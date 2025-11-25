@@ -182,6 +182,7 @@ def diff
     changedStrings = {}
 
     oldLang.each { |key, tl|
+        next if tl.empty?
         next if badString?(key, tl)
         newTl = $lang[key]
 
@@ -193,6 +194,7 @@ def diff
     }
 
     $lang.each { |key, newTl|
+        next if newTl.empty?
         next if badString?(key, newTl)
         tl = oldLang[key]
         if tl.nil?
@@ -202,11 +204,14 @@ def diff
     
     output = ""
     champDiff = {}
+    champExceptions = [
+        "anticheat", "dynamic"
+    ]
     removedStrings.each { |key, tl|
         champion = nil
         $champLang.each { |c| 
             if key.include?(c)
-                champion = c unless key.include?("anticheat")
+                champion = c unless champExceptions.any? { |ce| key.include?(ce) }
                 break
             end
         }
@@ -222,7 +227,7 @@ def diff
         champion = nil
         $champLang.each { |c| 
             if key.include?(c)
-                champion = c unless key.include?("anticheat")
+                champion = c unless champExceptions.any? { |ce| key.include?(ce) }
                 break
             end
         }
@@ -238,7 +243,7 @@ def diff
         champion = nil
         $champLang.each { |c| 
             if key.include?(c)
-                champion = c unless key.include?("anticheat")
+                champion = c unless champExceptions.any? { |ce| key.include?(ce) }
                 break
             end
         }
