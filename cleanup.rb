@@ -456,27 +456,105 @@ print "done.\n"
 print "Loading and formatting Arena augment data..."
 $arena = {}
 File.open("temp/data/maps/shipping/map30/map30.json", 'rb') { |f| $arena = JSON.parse(f.read()) }
+FileUtils.rm_rf(Dir.glob("arena/*"))
 $arena = $arena.fetch("entries", $arena)
 augments = []
-$arena.each{ |key, data|
+arenaOther = {}
+$arena.each { |key, data|
     v = augmentSearcher(key, data)
-    augments.push(v) if !v.nil?
+    if v
+        augments.push(v) 
+        next
+    end
+
+    type = data["~class"]
+    next if !type
+    case type
+        when "0xfe44baa3"
+            type = "GuestsOfHonor"
+        when "0x5a92b195"
+            type = "GamemodeKeybinds"
+        when "0x6b3ef1bd"
+            type = "SurrenderData"
+        when "0x62ba66ab"
+            type = "GuestsOfHonorList"
+            data["0x886394e"] = data["0x886394e"].map { |m| $arena.dig(m, "name") }
+        when "0x409a5657"
+            type = "DefaultAugmentData"
+            augmentPools = data["0x857c9848"]
+            augmentPools.each { |pool|
+                for i in 0...pool["AugmentPool"].length
+                    augment = pool["AugmentPool"][i]
+                    name = $lang.dig($arena.dig(augment, "NameTra")&.downcase) || augment
+                    data["0x857c9848"][augmentPools.index(pool)]["AugmentPool"][i] = name
+                end
+            }
+        when "0x23433cc1"
+            type = "AugmentNameModifiers"
+        else
+            #do nothing
+    end
+    arenaOther[type] ||= {}
+    arenaOther[type].store(key, data)
 }
 
 File.open("arena/augments.json", 'wb') { |f| f.write(JSON.pretty_generate(augments.sort_by { |a| a["id"] })) }
+arenaOther.each { |key, data|
+    File.open("arena/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
+}
 print "done.\n"
 
 # ARAM: Mayhem Augment handling
 print "Loading and formatting ARAM: Mayhem augment data..."
+#FileUtils.rm_rf(Dir.glob("mayhem/*"))
 $aram = {}
 File.open("temp/data/maps/modespecificdata/augments.json", 'rb') { |f| $aram = JSON.parse(f.read()) }
 $aram = $aram.fetch("entries", $aram)
 aramAugments = []
+aramOther = {}
 $aram.each { |key, data|
     v = augmentSearcher(key, data, 1)
-    aramAugments.push(v) if !v.nil?
+
+    if v
+        aramAugments.push(v)
+        next
+    end
+
+    type = data["~class"]
+
+    next if !type
+    case type
+        when "0xfe44baa3"
+            #type = "GuestsOfHonor"
+        when "0x5a92b195"
+            #type = "GamemodeKeybinds"
+        when "0x6b3ef1bd"
+            #type = "SurrenderData"
+        when "0x62ba66ab"
+            #type = "GuestsOfHonorList"
+            #data["0x886394e"] = data["0x886394e"].map { |m| $arena.dig(m, "name") }
+        when "0x409a5657"
+            #type = "DefaultAugmentData"
+            #augmentPools = data["0x857c9848"]
+            #augmentPools.each { |pool|
+            #    for i in 0...pool["AugmentPool"].length
+            #        augment = pool["AugmentPool"][i]
+            #        name = $lang.dig($arena.dig(augment, "NameTra")&.downcase) || augment
+            #        data["0x857c9848"][augmentPools.index(pool)]["AugmentPool"][i] = name
+            #    end
+            #}
+        when "0x23433cc1"
+            #type = "AugmentNameModifiers"
+        else
+            #do nothing
+    end
+    arenaOther[type] ||= {}
+    arenaOther[type].store(key, data)
 }
 File.open("mayhem/augments.json", 'wb') { |f| f.write(JSON.pretty_generate(aramAugments.sort_by { |a| a["id"] })) }
+aramOther.each { |key, data|
+    #File.open("mayhem/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
+}
 print "done.\n"
 
 print "Loading and formatting champion data..."
