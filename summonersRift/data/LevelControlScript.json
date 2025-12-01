@@ -1,0 +1,3473 @@
+{
+  "0x2a3f5cc": {
+    "Guid": "6307f4a1-d42a-4708-977c-0367b2c527d3",
+    "ScriptName": "SR_DragonLevelScript",
+    "functions": {
+      "0x6206716f": {
+        "blocks": [
+          {
+            "0xd851ffa3": "6fe64e3a-5e30-4488-ae28-db476d6b7bd8",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "lastSoulGranted",
+              "~class": "IntTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "08aa2ff1-fa73-4738-aeb9-c5674052e1f0",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "lastSoulReward",
+              "~class": "IntTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "c0b3e04f-604a-4145-b223-7b22212da1a6",
+            "Condition": {
+              "Operation": 1,
+              "Value1": {
+                "Var": "0x82024101",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "Table": {
+                  "~class": "InstanceVars"
+                },
+                "Var": "0xf703215",
+                "~class": "IntTableGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "70b5de9e-7e61-451f-b3ad-f230a9bc988e",
+            "Condition": {
+              "Operation": 1,
+              "Value1": {
+                "Var": "0x9e56f6fd",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "Table": {
+                  "~class": "InstanceVars"
+                },
+                "Var": "0x9204dd59",
+                "~class": "IntTableGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "10abf06f-ed9a-40e0-9f58-753a406d19d3",
+                  "Dest": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "lastSoulReward",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "Var": "0x82024101",
+                    "~class": "IntTableGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "0xd851ffa3": "a56ae6b0-d832-4b29-be3b-62b7734a56f3",
+                  "Dest": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "lastSoulGranted",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "Var": "0x9e56f6fd",
+                    "~class": "IntTableGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "0xd851ffa3": "0aaf9dd7-adb2-46a4-861d-81108fb223c0",
+                  "Function": {
+                    "FunctionName": "0xcfa64bf6",
+                    "LevelScriptLink": "0x2a3f5cc",
+                    "~class": "LevelScriptFunctionLink"
+                  },
+                  "FunctionDefinition": {
+                    "0x8c54e274": {
+                      "DragonType": {
+                        "Var": "0x82024101",
+                        "~class": "IntTableGet"
+                      }
+                    },
+                    "0xde888209": {
+                      "0xe08dccea": {
+                        "Var": "elementalBaseName",
+                        "~class": "StringTableSet"
+                      }
+                    },
+                    "~class": "0x2a2c82dc"
+                  },
+                  "~class": "0x6548f43"
+                },
+                {
+                  "~class": "0x0"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 2,
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0x7279123f": {
+        "FunctionDef": {
+          "0x8c54e274": [
+            {
+              "Input": {
+                "Var": "dragonName",
+                "~class": "StringTableSet"
+              },
+              "~class": "0x2330a302"
+            }
+          ],
+          "0xde888209": [
+            {
+              "Output": {
+                "Var": "0x2bc52d61",
+                "~class": "StringTableGet"
+              },
+              "~class": "0x294650d7"
+            }
+          ],
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "0xd851ffa3": "46a83c76-ea01-4129-8277-13b72a78b899",
+            "Dest": {
+              "Var": "baseIndex",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "416feff5-b7dd-4ff4-ba57-324b68110bec",
+            "Condition": {
+              "Value1": {
+                "Var": "0x7b33dc7d",
+                "~class": "StringTableGet"
+              },
+              "Value2": {
+                "value": "SRU_Dragon_Air",
+                "~class": "StringGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "a707dc42-ff98-4554-bbb7-a0f1fcf27076",
+                  "Dest": {
+                    "Var": "baseIndex",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": 1,
+                    "~class": "IntGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "174d5f1a-d8c3-494f-8995-63a93e87202f",
+            "Condition": {
+              "Value1": {
+                "Var": "0x7b33dc7d",
+                "~class": "StringTableGet"
+              },
+              "Value2": {
+                "value": "SRU_Dragon_Fire",
+                "~class": "StringGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "3f492e9f-97f3-44b8-a2ba-e1af49c41ee1",
+                  "Dest": {
+                    "Var": "baseIndex",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": 2,
+                    "~class": "IntGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 3,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "a0e7ff79-189f-4985-b64c-b5825810552f",
+            "Condition": {
+              "Value1": {
+                "Var": "0x7b33dc7d",
+                "~class": "StringTableGet"
+              },
+              "Value2": {
+                "value": "SRU_Dragon_Water",
+                "~class": "StringGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "b4a4f545-12ab-4ada-ac5e-62fa0d6b24a3",
+                  "Dest": {
+                    "Var": "baseIndex",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": 3,
+                    "~class": "IntGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 3,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "413a6452-10e0-4e49-add0-04c287ff6c5c",
+            "Condition": {
+              "Value1": {
+                "Var": "0x7b33dc7d",
+                "~class": "StringTableGet"
+              },
+              "Value2": {
+                "value": "SRU_Dragon_Earth",
+                "~class": "StringGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "1c378dac-17a7-45ae-93e4-f9bc9ce16216",
+                  "Dest": {
+                    "Var": "baseIndex",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": 4,
+                    "~class": "IntGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 3,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "03ec0276-3355-49a3-bb61-028536934fb4",
+            "Condition": {
+              "Value1": {
+                "Var": "0x7b33dc7d",
+                "~class": "StringTableGet"
+              },
+              "Value2": {
+                "value": "SRU_Dragon_Hextech",
+                "~class": "StringGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "b5ae3d6c-6424-48fb-b02a-c3c99f07c146",
+                  "Dest": {
+                    "Var": "baseIndex",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": 5,
+                    "~class": "IntGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 3,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "51ff2146-3d51-45f7-8101-eb61c013ae8f",
+            "Condition": {
+              "Value1": {
+                "Var": "0x7b33dc7d",
+                "~class": "StringTableGet"
+              },
+              "Value2": {
+                "value": "SRU_Dragon_Chemtech",
+                "~class": "StringGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "67588a2c-3052-4431-bb5b-36d1fd9a3203",
+                  "Dest": {
+                    "Var": "baseIndex",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": 6,
+                    "~class": "IntGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 3,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "01738316-ffe2-40f1-82e4-95a9c8885ed7",
+            "Condition": {
+              "Value1": {
+                "Var": "0x7b33dc7d",
+                "~class": "StringTableGet"
+              },
+              "Value2": {
+                "value": "SRU_Dragon_Elder",
+                "~class": "StringGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "011a29bd-578b-4cb8-82c5-32beedb6a966",
+                  "Dest": {
+                    "Var": "baseIndex",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "0xa827740",
+                    "~class": "IntTableGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 3,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "d0bc8a01-a594-45f1-91a2-bc124e088575",
+            "Function": {
+              "FunctionName": "0xcfa64bf6",
+              "LevelScriptLink": "0x2a3f5cc",
+              "~class": "LevelScriptFunctionLink"
+            },
+            "FunctionDefinition": {
+              "0x8c54e274": {
+                "DragonType": {
+                  "Var": "0x248e6354",
+                  "~class": "IntTableGet"
+                }
+              },
+              "0xde888209": {
+                "0xe08dccea": {
+                  "Var": "baseString",
+                  "~class": "StringTableSet"
+                }
+              },
+              "~class": "0x2a2c82dc"
+            },
+            "~class": "0x6548f43"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0x91bb8003": {
+        "blocks": [
+          {
+            "0xd851ffa3": "f0d66310-8c09-4b7b-9360-567b1adadc3e",
+            "Condition": {
+              "Operation": 1,
+              "Value1": {
+                "Table": {
+                  "~class": "InstanceVars"
+                },
+                "Var": "0x3836dfa6",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "Table": {
+                  "~class": "InstanceVars"
+                },
+                "Var": "0xa827740",
+                "~class": "IntTableGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "bf90dd02-6cf8-4f1e-8ac9-d59aad24880e",
+                  "Dest": {
+                    "Var": "dragonFlavor",
+                    "~class": "ScriptTableSet"
+                  },
+                  "SrcKey": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "0x3836dfa6",
+                    "~class": "IntTableGet"
+                  },
+                  "SrcTable": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "0x39ea66e6",
+                    "~class": "CustomTableGet"
+                  },
+                  "~class": "GetKeyValueInCustomTableBlock"
+                },
+                {
+                  "0xd851ffa3": "6cbde8d9-923b-4412-8e45-d87f6ad8e46b",
+                  "Condition": {
+                    "Value1": {
+                      "Var": "0xf5f62d12",
+                      "~class": "IntTableGet"
+                    },
+                    "Value2": {
+                      "value": 1,
+                      "~class": "IntGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "7cb7c1ca-3777-4991-b607-94aa9f69b035",
+                  "Condition": {
+                    "Value1": {
+                      "Var": "0xf5f62d12",
+                      "~class": "ScriptTableGet"
+                    },
+                    "Value2": {
+                      "value": 2,
+                      "~class": "IntGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "type": 3,
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "7a96d176-f410-4714-a4e9-5218ac1c9c36",
+                  "Condition": {
+                    "Value1": {
+                      "Var": "0xf5f62d12",
+                      "~class": "ScriptTableGet"
+                    },
+                    "Value2": {
+                      "value": 3,
+                      "~class": "IntGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "type": 3,
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "68cfc8a1-81c5-49ee-8aa2-73a7fb0202da",
+                  "Condition": {
+                    "Value1": {
+                      "Var": "0xf5f62d12",
+                      "~class": "ScriptTableGet"
+                    },
+                    "Value2": {
+                      "value": 4,
+                      "~class": "IntGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "type": 3,
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "4a8246a5-951b-439a-ae8d-27fd78978a02",
+                  "Condition": {
+                    "Value1": {
+                      "Var": "0xf5f62d12",
+                      "~class": "ScriptTableGet"
+                    },
+                    "Value2": {
+                      "value": 5,
+                      "~class": "IntGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "type": 3,
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "61295e3c-4917-467b-9b32-addc76272b9f",
+                  "Condition": {
+                    "Value1": {
+                      "Var": "0xf5f62d12",
+                      "~class": "ScriptTableGet"
+                    },
+                    "Value2": {
+                      "value": 6,
+                      "~class": "IntGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "type": 3,
+                  "~class": "0xe524b2fc"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "0fa6a38f-f61e-4a3d-92ef-8f69971f7ee1",
+            "Sequence": {
+              "blocks": [
+                {
+                  "~class": "0x0"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0xa87912d": {
+        "FunctionDef": {
+          "0x8c54e274": [
+            {
+              "Input": {
+                "Var": "dragonType",
+                "~class": "IntTableSet"
+              },
+              "~class": "0x2330a302"
+            }
+          ],
+          "0xde888209": [
+            {
+              "Output": {
+                "Var": "0xe08dccea",
+                "~class": "ScriptTableGet"
+              },
+              "~class": "0x294650d7"
+            }
+          ],
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "0xd851ffa3": "178268dc-6e2d-452c-a28c-e66d2ca2f6ae",
+            "Condition": {
+              "Value1": {
+                "Var": "DragonType",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "value": 1,
+                "~class": "IntGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "f5bf6faa-db2e-4d8a-834f-e7291abb6e79",
+                  "Dest": {
+                    "Var": "returnString",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": "Air",
+                    "~class": "StringGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "bb342b50-f3b0-4029-b2fd-2698ee4c9379",
+            "Condition": {
+              "Value1": {
+                "Var": "DragonType",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "value": 2,
+                "~class": "IntGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "5d74c261-5a6b-4065-a97b-48982f62707d",
+                  "Dest": {
+                    "Var": "returnString",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": "Fire",
+                    "~class": "StringGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 3,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "bf5783eb-d59b-460f-980b-68a263d84b4b",
+            "Condition": {
+              "Value1": {
+                "Var": "DragonType",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "value": 3,
+                "~class": "IntGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "6c878934-ba64-451c-a239-21031f0a3053",
+                  "Dest": {
+                    "Var": "returnString",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": "Water",
+                    "~class": "StringGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 3,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "13bbd0a8-5d31-42d5-8c94-b56315436001",
+            "Condition": {
+              "Value1": {
+                "Var": "DragonType",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "value": 4,
+                "~class": "IntGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "c424af8f-dce3-45e0-bf4b-da0e4b79ef29",
+                  "Dest": {
+                    "Var": "returnString",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": "Earth",
+                    "~class": "StringGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 3,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "9359516b-5a53-4eed-8920-3acf5683299a",
+            "Condition": {
+              "Value1": {
+                "Var": "DragonType",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "value": 5,
+                "~class": "IntGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "31a9ec49-7fec-44c7-9f4b-531a53a111d8",
+                  "Dest": {
+                    "Var": "returnString",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": "Hextech",
+                    "~class": "StringGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 3,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "d1307a24-7f36-4410-971c-6ebb93519975",
+            "Condition": {
+              "Value1": {
+                "Var": "DragonType",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "value": 6,
+                "~class": "IntGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "a1bbabb0-2186-4e5d-823b-3aa35b70436a",
+                  "Dest": {
+                    "Var": "returnString",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": "Chemtech",
+                    "~class": "StringGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 3,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "a21185c4-e354-4fdc-8b5c-0b306ea2bec5",
+            "Condition": {
+              "Value1": {
+                "Var": "DragonType",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "Table": {
+                  "~class": "InstanceVars"
+                },
+                "Var": "0xa827740",
+                "~class": "IntTableGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "5e1da26a-17d0-4da8-b769-0028f5b8e948",
+                  "Dest": {
+                    "Var": "returnString",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": "Elder",
+                    "~class": "StringGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 3,
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0xba7d6692": {
+        "FunctionDef": {
+          "0x8c54e274": [
+            {
+              "Input": {
+                "Var": "dragonType",
+                "~class": "IntTableSet"
+              },
+              "~class": "0x2330a302"
+            }
+          ],
+          "0xde888209": [
+            {
+              "Output": {
+                "Var": "0xe08dccea",
+                "~class": "StringTableGet"
+              },
+              "~class": "0x294650d7"
+            }
+          ],
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "0xd851ffa3": "c84cb0bb-20c6-461c-a1fc-ce099df500e6",
+            "Function": {
+              "FunctionName": "0xa87912d",
+              "LevelScriptLink": "0x2a3f5cc",
+              "~class": "LevelScriptFunctionLink"
+            },
+            "FunctionDefinition": {
+              "0x8c54e274": {
+                "DragonType": {
+                  "Var": "DragonType",
+                  "~class": "IntTableGet"
+                }
+              },
+              "0xde888209": {
+                "0xe08dccea": {
+                  "Var": "returnString",
+                  "~class": "StringTableSet"
+                }
+              },
+              "~class": "0x2a2c82dc"
+            },
+            "~class": "0x6548f43"
+          },
+          {
+            "0xd851ffa3": "d14b4b98-0e43-4217-abe7-77c0041e0c66",
+            "Result": {
+              "Var": "returnString",
+              "~class": "StringTableSet"
+            },
+            "String1": {
+              "value": "Dragon",
+              "~class": "StringGet"
+            },
+            "String2": {
+              "Var": "0xe08dccea",
+              "~class": "StringTableGet"
+            },
+            "~class": "ConcatenateStringsBlock"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0xcfa64bf6": {
+        "FunctionDef": {
+          "0x8c54e274": [
+            {
+              "Input": {
+                "Var": "dragonType",
+                "~class": "IntTableSet"
+              },
+              "~class": "0x2330a302"
+            }
+          ],
+          "0xde888209": [
+            {
+              "Output": {
+                "Var": "0xe08dccea",
+                "~class": "StringTableGet"
+              },
+              "~class": "0x294650d7"
+            }
+          ],
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "0xd851ffa3": "dd4eb81c-4714-437a-a6c1-1094fa51b1cf",
+            "Condition": {
+              "Value1": {
+                "Var": "DragonType",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "value": 1,
+                "~class": "IntGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "113b56f4-c859-4bf3-bc0d-15e2ff512d0c",
+                  "Dest": {
+                    "Var": "returnString",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": "Cloud",
+                    "~class": "StringGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "b23f6ca3-6e47-4c9e-91da-38afdc28bc25",
+            "Condition": {
+              "Value1": {
+                "Var": "DragonType",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "value": 2,
+                "~class": "IntGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "7b117c33-5347-40d9-bd8a-e1346a28864e",
+                  "Dest": {
+                    "Var": "returnString",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": "Infernal",
+                    "~class": "StringGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 3,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "7da5bfc7-6e24-4ba5-9f64-d6abf5be86bb",
+            "Condition": {
+              "Value1": {
+                "Var": "DragonType",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "value": 3,
+                "~class": "IntGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "a73474da-580c-42e3-be5b-c206fb3fa6a0",
+                  "Dest": {
+                    "Var": "returnString",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": "Ocean",
+                    "~class": "StringGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 3,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "2a14a0ab-a92c-4831-9d31-c4b3df2e5464",
+            "Condition": {
+              "Value1": {
+                "Var": "DragonType",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "value": 4,
+                "~class": "IntGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "e6035343-9952-43aa-82b3-5af897587252",
+                  "Dest": {
+                    "Var": "returnString",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": "Mountain",
+                    "~class": "StringGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 3,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "2be6755b-11b2-4cc0-86e9-ac0ac5badcdd",
+            "Condition": {
+              "Value1": {
+                "Var": "DragonType",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "value": 5,
+                "~class": "IntGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "88eb22bd-8a9c-421c-a6f3-332c812c95c3",
+                  "Dest": {
+                    "Var": "returnString",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": "Hextech",
+                    "~class": "StringGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 3,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "fdaacbfe-86ee-49ff-b37b-f68da7d1e7f1",
+            "Condition": {
+              "Value1": {
+                "Var": "DragonType",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "value": 6,
+                "~class": "IntGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "55183897-d90b-40cc-b604-d5ca1ea2c8a1",
+                  "Dest": {
+                    "Var": "returnString",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": "Chemtech",
+                    "~class": "StringGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 3,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "7dd94dcd-32eb-4c1e-b642-22d8553f922f",
+            "Condition": {
+              "Value1": {
+                "Var": "DragonType",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "Table": {
+                  "~class": "InstanceVars"
+                },
+                "Var": "0xa827740",
+                "~class": "IntTableGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "c46f398e-f098-4477-98f7-66535e5303d6",
+                  "Dest": {
+                    "Var": "returnString",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": "Elder",
+                    "~class": "StringGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 3,
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0xd6d0cd76": {
+        "FunctionDef": {
+          "0x8c54e274": [
+            {
+              "Input": {
+                "Var": "Location",
+                "~class": "VectorTableSet"
+              },
+              "~class": "0x2330a302"
+            },
+            {
+              "Input": {
+                "Var": "FacingLocation",
+                "~class": "VectorTableSet"
+              },
+              "~class": "0x2330a302"
+            }
+          ],
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "0xd851ffa3": "c7933525-5100-40dc-9aa4-40554571a1be",
+            "~class": "ScriptCommentBlock"
+          },
+          {
+            "0xd851ffa3": "b964a205-1423-4c17-b79f-10fbdd8e6ff4",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "DragonCampName",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "value": "Dragon",
+              "~class": "StringGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "192f51ae-a1dc-4583-8565-6b23db71bef7",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "DragonLoc",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "Var": "Location",
+              "~class": "VectorTableGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "da520c43-c0fa-41e9-a53c-1e1e409b97fd",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "DragonFacingLoc",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "Var": "FacingLocation",
+              "~class": "VectorTableGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "b805f9fd-9a35-42fa-bf9e-361c5207619d",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "DragonSpawnRate",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "value": 300,
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "8061d9d9-3281-43e4-9bca-08118f913734",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "ElderDragonSpawnRate",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "value": 360,
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "7faa1179-41b8-412f-b384-40586b297ad0",
+            "Dest": {
+              "Var": "InitialCountdown",
+              "~class": "FloatTableSet"
+            },
+            "~class": "GetGameStartCountdownTime"
+          },
+          {
+            "0xd851ffa3": "0a69bf15-940a-4c8b-9eb4-60a16b810207",
+            "Dest": {
+              "Var": "DragonSpawnTime",
+              "~class": "ScriptTableSet"
+            },
+            "Formula": "ptp.InitialCountdown + 235",
+            "~class": "0x15ebaa9c"
+          },
+          {
+            "0xd851ffa3": "530ae80a-e391-4c35-82cc-71c21cd5edef",
+            "Condition": {
+              "~class": "0x0"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "c60a1f7b-9d29-45ff-841e-e17b6cfda80a",
+            "Condition": {
+              "~class": "0x0"
+            },
+            "type": 2,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "faba6345-b1bd-4c01-82be-665d8a742b99",
+            "Condition": {
+              "~class": "0x0"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "8ff57c1e-90fc-4a85-b0e4-cb58857ff9a8",
+                  "Dest": {
+                    "Var": "DragonSpawnTime",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Formula": "ptp.InitialCountdown + 175",
+                  "~class": "0x15ebaa9c"
+                },
+                {
+                  "0xd851ffa3": "21135b6e-3757-49ed-8b5a-6bf9f46da690",
+                  "Dest": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "DragonSpawnRate",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": 150,
+                    "~class": "IntGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "0xd851ffa3": "a1602e0d-e3e1-4dc6-8e9c-d2dd8272f94a",
+                  "Dest": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "ElderDragonSpawnRate",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": 300,
+                    "~class": "IntGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 2,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0x5a4ef4e7": {
+              "PathHash": "0x7faa12bd",
+              "~class": "0x5b4f4df6"
+            },
+            "0x7d27af7f": true,
+            "0xd851ffa3": "f5eb3dc0-50d4-4932-849b-2aa194e6a1c0",
+            "CampLevel": 2,
+            "FacingLocation": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "0x737eb666",
+              "~class": "VectorTableGet"
+            },
+            "InitialSpawnTime": {
+              "Var": "0xd41e3d3c",
+              "~class": "FloatTableGet"
+            },
+            "Location": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "0x9756fa28",
+              "~class": "VectorTableGet"
+            },
+            "MinimapIcon": "Dragon",
+            "MinimapIconOffset": {
+              "value": [
+                150.0,
+                0.0,
+                50.0
+              ],
+              "~class": "VectorGet"
+            },
+            "RespawnDelaySecs": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "0xcc561d1f",
+              "~class": "FloatTableGet"
+            },
+            "RevealEvent": 1,
+            "ScoreboardTimer": 5,
+            "SpawnBehavior": {
+              "callback": {
+                "FunctionName": "0x91bb8003",
+                "LevelScriptLink": "0x2a3f5cc",
+                "~class": "LevelScriptFunctionLink"
+              },
+              "~class": "CustomNeutralCampSpawnBehavior"
+            },
+            "SpawnDurationSecs": {
+              "value": 6.5,
+              "~class": "FloatGet"
+            },
+            "StopSpawnTimeSecs": {
+              "value": 25000.0,
+              "~class": "FloatGet"
+            },
+            "~class": "CreateNeutralCamp"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "d8d5d991-5a16-4373-a6be-ec5c07420e05",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "ORDER_DRAGONS_TAKEN",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "cadd6e4a-5500-4eb6-ae6c-5ae3ed6f2e24",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "CHAOS_DRAGONS_TAKEN",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "714061a8-275b-458e-ac69-f38b2f22deff",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "NUM_DRAGON_FLAVORS",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "value": 7,
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "e779a2ec-95b4-4c51-9f8e-3197f4e9409b",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "NUM_ELEMENTAL_FLAVORS",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "value": 6,
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "4aa04103-3a5d-49f7-8ed6-49d41d2a3c6a",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "ELDER_DRAGON_FLAVOR_ID",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "value": -1,
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "4e1786fc-8b56-4ebb-82ab-217dfc797580",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "DRAGONS_TO_ELDER",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "value": 4,
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "db8cf6d2-8dfe-4f5e-9c0e-3ab245b9f5d1",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "DRAGONS_TO_TERRAINCHANGE",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "value": 2,
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "d310d80c-b467-44ed-80e2-2c06e252e31e",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "DRAGON_REWARDS_PERKILL",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "value": 1,
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "2419f288-4ce7-41af-b173-d0c5c39d84e2",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "dragonFlavorIndex",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "value": 1,
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "fc2cb88b-a9b2-471e-9fcd-fd4980038043",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "lastSoulGranted",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "8e545f5e-f4f4-4b00-bd56-c2e03d827a71",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "lastSoulReward",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "e225ecee-2b5a-41ae-9dac-c5fb5924ea06",
+            "SelectedTerrain": {
+              "Var": "selectedTerrain",
+              "~class": "IntTableSet"
+            },
+            "~class": "0xed070692"
+          },
+          {
+            "0xd851ffa3": "307e17a3-a4f1-4737-91ca-a9d83b75b785",
+            "Function": {
+              "FunctionName": "0xf13f0031",
+              "LevelScriptLink": "0x2a3f5cc",
+              "~class": "LevelScriptFunctionLink"
+            },
+            "FunctionDefinition": {
+              "0x8c54e274": {
+                "SelectedTerrain": {
+                  "Var": "SelectedTerrain",
+                  "~class": "IntTableGet"
+                }
+              },
+              "0xde888209": {
+                "0x5520db90": {
+                  "Var": "selectedDragon",
+                  "~class": "IntTableSet"
+                }
+              },
+              "~class": "0x2a2c82dc"
+            },
+            "~class": "0x6548f43"
+          },
+          {
+            "0xd851ffa3": "170dc047-9916-42de-9a2b-6dc5ed64b429",
+            "Dest": {
+              "Var": "disabledDragon",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "116f6d12-2f6c-4503-a4d0-477e90351af3",
+            "Dest": {
+              "Var": "dragonsToTerrainChange",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "value": 2,
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "e3c1218a-85e2-4d40-a6a5-e2d173995b9a",
+            "Dest": {
+              "Var": "dragonsToElder",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "value": 4,
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "138ae037-89b6-4f77-b9f0-670fe79ecbaa",
+            "ModePreloadFlags": {
+              "Var": "preloadFlags",
+              "~class": "IntTableSet"
+            },
+            "~class": "GetModePreloadFlags"
+          },
+          {
+            "0xd851ffa3": "494c168a-073f-4bc0-b8d5-056019d3a5a9",
+            "Dest": {
+              "Var": "NumDragonFlavors",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "value": 6,
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "a3327c83-d8a4-45d2-a07c-c2f9e247216a",
+            "0xdec56440": [
+              {
+                "Var": "0x294054ff",
+                "~class": "IntTableGet"
+              }
+            ],
+            "MaxValue": {
+              "Var": "0x22819089",
+              "~class": "IntTableGet"
+            },
+            "MinValue": {
+              "value": 1,
+              "~class": "IntGet"
+            },
+            "OutputTable": {
+              "Var": "elementalDragonTable",
+              "~class": "CustomTableSet"
+            },
+            "~class": "0x92b6b7fa"
+          },
+          {
+            "0xd851ffa3": "a921bfdd-c371-4603-8110-d1fdf1abf94a",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "dragonFlavorTable",
+              "~class": "CustomTableSet"
+            },
+            "~class": "CreateCustomTableBlock"
+          },
+          {
+            "0xd851ffa3": "95888d50-59ca-49e1-b025-2fce5a01ad43",
+            "Dest": {
+              "Var": "index",
+              "~class": "IntTableSet"
+            },
+            "End": {
+              "Var": "0x2cc5c007",
+              "~class": "IntTableGet"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "3a164338-359c-4927-b867-541649fc2ef3",
+                  "Dest": {
+                    "Var": "elemDrag",
+                    "~class": "ScriptTableSet"
+                  },
+                  "SrcKey": {
+                    "Var": "Index",
+                    "~class": "IntTableGet"
+                  },
+                  "SrcTable": {
+                    "Var": "0x3db0b587",
+                    "~class": "CustomTableGet"
+                  },
+                  "~class": "GetKeyValueInCustomTableBlock"
+                },
+                {
+                  "0xd851ffa3": "f7726e4f-7a84-4289-906b-9e28f6aa803a",
+                  "DestTable": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "0x39ea66e6",
+                    "~class": "CustomTableGet"
+                  },
+                  "Key": {
+                    "Var": "Index",
+                    "~class": "IntTableGet"
+                  },
+                  "value": {
+                    "Var": "0x903e63b4",
+                    "~class": "ScriptTableGet"
+                  },
+                  "~class": "SetKeyValueInCustomTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "Start": {
+              "value": 1,
+              "~class": "IntGet"
+            },
+            "step": {
+              "value": 1,
+              "~class": "IntGet"
+            },
+            "~class": "LoopBlock"
+          },
+          {
+            "0xd851ffa3": "8c2ff121-65f3-4a33-8d36-d6b34893b7d2",
+            "Dest": {
+              "Var": "dragonAtTerrainChangeMomentIndex",
+              "~class": "ScriptTableSet"
+            },
+            "Formula": "ptp.dragonsToTerrainChange + 1",
+            "~class": "0x15ebaa9c"
+          },
+          {
+            "0xd851ffa3": "3bd11662-4d24-4fc0-84e9-be9ead237e56",
+            "Dest": {
+              "Var": "maxDragonsForBothTeams",
+              "~class": "ScriptTableSet"
+            },
+            "Formula": "ptp.dragonsToElder * 2",
+            "~class": "0x15ebaa9c"
+          },
+          {
+            "0xd851ffa3": "d6c2826d-23c5-4d68-a1a7-dd40cce8bef5",
+            "Condition": {
+              "Operation": 1,
+              "Value1": {
+                "Var": "SelectedTerrain",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "~class": "IntGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "047dc972-ff1b-457f-a0c1-65bba7c3903c",
+                  "Dest": {
+                    "Var": "index",
+                    "~class": "IntTableSet"
+                  },
+                  "End": {
+                    "Var": "0xb308fb05",
+                    "~class": "IntTableGet"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "538e0d87-0e38-4eee-8882-6275aedee3bb",
+                        "DestTable": {
+                          "Table": {
+                            "~class": "InstanceVars"
+                          },
+                          "Var": "0x39ea66e6",
+                          "~class": "CustomTableGet"
+                        },
+                        "Key": {
+                          "Var": "Index",
+                          "~class": "IntTableGet"
+                        },
+                        "value": {
+                          "Var": "0x294054ff",
+                          "~class": "ScriptTableGet"
+                        },
+                        "~class": "SetKeyValueInCustomTableBlock"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "Start": {
+                    "Var": "0x99699cc",
+                    "~class": "IntTableGet"
+                  },
+                  "step": {
+                    "value": 1,
+                    "~class": "IntGet"
+                  },
+                  "~class": "LoopBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "46788f54-72f5-4770-9a01-9594dd782457",
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "01e36350-0586-4544-8280-6e7680369973",
+                  "Dest": {
+                    "Var": "index",
+                    "~class": "IntTableSet"
+                  },
+                  "End": {
+                    "Var": "0xb308fb05",
+                    "~class": "IntTableGet"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "b5da76ea-4813-43e3-8f11-37446d529321",
+                        "Dest": {
+                          "Var": "randElementalDragonIndex",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Formula": "rand(1,2)",
+                        "~class": "0x15ebaa9c"
+                      },
+                      {
+                        "0xd851ffa3": "4c8bc058-7449-4990-b2f3-368fa0b7595f",
+                        "Dest": {
+                          "Var": "randElementalDragon",
+                          "~class": "ScriptTableSet"
+                        },
+                        "SrcKey": {
+                          "Var": "0x95c8ace8",
+                          "~class": "IntTableGet"
+                        },
+                        "SrcTable": {
+                          "Var": "0x3db0b587",
+                          "~class": "CustomTableGet"
+                        },
+                        "~class": "GetKeyValueInCustomTableBlock"
+                      },
+                      {
+                        "0xd851ffa3": "75cd5727-0c64-4324-aefd-1e8bf914458a",
+                        "DestTable": {
+                          "Table": {
+                            "~class": "InstanceVars"
+                          },
+                          "Var": "0x39ea66e6",
+                          "~class": "CustomTableGet"
+                        },
+                        "Key": {
+                          "Var": "Index",
+                          "~class": "IntTableGet"
+                        },
+                        "value": {
+                          "Var": "0x90decb0c",
+                          "~class": "ScriptTableGet"
+                        },
+                        "~class": "SetKeyValueInCustomTableBlock"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "Start": {
+                    "Var": "0x99699cc",
+                    "~class": "IntTableGet"
+                  },
+                  "step": {
+                    "value": 1,
+                    "~class": "IntGet"
+                  },
+                  "~class": "LoopBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "be8bf914-0980-4727-8d2f-8f3cb589dcd1",
+            "OutTable": {
+              "Var": "sortedSelectedDragons",
+              "~class": "CustomTableSet"
+            },
+            "Table": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "0x39ea66e6",
+              "~class": "CustomTableGet"
+            },
+            "~class": "CopyCustomTableBlock"
+          },
+          {
+            "0xd851ffa3": "68579157-7880-42ae-89fc-0408ca5c9ae2",
+            "Table": {
+              "Var": "0xfe052eab",
+              "~class": "CustomTableGet"
+            },
+            "~class": "SortCustomTableBlock"
+          },
+          {
+            "0xd851ffa3": "941b76b0-5144-43a1-aed0-e9e2cb27d5af",
+            "~class": "ScriptCommentBlock"
+          },
+          {
+            "0xd851ffa3": "1599e934-ce88-42f3-9597-2c5ea90aab1a",
+            "Condition": {
+              "Value1": {
+                "Var": "0xa6c7ad01",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "~class": "IntGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "d78a8c7f-08e9-468f-873d-ec6aec09a1c4",
+                  "Dest": {
+                    "Var": "index",
+                    "~class": "IntTableSet"
+                  },
+                  "End": {
+                    "Var": "0x99699cc",
+                    "~class": "IntTableGet"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "76668131-ee61-490d-aac8-7175207c1896",
+                        "Dest": {
+                          "Var": "preloadDragonIndex",
+                          "~class": "ScriptTableSet"
+                        },
+                        "SrcKey": {
+                          "Var": "Index",
+                          "~class": "IntTableGet"
+                        },
+                        "SrcTable": {
+                          "Var": "0xfe052eab",
+                          "~class": "CustomTableGet"
+                        },
+                        "~class": "GetKeyValueInCustomTableBlock"
+                      },
+                      {
+                        "0xd851ffa3": "9d141337-b7d0-4af7-a8ca-f2a6e3752fb7",
+                        "Function": {
+                          "FunctionName": "0xf0e031fb",
+                          "LevelScriptLink": "0x2a3f5cc",
+                          "~class": "LevelScriptFunctionLink"
+                        },
+                        "FunctionDefinition": {
+                          "0x8c54e274": {
+                            "DragonType": {
+                              "Var": "0x248ac9bf",
+                              "~class": "IntTableGet"
+                            }
+                          },
+                          "~class": "0x2a2c82dc"
+                        },
+                        "~class": "0x6548f43"
+                      },
+                      {
+                        "0xd851ffa3": "4112588d-3a3b-4bfa-8c54-75c9c920b233",
+                        "BitField": {
+                          "Var": "preloadFlags",
+                          "~class": "IntTableSet"
+                        },
+                        "BitIndex": {
+                          "Var": "0x248ac9bf",
+                          "~class": "IntTableGet"
+                        },
+                        "~class": "SetBit"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "Start": {
+                    "value": 1,
+                    "~class": "IntGet"
+                  },
+                  "step": {
+                    "value": 1,
+                    "~class": "IntGet"
+                  },
+                  "~class": "LoopBlock"
+                },
+                {
+                  "0xd851ffa3": "69e55eb8-b99f-481f-9270-7527ff5192db",
+                  "ModePreloadFlags": {
+                    "Var": "0xa6c7ad01",
+                    "~class": "IntTableGet"
+                  },
+                  "~class": "SetModePreloadFlags"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "3f1e95ad-3e28-43c2-97c7-6ed0864a6467",
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "7509e1f1-0653-4311-bb23-7fd57b572ede",
+                  "Dest": {
+                    "Var": "index",
+                    "~class": "IntTableSet"
+                  },
+                  "End": {
+                    "Var": "0x22819089",
+                    "~class": "IntTableGet"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "25a15da6-0dbf-4ecc-92c0-2e6b17ff8d3c",
+                        "Condition": {
+                          "BitField": {
+                            "Var": "0xa6c7ad01",
+                            "~class": "IntTableGet"
+                          },
+                          "Position": {
+                            "Var": "Index",
+                            "~class": "IntTableGet"
+                          },
+                          "~class": "0x418af145"
+                        },
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "0xd851ffa3": "0b997681-a9d7-4a37-acee-4ea7e2d23851",
+                              "Function": {
+                                "FunctionName": "0xf0e031fb",
+                                "LevelScriptLink": "0x2a3f5cc",
+                                "~class": "LevelScriptFunctionLink"
+                              },
+                              "FunctionDefinition": {
+                                "0x8c54e274": {
+                                  "DragonType": {
+                                    "Var": "Index",
+                                    "~class": "IntTableGet"
+                                  }
+                                },
+                                "~class": "0x2a2c82dc"
+                              },
+                              "~class": "0x6548f43"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "~class": "0xe524b2fc"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "Start": {
+                    "value": 1,
+                    "~class": "IntGet"
+                  },
+                  "step": {
+                    "value": 1,
+                    "~class": "IntGet"
+                  },
+                  "~class": "LoopBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "9fd5e44d-4a5a-4a7a-a557-bf5c26ee00cb",
+            "Condition": {
+              "Value1": {
+                "Var": "SelectedTerrain",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "value": 5,
+                "~class": "IntGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "196583fe-536b-4318-8a46-d559bb455521",
+                  "CharacterName": {
+                    "value": "Hexgate",
+                    "~class": "StringGet"
+                  },
+                  "~class": "PreloadCharacter"
+                },
+                {
+                  "0xd851ffa3": "c9070ccc-2914-4a56-a2e0-13896a639edd",
+                  "CharacterName": {
+                    "value": "Hexgate_Exit",
+                    "~class": "StringGet"
+                  },
+                  "~class": "PreloadCharacter"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "6abc8177-2221-4734-b23c-3869d515a40b",
+            "Condition": {
+              "Value1": {
+                "Var": "SelectedTerrain",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "value": 6,
+                "~class": "IntGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "f3e5f59b-a870-4213-abc9-059775f0dff8",
+                  "CharacterName": {
+                    "value": "SRU_Plant_Health",
+                    "~class": "StringGet"
+                  },
+                  "SkinID": {
+                    "value": 2,
+                    "~class": "IntGet"
+                  },
+                  "~class": "PreloadCharacterWithSkinID"
+                },
+                {
+                  "0xd851ffa3": "9b717e12-6240-4b4a-8751-d8f1d18248ab",
+                  "CharacterName": {
+                    "value": "SRU_Plant_Satchel",
+                    "~class": "StringGet"
+                  },
+                  "SkinID": {
+                    "value": 1,
+                    "~class": "IntGet"
+                  },
+                  "~class": "PreloadCharacterWithSkinID"
+                },
+                {
+                  "0xd851ffa3": "10675b11-73fd-496e-91d5-7e0bc30c8b31",
+                  "CharacterName": {
+                    "value": "SRU_Plant_Vision",
+                    "~class": "StringGet"
+                  },
+                  "SkinID": {
+                    "value": 1,
+                    "~class": "IntGet"
+                  },
+                  "~class": "PreloadCharacterWithSkinID"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 3,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "2b54cf51-4e81-477a-b84a-e692c33cd3af",
+            "Dest": {
+              "Var": "firstDrag",
+              "~class": "ScriptTableSet"
+            },
+            "SrcKey": {
+              "value": 1,
+              "~class": "IntGet"
+            },
+            "SrcTable": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "0x39ea66e6",
+              "~class": "CustomTableGet"
+            },
+            "~class": "GetKeyValueInCustomTableBlock"
+          },
+          {
+            "0xd851ffa3": "bd46d925-c62b-4d48-9e32-cc9ff087361c",
+            "Function": {
+              "FunctionName": "0xfc8faf3e",
+              "LevelScriptLink": "0x2a3f5cc",
+              "~class": "LevelScriptFunctionLink"
+            },
+            "FunctionDefinition": {
+              "0x8c54e274": {
+                "DragonType": {
+                  "Var": "0x291683df",
+                  "~class": "IntTableGet"
+                }
+              },
+              "0xde888209": {
+                "0xe08dccea": {
+                  "Var": "dragonIconName",
+                  "~class": "StringTableSet"
+                }
+              },
+              "~class": "0x2a2c82dc"
+            },
+            "~class": "0x6548f43"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "56c2cf4b-0b24-455f-a900-71b9c8957823",
+            "Function": {
+              "FunctionName": "0xba7d6692",
+              "LevelScriptLink": "0x2a3f5cc",
+              "~class": "LevelScriptFunctionLink"
+            },
+            "FunctionDefinition": {
+              "0x8c54e274": {
+                "DragonType": {
+                  "Var": "0x291683df",
+                  "~class": "IntTableGet"
+                }
+              },
+              "0xde888209": {
+                "0xe08dccea": {
+                  "Var": "selectedBaseDragonName",
+                  "~class": "StringTableSet"
+                }
+              },
+              "~class": "0x2a2c82dc"
+            },
+            "~class": "0x6548f43"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0xdcaf415e": {
+        "FunctionDef": {
+          "0x8c54e274": [
+            {
+              "Input": {
+                "Var": "skinName",
+                "~class": "StringTableSet"
+              },
+              "~class": "0x2330a302"
+            },
+            {
+              "Input": {
+                "~class": "0x0"
+              },
+              "~class": "0x2330a302"
+            }
+          ],
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "0xd851ffa3": "8ac95dbe-0ac0-418e-a583-809b8d3c78ad",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "ORDER_DRAGONS_TAKEN",
+              "~class": "IntTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "260b6bd2-1dc2-4065-801c-bf250e7b2f2d",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "CHAOS_DRAGONS_TAKEN",
+              "~class": "IntTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "90885261-e67d-4f57-bac3-41be5e31431f",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "dragonFlavorIndex",
+              "~class": "IntTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "1860fb5a-555c-4acd-b0f6-d904a633c879",
+            "InitialDelaySecs": {
+              "value": 0.25,
+              "~class": "FloatGet"
+            },
+            "callback": {
+              "FunctionName": "0x6206716f",
+              "LevelScriptLink": "0x2a3f5cc",
+              "~class": "LevelScriptFunctionLink"
+            },
+            "~class": "AddLevelTimer"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "55fcafa5-5e5f-4467-9ada-53e670a510c7",
+            "Condition": {
+              "Value1": {
+                "~class": "0x0"
+              },
+              "Value2": {
+                "~class": "0x0"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "567e4f57-5770-49b8-aa79-5421994a1dcb",
+            "Condition": {
+              "Value1": {
+                "~class": "0x0"
+              },
+              "Value2": {
+                "~class": "0x0"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "8e771479-de65-4289-9bc4-4976747b7470",
+                  "Dest": {
+                    "Var": "count",
+                    "~class": "IntTableSet"
+                  },
+                  "End": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "0xce84c291",
+                    "~class": "IntTableGet"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "e5abe390-d44b-490c-a015-4f2e7e1a16e3",
+                        "Function": {
+                          "FunctionName": "0x7279123f",
+                          "LevelScriptLink": "0x2a3f5cc",
+                          "~class": "LevelScriptFunctionLink"
+                        },
+                        "FunctionDefinition": {
+                          "0x8c54e274": {
+                            "0x7b33dc7d": {
+                              "Var": "SkinName",
+                              "~class": "StringTableGet"
+                            }
+                          },
+                          "0xde888209": {
+                            "0x2bc52d61": {
+                              "Var": "elementalBaseName",
+                              "~class": "StringTableSet"
+                            }
+                          },
+                          "~class": "0x2a2c82dc"
+                        },
+                        "~class": "0x6548f43"
+                      },
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "Start": {
+                    "value": 1,
+                    "~class": "IntGet"
+                  },
+                  "step": {
+                    "value": 1,
+                    "~class": "IntGet"
+                  },
+                  "~class": "LoopBlock"
+                },
+                {
+                  "0xd851ffa3": "f3065085-1794-41d1-a52b-c211ca1b3afc",
+                  "Condition": {
+                    "Value1": {
+                      "~class": "0x0"
+                    },
+                    "Value2": {
+                      "~class": "0x0"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "651e6e1b-7576-41b9-88e0-1a035eb58cc9",
+                        "Dest": {
+                          "Table": {
+                            "~class": "InstanceVars"
+                          },
+                          "Var": "ORDER_DRAGONS_TAKEN",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Formula": "iv.ORDER_DRAGONS_TAKEN + 1",
+                        "~class": "0x15ebaa9c"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "ebbd24c4-bdcf-4da9-aa7a-f6d6be963734",
+                  "Condition": {
+                    "Value1": {
+                      "~class": "0x0"
+                    },
+                    "Value2": {
+                      "~class": "0x0"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "72add9bb-f6b3-44ee-b438-3ea624efc375",
+                        "Dest": {
+                          "Table": {
+                            "~class": "InstanceVars"
+                          },
+                          "Var": "CHAOS_DRAGONS_TAKEN",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Formula": "iv.CHAOS_DRAGONS_TAKEN + 1",
+                        "~class": "0x15ebaa9c"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "type": 3,
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "f54c39e9-fdcf-4565-9485-0af402f1394a",
+                  "Condition": {
+                    "Operation": 3,
+                    "Value1": {
+                      "Table": {
+                        "~class": "InstanceVars"
+                      },
+                      "Var": "0x92708f0",
+                      "~class": "IntTableGet"
+                    },
+                    "Value2": {
+                      "Table": {
+                        "~class": "InstanceVars"
+                      },
+                      "Var": "0xc58b2fd6",
+                      "~class": "IntTableGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "3545bbb7-1606-44d6-882e-5f5454e52dd9",
+                  "Condition": {
+                    "Operation": 3,
+                    "Value1": {
+                      "Table": {
+                        "~class": "InstanceVars"
+                      },
+                      "Var": "0x89c89a58",
+                      "~class": "IntTableGet"
+                    },
+                    "Value2": {
+                      "Table": {
+                        "~class": "InstanceVars"
+                      },
+                      "Var": "0xc58b2fd6",
+                      "~class": "IntTableGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "440e221d-5948-4420-9b8e-5feef08882ca",
+                        "Dest": {
+                          "Table": {
+                            "~class": "InstanceVars"
+                          },
+                          "Var": "dragonFlavorIndex",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Src": {
+                          "Table": {
+                            "~class": "InstanceVars"
+                          },
+                          "Var": "0xa827740",
+                          "~class": "IntTableGet"
+                        },
+                        "~class": "SetVarInTableBlock"
+                      },
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "0xd851ffa3": "35006f0a-5b09-4763-a3cf-c9432b083535",
+                        "Function": {
+                          "FunctionName": "0xba7d6692",
+                          "LevelScriptLink": "0x2a3f5cc",
+                          "~class": "LevelScriptFunctionLink"
+                        },
+                        "FunctionDefinition": {
+                          "0x8c54e274": {
+                            "DragonType": {
+                              "Table": {
+                                "~class": "InstanceVars"
+                              },
+                              "Var": "0xa827740",
+                              "~class": "IntTableGet"
+                            }
+                          },
+                          "0xde888209": {
+                            "0xe08dccea": {
+                              "Var": "elderBaseDragonName",
+                              "~class": "StringTableSet"
+                            }
+                          },
+                          "~class": "0x2a2c82dc"
+                        },
+                        "~class": "0x6548f43"
+                      },
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "0xd851ffa3": "aa85fc35-efc6-4a52-b824-877daa63bd1f",
+                        "Function": {
+                          "FunctionName": "0xfc8faf3e",
+                          "LevelScriptLink": "0x2a3f5cc",
+                          "~class": "LevelScriptFunctionLink"
+                        },
+                        "FunctionDefinition": {
+                          "0x8c54e274": {
+                            "DragonType": {
+                              "Table": {
+                                "~class": "InstanceVars"
+                              },
+                              "Var": "0xa827740",
+                              "~class": "IntTableGet"
+                            }
+                          },
+                          "0xde888209": {
+                            "0xe08dccea": {
+                              "Var": "dragonIconName",
+                              "~class": "StringTableSet"
+                            }
+                          },
+                          "~class": "0x2a2c82dc"
+                        },
+                        "~class": "0x6548f43"
+                      },
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "type": 2,
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "0a4c624a-56a9-43f3-aba4-f00f0aff9ace",
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "bc9f886e-ffe1-4743-af13-2ae14404a6e9",
+                        "Dest": {
+                          "Var": "oldDragonFlavor",
+                          "~class": "ScriptTableSet"
+                        },
+                        "SrcKey": {
+                          "Table": {
+                            "~class": "InstanceVars"
+                          },
+                          "Var": "0x3836dfa6",
+                          "~class": "IntTableGet"
+                        },
+                        "SrcTable": {
+                          "Table": {
+                            "~class": "InstanceVars"
+                          },
+                          "Var": "0x39ea66e6",
+                          "~class": "CustomTableGet"
+                        },
+                        "~class": "GetKeyValueInCustomTableBlock"
+                      },
+                      {
+                        "0xd851ffa3": "2d63ce84-47ce-4cf7-bc58-3d58d496e2ab",
+                        "Dest": {
+                          "Table": {
+                            "~class": "InstanceVars"
+                          },
+                          "Var": "DragonFlavorIndex",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Formula": "iv.DragonFlavorIndex + 1",
+                        "~class": "0x15ebaa9c"
+                      },
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "0xd851ffa3": "df4a5efd-889a-43b0-b514-b681ac88d0a7",
+                        "Dest": {
+                          "Var": "newDragonFlavor",
+                          "~class": "ScriptTableSet"
+                        },
+                        "SrcKey": {
+                          "Table": {
+                            "~class": "InstanceVars"
+                          },
+                          "Var": "0x3836dfa6",
+                          "~class": "IntTableGet"
+                        },
+                        "SrcTable": {
+                          "Table": {
+                            "~class": "InstanceVars"
+                          },
+                          "Var": "0x39ea66e6",
+                          "~class": "CustomTableGet"
+                        },
+                        "~class": "GetKeyValueInCustomTableBlock"
+                      },
+                      {
+                        "0xd851ffa3": "2028e808-71bf-451c-9745-dd0c302acfac",
+                        "Condition": {
+                          "Operation": 1,
+                          "Value1": {
+                            "Var": "0xf6e562bd",
+                            "~class": "ScriptTableGet"
+                          },
+                          "Value2": {
+                            "Var": "0xafbde22e",
+                            "~class": "ScriptTableGet"
+                          },
+                          "~class": "ComparisonScriptCondition"
+                        },
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "0xd851ffa3": "f5f07276-c902-40e8-af5a-ea59e539ec0a",
+                              "Function": {
+                                "FunctionName": "0xba7d6692",
+                                "LevelScriptLink": "0x2a3f5cc",
+                                "~class": "LevelScriptFunctionLink"
+                              },
+                              "FunctionDefinition": {
+                                "0x8c54e274": {
+                                  "DragonType": {
+                                    "Var": "0xafbde22e",
+                                    "~class": "IntTableGet"
+                                  }
+                                },
+                                "0xde888209": {
+                                  "0xe08dccea": {
+                                    "Var": "baseDragonName",
+                                    "~class": "StringTableSet"
+                                  }
+                                },
+                                "~class": "0x2a2c82dc"
+                              },
+                              "~class": "0x6548f43"
+                            },
+                            {
+                              "~class": "0x0"
+                            },
+                            {
+                              "~class": "0x0"
+                            },
+                            {
+                              "0xd851ffa3": "b9e15a1c-5e90-4cd4-8528-a684b8497a96",
+                              "Function": {
+                                "FunctionName": "0xfc8faf3e",
+                                "LevelScriptLink": "0x2a3f5cc",
+                                "~class": "LevelScriptFunctionLink"
+                              },
+                              "FunctionDefinition": {
+                                "0x8c54e274": {
+                                  "DragonType": {
+                                    "Var": "0xafbde22e",
+                                    "~class": "IntTableGet"
+                                  }
+                                },
+                                "0xde888209": {
+                                  "0xe08dccea": {
+                                    "Var": "dragonIconName",
+                                    "~class": "StringTableSet"
+                                  }
+                                },
+                                "~class": "0x2a2c82dc"
+                              },
+                              "~class": "0x6548f43"
+                            },
+                            {
+                              "~class": "0x0"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "~class": "0xe524b2fc"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 2,
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0xf0e031fb": {
+        "FunctionDef": {
+          "0x8c54e274": [
+            {
+              "Input": {
+                "Var": "dragonType",
+                "~class": "IntTableSet"
+              },
+              "~class": "0x2330a302"
+            }
+          ],
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "0xd851ffa3": "effc988b-20ad-4110-baeb-01122c3ef752",
+            "Function": {
+              "FunctionName": "0xa87912d",
+              "LevelScriptLink": "0x2a3f5cc",
+              "~class": "LevelScriptFunctionLink"
+            },
+            "FunctionDefinition": {
+              "0x8c54e274": {
+                "DragonType": {
+                  "Var": "DragonType",
+                  "~class": "IntTableGet"
+                }
+              },
+              "0xde888209": {
+                "0xe08dccea": {
+                  "Var": "dragonBaseName",
+                  "~class": "StringTableSet"
+                }
+              },
+              "~class": "0x2a2c82dc"
+            },
+            "~class": "0x6548f43"
+          },
+          {
+            "0xd851ffa3": "5c559884-b61d-44b1-b472-7aa21fbcf5ca",
+            "Result": {
+              "Var": "dragonCharName",
+              "~class": "StringTableSet"
+            },
+            "String1": {
+              "value": "SRU_Dragon_",
+              "~class": "StringGet"
+            },
+            "String2": {
+              "Var": "0xabbd9f88",
+              "~class": "StringTableGet"
+            },
+            "~class": "ConcatenateStringsBlock"
+          },
+          {
+            "0xd851ffa3": "1bd769e4-f3be-4593-ac68-fc6fde1097bc",
+            "CharacterName": {
+              "Var": "0x264e0059",
+              "~class": "StringTableGet"
+            },
+            "~class": "PreloadCharacter"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0xf13f0031": {
+        "FunctionDef": {
+          "0x8c54e274": [
+            {
+              "Input": {
+                "Var": "selectedTerrain",
+                "~class": "IntTableSet"
+              },
+              "~class": "0x2330a302"
+            }
+          ],
+          "0xde888209": [
+            {
+              "Output": {
+                "Var": "0x5520db90",
+                "~class": "IntTableGet"
+              },
+              "~class": "0x294650d7"
+            }
+          ],
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "0xd851ffa3": "3e1528f3-1d3b-4af8-b38a-4ee1ff6200df",
+            "Condition": {
+              "Value1": {
+                "Var": "SelectedTerrain",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "value": 1,
+                "~class": "IntGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "b01752c5-20b5-4d96-b895-d4a8a9e90408",
+                  "Dest": {
+                    "Var": "outDragonType",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": 2,
+                    "~class": "IntGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "2e15cd4c-9d3e-4fcf-9823-37bac2f93a5c",
+            "Condition": {
+              "Value1": {
+                "Var": "SelectedTerrain",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "value": 2,
+                "~class": "IntGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "7622901d-b727-4f8a-8be8-01214fd89096",
+                  "Dest": {
+                    "Var": "outDragonType",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": 4,
+                    "~class": "IntGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 3,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "4fc1ada3-43f2-45a1-bf8b-7dde6a01df45",
+            "Condition": {
+              "Value1": {
+                "Var": "SelectedTerrain",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "value": 3,
+                "~class": "IntGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "d6f01691-ac6e-4d0d-b766-90261602f011",
+                  "Dest": {
+                    "Var": "outDragonType",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": 3,
+                    "~class": "IntGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 3,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "1aba3f52-cb3a-4fea-bbf2-3ac2603c2bb1",
+            "Condition": {
+              "Value1": {
+                "Var": "SelectedTerrain",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "value": 4,
+                "~class": "IntGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "c1077499-c656-43e0-90d2-95b0e77019af",
+                  "Dest": {
+                    "Var": "outDragonType",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": 1,
+                    "~class": "IntGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 3,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "a8fd9a3d-76c0-41ef-b48e-80d35c7b482d",
+            "Condition": {
+              "Value1": {
+                "Var": "SelectedTerrain",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "value": 5,
+                "~class": "IntGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "03f919ca-a609-4c59-8e3c-6bb31834a88e",
+                  "Dest": {
+                    "Var": "outDragonType",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": 5,
+                    "~class": "IntGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 3,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "d84c2ba5-16b9-4c6e-b765-03923780cb7f",
+            "Condition": {
+              "Value1": {
+                "Var": "SelectedTerrain",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "value": 6,
+                "~class": "IntGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "761797c7-ec88-4b3e-8554-adab130a88cc",
+                  "Dest": {
+                    "Var": "outDragonType",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": 6,
+                    "~class": "IntGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 3,
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0xfc8faf3e": {
+        "FunctionDef": {
+          "0x8c54e274": [
+            {
+              "Input": {
+                "Var": "dragonType",
+                "~class": "IntTableSet"
+              },
+              "~class": "0x2330a302"
+            }
+          ],
+          "0xde888209": [
+            {
+              "Output": {
+                "Var": "0xe08dccea",
+                "~class": "StringTableGet"
+              },
+              "~class": "0x294650d7"
+            }
+          ],
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "0xd851ffa3": "eb28ea85-7702-4eff-af89-52035c9b8845",
+            "Function": {
+              "FunctionName": "0xba7d6692",
+              "LevelScriptLink": "0x2a3f5cc",
+              "~class": "LevelScriptFunctionLink"
+            },
+            "FunctionDefinition": {
+              "0x8c54e274": {
+                "DragonType": {
+                  "Var": "DragonType",
+                  "~class": "IntTableGet"
+                }
+              },
+              "0xde888209": {
+                "0xe08dccea": {
+                  "Var": "returnString",
+                  "~class": "StringTableSet"
+                }
+              },
+              "~class": "0x2a2c82dc"
+            },
+            "~class": "0x6548f43"
+          },
+          {
+            "0xd851ffa3": "e6ddabdd-74cb-49d7-97d7-335f10fdc8a2",
+            "Condition": {
+              "Operation": 1,
+              "Value1": {
+                "Var": "0xe08dccea",
+                "~class": "StringTableGet"
+              },
+              "Value2": {
+                "value": "Dragon",
+                "~class": "StringGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "9e97618d-feda-4037-b8e9-82462ca3e024",
+                  "Result": {
+                    "Var": "returnString",
+                    "~class": "StringTableSet"
+                  },
+                  "String1": {
+                    "Var": "0xe08dccea",
+                    "~class": "StringTableGet"
+                  },
+                  "String2": {
+                    "value": "Minimap",
+                    "~class": "StringGet"
+                  },
+                  "~class": "ConcatenateStringsBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "ScriptFunction"
+      }
+    },
+    "path": "0x2a3f5cc",
+    "sequences": {
+      "0xbbc06451": {
+        "blocks": [
+          {
+            "0xd851ffa3": "365150ca-4396-4309-9b7d-cbd72c0d5e29",
+            "DestTable": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "0x39ea66e6",
+              "~class": "CustomTableGet"
+            },
+            "Key": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "0x3836dfa6",
+              "~class": "IntTableGet"
+            },
+            "value": {
+              "Var": "DragonType",
+              "~class": "IntTableGet"
+            },
+            "~class": "SetKeyValueInCustomTableBlock"
+          },
+          {
+            "0xd851ffa3": "818812bc-8020-4138-b3e6-262d75480108",
+            "Function": {
+              "FunctionName": "0xfc8faf3e",
+              "LevelScriptLink": "0x2a3f5cc",
+              "~class": "LevelScriptFunctionLink"
+            },
+            "FunctionDefinition": {
+              "0x8c54e274": {
+                "DragonType": {
+                  "Var": "DragonType",
+                  "~class": "IntTableGet"
+                }
+              },
+              "0xde888209": {
+                "0xe08dccea": {
+                  "Var": "dragonIconName",
+                  "~class": "StringTableSet"
+                }
+              },
+              "~class": "0x2a2c82dc"
+            },
+            "~class": "0x6548f43"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "22bb309f-07f1-4130-9ede-86b51b83f78c",
+            "Function": {
+              "FunctionName": "0xba7d6692",
+              "LevelScriptLink": "0x2a3f5cc",
+              "~class": "LevelScriptFunctionLink"
+            },
+            "FunctionDefinition": {
+              "0x8c54e274": {
+                "DragonType": {
+                  "Var": "DragonType",
+                  "~class": "IntTableGet"
+                }
+              },
+              "0xde888209": {
+                "0xe08dccea": {
+                  "Var": "selectedBaseDragonName",
+                  "~class": "StringTableSet"
+                }
+              },
+              "~class": "0x2a2c82dc"
+            },
+            "~class": "0x6548f43"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0xd7730072": {
+        "blocks": [
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "c3ff16c1-ae48-46b6-816f-08c68746af54",
+            "FoundIndex": {
+              "Var": "foundIndex",
+              "~class": "IntTableSet"
+            },
+            "InputString": {
+              "Var": "SkinName",
+              "~class": "StringTableGet"
+            },
+            "TargetString": {
+              "value": "SRU_Dragon",
+              "~class": "StringGet"
+            },
+            "~class": "0x1f8480d8"
+          },
+          {
+            "0xd851ffa3": "a2e083b9-119e-475f-9bf4-3f983abe4d4a",
+            "Condition": {
+              "Value1": {
+                "Var": "FoundIndex",
+                "~class": "IntTableGet"
+              },
+              "Value2": {
+                "~class": "IntGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "d21556e1-555e-4ce0-9422-a4c101715736",
+                  "Function": {
+                    "FunctionName": "0xdcaf415e",
+                    "LevelScriptLink": "0x2a3f5cc",
+                    "~class": "LevelScriptFunctionLink"
+                  },
+                  "FunctionDefinition": {
+                    "0x8c54e274": {
+                      "Killer": {
+                        "~class": "0x0"
+                      },
+                      "SkinName": {
+                        "Var": "SkinName",
+                        "~class": "StringTableGet"
+                      }
+                    },
+                    "~class": "0x2a2c82dc"
+                  },
+                  "~class": "0x6548f43"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "LevelScriptOnInit": {
+        "blocks": [
+          {
+            "0xd851ffa3": "2887a12c-05ca-4372-8677-33b621d507bb",
+            "CharacterName": {
+              "value": "SRU_Dragon_Elder",
+              "~class": "StringGet"
+            },
+            "~class": "PreloadCharacter"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "LevelScriptOnReset": {
+        "blocks": [
+          {
+            "0xd851ffa3": "f7318870-369e-4bc3-a78a-113cba905a19",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "DRAGONS_TO_ELDER",
+              "~class": "IntTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "f5a989ce-5af2-4274-a337-f7e76d783d9e",
+            "Dest": {
+              "Var": "CampSpawnLeadupSoft",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "value": 60,
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "a56a81f3-8fbf-4a67-9b70-41a18b7f53c0",
+            "Dest": {
+              "Var": "CampSpawnLeadupBright",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "value": 10,
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "a6acc01a-5448-4814-b7f2-0cd6fef0e3fe",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "DragonFlavorIndex",
+              "~class": "ScriptTableSet"
+            },
+            "Formula": "rand(1,iv.DRAGONS_TO_ELDER) * 2",
+            "~class": "0x15ebaa9c"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      }
+    },
+    "~class": "LevelControlScript"
+  }
+}
