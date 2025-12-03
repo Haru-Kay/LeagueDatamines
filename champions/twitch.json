@@ -418,7 +418,7 @@
     "armorPerLevel": 4.199999809265137,
     "attackRange": 550.0,
     "attackSpeed": 0.6790000200271606,
-    "attackSpeedPerLevel": 3.380000114440918,
+    "attackSpeedPerLevel": 3.0,
     "attackSpeedRatio": 0.6790000200271606,
     "baseArmor": 27.0,
     "baseDamage": 59.0,
@@ -503,7 +503,8 @@
         "~class": "AttackSlotData"
       }
     ],
-    "damagePerLevel": 3.0999999046325684,
+    "critDamageMultiplier": 2.0,
+    "damagePerLevel": 3.0,
     "extraAttacks": [
       {
         "mAttackName": "TwitchBasicAttack2",
@@ -1475,31 +1476,37 @@
         "MaxPhysicalDamage": {
           "mFormulaParts": [
             {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
               "mPart1": {
-                "mDataValue": "baseDamage",
+                "mDataValue": "maxStacks",
                 "~class": "NamedDataValueCalculationPart"
               },
               "mPart2": {
-                "mNumber": 0.16699999570846558,
-                "~class": "NumberCalculationPart"
+                "mDataValue": "BasePhysicalDamagePerStack",
+                "~class": "NamedDataValueCalculationPart"
               },
               "~class": "ProductOfSubPartsCalculationPart"
             },
             {
-              "mDataValue": "BasePhysicalDamagePerStack",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mDataValue": "bADRatioPerStack",
               "mStat": 2,
               "mStatFormula": 2,
-              "~class": "StatByNamedDataValueCalculationPart"
+              "mSubpart": {
+                "mPart1": {
+                  "mDataValue": "bADRatioPerStack",
+                  "~class": "NamedDataValueCalculationPart"
+                },
+                "mPart2": {
+                  "mDataValue": "maxStacks",
+                  "~class": "NamedDataValueCalculationPart"
+                },
+                "~class": "ProductOfSubPartsCalculationPart"
+              },
+              "~class": "StatBySubPartCalculationPart"
             }
           ],
-          "mMultiplier": {
-            "mDataValue": "maxStacks",
-            "~class": "NamedDataValueCalculationPart"
-          },
           "~class": "GameCalculation"
         },
         "PhysicalDamagePerStack": {
@@ -1930,6 +1937,112 @@
     },
     "mScriptName": "TwitchHideInShadows",
     "mSpell": {
+      "DataValues": [
+        {
+          "mName": "AttackSpeedMod",
+          "mValues": [
+            0.3499999940395355,
+            0.4000000059604645,
+            0.44999998807907104,
+            0.5,
+            0.550000011920929,
+            0.6000000238418579,
+            0.6499999761581421
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "AttackSpeedDuration",
+          "mValues": [
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "StealthDuration",
+          "mValues": [
+            9.0,
+            10.0,
+            11.0,
+            12.0,
+            13.0,
+            14.0,
+            15.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "MaxFadeTime",
+          "mValues": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "StealthDetectionRange",
+          "mValues": [
+            500.0,
+            500.0,
+            500.0,
+            500.0,
+            500.0,
+            500.0,
+            500.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "MoveSpeedMod",
+          "mValues": [
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "HiddenSpeed",
+          "mValues": [
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "MoveBonusRange",
+          "mValues": [
+            1000.0,
+            1000.0,
+            1000.0,
+            1000.0,
+            1000.0,
+            1000.0,
+            1000.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "castConeDistance": 100.0,
       "castFrame": 0.14499999582767487,
       "castRadius": [
@@ -1991,14 +2104,15 @@
               "Elements": [
                 {
                   "nameOverride": "Spell_ListType_CamouflageDuration",
-                  "type": "Effect%dAmount",
+                  "type": "StealthDuration",
                   "typeIndex": 2,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "Style": 1,
+                  "multiplier": 100.0,
                   "nameOverride": "Spell_ListType_AttackSpeed",
-                  "type": "Effect%dAmount",
+                  "type": "AttackSpeedMod",
                   "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
                 }
@@ -2018,78 +2132,23 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 1.0,
       "mEffectAmount": [
         {
-          "value": [
-            45.0,
-            45.0,
-            50.0,
-            55.0,
-            60.0,
-            65.0,
-            65.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            9.0,
-            10.0,
-            11.0,
-            12.0,
-            13.0,
-            14.0,
-            15.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
@@ -2105,39 +2164,12 @@
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            500.0,
-            500.0,
-            500.0,
-            500.0,
-            500.0,
-            500.0,
-            500.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            1000.0,
-            1000.0,
-            1000.0,
-            1000.0,
-            1000.0,
-            1000.0,
-            1000.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            30.0,
-            30.0,
-            30.0,
-            30.0,
-            30.0,
-            30.0,
-            30.0
-          ],
           "~class": "SpellEffectAmount"
         }
       ],

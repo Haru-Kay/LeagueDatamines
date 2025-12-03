@@ -69,120 +69,6 @@ def formatChampion(obj)
     return obj
 end
 
-def sortLang
-    out = {
-        :tft => {}, #tft, teamplanner
-        :tutorial => {}, #game_objecttooltips, tutorial, learning_quests, protips, newplayerquest
-        :tooltips => {}, #tooltip
-        :loot => {}, #loot, chroma, loadout_, sight_ward, game_summoner_emote, game_summoner_description, summoner_icon, regalia
-        :skins => {}, #game_character_skin, skin_, current_form_tooltip, current_meter
-        :skinlines => {}, #skin_line, skinline
-        :chromas => {}, #chroma
-        :urf => {}, #awesome
-        :mayhem => {}, #kiwi
-        :arena => {}, #cherry, lolmode_phase
-        :swarm => {}, #strawberry, augment_special
-        :brawl => {}, #brawl
-        :doombots => {}, #ruby
-        :aracanearam => {}, #crepe
-        :nexusblitz => {}, #slime
-        :items => {}, #game_items
-        :spells => {}, #spells RUN AFTER TFT
-        :buffs => {}, #buff
-        :lore => {}, #game_character_lore
-        :runes => {}, #perk
-        :eternals => {}, #stat_stone
-        :queues => {}, #queue
-        :challenges => {}, #challenges, challenge_, rewardgroup
-        :loadtips => {},
-        :titles => {}, #player_title,
-        :champs => {}, #champs, generatedtip_passive_
-        :units => {}, #game_character
-        :misc => {}, #replayui, game_cheats, game_hud, scoreboard, game_floatingtext, game_, standalone, lolmodes, shop_, vanguard, 
-                    #stats_filter, message_box, replaycameracontrolpanel, loading_screen, surrender, reminder_, radial_menu,
-                    #playercard_switcher_, keyboard_lcd, game_announcement
-        :aprilfools => {},
-        :bots => {},
-        :spellbook => {}
-    }
-    filters = {
-        ["tft", "teamplanner", "set6", "set8", "tier", "_spiritblossom_", "sgpig_journey_name", "companion", "durian", "chibi"] => :tft,
-        ["game_objecttooltips", "tutorial", "learning_quests", "game_intro", "protips", "newplayerquest"] => :tutorial,
-        ["tooltip"] => :tooltips,
-        ["loot", "chroma", "loadout_", "sight_ward", "game_summoner_emote", "game_summoner_description", "summoner_icon", "regalia", "ward_", "player_title",
-            "mastery_title"] => :loot,
-        ["game_character_skin", "skin_augment", "current_form_tooltip", "current_meter", "selection_button"] => :skins,
-        ["skin_line", "skinline"] => :skinlines,
-        ["chroma"] => :chromas,
-        ["queue"] => :queues,
-        ["strawberry", "augment_special", "augment_weapon", "augment_stat", "augment_upgrade", "augment_default", "streaberry", "passive_desc_pickupradius",
-            "rewards_details_boss_"] => :swarm,
-        ["kiwi", "kingme", "upgrademodifier"] => :mayhem,
-        ["cherry", "lolmode_phase", "augment"] => :arena,
-        ["ruby"] => :doombots,
-        ["crepe"] => :aracanearam,
-        ["slime"] => :nexusblitz,
-        ["awesome"] => :urf,
-        ["ultbook"] => :spellbook,
-        ["spell"] => :spells,
-        ["buff_", "_buff", "buffdesc", "3181buffname", "3181minionbuff"] => :buffs,
-        ["game_character_lore"] => :lore,
-        ["game_startup_tip"] => :loadtips,
-        ["perk"] => :runes,
-        ["stat_stone"] => :eternals,
-        ["brawl_"] => :brawl,
-        ["challenges", "challenge_", "rewardgroup"] => :challenges,
-        ["item"] => :items,
-        ["generatedtip_passive_"] => :champs,
-        ["game_character_"] => :units,
-        ["ap2025", "aprilfools2025", "ap_shacoskin_bothparty"] => :aprilfools,
-        ["bark_", "bountyhunter"] => :misc,
-        ["game_bot"] => :bots
-    }
-    reverse = filters.invert
-    champIgnore = reverse[:swarm] + reverse[:mayhem] + reverse[:arena] + reverse[:doombots] + reverse[:aracanearam] + reverse[:nexusblitz] + 
-        reverse[:urf] + reverse[:challenges] + reverse[:misc] + reverse[:tft] + reverse[:aprilfools] + reverse[:skins] + reverse[:eternals]
-    override = [
-        "spell_viktorgravitonfield_augmentslow",
-        "generatedtip_passive_heightenedlearning_description",
-        "generatedtip_passive_heightenedlearning_displayname"
-    ]
-    $lang.each { |key, tl|
-        next if tl.empty? || tl == "unused, please delete"
-        found = nil
-        filters.each { |filter, dest|
-            if filter.any? { |id| key.include?(id) }
-                out[dest].store(key, tl)
-                found = dest
-                break
-            end
-        }
-        if ($champLang.any? { |champ| key.include?(champ) } && !found) || override.include?(key)
-            out[:champs].store(key, tl)
-            out[found].delete(key) if override.include?(key)
-            found = :champs
-            next
-        end
-        out[:misc].store(key, tl) if !found
-    }
-
-    out.each { |type, data|
-        if type == :champs
-            champsort = {}
-            $champLang.sort.each { |champ|
-                data.sort_by { |k, v| k }.to_h.each { |k, v|
-                    champsort.store(k, v) if k.include?(champ)
-                }
-            }
-            
-            File.open("lang/#{type}.json", 'wb') { |f| f.write(JSON.pretty_generate(champsort)) }
-        else
-            File.open("lang/#{type}.json", 'wb') { |f| f.write(JSON.pretty_generate(data.sort_by { |k, v| k }.to_h)) }
-        end
-    }
-
-end
-
 def badString?(key, value) 
     badKeys = [
         "GeneratedTip",
@@ -219,7 +105,6 @@ def badString?(key, value)
 end
 
 def diff
-    return
     print "Loading previous patch stringtable..."
     oldLang = {}
     File.open("live.lol.stringtable.json", 'rb') { |f| oldLang = JSON.parse(f.read()) }
@@ -234,7 +119,7 @@ def diff
     oldLang.each { |key, tl|
         next if tl.empty?
         next if badString?(key, tl)
-        newTl = $lang[key]
+        newTl = $cdLang[key]
 
         if newTl.nil?
             removedStrings.store(key, tl)
@@ -243,7 +128,7 @@ def diff
         end
     }
 
-    $lang.each { |key, newTl|
+    $cdLang.each { |key, newTl|
         next if newTl.empty?
         next if badString?(key, newTl)
         tl = oldLang[key]
@@ -427,6 +312,7 @@ def applyLang(obj)
 end
 def itemNameLangFix(value)
     return value if !value.is_a?(String) || !value =~ "^Items/[0-9]+$"
+    return "ARAM/Recall" if value == "Items/2007"
     return "DoomBots/The Collector" if value == "Items/667666" # riot typo. collector id 6676, should be 666676.
     #game_item_displayname_//
     #item_//_name\
@@ -467,10 +353,10 @@ mapBins = {
 }
 
 print "Loading and formatting stringtable..."
-$lang = {}
-File.open("lang/lol.stringtable.json", 'rb') { |f| $lang = JSON.parse(f.read()) }
-$lang = $lang["entries"] || $lang
-File.open("lang/lol.stringtable.json", 'wb') { |f| f.write(JSON.pretty_generate($lang)) }
+$cdLang = {}
+File.open("lang/lol.stringtable.json", 'rb') { |f| $cdLang = JSON.parse(f.read()) }
+$cdLang = $cdLang["entries"] || $cdLang
+File.open("lang/lol.stringtable.json", 'wb') { |f| f.write(JSON.pretty_generate($cdLang)) }
 print "done.\n"
 
 $lang = nil
@@ -541,6 +427,8 @@ print "done.\n"
                 type = "DamageFeedbackVFX"
             when "0xe2b34203"
                 type = "SharedScriptSkeleton"
+            when "GameModeItemList"
+                data["mItems"] = data["mItems"].map { |i| itemNameLangFix(i) }
             else
                 type = "MiscData" if type.start_with?("0x")
         end
@@ -604,6 +492,8 @@ print "done.\n"
                 type = "DragonSoulNames"
             when "0xb26bd951"
                 type = "MapUnitSkinData"
+            when "GameModeItemList"
+                data["mItems"] = data["mItems"].map { |i| itemNameLangFix(i) }
             else
                 type = "MiscData" if type.start_with?("0x")
         end
@@ -687,6 +577,8 @@ print "done.\n"
                 type = "AugmentList"  
             when "0x1ff0e246"
                 type = "GameEndUI"
+            when "GameModeItemList"
+                data["mItems"] = data["mItems"].map { |i| itemNameLangFix(i) }
             else
                 type = "MiscData" if type.start_with?("0x")
         end
@@ -804,6 +696,10 @@ print "done.\n"
                 }
             when "0x23433cc1"
                 type = "AugmentNameModifiers"
+            when "GameModeItemList"
+                data["mItems"] = data["mItems"].map { |i| itemNameLangFix(i) }
+            when "AnvilData"
+                data = applyLang(data)
             else
                 type = "MiscData" if type.start_with?("0x")
         end
@@ -915,7 +811,7 @@ print "done.\n"
 
 print "Loading and formatting loadtips..."
 loadtips1 = {}
-$lang.each { |key, string|
+$cdLang.each { |key, string|
     next if !key.start_with?("game_startup_tip_") || key.start_with?("game_startup_tip_category")
     id, category = key.split("game_startup_tip_")[1].split("_")
     loadtips1[category] ||= {}

@@ -1,7 +1,7 @@
 {
   "0x147211fb": {
     "ExpRadius": 1500.0,
-    "InitialSpawnTimeSecs": 65.0,
+    "InitialSpawnTimeSecs": 30.0,
     "MinionSpawnIntervalSecs": 0.800000011920929,
     "MoveSpeedIncreaseIncrement": 25,
     "MoveSpeedIncreaseInitialDelaySecs": 600.0,
@@ -16,7 +16,6 @@
         "0xfee040bc": "0x63f0a8c",
         "MinionType": 7,
         "MinionUpgradeStats": {
-          "0x726ae049": 3.0,
           "DamageMax": 300.0,
           "DamageUpgrade": 5.0,
           "GoldMax": 90.0,
@@ -48,8 +47,35 @@
           "~class": "MinionUpgradeConfig"
         },
         "WaveBehavior": {
-          "SpawnCount": 3,
-          "~class": "ConstantWaveBehavior"
+          "behaviors": [
+            {
+              "Behavior": {
+                "SpawnCount": 3,
+                "~class": "ConstantWaveBehavior"
+              },
+              "~class": "TimedWaveBehaviorInfo"
+            },
+            {
+              "Behavior": {
+                "SpawnCountsByWave": [
+                  3,
+                  2
+                ],
+                "~class": "RotatingWaveBehavior"
+              },
+              "StartTimeSecs": 840,
+              "~class": "TimedWaveBehaviorInfo"
+            },
+            {
+              "Behavior": {
+                "SpawnCount": 2,
+                "~class": "ConstantWaveBehavior"
+              },
+              "StartTimeSecs": 1500,
+              "~class": "TimedWaveBehaviorInfo"
+            }
+          ],
+          "~class": "TimedVariableWaveBehavior"
         },
         "~class": "BarracksMinionConfig"
       },
@@ -57,9 +83,9 @@
         "0xfee040bc": "0x59640394",
         "MinionType": 6,
         "MinionUpgradeStats": {
-          "0x726ae049": 3.0,
           "DamageMax": 90.0,
           "DamageUpgrade": 1.5,
+          "DamageUpgradeLate": 2.5,
           "GoldMax": 90.0,
           "HPUpgrade": 85.0,
           "HpMaxBonus": 5100.0,
@@ -70,13 +96,12 @@
             {
               "Behavior": {
                 "SpawnCountsByWave": [
-                  1,
                   0,
-                  0
+                  0,
+                  1
                 ],
                 "~class": "RotatingWaveBehavior"
               },
-              "StartTimeSecs": 150,
               "~class": "TimedWaveBehaviorInfo"
             },
             {
@@ -87,7 +112,7 @@
                 ],
                 "~class": "RotatingWaveBehavior"
               },
-              "StartTimeSecs": 850,
+              "StartTimeSecs": 840,
               "~class": "TimedWaveBehaviorInfo"
             },
             {
@@ -115,8 +140,24 @@
           "~class": "MinionUpgradeConfig"
         },
         "WaveBehavior": {
-          "SpawnCount": 3,
-          "~class": "ConstantWaveBehavior"
+          "behaviors": [
+            {
+              "Behavior": {
+                "SpawnCount": 3,
+                "~class": "ConstantWaveBehavior"
+              },
+              "~class": "TimedWaveBehaviorInfo"
+            },
+            {
+              "Behavior": {
+                "SpawnCount": 2,
+                "~class": "ConstantWaveBehavior"
+              },
+              "StartTimeSecs": 1800,
+              "~class": "TimedWaveBehaviorInfo"
+            }
+          ],
+          "~class": "TimedVariableWaveBehavior"
         },
         "~class": "BarracksMinionConfig"
       }
@@ -140,7 +181,6 @@
         "0xfee040bc": "0x63f0a8c",
         "MinionType": 7,
         "MinionUpgradeStats": {
-          "0x726ae049": 3.0,
           "ArmorMax": 30.0,
           "ArmorUpgrade": 3.0,
           "DamageMax": 300.0,
@@ -177,8 +217,35 @@
           "~class": "MinionUpgradeConfig"
         },
         "WaveBehavior": {
-          "SpawnCount": 3,
-          "~class": "ConstantWaveBehavior"
+          "behaviors": [
+            {
+              "Behavior": {
+                "SpawnCount": 3,
+                "~class": "ConstantWaveBehavior"
+              },
+              "~class": "TimedWaveBehaviorInfo"
+            },
+            {
+              "Behavior": {
+                "SpawnCountsByWave": [
+                  3,
+                  2
+                ],
+                "~class": "RotatingWaveBehavior"
+              },
+              "StartTimeSecs": 840,
+              "~class": "TimedWaveBehaviorInfo"
+            },
+            {
+              "Behavior": {
+                "SpawnCount": 2,
+                "~class": "ConstantWaveBehavior"
+              },
+              "StartTimeSecs": 1500,
+              "~class": "TimedWaveBehaviorInfo"
+            }
+          ],
+          "~class": "TimedVariableWaveBehavior"
         },
         "~class": "BarracksMinionConfig"
       },
@@ -186,11 +253,11 @@
         "0xfee040bc": "0x59640394",
         "MinionType": 6,
         "MinionUpgradeStats": {
-          "0x726ae049": 3.0,
           "ArmorMax": 30.0,
           "ArmorUpgrade": 3.0,
           "DamageMax": 90.0,
           "DamageUpgrade": 1.5,
+          "DamageUpgradeLate": 2.5,
           "GoldMax": 90.0,
           "HPUpgrade": 210.0,
           "HpMaxBonus": 5100.0,
@@ -202,13 +269,12 @@
             {
               "Behavior": {
                 "SpawnCountsByWave": [
-                  1,
                   0,
-                  0
+                  0,
+                  1
                 ],
                 "~class": "RotatingWaveBehavior"
               },
-              "StartTimeSecs": 150,
               "~class": "TimedWaveBehaviorInfo"
             },
             {
@@ -250,8 +316,24 @@
           "~class": "MinionUpgradeConfig"
         },
         "WaveBehavior": {
-          "SpawnCount": 3,
-          "~class": "ConstantWaveBehavior"
+          "behaviors": [
+            {
+              "Behavior": {
+                "SpawnCount": 3,
+                "~class": "ConstantWaveBehavior"
+              },
+              "~class": "TimedWaveBehaviorInfo"
+            },
+            {
+              "Behavior": {
+                "SpawnCount": 2,
+                "~class": "ConstantWaveBehavior"
+              },
+              "StartTimeSecs": 1800,
+              "~class": "TimedWaveBehaviorInfo"
+            }
+          ],
+          "~class": "TimedVariableWaveBehavior"
         },
         "~class": "BarracksMinionConfig"
       }
@@ -275,7 +357,6 @@
         "0xfee040bc": "0x83246234",
         "MinionType": 7,
         "MinionUpgradeStats": {
-          "0x726ae049": 3.0,
           "ArmorMax": 30.0,
           "ArmorUpgrade": 3.0,
           "DamageMax": 300.0,
@@ -331,11 +412,11 @@
         "0xfee040bc": "0x7e4f5ecc",
         "MinionType": 6,
         "MinionUpgradeStats": {
-          "0x726ae049": 3.0,
           "ArmorMax": 30.0,
           "ArmorUpgrade": 3.0,
           "DamageMax": 90.0,
           "DamageUpgrade": 1.5,
+          "DamageUpgradeLate": 2.5,
           "GoldMax": 90.0,
           "HPUpgrade": 210.0,
           "HpMaxBonus": 5100.0,
@@ -347,13 +428,12 @@
             {
               "Behavior": {
                 "SpawnCountsByWave": [
-                  1,
+                  0,
                   0,
                   0
                 ],
                 "~class": "RotatingWaveBehavior"
               },
-              "StartTimeSecs": 150,
               "~class": "TimedWaveBehaviorInfo"
             },
             {
@@ -407,13 +487,13 @@
   },
   "0x4b1f14b9": {
     "ExpRadius": 1500.0,
-    "InitialSpawnTimeSecs": 65.0,
+    "InitialSpawnTimeSecs": 30.0,
     "MinionSpawnIntervalSecs": 0.800000011920929,
     "MoveSpeedIncreaseIncrement": 25,
     "MoveSpeedIncreaseInitialDelaySecs": 600.0,
     "MoveSpeedIncreaseIntervalSecs": 300.0,
     "MoveSpeedIncreaseMaxTimes": 4,
-    "UpgradeIntervalSecs": 60.0,
+    "UpgradeIntervalSecs": 40.0,
     "UpgradesBeforeLateGameScaling": 5,
     "WaveSpawnIntervalSecs": 30.0,
     "goldRadius": 1250.0,
@@ -424,7 +504,7 @@
         "MinionUpgradeStats": {
           "0x726ae049": 3.0,
           "DamageMax": 300.0,
-          "DamageUpgrade": 5.0,
+          "DamageUpgrade": 3.0,
           "GoldMax": 90.0,
           "HPUpgrade": 100.0,
           "HpMaxBonus": 6000.0,
@@ -454,8 +534,35 @@
           "~class": "MinionUpgradeConfig"
         },
         "WaveBehavior": {
-          "SpawnCount": 3,
-          "~class": "ConstantWaveBehavior"
+          "behaviors": [
+            {
+              "Behavior": {
+                "SpawnCount": 3,
+                "~class": "ConstantWaveBehavior"
+              },
+              "~class": "TimedWaveBehaviorInfo"
+            },
+            {
+              "Behavior": {
+                "SpawnCountsByWave": [
+                  3,
+                  2
+                ],
+                "~class": "RotatingWaveBehavior"
+              },
+              "StartTimeSecs": 840,
+              "~class": "TimedWaveBehaviorInfo"
+            },
+            {
+              "Behavior": {
+                "SpawnCount": 2,
+                "~class": "ConstantWaveBehavior"
+              },
+              "StartTimeSecs": 1500,
+              "~class": "TimedWaveBehaviorInfo"
+            }
+          ],
+          "~class": "TimedVariableWaveBehavior"
         },
         "~class": "BarracksMinionConfig"
       },
@@ -467,7 +574,7 @@
           "DamageMax": 90.0,
           "DamageUpgrade": 1.5,
           "GoldMax": 90.0,
-          "HPUpgrade": 85.0,
+          "HPUpgrade": 100.0,
           "HpMaxBonus": 5100.0,
           "~class": "MinionUpgradeConfig"
         },
@@ -475,33 +582,10 @@
           "behaviors": [
             {
               "Behavior": {
-                "SpawnCountsByWave": [
-                  1,
-                  0,
-                  0
-                ],
-                "~class": "RotatingWaveBehavior"
-              },
-              "StartTimeSecs": 150,
-              "~class": "TimedWaveBehaviorInfo"
-            },
-            {
-              "Behavior": {
-                "SpawnCountsByWave": [
-                  0,
-                  1
-                ],
-                "~class": "RotatingWaveBehavior"
-              },
-              "StartTimeSecs": 600,
-              "~class": "TimedWaveBehaviorInfo"
-            },
-            {
-              "Behavior": {
                 "SpawnCount": 1,
                 "~class": "ConstantWaveBehavior"
               },
-              "StartTimeSecs": 1200,
+              "StartTimeSecs": 90,
               "~class": "TimedWaveBehaviorInfo"
             }
           ],
@@ -521,8 +605,24 @@
           "~class": "MinionUpgradeConfig"
         },
         "WaveBehavior": {
-          "SpawnCount": 3,
-          "~class": "ConstantWaveBehavior"
+          "behaviors": [
+            {
+              "Behavior": {
+                "SpawnCount": 3,
+                "~class": "ConstantWaveBehavior"
+              },
+              "~class": "TimedWaveBehaviorInfo"
+            },
+            {
+              "Behavior": {
+                "SpawnCount": 2,
+                "~class": "ConstantWaveBehavior"
+              },
+              "StartTimeSecs": 1800,
+              "~class": "TimedWaveBehaviorInfo"
+            }
+          ],
+          "~class": "TimedVariableWaveBehavior"
         },
         "~class": "BarracksMinionConfig"
       }
@@ -546,7 +646,6 @@
         "0xfee040bc": "0x63f0a8c",
         "MinionType": 7,
         "MinionUpgradeStats": {
-          "0x726ae049": 3.0,
           "ArmorMax": 30.0,
           "ArmorUpgrade": 3.0,
           "DamageMax": 300.0,
@@ -602,11 +701,11 @@
         "0xfee040bc": "0x59640394",
         "MinionType": 6,
         "MinionUpgradeStats": {
-          "0x726ae049": 3.0,
           "ArmorMax": 30.0,
           "ArmorUpgrade": 3.0,
           "DamageMax": 90.0,
           "DamageUpgrade": 1.5,
+          "DamageUpgradeLate": 2.5,
           "GoldMax": 90.0,
           "HPUpgrade": 210.0,
           "HpMaxBonus": 5100.0,
@@ -618,13 +717,12 @@
             {
               "Behavior": {
                 "SpawnCountsByWave": [
-                  1,
+                  0,
                   0,
                   0
                 ],
                 "~class": "RotatingWaveBehavior"
               },
-              "StartTimeSecs": 150,
               "~class": "TimedWaveBehaviorInfo"
             },
             {
@@ -678,13 +776,13 @@
   },
   "0xac54b461": {
     "ExpRadius": 1500.0,
-    "InitialSpawnTimeSecs": 65.0,
+    "InitialSpawnTimeSecs": 30.0,
     "MinionSpawnIntervalSecs": 0.800000011920929,
     "MoveSpeedIncreaseIncrement": 25,
     "MoveSpeedIncreaseInitialDelaySecs": 600.0,
     "MoveSpeedIncreaseIntervalSecs": 300.0,
     "MoveSpeedIncreaseMaxTimes": 4,
-    "UpgradeIntervalSecs": 60.0,
+    "UpgradeIntervalSecs": 40.0,
     "UpgradesBeforeLateGameScaling": 5,
     "WaveSpawnIntervalSecs": 30.0,
     "goldRadius": 1250.0,
@@ -725,8 +823,35 @@
           "~class": "MinionUpgradeConfig"
         },
         "WaveBehavior": {
-          "SpawnCount": 3,
-          "~class": "ConstantWaveBehavior"
+          "behaviors": [
+            {
+              "Behavior": {
+                "SpawnCount": 3,
+                "~class": "ConstantWaveBehavior"
+              },
+              "~class": "TimedWaveBehaviorInfo"
+            },
+            {
+              "Behavior": {
+                "SpawnCountsByWave": [
+                  3,
+                  2
+                ],
+                "~class": "RotatingWaveBehavior"
+              },
+              "StartTimeSecs": 840,
+              "~class": "TimedWaveBehaviorInfo"
+            },
+            {
+              "Behavior": {
+                "SpawnCount": 2,
+                "~class": "ConstantWaveBehavior"
+              },
+              "StartTimeSecs": 1500,
+              "~class": "TimedWaveBehaviorInfo"
+            }
+          ],
+          "~class": "TimedVariableWaveBehavior"
         },
         "~class": "BarracksMinionConfig"
       },
@@ -738,7 +863,7 @@
           "DamageMax": 90.0,
           "DamageUpgrade": 1.5,
           "GoldMax": 90.0,
-          "HPUpgrade": 85.0,
+          "HPUpgrade": 100.0,
           "HpMaxBonus": 5100.0,
           "~class": "MinionUpgradeConfig"
         },
@@ -746,33 +871,10 @@
           "behaviors": [
             {
               "Behavior": {
-                "SpawnCountsByWave": [
-                  1,
-                  0,
-                  0
-                ],
-                "~class": "RotatingWaveBehavior"
-              },
-              "StartTimeSecs": 150,
-              "~class": "TimedWaveBehaviorInfo"
-            },
-            {
-              "Behavior": {
-                "SpawnCountsByWave": [
-                  0,
-                  1
-                ],
-                "~class": "RotatingWaveBehavior"
-              },
-              "StartTimeSecs": 600,
-              "~class": "TimedWaveBehaviorInfo"
-            },
-            {
-              "Behavior": {
                 "SpawnCount": 1,
                 "~class": "ConstantWaveBehavior"
               },
-              "StartTimeSecs": 1200,
+              "StartTimeSecs": 90,
               "~class": "TimedWaveBehaviorInfo"
             }
           ],
@@ -792,8 +894,24 @@
           "~class": "MinionUpgradeConfig"
         },
         "WaveBehavior": {
-          "SpawnCount": 3,
-          "~class": "ConstantWaveBehavior"
+          "behaviors": [
+            {
+              "Behavior": {
+                "SpawnCount": 3,
+                "~class": "ConstantWaveBehavior"
+              },
+              "~class": "TimedWaveBehaviorInfo"
+            },
+            {
+              "Behavior": {
+                "SpawnCount": 2,
+                "~class": "ConstantWaveBehavior"
+              },
+              "StartTimeSecs": 1800,
+              "~class": "TimedWaveBehaviorInfo"
+            }
+          ],
+          "~class": "TimedVariableWaveBehavior"
         },
         "~class": "BarracksMinionConfig"
       }
@@ -817,7 +935,6 @@
         "0xfee040bc": "0x83246234",
         "MinionType": 7,
         "MinionUpgradeStats": {
-          "0x726ae049": 3.0,
           "ArmorMax": 30.0,
           "ArmorUpgrade": 3.0,
           "DamageMax": 300.0,
@@ -854,8 +971,35 @@
           "~class": "MinionUpgradeConfig"
         },
         "WaveBehavior": {
-          "SpawnCount": 3,
-          "~class": "ConstantWaveBehavior"
+          "behaviors": [
+            {
+              "Behavior": {
+                "SpawnCount": 3,
+                "~class": "ConstantWaveBehavior"
+              },
+              "~class": "TimedWaveBehaviorInfo"
+            },
+            {
+              "Behavior": {
+                "SpawnCountsByWave": [
+                  3,
+                  2
+                ],
+                "~class": "RotatingWaveBehavior"
+              },
+              "StartTimeSecs": 840,
+              "~class": "TimedWaveBehaviorInfo"
+            },
+            {
+              "Behavior": {
+                "SpawnCount": 2,
+                "~class": "ConstantWaveBehavior"
+              },
+              "StartTimeSecs": 1500,
+              "~class": "TimedWaveBehaviorInfo"
+            }
+          ],
+          "~class": "TimedVariableWaveBehavior"
         },
         "~class": "BarracksMinionConfig"
       },
@@ -863,11 +1007,11 @@
         "0xfee040bc": "0x7e4f5ecc",
         "MinionType": 6,
         "MinionUpgradeStats": {
-          "0x726ae049": 3.0,
           "ArmorMax": 30.0,
           "ArmorUpgrade": 3.0,
           "DamageMax": 90.0,
           "DamageUpgrade": 1.5,
+          "DamageUpgradeLate": 2.5,
           "GoldMax": 90.0,
           "HPUpgrade": 210.0,
           "HpMaxBonus": 5100.0,
@@ -879,13 +1023,12 @@
             {
               "Behavior": {
                 "SpawnCountsByWave": [
-                  1,
                   0,
-                  0
+                  0,
+                  1
                 ],
                 "~class": "RotatingWaveBehavior"
               },
-              "StartTimeSecs": 150,
               "~class": "TimedWaveBehaviorInfo"
             },
             {
@@ -927,8 +1070,24 @@
           "~class": "MinionUpgradeConfig"
         },
         "WaveBehavior": {
-          "SpawnCount": 3,
-          "~class": "ConstantWaveBehavior"
+          "behaviors": [
+            {
+              "Behavior": {
+                "SpawnCount": 3,
+                "~class": "ConstantWaveBehavior"
+              },
+              "~class": "TimedWaveBehaviorInfo"
+            },
+            {
+              "Behavior": {
+                "SpawnCount": 2,
+                "~class": "ConstantWaveBehavior"
+              },
+              "StartTimeSecs": 1800,
+              "~class": "TimedWaveBehaviorInfo"
+            }
+          ],
+          "~class": "TimedVariableWaveBehavior"
         },
         "~class": "BarracksMinionConfig"
       }
@@ -937,7 +1096,7 @@
   },
   "0xe61e55a3": {
     "ExpRadius": 1500.0,
-    "InitialSpawnTimeSecs": 65.0,
+    "InitialSpawnTimeSecs": 30.0,
     "MinionSpawnIntervalSecs": 0.800000011920929,
     "MoveSpeedIncreaseIncrement": 25,
     "MoveSpeedIncreaseInitialDelaySecs": 600.0,
@@ -952,7 +1111,6 @@
         "0xfee040bc": "0x83246234",
         "MinionType": 7,
         "MinionUpgradeStats": {
-          "0x726ae049": 3.0,
           "DamageMax": 300.0,
           "DamageUpgrade": 5.0,
           "GoldMax": 90.0,
@@ -984,8 +1142,35 @@
           "~class": "MinionUpgradeConfig"
         },
         "WaveBehavior": {
-          "SpawnCount": 3,
-          "~class": "ConstantWaveBehavior"
+          "behaviors": [
+            {
+              "Behavior": {
+                "SpawnCount": 3,
+                "~class": "ConstantWaveBehavior"
+              },
+              "~class": "TimedWaveBehaviorInfo"
+            },
+            {
+              "Behavior": {
+                "SpawnCountsByWave": [
+                  3,
+                  2
+                ],
+                "~class": "RotatingWaveBehavior"
+              },
+              "StartTimeSecs": 840,
+              "~class": "TimedWaveBehaviorInfo"
+            },
+            {
+              "Behavior": {
+                "SpawnCount": 2,
+                "~class": "ConstantWaveBehavior"
+              },
+              "StartTimeSecs": 1500,
+              "~class": "TimedWaveBehaviorInfo"
+            }
+          ],
+          "~class": "TimedVariableWaveBehavior"
         },
         "~class": "BarracksMinionConfig"
       },
@@ -993,9 +1178,9 @@
         "0xfee040bc": "0x7e4f5ecc",
         "MinionType": 6,
         "MinionUpgradeStats": {
-          "0x726ae049": 3.0,
           "DamageMax": 90.0,
           "DamageUpgrade": 1.5,
+          "DamageUpgradeLate": 2.5,
           "GoldMax": 90.0,
           "HPUpgrade": 85.0,
           "HpMaxBonus": 5100.0,
@@ -1006,13 +1191,12 @@
             {
               "Behavior": {
                 "SpawnCountsByWave": [
-                  1,
                   0,
-                  0
+                  0,
+                  1
                 ],
                 "~class": "RotatingWaveBehavior"
               },
-              "StartTimeSecs": 150,
               "~class": "TimedWaveBehaviorInfo"
             },
             {
@@ -1023,7 +1207,7 @@
                 ],
                 "~class": "RotatingWaveBehavior"
               },
-              "StartTimeSecs": 850,
+              "StartTimeSecs": 840,
               "~class": "TimedWaveBehaviorInfo"
             },
             {
@@ -1051,8 +1235,24 @@
           "~class": "MinionUpgradeConfig"
         },
         "WaveBehavior": {
-          "SpawnCount": 3,
-          "~class": "ConstantWaveBehavior"
+          "behaviors": [
+            {
+              "Behavior": {
+                "SpawnCount": 3,
+                "~class": "ConstantWaveBehavior"
+              },
+              "~class": "TimedWaveBehaviorInfo"
+            },
+            {
+              "Behavior": {
+                "SpawnCount": 2,
+                "~class": "ConstantWaveBehavior"
+              },
+              "StartTimeSecs": 1800,
+              "~class": "TimedWaveBehaviorInfo"
+            }
+          ],
+          "~class": "TimedVariableWaveBehavior"
         },
         "~class": "BarracksMinionConfig"
       }

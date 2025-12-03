@@ -513,6 +513,7 @@
         "~class": "AttackSlotData"
       }
     ],
+    "critDamageMultiplier": 2.0,
     "damagePerLevel": 2.9000000953674316,
     "extraAttacks": [
       {
@@ -876,67 +877,28 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "ActiveTowerRadius",
-          "mValues": [
-            600.0,
-            600.0,
-            600.0,
-            600.0,
-            600.0,
-            600.0,
-            600.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "mName": "ActiveBaseDamage",
           "mValues": [
-            50.0,
+            35.0,
             60.0,
-            70.0,
-            80.0,
-            90.0,
-            100.0,
-            110.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "ActiveDuration",
-          "mValues": [
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0
+            85.0,
+            110.0,
+            135.0,
+            160.0,
+            185.0
           ],
           "~class": "SpellDataValue"
         },
         {
           "mName": "ActiveBADRatio",
           "mValues": [
-            0.8999999761581421,
-            1.0,
-            1.100000023841858,
-            1.2000000476837158,
-            1.2999999523162842,
-            1.399999976158142,
-            1.5
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "ActiveMaxStacks",
-          "mValues": [
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929
           ],
           "~class": "SpellDataValue"
         },
@@ -954,6 +916,45 @@
           "~class": "SpellDataValue"
         },
         {
+          "mName": "ActiveTowerRadius",
+          "mValues": [
+            600.0,
+            600.0,
+            600.0,
+            600.0,
+            600.0,
+            600.0,
+            600.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ActiveMaxStacks",
+          "mValues": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ActiveDuration",
+          "mValues": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
           "mName": "ActivePerStackAmp",
           "mValues": [
             0.25,
@@ -967,15 +968,15 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "CritChanceAmp",
+          "mName": "CritChanceModifier",
           "mValues": [
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645
           ],
           "~class": "SpellDataValue"
         }
@@ -1058,14 +1059,6 @@
                   "nameOverride": "Spell_ListType_TristanaBaseChargeDamage",
                   "type": "ActiveBaseDamage",
                   "typeIndex": 4,
-                  "~class": "TooltipInstanceListElement"
-                },
-                {
-                  "Style": 1,
-                  "multiplier": 100.0,
-                  "nameOverride": "SpellListType_AttackDamageRatio",
-                  "type": "ActiveBADRatio",
-                  "typeIndex": 5,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -1170,23 +1163,23 @@
               },
               {
                 "mPart1": {
+                  "mDataValue": "0xfb35968c",
+                  "mStat": 8,
+                  "~class": "StatByNamedDataValueCalculationPart"
+                },
+                "mPart2": {
                   "mSubparts": [
-                    {
-                      "mNumber": -1.0,
-                      "~class": "NumberCalculationPart"
-                    },
                     {
                       "mCoefficient": 1.0,
                       "mStat": 9,
                       "~class": "StatByCoefficientCalculationPart"
+                    },
+                    {
+                      "mNumber": -1.0,
+                      "~class": "NumberCalculationPart"
                     }
                   ],
                   "~class": "SumOfSubPartsCalculationPart"
-                },
-                "mPart2": {
-                  "mCoefficient": 1.0,
-                  "mStat": 8,
-                  "~class": "StatByCoefficientCalculationPart"
                 },
                 "~class": "ProductOfSubPartsCalculationPart"
               }
