@@ -1,6 +1,55 @@
 require 'json'
 require 'fileutils'
 require 'hashie'
+require 'digest/xxhash'
+
+def xxh3(s)
+    digest = Digest::XXH3_64bits.hexdigest(s)
+    hashInt = digest.to_i(16)
+
+    hashMask = (1 << 38) - 1
+
+    return (hashInt & hashMask).to_s(16)
+end
+
+class LangHashWrapper
+    attr_reader :hash
+    def initialize(hash)
+        @hash = hash
+    end
+
+    def fetch(*args)
+        key = args[0]
+        if key
+            while key.start_with?("{") && key.end_with?("}")
+                key = key[1..key.length - 1]
+            end
+            key = key[2..] if key.start_with?("0x")
+            key = xxh3(key)
+        end
+        @hash.fetch(key, *args[1..])
+    end
+
+    def dig(key)
+        @hash.dig(xxh3(key))
+    end
+
+    def [](key)
+        self.dig(key)
+    end
+
+    def method_missing(method, *args, &block)
+        if @hash.respond_to?(method)
+            @hash.send(method, *args, &block)
+        else
+            super
+        end
+    end
+
+    def respond_to_missing?(method, include_private = false)
+        @hash.respond_to?(method) || super
+    end
+end
 
 def formatChampion(obj)
     obj = obj.fetch("entries", obj)
@@ -170,6 +219,7 @@ def badString?(key, value)
 end
 
 def diff
+    return
     print "Loading previous patch stringtable..."
     oldLang = {}
     File.open("live.lol.stringtable.json", 'rb') { |f| oldLang = JSON.parse(f.read()) }
@@ -205,7 +255,7 @@ def diff
     output = ""
     champDiff = {}
     champExceptions = [
-        "anticheat", "dynamic"
+        "anticheat", "dynamic", "behavior"
     ]
     removedStrings.each { |key, tl|
         champion = nil
@@ -376,7 +426,7 @@ def applyLang(obj)
     end
 end
 def itemNameLangFix(value)
-    return value if !value.is_a?(String) && !value =~ "^Items/[0-9]+$"
+    return value if !value.is_a?(String) || !value =~ "^Items/[0-9]+$"
     return "DoomBots/The Collector" if value == "Items/667666" # riot typo. collector id 6676, should be 666676.
     #game_item_displayname_//
     #item_//_name\
@@ -399,7 +449,7 @@ def itemNameLangFix(value)
     end
     if id&.length == 6
         ret = "ARAMMayhem/#{ret}" if id.start_with?("12")
-        ret = "TFT/#{ret}" if id.start_with?("22")
+        ret = "Arena/#{ret}" if id.start_with?("22")
         ret = "Arena/#{ret}" if id.start_with?("44")
         ret = "DoomBots/#{ret}" if id.start_with?("66")
         ret = "99/#{ret}" if id.start_with?("99")
@@ -422,6 +472,9 @@ File.open("lang/lol.stringtable.json", 'rb') { |f| $lang = JSON.parse(f.read()) 
 $lang = $lang["entries"] || $lang
 File.open("lang/lol.stringtable.json", 'wb') { |f| f.write(JSON.pretty_generate($lang)) }
 print "done.\n"
+
+$lang = nil
+File.open("temp/stringtable.json", 'rb') { |f| $lang = LangHashWrapper.new(JSON.parse(f.read())) }
 
 print "Loading and formatting miscellaneous game data..."
 Dir.each_child("game-data") { |path|
