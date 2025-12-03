@@ -693,7 +693,6 @@
         "~class": "AttackSlotData"
       }
     ],
-    "critDamageMultiplier": 2.0,
     "damagePerLevel": 2.5,
     "extraAttacks": [
       {
@@ -2750,16 +2749,7 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "CritDamageMod",
-          "mValues": [
-            0.8999999761581421,
-            0.8999999761581421,
-            0.8999999761581421,
-            0.8999999761581421,
-            0.8999999761581421,
-            0.8999999761581421,
-            0.8999999761581421
-          ],
+          "mName": "PercentCritDamageReduction",
           "~class": "SpellDataValue"
         }
       ],
@@ -2856,7 +2846,6 @@
         },
         "CurrentCritDamage": {
           "mDisplayAsPercent": true,
-          "mExpandedTooltipCalculationDisplay": 6,
           "mFormulaParts": [
             {
               "mCoefficient": 1.0,
@@ -2864,6 +2853,7 @@
               "~class": "StatByCoefficientCalculationPart"
             }
           ],
+          "mPrecision": 1,
           "~class": "GameCalculation"
         },
         "ShieldValue": {
@@ -3369,19 +3359,6 @@
             1.0
           ],
           "~class": "SpellDataValue"
-        },
-        {
-          "mName": "ADRatio",
-          "mValues": [
-            1.0499999523162842,
-            1.0499999523162842,
-            1.0499999523162842,
-            1.0499999523162842,
-            1.0499999523162842,
-            1.0499999523162842,
-            1.0499999523162842
-          ],
-          "~class": "SpellDataValue"
         }
       ],
       "castFrame": 7.5,
@@ -3514,9 +3491,9 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mDataValue": "ADRatio",
+              "mCoefficient": 1.0499999523162842,
               "mStat": 2,
-              "~class": "StatByNamedDataValueCalculationPart"
+              "~class": "StatByCoefficientCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -3530,9 +3507,9 @@
             {
               "mStat": 2,
               "mSubpart": {
-                "mDataValue": "ADRatio",
+                "mCoefficient": 1.0499999523162842,
                 "mStat": 9,
-                "~class": "StatByNamedDataValueCalculationPart"
+                "~class": "StatByCoefficientCalculationPart"
               },
               "~class": "StatBySubPartCalculationPart"
             }

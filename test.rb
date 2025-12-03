@@ -1,5 +1,6 @@
 require 'base64'
 require 'digest/xxhash'
+require 'json'
 
 class CustomParser
   attr_accessor :file
@@ -129,38 +130,21 @@ def parse_rst(path)
   end
 
   hasTrenc = false
-  hasTrenc = parser.unpack("C")[0] if version < 5
 
   data = parser.file[parser.pos...]
+  ret = {}
   for index in 0...entries.length
     entry = entries[index]
     i, h = entry
-    if hasTrenc && data[i] == 0xFF
-      size = intFromBytes(data[i + 1...][...2])
-      d = Base64.strict_encode64(data[i + 3...][...size])
-      entries[index][1] = d.force_encoding("UTF-8")
-    else
-      e = data.index("\0", i) || data.length
-      d = data[i...e]
-      entries[index][1] = d.force_encoding("UTF-8")
-    end
+    e = data.index("\0", i) || data.length
+    d = data[i...e]
+    ret.store("%x" % h, d.force_encoding("UTF-8"))
   end
 
-  ret = {}
-  entries.each { |entry|
-    key, value = entry
-    key
-  }
-  return entries
+  return ret
 end
 
-entries = parse_rst("bins/data/menu/en_us/lol.stringtable")
+entries = parse_rst("bins/data/menu/en_us/data/menu/en_us/lol.stringtable")
 File.open("temp/stringtable.json", 'wb') { |f|
-  f.write("{\n")
-  entries.each { |entry|
-    #f.write("  \"{#{Digest::XXH3_64bits.new.reset_with_secret("0" * 136).update(("%x" % entry[0]).downcase).hexdigest.to_i(16)}}\" : \"#{entry[1]}\"#{entry == entries[-1] ? "" : ","}\n")
-    #puts entry[1].include?("\#") if entry[0] == 0x0000cb95d9
-    f.write("\"{#{"%010x" % entry[0]}}\" : #{entry[1].gsub(/#@/, "\#@").inspect}#{entry == entries[-1] ? "" : ","}\n")
-  }
-  f.write("}")
+  f.write(JSON.pretty_generate(entries))
 }

@@ -563,8 +563,7 @@
         "~class": "AttackSlotData"
       }
     ],
-    "critDamageMultiplier": 2.0,
-    "damagePerLevel": 3.0,
+    "damagePerLevel": 3.5999999046325684,
     "extraAttacks": [
       {
         "mAttackName": "DravenBasicAttack2",
@@ -1803,21 +1802,6 @@
     },
     "mScriptName": "DravenFury",
     "mSpell": {
-      "DataValues": [
-        {
-          "mName": "AttackSpeed",
-          "mValues": [
-            0.15000000596046448,
-            0.20000000298023224,
-            0.25,
-            0.30000001192092896,
-            0.3499999940395355,
-            0.4000000059604645,
-            0.44999998807907104
-          ],
-          "~class": "SpellDataValue"
-        }
-      ],
       "castConeDistance": 100.0,
       "castFrame": 7.5,
       "castRadius": [
@@ -2759,7 +2743,6 @@
           "~class": "GameCalculation"
         },
         "RPassiveTrueDamage": {
-          "mExpandedTooltipCalculationDisplay": 5,
           "mFormulaParts": [
             {
               "mBuffName": "0x577427b5",
@@ -3025,19 +3008,6 @@
     "mSpell": {
       "DataValues": [
         {
-          "mName": "BaseDamage",
-          "mValues": [
-            35.0,
-            40.0,
-            45.0,
-            50.0,
-            55.0,
-            60.0,
-            65.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "mName": "ADScaling",
           "mValues": [
             0.6499999761581421,
@@ -3060,6 +3030,19 @@
             6.0,
             6.0,
             6.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "BaseDamage",
+          "mValues": [
+            35.0,
+            40.0,
+            45.0,
+            50.0,
+            55.0,
+            60.0,
+            65.0
           ],
           "~class": "SpellDataValue"
         }
@@ -3138,14 +3121,14 @@
               "Elements": [
                 {
                   "nameOverride": "Spell_ListType_Damage",
-                  "type": "BaseDamage",
+                  "type": "Effect%dAmount",
                   "typeIndex": 5,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "Style": 1,
                   "nameOverride": "Spell_ListType_BonusADPercentage",
-                  "type": "ADScaling",
+                  "type": "Effect%dAmount",
                   "typeIndex": 2,
                   "~class": "TooltipInstanceListElement"
                 },
@@ -3169,23 +3152,42 @@
         },
         "~class": "SpellDataResourceClient"
       },
+      "mCoefficient": 0.6000000238418579,
       "mEffectAmount": [
         {
+          "value": [
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0
+          ],
           "~class": "SpellEffectAmount"
         },
         {
           "value": [
             75.0,
             75.0,
-            75.0,
-            75.0,
-            75.0,
-            75.0,
-            75.0
+            85.0,
+            95.0,
+            105.0,
+            115.0,
+            115.0
           ],
           "~class": "SpellEffectAmount"
         },
         {
+          "value": [
+            25.0,
+            30.0,
+            35.0,
+            40.0,
+            45.0,
+            50.0,
+            55.0
+          ],
           "~class": "SpellEffectAmount"
         },
         {
@@ -3201,6 +3203,15 @@
           "~class": "SpellEffectAmount"
         },
         {
+          "value": [
+            40.0,
+            40.0,
+            45.0,
+            50.0,
+            55.0,
+            60.0,
+            60.0
+          ],
           "~class": "SpellEffectAmount"
         },
         {

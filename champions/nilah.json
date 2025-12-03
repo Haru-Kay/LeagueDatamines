@@ -672,7 +672,7 @@
     "armorPerLevel": 4.5,
     "attackRange": 225.0,
     "attackSpeed": 0.6970000267028809,
-    "attackSpeedPerLevel": 2.0,
+    "attackSpeedPerLevel": 2.25,
     "attackSpeedRatio": 0.6700000166893005,
     "baseArmor": 27.0,
     "baseDamage": 60.0,
@@ -732,7 +732,6 @@
         "~class": "AttackSlotData"
       }
     ],
-    "critDamageMultiplier": 2.0,
     "damagePerLevel": 2.0,
     "extraAttacks": [
       {
@@ -1776,12 +1775,12 @@
           "mName": "BaseDamage",
           "mValues": [
             0.0,
+            5.0,
             10.0,
+            15.0,
             20.0,
-            30.0,
-            40.0,
-            50.0,
-            60.0
+            25.0,
+            30.0
           ],
           "~class": "SpellDataValue"
         },
@@ -1801,13 +1800,13 @@
         {
           "mName": "QADRatio",
           "mValues": [
+            0.8500000238418579,
+            0.8999999761581421,
+            0.949999988079071,
             1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
+            1.0499999523162842,
+            1.100000023841858,
+            1.149999976158142
           ],
           "~class": "SpellDataValue"
         },
@@ -1840,14 +1839,18 @@
         {
           "mName": "CritArmorPenScalar",
           "mValues": [
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896
+            0.33000001311302185,
+            0.33000001311302185,
+            0.33000001311302185,
+            0.33000001311302185,
+            0.33000001311302185,
+            0.33000001311302185,
+            0.33000001311302185
           ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "CritDamageRatio",
           "~class": "SpellDataValue"
         },
         {
@@ -1912,23 +1915,6 @@
             4.0,
             4.0,
             4.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "CritDamageRatio",
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "ActiveCritScaling",
-          "mValues": [
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929
           ],
           "~class": "SpellDataValue"
         }
@@ -2014,6 +2000,13 @@
                   "type": "BaseDamage",
                   "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Spell_ListType_ADScaling",
+                  "type": "QADRatio",
+                  "~class": "TooltipInstanceListElement"
                 }
               ],
               "levelCount": 5,
@@ -2054,6 +2047,15 @@
       ],
       "mLineWidth": 80.0,
       "mSpellCalculations": {
+        "AttackBonusDamage": {
+          "mFormulaParts": [
+            {
+              "mStat": 2,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
         "AttackTotalDamageTooltip": {
           "mFormulaParts": [
             {
@@ -2115,26 +2117,9 @@
                 "~class": "NumberCalculationPart"
               },
               {
-                "mPart1": {
-                  "mDataValue": "0x304ad448",
-                  "mStat": 8,
-                  "~class": "StatByNamedDataValueCalculationPart"
-                },
-                "mPart2": {
-                  "mSubparts": [
-                    {
-                      "mCoefficient": 1.0,
-                      "mStat": 9,
-                      "~class": "StatByCoefficientCalculationPart"
-                    },
-                    {
-                      "mNumber": -1.0,
-                      "~class": "NumberCalculationPart"
-                    }
-                  ],
-                  "~class": "SumOfSubPartsCalculationPart"
-                },
-                "~class": "ProductOfSubPartsCalculationPart"
+                "mCoefficient": 1.0,
+                "mStat": 8,
+                "~class": "StatByCoefficientCalculationPart"
               }
             ],
             "~class": "SumOfSubPartsCalculationPart"
@@ -2583,8 +2568,7 @@
                   "~class": "TooltipInstanceListElement"
                 },
                 {
-                  "multiplier": 4.0,
-                  "nameOverride": "Spell_ListType_DamageOverTime",
+                  "nameOverride": "Spell_ListType_DamagePerTick",
                   "type": "DamagePerTick",
                   "~class": "TooltipInstanceListElement"
                 }
@@ -2596,8 +2580,7 @@
           "mLocKeys": {
             "keyName": "Spell_NilahR_Name",
             "keySummary": "Spell_NilahR_Summary",
-            "keyTooltip": "Spell_NilahR_Tooltip",
-            "keyTooltipExtendedBelowLine": "Spell_NilahR_TooltipExtendedBelowLine"
+            "keyTooltip": "Spell_NilahR_Tooltip"
           },
           "mObjectName": "NilahR",
           "~class": "TooltipInstanceSpell"
@@ -2711,12 +2694,12 @@
         "~class": "Self"
       },
       "mana": [
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0
+        80.0,
+        80.0,
+        80.0,
+        80.0,
+        80.0,
+        80.0
       ],
       "~class": "SpellDataResource"
     },
