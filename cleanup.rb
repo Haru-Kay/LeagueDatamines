@@ -152,10 +152,11 @@ def diff
         }
 
         str = "REMOVED:\n#{key.inspect} = #{tl.inspect}\n"
-        output += str
         if champion
-            champDiff[champion] ||= [] if champion
+            champDiff[champion] ||= []
             champDiff[champion].push(str)
+        else
+            output += str
         end
     }
     newStrings.each { |key, tl|
@@ -166,12 +167,13 @@ def diff
                 break
             end
         }
-        
+
         str = "ADDED:\n#{key.inspect} = #{tl.inspect}\n"
-        output += str
         if champion
-            champDiff[champion] ||= [] if champion
+            champDiff[champion] ||= []
             champDiff[champion].push(str)
+        else
+            output += str
         end
     }
     changedStrings.each { |key, tl|
@@ -227,10 +229,11 @@ def diff
         suffix = oldStr[oldLastDiff + 1...]
         next if suffix.nil?
         str = "CHANGED:\n#{key.inspect} =\n#{prefix.inspect}...\n  ...#{oldInfix.inspect}...\n  -->\n  ...#{newInfix.inspect}...\n#{suffix.inspect}\n"
-        output += str
         if champion
-            champDiff[champion] ||= [] if champion
+            champDiff[champion] ||= []
             champDiff[champion].push(str)
+        else
+            output += str
         end
     }
 
