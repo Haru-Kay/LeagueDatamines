@@ -205,7 +205,7 @@ def diff
     output = ""
     champDiff = {}
     champExceptions = [
-        "anticheat", "dynamic"
+        "anticheat", "dynamic", "behavior"
     ]
     removedStrings.each { |key, tl|
         champion = nil

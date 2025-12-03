@@ -543,6 +543,44 @@
     "path": "0x17c77f7a",
     "~class": "BuffScript"
   },
+  "0x1a1c63ea": {
+    "ScriptName": "FaeLightRevealRegionTracking",
+    "path": "0x1a1c63ea",
+    "sequences": {
+      "0x69523460": {
+        "blocks": [
+          {
+            "0xd851ffa3": "e7584ab1-6c97-4580-88a7-a66efa8bc606",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "ParentFaelightPad",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "~class": "0x0"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0xec26660f": {
+        "blocks": [
+          {
+            "0xd851ffa3": "02cba20c-b2d5-45a0-b287-dfefe6756b66",
+            "~class": "ScriptCommentBlock"
+          },
+          {
+            "~class": "0x0"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      }
+    },
+    "~class": "BuffScript"
+  },
   "0x1c51df2e": {
     "ScriptName": "Ruby_Curse_Veigar_E",
     "path": "0x1c51df2e",
@@ -4973,6 +5011,108 @@
     },
     "~class": "BuffScript"
   },
+  "0x4641646b": {
+    "ScriptName": "SR_2026_S1_FaerieLightDebug",
+    "globalProperties": {
+      "PersistsThroughDeath": true,
+      "~class": "ScriptGlobalProperties"
+    },
+    "path": "0x4641646b",
+    "sequences": {
+      "0x2bc401": {
+        "blocks": [
+          {
+            "~class": "0x0"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0x69523460": {
+        "blocks": [
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "2cb27018-126a-404e-ba5f-1e59daa7e495",
+            "Condition": {
+              "Operation": 1,
+              "Value1": {
+                "Var": "0x5afd91a9",
+                "~class": "ScriptTableGet"
+              },
+              "Value2": {
+                "value": true,
+                "~class": "BoolGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "f9bab679-f23b-43a4-b95f-3262d98d1e16",
+                  "Dest": {
+                    "Var": "PosX",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": 0.7599999904632568,
+                    "~class": "FloatGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "0xd851ffa3": "cfd4d76c-d091-4dff-8798-1cb582a1679d",
+                  "Dest": {
+                    "Var": "PosY",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": 0.8299999833106995,
+                    "~class": "FloatGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "0xd851ffa3": "f5ed59a3-c118-47bf-8fc3-8fc34af7fd83",
+                  "Dest": {
+                    "Var": "SizeX",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": 50,
+                    "~class": "IntGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "0xd851ffa3": "9821c91f-25af-46c4-b2b6-78d4f5945256",
+                  "Dest": {
+                    "Var": "SizeY",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": 50,
+                    "~class": "IntGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "~class": "0x0"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      }
+    },
+    "~class": "BuffScript"
+  },
   "0x477b1000": {
     "ScriptName": "Ruby_Curse_BrushAttack",
     "path": "0x477b1000",
@@ -5888,6 +6028,177 @@
       "~class": "ScriptGlobalProperties"
     },
     "path": "0x553069e3",
+    "~class": "BuffScript"
+  },
+  "0x58d586e9": {
+    "ScriptName": "FaelightRegionDetectorBuff",
+    "globalProperties": {
+      "PersistsThroughDeath": true,
+      "~class": "ScriptGlobalProperties"
+    },
+    "path": "0x58d586e9",
+    "sequences": {
+      "0xec26660f": {
+        "blocks": [
+          {
+            "0xd851ffa3": "feb9c5c1-ffa8-4b0b-8e60-9b5ac69152b8",
+            "~class": "ScriptCommentBlock"
+          },
+          {
+            "0xd851ffa3": "e97c0eaa-5d70-419a-a683-2fb13f71280f",
+            "Dest": {
+              "Var": "SelfWasFoundInZone",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "BoolGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "20d55cbc-a748-4dd7-a341-679898149c05",
+            "Dest": {
+              "Var": "DetectedFL",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "0x1a6cd1f8"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0x421aee08": {
+              "Var": "FaelightPad",
+              "~class": "0x851d2116"
+            },
+            "0xd851ffa3": "e012b5ee-7982-46f3-9e0a-596f7fad7a52",
+            "Group": {
+              "value": "0x81b70e80",
+              "~class": "0x5d85166e"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "59ca6c86-adb4-4466-bf2a-420f51f4d88a",
+                  "Condition": {
+                    "Target": {
+                      "Var": "0x95cbbc36",
+                      "~class": "0x132b63da"
+                    },
+                    "~class": "0x1036ea1c"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "0a0d6463-aaa5-405e-8c02-8ac45cd96431",
+                        "Condition": {
+                          "~class": "0x0"
+                        },
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "~class": "0x0"
+                            },
+                            {
+                              "~class": "0x0"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "~class": "0xe524b2fc"
+                      },
+                      {
+                        "0xd851ffa3": "b6d10b18-52eb-4a46-b0b7-138e446ab3ca",
+                        "Condition": {
+                          "Value1": {
+                            "Var": "0x91b277d1",
+                            "~class": "ScriptTableGet"
+                          },
+                          "Value2": {
+                            "value": true,
+                            "~class": "BoolGet"
+                          },
+                          "~class": "ComparisonScriptCondition"
+                        },
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "~class": "0x0"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "~class": "0xe524b2fc"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0x1d1499b7"
+          },
+          {
+            "0xd851ffa3": "66179b45-6381-47cf-831f-64a7ddc11009",
+            "Condition": {
+              "Value1": {
+                "Var": "0x91b277d1",
+                "~class": "ScriptTableGet"
+              },
+              "Value2": {
+                "value": true,
+                "~class": "BoolGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "52804984-0f37-4b43-9afc-88d2356d7aa9",
+                  "Var": {
+                    "Var": "EnemySuperwards",
+                    "~class": "ScriptTableSet"
+                  },
+                  "~class": "0x851b8dc5"
+                },
+                {
+                  "0xd851ffa3": "6f6c8aa8-d3fb-471a-b189-cf4e37b00c2f",
+                  "DestKey": {
+                    "Var": "iWard",
+                    "~class": "ScriptTableSet"
+                  },
+                  "DestValue": {
+                    "Var": "unused",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "Table": {
+                    "Var": "0x8bd43d21",
+                    "~class": "CustomTableGet"
+                  },
+                  "~class": "ForEachInCustomTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      }
+    },
     "~class": "BuffScript"
   },
   "0x594b4186": {
@@ -7299,6 +7610,224 @@
     },
     "~class": "BuffScript"
   },
+  "0x69858f23": {
+    "ScriptName": "SR_2026_S1_FaerieLightChampVisible",
+    "globalProperties": {
+      "buffName": "FaelightKnownEnemyVision",
+      "~class": "ScriptGlobalProperties"
+    },
+    "path": "0x69858f23",
+    "sequences": {
+      "0x69523460": {
+        "blocks": [
+          {
+            "0xd851ffa3": "4235b8a5-9f85-4b26-b845-6703bc0385df",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "ParentFaelightPad",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "325da0e2-94c0-4d1d-9264-64b0c1bc7180",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "SourceWard",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "Var": "0xd791104e",
+              "~class": "ScriptTableGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0x71b38c83": {
+        "blocks": [
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0xec26660f": {
+        "blocks": [
+          {
+            "0xd851ffa3": "94b62cdf-78f1-4af9-8328-1f6f9e8f04c3",
+            "~class": "ScriptCommentBlock"
+          },
+          {
+            "0xd851ffa3": "4fae5723-e3cf-4272-a103-de7cced6f201",
+            "Dest": {
+              "Var": "SelfWasFoundInZone",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "BoolGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "e6c145e7-56b9-4498-a75a-eb85de72cf76",
+            "Dest": {
+              "Var": "SourceWasFound",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "BoolGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "00996eb6-bade-401c-b2b6-fc73bc79d1b4",
+            "Condition": {
+              "TableValue": {
+                "Table": {
+                  "~class": "InstanceVars"
+                },
+                "Var": "SourceWard",
+                "~class": "ScriptTableSet"
+              },
+              "~class": "TableValueExistsScriptCondition"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "ec8ff459-fd80-40c2-9410-24218d16d10a",
+            "Condition": {
+              "~class": "0x0"
+            },
+            "Invert": true,
+            "type": 1,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "47d20292-e003-4adf-81f3-59c0303e7fa2",
+            "Condition": {
+              "~class": "0x0"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "d5bfde3b-cac6-4a0e-aa7f-aa91e230dd79",
+                  "Dest": {
+                    "Var": "SourceWasFound",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": true,
+                    "~class": "BoolGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 1,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "68ee1dfd-8a2c-47da-a6f1-318347002951",
+            "Condition": {
+              "Value1": {
+                "Var": "0x91b277d1",
+                "~class": "BoolTableGet"
+              },
+              "Value2": {
+                "~class": "BoolGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "33b9be4a-ccab-4d95-8e52-68e0753da7ca",
+            "Condition": {
+              "Value1": {
+                "Var": "0x2365337f",
+                "~class": "ScriptTableGet"
+              },
+              "Value2": {
+                "~class": "BoolGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "~class": "0x0"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 2,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "006bbd31-e045-495f-87d2-ada6258329d9",
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "6861fa78-1457-48b4-8a7a-dd8dcb095ccd",
+                  "Condition": {
+                    "~class": "0x0"
+                  },
+                  "Invert": true,
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "e58d7cf1-bf3b-406c-97a6-7b67c80134e6",
+                  "Condition": {
+                    "~class": "0x0"
+                  },
+                  "Invert": true,
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "type": 1,
+                  "~class": "0xe524b2fc"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      }
+    },
+    "~class": "BuffScript"
+  },
   "0x6acb8232": {
     "ScriptName": "Ruby_Mission_Singed_LossSpeedBuff",
     "globalProperties": {
@@ -7640,6 +8169,519 @@
       "~class": "ScriptGlobalProperties"
     },
     "path": "0x70ef6411",
+    "~class": "BuffScript"
+  },
+  "0x71fda": {
+    "ScriptName": "FaeLightSuperwardBuff",
+    "functions": {
+      "0x83351bc2": {
+        "FunctionDef": {
+          "0x8c54e274": [
+            {
+              "Input": {
+                "Var": "Ward",
+                "~class": "ScriptTableSet"
+              },
+              "~class": "0x2330a302"
+            }
+          ],
+          "0xde888209": [
+            {
+              "Output": {
+                "Var": "0xb9aff13c",
+                "~class": "ScriptTableGet"
+              },
+              "~class": "0x294650d7"
+            }
+          ],
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "0xd851ffa3": "442280ca-e472-424b-8bd6-0751568b6726",
+            "Dest": {
+              "Var": "Result",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "BoolGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "ba0b123a-3fe9-43bf-9114-83c11f8b1153",
+            "Condition": {
+              "~class": "0x0"
+            },
+            "Invert": true,
+            "Sequence": {
+              "blocks": [
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "3582a1be-b88a-46cd-a60d-1c3f24884f9f",
+                  "Condition": {
+                    "Value1": {
+                      "Var": "0xc1df39e",
+                      "~class": "ScriptTableGet"
+                    },
+                    "Value2": {
+                      "value": true,
+                      "~class": "BoolGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "65478b88-c293-43cf-afc2-1caac9de0a1b",
+                  "Condition": {
+                    "~class": "0x0"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "f7acf04d-6ed1-4d31-a717-6748ced830d9",
+                        "Dest": {
+                          "Var": "Result",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Src": {
+                          "value": true,
+                          "~class": "BoolGet"
+                        },
+                        "~class": "SetVarInTableBlock"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "type": 2,
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "8875197d-f7e3-45d2-9705-936499c1b4f6",
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "92be84f2-9018-43c5-bf40-452737ac8aa1",
+            "Dest": {
+              "Var": "NearsightApplies",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "Var": "Result",
+              "~class": "ScriptTableGet"
+            },
+            "~class": "SetVarInTableBlock"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0xe26a9a75": {
+        "FunctionDef": {
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          }
+        ],
+        "~class": "ScriptFunction"
+      }
+    },
+    "globalProperties": {
+      "buffName": "FaeLightSuperwardBuff",
+      "buffTextureName": "ASSETS/Shared/Spells/Icons2D/SRT_Faelight_WardBuff.dds",
+      "~class": "ScriptGlobalProperties"
+    },
+    "path": "0x71fda",
+    "sequences": {
+      "0x69523460": {
+        "blocks": [
+          {
+            "0xd851ffa3": "5d9a222c-3fb2-44a4-bbd2-7d55f5027002",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "VisionBubbleRadius",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "f443572c-5b0e-4027-9312-41f2c35ace7a",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "VisionBubbleDuration",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "3f17aa07-b238-4049-b702-33617bc7fc35",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "ParentFaelightPad",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "11529368-04a5-45f2-ab56-49ed128d6660",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "WardSightBonusRadius",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "f68e14da-7b71-4151-9625-450a36c60bf3",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "HasBeenTracked",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "6fa5ee58-7e5e-4733-8c5e-10e2859da9c7",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "HasBeenScanned",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "fde450c6-e2ce-48e8-9aae-053a7b61c4f5",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "RevealRegionID",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "c457cf6f-9a70-4817-8961-03e604ba9ef5",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "StartingMissilePoints",
+              "~class": "0x9def8cb"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "6b3fc28c-4f42-40b5-b450-fdbe7b7f192b",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "VisionScoreSuperwardMod",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "b34a8056-97b9-40b5-886c-673a574b2466",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "VisionScoreRegionValPerMin",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "29f6b8a0-a364-4b1a-81f0-fd7adb0c1312",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "HasNearsight",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "BoolGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "38f25b22-a77d-41a1-9e3c-1601e1882642",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "CurrentVisionRadiusMod",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "ddb3eaef-e247-4ec8-84a3-0102254d6493",
+            "Dest": {
+              "Table": {
+                "~class": "NextBuffVars"
+              },
+              "Var": "VisionBubbleRadius",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "0x1ef2ab9",
+              "~class": "ScriptTableGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "6220515a-fbc5-4fe0-94be-8ec397cf688a",
+            "Dest": {
+              "Table": {
+                "~class": "NextBuffVars"
+              },
+              "Var": "ParentFaelightPad",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "0x6c031c8e",
+              "~class": "ScriptTableGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "a382a92d-2737-47cf-9c93-9daaa3ac9d5b",
+            "Dest": {
+              "Table": {
+                "~class": "NextBuffVars"
+              },
+              "Var": "RevealRegionID",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "0xbc613239",
+              "~class": "ScriptTableGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "8adc9431-a41c-4e61-9ec5-c1aa23800120",
+            "Dest": {
+              "Table": {
+                "~class": "NextBuffVars"
+              },
+              "Var": "HasBeenTracked",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "0x626ab69",
+              "~class": "ScriptTableGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "cec13d8e-3441-4670-b42a-d8f1b97ce0b1",
+            "Dest": {
+              "Table": {
+                "~class": "NextBuffVars"
+              },
+              "Var": "HasBeenScanned",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "0x22905817",
+              "~class": "ScriptTableGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "7839be51-4833-4aa2-a6c3-55696b7d3202",
+            "Dest": {
+              "Table": {
+                "~class": "NextBuffVars"
+              },
+              "Var": "StartingMissilePoints",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "0xe69f40a4",
+              "~class": "ScriptTableGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "7f2bb67a-6df8-4f50-a00b-164601d843c9",
+            "Dest": {
+              "Table": {
+                "~class": "NextBuffVars"
+              },
+              "Var": "VisionScoreRegionValPerMin",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "0x658634e9",
+              "~class": "ScriptTableGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "c2d561d1-0f08-4b38-9c3c-66c0a0bae1f5",
+            "~class": "ScriptCommentBlock"
+          },
+          {
+            "0xd851ffa3": "4bd998ee-4cac-4bef-9ed2-7c31e331224d",
+            "Dest": {
+              "Table": {
+                "~class": "CharacterVars"
+              },
+              "Var": "ContribWardFaelightSuperwardMod",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "0xd2c3fa56",
+              "~class": "ScriptTableGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "26b7ea19-49f1-48b6-9135-580554822511",
+            "Sequence": {
+              "blocks": [
+                {
+                  "~class": "0x0"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "ScriptCommentBlock"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0x71b38c83": {
+        "blocks": [
+          {
+            "~class": "0x0"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0xd844d98f": {
+        "blocks": [
+          {
+            "0xd851ffa3": "4561c064-cb7f-416a-907b-772f85e49737",
+            "Condition": {
+              "Value1": {
+                "Table": {
+                  "~class": "InstanceVars"
+                },
+                "Var": "0xc1df39e",
+                "~class": "ScriptTableGet"
+              },
+              "Value2": {
+                "~class": "BoolGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "~class": "0x0"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      }
+    },
     "~class": "BuffScript"
   },
   "0x72016d62": {
@@ -9024,6 +10066,1772 @@
         "~class": "RootScriptSequence"
       },
       "0xd844d98f": {
+        "blocks": [
+          {
+            "~class": "0x0"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      }
+    },
+    "~class": "BuffScript"
+  },
+  "0x8ad317f6": {
+    "ScriptName": "FaeLightPadBuff",
+    "functions": {
+      "0x2cdd77e5": {
+        "FunctionDef": {
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "0xd851ffa3": "c656ed54-fc31-41b4-9586-bad5e781564a",
+            "~class": "ScriptCommentBlock"
+          },
+          {
+            "0xd851ffa3": "5d485ed0-25a6-4fae-b4a7-7973a5e3da05",
+            "DestKey": {
+              "Var": "unused11",
+              "~class": "ScriptTableSet"
+            },
+            "DestValue": {
+              "Var": "LightPosition",
+              "~class": "ScriptTableSet"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "662a85f3-4379-4559-891d-88af8e0f4431",
+                  "Dest": {
+                    "Var": "RevealVfx",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "0x5c06309c": {
+                      "0x5a81f39a": "SR_2026_S1_Map_Circle_Debug1",
+                      "~class": "0xba65f1fe"
+                    },
+                    "~class": "0x7908fe0e"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "0xd851ffa3": "08b50e88-ada8-49db-8373-711d93c0b81f",
+                  "Condition": {
+                    "0xd33ff5da": {
+                      "Var": "owner",
+                      "~class": "0x132b63da"
+                    },
+                    "tag": {
+                      "value": "0xd45f523d",
+                      "~class": "0x5d85166e"
+                    },
+                    "~class": "0x5480000a"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "0b0ab4d8-a879-48b5-8e3b-e71580a8c3cd",
+                        "Dest": {
+                          "Var": "RevealVfx",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Src": {
+                          "0x5c06309c": {
+                            "0x5a81f39a": "SR_2026_S1_Map_Circle_Debug2",
+                            "~class": "0xba65f1fe"
+                          },
+                          "~class": "0x7908fe0e"
+                        },
+                        "~class": "SetVarInTableBlock"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "897469e8-2235-4334-9bb9-c0db4210173b",
+                  "Condition": {
+                    "~class": "0x0"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "SortedByKeys": {
+              "~class": "BoolGet"
+            },
+            "Table": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "0x2e573b2f",
+              "~class": "CustomTableGet"
+            },
+            "~class": "ForEachInCustomTableBlock"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0x41507e77": {
+        "FunctionDef": {
+          "0x8c54e274": [
+            {
+              "Input": {
+                "Var": "Ward",
+                "~class": "ScriptTableSet"
+              },
+              "~class": "0x2330a302"
+            }
+          ],
+          "0xde888209": [
+            {
+              "Output": {
+                "Var": "0x37c1e787",
+                "~class": "FloatTableGet"
+              },
+              "~class": "0x294650d7"
+            }
+          ],
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "a140b058-3e95-40e8-a58e-1c97fd9c28cb",
+            "Dest": {
+              "Var": "VisionMod",
+              "~class": "ScriptTableSet"
+            },
+            "Formula": "ptp.BaseVisRadius *  iv.WardSightBonusRadius",
+            "~class": "0x15ebaa9c"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0x84388529": {
+        "FunctionDef": {
+          "0xde888209": [
+            {
+              "Output": {
+                "Var": "0xf34bd3aa",
+                "~class": "ScriptTableGet"
+              },
+              "~class": "0x294650d7"
+            }
+          ],
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "ed6922c8-c067-45d9-a022-43d4bcf36768",
+            "Dest": {
+              "Var": "Result",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "BoolGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "f62f68c1-6fc7-4b40-ab1f-c6fafce88896",
+            "Dest": {
+              "Var": "Target",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "Var": "0xd791104e",
+              "~class": "ScriptTableGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "e020ef36-9775-4ef8-b48e-aab2fc2b4341",
+            "Condition": {
+              "Value1": {
+                "Var": "0xb323b8ac",
+                "~class": "ScriptTableGet"
+              },
+              "Value2": {
+                "value": true,
+                "~class": "BoolGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "2c0a66ab-6900-4bbe-9beb-11e9014c4616",
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "f0337455-f258-4be1-99d6-6708b5a56a68",
+                        "Dest": {
+                          "Table": {
+                            "~class": "NextBuffVars"
+                          },
+                          "Var": "HasBeenTracked",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Src": {
+                          "~class": "BoolGet"
+                        },
+                        "~class": "SetVarInTableBlock"
+                      },
+                      {
+                        "0xd851ffa3": "61f9c248-416f-48f3-aba9-2cda2d670a50",
+                        "Dest": {
+                          "Table": {
+                            "~class": "NextBuffVars"
+                          },
+                          "Var": "HasBeenScanned",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Src": {
+                          "~class": "BoolGet"
+                        },
+                        "~class": "SetVarInTableBlock"
+                      },
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "0xd851ffa3": "8a1b6673-a275-425e-8d13-b8f3fa86fbaf",
+                        "DestKey": {
+                          "Var": "iWard",
+                          "~class": "ScriptTableSet"
+                        },
+                        "DestValue": {
+                          "Var": "unused",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "0xd851ffa3": "2ea77995-789b-4611-b0eb-82645ea9e9ef",
+                              "Sequence": {
+                                "blocks": [
+                                  {
+                                    "0xd851ffa3": "90f11ddc-9f9b-47e2-a09b-28b30a63b39a",
+                                    "Condition": {
+                                      "~class": "0x0"
+                                    },
+                                    "Sequence": {
+                                      "blocks": [
+                                        {
+                                          "0xd851ffa3": "a1e68765-2ec1-48ad-8a68-6ede64a9a016",
+                                          "Condition": {
+                                            "~class": "0x0"
+                                          },
+                                          "Invert": true,
+                                          "Sequence": {
+                                            "blocks": [
+                                              {
+                                                "~class": "0x0"
+                                              },
+                                              {
+                                                "0xd851ffa3": "77bd954e-f616-4c2d-8547-44208a42394d",
+                                                "Condition": {
+                                                  "Value1": {
+                                                    "Var": "0x22905817",
+                                                    "~class": "ScriptTableGet"
+                                                  },
+                                                  "Value2": {
+                                                    "value": true,
+                                                    "~class": "BoolGet"
+                                                  },
+                                                  "~class": "ComparisonScriptCondition"
+                                                },
+                                                "Sequence": {
+                                                  "blocks": [
+                                                    {
+                                                      "0xd851ffa3": "bb67754f-6d28-4d13-846e-00ef637702a1",
+                                                      "Dest": {
+                                                        "Table": {
+                                                          "~class": "NextBuffVars"
+                                                        },
+                                                        "Var": "HasBeenScanned",
+                                                        "~class": "ScriptTableSet"
+                                                      },
+                                                      "Src": {
+                                                        "value": true,
+                                                        "~class": "BoolGet"
+                                                      },
+                                                      "~class": "SetVarInTableBlock"
+                                                    }
+                                                  ],
+                                                  "~class": "ScriptSequence"
+                                                },
+                                                "~class": "0xe524b2fc"
+                                              }
+                                            ],
+                                            "~class": "ScriptSequence"
+                                          },
+                                          "~class": "0xe524b2fc"
+                                        }
+                                      ],
+                                      "~class": "ScriptSequence"
+                                    },
+                                    "~class": "0xe524b2fc"
+                                  }
+                                ],
+                                "~class": "ScriptSequence"
+                              },
+                              "~class": "ScriptCommentBlock"
+                            },
+                            {
+                              "~class": "0x0"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "Table": {
+                          "Var": "0xa3c4b428",
+                          "~class": "CustomTableGet"
+                        },
+                        "~class": "ForEachInCustomTableBlock"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "ScriptCommentBlock"
+                },
+                {
+                  "0xd851ffa3": "68cc60be-e9df-45b4-bcda-312e759fdbc9",
+                  "Dest": {
+                    "Table": {
+                      "~class": "NextBuffVars"
+                    },
+                    "Var": "VisionBubbleDuration",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "0x4a7ea11f",
+                    "~class": "ScriptTableGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "0xd851ffa3": "381ed92a-66e4-4015-ad3b-f96750a2484c",
+                  "Dest": {
+                    "Table": {
+                      "~class": "NextBuffVars"
+                    },
+                    "Var": "ParentFaelightPad",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "Var": "owner",
+                    "~class": "ScriptTableGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "0xd851ffa3": "9bad40fe-72cb-4e7e-aa11-38e302ba8ffa",
+                  "Dest": {
+                    "Table": {
+                      "~class": "NextBuffVars"
+                    },
+                    "Var": "WardSightBonusRadius",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "0x12b941d5",
+                    "~class": "ScriptTableGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "0xd851ffa3": "90ba4d15-19e9-433d-8686-ea5e87d95991",
+                  "Dest": {
+                    "Table": {
+                      "~class": "NextBuffVars"
+                    },
+                    "Var": "RevealRegionID",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "0x2e573b2f",
+                    "~class": "ScriptTableGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "0xd851ffa3": "5cafa077-135f-466f-a9de-366bd2c47752",
+                  "Dest": {
+                    "Table": {
+                      "~class": "NextBuffVars"
+                    },
+                    "Var": "StartingMissilePoints",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "0xe69f40a4",
+                    "~class": "ScriptTableGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "0xd851ffa3": "5f442c11-76da-4d37-926f-0f81a98957b8",
+                  "Dest": {
+                    "Table": {
+                      "~class": "NextBuffVars"
+                    },
+                    "Var": "VisionBubbleRadius",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "0x1ef2ab9",
+                    "~class": "ScriptTableGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "0xd851ffa3": "3a488024-1528-47a8-9d13-5886545d0ae0",
+                  "Dest": {
+                    "Table": {
+                      "~class": "NextBuffVars"
+                    },
+                    "Var": "VisionScoreSuperwardMod",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "0xd2c3fa56",
+                    "~class": "ScriptTableGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "0xd851ffa3": "091b3db6-d9de-43e1-81f6-8a2690ef077a",
+                  "Dest": {
+                    "Table": {
+                      "~class": "NextBuffVars"
+                    },
+                    "Var": "VisionScoreRegionValPerMin",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "0x658634e9",
+                    "~class": "ScriptTableGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "e3f0a9d9-5c00-4d78-9140-718a6a590988",
+                  "Dest": {
+                    "Var": "Result",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": true,
+                    "~class": "BoolGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "187f106b-77f7-4f72-b42b-06f1def21164",
+            "Dest": {
+              "Var": "UpgradeSuccess",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "Var": "Result",
+              "~class": "ScriptTableGet"
+            },
+            "~class": "SetVarInTableBlock"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0x9ddbfa1f": {
+        "FunctionDef": {
+          "0x8c54e274": [
+            {
+              "Input": {
+                "Var": "StartingPoint",
+                "~class": "ScriptTableSet"
+              },
+              "~class": "0x2330a302"
+            }
+          ],
+          "0xde888209": [
+            {
+              "Output": {
+                "Var": "0xf3e54d9e",
+                "~class": "ScriptTableGet"
+              },
+              "~class": "0x294650d7"
+            }
+          ],
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "b4636b5d-f61d-4208-b390-059f1c580939",
+            "Dest": {
+              "Var": "TargetPos",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "Var": "0xe84152f5",
+              "~class": "ScriptTableGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "d844fcb4-a253-42bd-ae55-b68507eaed37",
+            "Dest": {
+              "Var": "NewPos",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "Var": "0xbf23cb82",
+              "~class": "ScriptTableGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "57ad84fa-b2b3-44d5-9323-3c6acfed8385",
+            "Condition": {
+              "~class": "0x0"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "f027dd61-92cf-44a3-bea3-2ed08154b756",
+            "Condition": {
+              "~class": "0x0"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "14e2bdb4-8360-439c-8743-24fd2f1245cf",
+                  "Dest": {
+                    "Var": "SegmentDenominator",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": 10,
+                    "~class": "IntGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "~class": "0x0"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 1,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "6dfa3e1c-7593-41fa-b972-80f7da8c14e8",
+            "Dest": {
+              "Var": "ResultingPos",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "Var": "0xcbb03565",
+              "~class": "ScriptTableGet"
+            },
+            "~class": "SetVarInTableBlock"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0xa4f96c9": {
+        "FunctionDef": {
+          "0x8c54e274": [
+            {
+              "Input": {
+                "Var": "Ward",
+                "~class": "ScriptTableSet"
+              },
+              "~class": "0x2330a302"
+            }
+          ],
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "0xd851ffa3": "32ce1730-c987-45b1-a0d3-ccd8c8fbc740",
+            "DestTable": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "0xe6ed8137",
+              "~class": "CustomTableGet"
+            },
+            "Key": {
+              "Var": "Ward",
+              "~class": "ScriptTableGet"
+            },
+            "value": {
+              "value": 1,
+              "~class": "IntGet"
+            },
+            "~class": "SetKeyValueInCustomTableBlock"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0xa7b6e679": {
+        "FunctionDef": {
+          "0x8c54e274": [
+            {
+              "Input": {
+                "Var": "WardToCheck",
+                "~class": "ScriptTableSet"
+              },
+              "~class": "0x2330a302"
+            }
+          ],
+          "0xde888209": [
+            {
+              "Output": {
+                "Var": "0xb323b8ac",
+                "~class": "BoolTableGet"
+              },
+              "~class": "0x294650d7"
+            }
+          ],
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "0xd851ffa3": "cb3925db-ac02-421d-b07d-967267a2a5d9",
+            "Dest": {
+              "Var": "Result",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "BoolGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "b27c4cb2-1082-4408-b69e-fb0944f474f8",
+            "Dest": {
+              "Var": "Target",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "Var": "0x6768392e",
+              "~class": "ScriptTableGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "a64e9ad7-22f7-4e27-adab-d09b03ed73c7",
+            "Condition": {
+              "CustomTable": {
+                "Table": {
+                  "~class": "InstanceVars"
+                },
+                "Var": "0xe6ed8137",
+                "~class": "CustomTableGet"
+              },
+              "Key": {
+                "Var": "Target",
+                "~class": "ScriptTableGet"
+              },
+              "~class": "0x5727ed42"
+            },
+            "Invert": true,
+            "Sequence": {
+              "blocks": [
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "912b2058-5728-41af-8370-e3b47d81df2a",
+                  "Condition": {
+                    "~class": "0x0"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "14d65e50-e423-46a3-865d-c6824e6ada12",
+                        "Dest": {
+                          "Var": "Result",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Src": {
+                          "value": true,
+                          "~class": "BoolGet"
+                        },
+                        "~class": "SetVarInTableBlock"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "ce1d2e53-6747-49c6-a096-2c71510046d1",
+            "Dest": {
+              "Var": "Qualifies",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "Var": "Result",
+              "~class": "ScriptTableGet"
+            },
+            "~class": "SetVarInTableBlock"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0xe3907fad": {
+        "FunctionDef": {
+          "0x8c54e274": [
+            {
+              "Input": {
+                "~class": "0x0"
+              },
+              "~class": "0x2330a302"
+            }
+          ],
+          "0xde888209": [
+            {
+              "Output": {
+                "Var": "0xd81da5c0",
+                "~class": "ScriptTableGet"
+              },
+              "~class": "0x294650d7"
+            }
+          ],
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "0xd851ffa3": "ce3cbd80-ca13-40e8-b88a-8342bfab0a45",
+            "Dest": {
+              "Var": "Result",
+              "~class": "CustomTableSet"
+            },
+            "~class": "CreateCustomTableBlock"
+          },
+          {
+            "0xd851ffa3": "da896b80-9c65-4201-995e-5f74c4c1c213",
+            "DestKey": {
+              "Var": "iWard",
+              "~class": "ScriptTableSet"
+            },
+            "DestValue": {
+              "Var": "unused",
+              "~class": "ScriptTableSet"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "8a59629e-6da3-4c40-8076-87324745aa17",
+                  "Condition": {
+                    "Value1": {
+                      "Var": "teamId",
+                      "~class": "ScriptTableGet"
+                    },
+                    "Value2": {
+                      "~class": "0x0"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "89e0647c-2706-4863-be54-e38bd8ce09d5",
+                  "Condition": {
+                    "Value1": {
+                      "Var": "teamId",
+                      "~class": "ScriptTableGet"
+                    },
+                    "Value2": {
+                      "~class": "0x0"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "61e883ed-0783-42c4-886f-c2be9e732451",
+                        "Condition": {
+                          "Value1": {
+                            "Var": "0x309738e5",
+                            "~class": "ScriptTableGet"
+                          },
+                          "Value2": {
+                            "Var": "teamId",
+                            "~class": "ScriptTableGet"
+                          },
+                          "~class": "ComparisonScriptCondition"
+                        },
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "0xd851ffa3": "7979de15-73c1-4740-a923-b628074c755d",
+                              "DestTable": {
+                                "Var": "Result",
+                                "~class": "CustomTableGet"
+                              },
+                              "Key": {
+                                "Var": "0x83fd142e",
+                                "~class": "ScriptTableGet"
+                              },
+                              "value": {
+                                "value": 1,
+                                "~class": "IntGet"
+                              },
+                              "~class": "SetKeyValueInCustomTableBlock"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "~class": "0xe524b2fc"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "type": 2,
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "39491b5f-2122-4410-a7a2-6b555ae5119b",
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "84a8e936-359c-467a-9b99-c5b952353827",
+                        "DestTable": {
+                          "Var": "Result",
+                          "~class": "CustomTableGet"
+                        },
+                        "Key": {
+                          "Var": "0x83fd142e",
+                          "~class": "ScriptTableGet"
+                        },
+                        "value": {
+                          "value": 1,
+                          "~class": "IntGet"
+                        },
+                        "~class": "SetKeyValueInCustomTableBlock"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "Table": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "0xe6ed8137",
+              "~class": "CustomTableGet"
+            },
+            "~class": "ForEachInCustomTableBlock"
+          },
+          {
+            "0xd851ffa3": "c96742a1-5b5a-4c95-9573-32e90dd72b44",
+            "Dest": {
+              "Var": "Wards",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "Var": "Result",
+              "~class": "ScriptTableGet"
+            },
+            "~class": "SetVarInTableBlock"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0xe99d3030": {
+        "FunctionDef": {
+          "0x8c54e274": [
+            {
+              "Input": {
+                "Var": "Ward",
+                "~class": "ScriptTableSet"
+              },
+              "~class": "0x2330a302"
+            }
+          ],
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "0xd851ffa3": "b04efa50-eddd-468b-b073-ed82c71d3d2d",
+            "Key": {
+              "Var": "Ward",
+              "~class": "ScriptTableGet"
+            },
+            "Table": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "0xe6ed8137",
+              "~class": "CustomTableGet"
+            },
+            "~class": "RemoveFromCustomTableBlock"
+          }
+        ],
+        "~class": "ScriptFunction"
+      }
+    },
+    "globalProperties": {
+      "buffName": "FaeLightPadBuff",
+      "~class": "ScriptGlobalProperties"
+    },
+    "path": "0x8ad317f6",
+    "sequences": {
+      "0x69523460": {
+        "blocks": [
+          {
+            "0xd851ffa3": "e5bc2bf1-6e6e-486a-a518-cd0b7198eb81",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "LightPointList",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "3cb34852-76d5-4e68-a66c-64bd5a2b0637",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "VisionBubbleRadius",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "4f5d7e58-1277-4f3c-8f32-a7b3b6ea2c62",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "VisionBubbleDuration",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "e9a4974b-7092-4c76-bd8c-dd83046a7198",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "WardSightBonusRadius",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "133829b3-4c54-4775-8533-ed0cdbff4b39",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "StartingMissilePoints",
+              "~class": "0x9def8cb"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "f08935c7-a310-4cb5-b3ce-90a3531d8565",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "FaerieLightsVfx",
+              "~class": "0x851d2116"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "dfc47fdf-b6d1-4a79-907c-da5f46d25f69",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "VisionScoreSuperwardMod",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "31ba11a0-4b49-48ab-ae09-e215b94f2f9a",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "VisionScoreRegionValPerMin",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "027ef30d-bcdb-45e5-bc2f-7bc3bc99135a",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "WardSnapCatchRadius",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "value": 225,
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "d6f2eff7-29da-46ef-956c-d5189a1c87d8",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "HostSpotRadius",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "value": 75,
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "4e2c3088-5432-4166-89e4-b539688d215a",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "Superwards",
+              "~class": "CustomTableSet"
+            },
+            "~class": "CreateCustomTableBlock"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0xc694c800": {
+        "blocks": [
+          {
+            "~class": "0x0"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      }
+    },
+    "~class": "BuffScript"
+  },
+  "0x8b098509": {
+    "ScriptName": "Homeguards2026_LaneVFXBuff",
+    "functions": {
+      "0x210a3c7b": {
+        "blocks": [
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "b659c1df-8f5a-44be-87c7-97dea4520091",
+            "Dest": {
+              "Var": "TestPos",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "Var": "0xae6a70be",
+              "~class": "ScriptTableGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "a5effffe-f5b4-4185-9e69-e2fbe2b3176b",
+            "Condition": {
+              "Value1": {
+                "Table": {
+                  "~class": "InstanceVars"
+                },
+                "Var": "teamId",
+                "~class": "ScriptTableGet"
+              },
+              "Value2": {
+                "~class": "0x0"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "f95198de-e68b-454f-9092-c3e01e08bdf8",
+                  "Condition": {
+                    "Value1": {
+                      "Table": {
+                        "~class": "InstanceVars"
+                      },
+                      "Var": "0x156ea962",
+                      "~class": "ScriptTableGet"
+                    },
+                    "Value2": {
+                      "~class": "IntGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "918f7669-0e71-483e-939a-1e21efea5284",
+                  "Condition": {
+                    "Value1": {
+                      "Table": {
+                        "~class": "InstanceVars"
+                      },
+                      "Var": "0x156ea962",
+                      "~class": "ScriptTableGet"
+                    },
+                    "Value2": {
+                      "value": 1,
+                      "~class": "IntGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "dbde9bb9-66d8-48cf-9205-6e3e457c8de5",
+                  "Condition": {
+                    "Value1": {
+                      "Table": {
+                        "~class": "InstanceVars"
+                      },
+                      "Var": "0x156ea962",
+                      "~class": "ScriptTableGet"
+                    },
+                    "Value2": {
+                      "value": 2,
+                      "~class": "IntGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "bcf50e36-f14a-4841-869c-7616fe99d02e",
+            "Condition": {
+              "Value1": {
+                "Table": {
+                  "~class": "InstanceVars"
+                },
+                "Var": "teamId",
+                "~class": "ScriptTableGet"
+              },
+              "Value2": {
+                "~class": "0x0"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "856b4e1e-e4a4-43a9-8f4d-1c3de4bd50b5",
+                  "Condition": {
+                    "Value1": {
+                      "Table": {
+                        "~class": "InstanceVars"
+                      },
+                      "Var": "0x156ea962",
+                      "~class": "ScriptTableGet"
+                    },
+                    "Value2": {
+                      "~class": "IntGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "bf711672-bfc6-4358-ba3a-cde081f401ff",
+                  "Condition": {
+                    "Value1": {
+                      "Table": {
+                        "~class": "InstanceVars"
+                      },
+                      "Var": "0x156ea962",
+                      "~class": "ScriptTableGet"
+                    },
+                    "Value2": {
+                      "value": 1,
+                      "~class": "IntGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "c11e3413-0a4e-4a2f-9438-c927e2c2030a",
+                  "Condition": {
+                    "Value1": {
+                      "Table": {
+                        "~class": "InstanceVars"
+                      },
+                      "Var": "0x156ea962",
+                      "~class": "ScriptTableGet"
+                    },
+                    "Value2": {
+                      "value": 2,
+                      "~class": "IntGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "0abd807d-cc59-48e3-95f1-f02523b2672d",
+            "Condition": {
+              "Operation": 1,
+              "Value1": {
+                "Var": "0xae6a70be",
+                "~class": "ScriptTableGet"
+              },
+              "Value2": {
+                "Var": "0x9d238129",
+                "~class": "ScriptTableGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "adc8165d-2e09-45e3-a4c6-3ae672b4b644",
+                  "Condition": {
+                    "Operation": 2,
+                    "Value1": {
+                      "Var": "Distance",
+                      "~class": "ScriptTableGet"
+                    },
+                    "Value2": {
+                      "value": 250,
+                      "~class": "IntGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "68e162e8-4118-4cce-a242-08ed929c80af",
+                        "Condition": {
+                          "Operation": 2,
+                          "Value1": {
+                            "Var": "Distance",
+                            "~class": "ScriptTableGet"
+                          },
+                          "Value2": {
+                            "value": 300,
+                            "~class": "IntGet"
+                          },
+                          "~class": "ComparisonScriptCondition"
+                        },
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "0xd851ffa3": "a960e70c-11c2-4237-85b8-3003f2669be6",
+                              "Dest": {
+                                "Var": "Distance",
+                                "~class": "ScriptTableSet"
+                              },
+                              "Src": {
+                                "value": 300,
+                                "~class": "IntGet"
+                              },
+                              "~class": "SetVarInTableBlock"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "~class": "0xe524b2fc"
+                      },
+                      {
+                        "0xd851ffa3": "def45b5b-11fe-49df-bfdc-f4ae4c37fe61",
+                        "Dest": {
+                          "Var": "DestPos",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Formula": "(normalize(ptp.TestPos - ptp.OwnerPos) * ptp.Distance) + ptp.OwnerPos",
+                        "~class": "0x15ebaa9c"
+                      },
+                      {
+                        "0xd851ffa3": "c204f1d4-ef53-4477-8574-2f881856264e",
+                        "Condition": {
+                          "Value1": {
+                            "Table": {
+                              "~class": "InstanceVars"
+                            },
+                            "Var": "0x156ea962",
+                            "~class": "ScriptTableGet"
+                          },
+                          "Value2": {
+                            "~class": "IntGet"
+                          },
+                          "~class": "ComparisonScriptCondition"
+                        },
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "~class": "0x0"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "~class": "0xe524b2fc"
+                      },
+                      {
+                        "0xd851ffa3": "31ce05a9-ae4d-453b-8998-d2229c9d31f2",
+                        "Condition": {
+                          "Value1": {
+                            "Table": {
+                              "~class": "InstanceVars"
+                            },
+                            "Var": "0x156ea962",
+                            "~class": "ScriptTableGet"
+                          },
+                          "Value2": {
+                            "value": 1,
+                            "~class": "IntGet"
+                          },
+                          "~class": "ComparisonScriptCondition"
+                        },
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "~class": "0x0"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "~class": "0xe524b2fc"
+                      },
+                      {
+                        "0xd851ffa3": "83641981-2021-4f22-bef6-a9027df54ec0",
+                        "Condition": {
+                          "Value1": {
+                            "Table": {
+                              "~class": "InstanceVars"
+                            },
+                            "Var": "0x156ea962",
+                            "~class": "ScriptTableGet"
+                          },
+                          "Value2": {
+                            "value": 2,
+                            "~class": "IntGet"
+                          },
+                          "~class": "ComparisonScriptCondition"
+                        },
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "~class": "0x0"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "~class": "0xe524b2fc"
+                      },
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "5f20eed5-e3eb-4adf-b07c-fce3470ce41a",
+                  "Condition": {
+                    "Operation": 4,
+                    "Value1": {
+                      "Var": "Distance",
+                      "~class": "ScriptTableGet"
+                    },
+                    "Value2": {
+                      "value": 75,
+                      "~class": "IntGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "type": 3,
+                  "~class": "0xe524b2fc"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "ScriptFunction"
+      }
+    },
+    "path": "0x8b098509",
+    "sequences": {
+      "0x2b218079": {
+        "blocks": [
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "cf16961d-bfdc-492a-9489-3288c07cc1ba",
+            "Condition": {
+              "Value1": {
+                "Var": "Result",
+                "~class": "BoolTableGet"
+              },
+              "Value2": {
+                "~class": "BoolGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "~class": "0x0"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0x6228014f": {
+        "blocks": [
+          {
+            "0xd851ffa3": "350b566e-4f7c-424e-8f9f-5d5b96aebed5",
+            "Condition": {
+              "~class": "0x0"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "~class": "0x0"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0x69523460": {
+        "blocks": [
+          {
+            "0xd851ffa3": "f1a61a6d-8579-420a-80f0-662687ff82e5",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "laneID",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "5739ae71-780f-468a-9bfc-0af5a120bc5f",
+            "Var": {
+              "~class": "0x0"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "1d08c923-a5fc-4102-85ec-66e7e22019f6",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "AreaTriggerRadius",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "value": 1600,
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0xc694c800": {
+        "blocks": [
+          {
+            "0xd851ffa3": "49a88359-5782-46d7-8df4-c83e0eb18391",
+            "Condition": {
+              "~class": "0x0"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "687b1d4a-e97a-4378-b8f0-e15b5dce57f3",
+                  "Condition": {
+                    "~class": "0x0"
+                  },
+                  "Invert": true,
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "8288c8d1-5720-48e7-8856-771b2a42b537",
+                        "Dest": {
+                          "Table": {
+                            "~class": "NextBuffVars"
+                          },
+                          "Var": "laneID",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Src": {
+                          "Table": {
+                            "~class": "InstanceVars"
+                          },
+                          "Var": "0x156ea962",
+                          "~class": "ScriptTableGet"
+                        },
+                        "~class": "SetVarInTableBlock"
+                      },
+                      {
+                        "0xd851ffa3": "387bcd23-cd7e-4a72-9d81-6dd99708da7e",
+                        "Dest": {
+                          "Table": {
+                            "~class": "NextBuffVars"
+                          },
+                          "Var": "teamID",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Src": {
+                          "Table": {
+                            "~class": "InstanceVars"
+                          },
+                          "Var": "teamId",
+                          "~class": "ScriptTableGet"
+                        },
+                        "~class": "SetVarInTableBlock"
+                      },
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0xd844d98f": {
+        "blocks": [
+          {
+            "~class": "0x0"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0xec26660f": {
         "blocks": [
           {
             "~class": "0x0"
@@ -11436,6 +14244,1462 @@
     "path": "0x98b617ba",
     "~class": "BuffScript"
   },
+  "0x994368ce": {
+    "ScriptName": "SR_2026_S1_FaerieLightManagerBuff",
+    "functions": {
+      "0xfbb729ce": {
+        "FunctionDef": {
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "0xd851ffa3": "3054037c-0e3a-43a9-ac69-3b3425aebb0b",
+            "Condition": {
+              "Value1": {
+                "Table": {
+                  "~class": "InstanceVars"
+                },
+                "Var": "IsActive",
+                "~class": "ScriptTableGet"
+              },
+              "Value2": {
+                "value": true,
+                "~class": "BoolGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "445dde14-21fd-4a89-83e8-55aeb795cdc1",
+                  "DestKey": {
+                    "Var": "unused11",
+                    "~class": "ScriptTableSet"
+                  },
+                  "DestValue": {
+                    "Var": "LightPosition",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "0xd851ffa3": "8c75ba94-3998-46a4-bb72-33c569f13e71",
+                        "Dest": {
+                          "Var": "RevealVfx",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Src": {
+                          "0x5c06309c": {
+                            "0x5a81f39a": "SR_2026_S1_Map_Circle_Debug1",
+                            "~class": "0xba65f1fe"
+                          },
+                          "~class": "0x7908fe0e"
+                        },
+                        "~class": "SetVarInTableBlock"
+                      },
+                      {
+                        "0xd851ffa3": "693bd741-1790-46a5-8ab1-19b1ea72e897",
+                        "Condition": {
+                          "Operation": 2,
+                          "Value1": {
+                            "Table": {
+                              "~class": "InstanceVars"
+                            },
+                            "Var": "0x3dd5f864",
+                            "~class": "ScriptTableGet"
+                          },
+                          "Value2": {
+                            "~class": "IntGet"
+                          },
+                          "~class": "ComparisonScriptCondition"
+                        },
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "0xd851ffa3": "b1ddb718-5651-4fb0-8573-244246f4a0e3",
+                              "Dest": {
+                                "Var": "RevealVfx",
+                                "~class": "ScriptTableSet"
+                              },
+                              "Src": {
+                                "0x5c06309c": {
+                                  "0x5a81f39a": "SR_2026_S1_Map_Circle_Debug2",
+                                  "~class": "0xba65f1fe"
+                                },
+                                "~class": "0x7908fe0e"
+                              },
+                              "~class": "SetVarInTableBlock"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "~class": "0xe524b2fc"
+                      },
+                      {
+                        "0xd851ffa3": "4e280306-ec92-4feb-a7cd-fc3e35124dc7",
+                        "Condition": {
+                          "~class": "0x0"
+                        },
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "~class": "0x0"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "~class": "0xe524b2fc"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "SortedByKeys": {
+                    "~class": "BoolGet"
+                  },
+                  "Table": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "0x2e573b2f",
+                    "~class": "CustomTableGet"
+                  },
+                  "~class": "ForEachInCustomTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "ScriptFunction"
+      }
+    },
+    "path": "0x994368ce",
+    "sequences": {
+      "0x6228014f": {
+        "blocks": [
+          {
+            "0xd851ffa3": "13a3f732-dd0e-47c6-b810-4aa577757bb6",
+            "Condition": {
+              "Value1": {
+                "Table": {
+                  "~class": "InstanceVars"
+                },
+                "Var": "IsActive",
+                "~class": "ScriptTableGet"
+              },
+              "Value2": {
+                "value": true,
+                "~class": "BoolGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "df4424fb-e580-4ef1-8c1b-e988d1d24690",
+                  "Var": {
+                    "~class": "0x0"
+                  },
+                  "~class": "0x851b8dc5"
+                },
+                {
+                  "0xd851ffa3": "2edec333-cdff-4aa0-9483-5680b5bf1ca5",
+                  "Condition": {
+                    "~class": "0x0"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "0xd851ffa3": "a45d64a1-317d-4010-82ce-0a2016a74c61",
+                        "Key": {
+                          "Var": "0x740ea6fa",
+                          "~class": "ScriptTableGet"
+                        },
+                        "Table": {
+                          "Table": {
+                            "~class": "InstanceVars"
+                          },
+                          "Var": "0xf2743c6a",
+                          "~class": "CustomTableGet"
+                        },
+                        "~class": "RemoveFromCustomTableBlock"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "ac6ec0d7-5b15-4e78-aafc-a4af130be177",
+                  "IsDisabled": true,
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "1d3aa5ff-322e-43ab-828b-5749c9638047",
+                        "Condition": {
+                          "~class": "0x0"
+                        },
+                        "IsDisabled": true,
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "0xd851ffa3": "a342754c-df5f-428b-90aa-c6338898ffc0",
+                              "Condition": {
+                                "Operation": 1,
+                                "Value1": {
+                                  "Table": {
+                                    "~class": "InstanceVars"
+                                  },
+                                  "Var": "0xf3b9b7ef",
+                                  "~class": "ScriptTableGet"
+                                },
+                                "Value2": {
+                                  "~class": "0x1a6cd1f8"
+                                },
+                                "~class": "ComparisonScriptCondition"
+                              },
+                              "IsDisabled": true,
+                              "Sequence": {
+                                "blocks": [
+                                  {
+                                    "0xd851ffa3": "5f1a744a-c503-4aee-b95c-37243b356c94",
+                                    "Color": [
+                                      255,
+                                      0,
+                                      72,
+                                      255
+                                    ],
+                                    "IsDisabled": true,
+                                    "ToSay": {
+                                      "value": "Cleaing up Order VFX",
+                                      "~class": "StringGet"
+                                    },
+                                    "~class": "DebugPrintToChatBlock"
+                                  },
+                                  {
+                                    "~class": "0x0"
+                                  },
+                                  {
+                                    "0xd851ffa3": "e6ff9765-e645-4127-a31c-143860578478",
+                                    "Dest": {
+                                      "Table": {
+                                        "~class": "InstanceVars"
+                                      },
+                                      "Var": "FaeLight_Uppies_Order",
+                                      "~class": "ScriptTableSet"
+                                    },
+                                    "IsDisabled": true,
+                                    "Src": {
+                                      "~class": "0x1a6cd1f8"
+                                    },
+                                    "~class": "SetVarInTableBlock"
+                                  }
+                                ],
+                                "~class": "ScriptSequence"
+                              },
+                              "type": 1,
+                              "~class": "0xe524b2fc"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "~class": "0xe524b2fc"
+                      },
+                      {
+                        "0xd851ffa3": "ae89fecc-c198-4624-a60d-e7b83f407608",
+                        "Condition": {
+                          "~class": "0x0"
+                        },
+                        "IsDisabled": true,
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "0xd851ffa3": "245fed9a-f01c-443a-90ee-5abb9a8a0687",
+                              "Condition": {
+                                "Operation": 1,
+                                "Value1": {
+                                  "Table": {
+                                    "~class": "InstanceVars"
+                                  },
+                                  "Var": "0xb94b5d47",
+                                  "~class": "ScriptTableGet"
+                                },
+                                "Value2": {
+                                  "~class": "0x1a6cd1f8"
+                                },
+                                "~class": "ComparisonScriptCondition"
+                              },
+                              "IsDisabled": true,
+                              "Sequence": {
+                                "blocks": [
+                                  {
+                                    "0xd851ffa3": "fca9f950-6ab0-4051-8d84-7cf81fe3287e",
+                                    "Color": [
+                                      231,
+                                      255,
+                                      0,
+                                      255
+                                    ],
+                                    "IsDisabled": true,
+                                    "ToSay": {
+                                      "value": "Cleaing up Chaos VFX",
+                                      "~class": "StringGet"
+                                    },
+                                    "~class": "DebugPrintToChatBlock"
+                                  },
+                                  {
+                                    "~class": "0x0"
+                                  },
+                                  {
+                                    "0xd851ffa3": "e9dbedbb-7e61-47ec-8784-c1f2a7c11a75",
+                                    "Dest": {
+                                      "Table": {
+                                        "~class": "InstanceVars"
+                                      },
+                                      "Var": "FaeLight_Uppies_Chaos",
+                                      "~class": "ScriptTableSet"
+                                    },
+                                    "IsDisabled": true,
+                                    "Src": {
+                                      "~class": "0x1a6cd1f8"
+                                    },
+                                    "~class": "SetVarInTableBlock"
+                                  }
+                                ],
+                                "~class": "ScriptSequence"
+                              },
+                              "type": 1,
+                              "~class": "0xe524b2fc"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "~class": "0xe524b2fc"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "ScriptCommentBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0x69523460": {
+        "blocks": [
+          {
+            "0xd851ffa3": "2f1928df-0ea5-41ed-a133-04a03ac1968e",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "LightPointList",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "fac7fe91-2aa0-47e8-96c3-90218a0b6dc8",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "WardSightBonusRadius",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "eb4bf108-4d14-46e4-ad0a-916bd0cf5aeb",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "VisionBubbleDuration",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "0acc16fd-64f8-41b4-a516-b0f9153168bf",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "VisionBubbleRadius",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "37f0909e-ec4d-4cd7-b752-7347de286a45",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "SpawnTimeDelay",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "9af61547-249e-4162-998a-3a73cd1e8d81",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "FaerieLightsVfx",
+              "~class": "0x851d2116"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "4f599ea5-270a-4a1e-8a04-a305b3eb00e5",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "StartingMissilePoints",
+              "~class": "0x9def8cb"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "5b6639b5-b755-4c84-ba75-687ce1ceab5a",
+            "Condition": {
+              "Operation": 2,
+              "Value1": {
+                "Table": {
+                  "~class": "InstanceVars"
+                },
+                "Var": "0x3dd5f864",
+                "~class": "ScriptTableGet"
+              },
+              "Value2": {
+                "~class": "IntGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "f83222cc-cbb7-4374-8902-4a74a1528d32",
+                  "Dest": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "IsActive",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "~class": "BoolGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "~class": "0x0"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "a1b567ce-606b-4c00-a93a-e311d06542a0",
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "37f2303e-339d-441f-b23e-eaa40f53c687",
+                  "Dest": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "IsActive",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": true,
+                    "~class": "BoolGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "221f433d-c4d0-45a8-b0aa-3d9ac6ec625f",
+                  "Var": {
+                    "~class": "0x0"
+                  },
+                  "~class": "0x851b8dc5"
+                },
+                {
+                  "0xd851ffa3": "bf0a9475-37a1-4fd3-bc80-728f88ac0363",
+                  "IsDisabled": true,
+                  "Target": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "0x34aa9be8",
+                    "~class": "0x132b63da"
+                  },
+                  "~class": "0x3aa63a24"
+                },
+                {
+                  "~class": "0x0"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "ac8485b7-d14f-4463-b005-f907d88eed26",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "PluggedWardsList",
+              "~class": "CustomTableSet"
+            },
+            "~class": "CreateCustomTableBlock"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "34a0a37f-f895-4af1-9cbe-03982a8b2f30",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "HostSpotRadius",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "value": 75,
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "6e56ec8b-8d22-4cac-99a4-091224d50c90",
+            "Dest": {
+              "Var": "OrderTeam",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "0x0"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "855fc233-69b5-4102-bc43-ad9bd933681c",
+            "Dest": {
+              "Var": "ChaosTeam",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "0x0"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "dfd6e276-940a-406a-953a-a8b5672210f9",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "FaeLight_Uppies_Order",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "0x1a6cd1f8"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "5b4e0811-6381-4e9a-9df1-a6419985b379",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "FaeLight_Uppies_Chaos",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "0x1a6cd1f8"
+            },
+            "~class": "SetVarInTableBlock"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0x71b38c83": {
+        "~class": "RootScriptSequence"
+      },
+      "0xc694c800": {
+        "blocks": [
+          {
+            "0xd851ffa3": "1fa25467-0cb3-41ce-9c73-6a35bf827778",
+            "Condition": {
+              "Value1": {
+                "Table": {
+                  "~class": "InstanceVars"
+                },
+                "Var": "IsActive",
+                "~class": "ScriptTableGet"
+              },
+              "Value2": {
+                "value": true,
+                "~class": "BoolGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "2eeddfe8-9e1b-417f-89a6-1511e77ade13",
+                  "Var": {
+                    "~class": "0x0"
+                  },
+                  "~class": "0x851b8dc5"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "adc582c8-4b9f-477e-a566-04afdcfefecc",
+                  "Condition": {
+                    "~class": "0x0"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "b4c1e1a7-9493-4d9c-8dac-e314597d171c",
+                        "Dest": {
+                          "Var": "SegmentDenominator",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Src": {
+                          "value": 10,
+                          "~class": "IntGet"
+                        },
+                        "~class": "SetVarInTableBlock"
+                      },
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "0xd851ffa3": "748fe4ed-27f1-4822-a7bf-ac033e263712",
+                        "Var": {
+                          "Var": "NewPos",
+                          "~class": "ScriptTableSet"
+                        },
+                        "~class": "0x851b8dc5"
+                      },
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "37f74d8f-59c8-4031-a547-52d74629bf05",
+                  "Dest": {
+                    "Var": "WardsToDeprecate",
+                    "~class": "CustomTableSet"
+                  },
+                  "~class": "CreateCustomTableBlock"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "8b22e4bf-a53b-43cc-bd63-a8e500d57ae3",
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "0xd851ffa3": "3fde7acd-718a-43fd-83ea-bfa4f04a7355",
+                        "Condition": {
+                          "~class": "0x0"
+                        },
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "0xd851ffa3": "b5a10a2b-f4bd-469b-8486-9e50876a1f3e",
+                              "Condition": {
+                                "Value1": {
+                                  "Table": {
+                                    "~class": "InstanceVars"
+                                  },
+                                  "Var": "0xf3b9b7ef",
+                                  "~class": "ScriptTableGet"
+                                },
+                                "Value2": {
+                                  "~class": "0x1a6cd1f8"
+                                },
+                                "~class": "ComparisonScriptCondition"
+                              },
+                              "Sequence": {
+                                "blocks": [
+                                  {
+                                    "~class": "0x0"
+                                  },
+                                  {
+                                    "~class": "0x0"
+                                  }
+                                ],
+                                "~class": "ScriptSequence"
+                              },
+                              "~class": "0xe524b2fc"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "~class": "0xe524b2fc"
+                      },
+                      {
+                        "0xd851ffa3": "54fd6799-c4e9-4889-b847-e07f3ac376cf",
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "0xd851ffa3": "75ea2524-063b-49d4-b7bf-88fb29891a1f",
+                              "Condition": {
+                                "Value1": {
+                                  "Table": {
+                                    "~class": "InstanceVars"
+                                  },
+                                  "Var": "0xb94b5d47",
+                                  "~class": "ScriptTableGet"
+                                },
+                                "Value2": {
+                                  "~class": "0x1a6cd1f8"
+                                },
+                                "~class": "ComparisonScriptCondition"
+                              },
+                              "Sequence": {
+                                "blocks": [
+                                  {
+                                    "~class": "0x0"
+                                  },
+                                  {
+                                    "~class": "0x0"
+                                  }
+                                ],
+                                "~class": "ScriptSequence"
+                              },
+                              "~class": "0xe524b2fc"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "~class": "0xe524b2fc"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "ScriptCommentBlock"
+                },
+                {
+                  "0xd851ffa3": "925999f5-6c07-4a87-af80-cddc3ee22195",
+                  "DestKey": {
+                    "Var": "WardRef",
+                    "~class": "ScriptTableSet"
+                  },
+                  "DestValue": {
+                    "Var": "WardSpawnTime",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "a7eda646-a78e-4f69-8100-3bb152d13773",
+                        "Condition": {
+                          "~class": "0x0"
+                        },
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "~class": "0x0"
+                            },
+                            {
+                              "0xd851ffa3": "ffeb7dc7-dad8-41f1-9a9e-6eaa1ee1f89a",
+                              "Condition": {
+                                "Value1": {
+                                  "Var": "teamId",
+                                  "~class": "ScriptTableGet"
+                                },
+                                "Value2": {
+                                  "Var": "0x7c06ad3f",
+                                  "~class": "ScriptTableGet"
+                                },
+                                "~class": "ComparisonScriptCondition"
+                              },
+                              "Sequence": {
+                                "blocks": [
+                                  {
+                                    "0xd851ffa3": "464e314f-972b-4ebd-a74b-c20a75d22c1c",
+                                    "DestTable": {
+                                      "Var": "0x976f72ec",
+                                      "~class": "CustomTableGet"
+                                    },
+                                    "value": {
+                                      "Var": "0xe345eb6c",
+                                      "~class": "ScriptTableGet"
+                                    },
+                                    "~class": "InsertIntoCustomTableBlock"
+                                  },
+                                  {
+                                    "0xd851ffa3": "68ab60d7-7272-4005-9a70-2346e8514925",
+                                    "Sequence": {
+                                      "blocks": [
+                                        {
+                                          "~class": "0x0"
+                                        },
+                                        {
+                                          "0xd851ffa3": "9a40b766-31e2-4578-8f00-b1b3fe116cc4",
+                                          "Condition": {
+                                            "TableValue": {
+                                              "Var": "HasBeenPinged",
+                                              "~class": "ScriptTableSet"
+                                            },
+                                            "~class": "TableValueExistsScriptCondition"
+                                          },
+                                          "~class": "0xe524b2fc"
+                                        },
+                                        {
+                                          "0xd851ffa3": "7991b58c-c613-4004-aa91-d6a52b841a8b",
+                                          "Condition": {
+                                            "Value1": {
+                                              "Var": "0xf6e44ac",
+                                              "~class": "ScriptTableGet"
+                                            },
+                                            "Value2": {
+                                              "value": true,
+                                              "~class": "BoolGet"
+                                            },
+                                            "~class": "ComparisonScriptCondition"
+                                          },
+                                          "Sequence": {
+                                            "blocks": [
+                                              {
+                                                "~class": "0x0"
+                                              },
+                                              {
+                                                "0xd851ffa3": "4c737ee1-ff83-491f-aee1-97da56ad76d8",
+                                                "Dest": {
+                                                  "Var": "WardLifetime",
+                                                  "~class": "ScriptTableSet"
+                                                },
+                                                "Formula": "ptp.TheTime - ptp.WardSpawnTime",
+                                                "~class": "0x15ebaa9c"
+                                              },
+                                              {
+                                                "0xd851ffa3": "334cfc1e-2fa7-4f5d-888f-f8b1953b6023",
+                                                "Condition": {
+                                                  "Operation": 4,
+                                                  "Value1": {
+                                                    "Var": "0xeb96c78",
+                                                    "~class": "ScriptTableGet"
+                                                  },
+                                                  "Value2": {
+                                                    "Table": {
+                                                      "~class": "InstanceVars"
+                                                    },
+                                                    "Var": "0x4a7ea11f",
+                                                    "~class": "ScriptTableGet"
+                                                  },
+                                                  "~class": "ComparisonScriptCondition"
+                                                },
+                                                "Sequence": {
+                                                  "blocks": [
+                                                    {
+                                                      "~class": "0x0"
+                                                    }
+                                                  ],
+                                                  "~class": "ScriptSequence"
+                                                },
+                                                "~class": "0xe524b2fc"
+                                              }
+                                            ],
+                                            "~class": "ScriptSequence"
+                                          },
+                                          "type": 1,
+                                          "~class": "0xe524b2fc"
+                                        }
+                                      ],
+                                      "~class": "ScriptSequence"
+                                    },
+                                    "~class": "ScriptCommentBlock"
+                                  }
+                                ],
+                                "~class": "ScriptSequence"
+                              },
+                              "~class": "0xe524b2fc"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "~class": "0xe524b2fc"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "SortedByKeys": {
+                    "~class": "BoolGet"
+                  },
+                  "Table": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "0xf2743c6a",
+                    "~class": "CustomTableGet"
+                  },
+                  "~class": "ForEachInCustomTableBlock"
+                },
+                {
+                  "0xd851ffa3": "af45c631-6a63-41ed-b4b5-26344c2ccbdf",
+                  "DestKey": {
+                    "Var": "unused10",
+                    "~class": "ScriptTableSet"
+                  },
+                  "DestValue": {
+                    "Var": "WardRef",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "996779f5-38ab-4bad-95dd-e10a03471433",
+                        "Condition": {
+                          "~class": "0x0"
+                        },
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "~class": "0x0"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "~class": "0xe524b2fc"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "SortedByKeys": {
+                    "~class": "BoolGet"
+                  },
+                  "Table": {
+                    "Var": "0x976f72ec",
+                    "~class": "CustomTableGet"
+                  },
+                  "~class": "ForEachInCustomTableBlock"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "ddc9a0ee-758a-43ca-bb4b-af65d7f93a6c",
+                  "DestTable": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "0xf2743c6a",
+                    "~class": "CustomTableGet"
+                  },
+                  "Key": {
+                    "Var": "0x48f66a30",
+                    "~class": "ScriptTableGet"
+                  },
+                  "value": {
+                    "Var": "0xe952575d",
+                    "~class": "ScriptTableGet"
+                  },
+                  "~class": "SetKeyValueInCustomTableBlock"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "dd7af6c8-ce85-4949-a5e8-0e77635b77af",
+                  "DestKey": {
+                    "Var": "unused11",
+                    "~class": "ScriptTableSet"
+                  },
+                  "DestValue": {
+                    "Var": "LightPosition",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "SortedByKeys": {
+                    "~class": "BoolGet"
+                  },
+                  "Table": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "0x2e573b2f",
+                    "~class": "CustomTableGet"
+                  },
+                  "~class": "ForEachInCustomTableBlock"
+                },
+                {
+                  "0xd851ffa3": "e73cb2a3-0d74-48d7-8591-cc0bbd77864f",
+                  "DestKey": {
+                    "Var": "index",
+                    "~class": "ScriptTableSet"
+                  },
+                  "DestValue": {
+                    "Var": "MisPointEntity",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "6760b229-4744-4b3c-8788-74009eb3f2e5",
+                        "Dest": {
+                          "Var": "MisSpawnPos",
+                          "~class": "VectorTableSet"
+                        },
+                        "Target": {
+                          "Var": "0x18343f55",
+                          "~class": "0x132b63da"
+                        },
+                        "~class": "0x667eafac"
+                      },
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "0xd851ffa3": "c4321724-1f46-45b0-9023-9c566bfdc637",
+                        "FunctionDefinition": {
+                          "0xde888209": {
+                            "0x2b051c8e": {
+                              "Var": "MisTargEntityList",
+                              "~class": "ScriptTableSet"
+                            }
+                          },
+                          "~class": "0x2a2c82dc"
+                        },
+                        "Target": {
+                          "Var": "0x18343f55",
+                          "~class": "0x132b63da"
+                        },
+                        "callback": {
+                          "FunctionName": "0xdaa34884",
+                          "Script": "0x72c776d2",
+                          "~class": "0xf6e1bec7"
+                        },
+                        "~class": "0x6c93a1b4"
+                      },
+                      {
+                        "0xd851ffa3": "6692915f-d457-4b32-8f84-dcf1fd4d51e6",
+                        "DestKey": {
+                          "Var": "MisTargIndex",
+                          "~class": "ScriptTableSet"
+                        },
+                        "DestValue": {
+                          "Var": "MissileTargetEntity",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "0xd851ffa3": "95ea5214-8c2f-4885-96b5-d365537fa57e",
+                              "Dest": {
+                                "Var": "MisEndPos",
+                                "~class": "VectorTableSet"
+                              },
+                              "Target": {
+                                "Var": "0x732921f5",
+                                "~class": "0x132b63da"
+                              },
+                              "~class": "0x667eafac"
+                            },
+                            {
+                              "0xd851ffa3": "be4fc281-3c5a-45d8-8fd3-d35f9da92b6b",
+                              "Dest": {
+                                "Table": {
+                                  "~class": "NextSpellVars"
+                                },
+                                "Var": "TargetEntity",
+                                "~class": "ScriptTableSet"
+                              },
+                              "Src": {
+                                "Var": "0x732921f5",
+                                "~class": "ScriptTableGet"
+                              },
+                              "~class": "SetVarInTableBlock"
+                            },
+                            {
+                              "~class": "0x0"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "Table": {
+                          "Var": "0x6a1b797b",
+                          "~class": "CustomTableGet"
+                        },
+                        "~class": "ForEachInCustomTableBlock"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "Table": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "0xe69f40a4",
+                    "~class": "CustomTableGet"
+                  },
+                  "~class": "ForEachInCustomTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0xd844d98f": {
+        "blocks": [
+          {
+            "0xd851ffa3": "2c7b41aa-5142-43f0-8181-e663fac3f323",
+            "Condition": {
+              "Value1": {
+                "Table": {
+                  "~class": "InstanceVars"
+                },
+                "Var": "IsActive",
+                "~class": "ScriptTableGet"
+              },
+              "Value2": {
+                "value": true,
+                "~class": "BoolGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "d39498cf-b4e6-440f-aeed-6bd64d8351b9",
+                  "DestKey": {
+                    "Var": "WardRef",
+                    "~class": "ScriptTableSet"
+                  },
+                  "DestValue": {
+                    "Var": "unused3",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "2a08193a-22e1-4474-90ee-653a2e689c8b",
+                        "Condition": {
+                          "~class": "0x0"
+                        },
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "0xd851ffa3": "0fd36895-3870-43ed-82ce-d50d0775bad7",
+                              "Condition": {
+                                "~class": "0x0"
+                              },
+                              "Invert": true,
+                              "Sequence": {
+                                "blocks": [
+                                  {
+                                    "~class": "0x0"
+                                  },
+                                  {
+                                    "~class": "0x0"
+                                  },
+                                  {
+                                    "0xd851ffa3": "de0b76d4-7094-46b9-a731-768cbebd2dc4",
+                                    "Condition": {
+                                      "TableValue": {
+                                        "Var": "WardHasNearSight",
+                                        "~class": "ScriptTableSet"
+                                      },
+                                      "~class": "TableValueExistsScriptCondition"
+                                    },
+                                    "Invert": true,
+                                    "~class": "0xe524b2fc"
+                                  },
+                                  {
+                                    "0xd851ffa3": "9f39222f-efcf-419e-aaa4-03e06fefb4b7",
+                                    "Condition": {
+                                      "Value1": {
+                                        "Var": "0x77d2a990",
+                                        "~class": "ScriptTableGet"
+                                      },
+                                      "Value2": {
+                                        "~class": "BoolGet"
+                                      },
+                                      "~class": "ComparisonScriptCondition"
+                                    },
+                                    "Sequence": {
+                                      "blocks": [
+                                        {
+                                          "~class": "0x0"
+                                        }
+                                      ],
+                                      "~class": "ScriptSequence"
+                                    },
+                                    "type": 2,
+                                    "~class": "0xe524b2fc"
+                                  }
+                                ],
+                                "~class": "ScriptSequence"
+                              },
+                              "~class": "0xe524b2fc"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "~class": "0xe524b2fc"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "SortedByKeys": {
+                    "~class": "BoolGet"
+                  },
+                  "Table": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "0xf2743c6a",
+                    "~class": "CustomTableGet"
+                  },
+                  "~class": "ForEachInCustomTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "a5d1b4d5-0e3f-490b-a9a9-e6d7ca4ea529",
+            "Sequence": {
+              "blocks": [
+                {
+                  "~class": "0x0"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0xec26660f": {
+        "blocks": [
+          {
+            "0xd851ffa3": "d3e5acbc-37fb-4be4-80c4-70477c3086b3",
+            "Condition": {
+              "TableValue": {
+                "Table": {
+                  "~class": "WorldVars"
+                },
+                "Var": "DragonElementalTerrainActive",
+                "~class": "ScriptTableSet"
+              },
+              "~class": "TableValueExistsScriptCondition"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "0b1b7114-78e4-48dd-a76f-10777e3942b8",
+            "Condition": {
+              "Operation": 1,
+              "Value1": {
+                "Table": {
+                  "~class": "WorldVars"
+                },
+                "Var": "0xaeea36d6",
+                "~class": "ScriptTableGet"
+              },
+              "Value2": {
+                "~class": "IntGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "type": 1,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "c06b7a81-818f-4345-9e84-23022982fb77",
+            "Condition": {
+              "Value1": {
+                "Table": {
+                  "~class": "InstanceVars"
+                },
+                "Var": "IsActive",
+                "~class": "ScriptTableGet"
+              },
+              "Value2": {
+                "~class": "BoolGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "a4f7b866-2592-4fe1-93c1-31633f7800a7",
+                  "Dest": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "IsActive",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": true,
+                    "~class": "BoolGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "0xd851ffa3": "9586e470-294e-4203-bff2-f1103f1bd616",
+                  "Var": {
+                    "~class": "0x0"
+                  },
+                  "~class": "0x851b8dc5"
+                },
+                {
+                  "0xd851ffa3": "6ff47389-3e68-4547-9d64-3ec74fcdb2dc",
+                  "IsDisabled": true,
+                  "Target": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "0x34aa9be8",
+                    "~class": "0x132b63da"
+                  },
+                  "~class": "0x3aa63a24"
+                },
+                {
+                  "~class": "0x0"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 1,
+            "~class": "0xe524b2fc"
+          },
+          {
+            "~class": "0x0"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      }
+    },
+    "~class": "BuffScript"
+  },
   "0x9ea2ed84": {
     "ScriptName": "Ruby_LargeMission_Karthus_Crystal_Buff",
     "path": "0x9ea2ed84",
@@ -12141,6 +16405,98 @@
           },
           {
             "0xd851ffa3": "02231651-0b89-495d-bc73-f30f56e52735",
+            "Sequence": {
+              "blocks": [
+                {
+                  "~class": "0x0"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      }
+    },
+    "~class": "BuffScript"
+  },
+  "0xa236851": {
+    "ScriptName": "Homeguards2026_LaneVFX_PlayerBuff",
+    "path": "0xa236851",
+    "sequences": {
+      "0x69523460": {
+        "blocks": [
+          {
+            "0xd851ffa3": "f1a61a6d-8579-420a-80f0-662687ff82e5",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "laneID",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "5739ae71-780f-468a-9bfc-0af5a120bc5f",
+            "Var": {
+              "~class": "0x0"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "10fbabc8-ec2a-46a4-849c-cfd119229255",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "LaneMarker",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "Var": "0xd791104e",
+              "~class": "ScriptTableGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "1d08c923-a5fc-4102-85ec-66e7e22019f6",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "AreaTriggerRadius",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "value": 2000,
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "~class": "0x0"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0x71b38c83": {
+        "blocks": [
+          {
+            "~class": "0x0"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0xec26660f": {
+        "blocks": [
+          {
+            "0xd851ffa3": "8e00409b-460c-4867-9fdb-7a27fa0f85bf",
+            "Condition": {
+              "~class": "0x0"
+            },
+            "Invert": true,
             "Sequence": {
               "blocks": [
                 {
@@ -13875,6 +18231,1289 @@
     },
     "~class": "BuffScript"
   },
+  "0xb1ec509a": {
+    "PreloadData": {
+      "ModulePreloads": [
+        {
+          "PreloadResourceName": "ContribScores",
+          "~class": "ScriptPreloadModule"
+        }
+      ],
+      "~class": "LoLSpellPreloadData"
+    },
+    "ScriptName": "FaeLightRevealRegionBuff",
+    "functions": {
+      "0x18a49a3c": {
+        "0x7ca5f1b": true,
+        "FunctionDef": {
+          "0x8c54e274": [
+            {
+              "Input": {
+                "Var": "VisionID",
+                "~class": "ScriptTableSet"
+              },
+              "~class": "0x2330a302"
+            }
+          ],
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "0xd851ffa3": "53d11248-5adb-4cc8-a16e-2e9aacb5adb9",
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "0b0a704c-920a-4fe2-95b8-e998edff6729",
+                  "DestKey": {
+                    "Var": "unused",
+                    "~class": "ScriptTableSet"
+                  },
+                  "DestValue": {
+                    "Var": "TempBubble",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "SortedByKeys": {
+                    "~class": "BoolGet"
+                  },
+                  "Table": {
+                    "Var": "0x42206c2c",
+                    "~class": "CustomTableGet"
+                  },
+                  "~class": "ForEachInCustomTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "ScriptCommentBlock"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0x1d37559c": {
+        "FunctionDef": {
+          "0x8c54e274": [
+            {
+              "Input": {
+                "Var": "RegionID",
+                "~class": "ScriptTableSet"
+              },
+              "~class": "0x2330a302"
+            }
+          ],
+          "0xde888209": [
+            {
+              "Output": {
+                "Var": "0x42206c2c",
+                "~class": "ScriptTableGet"
+              },
+              "~class": "0x294650d7"
+            }
+          ],
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "a263f1a7-42cb-4141-9600-99b050338198",
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "95e6c613-73ec-417d-878f-ed681cec474f",
+                  "Dest": {
+                    "Var": "ListOfVisionBubbles",
+                    "~class": "CustomTableSet"
+                  },
+                  "~class": "CreateCustomTableBlock"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "71ecbedf-a444-4b1a-9f5d-9f2b96c83e40",
+                  "DestKey": {
+                    "Var": "unused",
+                    "~class": "ScriptTableSet"
+                  },
+                  "DestValue": {
+                    "Var": "TempPos",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "0xd851ffa3": "8636f491-ea2c-4872-807c-a4620cd64bb5",
+                        "DestTable": {
+                          "Var": "0xf1fe222b",
+                          "~class": "CustomTableGet"
+                        },
+                        "value": {
+                          "Var": "0x7822b7a2",
+                          "~class": "ScriptTableGet"
+                        },
+                        "~class": "InsertIntoCustomTableBlock"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "SortedByKeys": {
+                    "~class": "BoolGet"
+                  },
+                  "Table": {
+                    "Var": "0xb34f20c8",
+                    "~class": "CustomTableGet"
+                  },
+                  "~class": "ForEachInCustomTableBlock"
+                },
+                {
+                  "0xd851ffa3": "c73d4fc7-3da7-433a-bf3e-c4ff1902851b",
+                  "Dest": {
+                    "Var": "VisionID",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "Var": "0xf1fe222b",
+                    "~class": "ScriptTableGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "ScriptCommentBlock"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0x20396ae4": {
+        "FunctionDef": {
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "0xd851ffa3": "a4c199da-3897-41d9-a3ad-3c1924019445",
+            "Condition": {
+              "Value1": {
+                "Table": {
+                  "~class": "InstanceVars"
+                },
+                "Var": "0x626ab69",
+                "~class": "ScriptTableGet"
+              },
+              "Value2": {
+                "~class": "BoolGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "0bd6a658-1f68-4147-b656-128f6d1bf1d1",
+                  "Dest": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "HasBeenTracked",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": true,
+                    "~class": "BoolGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "~class": "0x0"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "996993ec-e28e-42fb-94a4-78bc57bd62f2",
+            "Condition": {
+              "~class": "0x0"
+            },
+            "Invert": true,
+            "Sequence": {
+              "blocks": [
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "d1082e6f-7650-474b-8c18-5e6606f7609b",
+                  "Dest": {
+                    "Table": {
+                      "~class": "NextBuffVars"
+                    },
+                    "Var": "ParentFaelightPad",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "0x6c031c8e",
+                    "~class": "ScriptTableGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "~class": "0x0"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0x4b4dc6c0": {
+        "FunctionDef": {
+          "0x8c54e274": [
+            {
+              "Input": {
+                "Var": "HasNearsight",
+                "~class": "ScriptTableSet"
+              },
+              "~class": "0x2330a302"
+            }
+          ],
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "0xd851ffa3": "829d1ef1-880f-45d3-beff-5111d04a6132",
+            "Condition": {
+              "Value1": {
+                "Var": "0xc1df39e",
+                "~class": "ScriptTableGet"
+              },
+              "Value2": {
+                "value": true,
+                "~class": "BoolGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "ada8cb5f-fe12-4198-bf7d-5e7798c077ae",
+                  "Condition": {
+                    "Value1": {
+                      "Table": {
+                        "~class": "InstanceVars"
+                      },
+                      "Var": "0xed462f6e",
+                      "~class": "ScriptTableGet"
+                    },
+                    "Value2": {
+                      "value": true,
+                      "~class": "BoolGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "4d848f67-7ede-4bc0-857a-8cb6296b2ce3",
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "afd2993a-e3f4-4446-9bee-1c4b4e7a5edd",
+                  "Condition": {
+                    "Value1": {
+                      "Table": {
+                        "~class": "InstanceVars"
+                      },
+                      "Var": "0xed462f6e",
+                      "~class": "ScriptTableGet"
+                    },
+                    "Value2": {
+                      "~class": "BoolGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "type": 3,
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0x516374eb": {
+        "FunctionDef": {
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "0xd851ffa3": "7aea524a-9b23-42b3-b530-c405dba966f2",
+            "Condition": {
+              "Value1": {
+                "Table": {
+                  "~class": "InstanceVars"
+                },
+                "Var": "0x22905817",
+                "~class": "ScriptTableGet"
+              },
+              "Value2": {
+                "~class": "BoolGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "ca4185a0-c172-4045-95a4-a0ab98f9d1c1",
+                  "Dest": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "HasBeenScanned",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": true,
+                    "~class": "BoolGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "7b3cfaca-ed7a-4d71-85ff-d5b9733ff0bd",
+                  "Dest": {
+                    "Var": "Pos",
+                    "~class": "VectorTableSet"
+                  },
+                  "Target": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "0x6c031c8e",
+                    "~class": "0x132b63da"
+                  },
+                  "~class": "0x667eafac"
+                },
+                {
+                  "~class": "0x0"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "4864f5ed-caad-41ad-b735-3aedc7e640f7",
+            "Dest": {
+              "Table": {
+                "~class": "NextBuffVars"
+              },
+              "Var": "ParentFaelightPad",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "0x6c031c8e",
+              "~class": "ScriptTableGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "~class": "0x0"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0x52eee126": {
+        "0x7ca5f1b": true,
+        "FunctionDef": {
+          "0x8c54e274": [
+            {
+              "Input": {
+                "Var": "ParticleID",
+                "~class": "ScriptTableSet"
+              },
+              "~class": "0x2330a302"
+            },
+            {
+              "Input": {
+                "Var": "VfxGroupID",
+                "~class": "ScriptTableSet"
+              },
+              "~class": "0x2330a302"
+            }
+          ],
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0x5df81219": {
+        "FunctionDef": {
+          "0xde888209": [
+            {
+              "Output": {
+                "Var": "0xc76df42e",
+                "~class": "ScriptTableGet"
+              },
+              "~class": "0x294650d7"
+            }
+          ],
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "a0fd00ff-24c5-4e03-9f23-1ab09f7fd915",
+            "Dest": {
+              "Var": "BonusScore",
+              "~class": "ScriptTableSet"
+            },
+            "Formula": "round(ptp.Duration * iv.VisionScoreRegionValPerMin)",
+            "~class": "0x15ebaa9c"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0x7be0a8bd": {
+        "blocks": [
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "21e4d463-d3a8-4b7c-b25e-b73db166053c",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "RevealRegionIsActive",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "value": true,
+              "~class": "BoolGet"
+            },
+            "~class": "SetVarInTableBlock"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0x8c17a39d": {
+        "blocks": [
+          {
+            "0xd851ffa3": "ddca6935-88e6-4bbe-b9a7-c34d008c417d",
+            "Dest": {
+              "Var": "Attacker",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "Var": "0xf42a0006",
+              "~class": "ScriptTableGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "2d79b7f4-c950-46e2-b30a-ecdefa1b19a7",
+            "DestKey": {
+              "Var": "index",
+              "~class": "ScriptTableSet"
+            },
+            "DestValue": {
+              "Var": "MisPointEntity",
+              "~class": "ScriptTableSet"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "8f359dfa-c8c5-4ed8-8a09-997de6b19fcd",
+                  "Dest": {
+                    "Var": "MisSpawnPos",
+                    "~class": "VectorTableSet"
+                  },
+                  "Target": {
+                    "Var": "0x18343f55",
+                    "~class": "0x132b63da"
+                  },
+                  "~class": "0x667eafac"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "3c7159a6-0257-493c-afa1-92cce0b2d472",
+                  "FunctionDefinition": {
+                    "0xde888209": {
+                      "0x2b051c8e": {
+                        "Var": "MisTargEntityList",
+                        "~class": "ScriptTableSet"
+                      }
+                    },
+                    "~class": "0x2a2c82dc"
+                  },
+                  "Target": {
+                    "Var": "0x18343f55",
+                    "~class": "0x132b63da"
+                  },
+                  "callback": {
+                    "FunctionName": "0xdaa34884",
+                    "Script": "0x72c776d2",
+                    "~class": "0xf6e1bec7"
+                  },
+                  "~class": "0x6c93a1b4"
+                },
+                {
+                  "0xd851ffa3": "2f082024-bef2-49b6-b9ca-4e61781fce31",
+                  "DestKey": {
+                    "Var": "MisTargIndex",
+                    "~class": "ScriptTableSet"
+                  },
+                  "DestValue": {
+                    "Var": "MissileTargetEntity",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "8f13fefe-0998-4e33-8207-31f97046be48",
+                        "Dest": {
+                          "Var": "MisEndPos",
+                          "~class": "VectorTableSet"
+                        },
+                        "Target": {
+                          "Var": "0x732921f5",
+                          "~class": "0x132b63da"
+                        },
+                        "~class": "0x667eafac"
+                      },
+                      {
+                        "0xd851ffa3": "a5f16964-4e93-42c6-b003-17cda77c8f56",
+                        "Dest": {
+                          "Table": {
+                            "~class": "NextSpellVars"
+                          },
+                          "Var": "TargetEntity",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Src": {
+                          "Var": "0x732921f5",
+                          "~class": "ScriptTableGet"
+                        },
+                        "~class": "SetVarInTableBlock"
+                      },
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "Table": {
+                    "Var": "0x6a1b797b",
+                    "~class": "CustomTableGet"
+                  },
+                  "~class": "ForEachInCustomTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "Table": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "0xe69f40a4",
+              "~class": "CustomTableGet"
+            },
+            "~class": "ForEachInCustomTableBlock"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0x9539e085": {
+        "FunctionDef": {
+          "0xde888209": [
+            {
+              "Output": {
+                "Var": "0x22905817",
+                "~class": "ScriptTableGet"
+              },
+              "~class": "0x294650d7"
+            }
+          ],
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "0xd851ffa3": "949c2e7e-91dc-43b6-ab7a-21a054b367d5",
+            "Dest": {
+              "Var": "HasBeenScanned",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "0x22905817",
+              "~class": "ScriptTableGet"
+            },
+            "~class": "SetVarInTableBlock"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0xad95fd79": {
+        "blocks": [
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "7ea4a1cc-d9ec-446d-bbe6-4ec241e02bcf",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "RevealRegionIsActive",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "BoolGet"
+            },
+            "~class": "SetVarInTableBlock"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0xe117306": {
+        "FunctionDef": {
+          "0xde888209": [
+            {
+              "Output": {
+                "Var": "0x377a3df2",
+                "~class": "ScriptTableGet"
+              },
+              "~class": "0x294650d7"
+            },
+            {
+              "Output": {
+                "Var": "0x571380fe",
+                "~class": "ScriptTableGet"
+              },
+              "~class": "0x294650d7"
+            }
+          ],
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "521afcbb-5925-43c9-927c-b697ff60edfb",
+            "Dest": {
+              "Var": "RegionName",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "value": "FaeLights_Order",
+              "~class": "StringGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "770322b9-1198-4076-9167-8668b2106aec",
+            "Dest": {
+              "Var": "RegionEffectResource",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "0x5c06309c": {
+                "0x5a81f39a": "0x3409698c",
+                "~class": "0xba65f1fe"
+              },
+              "~class": "0x7908fe0e"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "124955a0-b853-4613-a256-19dbda73f22d",
+            "Dest": {
+              "Var": "RegionEffectResource",
+              "~class": "ScriptTableSet"
+            },
+            "IsDisabled": true,
+            "Src": {
+              "0x5c06309c": {
+                "0x5a81f39a": "SRU_FaeLightWardPad_Uppies_Order",
+                "~class": "0xba65f1fe"
+              },
+              "~class": "0x7908fe0e"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "7ec96b1a-fc24-4787-a33d-e3018e828e5d",
+            "Condition": {
+              "Value1": {
+                "Var": "teamId",
+                "~class": "ScriptTableGet"
+              },
+              "Value2": {
+                "~class": "0x0"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "10bd4e16-e21b-451a-8b8e-b622aaecb241",
+                  "Dest": {
+                    "Var": "RegionName",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": "FaeLights_Chaos",
+                    "~class": "StringGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "0xd851ffa3": "d294e9bf-aba4-4656-bb4e-c287a098f99c",
+                  "Dest": {
+                    "Var": "RegionEffectResource",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "0x5c06309c": {
+                      "0x5a81f39a": "0xeb9309fc",
+                      "~class": "0xba65f1fe"
+                    },
+                    "~class": "0x7908fe0e"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "0xd851ffa3": "00f1688c-6ff4-4163-9090-b4d8b8559570",
+                  "Dest": {
+                    "Var": "RegionEffectResource",
+                    "~class": "ScriptTableSet"
+                  },
+                  "IsDisabled": true,
+                  "Src": {
+                    "0x5c06309c": {
+                      "0x5a81f39a": "SRU_FaeLightWardPad_Uppies_Chaos",
+                      "~class": "0xba65f1fe"
+                    },
+                    "~class": "0x7908fe0e"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          }
+        ],
+        "~class": "ScriptFunction"
+      },
+      "0xeda2c38d": {
+        "FunctionDef": {
+          "0x8c54e274": [
+            {
+              "Input": {
+                "Var": "RegionID",
+                "~class": "ScriptTableSet"
+              },
+              "~class": "0x2330a302"
+            }
+          ],
+          "0xde888209": [
+            {
+              "Output": {
+                "Var": "0x377a3df2",
+                "~class": "ScriptTableGet"
+              },
+              "~class": "0x294650d7"
+            }
+          ],
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "f6e60c0e-d06a-4493-99d2-dbc4a6dabe27",
+            "Dest": {
+              "Var": "ListOfVfxIDs",
+              "~class": "CustomTableSet"
+            },
+            "~class": "CreateCustomTableBlock"
+          },
+          {
+            "0xd851ffa3": "d1fb632e-8b1b-4955-883c-011fa4c65783",
+            "Condition": {
+              "Operation": 3,
+              "Value1": {
+                "Var": "timestamp",
+                "~class": "ScriptTableGet"
+              },
+              "Value2": {
+                "Table": {
+                  "~class": "InstanceVars"
+                },
+                "Var": "0x7da4a2fa",
+                "~class": "ScriptTableGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "400dd2a9-2af4-4ecd-8d7c-28b97c84b317",
+                  "Dest": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "EnemyPulseReadyTime",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Formula": "ptp.Timestamp + iv.EnemyPulseCooloffDuration",
+                  "~class": "0x15ebaa9c"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "40ab4c11-fa6c-4d7e-a94e-f677b673c53c",
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "0xd851ffa3": "73d0e6c4-7fd5-4d6b-a71b-229c51c75c7b",
+                        "DestKey": {
+                          "Var": "unused",
+                          "~class": "ScriptTableSet"
+                        },
+                        "DestValue": {
+                          "Var": "TempPos",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "~class": "0x0"
+                            },
+                            {
+                              "~class": "0x0"
+                            },
+                            {
+                              "0xd851ffa3": "064157c9-03a3-449f-9271-fa8ca66f628c",
+                              "DestTable": {
+                                "Var": "0xef2b0da2",
+                                "~class": "CustomTableGet"
+                              },
+                              "value": {
+                                "Var": "0xc7465412",
+                                "~class": "ScriptTableGet"
+                              },
+                              "~class": "InsertIntoCustomTableBlock"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "SortedByKeys": {
+                          "~class": "BoolGet"
+                        },
+                        "Table": {
+                          "Var": "0xb34f20c8",
+                          "~class": "CustomTableGet"
+                        },
+                        "~class": "ForEachInCustomTableBlock"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "ScriptCommentBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "fd894ec4-3d35-4ec4-89ce-322c3967ad70",
+            "Dest": {
+              "Var": "ParticleID",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "Var": "0xef2b0da2",
+              "~class": "ScriptTableGet"
+            },
+            "~class": "SetVarInTableBlock"
+          }
+        ],
+        "~class": "ScriptFunction"
+      }
+    },
+    "globalProperties": {
+      "buffName": "FaelightRevealRegionBuff",
+      "buffTextureName": "ASSETS/Shared/Spells/Icons2D/SRT_Faelight_WardBuff.dds",
+      "~class": "ScriptGlobalProperties"
+    },
+    "path": "0xb1ec509a",
+    "sequences": {
+      "0x69523460": {
+        "blocks": [
+          {
+            "0xd851ffa3": "94a47413-fb5d-4bfb-a350-2afe27ac92b2",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "VisionBubbleRadius",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "9f1fe979-7936-43e7-add9-507bf6d2a90a",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "ParentFaelightPad",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "f85ec64d-2261-4c89-acc3-ca21167f498d",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "HasBeenTracked",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "1680e9a7-8f5b-45d3-ae0b-5d184358e46c",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "HasBeenScanned",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "af449ceb-8ee4-4388-93c5-0b8ef51fd9a2",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "RevealRegionID",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "bce2c217-9ec1-48eb-aaf2-e21901bcc827",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "VisionScoreRegionValPerMin",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "c160b41a-a027-429d-ba8f-3b578dc5b6b4",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "StartingMissilePoints",
+              "~class": "0x9def8cb"
+            },
+            "~class": "0x851b8dc5"
+          },
+          {
+            "0xd851ffa3": "198f0f64-a9d7-4051-883e-e2e4b3d5a973",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "RevealRegionIsActive",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "BoolGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "0ec6fd9c-c103-4a3e-84fc-b1bfdcae984e",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "EnemyPulseReadyTime",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "ba935ca0-7675-445a-a481-72ed0f2be261",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "EnemyPulseCooloffDuration",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "value": 10,
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "36a23135-4196-475c-b9f2-3089e714e073",
+            "Dest": {
+              "Var": "CountdownSpeed",
+              "~class": "ScriptTableSet"
+            },
+            "Formula": "45 / iv.FullDuration",
+            "~class": "0x15ebaa9c"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "7261c2e4-e704-439d-9001-4fdff8d256b1",
+            "~class": "ScriptCommentBlock"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0x71b38c83": {
+        "blocks": [
+          {
+            "0xd851ffa3": "c3942c94-8795-41b4-aca4-28f653bbc2b9",
+            "Condition": {
+              "TableValue": {
+                "Table": {
+                  "~class": "InstanceVars"
+                },
+                "Var": "VisionID",
+                "~class": "ScriptTableSet"
+              },
+              "~class": "TableValueExistsScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "~class": "0x0"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "91f61f98-e905-4e9c-957a-6817035b21e6",
+            "Condition": {
+              "TableValue": {
+                "Table": {
+                  "~class": "InstanceVars"
+                },
+                "Var": "LingerVfxParticleID",
+                "~class": "ScriptTableSet"
+              },
+              "~class": "TableValueExistsScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "~class": "0x0"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "abbd769f-66bb-45f4-83f4-ffb89ffd5998",
+            "Condition": {
+              "~class": "0x0"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "~class": "0x0"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "b4f8fae6-d93e-46ae-8a26-d0c1e07eb046",
+            "Dest": {
+              "Var": "VisScoreContrib",
+              "~class": "ScriptTableSet"
+            },
+            "Formula": "(iv.FullDuration - ptp.RemainingDuration) * iv.VisionScoreRegionValPerMin",
+            "~class": "0x15ebaa9c"
+          },
+          {
+            "0xd851ffa3": "77fded9b-0acc-435f-bf77-d827a14f1d7e",
+            "Condition": {
+              "TableValue": {
+                "Table": {
+                  "~class": "CharacterVars"
+                },
+                "Var": "ContribWardPosScoreMod",
+                "~class": "ScriptTableSet"
+              },
+              "~class": "TableValueExistsScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "ac44a1cc-9c3b-41d9-b49d-5912747f1117",
+                  "Dest": {
+                    "Var": "VisScoreContrib",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Formula": "ptp.VisScoreContrib * cv.ContribWardPosScoreMod",
+                  "~class": "0x15ebaa9c"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "28a66745-f7d5-4496-b922-879c2109d38b",
+            "Dest": {
+              "Var": "VisScoreContrib",
+              "~class": "ScriptTableSet"
+            },
+            "Formula": "round(ptp.VisScoreContrib)",
+            "~class": "0x15ebaa9c"
+          },
+          {
+            "~class": "0x0"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      }
+    },
+    "~class": "BuffScript"
+  },
   "0xb23368c3": {
     "ScriptName": "Ruby_Curse_PolymorphZones",
     "path": "0xb23368c3",
@@ -14054,6 +19693,107 @@
         "blocks": [
           {
             "~class": "0x0"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      }
+    },
+    "~class": "BuffScript"
+  },
+  "0xb70799a2": {
+    "ScriptName": "NearbySuperwardBlackoutBuff",
+    "functions": {
+      "0x31501e3c": {
+        "FunctionDef": {
+          "0x8c54e274": [
+            {
+              "Input": {
+                "Var": "UnitToCheck",
+                "~class": "ScriptTableSet"
+              },
+              "~class": "0x2330a302"
+            }
+          ],
+          "0xde888209": [
+            {
+              "Output": {
+                "Var": "0x777397b",
+                "~class": "ScriptTableGet"
+              },
+              "~class": "0x294650d7"
+            }
+          ],
+          "~class": "0xeca2da9a"
+        },
+        "blocks": [
+          {
+            "0xd851ffa3": "c9bd72a7-23a3-46be-bae1-d08d1dcdc395",
+            "Dest": {
+              "Var": "Result",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "BoolGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "1b294b77-429f-4e60-a593-00fc6d83d705",
+            "Condition": {
+              "~class": "0x0"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "2d31ebc1-b8f2-418d-9017-ff8f02894081",
+                  "Dest": {
+                    "Var": "Result",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": true,
+                    "~class": "BoolGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "56bd60f0-1bec-4751-bac4-d8a8cd2174f4",
+            "Dest": {
+              "Var": "IsInRange",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "Var": "Result",
+              "~class": "ScriptTableGet"
+            },
+            "~class": "SetVarInTableBlock"
+          }
+        ],
+        "~class": "ScriptFunction"
+      }
+    },
+    "path": "0xb70799a2",
+    "sequences": {
+      "0x69523460": {
+        "blocks": [
+          {
+            "0xd851ffa3": "419c2e9f-8679-40ea-b9ac-cd6c85b91025",
+            "Var": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "BlackoutRadius",
+              "~class": "ScriptTableSet"
+            },
+            "~class": "0x851b8dc5"
           }
         ],
         "~class": "RootScriptSequence"

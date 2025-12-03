@@ -505,6 +505,7 @@
         "~class": "AttackSlotData"
       }
     ],
+    "critDamageMultiplier": 2.0,
     "damagePerLevel": 3.0,
     "extraAttacks": [
       {
@@ -755,6 +756,19 @@
             0.6000000238418579
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "mName": "NonCritBackstabMod",
+          "mValues": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -934,14 +948,29 @@
             {
               "mSubparts": [
                 {
-                  "mNumber": 1.5499999523162842,
+                  "mNumber": 1.0,
                   "~class": "NumberCalculationPart"
                 },
                 {
-                  "mCoefficient": 1.0,
-                  "mStat": 9,
-                  "mStatFormula": 2,
-                  "~class": "StatByCoefficientCalculationPart"
+                  "mPart1": {
+                    "mDataValue": "0xb81e42ad",
+                    "~class": "NamedDataValueCalculationPart"
+                  },
+                  "mPart2": {
+                    "mSubparts": [
+                      {
+                        "mCoefficient": 1.0,
+                        "mStat": 9,
+                        "~class": "StatByCoefficientCalculationPart"
+                      },
+                      {
+                        "mNumber": -1.0,
+                        "~class": "NumberCalculationPart"
+                      }
+                    ],
+                    "~class": "SumOfSubPartsCalculationPart"
+                  },
+                  "~class": "ProductOfSubPartsCalculationPart"
                 }
               ],
               "~class": "SumOfSubPartsCalculationPart"
@@ -2627,13 +2656,13 @@
         {
           "mName": "AttackBonusADRatio",
           "mValues": [
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448
           ],
           "~class": "SpellDataValue"
         }
@@ -2747,17 +2776,6 @@
         "ASSETS/Characters/Shaco/HUD/Icons2D/Jester_CarefulStrikes.dds"
       ],
       "mSpellCalculations": {
-        "0x3445d362": {
-          "mFormulaParts": [
-            {
-              "mCoefficient": 1.0,
-              "mStat": 9,
-              "mStatFormula": 1,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
         "BasicAttackDamage": {
           "mFormulaParts": [
             {

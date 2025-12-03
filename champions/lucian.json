@@ -415,7 +415,7 @@
     "armorPerLevel": 4.199999809265137,
     "attackRange": 500.0,
     "attackSpeed": 0.6380000114440918,
-    "attackSpeedPerLevel": 3.299999952316284,
+    "attackSpeedPerLevel": 2.5,
     "attackSpeedRatio": 0.6380000114440918,
     "baseArmor": 28.0,
     "baseDamage": 60.0,
@@ -510,7 +510,8 @@
         "~class": "AttackSlotData"
       }
     ],
-    "damagePerLevel": 2.9000000953674316,
+    "critDamageMultiplier": 2.0,
+    "damagePerLevel": 2.5,
     "extraAttacks": [
       {
         "mAttackName": "LucianBasicAttack2",
@@ -1946,15 +1947,54 @@
     "mSpell": {
       "DataValues": [
         {
+          "mName": "BaseDamage",
+          "mValues": [
+            45.0,
+            80.0,
+            115.0,
+            150.0,
+            185.0,
+            220.0,
+            255.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
           "mName": "BonusADRatio",
           "mValues": [
-            0.44999998807907104,
-            0.6000000238418579,
-            0.75,
-            0.8999999761581421,
-            1.0499999523162842,
-            1.2000000476837158,
-            1.350000023841858
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "Range",
+          "mValues": [
+            1000.0,
+            1000.0,
+            1000.0,
+            1000.0,
+            1000.0,
+            1000.0,
+            1000.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "Width",
+          "mValues": [
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0
           ],
           "~class": "SpellDataValue"
         }
@@ -2048,14 +2088,14 @@
               "Elements": [
                 {
                   "nameOverride": "Spell_ListType_Damage",
-                  "type": "Effect%dAmount",
+                  "type": "BaseDamage",
                   "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "Style": 1,
                   "nameOverride": "Spell_ListType_AttackDamageBonus",
-                  "type": "Effect%dAmount",
+                  "type": "BonusADRatio",
                   "typeIndex": 2,
                   "~class": "TooltipInstanceListElement"
                 },
@@ -2085,39 +2125,12 @@
       },
       "mEffectAmount": [
         {
-          "value": [
-            85.0,
-            85.0,
-            115.0,
-            145.0,
-            175.0,
-            205.0,
-            205.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            60.0,
-            60.0,
-            75.0,
-            90.0,
-            105.0,
-            120.0,
-            120.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            1000.0,
-            1000.0,
-            1000.0,
-            1000.0,
-            1000.0,
-            1000.0,
-            1000.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
@@ -2133,15 +2146,6 @@
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            100.0,
-            100.0,
-            100.0,
-            100.0,
-            100.0,
-            100.0,
-            100.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
@@ -2190,8 +2194,8 @@
         "TotalDamage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mDataValue": "BonusADRatio",
@@ -2200,7 +2204,6 @@
               "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
-          "tooltipOnly": true,
           "~class": "GameCalculation"
         }
       },
@@ -2417,71 +2420,6 @@
     "mSpell": {
       "DataValues": [
         {
-          "mName": "Duration",
-          "mValues": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "NumShots",
-          "mValues": [
-            22.0,
-            22.0,
-            22.0,
-            22.0,
-            22.0,
-            22.0,
-            22.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "RecastLockout",
-          "mValues": [
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "RangeCheck",
-          "mValues": [
-            1050.0,
-            1050.0,
-            1050.0,
-            1050.0,
-            1050.0,
-            1050.0,
-            1050.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "PercentDamageAmpToMinions",
-          "mValues": [
-            200.0,
-            200.0,
-            200.0,
-            200.0,
-            200.0,
-            200.0,
-            200.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "mName": "BaseDamage",
           "mValues": [
             0.0,
@@ -2508,15 +2446,93 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "CritRatio",
+          "mName": "DamageAPRatio",
           "mValues": [
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "CritValueMod",
+          "mValues": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "PercentDamageAmpToMinions",
+          "mValues": [
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "NumShots",
+          "mValues": [
+            22.0,
+            22.0,
+            22.0,
+            22.0,
+            22.0,
+            22.0,
+            22.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "Duration",
+          "mValues": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "RecastLockout",
+          "mValues": [
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "RangeCheck",
+          "mValues": [
+            1050.0,
+            1050.0,
+            1050.0,
+            1050.0,
+            1050.0,
+            1050.0,
+            1050.0
           ],
           "~class": "SpellDataValue"
         }
@@ -2669,36 +2685,34 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.15000000596046448,
-              "~class": "StatByCoefficientCalculationPart"
-            },
-            {
               "mDataValue": "DamageADRatio",
               "mStat": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "DamageAPRatio",
               "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
         },
         "TotalDamage": {
-          "mModifiedGameCalculation": "DamagePerBullet",
+          "mExpandedTooltipCalculationDisplay": 6,
+          "mModifiedGameCalculation": "TotalNumShots",
           "mMultiplier": {
             "mSubparts": [
               {
-                "mPart1": {
-                  "mDataValue": "CritRatio",
-                  "mStat": 8,
-                  "~class": "StatByNamedDataValueCalculationPart"
-                },
-                "mPart2": {
-                  "mNumber": 100.0,
-                  "~class": "NumberCalculationPart"
-                },
-                "~class": "ProductOfSubPartsCalculationPart"
+                "mDataValue": "baseDamage",
+                "~class": "NamedDataValueCalculationPart"
               },
               {
-                "mDataValue": "NumShots",
-                "~class": "NamedDataValueCalculationPart"
+                "mDataValue": "DamageADRatio",
+                "mStat": 2,
+                "~class": "StatByNamedDataValueCalculationPart"
+              },
+              {
+                "mDataValue": "DamageAPRatio",
+                "~class": "StatByNamedDataValueCalculationPart"
               }
             ],
             "~class": "SumOfSubPartsCalculationPart"
@@ -2706,29 +2720,45 @@
           "~class": "GameCalculationModified"
         },
         "TotalNumShots": {
+          "mExpandedTooltipCalculationDisplay": 6,
           "mFormulaParts": [
             {
               "mSubparts": [
                 {
+                  "mNumber": 1.0,
+                  "~class": "NumberCalculationPart"
+                },
+                {
                   "mPart1": {
-                    "mDataValue": "CritRatio",
+                    "mDataValue": "0xe2c90986",
                     "mStat": 8,
                     "~class": "StatByNamedDataValueCalculationPart"
                   },
                   "mPart2": {
-                    "mNumber": 100.0,
-                    "~class": "NumberCalculationPart"
+                    "mSubparts": [
+                      {
+                        "mCoefficient": 1.0,
+                        "mStat": 9,
+                        "~class": "StatByCoefficientCalculationPart"
+                      },
+                      {
+                        "mNumber": -1.0,
+                        "~class": "NumberCalculationPart"
+                      }
+                    ],
+                    "~class": "SumOfSubPartsCalculationPart"
                   },
                   "~class": "ProductOfSubPartsCalculationPart"
-                },
-                {
-                  "mDataValue": "NumShots",
-                  "~class": "NamedDataValueCalculationPart"
                 }
               ],
               "~class": "SumOfSubPartsCalculationPart"
             }
           ],
+          "mMultiplier": {
+            "mDataValue": "NumShots",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "mSimpleTooltipCalculationDisplay": 6,
           "~class": "GameCalculation"
         }
       },

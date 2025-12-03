@@ -1780,6 +1780,7 @@
         "~class": "AttackSlotData"
       }
     ],
+    "critDamageMultiplier": 2.0,
     "damagePerLevel": 2.0,
     "extraAttacks": [
       {
@@ -2761,19 +2762,6 @@
     "mSpell": {
       "DataValues": [
         {
-          "mName": "AttackADRatio",
-          "mValues": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "mName": "MagicDamageSplit",
           "mValues": [
             0.5,
@@ -2783,36 +2771,6 @@
             0.5,
             0.5,
             0.5
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "YonePercentCritDmgMod",
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "YoneCritTooltip",
-          "mValues": [
-            150.0,
-            150.0,
-            150.0,
-            150.0,
-            150.0,
-            150.0,
-            150.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "YoneReductionTooltip",
-          "mValues": [
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0
           ],
           "~class": "SpellDataValue"
         },
@@ -2839,6 +2797,19 @@
             1.0,
             1.0,
             1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "CritDamageMod",
+          "mValues": [
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421
           ],
           "~class": "SpellDataValue"
         }
@@ -2911,6 +2882,7 @@
       "mSpellCalculations": {
         "CurrentCritDamage": {
           "mDisplayAsPercent": true,
+          "mExpandedTooltipCalculationDisplay": 6,
           "mFormulaParts": [
             {
               "mCoefficient": 1.0,
@@ -2918,7 +2890,6 @@
               "~class": "StatByCoefficientCalculationPart"
             }
           ],
-          "mPrecision": 1,
           "~class": "GameCalculation"
         }
       },
@@ -3332,9 +3303,9 @@
             {
               "mStat": 2,
               "mSubpart": {
-                "mCoefficient": 1.0499999523162842,
+                "mDataValue": "ADRatio",
                 "mStat": 9,
-                "~class": "StatByCoefficientCalculationPart"
+                "~class": "StatByNamedDataValueCalculationPart"
               },
               "~class": "StatBySubPartCalculationPart"
             }

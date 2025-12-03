@@ -554,6 +554,7 @@
         "~class": "AttackSlotData"
       }
     ],
+    "critDamageMultiplier": 2.0,
     "criticalAttack": "SennaCritAttack",
     "deathEventListeningRadius": 2000.0,
     "extraAttacks": [
@@ -1488,11 +1489,16 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "BonusCritDamage",
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "CritReductionPercent",
+          "mName": "CritDamageMod",
+          "mValues": [
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421
+          ],
           "~class": "SpellDataValue"
         },
         {
@@ -1896,6 +1902,17 @@
             {
               "mCoefficient": 0.20000000298023224,
               "mStat": 2,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "CriticalDamage": {
+          "mDisplayAsPercent": true,
+          "mFormulaParts": [
+            {
+              "mCoefficient": 1.0,
+              "mStat": 9,
               "~class": "StatByCoefficientCalculationPart"
             }
           ],
