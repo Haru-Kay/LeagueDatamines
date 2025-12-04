@@ -48,6 +48,7 @@ champs.each { |champ|
 
 pool.post {
     system("wadtools -L error --progress false e -i \"D:/Games/Riot Games/League of Legends (PBE)/Game/DATA/FINAL/Localized/Global.en_US.wad.client\" -o \"D:/CommunityDragon/bins/data/menu/en_us/\"")
+    system("ruby stringtable.rb")
     puts "Generated stringtable"
 }
 

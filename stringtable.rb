@@ -145,6 +145,6 @@ def parse_rst(path)
 end
 
 entries = parse_rst("bins/data/menu/en_us/data/menu/en_us/lol.stringtable")
-File.open("temp/stringtable.json", 'wb') { |f|
+File.open("lang/stringtable.json", 'wb') { |f|
   f.write(JSON.pretty_generate(entries))
 }

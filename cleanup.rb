@@ -380,7 +380,7 @@ File.open("lang/lol.stringtable.json", 'wb') { |f| f.write(JSON.pretty_generate(
 print "done.\n"
 
 $lang = nil
-File.open("temp/stringtable.json", 'rb') { |f| $lang = LangHashWrapper.new(JSON.parse(f.read())) }
+File.open("lang/stringtable.json", 'rb') { |f| $lang = LangHashWrapper.new(JSON.parse(f.read())) }
 
 print "Loading and formatting miscellaneous game data..."
 Dir.each_child("game-data") { |path|
