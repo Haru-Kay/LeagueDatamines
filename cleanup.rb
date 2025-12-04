@@ -4,6 +4,7 @@ require 'hashie'
 require 'digest/xxhash'
 
 def xxh3(s)
+    return s if s.to_i(16).to_s(16) == s
     digest = Digest::XXH3_64bits.hexdigest(s)
     hashInt = digest.to_i(16)
 
@@ -109,6 +110,16 @@ def diff
     oldLang = {}
     File.open("live.lol.stringtable.json", 'rb') { |f| oldLang = JSON.parse(f.read()) }
     oldLang = oldLang["entries"] || oldLang
+    hash = {}
+    oldLang.transform_keys! { |k|
+        if k.start_with?("{")
+            ret = k[1..k.length - 1].to_i(16).to_s(16)
+        else
+            ret = xxh3(k.downcase)
+        end
+        hash.store(ret, k)
+        ret
+    }
     print "done.\n"
 
     print "Finding file diffs..."
@@ -118,8 +129,8 @@ def diff
 
     oldLang.each { |key, tl|
         next if tl.empty?
-        next if badString?(key, tl)
-        newTl = $cdLang[key]
+        next if badString?(hash.fetch(key, key), tl)
+        newTl = $lang[key]
 
         if newTl.nil?
             removedStrings.store(key, tl)
@@ -128,9 +139,9 @@ def diff
         end
     }
 
-    $cdLang.each { |key, newTl|
+    $lang.each { |key, newTl|
         next if newTl.empty?
-        next if badString?(key, newTl)
+        next if badString?(hash.fetch(key, key), newTl)
         tl = oldLang[key]
         if tl.nil?
             newStrings.store(key, newTl)
@@ -145,13 +156,15 @@ def diff
     removedStrings.each { |key, tl|
         champion = nil
         $champLang.each { |c| 
-            if key.include?(c)
-                champion = c unless champExceptions.any? { |ce| key.include?(ce) }
+            if hash.fetch(key, key).include?(c)
+                champion = c unless champExceptions.any? { |ce| hash.fetch(key, key).include?(ce) }
                 break
             end
         }
 
-        str = "REMOVED:\n#{key.inspect} = #{tl.inspect}\n"
+        s = hash.fetch(key, key)
+        s = "{#{"%010x" % s.to_i(16)}}" if s.to_i(16).to_s(16) == s
+        str = "REMOVED:\n#{s.inspect} = #{tl.inspect}\n"
         if champion
             champDiff[champion] ||= []
             champDiff[champion].push(str)
@@ -162,13 +175,15 @@ def diff
     newStrings.each { |key, tl|
         champion = nil
         $champLang.each { |c| 
-            if key.include?(c)
-                champion = c unless champExceptions.any? { |ce| key.include?(ce) }
+            if hash.fetch(key, key).include?(c)
+                champion = c unless champExceptions.any? { |ce| hash.fetch(key, key).include?(ce) }
                 break
             end
         }
 
-        str = "ADDED:\n#{key.inspect} = #{tl.inspect}\n"
+        s = hash.fetch(key, key)
+        s = "{#{"%010x" % s.to_i(16)}}" if s.to_i(16).to_s(16) == s
+        str = "ADDED:\n#{s.inspect} = #{tl.inspect}\n"
         if champion
             champDiff[champion] ||= []
             champDiff[champion].push(str)
@@ -179,8 +194,8 @@ def diff
     changedStrings.each { |key, tl|
         champion = nil
         $champLang.each { |c| 
-            if key.include?(c)
-                champion = c unless champExceptions.any? { |ce| key.include?(ce) }
+            if hash.fetch(key, key).include?(c)
+                champion = c unless champExceptions.any? { |ce| hash.fetch(key, key).include?(ce) }
                 break
             end
         }
@@ -228,7 +243,9 @@ def diff
         newInfix = newStr[firstDiff, newLastDiff - firstDiff + 1]
         suffix = oldStr[oldLastDiff + 1...]
         next if suffix.nil?
-        str = "CHANGED:\n#{key.inspect} =\n#{prefix.inspect}...\n  ...#{oldInfix.inspect}...\n  -->\n  ...#{newInfix.inspect}...\n#{suffix.inspect}\n"
+        s = hash.fetch(key, key)
+        s = "{#{"%010x" % s.to_i(16)}}" if s.to_i(16).to_s(16) == s
+        str = "CHANGED:\n#{s.inspect} =\n#{prefix.inspect}...\n  ...#{oldInfix.inspect}...\n  -->\n  ...#{newInfix.inspect}...\n#{suffix.inspect}\n"
         if champion
             champDiff[champion] ||= []
             champDiff[champion].push(str)
