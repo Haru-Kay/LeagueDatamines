@@ -1,0 +1,2450 @@
+{
+  "0x794e3f44": {
+    "ObjectName": "GangplankEBarrelChainVO",
+    "mScriptName": "GangplankEBarrelChainVO",
+    "~class": "SpellObject"
+  },
+  "Characters/Gangplank/Spells/GangplankBasicAttack": {
+    "ObjectName": "GangplankBasicAttack",
+    "mScriptName": "GangplankBasicAttack",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castFrame": 8.710000038146973,
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Gangplank_BA_tar",
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Gangplank/Spells/GangplankBilgewaterToken": {
+    "ObjectName": "GangplankBilgewaterToken",
+    "mBuff": {
+      "mDescription": "<titleLeft>Silver Serpents</titleLeft><mainText>Trade in 500 at the shop to upgrade Cannon Barrage.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "GangplankBilgewaterToken",
+    "~class": "SpellObject"
+  },
+  "Characters/Gangplank/Spells/GangplankCritAttack": {
+    "ObjectName": "GangplankCritAttack",
+    "mScriptName": "GangplankCritAttack",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castFrame": 8.710000038146973,
+      "mAnimationName": "Crit",
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Gangplank_BA_Tar_Crit",
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Gangplank/Spells/GangplankEAbility/GangplankE": {
+    "ObjectName": "GangplankE",
+    "mScriptName": "GangplankE",
+    "mSpell": {
+      "DataValues": [
+        {
+          "mName": "BarrelSlow",
+          "mValues": [
+            30.0,
+            40.0,
+            50.0,
+            60.0,
+            70.0,
+            80.0,
+            90.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "castFrame": 10.0,
+      "castRadius": [
+        325.0,
+        325.0,
+        325.0,
+        325.0,
+        325.0,
+        325.0,
+        325.0
+      ],
+      "castRange": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delayTotalTimePercent": -1.0,
+      "mAffectsTypeFlags": 6154,
+      "mAmmoRechargeTime": [
+        17.0,
+        17.0,
+        16.0,
+        15.0,
+        14.0,
+        13.0,
+        12.0
+      ],
+      "mAnimationName": "Spell3",
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.25,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "centerLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "~class": "TargeterDefinitionAoe"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Bonus Damage Against Champions",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 3,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Max Charges",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "nameOverride": "Slow",
+                  "type": "BarrelSlow",
+                  "typeIndex": 4,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "AmmoRechargeTime",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyCooldown": "@AmmoRechargeTime@s Recharge (max: @MaxAmmo@)",
+            "keyCost": "No Cost",
+            "keyName": "Powder Keg",
+            "keySummary": "Gangplank uncovers a powder keg at target location. If he attacks it, it explodes, spreading the attack's damage to enemies in the area, slowing them.",
+            "keyTooltip": "Gangplank places a powder keg that can be attacked by Gangplank and enemy champions for @Effect5Amount@ seconds. When an enemy destroys it, the keg is defused. When Gangplank destroys it, it explodes, <status>Slowing</status> by @FinalSlowAmount@% for @Effect2Amount@ seconds and dealing the <physicalDamage>Attack's damage</physicalDamage>, ignoring @Effect10Amount@% Armor. Champions take an additional <physicalDamage>@Effect3Amount@ physical damage</physicalDamage>.<br><br>Keg health decays every @f5@ seconds. Keg explosions detonate other kegs with overlapping blast zones, but don't deal damage to the same target more than once. Keg explosions triggered by <spellName>{{Spell_GangplankQWrapper_Name}}</spellName> will grant the bonus gold for targets killed.",
+            "keyTooltipExtendedBelowLine": "<rules>Keg decay rate increases at level 7 and 13.</rules>"
+          },
+          "mObjectName": "GangplankE",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.4000000059604645,
+      "mEffectAmount": [
+        {
+          "value": [
+            3.0,
+            3.0,
+            3.0,
+            4.0,
+            4.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            80.0,
+            75.0,
+            105.0,
+            135.0,
+            165.0,
+            195.0,
+            240.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            40.0,
+            40.0,
+            50.0,
+            60.0,
+            70.0,
+            80.0,
+            90.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            25.0,
+            25.0,
+            25.0,
+            25.0,
+            25.0,
+            25.0,
+            25.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mFloatVarsDecimals": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "mImgIconName": [
+        "ASSETS/Characters/Gangplank/HUD/Icons2D/Gangplank_E.dds"
+      ],
+      "mMaxAmmo": [
+        3,
+        3,
+        3,
+        4,
+        4,
+        5,
+        5
+      ],
+      "mSpellCalculations": {
+        "FinalSlowAmount": {
+          "mExpandedTooltipCalculationDisplay": 6,
+          "mFormulaParts": [
+            {
+              "mDataValue": "BarrelSlow",
+              "~class": "NamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellRevealsChampion": false,
+      "mTargetingTypeData": {
+        "~class": "Area"
+      },
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Gangplank/Spells/GangplankEAbility/GangplankEBarrelActive": {
+    "ObjectName": "GangplankEBarrelActive",
+    "mBuff": {
+      "mDescription": "<titleLeft>Powder Keg</titleLeft><mainText>Gangplank can explode these kegs to damage and slow enemies in the area.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "GangplankEBarrelActive",
+    "~class": "SpellObject"
+  },
+  "Characters/Gangplank/Spells/GangplankEAbility/GangplankEBarrelFuseMissile": {
+    "ObjectName": "GangplankEBarrelFuseMissile",
+    "mScriptName": "GangplankEBarrelFuseMissile",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "castConeDistance": 100.0,
+      "castFrame": 7.53000020980835,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        1200.0,
+        1200.0,
+        1200.0,
+        1200.0,
+        1200.0,
+        1200.0,
+        1200.0
+      ],
+      "castRangeDisplayOverride": [
+        1175.0,
+        1175.0,
+        1175.0,
+        1175.0,
+        1175.0,
+        1175.0,
+        1175.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delayCastOffsetPercent": -0.5,
+      "delayTotalTimePercent": -0.5,
+      "flags": 4,
+      "mAffectsTypeFlags": 6154,
+      "mAlternateName": "EzrealMysticShotMissile",
+      "mAnimationName": "Spell1",
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.25099998712539673,
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "hideWithLineIndicator": true,
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "endLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "lineStopsAtEndPosition": false,
+            "lineWidth": {
+              "mPerLevelValues": [
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0
+              ],
+              "mValueType": 2,
+              "~class": "FloatPerSpellLevel"
+            },
+            "~class": "TargeterDefinitionLine"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 1.2000000476837158,
+      "mEffectAmount": [
+        {
+          "value": [
+            30.0,
+            90.0,
+            150.0,
+            245.0,
+            315.0,
+            440.0,
+            565.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            2.25,
+            2.5,
+            2.75,
+            3.0,
+            3.25,
+            3.5,
+            3.75
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mHitBoneName": "Root",
+      "mImgIconName": [
+        "FallenAngel_DarkBinding.dds"
+      ],
+      "mLineWidth": 60.0,
+      "mMissileEffectKey": "Gangplank_E_Fuze_Lit",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "mMissileWidth": 60.0,
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mStartBoneName": "Root",
+          "mTargetHeightAugment": 100.0,
+          "mTravelTime": 0.30000001192092896,
+          "~class": "FixedTimeMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mTargetingTypeData": {
+        "~class": "Location"
+      },
+      "missileSpeed": 2000.0,
+      "selectionPriority": 2,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Gangplank/Spells/GangplankEAbility/GangplankEShred": {
+    "ObjectName": "GangplankEShred",
+    "mBuff": {
+      "mDescription": "game_buff_tooltip_GangplankEShred",
+      "~class": "BuffData"
+    },
+    "mScriptName": "GangplankEShred",
+    "~class": "SpellObject"
+  },
+  "Characters/Gangplank/Spells/GangplankEAbility/GangplankESlow": {
+    "ObjectName": "GangplankESlow",
+    "mBuff": {
+      "mDescription": "<titleLeft>Groggy</titleLeft><mainText>Gangplank's exploding powder keg slowed this unit's movement.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "GangplankESlow",
+    "~class": "SpellObject"
+  },
+  "Characters/Gangplank/Spells/GangplankEAbility/GangplankESpellPassive": {
+    "ObjectName": "GangplankESpellPassive",
+    "mScriptName": "GangplankESpellPassive",
+    "mSpell": {
+      "castFrame": 10.0,
+      "castRadius": [
+        325.0,
+        325.0,
+        325.0,
+        325.0,
+        325.0,
+        325.0,
+        325.0
+      ],
+      "castRange": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delayTotalTimePercent": -1.0,
+      "mAffectsTypeFlags": 6154,
+      "mAmmoRechargeTime": [
+        20.0,
+        18.0,
+        16.0,
+        14.0,
+        12.0,
+        10.0,
+        10.0
+      ],
+      "mAnimationName": "Spell3",
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.25,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "centerLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "~class": "TargeterDefinitionAoe"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "type": "AmmoRechargeTime",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "nameOverride": "Slow",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 4,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Bonus Damage Against Champions",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 3,
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mObjectName": "GangplankESpellPassive",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.4000000059604645,
+      "mEffectAmount": [
+        {
+          "value": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            80.0,
+            80.0,
+            105.0,
+            130.0,
+            155.0,
+            180.0,
+            205.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            30.0,
+            40.0,
+            50.0,
+            60.0,
+            70.0,
+            80.0,
+            90.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            25.0,
+            25.0,
+            25.0,
+            25.0,
+            25.0,
+            25.0,
+            25.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mFloatVarsDecimals": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "mImgIconName": [
+        "ASSETS/Characters/Gangplank/HUD/Icons2D/Gangplank_E.dds"
+      ],
+      "mMaxAmmo": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "mSpellRevealsChampion": false,
+      "mTargetingTypeData": {
+        "~class": "Area"
+      },
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Gangplank/Spells/GangplankPassiveAbility/GangplankPassive": {
+    "ObjectName": "GangplankPassive",
+    "mBuff": {
+      "mDescription": "<titleLeft>Trial by Fire</titleLeft><mainText>Every @f3@ seconds, Gangplank's next melee attack ignites the target, dealing @f1@ <font color='#FF8C00'>(+@f2@)</font> bonus true damage over 2.5 seconds (half damage against turrets) and granting Gangplank 30% Move Speed for 2 seconds.<br><br>Destroying a Powder Keg refreshes Trial by Fire and grants him the Move Speed.<br><br><font color='#99FF99'>Parrrley does not activate Trial by Fire.</font></mainText>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "GangplankPassive",
+    "mSpell": {
+      "DataValues": [
+        {
+          "mName": "Cooldown",
+          "mValues": [
+            15.0,
+            15.0,
+            15.0,
+            15.0,
+            15.0,
+            15.0,
+            15.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "OldMoveSpeed",
+          "mValues": [
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "MoveSpeedDuration",
+          "mValues": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "DoTDuration",
+          "mValues": [
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "TurretDamageMult",
+          "mValues": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ADRatio",
+          "mValues": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "castRange": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyCooldown": "@Cooldown@s %i:cooldown%",
+            "keyName": "Trial by Fire",
+            "keySummary": "Every few seconds, Gangplank's melee strike will set his opponent on fire.",
+            "keyTooltip": "Gangplank's melee Attacks ignite the target, dealing an additional <trueDamage>@TotalDamage@ true damage</trueDamage> over @DoTDuration@ seconds and granting Gangplank <speed>@MoveSpeed@ Move Speed</speed> for @MoveSpeedDuration@ seconds.<br><br>Destroying a <keywordMajor>Powder Keg</keywordMajor> refreshes this Cooldown and grants Gangplank the same <speed>Move Speed</speed>.",
+            "keyTooltipExtended": "{{Spell_GangplankPassive_Tooltip}}<br><br><rules>Deals 50% damage to turrets.<br><spellName>Trial By Fire's</spellName> damage increases based on Critical Strike Chance.<br><spellName>{{Spell_GangplankQWrapper_Name}}</spellName> does not deal this Ability's bonus damage.</rules>"
+          },
+          "mObjectName": "GangplankPassive",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "ASSETS/Characters/Gangplank/HUD/Icons2D/Gangplank_Passive.dds"
+      ],
+      "mSpellCalculations": {
+        "MoveSpeed": {
+          "mDisplayAsPercent": true,
+          "mFormulaParts": [
+            {
+              "mEndValue": 0.30000001192092896,
+              "mStartValue": 0.15000000596046448,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "TotalDamage": {
+          "mExpandedTooltipCalculationDisplay": 0,
+          "mFormulaParts": [
+            {
+              "mEndValue": 250.0,
+              "mStartValue": 50.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            },
+            {
+              "mDataValue": "ADRatio",
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Gangplank/Spells/GangplankPassiveAbility/GangplankPassiveAttack": {
+    "ObjectName": "GangplankPassiveAttack",
+    "mBuff": {
+      "mDescription": "<titleLeft>Trial by Fire</titleLeft><mainText>This unit is on fire, taking damage over time.</mainText>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "GangplankPassiveAttack",
+    "~class": "SpellObject"
+  },
+  "Characters/Gangplank/Spells/GangplankPassiveAbility/GangplankPassiveAttackCD": {
+    "ObjectName": "GangplankPassiveAttackCD",
+    "mScriptName": "GangplankPassiveAttackCD",
+    "~class": "SpellObject"
+  },
+  "Characters/Gangplank/Spells/GangplankPassiveAbility/GangplankPassiveAttackDOT": {
+    "ObjectName": "GangplankPassiveAttackDOT",
+    "mBuff": {
+      "mDescription": "<titleLeft>Trial by Fire</titleLeft><mainText>This unit is on fire, taking damage over time.</mainText>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "GangplankPassiveAttackDOT",
+    "~class": "SpellObject"
+  },
+  "Characters/Gangplank/Spells/GangplankPassiveAbility/GangplankPassiveHaste": {
+    "ObjectName": "GangplankPassiveHaste",
+    "mBuff": {
+      "mDescription": "<titleLeft>Trial by Fire</titleLeft><mainText>Gangplank is hasted.</mainText>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "GangplankPassiveHaste",
+    "~class": "SpellObject"
+  },
+  "Characters/Gangplank/Spells/GangplankQWrapperAbility/GangplankQProceed": {
+    "ObjectName": "GangplankQProceed",
+    "mScriptName": "GangplankQProceed",
+    "mSpell": {
+      "alwaysSnapFacing": true,
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castFrame": 13.0,
+      "castRange": [
+        30000.0,
+        30000.0,
+        30000.0,
+        30000.0,
+        30000.0,
+        30000.0,
+        30000.0
+      ],
+      "mAffectsTypeFlags": 6186,
+      "mAlternateName": "GangplankQWrapper",
+      "mAnimationName": "Spell1",
+      "mCantCancelWhileWindingUp": true,
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mUseTooltipFromAnotherSpell": "Characters/Gangplank/Spells/GangplankQWrapperAbility/GangplankQWrapper",
+        "~class": "SpellDataResourceClient"
+      },
+      "mConsideredAsAutoAttack": true,
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Gangplank_Q_Tar",
+      "mHitEffectOrientType": 2,
+      "mMissileEffectKey": "Gangplank_Q_Mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 2600.0,
+          "mStartBoneName": "R_hand",
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mSpellTags": [
+        "SpecialCase_CastNotTriggerTear"
+      ],
+      "missileSpeed": 2600.0,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Gangplank/Spells/GangplankQWrapperAbility/GangplankQProceedCrit": {
+    "ObjectName": "GangplankQProceedCrit",
+    "mScriptName": "GangplankQProceedCrit",
+    "mSpell": {
+      "alwaysSnapFacing": true,
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castFrame": 13.0,
+      "castRange": [
+        30000.0,
+        30000.0,
+        30000.0,
+        30000.0,
+        30000.0,
+        30000.0,
+        30000.0
+      ],
+      "mAffectsTypeFlags": 6186,
+      "mAlternateName": "GangplankQWrapper",
+      "mAnimationName": "Spell1_BASE",
+      "mCantCancelWhileWindingUp": true,
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mUseTooltipFromAnotherSpell": "Characters/Gangplank/Spells/GangplankQWrapperAbility/GangplankQWrapper",
+        "~class": "SpellDataResourceClient"
+      },
+      "mConsideredAsAutoAttack": true,
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Gangplank_Q_Tar_Crit",
+      "mHitEffectOrientType": 2,
+      "mMissileEffectKey": "Gangplank_Q_Mis_Crit",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 2600.0,
+          "mStartBoneName": "R_hand",
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mSpellTags": [
+        "SpecialCase_CastNotTriggerTear"
+      ],
+      "missileSpeed": 2600.0,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Gangplank/Spells/GangplankQWrapperAbility/GangplankQWrapper": {
+    "ObjectName": "GangplankQWrapper",
+    "mScriptName": "GangplankQWrapper",
+    "mSpell": {
+      "DataValues": [
+        {
+          "mName": "SpellDamage",
+          "mValues": [
+            -20.0,
+            10.0,
+            40.0,
+            70.0,
+            100.0,
+            130.0,
+            160.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ADRatio",
+          "mValues": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "CherryRatio",
+          "mValues": [
+            0.07000000029802322,
+            0.07000000029802322,
+            0.07000000029802322,
+            0.07000000029802322,
+            0.07000000029802322,
+            0.07000000029802322,
+            0.07000000029802322
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "GameModeInteger",
+          "mValues": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "CritDamageMod",
+          "mValues": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "mName": "GameModeInteger",
+              "mValues": [
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
+      "castRange": [
+        625.0,
+        625.0,
+        625.0,
+        625.0,
+        625.0,
+        625.0,
+        625.0
+      ],
+      "cooldownTime": [
+        4.5,
+        4.5,
+        4.5,
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 6186,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "SpellDamage",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Plunder Gold",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 2,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Plunder Silver Serpents",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 5,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Parrrley",
+            "keySummary": "Shoots target, plundering Gold for each enemy unit killed.",
+            "keyTooltip": "{{Spell_GangplankQWrapper_Tooltip_@GameModeInteger@}}",
+            "keyTooltipExtended": "{{Spell_GangplankQWrapper_Tooltip_@GameModeInteger@}}<br><br>Total Gold plundered: <statTracking>@f1@ Gold</statTracking><br>Total SS plundered: <statTracking>@f3@ Silver Serpents</statTracking>",
+            "keyTooltipExtendedBelowLine": "<rules>The shot applies On-Hit effects (other than <spellName>{{Spell_GangplankPassive_Name}}</spellName>) and can critically strike for <physicalDamage>@ShotCrit@ physical damage</physicalDamage>.</rules>"
+          },
+          "mObjectName": "GangplankQWrapper",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 1.0,
+      "mDoesNotConsumeCooldown": true,
+      "mEffectAmount": [
+        {
+          "value": [
+            10.0,
+            10.0,
+            40.0,
+            70.0,
+            100.0,
+            130.0,
+            145.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            3.0,
+            3.0,
+            4.0,
+            5.0,
+            6.0,
+            7.0,
+            8.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            500.0,
+            500.0,
+            500.0,
+            500.0,
+            500.0,
+            500.0,
+            500.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            4.0,
+            4.0,
+            5.0,
+            6.0,
+            7.0,
+            8.0,
+            9.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mImgIconName": [
+        "ASSETS/Characters/Gangplank/HUD/Icons2D/Gangplank_Q.dds"
+      ],
+      "mSpellCalculations": {
+        "0xdae9927d": {
+          "mModifiedGameCalculation": "ShotDamage",
+          "mMultiplier": {
+            "mSubparts": [
+              {
+                "mNumber": 1.0,
+                "~class": "NumberCalculationPart"
+              },
+              {
+                "mPart1": {
+                  "mDataValue": "CritDamageMod",
+                  "~class": "NamedDataValueCalculationPart"
+                },
+                "mPart2": {
+                  "mSubparts": [
+                    {
+                      "mCoefficient": 1.0,
+                      "mStat": 9,
+                      "~class": "StatByCoefficientCalculationPart"
+                    },
+                    {
+                      "mNumber": -1.0,
+                      "~class": "NumberCalculationPart"
+                    }
+                  ],
+                  "~class": "SumOfSubPartsCalculationPart"
+                },
+                "~class": "ProductOfSubPartsCalculationPart"
+              }
+            ],
+            "~class": "SumOfSubPartsCalculationPart"
+          },
+          "~class": "GameCalculationModified"
+        },
+        "ShotDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "SpellDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "ADRatio",
+              "mStat": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mana": [
+        50.0,
+        45.0,
+        40.0,
+        35.0,
+        30.0,
+        30.0
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Gangplank/Spells/GangplankRAbility/GangplankR": {
+    "ObjectName": "GangplankR",
+    "mScriptName": "GangplankR",
+    "mSpell": {
+      "0xf9c2333e": {
+        "0xa110bc47": {
+          "value": [
+            140.0,
+            140.0,
+            120.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0
+          ],
+          "~class": "SpellEffectAmount"
+        }
+      },
+      "DataValues": [
+        {
+          "mName": "DamagePerWave",
+          "mValues": [
+            10.0,
+            40.0,
+            70.0,
+            100.0,
+            130.0,
+            160.0,
+            190.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "DeathsDaughterBaseDamage",
+          "mValues": [
+            30.0,
+            120.0,
+            210.0,
+            300.0,
+            390.0,
+            480.0,
+            570.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "RaiseMoraleHaste",
+          "mValues": [
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ZoneDuration",
+          "mValues": [
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "CannonDelay",
+          "mValues": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "CannonInterval",
+          "mValues": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "SlowPercent",
+          "mValues": [
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "SlowDuration",
+          "mValues": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "DeathsDaughterSlow",
+          "mValues": [
+            75.0,
+            75.0,
+            75.0,
+            75.0,
+            75.0,
+            75.0,
+            75.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "DeathsDaughterSlowDuration",
+          "mValues": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "RaiseMoraleHasteDuration",
+          "mValues": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "TotalWavesTooltip",
+          "mValues": [
+            12.0,
+            12.0,
+            12.0,
+            12.0,
+            12.0,
+            12.0,
+            12.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "castFrame": 10.0,
+      "castRadius": [
+        525.0,
+        525.0,
+        525.0,
+        525.0,
+        525.0,
+        525.0,
+        525.0
+      ],
+      "castRange": [
+        30000.0,
+        30000.0,
+        30000.0,
+        30000.0,
+        30000.0,
+        30000.0,
+        30000.0
+      ],
+      "cooldownTime": [
+        160.0,
+        160.0,
+        140.0,
+        120.0,
+        120.0,
+        120.0,
+        120.0
+      ],
+      "mAffectsTypeFlags": 6154,
+      "mAnimationName": "Spell4",
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.25,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "~class": "TargeterDefinitionMinimap"
+          },
+          {
+            "centerLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "~class": "TargeterDefinitionAoe"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage Per Wave",
+                  "type": "DamagePerWave",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 3,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Cannon Barrage",
+            "keySummary": "Gangplank signals his ship to bombard an area, slowing and damaging enemies.",
+            "keyTooltip": "Gangplank signals his ship to fire @TotalWavesTooltip@ waves of cannonballs anywhere on the map over @ZoneDuration@ seconds. Each wave <status>Slows</status> by @SlowPercent@% for @SlowDuration@ seconds and deals <magicDamage>@OneWaveDamage@ magic damage</magicDamage>. Maximum damage: @TotalDamageTooltip@<br><br>This Ability can be upgraded in the shop via <spellName>{{Spell_GangplankQWrapper_Name}}</spellName>.<br><br><spellName>Fire at Will</spellName>: Fires 6 additional waves of cannonballs.<br><spellName>Death's Daughter</spellName>: Fires a Mega-Cannonball that deals <trueDamage>@DeathsDaughterDamage@ true damage</trueDamage> and <status>Slows</status> by @DeathsDaughterSlow@% for @DeathsDaughterSlowDuration@ second.<br><spellName>Raise Morale</spellName>: Allies inside Cannon Barrage gain <speed>@RaiseMoraleHaste@% Move Speed</speed> for @RaiseMoraleHasteDuration@ seconds."
+          },
+          "mObjectName": "GangplankR",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.10000000149011612,
+      "mEffectAmount": [
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            0.0,
+            1.5,
+            0.5,
+            0.5,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            75.0,
+            75.0,
+            75.0,
+            75.0,
+            75.0,
+            75.0,
+            75.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mImgIconName": [
+        "ASSETS/Characters/Gangplank/HUD/Icons2D/Gangplank_R.dds"
+      ],
+      "mSpellCalculations": {
+        "DeathsDaughterDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "DeathsDaughterBaseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.30000001192092896,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "OneWaveDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "DamagePerWave",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.10000000149011612,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "TotalDamageTooltip": {
+          "mModifiedGameCalculation": "OneWaveDamage",
+          "mMultiplier": {
+            "mDataValue": "TotalWavesTooltip",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "~class": "GameCalculationModified"
+        }
+      },
+      "mSpellRevealsChampion": false,
+      "mSpellTags": [
+        "Trait_Ultimate"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Area"
+      },
+      "mUseMinimapTargeting": true,
+      "mana": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Gangplank/Spells/GangplankRAbility/GangplankRSlow": {
+    "ObjectName": "GangplankRSlow",
+    "mBuff": {
+      "mDescription": "<titleLeft>Cannon Barrage</titleLeft><mainText>This unit is being slowed by a shower of cannonballs.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "mShowDuration": false,
+      "~class": "BuffData"
+    },
+    "mScriptName": "GangplankRSlow",
+    "~class": "SpellObject"
+  },
+  "Characters/Gangplank/Spells/GangplankRAbility/GangplankRSpeed": {
+    "ObjectName": "GangplankRSpeed",
+    "mBuff": {
+      "mDescription": "<titleLeft>Cannon Barrage - Raise Morale</titleLeft><mainText>This unit has increased Move Speed.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "mShowDuration": false,
+      "~class": "BuffData"
+    },
+    "mScriptName": "GangplankRSpeed",
+    "~class": "SpellObject"
+  },
+  "Characters/Gangplank/Spells/GangplankRAbility/GangplankRWithRaiseMorale": {
+    "ObjectName": "GangplankRWithRaiseMorale",
+    "mScriptName": "GangplankRWithRaiseMorale",
+    "mSpell": {
+      "0xf9c2333e": {
+        "0xa110bc47": {
+          "value": [
+            140.0,
+            140.0,
+            120.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0
+          ],
+          "~class": "SpellEffectAmount"
+        }
+      },
+      "DataValues": [
+        {
+          "mName": "DamagePerWave",
+          "mValues": [
+            10.0,
+            40.0,
+            70.0,
+            100.0,
+            130.0,
+            160.0,
+            190.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "DeathsDaughterBaseDamage",
+          "mValues": [
+            30.0,
+            120.0,
+            210.0,
+            300.0,
+            390.0,
+            480.0,
+            570.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "RaiseMoraleHaste",
+          "mValues": [
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ZoneDuration",
+          "mValues": [
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "CannonDelay",
+          "mValues": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "CannonInterval",
+          "mValues": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "SlowPercent",
+          "mValues": [
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "SlowDuration",
+          "mValues": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "DeathsDaughterSlow",
+          "mValues": [
+            75.0,
+            75.0,
+            75.0,
+            75.0,
+            75.0,
+            75.0,
+            75.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "DeathsDaughterSlowDuration",
+          "mValues": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "RaiseMoraleHasteDuration",
+          "mValues": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "TotalWavesTooltip",
+          "mValues": [
+            12.0,
+            12.0,
+            12.0,
+            12.0,
+            12.0,
+            12.0,
+            12.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "castFrame": 10.0,
+      "castRadius": [
+        525.0,
+        525.0,
+        525.0,
+        525.0,
+        525.0,
+        525.0,
+        525.0
+      ],
+      "castRange": [
+        30000.0,
+        30000.0,
+        30000.0,
+        30000.0,
+        30000.0,
+        30000.0,
+        30000.0
+      ],
+      "cooldownTime": [
+        160.0,
+        160.0,
+        140.0,
+        120.0,
+        120.0,
+        120.0,
+        120.0
+      ],
+      "mAffectsTypeFlags": 6154,
+      "mAnimationName": "Spell4",
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.25,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "~class": "TargeterDefinitionMinimap"
+          },
+          {
+            "centerLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "~class": "TargeterDefinitionAoe"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage Per Wave",
+                  "type": "DamagePerWave",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 3,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Cannon Barrage",
+            "keySummary": "Gangplank signals his ship to bombard an area, slowing and damaging enemies.",
+            "keyTooltip": "Gangplank signals his ship to fire @TotalWavesTooltip@ waves of cannonballs anywhere on the map over @ZoneDuration@ seconds. Each wave <status>Slows</status> by @SlowPercent@% for @SlowDuration@ seconds and deals <magicDamage>@OneWaveDamage@ magic damage</magicDamage>. Maximum damage: @TotalDamageTooltip@<br><br>This Ability can be upgraded in the shop via <spellName>{{Spell_GangplankQWrapper_Name}}</spellName>.<br><br><spellName>Fire at Will</spellName>: Fires 6 additional waves of cannonballs.<br><spellName>Death's Daughter</spellName>: Fires a Mega-Cannonball that deals <trueDamage>@DeathsDaughterDamage@ true damage</trueDamage> and <status>Slows</status> by @DeathsDaughterSlow@% for @DeathsDaughterSlowDuration@ second.<br><spellName>Raise Morale</spellName>: Allies inside Cannon Barrage gain <speed>@RaiseMoraleHaste@% Move Speed</speed> for @RaiseMoraleHasteDuration@ seconds."
+          },
+          "mObjectName": "GangplankRWithRaiseMorale",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.10000000149011612,
+      "mEffectAmount": [
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            0.0,
+            1.5,
+            0.5,
+            0.5,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            75.0,
+            75.0,
+            75.0,
+            75.0,
+            75.0,
+            75.0,
+            75.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mImgIconName": [
+        "ASSETS/Characters/Gangplank/HUD/Icons2D/Gangplank_R.dds"
+      ],
+      "mSpellCalculations": {
+        "DeathsDaughterDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "DeathsDaughterBaseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.30000001192092896,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "OneWaveDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "DamagePerWave",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.10000000149011612,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "TotalDamageTooltip": {
+          "mModifiedGameCalculation": "OneWaveDamage",
+          "mMultiplier": {
+            "mDataValue": "TotalWavesTooltip",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "~class": "GameCalculationModified"
+        }
+      },
+      "mSpellRevealsChampion": false,
+      "mSpellTags": [
+        "Trait_Ultimate",
+        "PositiveEffect_Boon"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Area"
+      },
+      "mUseMinimapTargeting": true,
+      "mana": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Gangplank/Spells/GangplankWAbility/GangplankW": {
+    "ObjectName": "GangplankW",
+    "mScriptName": "GangplankW",
+    "mSpell": {
+      "canCastWhileDisabled": true,
+      "cannotBeSuppressed": true,
+      "castFrame": 10.0,
+      "cooldownTime": [
+        24.0,
+        22.0,
+        20.0,
+        18.0,
+        16.0,
+        14.0,
+        14.0
+      ],
+      "mAffectsTypeFlags": 15567,
+      "mAnimationName": "Spell2",
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.25,
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Healing",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Remove Scurvy",
+            "keySummary": "Eats citrus to cure crowd control effects and restore Health.",
+            "keyTooltip": "Gangplank consumes a large amount of citrus fruit, removing all <status>Disabling</status> effects and restoring <healing>@BaseHealth@ plus @Effect2Amount@% missing Health</healing>."
+          },
+          "mObjectName": "GangplankW",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.8999999761581421,
+      "mEffectAmount": [
+        {
+          "value": [
+            20.0,
+            45.0,
+            70.0,
+            95.0,
+            120.0,
+            145.0,
+            170.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            13.0,
+            13.0,
+            13.0,
+            13.0,
+            13.0,
+            13.0,
+            13.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            20.0,
+            30.0,
+            40.0,
+            50.0,
+            60.0,
+            70.0,
+            80.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mImgIconName": [
+        "ASSETS/Characters/Gangplank/HUD/Icons2D/Gangplank_W.dds"
+      ],
+      "mSpellCalculations": {
+        "BaseHealth": {
+          "mFormulaParts": [
+            {
+              "mEffectIndex": 1,
+              "~class": "EffectValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.8999999761581421,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "tooltipOnly": true,
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "SpecialCase_StasisLocked"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Self"
+      },
+      "mana": [
+        60.0,
+        70.0,
+        80.0,
+        90.0,
+        100.0,
+        110.0
+      ],
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  }
+}

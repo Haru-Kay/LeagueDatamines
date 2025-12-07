@@ -1,0 +1,1383 @@
+{
+  "0x73f7fcaf": {
+    "ObjectName": "Crepe_SingedVsHeimerdinger_SingedWin",
+    "mBuff": {
+      "~class": "BuffData"
+    },
+    "mScriptName": "Crepe_SingedVsHeimerdinger_SingedWin",
+    "~class": "SpellObject"
+  },
+  "0x7f526d60": {
+    "ObjectName": "Crepe_SingedVsHeimerdinger_SingedReward",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0x2ca8f134",
+        "mLocKeys": {
+          "keyName": "Unconstrained Chemistry",
+          "keyTooltip": "Roll a random elixir every three minutes.<br><br><flavorText>“Professor Heimerdinger, neither laws nor limits will stop what must be studied.”</flavorText><br>"
+        },
+        "mObjectName": "Crepe_SingedVsHeimerdinger_SingedReward",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Crepe_SingedVsHeimerdinger_SingedReward",
+    "mSpell": {
+      "mKeywordWhenAcquired": "ASSETS/Characters/Jhin/HUD/Icons2D/JhinQuestVictory.dds",
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0xa12f318d": {
+    "ObjectName": "Crepe_SingedVsHeimerdinger_SingedStart",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0x2ca8f134",
+        "mLocKeys": {
+          "keyName": "For Science's Sake",
+          "keyTooltip": "Collect 10 Health Relics."
+        },
+        "mObjectName": "Crepe_SingedVsHeimerdinger_SingedStart",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Crepe_SingedVsHeimerdinger_SingedStart",
+    "mSpell": {
+      "mImgIconName": [
+        "ASSETS/Characters/Singed/HUD/Icons2D/SingedHeimerdinger64.HA_CREPE.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0xa7702515": {
+    "ObjectName": "Crepe_SingedVsHeimerdinger_HeimerdingerLose",
+    "mBuff": {
+      "CanTimeoutWhileCasting": false,
+      "mShowAccumulatedDuration": false,
+      "mShowDuration": false,
+      "mTooltipData": {
+        "mFormat": "0x2ca8f134",
+        "mLocKeys": {
+          "keyName": "Botched Experiment",
+          "keyTooltip": "Heimerdinger's pursuit of new technology fell short.<br><br><flavorText>“Unfortunately, our methods proved ineffective. But what's an experiment without a few broken beakers?”</flavorText>"
+        },
+        "mObjectName": "Crepe_SingedVsHeimerdinger_HeimerdingerLose",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Crepe_SingedVsHeimerdinger_HeimerdingerLose",
+    "mSpell": {
+      "mImgIconName": [
+        "ASSETS/Characters/Jhin/HUD/Icons2D/JhinQuestLoser.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Singed/Spells/FlingAbility/Fling": {
+    "ObjectName": "Fling",
+    "mScriptName": "Fling",
+    "mSpell": {
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 7.5,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        125.0,
+        125.0,
+        125.0,
+        125.0,
+        125.0,
+        125.0,
+        125.0
+      ],
+      "castRangeUseBoundingBoxes": true,
+      "cooldownTime": [
+        10.0,
+        10.0,
+        9.5,
+        9.0,
+        8.5,
+        8.0,
+        8.0
+      ],
+      "delayCastOffsetPercent": -0.5,
+      "delayTotalTimePercent": -0.5,
+      "mAffectsTypeFlags": 6154,
+      "mAlternateName": "Fling",
+      "mAnimationName": "Spell5",
+      "mCantCancelWhileChanneling": true,
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.25,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "endLocator": {
+              "distanceOffset": -450.0,
+              "orientationType": 2,
+              "~class": "DrawablePositionLocator"
+            },
+            "lineStopsAtEndPosition": true,
+            "lineWidth": {
+              "mPerLevelValues": [
+                30.0,
+                30.0,
+                30.0,
+                30.0,
+                30.0,
+                30.0
+              ],
+              "mValueType": 2,
+              "~class": "FloatPerSpellLevel"
+            },
+            "overrideBaseRange": {
+              "mPerLevelValues": [
+                650.0,
+                650.0,
+                650.0,
+                650.0,
+                650.0,
+                650.0
+              ],
+              "mValueType": 2,
+              "~class": "FloatPerSpellLevel"
+            },
+            "startLocator": {
+              "basePosition": 2,
+              "~class": "DrawablePositionLocator"
+            },
+            "~class": "TargeterDefinitionLine"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "nameOverride": "Maximum Health Damage",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 3,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Root Duration",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 2,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Cooldown",
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Fling",
+            "keySummary": "Damages target enemy unit and flings them into the air behind Singed. If the target Singed flings lands in his Mega Adhesive, they are also rooted.",
+            "keyTooltip": "Singed flings an enemy over his shoulder, dealing <magicDamage>@BaseDamage@ plus @Effect3Amount@% max Health magic damage</magicDamage>.<br><br>If Singed flings a target into his <spellName>{{Spell_MegaAdhesive_Name}}</spellName>, they are <status>Rooted</status> for @Effect2Amount@ seconds.",
+            "keyTooltipExtendedBelowLine": "<rules>Max Health damage is capped at 300 against minions and jungle monsters.</rules>"
+          },
+          "mObjectName": "Fling",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.550000011920929,
+      "mEffectAmount": [
+        {
+          "value": [
+            50.0,
+            50.0,
+            60.0,
+            70.0,
+            80.0,
+            90.0,
+            100.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            0.75,
+            1.0,
+            1.25,
+            1.5,
+            1.75,
+            2.0,
+            2.25
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            6.0,
+            6.0,
+            6.5,
+            7.0,
+            7.5,
+            8.0,
+            8.5
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            420.0,
+            420.0,
+            420.0,
+            420.0,
+            420.0,
+            420.0,
+            420.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mHitBoneName": "C_BuffBone_Glb_Center_Loc",
+      "mHitEffectKey": "Singed_E_tar_Fling_01",
+      "mImgIconName": [
+        "ASSETS/Characters/Singed/HUD/Icons2D/Singed_E.dds"
+      ],
+      "mSpellCalculations": {
+        "baseDamage": {
+          "mFormulaParts": [
+            {
+              "mEffectIndex": 1,
+              "~class": "EffectValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.550000011920929,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "tooltipOnly": true,
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "Trait_ImmobilizingCCSpell"
+      ],
+      "mana": [
+        60.0,
+        70.0,
+        80.0,
+        90.0,
+        100.0,
+        110.0
+      ],
+      "missileSpeed": 0.0,
+      "selectionPriority": 1,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Singed/Spells/InsanityPotionAbility/InsanityPotion": {
+    "ObjectName": "InsanityPotion",
+    "mScriptName": "InsanityPotion",
+    "mSpell": {
+      "DataValues": [
+        {
+          "mName": "StatAmount",
+          "mValues": [
+            -10.0,
+            25.0,
+            60.0,
+            95.0,
+            130.0,
+            165.0,
+            200.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "Duration",
+          "mValues": [
+            25.0,
+            25.0,
+            25.0,
+            25.0,
+            25.0,
+            25.0,
+            25.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "GrievousAmount",
+          "mValues": [
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "GrievousDuration",
+          "mValues": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "mName": "StatAmount",
+              "mValues": [
+                5.0,
+                30.0,
+                55.0,
+                80.0,
+                105.0,
+                130.0,
+                155.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
+      "castConeDistance": 100.0,
+      "castFrame": 18.200000762939453,
+      "castRadius": [
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0
+      ],
+      "castRange": [
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0
+      ],
+      "cooldownTime": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "delayCastOffsetPercent": -0.5,
+      "delayTotalTimePercent": -0.5,
+      "flags": 4,
+      "mAffectsTypeFlags": 9221,
+      "mAlternateName": "InsanityPotion",
+      "mAnimationName": "Spell2",
+      "mCantCancelWhileWindingUp": true,
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Bonus Stats",
+                  "type": "StatAmount",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 3,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Insanity Potion",
+            "keySummary": "Singed drinks a potent brew of chemicals, granting him increased combat stats, and making his Poison Trail apply Grievous Wounds.",
+            "keyTooltip": "Singed drinks a potent brew of chemicals, granting him @StatAmount@ <scaleAP>Ability Power</scaleAP>, <scaleArmor>Armor</scaleArmor>, <scaleMR>Magic Resist</scaleMR>, <speed>Move Speed</speed>, <healing>Health Regen</healing>, and <scaleMana>Mana Regen</scaleMana> for @Duration@ seconds. During this effect, Singed's <spellName>Poison Trail</spellName> also applies @GrievousAmount*100@% Grievous Wounds for @GrievousDuration@ second."
+          },
+          "mObjectName": "InsanityPotion",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 1.0,
+      "mImgIconName": [
+        "ASSETS/Characters/Singed/HUD/Icons2D/Singed_R.dds"
+      ],
+      "mRequiredUnitTags": {
+        "mObjectTagList": [
+          "champion"
+        ],
+        "~class": "ObjectTags"
+      },
+      "mSpellTags": [
+        "Trait_Ultimate"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Self"
+      },
+      "mana": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "missileSpeed": 1450.0,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Singed/Spells/MegaAdhesiveAbility/MegaAdhesive": {
+    "ObjectName": "MegaAdhesive",
+    "mScriptName": "MegaAdhesive",
+    "mSpell": {
+      "DataValues": [
+        {
+          "mName": "SlowPercent",
+          "mValues": [
+            45.0,
+            50.0,
+            55.0,
+            60.0,
+            65.0,
+            70.0,
+            75.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "WDuration",
+          "mValues": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "WRadius",
+          "mValues": [
+            265.0,
+            265.0,
+            265.0,
+            265.0,
+            265.0,
+            265.0,
+            265.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "DelayExecute",
+          "mValues": [
+            0.375,
+            0.375,
+            0.375,
+            0.375,
+            0.375,
+            0.375,
+            0.375
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "bHaveHitBone": true,
+      "castConeDistance": 100.0,
+      "castFrame": 20.399999618530273,
+      "castRadius": [
+        265.0,
+        265.0,
+        265.0,
+        265.0,
+        265.0,
+        265.0,
+        265.0
+      ],
+      "castRange": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0
+      ],
+      "cooldownTime": [
+        17.0,
+        17.0,
+        16.0,
+        15.0,
+        14.0,
+        13.0,
+        13.0
+      ],
+      "delayCastOffsetPercent": -0.5,
+      "delayTotalTimePercent": -0.5,
+      "mAffectsTypeFlags": 6154,
+      "mAnimationName": "Spell3",
+      "mCantCancelWhileWindingUp": true,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "centerLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "~class": "TargeterDefinitionAoe"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "Style": 1,
+                  "nameOverride": "Slow",
+                  "type": "SlowPercent",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Mega Adhesive",
+            "keySummary": "Throws a vial of mega adhesive on the ground, slowing and grounding enemies who walk on it.",
+            "keyTooltip": "Singed hurls a cask of sticky liquid, <status>Grounding</status> and <status>Slowing</status> enemies in the area by @SlowPercent@% for @WDuration@ seconds."
+          },
+          "mObjectName": "MegaAdhesive",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BuffBone_Glb_Center_Loc",
+      "mImgIconName": [
+        "ASSETS/Characters/Singed/HUD/Icons2D/Singed_W.dds"
+      ],
+      "mSpellRevealsChampion": false,
+      "mTargetingTypeData": {
+        "~class": "Area"
+      },
+      "mana": [
+        60.0,
+        70.0,
+        80.0,
+        90.0,
+        100.0,
+        100.0
+      ],
+      "missileSpeed": 700.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Singed/Spells/PoisonTrailAbility/PoisonTrail": {
+    "ObjectName": "PoisonTrail",
+    "mScriptName": "PoisonTrail",
+    "mSpell": {
+      "DataValues": [
+        {
+          "mName": "BaseDamagePerSecond",
+          "mValues": [
+            10.0,
+            20.0,
+            30.0,
+            40.0,
+            50.0,
+            60.0,
+            70.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "APRatioPerSecond",
+          "mValues": [
+            0.42500001192092896,
+            0.42500001192092896,
+            0.42500001192092896,
+            0.42500001192092896,
+            0.42500001192092896,
+            0.42500001192092896,
+            0.42500001192092896
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ToggleCooldown",
+          "mValues": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "CloudDuration",
+          "mValues": [
+            3.25,
+            3.25,
+            3.25,
+            3.25,
+            3.25,
+            3.25,
+            3.25
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "PoisonDuration",
+          "mValues": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "TicksPerSecond",
+          "mValues": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "MaxLingerTicks",
+          "mValues": [
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "DataValuesModeOverride": {
+        "SWIFTPLAY": {
+          "SpellDataValues": [
+            {
+              "mName": "APRatioPerSecond",
+              "mValues": [
+                0.375,
+                0.375,
+                0.375,
+                0.375,
+                0.375,
+                0.375,
+                0.375
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        },
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "mName": "BaseDamagePerSecond",
+              "mValues": [
+                7.5,
+                15.0,
+                22.5,
+                30.0,
+                37.5,
+                45.0,
+                52.5
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "mName": "APRatioPerSecond",
+              "mValues": [
+                0.32499998807907104,
+                0.32499998807907104,
+                0.32499998807907104,
+                0.32499998807907104,
+                0.32499998807907104,
+                0.32499998807907104,
+                0.32499998807907104
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
+      "bIsToggleSpell": true,
+      "castConeDistance": 100.0,
+      "castFrame": 20.209999084472656,
+      "castRadius": [
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0
+      ],
+      "castRange": [
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delayCastOffsetPercent": -0.23749999701976776,
+      "delayTotalTimePercent": -0.23000000417232513,
+      "flags": 4,
+      "mAffectsTypeFlags": 9221,
+      "mCantCancelWhileWindingUp": true,
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "BaseDamagePerSecond",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyCost": "@Cost@ Mana per Second",
+            "keyName": "Poison Trail",
+            "keySummary": "Leaves a trail of poison behind Singed, dealing damage to enemies caught in the path.",
+            "keyTooltip": "<toggle>Toggle:</toggle> Singed lays a poisonous trail that deals <magicDamage>@DamagePerSecond@ magic damage</magicDamage> per second.",
+            "keyTooltipExtendedBelowLine": "<rules>Cloud duration: @CloudDuration@ seconds.<br>Poison duration: @PoisonDuration@ seconds.<br>Approximate total damage: <magicDamage>@ApproximateTotalDamageTooltip@ magic damage</magicDamage>.<br>If a minion would be killed by minion damage while under the effects of Poison Trail, Singed claims the kill credit instead.</rules>"
+          },
+          "mObjectName": "PoisonTrail",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.10000000149011612,
+      "mImgIconName": [
+        "ASSETS/Characters/Singed/HUD/Icons2D/Singed_Q.dds",
+        "ASSETS/Characters/Singed/HUD/Icons2D/Singed_Q_Off.dds"
+      ],
+      "mLockedSpellOriginationCastID": true,
+      "mRequiredUnitTags": {
+        "mObjectTagList": [
+          "champion"
+        ],
+        "~class": "ObjectTags"
+      },
+      "mSpellCalculations": {
+        "ApproximateTotalDamageTooltip": {
+          "mModifiedGameCalculation": "DamagePerSecond",
+          "mMultiplier": {
+            "mNumber": 4.75,
+            "~class": "NumberCalculationPart"
+          },
+          "tooltipOnly": true,
+          "~class": "GameCalculationModified"
+        },
+        "DamagePerSecond": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "BaseDamagePerSecond",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "APRatioPerSecond",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mTargetingTypeData": {
+        "~class": "Self"
+      },
+      "mana": [
+        13.0,
+        13.0,
+        13.0,
+        13.0,
+        13.0,
+        13.0
+      ],
+      "missileSpeed": 347.79998779296875,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Singed/Spells/SingedBasicAttack": {
+    "ObjectName": "SingedBasicAttack",
+    "mScriptName": "SingedBasicAttack",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 14.645000457763672,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delayCastOffsetPercent": -0.2273000031709671,
+      "mAffectsTypeFlags": 4234,
+      "mAlternateName": "SingedBasicAttack",
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Singed_BA_tar",
+      "mHitEffectOrientType": 2,
+      "missileSpeed": 700.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Singed/Spells/SingedBasicAttack2": {
+    "ObjectName": "SingedBasicAttack2",
+    "mScriptName": "SingedBasicAttack2",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 14.5,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delayCastOffsetPercent": -0.2273000031709671,
+      "mAffectsTypeFlags": 4234,
+      "mAlternateName": "SingedBasicAttack2",
+      "mAnimationName": "Attack2",
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Singed_BA_tar",
+      "mHitEffectOrientType": 2,
+      "missileSpeed": 700.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Singed/Spells/SingedCritAttack": {
+    "ObjectName": "SingedCritAttack",
+    "mScriptName": "SingedCritAttack",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 14.5,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delayCastOffsetPercent": -0.2273000031709671,
+      "mAffectsTypeFlags": 4234,
+      "mAnimationName": "Crit",
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Singed_BA_crit_tar",
+      "mHitEffectOrientType": 2,
+      "missileSpeed": 700.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Singed/Spells/SingedPAbility/SingedP": {
+    "ObjectName": "SingedP",
+    "mBuff": {
+      "mDescription": "Singed drafts off of nearby allied or enemy champions, gaining <speed>@MSPercent*100@% Move Speed</speed> for @MSDuration@ seconds. This effect has an @PerTargetCD@ second Cooldown per champion.",
+      "~class": "BuffData"
+    },
+    "mScriptName": "SingedP",
+    "mSpell": {
+      "DataValues": [
+        {
+          "mName": "MSPercent",
+          "mValues": [
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "MSDuration",
+          "mValues": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "PerTargetCD",
+          "mValues": [
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "TriggerArea",
+          "mValues": [
+            225.0,
+            225.0,
+            225.0,
+            225.0,
+            225.0,
+            225.0,
+            225.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "DataValuesModeOverride": {
+        "0xbffdf499": {
+          "SpellDataValues": [
+            {
+              "mName": "MSPercent",
+              "mValues": [
+                0.20000000298023224,
+                0.20000000298023224,
+                0.20000000298023224,
+                0.20000000298023224,
+                0.20000000298023224,
+                0.20000000298023224,
+                0.20000000298023224
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "mName": "PerTargetCD",
+              "mValues": [
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        },
+        "ARAM": {
+          "SpellDataValues": [
+            {
+              "mName": "MSPercent",
+              "mValues": [
+                0.20000000298023224,
+                0.20000000298023224,
+                0.20000000298023224,
+                0.20000000298023224,
+                0.20000000298023224,
+                0.20000000298023224,
+                0.20000000298023224
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "mName": "PerTargetCD",
+              "mValues": [
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
+      "bIsToggleSpell": true,
+      "castConeDistance": 100.0,
+      "castFrame": 20.209999084472656,
+      "castRadius": [
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0
+      ],
+      "castRange": [
+        225.0,
+        225.0,
+        225.0,
+        225.0,
+        225.0,
+        225.0,
+        225.0
+      ],
+      "delayCastOffsetPercent": -0.23749999701976776,
+      "delayTotalTimePercent": -0.23000000417232513,
+      "flags": 4,
+      "mAffectsTypeFlags": 9221,
+      "mCantCancelWhileWindingUp": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "EnableExtendedTooltip": false,
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyName": "Noxious Slipstream",
+            "keySummary": "Singed drafts off nearby champions, gaining a burst of Move Speed when passing them.",
+            "keyTooltip": "Singed drafts off of nearby allied or enemy champions, gaining <speed>@MSPercent*100@% Move Speed</speed> for @MSDuration@ seconds. This effect has an @PerTargetCD@ second Cooldown per champion."
+          },
+          "mObjectName": "SingedP",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "ASSETS/Characters/Singed/HUD/Icons2D/Singed_Passive.dds"
+      ],
+      "mRequiredUnitTags": {
+        "mObjectTagList": [
+          "champion"
+        ],
+        "~class": "ObjectTags"
+      },
+      "mTargetingTypeData": {
+        "~class": "Self"
+      },
+      "missileSpeed": 347.79998779296875,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Singed/Spells/SingedQPassive": {
+    "ObjectName": "SingedQPassive",
+    "mScriptName": "SingedQPassive",
+    "~class": "SpellObject"
+  },
+  "Characters/Singed/Spells/SingedStatStonePoisonTracker": {
+    "ObjectName": "SingedStatStonePoisonTracker",
+    "mScriptName": "SingedStatStonePoisonTracker",
+    "~class": "SpellObject"
+  },
+  "Characters/Singed/Spells/SingedWParticleMissile": {
+    "ObjectName": "SingedWParticleMissile",
+    "mScriptName": "SingedWParticleMissile",
+    "mSpell": {
+      "canCastWhileDisabled": true,
+      "castConeDistance": 100.0,
+      "castFrame": 7.0,
+      "castRange": [
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delayCastOffsetPercent": -0.5,
+      "delayTotalTimePercent": -0.5,
+      "flags": 4194308,
+      "mAffectsTypeFlags": 23567,
+      "mAnimationName": "none",
+      "mCastType": 3,
+      "mImgIconName": [
+        "ASSETS/Characters/Singed/HUD/Icons2D/Singed_W.dds"
+      ],
+      "mMissileEffectKey": "Singed_W_Mis",
+      "mMissileSpec": {
+        "0xc195fba6": true,
+        "behaviors": [
+          {
+            "~class": "CastOnHit"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "mGravity": 18000.0,
+          "~class": "GravityHeightSolver"
+        },
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 20.0,
+          "mStartBoneName": "L_hand",
+          "mTargetHeightAugment": 20.0,
+          "mTracksTarget": false,
+          "mTravelTime": 0.4000000059604645,
+          "~class": "FixedTimeMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mProjectTargetToCastRange": true,
+      "mTargetingTypeData": {
+        "~class": "Location"
+      },
+      "missileSpeed": 100.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Singed/Spells/SlipstreamCooldown": {
+    "ObjectName": "SlipstreamCooldown",
+    "mBuff": {
+      "mDescription": "<titleLeft>Noxious Slipstream</titleLeft><mainText>Singed has recently used this champion to increase his Move Speed.</mainText>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "SlipstreamCooldown",
+    "~class": "SpellObject"
+  },
+  "Characters/Singed/Spells/SlipstreamMoveSpeedBuff": {
+    "ObjectName": "SlipstreamMoveSpeedBuff",
+    "mBuff": {
+      "mDescription": "<titleLeft>Noxious Slipstream</titleLeft><mainText>Singed has increased Move Speed from passing by a champion.</mainText>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "SlipstreamMoveSpeedBuff",
+    "~class": "SpellObject"
+  }
+}

@@ -1,0 +1,2200 @@
+{
+  "0xffc8ba96": {
+    "ObjectName": "NeekoBubbleDebuff",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Knocked Up",
+          "keyTooltip": "This unit is <status>Knocked Up</status>."
+        },
+        "mObjectName": "NeekoBubbleDebuff",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "NeekoBubbleDebuff",
+    "mSpell": {
+      "ImgIconPath": "ASSETS/Characters/Neeko/HUD/Icons2D/Neeko_R.dds",
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Neeko/Spells/NeekoBasicAttack": {
+    "ObjectName": "NeekoBasicAttack",
+    "mScriptName": "NeekoBasicAttack",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 10.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        550.0,
+        550.0,
+        550.0,
+        550.0,
+        550.0,
+        550.0,
+        550.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delayCastOffsetPercent": -0.5800000429153442,
+      "delayTotalTimePercent": -0.25,
+      "mAffectsTypeFlags": 5327,
+      "mApplyAttackDamage": true,
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Neeko_BA_tar",
+      "mMissileEffectKey": "Neeko_BA_mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mSpeed": 2000.0,
+          "mStartBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+          "mTargetBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mTurnSpeedScalar": 3.0,
+      "missileSpeed": 2000.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Neeko/Spells/NeekoCritAttack": {
+    "ObjectName": "NeekoCritAttack",
+    "mScriptName": "NeekoCritAttack",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 10.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        550.0,
+        550.0,
+        550.0,
+        550.0,
+        550.0,
+        550.0,
+        550.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delayCastOffsetPercent": -0.5800000429153442,
+      "delayTotalTimePercent": -0.25,
+      "mAffectsTypeFlags": 5327,
+      "mAnimationName": "Crit",
+      "mApplyAttackDamage": true,
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Neeko_BA_crit_tar",
+      "mMissileEffectKey": "Neeko_BA_mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mSpeed": 2000.0,
+          "mStartBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+          "mTargetBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 2000.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Neeko/Spells/NeekoDataSelector": {
+    "ObjectName": "NeekoDataSelector",
+    "mScriptName": "NeekoDataSelector",
+    "mSpell": {
+      "castConeDistance": 100.0,
+      "castFrame": 7.960000038146973,
+      "castRange": [
+        800.0,
+        800.0,
+        800.0,
+        800.0,
+        800.0,
+        800.0,
+        800.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delayCastOffsetPercent": -0.5,
+      "delayTotalTimePercent": -0.5,
+      "flags": 4,
+      "mAffectsStatusFlags": 48,
+      "mAffectsTypeFlags": 3124,
+      "mAnimationName": "",
+      "mCantCancelWhileWindingUp": true,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "missileSpeed": 10000.0,
+      "selectionPriority": 1,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Neeko/Spells/NeekoEAbility/NeekoE": {
+    "BotData": {
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "mSpellCalculationKey": "baseDamage",
+            "~class": "0xf3cbe7b2"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xec17e271": [
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mDataValue": "MaxRootDuration",
+                "~class": "NamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 8192,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mNumber": 70.0,
+                "~class": "NumberCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 32768,
+          "~class": "0xb09016f6"
+        }
+      ],
+      "DamageTag": 1,
+      "~class": "BotsSpellData"
+    },
+    "ObjectName": "NeekoE",
+    "mScriptName": "NeekoE",
+    "mSpell": {
+      "DataValues": [
+        {
+          "mName": "Damage",
+          "mValues": [
+            35.0,
+            70.0,
+            105.0,
+            140.0,
+            175.0,
+            210.0,
+            245.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "BaseRootDuration",
+          "mValues": [
+            0.0,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "MinRootDuration",
+          "mValues": [
+            0.5,
+            0.699999988079071,
+            0.8999999761581421,
+            1.100000023841858,
+            1.2999999523162842,
+            1.5,
+            1.7000000476837158
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "TargetsRequiredForMaxValue",
+          "mValues": [
+            0.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "MaxRootDuration",
+          "mValues": [
+            1.5,
+            1.7999999523162842,
+            2.0999999046325684,
+            2.4000000953674316,
+            2.700000047683716,
+            3.0,
+            3.299999952316284
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "EmpoweredWidth",
+          "mValues": [
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "EmpoweredSpeed",
+          "mValues": [
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "mName": "MinRootDuration",
+              "mValues": [
+                0.800000011920929,
+                1.0,
+                1.2000000476837158,
+                1.399999976158142,
+                1.600000023841858,
+                1.7999999523162842,
+                2.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
+      "castConeAngle": 0.0,
+      "castConeDistance": 0.0,
+      "castRange": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0
+      ],
+      "cooldownTime": [
+        12.0,
+        12.0,
+        11.5,
+        11.0,
+        10.5,
+        10.0,
+        10.0
+      ],
+      "delayCastOffsetPercent": -0.5,
+      "delayTotalTimePercent": -0.5,
+      "mAffectsTypeFlags": 6154,
+      "mAnimationName": "Spell3",
+      "mCantCancelWhileWindingUp": true,
+      "mCastType": 3,
+      "mCasterPositionEndOfCastUpdate": 1,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "endLocator": {
+              "basePosition": 3,
+              "orientationType": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "lineStopsAtEndPosition": false,
+            "lineWidth": {
+              "mPerLevelValues": [
+                70.0,
+                70.0,
+                70.0,
+                70.0,
+                70.0,
+                70.0
+              ],
+              "mValueType": 1,
+              "~class": "FloatPerSpellLevel"
+            },
+            "~class": "TargeterDefinitionLine"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "Damage",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Minimum Root Duration",
+                  "type": "MinRootDuration",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Empowered Root Duration",
+                  "type": "MaxRootDuration",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Tangle-Barbs",
+            "keySummary": "Neeko slings a tangle that damages and roots everything it passes through. If the tangle kills an enemy or passes through a champion, it becomes larger, faster, and roots for longer.",
+            "keyTooltip": "Neeko slings a tangle that deals <magicDamage>@BaseDamage@ magic damage</magicDamage> and <status>Roots</status> for @MinRootDuration@ seconds.<br><br>The tangle becomes empowered after hitting an enemy, growing larger, moving faster, and <status>Rooting</status> for @MaxRootDuration@ seconds."
+          },
+          "mObjectName": "NeekoE",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mImgIconName": [
+        "ASSETS/Characters/Neeko/HUD/Icons2D/Neeko_E.dds"
+      ],
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnHit"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          },
+          {
+            "~class": "0x0"
+          }
+        ],
+        "heightSolver": {
+          "mHeightOffset": 60.0,
+          "~class": "FollowTerrainHeightSolver"
+        },
+        "mMissileWidth": 70.0,
+        "movementComponent": {
+          "mProjectTargetToCastRange": true,
+          "mSpeed": 1300.0,
+          "mStartBoneName": "Root",
+          "mUseGroundHeightAtTarget": false,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mSpellCalculations": {
+        "baseDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "Damage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.6499999761581421,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "Trait_ImmobilizingCCSpell"
+      ],
+      "mTargetingTypeData": {
+        "~class": "direction"
+      },
+      "mana": [
+        60.0,
+        65.0,
+        70.0,
+        75.0,
+        80.0,
+        60.0
+      ],
+      "missileSpeed": 0.0,
+      "selectionPriority": 1,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Neeko/Spells/NeekoEAbility/NeekoERoot": {
+    "ObjectName": "NeekoERoot",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Rooted",
+          "keyTooltip": "This unit cannot move."
+        },
+        "mObjectName": "NeekoERoot",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "NeekoERoot",
+    "~class": "SpellObject"
+  },
+  "Characters/Neeko/Spells/NeekoMonsterReactionTracker": {
+    "ObjectName": "NeekoMonsterReactionTracker",
+    "mScriptName": "NeekoMonsterReactionTracker",
+    "~class": "SpellObject"
+  },
+  "Characters/Neeko/Spells/NeekoPassiveAbility/NeekoPassive": {
+    "ObjectName": "NeekoPassive",
+    "mScriptName": "NeekoPassive",
+    "mSpell": {
+      "DataValues": [
+        {
+          "mName": "MagicPen",
+          "mValues": [
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "MagicPenDuration",
+          "mValues": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ChargeTime",
+          "mValues": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "PassiveCooldown",
+          "mValues": [
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "canCastWhileDisabled": true,
+      "cannotBeSuppressed": true,
+      "castRange": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAnimationName": "",
+      "mClientData": {
+        "mTooltipData": {
+          "EnableExtendedTooltip": false,
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyCooldown": "@PassiveCooldown@s %i:cooldown% ",
+            "keyName": "Inherent Glamour",
+            "keySummary": "Neeko can look like an ally champion or as other units on the map. Receiving immobilizing crowd control, casting damaging spells, damaging enemy towers as a non-champion, or your disguise taking damage equal to its healthbar breaks the disguise.",
+            "keyTooltip": "Neeko can disguise herself as other units on the map. At any time she can disguise as an allied champion, or Neeko can stand next to any allied or neutral unit to store their Sho'ma and be able to transform into it. Your disguise will break upon receiving <status>immobilizing crowd control</status>, casting a damaging spell, damaging enemy towers as a non-champion, or your disguise taking damage equal to its healthbar. <br><br><rules>Neeko gains many of the properties of the units she turns into, negative and positive.</rules>"
+          },
+          "mObjectName": "NeekoPassive",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "ASSETS/Characters/Neeko/HUD/Icons2D/Neeko_P.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Neeko/Spells/NeekoPassiveAbility/NeekoPassiveBuff": {
+    "ObjectName": "NeekoPassiveBuff",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Inherent Glamour",
+          "keyTooltip": "Neeko gains magic penetration."
+        },
+        "mObjectName": "NeekoPassiveBuff",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "NeekoPassiveBuff",
+    "~class": "SpellObject"
+  },
+  "Characters/Neeko/Spells/NeekoQAbility/NeekoQ": {
+    "BotData": {
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "mSpellCalculationKey": "ExplosionDamage",
+            "~class": "0xf3cbe7b2"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "DamageTag": 1,
+      "~class": "BotsSpellData"
+    },
+    "ObjectName": "NeekoQ",
+    "mScriptName": "NeekoQ",
+    "mSpell": {
+      "DataValues": [
+        {
+          "mName": "SlowAmount",
+          "mValues": [
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "SlowDuration",
+          "mValues": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ZoneDamage",
+          "mValues": [
+            10.0,
+            60.0,
+            110.0,
+            160.0,
+            210.0,
+            260.0,
+            310.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "SecondaryDamage",
+          "mValues": [
+            10.0,
+            35.0,
+            60.0,
+            85.0,
+            110.0,
+            135.0,
+            160.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "RepeatDelay",
+          "mValues": [
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "MonsterBonus",
+          "mValues": [
+            20.0,
+            35.0,
+            50.0,
+            65.0,
+            80.0,
+            95.0,
+            110.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "mName": "ZoneDamage",
+              "mValues": [
+                40.0,
+                90.0,
+                140.0,
+                190.0,
+                240.0,
+                290.0,
+                340.0
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "mName": "SecondaryDamage",
+              "mValues": [
+                50.0,
+                75.0,
+                100.0,
+                125.0,
+                150.0,
+                175.0,
+                200.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
+      "castRadius": [
+        250.0,
+        250.0,
+        250.0,
+        250.0,
+        250.0,
+        250.0,
+        250.0
+      ],
+      "castRange": [
+        800.0,
+        800.0,
+        800.0,
+        800.0,
+        800.0,
+        800.0,
+        800.0
+      ],
+      "castRangeUseBoundingBoxes": true,
+      "cooldownTime": [
+        9.0,
+        9.0,
+        8.5,
+        8.0,
+        7.5,
+        7.0,
+        7.0
+      ],
+      "delayCastOffsetPercent": -0.5,
+      "mAffectsTypeFlags": 6154,
+      "mAnimationName": "Spell1",
+      "mCantCancelWhileWindingUp": true,
+      "mCastType": 3,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "centerLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "overrideRadius": {
+              "mPerLevelValues": [
+                225.0,
+                225.0,
+                225.0,
+                225.0,
+                225.0,
+                225.0
+              ],
+              "mValueType": 1,
+              "~class": "FloatPerSpellLevel"
+            },
+            "~class": "TargeterDefinitionAoe"
+          },
+          {
+            "overrideBaseRange": {
+              "mPerLevelValues": [
+                725.0,
+                725.0,
+                725.0,
+                725.0,
+                725.0,
+                725.0
+              ],
+              "mValueType": 1,
+              "~class": "FloatPerSpellLevel"
+            },
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Initial Damage",
+                  "type": "ZoneDamage",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Explosion Damage",
+                  "type": "SecondaryDamage",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Bonus Monster Damage",
+                  "type": "MonsterBonus",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Blooming Burst",
+            "keySummary": "Neeko throws a seed dealing magic damage. The seed blooms again on hitting champions or killing units.",
+            "keyTooltip": "Neeko throws a seed that blooms to deal <magicDamage>@ExplosionDamage@ magic damage</magicDamage>. If it kills a unit or hits a champion or large monster, it will bloom again, dealing <magicDamage>@SecondDamage@ magic damage</magicDamage>. Max 2 extra blooms.",
+            "keyTooltipExtendedBelowLine": "<rules>Each bloom deals an additional <magicDamage>@MonsterBonus@ magic damage</magicDamage> to monsters.</rules>"
+          },
+          "mObjectName": "NeekoQ",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mImgIconName": [
+        "ASSETS/Characters/Neeko/HUD/Icons2D/Neeko_Q.dds"
+      ],
+      "mMissileEffectKey": "Neeko_Q_mis",
+      "mMissileSpec": {
+        "0xc195fba6": true,
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "mGravity": 20000.0,
+          "~class": "GravityHeightSolver"
+        },
+        "movementComponent": {
+          "mSpeed": 2000.0,
+          "mStartBoneName": "R_buffbone_Glb_Foot_Loc",
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mSpellCalculations": {
+        "ExplosionDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "ZoneDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.6000000238418579,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "SecondDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "SecondaryDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.25,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mTargetingTypeData": {
+        "~class": "LocationClamped"
+      },
+      "mana": [
+        50.0,
+        60.0,
+        70.0,
+        80.0,
+        90.0,
+        85.0
+      ],
+      "selectionPriority": 1,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Neeko/Spells/NeekoRAbility/NeekoR": {
+    "BotData": {
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "mSpellCalculationKey": "TotalDamage",
+            "~class": "0xf3cbe7b2"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xec17e271": [
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mDataValue": "StunDuration",
+                "~class": "NamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 16777216,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mSpellCalculationKey": "BaseShield",
+                "~class": "0xf3cbe7b2"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 524288,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mDataValue": "StunDuration",
+                "~class": "NamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 4096,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mDataValue": "StunDuration",
+                "~class": "NamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 2048,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mDataValue": "StunDuration",
+                "~class": "NamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 16384,
+          "~class": "0xb09016f6"
+        }
+      ],
+      "DamageTag": 1,
+      "~class": "BotsSpellData"
+    },
+    "ObjectName": "NeekoR",
+    "mScriptName": "NeekoR",
+    "mSpell": {
+      "DataValues": [
+        {
+          "mName": "Damage",
+          "mValues": [
+            -50.0,
+            150.0,
+            350.0,
+            550.0,
+            750.0,
+            950.0,
+            1150.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "Duration",
+          "mValues": [
+            0.0,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "StunDuration",
+          "mValues": [
+            0.0,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ShieldAmount",
+          "mValues": [
+            50.0,
+            75.0,
+            100.0,
+            125.0,
+            150.0,
+            175.0,
+            200.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ShieldDuration",
+          "mValues": [
+            0.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "DelayUntilReveal",
+          "mValues": [
+            0.0,
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "DelayUntilExplosion",
+          "mValues": [
+            0.0,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ShieldPerChampion",
+          "mValues": [
+            20.0,
+            40.0,
+            60.0,
+            80.0,
+            100.0,
+            120.0,
+            140.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "SlowAmount",
+          "mValues": [
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "DelayBeforePassiveRemoval",
+          "mValues": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "castConeAngle": 0.0,
+      "castConeDistance": 0.0,
+      "castRange": [
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0
+      ],
+      "cooldownTime": [
+        120.0,
+        120.0,
+        105.0,
+        90.0,
+        90.0,
+        90.0,
+        90.0
+      ],
+      "delayTotalTimePercent": -1.0,
+      "flags": 4,
+      "mAffectsTypeFlags": 6154,
+      "mAnimationName": "",
+      "mCantCancelWhileWindingUp": true,
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "Damage",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Cooldown",
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 3,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Pop Blossom",
+            "keySummary": "After a short preparation, Neeko leaps into the air, knocking up all nearby enemies. Upon landing, nearby enemies are damaged and stunned. The preparation is hidden if Neeko is disguised.",
+            "keyTooltip": "After a delay Neeko leaps into the air, <status>Knocking Up</status> all nearby enemies for @DelayUntilExplosion@ seconds. She then crashes down, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> to all nearby enemies and <status>Stunning</status> them for @StunDuration@ seconds.<br><br><rules>This Ability can be prepared in secret if Neeko is disguised. @DelayBeforePassiveRemoval@ seconds after casting this ability Neeko breaks her disguise.</rules>"
+          },
+          "mObjectName": "NeekoR",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mDimensionBehavior": 1,
+      "mImgIconName": [
+        "ASSETS/Characters/Neeko/HUD/Icons2D/Neeko_R.dds"
+      ],
+      "mSpellCalculations": {
+        "BaseShield": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "ShieldAmount",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.75,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "ShieldMultiplier": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "ShieldPerChampion",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.4000000059604645,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "TotalDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "Damage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 1.2000000476837158,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellRevealsChampion": false,
+      "mSpellTags": [
+        "Trait_Ultimate",
+        "Trait_ImmobilizingCCSpell"
+      ],
+      "mTargetingTypeData": {
+        "~class": "SelfAoe"
+      },
+      "mana": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Neeko/Spells/NeekoRAbility/NeekoRDummySpell": {
+    "ObjectName": "NeekoRDummySpell",
+    "mScriptName": "NeekoRDummySpell",
+    "mSpell": {
+      "canCastOrQueueWhileCasting": true,
+      "canCastWhileDisabled": true,
+      "cannotBeSuppressed": true,
+      "castRange": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "flags": 4,
+      "mAnimationName": "",
+      "mCantCancelWhileWindingUp": true,
+      "mCastingBreaksStealth": true,
+      "mDimensionBehavior": 1,
+      "mTargetingTypeData": {
+        "~class": "SelfAoe"
+      },
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Neeko/Spells/NeekoRAbility/NeekoRIndicatorMis": {
+    "ObjectName": "NeekoRIndicatorMis",
+    "mScriptName": "NeekoRIndicatorMis",
+    "mSpell": {
+      "flags": 4194308,
+      "mAffectsTypeFlags": 8192,
+      "mCastType": 3,
+      "mDimensionBehavior": 1,
+      "mMissileSpec": {
+        "heightSolver": {
+          "~class": "FollowTerrainHeightSolver"
+        },
+        "movementComponent": {
+          "mSpeed": 250000.0,
+          "mStartBoneName": "root",
+          "mVisualsTrackHiddenTargets": true,
+          "~class": "FixedSpeedMovement"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 250000.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Neeko/Spells/NeekoRAbility/NeekoRShield": {
+    "ObjectName": "NeekoRShield",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Pop Blossom",
+          "keyTooltip": "Neeko is shielded from damage."
+        },
+        "mObjectName": "NeekoRShield",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "NeekoRShield",
+    "~class": "SpellObject"
+  },
+  "Characters/Neeko/Spells/NeekoRAbility/NeekoRStun": {
+    "ObjectName": "NeekoRStun",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Stunned",
+          "keyTooltip": "TestTestTest"
+        },
+        "mObjectName": "NeekoRStun",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "NeekoRStun",
+    "~class": "SpellObject"
+  },
+  "Characters/Neeko/Spells/NeekoRunCycleManager": {
+    "ObjectName": "NeekoRunCycleManager",
+    "mScriptName": "NeekoRunCycleManager",
+    "~class": "SpellObject"
+  },
+  "Characters/Neeko/Spells/NeekoWAbility/NeekoW": {
+    "BotData": {
+      "0x38382c53": [
+        {
+          "0xe38f54f7": 8192,
+          "~class": "0x150d1b92"
+        }
+      ],
+      "~class": "BotsSpellData"
+    },
+    "ObjectName": "NeekoW",
+    "mScriptName": "NeekoW",
+    "mSpell": {
+      "0xf9c2333e": {
+        "cherry": {
+          "value": [
+            12.0,
+            12.0,
+            11.0,
+            10.0,
+            9.0,
+            8.0,
+            7.0
+          ],
+          "~class": "SpellEffectAmount"
+        }
+      },
+      "DataValues": [
+        {
+          "mName": "CloneDuration",
+          "mValues": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "StealthDuration",
+          "mValues": [
+            0.0,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "CloneDamageTimer",
+          "mValues": [
+            0.0,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "Haste",
+          "mValues": [
+            15.0,
+            20.0,
+            25.0,
+            30.0,
+            35.0,
+            40.0,
+            45.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "HasteDuration",
+          "mValues": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "PassiveDamage",
+          "mValues": [
+            -5.0,
+            30.0,
+            65.0,
+            100.0,
+            135.0,
+            170.0,
+            205.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "PassiveHaste",
+          "mValues": [
+            2.5,
+            10.0,
+            17.5,
+            25.0,
+            32.5,
+            40.0,
+            47.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "PassiveHasteDuration",
+          "mValues": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "MonsterBonus",
+          "mValues": [
+            75.0,
+            75.0,
+            75.0,
+            75.0,
+            75.0,
+            75.0,
+            75.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "APRatio",
+          "mValues": [
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "mName": "PassiveDamage",
+              "mValues": [
+                35.0,
+                70.0,
+                105.0,
+                140.0,
+                175.0,
+                210.0,
+                245.0
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "mName": "APRatio",
+              "mValues": [
+                0.699999988079071,
+                0.699999988079071,
+                0.699999988079071,
+                0.699999988079071,
+                0.699999988079071,
+                0.699999988079071,
+                0.699999988079071
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
+      "castConeAngle": 0.0,
+      "castConeDistance": 0.0,
+      "castRange": [
+        900.0,
+        900.0,
+        900.0,
+        900.0,
+        900.0,
+        900.0,
+        900.0
+      ],
+      "cooldownTime": [
+        16.0,
+        16.0,
+        15.0,
+        14.0,
+        13.0,
+        12.0,
+        12.0
+      ],
+      "flags": 4,
+      "mAnimationName": "",
+      "mCantCancelWhileWindingUp": true,
+      "mCharacterPassiveBuffs": [
+        {
+          "mParentPassiveBuff": "Characters/Neeko/Spells/NeekoWAbility/NeekoWPassive",
+          "~class": "CharacterPassiveData"
+        }
+      ],
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "endLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "lineWidth": {
+              "mPerLevelValues": [
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0
+              ],
+              "mValueType": 1,
+              "~class": "FloatPerSpellLevel"
+            },
+            "~class": "TargeterDefinitionLine"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Passive Damage",
+                  "type": "PassiveDamage",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "nameOverride": "Active Move Speed",
+                  "type": "Haste",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "nameOverride": "Passive Move Speed",
+                  "type": "PassiveHaste",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyCost": "No Cost",
+            "keyName": "Shapesplitter",
+            "keySummary": "Neeko passively deals bonus magic damage every third attack, briefly increasing her move speed. Neeko can activate to send a clone in a direction and recast to change the direction of the clone.",
+            "keyTooltip": "<passive>Passive:</passive> Every 3rd Attack deals an additional <magicDamage>@PassiveBonusDamageCalc@ bonus magic damage</magicDamage> and increases Neeko's <speed>Move Speed by @PassiveHaste@%</speed> for @PassiveHasteDuration@ second.<br><br><active>Active:</active> Neeko becomes <keywordStealth>invisible</keywordStealth> for @StealthDuration@ seconds and projects a clone that lasts @CloneDuration@ seconds. Neeko and the clone gain <speed>@Haste@% Move Speed</speed> for @HasteDuration@ seconds. <br><br><rules>The clone can be controlled using the Move Pet Click hotkey or by <recast>Recasting</recast> this Ability.<br>The clone mirrors her spellcasts, emotes, and recall.</rules>",
+            "keyTooltipExtendedBelowLine": "<rules>The clone is untargetable while stealthed.<br>Empowered Attacks deal <magicDamage>@MonsterBonus@ bonus magic damage</magicDamage> to monsters.</rules>"
+          },
+          "mObjectName": "NeekoW",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mImgIconName": [
+        "ASSETS/Characters/Neeko/HUD/Icons2D/Neeko_W.dds"
+      ],
+      "mSpellCalculations": {
+        "PassiveBonusDamageCalc": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "PassiveDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellRevealsChampion": false,
+      "mTargetingTypeData": {
+        "~class": "direction"
+      },
+      "missileSpeed": 0.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Neeko/Spells/NeekoWAbility/NeekoW2": {
+    "ObjectName": "NeekoW2",
+    "mScriptName": "NeekoW2",
+    "mSpell": {
+      "DataValues": [
+        {
+          "mName": "CloneDuration",
+          "mValues": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "StealthDuration",
+          "mValues": [
+            0.0,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "CloneDamageTimer",
+          "mValues": [
+            0.0,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "Haste",
+          "mValues": [
+            15.0,
+            20.0,
+            25.0,
+            30.0,
+            35.0,
+            40.0,
+            45.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "HasteDuration",
+          "mValues": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "PassiveDamage",
+          "mValues": [
+            20.0,
+            50.0,
+            80.0,
+            110.0,
+            140.0,
+            170.0,
+            200.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "PassiveHaste",
+          "mValues": [
+            2.5,
+            10.0,
+            17.5,
+            25.0,
+            32.5,
+            40.0,
+            47.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "PassiveHasteDuration",
+          "mValues": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "canCastWhileDisabled": true,
+      "castConeAngle": 0.0,
+      "castConeDistance": 0.0,
+      "castRange": [
+        10000.0,
+        10000.0,
+        10000.0,
+        10000.0,
+        10000.0,
+        10000.0,
+        10000.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "flags": 4,
+      "mAnimationName": "",
+      "mCantCancelWhileWindingUp": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "endLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "lineWidth": {
+              "mPerLevelValues": [
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0
+              ],
+              "mValueType": 1,
+              "~class": "FloatPerSpellLevel"
+            },
+            "~class": "TargeterDefinitionLine"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyCost": "No Cost",
+            "keyName": "Shapesplitter",
+            "keySummary": "Neeko passively deals bonus magic damage every third attack, briefly increasing her move speed. Neeko can activate to send a clone in a direction and recast to change the direction of the clone.",
+            "keyTooltip": "Activate to command Neeko's clone to walk to target location."
+          },
+          "mObjectName": "NeekoW2",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mDoesNotConsumeCooldown": true,
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mImgIconName": [
+        "ASSETS/Characters/Neeko/HUD/Icons2D/Neeko_W2.dds"
+      ],
+      "mSpellCalculations": {
+        "PassiveBonusDamageCalc": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "PassiveDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.6000000238418579,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellRevealsChampion": false,
+      "mSpellTags": [
+        "Trait_SignatureSpell"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Location"
+      },
+      "missileSpeed": 0.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Neeko/Spells/NeekoWAbility/NeekoWPassive": {
+    "ObjectName": "NeekoWPassive",
+    "mBuff": {
+      "~class": "BuffData"
+    },
+    "mScriptName": "NeekoWPassive",
+    "~class": "SpellObject"
+  },
+  "Characters/Neeko/Spells/NeekoWAbility/NeekoWPassiveAttack": {
+    "ObjectName": "NeekoWPassiveAttack",
+    "mScriptName": "NeekoWPassiveAttack",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "canCastWhileDisabled": true,
+      "castConeDistance": 100.0,
+      "castFrame": 10.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        550.0,
+        550.0,
+        550.0,
+        550.0,
+        550.0,
+        550.0,
+        550.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 4234,
+      "mAnimationName": "Passive_Attack",
+      "mApplyAttackDamage": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "missileSpeed": 2000.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Neeko/Spells/NeekoWAbility/NeekoWPassiveCounter": {
+    "ObjectName": "NeekoWPassiveCounter",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Shapesplitter",
+          "keyTooltip": "Neeko's third basic attack will deal bonus magic damage."
+        },
+        "mObjectName": "NeekoWPassiveCounter",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "NeekoWPassiveCounter",
+    "~class": "SpellObject"
+  },
+  "Characters/Neeko/Spells/NeekoWAbility/NeekoWPassiveMissile": {
+    "ObjectName": "NeekoWPassiveMissile",
+    "mScriptName": "NeekoWPassiveMissile",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "canCastWhileDisabled": true,
+      "cannotBeSuppressed": true,
+      "castConeDistance": 100.0,
+      "castRange": [
+        1500.0,
+        1500.0,
+        1500.0,
+        1500.0,
+        1500.0,
+        1500.0,
+        1500.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "flags": 4,
+      "mAffectsStatusFlags": 48,
+      "mAffectsTypeFlags": 7375,
+      "mCastType": 1,
+      "mDoesntBreakChannels": true,
+      "mMissileEffectKey": "Neeko_W_P_mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "~class": "BlendedLinearHeightSolver"
+        },
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 50.0,
+          "mSpeed": 3000.0,
+          "mStartBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+          "mTargetBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+          "mTargetHeightAugment": 50.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 3500.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Neeko/Spells/NeekoWAbility/NeekoWPassiveReady": {
+    "ObjectName": "NeekoWPassiveReady",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Shapesplitter",
+          "keyTooltip": "Neeko's next basic attack will deal bonus magic damage."
+        },
+        "mObjectName": "NeekoWPassiveReady",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "NeekoWPassiveReady",
+    "~class": "SpellObject"
+  }
+}

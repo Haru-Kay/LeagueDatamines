@@ -1,0 +1,1922 @@
+{
+  "0x34c317b1": {
+    "ObjectName": "SkarnerRTailGrabLeft",
+    "mScriptName": "SkarnerRTailGrabLeft",
+    "~class": "SpellObject"
+  },
+  "0x5ac742ee": {
+    "ObjectName": "SkarnerECancel",
+    "mScriptName": "SkarnerECancel",
+    "mSpell": {
+      "flags": 36,
+      "mAffectsTypeFlags": 8192,
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLocKeys": {
+            "keyName": "Ixtal's Impact",
+            "keyTooltip": "Skarner ends his charge and releases any pinned victim."
+          },
+          "mObjectName": "SkarnerECancel",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "ASSETS/Characters/Skarner/HUD/Icons2D/Skarner_Charge_Cancel.dds"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Self"
+      },
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x6023192c": {
+    "ObjectName": "SkarnerQFirstClawEmpower",
+    "mScriptName": "SkarnerQFirstClawEmpower",
+    "~class": "SpellObject"
+  },
+  "0x65344ca5": {
+    "ObjectName": "SkarnerEGrabbed",
+    "mBuff": {
+      "mDescription": "<titleLeft>Ixtal's Impact</titleLeft><mainText>Skarner is carrying his prey.</mainText>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "SkarnerEGrabbed",
+    "mSpell": {
+      "mImgIconName": [
+        "ASSETS/Characters/Skarner/HUD/Icons2D/Skarner_E.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x656cfc52": {
+    "ObjectName": "SkarnerRTailGrabRight",
+    "mScriptName": "SkarnerRTailGrabRight",
+    "~class": "SpellObject"
+  },
+  "0x7320cef5": {
+    "ObjectName": "SkarnerWShield",
+    "mBuff": {
+      "mDescription": "<titleLeft>Seismic Bastion</titleLeft><mainText>Skarner is shielded.</mainText>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "SkarnerWShield",
+    "mSpell": {
+      "mImgIconName": [
+        "ASSETS/Characters/Skarner/HUD/Icons2D/Skarner_W.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x78d3d80c": {
+    "ObjectName": "SkarnerEStun",
+    "mBuff": {
+      "mDescription": "<titleLeft>Ixtal's Impact</titleLeft><mainText>Skarner has stunned his prey.</mainText>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "SkarnerEStun",
+    "mSpell": {
+      "mImgIconName": [
+        "ASSETS/Characters/Skarner/HUD/Icons2D/Skarner_E.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x82f12fe7": {
+    "ObjectName": "SkarnerQRockThrow",
+    "mScriptName": "SkarnerQRockThrow",
+    "mSpell": {
+      "castRange": [
+        1050.0,
+        1050.0,
+        1050.0,
+        1050.0,
+        1050.0,
+        1050.0,
+        1050.0
+      ],
+      "delayCastOffsetPercent": -0.5,
+      "delayTotalTimePercent": -0.5,
+      "mAffectsTypeFlags": 6154,
+      "mAnimationName": "Spell1_toss",
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.25,
+      "mCastType": 3,
+      "mCasterPositionEndOfCastUpdate": 1,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "hideWithLineIndicator": true,
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "endLocator": {
+              "basePosition": 4,
+              "~class": "DrawablePositionLocator"
+            },
+            "lineWidth": {
+              "mPerLevelValues": [
+                90.0,
+                90.0,
+                90.0,
+                90.0,
+                90.0,
+                90.0
+              ],
+              "mValueType": 1,
+              "~class": "FloatPerSpellLevel"
+            },
+            "~class": "TargeterDefinitionLine"
+          }
+        ],
+        "mUseTooltipFromAnotherSpell": "Characters/Skarner/Spells/SkarnerQAbility/SkarnerQ",
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "ASSETS/Characters/Skarner/HUD/Icons2D/Skarner_Q_Throw.dds"
+      ],
+      "mMissileEffectKey": "Skarner_P_Rock_2",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnHit"
+          },
+          {
+            "~class": "DestroyOnHit"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "~class": "BlendedLinearHeightSolver"
+        },
+        "mMissileWidth": 90.0,
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 1600.0,
+          "mStartBoneName": "BUFFBONE_CSTM_WEAPON_GAP_10",
+          "mTracksTarget": false,
+          "mUseHeightOffsetAtEnd": true,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VerticalFacingFaceTarget"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mTargetingTypeData": {
+        "~class": "direction"
+      },
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x86d7096a": {
+    "ObjectName": "SkarnerRImpale",
+    "mBuff": {
+      "mDescription": "<titleLeft>Impale</titleLeft><mainText>This champion has been Impaled by Skarner.</mainText>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "SkarnerRImpale",
+    "mSpell": {
+      "mImgIconName": [
+        "ASSETS/Characters/Skarner/HUD/Icons2D/Skarner_R.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x8b0509f5": {
+    "ObjectName": "SkarnerQRockAttack",
+    "mScriptName": "SkarnerQRockAttack",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "canCastWhileDisabled": true,
+      "castFrame": 10.0,
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 22666,
+      "mAnimationName": "Spell1_Rock_Melee",
+      "mApplyAttackDamage": true,
+      "mApplyMaterialOnHitSound": true,
+      "mCantCancelWhileWindingUp": true,
+      "mCantCancelWhileWindingUpTargetingChampion": true,
+      "mCastTime": 0.10670000314712524,
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x978a6209": {
+    "ObjectName": "SkarnerRTailGrabCenter",
+    "mScriptName": "SkarnerRTailGrabCenter",
+    "~class": "SpellObject"
+  },
+  "0xa69258ba": {
+    "ObjectName": "SkarnerQSecondClawEmpower",
+    "mBuff": {
+      "PersistentEffectConditions": [
+        {
+          "PersistentVfxs": [
+            {
+              "effectKey": "Skarner_Q_State_Claws",
+              "~class": "PersistentVfxData"
+            }
+          ],
+          "~class": "PersistentEffectConditionData"
+        },
+        {
+          "PersistentVfxs": [
+            {
+              "boneName": "L_Claw",
+              "effectKey": "Skarner_Q_State_ClawLeft",
+              "~class": "PersistentVfxData"
+            }
+          ],
+          "~class": "PersistentEffectConditionData"
+        },
+        {
+          "PersistentVfxs": [
+            {
+              "boneName": "R_Claw",
+              "effectKey": "Skarner_Q_State_ClawRight",
+              "~class": "PersistentVfxData"
+            }
+          ],
+          "~class": "PersistentEffectConditionData"
+        }
+      ],
+      "~class": "BuffData"
+    },
+    "mScriptName": "SkarnerQSecondClawEmpower",
+    "~class": "SpellObject"
+  },
+  "0xbe030f4b": {
+    "ObjectName": "SkarnerQClawAttack",
+    "mScriptName": "SkarnerQClawAttack",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "canCastWhileDisabled": true,
+      "castConeDistance": 100.0,
+      "castFrame": 10.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        50.0,
+        50.0,
+        50.0,
+        50.0,
+        50.0,
+        50.0,
+        50.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delayCastOffsetPercent": -0.1899999976158142,
+      "mAffectsTypeFlags": 5327,
+      "mAnimationName": "Attack_Rock1",
+      "mApplyAttackDamage": true,
+      "mApplyMaterialOnHitSound": true,
+      "mCantCancelWhileChanneling": true,
+      "mCantCancelWhileWindingUp": true,
+      "mCantCancelWhileWindingUpTargetingChampion": true,
+      "mClientData": {
+        "mRightClickSpellAction": 0,
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 2000.0,
+          "mStartBoneName": "BUFFBONE_CSTM_WEAPON_1",
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 2000.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0xd1e124bb": {
+    "ObjectName": "SkarnerPassiveDot",
+    "mBuff": {
+      "mDescription": "<titleLeft>Quaking</titleLeft><mainText>This unit is Quaking from Skarner. When Quaking is at 3 stacks this unit takes damage over time.</mainText>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "SkarnerPassiveDot",
+    "mSpell": {
+      "mImgIconName": [
+        "ASSETS/Characters/Skarner/HUD/Icons2D/Skarner_Passive.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0xf46b5c80": {
+    "ObjectName": "SkarnerPassiveAttack",
+    "mScriptName": "SkarnerPassiveAttack",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 10.0,
+      "castRadius": [
+        385.0,
+        385.0,
+        385.0,
+        385.0,
+        385.0,
+        385.0,
+        385.0
+      ],
+      "delayCastOffsetPercent": -0.3077000081539154,
+      "mAffectsTypeFlags": 5327,
+      "mAlternateName": "Skarner_ReworkBasicAttack",
+      "mAnimationName": "Attack_Passive1",
+      "mApplyMaterialOnHitSound": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Skarner_BA_tar_03",
+      "mHitEffectOrientType": 2,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Skarner/Spells/SkarnerBasicAttack": {
+    "ObjectName": "SkarnerBasicAttack",
+    "mScriptName": "SkarnerBasicAttack",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 10.0,
+      "castRadius": [
+        385.0,
+        385.0,
+        385.0,
+        385.0,
+        385.0,
+        385.0,
+        385.0
+      ],
+      "delayCastOffsetPercent": -0.3077000081539154,
+      "mAffectsTypeFlags": 5327,
+      "mAlternateName": "Skarner_ReworkBasicAttack",
+      "mApplyMaterialOnHitSound": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Skarner_BA_tar_01",
+      "mHitEffectOrientType": 2,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Skarner/Spells/SkarnerBasicAttack2": {
+    "ObjectName": "SkarnerBasicAttack2",
+    "mScriptName": "SkarnerBasicAttack2",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 10.0,
+      "delayCastOffsetPercent": -0.3077000081539154,
+      "mAffectsTypeFlags": 5327,
+      "mAlternateName": "Skarner_ReworkBasicAttack2",
+      "mAnimationName": "Attack2",
+      "mApplyMaterialOnHitSound": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Skarner_BA_tar_02",
+      "mHitEffectOrientType": 2,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Skarner/Spells/SkarnerCritAttack": {
+    "ObjectName": "SkarnerCritAttack",
+    "mScriptName": "SkarnerCritAttack",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 10.0,
+      "delayCastOffsetPercent": -0.3077000081539154,
+      "mAffectsTypeFlags": 5327,
+      "mAlternateName": "Skarner_ReworkCritAttack",
+      "mAnimationName": "Crit",
+      "mApplyMaterialOnHitSound": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Skarner_BA_tar_crit_01",
+      "mHitEffectOrientType": 2,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Skarner/Spells/SkarnerEAbility/SkarnerE": {
+    "ObjectName": "SkarnerE",
+    "mBuff": {
+      "mDescription": "<titleLeft>Ixtal's Impact</titleLeft><mainText>Skarner is charging toward his prey.</mainText>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "SkarnerE",
+    "mSpell": {
+      "0xf9c2333e": {
+        "0xbffdf499": {
+          "value": [
+            18.0,
+            18.0,
+            17.0,
+            16.0,
+            15.0,
+            14.0,
+            13.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        "cherry": {
+          "value": [
+            14.0,
+            14.0,
+            13.0,
+            12.0,
+            11.0,
+            10.0,
+            9.0
+          ],
+          "~class": "SpellEffectAmount"
+        }
+      },
+      "DataValues": [
+        {
+          "mName": "ChargeDuration",
+          "mValues": [
+            2.75,
+            2.75,
+            2.75,
+            2.75,
+            2.75,
+            2.75,
+            2.75
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "InitialSpeed",
+          "mValues": [
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "Acceleration",
+          "mValues": [
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "MaximumSpeed",
+          "mValues": [
+            950.0,
+            950.0,
+            950.0,
+            950.0,
+            950.0,
+            950.0,
+            950.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "GrabHitboxRadius",
+          "mValues": [
+            160.0,
+            160.0,
+            160.0,
+            160.0,
+            160.0,
+            160.0,
+            160.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "GrabHitboxOffset",
+          "mValues": [
+            90.0,
+            90.0,
+            90.0,
+            90.0,
+            90.0,
+            90.0,
+            90.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "WallRevealRadius",
+          "mValues": [
+            650.0,
+            650.0,
+            650.0,
+            650.0,
+            650.0,
+            650.0,
+            650.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "WallWarningRadius",
+          "mValues": [
+            1750.0,
+            1750.0,
+            1750.0,
+            1750.0,
+            1750.0,
+            1750.0,
+            1750.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "GrabbedMoveSpeedBonus",
+          "mValues": [
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "MinGrabbedSpeed",
+          "mValues": [
+            650.0,
+            650.0,
+            650.0,
+            650.0,
+            650.0,
+            650.0,
+            650.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "DistancePostGrab",
+          "mValues": [
+            675.0,
+            675.0,
+            675.0,
+            675.0,
+            675.0,
+            675.0,
+            675.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "StunDuration",
+          "mValues": [
+            1.100000023841858,
+            1.100000023841858,
+            1.100000023841858,
+            1.100000023841858,
+            1.100000023841858,
+            1.100000023841858,
+            1.100000023841858
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "PinBaseDamage",
+          "mValues": [
+            0.0,
+            30.0,
+            60.0,
+            90.0,
+            120.0,
+            150.0,
+            180.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ADRatio",
+          "mValues": [
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "PinDamageRatio",
+          "mValues": [
+            0.05999999865889549,
+            0.05999999865889549,
+            0.05999999865889549,
+            0.05999999865889549,
+            0.05999999865889549,
+            0.05999999865889549,
+            0.05999999865889549
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "VictimOffsetIncrease",
+          "mValues": [
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "RefundPercent",
+          "mValues": [
+            0.6499999761581421,
+            0.6499999761581421,
+            0.6499999761581421,
+            0.6499999761581421,
+            0.6499999761581421,
+            0.6499999761581421,
+            0.6499999761581421
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "MinimumQRenew",
+          "mValues": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "InitialHitboxRadius",
+          "mValues": [
+            160.0,
+            160.0,
+            160.0,
+            160.0,
+            160.0,
+            160.0,
+            160.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "InitialHitboxOffset",
+          "mValues": [
+            90.0,
+            90.0,
+            90.0,
+            90.0,
+            90.0,
+            90.0,
+            90.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "SecondHitboxDelay",
+          "mValues": [
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "SecondHitboxRadius",
+          "mValues": [
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "SecondHitboxOffset",
+          "mValues": [
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "FinalHitboxDelay",
+          "mValues": [
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "mName": "PinBaseDamage",
+              "mValues": [
+                20.0,
+                50.0,
+                80.0,
+                110.0,
+                140.0,
+                170.0,
+                200.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
+      "cantCastWhileRooted": true,
+      "castRange": [
+        1700.0,
+        1700.0,
+        1700.0,
+        1700.0,
+        1700.0,
+        1700.0,
+        1700.0
+      ],
+      "cooldownTime": [
+        23.0,
+        22.0,
+        21.0,
+        20.0,
+        19.0,
+        18.0,
+        17.0
+      ],
+      "flags": 36,
+      "mAffectsTypeFlags": 8192,
+      "mAnimationName": "Spell3",
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionMinimap"
+          },
+          {
+            "endLocator": {
+              "basePosition": 4,
+              "~class": "DrawablePositionLocator"
+            },
+            "lineWidth": {
+              "mPerLevelValues": [
+                130.0,
+                130.0,
+                130.0,
+                130.0,
+                130.0,
+                130.0
+              ],
+              "mValueType": 1,
+              "~class": "FloatPerSpellLevel"
+            },
+            "~class": "TargeterDefinitionLine"
+          },
+          {
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "PinBaseDamage",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Cooldown",
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Ixtal's Impact",
+            "keySummary": "Skarner charges forward and passes through terrain. If he collides with a champion or large monster, he'll slam them into the next wall he hits to damage and stun them.",
+            "keyTooltip": "Skarner charges forward, steering toward the chosen direction and ignoring terrain. If he runs into a champion or large monster, Skarner drags them along for the rest of his charge.<br><br>Colliding into a wall with an enemy in tow deals <physicalDamage>@PinDamage@ physical damage</physicalDamage> to the enemy and <status>Stuns</status> them for @StunDuration@s.<br><br>Skarner can <recast>Recast</recast> this Ability to end his charge early.",
+            "keyTooltipExtendedBelowLine": "<rules>Successful wall collisions reduce this Ability's cooldown to @RefundPercent*100@%.</rules>"
+          },
+          "mObjectName": "SkarnerE",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "ASSETS/Characters/Skarner/HUD/Icons2D/Skarner_E.dds"
+      ],
+      "mSpellCalculations": {
+        "PinDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "PinBaseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "ADRatio",
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "PinDamageRatio",
+              "mStat": 12,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mTargetingTypeData": {
+        "~class": "direction"
+      },
+      "mana": [
+        50.0,
+        55.0,
+        60.0,
+        65.0,
+        70.0,
+        70.0
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Skarner/Spells/SkarnerPassiveAbility/SkarnerPassive": {
+    "ObjectName": "SkarnerPassive",
+    "mScriptName": "SkarnerPassive",
+    "mSpell": {
+      "DataValues": [
+        {
+          "mName": "StacksToTriggerPassive",
+          "mValues": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "Duration",
+          "mValues": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "TickFrequency",
+          "mValues": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "castRange": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyName": "Threads of Vibration",
+            "keySummary": "Skarner's Attacks, Shattered Earth, Upheaval, and Impale, apply Quaking. At max stacks of Quaking, enemies take max Health magic damage over its duration.",
+            "keyTooltip": "Skarner's Attacks, <spellName>Shattered Earth</spellName>, <spellName>Upheaval</spellName>, and <spellName>Impale</spellName>, apply <keywordMajor>Quaking</keywordMajor> for @Duration@s. At @StacksToTriggerPassive@ stacks of <keywordMajor>Quaking</keywordMajor>, enemies take <magicDamage>@PercentHealthDamage@ max Health magic damage</magicDamage> over its duration.",
+            "keyTooltipExtended": "{{Spell_Skarner_Passive_Tooltip}}<br><br><rules>Total damage to monsters is capped at @DamageMonsterCap@.</rules>"
+          },
+          "mObjectName": "SkarnerPassive",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "ASSETS/Characters/Skarner/HUD/Icons2D/Skarner_Passive.dds"
+      ],
+      "mSpellCalculations": {
+        "DamageMonsterCap": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 300.0,
+              "mStartValue": 100.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "PercentHealthDamage": {
+          "mDisplayAsPercent": true,
+          "mFormulaParts": [
+            {
+              "mEndValue": 9.0,
+              "mStartValue": 5.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            }
+          ],
+          "mMultiplier": {
+            "mNumber": 0.009999999776482582,
+            "~class": "NumberCalculationPart"
+          },
+          "mPrecision": 1,
+          "~class": "GameCalculation"
+        }
+      },
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Skarner/Spells/SkarnerQAbility/SkarnerQ": {
+    "ObjectName": "SkarnerQ",
+    "mBuff": {
+      "mDescription": "<titleLeft>Shattered Earth / Upheaval</titleLeft><mainText>Skarner is holding a boulder, which empowers his attacks and will deal tons of damage when thrown.</mainText>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "SkarnerQ",
+    "mSpell": {
+      "DataValues": [
+        {
+          "mName": "RockHoldDuration",
+          "mValues": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "AttackRadius",
+          "mValues": [
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "BaseDamage",
+          "mValues": [
+            0.0,
+            10.0,
+            20.0,
+            30.0,
+            40.0,
+            50.0,
+            60.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "MaxHPPercent",
+          "mValues": [
+            0.09000000357627869,
+            0.09000000357627869,
+            0.09000000357627869,
+            0.09000000357627869,
+            0.09000000357627869,
+            0.09000000357627869,
+            0.09000000357627869
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "SlowDuration",
+          "mValues": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "SlowPercent",
+          "mValues": [
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "MonsterDamageCap",
+          "mValues": [
+            100.0,
+            150.0,
+            200.0,
+            250.0,
+            300.0,
+            350.0,
+            400.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "AttackRange",
+          "mValues": [
+            25.0,
+            25.0,
+            25.0,
+            25.0,
+            25.0,
+            25.0,
+            25.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "AttackSpeed",
+          "mValues": [
+            0.15000000596046448,
+            0.20000000298023224,
+            0.25,
+            0.30000001192092896,
+            0.3499999940395355,
+            0.4000000059604645,
+            0.44999998807907104
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "BonusHealthRatio",
+          "mValues": [
+            0.029999999329447746,
+            0.029999999329447746,
+            0.029999999329447746,
+            0.029999999329447746,
+            0.029999999329447746,
+            0.029999999329447746,
+            0.029999999329447746
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ADRatio",
+          "mValues": [
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "TurretDamageMod",
+          "mValues": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "mName": "BaseDamage",
+              "mValues": [
+                0.0,
+                20.0,
+                40.0,
+                60.0,
+                80.0,
+                100.0,
+                120.0
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "mName": "MaxHPPercent",
+              "mValues": [
+                0.11999999731779099,
+                0.11999999731779099,
+                0.11999999731779099,
+                0.11999999731779099,
+                0.11999999731779099,
+                0.11999999731779099,
+                0.11999999731779099
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
+      "canCastOrQueueWhileCasting": true,
+      "cooldownTime": [
+        8.0,
+        8.0,
+        6.75,
+        5.5,
+        4.25,
+        3.0,
+        3.0
+      ],
+      "delayCastOffsetPercent": -0.30000001192092896,
+      "delayTotalTimePercent": -0.824999988079071,
+      "flags": 32,
+      "mAnimationName": "Spell1",
+      "mCantCancelWhileWindingUp": true,
+      "mCantCancelWhileWindingUpTargetingChampion": true,
+      "mChannelIsInterruptedByAttacking": false,
+      "mChannelIsInterruptedByDisables": false,
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "BaseDamage",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Attack Speed",
+                  "type": "AttackSpeed",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Monster Cap",
+                  "type": "MonsterDamageCap",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Cooldown",
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Shattered Earth / Upheaval",
+            "keySummary": "Skarner rips a boulder from the earth that empowers his attacks and can be thrown as a powerful projectile.",
+            "keyTooltip": "Skarner rips a boulder from the ground, empowering his next 3 Attacks with <attackSpeed>@AttackSpeed*100@% Attack Speed</attackSpeed> and dealing <physicalDamage>@AbilityDamage@ physical damage</physicalDamage> to surrounding enemies. His final Attack will deal an additional <physicalDamage>@MaxHPPercent*100@% max Health physical damage</physicalDamage> and <status>Slow</status> affected foes by @SlowPercent*100@% for @SlowDuration@s.<br><br><recast>Recast:</recast> Skarner ends this Ability and throws his boulder, dealing <physicalDamage>@spell.SkarnerQ:AbilityDamage@ + @spell.SkarnerQ:MaxHPPercent*100@% max Health physical damage</physicalDamage>, and additionally <status>Slowing</status> the first enemy hit — and any other surrounding enemies — by @spell.SkarnerQ:SlowPercent*100@% for @spell.SkarnerQ:SlowDuration@s.",
+            "keyTooltipExtendedBelowLine": "<rules>Percent Health Damage to monsters is capped at @MonsterDamageCap@.<br>This Ability deals @TurretDamageMod*100@% to structures.</rules>"
+          },
+          "mObjectName": "SkarnerQ",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mDoesNotConsumeCooldown": true,
+      "mImgIconName": [
+        "ASSETS/Characters/Skarner/HUD/Icons2D/Skarner_Q.dds"
+      ],
+      "mSpellCalculations": {
+        "AbilityDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "ADRatio",
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "BonusHealthRatio",
+              "mStat": 12,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "Trait_AttackReset"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Self"
+      },
+      "mana": [
+        45.0,
+        45.0,
+        45.0,
+        45.0,
+        45.0,
+        45.0
+      ],
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Skarner/Spells/SkarnerRAbility/SkarnerR": {
+    "ObjectName": "SkarnerR",
+    "mScriptName": "SkarnerR",
+    "mSpell": {
+      "DataValues": [
+        {
+          "mName": "BackwardOffset",
+          "mValues": [
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "HitboxStartHalfWidth",
+          "mValues": [
+            175.0,
+            175.0,
+            175.0,
+            175.0,
+            175.0,
+            175.0,
+            175.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "HitboxEndHalfWidth",
+          "mValues": [
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "BaseDamage",
+          "mValues": [
+            50.0,
+            150.0,
+            250.0,
+            350.0,
+            450.0,
+            550.0,
+            650.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "Duration",
+          "mValues": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "HoldDistance",
+          "mValues": [
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "SpeedBoostAmount",
+          "mValues": [
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "SpeedBoostDuration",
+          "mValues": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "DropDistance",
+          "mValues": [
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "mName": "BaseDamage",
+              "mValues": [
+                150.0,
+                250.0,
+                350.0,
+                450.0,
+                550.0,
+                650.0,
+                750.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
+      "alwaysSnapFacing": true,
+      "castRange": [
+        625.0,
+        625.0,
+        625.0,
+        625.0,
+        625.0,
+        625.0,
+        625.0
+      ],
+      "cooldownTime": [
+        120.0,
+        120.0,
+        105.0,
+        90.0,
+        90.0,
+        90.0,
+        90.0
+      ],
+      "delayCastOffsetPercent": 0.5,
+      "delayTotalTimePercent": -0.625,
+      "mAffectsTypeFlags": 2,
+      "mAnimationName": "Spell4_channel",
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.75,
+      "mCasterPositionEndOfCastUpdate": 2,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "endLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "lineWidth": {
+              "mPerLevelValues": [
+                120.0,
+                120.0,
+                120.0,
+                120.0,
+                120.0,
+                120.0
+              ],
+              "mValueType": 1,
+              "~class": "FloatPerSpellLevel"
+            },
+            "~class": "TargeterDefinitionLine"
+          },
+          {
+            "hideWithLineIndicator": true,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "BaseDamage",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Cooldown",
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 3,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Impale",
+            "keySummary": "Skarner's tails lash forward to suppress enemy champions. Once suppressed, the victims will be dragged along by Skarner as he moves around.",
+            "keyTooltip": "Skarner's tails lash forward, dealing <magicDamage>@Damage@ magic damage</magicDamage> and <status>Suppressing</status> the first 3 champions he hits for @Duration@s. Those hit are dragged along by Skarner for the duration of this Ability.<br><br>If Skarner hits at least one champion he gains <speed>@SpeedBoostAmount*100@% Move Speed</speed> for @SpeedBoostDuration@ seconds.<br><br>If <spellName>Shattered Earth</spellName> is active, Skarner will cast <spellName>Upheaval</spellName> first."
+          },
+          "mObjectName": "SkarnerR",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "ASSETS/Characters/Skarner/HUD/Icons2D/Skarner_R.dds"
+      ],
+      "mSpellCalculations": {
+        "Damage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 1.0,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "Trait_Ultimate",
+        "Trait_ImmobilizingCCSpell"
+      ],
+      "mTargetingTypeData": {
+        "~class": "direction"
+      },
+      "mana": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "selectionPriority": 1,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Skarner/Spells/SkarnerTurretAttack": {
+    "ObjectName": "SkarnerTurretAttack",
+    "mScriptName": "SkarnerTurretAttack",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 10.0,
+      "castRadius": [
+        385.0,
+        385.0,
+        385.0,
+        385.0,
+        385.0,
+        385.0,
+        385.0
+      ],
+      "delayCastOffsetPercent": -0.3077000081539154,
+      "mAffectsTypeFlags": 5327,
+      "mAnimationName": "TurretAttack1",
+      "mApplyMaterialOnHitSound": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Skarner_BA_tar_01",
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Skarner/Spells/SkarnerWAbility/SkarnerW": {
+    "ObjectName": "SkarnerW",
+    "mScriptName": "SkarnerW",
+    "mSpell": {
+      "DataValues": [
+        {
+          "mName": "BaseDamage",
+          "mValues": [
+            30.0,
+            50.0,
+            70.0,
+            90.0,
+            110.0,
+            130.0,
+            150.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "DamageAPRatio",
+          "mValues": [
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "InitialShieldRatio",
+          "mValues": [
+            0.07999999821186066,
+            0.07999999821186066,
+            0.07999999821186066,
+            0.07999999821186066,
+            0.07999999821186066,
+            0.07999999821186066,
+            0.07999999821186066
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ShieldDuration",
+          "mValues": [
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "SlowEffect",
+          "mValues": [
+            -0.20000000298023224,
+            -0.20000000298023224,
+            -0.20000000298023224,
+            -0.20000000298023224,
+            -0.20000000298023224,
+            -0.20000000298023224,
+            -0.20000000298023224
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "SlowDuration",
+          "mValues": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "castRange": [
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0
+      ],
+      "castRangeDisplayOverride": [
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0
+      ],
+      "cooldownTime": [
+        10.0,
+        10.0,
+        9.0,
+        8.0,
+        7.0,
+        6.0,
+        6.0
+      ],
+      "delayCastOffsetPercent": -0.3999999761581421,
+      "delayTotalTimePercent": -0.75,
+      "flags": 32,
+      "mAffectsTypeFlags": 6154,
+      "mAnimationName": "Spell2",
+      "mCanMoveWhileChanneling": true,
+      "mCantCancelWhileWindingUp": true,
+      "mCastType": 7,
+      "mCasterPositionEndOfCastUpdate": 2,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "BaseDamage",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Cooldown",
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Seismic Bastion",
+            "keySummary": "Skarner gains a shield and creates an earthquake whose shockwave damages and slows foes.",
+            "keyTooltip": "Skarner gains <shield>@InitialShield@ Shield</shield> for @ShieldDuration@s and triggers an earthquake that deals <magicDamage>@Damage@ magic damage</magicDamage> and <status>Slows</status> nearby enemies by @SlowEffect*-100@% for @SlowDuration@s."
+          },
+          "mObjectName": "SkarnerW",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mDoNotNeedToFaceTarget": true,
+      "mImgIconName": [
+        "ASSETS/Characters/Skarner/HUD/Icons2D/Skarner_W.dds"
+      ],
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnHit"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "mMissileWidth": 200.0,
+        "movementComponent": {
+          "mSpeed": 1650.0,
+          "mStartBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+          "~class": "FixedSpeedMovement"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mSpellCalculations": {
+        "Damage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "DamageAPRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "InitialShield": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "InitialShieldRatio",
+              "mStat": 12,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mTargetingTypeData": {
+        "~class": "direction"
+      },
+      "mana": [
+        60.0,
+        65.0,
+        70.0,
+        75.0,
+        80.0,
+        80.0
+      ],
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  }
+}

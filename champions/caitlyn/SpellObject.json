@@ -1,0 +1,2314 @@
+{
+  "0x2a4a230d": {
+    "ObjectName": "Crepe_JinxVsCaitlyn_CaitlynStart",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Caught in the Crossfire",
+          "keyTooltip": "Catch Jinx in Caitlyn's <spellName>Yordle Snap Trap</spellname> and slay her within 5 seconds."
+        },
+        "mObjectName": "Crepe_JinxVsCaitlyn_CaitlynStart",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Crepe_JinxVsCaitlyn_CaitlynStart",
+    "~class": "SpellObject"
+  },
+  "0x4702b3b3": {
+    "ObjectName": "Crepe_JinxVsCaitlyn_JinxLose",
+    "mBuff": {
+      "CanTimeoutWhileCasting": false,
+      "mShowAccumulatedDuration": false,
+      "mShowDuration": false,
+      "mTooltipData": {
+        "mFormat": "0x2ca8f134",
+        "mLocKeys": {
+          "keyName": "Mired in Mania",
+          "keyTooltip": "Jinx could no longer evade Caitlyn's hunt.<br><br><flavorText>“Well, you caught me. Bet that makes everything better, right?”</flavorText><br>"
+        },
+        "mObjectName": "Crepe_JinxVsCaitlyn_JinxLose",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Crepe_JinxVsCaitlyn_JinxLose",
+    "mSpell": {
+      "mImgIconName": [
+        "ASSETS/Characters/Jhin/HUD/Icons2D/JhinQuestLoser.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x78e322f": {
+    "ObjectName": "Crepe_JinxVsCaitlyn_CaitlynWin",
+    "mBuff": {
+      "~class": "BuffData"
+    },
+    "mScriptName": "Crepe_JinxVsCaitlyn_CaitlynWin",
+    "~class": "SpellObject"
+  },
+  "0xd4bc99e0": {
+    "ObjectName": "Crepe_JinxVsCaitlyn_CaitlynReward",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0x2ca8f134",
+        "mLocKeys": {
+          "keyName": "And End to the Madness...?",
+          "keyTooltip": " Slain enemies drop a <spellName>Yordle Snap Trap</spellName>. <br><br><flavorText>“Finally, we can put all this pain behind us…”</flavorText>"
+        },
+        "mObjectName": "Crepe_JinxVsCaitlyn_CaitlynReward",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Crepe_JinxVsCaitlyn_CaitlynReward",
+    "mSpell": {
+      "mImgIconName": [
+        "ASSETS/Characters/Jhin/HUD/Icons2D/JhinQuestVictory.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0xf530200b": {
+    "ObjectName": "Crepe_JinxVsCaitlyn_CaitlynDescription",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Caught in the Crossfire",
+          "keyTooltip": "Catch Jinx in Caitlyn's <spellName>Yordle Snap Trap</spellname> and slay her within 5 seconds."
+        },
+        "mObjectName": "Crepe_JinxVsCaitlyn_CaitlynDescription",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Crepe_JinxVsCaitlyn_CaitlynDescription",
+    "~class": "SpellObject"
+  },
+  "Characters/Caitlyn/Spells/CaitlynBasicAttack": {
+    "ObjectName": "CaitlynBasicAttack",
+    "mScriptName": "CaitlynBasicAttack",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 8.5,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delayCastOffsetPercent": -0.029999999329447746,
+      "mAffectsTypeFlags": 5327,
+      "mAlternateName": "CaitlynBasicAttack",
+      "mAnimationName": "AttackSelector",
+      "mCastType": 1,
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "caitlyn_BA_tar",
+      "mHitEffectOrientType": 2,
+      "mMissileEffectKey": "Caitlyn_BA_mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 2500.0,
+          "mStartBoneName": "Rifle_TopBarrel2",
+          "mStartBoneSkinOverrides": {
+            "11": "Gun_Barrel_End",
+            "22": "BUFFBONE_GLB_WEAPON_1"
+          },
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 2500.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Caitlyn/Spells/CaitlynCritAttack": {
+    "ObjectName": "CaitlynCritAttack",
+    "mScriptName": "CaitlynCritAttack",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 8.5,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delayCastOffsetPercent": -0.029999999329447746,
+      "mAffectsTypeFlags": 5327,
+      "mAlternateName": "CaitlynCritAttack",
+      "mAnimationName": "Crit",
+      "mCastType": 1,
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Caitlyn_BA_Crit_tar",
+      "mHitEffectOrientType": 2,
+      "mMissileEffectKey": "Caitlyn_Crit_Mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 2500.0,
+          "mStartBoneName": "Rifle_TopBarrel2",
+          "mStartBoneSkinOverrides": {
+            "11": "Gun_Barrel_End",
+            "22": "BUFFBONE_GLB_WEAPON_1"
+          },
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 2500.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Caitlyn/Spells/CaitlynEAbility/CaitlynE": {
+    "BotData": {
+      "0x38382c53": [
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 1,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 4,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 1024,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 8192,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 4096,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 8,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 2048,
+          "~class": "0x150d1b92"
+        }
+      ],
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "mSpellCalculationKey": "NetDamage",
+            "~class": "0xf3cbe7b2"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xec17e271": [
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mEffectIndex": 3,
+                "~class": "EffectValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 1,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 128,
+          "~class": "0xb09016f6"
+        }
+      ],
+      "DamageTag": 1,
+      "~class": "BotsSpellData"
+    },
+    "ObjectName": "CaitlynE",
+    "mScriptName": "CaitlynE",
+    "mSpell": {
+      "DataValues": [
+        {
+          "mName": "Damage",
+          "mValues": [
+            30.0,
+            80.0,
+            130.0,
+            180.0,
+            230.0,
+            280.0,
+            330.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "bHaveHitBone": true,
+      "cantCastWhileRooted": true,
+      "castConeDistance": 100.0,
+      "castFrame": 7.0,
+      "castRadius": [
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0
+      ],
+      "castRange": [
+        10000.0,
+        10000.0,
+        10000.0,
+        10000.0,
+        10000.0,
+        10000.0,
+        10000.0
+      ],
+      "castRangeDisplayOverride": [
+        750.0,
+        750.0,
+        750.0,
+        750.0,
+        750.0,
+        750.0,
+        750.0
+      ],
+      "cooldownTime": [
+        18.0,
+        16.0,
+        14.0,
+        12.0,
+        10.0,
+        8.0,
+        6.0
+      ],
+      "delayCastOffsetPercent": -0.699999988079071,
+      "delayTotalTimePercent": -0.699999988079071,
+      "mAffectsTypeFlags": 15375,
+      "mAlternateName": "CaitlynE",
+      "mAnimationName": "Spell3",
+      "mCantCancelWhileChanneling": true,
+      "mCantCancelWhileWindingUp": true,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "90 Caliber Net",
+            "keySummary": "Caitlyn fires a heavy net to slow her target. The recoil knocks Caitlyn back.",
+            "keyTooltip": "Caitlyn fires a net, pushing her backwards. The net <status>Slows</status> the first target hit by @Effect3Amount@% for @Effect2Amount@ second and deals <magicDamage>@NetDamage@ magic damage</magicDamage>."
+          },
+          "mObjectName": "CaitlynE",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.800000011920929,
+      "mEffectAmount": [
+        {
+          "value": [
+            40.0,
+            80.0,
+            130.0,
+            180.0,
+            230.0,
+            280.0,
+            310.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mHitBoneName": "C_BuffBone_Glb_Center_Loc",
+      "mImgIconName": [
+        "ASSETS/Characters/Caitlyn/HUD/Icons2D/CaitlynE.dds",
+        ""
+      ],
+      "mLineWidth": 70.0,
+      "mSpellCalculations": {
+        "NetDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "Damage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.800000011920929,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "PositiveEffect_MoveBlock"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Location"
+      },
+      "mana": [
+        75.0,
+        75.0,
+        75.0,
+        75.0,
+        75.0,
+        75.0
+      ],
+      "missileSpeed": 1600.0,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Caitlyn/Spells/CaitlynEAbility/CaitlynEMissile": {
+    "ObjectName": "CaitlynEMissile",
+    "mScriptName": "CaitlynEMissile",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "canCastWhileDisabled": true,
+      "castConeDistance": 100.0,
+      "castFrame": 5.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        800.0,
+        800.0,
+        800.0,
+        800.0,
+        800.0,
+        800.0,
+        800.0
+      ],
+      "castRangeDisplayOverride": [
+        950.0,
+        950.0,
+        950.0,
+        950.0,
+        950.0,
+        950.0,
+        950.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delayCastOffsetPercent": -0.5,
+      "delayTotalTimePercent": -0.550000011920929,
+      "mAffectsTypeFlags": 6154,
+      "mAlternateName": "CaitlynE",
+      "mAnimationName": "Spell3",
+      "mCantCancelWhileChanneling": true,
+      "mCantCancelWhileWindingUp": true,
+      "mCastType": 3,
+      "mCoefficient": 0.800000011920929,
+      "mEffectAmount": [
+        {
+          "value": [
+            0.0,
+            60.0,
+            120.0,
+            180.0,
+            240.0,
+            300.0,
+            360.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            1.0,
+            1.2000000476837158,
+            1.399999976158142,
+            1.600000023841858,
+            1.7999999523162842,
+            2.0,
+            2.200000047683716
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mHitBoneName": "C_BuffBone_Glb_Center_Loc",
+      "mImgIconName": [
+        "ASSETS/Characters/Caitlyn/HUD/Icons2D/CaitlynE.dds",
+        ""
+      ],
+      "mLineWidth": 70.0,
+      "mMissileEffectKey": "Caitlyn_E_mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnHit"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "~class": "BlendedLinearHeightSolver"
+        },
+        "mMissileWidth": 70.0,
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mProjectTargetToCastRange": true,
+          "mSpeed": 1600.0,
+          "mStartBoneName": "",
+          "mTracksTarget": false,
+          "mUseHeightOffsetAtEnd": true,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VerticalFacingFaceTarget"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mTargetingTypeData": {
+        "~class": "direction"
+      },
+      "missileSpeed": 1600.0,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Caitlyn/Spells/CaitlynPassiveAbility/CaitlynPassive": {
+    "ObjectName": "CaitlynPassive",
+    "mScriptName": "CaitlynPassive",
+    "mSpell": {
+      "DataValues": [
+        {
+          "mName": "CriticalStrikeScaling",
+          "mValues": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "TowerCap",
+          "mValues": [
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "AttacksPerHeadshot",
+          "mValues": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "BrushStackBonus",
+          "mValues": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "mAnimationName": "",
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyName": "Headshot",
+            "keySummary": "Every few basic attacks, or against a target she has trapped or netted, Caitlyn will fire a headshot dealing bonus damage that scales with her critical strike chance. On trapped or netted targets, Caitlyn's Headshot attack range is doubled.",
+            "keyTooltip": "Every @AttacksPerHeadshot@ Attacks, Caitlyn fires a <keywordMajor>Headshot</keywordMajor>. Attacks while in brush count as @BrushAttackTotal@ for building towards a <keywordMajor>Headshot</keywordMajor>.<br><br><keywordMajor>Headshots</keywordMajor> deal an additional <physicalDamage>@HeadShotBonusDamage@ physical damage</physicalDamage>. They have double range against enemies affected by <spellName>{{Spell_CaitlynEntrapment_Name}}</spellName> and <spellName>{{Spell_CaitlynYordleTrap_Name}}</spellName>. <keywordMajor>Headshots</keywordMajor> against enemies hit by <spellName>{{Spell_CaitlynYordleTrap_Name}}</spellName> deal a further <physicalDamage>@spell.CaitlynW:HeadshotBonusDamage@ physical damage</physicalDamage>.",
+            "keyTooltipExtended": "{{Spell_CaitlynP_Tooltip}}<br><br><rules><keywordMajor>Headshot</keywordMajor> damage scales with level, Critical Strike Chance, and Critical Strike Damage.<br><keywordMajor>Headshots</keywordMajor> deal an additional <physicalDamage>@HeadShotMinionBonusDamage@ physical damage</physicalDamage> to non-champions.<br>Extra damage on trapped targets scales with {{Spell_CaitlynYordleTrap_Name}} rank.</rules>"
+          },
+          "mObjectName": "CaitlynPassive",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "ASSETS/Characters/Caitlyn/HUD/Icons2D/CaitlynP.dds",
+        "ASSETS/Characters/Caitlyn/HUD/Icons2D/CaitlynPGrey.dds"
+      ],
+      "mSpellCalculations": {
+        "0x36ebd3cf": {
+          "mFormulaParts": [
+            {
+              "mCoefficient": 1.0,
+              "mStat": 9,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "BrushAttackTotal": {
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mFormulaParts": [
+            {
+              "mSubparts": [
+                {
+                  "mNumber": 1.0,
+                  "~class": "NumberCalculationPart"
+                },
+                {
+                  "mDataValue": "BrushStackBonus",
+                  "~class": "NamedDataValueCalculationPart"
+                }
+              ],
+              "~class": "SumOfSubPartsCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 5,
+          "~class": "GameCalculation"
+        },
+        "HeadShotBonusDamage": {
+          "mFormulaParts": [
+            {
+              "mStat": 2,
+              "mSubpart": {
+                "mSubparts": [
+                  {
+                    "mBreakpoints": [
+                      {
+                        "mAdditionalBonusAtThisLevel": 0.20000000298023224,
+                        "mLevel": 7,
+                        "~class": "Breakpoint"
+                      },
+                      {
+                        "mAdditionalBonusAtThisLevel": 0.20000000298023224,
+                        "mLevel": 13,
+                        "~class": "Breakpoint"
+                      }
+                    ],
+                    "mLevel1Value": 0.6000000238418579,
+                    "~class": "ByCharLevelBreakpointsCalculationPart"
+                  },
+                  {
+                    "mPart1": {
+                      "mDataValue": "0x10e05b53",
+                      "mStat": 8,
+                      "~class": "StatByNamedDataValueCalculationPart"
+                    },
+                    "mPart2": {
+                      "mSubparts": [
+                        {
+                          "mCoefficient": 1.0,
+                          "mStat": 9,
+                          "~class": "StatByCoefficientCalculationPart"
+                        },
+                        {
+                          "mNumber": -1.0,
+                          "~class": "NumberCalculationPart"
+                        }
+                      ],
+                      "~class": "SumOfSubPartsCalculationPart"
+                    },
+                    "~class": "ProductOfSubPartsCalculationPart"
+                  }
+                ],
+                "~class": "SumOfSubPartsCalculationPart"
+              },
+              "~class": "StatBySubPartCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "HeadShotMinionBonusDamage": {
+          "mFormulaParts": [
+            {
+              "mStat": 2,
+              "mSubpart": {
+                "mSubparts": [
+                  {
+                    "mNumber": 1.0,
+                    "~class": "NumberCalculationPart"
+                  },
+                  {
+                    "mPart1": {
+                      "mNumber": -1.0,
+                      "~class": "NumberCalculationPart"
+                    },
+                    "mPart2": {
+                      "mBreakpoints": [
+                        {
+                          "mAdditionalBonusAtThisLevel": 0.20000000298023224,
+                          "mLevel": 7,
+                          "~class": "Breakpoint"
+                        },
+                        {
+                          "mAdditionalBonusAtThisLevel": 0.20000000298023224,
+                          "mLevel": 13,
+                          "~class": "Breakpoint"
+                        }
+                      ],
+                      "mLevel1Value": 0.5,
+                      "~class": "ByCharLevelBreakpointsCalculationPart"
+                    },
+                    "~class": "ProductOfSubPartsCalculationPart"
+                  }
+                ],
+                "~class": "SumOfSubPartsCalculationPart"
+              },
+              "~class": "StatBySubPartCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mTargetingTypeData": {
+        "~class": "Self"
+      },
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Caitlyn/Spells/CaitlynPassiveAbility/CaitlynPassiveCount": {
+    "ObjectName": "CaitlynPassiveCount",
+    "mBuff": {
+      "mDescription": "<titleLeft>Headshot: Count</titleLeft><mainText>Caitlyn is charging up for a headshot.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "CaitlynPassiveCount",
+    "~class": "SpellObject"
+  },
+  "Characters/Caitlyn/Spells/CaitlynPassiveAbility/CaitlynPassiveDriver": {
+    "ObjectName": "CaitlynPassiveDriver",
+    "mBuff": {
+      "mDescription": "<titleLeft>Headshot: Ready</titleLeft><mainText>Caitlyn's next basic attack will deal massive damage. Boom.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "CaitlynPassiveDriver",
+    "~class": "SpellObject"
+  },
+  "Characters/Caitlyn/Spells/CaitlynPassiveAbility/CaitlynPassiveMissile": {
+    "ObjectName": "CaitlynPassiveMissile",
+    "mScriptName": "CaitlynPassiveMissile",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "canCastWhileDisabled": true,
+      "castConeDistance": 100.0,
+      "castFrame": 9.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delayCastOffsetPercent": -0.15279999375343323,
+      "mAffectsTypeFlags": 6826,
+      "mAnimationName": "Passive",
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 1.0,
+      "mCastType": 1,
+      "mClientData": {
+        "mUseTooltipFromAnotherSpell": "Characters/Caitlyn/Spells/CaitlynPassiveAbility/CaitlynPassive",
+        "~class": "SpellDataResourceClient"
+      },
+      "mEffectAmount": [
+        {
+          "value": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mHitBoneName": "C_Buffbone_Glb_Head_Loc",
+      "mHitEffectKey": "caitlyn_BA_tar",
+      "mImgIconName": [
+        "ASSETS/Characters/Caitlyn/HUD/Icons2D/CaitlynP.dds"
+      ],
+      "mMissileEffectKey": "Caitlyn_P_mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 3000.0,
+          "mStartBoneName": "Rifle_TopBarrel2",
+          "mStartBoneSkinOverrides": {
+            "11": "Gun_Barrel_End",
+            "22": "BUFFBONE_GLB_WEAPON_1"
+          },
+          "mTargetBoneName": "C_Buffbone_Glb_Head_Loc",
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mRollForCriticalHit": true,
+      "mUseAutoattackCastTimeData": {
+        "~class": "UseAutoattackCastTimeData"
+      },
+      "missileSpeed": 3000.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Caitlyn/Spells/CaitlynPassiveAbility/CaitlynPassiveRangeCheck": {
+    "ObjectName": "CaitlynPassiveRangeCheck",
+    "mScriptName": "CaitlynPassiveRangeCheck",
+    "~class": "SpellObject"
+  },
+  "Characters/Caitlyn/Spells/CaitlynPassiveAbility/CaitlynPassiveRangeMarker": {
+    "ObjectName": "CaitlynPassiveRangeMarker",
+    "mScriptName": "CaitlynPassiveRangeMarker",
+    "~class": "SpellObject"
+  },
+  "Characters/Caitlyn/Spells/CaitlynQAbility/CaitlynQ": {
+    "BotData": {
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "mSpellCalculationKey": "InitialDamage",
+            "~class": "0xf3cbe7b2"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "DamageTag": 0,
+      "~class": "BotsSpellData"
+    },
+    "ObjectName": "CaitlynQ",
+    "mScriptName": "CaitlynQ",
+    "mSpell": {
+      "DataValues": [
+        {
+          "mName": "BaseDamage",
+          "mValues": [
+            10.0,
+            50.0,
+            90.0,
+            130.0,
+            170.0,
+            210.0,
+            250.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "SecondaryMult",
+          "mValues": [
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "tADRatio",
+          "mValues": [
+            1.0499999523162842,
+            1.25,
+            1.4500000476837158,
+            1.649999976158142,
+            1.850000023841858,
+            2.049999952316284,
+            2.25
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "DataValuesModeOverride": {
+        "0xbffdf499": {
+          "SpellDataValues": [
+            {
+              "mName": "tADRatio",
+              "mValues": [
+                1.100000023841858,
+                1.25,
+                1.399999976158142,
+                1.5499999523162842,
+                1.7000000476837158,
+                1.850000023841858,
+                2.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        },
+        "ARAM": {
+          "SpellDataValues": [
+            {
+              "mName": "tADRatio",
+              "mValues": [
+                1.100000023841858,
+                1.25,
+                1.399999976158142,
+                1.5499999523162842,
+                1.7000000476837158,
+                1.850000023841858,
+                2.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
+      "alwaysSnapFacing": true,
+      "castConeDistance": 100.0,
+      "castFrame": 30.0,
+      "castRadius": [
+        90.0,
+        90.0,
+        90.0,
+        90.0,
+        90.0,
+        90.0,
+        90.0
+      ],
+      "castRange": [
+        1300.0,
+        1300.0,
+        1300.0,
+        1300.0,
+        1300.0,
+        1300.0,
+        1300.0
+      ],
+      "castRangeDisplayOverride": [
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0
+      ],
+      "cooldownTime": [
+        11.0,
+        10.0,
+        9.0,
+        8.0,
+        7.0,
+        6.0,
+        6.0
+      ],
+      "delayCastOffsetPercent": 0.25,
+      "delayTotalTimePercent": -0.5,
+      "flags": 4194304,
+      "luaOnMissileUpdateDistanceInterval": 51.0,
+      "mAffectsTypeFlags": 6154,
+      "mAnimationName": "Spell1",
+      "mCantCancelWhileWindingUp": true,
+      "mCastType": 3,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "BaseDamage",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Total AD Ratio",
+                  "type": "tADRatio",
+                  "typeIndex": 5,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Piltover Peacemaker",
+            "keySummary": "Caitlyn revs up her rifle for 1 second to unleash a penetrating shot that deals physical damage (deals less damage to subsequent targets).",
+            "keyTooltip": "Caitlyn revs her rifle to fire a piercing shot dealing <physicalDamage>@InitialDamage@ physical damage</physicalDamage>. After the bolt strikes the first target, it opens into a wider shot that deals <physicalDamage>@SecondaryDamage@ physical damage</physicalDamage>.<br><br>Enemies revealed by <spellName>{{Spell_CaitlynYordleTrap_Name}}</spellName> always take full damage."
+          },
+          "mObjectName": "CaitlynQ",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mEffectAmount": [
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            1.2999999523162842,
+            1.2999999523162842,
+            1.4500000476837158,
+            1.600000023841858,
+            1.75,
+            1.899999976158142,
+            2.049999952316284
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mFloatVarsDecimals": [
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mImgIconName": [
+        "ASSETS/Characters/Caitlyn/HUD/Icons2D/CaitlynQ.dds",
+        ""
+      ],
+      "mLineWidth": 60.0,
+      "mMissileEffectKey": "Caitlyn_Q_mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnHit"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "~class": "BlendedLinearHeightSolver"
+        },
+        "mMissileWidth": 60.0,
+        "movementComponent": {
+          "mProjectTargetToCastRange": true,
+          "mSpeed": 2200.0,
+          "mStartBoneName": "",
+          "mTracksTarget": false,
+          "mUseHeightOffsetAtEnd": true,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VerticalFacingFaceTarget"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mSpellCalculations": {
+        "InitialDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mStat": 2,
+              "mSubpart": {
+                "mDataValue": "tADRatio",
+                "~class": "NamedDataValueCalculationPart"
+              },
+              "~class": "StatBySubPartCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "SecondaryDamage": {
+          "mModifiedGameCalculation": "InitialDamage",
+          "mMultiplier": {
+            "mDataValue": "SecondaryMult",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "~class": "GameCalculationModified"
+        }
+      },
+      "mSpellRevealsChampion": false,
+      "mTargetingTypeData": {
+        "~class": "direction"
+      },
+      "mana": [
+        55.0,
+        60.0,
+        65.0,
+        70.0,
+        75.0,
+        80.0
+      ],
+      "missileSpeed": 2200.0,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Caitlyn/Spells/CaitlynQAbility/CaitlynQ2": {
+    "ObjectName": "CaitlynQ2",
+    "mScriptName": "CaitlynQ2",
+    "mSpell": {
+      "alwaysSnapFacing": true,
+      "castConeDistance": 100.0,
+      "castFrame": 30.0,
+      "castRadius": [
+        90.0,
+        90.0,
+        90.0,
+        90.0,
+        90.0,
+        90.0,
+        90.0
+      ],
+      "castRange": [
+        1300.0,
+        1300.0,
+        1300.0,
+        1300.0,
+        1300.0,
+        1300.0,
+        1300.0
+      ],
+      "castRangeDisplayOverride": [
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delayCastOffsetPercent": 0.25,
+      "delayTotalTimePercent": -0.5,
+      "flags": 4194304,
+      "luaOnMissileUpdateDistanceInterval": 51.0,
+      "mAffectsTypeFlags": 6154,
+      "mAnimationName": "Spell1",
+      "mCantCancelWhileWindingUp": true,
+      "mCastType": 3,
+      "mCoefficient": 1.600000023841858,
+      "mEffectAmount": [
+        {
+          "value": [
+            0.0,
+            25.0,
+            70.0,
+            115.0,
+            160.0,
+            205.0,
+            250.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mImgIconName": [
+        "ASSETS/Characters/Caitlyn/HUD/Icons2D/CaitlynQ.dds",
+        ""
+      ],
+      "mIsDisabledWhileDead": false,
+      "mLineWidth": 90.0,
+      "mMissileEffectKey": "Caitlyn_Q_mis2",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnHit"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "~class": "BlendedLinearHeightSolver"
+        },
+        "mMissileWidth": 90.0,
+        "movementComponent": {
+          "mSpeed": 2200.0,
+          "mTracksTarget": false,
+          "mUseHeightOffsetAtEnd": true,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VerticalFacingFaceTarget"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mProjectTargetToCastRange": true,
+      "mSpellRevealsChampion": false,
+      "mTargetingTypeData": {
+        "~class": "direction"
+      },
+      "missileSpeed": 2200.0,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Caitlyn/Spells/CaitlynRAbility/CaitlynR": {
+    "BotData": {
+      "0x38382c53": [
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 8,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 4096,
+          "~class": "0x150d1b92"
+        }
+      ],
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "mSpellCalculationKey": "RTotalDamage",
+            "~class": "0xf3cbe7b2"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "DamageTag": 0,
+      "~class": "BotsSpellData"
+    },
+    "ObjectName": "CaitlynR",
+    "mBuff": {
+      "mDescription": "<titleLeft>Ace in the Hole: Targeted</titleLeft><mainText>You are about to be shot by Caitlyn.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "CaitlynR",
+    "mSpell": {
+      "DataValues": [
+        {
+          "mName": "RBaseDamage",
+          "mValues": [
+            125.0,
+            300.0,
+            475.0,
+            650.0,
+            825.0,
+            1000.0,
+            1175.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "RADRatio",
+          "mValues": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "CriticalStrikeModifier",
+          "mValues": [
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "alwaysSnapFacing": true,
+      "castConeDistance": 100.0,
+      "castFrame": 14.039999961853027,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        3500.0,
+        3500.0,
+        3500.0,
+        3500.0,
+        3500.0,
+        3500.0,
+        3500.0
+      ],
+      "cooldownTime": [
+        90.0,
+        90.0,
+        90.0,
+        90.0,
+        90.0,
+        90.0,
+        90.0
+      ],
+      "delayCastOffsetPercent": -0.25,
+      "delayTotalTimePercent": -0.5,
+      "mAffectsTypeFlags": 4106,
+      "mAlternateName": "CaitlynR",
+      "mAnimationName": "Spell4",
+      "mCantCancelWhileChanneling": true,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "RBaseDamage",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 3,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Ace in the Hole",
+            "keySummary": "Caitlyn takes time to line up the perfect shot, dealing massive damage to a single target at a huge range. Enemy champions can intercept the bullet for their ally.",
+            "keyTooltip": "Caitlyn takes a moment to channel and line up the perfect shot, then she fires, dealing <physicalDamage>@RTotalDamage@ physical damage</physicalDamage>, but other enemy champions can intercept it. This Ability grants <keywordStealth>True Sight</keywordStealth> of the target during the channel.<br><br><rules>Damage scales with Caitlyn's Critical Strike chance and Critical Strike Damage.</rules>"
+          },
+          "mObjectName": "CaitlynR",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mDimensionBehavior": 1,
+      "mFloatVarsDecimals": [
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mImgIconName": [
+        "ASSETS/Characters/Caitlyn/HUD/Icons2D/CaitlynR.dds",
+        ""
+      ],
+      "mRequiredUnitTags": {
+        "mObjectTagList": [
+          "champion"
+        ],
+        "~class": "ObjectTags"
+      },
+      "mSpellCalculations": {
+        "RTotalDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "RBaseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "RADRatio",
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "mMultiplier": {
+            "mSubparts": [
+              {
+                "mNumber": 1.0,
+                "~class": "NumberCalculationPart"
+              },
+              {
+                "mPart1": {
+                  "mDataValue": "0xa2a2a5ff",
+                  "mStat": 8,
+                  "~class": "StatByNamedDataValueCalculationPart"
+                },
+                "mPart2": {
+                  "mSubparts": [
+                    {
+                      "mCoefficient": 1.0,
+                      "mStat": 9,
+                      "~class": "StatByCoefficientCalculationPart"
+                    },
+                    {
+                      "mNumber": -1.0,
+                      "~class": "NumberCalculationPart"
+                    }
+                  ],
+                  "~class": "SumOfSubPartsCalculationPart"
+                },
+                "~class": "ProductOfSubPartsCalculationPart"
+              }
+            ],
+            "~class": "SumOfSubPartsCalculationPart"
+          },
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "Trait_Ultimate",
+        "Trait_ChannelSpell"
+      ],
+      "mUseMinimapTargeting": true,
+      "mana": [
+        100.0,
+        100.0,
+        100.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "missileSpeed": 1500.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Caitlyn/Spells/CaitlynRAbility/CaitlynRMissile": {
+    "ObjectName": "CaitlynRMissile",
+    "mScriptName": "CaitlynRMissile",
+    "mSpell": {
+      "castConeDistance": 100.0,
+      "castFrame": 20.0,
+      "castRadius": [
+        710.0,
+        710.0,
+        710.0,
+        710.0,
+        710.0,
+        710.0,
+        710.0
+      ],
+      "castRange": [
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delayCastOffsetPercent": -0.5,
+      "delayTotalTimePercent": -0.5,
+      "mAffectsTypeFlags": 4106,
+      "mAlternateName": "CaitlynRMissile",
+      "mAnimationName": "Spell1",
+      "mCantCancelWhileWindingUp": true,
+      "mCastType": 3,
+      "mCoefficient": 0.6000000238418579,
+      "mEffectAmount": [
+        {
+          "value": [
+            50.0,
+            90.0,
+            130.0,
+            170.0,
+            215.0,
+            260.0,
+            300.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mImgIconName": [
+        "ASSETS/Characters/Caitlyn/HUD/Icons2D/CaitlynR.dds",
+        ""
+      ],
+      "mLineWidth": 40.0,
+      "mMissileEffectKey": "Caitlyn_R_mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnHit"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "~class": "BlendedLinearHeightSolver"
+        },
+        "mMissileWidth": 40.0,
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mProjectTargetToCastRange": true,
+          "mSpeed": 3200.0,
+          "mStartBoneName": "",
+          "mUseHeightOffsetAtEnd": true,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VerticalFacingFaceTarget"
+        },
+        "visibilityComponent": {
+          "mPerceptionBubbleRadius": 1500.0,
+          "~class": "EnterFOWVisibility"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mRequiredUnitTags": {
+        "mObjectTagList": [
+          "champion"
+        ],
+        "~class": "ObjectTags"
+      },
+      "missileSpeed": 3200.0,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Caitlyn/Spells/CaitlynSkin11Manager": {
+    "ObjectName": "CaitlynSkin11Manager",
+    "mScriptName": "CaitlynSkin11Manager",
+    "~class": "SpellObject"
+  },
+  "Characters/Caitlyn/Spells/CaitlynSkin22Manager": {
+    "ObjectName": "CaitlynSkin22Manager",
+    "mScriptName": "CaitlynSkin22Manager",
+    "~class": "SpellObject"
+  },
+  "Characters/Caitlyn/Spells/CaitlynWAbility/CaitlynW": {
+    "BotData": {
+      "0x38382c53": [
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 1,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0xe38f54f7": 2,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 4,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 1024,
+          "~class": "0x150d1b92"
+        }
+      ],
+      "0xec17e271": [
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mEffectIndex": 6,
+                "~class": "EffectValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 4096,
+          "~class": "0xb09016f6"
+        }
+      ],
+      "~class": "BotsSpellData"
+    },
+    "ObjectName": "CaitlynW",
+    "mBuff": {
+      "mDescription": "<titleLeft>Yordle Trap</titleLeft><mainText>Trapped! This unit cannot move and Caitlyn can line up a long range Headshot on it.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "CaitlynW",
+    "mSpell": {
+      "DataValues": [
+        {
+          "mName": "BaseDamage",
+          "mValues": [
+            35.0,
+            35.0,
+            80.0,
+            125.0,
+            170.0,
+            215.0,
+            260.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ADRatio",
+          "mValues": [
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "TrapDuration",
+          "mValues": [
+            25.0,
+            30.0,
+            35.0,
+            40.0,
+            45.0,
+            50.0,
+            55.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "MaximumTraps",
+          "mValues": [
+            3.0,
+            3.0,
+            3.0,
+            4.0,
+            4.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "RootDuration",
+          "mValues": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "MaximumCharges",
+          "mValues": [
+            3.0,
+            3.0,
+            3.0,
+            4.0,
+            4.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "castConeDistance": 100.0,
+      "castFrame": 7.5,
+      "castRadius": [
+        75.0,
+        75.0,
+        75.0,
+        75.0,
+        75.0,
+        75.0,
+        75.0
+      ],
+      "castRange": [
+        800.0,
+        800.0,
+        800.0,
+        800.0,
+        800.0,
+        800.0,
+        800.0
+      ],
+      "cooldownTime": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "delayCastOffsetPercent": -0.5,
+      "delayTotalTimePercent": -0.5,
+      "mAffectsTypeFlags": 1029,
+      "mAmmoRechargeTime": [
+        38.0,
+        26.0,
+        22.0,
+        18.0,
+        14.0,
+        10.0,
+        10.0
+      ],
+      "mAnimationName": "Spell2",
+      "mCantCancelWhileWindingUp": true,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "centerLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "~class": "TargeterDefinitionAoe"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Bonus Headshot Damage on Trapped Targets",
+                  "type": "BaseDamage",
+                  "typeIndex": 2,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "AmmoRechargeTime",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Maximum Traps",
+                  "type": "MaximumTraps",
+                  "typeIndex": 4,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Trap Duration",
+                  "type": "TrapDuration",
+                  "typeIndex": 3,
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Yordle Snap Trap",
+            "keySummary": "Caitlyn sets a trap that, when sprung, reveals and immobilizes the enemy champion for 1.5 seconds, granting Caitlyn an empowered Headshot.",
+            "keyTooltip": "Caitlyn sets a trap that <status>Roots</status> the first champion that steps on it for @RootDuration@ seconds and granting <keywordStealth>True Sight</keywordStealth> of them for 3 seconds. Traps last for @TrapDuration@ seconds, and @MaximumTraps@ traps may be active at once. This Ability has @MaximumCharges@ charges (@AmmoRechargeTime@ second refresh).<br><br>Targets rooted by this Ability take an additional <physicalDamage>@HeadshotBonusDamage@ physical damage</physicalDamage> from <keywordMajor>Headshot</keywordMajor>."
+          },
+          "mObjectName": "CaitlynW",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mEffectAmount": [
+        {
+          "value": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mImgIconName": [
+        "ASSETS/Characters/Caitlyn/HUD/Icons2D/CaitlynW.dds",
+        ""
+      ],
+      "mMaxAmmo": [
+        2,
+        3,
+        3,
+        4,
+        4,
+        5,
+        5
+      ],
+      "mProjectTargetToCastRange": true,
+      "mRequiredUnitTags": {
+        "mObjectTagList": [
+          "champion"
+        ],
+        "~class": "ObjectTags"
+      },
+      "mSpellCalculations": {
+        "HeadShotBonusDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "ADRatio",
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellRevealsChampion": false,
+      "mSpellTags": [
+        "Trait_ImmobilizingCCSpell"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Area"
+      },
+      "mana": [
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0
+      ],
+      "missileSpeed": 1450.0,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Caitlyn/Spells/CaitlynWAbility/CaitlynWSight": {
+    "ObjectName": "CaitlynWSight",
+    "mBuff": {
+      "mDescription": "<titleLeft>Yordle Trap: Sight</titleLeft><mainText>Caitlyn's team can see this unit.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "CaitlynWSight",
+    "~class": "SpellObject"
+  },
+  "Characters/Caitlyn/Spells/CaitlynWAbility/CaitlynWSnare": {
+    "ObjectName": "CaitlynWSnare",
+    "mBuff": {
+      "mDescription": "<titleLeft>Yordle Trap</titleLeft><mainText>Trapped! This unit cannot move and Caitlyn can line up a long range Headshot on it.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "mShowAccumulatedDuration": false,
+      "mShowDuration": false,
+      "~class": "BuffData"
+    },
+    "mScriptName": "CaitlynWSnare",
+    "mSpell": {
+      "flags": 4,
+      "mAffectsTypeFlags": 2,
+      "mDoesntBreakChannels": true,
+      "mIgnoreRangeCheck": true,
+      "mIsDisabledWhileDead": false,
+      "mLookAtPolicy": 0,
+      "mRequiredUnitTags": {
+        "mObjectTagList": [
+          "champion"
+        ],
+        "~class": "ObjectTags"
+      },
+      "mSpellRevealsChampion": false,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  }
+}

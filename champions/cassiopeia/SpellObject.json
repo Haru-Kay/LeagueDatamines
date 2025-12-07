@@ -1,0 +1,2091 @@
+{
+  "0x2b50ca69": {
+    "ObjectName": "CassiopeiaPassive_Feats",
+    "mBuff": {
+      "mDescription": "<titleLeft>Serpentine Grace</titleLeft><mainText>Cassiopeia gains <font color='#FFFFFF'>@f2@</font> Move Speed (@f1@ per level).<br><br><i>Cassiopeia cannot purchase Boots items.</i></mainText>",
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "~class": "BuffData"
+    },
+    "mScriptName": "CassiopeiaPassive_Feats",
+    "mSpell": {
+      "DataValues": [
+        {
+          "mName": "ModesMSMod",
+          "mValues": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "mName": "ModesMSMod",
+              "mValues": [
+                0.699999988079071,
+                0.699999988079071,
+                0.699999988079071,
+                0.699999988079071,
+                0.699999988079071,
+                0.699999988079071,
+                0.699999988079071
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
+      "castRange": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyName": "Triumphant Serpentine Grace",
+            "keySummary": "Cassiopeia gains Move Speed and Ability Power per level, but she cannot purchase Boots items.",
+            "keyTooltip": "Cassiopeia gains <speed>@TotalMovementSpeed@ Move Speed</speed> and <scaleAP>@BonusAbilityPower@ Ability Power</scaleAP> but cannot purchase Boots.",
+            "keyTooltipExtended": "Cassiopeia gains <speed>@TotalMovementSpeed@ Move Speed</speed> and <scaleAP>@BonusAbilityPower@ Ability Power</scaleAP> but cannot purchase Boots.<br><br><rules>This passive has been enhanced by claiming the Feats of Strength.</rules>"
+          },
+          "mObjectName": "CassiopeiaPassive_Feats",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "ASSETS/Characters/Cassiopeia/HUD/Icons2D/Cassiopeia_Passive_Feats_Upgrade.dds",
+        "ASSETS/Characters/Cassiopeia/HUD/Icons2D/Cassiopeia_Passive_Feats_Upgrade.dds"
+      ],
+      "mSpellCalculations": {
+        "0x32f90193": {
+          "mFormulaParts": [
+            {
+              "mInitialBonusPerLevel": 3.0,
+              "mLevel1Value": 3.0,
+              "~class": "ByCharLevelBreakpointsCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "TotalMovementSpeed": {
+          "mFormulaParts": [
+            {
+              "mInitialBonusPerLevel": 4.0,
+              "mLevel1Value": 4.0,
+              "~class": "ByCharLevelBreakpointsCalculationPart"
+            }
+          ],
+          "mMultiplier": {
+            "mDataValue": "ModesMSMod",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "~class": "GameCalculation"
+        }
+      },
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Cassiopeia/Spells/CassPoisonDebuffListener": {
+    "ObjectName": "CassPoisonDebuffListener",
+    "mScriptName": "CassPoisonDebuffListener",
+    "~class": "SpellObject"
+  },
+  "Characters/Cassiopeia/Spells/CassiopeiaBasicAttack": {
+    "ObjectName": "CassiopeiaBasicAttack",
+    "mScriptName": "CassiopeiaBasicAttack",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 9.0,
+      "castRange": [
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0
+      ],
+      "delayCastOffsetPercent": -0.4122999906539917,
+      "mAffectsTypeFlags": 8143,
+      "mAlternateName": "CassiopeaBasicAttack",
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Cassiopeia_BA_tar",
+      "mMissileEffectKey": "Cassiopeia_BA_mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 1500.0,
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 1200.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Cassiopeia/Spells/CassiopeiaBasicAttack2": {
+    "ObjectName": "CassiopeiaBasicAttack2",
+    "mScriptName": "CassiopeiaBasicAttack2",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 9.0,
+      "castRange": [
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0
+      ],
+      "delayCastOffsetPercent": -0.4122999906539917,
+      "mAffectsTypeFlags": 8143,
+      "mAlternateName": "CassiopeaBasicAttack2",
+      "mAnimationName": "Attack2",
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Cassiopeia_BA_tar",
+      "mMissileEffectKey": "Cassiopeia_BA_mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 1500.0,
+          "mStartBoneName": "L_Hand",
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 1200.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Cassiopeia/Spells/CassiopeiaCritAttack": {
+    "ObjectName": "CassiopeiaCritAttack",
+    "mScriptName": "CassiopeiaCritAttack",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 9.0,
+      "castRange": [
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0
+      ],
+      "delayCastOffsetPercent": -0.4122999906539917,
+      "mAffectsTypeFlags": 8143,
+      "mAlternateName": "CassiopeaCritAttack",
+      "mAnimationName": "Crit",
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Cassiopeia_Crit_tar",
+      "mMissileEffectKey": "Cassiopeia_BA_mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 1500.0,
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 1200.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Cassiopeia/Spells/CassiopeiaEAbility/CassiopeiaE": {
+    "BotData": {
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "mSpellCalculationKey": "BasicDamage",
+            "~class": "0xf3cbe7b2"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xec17e271": [
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mSpellCalculationKey": "HealCalc",
+                "~class": "0xf3cbe7b2"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 8,
+          "~class": "0xb09016f6"
+        }
+      ],
+      "DamageTag": 1,
+      "~class": "BotsSpellData"
+    },
+    "ObjectName": "CassiopeiaE",
+    "mScriptName": "CassiopeiaE",
+    "mSpell": {
+      "DataValues": [
+        {
+          "mName": "BasicAPRatio",
+          "mValues": [
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "BonusDamage",
+          "mValues": [
+            0.0,
+            20.0,
+            43.0,
+            66.0,
+            89.0,
+            112.0,
+            138.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "BonusAPRatio",
+          "mValues": [
+            0.550000011920929,
+            0.550000011920929,
+            0.550000011920929,
+            0.550000011920929,
+            0.550000011920929,
+            0.550000011920929,
+            0.550000011920929
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "HealRatio",
+          "mValues": [
+            0.08500000089406967,
+            0.10000000149011612,
+            0.11500000208616257,
+            0.12999999523162842,
+            0.14499999582767487,
+            0.1599999964237213,
+            0.17499999701976776
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "MinionReductionModifier",
+          "mValues": [
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "mName": "HealRatio",
+              "mValues": [
+                0.06499999761581421,
+                0.07000000029802322,
+                0.07500000298023224,
+                0.07999999821186066,
+                0.08500000089406967,
+                0.09000000357627869,
+                0.0949999988079071
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "mName": "BonusAPRatio",
+              "mValues": [
+                0.4000000059604645,
+                0.4000000059604645,
+                0.4000000059604645,
+                0.4000000059604645,
+                0.4000000059604645,
+                0.4000000059604645,
+                0.4000000059604645
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
+      "castConeDistance": 100.0,
+      "castFrame": 7.5,
+      "castRadius": [
+        710.0,
+        710.0,
+        710.0,
+        710.0,
+        710.0,
+        710.0,
+        710.0
+      ],
+      "castRange": [
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0
+      ],
+      "cooldownTime": [
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75
+      ],
+      "delayCastOffsetPercent": -0.75,
+      "delayTotalTimePercent": -1.0,
+      "mAffectsTypeFlags": 6154,
+      "mAlternateName": "CassiopeiaE",
+      "mAnimationName": "Spell3",
+      "mCantCancelWhileWindingUp": true,
+      "mCastType": 1,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": true,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Bonus Poison Damage",
+                  "type": "BonusDamage",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Healing from Ability Power",
+                  "type": "HealRatio",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Twin Fang",
+            "keySummary": "Cassiopeia lets loose an attack that deals increased damage to Poisoned targets and heals her for a percentage of the damage dealt. If the target dies from this attack, Cassiopeia regains Mana.",
+            "keyTooltip": "Cassiopeia launches deadly fangs, dealing <magicDamage>@BasicDamage@ magic damage</magicDamage>. If the enemy is <keywordMajor>Poisoned</keywordMajor>, they take an additional <magicDamage>@BonusPoisonedDamage@ magic damage</magicDamage> and Cassiopeia restores <healing>@HealCalc@ Health</healing>, reduced to <healing>@HealCalcMinion@ Health</healing> against lane minions and small monsters.<br><br>If this kills the target, Cassiopeia restores <scaleMana>@Cost@ Mana</scaleMana>.<br><br>"
+          },
+          "mObjectName": "CassiopeiaE",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mImgIconName": [
+        "ASSETS/Characters/Cassiopeia/HUD/Icons2D/Cassiopeia_E.dds"
+      ],
+      "mMissileEffectKey": "Cassiopeia_E_mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 2500.0,
+          "mStartBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mSpellCalculations": {
+        "BasicDamage": {
+          "mFormulaParts": [
+            {
+              "mInitialBonusPerLevel": 4.0,
+              "mLevel1Value": 52.0,
+              "~class": "ByCharLevelBreakpointsCalculationPart"
+            },
+            {
+              "mDataValue": "BasicAPRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "BonusPoisonedDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "BonusDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "BonusAPRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "HealCalc": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "HealRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "HealCalcMinion": {
+          "mModifiedGameCalculation": "HealCalc",
+          "mMultiplier": {
+            "mDataValue": "MinionReductionModifier",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "tooltipOnly": true,
+          "~class": "GameCalculationModified"
+        }
+      },
+      "mSpellCooldownOrSealedQueueThreshold": 0.3499999940395355,
+      "mana": [
+        40.0,
+        40.0,
+        40.0,
+        40.0,
+        40.0,
+        40.0
+      ],
+      "missileSpeed": 2500.0,
+      "selectionPriority": 1,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Cassiopeia/Spells/CassiopeiaPassiveAbility/CassiopeiaPassive": {
+    "ObjectName": "CassiopeiaPassive",
+    "mBuff": {
+      "mDescription": "<titleLeft>Serpentine Grace</titleLeft><mainText>Cassiopeia gains <font color='#FFFFFF'>@f2@</font> Move Speed (@f1@ per level).<br><br><i>Cassiopeia cannot purchase Boots items.</i></mainText>",
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "~class": "BuffData"
+    },
+    "mScriptName": "CassiopeiaPassive",
+    "mSpell": {
+      "DataValues": [
+        {
+          "mName": "ModesMSMod",
+          "mValues": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "mName": "ModesMSMod",
+              "mValues": [
+                0.699999988079071,
+                0.699999988079071,
+                0.699999988079071,
+                0.699999988079071,
+                0.699999988079071,
+                0.699999988079071,
+                0.699999988079071
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
+      "castRange": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyName": "Serpentine Grace",
+            "keySummary": "Cassiopeia gains Move Speed and Ability Power per level, but she cannot purchase Boots items.",
+            "keyTooltip": "Cassiopeia gains <speed>@TotalMovementSpeed@ Move Speed</speed> but cannot purchase Boots."
+          },
+          "mObjectName": "CassiopeiaPassive",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "ASSETS/Characters/Cassiopeia/HUD/Icons2D/Cassiopeia_Passive.dds",
+        "ASSETS/Characters/Cassiopeia/HUD/Icons2D/Cassiopeia_Passive_Feats_Upgrade.dds"
+      ],
+      "mSpellCalculations": {
+        "TotalMovementSpeed": {
+          "mFormulaParts": [
+            {
+              "mInitialBonusPerLevel": 4.0,
+              "mLevel1Value": 4.0,
+              "~class": "ByCharLevelBreakpointsCalculationPart"
+            }
+          ],
+          "mMultiplier": {
+            "mDataValue": "ModesMSMod",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "~class": "GameCalculation"
+        }
+      },
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Cassiopeia/Spells/CassiopeiaQAbility/CassiopeiaQ": {
+    "BotData": {
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "mSpellCalculationKey": "TooltipTotalDamage",
+            "~class": "0xf3cbe7b2"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xec17e271": [
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mEffectIndex": 4,
+                "~class": "EffectValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 2,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mPart1": {
+                  "mEffectIndex": 1,
+                  "~class": "EffectValueCalculationPart"
+                },
+                "mPart2": {
+                  "mEffectIndex": 2,
+                  "~class": "EffectValueCalculationPart"
+                },
+                "~class": "ProductOfSubPartsCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 33554432,
+          "~class": "0xb09016f6"
+        }
+      ],
+      "DamageTag": 1,
+      "~class": "BotsSpellData"
+    },
+    "ObjectName": "CassiopeiaQ",
+    "mBuff": {
+      "mDescription": "<titleLeft>Noxious Blast Haste</titleLeft><mainText>Hitting a champion with Noxious Blast has increased Cassiopeia's Move Speed.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "CassiopeiaQ",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "castConeDistance": 100.0,
+      "castFrame": 6.5,
+      "castRadius": [
+        160.0,
+        160.0,
+        160.0,
+        160.0,
+        160.0,
+        160.0,
+        160.0
+      ],
+      "castRange": [
+        850.0,
+        850.0,
+        850.0,
+        850.0,
+        850.0,
+        850.0,
+        850.0
+      ],
+      "castRangeDisplayOverride": [
+        850.0,
+        850.0,
+        850.0,
+        850.0,
+        850.0,
+        850.0,
+        850.0
+      ],
+      "cooldownTime": [
+        3.5,
+        3.5,
+        3.5,
+        3.5,
+        3.5,
+        3.5,
+        3.5
+      ],
+      "delayCastOffsetPercent": -0.5,
+      "flags": 4194304,
+      "mAffectsTypeFlags": 6154,
+      "mAnimationName": "Spell1",
+      "mCantCancelWhileWindingUp": true,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "centerLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "textureRadiusOverrideName": "ASSETS/Spells/Textures/AOE.tex",
+            "~class": "TargeterDefinitionAoe"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "nameOverride": "Move Speed",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 3,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Noxious Blast",
+            "keySummary": "Cassiopeia blasts an area with Poison after a brief delay, granting her increased Move Speed if she hits an enemy champion.",
+            "keyTooltip": "Cassiopeia blasts noxious gas, <keywordMajor>Poisoning</keywordMajor> enemies and dealing <magicDamage>@TooltipTotalDamage@ magic damage</magicDamage> over @Effect2Amount@ seconds. Hitting a champion grants Cassiopeia <speed>@Effect3Amount@% Move Speed</speed> decaying over @Effect4Amount@ seconds."
+          },
+          "mObjectName": "CassiopeiaQ",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.6499999761581421,
+      "mEffectAmount": [
+        {
+          "value": [
+            30.0,
+            75.0,
+            110.0,
+            145.0,
+            180.0,
+            215.0,
+            250.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            25.0,
+            30.0,
+            35.0,
+            40.0,
+            45.0,
+            50.0,
+            50.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            7.0,
+            7.0,
+            7.0,
+            7.0,
+            7.0,
+            7.0,
+            7.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mFloatVarsDecimals": [
+        2,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mHitBoneName": "head",
+      "mImgIconName": [
+        "ASSETS/Characters/Cassiopeia/HUD/Icons2D/Cassiopeia_Q.dds"
+      ],
+      "mSpellCalculations": {
+        "TooltipTotalDamage": {
+          "mFormulaParts": [
+            {
+              "mEffectIndex": 1,
+              "~class": "EffectValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.6499999761581421,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "tooltipOnly": true,
+          "~class": "GameCalculation"
+        }
+      },
+      "mTargetingTypeData": {
+        "~class": "Area"
+      },
+      "mana": [
+        50.0,
+        55.0,
+        60.0,
+        65.0,
+        70.0,
+        70.0
+      ],
+      "missileSpeed": 20.0,
+      "selectionPriority": 2,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Cassiopeia/Spells/CassiopeiaQAbility/CassiopeiaQDebuff": {
+    "ObjectName": "CassiopeiaQDebuff",
+    "mBuff": {
+      "mDescription": "<titleLeft>Noxious Poison</titleLeft><mainText>The unit is taking periodic damage from poison.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "CassiopeiaQDebuff",
+    "~class": "SpellObject"
+  },
+  "Characters/Cassiopeia/Spells/CassiopeiaRAbility/CassiopeiaR": {
+    "BotData": {
+      "0x38382c53": [
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 8,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 2048,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 4096,
+          "~class": "0x150d1b92"
+        }
+      ],
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "mSpellCalculationKey": "RDamage",
+            "~class": "0xf3cbe7b2"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xec17e271": [
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mDataValue": "RCCDuration",
+                "~class": "NamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 1,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mDataValue": "RCCDuration",
+                "~class": "NamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 2048,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mDataValue": "RBaseDamage",
+                "~class": "NamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 4096,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mDataValue": "RCCDuration",
+                "~class": "NamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 16384,
+          "~class": "0xb09016f6"
+        }
+      ],
+      "DamageTag": 1,
+      "~class": "BotsSpellData"
+    },
+    "ObjectName": "CassiopeiaR",
+    "mBuff": {
+      "mDescription": "<titleLeft>Petrifying Gaze Slow</titleLeft><mainText>Petrifying Gaze has slowed this unit.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "CassiopeiaR",
+    "mSpell": {
+      "DataValues": [
+        {
+          "mName": "RCCDuration",
+          "mValues": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "RSlowPercent",
+          "mValues": [
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "RBaseDamage",
+          "mValues": [
+            50.0,
+            150.0,
+            250.0,
+            350.0,
+            450.0,
+            550.0,
+            650.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "APRatio",
+          "mValues": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "mName": "RBaseDamage",
+              "mValues": [
+                25.0,
+                100.0,
+                175.0,
+                250.0,
+                325.0,
+                400.0,
+                475.0
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "mName": "APRatio",
+              "mValues": [
+                0.4000000059604645,
+                0.4000000059604645,
+                0.4000000059604645,
+                0.4000000059604645,
+                0.4000000059604645,
+                0.4000000059604645,
+                0.4000000059604645
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
+      "castConeAngle": 40.0,
+      "castConeDistance": 825.0,
+      "castFrame": 15.0,
+      "castRadius": [
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0
+      ],
+      "castRange": [
+        825.0,
+        825.0,
+        825.0,
+        825.0,
+        825.0,
+        825.0,
+        700.0
+      ],
+      "cooldownTime": [
+        120.0,
+        120.0,
+        100.0,
+        80.0,
+        10.0,
+        10.0,
+        10.0
+      ],
+      "delayTotalTimePercent": -0.75,
+      "flags": 4194304,
+      "mAffectsTypeFlags": 6154,
+      "mAlternateName": "CassiopeiaR",
+      "mAnimationName": "Spell4",
+      "mCantCancelWhileChanneling": true,
+      "mCantCancelWhileWindingUp": true,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "coneAngleDegrees": 40.0,
+            "coneRange": 825.0,
+            "endLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "~class": "TargeterDefinitionCone"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "RBaseDamage",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 3,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Petrifying Gaze",
+            "keySummary": "Cassiopeia releases a swirl of magical energy from her eyes, stunning any enemies in front of her that are facing her and slowing any others with their back turned.",
+            "keyTooltip": "Cassiopeia unleashes a petrifying gaze, dealing <magicDamage>@RDamage@ magic damage</magicDamage> and <status>Stunning</status> enemies facing her for @RCCDuration@ seconds. Enemies facing away are <status>Slowed</status> by @RSlowPercent@% decaying over the same duration instead."
+          },
+          "mObjectName": "CassiopeiaR",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.5,
+      "mImgIconName": [
+        "ASSETS/Characters/Cassiopeia/HUD/Icons2D/Cassiopeia_R.dds"
+      ],
+      "mSpellCalculations": {
+        "RDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "RBaseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "Trait_Ultimate",
+        "Trait_ImmobilizingCCSpell"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Cone"
+      },
+      "mana": [
+        100.0,
+        100.0,
+        100.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "missileSpeed": 0.0,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Cassiopeia/Spells/CassiopeiaRAbility/CassiopeiaRStun": {
+    "ObjectName": "CassiopeiaRStun",
+    "mBuff": {
+      "mDescription": "<titleLeft>Petrifying Gaze Stun</titleLeft><mainText>Petrifying Gaze has stunned this unit by turning it to stone.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "CassiopeiaRStun",
+    "mSpell": {
+      "castConeAngle": 40.0,
+      "castConeDistance": 750.0,
+      "castFrame": 15.0,
+      "castRadius": [
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0
+      ],
+      "castRange": [
+        750.0,
+        750.0,
+        750.0,
+        750.0,
+        750.0,
+        750.0,
+        750.0
+      ],
+      "cooldownTime": [
+        140.0,
+        130.0,
+        120.0,
+        110.0,
+        10.0,
+        10.0,
+        10.0
+      ],
+      "delayTotalTimePercent": -0.75,
+      "flags": 4194304,
+      "mAffectsTypeFlags": 6154,
+      "mAlternateName": "CassiopeiaR",
+      "mAnimationName": "Spell4",
+      "mCantCancelWhileChanneling": true,
+      "mCantCancelWhileWindingUp": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "coneAngleDegrees": 40.0,
+            "coneRange": 750.0,
+            "endLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "~class": "TargeterDefinitionCone"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.6000000238418579,
+      "mEffectAmount": [
+        {
+          "value": [
+            75.0,
+            200.0,
+            325.0,
+            450.0,
+            0.0,
+            0.0,
+            125.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            60.0,
+            60.0,
+            60.0,
+            60.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mImgIconName": [
+        "ASSETS/Characters/Cassiopeia/HUD/Icons2D/Cassiopeia_R.dds"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Cone"
+      },
+      "mana": [
+        120.0,
+        160.0,
+        200.0,
+        0.0,
+        0.0,
+        40.0
+      ],
+      "missileSpeed": 0.0,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Cassiopeia/Spells/CassiopeiaStatStonePoisonTracker": {
+    "ObjectName": "CassiopeiaStatStonePoisonTracker",
+    "mScriptName": "CassiopeiaStatStonePoisonTracker",
+    "~class": "SpellObject"
+  },
+  "Characters/Cassiopeia/Spells/CassiopeiaWAbility/CassiopeiaW": {
+    "BotData": {
+      "0x38382c53": [
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 1,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 4,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 64,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 128,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 1024,
+          "~class": "0x150d1b92"
+        }
+      ],
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "mPart1": {
+              "mEffectIndex": 4,
+              "~class": "EffectValueCalculationPart"
+            },
+            "mPart2": {
+              "mSpellCalculationKey": "DamagePerSecond",
+              "~class": "0xf3cbe7b2"
+            },
+            "~class": "ProductOfSubPartsCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xec17e271": [
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mEffectIndex": 2,
+                "~class": "EffectValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 1,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mSpellCalculationKey": "DamagePerSecond",
+                "~class": "0xf3cbe7b2"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 33554432,
+          "~class": "0xb09016f6"
+        }
+      ],
+      "DamageTag": 1,
+      "~class": "BotsSpellData"
+    },
+    "ObjectName": "CassiopeiaW",
+    "mBuff": {
+      "mDescription": "<titleLeft>Miasma</titleLeft><mainText>This unit is slowed and Grounded by Cassiopeia's poison.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "CassiopeiaW",
+    "mSpell": {
+      "0xf9c2333e": {
+        "cherry": {
+          "value": [
+            30.0,
+            28.0,
+            26.0,
+            24.0,
+            22.0,
+            20.0,
+            18.0
+          ],
+          "~class": "SpellEffectAmount"
+        }
+      },
+      "bHaveHitBone": true,
+      "castConeDistance": 100.0,
+      "castFrame": 7.5,
+      "castRadius": [
+        180.0,
+        180.0,
+        180.0,
+        180.0,
+        180.0,
+        180.0,
+        180.0
+      ],
+      "castRadiusSecondary": [
+        213.0,
+        213.0,
+        213.0,
+        213.0,
+        213.0,
+        213.0,
+        213.0
+      ],
+      "castRange": [
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0
+      ],
+      "castRangeDisplayOverride": [
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0
+      ],
+      "cooldownTime": [
+        24.0,
+        24.0,
+        22.0,
+        20.0,
+        18.0,
+        16.0,
+        14.0
+      ],
+      "delayCastOffsetPercent": -0.5,
+      "delayTotalTimePercent": -0.5,
+      "mAffectsTypeFlags": 7375,
+      "mAlternateName": "CassiopeiaW",
+      "mAnimationName": "Spell2",
+      "mCantCancelWhileWindingUp": true,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "angelOffsetRadian": 0.12999999523162842,
+            "centerLocator": {
+              "orientationType": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "innerTextureName": "ASSETS/Characters/Cassiopeia/HUD/Textures/Cassiopeia_W_Indicator_Center.tex",
+            "leftTextureName": "ASSETS/Characters/Cassiopeia/HUD/Textures/Cassiopeia_W_Indicator_Left.tex",
+            "numOfInnerAOE": 5,
+            "overrideMaxCastRange": {
+              "mPerLevelValues": [
+                700.0,
+                700.0,
+                700.0,
+                700.0,
+                700.0,
+                700.0
+              ],
+              "mValueType": 1,
+              "~class": "FloatPerSpellLevel"
+            },
+            "overrideMinCastRange": {
+              "mValueType": 1,
+              "~class": "FloatPerSpellLevel"
+            },
+            "rightTextureName": "ASSETS/Characters/Cassiopeia/HUD/Textures/Cassiopeia_W_Indicator_Right.tex",
+            "~class": "TargeterDefinitionMultiAOE"
+          },
+          {
+            "overrideBaseRange": {
+              "mPerLevelValues": [
+                700.0,
+                700.0,
+                700.0,
+                700.0,
+                700.0,
+                700.0
+              ],
+              "mValueType": 1,
+              "~class": "FloatPerSpellLevel"
+            },
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "nameOverride": "Slow",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 2,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Miasma",
+            "keySummary": "Cassiopeia releases several clouds of poison, slowing, grounding, and lightly damaging enemies that pass through them. Grounded enemies cannot use Movement abilities.",
+            "keyTooltip": "Cassiopeia spews venom, leaving toxic clouds for @Effect4Amount@ seconds. Enemies in the clouds take <magicDamage>@DamagePerSecond@ magic damage</magicDamage> per second, are <keywordMajor>Poisoned</keywordMajor>, <status>Grounded</status>, and <status>Slowed</status> by @Effect2Amount@%."
+          },
+          "mObjectName": "CassiopeiaW",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.10000000149011612,
+      "mEffectAmount": [
+        {
+          "value": [
+            20.0,
+            20.0,
+            25.0,
+            30.0,
+            35.0,
+            40.0,
+            45.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            30.0,
+            40.0,
+            50.0,
+            60.0,
+            70.0,
+            80.0,
+            90.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mHitBoneName": "head",
+      "mImgIconName": [
+        "ASSETS/Characters/Cassiopeia/HUD/Icons2D/Cassiopeia_W.dds"
+      ],
+      "mProjectTargetToCastRange": true,
+      "mSpellCalculations": {
+        "DamagePerSecond": {
+          "mFormulaParts": [
+            {
+              "mEffectIndex": 1,
+              "~class": "EffectValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.10000000149011612,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "tooltipOnly": true,
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellCooldownOrSealedQueueThreshold": 0.3499999940395355,
+      "mSpellRevealsChampion": false,
+      "mTargetingTypeData": {
+        "~class": "Location"
+      },
+      "mana": [
+        70.0,
+        75.0,
+        80.0,
+        85.0,
+        90.0,
+        90.0
+      ],
+      "missileSpeed": 1500.0,
+      "selectionPriority": 2,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Cassiopeia/Spells/CassiopeiaWAbility/CassiopeiaWMissile": {
+    "ObjectName": "CassiopeiaWMissile",
+    "mBuff": {
+      "mDescription": "<titleLeft>Miasma</titleLeft><mainText>This unit is slowed and Grounded by Cassiopeia's poison.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "CassiopeiaWMissile",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "castConeDistance": 100.0,
+      "castFrame": 7.5,
+      "castRadius": [
+        106.0,
+        106.0,
+        106.0,
+        106.0,
+        106.0,
+        106.0,
+        106.0
+      ],
+      "castRadiusSecondary": [
+        213.0,
+        213.0,
+        213.0,
+        213.0,
+        213.0,
+        213.0,
+        213.0
+      ],
+      "castRange": [
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delayCastOffsetPercent": -0.5,
+      "delayTotalTimePercent": -0.5,
+      "flags": 4,
+      "luaOnMissileUpdateDistanceInterval": 50.0,
+      "mAffectsStatusFlags": 32,
+      "mAffectsTypeFlags": 7170,
+      "mAlternateName": "CassiopeiaW",
+      "mAnimationName": "Spell2",
+      "mCantCancelWhileWindingUp": true,
+      "mCastType": 3,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "centerLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "textureRadiusOverrideName": "ASSETS/Spells/Textures/AOE.tex",
+            "~class": "TargeterDefinitionAoe"
+          },
+          {
+            "centerLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "overrideRadius": {
+              "mPerLevelValues": [
+                213.0,
+                213.0,
+                213.0,
+                213.0,
+                213.0,
+                213.0
+              ],
+              "mValueType": 2,
+              "~class": "FloatPerSpellLevel"
+            },
+            "textureRadiusOverrideName": "ASSETS/Characters/Cassiopeia/HUD/Textures/AOE_Cassiopeia_outer.tex",
+            "~class": "TargeterDefinitionAoe"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.30000001192092896,
+      "mHitBoneName": "head",
+      "mImgIconName": [
+        "ASSETS/Characters/Cassiopeia/HUD/Icons2D/Cassiopeia_W.dds"
+      ],
+      "mLineWidth": 25.0,
+      "mMissileEffectKey": "Cassiopeia_W_mis",
+      "mMissileSpec": {
+        "0xc195fba6": true,
+        "behaviors": [
+          {
+            "~class": "CastOnHit"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "mGravity": 10000.0,
+          "~class": "GravityHeightSolver"
+        },
+        "mMissileWidth": 25.0,
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 3000.0,
+          "mStartBoneName": "head",
+          "mTargetHeightAugment": 100.0,
+          "mTracksTarget": false,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VerticalFacingFaceTarget"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mProjectTargetToCastRange": true,
+      "mSpellRevealsChampion": false,
+      "mTargetingTypeData": {
+        "~class": "Area"
+      },
+      "missileSpeed": 3000.0,
+      "selectionPriority": 2,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Cassiopeia/Spells/CassiopeiaWAbility/CassiopeiaWSlow": {
+    "ObjectName": "CassiopeiaWSlow",
+    "mBuff": {
+      "mDescription": "<titleLeft>Miasma Slow</titleLeft><mainText>This unit is slowed and Grounded by Cassiopeia's poison.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "CassiopeiaWSlow",
+    "mSpell": {
+      "castConeAngle": 40.0,
+      "castConeDistance": 750.0,
+      "castFrame": 15.0,
+      "castRadius": [
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0
+      ],
+      "castRange": [
+        750.0,
+        750.0,
+        750.0,
+        750.0,
+        750.0,
+        750.0,
+        750.0
+      ],
+      "cooldownTime": [
+        140.0,
+        130.0,
+        120.0,
+        110.0,
+        10.0,
+        10.0,
+        10.0
+      ],
+      "delayTotalTimePercent": -0.75,
+      "flags": 4194304,
+      "mAffectsTypeFlags": 6154,
+      "mAlternateName": "CassiopeiaR",
+      "mAnimationName": "Spell4",
+      "mCantCancelWhileChanneling": true,
+      "mCantCancelWhileWindingUp": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "coneAngleDegrees": 40.0,
+            "coneRange": 750.0,
+            "endLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "~class": "TargeterDefinitionCone"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.6000000238418579,
+      "mEffectAmount": [
+        {
+          "value": [
+            75.0,
+            200.0,
+            325.0,
+            450.0,
+            0.0,
+            0.0,
+            125.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            60.0,
+            60.0,
+            60.0,
+            60.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mImgIconName": [
+        "ASSETS/Characters/Cassiopeia/HUD/Icons2D/Cassiopeia_W.dds"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Cone"
+      },
+      "mana": [
+        120.0,
+        160.0,
+        200.0,
+        0.0,
+        0.0,
+        40.0
+      ],
+      "missileSpeed": 0.0,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  }
+}
