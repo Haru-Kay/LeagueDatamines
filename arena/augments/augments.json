@@ -5272,7 +5272,7 @@
     "tooltip": "Requirement: Purchase @AnvilsReqToComplete@ Item Anvils.<br><br>Reward: All of your items become <keywordMajor>Masterwork</keywordMajor>, increasing their stats by @ItemPercentAmp*100@%.",
     "dataValues": {
       "AnvilsReqToComplete": 2.0,
-      "ItemPercentAmp": 0.10000000149011612
+      "ItemPercentAmp": 0.15000000596046448
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/Quest_Rite_of_the_Forge_God_Small.tex",
@@ -5292,7 +5292,7 @@
       "MaxmimumDistance": 3000.0,
       "MaximumDistanceRoF": 1500.0,
       "WispSpeed": 3500.0,
-      "DelayMovingTime": 0.5
+      "DelayMovingTime": 1.0
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/Panic_Room_Small.tex",
@@ -5304,13 +5304,13 @@
     "apiName": "AimForTheHead",
     "name": "Aim for the Head",
     "rarity": "Gold",
-    "desc": "Gain @CritChanceBonus*100@% Critical Strike Chance and @CritDamageBonus*100@% Critical Strike Damage. Your Critical Strike Chance is capped at @CritChanceCeiling*100@%.<br><br>Convert Critical Strike Chance above @CritChanceCeiling*100@% into Critical Strike Damage.",
-    "tooltip": "Gain @CritChanceBonus*100@% Critical Strike Chance and @CritDamageBonus*100@% Critical Strike Damage. Your Critical Strike Chance is capped at @CritChanceCeiling*100@%.<br><br>Convert Critical Strike Chance above @CritChanceCeiling*100@% into Critical Strike Damage.",
+    "desc": "Gain @CritChanceBonus*100@% Critical Strike Chance and @CritDamageBonus*100@% Critical Strike Damage. Your Critical Strike Chance is capped at @CritChanceCeiling*100@%.<br><br>Convert @CritChanceToDamageRatio*100@% of Critical Strike Chance above @CritChanceCeiling*100@% into Critical Strike Damage.",
+    "tooltip": "{{Cherry_AimForTheHead_Summary}}<br><br>Total Bonus Critical Strike Damage: @f1*100@%",
     "dataValues": {
-      "CritDamageBonus": 0.5,
-      "CritChanceMod": 0.5,
+      "CritDamageBonus": 0.25,
       "CritChanceBonus": 0.25,
-      "CritChanceCeiling": 0.5
+      "CritChanceCeiling": 0.5,
+      "CritChanceToDamageRatio": 0.5
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/Aim_For_The_Head_Small.tex",
@@ -5323,7 +5323,7 @@
     "name": "Hybrid",
     "rarity": "Gold",
     "desc": "When you deal damage with an Attack, your next Ability deals @AbilityBoost*100@% increased damage.<br><br>When you deal damage with an Ability, your next Attack deals @AttackBoost*100@% increased damage.",
-    "tooltip": "When you deal damage with an Attack, your next Ability deals @AbilityBoost*100@% increased damage.<br><br>When you deal damage with an Ability, your next Attack deals @AttackBoost*100@% increased damage.",
+    "tooltip": "{{Cherry_Hybrid_Summary}}<br><br><rules>Abilities empower one Attack per cast.</rules>",
     "dataValues": {
       "AttackBoost": 0.30000001192092896,
       "AbilityBoost": 0.30000001192092896
@@ -5338,61 +5338,31 @@
     "apiName": "HiveMind",
     "name": "Hive Mind",
     "rarity": "Prismatic",
-    "desc": "Start each round with @StartingBees@ Bee(s). Gain Bees by harvesting flowers. Attacking or landing abilities on a target within @BeeRange@ will launch a Bee to attack over @DebuffDuration@ seconds.",
-    "tooltip": "Start each round with @StartingBees@ Bee(s). Gain Bees by harvesting flowers. Attacking or landing abilities on a target within @BeeRange@ will launch a Bee to attack over @DebuffDuration@ seconds.<br><br>Damage Dealt This Round: @f1@<br>Damage Dealt Total: @f2@",
+    "desc": "Start each round with @StartingBees@ Bee(s), gain additonal Bees by harvesting flowers. Damaging an enemy champion sends a Bee dealing @BeeDamage@ over @DebuffDuration@ seconds on arrival, before returning to you.<br>",
+    "tooltip": "Start each round with @StartingBees@ Bee(s), gain additonal Bees by harvesting flowers. Damaging an enemy champion sends a Bee dealing @BeeDamage@ over @DebuffDuration@ seconds on arrival, before returning to you.<br><br>Damage Dealt This Round: @f1@<br>Damage Dealt Total: @f2@",
     "dataValues": {
-      "MaxBeeStacks": [
-        6.0,
-        6.0,
-        8.0,
-        8.0,
-        8.0,
-        8.0,
-        8.0
-      ],
-      "DebuffDuration": [
-        1.5,
-        1.5,
-        1.5,
-        2.0,
-        2.0,
-        2.0,
-        2.0
-      ],
-      "BeeRange": [
-        800.0,
-        800.0,
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0
-      ],
+      "MaxBeeStacks": 8.0,
+      "DebuffDuration": 2.0,
+      "BeeRange": 25000.0,
       "ASReductionPerCounter": -0.029999999329447746,
-      "StartingBees": [
-        1.0,
-        1.0,
-        2.0,
-        2.0,
-        2.0,
-        2.0,
-        2.0
-      ]
+      "StartingBees": 1.0,
+      "BaseDamageMin": 20.0,
+      "BaseDamageMax": 40.0
     },
     "calculations": {
       "0x18f0ea4e": {
         "mFormulaParts": [
           {
-            "mEndValue": 5.0,
-            "mStartValue": 1.0,
-            "~class": "ByCharLevelInterpolationCalculationPart"
+            "0x589a59c": "BaseDamageMin",
+            "0xb65bc23": "BaseDamageMax",
+            "~class": "0xee18a47b"
           },
           {
-            "mCoefficient": 0.05000000074505806,
+            "mCoefficient": 0.10000000149011612,
             "~class": "StatByCoefficientCalculationPart"
           },
           {
-            "mCoefficient": 0.05000000074505806,
+            "mCoefficient": 0.10000000149011612,
             "mStat": 2,
             "mStatFormula": 2,
             "~class": "StatByCoefficientCalculationPart"
@@ -5412,15 +5382,13 @@
     "name": "Righteous Fury",
     "rarity": "Prismatic",
     "desc": "<healing>Healing</healing> or <Shield>Shielding</Shield> increases your Ability damage by @SpellDamagePerStack*100@%, stacking infinitely for the round.",
-    "tooltip": "{{Cherry_RighteousFury_Summary}}<br><br>Current Ability Damage Bonus: @f1@%<br>Bonus damage this round: @f2@<br>Bonus damage total: @f3@",
+    "tooltip": "{{Cherry_RighteousFury_Summary}}<br><br>@Cooldown@s Cooldown per Ability cast, Augment, and Item.<br><br>Current Ability Damage Bonus: @f1@%<br>Bonus damage this round: @f2@<br>Bonus damage total: @f3@",
     "dataValues": {
       "SpellDamagePerStack": 0.029999999329447746,
       "MinimumTrigger": 1.0,
       "Cooldown": 3.0,
       "ADPerStack": 2.0,
-      "ASPerStack": 0.019999999552965164,
-      "StacksPerSelfCast": 1.0,
-      "StacksPerAllyCast": 5.0
+      "ASPerStack": 0.019999999552965164
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/Righteous_Fury_Small.tex",

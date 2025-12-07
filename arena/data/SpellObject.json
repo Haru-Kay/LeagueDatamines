@@ -3092,26 +3092,13 @@
         {
           "mName": "CritDamageBonus",
           "mValues": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "CritChanceMod",
-          "mValues": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25
           ],
           "~class": "SpellDataValue"
         },
@@ -3130,6 +3117,19 @@
         },
         {
           "mName": "CritChanceCeiling",
+          "mValues": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "CritChanceToDamageRatio",
           "mValues": [
             0.5,
             0.5,
@@ -5987,32 +5987,6 @@
             0.019999999552965164
           ],
           "~class": "SpellDataValue"
-        },
-        {
-          "mName": "StacksPerSelfCast",
-          "mValues": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "StacksPerAllyCast",
-          "mValues": [
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0
-          ],
-          "~class": "SpellDataValue"
         }
       ],
       "cooldownTime": [
@@ -8452,6 +8426,17 @@
           "~class": "SpellDataValue"
         }
       ],
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLocKeys": {
+            "keyTooltipExtended": "Cherry_Hybrid_Tooltip_Extended"
+          },
+          "mObjectName": "Augment_Hybrid",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
       "~class": "SpellDataResource"
     },
     "~class": "SpellObject"
@@ -8494,13 +8479,13 @@
         {
           "mName": "ItemPercentAmp",
           "mValues": [
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448
           ],
           "~class": "SpellDataValue"
         }
@@ -9118,13 +9103,13 @@
         {
           "mName": "DelayMovingTime",
           "mValues": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
           ],
           "~class": "SpellDataValue"
         }
@@ -11636,8 +11621,8 @@
         {
           "mName": "MaxBeeStacks",
           "mValues": [
-            6.0,
-            6.0,
+            8.0,
+            8.0,
             8.0,
             8.0,
             8.0,
@@ -11649,9 +11634,9 @@
         {
           "mName": "DebuffDuration",
           "mValues": [
-            1.5,
-            1.5,
-            1.5,
+            2.0,
+            2.0,
+            2.0,
             2.0,
             2.0,
             2.0,
@@ -11662,13 +11647,13 @@
         {
           "mName": "BeeRange",
           "mValues": [
-            800.0,
-            800.0,
-            1000.0,
-            1000.0,
-            1000.0,
-            1000.0,
-            1000.0
+            25000.0,
+            25000.0,
+            25000.0,
+            25000.0,
+            25000.0,
+            25000.0,
+            25000.0
           ],
           "~class": "SpellDataValue"
         },
@@ -11690,11 +11675,37 @@
           "mValues": [
             1.0,
             1.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "BaseDamageMin",
+          "mValues": [
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "BaseDamageMax",
+          "mValues": [
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0
           ],
           "~class": "SpellDataValue"
         }
@@ -11721,10 +11732,6 @@
                 {
                   "type": "StartingBees",
                   "~class": "TooltipInstanceListElement"
-                },
-                {
-                  "type": "BeeRange",
-                  "~class": "TooltipInstanceListElement"
                 }
               ],
               "~class": "TooltipInstanceList"
@@ -11746,16 +11753,16 @@
         "0x18f0ea4e": {
           "mFormulaParts": [
             {
-              "mEndValue": 5.0,
-              "mStartValue": 1.0,
-              "~class": "ByCharLevelInterpolationCalculationPart"
+              "0x589a59c": "BaseDamageMin",
+              "0xb65bc23": "BaseDamageMax",
+              "~class": "0xee18a47b"
             },
             {
-              "mCoefficient": 0.05000000074505806,
+              "mCoefficient": 0.10000000149011612,
               "~class": "StatByCoefficientCalculationPart"
             },
             {
-              "mCoefficient": 0.05000000074505806,
+              "mCoefficient": 0.10000000149011612,
               "mStat": 2,
               "mStatFormula": 2,
               "~class": "StatByCoefficientCalculationPart"
