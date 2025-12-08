@@ -13,6 +13,20 @@ def xxh3(s)
     return (hashInt & hashMask).to_s(16)
 end
 
+def fnv(item, size: 32)
+    offset_basis = 0x811c9dc5
+    prime = 16777619
+
+    hash = offset_basis
+    item.to_s.each_byte { |byte|
+        hash ^= byte
+        hash *= prime
+        hash &= 4294967295
+    }
+    
+    return hash.to_s(16)
+end
+
 class LangHashWrapper
     attr_reader :hash
     def initialize(hash)
@@ -50,24 +64,6 @@ class LangHashWrapper
     def respond_to_missing?(method, include_private = false)
         @hash.respond_to?(method) || super
     end
-end
-
-def formatChampion(obj)
-    obj = obj.fetch("entries", obj)
-    fluff = [
-        "ItemRecommendationOverrideSet",
-        "RecSpellRankUpInfoList",
-        "ItemRecommendationContextList",
-        "ChampionRuneRecommendationsContext",
-        "JunglePathRecommendation"
-    ]
-    obj.delete_if { |key, value|
-        (value.is_a?(Hash) && fluff.include?(value["~class"]))
-    }
-    # TODO: Statstones and other hash values
-    #obj.each { |key, value| }
-
-    return obj
 end
 
 def badString?(key, value) 
@@ -330,6 +326,7 @@ def applyLang(obj)
             return obj
     end
 end
+
 def itemNameLangFix(value)
     return value if !value.is_a?(String) || !value =~ "^Items/[0-9]+$"
     return "ARAM/Recall" if value == "Items/2007"
@@ -770,15 +767,52 @@ print "done.\n"
 # Arena handling end
 
 print "Loading and formatting champion data..."
-Dir.mkdir("champions") if !Dir.exist?("champions")
-deletions = []
+FileUtils.rm_rf(Dir.glob("champions/*"))
 Dir.each_child("temp/data/characters") { |path|
     basepath = "temp/data/characters/" + path
     Dir.each_child(basepath) { |file|
         filepath = basepath + "/" + file
         champ = {}
         File.open(filepath, 'rb') { |f| champ = JSON.parse(f.read()) }
-        File.open("champions/" + file, 'wb') { |f| f.write(JSON.pretty_generate(formatChampion(champ))) }
+        champ = champ.fetch("entries", champ)
+        out = {}
+        champ.each { |obj, data|
+            d = applyLang(data)
+            clazz = d["~class"] || "Misc"
+            
+            case clazz
+                when "StatStoneSet", "StatStoneData"
+                    clazz = "Eternals"
+                when "CharacterRecord"
+                    clazz = "BaseStats"
+                when "ItemRecommendationOverrideSet", "RecSpellRankUpInfolist", "ItemRecommendationContextList",
+                    "ChampionRuneRecommendationsContext", "JunglePathRecommendation", "SkinCharacterMetaDataProperties"
+                    next
+                when "SpellObject"
+                    clazz = "Spells"
+                else
+                    #do nothing
+            end
+
+            out[clazz] ||= {}
+            out[clazz].store(obj, d)
+        }
+        next if out.empty?
+
+        champ.extend(Hashie::Extensions::DeepFind)
+        dataNames = {}
+        champ.deep_find_all("mName")&.each { |n|
+            dataNames.store("0x#{fnv(n.downcase)}", n)
+        }
+
+        Dir.mkdir("champions/#{path}") if !Dir.exist?("champions/#{path}")
+        out.each { |filename, json|
+            str = JSON.pretty_generate(json)
+            dataNames.each { |h, n|
+                str.gsub!(h, n)
+            }
+            File.open("champions/#{path}/#{filename}.json", 'wb') { |f| f.write(str) }
+        }
     }
 }
 print "done.\n"
