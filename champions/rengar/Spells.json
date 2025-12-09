@@ -1255,13 +1255,13 @@
         {
           "mName": "BonusLeapRange",
           "mValues": [
-            630.0,
-            630.0,
-            630.0,
-            630.0,
-            630.0,
-            630.0,
-            630.0
+            620.0,
+            620.0,
+            620.0,
+            620.0,
+            620.0,
+            620.0,
+            620.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1604,15 +1604,15 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "BaseADRatio",
+          "mName": "BaseADRatioTooltip",
           "mValues": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
+            96.25,
+            100.0,
+            103.75,
+            107.5,
+            111.25,
+            115.0,
+            118.75
           ],
           "~class": "SpellDataValue"
         },
@@ -1678,6 +1678,19 @@
             3.0,
             3.0,
             3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "BaseADRatio",
+          "mValues": [
+            0.9624999761581421,
+            1.0,
+            1.037500023841858,
+            1.0750000476837158,
+            1.1124999523162842,
+            1.149999976158142,
+            1.1875
           ],
           "~class": "SpellDataValue"
         }
@@ -1939,6 +1952,13 @@
                   "~class": "TooltipInstanceListElement"
                 },
                 {
+                  "Style": 1,
+                  "nameOverride": "Total AD Ratio",
+                  "type": "BaseADRatioTooltip",
+                  "typeIndex": 2,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
                   "nameOverride": "Cooldown",
                   "type": "AmmoRechargeTime",
                   "~class": "TooltipInstanceListElement"
@@ -1961,7 +1981,6 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 1.0,
       "mDisableCastBar": true,
       "mFloatVarsDecimals": [
         0,
@@ -2006,6 +2025,25 @@
           "mMultiplier": {
             "mDataValue": "TowerMod",
             "~class": "NamedDataValueCalculationPart"
+          },
+          "~class": "GameCalculation"
+        },
+        "0xc6c2d6f4": {
+          "mFormulaParts": [
+            {
+              "mCoefficient": 1.0,
+              "mStat": 9,
+              "~class": "StatByCoefficientCalculationPart"
+            },
+            {
+              "mNumber": -1.0,
+              "~class": "NumberCalculationPart"
+            }
+          ],
+          "mMultiplier": {
+            "mCoefficient": 1.0,
+            "mStat": 2,
+            "~class": "StatByCoefficientCalculationPart"
           },
           "~class": "GameCalculation"
         },
