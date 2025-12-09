@@ -5338,19 +5338,19 @@
     "apiName": "HiveMind",
     "name": "Hive Mind",
     "rarity": "Prismatic",
-    "desc": "Start each round with @StartingBees@ Bee(s), gain additonal Bees by harvesting flowers. Damaging an enemy champion sends a Bee dealing @BeeDamage@ over @DebuffDuration@ seconds on arrival, before returning to you.<br>",
-    "tooltip": "Start each round with @StartingBees@ Bee(s), gain additonal Bees by harvesting flowers. Damaging an enemy champion sends a Bee dealing @BeeDamage@ over @DebuffDuration@ seconds on arrival, before returning to you.<br><br>Damage Dealt This Round: @f1@<br>Damage Dealt Total: @f2@",
+    "desc": "Start each round with @StartingBees@ Bee, gain additonal Bees by harvesting flowers. Damaging an enemy champion sends a Bee dealing <magicDamage>@BeeDamage@ magic damage</magicDamage> over @DebuffDuration@ seconds on arrival, before returning to you.<br>",
+    "tooltip": "Start each round with @StartingBees@ Bee, gain additonal Bees by harvesting flowers. Damaging an enemy champion sends a Bee dealing <magicDamage>@BeeDamage@ magic damage</magicDamage> over @DebuffDuration@ seconds on arrival, before returning to you.<br><br>Damage Dealt This Round: @f1@<br>Damage Dealt Total: @f2@",
     "dataValues": {
       "MaxBeeStacks": 8.0,
       "DebuffDuration": 2.0,
       "BeeRange": 25000.0,
       "ASReductionPerCounter": -0.029999999329447746,
       "StartingBees": 1.0,
-      "BaseDamageMin": 20.0,
-      "BaseDamageMax": 40.0
+      "BaseDamageMin": 40.0,
+      "BaseDamageMax": 100.0
     },
     "calculations": {
-      "0x18f0ea4e": {
+      "BeeDamage": {
         "mFormulaParts": [
           {
             "0x589a59c": "BaseDamageMin",
@@ -5358,11 +5358,11 @@
             "~class": "0xee18a47b"
           },
           {
-            "mCoefficient": 0.10000000149011612,
+            "mCoefficient": 0.20000000298023224,
             "~class": "StatByCoefficientCalculationPart"
           },
           {
-            "mCoefficient": 0.10000000149011612,
+            "mCoefficient": 0.20000000298023224,
             "mStat": 2,
             "mStatFormula": 2,
             "~class": "StatByCoefficientCalculationPart"

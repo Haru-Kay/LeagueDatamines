@@ -80,10 +80,13 @@ stat = {
     "bonus Ability Haste"
   ],
   "12": [
-    "Health",
+    "max Health",
     "base Health",
     "bonus Health"
   ],
+  "13": [
+    "current Health"
+  ]
   "17": [
     "Dodge",
     "base Dodge",
