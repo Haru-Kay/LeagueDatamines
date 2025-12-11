@@ -659,40 +659,17 @@
     "ObjectName": "CaitlynPassive",
     "mScriptName": "CaitlynPassive",
     "mSpell": {
-      "0xfe87f21e": [
-        {
-          "0x1987941": [
-            {
-              "mSubRequirements": [
-                {
-                  "0x7b66f15d": false,
-                  "0xd6b6109c": "Characters/Caitlyn/Spells/CaitlynPassiveAbility/CaitlynPassiveDriver",
-                  "~class": "HasBuffCastRequirement"
-                },
-                {
-                  "0xd6b6109c": "Characters/Caitlyn/Spells/CaitlynPassiveAbility/CaitlynPassiveRangeMarker",
-                  "~class": "HasBuffCastRequirement"
-                }
-              ],
-              "mSuccessesRequired": 1,
-              "~class": "HasAtleastNSubRequirementsCastRequirement"
-            }
-          ],
-          "0x6166b756": "0x42962485",
-          "~class": "0xfe87f21e"
-        }
-      ],
       "DataValues": [
         {
-          "mName": "CriticalStrikeScaling",
+          "mName": "CritChanceMultiplier",
           "mValues": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25
           ],
           "~class": "SpellDataValue"
         },
@@ -756,34 +733,6 @@
         "ASSETS/Characters/Caitlyn/HUD/Icons2D/CaitlynPGrey.dds"
       ],
       "mSpellCalculations": {
-        "0x36ebd3cf": {
-          "mFormulaParts": [
-            {
-              "mCoefficient": 1.0,
-              "mStat": 9,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "0x42962485": {
-          "mFormulaParts": [
-            {
-              "mSubparts": [
-                {
-                  "mSpellCalculationKey": "HeadShotMinionBonusDamage",
-                  "~class": "0xf3cbe7b2"
-                },
-                {
-                  "mSpellCalculationKey": "HeadShotBonusDamage",
-                  "~class": "0xf3cbe7b2"
-                }
-              ],
-              "~class": "SumOfSubPartsCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
         "BrushAttackTotal": {
           "mExpandedTooltipCalculationDisplay": 5,
           "mFormulaParts": [
@@ -828,23 +777,14 @@
                   },
                   {
                     "mPart1": {
-                      "mDataValue": "CriticalStrikeScaling",
-                      "mStat": 8,
-                      "~class": "StatByNamedDataValueCalculationPart"
+                      "mCoefficient": 1.0,
+                      "mStat": 9,
+                      "~class": "StatByCoefficientCalculationPart"
                     },
                     "mPart2": {
-                      "mSubparts": [
-                        {
-                          "mCoefficient": 1.0,
-                          "mStat": 9,
-                          "~class": "StatByCoefficientCalculationPart"
-                        },
-                        {
-                          "mNumber": -1.0,
-                          "~class": "NumberCalculationPart"
-                        }
-                      ],
-                      "~class": "SumOfSubPartsCalculationPart"
+                      "mCoefficient": 0.8500000238418579,
+                      "mStat": 8,
+                      "~class": "StatByCoefficientCalculationPart"
                     },
                     "~class": "ProductOfSubPartsCalculationPart"
                   }
@@ -1652,15 +1592,15 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "CriticalStrikeModifier",
+          "mName": "CritChanceAmp",
           "mValues": [
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
           ],
           "~class": "SpellDataValue"
         }
@@ -1779,26 +1719,9 @@
                 "~class": "NumberCalculationPart"
               },
               {
-                "mPart1": {
-                  "mDataValue": "CriticalStrikeModifier",
-                  "mStat": 8,
-                  "~class": "StatByNamedDataValueCalculationPart"
-                },
-                "mPart2": {
-                  "mSubparts": [
-                    {
-                      "mCoefficient": 1.0,
-                      "mStat": 9,
-                      "~class": "StatByCoefficientCalculationPart"
-                    },
-                    {
-                      "mNumber": -1.0,
-                      "~class": "NumberCalculationPart"
-                    }
-                  ],
-                  "~class": "SumOfSubPartsCalculationPart"
-                },
-                "~class": "ProductOfSubPartsCalculationPart"
+                "mDataValue": "CritChanceAmp",
+                "mStat": 8,
+                "~class": "StatByNamedDataValueCalculationPart"
               }
             ],
             "~class": "SumOfSubPartsCalculationPart"
@@ -2011,86 +1934,6 @@
     },
     "mScriptName": "CaitlynW",
     "mSpell": {
-      "DataValues": [
-        {
-          "mName": "BaseDamage",
-          "mValues": [
-            35.0,
-            35.0,
-            80.0,
-            125.0,
-            170.0,
-            215.0,
-            260.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "ADRatio",
-          "mValues": [
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "TrapDuration",
-          "mValues": [
-            25.0,
-            30.0,
-            35.0,
-            40.0,
-            45.0,
-            50.0,
-            55.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "MaximumTraps",
-          "mValues": [
-            3.0,
-            3.0,
-            3.0,
-            4.0,
-            4.0,
-            5.0,
-            5.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "RootDuration",
-          "mValues": [
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "MaximumCharges",
-          "mValues": [
-            3.0,
-            3.0,
-            3.0,
-            4.0,
-            4.0,
-            5.0,
-            5.0
-          ],
-          "~class": "SpellDataValue"
-        }
-      ],
       "castConeDistance": 100.0,
       "castFrame": 7.5,
       "castRadius": [
@@ -2155,7 +1998,7 @@
               "Elements": [
                 {
                   "nameOverride": "Bonus Headshot Damage on Trapped Targets",
-                  "type": "BaseDamage",
+                  "type": "Effect%dAmount",
                   "typeIndex": 2,
                   "~class": "TooltipInstanceListElement"
                 },
@@ -2165,13 +2008,13 @@
                 },
                 {
                   "nameOverride": "Maximum Traps",
-                  "type": "MaximumTraps",
+                  "type": "Effect%dAmount",
                   "typeIndex": 4,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Trap Duration",
-                  "type": "TrapDuration",
+                  "type": "Effect%dAmount",
                   "typeIndex": 3,
                   "~class": "TooltipInstanceListElement"
                 }
@@ -2190,6 +2033,7 @@
         },
         "~class": "SpellDataResourceClient"
       },
+      "mCoefficient": 0.6000000238418579,
       "mEffectAmount": [
         {
           "value": [
@@ -2204,18 +2048,63 @@
           "~class": "SpellEffectAmount"
         },
         {
+          "value": [
+            35.0,
+            35.0,
+            80.0,
+            125.0,
+            170.0,
+            215.0,
+            215.0
+          ],
           "~class": "SpellEffectAmount"
         },
         {
+          "value": [
+            30.0,
+            30.0,
+            35.0,
+            40.0,
+            45.0,
+            50.0,
+            55.0
+          ],
           "~class": "SpellEffectAmount"
         },
         {
+          "value": [
+            2.0,
+            3.0,
+            3.0,
+            4.0,
+            4.0,
+            5.0,
+            5.0
+          ],
           "~class": "SpellEffectAmount"
         },
         {
+          "value": [
+            2.0,
+            3.0,
+            3.0,
+            4.0,
+            4.0,
+            5.0,
+            5.0
+          ],
           "~class": "SpellEffectAmount"
         },
         {
+          "value": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
           "~class": "SpellEffectAmount"
         },
         {
@@ -2282,14 +2171,24 @@
         "HeadShotBonusDamage": {
           "mFormulaParts": [
             {
-              "mDataValue": "baseDamage",
-              "~class": "NamedDataValueCalculationPart"
+              "mEffectIndex": 2,
+              "~class": "EffectValueCalculationPart"
             },
             {
-              "mDataValue": "ADRatio",
               "mStat": 2,
               "mStatFormula": 2,
-              "~class": "StatByNamedDataValueCalculationPart"
+              "mSubpart": {
+                "mPart1": {
+                  "mEffectIndex": 7,
+                  "~class": "EffectValueCalculationPart"
+                },
+                "mPart2": {
+                  "mNumber": 0.009999999776482582,
+                  "~class": "NumberCalculationPart"
+                },
+                "~class": "ProductOfSubPartsCalculationPart"
+              },
+              "~class": "StatBySubPartCalculationPart"
             }
           ],
           "~class": "GameCalculation"

@@ -401,77 +401,25 @@
           "mName": "BaseDamage",
           "mValues": [
             0.0,
-            8.0,
-            16.0,
-            24.0,
-            32.0,
-            40.0,
-            48.0
+            15.0,
+            30.0,
+            45.0,
+            60.0,
+            75.0,
+            90.0
           ],
           "~class": "SpellDataValue"
         },
         {
           "mName": "ADRatio",
           "mValues": [
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "AttackSpeedCoefficient",
-          "mValues": [
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "CritDamageMod",
-          "mValues": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "OnHitDamageReduction",
-          "mValues": [
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "AttackFrequency",
-          "mValues": [
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448
           ],
           "~class": "SpellDataValue"
         },
@@ -515,6 +463,32 @@
           "~class": "SpellDataValue"
         },
         {
+          "mName": "CritDamageReduction",
+          "mValues": [
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "AttackSpeedCoefficient",
+          "mValues": [
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
           "mName": "EdgeToEdgeCollisionRadius",
           "mValues": [
             50.0,
@@ -524,6 +498,32 @@
             50.0,
             50.0,
             50.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "AttackFrequency",
+          "mValues": [
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "OnHitDamageReduction",
+          "mValues": [
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25
           ],
           "~class": "SpellDataValue"
         },
@@ -707,17 +707,7 @@
       ],
       "mLineDragLength": 500.0,
       "mSpellCalculations": {
-        "0x36ebd3cf": {
-          "mFormulaParts": [
-            {
-              "mCoefficient": 1.0,
-              "mStat": 9,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "CriticalCalc": {
+        "ASModDamageToDeal": {
           "mModifiedGameCalculation": "DamageToDeal",
           "mMultiplier": {
             "mSubparts": [
@@ -726,25 +716,10 @@
                 "~class": "NumberCalculationPart"
               },
               {
-                "mPart1": {
-                  "mDataValue": "CritDamageMod",
-                  "~class": "NamedDataValueCalculationPart"
-                },
-                "mPart2": {
-                  "mSubparts": [
-                    {
-                      "mCoefficient": 1.0,
-                      "mStat": 9,
-                      "~class": "StatByCoefficientCalculationPart"
-                    },
-                    {
-                      "mNumber": -1.0,
-                      "~class": "NumberCalculationPart"
-                    }
-                  ],
-                  "~class": "SumOfSubPartsCalculationPart"
-                },
-                "~class": "ProductOfSubPartsCalculationPart"
+                "mDataValue": "AttackSpeedCoefficient",
+                "mStat": 4,
+                "mStatFormula": 2,
+                "~class": "StatByNamedDataValueCalculationPart"
               }
             ],
             "~class": "SumOfSubPartsCalculationPart"
@@ -763,21 +738,6 @@
               "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
-          "mMultiplier": {
-            "mSubparts": [
-              {
-                "mNumber": 1.0,
-                "~class": "NumberCalculationPart"
-              },
-              {
-                "mDataValue": "AttackSpeedCoefficient",
-                "mStat": 4,
-                "mStatFormula": 2,
-                "~class": "StatByNamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "SumOfSubPartsCalculationPart"
-          },
           "~class": "GameCalculation"
         }
       },
@@ -850,8 +810,7 @@
         "ASSETS/Characters/Akshan/HUD/Icons2D/akshan_e2.dds"
       ],
       "mSpellTags": [
-        "PositiveEffect_MoveBlock",
-        "Trait_FreeRecast"
+        "PositiveEffect_MoveBlock"
       ],
       "mTargetingTypeData": {
         "~class": "Location"
@@ -892,9 +851,6 @@
       "mDoesntBreakChannels": true,
       "mImgIconName": [
         "ASSETS/Characters/Akshan/HUD/Icons2D/akshan_e2.dds"
-      ],
-      "mSpellTags": [
-        "Trait_FreeRecast"
       ],
       "mTargetingTypeData": {
         "~class": "LocationClamped"
@@ -1282,13 +1238,13 @@
         {
           "mName": "SecondAutoCritRatio",
           "mValues": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896
           ],
           "~class": "SpellDataValue"
         },
@@ -1334,40 +1290,6 @@
         "ASSETS/Characters/Akshan/HUD/Icons2D/akshan_p.dds"
       ],
       "mSpellCalculations": {
-        "0x82593567": {
-          "mModifiedGameCalculation": "SecondAutoDamage",
-          "mMultiplier": {
-            "mSubparts": [
-              {
-                "mNumber": 1.0,
-                "~class": "NumberCalculationPart"
-              },
-              {
-                "mPart1": {
-                  "mDataValue": "SecondAutoCritRatio",
-                  "~class": "NamedDataValueCalculationPart"
-                },
-                "mPart2": {
-                  "mSubparts": [
-                    {
-                      "mCoefficient": 1.0,
-                      "mStat": 9,
-                      "~class": "StatByCoefficientCalculationPart"
-                    },
-                    {
-                      "mNumber": -1.0,
-                      "~class": "NumberCalculationPart"
-                    }
-                  ],
-                  "~class": "SumOfSubPartsCalculationPart"
-                },
-                "~class": "ProductOfSubPartsCalculationPart"
-              }
-            ],
-            "~class": "SumOfSubPartsCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
         "ASModdedMS": {
           "mModifiedGameCalculation": "MS",
           "mMultiplier": {
@@ -1675,26 +1597,26 @@
         {
           "mName": "BaseDamage",
           "mValues": [
-            15.0,
+            -15.0,
+            5.0,
+            25.0,
             45.0,
-            75.0,
-            105.0,
-            135.0,
-            165.0,
-            195.0
+            65.0,
+            85.0,
+            105.0
           ],
           "~class": "SpellDataValue"
         },
         {
           "mName": "ADRatio",
           "mValues": [
-            0.699999988079071,
-            0.699999988079071,
-            0.699999988079071,
-            0.699999988079071,
-            0.699999988079071,
-            0.699999988079071,
-            0.699999988079071
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929
           ],
           "~class": "SpellDataValue"
         },
@@ -1783,26 +1705,26 @@
             {
               "mName": "BaseDamage",
               "mValues": [
+                -15.0,
                 15.0,
-                55.0,
-                95.0,
+                45.0,
+                75.0,
+                105.0,
                 135.0,
-                175.0,
-                215.0,
-                255.0
+                165.0
               ],
               "~class": "SpellDataValue"
             },
             {
               "mName": "ADRatio",
               "mValues": [
-                0.8999999761581421,
-                0.8999999761581421,
-                0.8999999761581421,
-                0.8999999761581421,
-                0.8999999761581421,
-                0.8999999761581421,
-                0.8999999761581421
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
               ],
               "~class": "SpellDataValue"
             },
@@ -1944,7 +1866,6 @@
             {
               "mDataValue": "ADRatio",
               "mStat": 2,
-              "mStatFormula": 2,
               "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
@@ -2199,6 +2120,19 @@
       },
       "DataValues": [
         {
+          "mName": "ASBonus",
+          "mValues": [
+            0.6000000238418579,
+            1.0,
+            1.399999976158142,
+            1.7999999523162842,
+            2.200000047683716,
+            2.5999999046325684,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
           "mName": "BonusDamage",
           "mValues": [
             15.0,
@@ -2221,19 +2155,6 @@
             0.15000000596046448,
             0.15000000596046448,
             0.15000000596046448
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "CritDamageMod",
-          "mValues": [
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896
           ],
           "~class": "SpellDataValue"
         },
@@ -2277,6 +2198,19 @@
           "~class": "SpellDataValue"
         },
         {
+          "mName": "CritDamageReduction",
+          "mValues": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
           "mName": "CastTimePerBullet",
           "mValues": [
             0.15000000596046448,
@@ -2286,6 +2220,19 @@
             0.15000000596046448,
             0.15000000596046448,
             0.15000000596046448
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "RecentlyDamagedDuration",
+          "mValues": [
+            4.5,
+            4.5,
+            4.5,
+            4.5,
+            4.5,
+            4.5,
+            4.5
           ],
           "~class": "SpellDataValue"
         },
@@ -2441,30 +2388,19 @@
           "mMultiplier": {
             "mSubparts": [
               {
-                "mNumber": 1.0,
-                "~class": "NumberCalculationPart"
+                "mDataValue": "CritDamageReduction",
+                "mStat": 8,
+                "~class": "StatByNamedDataValueCalculationPart"
               },
               {
-                "mPart1": {
-                  "mDataValue": "CritDamageMod",
-                  "mStat": 8,
-                  "~class": "StatByNamedDataValueCalculationPart"
-                },
-                "mPart2": {
-                  "mSubparts": [
-                    {
-                      "mCoefficient": 1.0,
-                      "mStat": 9,
-                      "~class": "StatByCoefficientCalculationPart"
-                    },
-                    {
-                      "mNumber": -1.0,
-                      "~class": "NumberCalculationPart"
-                    }
-                  ],
-                  "~class": "SumOfSubPartsCalculationPart"
-                },
-                "~class": "ProductOfSubPartsCalculationPart"
+                "mDataValue": "CritDamageReduction",
+                "mStat": 9,
+                "mStatFormula": 2,
+                "~class": "StatByNamedDataValueCalculationPart"
+              },
+              {
+                "mNumber": 1.0,
+                "~class": "NumberCalculationPart"
               }
             ],
             "~class": "SumOfSubPartsCalculationPart"
@@ -2591,9 +2527,6 @@
       "mDoesntBreakChannels": true,
       "mImgIconName": [
         "ASSETS/Characters/Akshan/HUD/Icons2D/Akshan_R.dds"
-      ],
-      "mSpellTags": [
-        "Trait_FreeRecast"
       ],
       "mTargetingTypeData": {
         "~class": "Self"
