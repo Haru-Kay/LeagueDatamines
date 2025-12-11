@@ -1134,13 +1134,13 @@
         {
           "mName": "MonsterCapDamage",
           "mValues": [
-            50.0,
-            75.0,
-            100.0,
+            45.0,
+            65.0,
+            85.0,
+            105.0,
             125.0,
-            150.0,
-            175.0,
-            200.0
+            145.0,
+            165.0
           ],
           "~class": "SpellDataValue"
         },
@@ -1277,7 +1277,7 @@
             "keySummary": "Human Form: Deals damage based upon how high the target's Health is.<br><br>Spider Form: Lunges at an enemy and deals damage based upon how low their Health is.",
             "keyTooltip": "<keywordMajor>Human Form</keywordMajor>: Elise injects neurotoxin, dealing <magicDamage>@BaseDamage@ plus @HumanPercentHealth@ current Health magic damage</magicDamage>.",
             "keyTooltipExtended": "{{Spell_EliseHumanQ_Tooltip}}<br><br>{{Spell_EliseSpiderQ_Tooltip}}",
-            "keyTooltipExtendedBelowLine": "<rules><keywordMajor>Human Form</keywordMajor> and <keywordMajor>Spider Form</keywordMajor> percent Health damage is capped at @MonsterCapDamage@ against monsters.</rules>"
+            "keyTooltipExtendedBelowLine": "<rules><keywordMajor>Human Form</keywordMajor> and <keywordMajor>Spider Form</keywordMajor> percent Health damage is capped at @MonsterDamageCapCalc@ against monsters.</rules>"
           },
           "mObjectName": "EliseHumanQ",
           "~class": "TooltipInstanceSpell"
@@ -1328,6 +1328,19 @@
           },
           "mPrecision": 1,
           "mSimpleTooltipCalculationDisplay": 6,
+          "~class": "GameCalculation"
+        },
+        "MonsterDamageCapCalc": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "MonsterCapDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.8999999761581421,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
           "~class": "GameCalculation"
         }
       },
@@ -1789,6 +1802,19 @@
     "ObjectName": "EliseR",
     "mScriptName": "EliseR",
     "mSpell": {
+      "0xfe87f21e": [
+        {
+          "0x1987941": [
+            {
+              "0x7b66f15d": false,
+              "mBuffName": "0x93251bfb",
+              "~class": "HasBuffCastRequirement"
+            }
+          ],
+          "0x6166b756": "PassiveTotalDamage",
+          "~class": "0xfe87f21e"
+        }
+      ],
       "DataValues": [
         {
           "mName": "PassiveBonusDamage",
@@ -2091,6 +2117,41 @@
         "~class": "ObjectTags"
       },
       "mSpellCalculations": {
+        "0x60195651": {
+          "mConditionalCalculationRequirements": {
+            "mBuffName": "0xe6fdcc5d",
+            "~class": "HasBuffCastRequirement"
+          },
+          "mConditionalGameCalculation": "0xe5407a95",
+          "mDefaultGameCalculation": "PassiveTotalDamage",
+          "~class": "GameCalculationConditional"
+        },
+        "0x84a53877": {
+          "mConditionalCalculationRequirements": {
+            "mBuffName": "0x93251bfb",
+            "~class": "HasBuffCastRequirement"
+          },
+          "mConditionalGameCalculation": "0x60195651",
+          "~class": "GameCalculationConditional"
+        },
+        "0xe5407a95": {
+          "mModifiedGameCalculation": "PassiveTotalDamage",
+          "mMultiplier": {
+            "mSubparts": [
+              {
+                "0x137cf12a": "PBonusIncrease",
+                "SourceObject": "Characters/Elise/Spells/EliseSpiderEAbility/EliseSpiderEInitial",
+                "~class": "0x9e9e2e5c"
+              },
+              {
+                "mNumber": 1.0,
+                "~class": "NumberCalculationPart"
+              }
+            ],
+            "~class": "SumOfSubPartsCalculationPart"
+          },
+          "~class": "GameCalculationModified"
+        },
         "PassiveTotalDamage": {
           "mFormulaParts": [
             {
@@ -3228,13 +3289,13 @@
         {
           "mName": "MonsterCapDamage",
           "mValues": [
-            50.0,
-            75.0,
-            100.0,
+            45.0,
+            65.0,
+            85.0,
+            105.0,
             125.0,
-            150.0,
-            175.0,
-            200.0
+            145.0,
+            165.0
           ],
           "~class": "SpellDataValue"
         },
@@ -3365,6 +3426,19 @@
           },
           "mPrecision": 1,
           "mSimpleTooltipCalculationDisplay": 6,
+          "~class": "GameCalculation"
+        },
+        "MonsterDamageCapCalc": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "MonsterCapDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.8999999761581421,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
           "~class": "GameCalculation"
         }
       },

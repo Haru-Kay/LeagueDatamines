@@ -1166,12 +1166,12 @@
           "mName": "BaseDamage",
           "mValues": [
             0.0,
-            5.0,
             10.0,
-            15.0,
             20.0,
-            25.0,
-            30.0
+            30.0,
+            40.0,
+            50.0,
+            60.0
           ],
           "~class": "SpellDataValue"
         },
@@ -1191,13 +1191,13 @@
         {
           "mName": "QADRatio",
           "mValues": [
-            0.8500000238418579,
-            0.8999999761581421,
-            0.949999988079071,
             1.0,
-            1.0499999523162842,
-            1.100000023841858,
-            1.149999976158142
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
           ],
           "~class": "SpellDataValue"
         },
@@ -1230,18 +1230,14 @@
         {
           "mName": "CritArmorPenScalar",
           "mValues": [
-            0.33000001311302185,
-            0.33000001311302185,
-            0.33000001311302185,
-            0.33000001311302185,
-            0.33000001311302185,
-            0.33000001311302185,
-            0.33000001311302185
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896
           ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "CritDamageRatio",
           "~class": "SpellDataValue"
         },
         {
@@ -1306,6 +1302,23 @@
             4.0,
             4.0,
             4.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "CritDamageRatio",
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ActiveCritScaling",
+          "mValues": [
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929
           ],
           "~class": "SpellDataValue"
         }
@@ -1391,13 +1404,6 @@
                   "type": "BaseDamage",
                   "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
-                },
-                {
-                  "Style": 1,
-                  "multiplier": 100.0,
-                  "nameOverride": "Spell_ListType_ADScaling",
-                  "type": "QADRatio",
-                  "~class": "TooltipInstanceListElement"
                 }
               ],
               "levelCount": 5,
@@ -1407,8 +1413,8 @@
           "mLocKeys": {
             "keyName": "Formless Blade",
             "keySummary": "With a snap of her whip-blade, Nilah damages any enemies she hits in a straight line in her chosen direction. This action extends her attack range for a short duration.",
-            "keyTooltip": "<spellPassive>Passive:</spellPassive> Nilah gains @CritArmorPen@ Armor Penetration, and her Attacks against champions restore <healing>@CritLifesteal@ damage dealt as Health</healing>. Overhealing from this is converted into a <shield>Shield</shield> for @ShieldDuration@ seconds.<br><br><spellActive>Active:</spellActive> Nilah cracks her whip-blade, dealing <physicalDamage>@DamageCalc@ physical damage</physicalDamage>, increased by her Critical Strike Chance. If an enemy unit or structure is hit, Nilah gains 125 Attack Range and <attackSpeed>@BonusAttackSpeedCalc@% Attack Speed</attackSpeed>, and her Attacks hit in a cone as <physicalDamage>@AttackTotalDamageTooltip@ physical damage</physicalDamage> for @BuffDuration@ seconds.<br>",
-            "keyTooltipExtendedBelowLine": "<rules>If cast during <spellName>Slipstream</spellName>, Nilah creates a wave of water striking all enemies along Nilah's path. </rules><br><rules>Area attacks deal @MinionMod*100@% damage to minions and @MonsterMod*100@% damage to monsters.</rules><br><rules>This ability executes low Health minions.</rules>"
+            "keyTooltip": "<spellPassive>Passive:</spellPassive> Nilah gains @CritArmorPen@ Armor Penetration, and her Attacks against champions restore <healing>@CritLifesteal@ damage dealt as Health</healing>. Overhealing from this is converted into a <shield>Shield</shield> for @ShieldDuration@ seconds.<br><br><spellActive>Active:</spellActive> Nilah cracks her whip-blade, dealing <physicalDamage>@DamageCalc@ physical damage</physicalDamage>. If an enemy unit or structure is hit, Nilah gains 125 Attack Range and <attackSpeed>@BonusAttackSpeedCalc@% Attack Speed</attackSpeed>, and her Attacks hit in a cone for @BuffDuration@ seconds.<br>",
+            "keyTooltipExtendedBelowLine": "<rules>Damage is increased by her Critical Strike Chance and Critical Strike Damage at @ActiveCritScaling*100@% effectiveness.<br>If cast during <spellName>Slipstream</spellName>, Nilah creates a wave of water striking all enemies along Nilah's path. </rules><br><rules>Area attacks deal @MinionMod*100@% damage to minions and @MonsterMod*100@% damage to monsters.</rules><br><rules>This ability executes low Health minions.</rules>"
           },
           "mObjectName": "NilahQ",
           "~class": "TooltipInstanceSpell"
@@ -1438,15 +1444,6 @@
       ],
       "mLineWidth": 80.0,
       "mSpellCalculations": {
-        "AttackBonusDamage": {
-          "mFormulaParts": [
-            {
-              "mStat": 2,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
         "AttackTotalDamageTooltip": {
           "mFormulaParts": [
             {
@@ -1508,9 +1505,26 @@
                 "~class": "NumberCalculationPart"
               },
               {
-                "mCoefficient": 1.0,
-                "mStat": 8,
-                "~class": "StatByCoefficientCalculationPart"
+                "mPart1": {
+                  "mDataValue": "ActiveCritScaling",
+                  "mStat": 8,
+                  "~class": "StatByNamedDataValueCalculationPart"
+                },
+                "mPart2": {
+                  "mSubparts": [
+                    {
+                      "mCoefficient": 1.0,
+                      "mStat": 9,
+                      "~class": "StatByCoefficientCalculationPart"
+                    },
+                    {
+                      "mNumber": -1.0,
+                      "~class": "NumberCalculationPart"
+                    }
+                  ],
+                  "~class": "SumOfSubPartsCalculationPart"
+                },
+                "~class": "ProductOfSubPartsCalculationPart"
               }
             ],
             "~class": "SumOfSubPartsCalculationPart"
@@ -1949,7 +1963,8 @@
                   "~class": "TooltipInstanceListElement"
                 },
                 {
-                  "nameOverride": "Damage per Tick",
+                  "multiplier": 4.0,
+                  "nameOverride": "Damage Over Time",
                   "type": "DamagePerTick",
                   "~class": "TooltipInstanceListElement"
                 }
@@ -1961,7 +1976,8 @@
           "mLocKeys": {
             "keyName": "Apotheosis",
             "keySummary": "Twirling her whip-blade in joyful exuberance, Nilah deals damage to enemies around her before pulling them closer with her weapon.",
-            "keyTooltip": "Nilah whirls her whip-blade, dealing <physicalDamage>@DamagePerTickCalcTooltip@ physical damage</physicalDamage> over 1 second, then finishes with a burst of <physicalDamage>@DamageCalc@ physical damage</physicalDamage> that also <status>Pulls</status> nearby enemies toward her.<br><br>Nilah heals herself and nearby allies by <healing>@ChampHealingPercent@ (+@spell.NilahQ:CritLifesteal@ {{ Spell_NilahQ_Name }}) of her damage dealt to enemy champions' Health (@OtherHealingPercent*100@% for non-champions)</healing>, converting any overhealing into a <shield>Shield</shield> for @Duration@ seconds.<br>"
+            "keyTooltip": "Nilah whirls her whip-blade, dealing <physicalDamage>@DamagePerTickCalcTooltip@ physical damage</physicalDamage> over 1 second, then finishes with a burst of <physicalDamage>@DamageCalc@ physical damage</physicalDamage> that also <status>Pulls</status> nearby enemies toward her.<br><br>Apotheosis heals Nilah and her nearby allies for <healing>@ChampHealingPercent@ (+@spell.NilahQ:CritLifesteal@ {{ Spell_NilahQ_Name }}) of the damage dealt</healing> to enemy champions, converting any overhealing into a <shield>Shield</shield> for @Duration@ seconds.",
+            "keyTooltipExtendedBelowLine": "<rules>Healing is reduced to @OtherHealingPercent*100@% against non-champions</rules>"
           },
           "mObjectName": "NilahR",
           "~class": "TooltipInstanceSpell"
@@ -2075,12 +2091,12 @@
         "~class": "Self"
       },
       "mana": [
-        80.0,
-        80.0,
-        80.0,
-        80.0,
-        80.0,
-        80.0
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
       ],
       "~class": "SpellDataResource"
     },

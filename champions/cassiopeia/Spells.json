@@ -74,9 +74,9 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Triumphant Serpentine Grace",
-            "keySummary": "Cassiopeia gains Move Speed per level, but she cannot purchase Boots items.",
-            "keyTooltip": "Cassiopeia gains <speed>@TotalMovementSpeed@ Move Speed</speed> but cannot purchase Boots.",
-            "keyTooltipExtended": "Cassiopeia gains <speed>@TotalMovementSpeed@ Move Speed</speed> but cannot purchase Boots.<br><br><rules>This passive has been enhanced by claiming the Feats of Strength.</rules>"
+            "keySummary": "All Move Speed bonuses are more effective on Cassiopeia.",
+            "keyTooltip": "Cassiopeia gains <speed>@TotalMovementSpeed@ Move Speed</speed> and <scaleAP>@BonusAbilityPower@ Ability Power</scaleAP> but cannot purchase Boots.",
+            "keyTooltipExtended": "Cassiopeia gains <speed>@TotalMovementSpeed@ Move Speed</speed> and <scaleAP>@BonusAbilityPower@ Ability Power</scaleAP> but cannot purchase Boots.<br><br><rules>This passive has been enhanced by claiming the Feats of Strength.</rules>"
           },
           "mObjectName": "CassiopeiaPassive_Feats",
           "~class": "TooltipInstanceSpell"
@@ -88,11 +88,21 @@
         "ASSETS/Characters/Cassiopeia/HUD/Icons2D/Cassiopeia_Passive_Feats_Upgrade.dds"
       ],
       "mSpellCalculations": {
+        "BonusAbilityPower": {
+          "mFormulaParts": [
+            {
+              "mInitialBonusPerLevel": 3.0,
+              "mLevel1Value": 3.0,
+              "~class": "ByCharLevelBreakpointsCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
         "TotalMovementSpeed": {
           "mFormulaParts": [
             {
-              "mInitialBonusPerLevel": 5.0,
-              "mLevel1Value": 5.0,
+              "mInitialBonusPerLevel": 4.0,
+              "mLevel1Value": 4.0,
               "~class": "ByCharLevelBreakpointsCalculationPart"
             }
           ],
@@ -630,41 +640,6 @@
     },
     "mScriptName": "CassiopeiaPassive",
     "mSpell": {
-      "DataValues": [
-        {
-          "mName": "ModesMSMod",
-          "mValues": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
-          "~class": "SpellDataValue"
-        }
-      ],
-      "DataValuesModeOverride": {
-        "cherry": {
-          "SpellDataValues": [
-            {
-              "mName": "ModesMSMod",
-              "mValues": [
-                0.699999988079071,
-                0.699999988079071,
-                0.699999988079071,
-                0.699999988079071,
-                0.699999988079071,
-                0.699999988079071,
-                0.699999988079071
-              ],
-              "~class": "SpellDataValue"
-            }
-          ],
-          "~class": "SpellDataValueVector"
-        }
-      },
       "castRange": [
         0.0,
         0.0,
@@ -679,8 +654,8 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Serpentine Grace",
-            "keySummary": "Cassiopeia gains Move Speed per level, but she cannot purchase Boots items.",
-            "keyTooltip": "Cassiopeia gains <speed>@TotalMovementSpeed@ Move Speed</speed> but cannot purchase Boots."
+            "keySummary": "All Move Speed bonuses are more effective on Cassiopeia.",
+            "keyTooltip": "Cassiopeia increases the effectiveness of all <speed>Move Speed</speed> bonuses by @PercentHasteMod@."
           },
           "mObjectName": "CassiopeiaPassive",
           "~class": "TooltipInstanceSpell"
@@ -688,24 +663,23 @@
         "~class": "SpellDataResourceClient"
       },
       "mImgIconName": [
-        "ASSETS/Characters/Cassiopeia/HUD/Icons2D/Cassiopeia_Passive.dds",
-        "ASSETS/Characters/Cassiopeia/HUD/Icons2D/Cassiopeia_Passive_Feats_Upgrade.dds"
+        "ASSETS/Characters/Cassiopeia/HUD/Icons2D/Cassiopeia_Passive.dds"
       ],
       "mSpellCalculations": {
-        "TotalMovementSpeed": {
+        "PercentHasteMod": {
+          "mDisplayAsPercent": true,
           "mFormulaParts": [
             {
-              "mInitialBonusPerLevel": 4.0,
-              "mLevel1Value": 4.0,
+              "mInitialBonusPerLevel": 0.019999999552965164,
+              "mLevel1Value": 0.05999999865889549,
               "~class": "ByCharLevelBreakpointsCalculationPart"
             }
           ],
-          "mMultiplier": {
-            "mDataValue": "ModesMSMod",
-            "~class": "NamedDataValueCalculationPart"
-          },
           "~class": "GameCalculation"
         }
+      },
+      "mTargetingTypeData": {
+        "~class": "Self"
       },
       "~class": "SpellDataResource"
     },

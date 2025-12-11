@@ -382,37 +382,16 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "CritBaseMult",
+          "mName": "CritMod",
           "mValues": [
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896
           ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "MonsterMod",
-          "mValues": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "MonsterBonus",
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "RefundRate",
           "~class": "SpellDataValue"
         }
       ],
@@ -496,7 +475,7 @@
             "keyName": "Judgment",
             "keySummary": "Garen rapidly spins his sword around his body, dealing physical damage to nearby enemies.",
             "keyTooltip": "Garen rapidly spins his sword for @Duration@ seconds, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> @f1@ times over the duration. The nearest enemy takes <physicalDamage>@NearestEnemyBonus*100@% increased damage</physicalDamage>. Champions hit by @StacksToShred@ strikes lose <scaleArmor>@ShredAmount*100@% Armor</scaleArmor> for @ShredDuration@ seconds.<br><br><recast>Recast</recast>: Garen ends this Ability early.",
-            "keyTooltipExtendedBelowLine": "<rules>Gains one strike from every <attackSpeed>@ASPerTick*100@% Attack Speed</attackSpeed> from items and levels.<br>Can critically strike for <physicalDamage>@TotalDamageCrit@ physical damage</physicalDamage>.</rules>"
+            "keyTooltipExtendedBelowLine": "<rules>Gains one strike from every <attackSpeed>@ASPerTick*100@% Attack Speed</attackSpeed> from items and levels.<br>Can critically strike for <physicalDamage>@CriticalDamage@ physical damage</physicalDamage>.</rules>"
           },
           "mObjectName": "GarenE",
           "~class": "TooltipInstanceSpell"
@@ -527,27 +506,37 @@
       ],
       "mLineWidth": 160.0,
       "mSpellCalculations": {
-        "0x733c613a": {
+        "CriticalDamage": {
           "mModifiedGameCalculation": "TotalDamage",
           "mMultiplier": {
-            "mPart1": {
-              "mDataValue": "NearestEnemyBonus",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            "mPart2": {
-              "mDataValue": "CritBaseMult",
-              "mStat": 9,
-              "~class": "StatByNamedDataValueCalculationPart"
-            },
-            "~class": "ProductOfSubPartsCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
-        "0x85042ef6": {
-          "mModifiedGameCalculation": "TotalDamage",
-          "mMultiplier": {
-            "mDataValue": "NearestEnemyBonus",
-            "~class": "NamedDataValueCalculationPart"
+            "mSubparts": [
+              {
+                "mNumber": 1.0,
+                "~class": "NumberCalculationPart"
+              },
+              {
+                "mPart1": {
+                  "mDataValue": "CritMod",
+                  "~class": "NamedDataValueCalculationPart"
+                },
+                "mPart2": {
+                  "mSubparts": [
+                    {
+                      "mCoefficient": 1.0,
+                      "mStat": 9,
+                      "~class": "StatByCoefficientCalculationPart"
+                    },
+                    {
+                      "mNumber": -1.0,
+                      "~class": "NumberCalculationPart"
+                    }
+                  ],
+                  "~class": "SumOfSubPartsCalculationPart"
+                },
+                "~class": "ProductOfSubPartsCalculationPart"
+              }
+            ],
+            "~class": "SumOfSubPartsCalculationPart"
           },
           "~class": "GameCalculationModified"
         },
@@ -573,57 +562,6 @@
             }
           ],
           "~class": "GameCalculation"
-        },
-        "TotalDamageCrit": {
-          "mModifiedGameCalculation": "TotalDamage",
-          "mMultiplier": {
-            "mDataValue": "CritBaseMult",
-            "mStat": 9,
-            "~class": "StatByNamedDataValueCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
-        "TotalDamageNearest": {
-          "mModifiedGameCalculation": "TotalDamage",
-          "mMultiplier": {
-            "mSubparts": [
-              {
-                "mNumber": 1.0,
-                "~class": "NumberCalculationPart"
-              },
-              {
-                "mDataValue": "NearestEnemyBonus",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "SumOfSubPartsCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
-        "TotalDamageNearestCrit": {
-          "mModifiedGameCalculation": "TotalDamage",
-          "mMultiplier": {
-            "mPart1": {
-              "mSubparts": [
-                {
-                  "mNumber": 1.0,
-                  "~class": "NumberCalculationPart"
-                },
-                {
-                  "mDataValue": "NearestEnemyBonus",
-                  "~class": "NamedDataValueCalculationPart"
-                }
-              ],
-              "~class": "SumOfSubPartsCalculationPart"
-            },
-            "mPart2": {
-              "mDataValue": "CritBaseMult",
-              "mStat": 9,
-              "~class": "StatByNamedDataValueCalculationPart"
-            },
-            "~class": "ProductOfSubPartsCalculationPart"
-          },
-          "~class": "GameCalculationModified"
         }
       },
       "mTargetingTypeData": {

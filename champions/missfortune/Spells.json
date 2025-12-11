@@ -338,8 +338,8 @@
               "~class": "0xf3cbe7b2"
             },
             "mPart2": {
-              "mSpellCalculationKey": "TotalWaves",
-              "~class": "0xf3cbe7b2"
+              "mDataValue": "BaseWaves",
+              "~class": "NamedDataValueCalculationPart"
             },
             "~class": "ProductOfSubPartsCalculationPart"
           }
@@ -367,54 +367,28 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "BaseCritDamageMultiplier",
+          "mName": "BaseDamage",
           "mValues": [
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "BaseChannelDuration",
-          "mValues": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
+            10.0,
+            20.0,
+            30.0,
+            40.0,
+            50.0,
+            60.0,
+            70.0
           ],
           "~class": "SpellDataValue"
         },
         {
           "mName": "tADRatio",
           "mValues": [
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "BonusCritDamageScalar",
-          "mValues": [
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579
           ],
           "~class": "SpellDataValue"
         },
@@ -428,6 +402,32 @@
             0.25,
             0.25,
             0.25
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "CritDamageMultiplier",
+          "mValues": [
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "BaseChannelDuration",
+          "mValues": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
           ],
           "~class": "SpellDataValue"
         }
@@ -526,7 +526,7 @@
           "mLocKeys": {
             "keyName": "Bullet Time",
             "keySummary": "Miss Fortune channels a barrage of bullets into a cone in front of her, dealing large amounts of damage to enemies. Each wave of Bullet Time can critically strike",
-            "keyTooltip": "Miss Fortune channels a barrage of bullets, firing @TotalWaves@ waves over @TotalChannelDuration@ seconds, dealing <physicalDamage>@PhysicalDamagePerWave@ physical damage</physicalDamage> per wave (total <physicalDamage>@TotalPhysicalDamage@ physical damage</physicalDamage>).<br><br>Each wave can critically strike for %i:scaleCrit% <physicalDamage>@PhysicalCritPerWave@ physical damage</physicalDamage> (total %i:scaleCrit% <physicalDamage>@TotalPhysicalCritDamage@ physical damage</physicalDamage>).",
+            "keyTooltip": "Miss Fortune channels a barrage of bullets, firing @BaseWaves@ waves over @BaseChannelDuration@ seconds, dealing <physicalDamage>@PhysicalDamagePerWave@ physical damage</physicalDamage> per wave (total <physicalDamage>@TotalPhysicalDamage@ physical damage</physicalDamage>).<br><br>Each wave can critically strike for %i:scaleCrit% <physicalDamage>@CritDamagePerWave@ physical damage</physicalDamage>.",
             "keyTooltipSimple": "<font color='#FF9900'>Channel:</font> Miss Fortune unleash a barrage of bullets, dealing massive damage."
           },
           "mObjectName": "MissFortuneBulletTime",
@@ -560,49 +560,47 @@
       "mLineWidth": 100.0,
       "mMissileEffectKey": "MissFortune_R_mis",
       "mSpellCalculations": {
-        "CritMultiplier": {
-          "mFormulaParts": [
-            {
-              "mDataValue": "BaseCritDamageMultiplier",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mPart1": {
-                "mDataValue": "BonusCritDamageScalar",
-                "~class": "NamedDataValueCalculationPart"
-              },
-              "mPart2": {
-                "mCoefficient": 1.0,
-                "mStat": 9,
-                "mStatFormula": 2,
-                "~class": "StatByCoefficientCalculationPart"
-              },
-              "~class": "ProductOfSubPartsCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 6,
-          "~class": "GameCalculation"
-        },
-        "PhysicalCritPerWave": {
-          "mModifiedGameCalculation": "CritMultiplier",
+        "CritDamagePerWave": {
+          "mModifiedGameCalculation": "PhysicalDamagePerWave",
           "mMultiplier": {
             "mSubparts": [
               {
-                "mDataValue": "tADRatio",
-                "mStat": 2,
-                "~class": "StatByNamedDataValueCalculationPart"
+                "mNumber": 1.0,
+                "~class": "NumberCalculationPart"
               },
               {
-                "mDataValue": "APRatio",
-                "~class": "StatByNamedDataValueCalculationPart"
+                "mPart1": {
+                  "mDataValue": "critDamageMultiplier",
+                  "~class": "NamedDataValueCalculationPart"
+                },
+                "mPart2": {
+                  "mSubparts": [
+                    {
+                      "mCoefficient": 1.0,
+                      "mStat": 9,
+                      "~class": "StatByCoefficientCalculationPart"
+                    },
+                    {
+                      "mNumber": -1.0,
+                      "~class": "NumberCalculationPart"
+                    }
+                  ],
+                  "~class": "SumOfSubPartsCalculationPart"
+                },
+                "~class": "ProductOfSubPartsCalculationPart"
               }
             ],
             "~class": "SumOfSubPartsCalculationPart"
           },
+          "mSimpleTooltipCalculationDisplay": 6,
           "~class": "GameCalculationModified"
         },
         "PhysicalDamagePerWave": {
           "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
             {
               "mDataValue": "tADRatio",
               "mStat": 2,
@@ -616,85 +614,13 @@
           "mSimpleTooltipCalculationDisplay": 6,
           "~class": "GameCalculation"
         },
-        "TotalChannelDuration": {
-          "mFormulaParts": [
-            {
-              "mDataValue": "BaseChannelDuration",
-              "~class": "NamedDataValueCalculationPart"
-            }
-          ],
-          "mPrecision": 1,
-          "~class": "GameCalculation"
-        },
-        "TotalPhysicalCritDamage": {
-          "mModifiedGameCalculation": "TotalWaves",
-          "mMultiplier": {
-            "mPart1": {
-              "mSubparts": [
-                {
-                  "mDataValue": "tADRatio",
-                  "mStat": 2,
-                  "~class": "StatByNamedDataValueCalculationPart"
-                },
-                {
-                  "mDataValue": "APRatio",
-                  "~class": "StatByNamedDataValueCalculationPart"
-                }
-              ],
-              "~class": "SumOfSubPartsCalculationPart"
-            },
-            "mPart2": {
-              "mSubparts": [
-                {
-                  "mDataValue": "BaseCritDamageMultiplier",
-                  "~class": "NamedDataValueCalculationPart"
-                },
-                {
-                  "mPart1": {
-                    "mDataValue": "BonusCritDamageScalar",
-                    "~class": "NamedDataValueCalculationPart"
-                  },
-                  "mPart2": {
-                    "mCoefficient": 1.0,
-                    "mStat": 9,
-                    "mStatFormula": 2,
-                    "~class": "StatByCoefficientCalculationPart"
-                  },
-                  "~class": "ProductOfSubPartsCalculationPart"
-                }
-              ],
-              "~class": "SumOfSubPartsCalculationPart"
-            },
-            "~class": "ProductOfSubPartsCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
         "TotalPhysicalDamage": {
-          "mModifiedGameCalculation": "TotalWaves",
+          "mModifiedGameCalculation": "PhysicalDamagePerWave",
           "mMultiplier": {
-            "mSubparts": [
-              {
-                "mDataValue": "tADRatio",
-                "mStat": 2,
-                "~class": "StatByNamedDataValueCalculationPart"
-              },
-              {
-                "mDataValue": "APRatio",
-                "~class": "StatByNamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "SumOfSubPartsCalculationPart"
+            "mDataValue": "BaseWaves",
+            "~class": "NamedDataValueCalculationPart"
           },
           "~class": "GameCalculationModified"
-        },
-        "TotalWaves": {
-          "mFormulaParts": [
-            {
-              "mDataValue": "BaseWaves",
-              "~class": "NamedDataValueCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
         }
       },
       "mSpellTags": [
@@ -1402,6 +1328,32 @@
     "mSpell": {
       "DataValues": [
         {
+          "mName": "BaseDamage",
+          "mValues": [
+            -5.0,
+            20.0,
+            45.0,
+            70.0,
+            95.0,
+            120.0,
+            145.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ADRatio",
+          "mValues": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
           "mName": "APRatio",
           "mValues": [
             0.3499999940395355,
@@ -1415,15 +1367,15 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "BaseDamage",
+          "mName": "BounceCriticalMod",
           "mValues": [
-            0.0,
-            20.0,
-            45.0,
-            70.0,
-            95.0,
-            120.0,
-            120.0
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
           ],
           "~class": "SpellDataValue"
         }
@@ -1529,7 +1481,7 @@
                 },
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
+                  "type": "BaseDamage",
                   "typeIndex": 2,
                   "~class": "TooltipInstanceListElement"
                 }
@@ -1541,7 +1493,7 @@
           "mLocKeys": {
             "keyName": "Double Up",
             "keySummary": "Miss Fortune fires a bullet at an enemy, damaging them and a target behind them. Both strikes can also apply Love Tap.",
-            "keyTooltip": "Miss Fortune fires a bouncing shot, dealing <physicalDamage>@TotalDamageTooltip@ physical damage</physicalDamage> to an enemy and to another one behind them. <br><br>The second shot can critically strike. It always critically strikes if the first shot kills its target. ",
+            "keyTooltip": "Miss Fortune fires a bouncing shot, dealing <physicalDamage>@TotalDamageTooltip@ physical damage</physicalDamage> to an enemy and to another one behind them. <br><br>The second shot can critically strike for <physicalDamage>@TotalDamageCrit@ physical damage</physicalDamage>. It always critically strikes if the first shot kills its target.",
             "keyTooltipExtendedBelowLine": "<rules>Both strikes apply on-hit effects.</rules>",
             "keyTooltipSimple": "Fires a bouncing shot, damaging the target and another enemy behind.<br><br>If this kills the first target, deals extra damage to the second."
           },
@@ -1685,16 +1637,60 @@
         "~class": "MissileSpecification"
       },
       "mSpellCalculations": {
+        "0x5a1fd353": {
+          "mFormulaParts": [
+            {
+              "mCoefficient": 1.0,
+              "mStat": 9,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "TotalDamageCrit": {
+          "mModifiedGameCalculation": "TotalDamageTooltip",
+          "mMultiplier": {
+            "mSubparts": [
+              {
+                "mNumber": 1.0,
+                "~class": "NumberCalculationPart"
+              },
+              {
+                "mPart1": {
+                  "mDataValue": "BounceCriticalMod",
+                  "~class": "NamedDataValueCalculationPart"
+                },
+                "mPart2": {
+                  "mSubparts": [
+                    {
+                      "mCoefficient": 1.0,
+                      "mStat": 9,
+                      "~class": "StatByCoefficientCalculationPart"
+                    },
+                    {
+                      "mNumber": -1.0,
+                      "~class": "NumberCalculationPart"
+                    }
+                  ],
+                  "~class": "SumOfSubPartsCalculationPart"
+                },
+                "~class": "ProductOfSubPartsCalculationPart"
+              }
+            ],
+            "~class": "SumOfSubPartsCalculationPart"
+          },
+          "~class": "GameCalculationModified"
+        },
         "TotalDamageTooltip": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 2,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 1.0,
+              "mDataValue": "ADRatio",
               "mStat": 2,
-              "~class": "StatByCoefficientCalculationPart"
+              "~class": "StatByNamedDataValueCalculationPart"
             },
             {
               "mDataValue": "APRatio",
@@ -1702,7 +1698,6 @@
             }
           ],
           "mSimpleTooltipCalculationDisplay": 6,
-          "tooltipOnly": true,
           "~class": "GameCalculation"
         }
       },

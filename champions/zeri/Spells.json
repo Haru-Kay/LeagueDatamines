@@ -253,13 +253,39 @@
         {
           "mName": "BonusDamageBase",
           "mValues": [
-            18.0,
-            20.0,
-            22.0,
-            24.0,
-            26.0,
-            28.0,
-            30.0
+            15.0,
+            17.0,
+            19.0,
+            21.0,
+            23.0,
+            25.0,
+            27.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "BonusADRatio",
+          "mValues": [
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "BonusAPRatio",
+          "mValues": [
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224
           ],
           "~class": "SpellDataValue"
         },
@@ -277,15 +303,15 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "CritChanceMaxAmp",
+          "mName": "CritScalingMod",
           "mValues": [
-            0.8500000238418579,
-            0.8500000238418579,
-            0.8500000238418579,
-            0.8500000238418579,
-            0.8500000238418579,
-            0.8500000238418579,
-            0.8500000238418579
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
           ],
           "~class": "SpellDataValue"
         },
@@ -442,7 +468,7 @@
             "keyName": "Spark Surge",
             "keySummary": "Zeri dashes a short distance and energizes her next 3 shots of Burst Fire, causing them to pierce through enemies. She will vault and grind over any terrain she touches.",
             "keyTooltip": "Zeri dashes a short distance and vaults over any terrain she touches, greatly extending the dash range. For the next @BuffDuration@ seconds, her shots of <spellName>{{Spell_ZeriQ_Name}}</spellName> pierce dealing @PenDamagePercent*100@% damage to enemies after the first and an additional <magicDamage>@BonusDamageTotal@ magic damage</magicDamage> On-Hit to the first target struck. <br><br>Hitting an enemy champion with an Attack or Ability reduces this Ability's cooldown by @CDReductionPerHit@ seconds. Critical strikes reduce the cooldown by @CritCDReductionPerHit@ seconds instead.",
-            "keyTooltipExtendedBelowLine": "<rules>On-hit damage is increased by up to @CritChanceMaxAmp*100@% based on Zeri's Critical Strike chance. Pierce damage can critically strike, but does not apply On-Hit effects. Uncharged Attacks do not reduce this ability's cooldown.</rules>"
+            "keyTooltipExtendedBelowLine": "<rules>On-hit damage is increased by Zeri's Critical Strike Chance and Critical Strike Damage at @CritScalingMod*100@% effectiveness.<br>Pierce damage can critically strike but does not apply On-Hit effects.<br>Uncharged Attacks do not reduce this ability's cooldown.</rules>"
           },
           "mObjectName": "ZeriE",
           "~class": "TooltipInstanceSpell"
@@ -490,18 +516,18 @@
         "BonusDamageTotal": {
           "mFormulaParts": [
             {
-              "mCoefficient": 0.20000000298023224,
-              "~class": "StatByCoefficientCalculationPart"
-            },
-            {
               "mDataValue": "BonusDamageBase",
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.11999999731779099,
+              "mDataValue": "BonusADRatio",
               "mStat": 2,
               "mStatFormula": 2,
-              "~class": "StatByCoefficientCalculationPart"
+              "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "BonusAPRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "mMultiplier": {
@@ -511,9 +537,26 @@
                 "~class": "NumberCalculationPart"
               },
               {
-                "mDataValue": "CritChanceMaxAmp",
-                "mStat": 8,
-                "~class": "StatByNamedDataValueCalculationPart"
+                "mPart1": {
+                  "mDataValue": "CritScalingMod",
+                  "mStat": 8,
+                  "~class": "StatByNamedDataValueCalculationPart"
+                },
+                "mPart2": {
+                  "mSubparts": [
+                    {
+                      "mCoefficient": 1.0,
+                      "mStat": 9,
+                      "~class": "StatByCoefficientCalculationPart"
+                    },
+                    {
+                      "mNumber": -1.0,
+                      "~class": "NumberCalculationPart"
+                    }
+                  ],
+                  "~class": "SumOfSubPartsCalculationPart"
+                },
+                "~class": "ProductOfSubPartsCalculationPart"
               }
             ],
             "~class": "SumOfSubPartsCalculationPart"
@@ -822,6 +865,13 @@
     "ObjectName": "ZeriQ",
     "mScriptName": "ZeriQ",
     "mSpell": {
+      "0xfe87f21e": [
+        {
+          "0x6166b756": "PassiveExecuteThreshold",
+          "0x7a9d64ea": true,
+          "~class": "0xfe87f21e"
+        }
+      ],
       "DataValues": [
         {
           "mName": "MinCooldown",
@@ -2672,13 +2722,13 @@
         {
           "mName": "ActiveDamage",
           "mValues": [
-            100.0,
-            200.0,
-            300.0,
-            400.0,
-            500.0,
-            600.0,
-            700.0
+            50.0,
+            150.0,
+            250.0,
+            350.0,
+            450.0,
+            550.0,
+            650.0
           ],
           "~class": "SpellDataValue"
         },
@@ -2980,15 +3030,28 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "CritMult",
+          "mName": "ADRatio",
           "mValues": [
-            1.75,
-            1.75,
-            1.75,
-            1.75,
-            1.75,
-            1.75,
-            1.75
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "CriticalEffectiveness",
+          "mValues": [
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75
           ],
           "~class": "SpellDataValue"
         },
@@ -3259,8 +3322,8 @@
           "mLocKeys": {
             "keyName": "Ultrashock Laser",
             "keySummary": "Zeri fires an electric pulse that slows and damages the first enemy hit. If the pulse hits a wall it expands into a long range laser.",
-            "keyTooltip": "Zeri fires an electric pulse that deals <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and <status>Slows</status> the first enemy hit by @SlowPercent*100@% for @SlowDuration@ seconds.<br><br>If the pulse hits terrain, it expands into a laser that applies the effects in an area and Critically Strikes champions and monsters.",
-            "keyTooltipExtendedBelowLine": "<rules>This Ability's cast time scales down with <attackSpeed>Attack Speed</attackSpeed>.</rules>"
+            "keyTooltip": "Zeri fires an electric pulse that deals <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and <status>Slows</status> the first enemy hit by @SlowPercent*100@% for @SlowDuration@ seconds.<br><br>If the pulse hits terrain, it expands into a laser that applies the effects in an area and Critically Strikes champions and monsters for <physicalDamage>@WallDamage@ physical damage</physicalDamage>.",
+            "keyTooltipExtendedBelowLine": "<rules>This Ability's cast time scales down with <attackSpeed>Attack Speed</attackSpeed>.<br>Empowered damage scales with Critical Strike Damage at @CriticalEffectiveness*100@% effectiveness.</rules>"
           },
           "mObjectName": "ZeriW",
           "~class": "TooltipInstanceSpell"
@@ -3311,9 +3374,9 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 1.2999999523162842,
+              "mDataValue": "ADRatio",
               "mStat": 2,
-              "~class": "StatByCoefficientCalculationPart"
+              "~class": "StatByNamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.25,
@@ -3321,6 +3384,40 @@
             }
           ],
           "~class": "GameCalculation"
+        },
+        "WallDamage": {
+          "mModifiedGameCalculation": "TotalDamage",
+          "mMultiplier": {
+            "mSubparts": [
+              {
+                "mNumber": 1.0,
+                "~class": "NumberCalculationPart"
+              },
+              {
+                "mPart1": {
+                  "mDataValue": "CriticalEffectiveness",
+                  "~class": "NamedDataValueCalculationPart"
+                },
+                "mPart2": {
+                  "mSubparts": [
+                    {
+                      "mCoefficient": 1.0,
+                      "mStat": 9,
+                      "~class": "StatByCoefficientCalculationPart"
+                    },
+                    {
+                      "mNumber": -1.0,
+                      "~class": "NumberCalculationPart"
+                    }
+                  ],
+                  "~class": "SumOfSubPartsCalculationPart"
+                },
+                "~class": "ProductOfSubPartsCalculationPart"
+              }
+            ],
+            "~class": "SumOfSubPartsCalculationPart"
+          },
+          "~class": "GameCalculationModified"
         }
       },
       "mTargetingTypeData": {

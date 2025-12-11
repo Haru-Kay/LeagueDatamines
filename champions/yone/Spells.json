@@ -1023,19 +1023,6 @@
     "mSpell": {
       "DataValues": [
         {
-          "mName": "AttackADRatio",
-          "mValues": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "mName": "MagicDamageSplit",
           "mValues": [
             0.5,
@@ -1045,36 +1032,6 @@
             0.5,
             0.5,
             0.5
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "YonePercentCritDmgMod",
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "YoneCritTooltip",
-          "mValues": [
-            150.0,
-            150.0,
-            150.0,
-            150.0,
-            150.0,
-            150.0,
-            150.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "YoneReductionTooltip",
-          "mValues": [
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0
           ],
           "~class": "SpellDataValue"
         },
@@ -1101,6 +1058,19 @@
             1.0,
             1.0,
             1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "CritDamageMod",
+          "mValues": [
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421
           ],
           "~class": "SpellDataValue"
         }
@@ -1133,7 +1103,7 @@
           "mLocKeys": {
             "keyName": "Way of the Hunter",
             "keySummary": "Yone deals magic damage with every second Attack. In addition, his critical strike chance is increased.",
-            "keyTooltip": "<spellPassive>Steel and Spirit:</spellPassive> Yone uses two blades, causing every second Attack to deal <magicDamage>@MagicDamageSplit*100@% magic damage</magicDamage>.<br><br><spellPassive>Intent:</spellPassive> Yone's Critical Strike Chance is increased by @CritChanceMultiplier*100@%. Gain <physicalDamage>@YoneCritToAD*.01@ Bonus AD</physicalDamage> for every 1% Critical Strike Chance above 100%.",
+            "keyTooltip": "<spellPassive>Steel and Spirit:</spellPassive> Yone uses two blades, causing every second Attack to deal <magicDamage>@MagicDamageSplit*100@% magic damage</magicDamage>.<br><br><spellPassive>Intent:</spellPassive> Yone's Critical Strike Chance is increased by @CritChanceMultiplier*100@% but his Critical Strike Damage is reduced to @CurrentCritDamage@. Gain <physicalDamage>@YoneCritToAD*.01@ Bonus AD</physicalDamage> for every 1% Critical Strike Chance above 100%.",
             "keyTooltipExtended": "{{Spell_YonePassive_Tooltip}}<br><br><rules>Intent is calculated after other Critical Strike Chance modifying effects.<br><onlyShowInGame>Current bonus: @f2@% Critical Strike Chance, <physicalDamage>@f3@ Bonus Attack Damage</physicalDamage>.</onlyShowInGame></rules>"
           },
           "mObjectName": "YonePassive",
@@ -1173,6 +1143,7 @@
       "mSpellCalculations": {
         "CurrentCritDamage": {
           "mDisplayAsPercent": true,
+          "mExpandedTooltipCalculationDisplay": 6,
           "mFormulaParts": [
             {
               "mCoefficient": 1.0,
@@ -1180,7 +1151,6 @@
               "~class": "StatByCoefficientCalculationPart"
             }
           ],
-          "mPrecision": 1,
           "~class": "GameCalculation"
         }
       },
@@ -1582,9 +1552,9 @@
             {
               "mStat": 2,
               "mSubpart": {
-                "mCoefficient": 1.0499999523162842,
+                "mDataValue": "ADRatio",
                 "mStat": 9,
-                "~class": "StatByCoefficientCalculationPart"
+                "~class": "StatByNamedDataValueCalculationPart"
               },
               "~class": "StatBySubPartCalculationPart"
             }

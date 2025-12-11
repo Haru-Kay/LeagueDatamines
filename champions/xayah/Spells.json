@@ -1284,6 +1284,45 @@
     "mSpell": {
       "DataValues": [
         {
+          "mName": "BaseDamage",
+          "mValues": [
+            35.0,
+            50.0,
+            65.0,
+            80.0,
+            95.0,
+            110.0,
+            125.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "bADRatio",
+          "mValues": [
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "CritRatio",
+          "mValues": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
           "mName": "FeatherFalloff",
           "mValues": [
             0.05000000074505806,
@@ -1336,32 +1375,6 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "BaseDamage",
-          "mValues": [
-            45.0,
-            55.0,
-            65.0,
-            75.0,
-            85.0,
-            95.0,
-            105.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "CritRatio",
-          "mValues": [
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "mName": "FeatherReturnDelay",
           "mValues": [
             0.25,
@@ -1371,19 +1384,6 @@
             0.25,
             0.25,
             0.25
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "bADRatio",
-          "mValues": [
-            0.6000000238418579,
-            0.6000000238418579,
-            0.6000000238418579,
-            0.6000000238418579,
-            0.6000000238418579,
-            0.6000000238418579,
-            0.6000000238418579
           ],
           "~class": "SpellDataValue"
         }
@@ -1483,7 +1483,7 @@
             "keyName": "Bladecaller",
             "keySummary": "Xayah calls back all her dropped Feathers dealing damage and rooting enemies.",
             "keyTooltip": "Xayah calls all <keywordMajor>Feathers</keywordMajor> back to her, dealing <physicalDamage>@FeatherDamage@ physical damage</physicalDamage> each. If @FeatherThreshold@ or more <keywordMajor>Feathers</keywordMajor> hit an enemy, they are <status>Rooted</status> for @RootDuration@ seconds.",
-            "keyTooltipExtendedBelowLine": "<rules>Feather damage scales with %i:scaleAD% and %i:scaleCrit%: <physicalDamage>@FeatherDamagePreCrit@</physicalDamage> increased by <physicalDamage>@CritPercentIncrease@</physicalDamage><br>Minions take @MinionMultiplier*100@% damage from this Ability.<br>Enemies take 5% less damage per feather hit, to a minimum of 10% damage.</rules>"
+            "keyTooltipExtendedBelowLine": "<rules>Damage scales with Critical Strike Chance and Critical Strike Damage at <physicalDamage>@CritRatio*100@%</physicalDamage> effectiveness.<br>Minions take @MinionMultiplier*100@% damage from this Ability.<br>Enemies take 5% less damage per feather hit, to a minimum of 10% damage.</rules>"
           },
           "mObjectName": "XayahE",
           "~class": "TooltipInstanceSpell"
@@ -1517,18 +1517,6 @@
       "mNoWinddownIfCancelled": true,
       "mPingableWhileDisabled": true,
       "mSpellCalculations": {
-        "CritPercentIncrease": {
-          "mDisplayAsPercent": true,
-          "mFormulaParts": [
-            {
-              "mDataValue": "CritRatio",
-              "mStat": 8,
-              "~class": "StatByNamedDataValueCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 6,
-          "~class": "GameCalculation"
-        },
         "FeatherDamage": {
           "mFormulaParts": [
             {
@@ -1549,35 +1537,37 @@
                 "~class": "NumberCalculationPart"
               },
               {
-                "mDataValue": "CritRatio",
-                "mStat": 8,
-                "~class": "StatByNamedDataValueCalculationPart"
+                "mPart1": {
+                  "mDataValue": "CritRatio",
+                  "mStat": 8,
+                  "~class": "StatByNamedDataValueCalculationPart"
+                },
+                "mPart2": {
+                  "mSubparts": [
+                    {
+                      "mCoefficient": 1.0,
+                      "mStat": 9,
+                      "~class": "StatByCoefficientCalculationPart"
+                    },
+                    {
+                      "mNumber": -1.0,
+                      "~class": "NumberCalculationPart"
+                    }
+                  ],
+                  "~class": "SumOfSubPartsCalculationPart"
+                },
+                "~class": "ProductOfSubPartsCalculationPart"
               }
             ],
             "~class": "SumOfSubPartsCalculationPart"
           },
           "~class": "GameCalculation"
         },
-        "FeatherDamagePreCrit": {
-          "mFormulaParts": [
-            {
-              "mDataValue": "baseDamage",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mDataValue": "BADRatio",
-              "mStat": 2,
-              "mStatFormula": 2,
-              "~class": "StatByNamedDataValueCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
         "MinionDamage": {
           "mModifiedGameCalculation": "FeatherDamage",
           "mMultiplier": {
-            "mNumber": 0.5,
-            "~class": "NumberCalculationPart"
+            "mDataValue": "MinionMultiplier",
+            "~class": "NamedDataValueCalculationPart"
           },
           "~class": "GameCalculationModified"
         }

@@ -659,17 +659,40 @@
     "ObjectName": "CaitlynPassive",
     "mScriptName": "CaitlynPassive",
     "mSpell": {
+      "0xfe87f21e": [
+        {
+          "0x1987941": [
+            {
+              "mSubRequirements": [
+                {
+                  "0x7b66f15d": false,
+                  "0xd6b6109c": "Characters/Caitlyn/Spells/CaitlynPassiveAbility/CaitlynPassiveDriver",
+                  "~class": "HasBuffCastRequirement"
+                },
+                {
+                  "0xd6b6109c": "Characters/Caitlyn/Spells/CaitlynPassiveAbility/CaitlynPassiveRangeMarker",
+                  "~class": "HasBuffCastRequirement"
+                }
+              ],
+              "mSuccessesRequired": 1,
+              "~class": "HasAtleastNSubRequirementsCastRequirement"
+            }
+          ],
+          "0x6166b756": "0x42962485",
+          "~class": "0xfe87f21e"
+        }
+      ],
       "DataValues": [
         {
-          "mName": "CritChanceMultiplier",
+          "mName": "CriticalStrikeScaling",
           "mValues": [
-            1.25,
-            1.25,
-            1.25,
-            1.25,
-            1.25,
-            1.25,
-            1.25
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
           ],
           "~class": "SpellDataValue"
         },
@@ -733,6 +756,34 @@
         "ASSETS/Characters/Caitlyn/HUD/Icons2D/CaitlynPGrey.dds"
       ],
       "mSpellCalculations": {
+        "0x36ebd3cf": {
+          "mFormulaParts": [
+            {
+              "mCoefficient": 1.0,
+              "mStat": 9,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "0x42962485": {
+          "mFormulaParts": [
+            {
+              "mSubparts": [
+                {
+                  "mSpellCalculationKey": "HeadShotMinionBonusDamage",
+                  "~class": "0xf3cbe7b2"
+                },
+                {
+                  "mSpellCalculationKey": "HeadShotBonusDamage",
+                  "~class": "0xf3cbe7b2"
+                }
+              ],
+              "~class": "SumOfSubPartsCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
         "BrushAttackTotal": {
           "mExpandedTooltipCalculationDisplay": 5,
           "mFormulaParts": [
@@ -777,14 +828,23 @@
                   },
                   {
                     "mPart1": {
-                      "mCoefficient": 1.0,
-                      "mStat": 9,
-                      "~class": "StatByCoefficientCalculationPart"
+                      "mDataValue": "CriticalStrikeScaling",
+                      "mStat": 8,
+                      "~class": "StatByNamedDataValueCalculationPart"
                     },
                     "mPart2": {
-                      "mCoefficient": 0.8500000238418579,
-                      "mStat": 8,
-                      "~class": "StatByCoefficientCalculationPart"
+                      "mSubparts": [
+                        {
+                          "mCoefficient": 1.0,
+                          "mStat": 9,
+                          "~class": "StatByCoefficientCalculationPart"
+                        },
+                        {
+                          "mNumber": -1.0,
+                          "~class": "NumberCalculationPart"
+                        }
+                      ],
+                      "~class": "SumOfSubPartsCalculationPart"
                     },
                     "~class": "ProductOfSubPartsCalculationPart"
                   }
@@ -1592,15 +1652,15 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "CritChanceAmp",
+          "mName": "CriticalStrikeModifier",
           "mValues": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896
           ],
           "~class": "SpellDataValue"
         }
@@ -1662,7 +1722,7 @@
           "mLocKeys": {
             "keyName": "Ace in the Hole",
             "keySummary": "Caitlyn takes time to line up the perfect shot, dealing massive damage to a single target at a huge range. Enemy champions can intercept the bullet for their ally.",
-            "keyTooltip": "Caitlyn takes a moment to channel and line up the perfect shot, then she fires, dealing <physicalDamage>@RTotalDamage@ physical damage</physicalDamage>, but other enemy champions can intercept it. This Ability grants <keywordStealth>True Sight</keywordStealth> of the target during the channel.<br><br><rules>Deals up to an additional @CritChanceAmp*100@% based on Caitlyn's Critical Strike chance.</rules>"
+            "keyTooltip": "Caitlyn takes a moment to channel and line up the perfect shot, then she fires, dealing <physicalDamage>@RTotalDamage@ physical damage</physicalDamage>, but other enemy champions can intercept it. This Ability grants <keywordStealth>True Sight</keywordStealth> of the target during the channel.<br><br><rules>Damage scales with Caitlyn's Critical Strike chance and Critical Strike Damage.</rules>"
           },
           "mObjectName": "CaitlynR",
           "~class": "TooltipInstanceSpell"
@@ -1719,9 +1779,26 @@
                 "~class": "NumberCalculationPart"
               },
               {
-                "mDataValue": "CritChanceAmp",
-                "mStat": 8,
-                "~class": "StatByNamedDataValueCalculationPart"
+                "mPart1": {
+                  "mDataValue": "CriticalStrikeModifier",
+                  "mStat": 8,
+                  "~class": "StatByNamedDataValueCalculationPart"
+                },
+                "mPart2": {
+                  "mSubparts": [
+                    {
+                      "mCoefficient": 1.0,
+                      "mStat": 9,
+                      "~class": "StatByCoefficientCalculationPart"
+                    },
+                    {
+                      "mNumber": -1.0,
+                      "~class": "NumberCalculationPart"
+                    }
+                  ],
+                  "~class": "SumOfSubPartsCalculationPart"
+                },
+                "~class": "ProductOfSubPartsCalculationPart"
               }
             ],
             "~class": "SumOfSubPartsCalculationPart"
@@ -1934,6 +2011,86 @@
     },
     "mScriptName": "CaitlynW",
     "mSpell": {
+      "DataValues": [
+        {
+          "mName": "BaseDamage",
+          "mValues": [
+            35.0,
+            35.0,
+            80.0,
+            125.0,
+            170.0,
+            215.0,
+            260.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ADRatio",
+          "mValues": [
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "TrapDuration",
+          "mValues": [
+            25.0,
+            30.0,
+            35.0,
+            40.0,
+            45.0,
+            50.0,
+            55.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "MaximumTraps",
+          "mValues": [
+            3.0,
+            3.0,
+            3.0,
+            4.0,
+            4.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "RootDuration",
+          "mValues": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "MaximumCharges",
+          "mValues": [
+            3.0,
+            3.0,
+            3.0,
+            4.0,
+            4.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "castConeDistance": 100.0,
       "castFrame": 7.5,
       "castRadius": [
@@ -1998,7 +2155,7 @@
               "Elements": [
                 {
                   "nameOverride": "Bonus Headshot Damage on Trapped Targets",
-                  "type": "Effect%dAmount",
+                  "type": "BaseDamage",
                   "typeIndex": 2,
                   "~class": "TooltipInstanceListElement"
                 },
@@ -2008,13 +2165,13 @@
                 },
                 {
                   "nameOverride": "Maximum Traps",
-                  "type": "Effect%dAmount",
+                  "type": "MaximumTraps",
                   "typeIndex": 4,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Trap Duration",
-                  "type": "Effect%dAmount",
+                  "type": "TrapDuration",
                   "typeIndex": 3,
                   "~class": "TooltipInstanceListElement"
                 }
@@ -2026,14 +2183,13 @@
           "mLocKeys": {
             "keyName": "Yordle Snap Trap",
             "keySummary": "Caitlyn sets a trap that, when sprung, reveals and immobilizes the enemy champion for 1.5 seconds, granting Caitlyn an empowered Headshot.",
-            "keyTooltip": "Caitlyn sets a trap that <status>Roots</status> the first champion that steps on it for @Effect6Amount@ seconds and granting <keywordStealth>True Sight</keywordStealth> of them for 3 seconds. Traps last for @Effect3Amount@ seconds, and @Effect5Amount@ traps may be active at once. This Ability has @Effect5Amount@ charges (@AmmoRechargeTime@ second refresh)."
+            "keyTooltip": "Caitlyn sets a trap that <status>Roots</status> the first champion that steps on it for @RootDuration@ seconds and granting <keywordStealth>True Sight</keywordStealth> of them for 3 seconds. Traps last for @TrapDuration@ seconds, and @MaximumTraps@ traps may be active at once. This Ability has @MaximumCharges@ charges (@AmmoRechargeTime@ second refresh).<br><br>Targets rooted by this Ability take an additional <physicalDamage>@HeadshotBonusDamage@ physical damage</physicalDamage> from <keywordMajor>Headshot</keywordMajor>."
           },
           "mObjectName": "CaitlynW",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.6000000238418579,
       "mEffectAmount": [
         {
           "value": [
@@ -2048,63 +2204,18 @@
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            35.0,
-            35.0,
-            80.0,
-            125.0,
-            170.0,
-            215.0,
-            215.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            30.0,
-            30.0,
-            35.0,
-            40.0,
-            45.0,
-            50.0,
-            55.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            2.0,
-            3.0,
-            3.0,
-            4.0,
-            4.0,
-            5.0,
-            5.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            2.0,
-            3.0,
-            3.0,
-            4.0,
-            4.0,
-            5.0,
-            5.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5
-          ],
           "~class": "SpellEffectAmount"
         },
         {
@@ -2171,24 +2282,14 @@
         "HeadShotBonusDamage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 2,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
+              "mDataValue": "ADRatio",
               "mStat": 2,
               "mStatFormula": 2,
-              "mSubpart": {
-                "mPart1": {
-                  "mEffectIndex": 7,
-                  "~class": "EffectValueCalculationPart"
-                },
-                "mPart2": {
-                  "mNumber": 0.009999999776482582,
-                  "~class": "NumberCalculationPart"
-                },
-                "~class": "ProductOfSubPartsCalculationPart"
-              },
-              "~class": "StatBySubPartCalculationPart"
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"

@@ -1030,6 +1030,11 @@
                   "mAdditionalBonusAtThisLevel": 0.014999999664723873,
                   "mLevel": 16,
                   "~class": "Breakpoint"
+                },
+                {
+                  "mAdditionalBonusAtThisLevel": 0.014999999664723873,
+                  "mLevel": 19,
+                  "~class": "Breakpoint"
                 }
               ],
               "mLevel1Value": 0.05000000074505806,
@@ -1170,6 +1175,13 @@
       "mAlternateName": "JaxLeapStrike",
       "mAnimationName": "Spell2",
       "mCantCancelWhileWindingUp": true,
+      "mCastRequirementsTarget": [
+        {
+          "mInvertResult": true,
+          "mUnit": "Characters/SRU_FaeLightWardPad/CharacterRecords/Root",
+          "~class": "IsSpecifiedUnitCastRequirement"
+        }
+      ],
       "mCastingBreaksStealth": true,
       "mClientData": {
         "mTargeterDefinitions": [
@@ -1629,6 +1641,14 @@
           },
           "~class": "GameCalculationModified"
         },
+        "FinalDamage": {
+          "mConditionalCalculationRequirements": {
+            "mBuffName": "0x1e75ffdf",
+            "~class": "HasBuffCastRequirement"
+          },
+          "mConditionalGameCalculation": "OnHitDamage",
+          "~class": "GameCalculationConditional"
+        },
         "OnHitDamage": {
           "mFormulaParts": [
             {
@@ -1886,6 +1906,14 @@
         "~class": "ObjectTags"
       },
       "mSpellCalculations": {
+        "FinalDamage": {
+          "mConditionalCalculationRequirements": {
+            "mBuffName": "0x12395d09",
+            "~class": "HasBuffCastRequirement"
+          },
+          "mConditionalGameCalculation": "TotalDamage",
+          "~class": "GameCalculationConditional"
+        },
         "TotalDamage": {
           "mFormulaParts": [
             {

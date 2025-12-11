@@ -46,32 +46,6 @@
     "mSpell": {
       "DataValues": [
         {
-          "mName": "CritAmpPerc",
-          "mValues": [
-            1.0499999523162842,
-            1.0499999523162842,
-            1.0499999523162842,
-            1.0499999523162842,
-            1.0499999523162842,
-            1.0499999523162842,
-            1.0499999523162842
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "CritSlowMod",
-          "mValues": [
-            25.0,
-            25.0,
-            25.0,
-            25.0,
-            25.0,
-            25.0,
-            25.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "mName": "BarrelSlow",
           "mValues": [
             30.0,
@@ -179,7 +153,7 @@
             "keyCost": "No Cost",
             "keyName": "Powder Keg",
             "keySummary": "Gangplank uncovers a powder keg at target location. If he attacks it, it explodes, spreading the attack's damage to enemies in the area, slowing them.",
-            "keyTooltip": "Gangplank places a powder keg that can be attacked by Gangplank and enemy champions for @Effect5Amount@ seconds. When an enemy destroys it, the keg is defused. When Gangplank destroys it, it explodes, <status>Slowing</status> by @FinalSlowAmount@% for @Effect2Amount@ seconds and dealing the <physicalDamage>Attack's damage</physicalDamage>, ignoring @Effect10Amount@% Armor. Champions take an additional <physicalDamage>@Effect3Amount@ physical damage</physicalDamage>.<br><br>Keg health decays every @f5@ seconds. Keg explosions detonate other kegs with overlapping blast zones, but don't deal damage to the same target more than once. Keg explosions triggered by <spellName>{{Spell_GangplankQWrapper_Name}}</spellName> will grant the bonus gold for targets killed.",
+            "keyTooltip": "Gangplank places a powder keg that can be attacked by Gangplank and enemy champions for @Effect5Amount@ seconds. When an enemy destroys it, the keg is defused. When Gangplank destroys it, it explodes, <status>Slowing</status> by @FinalSlowAmount@% for @Effect2Amount@ seconds and dealing the <physicalDamage>Attack's damage</physicalDamage>, ignoring @Effect10Amount@% Armor. Champions take an additional <physicalDamage>@Effect3Amount@ physical damage</physicalDamage>.<br><br>Keg health decays every @BarrelDecayTime@ seconds. Keg explosions detonate other kegs with overlapping blast zones, but don't deal damage to the same target more than once. Keg explosions triggered by <spellName>{{Spell_GangplankQWrapper_Name}}</spellName> will grant the bonus gold for targets killed.",
             "keyTooltipExtendedBelowLine": "<rules>Keg decay rate increases at level 7 and 13.</rules>"
           },
           "mObjectName": "GangplankE",
@@ -215,13 +189,13 @@
         },
         {
           "value": [
-            80.0,
             75.0,
-            105.0,
+            75.0,
+            95.0,
+            115.0,
             135.0,
-            165.0,
-            195.0,
-            240.0
+            155.0,
+            175.0
           ],
           "~class": "SpellEffectAmount"
         },
@@ -341,6 +315,28 @@
         5
       ],
       "mSpellCalculations": {
+        "0x8c0ee468": {
+          "mFormulaParts": [
+            {
+              "mBreakpoints": [
+                {
+                  "mAdditionalBonusAtThisLevel": -1.0,
+                  "mLevel": 7,
+                  "~class": "Breakpoint"
+                },
+                {
+                  "mAdditionalBonusAtThisLevel": -0.5,
+                  "mLevel": 13,
+                  "~class": "Breakpoint"
+                }
+              ],
+              "mLevel1Value": 2.0,
+              "~class": "ByCharLevelBreakpointsCalculationPart"
+            }
+          ],
+          "mPrecision": 1,
+          "~class": "GameCalculation"
+        },
         "FinalSlowAmount": {
           "mExpandedTooltipCalculationDisplay": 6,
           "mFormulaParts": [
@@ -886,6 +882,19 @@
             0.5
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ADRatio",
+          "mValues": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "castRange": [
@@ -931,20 +940,15 @@
           "mExpandedTooltipCalculationDisplay": 0,
           "mFormulaParts": [
             {
-              "mCoefficient": 1.0,
-              "mStat": 2,
-              "mStatFormula": 2,
-              "~class": "StatByCoefficientCalculationPart"
-            },
-            {
-              "mCoefficient": 200.0,
-              "mStat": 8,
-              "~class": "StatByCoefficientCalculationPart"
-            },
-            {
               "mEndValue": 250.0,
               "mStartValue": 50.0,
               "~class": "ByCharLevelInterpolationCalculationPart"
+            },
+            {
+              "mDataValue": "ADRatio",
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -1124,6 +1128,32 @@
     "mSpell": {
       "DataValues": [
         {
+          "mName": "SpellDamage",
+          "mValues": [
+            -20.0,
+            10.0,
+            40.0,
+            70.0,
+            100.0,
+            130.0,
+            160.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ADRatio",
+          "mValues": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
           "mName": "CherryRatio",
           "mValues": [
             0.07000000029802322,
@@ -1150,20 +1180,7 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "SpellDamage",
-          "mValues": [
-            -20.0,
-            10.0,
-            40.0,
-            70.0,
-            100.0,
-            130.0,
-            160.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "ADRatio",
+          "mName": "CritDamageMod",
           "mValues": [
             1.0,
             1.0,
@@ -1230,7 +1247,7 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
+                  "type": "SpellDamage",
                   "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
                 },
@@ -1260,7 +1277,7 @@
             "keySummary": "Shoots target, plundering Gold for each enemy unit killed.",
             "keyTooltip": "{{Spell_GangplankQWrapper_Tooltip_@GameModeInteger@}}",
             "keyTooltipExtended": "{{Spell_GangplankQWrapper_Tooltip_@GameModeInteger@}}<br><br>Total Gold plundered: <statTracking>@f1@ Gold</statTracking><br>Total SS plundered: <statTracking>@f3@ Silver Serpents</statTracking>",
-            "keyTooltipExtendedBelowLine": "<rules>The shot applies On-Hit effects (other than <spellName>{{Spell_GangplankPassive_Name}}</spellName>) and can critically strike (including base damage).</rules>"
+            "keyTooltipExtendedBelowLine": "<rules>The shot applies On-Hit effects (other than <spellName>{{Spell_GangplankPassive_Name}}</spellName>) and can critically strike for <physicalDamage>@ShotCrit@ physical damage</physicalDamage>.</rules>"
           },
           "mObjectName": "GangplankQWrapper",
           "~class": "TooltipInstanceSpell"
@@ -1359,6 +1376,40 @@
         "ASSETS/Characters/Gangplank/HUD/Icons2D/Gangplank_Q.dds"
       ],
       "mSpellCalculations": {
+        "ShotCrit": {
+          "mModifiedGameCalculation": "ShotDamage",
+          "mMultiplier": {
+            "mSubparts": [
+              {
+                "mNumber": 1.0,
+                "~class": "NumberCalculationPart"
+              },
+              {
+                "mPart1": {
+                  "mDataValue": "CritDamageMod",
+                  "~class": "NamedDataValueCalculationPart"
+                },
+                "mPart2": {
+                  "mSubparts": [
+                    {
+                      "mCoefficient": 1.0,
+                      "mStat": 9,
+                      "~class": "StatByCoefficientCalculationPart"
+                    },
+                    {
+                      "mNumber": -1.0,
+                      "~class": "NumberCalculationPart"
+                    }
+                  ],
+                  "~class": "SumOfSubPartsCalculationPart"
+                },
+                "~class": "ProductOfSubPartsCalculationPart"
+              }
+            ],
+            "~class": "SumOfSubPartsCalculationPart"
+          },
+          "~class": "GameCalculationModified"
+        },
         "ShotDamage": {
           "mFormulaParts": [
             {
