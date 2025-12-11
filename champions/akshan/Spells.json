@@ -693,8 +693,8 @@
           "mLocKeys": {
             "keyName": "Heroic Swing",
             "keySummary": "Akshan fires a grappling hook into terrain then swings around it, repeatedly firing at the nearest enemy while swinging. He can jump off early or gets knocked off when colliding with champions or terrain.",
-            "keyTooltip": "<spellActive>First Cast:</spellActive> Akshan fires a grappling hook, attaching to the first terrain hit.<br><br><spellActive>Second Cast:</spellActive> Akshan swings around the terrain, repeatedly firing at the nearest enemy for <physicalDamage>@DamageToDeal@ physical damage</physicalDamage> per shot.<br><br><spellActive>Third Cast:</spellActive> Akshan dives off the rope, firing a final shot.<br><br>Colliding with an enemy Champion or terrain ends the swing early.<br><br>Champion takedowns refresh this Ability's Cooldown.",
-            "keyTooltipExtendedBelowLine": "<rules>Akshan prioritizes shooting champions marked by <spellName>Dirty Fighting</spellName>.<br>On-hits while swinging are @OnHitDamageReduction*100@% effective.<br>Damage is increased by <attackSpeed>@AttackSpeedCoefficient*100@% of bonus Attack Speed</attackSpeed>.<br>Attacks can critically strike for <physicalDamage>@CriticalCalc@ physical damage</physicalDamage>.</rules>"
+            "keyTooltip": "<spellActive>First Cast:</spellActive> Akshan fires a grappling hook, attaching to the first terrain hit.<br><br><spellActive>Second Cast:</spellActive> Akshan swings around the terrain, repeatedly firing at the nearest enemy for <physicalDamage>@ASModDamageToDeal@ physical damage</physicalDamage> per shot.<br><br><spellActive>Third Cast:</spellActive> Akshan dives off the rope, firing a final shot.<br><br>Colliding with an enemy Champion or terrain ends the swing early.<br><br>Champion takedowns refresh this Ability's Cooldown.",
+            "keyTooltipExtendedBelowLine": "<rules>Akshan prioritizes shooting champions marked by <spellName>Dirty Fighting</spellName>.<br>On-hits while swinging are @OnHitDamageReduction*100@% effective.<br>Attacks can critically strike at @CritDamageReduction*100@% reduced damage.</rules>"
           },
           "mObjectName": "AkshanE",
           "~class": "TooltipInstanceSpell"
@@ -1279,7 +1279,7 @@
             "keyName": "Dirty Fighting",
             "keySummary": "Every three hits from Akshan's Attacks and Abilities deals bonus damage and grants him a Shield if the target was a champion.<br><br>When Akshan Attacks, he fires an additional Attack for reduced damage. If he cancels the additional Attack, he instead gains Move Speed.",
             "keyTooltip": "After launching an Attack, Akshan will fire an additional shot for <physicalDamage>@SecondAutoDamage@ physical damage</physicalDamage>. He can cancel this shot to instead gain <speed>@ASModdedMS@ Move Speed</speed> decaying over @HasteDuration@ second.<br><br>Every three hits from Attacks or Abilities deals an additional <magicDamage>@PassiveProcDamage@ magic damage</magicDamage>. Against champions, Akshan also gains <shield>@TotalShieldAmount@ Shield</shield> for @ShieldDuration@ seconds (@PassiveCooldown@ second Cooldown).<br><br>",
-            "keyTooltipExtended": "{{Spell_AkshanPassive_Tooltip}}<br><rules>The second Attack can critically strike at @SecondAutoCritRatio*100@% effectiveness.<br>The second Attack deals 100% total attack damage to minions.<br>The first Attack <speed>Move Speed</speed> scales with <attackSpeed>100% Attack Speed.</attackSpeed></rules>"
+            "keyTooltipExtended": "{{Spell_AkshanPassive_Tooltip}}<br><rules>The second Attack always deals 100% damage to minions and critically strikes at @SecondAutoCritRatio*100@% effectiveness.<br>The first Attack <speed>Move Speed</speed> scales with <attackSpeed>100% Attack Speed.</attackSpeed></rules>"
           },
           "mObjectName": "AkshanPassive",
           "~class": "TooltipInstanceSpell"
@@ -2356,7 +2356,7 @@
             "keyName": "Comeuppance",
             "keySummary": "Akshan locks onto an enemy champion and starts storing bullets. When released, he fires all stored bullets, dealing damage based on missing health to the first champion, minion, or structure hit.",
             "keyTooltip": "Akshan locks onto a champion and begins overcharging his gun for up to @ChannelDuration@ seconds, storing up to @NumberOfBullets@ bullets.<br><br><recast>Recast:</recast> Akshan unleashes the stored bullets, each dealing at least <physicalDamage>@DamagePerBulletWithCrit@ physical damage</physicalDamage> to the first enemy or structure hit, increased up to <physicalDamage>@MaxDamagePerBullet@ physical damage</physicalDamage> based on missing Health.",
-            "keyTooltipExtendedBelowLine": "<rules>Bullets execute minions and apply Lifesteal.<br>Bullet damage scales with Critical Strike Chance and Critical Strike Damage at @CritDamageMod*100@% effectiveness.</rules>"
+            "keyTooltipExtendedBelowLine": "<rules>Bullets execute minions and apply Lifesteal.<br>Bullet damage scales with Critical Strike Chance and Critical Strike Damage at @CritDamageReduction*100@% reduced effectiveness.</rules>"
           },
           "mObjectName": "AkshanR",
           "~class": "TooltipInstanceSpell"

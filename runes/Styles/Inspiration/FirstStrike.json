@@ -1,0 +1,195 @@
+{
+  "mBuffs": [
+    {
+      "mBuffScriptName": "ASSETS/Perks/Styles/Inspiration/FirstStrike/FirstStrikeCD.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_FirstStrike}}</titleLeft><mainText>{{perk_displayname_FirstStrike}} is on cooldown.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    },
+    {
+      "mBuffScriptName": "ASSETS/Perks/Styles/Inspiration/FirstStrike/FirstStrikeAvailable.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "PersistentEffectConditions": [
+            {
+              "PersistentVfxs": [
+                {
+                  "boneName": "C_Buffbone_Glb_Layout_Loc",
+                  "effectKey": "0xe8e91a5",
+                  "~class": "PersistentVfxData"
+                }
+              ],
+              "~class": "PersistentEffectConditionData"
+            }
+          ],
+          "mDescription": "<titleLeft>{{perk_displayname_FirstStrike}}</titleLeft><mainText>Deal extra damage and gain gold based on the damage dealt when you start champion combat.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    },
+    {
+      "mBuffScriptName": "ASSETS/Perks/Styles/Inspiration/FirstStrike/FirstStrike.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "PersistentEffectConditions": [
+            {
+              "PersistentVfxs": [
+                {
+                  "boneName": "C_Buffbone_Glb_Layout_Loc",
+                  "effectKey": "0x601bd6a1",
+                  "~class": "PersistentVfxData"
+                }
+              ],
+              "~class": "PersistentEffectConditionData"
+            }
+          ],
+          "mDescription": "<titleLeft>{{perk_displayname_FirstStrike}}</titleLeft><mainText>First Strike is activated! Damage is amplified and will generate gold.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    }
+  ],
+  "mDisplayNameLocalizationKey": "First Strike",
+  "mDisplayStatLocalizationKey": "@f1@",
+  "mEndOfGameStatDescriptions": [
+    "Damage Dealt: @eogvar1@",
+    "Gold Gained: @eogvar2@"
+  ],
+  "mIconTextureName": "ASSETS/Perks/Styles/Inspiration/FirstStrike/FirstStrike.tex",
+  "mLongDescLocalizationKey": "Attacks or abilities against an enemy champion within @GraceWindow@s of entering champion combat grant @GoldProcBonus@ gold and <b>First Strike</b> for @Duration@ seconds, causing you to deal <truedamage>@DamageAmp*100@%</truedamage> extra <truedamage> damage</truedamage> against champions, and granting <gold>@GoldPercentBonus*100@% (@GoldPercentBonusRanged*100@% for ranged champions)</gold> of bonus damage dealt as <gold>gold</gold>.<br><br>Cooldown: <scaleLevel>@TooltipOnlyCooldownStartAmount@ - @TooltipOnlyCooldownEndAmount@</scaleLevel>s",
+  "mMajorChangePatchVersion": "11.23",
+  "mPerkId": 8369,
+  "mPerkName": "FirstStrike",
+  "mScript": {
+    "mSpellScriptData": {
+      "mCalculations": {
+        "0x6387172": {
+          "mFormulaParts": [
+            {
+              "mNumber": 2.0,
+              "~class": "NumberCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "0x792cf56b": {
+          "mFormulaParts": [
+            {
+              "mNumber": 1.0,
+              "~class": "NumberCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "ChampRange": {
+          "mConditionalCalculationRequirements": {
+            "~class": "IsRangedCastRequirement"
+          },
+          "mConditionalGameCalculation": "0x6387172",
+          "mDefaultGameCalculation": "0x792cf56b",
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mSimpleTooltipCalculationDisplay": 5,
+          "~class": "GameCalculationConditional"
+        },
+        "Cooldown": {
+          "mFormulaParts": [
+            {
+              "mPart1": {
+                "mEndValue": 15.0,
+                "mScalePastDefaultMaxLevel": false,
+                "mStartValue": 25.0,
+                "~class": "ByCharLevelInterpolationCalculationPart"
+              },
+              "mPart2": {
+                "mDataValue": "ModesCooldownReduction",
+                "~class": "NamedDataValueCalculationPart"
+              },
+              "~class": "ProductOfSubPartsCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "MeleeItemCalcValue": {
+          "mDisplayAsPercent": true,
+          "mExpandedTooltipCalculationDisplay": 6,
+          "mFormulaParts": [
+            {
+              "mDataValue": "0xb50bc5ec",
+              "~class": "NamedDataValueCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 6,
+          "~class": "GameCalculation"
+        },
+        "RangedItemCalcValue": {
+          "mModifiedGameCalculation": "MeleeItemCalcValue",
+          "mMultiplier": {
+            "mDataValue": "0x7563bf99",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "~class": "GameCalculationModified"
+        }
+      },
+      "mEffectAmount": {
+        "0x7563bf99": 0.699999988079071,
+        "0xb50bc5ec": 0.5,
+        "DamageAmp": 0.07000000029802322,
+        "GoldPercentBonus": 0.5,
+        "GoldPercentBonusRanged": 0.3499999940395355,
+        "GoldProcBonus": 10.0,
+        "GraceWindow": 0.25,
+        "MissileNoiseNumberLimiter": 3.0,
+        "MissileNoiseRangeLimiter": 1500.0,
+        "ModesCooldownReduction": 1.0,
+        "OOCTimer": 10.0,
+        "TooltipOnlyCooldownEndAmount": 15.0,
+        "TooltipOnlyCooldownStartAmount": 25.0,
+        "duration": 3.0
+      },
+      "mEffectAmountGameMode": {
+        "ARAM": {
+          "mEffectAmountPerMode": {
+            "0xb50bc5ec": 0.6000000238418579,
+            "GoldPercentBonus": 0.6000000238418579,
+            "GoldPercentBonusRanged": 0.44999998807907104,
+            "GoldProcBonus": 15.0
+          },
+          "~class": "PerkEffectAmountPerMode"
+        },
+        "URF": {
+          "mEffectAmountPerMode": {
+            "ModesCooldownReduction": 0.6000000238418579
+          },
+          "~class": "PerkEffectAmountPerMode"
+        }
+      },
+      "~class": "PerkScriptData"
+    },
+    "mSpellScriptName": "ASSETS/Perks/Styles/Inspiration/FirstStrike/FirstStrike.lua",
+    "~class": "PerkScript"
+  },
+  "mShortDescLocalizationKey": "When you initiate champion combat, deal @DamageAmp*100@% extra damage for @Duration@ seconds and gain gold based on damage dealt.",
+  "mTooltipNameLocalizationKey": "Attacks or abilities against an enemy champion within @GraceWindow.2@s of entering champion combat grant @GoldProcBonus@ gold and <b>First Strike</b> for @Duration@ seconds, causing you to deal <truedamage>@DamageAmp*100@%</truedamage> extra <truedamage>damage</truedamage> against champions, and granting <gold>{{ Item_Melee_Ranged_Split }}</gold> of that damage dealt as <gold>gold</gold>.<br><br>Cooldown: <scaleLevel>@Cooldown@</scaleLevel>s<br><hr><br>Damage Dealt: @f1@<br>Gold Gained: @f2@",
+  "mVFXResourceResolver": {
+    "resourceMap": {
+      "0x2978064b": "Perks/Styles/Inspiration/FirstStrike/Particles/Perks_FirstStrike_Tar",
+      "0x3659ab7": "Perks/Styles/Inspiration/FirstStrike/Particles/Perks_FirstStrike_Mis",
+      "0x37975d3a": "Perks/Styles/Inspiration/FirstStrike/Particles/Perks_FirstStrike_Fail",
+      "0x41cbbf7e": "Perks/Styles/Inspiration/FirstStrike/Particles/Perks_FirstStrike_Buff_Start",
+      "0x601bd6a1": "Perks/Styles/Inspiration/FirstStrike/Particles/Perks_FirstStrike_Buff_Activated",
+      "0x604a5cd": "Perks/Styles/Inspiration/FirstStrike/Particles/Perks_FirstStrike_GoldReward",
+      "0xe8e91a5": "Perks/Styles/Inspiration/FirstStrike/Particles/Perks_FirstStrike_Buff"
+    },
+    "~class": "ResourceResolver"
+  },
+  "~class": "Perk"
+}

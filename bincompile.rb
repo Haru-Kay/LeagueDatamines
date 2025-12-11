@@ -47,7 +47,7 @@ champs.each { |champ|
 }
 
 pool.post {
-    system("wadtools -L error --progress false e -i \"D:/Games/Riot Games/League of Legends (PBE)/Game/DATA/FINAL/Localized/Global.en_US.wad.client\" -o \"D:/CommunityDragon/bins/data/menu/en_us/\"")
+    system("wadtools -L error --progress false e -i \"#{path}Localized/Global.en_US.wad.client\" -o \"D:/CommunityDragon/bins/data/menu/en_us/\"")
     system("ruby stringtable.rb")
     puts "Generated stringtable"
 }
@@ -88,6 +88,11 @@ pool.post {
 pool.post {
     system("wadtools -L error --progress false e -i \"#{path}Global.wad.client\" -o \"#{Dir.getwd}/bins\" -x \"^globals$\"")
     puts "Generated loadtip bin"
+}
+
+pool.post {
+    system("wadtools -L error --progress false e -i \"#{path}Global.wad.client\" -o \"#{Dir.getwd}/bins\" -x \"^perks$\"")
+    puts "Generated perks bin"
 }
 
 pool.shutdown

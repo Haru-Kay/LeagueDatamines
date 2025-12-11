@@ -936,3 +936,44 @@ loadtips.store("Unused", loadtips1)
 File.open("loadtips/loadtips.json", 'wb') { |f| f.write(JSON.pretty_generate(loadtips)) }
 
 print "done.\n"
+
+
+print "Loading and formatting runes..."
+FileUtils.rm_rf(Dir.glob("runes/*"))
+Dir.mkdir("runes") unless Dir.exist?("runes")
+runes = nil
+File.open("temp/perks.ltk.json", 'rb') { |f| runes = JSON.parse(f.read()) }
+runes = runes.fetch("entries", runes)
+runes.delete_if { |k, v| !v["~class"].include?("Perk") || v["~class"] == "PerkConfig" }
+runes.transform_keys! { |k, v| 
+    next k if !k.start_with?("0x")
+    name = runes[k].dig("mIconTextureName")
+    next k if !name
+    name[7...name.length - 4]
+}
+runes = runes.sort_by { |k, v| k }.to_h
+runes = applyLang(runes)
+
+runes.each { |key, value|
+    next if key == "Perks/Template"
+    path = key.gsub("Perks", "runes")
+
+    spl = path.split("/")
+    filename = spl[-1]
+    if value["~class"] == "PerkStyle"
+        path = spl.join("/")
+    else
+        n = -1
+        n = -2 if spl[-1] == spl[-2]
+        path = spl[0...n].join("/")
+    end
+    temp = ""
+    path.split("/").each { |s| 
+        temp += "#{s}/"
+        Dir.mkdir(temp) unless Dir.exist?(temp)
+        
+    } unless Dir.exist?(path)
+    File.open(path + "/#{filename}.json", 'wb') { |f| f.write(JSON.pretty_generate(value))}
+}
+
+print "done.\n"

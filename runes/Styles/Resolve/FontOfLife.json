@@ -1,0 +1,64 @@
+{
+  "mBuffs": [
+    {
+      "mBuffScriptName": "ASSETS/Perks/Styles/Resolve/FontOfLife/FontOfLifeCD.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_FontOfLife}}</titleLeft><br><mainText>{{perk_displayname_FontOfLife}} is on cooldown.</mainText><br><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    }
+  ],
+  "mDisplayNameLocalizationKey": "Font of Life",
+  "mDisplayStatLocalizationKey": "@f1@",
+  "mEndOfGameStatDescriptions": [
+    "Total Ally Healing: @eogvar1@"
+  ],
+  "mIconTextureName": "ASSETS/Perks/Styles/Resolve/FontOfLife/FontOfLife.tex",
+  "mLongDescLocalizationKey": "Impairing the movement of an enemy champion restores <healing>@BaseHeal@ Health</healing> to you and the lowest health nearby allied champion.<br><br>@RangedMod*100@% effect for Ranged Users.<br><br>Cooldown: @Cooldown@s",
+  "mPerkId": 8463,
+  "mPerkName": "FontOfLife",
+  "mScript": {
+    "mSpellScriptData": {
+      "mCalculations": {
+        "BaseHeal": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 50.0,
+              "mStartValue": 10.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            }
+          ],
+          "mRangedMultiplier": {
+            "mDataValue": "RangedMod",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "mSimpleTooltipCalculationDisplay": 4,
+          "~class": "0xe9a3c91d"
+        }
+      },
+      "mEffectAmount": {
+        "Cooldown": 20.0,
+        "RangedMod": 0.699999988079071
+      },
+      "~class": "PerkScriptData"
+    },
+    "mSpellScriptName": "ASSETS/Perks/Styles/Resolve/FontOfLife/FontOfLife.lua",
+    "~class": "PerkScript"
+  },
+  "mShortDescLocalizationKey": "<lol-uikit-tooltipped-keyword key='LinkTooltip_Description_ImpairMov'>Impairing</lol-uikit-tooltipped-keyword> the movement of an enemy champion heals nearby allied champions. ",
+  "mTooltipNameLocalizationKey": "Impairing the movement of an enemy champion restores <healing>@BaseHeal@ Health</healing> to you and the lowest health nearby allied champion.<br>Cooldown: @Cooldown@s<br><br>Total heal: <healing>@f1@</healing>",
+  "mVFXResourceResolver": {
+    "resourceMap": {
+      "Perks_FontofLife_Beam": "Perks/Styles/Resolve/FontOfLife/Particles/Perks_FontofLife_Beam",
+      "Perks_FontofLife_Heal": "Perks/Styles/Resolve/FontOfLife/Particles/Perks_FontofLife_Heal",
+      "Perks_FontofLife_Marker": "Perks/Styles/Resolve/FontOfLife/Particles/Perks_FontofLife_Marker",
+      "Perks_FontofLife_Marker_Pulse": "Perks/Styles/Resolve/FontOfLife/Particles/Perks_FontofLife_Marker_Pulse"
+    },
+    "~class": "ResourceResolver"
+  },
+  "~class": "Perk"
+}

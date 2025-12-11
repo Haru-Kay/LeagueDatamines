@@ -1,0 +1,73 @@
+{
+  "mBuffs": [
+    {
+      "mBuffScriptName": "ASSETS/Perks/Styles/Domination/SixthSense/SixthSenseCD.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_SixthSense}}</titleLeft><mainText>{{perk_displayname_SixthSense}} is on cooldown.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    }
+  ],
+  "mDisplayNameLocalizationKey": "Sixth Sense",
+  "mDisplayStatLocalizationKey": "@f1@",
+  "mEndOfGameStatDescriptions": [
+    "Wards sensed: @eogvar1@"
+  ],
+  "mIconTextureName": "ASSETS/Perks/Styles/Domination/SixthSense/SixthSense.tex",
+  "mLongDescLocalizationKey": "Automatically sense a nearby untracked and unseen ward, tracking it for the team. <br><br>Level @LevelThreshold@: Also reveal the ward for @RevealDuration@s.<br><br>This effect has a @MeleeItemCalcValue@ second Cooldown.",
+  "mMajorChangePatchVersion": "14.1",
+  "mPerkId": 8137,
+  "mPerkName": "SixthSense",
+  "mPingTextLocalizationKey": "{{perk_pingtip_SixthSense_@f2@}}",
+  "mScript": {
+    "mSpellScriptData": {
+      "mCalculations": {
+        "0x6387172": {
+          "mFormulaParts": [
+            {
+              "mNumber": 2.0,
+              "~class": "NumberCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "0x792cf56b": {
+          "mFormulaParts": [
+            {
+              "mNumber": 1.0,
+              "~class": "NumberCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "ChampRange": {
+          "mConditionalCalculationRequirements": {
+            "~class": "IsRangedCastRequirement"
+          },
+          "mConditionalGameCalculation": "0x6387172",
+          "mDefaultGameCalculation": "0x792cf56b",
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mSimpleTooltipCalculationDisplay": 5,
+          "~class": "GameCalculationConditional"
+        }
+      },
+      "mEffectAmount": {
+        "0xd3bd04a2": 900.0,
+        "LevelThreshold": 11.0,
+        "MeleeItemCalcValue": 250.0,
+        "RangedItemCalcValue": 250.0,
+        "RevealDuration": 10.0
+      },
+      "~class": "PerkScriptData"
+    },
+    "mSpellScriptName": "ASSETS/Perks/Styles/Domination/SixthSense/SixthSense.lua",
+    "~class": "PerkScript"
+  },
+  "mShortDescLocalizationKey": "On a long Cooldown, automatically sense a nearby untracked and unseen ward, tracking it for the team. <br><br>Level @LevelThreshold@: Also reveal the ward for @RevealDuration@s.",
+  "mTooltipNameLocalizationKey": "Automatically sense a nearby untracked and unseen ward, tracking it for the team. <br><br>Level @LevelThreshold@: Also reveal the ward for @RevealDuration@s.<br><br>This effect has a @MeleeItemCalcValue@ second Cooldown.<br><hr><br>Wards sensed: @f1@",
+  "~class": "Perk"
+}

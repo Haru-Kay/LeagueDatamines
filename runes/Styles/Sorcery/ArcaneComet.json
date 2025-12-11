@@ -1,0 +1,130 @@
+{
+  "mBuffs": [
+    {
+      "mBuffScriptName": "ASSETS/Perks/Styles/Sorcery/ArcaneComet/ArcaneCometSnipe.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "PersistentEffectConditions": [
+            {
+              "PersistentVfxs": [
+                {
+                  "effectKey": "Perks_Meteor_Ready_Idle_Offset",
+                  "~class": "PersistentVfxData"
+                }
+              ],
+              "~class": "PersistentEffectConditionData"
+            }
+          ],
+          "mDescription": "<titleLeft>{{perk_displayname_ArcaneComet}}</titleLeft><mainText>Your next spell will hurl a comet at the target champion.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    },
+    {
+      "mBuffScriptName": "ASSETS/Perks/Styles/Sorcery/ArcaneComet/ArcaneCometRechargeSnipe.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_ArcaneComet}}</titleLeft><mainText>{{perk_displayname_ArcaneComet}} is cooling down.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    }
+  ],
+  "mDefault": true,
+  "mDisplayNameLocalizationKey": "Arcane Comet",
+  "mDisplayStatLocalizationKey": "@f1@",
+  "mEndOfGameStatDescriptions": [
+    "Total Damage Dealt: @eogvar1@"
+  ],
+  "mIconTextureName": "ASSETS/Perks/Styles/Sorcery/ArcaneComet/ArcaneComet.tex",
+  "mLongDescLocalizationKey": "Damaging a champion with an ability hurls a comet at their location, or, if Arcane Comet is on cooldown, reduces its remaining cooldown.<br><br><lol-uikit-tooltipped-keyword key='LinkTooltip_Description_AdaptiveDmg'><font color='#48C4B7'>Adaptive Damage</font></lol-uikit-tooltipped-keyword>: @DamageBase@ - @DamageMax@ based on level (<scaleAP>+@APRatio.-1@ AP</scaleAP> and <scaleAD>+@ADRatio.-1@ bonus AD</scaleAD>)<br>Cooldown: @RechargeTime@ - @RechargeTimeMin@s<br><rules><br>Cooldown Reduction:<br>Single Target: @PercentRefund*100@%.<br>Area of Effect: @AoEPercentRefund*100@%.<br>Damage over Time: @DotPercentRefund*100@%.<br></rules>",
+  "mPerkId": 8229,
+  "mPerkName": "ArcaneComet",
+  "mScript": {
+    "mSpellScriptData": {
+      "mCalculations": {
+        "CooldownCalc": {
+          "mFormulaParts": [
+            {
+              "mCeiling": 20.0,
+              "mFloor": 0.30000001192092896,
+              "mSubparts": [
+                {
+                  "mEndValue": 8.0,
+                  "mStartValue": 20.0,
+                  "~class": "ByCharLevelInterpolationCalculationPart"
+                }
+              ],
+              "~class": "ClampSubPartsCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "DamageCalc": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 130.0,
+              "mStartValue": 30.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "ADRatio",
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 4,
+          "~class": "GameCalculation"
+        }
+      },
+      "mEffectAmount": {
+        "ADRatio": 0.10000000149011612,
+        "APRatio": 0.05000000074505806,
+        "AoEPercentRefund": 0.10000000149011612,
+        "DamageBase": 30.0,
+        "DamageMax": 130.0,
+        "DotPercentRefund": 0.05000000074505806,
+        "PercentRefund": 0.20000000298023224,
+        "RechargeTime": 20.0,
+        "RechargeTimeMin": 8.0
+      },
+      "mEffectAmountGameMode": {
+        "ARAM": {
+          "mEffectAmountPerMode": {
+            "RechargeTime": 15.0
+          },
+          "~class": "PerkEffectAmountPerMode"
+        }
+      },
+      "~class": "PerkScriptData"
+    },
+    "mSpellScriptName": "ASSETS/Perks/Styles/Sorcery/ArcaneComet/ArcaneCometSnipe.lua",
+    "~class": "PerkScript"
+  },
+  "mShortDescLocalizationKey": "Damaging a champion with an ability hurls a damaging comet at their location.",
+  "mTooltipNameLocalizationKey": "Damaging a champion with an ability hurls a comet at their location, or, if Arcane Comet is on cooldown, reduces its remaining cooldown.<br><br>Damage: @DamageCalc@<br>Cooldown: @CooldownCalc@s<br><rules><br>Cooldown Reduction:<br>Single Target: @PercentRefund*100@%.<br>Area of Effect: @AoEPercentRefund*100@%.<br>Damage over Time: @DotPercentRefund*100@%.<br></rules><br>You have hit with @f3@% of comets fired, for a total of @f1@ damage to champions.",
+  "mVFXResourceResolver": {
+    "resourceMap": {
+      "Perks_Meteor_AOE_Ring": "Perks/Styles/Sorcery/ArcaneComet/Particles/Perks_Meteor_AOE_Ring",
+      "Perks_Meteor_AOE_Ring_Enemy": "Perks/Styles/Sorcery/ArcaneComet/Particles/Perks_Meteor_AOE_Ring_Enemy",
+      "Perks_Meteor_AOE_Tar": "Perks/Styles/Sorcery/ArcaneComet/Particles/Perks_Meteor_AOE_Tar",
+      "Perks_Meteor_Cas": "Perks/Styles/Sorcery/ArcaneComet/Particles/Perks_Meteor_Cas",
+      "Perks_Meteor_Mis": "Perks/Styles/Sorcery/ArcaneComet/Particles/Perks_Meteor_Mis",
+      "Perks_Meteor_Ready_Idle": "Perks/Styles/Sorcery/ArcaneComet/Particles/Perks_Meteor_Ready_Idle",
+      "Perks_Meteor_Ready_Idle_Offset": "Perks/Styles/Sorcery/ArcaneComet/Particles/Perks_Meteor_Ready_Idle_Offset",
+      "Perks_Meteor_Ready_Idle_Offset_Child": "Perks/Styles/Sorcery/ArcaneComet/Particles/Perks_Meteor_Ready_Idle_Offset_Child",
+      "Perks_Meteor_Tar": "Perks/Styles/Sorcery/ArcaneComet/Particles/Perks_Meteor_Tar"
+    },
+    "~class": "ResourceResolver"
+  },
+  "~class": "Perk"
+}

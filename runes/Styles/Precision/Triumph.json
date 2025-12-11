@@ -1,0 +1,64 @@
+{
+  "mDefault": true,
+  "mDisplayNameLocalizationKey": "Triumph",
+  "mDisplayStatLocalizationKey": "@f1@",
+  "mEndOfGameStatDescriptions": [
+    "Total Health Restored: @eogvar1@",
+    "Total bonus gold granted: @eogvar2@"
+  ],
+  "mIconTextureName": "ASSETS/Perks/Styles/Precision/Triumph.tex",
+  "mLongDescLocalizationKey": "Takedowns restore @MissingHealthRestored*100@% of your missing health, @TriumphMaxHealthRestored*100@% of your max health, and grant an additional @BonusGold@ gold. <br><br><hr><br><i>'The most dangerous game brings the greatest glory.' <br>—Noxian Reckoner</i>",
+  "mPerkId": 9111,
+  "mPerkName": "Triumph",
+  "mScript": {
+    "mSpellScriptData": {
+      "mCalculations": {
+        "MaxHealthCalc": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "TriumphMaxHealthRestored",
+              "mStat": 12,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 4,
+          "~class": "GameCalculation"
+        }
+      },
+      "mEffectAmount": {
+        "BonusGold": 20.0,
+        "MissingHealthRestored": 0.05000000074505806,
+        "TriumphMaxHealthRestored": 0.02500000037252903
+      },
+      "mEffectAmountGameMode": {
+        "ARAM": {
+          "mEffectAmountPerMode": {
+            "BonusGold": 10.0,
+            "MissingHealthRestored": 0.029999999329447746,
+            "TriumphMaxHealthRestored": 0.014999999664723873
+          },
+          "~class": "PerkEffectAmountPerMode"
+        },
+        "KINGPORO": {
+          "mEffectAmountPerMode": {
+            "BonusGold": 10.0,
+            "MissingHealthRestored": 0.05999999865889549
+          },
+          "~class": "PerkEffectAmountPerMode"
+        }
+      },
+      "~class": "PerkScriptData"
+    },
+    "mSpellScriptName": "ASSETS/Perks/Styles/Precision/Triumph.lua",
+    "~class": "PerkScript"
+  },
+  "mShortDescLocalizationKey": "<lol-uikit-tooltipped-keyword key='LinkTooltip_Description_Takedown'>Takedowns</lol-uikit-tooltipped-keyword> restore @MissingHealthRestored.0*100@% of your missing health and grant an additional @BonusGold@ gold. ",
+  "mTooltipNameLocalizationKey": "Takedowns <healing>restore @MaxHealthCalc@ plus @MissingHealthRestored*100@% of your missing health</healing> and grant an additional <gold>@BonusGold@ gold</gold>. <br><br>Total health restored: <healing>@f1@</healing><br>Total bonus gold granted: <gold>@f2@</gold>",
+  "mVFXResourceResolver": {
+    "resourceMap": {
+      "Perks_Triumph_Mis": "Perks/Styles/Precision/Triumph/Particles/Perks_Triumph_Mis"
+    },
+    "~class": "ResourceResolver"
+  },
+  "~class": "Perk"
+}
