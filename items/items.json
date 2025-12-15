@@ -1603,26 +1603,16 @@
     "~class": "ItemData"
   },
   "Doran's Blade": {
+    "PercentOmnivampMod": 0.02500000037252903,
     "epicness": 1,
     "itemID": 1055,
     "mCanBeSold": true,
     "mCategories": [
       "Health",
       "Damage",
+      "LifeSteal",
       "SpellVamp",
       "Lane"
-    ],
-    "mDataValues": [
-      {
-        "mName": "HealMultiplier",
-        "mValue": 0.02500000037252903,
-        "~class": "ItemDataValue"
-      },
-      {
-        "mName": "HealingReduction",
-        "mValue": 0.3330000042915344,
-        "~class": "ItemDataValue"
-      }
     ],
     "mDisplayName": "Doran's Blade",
     "mFlatHPPoolMod": 80.0,
@@ -1640,9 +1630,9 @@
       "InventoryIconSmall": "ASSETS/Items/Icons2D/AutoAtlas/SmallIcons/1055_Marksman_T1_DoransBlade.png",
       "epicness": 0,
       "inventoryIcon": "ASSETS/Items/Icons2D/1055_Marksman_T1_DoransBlade.dds",
-      "mDescription": "<section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health</section><section><passive>Life Draining</passive><br>Return @HealMultiplier*100@% of damage dealt as <healing>Health</healing>. Reduced to @HealingReduction*100@% effectiveness for area of effect spells and pet damage.</section><section></section><section><flavorText></flavorText></section>",
-      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Doran's Blade</itemName@ItemActiveness@></titleLeft><titleRight>{{ Item_Gold_Value_Sell }} <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Physical Offense</subtitleLeft><subtitleRight>Unique: Starter</subtitleRight><mainText><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health</section><section><passive>Life Draining</passive><br>Return @HealMultiplier*100@% of damage dealt as <healing>Health</healing>. Reduced to @HealingReduction*100@% effectiveness for area of effect spells and pet damage.</section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft></postScriptLeft>",
-      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Doran's Blade</itemName@ItemActiveness@></titleLeft><titleRight>{{ Item_Gold_Value }}</titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Physical Offense</subtitleLeft><subtitleRight>Unique: Starter</subtitleRight><mainText><section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health</section><section><passive>Life Draining</passive><br>Return @HealMultiplier*100@% of damage dealt as <healing>Health</healing>. Reduced to @HealingReduction*100@% effectiveness for area of effect spells and pet damage.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
+      "mDescription": "<section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleSV% @PercentOmnivampMod*100@%</attention> Omnivamp</section><section></section><section></section><section><flavorText></flavorText></section>",
+      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Doran's Blade</itemName@ItemActiveness@></titleLeft><titleRight>{{ Item_Gold_Value_Sell }} <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Physical Offense</subtitleLeft><subtitleRight>Unique: Starter</subtitleRight><mainText><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleSV% @PercentOmnivampMod*100@%</attention> Omnivamp</section><section></section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft></postScriptLeft>",
+      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Doran's Blade</itemName@ItemActiveness@></titleLeft><titleRight>{{ Item_Gold_Value }}</titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Physical Offense</subtitleLeft><subtitleRight>Unique: Starter</subtitleRight><mainText><section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleSV% @PercentOmnivampMod*100@%</attention> Omnivamp</section><section></section><section></section><section><flavorText></flavorText></section></mainText><br>",
       "mTooltipData": {
         "mFormat": "0x32559c50",
         "mLists": {
@@ -1655,6 +1645,10 @@
               {
                 "type": "Health",
                 "~class": "TooltipInstanceListElement"
+              },
+              {
+                "type": "Omnivamp",
+                "~class": "TooltipInstanceListElement"
               }
             ],
             "~class": "TooltipInstanceList"
@@ -1664,9 +1658,7 @@
           "keyBrief": "Physical Offense",
           "keyColloquialism": ";dblade",
           "keyName": "Doran's Blade",
-          "keySecondaryBrief": "Unique: Starter",
-          "keyTooltip": "<passive>Life Draining</passive><br>Return @HealMultiplier*100@% of damage dealt as <healing>Health</healing>. Reduced to @HealingReduction*100@% effectiveness for area of effect spells and pet damage.",
-          "keyTooltipExternal": "<passive>Life Draining</passive><br>Return @HealMultiplier*100@% of damage dealt as <healing>Health</healing>. Reduced to @HealingReduction*100@% effectiveness for area of effect spells and pet damage."
+          "keySecondaryBrief": "Unique: Starter"
         },
         "mObjectName": "Doran's Blade",
         "~class": "TooltipInstanceItem"
@@ -42820,6 +42812,7 @@
     "~class": "ItemData"
   },
   "Hextech Gunblade": {
+    "PercentOmnivampMod": 0.10000000149011612,
     "clickable": true,
     "epicness": 5,
     "itemID": 3146,
@@ -42845,11 +42838,6 @@
       {
         "mName": "Cooldown",
         "mValue": 60.0,
-        "~class": "ItemDataValue"
-      },
-      {
-        "mName": "SpellVamp",
-        "mValue": 0.10000000149011612,
         "~class": "ItemDataValue"
       }
     ],
@@ -42885,9 +42873,9 @@
       "InventoryIconSmall": "ASSETS/Items/Icons2D/AutoAtlas/SmallIcons/3146_HextechGunblade.png",
       "epicness": 0,
       "inventoryIcon": "ASSETS/Items/Icons2D/3146_HextechGunblade.dds",
-      "mDescription": "<section></section><section><attention>%i:scaleAP% @FlatMagicDamageMod@</attention> Ability Power<br><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleLS% @PercentLifeStealMod*100@%</attention> Life Steal</section><section><passive>Spell Vamp</passive><br>Gain @SpellVamp*100@% Spell Vamp</section><section>{{ Item_OnActivation }} {{ Item_Cooldown }}<br><active>Lightning Bolt</active><br>Shocks the target enemy champion, dealing @ActiveDamage@ magic damage and slowing them by @SlowAmount*100@% for @SlowDuration@ seconds.</section><section><flavorText></flavorText></section>",
-      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Hextech Gunblade</itemName@ItemActiveness@></titleLeft><titleRight>{{ Item_Gold_Value_Sell }} <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}</subtitleLeft><subtitleRight></subtitleRight><mainText><section><attention>%i:scaleAP% @FlatMagicDamageMod@</attention> Ability Power<br><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleLS% @PercentLifeStealMod*100@%</attention> Life Steal</section><section><passive>Spell Vamp</passive><br>Gain @SpellVamp*100@% Spell Vamp</section><section>{{ Item_OnActivation }} {{ Item_Cooldown }}<br><active>Lightning Bolt</active><br>Shocks the target enemy champion, dealing @ActiveDamage@ magic damage and slowing them by @SlowAmount*100@% for @SlowDuration@ seconds.</section><section><flavorText></flavorText></section></mainText><postScriptLeft></postScriptLeft>",
-      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Hextech Gunblade</itemName@ItemActiveness@></titleLeft><titleRight>{{ Item_Gold_Value }}</titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}</subtitleLeft><subtitleRight></subtitleRight><mainText><section></section><section><attention>%i:scaleAP% @FlatMagicDamageMod@</attention> Ability Power<br><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleLS% @PercentLifeStealMod*100@%</attention> Life Steal</section><section><passive>Spell Vamp</passive><br>Gain @SpellVamp*100@% Spell Vamp</section><section>{{ Item_OnActivation }} {{ Item_Cooldown }}<br><active>Lightning Bolt</active><br>Shocks the target enemy champion, dealing @ActiveDamage@ magic damage and slowing them by @SlowAmount*100@% for @SlowDuration@ seconds.</section><section><flavorText></flavorText></section></mainText><br>",
+      "mDescription": "<section></section><section><attention>%i:scaleAP% @FlatMagicDamageMod@</attention> Ability Power<br><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleSV% @PercentOmnivampMod*100@%</attention> Omnivamp</section><section></section><section>{{ Item_OnActivation }} {{ Item_Cooldown }}<br><active>Lightning Bolt</active><br>Shocks the target enemy champion, dealing @ActiveDamage@ magic damage and slowing them by @SlowAmount*100@% for @SlowDuration@ seconds.</section><section><flavorText></flavorText></section>",
+      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Hextech Gunblade</itemName@ItemActiveness@></titleLeft><titleRight>{{ Item_Gold_Value_Sell }} <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}</subtitleLeft><subtitleRight></subtitleRight><mainText><section><attention>%i:scaleAP% @FlatMagicDamageMod@</attention> Ability Power<br><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleSV% @PercentOmnivampMod*100@%</attention> Omnivamp</section><section></section><section>{{ Item_OnActivation }} {{ Item_Cooldown }}<br><active>Lightning Bolt</active><br>Shocks the target enemy champion, dealing @ActiveDamage@ magic damage and slowing them by @SlowAmount*100@% for @SlowDuration@ seconds.</section><section><flavorText></flavorText></section></mainText><postScriptLeft></postScriptLeft>",
+      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Hextech Gunblade</itemName@ItemActiveness@></titleLeft><titleRight>{{ Item_Gold_Value }}</titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}</subtitleLeft><subtitleRight></subtitleRight><mainText><section></section><section><attention>%i:scaleAP% @FlatMagicDamageMod@</attention> Ability Power<br><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleSV% @PercentOmnivampMod*100@%</attention> Omnivamp</section><section></section><section>{{ Item_OnActivation }} {{ Item_Cooldown }}<br><active>Lightning Bolt</active><br>Shocks the target enemy champion, dealing @ActiveDamage@ magic damage and slowing them by @SlowAmount*100@% for @SlowDuration@ seconds.</section><section><flavorText></flavorText></section></mainText><br>",
       "mTooltipData": {
         "mFormat": "0x32559c50",
         "mLists": {
@@ -42902,7 +42890,7 @@
                 "~class": "TooltipInstanceListElement"
               },
               {
-                "type": "LifeSteal",
+                "type": "Omnivamp",
                 "~class": "TooltipInstanceListElement"
               }
             ],
@@ -42911,8 +42899,7 @@
         },
         "mLocKeys": {
           "keyActive": "{{ Item_OnActivation }} {{ Item_Cooldown }}<br><active>Lightning Bolt</active><br>Shocks the target enemy champion, dealing @ActiveDamage@ magic damage and slowing them by @SlowAmount*100@% for @SlowDuration@ seconds.",
-          "keyName": "Hextech Gunblade",
-          "keyTooltip": "<passive>Spell Vamp</passive><br>Gain @SpellVamp*100@% Spell Vamp"
+          "keyName": "Hextech Gunblade"
         },
         "mObjectName": "Hextech Gunblade",
         "~class": "TooltipInstanceItem"
@@ -42923,8 +42910,6 @@
       "Items/ItemGroups/Default",
       "0x9c33c917"
     ],
-    "mPercentLifeStealMod": 0.10000000149011612,
-    "mPercentSpellVampMod": 0.10000000149011612,
     "mVFXResourceResolver": {
       "resourceMap": {
         "0x1ea86593": "0x0",

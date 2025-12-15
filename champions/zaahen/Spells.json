@@ -1001,19 +1001,6 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "DamageBonusBase",
-          "mValues": [
-            30.0,
-            60.0,
-            90.0,
-            120.0,
-            150.0,
-            180.0,
-            210.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "mName": "MaximumRadius",
           "mValues": [
             375.0,
@@ -1075,6 +1062,19 @@
             50.0,
             50.0,
             50.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "SweetSpotDamageMod",
+          "mValues": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
           ],
           "~class": "SpellDataValue"
         }
@@ -1178,8 +1178,9 @@
                   "~class": "TooltipInstanceListElement"
                 },
                 {
+                  "multiplier": 1.5,
                   "nameOverride": "Edge Damage",
-                  "type": "DamageBonusBase",
+                  "type": "Damage_Base",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -1233,19 +1234,12 @@
           "~class": "GameCalculation"
         },
         "BonusDamageCalc": {
-          "mFormulaParts": [
-            {
-              "mDataValue": "DamageBonusBase",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mCoefficient": 1.0,
-              "mStat": 2,
-              "mStatFormula": 2,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
+          "mModifiedGameCalculation": "BaseDamageCalc",
+          "mMultiplier": {
+            "mDataValue": "SweetSpotDamageMod",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "~class": "GameCalculationModified"
         }
       },
       "mSpellTags": [
@@ -1327,13 +1321,13 @@
         {
           "mName": "RecastWindow",
           "mValues": [
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
           ],
           "~class": "SpellDataValue"
         },
@@ -1405,13 +1399,13 @@
         {
           "mName": "QCoeff",
           "mValues": [
-            0.10000000149011612,
+            0.15000000596046448,
             0.20000000298023224,
+            0.25,
             0.30000001192092896,
+            0.3499999940395355,
             0.4000000059604645,
-            0.5,
-            0.6000000238418579,
-            0.699999988079071
+            0.44999998807907104
           ],
           "~class": "SpellDataValue"
         },
@@ -1527,6 +1521,8 @@
                   "~class": "TooltipInstanceListElement"
                 },
                 {
+                  "Style": 1,
+                  "multiplier": 100.0,
                   "nameOverride": "Bonus AD Ratio",
                   "type": "QCoeff",
                   "~class": "TooltipInstanceListElement"
