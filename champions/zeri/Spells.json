@@ -253,39 +253,13 @@
         {
           "mName": "BonusDamageBase",
           "mValues": [
-            15.0,
-            17.0,
-            19.0,
-            21.0,
-            23.0,
-            25.0,
-            27.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "BonusADRatio",
-          "mValues": [
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "BonusAPRatio",
-          "mValues": [
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224
+            18.0,
+            20.0,
+            22.0,
+            24.0,
+            26.0,
+            28.0,
+            30.0
           ],
           "~class": "SpellDataValue"
         },
@@ -303,15 +277,15 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "CritScalingMod",
+          "mName": "CritChanceMaxAmp",
           "mValues": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
+            0.8500000238418579,
+            0.8500000238418579,
+            0.8500000238418579,
+            0.8500000238418579,
+            0.8500000238418579,
+            0.8500000238418579,
+            0.8500000238418579
           ],
           "~class": "SpellDataValue"
         },
@@ -516,18 +490,18 @@
         "BonusDamageTotal": {
           "mFormulaParts": [
             {
+              "mCoefficient": 0.20000000298023224,
+              "~class": "StatByCoefficientCalculationPart"
+            },
+            {
               "mDataValue": "BonusDamageBase",
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mDataValue": "BonusADRatio",
+              "mCoefficient": 0.11999999731779099,
               "mStat": 2,
               "mStatFormula": 2,
-              "~class": "StatByNamedDataValueCalculationPart"
-            },
-            {
-              "mDataValue": "BonusAPRatio",
-              "~class": "StatByNamedDataValueCalculationPart"
+              "~class": "StatByCoefficientCalculationPart"
             }
           ],
           "mMultiplier": {
@@ -537,26 +511,9 @@
                 "~class": "NumberCalculationPart"
               },
               {
-                "mPart1": {
-                  "mDataValue": "CritScalingMod",
-                  "mStat": 8,
-                  "~class": "StatByNamedDataValueCalculationPart"
-                },
-                "mPart2": {
-                  "mSubparts": [
-                    {
-                      "mCoefficient": 1.0,
-                      "mStat": 9,
-                      "~class": "StatByCoefficientCalculationPart"
-                    },
-                    {
-                      "mNumber": -1.0,
-                      "~class": "NumberCalculationPart"
-                    }
-                  ],
-                  "~class": "SumOfSubPartsCalculationPart"
-                },
-                "~class": "ProductOfSubPartsCalculationPart"
+                "mDataValue": "CritChanceMaxAmp",
+                "mStat": 8,
+                "~class": "StatByNamedDataValueCalculationPart"
               }
             ],
             "~class": "SumOfSubPartsCalculationPart"
@@ -2715,13 +2672,13 @@
         {
           "mName": "ActiveDamage",
           "mValues": [
-            50.0,
-            150.0,
-            250.0,
-            350.0,
-            450.0,
-            550.0,
-            650.0
+            100.0,
+            200.0,
+            300.0,
+            400.0,
+            500.0,
+            600.0,
+            700.0
           ],
           "~class": "SpellDataValue"
         },
@@ -3023,28 +2980,15 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "ADRatio",
+          "mName": "CritMult",
           "mValues": [
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "CriticalEffectiveness",
-          "mValues": [
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75
+            1.75,
+            1.75,
+            1.75,
+            1.75,
+            1.75,
+            1.75,
+            1.75
           ],
           "~class": "SpellDataValue"
         },
@@ -3367,9 +3311,9 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mDataValue": "ADRatio",
+              "mCoefficient": 1.2999999523162842,
               "mStat": 2,
-              "~class": "StatByNamedDataValueCalculationPart"
+              "~class": "StatByCoefficientCalculationPart"
             },
             {
               "mCoefficient": 0.25,
@@ -3377,40 +3321,6 @@
             }
           ],
           "~class": "GameCalculation"
-        },
-        "WallDamage": {
-          "mModifiedGameCalculation": "TotalDamage",
-          "mMultiplier": {
-            "mSubparts": [
-              {
-                "mNumber": 1.0,
-                "~class": "NumberCalculationPart"
-              },
-              {
-                "mPart1": {
-                  "mDataValue": "CriticalEffectiveness",
-                  "~class": "NamedDataValueCalculationPart"
-                },
-                "mPart2": {
-                  "mSubparts": [
-                    {
-                      "mCoefficient": 1.0,
-                      "mStat": 9,
-                      "~class": "StatByCoefficientCalculationPart"
-                    },
-                    {
-                      "mNumber": -1.0,
-                      "~class": "NumberCalculationPart"
-                    }
-                  ],
-                  "~class": "SumOfSubPartsCalculationPart"
-                },
-                "~class": "ProductOfSubPartsCalculationPart"
-              }
-            ],
-            "~class": "SumOfSubPartsCalculationPart"
-          },
-          "~class": "GameCalculationModified"
         }
       },
       "mTargetingTypeData": {

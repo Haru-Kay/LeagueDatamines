@@ -396,6 +396,7 @@ File.open("game-data/champion-summary.json", 'rb') { |f|
     c = JSON.parse(f.read()) 
     c.each { |champ|
         next if !champ.is_a?(Hash)
+        next if champ["alias"]&.include?("_")
         id = champ["id"]
         name = champ["name"]
         champs.store(id, name)
@@ -572,13 +573,13 @@ print "done.\n"
         next if !type
         case type
             when "0x3f04641e"
-                type = "ArcaneRelicsMapMarker"
+                type = "RelicsMapMarker"
             when "0x5a92b195"
                 type = "GamemodeKeybinds"
             when "0x6b3ef1bd"
                 type = "SurrenderData"
             when "0x9d9f60d2", "0xad65d8c4", "0xb26bd951"
-                type = "ArcaneMinionSkins"
+                type = "MinionSkins"
             when "0x60e2ec74"
                 type = "LoadScreenData"
             when "0x409a5657"
@@ -767,10 +768,23 @@ print "done.\n"
     print "done.\n"
 # Arena handling end
 
-print "Loading and formatting champion data..."
+manual = [
+    "cassiopeia_death"
+]
+print "Loading and formatting character data..."
 FileUtils.rm_rf(Dir.glob("champions/*"))
+FileUtils.rm_rf(Dir.glob("characters/*"))
 Dir.each_child("temp/data/characters") { |path|
     basepath = "temp/data/characters/" + path
+    if path.include?("_") && !manual.include?(path)
+        outdir = "characters/" + path.split("_")[0]
+        Dir.mkdir("#{outdir}") if !Dir.exist?("#{outdir}")
+    elsif !$champLang.include?(path)
+        outdir = "characters"
+    else
+        outdir = "champions"
+    end
+    Dir.mkdir("#{outdir}/#{path}") if !Dir.exist?("#{outdir}/#{path}")
     Dir.each_child(basepath) { |file|
         filepath = basepath + "/" + file
         champ = {}
@@ -806,13 +820,12 @@ Dir.each_child("temp/data/characters") { |path|
             dataNames.store("0x#{fnv(n.downcase)}", n)
         }
 
-        Dir.mkdir("champions/#{path}") if !Dir.exist?("champions/#{path}")
         out.each { |filename, json|
             str = JSON.pretty_generate(json)
             dataNames.each { |h, n|
                 str.gsub!(h, n)
             }
-            File.open("champions/#{path}/#{filename}.json", 'wb') { |f| f.write(str) }
+            File.open("#{outdir}/#{path}/#{filename}.json", 'wb') { |f| f.write(str) }
         }
     }
 }

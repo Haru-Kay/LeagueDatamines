@@ -2143,13 +2143,26 @@
         {
           "mName": "BaseDamage",
           "mValues": [
-            -5.0,
             0.0,
             5.0,
             10.0,
             15.0,
             20.0,
-            25.0
+            25.0,
+            30.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "QMissileBaseDamage",
+          "mValues": [
+            -10.0,
+            15.0,
+            40.0,
+            65.0,
+            90.0,
+            115.0,
+            140.0
           ],
           "~class": "SpellDataValue"
         },
@@ -2167,15 +2180,15 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "CritDamageMod",
+          "mName": "CritBonusDamage",
           "mValues": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25
           ],
           "~class": "SpellDataValue"
         },
@@ -2195,13 +2208,13 @@
         {
           "mName": "QADRatio",
           "mValues": [
+            0.875,
+            0.949999988079071,
+            1.024999976158142,
             1.100000023841858,
-            1.100000023841858,
-            1.100000023841858,
-            1.100000023841858,
-            1.100000023841858,
-            1.100000023841858,
-            1.100000023841858
+            1.1749999523162842,
+            1.25,
+            1.3250000476837158
           ],
           "~class": "SpellDataValue"
         }
@@ -2295,6 +2308,13 @@
                 {
                   "type": "Cooldown",
                   "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Total AD Ratio",
+                  "type": "QADRatio",
+                  "~class": "TooltipInstanceListElement"
                 }
               ],
               "levelCount": 5,
@@ -2336,40 +2356,6 @@
       ],
       "mLineWidth": 80.0,
       "mSpellCalculations": {
-        "CriticalDamageCalc": {
-          "mModifiedGameCalculation": "DamageCalc",
-          "mMultiplier": {
-            "mSubparts": [
-              {
-                "mNumber": 1.0,
-                "~class": "NumberCalculationPart"
-              },
-              {
-                "mPart1": {
-                  "mDataValue": "CritDamageMod",
-                  "~class": "NamedDataValueCalculationPart"
-                },
-                "mPart2": {
-                  "mSubparts": [
-                    {
-                      "mCoefficient": 1.0,
-                      "mStat": 9,
-                      "~class": "StatByCoefficientCalculationPart"
-                    },
-                    {
-                      "mNumber": -1.0,
-                      "~class": "NumberCalculationPart"
-                    }
-                  ],
-                  "~class": "SumOfSubPartsCalculationPart"
-                },
-                "~class": "ProductOfSubPartsCalculationPart"
-              }
-            ],
-            "~class": "SumOfSubPartsCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
         "DamageCalc": {
           "mFormulaParts": [
             {
@@ -2906,13 +2892,13 @@
         {
           "mName": "BaseDamage",
           "mValues": [
-            0.0,
-            20.0,
-            40.0,
-            60.0,
-            80.0,
-            100.0,
-            120.0
+            -5.0,
+            5.0,
+            15.0,
+            25.0,
+            35.0,
+            45.0,
+            55.0
           ],
           "~class": "SpellDataValue"
         },
@@ -2939,32 +2925,6 @@
             0.800000011920929,
             0.800000011920929,
             0.800000011920929
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "MinionDamageMod",
-          "mValues": [
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "ADRatio",
-          "mValues": [
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896
           ],
           "~class": "SpellDataValue"
         }
@@ -3089,15 +3049,6 @@
       ],
       "mLineWidth": 80.0,
       "mSpellCalculations": {
-        "CriticalDamageCalc": {
-          "mModifiedGameCalculation": "DamageCalc",
-          "mMultiplier": {
-            "mCoefficient": 1.0,
-            "mStat": 9,
-            "~class": "StatByCoefficientCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
         "DamageCalc": {
           "mFormulaParts": [
             {
@@ -3105,9 +3056,9 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mDataValue": "ADRatio",
+              "mCoefficient": 0.44999998807907104,
               "mStat": 2,
-              "~class": "StatByNamedDataValueCalculationPart"
+              "~class": "StatByCoefficientCalculationPart"
             }
           ],
           "~class": "GameCalculation"

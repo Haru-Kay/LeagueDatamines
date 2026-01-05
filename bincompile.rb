@@ -8,31 +8,9 @@ path = "#{loc}/Game/DATA/FINAL/"
 champs = []
 
 filter = [
-    "bloom_",
-    "brawl_",
-    "bw_",
-    "cherry_",
-    "crepe_",
-    "doombots_",
-    "durian_",
-    "ha_",
-    "habw_",
-    "nexusblitz_",
-    "nightmarebots_",
-    "npc_",
-    "ruby_",
-    "slime_",
-    "sru_",
-    "sruap_",
-    "srx_",
-    "strawberry_",
-    "testcube",
-    "tft",
-    "tutorial_",
-    "ultbook",
-    "urf_"
+    "tft_"
 ]
-Dir.each_child(path+"Champions") { |d|
+Dir.each_child(path + "Champions") { |d|
     next if filter.any? { |f| d.downcase.start_with?(f) }
     champs.push(d.split(".")[0])
     champs.uniq!
@@ -41,20 +19,20 @@ Dir.each_child(path+"Champions") { |d|
 pool = Concurrent::FixedThreadPool.new(7)
 champs.each { |champ|
     pool.post { 
-        system("wadtools -L error --progress false e -i \"#{path}Champions/#{champ}.wad.client\" -o \"#{Dir.getwd}/bins\" -x \"^data/characters/(.*?)/\\1\\.bin$\"")
+        system("./wadtools -L error --progress false e -i \"#{path}Champions/#{champ}.wad.client\" -o \"#{Dir.getwd}/bins\" -x \"^data/characters/(.*?)/\\1\\.bin$\"")
         puts "Generated #{champ} bin"
     }
 }
 
 pool.post {
-    system("wadtools -L error --progress false e -i \"#{path}Localized/Global.en_US.wad.client\" -o \"D:/CommunityDragon/bins/data/menu/en_us/\"")
-    system("ruby stringtable.rb")
+    system("./wadtools -L error --progress false e -i \"#{path}Localized/Global.en_US.wad.client\" -o \"D:/CommunityDragon/bins/data/menu/en_us/\"")
+    system("./ruby stringtable.rb")
     puts "Generated stringtable"
 }
 
 
 pool.post {
-    system("wadtools -L error --progress false e -i \"#{path}Maps/Shipping/Common.wad.client\" -o \"#{Dir.getwd}/bins\" -x \"^data/maps/shipping/common/common.bin$\"")
+    system("./wadtools -L error --progress false e -i \"#{path}Maps/Shipping/Common.wad.client\" -o \"#{Dir.getwd}/bins\" -x \"^data/maps/shipping/common/common.bin$\"")
     puts "Generated common bin"
 }
 
@@ -69,29 +47,29 @@ maps = {
 
 maps.each { |mapId, mapArr|
     pool.post {
-        system("wadtools -L error --progress false e -i \"#{path}Maps/Shipping/Map#{mapId}.wad.client\" -o \"#{Dir.getwd}/bins\" -x \"^data/maps/shipping/map#{mapId}/map#{mapId}.bin$\"")
+        system("./wadtools -L error --progress false e -i \"#{path}Maps/Shipping/Map#{mapId}.wad.client\" -o \"#{Dir.getwd}/bins\" -x \"^data/maps/shipping/map#{mapId}/map#{mapId}.bin$\"")
         puts "Generated map#{mapId} bin"
     }
     mapArr.each { |map|
         Dir.mkdir("#{Dir.getwd}/bins/data/maps/modespecificdata/map#{mapId}/") unless Dir.exist?("#{Dir.getwd}/bins/data/maps/modespecificdata/map#{mapId}/")
         pool.post {
-            system("wadtools -L error --progress false e -i \"#{path}Maps/Shipping/Map#{mapId}.wad.client\" -o \"#{Dir.getwd}/bins/data\" -x \"^maps/modespecificdata/#{map}.bin$\"")
+            system("./wadtools -L error --progress false e -i \"#{path}Maps/Shipping/Map#{mapId}.wad.client\" -o \"#{Dir.getwd}/bins/data\" -x \"^maps/modespecificdata/#{map}.bin$\"")
             FileUtils.mv("#{Dir.getwd}/bins/data/maps/modespecificdata/#{map}.bin", "#{Dir.getwd}/bins/data/maps/modespecificdata/map#{mapId}/#{map}.bin")
             puts "Generated #{map} bin"
         }
     }
 }
 pool.post {
-    system("wadtools -L error --progress false e -i \"#{path}Global.wad.client\" -o \"#{Dir.getwd}/bins/data\" -x \"^items$\"")
+    system("./wadtools -L error --progress false e -i \"#{path}Global.wad.client\" -o \"#{Dir.getwd}/bins/data\" -x \"^items$\"")
     puts "Generated items bin"
 }
 pool.post {
-    system("wadtools -L error --progress false e -i \"#{path}Global.wad.client\" -o \"#{Dir.getwd}/bins\" -x \"^globals$\"")
+    system("./wadtools -L error --progress false e -i \"#{path}Global.wad.client\" -o \"#{Dir.getwd}/bins\" -x \"^globals$\"")
     puts "Generated loadtip bin"
 }
 
 pool.post {
-    system("wadtools -L error --progress false e -i \"#{path}Global.wad.client\" -o \"#{Dir.getwd}/bins\" -x \"^perks$\"")
+    system("./wadtools -L error --progress false e -i \"#{path}Global.wad.client\" -o \"#{Dir.getwd}/bins\" -x \"^perks$\"")
     puts "Generated perks bin"
 }
 

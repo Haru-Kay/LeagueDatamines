@@ -1,17 +1,4 @@
 {
-  "mBuffs": [
-    {
-      "mBuffScriptName": "ASSETS/Perks/Styles/Resolve/Demolish/SR_2026_S1_DemolishCooldown.lua",
-      "mBuffSpellObject": {
-        "mBuff": {
-          "mDescription": "<mainText>Demolish can't be used.</mainText>",
-          "~class": "BuffData"
-        },
-        "~class": "SpellObject"
-      },
-      "~class": "PerkBuff"
-    }
-  ],
   "mDefault": true,
   "mDisplayNameLocalizationKey": "Demolish",
   "mDisplayStatLocalizationKey": "@f1@ | @f2@",
@@ -25,56 +12,31 @@
   "mScript": {
     "mSpellScriptData": {
       "mCalculations": {
-        "0x4e3f20aa": {
-          "0x72c5c2a8": 0,
-          "mFormulaParts": [
-            {
-              "mDataValue": "BaseDamageRanged",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mDataValue": "0xffe97357",
-              "mStat": 12,
-              "~class": "StatByNamedDataValueCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 4,
-          "~class": "GameCalculation"
-        },
-        "0x5fecac03": {
-          "0x72c5c2a8": 0,
-          "mFormulaParts": [
-            {
-              "mDataValue": "BaseDamageMelee",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mDataValue": "0x36a8d610",
-              "mStat": 12,
-              "~class": "StatByNamedDataValueCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 4,
-          "~class": "GameCalculation"
-        },
         "DamageCalc": {
-          "mConditionalCalculationRequirements": {
-            "~class": "IsMeleeCastRequirement"
-          },
-          "mConditionalGameCalculation": "0x5fecac03",
-          "mDefaultGameCalculation": "0x4e3f20aa",
+          "mFormulaParts": [
+            {
+              "mDataValue": "OutputDamagePerStack",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "MaxHealthPercentDamage",
+              "mStat": 12,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
           "mSimpleTooltipCalculationDisplay": 4,
-          "~class": "GameCalculationConditional"
+          "~class": "GameCalculation"
         }
       },
       "mEffectAmount": {
-        "0x36a8d610": 0.2800000011920929,
-        "0x8d810998": 8.0,
-        "0x97664ba4": 3.0,
-        "0xffe97357": 0.20000000298023224,
-        "BaseDamageMelee": 85.0,
-        "BaseDamageRanged": 50.0,
-        "CooldownSeconds": 30.0
+        "0xabb194af": 8.0,
+        "CooldownSeconds": 45.0,
+        "DistanceToTower": 600.0,
+        "MaxHealthPercentDamage": 0.3499999940395355,
+        "NumTicksToTrigger": 6.0,
+        "OutputDamagePerStack": 100.0,
+        "TickFallOffTime": 1.0,
+        "TotalDemolishTime": 3.0
       },
       "mEffectAmountGameMode": {
         "ARAM": {
@@ -113,25 +75,13 @@
       },
       "~class": "PerkScriptData"
     },
-    "mSpellScriptName": "ASSETS/Perks/Styles/Resolve/Demolish/Demolish_SEASONAL.lua",
+    "mSpellScriptName": "ASSETS/Perks/Styles/Resolve/Demolish/Demolish.lua",
     "~class": "PerkScript"
   },
   "mShortDescLocalizationKey": "Your third attack against turrets deals HP-based bonus damage.",
   "mTooltipNameLocalizationKey": "Your third attack against towers deals <scaleAD>@DamageCalc@</scaleAD> bonus physical damage.<br><br>Total bonus damage: <scaleAD>@f1@</scaleAD><br>Total triggers: <scaleAD>@f2@</scaleAD><br>Cooldown: @CooldownSeconds@s",
   "mVFXResourceResolver": {
     "resourceMap": {
-      "0x17e98d6d": "Perks/Styles/Resolve/Demolish/Particles/Rework_Demolish_Decal_2_Ally",
-      "0x27df50d8": "Perks/Styles/Resolve/Demolish/Particles/Rework_Demolish_Decal_0",
-      "0x28df526b": "Perks/Styles/Resolve/Demolish/Particles/Rework_Demolish_Decal_1",
-      "0x29df53fe": "Perks/Styles/Resolve/Demolish/Particles/Rework_Demolish_Decal_2",
-      "0x2adf5591": "Perks/Styles/Resolve/Demolish/Particles/Rework_Demolish_Decal_3",
-      "0x2eb36d78": "Perks/Styles/Resolve/Demolish/Particles/Rework_Demolish_Decal_3_Ally",
-      "0x6cd94f70": "Perks/Styles/Resolve/Demolish/Particles/Rework_Demolish_Child",
-      "0x79a4ee47": "Perks/Styles/Resolve/Demolish/Particles/Rework_Demolish_Decal_0_Ally",
-      "0x84c69bfa": "Perks/Styles/Resolve/Demolish/Particles/Rework_Demolish_Decal_1_Ally",
-      "0xc4b10c8b": "Perks/Styles/Resolve/Demolish/Particles/Rework_Demolish_Target_Death_Child",
-      "0xf188886f": "Perks/Styles/Resolve/Demolish/Particles/Rework_Demolish_Child_Ally",
-      "0xf68b83f4": "Perks/Styles/Resolve/Demolish/Particles/Rework_Demolish_Target_Death_Ally_Child",
       "Perks_Demolish_Crystal": "Perks/Styles/Resolve/Demolish/Particles/Perks_Demolish_Crystal",
       "Perks_Demolish_Crystal_0_Pop": "Perks/Styles/Resolve/Demolish/Particles/Perks_Demolish_Crystal_0_Pop",
       "Perks_Demolish_Crystal_0_Pop_Ally": "Perks/Styles/Resolve/Demolish/Particles/Perks_Demolish_Crystal_0_Pop_Ally",
