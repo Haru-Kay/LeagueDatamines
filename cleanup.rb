@@ -328,7 +328,8 @@ def applyLang(obj)
 end
 
 def itemNameLangFix(value)
-    return value if !value.is_a?(String) || !value =~ "^Items/[0-9]+$"
+    return value if !value.is_a?(String)
+    return value if !value.match?("^Items/[0-9]+$") && !value.match(/\d+/)
     return "ARAM/Recall" if value == "Items/2007"
     return "DoomBots/The Collector" if value == "Items/667666" # riot typo. collector id 6676, should be 666676.
     #game_item_displayname_//
@@ -355,7 +356,7 @@ def itemNameLangFix(value)
         ret = "Arena/#{ret}" if id.start_with?("22")
         ret = "Arena/#{ret}" if id.start_with?("44")
         ret = "DoomBots/#{ret}" if id.start_with?("66")
-        ret = "99/#{ret}" if id.start_with?("99")
+        ret = "ARAMMayhem/#{ret}" if id.start_with?("99")
     end
     return ret
 end
