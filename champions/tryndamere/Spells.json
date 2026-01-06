@@ -309,13 +309,39 @@
         {
           "mName": "Damage",
           "mValues": [
-            45.0,
-            75.0,
+            35.0,
+            70.0,
             105.0,
-            135.0,
-            165.0,
-            195.0,
-            225.0
+            140.0,
+            175.0,
+            210.0,
+            245.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ADRatio",
+          "mValues": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "APRatio",
+          "mValues": [
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929
           ],
           "~class": "SpellDataValue"
         },
@@ -487,8 +513,6 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.800000011920929,
-      "mCoefficient2": 1.2999999523162842,
       "mFloatVarsDecimals": [
         0,
         2,
@@ -520,17 +544,16 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 1.2999999523162842,
+              "mDataValue": "ADRatio",
               "mStat": 2,
               "mStatFormula": 2,
-              "~class": "StatByCoefficientCalculationPart"
+              "~class": "StatByNamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.800000011920929,
-              "~class": "StatByCoefficientCalculationPart"
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
-          "tooltipOnly": true,
           "~class": "GameCalculation"
         }
       },
@@ -599,13 +622,14 @@
           "~class": "GameCalculation"
         },
         "PassiveCritConversionTooltip": {
+          "mExpandedTooltipCalculationDisplay": 5,
           "mFormulaParts": [
             {
               "mNumber": 0.5,
               "~class": "NumberCalculationPart"
             }
           ],
-          "mPrecision": 2,
+          "mPrecision": 1,
           "~class": "GameCalculation"
         }
       },
@@ -710,28 +734,28 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "FlatAD",
+          "mName": "MaximumBonusAD",
           "mValues": [
-            0.0,
             5.0,
-            10.0,
-            15.0,
             20.0,
-            25.0,
-            30.0
+            35.0,
+            50.0,
+            65.0,
+            80.0,
+            95.0
           ],
           "~class": "SpellDataValue"
         },
         {
-          "mName": "ADPerOnePercentMissingHP",
+          "mName": "RemainingHealthThreshold",
           "mValues": [
-            0.05000000074505806,
-            0.15000000596046448,
-            0.25,
-            0.3499999940395355,
-            0.44999998807907104,
-            0.550000011920929,
-            0.6499999761581421
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612
           ],
           "~class": "SpellDataValue"
         }
@@ -827,14 +851,8 @@
             "LevelUp": {
               "Elements": [
                 {
-                  "nameOverride": "Attack Damage",
-                  "type": "FlatAD",
-                  "typeIndex": 1,
-                  "~class": "TooltipInstanceListElement"
-                },
-                {
-                  "nameOverride": "Attack Damage per Health % Missing",
-                  "type": "ADPerOnePercentMissingHP",
+                  "nameOverride": "Maximum Damage",
+                  "type": "MaximumBonusAD",
                   "typeIndex": 2,
                   "~class": "TooltipInstanceListElement"
                 },
@@ -859,7 +877,8 @@
             "keyCost": "No Cost",
             "keyName": "Bloodlust",
             "keySummary": "Tryndamere thrives on the thrills of combat, increasing his Attack Damage as he is more and more wounded. He can cast Bloodlust to consume his Fury and heal himself.",
-            "keyTooltip": "<spellPassive>Passive:</spellPassive> Tryndamere thirsts for blood, gaining up to <scaleAD>@MaximumBonusAD@ Attack Damage</scaleAD> based on his missing Health.<br><br><spellActive>Active:</spellActive> Tryndamere consumes his <keywordMajor>Fury</keywordMajor>, restoring <healing>@BaseHeal@ plus @HealPerFury@ Health per Fury (max: @MaximumHeal@)</healing>. "
+            "keyTooltip": "<spellPassive>Passive:</spellPassive> Tryndamere thirsts for blood, gaining up to <scaleAD>@MaximumBonusAD@ Attack Damage</scaleAD> based on his missing Health.<br><br><spellActive>Active:</spellActive> Tryndamere consumes his <keywordMajor>Fury</keywordMajor>, restoring <healing>@BaseHeal@ plus @HealPerFury@ Health per Fury (max: @MaximumHeal@)</healing>. ",
+            "keyTooltipExtendedBelowLine": "<rules>Maximum Attack Damage gained at @RemainingHealthThreshold*100@% remaining Health.</rules>"
           },
           "mObjectName": "TryndamereQ",
           "~class": "TooltipInstanceSpell"
@@ -921,6 +940,43 @@
               "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
+          "mPrecision": 1,
+          "~class": "GameCalculation"
+        },
+        "MaximumHeal": {
+          "mExpandedTooltipCalculationDisplay": 6,
+          "mFormulaParts": [
+            {
+              "mDataValue": "BaseHealing",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mPart1": {
+                "mAbilityResource": 4,
+                "mCoefficient": 1.0,
+                "~class": "AbilityResourceByCoefficientCalculationPart"
+              },
+              "mPart2": {
+                "mSubparts": [
+                  {
+                    "mDataValue": "BonusHealPerFury",
+                    "~class": "NamedDataValueCalculationPart"
+                  },
+                  {
+                    "mDataValue": "APRatioPerFury",
+                    "~class": "StatByNamedDataValueCalculationPart"
+                  }
+                ],
+                "~class": "SumOfSubPartsCalculationPart"
+              },
+              "~class": "ProductOfSubPartsCalculationPart"
+            }
+          ],
+          "tooltipOnly": true,
           "~class": "GameCalculation"
         }
       },
@@ -992,13 +1048,13 @@
         {
           "mName": "SlowPotency",
           "mValues": [
-            -0.22499999403953552,
+            -0.25,
             -0.30000001192092896,
-            -0.375,
+            -0.3499999940395355,
+            -0.4000000059604645,
             -0.44999998807907104,
-            -0.5249999761581421,
-            -0.6000000238418579,
-            -0.675000011920929
+            -0.5,
+            -0.550000011920929
           ],
           "~class": "SpellDataValue"
         },
@@ -1018,13 +1074,13 @@
         {
           "mName": "SlowDuration",
           "mValues": [
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5
           ],
           "~class": "SpellDataValue"
         }

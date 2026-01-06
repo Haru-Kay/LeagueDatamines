@@ -1865,7 +1865,7 @@
     "name": "Symphony of War",
     "rarity": "Prismatic",
     "desc": "Gain the <spellName>Lethal Tempo</spellName> and <spellName>Conqueror</spellName> Keystone Runes.",
-    "tooltip": "Gain the <spellName>Lethal Tempo</spellName> and <spellName>Conqueror</spellName> Keystone Runes.",
+    "tooltip": "Gain the <spellName>Lethal Tempo</spellName> and <spellName>Conqueror</spellName> Keystone Runes.<br><br><spellName>Lethal Tempo</spellName> - Attacking champions grants <attackSpeed>Attack Speed</attackSpeed>, stacking up to 6 times. At 6 stacks, your Attacks launch a bolt that deals additional damage.<br><spellName>Conqueror</spellName> - Attacks and Ability hits against champions grant you <physicalDamage>Adaptive</physicalDamage><magicDamage>Force</magicDamage>, stacking up to 12 times. At 12 stacks, heal for a percentage of damage you deal to champions.",
     "dataValues": {
       "MinAdaptivePerStack": 3.0,
       "MaxAdaptivePerStack": 5.5,
@@ -2853,7 +2853,7 @@
     "name": "Impassable",
     "rarity": "Gold",
     "desc": "Gain the <spellName>Aftershock</spellName> and <spellName>Glacial Augment</spellName> Keystone Runes.",
-    "tooltip": "Gain the <spellName>Aftershock</spellName> and <spellName>Glacial Augment</spellName> Keystone Runes.",
+    "tooltip": "Gain the <spellName>Aftershock</spellName> and <spellName>Glacial Augment</spellName> Keystone Runes.<br><br><spellName>Aftershock</spellName> - <status>Immobilizing</status> champions grants you <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> for 2.5 seconds, after which you explode, damaging nearby enemies based on your <scaleHealth>max Health</scaleHealth>.<br><spellName>Glacial Augment</spellName> - <status>Immobilizing</status> champions creates ice beneath them, <status>Slowing</status> enemies inside and reducing their damage.",
     "dataValues": {
       "SlowZoneDuration": 3.0,
       "SlowZoneSlowBase": 0.20000000298023224,
@@ -2930,7 +2930,7 @@
     "dataValues": {
       "StacktoRegenConversion": 0.125,
       "StackThreshold": 400.0,
-      "StackMultiplication": 6.0
+      "StackMultiplication": 3.0
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/Quest_SteelYourHeart_small.tex",
@@ -4906,6 +4906,22 @@
     ]
   },
   {
+    "id": 314,
+    "apiName": "Unshackled",
+    "name": "Unshackled",
+    "rarity": "Gold",
+    "desc": "You can cast <spellName>Hijack</spellName> on your partner. Gain @UltimateHaste@ Ultimate Haste.",
+    "tooltip": "You can cast <spellName>Hijack</spellName> on your partner. Gain @UltimateHaste@ Ultimate Haste.",
+    "dataValues": {
+      "UltimateHaste": 50.0,
+      "MaxLevel": 3.0
+    },
+    "icons": [
+      "ASSETS/UX/Cherry/Augments/Icons/Unshackled_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Unshackled_Large.tex"
+    ]
+  },
+  {
     "id": 317,
     "apiName": "PandorasBox",
     "name": "Pandora's Box",
@@ -5204,6 +5220,174 @@
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/DawnbringersResolve_small.tex",
       "ASSETS/UX/Cherry/Augments/Icons/DawnbringersResolve_large.tex"
+    ]
+  },
+  {
+    "id": 331,
+    "apiName": "Multitool",
+    "name": "Multitool",
+    "rarity": "Gold",
+    "desc": "Add Multitool to your inventory. During each Shopping Phase, choose 1 of 5 random items, and Multitool becomes that item for the next combat round.",
+    "tooltip": "Add Multitool to your inventory. During each Shopping Phase, choose 1 of 5 random items, and Multitool becomes that item for the next combat round.<br><br>At round @PrismaticRound@, Multitool can roll Prismatic Items.",
+    "dataValues": {
+      "AmountOfItemsToRoll": 5.0,
+      "PrismaticRound": 4.0,
+      "SellableRound": []
+    },
+    "icons": [
+      "ASSETS/UX/Cherry/Augments/Icons/Multitool_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Multitool_Large.tex"
+    ]
+  },
+  {
+    "id": 333,
+    "apiName": "Quest_RiteOfTheForgeGod",
+    "name": "Quest: Rite Of The Forge God",
+    "rarity": "Prismatic",
+    "desc": "Requirement: Purchase @AnvilsReqToComplete@ Item Anvils.<br><br>Reward: All of your items become <keywordMajor>Masterwork</keywordMajor>, increasing their stats by @ItemPercentAmp*100@%.",
+    "tooltip": "Requirement: Purchase @AnvilsReqToComplete@ Item Anvils.<br><br>Reward: All of your items become <keywordMajor>Masterwork</keywordMajor>, increasing their stats by @ItemPercentAmp*100@%.",
+    "dataValues": {
+      "AnvilsReqToComplete": 2.0,
+      "ItemPercentAmp": 0.15000000596046448
+    },
+    "icons": [
+      "ASSETS/UX/Cherry/Augments/Icons/Quest_Rite_of_the_Forge_God_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Quest_Rite_of_the_Forge_God_Large.tex"
+    ]
+  },
+  {
+    "id": 335,
+    "apiName": "PanicRoom",
+    "name": "Panic Room",
+    "rarity": "Silver",
+    "desc": "Once per combat, when you would die, instead turn into a wisp, set yourself to <scaleHealth>@HealthLock*100@% Health</scaleHealth>, and travel to a random spot in the arena.",
+    "tooltip": "Once per combat, when you would die, instead turn into a wisp, set yourself to <scaleHealth>@HealthLock*100@% Health</scaleHealth>, and travel to a random spot in the arena.",
+    "dataValues": {
+      "HealthLock": 0.20000000298023224,
+      "MinimumDistance": 1500.0,
+      "MaxmimumDistance": 3000.0,
+      "MaximumDistanceRoF": 1500.0,
+      "WispSpeed": 3500.0,
+      "DelayMovingTime": 1.0
+    },
+    "icons": [
+      "ASSETS/UX/Cherry/Augments/Icons/Panic_Room_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Panic_Room_Large.tex"
+    ]
+  },
+  {
+    "id": 336,
+    "apiName": "AimForTheHead",
+    "name": "Aim for the Head",
+    "rarity": "Gold",
+    "desc": "Gain @CritChanceBonus*100@% Critical Strike Chance and @CritDamageBonus*100@% Critical Strike Damage. Your Critical Strike Chance is capped at @CritChanceCeiling*100@%.<br><br>Convert @CritChanceToDamageRatio*100@% of Critical Strike Chance above @CritChanceCeiling*100@% into Critical Strike Damage.",
+    "tooltip": "{{Cherry_AimForTheHead_Summary}}<br><br>Total Bonus Critical Strike Damage: @f1*100@%",
+    "dataValues": {
+      "CritDamageBonus": 0.25,
+      "CritChanceBonus": 0.25,
+      "CritChanceCeiling": 0.5,
+      "CritChanceToDamageRatio": 0.5
+    },
+    "icons": [
+      "ASSETS/UX/Cherry/Augments/Icons/Aim_For_The_Head_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Aim_For_The_Head_Large.tex"
+    ]
+  },
+  {
+    "id": 338,
+    "apiName": "HiveMind",
+    "name": "Hive Mind",
+    "rarity": "Prismatic",
+    "desc": "Start each round with @StartingBees@ Bee, gain additonal Bees by harvesting flowers. Damaging an enemy champion sends a Bee dealing <magicDamage>@BeeDamage@ magic damage</magicDamage> over @DebuffDuration@ seconds on arrival, before returning to you.<br>",
+    "tooltip": "Start each round with @StartingBees@ Bee, gain additonal Bees by harvesting flowers. Damaging an enemy champion sends a Bee dealing <magicDamage>@BeeDamage@ magic damage</magicDamage> over @DebuffDuration@ seconds on arrival, before returning to you.<br><br>Damage Dealt This Round: @f1@<br>Damage Dealt Total: @f2@",
+    "dataValues": {
+      "MaxBeeStacks": 8.0,
+      "DebuffDuration": 2.0,
+      "BeeRange": 25000.0,
+      "ASReductionPerCounter": -0.029999999329447746,
+      "StartingBees": 1.0,
+      "BaseDamageMin": 40.0,
+      "BaseDamageMax": 100.0
+    },
+    "calculations": {
+      "BeeDamage": {
+        "mFormulaParts": [
+          {
+            "0x589a59c": "BaseDamageMin",
+            "0xb65bc23": "BaseDamageMax",
+            "~class": "0xee18a47b"
+          },
+          {
+            "mCoefficient": 0.20000000298023224,
+            "~class": "StatByCoefficientCalculationPart"
+          },
+          {
+            "mCoefficient": 0.20000000298023224,
+            "mStat": 2,
+            "mStatFormula": 2,
+            "~class": "StatByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Cherry/Augments/Icons/Hive_Mind_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Hive_Mind_Large.tex"
+    ]
+  },
+  {
+    "id": 343,
+    "apiName": "RighteousFury",
+    "name": "Righteous Fury",
+    "rarity": "Prismatic",
+    "desc": "<healing>Healing</healing> or <Shield>Shielding</Shield> increases your Ability damage by @SpellDamagePerStack*100@%, stacking infinitely for the round.",
+    "tooltip": "{{Cherry_RighteousFury_Summary}}<br><br>@Cooldown@s Cooldown per Ability cast, Augment, and Item.<br><br>Current Ability Damage Bonus: @f1@%<br>Bonus damage this round: @f2@<br>Bonus damage total: @f3@",
+    "dataValues": {
+      "SpellDamagePerStack": 0.029999999329447746,
+      "MinimumTrigger": 1.0,
+      "Cooldown": 3.0,
+      "ADPerStack": 2.0,
+      "ASPerStack": 0.019999999552965164
+    },
+    "icons": [
+      "ASSETS/UX/Cherry/Augments/Icons/Righteous_Fury_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Righteous_Fury_Large.tex"
+    ]
+  },
+  {
+    "id": 344,
+    "apiName": "Energetic",
+    "name": "Energetic",
+    "rarity": "Silver",
+    "desc": "Gain <keyword>Energized</keyword> twice as quickly. Triggering <keyword>Energized</keyword> fires a <keywordMajor>Magic Missile</keywordMajor>, dealing up to <trueDamage>@MaxHealthDamagePerMissile*100@% max Health true damage</trueDamage> based on distance travelled.",
+    "tooltip": "Gain <keyword>Energized</keyword> twice as quickly. Triggering <keyword>Energized</keyword> fires a <keywordMajor>Magic Missile</keywordMajor>, dealing up to <trueDamage>@MaxHealthDamagePerMissile*100@% max Health true damage</trueDamage> based on distance travelled.<br><br>Magic Missile Damage Dealt This Round: @f1@<br>Magic Missile Damage Dealt Total: @f2@",
+    "dataValues": {
+      "AmountOfMissiles": 1.0,
+      "MaxHealthDamagePerMissile": 0.003000000026077032,
+      "MaxRangeThreshold": [],
+      "EnergizeAmpMovementCharge": 2.0,
+      "EnergizeAmpAttackCharge": 2.0
+    },
+    "icons": [
+      "ASSETS/UX/Cherry/Augments/Icons/Energetic_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Energetic_Large.tex"
+    ]
+  },
+  {
+    "id": 357,
+    "apiName": "Hybrid",
+    "name": "Hybrid",
+    "rarity": "Gold",
+    "desc": "When you deal damage with an Attack, your next Ability deals @AbilityBoost*100@% increased damage.<br><br>When you deal damage with an Ability, your next Attack deals @AttackBoost*100@% increased damage.",
+    "tooltip": "{{Cherry_Hybrid_Summary}}<br><br><rules>Abilities empower one Attack per cast.</rules>",
+    "dataValues": {
+      "AttackBoost": 0.30000001192092896,
+      "AbilityBoost": 0.30000001192092896
+    },
+    "icons": [
+      "ASSETS/UX/Cherry/Augments/Icons/Hybrid_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Hybrid_Large.tex"
     ]
   },
   {

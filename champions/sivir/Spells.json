@@ -797,13 +797,13 @@
         {
           "mName": "ADRatio",
           "mValues": [
-            0.8500000238418579,
-            0.8500000238418579,
-            0.8500000238418579,
-            0.8500000238418579,
-            0.8500000238418579,
-            0.8500000238418579,
-            0.8500000238418579
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071
           ],
           "~class": "SpellDataValue"
         },
@@ -875,13 +875,13 @@
         {
           "mName": "CritRatio",
           "mValues": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645
           ],
           "~class": "SpellDataValue"
         }
@@ -1082,9 +1082,26 @@
                 "~class": "NumberCalculationPart"
               },
               {
-                "mDataValue": "CritRatio",
-                "mStat": 8,
-                "~class": "StatByNamedDataValueCalculationPart"
+                "mPart1": {
+                  "mDataValue": "CritRatio",
+                  "mStat": 8,
+                  "~class": "StatByNamedDataValueCalculationPart"
+                },
+                "mPart2": {
+                  "mSubparts": [
+                    {
+                      "mCoefficient": 1.0,
+                      "mStat": 9,
+                      "~class": "StatByCoefficientCalculationPart"
+                    },
+                    {
+                      "mNumber": -1.0,
+                      "~class": "NumberCalculationPart"
+                    }
+                  ],
+                  "~class": "SumOfSubPartsCalculationPart"
+                },
+                "~class": "ProductOfSubPartsCalculationPart"
               }
             ],
             "~class": "SumOfSubPartsCalculationPart"

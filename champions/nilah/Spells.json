@@ -1165,13 +1165,13 @@
         {
           "mName": "BaseDamage",
           "mValues": [
+            -10.0,
             0.0,
-            5.0,
             10.0,
-            15.0,
             20.0,
-            25.0,
-            30.0
+            30.0,
+            40.0,
+            50.0
           ],
           "~class": "SpellDataValue"
         },
@@ -1191,13 +1191,13 @@
         {
           "mName": "QADRatio",
           "mValues": [
-            0.8500000238418579,
-            0.8999999761581421,
-            0.949999988079071,
             1.0,
-            1.0499999523162842,
-            1.100000023841858,
-            1.149999976158142
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
           ],
           "~class": "SpellDataValue"
         },
@@ -1230,18 +1230,14 @@
         {
           "mName": "CritArmorPenScalar",
           "mValues": [
-            0.33000001311302185,
-            0.33000001311302185,
-            0.33000001311302185,
-            0.33000001311302185,
-            0.33000001311302185,
-            0.33000001311302185,
-            0.33000001311302185
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896
           ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "CritDamageRatio",
           "~class": "SpellDataValue"
         },
         {
@@ -1306,6 +1302,23 @@
             4.0,
             4.0,
             4.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "CritDamageRatio",
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ActiveCritScaling",
+          "mValues": [
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929
           ],
           "~class": "SpellDataValue"
         }
@@ -1391,13 +1404,6 @@
                   "type": "BaseDamage",
                   "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
-                },
-                {
-                  "Style": 1,
-                  "multiplier": 100.0,
-                  "nameOverride": "Spell_ListType_ADScaling",
-                  "type": "QADRatio",
-                  "~class": "TooltipInstanceListElement"
                 }
               ],
               "levelCount": 5,
@@ -1438,15 +1444,6 @@
       ],
       "mLineWidth": 80.0,
       "mSpellCalculations": {
-        "AttackBonusDamage": {
-          "mFormulaParts": [
-            {
-              "mStat": 2,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
         "AttackTotalDamageTooltip": {
           "mFormulaParts": [
             {
@@ -1508,9 +1505,26 @@
                 "~class": "NumberCalculationPart"
               },
               {
-                "mCoefficient": 1.0,
-                "mStat": 8,
-                "~class": "StatByCoefficientCalculationPart"
+                "mPart1": {
+                  "mDataValue": "ActiveCritScaling",
+                  "mStat": 8,
+                  "~class": "StatByNamedDataValueCalculationPart"
+                },
+                "mPart2": {
+                  "mSubparts": [
+                    {
+                      "mCoefficient": 1.0,
+                      "mStat": 9,
+                      "~class": "StatByCoefficientCalculationPart"
+                    },
+                    {
+                      "mNumber": -1.0,
+                      "~class": "NumberCalculationPart"
+                    }
+                  ],
+                  "~class": "SumOfSubPartsCalculationPart"
+                },
+                "~class": "ProductOfSubPartsCalculationPart"
               }
             ],
             "~class": "SumOfSubPartsCalculationPart"
@@ -1949,7 +1963,8 @@
                   "~class": "TooltipInstanceListElement"
                 },
                 {
-                  "nameOverride": "Damage per Tick",
+                  "multiplier": 4.0,
+                  "nameOverride": "Damage Over Time",
                   "type": "DamagePerTick",
                   "~class": "TooltipInstanceListElement"
                 }
@@ -1961,7 +1976,8 @@
           "mLocKeys": {
             "keyName": "Apotheosis",
             "keySummary": "Twirling her whip-blade in joyful exuberance, Nilah deals damage to enemies around her before pulling them closer with her weapon.",
-            "keyTooltip": "Nilah whirls her whip-blade, dealing <physicalDamage>@DamagePerTickCalcTooltip@ physical damage</physicalDamage> over 1 second, then finishes with a burst of <physicalDamage>@DamageCalc@ physical damage</physicalDamage> that also <status>Pulls</status> nearby enemies toward her.<br><br>Apotheosis heals Nilah and her nearby allies for <healing>@ChampHealingPercent@ (+@spell.NilahQ:CritLifesteal@ {{ Spell_NilahQ_Name }}) of the damage dealt</healing> to enemy champions, converting any overhealing into a <shield>Shield</shield> for @Duration@ seconds."
+            "keyTooltip": "Nilah whirls her whip-blade, dealing <physicalDamage>@DamagePerTickCalcTooltip@ physical damage</physicalDamage> over 1 second, then finishes with a burst of <physicalDamage>@DamageCalc@ physical damage</physicalDamage> that also <status>Pulls</status> nearby enemies toward her.<br><br>Apotheosis heals Nilah and her nearby allies for <healing>@ChampHealingPercent@ (+@spell.NilahQ:CritLifesteal@ {{ Spell_NilahQ_Name }}) of the damage dealt</healing> to enemy champions, converting any overhealing into a <shield>Shield</shield> for @Duration@ seconds.",
+            "keyTooltipExtendedBelowLine": "<rules>Healing is reduced to @OtherHealingPercent*100@% against non-champions</rules>"
           },
           "mObjectName": "NilahR",
           "~class": "TooltipInstanceSpell"
@@ -2075,12 +2091,12 @@
         "~class": "Self"
       },
       "mana": [
-        80.0,
-        80.0,
-        80.0,
-        80.0,
-        80.0,
-        80.0
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
       ],
       "~class": "SpellDataResource"
     },

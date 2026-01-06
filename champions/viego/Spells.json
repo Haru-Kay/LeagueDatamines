@@ -1389,6 +1389,32 @@
           "~class": "SpellDataValue"
         },
         {
+          "mName": "ActiveADRatio",
+          "mValues": [
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ActiveCritMod",
+          "mValues": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
           "mName": "BonusDamageVsMonsters",
           "~class": "SpellDataValue"
         },
@@ -1506,6 +1532,19 @@
             4.0,
             4.0,
             4.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "HealthCritMod",
+          "mValues": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
           ],
           "~class": "SpellDataValue"
         }
@@ -1644,6 +1683,50 @@
       ],
       "mLineWidth": 70.0,
       "mSpellCalculations": {
+        "HealthCritDamage": {
+          "mDisplayAsPercent": true,
+          "mExpandedTooltipCalculationDisplay": 6,
+          "mFormulaParts": [
+            {
+              "mNumber": 1.0,
+              "~class": "NumberCalculationPart"
+            },
+            {
+              "mPart1": {
+                "mDataValue": "HealthCritMod",
+                "~class": "NamedDataValueCalculationPart"
+              },
+              "mPart2": {
+                "mSubparts": [
+                  {
+                    "mCoefficient": 1.0,
+                    "mStat": 9,
+                    "~class": "StatByCoefficientCalculationPart"
+                  },
+                  {
+                    "mNumber": -1.0,
+                    "~class": "NumberCalculationPart"
+                  }
+                ],
+                "~class": "SumOfSubPartsCalculationPart"
+              },
+              "~class": "ProductOfSubPartsCalculationPart"
+            }
+          ],
+          "mMultiplier": {
+            "mPart1": {
+              "mNumber": 0.009999999776482582,
+              "~class": "NumberCalculationPart"
+            },
+            "mPart2": {
+              "mDataValue": "PercentHealthOnHit",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            "~class": "ProductOfSubPartsCalculationPart"
+          },
+          "mPrecision": 1,
+          "~class": "GameCalculation"
+        },
         "SecondAttackDamage": {
           "mFormulaParts": [
             {
@@ -1659,43 +1742,48 @@
           "~class": "GameCalculation"
         },
         "TotalDamage": {
-          "mExpandedTooltipCalculationDisplay": 0,
           "mFormulaParts": [
             {
               "mDataValue": "Damage",
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.699999988079071,
+              "mDataValue": "ActiveADRatio",
               "mStat": 2,
-              "~class": "StatByCoefficientCalculationPart"
-            },
-            {
-              "mStat": 8,
-              "mSubpart": {
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "mMultiplier": {
+            "mSubparts": [
+              {
+                "mNumber": 1.0,
+                "~class": "NumberCalculationPart"
+              },
+              {
                 "mPart1": {
-                  "mNumber": 0.75,
-                  "~class": "NumberCalculationPart"
+                  "mDataValue": "ActiveCritMod",
+                  "mStat": 8,
+                  "~class": "StatByNamedDataValueCalculationPart"
                 },
                 "mPart2": {
                   "mSubparts": [
                     {
-                      "mDataValue": "Damage",
-                      "~class": "NamedDataValueCalculationPart"
+                      "mCoefficient": 1.0,
+                      "mStat": 9,
+                      "~class": "StatByCoefficientCalculationPart"
                     },
                     {
-                      "mCoefficient": 0.699999988079071,
-                      "mStat": 2,
-                      "~class": "StatByCoefficientCalculationPart"
+                      "mNumber": -1.0,
+                      "~class": "NumberCalculationPart"
                     }
                   ],
                   "~class": "SumOfSubPartsCalculationPart"
                 },
                 "~class": "ProductOfSubPartsCalculationPart"
-              },
-              "~class": "StatBySubPartCalculationPart"
-            }
-          ],
+              }
+            ],
+            "~class": "SumOfSubPartsCalculationPart"
+          },
           "~class": "GameCalculation"
         },
         "TotalPercentHealthOnHit": {
@@ -1904,6 +1992,32 @@
             15.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ADRatio",
+          "mValues": [
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "CritMod",
+          "mValues": [
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "cantCastWhileRooted": true,
@@ -2064,30 +2178,44 @@
       "mShowChannelBar": false,
       "mSpellCalculations": {
         "TotalDamage": {
-          "mExpandedTooltipCalculationDisplay": 0,
           "mFormulaParts": [
             {
-              "mCoefficient": 1.2000000476837158,
+              "mDataValue": "ADRatio",
               "mStat": 2,
-              "~class": "StatByCoefficientCalculationPart"
-            },
-            {
-              "mStat": 8,
-              "mSubpart": {
-                "mPart1": {
-                  "mNumber": 1.0,
-                  "~class": "NumberCalculationPart"
-                },
-                "mPart2": {
-                  "mCoefficient": 1.2000000476837158,
-                  "mStat": 2,
-                  "~class": "StatByCoefficientCalculationPart"
-                },
-                "~class": "ProductOfSubPartsCalculationPart"
-              },
-              "~class": "StatBySubPartCalculationPart"
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
+          "mMultiplier": {
+            "mSubparts": [
+              {
+                "mNumber": 1.0,
+                "~class": "NumberCalculationPart"
+              },
+              {
+                "mPart1": {
+                  "mDataValue": "CritMod",
+                  "mStat": 8,
+                  "~class": "StatByNamedDataValueCalculationPart"
+                },
+                "mPart2": {
+                  "mSubparts": [
+                    {
+                      "mCoefficient": 1.0,
+                      "mStat": 9,
+                      "~class": "StatByCoefficientCalculationPart"
+                    },
+                    {
+                      "mNumber": -1.0,
+                      "~class": "NumberCalculationPart"
+                    }
+                  ],
+                  "~class": "SumOfSubPartsCalculationPart"
+                },
+                "~class": "ProductOfSubPartsCalculationPart"
+              }
+            ],
+            "~class": "SumOfSubPartsCalculationPart"
+          },
           "~class": "GameCalculation"
         },
         "TotalPercentHealth": {

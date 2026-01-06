@@ -1712,13 +1712,13 @@
         {
           "mName": "MonsterCap",
           "mValues": [
-            300.0,
-            300.0,
-            300.0,
-            300.0,
-            300.0,
-            300.0,
-            300.0
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0
           ],
           "~class": "SpellDataValue"
         },
@@ -1810,6 +1810,32 @@
             0.05000000074505806,
             0.05000000074505806,
             0.05000000074505806
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "CritMod",
+          "mValues": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "BonusADRatio",
+          "mValues": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1952,12 +1978,43 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 1.0,
+              "mDataValue": "BonusADRatio",
               "mStat": 2,
               "mStatFormula": 2,
-              "~class": "StatByCoefficientCalculationPart"
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
+          "mMultiplier": {
+            "mSubparts": [
+              {
+                "mNumber": 1.0,
+                "~class": "NumberCalculationPart"
+              },
+              {
+                "mPart1": {
+                  "mDataValue": "CritMod",
+                  "mStat": 8,
+                  "~class": "StatByNamedDataValueCalculationPart"
+                },
+                "mPart2": {
+                  "mSubparts": [
+                    {
+                      "mCoefficient": 1.0,
+                      "mStat": 9,
+                      "~class": "StatByCoefficientCalculationPart"
+                    },
+                    {
+                      "mNumber": -1.0,
+                      "~class": "NumberCalculationPart"
+                    }
+                  ],
+                  "~class": "SumOfSubPartsCalculationPart"
+                },
+                "~class": "ProductOfSubPartsCalculationPart"
+              }
+            ],
+            "~class": "SumOfSubPartsCalculationPart"
+          },
           "~class": "GameCalculation"
         },
         "CritDamage": {
@@ -1979,21 +2036,6 @@
           },
           "~class": "GameCalculationModified"
         },
-        "HealthThreshold": {
-          "mDisplayAsPercent": true,
-          "mFormulaParts": [
-            {
-              "mNumber": 0.25,
-              "~class": "NumberCalculationPart"
-            },
-            {
-              "mCoefficient": 0.5,
-              "mStat": 8,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
         "PercentBiteDamage": {
           "mDisplayAsPercent": true,
           "mFormulaParts": [
@@ -2008,6 +2050,37 @@
               "~class": "BuffCounterByCoefficientCalculationPart"
             }
           ],
+          "mMultiplier": {
+            "mSubparts": [
+              {
+                "mNumber": 1.0,
+                "~class": "NumberCalculationPart"
+              },
+              {
+                "mPart1": {
+                  "mDataValue": "CritMod",
+                  "mStat": 8,
+                  "~class": "StatByNamedDataValueCalculationPart"
+                },
+                "mPart2": {
+                  "mSubparts": [
+                    {
+                      "mCoefficient": 1.0,
+                      "mStat": 9,
+                      "~class": "StatByCoefficientCalculationPart"
+                    },
+                    {
+                      "mNumber": -1.0,
+                      "~class": "NumberCalculationPart"
+                    }
+                  ],
+                  "~class": "SumOfSubPartsCalculationPart"
+                },
+                "~class": "ProductOfSubPartsCalculationPart"
+              }
+            ],
+            "~class": "SumOfSubPartsCalculationPart"
+          },
           "mPrecision": 1,
           "~class": "GameCalculation"
         },

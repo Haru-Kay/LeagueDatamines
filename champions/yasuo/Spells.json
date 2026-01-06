@@ -2087,7 +2087,16 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "PercentCritDamageReduction",
+          "mName": "CritDamageMod",
+          "mValues": [
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421
+          ],
           "~class": "SpellDataValue"
         }
       ],
@@ -2184,6 +2193,7 @@
         },
         "CurrentCritDamage": {
           "mDisplayAsPercent": true,
+          "mExpandedTooltipCalculationDisplay": 6,
           "mFormulaParts": [
             {
               "mCoefficient": 1.0,
@@ -2191,7 +2201,6 @@
               "~class": "StatByCoefficientCalculationPart"
             }
           ],
-          "mPrecision": 1,
           "~class": "GameCalculation"
         },
         "ShieldValue": {
@@ -2679,6 +2688,19 @@
             1.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ADRatio",
+          "mValues": [
+            1.0499999523162842,
+            1.0499999523162842,
+            1.0499999523162842,
+            1.0499999523162842,
+            1.0499999523162842,
+            1.0499999523162842,
+            1.0499999523162842
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "castFrame": 7.5,
@@ -2811,9 +2833,9 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 1.0499999523162842,
+              "mDataValue": "ADRatio",
               "mStat": 2,
-              "~class": "StatByCoefficientCalculationPart"
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -2827,9 +2849,9 @@
             {
               "mStat": 2,
               "mSubpart": {
-                "mCoefficient": 1.0499999523162842,
+                "mDataValue": "ADRatio",
                 "mStat": 9,
-                "~class": "StatByCoefficientCalculationPart"
+                "~class": "StatByNamedDataValueCalculationPart"
               },
               "~class": "StatBySubPartCalculationPart"
             }

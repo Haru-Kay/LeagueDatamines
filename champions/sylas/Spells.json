@@ -1737,10 +1737,27 @@
         10.0,
         10.0
       ],
-      "mAffectsTypeFlags": 2,
+      "mAffectsTypeFlags": 3,
       "mAlternateName": "SylasTumble",
       "mAnimationName": "Spell4_Cast",
       "mCantCancelWhileWindingUp": true,
+      "mCastRequirementsTarget": [
+        {
+          "mSubRequirements": [
+            {
+              "mInvertResult": true,
+              "~class": "SameTeamCastRequirement"
+            },
+            {
+              "mBuffName": "0x616011a2",
+              "mFromAnyone": true,
+              "~class": "HasBuffCastRequirement"
+            }
+          ],
+          "mSuccessesRequired": 1,
+          "~class": "HasAtleastNSubRequirementsCastRequirement"
+        }
+      ],
       "mCastTime": 0.25,
       "mCastType": 1,
       "mCastingBreaksStealth": true,
