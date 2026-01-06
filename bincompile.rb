@@ -24,6 +24,11 @@ champs.each { |champ|
     }
 }
 
+pool.post { 
+    system("./wadtools -L error --progress false e -i \"#{path}Maps/Shipping/Map11.wad.client\" -o \"#{Dir.getwd}/bins\" -x \"^data/characters/(.*?)/\\1\\.bin$\"")
+    puts "Generated #{champ} bin"
+}
+
 pool.post {
     system("./wadtools -L error --progress false e -i \"#{path}Localized/Global.en_US.wad.client\" -o \"D:/CommunityDragon/bins/data/menu/en_us/\"")
     system("./ruby stringtable.rb")

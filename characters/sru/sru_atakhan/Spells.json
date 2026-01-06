@@ -1,0 +1,562 @@
+{
+  "0x83142cac": {
+    "ObjectName": "SRU_Atakhan_Shred",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Frail and Unworthy",
+          "keyTooltip": "This unit's Armor and Magic Resist are reduced by Atakhan's attacks"
+        },
+        "mObjectName": "SRU_Atakhan_Shred",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "SRU_Atakhan_Shred",
+    "mSpell": {
+      "mImgIconName": [
+        ""
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x9a25ab6c": {
+    "ObjectName": "Atakhan_CombatSpell_GenericMis",
+    "mScriptName": "Atakhan_CombatSpell_GenericMis",
+    "mSpell": {
+      "castRange": [
+        2500.0,
+        2500.0,
+        2500.0,
+        2500.0,
+        2500.0,
+        2500.0,
+        2500.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delayCastOffsetPercent": -1.0,
+      "flags": 4,
+      "mAffectsTypeFlags": 4106,
+      "mAnimationName": "",
+      "mCastType": 3,
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnHit"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "~class": "BlendedLinearHeightSolver"
+        },
+        "mMissileWidth": 80.0,
+        "movementComponent": {
+          "mAcceleration": 5000.0,
+          "mInitialSpeed": 250.0,
+          "mMaxSpeed": 3000.0,
+          "mMinSpeed": 250.0,
+          "mOffsetInitialTargetHeight": 100.0,
+          "mStartBoneName": "",
+          "mTracksTarget": false,
+          "mUseHeightOffsetAtEnd": true,
+          "~class": "AcceleratingMovement"
+        },
+        "verticalFacing": {
+          "~class": "VerticalFacingFaceTarget"
+        },
+        "visibilityComponent": {
+          "mPerceptionBubbleRadius": 750.0,
+          "~class": "Defaultvisibility"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mTargetingTypeData": {
+        "~class": "Location"
+      },
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x9d84f2dd": {
+    "ObjectName": "SRU_AtakhanBasicAttack",
+    "mScriptName": "SRU_AtakhanBasicAttack",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 11.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        200.0,
+        200.0,
+        200.0,
+        200.0,
+        200.0,
+        200.0,
+        200.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 5327,
+      "mApplyMaterialOnHitSound": true,
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "SRU_Atakhan_BasicAttack_Tar",
+      "mHitEffectOrientType": 2,
+      "missileSpeed": 347.79998779296875,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0xe74a6e3d": {
+    "ObjectName": "SRU_AtakhanBasicAttack2",
+    "mScriptName": "SRU_AtakhanBasicAttack2",
+    "mSpell": {
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 11.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        200.0,
+        200.0,
+        200.0,
+        200.0,
+        200.0,
+        200.0,
+        200.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 5327,
+      "mAnimationName": "Attack2",
+      "mApplyMaterialOnHitSound": true,
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "SRU_Atakhan_BasicAttack_Tar",
+      "mHitEffectOrientType": 2,
+      "missileSpeed": 347.79998779296875,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/SRU_Atakhan/Spells/Atakhan_CombatSpell": {
+    "ObjectName": "Atakhan_CombatSpell",
+    "mScriptName": "Atakhan_CombatSpell",
+    "mSpell": {
+      "DataValues": [
+        {
+          "mName": "SpecialCooldown",
+          "mValues": [
+            7.5,
+            7.5,
+            7.5,
+            7.5,
+            7.5,
+            7.5,
+            7.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "BloodyRingWidth",
+          "mValues": [
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "BloodyMaxRadius",
+          "mValues": [
+            900.0,
+            900.0,
+            900.0,
+            900.0,
+            900.0,
+            900.0,
+            900.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "BloodyPercentCurrentHealth",
+          "mValues": [
+            0.07999999821186066,
+            0.07999999821186066,
+            0.07999999821186066,
+            0.07999999821186066,
+            0.07999999821186066,
+            0.07999999821186066,
+            0.07999999821186066
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "BloodyFlatDamagePerLevel",
+          "mValues": [
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "BloodyAoECount",
+          "mValues": [
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "BloodyCastTime",
+          "mValues": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "BloodyChannelTime",
+          "mValues": [
+            2.75,
+            2.75,
+            2.75,
+            2.75,
+            2.75,
+            2.75,
+            2.75
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "PeacefulTickRate",
+          "mValues": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "PeacefulMaxRadius",
+          "mValues": [
+            500.0,
+            500.0,
+            500.0,
+            500.0,
+            500.0,
+            500.0,
+            500.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "PeacefulPercentMissingHealth",
+          "mValues": [
+            0.0333000011742115,
+            0.0333000011742115,
+            0.0333000011742115,
+            0.0333000011742115,
+            0.0333000011742115,
+            0.0333000011742115,
+            0.0333000011742115
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "PeacefulFlatDamagePerLevel",
+          "mValues": [
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "PeacefulCastTime",
+          "mValues": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "PeacefulChannelTime",
+          "mValues": [
+            2.75,
+            2.75,
+            2.75,
+            2.75,
+            2.75,
+            2.75,
+            2.75
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "PeacefulMaxTargets",
+          "mValues": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "GenericCooldown",
+          "mValues": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "GenericRange",
+          "mValues": [
+            800.0,
+            800.0,
+            800.0,
+            800.0,
+            800.0,
+            800.0,
+            800.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "GenericWidthBase",
+          "mValues": [
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "GenericWidthGrowth",
+          "mValues": [
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "GenericCastTime",
+          "mValues": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "GenericChannelTime",
+          "mValues": [
+            1.75,
+            1.75,
+            1.75,
+            1.75,
+            1.75,
+            1.75,
+            1.75
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "GenericPulseCount",
+          "mValues": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "GenericFlatDamagePerLevel",
+          "mValues": [
+            4.25,
+            4.25,
+            4.25,
+            4.25,
+            4.25,
+            4.25,
+            4.25
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "GenericPercentCurrentHealth",
+          "mValues": [
+            0.019999999552965164,
+            0.019999999552965164,
+            0.019999999552965164,
+            0.019999999552965164,
+            0.019999999552965164,
+            0.019999999552965164,
+            0.019999999552965164
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ShredPerStack",
+          "mValues": [
+            -1.0,
+            -1.0,
+            -1.0,
+            -1.0,
+            -1.0,
+            -1.0,
+            -1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ShredMaxStacks",
+          "mValues": [
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "ShredDuration",
+          "mValues": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLocKeys": {
+            "keyName": "Bringer Of Ruin",
+            "keySummary": "Atakhan casts demonic magic:<li> Blasting the living with multiple bolts of dark energy<li> Slashing repeatedly around himself",
+            "keyTooltip": "Atakhan casts demonic magic:<li> Blasting the living with multiple bolts of dark energy<li> Slashing repeatedly around himself"
+          },
+          "mObjectName": "Atakhan_CombatSpell",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "ASSETS/Shared/Spells/Icons2D/SRT_2025_Atakhan_Shred.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  }
+}
