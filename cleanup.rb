@@ -456,6 +456,7 @@ print "done.\n"
     }
     sharedSort.each { |key, data|
         next if key == "skip"
+        data = data.sort_by { |k, v| v["ObjectName"] } if key == "SpellObject"
         loc = key.downcase.include?("vfx") ? "vfxData" : "data"
         File.open("shared/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
     }
@@ -522,6 +523,7 @@ print "done.\n"
     jsonSort.each { |key, data|
         next if key == "skip"
         loc = key.downcase.include?("vfx") ? "vfxData" : "data"
+        data = data.sort_by { |k, v| v["ObjectName"] } if key == "SpellObject"
         File.open("#{gameType}/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
     }
 
@@ -551,6 +553,7 @@ print "done.\n"
         }
         jsonSort.each { |key, data|
             loc = key.downcase.include?("vfx") ? "vfxData" : "data"
+            data = data.sort_by { |k, v| v["ObjectName"] } if key == "SpellObject"
             File.open("#{gameType}/#{map}/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
         }
     }
@@ -606,6 +609,7 @@ print "done.\n"
     }
     aramOther.each { |key, data|
         loc = key.downcase.include?("vfx") ? "vfxData" : "data"
+        data = data.sort_by { |k, v| v["ObjectName"] } if key == "SpellObject"
         File.open("aram/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
     }
 
@@ -635,6 +639,7 @@ print "done.\n"
         }
         jsonSort.each { |key, data|
             loc = key.downcase.include?("vfx") ? "vfxData" : "data"
+            data = data.sort_by { |k, v| v["ObjectName"] } if key == "SpellObject"
             File.open("aram/#{map}/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
         }
     }
@@ -666,6 +671,7 @@ print "done.\n"
     File.open("aram/mayhem/augments/augments.json", 'wb') { |f| f.write(JSON.pretty_generate(aramAugments.sort_by { |a| a["id"] })) }
     aramOther.each { |key, data|
         loc = key.downcase.include?("vfx") ? "vfxData" : "data"
+        data = data.sort_by { |k, v| v["ObjectName"] } if key == "SpellObject"
         File.open("aram/mayhem/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
     }
     print "done.\n"
@@ -729,6 +735,7 @@ print "done.\n"
     File.open("arena/augments/augments.json", 'wb') { |f| f.write(JSON.pretty_generate(augments.sort_by { |a| a["id"] })) }
     arenaOther.each { |key, data|
         loc = key.downcase.include?("vfx") ? "vfxData" : "data"
+        data = data.sort_by { |k, v| v["ObjectName"] } if key == "SpellObject"
         File.open("arena/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
     }
 
@@ -762,6 +769,7 @@ print "done.\n"
         }
         jsonSort.each { |key, data|
             loc = key.downcase.include?("vfx") ? "vfxData" : "data"
+            data = data.sort_by { |k, v| v["ObjectName"] } if key == "SpellObject"
             File.open("arena/#{map}/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
         }
     }
@@ -821,6 +829,7 @@ Dir.each_child("temp/data/characters") { |path|
         }
 
         out.each { |filename, json|
+            json = json.sort_by { |k, v| v["ObjectName"] } if filename == "SpellObject"
             str = JSON.pretty_generate(json)
             dataNames.each { |h, n|
                 str.gsub!(h, n)
