@@ -455,7 +455,7 @@ print "done.\n"
         sharedSort[type].store(key, data)
     }
     sharedSort.each { |key, data|
-        next if data == "skip"
+        next if key == "skip"
         loc = key.downcase.include?("vfx") ? "vfxData" : "data"
         File.open("shared/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
     }
@@ -520,7 +520,7 @@ print "done.\n"
         jsonSort[type].store(key, data)
     }
     jsonSort.each { |key, data|
-        next if data == "skip"
+        next if key == "skip"
         loc = key.downcase.include?("vfx") ? "vfxData" : "data"
         File.open("#{gameType}/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
     }
