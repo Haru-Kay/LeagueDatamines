@@ -1,4 +1,118 @@
 {
+  "0xf8d8e0da": {
+    "childTechniques": [
+      {
+        "name": "transition",
+        "parentName": "normal",
+        "shaderMacros": {
+          "TRANSITION": "1"
+        },
+        "~class": "StaticMaterialChildTechniqueDef"
+      }
+    ],
+    "name": "Characters/Sylas/Skins/Skin0/Materials/Sylas_R_Clone",
+    "paramValues": [
+      {
+        "name": "Fresnel_Size",
+        "value": [
+          6.4008002281188965,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
+        "name": "Alpha_Bias",
+        "value": [
+          -0.14499999582767487,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
+        "name": "Diffuse_Alpha_Override",
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
+        "name": "Bloom_Color",
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
+        "name": "Bloom_Intensity",
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
+        "name": "FresnelColor_Size",
+        "value": [
+          1.3209174871444702,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
+        "name": "Fresnel_Color",
+        "value": [
+          0.687739372253418,
+          0.6489204168319702,
+          0.9357595443725586,
+          0.0
+        ],
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
+        "name": "FresnelColor_Bias",
+        "value": [
+          -0.04500000178813934,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "StaticMaterialShaderParamDef"
+      }
+    ],
+    "samplerValues": [
+      {
+        "TextureName": "Diffuse_Texture",
+        "addressU": 1,
+        "addressV": 1,
+        "addressW": 1,
+        "texturePath": "ASSETS/Shared/Materials/black.SKINS_Lissandra_Skin43.tex",
+        "~class": "StaticMaterialShaderSamplerDef"
+      }
+    ],
+    "shaderMacros": {
+      "NUM_BLEND_WEIGHTS": "4"
+    },
+    "switches": [
+      {
+        "name": "INVERT_FRESNEL",
+        "~class": "StaticMaterialSwitchDef"
+      }
+    ],
+    "techniques": [
+      {
+        "name": "normal",
+        "passes": [
+          {
+            "blendEnable": true,
+            "dstAlphaBlendFactor": 7,
+            "dstColorBlendFactor": 7,
+            "shader": "Shaders/SkinnedMesh/FresnelAlpha_Basic",
+            "srcAlphaBlendFactor": 6,
+            "srcColorBlendFactor": 6,
+            "~class": "StaticMaterialPassDef"
+          }
+        ],
+        "~class": "StaticMaterialTechniqueDef"
+      }
+    ],
+    "~class": "StaticMaterialDef"
+  },
   "Characters/Sylas/Skins/Skin0/Materials/Sylas_R_Absorbed_Gradient_inst": {
     "childTechniques": [
       {
@@ -88,86 +202,6 @@
             "dstAlphaBlendFactor": 7,
             "dstColorBlendFactor": 7,
             "shader": "Shaders/SkinnedMesh/GradientMappedFresnel",
-            "srcAlphaBlendFactor": 6,
-            "srcColorBlendFactor": 6,
-            "~class": "StaticMaterialPassDef"
-          }
-        ],
-        "~class": "StaticMaterialTechniqueDef"
-      }
-    ],
-    "~class": "StaticMaterialDef"
-  },
-  "Characters/Sylas/Skins/Skin0/Materials/Sylas_R_Clone_inst": {
-    "childTechniques": [
-      {
-        "name": "transition",
-        "parentName": "normal",
-        "shaderMacros": {
-          "TRANSITION": "1"
-        },
-        "~class": "StaticMaterialChildTechniqueDef"
-      }
-    ],
-    "dynamicMaterial": {
-      "~class": "DynamicMaterialDef"
-    },
-    "name": "Characters/Sylas/Skins/Skin0/Materials/Sylas_R_Clone_inst",
-    "paramValues": [
-      {
-        "name": "FresnelColor_Size",
-        "value": [
-          4.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "~class": "StaticMaterialShaderParamDef"
-      },
-      {
-        "name": "FresnelColor_Bias",
-        "~class": "StaticMaterialShaderParamDef"
-      },
-      {
-        "name": "Inner_Color",
-        "value": [
-          0.050003815442323685,
-          0.050003815442323685,
-          0.17999541759490967,
-          0.20000000298023224
-        ],
-        "~class": "StaticMaterialShaderParamDef"
-      },
-      {
-        "name": "Fresnel_Alpha",
-        "value": [
-          1.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "~class": "StaticMaterialShaderParamDef"
-      }
-    ],
-    "samplerValues": [
-      {
-        "TextureName": "Gradient_Texture",
-        "texturePath": "ASSETS/Characters/Sylas/Skins/Base/Particles/Sylas_Base_R_gradient.tex",
-        "~class": "StaticMaterialShaderSamplerDef"
-      }
-    ],
-    "shaderMacros": {
-      "NUM_BLEND_WEIGHTS": "4"
-    },
-    "techniques": [
-      {
-        "name": "normal",
-        "passes": [
-          {
-            "blendEnable": true,
-            "dstAlphaBlendFactor": 7,
-            "dstColorBlendFactor": 7,
-            "shader": "Shaders/SkinnedMesh/Sylas_R_Clone",
             "srcAlphaBlendFactor": 6,
             "srcColorBlendFactor": 6,
             "~class": "StaticMaterialPassDef"
