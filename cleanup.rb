@@ -353,7 +353,7 @@ def itemNameLangFix(value)
     end
     if id&.length == 6
         oldret = ret
-        ret = "ARAMMayhem/#{ret}" if id.start_with?("12")
+        ret = "ARAM/#{ret}" if id.start_with?("12")
         ret = "Arena/#{ret}" if id.start_with?("22")
         ret = "Swiftplay/#{ret}" if id.start_with?("32")
         ret = "Arena/Prismatic/#{ret}" if id.start_with?("44")
