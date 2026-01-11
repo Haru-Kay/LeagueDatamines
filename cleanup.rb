@@ -352,11 +352,14 @@ def itemNameLangFix(value)
         ret = "Swarm/#{ret}" if id.start_with?("9")
     end
     if id&.length == 6
+        oldret = ret
         ret = "ARAMMayhem/#{ret}" if id.start_with?("12")
         ret = "Arena/#{ret}" if id.start_with?("22")
-        ret = "Arena/#{ret}" if id.start_with?("44")
+        ret = "Swiftplay/#{ret}" if id.start_with?("32")
+        ret = "Arena/Prismatic/#{ret}" if id.start_with?("44")
         ret = "DoomBots/#{ret}" if id.start_with?("66")
         ret = "ARAMMayhem/#{ret}" if id.start_with?("99")
+        ret = "#{id[0...2]}/#{ret}" if oldret == ret
     end
     return ret
 end
@@ -859,6 +862,7 @@ itemBin.each { |item, itemObj|
     if transObj["~class"]
         case transObj["~class"]
             when "ItemData"
+                transItem = transObj["itemID"].to_s + "/" + transItem if items.key?(transItem)
                 items.store(transItem, transObj)
             when "SpellObject"
                 itemsSpells.store(transItem, transObj)
@@ -872,7 +876,7 @@ itemBin.each { |item, itemObj|
     end
 }
 
-File.open("items/items.json", 'wb') { |f| f.write(JSON.pretty_generate(items)) }
+File.open("items/items.json", 'wb') { |f| f.write(JSON.pretty_generate(items))}#.sort_by { |k, v| v["itemID"] }.to_h)) }
 File.open("items/itemsMisc.json", 'wb') { |f| f.write(JSON.pretty_generate(itemsMisc)) }
 File.open("items/itemsVFX.json", 'wb') { |f| f.write(JSON.pretty_generate(itemsVFX)) }
 File.open("items/itemsSpells.json", 'wb') { |f| f.write(JSON.pretty_generate(itemsSpells)) }
