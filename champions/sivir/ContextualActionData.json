@@ -937,6 +937,33 @@
               "mWaitForAnnouncerQueue": true,
               "~class": "ContextualActionPlayVO"
             },
+            "mConditions": [
+              {
+                "mChildConditions": [
+                  {
+                    "mCompareOp": 4,
+                    "mTargetHealth": 25.0,
+                    "~class": "ContextualConditionCharacterHealth"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mPriority": 30,
+            "mRuleName": "LowHP",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mEnemyEventName": "Kill3DGeneral",
+              "mSelfEventName": "Kill3DGeneral",
+              "mWaitForAnnouncerQueue": true,
+              "~class": "ContextualActionPlayVO"
+            },
             "mPriority": 30,
             "mRuleName": "General",
             "~class": "ContextualRule"
@@ -1103,6 +1130,24 @@
               "~class": "ContextualActionPlayVO"
             },
             "mRuleName": "Laugh",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "MaxResource": {
+        "mRules": [
+          {
+            "mAudioAction": {
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "0xb3ec72b9": 12,
+                "~class": "0xdc0a353"
+              }
+            ],
+            "mRuleName": "Max Ammo",
             "~class": "ContextualRule"
           }
         ],
@@ -1924,6 +1969,49 @@
               }
             ],
             "mRuleName": "Q Hit",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "SpellLevelUp": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Spell2DRRankOne",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mSpellSlot": 3,
+                "~class": "ContextualConditionSpellSlot"
+              }
+            ],
+            "mRuleName": "R Rank One",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 4,
+              "mSelfEventName": "Spell2DRankUpGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mPercentChanceToPlay": 25,
+                "~class": "ContextualConditionChanceToPlay"
+              }
+            ],
+            "mRuleName": "General",
             "~class": "ContextualRule"
           }
         ],

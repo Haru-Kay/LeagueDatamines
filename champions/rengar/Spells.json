@@ -48,6 +48,16 @@
     "mScriptName": "RengarRPassive",
     "~class": "SpellObject"
   },
+  "0xddd932f3": {
+    "ObjectName": "RengarCombatTracker",
+    "mScriptName": "RengarCombatTracker",
+    "~class": "SpellObject"
+  },
+  "0xfdf22d51": {
+    "ObjectName": "RengarRBonusDamage",
+    "mScriptName": "RengarRBonusDamage",
+    "~class": "SpellObject"
+  },
   "Characters/Rengar/Spells/RengarBasicAttack": {
     "ObjectName": "RengarBasicAttack",
     "mScriptName": "RengarBasicAttack",
@@ -1113,58 +1123,6 @@
     },
     "~class": "SpellObject"
   },
-  "Characters/Rengar/Spells/RengarInCombat": {
-    "ObjectName": "RengarInCombat",
-    "mScriptName": "RengarInCombat",
-    "~class": "SpellObject"
-  },
-  "Characters/Rengar/Spells/RengarNewPassiveBuffDash": {
-    "ObjectName": "RengarNewPassiveBuffDash",
-    "mScriptName": "RengarNewPassiveBuffDash",
-    "mSpell": {
-      "castConeDistance": 100.0,
-      "castRange": [
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0
-      ],
-      "cooldownTime": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mAffectsTypeFlags": 8191,
-      "mAlternateName": "RengarNewPassiveBuffDash",
-      "mCastingBreaksStealth": true,
-      "mClientData": {
-        "mTargeterDefinitions": [
-          {
-            "useCasterBoundingBox": false,
-            "~class": "TargeterDefinitionRange"
-          }
-        ],
-        "~class": "SpellDataResourceClient"
-      },
-      "mImgIconName": [
-        "ASSETS/Characters/Rengar/HUD/Icons2D/Rengar_Passive.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "~class": "SpellObject"
-  },
-  "Characters/Rengar/Spells/RengarOutOfCombat": {
-    "ObjectName": "RengarOutOfCombat",
-    "mScriptName": "RengarOutOfCombat",
-    "~class": "SpellObject"
-  },
   "Characters/Rengar/Spells/RengarPassiveAbility/RengarPassive": {
     "ObjectName": "RengarPassive",
     "mBuff": {
@@ -1518,47 +1476,6 @@
     },
     "~class": "SpellObject"
   },
-  "Characters/Rengar/Spells/RengarPassiveBuffDashAADummy": {
-    "ObjectName": "RengarPassiveBuffDashAADummy",
-    "mScriptName": "RengarPassiveBuffDashAADummy",
-    "mSpell": {
-      "castConeDistance": 100.0,
-      "castRange": [
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0
-      ],
-      "cooldownTime": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mAffectsTypeFlags": 8191,
-      "mAlternateName": "RengarPassiveBuffDash",
-      "mClientData": {
-        "mTargeterDefinitions": [
-          {
-            "useCasterBoundingBox": false,
-            "~class": "TargeterDefinitionRange"
-          }
-        ],
-        "~class": "SpellDataResourceClient"
-      },
-      "mImgIconName": [
-        "ASSETS/Characters/Rengar/HUD/Icons2D/Rengar_Passive.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "~class": "SpellObject"
-  },
   "Characters/Rengar/Spells/RengarPassiveEmpowered": {
     "ObjectName": "RengarPassiveEmpowered",
     "mScriptName": "RengarPassiveEmpowered",
@@ -1606,26 +1523,26 @@
         {
           "mName": "BaseADRatioTooltip",
           "mValues": [
-            96.25,
-            100.0,
-            103.75,
-            107.5,
-            111.25,
-            115.0,
-            118.75
+            -3.75,
+            0.0,
+            3.75,
+            7.5,
+            11.25,
+            15.0,
+            18.75
           ],
           "~class": "SpellDataValue"
         },
         {
           "mName": "EmpoweredADRatio",
           "mValues": [
-            1.2999999523162842,
-            1.2999999523162842,
-            1.2999999523162842,
-            1.2999999523162842,
-            1.2999999523162842,
-            1.2999999523162842,
-            1.2999999523162842
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896
           ],
           "~class": "SpellDataValue"
         },
@@ -1684,13 +1601,13 @@
         {
           "mName": "BaseADRatio",
           "mValues": [
-            0.9624999761581421,
-            1.0,
-            1.037500023841858,
-            1.0750000476837158,
-            1.1124999523162842,
-            1.149999976158142,
-            1.1875
+            -0.03750000149011612,
+            0.0,
+            0.03750000149011612,
+            0.07500000298023224,
+            0.11249999701976776,
+            0.15000000596046448,
+            0.1875
           ],
           "~class": "SpellDataValue"
         }
@@ -1954,7 +1871,7 @@
                 {
                   "Style": 1,
                   "multiplier": 100.0,
-                  "nameOverride": "Total AD Ratio",
+                  "nameOverride": "Bonus AD Ratio",
                   "type": "BaseADRatio",
                   "typeIndex": 2,
                   "~class": "TooltipInstanceListElement"
@@ -1974,8 +1891,8 @@
             "keyCost": "<font color='#EDDA74'>Generates 1 Ferocity</font>",
             "keyName": "Savagery",
             "keySummary": "Rengar's next Attack brutally stabs his target for bonus damage.<br><br>Ferocity effect: deals increased damage and grants Attack Speed.",
-            "keyTooltip": "Rengar's next 2 Attacks gain <attackSpeed>@ASBonus@% Attack Speed</attackSpeed>. The first Attack deals <physicalDamage>@QDamage@ physical damage</physicalDamage>.<br><br><keywordMajor>Max Ferocity:</keywordMajor> The first Attack deals <physicalDamage>@EmpoweredQDamage@ physical damage</physicalDamage> and grants Rengar <attackSpeed>@EmpoweredQAS@ Attack Speed</attackSpeed> for @ASDuration@ seconds.",
-            "keyTooltipExtended": "Rengar's next 2 Attacks gain <attackSpeed>@ASBonus@% Attack Speed</attackSpeed>. The first Attack deals <physicalDamage>@QDamage@ physical damage</physicalDamage>.<br><br><keywordMajor>Max Ferocity:</keywordMajor> The first Attack deals  <physicalDamage>@EmpoweredQDamage@ physical damage</physicalDamage> and grants Rengar <attackSpeed>@EmpoweredQAS@ Attack Speed</attackSpeed> for @ASDuration@ seconds.<br><br><rules>This Ability's bonus damage is reduced to @TowerMod*100@% against structures.</rules>"
+            "keyTooltip": "Rengar's next 2 Attacks gain <attackSpeed>@ASBonus@% Attack Speed</attackSpeed>. The first Attack deals <physicalDamage>@QTotalDamage@ physical damage</physicalDamage>.<br><br><keywordMajor>Max Ferocity:</keywordMajor> The first Attack deals <physicalDamage>@EmpoweredQTotalDamage@ physical damage</physicalDamage> and grants Rengar <attackSpeed>@EmpoweredQAS@ Attack Speed</attackSpeed> for @ASDuration@ seconds.",
+            "keyTooltipExtended": "Rengar's next 2 Attacks gain <attackSpeed>@ASBonus@% Attack Speed</attackSpeed>. The first Attack deals <physicalDamage>@QTotalDamage@ physical damage</physicalDamage>.<br><br><keywordMajor>Max Ferocity:</keywordMajor> The first Attack deals  <physicalDamage>@EmpoweredQTotalDamage@ physical damage</physicalDamage> and grants Rengar <attackSpeed>@EmpoweredQAS@ Attack Speed</attackSpeed> for @ASDuration@ seconds.<br><br><rules>This Ability's bonus damage is reduced to @TowerMod*100@% against structures.</rules>"
           },
           "mObjectName": "RengarQ",
           "~class": "TooltipInstanceSpell"
@@ -2016,17 +1933,72 @@
         1
       ],
       "mSpellCalculations": {
+        "0x1fb121bf": {
+          "mExpandedTooltipCalculationDisplay": 6,
+          "mFormulaParts": [
+            {
+              "mSubparts": [
+                {
+                  "mSpellCalculationKey": "0xd4a43abe",
+                  "~class": "0xf3cbe7b2"
+                },
+                {
+                  "mCoefficient": 1.0,
+                  "mStat": 2,
+                  "~class": "StatByCoefficientCalculationPart"
+                }
+              ],
+              "~class": "SumOfSubPartsCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 6,
+          "~class": "GameCalculation"
+        },
+        "0x646557b": {
+          "mExpandedTooltipCalculationDisplay": 6,
+          "mFormulaParts": [
+            {
+              "mSubparts": [
+                {
+                  "mSpellCalculationKey": "QBonusDamage",
+                  "~class": "0xf3cbe7b2"
+                },
+                {
+                  "mCoefficient": 1.0,
+                  "mStat": 2,
+                  "~class": "StatByCoefficientCalculationPart"
+                }
+              ],
+              "~class": "SumOfSubPartsCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 6,
+          "~class": "GameCalculation"
+        },
         "0x95c7ca04": {
           "mFormulaParts": [
             {
-              "mSpellCalculationKey": "QDamage",
-              "~class": "0xf3cbe7b2"
+              "mSubparts": [
+                {
+                  "mPart1": {
+                    "mSpellCalculationKey": "QBonusDamage",
+                    "~class": "0xf3cbe7b2"
+                  },
+                  "mPart2": {
+                    "mDataValue": "TowerMod",
+                    "~class": "NamedDataValueCalculationPart"
+                  },
+                  "~class": "ProductOfSubPartsCalculationPart"
+                },
+                {
+                  "mCoefficient": 1.0,
+                  "mStat": 2,
+                  "~class": "StatByCoefficientCalculationPart"
+                }
+              ],
+              "~class": "SumOfSubPartsCalculationPart"
             }
           ],
-          "mMultiplier": {
-            "mDataValue": "TowerMod",
-            "~class": "NamedDataValueCalculationPart"
-          },
           "~class": "GameCalculation"
         },
         "0xc6c2d6f4": {
@@ -2048,35 +2020,7 @@
           },
           "~class": "GameCalculation"
         },
-        "0xf2ca2500": {
-          "mFormulaParts": [
-            {
-              "mSpellCalculationKey": "EmpoweredQdamage",
-              "~class": "0xf3cbe7b2"
-            }
-          ],
-          "mMultiplier": {
-            "mDataValue": "TowerMod",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          "~class": "GameCalculation"
-        },
-        "EmpoweredQAS": {
-          "mDisplayAsPercent": true,
-          "mFormulaParts": [
-            {
-              "mInitialBonusPerLevel": 3.0,
-              "mLevel1Value": 50.0,
-              "~class": "ByCharLevelBreakpointsCalculationPart"
-            }
-          ],
-          "mMultiplier": {
-            "mNumber": 0.009999999776482582,
-            "~class": "NumberCalculationPart"
-          },
-          "~class": "GameCalculation"
-        },
-        "EmpoweredQdamage": {
+        "0xd4a43abe": {
           "mFormulaParts": [
             {
               "mBreakpoints": [
@@ -2098,7 +2042,48 @@
           ],
           "~class": "GameCalculation"
         },
-        "QDamage": {
+        "0xf2ca2500": {
+          "mFormulaParts": [
+            {
+              "mSubparts": [
+                {
+                  "mPart1": {
+                    "mSpellCalculationKey": "0xd4a43abe",
+                    "~class": "0xf3cbe7b2"
+                  },
+                  "mPart2": {
+                    "mDataValue": "TowerMod",
+                    "~class": "NamedDataValueCalculationPart"
+                  },
+                  "~class": "ProductOfSubPartsCalculationPart"
+                },
+                {
+                  "mCoefficient": 1.0,
+                  "mStat": 2,
+                  "~class": "StatByCoefficientCalculationPart"
+                }
+              ],
+              "~class": "SumOfSubPartsCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "EmpoweredQAS": {
+          "mDisplayAsPercent": true,
+          "mFormulaParts": [
+            {
+              "mInitialBonusPerLevel": 3.0,
+              "mLevel1Value": 50.0,
+              "~class": "ByCharLevelBreakpointsCalculationPart"
+            }
+          ],
+          "mMultiplier": {
+            "mNumber": 0.009999999776482582,
+            "~class": "NumberCalculationPart"
+          },
+          "~class": "GameCalculation"
+        },
+        "QBonusDamage": {
           "mFormulaParts": [
             {
               "mDataValue": "baseDamage",
