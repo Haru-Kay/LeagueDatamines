@@ -315,7 +315,7 @@
         5
       ],
       "mSpellCalculations": {
-        "0x8c0ee468": {
+        "BarrelDecayTime": {
           "mFormulaParts": [
             {
               "mBreakpoints": [
@@ -832,19 +832,6 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "OldMoveSpeed",
-          "mValues": [
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "mName": "MoveSpeedDuration",
           "mValues": [
             2.0,
@@ -897,6 +884,26 @@
           "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "mName": "Cooldown",
+              "mValues": [
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "castRange": [
         0.0,
         0.0,
@@ -914,7 +921,7 @@
             "keyName": "Trial by Fire",
             "keySummary": "Every few seconds, Gangplank's melee strike will set his opponent on fire.",
             "keyTooltip": "Gangplank's melee Attacks ignite the target, dealing an additional <trueDamage>@TotalDamage@ true damage</trueDamage> over @DoTDuration@ seconds and granting Gangplank <speed>@MoveSpeed@ Move Speed</speed> for @MoveSpeedDuration@ seconds.<br><br>Destroying a <keywordMajor>Powder Keg</keywordMajor> refreshes this Cooldown and grants Gangplank the same <speed>Move Speed</speed>.",
-            "keyTooltipExtended": "{{Spell_GangplankPassive_Tooltip}}<br><br><rules>Deals 50% damage to turrets.<br><spellName>Trial By Fire's</spellName> damage increases based on Critical Strike Chance.<br><spellName>{{Spell_GangplankQWrapper_Name}}</spellName> does not deal this Ability's bonus damage.</rules>"
+            "keyTooltipExtended": "{{Spell_GangplankPassive_Tooltip}}<br><br><rules>Deals @TurretDamageMult*100@% damage to turrets.<br><spellName>{{Spell_GangplankQWrapper_Name}}</spellName> does not apply this Ability.</rules>"
           },
           "mObjectName": "GangplankPassive",
           "~class": "TooltipInstanceSpell"
@@ -1453,6 +1460,18 @@
             100.0
           ],
           "~class": "SpellEffectAmount"
+        },
+        "cherry": {
+          "value": [
+            130.0,
+            130.0,
+            100.0,
+            90.0,
+            90.0,
+            90.0,
+            90.0
+          ],
+          "~class": "SpellEffectAmount"
         }
       },
       "DataValues": [
@@ -1882,6 +1901,18 @@
             100.0,
             100.0,
             100.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        "cherry": {
+          "value": [
+            130.0,
+            130.0,
+            100.0,
+            90.0,
+            90.0,
+            90.0,
+            90.0
           ],
           "~class": "SpellEffectAmount"
         }

@@ -14,5 +14,7 @@ start /b /wait snip-snip https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-
 start /b /wait ruby bincompile.rb 1
 start /b /wait ritobin -o info -i bin -r -d "Data/hashes/lol" "bins" "temp"
 
+start /b /wait ruby stringtable.rb
 start /b /wait ruby cleanup.rb
+start /b /wait ruby keyword.rb
 pause
