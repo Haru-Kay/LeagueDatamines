@@ -34,6 +34,43 @@
     ]
   },
   {
+    "id": 1006,
+    "apiName": "ARAM_BladeWaltz",
+    "name": "Blade Waltz",
+    "rarity": "Prismatic",
+    "desc": "Gain <spellName>Blade Waltz</spellName> as a Summoner Spell.",
+    "tooltip": "Makes you untargetable while you dash at and deal @Damage@ damage to enemies @TotalHits@ times (deals 50% On-Hit damage).",
+    "dataValues": {
+      "TotalHits": 8.0
+    },
+    "calculations": {
+      "Damage": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 150.0,
+            "mStartValue": 30.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          },
+          {
+            "mCoefficient": 0.10000000149011612,
+            "mStat": 2,
+            "mStatFormula": 2,
+            "~class": "StatByCoefficientCalculationPart"
+          },
+          {
+            "mCoefficient": 0.05999999865889549,
+            "~class": "StatByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Cherry/Augments/Icons/BladeWaltz_small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/BladeWaltz_large.tex"
+    ]
+  },
+  {
     "id": 1007,
     "apiName": "ARAM_BluntForce",
     "name": "Blunt Force",
@@ -63,7 +100,7 @@
   {
     "id": 1011,
     "apiName": "ARAM_CantTouchThis",
-    "name": "Cant Touch This",
+    "name": "Can't Touch This",
     "rarity": "Prismatic",
     "desc": "Casting your Ultimate makes you <keywordMajor>Invulnerable</keywordMajor> for a short duration.",
     "tooltip": "Casting your Ultimate makes you <status>Invulnerable</status> for @InvulnDuration@ seconds (@Cooldown@s Cooldown).",
@@ -97,8 +134,8 @@
     "apiName": "ARAM_CircleofDeath",
     "name": "Circle of Death",
     "rarity": "Prismatic",
-    "desc": "<healing>Healing</healing> and <healing>Health Regen</healing> you do also deal <magicDamage>magic damage</magicDamage> to the nearest enemy champion.<br>",
-    "tooltip": "<health>Healing</health> and <health>Health Regen</health> you do deals <magicDamage>@HealToDamageConversion*100@% of the value magic damage</magicDamage> to the nearest enemy champion.<br><br>Total Damage Dealt to Champions: @f2@",
+    "desc": "<healing>Healing</healing> and <healing>Health Regen</healing> also deals <magicDamage>magic damage</magicDamage> to the nearest enemy champion.<br>",
+    "tooltip": "Your <health>healing</health> and <health>Health Regen</health> deal <magicDamage>@HealToDamageConversion*100@% of the value magic damage</magicDamage> to the nearest enemy champion.<br><br>Damage Dealt: @f2@",
     "dataValues": {
       "HealToDamageConversion": 0.699999988079071,
       "DamageRange": 1000.0
@@ -114,7 +151,7 @@
     "name": "Courage of the Colossus",
     "rarity": "Prismatic",
     "desc": "Gain <shield>@TotalShield@ Shield</shield> after <status>Immobilizing</status> or <status>Grounding</status> an enemy champion.<br>",
-    "tooltip": "Gain <shield>@TotalShield@ Shield</shield> after <status>Immobilizing</status> or <status>Grounding</status> an enemy champion.<br><br>Shields Generated Total: @f2@",
+    "tooltip": "Gain <shield>@TotalShield@ Shield</shield> after <status>Immobilizing</status> or <status>Grounding</status> an enemy champion.<br><br>Shields Generated: @f2@",
     "dataValues": {
       "HealthScalar": 0.03999999910593033,
       "SpellIDCD": 5.0
@@ -161,8 +198,8 @@
     "apiName": "ARAM_DawnbringersResolve",
     "name": "Dawnbringer's Resolve",
     "rarity": "Gold",
-    "desc": "Upon dropping below <scaleHealth>@HealthThreshold*100@% Health</scaleHealth>, <healing>heal for @HealAmount*100@% max Health over 3 seconds</healing>. <br>Refresh on death or every @Cooldown@ seconds.<br>",
-    "tooltip": "Upon dropping below <scaleHealth>@HealthThreshold*100@% Health</scaleHealth>, <healing>heal for @HealAmount*100@% max Health over 3 seconds</healing>. <br>Refresh on death or every @Cooldown@ seconds.<br>",
+    "desc": "When dropping below <scaleHealth>@HealthThreshold*100@% Health</scaleHealth>, <healing>heal for @HealAmount*100@% max Health over 3 seconds</healing>. <br>Resets on death or every @Cooldown@ seconds.<br>",
+    "tooltip": "When dropping below <scaleHealth>@HealthThreshold*100@% Health</scaleHealth>, <healing>heal for @HealAmount*100@% max Health over 3 seconds</healing>. <br>Resets on death or every @Cooldown@ seconds.<br>",
     "dataValues": {
       "HealthThreshold": 0.5,
       "HealAmount": 0.30000001192092896,
@@ -213,7 +250,7 @@
     "name": "Demon's Dance",
     "rarity": "Gold",
     "desc": "Gain the <spellName>Fleet Footwork</spellName> and <spellName>Grasp of the Undying</spellName> Keystone Runes.<br>",
-    "tooltip": "Gain the <spellName>Fleet Footwork</spellName> and <spellName>Grasp of the Undying</spellName> Keystone Runes.<br><li> <spellName>Fleet Footwork</spellName>: Attacking and moving builds Energy stacks. At 100 stacks, your next attack heals you and grants increased <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_MS'>MS</lol-uikit-tooltipped-keyword>.<li><spellName>Grasp of the Undying</spellName>: Every @GRTriggerTime@ stacks your next attack on a champion deals bonus magic damage, heals you, and permanently increases your health.<br><br>Healing Done Total: @f2@<br>Max Health Gained: @f3@",
+    "tooltip": "Gain the <spellName>Fleet Footwork</spellName> and <spellName>Grasp of the Undying</spellName> Keystone Runes.<br><li> <spellName>Fleet Footwork</spellName>: Attacking and moving builds Energy stacks. At 100 stacks, your next Attack heals you and grants increased <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_MS'>Movement Speed</lol-uikit-tooltipped-keyword>.<li><spellName>Grasp of the Undying</spellName>: Every @GRTriggerTime@ stacks, your next Attack on a champion deals bonus magic damage, heals you, and permanently increases your Health.<br><br>Total Healing Done: @f2@<br>Max Health Gained: @f3@",
     "dataValues": {
       "FFHealBonusADRatio": 0.30000001192092896,
       "FFHealAPRatio": 0.20000000298023224,
@@ -243,7 +280,7 @@
     "name": "Dive Bomber",
     "rarity": "Silver",
     "desc": "Explodes when you die, dealing <trueDamage>massive true damage</trueDamage>.",
-    "tooltip": "Explodes when you die, dealing <trueDamage>@PercentMaxHPDamage*100@% of the targets max health as true damage</trueDamage> to nearby enemies.<br><br>Total Damage Dealt to Champions: @f2@",
+    "tooltip": "Explodes when you die, dealing <trueDamage>@PercentMaxHPDamage*100@% of the target's max Health as true damage</trueDamage> to nearby enemies.<br><br>Damage Dealt: @f2@",
     "dataValues": {
       "ExplosionRadius": 500.0,
       "PercentMaxHPDamage": 0.20000000298023224
@@ -259,7 +296,7 @@
     "name": "Don't Blink",
     "rarity": "Silver",
     "desc": "Deal more damage to enemies the faster you are than them.",
-    "tooltip": "Gain @BonusDamagePerMSDifference*1000@% bonus damage per <speed>10 Move Speed</speed> you have more than the target.<br><br>Bonus Damage Total: @f2@",
+    "tooltip": "Gain @BonusDamagePerMSDifference*1000@% bonus damage per <speed>10 Movement Speed</speed> more you have than the target.<br><br>Bonus Damage: @f2@",
     "dataValues": {
       "BonusDamagePerMSDifference": 0.0010000000474974513
     },
@@ -352,8 +389,8 @@
     "apiName": "ARAM_EtherealWeapon",
     "name": "Ethereal Weapon",
     "rarity": "Gold",
-    "desc": "Your Abilities apply {{ Item_Keyword_OnHit }} effects. 1 second cooldown per target.",
-    "tooltip": "Your Abilities apply {{ Item_Keyword_OnHit }} effects. 1 second cooldown per target.<br><br>Times Triggered Total: @f2@",
+    "desc": "Your Abilities apply {{ Item_Keyword_OnHit }} effects. 1 second Cooldown per target.",
+    "tooltip": "Your Abilities apply {{ Item_Keyword_OnHit }} effects. 1 second Cooldown per target.<br><br>Times Triggered: @f2@",
     "dataValues": {
       "Cooldown": 1.5
     },
@@ -393,8 +430,8 @@
     "apiName": "ARAM_Executioner",
     "name": "Executioner",
     "rarity": "Gold",
-    "desc": "Deal @BonusDamage*100@% more damage to enemies below @HealthThreshold*100@% health. Reset your basic abilities on takedown.",
-    "tooltip": "Deal @BonusDamage*100@% more damage to enemies below @HealthThreshold*100@% health. Reset your basic abilities on takedown.<br><br>Bonus Damage Total: @f2@",
+    "desc": "Deal @BonusDamage*100@% more damage to enemies below @HealthThreshold*100@% Health. Reset your basic Abilities on takedown.",
+    "tooltip": "Deal @BonusDamage*100@% more damage to enemies below @HealthThreshold*100@% Health. Reset your basic Abilities on takedown.<br><br>Damage Dealt: @f2@",
     "dataValues": {
       "HealthThreshold": 0.30000001192092896,
       "BonusDamage": 0.10000000149011612
@@ -421,12 +458,64 @@
     ]
   },
   {
+    "id": 1035,
+    "apiName": "ARAM_FeeltheBurn",
+    "name": "Feel the Burn",
+    "rarity": "Prismatic",
+    "desc": "Gain the <spellName>Feel the Burn</spellName> Summoner Spell.<br><br><rules><spellName>Feel the Burn</spellName> casts <spellName>Ignite</spellName> and <spellName>Exhaust</spellName> on all nearby enemy champions.</rules>",
+    "tooltip": "<rules>Casts <spellName>Ignite</spellName> and <spellName>Exhaust</spellName> on all nearby enemy champions.</rules>",
+    "dataValues": {
+      "DamageReductionTOOLTIPONLY": 0.3499999940395355,
+      "SlowAmount": 0.5,
+      "ExhaustDuration": 3.0,
+      "Range": 800.0,
+      "GrievousAmount": 0.4000000059604645,
+      "SightRadius": 100.0,
+      "DotDuration": 5.0,
+      "InverseDuration": 0.20000000298023224
+    },
+    "calculations": {
+      "0x7c50d74e": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 600.0,
+            "mStartValue": 100.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "DamagePerSecond": {
+        "mModifiedGameCalculation": "TooltipTrueDamageCalculation",
+        "mMultiplier": {
+          "mDataValue": "InverseDuration",
+          "~class": "NamedDataValueCalculationPart"
+        },
+        "~class": "GameCalculationModified"
+      },
+      "TooltipTrueDamageCalculation": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 410.0,
+            "mStartValue": 70.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Cherry/Augments/Icons/FeelTheBurn_small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/FeelTheBurn_large.tex"
+    ]
+  },
+  {
     "id": 1036,
     "apiName": "ARAM_Firebrand",
     "name": "Firebrand",
     "rarity": "Gold",
     "desc": "Your Attacks apply an infinitely stacking <keywordMajor>Burn</keywordMajor> {{ Item_Keyword_OnHit }}, dealing damage over time.",
-    "tooltip": "Your Attacks also <keywordMajor>Burn</keywordMajor> enemies, dealing <magicDamage>@PercentMaxHPDamagePer5Seconds*20@% max Health Magic Damage</magicDamage> damage per second over @BleedDuration@ seconds. The <keywordMajor>Burn</keywordMajor> stacks infinitely.<br><br>Damage Dealt Total: @f2@",
+    "tooltip": "Your Attacks also <keywordMajor>Burn</keywordMajor> enemies, dealing <magicDamage>@PercentMaxHPDamagePer5Seconds*20@% max Health magic damage</magicDamage> damage per second over @BleedDuration@ seconds. This <keywordMajor>Burn</keywordMajor> stacks infinitely.<br><br>Damage Dealt: @f2@",
     "dataValues": {
       "PercentMaxHPDamagePer5Seconds": 0.019999999552965164,
       "BleedDuration": 5.0
@@ -457,7 +546,7 @@
     "name": "From Beginning To End",
     "rarity": "Gold",
     "desc": "Gain the <spellName>First Strike</spellName> and <spellName>Dark Harvest</spellName> Keystone Runes.",
-    "tooltip": "Gain the <spellName>First Strike</spellName> and <spellName>Dark Harvest</spellName> Keystone Runes.<br><li><spellName>First Strike</spellName>: When you initiate champion combat, deal @DamageAmp*100@% extra damage for @AugDuration@ seconds and gain gold based on damage dealt.<br><li><spellName>Dark Harvest</spellName>: Damaging a low health champion inflicts <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_AdaptiveDmg'>adaptive damage</lol-uikit-tooltipped-keyword> and harvests a soul from the victim.<br><br>Damage Dealt Total: @f2@<br>Gold Gained Total: @f3@",
+    "tooltip": "Gain the <spellName>First Strike</spellName> and <spellName>Dark Harvest</spellName> Keystone Runes.<br><li><spellName>First Strike</spellName>: When you initiate champion combat, deal @DamageAmp*100@% extra damage for @AugDuration@ seconds and gain Gold based on damage dealt.<br><li><spellName>Dark Harvest</spellName>: Damaging a low Health champion inflicts <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_AdaptiveDmg'>adaptive damage</lol-uikit-tooltipped-keyword> and harvests a soul from the victim.<br><br>Damage Dealt: @f2@<br>Gold Gained: @f3@",
     "dataValues": {
       "AugDuration": 3.0,
       "DamageAmp": 0.07000000029802322,
@@ -537,7 +626,7 @@
     "name": "Frost Wraith",
     "rarity": "Silver",
     "desc": "<keywordMajor>Autocast</keywordMajor> <status>Root</status> nearby enemies for @RootDuration@ seconds every @Cooldown@ seconds.<br>",
-    "tooltip": "<keywordMajor>Autocast</keywordMajor> <status>Root</status> nearby enemies for @RootDuration@ seconds every @Cooldown@ seconds.<br><br>Enemies Rooted Total: @f2@",
+    "tooltip": "<keywordMajor>Autocast</keywordMajor> <status>Root</status> nearby enemies for @RootDuration@ seconds every @Cooldown@ seconds.<br><br>Enemies Rooted: @f2@",
     "dataValues": {
       "Cooldown": 6.5,
       "RootDuration": 1.25,
@@ -572,7 +661,7 @@
     "name": "Guilty Pleasure",
     "rarity": "Silver",
     "desc": "<status>Immobilizing</status> or <status>Grounding</status> enemy champions <healing>heals you</healing>.",
-    "tooltip": "<status>Immobilizing</status> or <status>Grounding</status> enemy champions <healing>restores @TotalHeal@ Health</healing>.<br><br>Healing Done Total: @f2@",
+    "tooltip": "<status>Immobilizing</status> or <status>Grounding</status> enemy champions <healing>restores @TotalHeal@ Health</healing>.<br><br>Total Healing Done: @f2@",
     "dataValues": {
       "HealPercentage": 0.014999999664723873,
       "SpellIDCD": 5.0
@@ -604,8 +693,8 @@
     "apiName": "ARAM_IceCold",
     "name": "Ice Cold",
     "rarity": "Silver",
-    "desc": "Your <status>Slowing</status> effects reduce <speed>Move Speed</speed> by an extra @ExtraSlowAmount@.",
-    "tooltip": "Your <status>Slowing</status> effects reduce <speed>Move Speed</speed> by an extra @ExtraSlowAmount@.",
+    "desc": "Your <status>Slowing</status> effects reduce <speed>Movement Speed</speed> by an extra @ExtraSlowAmount@.",
+    "tooltip": "Your <status>Slowing</status> effects reduce <speed>Movement Speed</speed> by an extra @ExtraSlowAmount@.",
     "dataValues": {
       "ExtraSlowAmount": 100.0,
       "SlowDuration": 1.0
@@ -620,8 +709,8 @@
     "apiName": "ARAM_InfernalConduit",
     "name": "Infernal Conduit",
     "rarity": "Prismatic",
-    "desc": "Your Abilities apply stacking <keywordMajor>Burn</keywordMajor>, that deals damage over time over time.<br><br>Your <keywordMajor>Burn</keywordMajor> effects reduce your basic Ability Cooldowns.",
-    "tooltip": "Your Abilities apply an infinitely stacking <keywordMajor>Burn</keywordMajor>, dealing <magicDamage>@BleedDamageTooltip@ magic damage</magicDamage> per second for @BleedDuration@ seconds.<br><br>All your <keywordMajor>Burn</keywordMajor> effects lower your basic Ability Cooldowns by @FlatCooldownRefundPerTick@ seconds when they damage enemies.<br><br>Damage Dealt Total: @f2@",
+    "desc": "Your Abilities apply stacking <keywordMajor>Burn</keywordMajor> that deals damage over time.<br><br>Your <keywordMajor>Burn</keywordMajor> effects reduce your basic Ability Cooldowns.",
+    "tooltip": "Your Abilities apply an infinitely stacking <keywordMajor>Burn</keywordMajor>, dealing <magicDamage>@BleedDamageTooltip@ magic damage</magicDamage> per second for @BleedDuration@ seconds.<br><br>All your <keywordMajor>Burn</keywordMajor> effects lower your basic Ability Cooldowns by @FlatCooldownRefundPerTick@ seconds when they damage enemies.<br><br>Damage Dealt: @f2@",
     "dataValues": {
       "BleedDuration": 3.0,
       "FlatCooldownRefundPerTick": 0.07999999821186066,
@@ -668,7 +757,7 @@
     "name": "Infernal Soul",
     "rarity": "Silver",
     "desc": "You gain the Infernal Soul, dealing bonus damage when you hit enemies with Abilities or Attacks.",
-    "tooltip": "You gain the Infernal Soul, dealing bonus damage when you hit enemies with Abilities or Attacks.<br><br>Total Damage Dealt to Champions: @f2@",
+    "tooltip": "You gain the Infernal Soul, dealing bonus damage when you hit enemies with Abilities or Attacks.<br><br>Damage Dealt: @f2@",
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/InfernalSoul_small.tex",
       "ASSETS/UX/Cherry/Augments/Icons/InfernalSoul_large.tex"
@@ -695,7 +784,7 @@
     "name": "Jeweled Gauntlet",
     "rarity": "Prismatic",
     "desc": "Your Abilities can Critically Strike. Gain @CritChance*100@% Crit Chance.",
-    "tooltip": "Your Abilities can Critically Strike for @CritDamage*100@% total damage. Gain @CritChance*100@% Crit Chance. Gain an additional @APToCritConversion@ Crit Chance.<br><br>Bonus Damage Total: @f2@",
+    "tooltip": "Your Abilities can Critically Strike for @CritDamage*100@% total damage. Gain @CritChance*100@% Crit Chance. Gain an additional @APToCritConversion@ Crit Chance.<br><br>Bonus Damage: @f2@",
     "dataValues": {
       "CritDamage": 1.4500000476837158,
       "CritChance": 0.25,
@@ -724,7 +813,7 @@
     "name": "Keystone Conjurer",
     "rarity": "Gold",
     "desc": "Gain the <spellName>Summon Aery</spellName> and <spellName>Arcane Comet</spellName> Keystone Runes.",
-    "tooltip": "Gain the <spellName>Summon Aery</spellName> and <spellName>Arcane Comet</spellName> Keystone Runes.<br><li><spellName>Summon Aery</spellName>: Your attacks and abilities send Aery to a target, damaging enemies or shielding allies.<li><spellName>Arcane Comet</spellName>: Damaging a champion with an ability hurls a damaging comet at their location.<br><br>Damage Dealt Total: @f1@<br>Shields Generated Total: @f2@",
+    "tooltip": "Gain the <spellName>Summon Aery</spellName> and <spellName>Arcane Comet</spellName> Keystone Runes.<br><li><spellName>Summon Aery</spellName>: Your Attacks and Abilities send Aery to a target, damaging enemies or Shielding allies.<li><spellName>Arcane Comet</spellName>: Damaging a champion with an Ability hurls a damaging comet at their location.<br><br>Damage Dealt: @f1@<br>Shields Generated: @f2@",
     "dataValues": {
       "RechargeTime": 20.0,
       "DamageBase": 10.0,
@@ -750,10 +839,10 @@
   {
     "id": 1051,
     "apiName": "ARAM_LightemUp",
-    "name": "Light 'em Up!",
+    "name": "Light 'Em Up!",
     "rarity": "Silver",
-    "desc": "Every 4th Attack deals additional <magicDamage>magic damage</magicDamage> {{ Item_Keyword_OnHit }}.",
-    "tooltip": "Every 4th Attack deals additional <magicDamage>@TOOLTIPONLYDamage@ magic damage</magicDamage>.<br><br>Total Damage Dealt to Champions: @f2@",
+    "desc": "Every 4th Attack shoot 4 <keywordMajor>Firecrackers</keywordMajor> dealing <magicDamage>magic damage</magicDamage> {{ Item_Keyword_OnHit }}.",
+    "tooltip": "Every 4th Attack shoot 4 <keywordMajor>Firecrackers</keywordMajor> dealing <magicDamage>@TOOLTIPONLYDamage@ magic damage</magicDamage>.<br><br>Total Damage Dealt to Champions: @f2@",
     "calculations": {
       "Damage": {
         "mFormulaParts": [
@@ -824,8 +913,8 @@
     "apiName": "ARAM_MadScientist",
     "name": "Mad Scientist",
     "rarity": "Prismatic",
-    "desc": "On each revive, you grow large (<font color = '#8347ff'>Adaptive Force</font> and <scaleHealth>Health</scaleHealth>) or tiny (Ability Haste and <speed>Move Speed</speed>).",
-    "tooltip": "On each Revive, you grow large, gaining (<font color = '#8347ff'>@ADAmp*100@% Adaptive Force</font> and <scaleHealth>@HealthAmp*100@% Health</scaleHealth>) or tiny (@Haste@ Ability Haste and <speed>@MovespeedAmp*100@% Move Speed</speed>).",
+    "desc": "On each Revive, you grow large (gaining <font color = '#8347ff'>Adaptive Force</font> and <scaleHealth>Health</scaleHealth>) or tiny (gaining Ability Haste and <speed>Movement Speed</speed>).",
+    "tooltip": "On each Revive, you grow large (gaining <font color = '#8347ff'>@ADAmp*100@% Adaptive Force</font> and <scaleHealth>@HealthAmp*100@% Health</scaleHealth>) or tiny (gaining @Haste@ Ability Haste and <speed>@MovespeedAmp*100@% Movement Speed</speed>).",
     "dataValues": {
       "ADAmp": 0.30000001192092896,
       "APAmp": 0.30000001192092896,
@@ -845,7 +934,7 @@
     "name": "Master of Duality",
     "rarity": "Prismatic",
     "desc": "Your Attacks grant you stacking <scaleAP>Ability Power</scaleAP> and your Abilities grant you <scaleAD>Attack Damage</scaleAD>.",
-    "tooltip": "Your Attacks grant you <scaleAP>@APGained@ Ability Power</scaleAP> and your Abilities grant you <scaleAD>@ADGained@ Attack Damage</scaleAD>, <br><br><rule>Buff stacks and refreshes infinitely but lasts @StackDuration@ seconds.</rule>",
+    "tooltip": "Your Attacks grant you <scaleAP>@APGained@ Ability Power</scaleAP> and your Abilities grant you <scaleAD>@ADGained@ Attack Damage</scaleAD>.<br><br><rule>This buff stacks and refreshes infinitely but lasts @StackDuration@ seconds.</rule>",
     "dataValues": {
       "StackDuration": 5.0
     },
@@ -883,6 +972,9 @@
     "rarity": "Silver",
     "desc": "Increase <scaleHealth>max Health</scaleHealth> by half of your <scaleMana>Mana</scaleMana>.",
     "tooltip": "Gain <scaleHealth>@ManaToHealthCalc@ Health</scaleHealth>.",
+    "dataValues": {
+      "ConvertCap": 99999.0
+    },
     "calculations": {
       "ManaToHealthCalc": {
         "mFormulaParts": [
@@ -919,7 +1011,7 @@
     "desc": "{{ Item_Keyword_OnHit }} reduce the cooldown of your abilities by @CooldownRefund@ seconds.",
     "tooltip": "{{ Item_Keyword_OnHit }} reduce the cooldown of your abilities by @CooldownRefund@ seconds.",
     "dataValues": {
-      "CooldownRefund": 0.20000000298023224,
+      "CooldownRefund": 1.25,
       "MinCDR": 0.5
     },
     "icons": [
@@ -933,7 +1025,7 @@
     "name": "Ocean Soul",
     "rarity": "Silver",
     "desc": "Gain the Ocean Soul, granting high <healing>Health</healing> and <scaleMana>Mana</scaleMana> regen after damaging enemies.",
-    "tooltip": "Gain the Ocean Soul, granting high <healing>Health</healing> and <scaleMana>Mana</scaleMana> regen after damaging enemies.<br><br>Healing Done Total: @f2@",
+    "tooltip": "Gain the Ocean Soul, granting high <healing>Health</healing> and <scaleMana>Mana Regen</scaleMana> after damaging enemies.<br><br>Total Healing Done: @f2@",
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/OceanSoul_small.tex",
       "ASSETS/UX/Cherry/Augments/Icons/OceanSoul_large.tex"
@@ -945,7 +1037,7 @@
     "name": "Ok Boomerang",
     "rarity": "Gold",
     "desc": "<keywordMajor>Autocast</keywordMajor> throw a boomerang at a nearby enemy every @BaseCooldown@s.",
-    "tooltip": "<keywordMajor>Autocast</keywordMajor> throw a boomerang at a nearby enemy every @BaseCooldown@s, dealing @Damage@ adaptive damage to enemies hit.<br><br>Damage Dealt Total: @f2@",
+    "tooltip": "<keywordMajor>Autocast</keywordMajor> a boomerang at a nearby enemy every @BaseCooldown@ seconds, dealing @Damage@ adaptive damage to enemies hit.<br><br>Damage Dealt: @f2@",
     "dataValues": {
       "BaseCooldown": 10.0
     },
@@ -996,8 +1088,8 @@
     "apiName": "ARAM_OutlawsGrit",
     "name": "Outlaw's Grit",
     "rarity": "Gold",
-    "desc": "After using a dash, blink, or teleport you gain <scaleArmor>@ResistsPerStack@ Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> up to @MaxStacks@ stacks.",
-    "tooltip": "After using a dash, leap, blink, or teleport Ability you gain <scaleArmor>@ResistsPerStack@ Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> up to @MaxResistTooltipOnly@ at @MaxStacks@ stacks. <br>Resets every @Refresh@ seconds.",
+    "desc": "After using a Dash, Blink, or Teleport Ability you gain <scaleArmor>@ResistsPerStack@ Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> up to @MaxStacks@ stacks.",
+    "tooltip": "After using a Dash, Blink, or Teleport Ability you gain <scaleArmor>@ResistsPerStack@ Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> up to @MaxResistTooltipOnly@ at @MaxStacks@ stacks. <br>Resets every @Refresh@ seconds.",
     "dataValues": {
       "MaxStacks": 5.0,
       "ResistsPerStack": 12.0,
@@ -1032,7 +1124,7 @@
     "name": "Perseverance",
     "rarity": "Gold",
     "desc": "Gain hugely increased <healing>Health Regen</healing>, even further increased at low <scaleHealth>Health</scaleHealth>.",
-    "tooltip": "Gain <healing>@BaseRegen*100@% base Health Regen</healing>, increased to <healing>@AmpedRegen*100@% base Health Regen</healing> below <scaleHealth>25% Health</scaleHealth>.<br><br>Healing Done Total: @f2@",
+    "tooltip": "Gain <healing>@BaseRegen*100@% base Health Regen</healing>, increased to <healing>@AmpedRegen*100@% base Health Regen</healing> below <scaleHealth>25% Health</scaleHealth>.<br><br>Total Healing Done: @f2@",
     "dataValues": {
       "BaseRegen": 8.0,
       "AmpedRegen": 16.0,
@@ -1049,7 +1141,7 @@
     "name": "Quantum Computing",
     "rarity": "Prismatic",
     "desc": "Periodically <keywordMajor>Autocast</keywordMajor> a massive slash. Enemies hit are <status>Slowed</status>, take additional <physicalDamage>max Health damage</physicalDamage>, and heal you.",
-    "tooltip": "Every @AutoCastCooldown@ seconds <keywordMajor>Autocast</keywordMajor> a massive slash around you, dealing <physicalDamage>@BaseDamageTotal@ physical damage</physicalDamage>. Enemies hit by the outer half are <status>Slowed</status> by @SlowPercentage@% decaying over @SlowDuration@ seconds, take an additional <physicalDamage>@OuterEdgeTooltip@ max Health physical damage</physicalDamage>, and you restore <healing>@OuterConeHealingRatio@% champion damage dealt Health</healing>.<br><br>Healing Done Total: @f2@",
+    "tooltip": "Every @AutoCastCooldown@ seconds, <keywordMajor>Autocast</keywordMajor> a massive slash around you, dealing <physicalDamage>@BaseDamageTotal@ physical damage</physicalDamage>. Enemies hit by the outer half are <status>Slowed</status> by @SlowPercentage@% decaying over @SlowDuration@ seconds, and take an additional <physicalDamage>@OuterEdgeTooltip@ max Health physical damage</physicalDamage>. You restore <healing>@OuterConeHealingRatio@% champion damage dealt as Health</healing>.<br><br>Total Healing Done: @f2@",
     "dataValues": {
       "AutoCastCooldown": 30.0,
       "BaseDamage": [
@@ -1137,7 +1229,7 @@
     "name": "Rabble Rousing",
     "rarity": "Gold",
     "desc": "Using an Ability restores <healing>@HealAmount@ Health</healing>.",
-    "tooltip": "Using an Ability restores <healing>@HealAmount@ Health</healing>.<br><br>Healing Done Total: @f2@",
+    "tooltip": "Using an Ability restores <healing>@HealAmount@ Health</healing>.<br><br>Total Healing Done: @f2@",
     "dataValues": {
       "MaxHealthPercentageHeal": 0.009999999776482582
     },
@@ -1183,8 +1275,8 @@
     "apiName": "ARAM_Repulsor",
     "name": "Repulsor",
     "rarity": "Silver",
-    "desc": "On dropping below @HealthThreshold*100@% Health, <status>Knocked Back</status> nearby enemies and <status>Slow</status> them for @SlowAmount*100@%.",
-    "tooltip": "On dropping below @HealthThreshold*100@% Health, <status>Knocked Back</status> nearby enemies and <status>Slow</status> them for @SlowAmount*100@% for @SlowDuration@ seconds. (@Cooldown@s cooldown or refresh on death)",
+    "desc": "On dropping below @HealthThreshold*100@% Health, <status>Knock Back</status> nearby enemies and <status>Slow</status> them for @SlowAmount*100@%.",
+    "tooltip": "On dropping below @HealthThreshold*100@% Health, <status>Knock Back</status> nearby enemies and <status>Slow</status> them for @SlowAmount*100@% for @SlowDuration@ seconds (@Cooldown@ seconds Cooldown or reset on death).",
     "dataValues": {
       "KnockbackDistance": 750.0,
       "KnockbackRange": 500.0,
@@ -1204,7 +1296,7 @@
     "name": "Restless Restoration",
     "rarity": "Gold",
     "desc": "You constantly <healing>heal</healing> while moving.",
-    "tooltip": "You restore <healing>@HealCalcPer1000Units@ Health</healing> per 1000 distance traveled.",
+    "tooltip": "You restore <healing>@HealCalcPer1000Units@ Health</healing> per 1000 units distance traveled.",
     "dataValues": {
       "HealthRatioPer1000Units": 0.009999999776482582
     },
@@ -1278,8 +1370,8 @@
     "apiName": "ARAM_ShadowRunner",
     "name": "Shadow Runner",
     "rarity": "Silver",
-    "desc": "After using a dash, leap, blink, or teleport Ability or exiting <stealth>Stealth</stealth>, gain <speed>Move Speed</speed>.",
-    "tooltip": "After using a dash, leap, blink, or teleport Ability or exiting <stealth>Stealth</stealth>, gain <speed>@MSAmount@ Move Speed</speed> for @BuffDuration@ seconds.",
+    "desc": "After using a Dash, Blink, or Teleport Ability or exiting <stealth>Stealth</stealth>, gain <speed>Movement Speed</speed>.",
+    "tooltip": "After using a Dash, Blink, or Teleport Ability or exiting <stealth>Stealth</stealth>, gain <speed>@MSAmount@ Movement Speed</speed> for @BuffDuration@ seconds.",
     "dataValues": {
       "MSAmount": 300.0,
       "BuffDuration": 2.0
@@ -1295,7 +1387,7 @@
     "name": "Shrink Ray",
     "rarity": "Gold",
     "desc": "Your Attacks reduce an enemy's damage by @DamageReduction*100@% for 3 seconds.",
-    "tooltip": "Your Attacks reduce an enemy's damage by @DamageReduction*100@% for 3 seconds.<br><br>Damage Reduced Total: @f2@",
+    "tooltip": "Your Attacks reduce an enemy's damage by @DamageReduction*100@% for 3 seconds.<br><br>Damage Reduced: @f2@",
     "dataValues": {
       "DamageReduction": 0.15000000596046448
     },
@@ -1310,7 +1402,7 @@
     "name": "Slow Cooker",
     "rarity": "Prismatic",
     "desc": "Every second, apply an infinitely stacking <keywordMajor>Burn</keywordMajor> to nearby enemy champions, scaling with your <scaleHealth>max Health</scaleHealth>.",
-    "tooltip": "Every second, apply an infinitely stacking <keywordMajor>Burn</keywordMajor> to nearby enemy champions, dealing <magicDamage>@BleedDamageTooltip@ magic damage</magicDamage> per second for @BleedDuration@ seconds.<br><br>Damage Dealt Total: @f2@",
+    "tooltip": "Every second, apply an infinitely stacking <keywordMajor>Burn</keywordMajor> to nearby enemy champions, dealing <magicDamage>@BleedDamageTooltip@ magic damage</magicDamage> per second for @BleedDuration@ seconds.<br><br>Damage Dealt: @f2@",
     "dataValues": {
       "BleedDuration": 3.0,
       "Range": 500.0
@@ -1346,7 +1438,7 @@
     "name": "Sonic Boom",
     "rarity": "Silver",
     "desc": "Buffing, <healing>Healing</healing>, or <shield>Shielding</shield> your ally deals damage and <status>Slows</status> enemies surrounding them.",
-    "tooltip": "Buffing, <healing>Healing</healing>, or <shield>Shielding</shield> your ally deals <trueDamage>@Damage@ true damage</trueDamage> and <status>Slows enemies surrounding them</status> by @SlowAmount*-100@% for 2 seconds. (@ProcCooldown@s cooldown)<br><br>Total Damage Dealt to Champions: @f2@",
+    "tooltip": "Buffing, <healing>healing</healing>, or <shield>Shielding</shield> your ally deals <trueDamage>@Damage@ true damage</trueDamage> and <status>Slows enemies surrounding them</status> by @SlowAmount*-100@% for 2 seconds (@ProcCooldown@ seconds Cooldown).<br><br>Damage Dealt: @f2@",
     "dataValues": {
       "Radius": 450.0,
       "ProcCooldown": 2.0,
@@ -1375,7 +1467,7 @@
     "name": "Soul Siphon",
     "rarity": "Gold",
     "desc": "Gain <crit>@CritChance*100@% Crit Chance</crit> and <lifeSteal>@HealPercentage*100@% lifesteal on <crit>Critical Strikes</crit></lifeSteal>.",
-    "tooltip": "Gain <crit>@CritChance*100@% Crit Chance</crit> and <lifeSteal>@HealPercentage*100@% lifesteal on <crit>Critical Strikes</crit></lifeSteal>.<br><br>Healing Done Total: @f2@",
+    "tooltip": "Gain <crit>@CritChance*100@% Crit Chance</crit> and <lifeSteal>@HealPercentage*100@% Lifesteal on <crit>Critical Strikes</crit></lifeSteal>.<br><br>Total Healing Done: @f2@",
     "dataValues": {
       "HealPercentage": 0.11999999731779099,
       "CritChance": 0.25
@@ -1391,7 +1483,7 @@
     "name": "Symphony of War",
     "rarity": "Prismatic",
     "desc": "Gain the <spellName>Lethal Tempo</spellName> and <spellName>Conqueror</spellName> Keystone Runes.",
-    "tooltip": "Gain the <spellName>Lethal Tempo</spellName> and <spellName>Conqueror</spellName> Keystone Runes.<br><li><spellName>Lethal Tempo</spellName>: Attacking an enemy champion grants you Attack Speed, up to @StackCap@ stacks. At max stacks, gain 50 bonus attack range and increase the attack speed cap to @ASCap@.<li><spellName>Conqueror</spellName>: Gain stacks of adaptive force when attacking enemy champions. After reaching @MaxStacks@ stacks, heal for a portion of damage you deal to champions.",
+    "tooltip": "Gain the <spellName>Lethal Tempo</spellName> and <spellName>Conqueror</spellName> Keystone Runes.<br><li><spellName>Lethal Tempo</spellName>: Attacking an enemy champion grants you Attack Speed up to @StackCap@ stacks. At max stacks, gain 50 bonus Attack Range and increase the Attack Speed cap up to @ASCap@.<li><spellName>Conqueror</spellName>: Gain stacks of Adaptive Force when attacking enemy champions. After reaching @MaxStacks@ stacks, heal for a portion of damage you deal to champions.",
     "dataValues": {
       "MinAdaptivePerStack": 3.0,
       "MaxAdaptivePerStack": 5.5,
@@ -1486,7 +1578,7 @@
     "name": "Tank It Or Leave It",
     "rarity": "Silver",
     "desc": "You can <crit>Critically Defend</crit> using your Crit Chance (max @MaxChance*100@% chance), giving you a chance to reduce damage. Gain @CritChance*100@% Crit Chance.",
-    "tooltip": "You can <crit>Critically Defend</crit> using your Crit Chance (max @MaxChance*100@% chance), giving you a chance to reduce damage taken by @DamageReduction*100@%. Gain @CritChance*100@% Crit Chance.<br><br>Damage Reduced Total: @f2@",
+    "tooltip": "You can <crit>Critically Defend</crit> using your Crit Chance (max @MaxChance*100@% chance), giving you a chance to reduce damage taken by @DamageReduction*100@%. Gain @CritChance*100@% Crit Chance.<br><br>Damage Reduced: @f2@",
     "dataValues": {
       "DamageReduction": 0.20000000298023224,
       "CritChance": 0.25,
@@ -1502,8 +1594,8 @@
     "apiName": "ARAM_TapDancer",
     "name": "Tap Dancer",
     "rarity": "Prismatic",
-    "desc": "Your Attacks grant you <speed>Move Speed</speed>. Gain <attackSpeed>Attack Speed</attackSpeed> based on your Movement Speed.",
-    "tooltip": "Your Attacks grant you <speed>@MSPerHit@ Move Speed</speed>. Gain <attackSpeed>@MSToASConversionCalc@ Attack Speed</attackSpeed>.<br><br><rule>Buff stacks and refreshes infinitely but lasts @StackDuration@ seconds.</rule>",
+    "desc": "Your Attacks grant you <speed>Movement Speed</speed>. Gain <attackSpeed>Attack Speed</attackSpeed> based on your Movement Speed.",
+    "tooltip": "Your Attacks grant you <speed>@MSPerHit@ Movement Speed</speed>. Gain <attackSpeed>@MSToASConversionCalc@ Attack Speed</attackSpeed>.<br><br><rule>The buff stacks and refreshes infinitely but lasts @StackDuration@ seconds.</rule>",
     "dataValues": {
       "MSPerHit": 10.0,
       "MSToASConversion": 0.0010000000474974513,
@@ -1566,7 +1658,7 @@
     "name": "Tormentor",
     "rarity": "Silver",
     "desc": "<status>Immobilizing</status> or <status>Grounding</status> enemy champions applies a <keywordMajor>Burn</keywordMajor> that deals damage over time, stacking infinitely.",
-    "tooltip": "<status>Immobilizing</status> or <status>Grounding</status> enemy champions applies a <keywordMajor>Burn</keywordMajor>, dealing <scaleAP>@PercentMaxHPDamagePer5Seconds*20@% max Health Magic Damage</scaleAP> per second for @BleedDuration@ seconds. The <keywordMajor>Burn</keywordMajor> stacks infinitely.<br><br>Total Damage Dealt to Champions: @f2@",
+    "tooltip": "<status>Immobilizing</status> or <status>Grounding</status> enemy champions applies a <keywordMajor>Burn</keywordMajor>, dealing <scaleAP>@PercentMaxHPDamagePer5Seconds*20@% max Health magic damage</scaleAP> per second for @BleedDuration@ seconds. The <keywordMajor>Burn</keywordMajor> stacks infinitely.<br><br>Damage Dealt: @f2@",
     "dataValues": {
       "PercentMaxHPDamagePer5Seconds": 0.03999999910593033,
       "BleedDuration": 5.0,
@@ -1586,7 +1678,8 @@
     "tooltip": "When you damage someone from over @SnipeDistance@ units away, fire a <abilityName>Trueshot Barrage</abilityName>, dealing <magicDamage>@Damage@ magic damage</magicDamage>. @Cooldown@s cooldown.<br><br>Total Damage Dealt to Champion: @f2@",
     "dataValues": {
       "Cooldown": 15.0,
-      "SnipeDistance": 700.0
+      "SnipeDistance": 700.0,
+      "Delay": 1.0
     },
     "calculations": {
       "Damage": {
@@ -1620,8 +1713,8 @@
     "apiName": "ARAM_Typhoon",
     "name": "Typhoon",
     "rarity": "Silver",
-    "desc": "Your Attacks fire a bolt at an additional target dealing reduced damage and applying {{ Item_Keyword_OnHit }} effects.",
-    "tooltip": "Your Attacks fire a bolt at an additional target dealing @ADRatio*100@% damage and applying {{ Item_Keyword_OnHit }} effects.",
+    "desc": "Your Attacks fire a <keywordMajor>Firecracker</keywordMajor> at an additional target dealing reduced damage and applying {{ Item_Keyword_OnHit }} effects.",
+    "tooltip": "Your Attacks fire a <keywordMajor>Firecracker</keywordMajor> at an additional target dealing @ADRatio*100@% damage and applying {{ Item_Keyword_OnHit }} effects.",
     "dataValues": {
       "ADRatio": 0.30000001192092896
     },
@@ -1647,8 +1740,8 @@
     "apiName": "ARAM_UltimateRevolution",
     "name": "Ultimate Revolution",
     "rarity": "Prismatic",
-    "desc": "Refresh your Ultimate Ability after casting it. (@Cooldown@s Cooldown or Reset on death)",
-    "tooltip": "Refresh your Ultimate Ability after casting it. (@Cooldown@s Cooldown or Reset on death)",
+    "desc": "Refresh your Ultimate after casting it (@Cooldown@ seconds Cooldown or reset on death).",
+    "tooltip": "Refresh your Ultimate after casting it (@Cooldown@ seconds Cooldown or reset on death).",
     "dataValues": {
       "Cooldown": 75.0
     },
@@ -1664,7 +1757,7 @@
     "rarity": "Silver",
     "disabled": true,
     "desc": "Your <healing>Heals</healing> grant extra <shield>Shield</shield> and your <shield>Shields</shield> grant extra <healing>Healing</healing>.",
-    "tooltip": "Your <healing>Heals</healing> grans an extra <shield>@ShieldFromHealPercentage*100@% Shield</shield> and your <shield>Shields</shield> grant an extra <healing>@HealFromShieldPercentage*100@% Healing</healing>.<br><br>Healing Done Total: @f1@<br>Shields Generated Total: @f2@",
+    "tooltip": "Your <healing>heals</healing> grant an extra <shield>@ShieldFromHealPercentage*100@% Shield</shield> and your <shield>Shields</shield> grant an extra <healing>@HealFromShieldPercentage*100@% Healing</healing>.<br><br>Total Healing Done: @f1@<br>Shields Generated: @f2@",
     "dataValues": {
       "ShieldFromHealPercentage": 0.20000000298023224,
       "HealFromShieldPercentage": 0.20000000298023224,
@@ -1682,7 +1775,7 @@
     "name": "Vulnerability",
     "rarity": "Gold",
     "desc": "Your Item and damage over time effects can Critically Strike. Gain @CritChance*100@% Crit chance.",
-    "tooltip": "Your Item and damage over time effects can Critically Strike for @CritDamage*100@% extra damage. Gain @CritChance*100@% Crit chance.<br><br>Damage Dealt Total: @f2@",
+    "tooltip": "Your Item and damage over time effects can Critically Strike for @CritDamage*100@% extra damage. Gain @CritChance*100@% Crit Chance.<br><br>Damage Dealt: @f2@",
     "dataValues": {
       "CritDamage": 1.4500000476837158,
       "CritChance": 0.25
@@ -1808,8 +1901,8 @@
     "apiName": "ARAM_Homeguard",
     "name": "Homeguard",
     "rarity": "Silver",
-    "desc": "Gain <speed>@MovementSpeed*100@% Move Speed</speed>, disabled for @DisableCooldown@ seconds after taking damage.",
-    "tooltip": "Gain <speed>@MovementSpeed*100@% Move Speed</speed>, disabled for @DisableCooldown@ seconds after taking damage.",
+    "desc": "Gain <speed>@MovementSpeed*100@% Movement Speed</speed>, disabled for @DisableCooldown@ seconds after taking damage.",
+    "tooltip": "Gain <speed>@MovementSpeed*100@% Movement Speed</speed>, disabled for @DisableCooldown@ seconds after taking damage.",
     "dataValues": {
       "MovementSpeed": 1.0,
       "Duration": 10.0,
@@ -1850,8 +1943,8 @@
       "BaseCooldown": 25.0
     },
     "icons": [
-      "ASSETS/UX/Cherry/Augments/Icons/SelfDestruct_small.tex",
-      "ASSETS/UX/Cherry/Augments/Icons/SelfDestruct_large.tex"
+      "ASSETS/Maps/Particles/Kiwi/SelfDestruct_small.MAYHEM_New_Augments.tex",
+      "ASSETS/Maps/Particles/Kiwi/SelfDestruct_large.MAYHEM_New_Augments.tex"
     ]
   },
   {
@@ -1876,7 +1969,7 @@
     "name": "Skilled Sniper",
     "rarity": "Gold",
     "desc": "Hitting an enemy with a non-Ultimate Ability at far range refunds @ReducedCooldownPercent*100@% Cooldown (@PeriodicReductionAmount*100@% for periodic Abilities).",
-    "tooltip": "Hitting an enemy with a non-Ultimate Ability at over @SnipeDistance@ range refunds @ReducedCooldownPercent*100@% Cooldown. (@PeriodicReductionAmount*100@% for periodic Abilities).<br><br>",
+    "tooltip": "Hitting an enemy with a non-Ultimate Ability at over @SnipeDistance@ range refunds @ReducedCooldownPercent*100@% Cooldown (@PeriodicReductionAmount*100@% for periodic Abilities).<br><br>",
     "dataValues": {
       "SnipeDistance": 700.0,
       "ReducedCooldownPercent": 0.800000011920929,
@@ -1908,8 +2001,8 @@
     "apiName": "ARAM_Flashy",
     "name": "Flashy",
     "rarity": "Gold",
-    "desc": "Your Flash has @FlashAmmoTooltip@ Ammo and a @FlashCooldown@ second Cooldown. Ammo has @AmmoRechargeTime@ seconds recharge time",
-    "tooltip": "Your Flash has @FlashAmmoTooltip@ Ammo and a @FlashCooldown@ second Cooldown. Ammo has @AmmoRechargeTime@ seconds recharge time",
+    "desc": "Your Flash has @FlashAmmoTooltip@ charges. After @AmmoRechargeTime@ seconds, regain all charges.",
+    "tooltip": "Your Flash has @FlashAmmoTooltip@ charges. After @AmmoRechargeTime@ seconds, regain all charges.",
     "dataValues": {
       "FlashCooldown": 2.0,
       "FlashAmmoTooltip": 3.0,
@@ -1925,8 +2018,8 @@
     "apiName": "ARAM_CriticalHealing",
     "name": "Critical Healing",
     "rarity": "Gold",
-    "desc": "Your <healing>Heals</healing> and <shield>Shields</shield> can Critically Strike for @CritHeal*100@% bonus amount. Gain %i:scaleCrit% @CritChance*100@% Crit Chance. ",
-    "tooltip": "Your <healing>Heals</healing> and <shield>Shields</shield> can Critically Strike for @CritHeal*100@% bonus amount. Gain %i:scaleCrit% @CritChance*100@% Crit Chance. ",
+    "desc": "Your <healing>healing</healing> and <shield>Shields</shield> can Critically Strike for @CritHeal*100@% bonus amount. Gain %i:scaleCrit% @CritChance*100@% Crit Chance. ",
+    "tooltip": "Your <healing>healing</healing> and <shield>Shields</shield> can Critically Strike for @CritHeal*100@% bonus amount. Gain %i:scaleCrit% @CritChance*100@% Crit Chance. ",
     "dataValues": {
       "CritHeal": 0.4000000059604645,
       "CritChance": 0.25
@@ -1942,7 +2035,7 @@
     "name": "Marksmage",
     "rarity": "Gold",
     "desc": "Your Attacks deal additional <physicalDamage>physical damage</physicalDamage> equal to <scaleAP>@APRatio*100@% Ability Power</scaleAP>.",
-    "tooltip": "Your Attacks deal additional <physicalDamage>@APDamage@ physical damage</physicalDamage>.<br><br>Damage Dealt Total: @f2@",
+    "tooltip": "Your Attacks deal an additional <physicalDamage>@APDamage@ physical damage</physicalDamage>.<br><br>Damage Dealt Total: @f2@",
     "dataValues": {
       "APRatio": 0.75
     },
@@ -1971,8 +2064,8 @@
     "apiName": "ARAM_MagicMissile",
     "name": "Magic Missile",
     "rarity": "Gold",
-    "desc": "Dealing damage with an Ability fires @NumberOfMissiles@ magic missiles at them, each dealing <trueDamage>percent max Health true damage</trueDamage> based on distance traveled.",
-    "tooltip": "Dealing damage with an Ability fires @NumberOfMissiles@ magic missiles at each enemy hit, each dealing up to <trueDamage>@MaxHealthDamageTooltip@% max Health true damage</trueDamage> based on distance traveled.<br><br>Damage Dealt Total: @f2@",
+    "desc": "Dealing Ability damage fires @NumberOfMissiles@ <keywordMajor>Firecracker</keywordMajor> at them, each dealing <trueDamage>percent max Health true damage</trueDamage> based on distance traveled.",
+    "tooltip": "Dealing Ability damage fires @NumberOfMissiles@ <keywordMajor>Firecracker</keywordMajor> at each enemy hit, each dealing up to <trueDamage>@MaxHealthDamageTooltip@% max Health true damage</trueDamage> based on distance traveled.<br><br>Damage Dealt Total: @f2@",
     "dataValues": {
       "NumberOfMissiles": 3.0,
       "MaxHealthDamagePerMissile": 0.0033400000538676977,
@@ -1990,7 +2083,7 @@
     "apiName": "ARAM_DrawYourSword",
     "name": "Draw Your Sword",
     "rarity": "Prismatic",
-    "desc": "Become melee and gain <physicalDamage>Attack Damage</physicalDamage>, <healing>Health</healing>, <attackSpeed>Attack Speed</attackSpeed>, <lifesteal>Lifesteal</lifesteal>, and <speed>Move Speed</speed> (scaling with the range you give up.).",
+    "desc": "Become melee and gain <physicalDamage>Attack Damage</physicalDamage>, <healing>Health</healing>, <attackSpeed>Attack Speed</attackSpeed>, <lifesteal>Lifesteal</lifesteal>, and <speed>Movement Speed</speed> (scaling with the range you give up).",
     "tooltip": "You are now melee. Gain <physicalDamage>@BonusAD*100@% Attack Damage</physicalDamage>, <healing>@BonusHP*100@% Health</healing>, <attackSpeed>@BonusAS*100@% Attack Speed</attackSpeed>, <lifesteal>@BonusLifesteal*100@% Lifesteal</lifesteal>, and <speed>@BonusMS*100@% Move Speed</speed> (each further increased based on Attack Range lost).",
     "dataValues": {
       "BonusAD": 0.30000001192092896,
@@ -2006,49 +2099,6 @@
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/DrawYourSword_small.tex",
       "ASSETS/UX/Cherry/Augments/Icons/DrawYourSword_large.tex"
-    ]
-  },
-  {
-    "id": 1135,
-    "apiName": "ARAM_Spellwake",
-    "name": "Spellwake",
-    "rarity": "Prismatic",
-    "disabled": true,
-    "desc": "Hitting enemies with Abilities creates a blast that deals <magicDamage>magic damage</magicDamage> from you to the location you hit them.",
-    "tooltip": "Hitting enemies with Abilities creates a blast that deals <magicDamage>@Damage@ magic damage</magicDamage> from you to the location you hit them.<br><br>Damage Dealt This Round: @f1@<br>Damage Dealt Total: @f2@",
-    "dataValues": {
-      "ExplosionRadius": 100.0,
-      "ExplosionDelayTime": 0.75,
-      "Cooldown": 6.0,
-      "PerwaveDamageCD": 0.5,
-      "APRatio": 0.4000000059604645,
-      "BonusADRatio": 1.649999976158142
-    },
-    "calculations": {
-      "Damage": {
-        "mFormulaParts": [
-          {
-            "mEndValue": 325.0,
-            "mStartValue": 100.0,
-            "~class": "ByCharLevelInterpolationCalculationPart"
-          },
-          {
-            "mDataValue": "APRatio",
-            "~class": "StatByNamedDataValueCalculationPart"
-          },
-          {
-            "mDataValue": "BonusADRatio",
-            "mStat": 2,
-            "mStatFormula": 2,
-            "~class": "StatByNamedDataValueCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      }
-    },
-    "icons": [
-      "ASSETS/UX/Cherry/Augments/Icons/SpellWake_small.tex",
-      "ASSETS/UX/Cherry/Augments/Icons/SpellWake_large.tex"
     ]
   },
   {
@@ -2104,7 +2154,7 @@
     "name": "Impassable",
     "rarity": "Gold",
     "desc": "Gain the <spellName>Aftershock</spellName> and <spellName>Glacial Augment</spellName> Keystone Runes.",
-    "tooltip": "Gain the <spellName>Aftershock</spellName> and <spellName>Glacial Augment</spellName> Keystone Runes.<br><li><spellName>Aftershock</spellName>: After <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_Immobilize'>immobilizing</lol-uikit-tooltipped-keyword> an enemy champion gain defenses and later deal a burst of magic damage around you.<li><spellName>Glacial Augment</spellName>: Immobilizing an enemy champion will cause @RayCount@ glacial rays that slow nearby enemies and reduce their damage to your allies.",
+    "tooltip": "Gain the <spellName>Aftershock</spellName> and <spellName>Glacial Augment</spellName> Keystone Runes.<br><li><spellName>Aftershock</spellName>: After <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_Immobilize'>Immobilizing</lol-uikit-tooltipped-keyword> an enemy champion, gain defenses and later deal a burst of magic damage around you.<li><spellName>Glacial Augment</spellName>: Immobilizing an enemy champion will spawn @RayCount@ glacial rays that Slow nearby enemies and reduce their damage to your allies.",
     "dataValues": {
       "SlowZoneDuration": 3.0,
       "SlowZoneSlowBase": 0.20000000298023224,
@@ -2176,8 +2226,8 @@
     "apiName": "ARAM_Quest_SteelYourHeart",
     "name": "Quest: Steel Your Heart",
     "rarity": "Gold",
-    "desc": "Requirement: Possess Heartsteel with @StackThreshold@+ stacks.<br><br>Reward: Multiply your Heartsteel stacks by @StackMultiplication@. ",
-    "tooltip": "Requirement: Possess Heartsteel with @StackThreshold@+ stacks.<br><br>Reward: Multiply your Heartsteel stacks by @StackMultiplication@. ",
+    "desc": "Requirement: Possess Heartsteel with @StackThreshold@+ stacks.<br><br>Reward: Multiply your Heartsteel stacks by @StackMultiplication@.",
+    "tooltip": "Requirement: Possess Heartsteel with @StackThreshold@+ stacks.<br><br>Reward: Multiply your Heartsteel stacks by @StackMultiplication@.",
     "dataValues": {
       "StackThreshold": 300.0,
       "StackMultiplication": 3.0
@@ -2231,73 +2281,11 @@
     ]
   },
   {
-    "id": 1174,
-    "apiName": "ARAM_LaserEyes",
-    "name": "Laser Eyes",
-    "rarity": "Prismatic",
-    "disabled": true,
-    "desc": "There is a laser in the direction you are facing that deals continuous <magicDamage>magic damage</magicDamage>.",
-    "tooltip": "There is a laser in the direction you are facing that deals <magicDamage>@LaserEyesTooltip@ magic damage</magicDamage> per second.<br><br>Damage Dealt This Round: @f1@<br>Damage Dealt Total: @f2@",
-    "dataValues": {
-      "LaserLength": 700.0,
-      "RectHalfWidth": 60.0,
-      "ADRatio": 0.14000000059604645,
-      "APRatio": 0.09000000357627869,
-      "ADRatioTooltip": 0.5600000023841858,
-      "APRatioTooltip": 0.36000001430511475
-    },
-    "calculations": {
-      "LaserDamage": {
-        "mFormulaParts": [
-          {
-            "mEndValue": 60.0,
-            "mStartValue": 5.0,
-            "~class": "ByCharLevelInterpolationCalculationPart"
-          },
-          {
-            "mDataValue": "APRatio",
-            "~class": "StatByNamedDataValueCalculationPart"
-          },
-          {
-            "mDataValue": "ADRatio",
-            "mStat": 2,
-            "~class": "StatByNamedDataValueCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "LaserEyesTooltip": {
-        "mFormulaParts": [
-          {
-            "mEndValue": 240.0,
-            "mStartValue": 20.0,
-            "~class": "ByCharLevelInterpolationCalculationPart"
-          },
-          {
-            "mDataValue": "APRatioTooltip",
-            "~class": "StatByNamedDataValueCalculationPart"
-          },
-          {
-            "mDataValue": "ADRatioTooltip",
-            "mStat": 2,
-            "~class": "StatByNamedDataValueCalculationPart"
-          }
-        ],
-        "tooltipOnly": true,
-        "~class": "GameCalculation"
-      }
-    },
-    "icons": [
-      "ASSETS/Maps/Particles/Kiwi/LaserEyes_small.Kiwi_15_24_Content.tex",
-      "ASSETS/Maps/Particles/Kiwi/LaserEyes_large.Kiwi_15_24_Content.tex"
-    ]
-  },
-  {
     "id": 1180,
     "apiName": "ARAM_BigBrain",
     "name": "Big Brain",
     "rarity": "Gold",
-    "desc": "Gain<shield> @ShieldBase@ Shield </shield>for every <scaleAP>%i:scaleAP% @AP@ Ability Power</scaleAP>. Refresh on death.",
+    "desc": "Gain<shield> @ShieldBase@ Shield </shield>for every <scaleAP>%i:scaleAP% @AP@ Ability Power</scaleAP>. Resets on death.",
     "tooltip": "Gain a <shield>@TotalShield@ Shield</shield>. Resets on death.",
     "dataValues": {
       "ShieldBase": 3.0,
@@ -2352,8 +2340,8 @@
     "apiName": "ARAM_Flashbang",
     "name": "Flashbang",
     "rarity": "Silver",
-    "desc": "Flashing causes an explosion that damages and <status>slows</status>. Flash resets every death.",
-    "tooltip": "Flashing causes an explosion that deals @ExplosiveDamage@ damages and <status>slows</status>. Flash resets every death.<br><br>Damage Dealt Total: @f2@",
+    "desc": "Your Flash causes an explosion that damages and <status>Slows</status> (resets on death).",
+    "tooltip": "Your Flash causes an explosion that deals @ExplosiveDamage@ damage and <status>Slows</status> (resets on death).<br><br>Damage Dealt: @f2@",
     "dataValues": {
       "SlowAmount": 0.3499999940395355,
       "SlowDuration": 1.25,
@@ -2407,8 +2395,8 @@
     "apiName": "ARAM_GiantSlayer",
     "name": "Giant Slayer",
     "rarity": "Prismatic",
-    "desc": "Become tiny, gain <speed>Move Speed</speed>, and bonus damage to champions based on how much larger they are than you.",
-    "tooltip": "Become tiny, gain <speed>@MovespeedMod*100@% Move Speed</speed>, and deal between @SmallBonusDamage*100@% and @XLargeBonusDamage*100@% bonus damage to champions based on how much larger they are than you.<br><br>Damage dealt total: @f2@",
+    "desc": "Become tiny, gain <speed>Movement Speed</speed>, and gain bonus damage to champions based on how much larger they are than you.",
+    "tooltip": "Become tiny, gain <speed>@MovespeedMod*100@% Movement Speed</speed>, and deal between @SmallBonusDamage*100@% and @XLargeBonusDamage*100@% bonus damage to champions based on how much larger they are than you.<br><br>Damage Dealt: @f2@",
     "dataValues": {
       "SizeMod": 0.25,
       "MovespeedMod": 0.30000001192092896,
@@ -2428,7 +2416,7 @@
     "name": "Holy Fire",
     "rarity": "Gold",
     "desc": "<healing>Healing</healing> or <shield>Shielding</shield> applies an infinitely stacking <keywordMajor>Burn</keywordMajor> to a nearby enemy, dealing <magicDamage>percent max Health magic damage</magicDamage> over a few seconds.",
-    "tooltip": "<healing>Healing</healing> or <shield>Shielding</shield> applies an infinitely stacking <keywordMajor>Burn</keywordMajor> to a nearby enemy, dealing up to <magicDamage>@BurnPercentMax*100@% max Health magic damage</magicDamage> over @BurnDuration@ seconds (min: @BurnPercentMin*100@%).<br><br>The damage scales with the relative size of the <healing>Heal</healing> or <shield>Shielding</shield> to the <scaleHealth>max Health</scaleHealth> of the champion being aided.<br><br>Damage Dealt Total: @f2@",
+    "tooltip": "<healing>Healing</healing> or <shield>Shielding</shield> applies an infinitely stacking <keywordMajor>Burn</keywordMajor> to a nearby enemy, dealing up to <magicDamage>@BurnPercentMax*100@% max Health magic damage</magicDamage> over @BurnDuration@ seconds (minimum @BurnPercentMin*100@%).<br><br>Damage scales with the relative size of the <healing>heal</healing> or <shield>Shielding</shield> to the <scaleHealth>max Health</scaleHealth> of the champion being aided.<br><br>Damage Dealt: @f2@",
     "dataValues": {
       "Radius": 650.0,
       "BurnPercentMin": 0.009999999776482582,
@@ -2459,21 +2447,6 @@
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/HolyFire_small.tex",
       "ASSETS/UX/Cherry/Augments/Icons/HolyFire_large.tex"
-    ]
-  },
-  {
-    "id": 1204,
-    "apiName": "ARAM_StackosaurusRex",
-    "name": "Stackosaurus Rex",
-    "rarity": "Silver",
-    "desc": "When you gain permanent <keywordMajor>Stacks</keywordMajor> of an Ability, gain @StackModifier*100@% more!",
-    "tooltip": "When you gain permanent <keywordMajor>Stacks</keywordMajor> of an Ability, gain @StackModifier*100@% more!",
-    "dataValues": {
-      "StackModifier": 0.75
-    },
-    "icons": [
-      "ASSETS/UX/Cherry/Augments/Icons/StackosaurusRex_small.tex",
-      "ASSETS/UX/Cherry/Augments/Icons/StackosaurusRex_large.tex"
     ]
   },
   {
@@ -2538,8 +2511,8 @@
     "apiName": "ARAM_ItsKillingTime",
     "name": "It's Killing Time",
     "rarity": "Gold",
-    "desc": "After casting your Ultimate, mark all enemy champions for death. While marked, store a percentage of damage dealt to them, and detonate the damage when the mark ends.",
-    "tooltip": "After casting your Ultimate, mark all enemy champions for death. The mark stores @DamageStorePercentage*100@% of damage dealt to them, then detonates for the stored damage after @MarkDuration@ seconds. (@Cooldown@ second Cooldown).<br><br>Damage Dealt Total: @f2@",
+    "desc": "After casting your Ultimate, mark all enemies and store damage dealt to them. When it ends, detonate the damage.",
+    "tooltip": "After casting your Ultimate, mark all enemies and store @DamageStorePercentage*100@% of damage dealt. After @MarkDuration@ seconds, detonate the stored damage. (@Cooldown@-second cooldown).<br><br>Damage Dealt Total: @f2@",
     "dataValues": {
       "MarkDuration": 5.0,
       "Cooldown": 8.0,
@@ -2556,8 +2529,8 @@
     "apiName": "ARAM_SpinToWin",
     "name": "Spin To Win",
     "rarity": "Silver",
-    "desc": "Your spin Abilities gain @SpinHaste@ Ability Haste and deal @SpinDamageAmp*100@% more damage!",
-    "tooltip": "{{ Kiwi_SpinToWin_Summary }}<br><br>Total Damage Deal to Champions: @f2@",
+    "desc": "Your spin Abilities gain @SpinHaste@ Ability Haste and deal @SpinDamageAmp*100@% more damage.",
+    "tooltip": "{{ Kiwi_SpinToWin_Summary }}<br><br>Damage Dealt: @f2@",
     "dataValues": {
       "SpinDamageAmp": 0.30000001192092896,
       "SpinHaste": 30.0
@@ -2572,8 +2545,8 @@
     "apiName": "ARAM_FanTheHammer",
     "name": "Fan The Hammer",
     "rarity": "Prismatic",
-    "desc": "Attacks fire @AdditionalBolts@ extra bolts that deal more damage with distance. Each direction has its own cooldown.",
-    "tooltip": "When you Attack, fire @AdditionalBolts@ additional bolts that each deal <physicalDamage>@DamagePerBolt@ physical damage</physicalDamage>, increased up to @MaxDamageAmp*100@% with distance travelled. Each cardinal direction has a @Cooldown@ second Cooldown.<br><br>Each bolt can Critically Strike and applies On-Hits at @OnHitRatio*100@% effectiveness.<br><br>Damage Dealt Total: @f2@",
+    "desc": "Attacks fire @AdditionalBolts@ extra <keywordMajor>Firecracker</keywordMajor> that deal more damage with distance. Each direction has its own cooldown.",
+    "tooltip": "When you Attack, fire @AdditionalBolts@ additional <keywordMajor>Firecracker</keywordMajor> that each deal <physicalDamage>@DamagePerBolt@ physical damage</physicalDamage>, increased up to @MaxDamageAmp*100@% with distance travelled. Each cardinal direction has a @Cooldown@ second Cooldown.<br><br>Each bolt can Critically Strike and applies On-Hits at @OnHitRatio*100@% effectiveness.<br><br>Damage Dealt Total: @f2@",
     "dataValues": {
       "Cooldown": 15.0,
       "AdditionalBolts": 5.0,
@@ -2609,8 +2582,8 @@
     "apiName": "ARAM_DualWield",
     "name": "Dual Wield",
     "rarity": "Prismatic",
-    "desc": "Attacks fire a secondary bolt that applies {{ Item_Keyword_OnHit }} effects at reduced strength. Gain <attackSpeed>@AttackSpeed*100@% total Attack Speed</attackSpeed>.",
-    "tooltip": "When you Attack, fire a secondary bolt that deals @AttackReduction*100@% damage and applies your {{ Item_Keyword_OnHit }} effects at @OnHitMod*100@% effectiveness. Gain <attackSpeed>@AttackSpeed*100@% total Attack Speed</attackSpeed>.",
+    "desc": "Attacks fire a bolt that applies {{ Item_Keyword_OnHit }} effects at reduced strength. Gain <attackSpeed>@AttackSpeed*100@% total Attack Speed</attackSpeed>.",
+    "tooltip": "When you Attack, fire a bolt that deals @AttackReduction*100@% damage and applies your {{ Item_Keyword_OnHit }} effects at @OnHitMod*100@% effectiveness. Gain <attackSpeed>@AttackSpeed*100@% total Attack Speed</attackSpeed>.",
     "dataValues": {
       "AttackSpeed": 0.20000000298023224,
       "AttackReduction": 0.4000000059604645,
@@ -2742,6 +2715,73 @@
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/LegDay_small.tex",
       "ASSETS/UX/Cherry/Augments/Icons/LegDay_large.tex"
+    ]
+  },
+  {
+    "id": 1308,
+    "apiName": "ARAM_Firefox",
+    "name": "FireFox",
+    "rarity": "Silver",
+    "desc": "<keywordMajor>Autocast</keywordMajor><br>Gain movement speed and conjure three flames that orbit you, targetting the closest visible enemy in range and dealing adaptive damage.",
+    "tooltip": "<keywordMajor>Autocast</keywordMajor>: Gain <speed>@MovementSpeed*100@% movement speed</speed> and conjure three flames that orbit you every @Cooldown@ seconds, targetting the closest visible enemy in range and dealing @SingleFireDamage@ adaptive damage. Subsequent hits do @RepeatDamageMod*100@% damage.<br><br>Damage Dealt Total: @f2@",
+    "dataValues": {
+      "MovementSpeed": 0.4000000059604645,
+      "MovementSpeedDuration": 2.0,
+      "MinionBonusDamageMultiplier": 2.0,
+      "MinionBonusDamageThreshold": 0.20000000298023224,
+      "BaseDamage": [
+        20.0,
+        45.0,
+        70.0,
+        95.0,
+        120.0,
+        145.0,
+        170.0
+      ],
+      "RepeatDamageMod": 0.30000001192092896,
+      "AcquisitionRange": 550.0,
+      "BonusAcquisitionRange": 725.0,
+      "InitialDelay": 0.25,
+      "SecondaryDelay": 0.4000000059604645,
+      "FlameDuration": 2.5,
+      "OrbitRadius": 150.0,
+      "Cooldown": 7.0,
+      "MaxLevel": 1.0
+    },
+    "calculations": {
+      "MultiFireDamage": {
+        "mModifiedGameCalculation": "SingleFireDamage",
+        "mMultiplier": {
+          "mDataValue": "RepeatDamageMod",
+          "~class": "NamedDataValueCalculationPart"
+        },
+        "mSimpleTooltipCalculationDisplay": 6,
+        "~class": "GameCalculationModified"
+      },
+      "SingleFireDamage": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 160.0,
+            "mStartValue": 35.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          },
+          {
+            "mCoefficient": 0.25,
+            "~class": "StatByCoefficientCalculationPart"
+          },
+          {
+            "mCoefficient": 0.25,
+            "mStat": 2,
+            "mStatFormula": 2,
+            "~class": "StatByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Cherry/Augments/Icons/Firfox_small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Firfox_large.tex"
     ]
   },
   {
@@ -2881,8 +2921,8 @@
     "apiName": "MightyShield",
     "name": "Mighty Shield",
     "rarity": "Silver",
-    "desc": "Gain %i:miniAdaptiveForce%<font color = '#8347ff'>@AdaptiveAmp@ Adaptive Force</font> for @ShieldDuration@ seconds when you gain a shield. (@Cooldown@s Cooldown)",
-    "tooltip": "Gain %i:miniAdaptiveForce%<font color = '#8347ff'>@AdaptiveAmp@ Adaptive Force</font> for @ShieldDuration@ seconds when you gain a shield. (@Cooldown@s Cooldown)",
+    "desc": "Gain %i:miniAdaptiveForce%<font color = '#8347ff'>@AdaptiveAmp@ Adaptive Force</font> for @ShieldDuration@ seconds when you gain a Shield (@Cooldown@ seconds Cooldown).",
+    "tooltip": "Gain %i:miniAdaptiveForce%<font color = '#8347ff'>@AdaptiveAmp@ Adaptive Force</font> for @ShieldDuration@ seconds when you gain a Shield (@Cooldown@ seconds Cooldown).",
     "dataValues": {
       "ShieldDuration": 3.0,
       "Cooldown": 5.0
@@ -2909,8 +2949,8 @@
     "apiName": "SwiftAndSafe",
     "name": "Swift and Safe",
     "rarity": "Silver",
-    "desc": "Gain a <shield>shield</shield> after a dash or blink.",
-    "tooltip": "Gain a <shield>@ShieldAmount@shield</shield> for @ShieldDuration@ seconds after a dash or blink. (@Cooldown@ seconds cooldown)<br>",
+    "desc": "Gain a <shield>Shield</shield> after a Dash or Blink.",
+    "tooltip": "Gain a <shield>@ShieldAmount@ Shield</shield> for @ShieldDuration@ seconds after a Dash or Blink (@Cooldown@ seconds Cooldown).<br>",
     "dataValues": {
       "Cooldown": 5.0,
       "APPercent": 0.25999999046325684,
@@ -2950,7 +2990,7 @@
     "name": "Wind Beneath Blade",
     "rarity": "Silver",
     "desc": "The higher your <physicalDamage>Armor Penetration</physicalDamage> and <magicDamage>Magic Penetration</magicDamage> are, the faster you are.",
-    "tooltip": "Gain <speed>@MSFromBasePen@ movement speed</speed> from Flat <physicalDamage>Armor Penetration</physicalDamage> and <magicDamage>Magic Penetration</magicDamage>. Gain <speed>@PercentPenConversion@ movement speed </speed> every 10% of your Percent <physicalDamage>Armor Penetration</physicalDamage> and <magicDamage>Magic Penetration</magicDamage><br><br>Gain @f2@ Movement Speed",
+    "tooltip": "Gain <speed>@MSFromBasePen@ Movement Speed</speed> from flat <physicalDamage>Armor Penetration</physicalDamage> and <magicDamage>Magic Penetration</magicDamage>. Gain <speed>@PercentPenConversion@ Movement Speed</speed> every 10% of your percent <physicalDamage>Armor Penetration</physicalDamage> and <magicDamage>Magic Penetration</magicDamage><br><br>Gain @f2@ Movement Speed.",
     "dataValues": {
       "FlatPenConversion": 1.5,
       "PercentPenConversion": 5.0
@@ -2982,8 +3022,8 @@
     "apiName": "ARAM_Upgrade_Cutlass",
     "name": "Upgrade Cutlass",
     "rarity": "Silver",
-    "desc": "Reduce <attention>Spectral Cutlass</attention> and <attention>Lifeline's</attention> cooldown to @UpgradeCD@s. When active, gain @DamageAmp*100@% damage amplification. <br><br>Gain 250 <gold>gold</gold>.",
-    "tooltip": "Reduce <attention>Spectral Cutlass</attention> and <attention>Lifeline's</attention> cooldown to @UpgradeCD@s. When active, gain @DamageAmp*100@% damage amplification. <br>",
+    "desc": "Reduce <attention>Spectral Cutlass</attention> and <attention>Lifeline's</attention> Cooldown to @UpgradeCD@ seconds. When active, gain @DamageAmp*100@% damage amplification.<br><br>Gain <gold>250 Gold</gold>.",
+    "tooltip": "Reduce <attention>Spectral Cutlass</attention> and <attention>Lifeline's</attention> Cooldown to @UpgradeCD@ seconds. When active, gain @DamageAmp*100@% damage amplification.<br>",
     "dataValues": {
       "DamageAmp": 0.25,
       "UpgradeCD": 30.0
@@ -2998,8 +3038,8 @@
     "apiName": "ARAM_Upgrade_ZH",
     "name": "Upgrade Zhonya's",
     "rarity": "Silver",
-    "desc": "Reduce <attention>Zhonya's Hourglass</attention> cooldown to @UpgradeCD@s. You can now move when in <attention>Zhonya's Hourglass, Seeker's Armguard,</attention> or <attention>Wooglet's Witchcap</attention> stasis.<br><br>Gain 250 <gold>gold</gold>.",
-    "tooltip": "Reduce <attention>Zhonya's Hourglass</attention> cooldown to @UpgradeCD@s. You can now move when in <attention>Zhonya's Hourglass, Seeker's Armguard,</attention> or <attention>Wooglet's Witchcap</attention> stasis.<br>",
+    "desc": "Reduce <attention>Zhonya's Hourglass</attention> Cooldown to @UpgradeCD@ seconds. You can now move when in <attention>Zhonya's Hourglass, Seeker's Armguard,</attention> or <attention>Wooglet's Witchcap</attention> stasis.<br><br>Gain <gold>250 Gold</gold>.",
+    "tooltip": "Reduce <attention>Zhonya's Hourglass</attention> Cooldown to @UpgradeCD@ seconds. You can now move when in <attention>Zhonya's Hourglass, Seeker's Armguard,</attention> or <attention>Wooglet's Witchcap</attention> stasis.<br>",
     "dataValues": {
       "UpgradeCD": 45.0
     },
@@ -3013,8 +3053,8 @@
     "apiName": "ARAM_Upgrade_Immolate",
     "name": "Upgrade Immolate",
     "rarity": "Silver",
-    "desc": "<attention>Hollow Radiance</attention> and <attention>Sunfire Aegis</attention> grant <gold>@GoldPerTick@ gold</gold> per target affected with Immolate. Gain <gold>250 gold</gold>.",
-    "tooltip": "<attention>Hollow Radiance</attention> and <attention>Sunfire Aegis</attention> grant <gold>@GoldPerTick@ gold</gold> per target affected with Immolate.  Gain <gold>250 gold</gold>.<br><br>Gold Earned: @f1@",
+    "desc": "<attention>Hollow Radiance</attention> and <attention>Sunfire Aegis</attention> grant <gold>@GoldPerTick@ Gold</gold> per target affected with Immolate. Gain <gold>250 Gold</gold>.",
+    "tooltip": "<attention>Hollow Radiance</attention> and <attention>Sunfire Aegis</attention> grant <gold>@GoldPerTick@ Gold</gold> per target affected with Immolate.  Gain <gold>250 Gold</gold>.<br><br>Gold Earned: @f1@",
     "dataValues": {
       "GoldPerTick": 10.0
     },
@@ -3028,12 +3068,12 @@
     "apiName": "ARAM_Upgrade_Collector",
     "name": "Upgrade Collector",
     "rarity": "Silver",
-    "desc": "Executing enemies with The Collector's passive increase its execute threshold and grant bonus gold. <br>Gain <gold>250 gold</gold>.",
-    "tooltip": "Executing enemies with The Collector's passive increase execute threshold by @ExecutionInc*100@% and grant additional <gold>@UpgradedGoldAmount@ gold</gold>. <br><br>Gain <gold>250 gold</gold>.",
+    "desc": "Executing enemies with The Collector's Passive increases its execute threshold and grants bonus Gold. <br>Gain <gold>250 Gold</gold>.",
+    "tooltip": "Executing enemies with The Collector's Passive increases execute threshold by @ExecutionInc*100@% and grant additional <gold>@UpgradedGoldAmount@ Gold</gold>. <br><br>Gain <gold>250 Gold</gold>.",
     "dataValues": {
       "UpgradedGoldAmount": 50.0,
       "ExecutionInc": 0.004999999888241291,
-      "MaxCount": 10.0
+      "MaxCount": 15.0
     },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/UpgradeCollector_small.tex",
@@ -3126,7 +3166,7 @@
     "apiName": "ARAM_GetExcited",
     "name": "Get Excited!",
     "rarity": "Gold",
-    "desc": "Increase <speed>Move Speed</speed> and <attackSpeed>Attack Speed</attackSpeed> for @BuffDuration@ seconds on takedown.",
+    "desc": "Increase <speed>Movement Speed</speed> and <attackSpeed>Attack Speed</attackSpeed> for @BuffDuration@ seconds on takedown.",
     "tooltip": "Gain <speed>@MSBuff*100@% Movement Speed</speed> and <attackSpeed>@ASBuff*100@% Attack Speed</attackSpeed> for @BuffDuration@ seconds on takedown.",
     "dataValues": {
       "BuffDuration": 4.0,
@@ -3143,8 +3183,8 @@
     "apiName": "ARAM_Cruelty",
     "name": "Cruelty",
     "rarity": "Prismatic",
-    "desc": "On <status>Immobilizing</status> or <status>Grounding</status> a champion, summon a comet that lands after a delay, dealing <magicDamage>magic damage</magicDamage> in the area.",
-    "tooltip": "On <status>Immobilizing</status> or <status>Grounding</status> an enemy champion, summon a comet above them. The comet lands after @DelayTime@ second, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> in the area. <br><rules>This effect has a @PerSpellLockout@ seconds cooldown per target per spell cast.</rules><br><br>Damage Dealt: @f1@",
+    "desc": "On <status>Immobilizing</status> or <status>Grounding</status> a champion, summon a comet that lands after a delay, dealing <magicDamage>magic damage</magicDamage> to nearby enemies.",
+    "tooltip": "On <status>Immobilizing</status> or <status>Grounding</status> an enemy champion, summon a comet above them. The comet lands after @DelayTime@ second, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> to nearby enemies. <br><rules>This effect has a @PerSpellLockout@ seconds Cooldown per target per spell cast.</rules><br><br>Damage Dealt: @f1@",
     "dataValues": {
       "DelayTime": 1.0,
       "PerSpellLockout": 6.0,
@@ -3181,8 +3221,8 @@
     "apiName": "ARAM_ProteinShake",
     "name": "Protein Shake",
     "rarity": "Prismatic",
-    "desc": "Gain %i:scaleHealShield%@BonusHSPower@% <heal>Heal and Shield Power</heal> based on bonus <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resistance</scaleMR>.",
-    "tooltip": "Gain %i:scaleHealShield%@BonusHSPower@% <heal>Heal and Shield Power</heal> based on bonus <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resistance</scaleMR>.",
+    "desc": "Gain %i:scaleHealShield%@BonusHSPower@% <heal>Heal and Shield Power</heal> based on bonus <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR>.",
+    "tooltip": "Gain %i:scaleHealShield%@BonusHSPower@% <heal>Heal and Shield Power</heal> based on bonus <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR>.",
     "dataValues": {
       "ConversionRate": 0.3499999940395355,
       "InitialHS": 25.0
@@ -3220,8 +3260,8 @@
     "apiName": "GlassCannon",
     "name": "Glass Cannon",
     "rarity": "Prismatic",
-    "desc": "Reduce <scaleHealth>Max Health by @HPReductionPerc*100@%</scaleHealth>. Deal an extra @TrueDamagePerc*100@% damage as <trueDamage>True Damage</trueDamage>. ",
-    "tooltip": "{{Kiwi_GlassCannon_Summary}}<br><br>Total Damage Dealt to Champions: @f1@",
+    "desc": "Reduce <scaleHealth>max Health by @HPReductionPerc*100@%</scaleHealth>. Deal an extra @TrueDamagePerc*100@% damage as <trueDamage>true damage</trueDamage>. ",
+    "tooltip": "{{Kiwi_GlassCannon_Summary}}<br><br>Damage Dealt: @f1@",
     "dataValues": {
       "TrueDamagePerc": 0.15000000596046448,
       "HPReductionPerc": 0.30000001192092896
@@ -3266,7 +3306,7 @@
     "name": "Adamant",
     "rarity": "Silver",
     "desc": "Each time you <status>Immobilize</status> or <status>Ground</status> an enemy, gain Armor and Magic Resist.",
-    "tooltip": "Each time you <status>Immobilize</status> or <status>Ground</status> an enemy, gain @ResistsPerLevel@ Armor and Magic Resist for @AugDuration@ seconds. Up to @MaxStacks@ stacks.",
+    "tooltip": "Each time you <status>Immobilize</status> or <status>Ground</status> an enemy, gain @ResistsPerLevel@ Armor and Magic Resist for @AugDuration@ seconds (up to @MaxStacks@ stacks).",
     "dataValues": {
       "Resists": 8.0,
       "SpellIDCD": 5.0,
@@ -3295,8 +3335,8 @@
     "apiName": "CriticalRhythm",
     "name": "Critical Rhythm",
     "rarity": "Gold",
-    "desc": "Gain <crit>@CritChance*100@% Crit Chance</crit>. Your basic attack stacks Attack Speed on <crit>Critical Strikes</crit>.<br><br><br>",
-    "tooltip": "Gain <crit>@CritChance*100@% Crit Chance</crit>. Your basic attack stacks @ASPerStack*100@% Attack Speed on <crit>Critical Strikes</crit>  up to @MaxStack@ stacks.<br>",
+    "desc": "Gain <crit>@CritChance*100@% Crit Chance</crit>. Your basic Attack stacks Attack Speed on <crit>Critical Strikes</crit>.<br><br><br>",
+    "tooltip": "Gain <crit>@CritChance*100@% Crit Chance</crit>. Your basic Attack stacks @ASPerStack*100@% Attack Speed on <crit>Critical Strikes</crit> up to @MaxStack@ stacks.<br>",
     "dataValues": {
       "ASPerStack": 0.05999999865889549,
       "CritChance": 0.25,
@@ -3313,8 +3353,8 @@
     "apiName": "BiggestSnowballEver",
     "name": "Biggest Snowball Ever",
     "rarity": "Prismatic",
-    "desc": "Gain @Haste@ Ability Haste on <spellName>Snowball</spellName>. <br><br>Your snowball is <attention>BIG</attention> and will pass through minions. It <status>Slows</status>, <status>Knockups</status> champions and deals additional <magicDamage>damage</magicDamage>.<br><br><rules>If you don't have one, gain a <spellName>Snowball</spellName>.</rules>",
-    "tooltip": "Gain @Haste@ Ability Haste on <spellName>Snowball</spellName>. <br><br>Your snowball is <attention>BIG</attention> and will pass through minions. It <status>Slows</status> enemies for @MoveSpeedModTooltip*100@% for @SlowDuration@ seconds, <status>Knockups</status> for @KnockUpDuration@ seconds and deals additional <magicDamage>@SnowballDamage@ damage</magicDamage>.<br><br><rules>If you don't have one, gain a <spellName>Snowball</spellName>.</rules>",
+    "desc": "Gain @Haste@ Ability Haste on <spellName>Snowball</spellName>. <br><br>Your snowball is <attention>BIG</attention> and will pass through minions. It <status>Slows</status>, <status>Knocks Up</status> champions, and deals additional <magicDamage>damage</magicDamage>.<br><br><rules>If you don't have one, gain a <spellName>Snowball</spellName>.</rules>",
+    "tooltip": "Gain @Haste@ Ability Haste on <spellName>Snowball</spellName>. <br><br>Your snowball is <attention>BIG</attention> and will pass through minions. It <status>Slows</status> enemies for @MoveSpeedModTooltip*100@% for @SlowDuration@ seconds, <status>Knocks Up</status> for @KnockUpDuration@ seconds, and deals an additional <magicDamage>@SnowballDamage@ damage</magicDamage>.<br><br><rules>If you don't have one, gain a <spellName>Snowball</spellName>.</rules>",
     "dataValues": {
       "MoveSpeedMod": -0.20000000298023224,
       "SlowDuration": 2.0,
@@ -3356,8 +3396,8 @@
     "apiName": "ReEnergize",
     "name": "ReEnergize",
     "rarity": "Silver",
-    "desc": "Your <keyword>Energized Attack</keyword> charges are fully refunded if the target is not the same as your previous. <keyword>Energized Attacks</keyword> deals extra <magicDamage>damage</magicDamage>. ",
-    "tooltip": "Your <keyword>Energized Attack</keyword> charges are fully refunded if the target is not the same as your previous. <keyword>Energized Attacks</keyword> deal an additional magic damage equal to <magicDamage>@TargetCurrentHealthRatio*100@% Target Current Health</magicDamage>.<br><br>Energize Refund Count: @f1@",
+    "desc": "Your <keyword>Energized Attack</keyword> charges are fully refunded if the target is not the same as your previous. <keyword>Energized Attacks</keyword> deals extra <magicDamage>damage</magicDamage>.",
+    "tooltip": "Your <keyword>Energized Attack</keyword> charges are fully refunded if the target is not the same as your previous. <keyword>Energized Attacks</keyword> deal an additional magic damage equal to <magicDamage>@TargetCurrentHealthRatio*100@% target current Health</magicDamage>.<br><br>Charges Refunded: @f1@",
     "dataValues": {
       "TargetCurrentHealthRatio": 0.10000000149011612
     },
@@ -3367,12 +3407,53 @@
     ]
   },
   {
+    "id": 1331,
+    "apiName": "EmpyreanPromise",
+    "name": "Empyrean Promise",
+    "rarity": "Prismatic",
+    "desc": "Gain  %i:scaleHealShield% @HSAmp*100@% Heal and Shield power. Gain <spellName>Empyrean Promise</spellName> as a Summoner Spell.<br><br><rules><active>Vigilance</active><br>Teleport to an ally and grant <shield>@ShieldAmount@ Shield</shield> for @ShieldDuration@ seconds after landing.</rules>",
+    "tooltip": "Gain  %i:scaleHealShield% @HSAmp*100@% Heal and Shield power. Gain <spellName>Empyrean Promise</spellName> as a Summoner Spell.<br><br><rules><active>Vigilance</active><br>Teleport to an ally and grant <shield>@ShieldAmount@ Shield</shield> for @ShieldDuration@ seconds after landing.</rules>",
+    "dataValues": {
+      "ShieldDuration": 3.0,
+      "ShieldRatioAP": 1.0,
+      "ShieldRatioBHealth": 0.10000000149011612,
+      "DelayMovingTime": 0.5,
+      "HSAmp": 0.15000000596046448
+    },
+    "calculations": {
+      "ShieldAmount": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 250.0,
+            "mStartValue": 100.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          },
+          {
+            "mDataValue": "ShieldRatioAP",
+            "~class": "StatByNamedDataValueCalculationPart"
+          },
+          {
+            "mDataValue": "ShieldRatioBHealth",
+            "mStat": 12,
+            "mStatFormula": 2,
+            "~class": "StatByNamedDataValueCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/EmpyreamPromise_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/EmpyreamPromise_large.tex"
+    ]
+  },
+  {
     "id": 1332,
     "apiName": "OminousPact",
     "name": "Ominous Pact",
     "rarity": "Prismatic",
-    "desc": "Gain <magicDamage>Ability Power</magicDamage>, <speed>Move Speed</speed> and <omnivamp>Omnivamp</omnivamp>, based on <scaleHealth>missing Health</scaleHealth>, taking damage each time you cast.<br>",
-    "tooltip": "Gain <magicDamage>@APPerLevel@ Ability Power</magicDamage>, <speed>@MSMod*100@% Move Speed</speed> and <omnivamp>@MaxOmnivamp*100@% Omnivamp</omnivamp>, based on <scaleHealth>missing Health</scaleHealth>. Spell casts cost @SpellHealthCost*100@% of your current health.<br><br><rules>Max benefit at @HealthThresholdTT*100@% health.</rules><br>",
+    "desc": "Gain <magicDamage>Ability Power</magicDamage>, <speed>Movement Speed</speed>, and <omnivamp>Omnivamp</omnivamp> based on <scaleHealth>missing Health</scaleHealth>, taking damage each time you cast.<br>",
+    "tooltip": "Gain <magicDamage>@APPerLevel@ Ability Power</magicDamage>, <speed>@MSMod*100@% Movement Speed</speed>, and <omnivamp>@MaxOmnivamp*100@% Omnivamp</omnivamp> based on <scaleHealth>missing Health</scaleHealth>. Spell casts cost @SpellHealthCost*100@% of your current Health.<br><br><rules>Max benefit at @HealthThresholdTT*100@% Health.</rules><br>",
     "dataValues": {
       "MaxOmnivamp": 0.20000000298023224,
       "MSMod": 0.5,
@@ -3402,7 +3483,7 @@
     "name": "Escape Plan",
     "rarity": "Silver",
     "desc": "Gain a massive <shield>decaying Shield</shield>, decaying <speed>Movement Speed</speed>, and a decaying shrink effect upon reaching <scaleHealth>@HealthThreshold*100@% Health</scaleHealth>.",
-    "tooltip": "Gain a massive <shield>@ShieldAmount@ decaying shield</shield>, decaying <speed>@MovespeedModEnhanced*100@% Movement Speed</speed>, and a decaying shrink effect upon reaching <scaleHealth>@HealthThreshold*100@% Health</scaleHealth>. (@Cooldown@s Cooldown)",
+    "tooltip": "Gain a massive <shield>@ShieldAmount@ decaying Shield</shield>, decaying <speed>@MovespeedModEnhanced*100@% Movement Speed</speed>, and a decaying shrink effect upon reaching <scaleHealth>@HealthThreshold*100@% Health</scaleHealth> (@Cooldown@ seconds Cooldown).",
     "dataValues": {
       "SizeMod": 0.20000000298023224,
       "Duration": 5.0,
@@ -3433,10 +3514,10 @@
     "apiName": "SnowballUpgrade",
     "name": "Snowball Upgrade",
     "rarity": "Gold",
-    "desc": "Gain @AbilityHaste@ Ability Haste on <spellName>Snowball</spellName>. Hitting an enemy creates a snowfall that deals <magic>AoE damage</magic> and <status>slows</status> the area.<br><br><rules>If you don't have one, gain a <spellName>Snowball</spellName>.</rules><br>",
-    "tooltip": "Gain @AbilityHaste@ Haste on your Snowball. <br>Hitting a target reveals an area, <status>Slowing</status> enemies by @TotalSlowAmount@ and dealing <magicDamage>@TotalDamagePerSecond@ magic damage</magicDamage> per second for @BaseDuration@ seconds (total <magicDamage>@TotalDamage@ magic damage</magicDamage>).",
+    "desc": "Gain @AbilityHaste@ Ability Haste on <spellName>Snowball</spellName>. Hitting an enemy creates a snowfall that deals <magic>AoE damage</magic> and <status>Slows</status> nearby enemies.<br><br><rules>If you don't have one, gain a <spellName>Snowball</spellName>.</rules><br>",
+    "tooltip": "Gain @AbilityHaste@ Ability Haste on your Snowball. <br>Hitting a target reveals an area, <status>Slowing</status> enemies by @TotalSlowAmount@ and dealing <magicDamage>@TotalDamagePerSecond@ magic damage</magicDamage> per second for @BaseDuration@ seconds (total <magicDamage>@TotalDamage@ magic damage</magicDamage>).",
     "dataValues": {
-      "AbilityHaste": 100.0,
+      "AbilityHaste": 50.0,
       "BaseDamagePerSecond": 100.0,
       "BaseDuration": 2.0,
       "BaseSlowAmount": 0.5,
@@ -3510,8 +3591,8 @@
     "apiName": "Goldrend",
     "name": "Goldrend",
     "rarity": "Prismatic",
-    "desc": "Damaging a champion with Attacks or Abilities deals additional <magicDamage>magic damage</magicDamage>, grants you <gold>Gold</gold> and <speed>Move Speed</speed>.",
-    "tooltip": "Damaging a champion with Attacks or Abilities deals an additional <magicDamage>@ReaperDamage@ magic damage</magicDamage>, grants you <gold>@TotalGoldPerProcTooltip@</gold> gold and <speed>@PercentMovespeedGain*100@% Move Speed</speed> for @MovementSpeedDuration@ seconds (@TimerDuration@s cooldown per champion).<br><br>Damage Dealt: @f1@<br>Gold Earned: @f2@",
+    "desc": "Damaging a champion with Attacks or Abilities deals additional <magicDamage>magic damage</magicDamage>, and grants you <gold>Gold</gold> and <speed>Movement Speed</speed>.",
+    "tooltip": "Damaging a champion with Attacks or Abilities deals an additional <magicDamage>@ReaperDamage@ magic damage</magicDamage>, grants you <gold>@TotalGoldPerProcTooltip@</gold> Gold and <speed>@PercentMovespeedGain*100@% Movement Speed</speed> for @MovementSpeedDuration@ seconds (@TimerDuration@ seconds Cooldown per champion).<br><br>Damage Dealt: @f1@<br>Gold Earned: @f2@",
     "dataValues": {
       "MovementSpeedDuration": 1.5,
       "PercentMovespeedGain": 0.25,
@@ -3566,8 +3647,8 @@
     "apiName": "ARAM_Upgrade_IE",
     "name": "Upgrade Infinity Edge",
     "rarity": "Gold",
-    "desc": "Gain @CritChance*100@% %i:scaleCrit% Critical Strike Chance and <gold>500 gold</gold>.<br>Having <attention>Infinity Edge</attention> allows your %i:scaleCrit% Critical Strike Chance to grant random %i:scaleCritMult% Critical Strike Damage each attack.",
-    "tooltip": "Gain @CritChance*100@% %i:scaleCrit% Critical Strike Chance and <gold>500 gold</gold>.<br>Having Infinity Edge allows your Critical Strikes to deal random <keyword>bonus Critical Strike Damage</keyword>, scaling up to @CritChanceToDamage*100@% of your Critical Strike Chance.<br><br>Extra Crit Damage Dealt to Champions: <attention>@f1@</attention><br><br><br>",
+    "desc": "Gain @CritChance*100@% %i:scaleCrit% Critical Strike Chance and <gold>500 Gold</gold>.<br>Having <attention>Infinity Edge</attention> allows your %i:scaleCrit% Critical Strike Chance to grant random %i:scaleCritMult% Critical Strike Damage each Attack.",
+    "tooltip": "Gain @CritChance*100@% %i:scaleCrit% Critical Strike Chance and <gold>500 Gold</gold>.<br>Having Infinity Edge allows your Critical Strikes to deal random <keyword>bonus Critical Strike Damage</keyword>, scaling up to @CritChanceToDamage*100@% of your Critical Strike Chance.<br><br>Crit Damage Dealt: <attention>@f1@</attention><br><br><br>",
     "dataValues": {
       "BonusCritDMG": 0.10000000149011612,
       "CritChanceToDamage": 0.5,
@@ -3583,8 +3664,8 @@
     "apiName": "KingMe",
     "name": "King Me",
     "rarity": "Prismatic",
-    "desc": "The first time you take the enemy transport <attention>with a Legendary item</attention> you become <font color = '#d158f9'>Kinged</font>, upgrading your item and gaining a random Prismatic Augment.",
-    "tooltip": "The first time you take the enemy transport <attention>with a Legendary item</attention> you become <font color = '#d158f9'>Kinged</font>, upgrading your item and gaining a random Prismatic Augment.",
+    "desc": "The first time you take the enemy transport <attention>with a Legendary Item</attention> you become <font color = '#d158f9'>Kinged</font>, upgrading your item and gaining a random Prismatic Augment.",
+    "tooltip": "The first time you take the enemy transport <attention>with a Legendary Item</attention> you become <font color = '#d158f9'>Kinged</font>, upgrading your item and gaining a random Prismatic Augment.",
     "dataValues": {
       "MasterworkLevel": 13.0,
       "BaseStatAmp": 0.10000000149011612,
@@ -3608,8 +3689,8 @@
     "apiName": "ARAM_Upgrade_Hubris",
     "name": "Upgrade Hubris",
     "rarity": "Gold",
-    "desc": "Your Hubris now heals you on takedown and grants movement speed for the buff duration, both scaling with your stacks. Additionally, gain <gold>250 gold.</gold>",
-    "tooltip": "On takedown, Hubris <healing>restore @MaxHealthRestored*100@% of your max health plus @MissingHealthStackAmount*100@% of your missing health</healing> and grants <speed>@MSBase@ plus @MSBonusPerStack@ movement speed</speed> for the buff duration, both scaling with your stacks. Additionally, gain <gold>250 gold</gold>.",
+    "desc": "Your Hubris now heals you on takedown and grants <speed>Movement Speed</speed> for the buff duration, both scaling with your stacks. Additionally, gain <gold>250 Gold.</gold>",
+    "tooltip": "On takedown, Hubris <healing>restores @MaxHealthRestored*100@% of your max Health plus @MissingHealthStackAmount*100@% of your missing Health</healing> and grants <speed>@MSBase@ plus @MSBonusPerStack@ Movement Speed</speed> for the buff duration, both scaling with your stacks. Additionally, gain <gold>250 Gold</gold>.",
     "dataValues": {
       "LethalityPerStack": 1.0,
       "MaxHealthRestored": 0.02500000037252903,
@@ -3620,6 +3701,62 @@
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/UpgradeHubris_small.tex",
       "ASSETS/UX/Kiwi/Augments/Icons/UpgradeHubris_large.tex"
+    ]
+  },
+  {
+    "id": 1339,
+    "apiName": "LaserHeal",
+    "name": "Laser Heal",
+    "rarity": "Prismatic",
+    "desc": "Cast a laser for 2.5 seconds that <scaleHealth>heals allies</scaleHealth>, and <status>Slows</status> and deals <scaleAP>magic damage</scaleAP> to enemies.",
+    "tooltip": "Cast a laser for 2.5 seconds that heals allies for <scaleHealth>@TotalHeal@ health</scaleHealth>, and deals <scaleAP>@TotalDamage@ magic damage</scaleAP> to enemies and <status>Slows</status> them for @MoveSpeedMod*100@%.<br><br>Damage Dealt: @f1@<br>Total Healing Done: @f2@",
+    "dataValues": {
+      "DegreesPerSec": 40.0,
+      "BeamWidth": 215.0,
+      "APRatio": 0.5,
+      "HealAPRatio": 0.699999988079071,
+      "bHealthRatio": 0.5,
+      "MoveSpeedMod": 0.20000000298023224
+    },
+    "calculations": {
+      "TotalDamage": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 350.0,
+            "mStartValue": 100.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          },
+          {
+            "mDataValue": "APRatio",
+            "~class": "StatByNamedDataValueCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "TotalHeal": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 430.0,
+            "mStartValue": 150.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          },
+          {
+            "mDataValue": "HealAPRatio",
+            "~class": "StatByNamedDataValueCalculationPart"
+          },
+          {
+            "mDataValue": "0x434a3b2a",
+            "mStat": 12,
+            "mStatFormula": 2,
+            "~class": "StatByNamedDataValueCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/LaseHeal_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/LaseHeal_large.tex"
     ]
   },
   {
@@ -3664,7 +3801,7 @@
     "name": "Hat on a Hat",
     "rarity": "Silver",
     "desc": "Headwear items and hats give an extra <scaleAP>Ability Power</scaleAP>  and <scaleMR>Magic Resist</scaleMR>. ",
-    "tooltip": "Headwear items and Hats give <scaleAP>@HatAPAdd@ Ability Power</scaleAP> and <scaleMR>@HatMRAdd@ Magic Resist</scaleMR>. <br>Cappa Juice gives <scaleAP>@CapAPAdd@ Ability Power</scaleAP> and <scaleMR>@CapMRAdd@ Magic Resist</scaleMR>.<br><br>Your headwear items and caps are currently granting:<li>@f1.1@ Magic Damage<li>@f2.1@ Magic Resist",
+    "tooltip": "Headwear items and hats give <scaleAP>@HatAPAdd@ Ability Power</scaleAP> and <scaleMR>@HatMRAdd@ Magic Resist</scaleMR>.<br>Cappa Juice gives <scaleAP>@CapAPAdd@ Ability Power</scaleAP> and <scaleMR>@CapMRAdd@ Magic Resist</scaleMR>.<br><br>Your headwear items and hats are currently granting:<li>@f1.1@ magic damage<li>@f2.1@ Magic Resist",
     "dataValues": {
       "HatAPAdd": 15.0,
       "HatMRAdd": 8.0,
@@ -3684,7 +3821,7 @@
     "desc": "Gain @AbilityHaste@ Ability Haste on <spellName>Snowball</spellName>. Hitting an enemy casts a random beneficial Summoner Spell on you and a harmful one on them. Following up recast the beneficial one on yourself.<br><br><rules>If you don't have one, gain a <spellName>Snowball</spellName>.</rules>",
     "tooltip": "Gain @AbilityHaste@ Ability Haste on <spellName>Snowball</spellName>. Hitting an enemy casts a random beneficial Summoner Spell on you and a harmful one on them. Following up recast the beneficial one on yourself.<br><br><rules>If you don't have one, gain a <spellName>Snowball</spellName>.</rules>",
     "dataValues": {
-      "AbilityHaste": 100.0
+      "AbilityHaste": 50.0
     },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/SnowballUpgrade_small.tex",
@@ -3696,7 +3833,7 @@
     "apiName": "Quest_Sneakerhead",
     "name": "Sneakerhead",
     "rarity": "Prismatic",
-    "desc": "Immediate: Gain a random pair of upgraded boots. <br><br>Requirement: Complete its quest to swap for another. <br><br>Reward: Jarvan I's Boot",
+    "desc": "Immediate: Gain a random pair of upgraded boots. <br><br>Requirement: Complete its quest to swap for another.<br><br>Reward: Jarvan I's Boot",
     "tooltip": "<mainText><font color='#a327ef'>Do the following quests for a super reward: </font></mainText><br><br>Quest 1: Attack <attackSpeed>@f1@ of @BGAttacks@ times</attackSpeed> with Berserker's Greaves<br>Quest 2: Run <speed>@f2@ of @BOSSteps@ steps</speed> with Boots of Swiftness<br>Quest 3: Cast <scaleAP>@f3@ of @IBOLSpells@ spells</scaleAP> with Ionian Boots of Lucidity<br>Quest 4: Be CC'd <status>@f4@ of @MTCCs@ times</status> with Mercury's Treads<br>Quest 5: Reduce <scaleAD>@f5@ of @PSDamageMelee@ attack damage</scaleAD> with Plated Steelcaps<br>Quest 6: Deal <attention>@f6@ of @SSSDamage@ spell damage</attention> with Sorcerer's Shoes<br>",
     "dataValues": {
       "BGAttacks": 25.0,
@@ -3765,8 +3902,8 @@
     "apiName": "FinalForm",
     "name": "Final Form",
     "rarity": "Prismatic",
-    "desc": "After casting your Ultimate, gain a <shield>Max Health Shield</shield>, <lifeSteal>Omnivamp</lifeSteal> and <speed>Movement Speed</speed> for @AugDuration@ seconds.",
-    "tooltip": "After casting your Ultimate, gain a <shield>@MaxHealthShield*100@% Max Health Shield</shield>, <lifeSteal>@OmniVamp*100@% Omnivamp</lifeSteal> and <speed>@MSBonus*100@% bonus movement speed</speed> for @AugDuration@ seconds. (@Cooldown@s cooldown).",
+    "desc": "After casting your Ultimate, gain a <shield>max Health Shield</shield>, <lifeSteal>Omnivamp</lifeSteal> and <speed>Movement Speed</speed> for @AugDuration@ seconds.",
+    "tooltip": "After casting your Ultimate, gain a <shield>@MaxHealthShield*100@% max Health Shield</shield>, <lifeSteal>@OmniVamp*100@% Omnivamp</lifeSteal> and <speed>@MSBonus*100@% bonus Movement Speed</speed> for @AugDuration@ seconds. (@Cooldown@ seconds Cooldown).",
     "dataValues": {
       "MaxHealthShield": 0.5,
       "OmniVamp": 0.20000000298023224,
@@ -3814,14 +3951,69 @@
     "apiName": "Vampirism",
     "name": "Vampirism",
     "rarity": "Gold",
-    "desc": "You cannot be Healed by allies or gain any <healing>Health Regen</healing>. Gain <omnivamp>@OmniVamp*100@%</omnivamp> Omnivamp. ",
-    "tooltip": "You cannot be Healed by allies or gain any <healing>Health Regen</healing>. Gain <omnivamp>@OmniVamp*100@%</omnivamp> Omnivamp. ",
+    "desc": "You cannot be healed by allies or gain <healing>Health Regen</healing>. Gain <omnivamp>@OmniVamp*100@%</omnivamp> Omnivamp.",
+    "tooltip": "You cannot be healed by allies or gain <healing>Health Regen</healing>. Gain <omnivamp>@OmniVamp*100@%</omnivamp> Omnivamp.",
     "dataValues": {
       "OmniVamp": 0.30000001192092896
     },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/Vampired_small.tex",
       "ASSETS/UX/Kiwi/Augments/Icons/Vampired_large.tex"
+    ]
+  },
+  {
+    "id": 1347,
+    "apiName": "Poltergeist",
+    "name": "Poltergeist",
+    "rarity": "Silver",
+    "desc": "Gain Poltergeist as a Summoner Spell.<br><br>Poltergeist casts both Barrier and Ghost.",
+    "tooltip": "Gain Poltergeist as a Summoner Spell.<br><br>Poltergeist casts both Barrier and Ghost.",
+    "dataValues": {
+      "Duration": 5.0,
+      "AllyRange": 835.0,
+      "MoveSpeed": 0.30000001192092896
+    },
+    "calculations": {
+      "BarrierAmount": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 440.0,
+            "mStartValue": 110.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "HealAmount": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 318.0,
+            "mStartValue": 80.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/Poltergeist_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/Poltergeist_large.tex"
+    ]
+  },
+  {
+    "id": 1348,
+    "apiName": "Flash2",
+    "name": "Flash 2",
+    "rarity": "Silver",
+    "desc": "Gain a second Flash Summoner Spell and @SummonerHaste@ Summoner Haste.",
+    "tooltip": "Gain a second Flash Summoner Spell and @SummonerHaste@ Summoner Haste.",
+    "dataValues": {
+      "Cooldown": 60.0,
+      "SummonerHaste": 70.0
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/Flash2_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/Flash2_large.tex"
     ]
   },
   {
@@ -3847,8 +4039,8 @@
     "apiName": "ARAM_TankEngine",
     "name": "Tank Engine",
     "rarity": "Gold",
-    "desc": "On takedown, gain a stack that increases size and <scaleHealth>max Health</scaleHealth>. Lose stacks on death.",
-    "tooltip": "On takedown, gain a stack that grants @SizeIncrement*100@% increased size and <scaleHealth>@MaxHPIncrement*100@% max Health</scaleHealth>. Lose @PercentOfStacksLost*100@% of stacks on death.<br><br>Max Health Gained: @f1@<br>",
+    "desc": "On takedown, gain a stack that increases your size and <scaleHealth>max Health</scaleHealth>. Lose stacks on death.",
+    "tooltip": "On takedown, gain a stack that grants @SizeIncrement*100@% increased size and <scaleHealth>@MaxHPIncrement*100@% max Health</scaleHealth>. Lose @PercentOfStacksLost*100@% of stacks on death.<br><br>Total Health Gained: @f1@<br>",
     "dataValues": {
       "SizeIncrement": 0.05000000074505806,
       "MaxHPIncrement": 0.05000000074505806,
@@ -3860,11 +4052,105 @@
     ]
   },
   {
+    "id": 1356,
+    "apiName": "CriticalMissile",
+    "name": "Critical Missile",
+    "rarity": "Gold",
+    "desc": "When you <crit>Crit</crit>, fire 1 plus @AdditionalMis@ <keyworkMajor> Firecrackers</keyworkMajor> that deals <magicDamage>@Damage@ magic damage</magicDamage> each. Additionally, gain <crit>@CrtiChance*100@%</crit> critical strike chance.",
+    "tooltip": "When you <crit>Crit</crit>, fire 1 plus @AdditionalMis@ <keyworkMajor> Firecrackers</keyworkMajor> that deals <magicDamage>@Damage@ magic damage</magicDamage> each. Additionally, gain <crit>@CrtiChance*100@%</crit> critical strike chance.",
+    "dataValues": {
+      "ADRatio": 0.15000000596046448,
+      "CrtiChance": 0.25,
+      "AdditionalMisDivision": 3.0,
+      "APRatio": 0.15000000596046448,
+      "Cooldown": 4.0
+    },
+    "calculations": {
+      "0x7e859db7": {
+        "mFormulaParts": [
+          {
+            "mDataValue": "0x3b02c388",
+            "mStat": 8,
+            "~class": "StatByNamedDataValueCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "Damage": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 80.0,
+            "mStartValue": 11.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          },
+          {
+            "mDataValue": "ADRatio",
+            "mStat": 2,
+            "mStatFormula": 2,
+            "~class": "StatByNamedDataValueCalculationPart"
+          },
+          {
+            "mDataValue": "APRatio",
+            "~class": "StatByNamedDataValueCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/CriticalMissile_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/CriticalMissile_large.tex"
+    ]
+  },
+  {
+    "id": 1358,
+    "apiName": "PinballSnowball",
+    "name": "Pinball",
+    "rarity": "Gold",
+    "desc": "Your <spellName>Snowball</spellName> gains <speed>@AbilityHaste@ Ability Haste</speed> and deals extra @TrueDamage@ <trueDamage>true Damage</trueDamage>. It bounces off walls, increase its size and damage, and reduce its cooldown.",
+    "tooltip": "Your <spellName>Snowball</spellName> gains @AbilityHaste@ Ability Haste, deals extra @TrueDamage@ <trueDamage>true Damage</trueDamage> and bounces off walls. Each bounce increases its size by @SizeAmp*100@%, increase its damage by @DamageAmp*100@% and reduces its cooldown by @CDRefundOnBounce*100@%.<br><br>Amount of Bounces: <statTracking>@f1@</statTracking>",
+    "dataValues": {
+      "AbilityHaste": 50.0,
+      "CDRefundOnBounce": 0.10000000149011612,
+      "SizeAmp": 0.25,
+      "DamageAmp": 0.20000000298023224,
+      "CastRangeAmp": 0.10000000149011612
+    },
+    "calculations": {
+      "TrueDamage": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 500.0,
+            "mStartValue": 100.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/PinballSnowball_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/PinballSnowball_large.tex"
+    ]
+  },
+  {
+    "id": 1361,
+    "apiName": "ARAM_Quest_VoidImmolation",
+    "name": "Quest: Icathia's Fall",
+    "rarity": "Prismatic",
+    "desc": "Immediately: Gain a Bami's Cinder and you can purchase 2 <keywordMajor>Immolate</keywordMajor> Items.<br><br>Requirement: Possess Sunfire Aegis and Hollow Radiance.<br><br>Reward: Sunfire Aegis and Hollow Radiance combine into Void Immolation.",
+    "tooltip": "Immediately: Gain a Bami's Cinder and you can purchase 2 <keywordMajor>Immolate</keywordMajor> Items.<br><br>Requirement: Possess Sunfire Aegis and Hollow Radiance.<br><br>Reward: Sunfire Aegis and Hollow Radiance combine into Void Immolation.",
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/Quest_VoidImmolation_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/Quest_VoidImmolation_large.tex"
+    ]
+  },
+  {
     "id": 1372,
     "apiName": "BabyKitty",
     "name": "I'm a Baby Kitty Where is Mama",
     "rarity": "Prismatic",
-    "desc": "Standing next to an ally marks them as your mama. <br>Gain <speed>Movement Speed</speed> when moving towards Mama. Gain <speed>Movement Speed</speed> and <healing>Heal</healing> and <shield>Shield Power</shield> when close to your mama.",
+    "desc": "Standing next to an ally marks them as your mama. <br>Gain <speed>Movement Speed</speed> when moving towards Mama. Gain <speed>Movement Speed</speed> and <healing>heal</healing> and <shield>Shield Power</shield> when close to your mama.",
     "tooltip": "Standing next to an ally marks them as your mama. <br>Gain <speed>@HuntPercentMS*100@% Movement Speed</speed> when moving towards Mama. Gain <speed>@MamaBonusPercentMS*100@% Movement Speed</speed> and @FLATBonusHSP*100@% <healing>Heal</healing> and <shield>Shield</shield> Power when close to your mama.",
     "dataValues": {
       "MamaRadius": 400.0,
@@ -3892,13 +4178,32 @@
     ]
   },
   {
+    "id": 1373,
+    "apiName": "ShrinkEngine",
+    "name": "Shrink Engine",
+    "rarity": "Gold",
+    "desc": "Takedowns makes you smaller and grant Ability Haste and <speed>Move Speed</speed>.<br><br>Lose @PercentOfStacksLost*100@% stacks on death.",
+    "tooltip": "Takedowns grant a stack that makes you @SizeReductionPerStack*100@% smaller, grants <speed>@HastePerStack@ Ability Haste</speed>, and <speed>@MoveSpeedAmpPerStack@ Move Speed</speed>.<br><br>Lose @PercentOfStacksLost*100@% stacks on death.<br>------------------------------------------------------------<br>You currently have <font color=\"#80eeff\">@f3@</font> stacks, granting you:<br>+ <font color=\"#f2deff\">@f1@</font> Ability Haste<br>+ <font color=\"#f2deff\">@f2@%</font> Move Speed",
+    "dataValues": {
+      "SizeReductionPerStack": 0.07999999821186066,
+      "MoveSpeedAmpPerStack": 0.03999999910593033,
+      "MinSize": 20.0,
+      "PercentOfStacksLost": 0.5,
+      "HastePerStack": 10.0
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/ShrinkEngine_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/ShrinkEngine_large.tex"
+    ]
+  },
+  {
     "id": 1374,
     "apiName": "Fetch",
     "name": "Fetch",
     "rarity": "Silver",
     "disabled": true,
-    "desc": "Gain bonus <speed>Move Speed</speed> toward enemies marked by <spellName>Snowball</spellName>. You can pick up an ally's Snowball to refresh your own.<br><br><rules>If you don't have one, gain a <spellName>Snowball</spellName>.</rules>",
-    "tooltip": "Gain <speed>@MSBonus*100@% bonus Move Speed</speed> toward enemies marked by Snowball for @MSDuration@ seconds. You can pick up an ally's Snowball to refresh your own.",
+    "desc": "Gain bonus <speed>Movement Speed</speed> toward enemies marked by <spellName>Snowball</spellName>. You can pick up an ally's Snowball to refresh your own.<br><br><rules>If you don't have one, gain a <spellName>Snowball</spellName>.</rules>",
+    "tooltip": "Gain <speed>@MSBonus*100@% bonus Movement Speed</speed> toward enemies marked by Snowball for @MSDuration@ seconds. You can pick up an ally's Snowball to reset your own.",
     "dataValues": {
       "MSBonus": 0.4000000059604645,
       "MSDuration": 3.0,
@@ -3919,6 +4224,276 @@
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/Fetch_small.tex",
       "ASSETS/UX/Kiwi/Augments/Icons/Fetch_large.tex"
+    ]
+  },
+  {
+    "id": 1375,
+    "apiName": "SoulEater",
+    "name": "Soul Eater",
+    "rarity": "Gold",
+    "desc": "<status>Immobilizing</status> an enemy champion grants <scaleHealth>@HealthGainPerStack@ max Health</scaleHealth>.",
+    "tooltip": "<status>Immobilizing</status> an enemy champion grants <scaleHealth>@HealthGainPerStack@ max Health</scaleHealth>.<br><br>Health Gained: <scaleHealth>@HealthGained@</scaleHealth>",
+    "dataValues": {
+      "HealthGainPerStack": 20.0,
+      "SpellIDCD": 5.0
+    },
+    "calculations": {
+      "0xaef2f649": {
+        "mFormulaParts": [
+          {
+            "mBuffName": "0x14cf4ae0",
+            "mDataValue": "0xa2bc5d31",
+            "~class": "BuffCounterByNamedDataValueCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/SoulEater_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/SoulEater_large.tex"
+    ]
+  },
+  {
+    "id": 1379,
+    "apiName": "Upgrade_SwordOfBlossom",
+    "name": "Upgrade Sword of Blossoming Dawn",
+    "rarity": "Prismatic",
+    "desc": "Your attack deal @AttackDamageNerf*100@% damages but you gain massive <speed>Attack Speed</speed> and <heal>Heal Shield Power</heal>.<br><br>Increase healing by @PercentInc*100@%.",
+    "tooltip": "Your attack deal @AttackDamageNerf*100@% damages but you gain <speed>@AttackSpeed*100@% Attack Speed</speed> and <heal>@HSPower*100@% Heal Shield Power</heal>.<br><br>Increase healing by @PercentInc*100@%.",
+    "dataValues": {
+      "AttackSpeed": 1.0,
+      "HSPower": 0.30000001192092896,
+      "AttackDamageNerf": 0.10000000149011612,
+      "PercentInc": 3.0
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/UpgradeMikaelsBlessing_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/UpgradeMikaelsBlessing_large.tex"
+    ]
+  },
+  {
+    "id": 1384,
+    "apiName": "Donation",
+    "name": "Donation",
+    "rarity": "Gold",
+    "desc": "Get <font color=\"#ffd138\">@GoldAmount@</font> Gold. No questions asked.",
+    "tooltip": "Receive <font color=\"#ffd138\">@GoldAmount@</font> Gold. Thanks chat! :)",
+    "dataValues": {
+      "GoldAmount": 2500.0,
+      "IncFrequency": 10.0
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/Donation_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/Donation_large.tex"
+    ]
+  },
+  {
+    "id": 1386,
+    "apiName": "YouSpinMeRightRound",
+    "name": "Spin Me Right Round",
+    "rarity": "Silver",
+    "desc": "Replace a Summoner Spell with <spellName>Heroic Swing</spellName>.<br><br><rules><spellName>Heroic Swing</spellName> fires a grappling hook, sticking into terrain, after which you can <recast>Recast</recast> to swing around it. While swinging, automatically Attack the nearest enemy. Colliding with an enemy champion or <recast>Recasting</recast> ends the swing.</rules>",
+    "tooltip": "Replace a Summoner Spell with <spellName>Heroic Swing</spellName>.<br><br><rules><spellName>Heroic Swing</spellName> fires a grappling hook, sticking into terrain, after which you can <recast>Recast</recast> to swing around it. While swinging, automatically Attack the nearest enemy. Colliding with an enemy champion or <recast>Recasting</recast> ends the swing.</rules>",
+    "dataValues": {
+      "BaseDamage": [
+        0.0,
+        15.0,
+        30.0,
+        45.0,
+        60.0,
+        75.0,
+        90.0
+      ],
+      "ADRatio": 0.15000000596046448,
+      "TimeToCastE2": 2.0,
+      "AnchorLifetime": 3.0,
+      "MinJumpbackDistance": 250.0,
+      "CritDamageReduction": 0.10000000149011612,
+      "AttackSpeedCoefficient": 0.30000001192092896,
+      "EdgeToEdgeCollisionRadius": 50.0,
+      "AttackFrequency": 0.20000000298023224,
+      "OnHitDamageReduction": 0.25,
+      "ResetCooldownToSet": 0.5,
+      "DistanceShiftTowardsWall": 175.0,
+      "E3LockoutDuration": 0.5,
+      "SpinDuration": 25000.0
+    },
+    "calculations": {
+      "ASModDamageToDeal": {
+        "mModifiedGameCalculation": "DamageToDeal",
+        "mMultiplier": {
+          "mSubparts": [
+            {
+              "mNumber": 1.0,
+              "~class": "NumberCalculationPart"
+            },
+            {
+              "mDataValue": "AttackSpeedCoefficient",
+              "mStat": 4,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "SumOfSubPartsCalculationPart"
+        },
+        "~class": "GameCalculationModified"
+      },
+      "DamageToDeal": {
+        "mFormulaParts": [
+          {
+            "mDataValue": "baseDamage",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          {
+            "mDataValue": "ADRatio",
+            "mStat": 2,
+            "~class": "StatByNamedDataValueCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/YouSpinMeRightRound_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/YouSpinMeRightRound_large.tex"
+    ]
+  },
+  {
+    "id": 1388,
+    "apiName": "InfiniteRecursion",
+    "name": "Infinite Recursion",
+    "rarity": "Prismatic",
+    "desc": "Gain @StartingHaste@ Ability Haste, plus @HastePerStack@ Ability Haste per takedown.",
+    "tooltip": "Gain @StartingHaste@ Ability Haste, plus @HastePerStack@ Ability Haste per takedown.<br><br>Current Ability Haste: @CurrentHaste@",
+    "dataValues": {
+      "HastePerStack": 4.0,
+      "StartingHaste": 60.0
+    },
+    "calculations": {
+      "0x984a86b5": {
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mBuffName": "0x95ab772f",
+            "mDataValue": "HastePerStack",
+            "~class": "BuffCounterByNamedDataValueCalculationPart"
+          },
+          {
+            "mDataValue": "0x27c6380c",
+            "~class": "NamedDataValueCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/InfiniteRecursion_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/InfiniteRecursion_large.tex"
+    ]
+  },
+  {
+    "id": 1389,
+    "apiName": "HandOfBaron",
+    "name": "Hand of Baron",
+    "rarity": "Prismatic",
+    "desc": "Gain <scaleAP>@AFAmp*100@% Adaptive Force</scaleAP>. Nearby allied minions are greatly empowered.",
+    "tooltip": "Gain <scaleAP>@AFAmp*100@% Adaptive Force</scaleAP>. Nearby allied minions are greatly empowered.",
+    "dataValues": {
+      "AFAmp": 0.33000001311302185
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/HandofBaron_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/HandofBaron_large.tex"
+    ]
+  },
+  {
+    "id": 1390,
+    "apiName": "ARAM_PhenomenalEvil",
+    "name": "Phenomenal Evil",
+    "rarity": "Gold",
+    "desc": "Permanently gain <scaleAP>@APPerProc@ Ability Power</scaleAP> when you hit enemies with Abilities.<br><br>If taken as your second Augment, starts with <scaleAP>@StartingAPIfSecondAugment@ Ability Power</scaleAP>.",
+    "tooltip": "Permanently gain <scaleAP>@APPerProc@ Ability Power</scaleAP> when you hit enemies with Abilities.<br><br>If taken as your second Augment, starts with <scaleAP>@StartingAPIfSecondAugment@ Ability Power</scaleAP>.<br><br>You have gained <scaleAP>@f1@ AP</scaleAP>. Veigar would be proud!",
+    "dataValues": {
+      "ProcCooldown": 1.0,
+      "StartingAPIfSecondAugment": 40.0,
+      "APPerProc": 1.0,
+      "SpellIDCD": 3.0
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/ARAM_PhenomenalEvil_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/ARAM_PhenomenalEvil_large.tex"
+    ]
+  },
+  {
+    "id": 1391,
+    "apiName": "RedEnvelopes",
+    "name": "Red Envelopes",
+    "rarity": "Gold",
+    "desc": "Red envelopes appear around you randomly. Picking them up gives you Gold and a small amount of a random stat.",
+    "tooltip": "Red envelopes appear randomly around you every @TimeBetweenEnvelopes@ seconds. Picking them up gives you between <font color=\"#ffd138\">@EnvelopeValueMin@</font> and <font color=\"#ffd138\">@EnvelopeValueMax@</font> Gold, plus <speed>@MSBuff@ Move Speed@BuffDuration@</speed> for seconds.<br><br><br>You have opened @f1@ red envelopes and received <font color=\"#ffd138\">@f2@</font> Gold from them.<br><br>Additional stats: <physicalDamage>@f3@ Attack Damage,</physicalDamage> <magicDamage>@f4@ Ability Power,</magicDamage> <speed>@f5@ Haste,</speed> <scaleArmor>@f6@ Armor,</scaleArmor> <scaleMr>@f7@ Magic Resitance,</scaleMr> <scaleHealth>@f8@ Health,</scaleHealth> <attackSpeed>@f9*100@% Attack Speed,</attackSpeed> <speed>@f10@ Movement Speed,</speed> <scaleLethality>@f11@ Lehtality,</scaleLethality> <scaleMPen>@f12@ Magic Penetration.</scaleMPen> ",
+    "dataValues": {
+      "BuffDuration": 4.0,
+      "MSBuff": 150.0,
+      "ADAP": 5.0,
+      "AH": 5.0,
+      "ARMR": 5.0,
+      "HP": 50.0,
+      "AS": 0.10000000149011612,
+      "MS": 5.0,
+      "LethalityMpen": 5.0
+    },
+    "calculations": {
+      "0x563f018c": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 58.0,
+            "mStartValue": 28.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0x64529f4e": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 18.0,
+            "mStartValue": 10.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xca0d7079": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 15.0,
+            "mStartValue": 25.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/RedEnvelopes_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/RedEnvelopes_large.tex"
+    ]
+  },
+  {
+    "id": 1392,
+    "apiName": "GoldenSnowball",
+    "name": "Holy Snowball",
+    "rarity": "Prismatic",
+    "desc": "Gain @Haste@ Ability Haste on <spellName>Snowball</spellName>. <br><br>You are briefly <keywordMajor>Invulnerable</keywordMajor> when you dash with Snowball.<br><br><rules>If you don't have one, gain a <spellName>Snowball</spellName>.</rules><br><br>",
+    "tooltip": "Gain @Haste@ Ability Haste on <spellName>Snowball</spellName>. <br><br>You become <keywordMajor>Invulnerable</keywordMajor> for @InvulnerabilityDuration@s when you dash with Snowball.<br><br><rules>If you don't have one, gain a <spellName>Snowball</spellName>.</rules><br><br>",
+    "dataValues": {
+      "InvulnerabilityDuration": 1.0,
+      "Haste": 100.0
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/GoldenSnowball_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/GoldenSnowball_large.tex"
     ]
   },
   {
@@ -3955,15 +4530,98 @@
     ]
   },
   {
+    "id": 1400,
+    "apiName": "TrainOfTheDead",
+    "name": "Final City Transit",
+    "rarity": "Gold",
+    "desc": "When you die, launch a train towards your killer, dealing <physicalDamage>@Damage@ physical damage</physicalDamage> to enemies it hits. The train does not stop.",
+    "tooltip": "When you die, launch a train towards your killer, dealing <physicalDamage>@Damage@ physical damage</physicalDamage> to enemies it hits. The train does not stop.<br><br>Your transit system has dealt a total of <attention>@f2@</attention> damage to <attention>@f1@</attention> impatient passengers.<br>It \"accidentally\" killed <attention>@f3@</attention> enemy champions.",
+    "calculations": {
+      "Damage": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 1000.0,
+            "mStartValue": 150.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          },
+          {
+            "mCoefficient": 0.15000000596046448,
+            "mStat": 12,
+            "~class": "StatByCoefficientCalculationPart"
+          },
+          {
+            "mCoefficient": 0.5,
+            "~class": "StatByCoefficientCalculationPart"
+          },
+          {
+            "mCoefficient": 0.800000011920929,
+            "mStat": 2,
+            "mStatFormula": 2,
+            "~class": "StatByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/Nightstalking_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/Nightstalking_large.tex"
+    ]
+  },
+  {
+    "id": 1401,
+    "apiName": "GrowthSpurt",
+    "name": "Growth Spurt",
+    "rarity": "Gold",
+    "desc": "Gain the <active>Growth Spurt</active> Summoner Spell.<br><br>Growth Spurt suddenly increases your size, <status>Knocking Up</status> nearby enemies and granting <scaleHealth>max Health</scaleHealth>.",
+    "tooltip": "Gain the <active>Growth Spurt</active> Summoner Spell.<br><br>Growth Spurt suddenly increases your size, <status>Knocking Up</status> nearby enemies for @KnockbackDuration@s and granting <scaleHealth>@TotalBonusHealth@ max Health</scaleHealth> for @BuffDuration@s.",
+    "dataValues": {
+      "BonusHealth": 300.0,
+      "SlowPercent": [
+        15.0,
+        30.0,
+        45.0,
+        60.0,
+        75.0,
+        90.0,
+        105.0
+      ],
+      "BuffDuration": 7.0,
+      "AoERadius": 400.0,
+      "KnockbackDuration": 1.0,
+      "KnockbackDistance": 275.0,
+      "ScaleIncrease": 0.5
+    },
+    "calculations": {
+      "TotalBonusHealth": {
+        "mFormulaParts": [
+          {
+            "mDataValue": "BonusHealth",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          {
+            "mCoefficient": 0.20000000298023224,
+            "mStat": 12,
+            "~class": "StatByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/GrowthSpurt_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/GrowthSpurt_large.tex"
+    ]
+  },
+  {
     "id": 1402,
     "apiName": "ARAM_StatsOnStatsOnStats",
     "name": "Stats on Stats on Stats!",
     "rarity": "Prismatic",
-    "disabled": true,
-    "desc": "Gain @AmountOfStatAnvils@ Stat Anvils!",
-    "tooltip": "Gain @AmountOfStatAnvils@ Stat Anvils!",
+    "desc": "Gain @AmountOfStatAnvils@ Stat Anvils, with a higher chance of Gold and Prismatic Anvils!<br><br>On your next augment selection, gain one additional reroll per slot.",
+    "tooltip": "Gain @AmountOfStatAnvils@ Stat Anvils, with a higher chance of Gold and Prismatic Anvils!<br><br>On your next augment selection, gain one additional reroll per slot.",
     "dataValues": {
-      "AmountOfStatAnvils": 4.0
+      "AmountOfStatAnvils": 5.0
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/StatsOnStatsOnStats_small.tex",
@@ -3975,11 +4633,10 @@
     "apiName": "ARAM_StatsOnStats",
     "name": "Stats on Stats!",
     "rarity": "Gold",
-    "disabled": true,
-    "desc": "Gain @AmountOfStatAnvils@ Stat Anvils!",
-    "tooltip": "Gain @AmountOfStatAnvils@ Stat Anvils!",
+    "desc": "Gain @AmountOfStatAnvils@ Stat Anvils, with a higher chance of Gold and Prismatic Anvils!",
+    "tooltip": "Gain @AmountOfStatAnvils@ Stat Anvils, with a higher chance of Gold and Prismatic Anvils!",
     "dataValues": {
-      "AmountOfStatAnvils": 3.0
+      "AmountOfStatAnvils": 4.0
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/StatsOnStats_small.tex",
@@ -3991,11 +4648,10 @@
     "apiName": "ARAM_Stats",
     "name": "Stats!",
     "rarity": "Silver",
-    "disabled": true,
     "desc": "Gain @AmountOfStatAnvils@ Stat Anvils!",
     "tooltip": "Gain @AmountOfStatAnvils@ Stat Anvils!",
     "dataValues": {
-      "AmountOfStatAnvils": 2.0
+      "AmountOfStatAnvils": 3.0
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/Stats_small.tex",
@@ -4003,12 +4659,549 @@
     ]
   },
   {
+    "id": 1405,
+    "apiName": "ARAM_SpeedDemon",
+    "name": "Speed Demon",
+    "rarity": "Silver",
+    "desc": "Gain <speed>@SpeedPerHit@ Move Speed</speed> when damaging an enemy champion with an Ability, decaying over @SpeedDuration@ seconds.",
+    "tooltip": "Gain <speed>@SpeedPerHit@ Move Speed</speed> when damaging an enemy champion with an Ability, decaying over @SpeedDuration@ seconds.",
+    "dataValues": {
+      "SpeedPerHit": 350.0,
+      "SpeedDuration": 2.0
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/SpeedDemon_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/SpeedDemon_large.tex"
+    ]
+  },
+  {
+    "id": 1406,
+    "apiName": "GrandmasChiliOil",
+    "name": "Grandma's Chili Oil",
+    "rarity": "Gold",
+    "desc": "Applying a <keywordMajor>Burn</keywordMajor> drops a <keywordMajor>Chili Oil</keywordMajor> pool nearby. Standing in <keywordMajor>Chili Oil</keywordMajor> pools restores <healing>Health</healing> and <keywordMajor>Burns</keywordMajor> enemies. <br><br><keywordMajor>Chili Oil</keywordMajor> pools are stronger for each <keywordMajor>Burn</keywordMajor> you can apply.",
+    "tooltip": "Applying a <keywordMajor>Burn</keywordMajor> drops a <keywordMajor>Chili Oil</keywordMajor> pool nearby for @GroundDuration@ seconds. Standing in <keywordMajor>Chili Oil</keywordMajor> restores <healing>@HealPerSecond@ Health</healing> and <keywordMajor>Burns</keywordMajor> enemies for <magicDamage>@MaxAoEMagicDamage@ magic damage</magicDamage> per second. <br><br><keywordMajor>Chili Oil</keywordMajor> pools are stronger for each <keywordMajor>Burn</keywordMajor> you can apply.",
+    "dataValues": {
+      "GroundDuration": 5.0,
+      "BaseFireDamagePerSecond": 100.0,
+      "FireDamagePerBurn": 60.0,
+      "BaseMSBoost": 0.20000000298023224,
+      "BaseVampBonus": 0.05000000074505806,
+      "MSDuration": 0.75,
+      "Cooldown": 3.0,
+      "AoESizePerAdditionalStack": 40.0,
+      "AOESize": 175.0,
+      "MaxRadiusBurnCount": 6.0,
+      "MinThrowDistance": 300.0,
+      "MaxThrowDistance": 700.0,
+      "SparkMaxAngle": 50.0,
+      "SparkDistanceAway": 525.0,
+      "PerAdditionalFireVampBonus": 0.02500000037252903,
+      "PerAdditionalStackMSBoost": 0.03999999910593033,
+      "MaxRadius": 1000.0,
+      "AdaptiveForce": 85.0,
+      "FireStarterCD": 5.0,
+      "FireStarterDuration": 3.0,
+      "MaxBurnCount": 10.0,
+      "BaseHealBonus": 50.0,
+      "PerAdditionalFireHealBonus": 30.0
+    },
+    "calculations": {
+      "0x4ff47e2": {
+        "mFormulaParts": [
+          {
+            "mDataValue": "BaseFireDamagePerSecond",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          {
+            "mPart1": {
+              "mDataValue": "MaxBurnCount",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            "mPart2": {
+              "mDataValue": "FireDamagePerBurn",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            "~class": "ProductOfSubPartsCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xda8a5191": {
+        "mDisplayAsPercent": true,
+        "mFormulaParts": [
+          {
+            "mDataValue": "BaseVampBonus",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          {
+            "mPart1": {
+              "mSubparts": [
+                {
+                  "mDataValue": "MaxBurnCount",
+                  "~class": "NamedDataValueCalculationPart"
+                },
+                {
+                  "mNumber": -1.0,
+                  "~class": "NumberCalculationPart"
+                }
+              ],
+              "~class": "SumOfSubPartsCalculationPart"
+            },
+            "mPart2": {
+              "mDataValue": "PerAdditionalFireHealBonus",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            "~class": "ProductOfSubPartsCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "CurrentEnemyBlazeBurn": {
+        "mFormulaParts": [
+          {
+            "mDataValue": "BaseFireDamagePerSecond",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          {
+            "mPart1": {
+              "mBuffName": "0x7b8aee93",
+              "mDataValue": "FireDamagePerBurn",
+              "~class": "BuffCounterByNamedDataValueCalculationPart"
+            },
+            "mPart2": {
+              "mNumber": 1.0,
+              "~class": "NumberCalculationPart"
+            },
+            "~class": "ProductOfSubPartsCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "CurrentTotalMSBonus": {
+        "mDisplayAsPercent": true,
+        "mFormulaParts": [
+          {
+            "mDataValue": "BaseMSBoost",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          {
+            "mPart1": {
+              "mBuffName": "0x7b8aee93",
+              "mDataValue": "PerAdditionalStackMSBoost",
+              "~class": "BuffCounterByNamedDataValueCalculationPart"
+            },
+            "mPart2": {
+              "mNumber": 1.0,
+              "~class": "NumberCalculationPart"
+            },
+            "~class": "ProductOfSubPartsCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "CurrentTotalVampBonus": {
+        "mDisplayAsPercent": true,
+        "mFormulaParts": [
+          {
+            "mDataValue": "BaseVampBonus",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          {
+            "mPart1": {
+              "mBuffName": "0x7b8aee93",
+              "mDataValue": "PerAdditionalFireVampBonus",
+              "~class": "BuffCounterByNamedDataValueCalculationPart"
+            },
+            "mPart2": {
+              "mNumber": 1.0,
+              "~class": "NumberCalculationPart"
+            },
+            "~class": "ProductOfSubPartsCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "FireStarterDamage": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 350.0,
+            "mStartValue": 100.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "HealPerSecond": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 150.0,
+            "mStartValue": 60.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          },
+          {
+            "mPart1": {
+              "mBuffName": "0x7b8aee93",
+              "mDataValue": "PerAdditionalFireHealBonus",
+              "~class": "BuffCounterByNamedDataValueCalculationPart"
+            },
+            "mPart2": {
+              "mNumber": 1.0,
+              "~class": "NumberCalculationPart"
+            },
+            "~class": "ProductOfSubPartsCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "MaxMoveSpeed": {
+        "mDisplayAsPercent": true,
+        "mFormulaParts": [
+          {
+            "mDataValue": "BaseMSBoost",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          {
+            "mPart1": {
+              "mSubparts": [
+                {
+                  "mDataValue": "MaxBurnCount",
+                  "~class": "NamedDataValueCalculationPart"
+                },
+                {
+                  "mNumber": -1.0,
+                  "~class": "NumberCalculationPart"
+                }
+              ],
+              "~class": "SumOfSubPartsCalculationPart"
+            },
+            "mPart2": {
+              "mDataValue": "PerAdditionalFireHealBonus",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            "~class": "ProductOfSubPartsCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/GrandmasChiliOil_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/GrandmasChiliOil_large.tex"
+    ]
+  },
+  {
+    "id": 1409,
+    "apiName": "ARAM_Poro_Blast",
+    "name": "Poro Blaster",
+    "rarity": "Gold",
+    "desc": "You gather Poros over time. Damaging enemies fires all Poros at them, each dealing <trueDamage>max Health true damage</trueDamage> and briefly <status>Knocking Back</status>.",
+    "tooltip": "You gather Poros over time. Damaging enemies with a basic attack or ability fires all Poros at them, each dealing target's <trueDamage>@MaxHealthRatio*100@% max Health true damage</trueDamage> and briefly <status>Knocking Back</status>.",
+    "dataValues": {
+      "MaxHealthRatio": 0.029999999329447746
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/PoroBlast_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/PoroBlast_large.tex"
+    ]
+  },
+  {
+    "id": 1411,
+    "apiName": "Upgrade_Thornmail",
+    "name": "Upgrade Thornmail",
+    "rarity": "Silver",
+    "desc": "After @ThornshieldCooldown@ seconds out of combat, your Thornmail or Bramble Vest generates a shell that reflects more damage from Attacks.",
+    "tooltip": "After @ThornshieldCooldown@ seconds out of combat, your Thornmail or Bramble Vest generates a shell that reflects @ThornShieldDamage@ damage from Attacks.",
+    "dataValues": {
+      "UpgradedGrievousAmount": 0.800000011920929,
+      "AdditionalArmor": 25.0,
+      "PeriodicDamageReduction": 0.25
+    },
+    "calculations": {
+      "0x821d5daa": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 5.0,
+            "mStartValue": 20.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xe84c6f2e": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 250.0,
+            "mStartValue": 50.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          },
+          {
+            "mCoefficient": 0.11999999731779099,
+            "mStat": 12,
+            "~class": "StatByCoefficientCalculationPart"
+          },
+          {
+            "mCoefficient": 0.30000001192092896,
+            "mStat": 1,
+            "~class": "StatByCoefficientCalculationPart"
+          },
+          {
+            "mCoefficient": 0.30000001192092896,
+            "mStat": 6,
+            "~class": "StatByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/UpgradeCollector_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/UpgradeCollector_large.tex"
+    ]
+  },
+  {
+    "id": 1413,
+    "apiName": "ARAM_StuckInHereWithMe",
+    "name": "Stuck In Here With Me",
+    "rarity": "Prismatic",
+    "desc": "Gain Ultimate Haste. After using your Ultimate <status>Taunts</status> nearby enemies and grants you damage reduction for a few seconds.",
+    "tooltip": "Gain @UltimateHaste@ Ultimate Haste. After using your Ultimate gain @DamageMitigation@ damage reduction and an aura for @TauntChannelTime@ seconds, after which you <status>Taunt</status> enemies inside for @TauntDuration@ seconds.",
+    "dataValues": {
+      "TauntRadius": 500.0,
+      "TauntDuration": 2.0,
+      "TauntChannelTime": 2.0,
+      "AugmentCooldown": 30.0,
+      "UltimateHaste": 30.0
+    },
+    "calculations": {
+      "0xc5c8ca6b": {
+        "mDisplayAsPercent": true,
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.4000000059604645,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "mSimpleTooltipCalculationDisplay": 5,
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/StuckInHereWithMe_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/StuckInHereWithMe_large.tex"
+    ]
+  },
+  {
+    "id": 1414,
+    "apiName": "Dropybara_Active",
+    "name": "Droppybara",
+    "rarity": "Prismatic",
+    "desc": "Gain the <spellName>Droppybara</spellName> Summoner Spell.<br><br><rules>After a delay, call down a Capybara that deals <trueDamage>@DamagetoChampions*100@% max Health true damage</trueDamage>.</rules>",
+    "tooltip": "After @LaserDelay@ seconds, a Capybara impacts the ground, dealing <trueDamage>@DamagetoChampions*100@% max Health true damage</trueDamage>.",
+    "dataValues": {
+      "DamagetoChampions": 0.25,
+      "AOESize": 550.0,
+      "CastRange": 1000.0,
+      "TickRate": 0.25,
+      "GroundDuration": 3.0,
+      "LaserDelay": 2.0,
+      "MinionMod": 0.699999988079071,
+      "SlowAmount": 0.3499999940395355
+    },
+    "calculations": {
+      "DamagePerTick": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 50.0,
+            "mStartValue": 30.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "TotalDamageOverTimeTooltip": {
+        "mModifiedGameCalculation": "DamagePerTick",
+        "mMultiplier": {
+          "mPart1": {
+            "mDataValue": "GroundDuration",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "mPart2": {
+            "mNumber": 4.0,
+            "~class": "NumberCalculationPart"
+          },
+          "~class": "ProductOfSubPartsCalculationPart"
+        },
+        "tooltipOnly": true,
+        "~class": "GameCalculationModified"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Cherry/Augments/Icons/OrbitalLaser_small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/OrbitalLaser_large.tex"
+    ]
+  },
+  {
+    "id": 1415,
+    "apiName": "Twinfire",
+    "name": "Twin Fire",
+    "rarity": "Silver",
+    "desc": "On ability damage, fire 1 plus @AdditionalMis@ <keyworkMajor> Firecrackers</keyworkMajor> that deals <magicDamage>@Damage@ magic damage</magicDamage> each. Additionally, gain <crit>@CrtiChance*100@%</crit> critical strike chance.",
+    "tooltip": "{{Kiwi_TwinFire_Summary}}",
+    "dataValues": {
+      "ADRatio": 0.15000000596046448,
+      "CrtiChance": 0.15000000596046448,
+      "AdditionalMisDivision": 3.0,
+      "APRatio": 0.10000000149011612,
+      "Cooldown": 5.0
+    },
+    "calculations": {
+      "0x7e859db7": {
+        "mFormulaParts": [
+          {
+            "mDataValue": "0x3b02c388",
+            "mStat": 8,
+            "~class": "StatByNamedDataValueCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "Damage": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 30.0,
+            "mStartValue": 10.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          },
+          {
+            "mDataValue": "ADRatio",
+            "mStat": 2,
+            "mStatFormula": 2,
+            "~class": "StatByNamedDataValueCalculationPart"
+          },
+          {
+            "mDataValue": "APRatio",
+            "~class": "StatByNamedDataValueCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/TwinFire_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/TwinFire_large.tex"
+    ]
+  },
+  {
+    "id": 1416,
+    "apiName": "HextechSoul",
+    "name": "Hextech Soul",
+    "rarity": "Silver",
+    "desc": "Periodically your next damaging Ability or Attack triggers a lightning blast, chaining through enemies to deal damage and <status>Slow</status>.",
+    "tooltip": "Periodically your next damaging Ability or Attack triggers a lightning blast, chaining through enemies to deal damage and <status>Slow</status>.",
+    "icons": [
+      "ASSETS/UX/Cherry/Augments/Icons/InfernalSoul_small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/InfernalSoul_large.tex"
+    ]
+  },
+  {
+    "id": 1418,
+    "apiName": "ARAM_CrackOpenThatEgg",
+    "name": "Crack Open That Egg",
+    "rarity": "Silver",
+    "desc": "Your shields will detonate on expiration",
+    "tooltip": "On shield experation, create an explosion that does the shields size as <magicDamage>magic damage</magicDamage>.<br><br><br>Damage Done: @f1.0@",
+    "dataValues": {
+      "HealMultiplier": 1.0,
+      "Cooldown": [],
+      "DamageMultiplier": 1.0
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/CrackOpenThatEgg_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/CrackOpenThatEgg_large.tex"
+    ]
+  },
+  {
+    "id": 1420,
+    "apiName": "Sonata",
+    "name": "Sonata",
+    "rarity": "Gold",
+    "desc": "Every @Cooldown@ seconds, <keywordMajor>automatically cast</keywordMajor> the <spellName>Aria of Perseverence</spellName> and <spellName>Song of Celerity</spellName> in an alternating melody.<br><br><rules><spellName>Aria of Perseverence</spellName> <healing>heals</healing> nearby allies and grants a temporary <shield>shielding aura.</shield></rules><br><br><rules><spellName>Song of Celerity</spellName> gains a temporary aura that grants <speed>bonus Move Speed.</speed></rules>",
+    "tooltip": "Every @Cooldown@ seconds, <keywordMajor>automatically cast</keywordMajor> the <spellName>Aria of Perseverence</spellName> and <spellName>Song of Celerity</spellName> in an alternating melody.<br><br><rules><spellName>Aria of Perseverence</spellName> <healing>heals</healing> nearby allies and grants a temporary <shield>shielding aura.</shield></rules><br><br><rules><spellName>Song of Celerity</spellName> gains a temporary aura that grants <speed>bonus Move Speed.</speed></rules>",
+    "dataValues": {
+      "Cooldown": 10.0
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/Sonata_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/Sonata_large.tex"
+    ]
+  },
+  {
+    "id": 1421,
+    "apiName": "PromQueen",
+    "name": "Prom Queen",
+    "rarity": "Prismatic",
+    "desc": "Every @BaseCD@ seconds, <keywordMajor>Autocast</keywordMajor> a spotlight that descends on you. When it lands, gain Rakan's Ultimate, charming enemies you touch.",
+    "tooltip": "Every @BaseCD@ seconds, <keywordMajor>Autocast</keywordMajor> a spotlight that descends on you. When it lands, gain Rakan's Ultimate, charming enemies you touch.",
+    "dataValues": {
+      "BaseCD": 25.0,
+      "CharmDuration": 2.0,
+      "Radius": 300.0,
+      "WarningDelay": 2.5,
+      "MoveSpeedPercent": 0.5
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/PromQueen_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/PromQueen_large.tex"
+    ]
+  },
+  {
+    "id": 1424,
+    "apiName": "ARAM_MissingPingAugment",
+    "name": "???",
+    "rarity": "Prismatic",
+    "desc": "Your <passive>Missing Pings</passive> will launch a missile at the pinged location which <magicdamage>damages</magicdamage> enemies and <heal>heals</heal> allies. ",
+    "tooltip": "Your <passive>Missing Pings</passive> will launch a missile at the pinged location which deals <magicdamage>@TotalBaseDmg@ Magic Damage</magicdamage> to enemies and heals allies <heal>@TotalBaseHealing@ Health</heal>.",
+    "dataValues": {
+      "BaseDmg": 100.0,
+      "BaseHeal": 100.0,
+      "MaxMult": 2.0
+    },
+    "calculations": {
+      "0x4f1ed7f6": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 200.0,
+            "mStartValue": 50.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xe77cbd0c": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 300.0,
+            "mStartValue": 100.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/MissingPing_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/MissingPing_large.tex"
+    ]
+  },
+  {
     "id": 1996,
     "apiName": "ARAM_Upgrade_Sheen",
     "name": "Upgrade Sheen",
     "rarity": "Gold",
-    "desc": "Your <passive>Spellblade</passive> effects deal <physical>additional damage</physical> and <heal>heal</heal> you for a percent of the target's health. Additionally, gain <gold>250 gold</gold>.",
-    "tooltip": "Your <passive>Spellblade</passive> effects deal additional <physicalDamage>target max Health physical damage</physicalDamage> and <healing>heal</healing> you . Additionally, gain <gold>250 gold</gold>.<br><br>Additonal Damage Dealt: @f1@<br>Healing Done: @f2@",
+    "desc": "Your <passive>Spellblade</passive> effects deal <physical>additional damage</physical> and <heal>heal</heal> you for a percent of the target's health. Additionally, gain <gold>250 Gold</gold>.",
+    "tooltip": "Your <passive>Spellblade</passive> effects deal additional <physicalDamage>target max Health physical damage</physicalDamage> and <healing>heal</healing> you. Additionally, gain <gold>250 Gold</gold>.<br><br>Damage Dealt: @f1@<br>Total Healing Done: @f2@",
     "dataValues": {
       "DamageMaxHP": 0.03999999910593033,
       "HealMaxHP": 0.03500000014901161
@@ -4016,6 +5209,761 @@
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/UpgradeSheen_small.tex",
       "ASSETS/UX/Kiwi/Augments/Icons/UpgradeSheen_large.tex"
+    ]
+  },
+  {
+    "id": 2001,
+    "apiName": "ARAM_WatchOutGrapefruit",
+    "name": "Heads Up Cupcake!",
+    "rarity": "Prismatic",
+    "desc": "Cupcakes will intermittenly fly across the bridge. Cupcakes grant gold to whoever catches them and restore <healing>Health</healing> to the first champion hit and their nearby allies. You gain Gold based on Cupcakes healing.",
+    "tooltip": "Periodically a <keyword>Cupcake</keyword> will shoot across the bridge. Champions that grab the <keyword>Cupcake</keyword> gain <gold>@Catch_Gold@ %i:goldCoins% Gold</gold>, they and their nearby allies are restored <healing>@Calc_Heal_Flat@ + @Calc_Heal@ missing Health</healing> and are <status>Slowed by @Calc_Slow@</status> for @Slow_Duration@ seconds.<br><br>Every <scaleHealth>@Gold_Healing_Interval@ Health</scaleHealth> your <keyword>Cupcake</keyword> have <healing>healed</healing> grants you <gold>@Gold@ %i:goldCoins% Gold</gold>.<br><br><rules>Total Healing: @f1.0@<br>Gold Earned: @f2.0@</rules>",
+    "dataValues": {
+      "Slow_Duration": 0.5,
+      "Radius": 300.0,
+      "Gold_Healing_Interval": 1000.0,
+      "Gold": 200.0,
+      "Catch_Gold": 15.0,
+      "Distance_Outlier_Threshold": 4500.0
+    },
+    "calculations": {
+      "0xdb8f1217": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 250.0,
+            "mStartValue": 50.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xecce0397": {
+        "mDisplayAsPercent": true,
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.15000000596046448,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "mSimpleTooltipCalculationDisplay": 5,
+        "~class": "GameCalculation"
+      },
+      "Calc_Slow": {
+        "mDisplayAsPercent": true,
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.5,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "mSimpleTooltipCalculationDisplay": 5,
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/WatchOutGrapefruit_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/WatchOutGrapefruit_large.tex"
+    ]
+  },
+  {
+    "id": 2002,
+    "apiName": "ARAM_VoidRift",
+    "name": "Void Rift",
+    "rarity": "Prismatic",
+    "desc": "Damaging enemies with Abilities creates a <keyword>Void Scar</keyword>. If there is another  <keyword>Void Scar</keyword> nearby, they connect dealing <magicDamage>magic damage</magicDamage> and <status>Slowing</status> enemies between them.",
+    "tooltip": "Damaging enemies with an Ability creates a <keyword>Void Scar</keyword> for @Lifetime@ seconds. If another <keyword>Void Scar</keyword> is created nearby they connect and form a rift between them, dealing <magicDamage>@Calc_Damage@ magic damage</magicDamage> to enemies inside and <status>Slowing by @Calc_Slow_Amount@</status>, decaying over @Slow_Duration@ second.<br><br><rules>Damage Dealt: @f1.0@</rules>",
+    "dataValues": {
+      "Cast_Delay": 0.6000000238418579,
+      "Detection_Range": 1250.0,
+      "Lifetime": 6.0,
+      "Slow_Duration": 1.0
+    },
+    "calculations": {
+      "0x300db355": {
+        "mDisplayAsPercent": true,
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.9900000095367432,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "mSimpleTooltipCalculationDisplay": 5,
+        "~class": "GameCalculation"
+      },
+      "Calc_Damage": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 350.0,
+            "mStartValue": 75.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          },
+          {
+            "mCoefficient": 4.5,
+            "mStat": 29,
+            "~class": "StatByCoefficientCalculationPart"
+          },
+          {
+            "mCoefficient": 4.5,
+            "mStat": 22,
+            "~class": "StatByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/VoidRift_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/VoidRift_large.tex"
+    ]
+  },
+  {
+    "id": 2003,
+    "apiName": "ARAM_PoroKing",
+    "name": "Bounce of the Poro King",
+    "rarity": "Prismatic",
+    "desc": "Replace a Summoner Spell with <spellName>Bounce of the Poro King</spellName>!<br><br><rules><spellName>Bounce of the Poro King</spellName>: Transform into the Poro King, becoming Unstoppable, Ghosted, gaining damage reduction and <speed>Move Speed</speed>, but being unable to Attack or use Abilities. Additionally, bounce repeatedly, dealing <physicalDamage>physical damage</physicalDamage> and <status>Knocking Back</status> nearby enemies.</rules>",
+    "tooltip": "Replace a Summoner Spell with <spellName>Bounce of the Poro King</spellName>!<br><br><spellName>Bounce of the Poro King</spellName>: For @Buff_Duration@ seconds transform into the Poro King! While you are the Poro King you are Unstoppable, Ghosted, gain @Calc_Damage_Reduction@ damage reduction and <speed>@Calc_MoveSpeed@ Move Speed</speed>, but cannot Attack or use Abilities.<br><br>Additionally, bounce in the air and crash down every second, dealing <physicalDamage>@Calc_Damage@ physical damage</physicalDamage> and <status>Knockback</status> nearby enemies.<br><br><rules>The Poro King cannot <status>Knock Away</status> the same enemy more than once per cast.<br><br>Damage Prevented: @f1.0@<br>Damage Dealt: @f2.0@<br>Enemies Bounced: @f3.0@</rules>",
+    "dataValues": {
+      "Poro_Augment_Amp": 1.0,
+      "Buff_Duration": 3.0
+    },
+    "calculations": {
+      "0x6b74500e": {
+        "mDisplayAsPercent": true,
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.8500000238418579,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "mSimpleTooltipCalculationDisplay": 5,
+        "~class": "GameCalculation"
+      },
+      "Calc_Damage": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 300.0,
+            "mStartValue": 100.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          },
+          {
+            "mCoefficient": 0.05000000074505806,
+            "mStat": 12,
+            "mStatFormula": 2,
+            "~class": "StatByCoefficientCalculationPart"
+          },
+          {
+            "mCoefficient": 1.0,
+            "mStat": 2,
+            "mStatFormula": 2,
+            "~class": "StatByCoefficientCalculationPart"
+          },
+          {
+            "mCoefficient": 0.5,
+            "mStatFormula": 2,
+            "~class": "StatByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "Calc_MoveSpeed": {
+        "mDisplayAsPercent": true,
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.25,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "mSimpleTooltipCalculationDisplay": 5,
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/PoroKing_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/PoroKing_large.tex"
+    ]
+  },
+  {
+    "id": 2004,
+    "apiName": "ARAM_EmpoweredByTheFaithful",
+    "name": "Empowered By The Faithful",
+    "rarity": "Prismatic",
+    "desc": "<healing>Healing</healing> or <shield>Shielding</shield> allies blesses them for several seconds, causing their damage to fill you with devotion. When you have enough devotion, unleash a shockwave that deals <magicDamage>magic damage</magicDamage> and executes low health enemies.",
+    "tooltip": "<healing>Healing</healing> or <shield>Shielding</shield> an ally blesses them for @Buff_Duration@ seconds. When blessed allies deal damage to enemy champions, you gain stacks of <keywordMajor>Devotion</keywordMajor>. At @Devotion_Threshold@ <keywordMajor>Devotion</keywordMajor> you unleash a shockwave that deals <magicDamage>@Calc_Damage@ magic damage</magicDamage> and executes enemies below <scaleHealth>@Calc_Execute_Threshold@ Health</scaleHealth>.<br><br><rules>Damage Dealt: @f1.0@<br>Faithless Inquisitioned: @f2.0@</rules>",
+    "dataValues": {
+      "Buff_Duration": 8.0,
+      "Devotion_Threshold": 50.0
+    },
+    "calculations": {
+      "0x31e71824": {
+        "mDisplayAsPercent": true,
+        "mFormulaParts": [
+          {
+            "mCoefficient": 0.25,
+            "mStat": 34,
+            "~class": "StatByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "Calc_Damage": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 300.0,
+            "mStartValue": 50.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          },
+          {
+            "mCoefficient": 750.0,
+            "mStat": 34,
+            "~class": "StatByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/EmpoweredByTheFaithful_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/EmpoweredByTheFaithful_large.tex"
+    ]
+  },
+  {
+    "id": 2005,
+    "apiName": "ARAM_InfernoTriggered",
+    "name": "Triggered Inferno",
+    "rarity": "Prismatic",
+    "desc": "Gain <spellName>Daredevil Impulse</spellName>. When you reach S <keywordMajor>Style</keywordMajor>, automatically use <spellName>Inferno Trigger</spellName>.\\n<rules>\\n<spellName>Daredevil Impulse</spellName> - Damaging champions with Attacks or Abilities different from the previous one grants <keywordMajor>Style</keywordMajor> (from F to S). Gain <speed>Move Speed</speed> per <keywordMajor>Style</keywordMajor> rank.\\n<spellName>Inferno Trigger</spellName> - Unleash a torrent of shots, dealing <physicalDamage>physical damage</physicalDamage> to nearby enemies.\\n</rules>",
+    "tooltip": "Damaging enemy champions with Attacks or Abilities different from the previous one grants <keywordMajor>Style</keywordMajor> (from F to S).<br><br>Gain <speed>@Calc_Style_MS_Per_Stack@ Move Speed</speed> per <keywordMajor>Style</keywordMajor> rank.<br><br>At S <keywordMajor>Style</keywordMajor> consume your <keywordMajor>Style</keywordMajor> to unleash a torrent of shots towards all nearby enemies 10 times over 2 seconds. Each shot deals <physicalDamage>@Calc_Damage_Per_Shot@ physical damage</physicalDamage>. Enemies below <scaleHealth>@Calc_Crit_Threshold@ Health</scaleHealth> are struck critically for <physicalDamage>@Calc_Crit_Damage_Per_Shot@ physical damage</physicalDamage>.This has a @Cooldown@ second Cooldown.<br><br><rules>Shots apply Lifesteal and deal @MinionDamageMod*100@% damage to minion.<br><br>Damage Dealt: @f1.0@<br>Infernoes Triggered: @f2.0@</rules>",
+    "dataValues": {
+      "Style_Duration": 6.0,
+      "Cooldown": 15.0,
+      "Duration": 2.25,
+      "MinionDamageMod": 0.25
+    },
+    "calculations": {
+      "0xb12f97e5": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 40.0,
+            "mStartValue": 10.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          },
+          {
+            "mCoefficient": 0.3499999940395355,
+            "mStat": 2,
+            "~class": "StatByCoefficientCalculationPart"
+          },
+          {
+            "mCoefficient": 0.20000000298023224,
+            "~class": "StatByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xedf4ef00": {
+        "mModifiedGameCalculation": "0xb12f97e5",
+        "mMultiplier": {
+          "mCoefficient": 1.0,
+          "mStat": 9,
+          "~class": "StatByCoefficientCalculationPart"
+        },
+        "~class": "GameCalculationModified"
+      },
+      "0xfd4d70e5": {
+        "mDisplayAsPercent": true,
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.30000001192092896,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "mSimpleTooltipCalculationDisplay": 6,
+        "~class": "GameCalculation"
+      },
+      "0xff4e3458": {
+        "mDisplayAsPercent": true,
+        "mFormulaParts": [
+          {
+            "mBreakpoints": [
+              {
+                "mAdditionalBonusAtThisLevel": 0.0024999999441206455,
+                "mLevel": 6,
+                "~class": "Breakpoint"
+              },
+              {
+                "mAdditionalBonusAtThisLevel": 0.0024999999441206455,
+                "mLevel": 11,
+                "~class": "Breakpoint"
+              },
+              {
+                "mAdditionalBonusAtThisLevel": 0.0024999999441206455,
+                "mLevel": 16,
+                "~class": "Breakpoint"
+              }
+            ],
+            "mLevel1Value": 0.027499999850988388,
+            "~class": "ByCharLevelBreakpointsCalculationPart"
+          }
+        ],
+        "mPrecision": 1,
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Cherry/Augments/Icons/MadScientist_small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/MadScientist_large.tex"
+    ]
+  },
+  {
+    "id": 2006,
+    "apiName": "ARAM_Dropkick",
+    "name": "Dropkick",
+    "rarity": "Prismatic",
+    "desc": "Your Attacks execute low health enemy champions, knocking them back causing an explosion and healing you.",
+    "tooltip": "Your Attacks and Abilities execute enemy champions below <scaleHealth>@Calc_Execute_Threshold@ maximum Health</scaleHealth>, <healing>restoring you @Calc_Heal@ Health</healing> and <status>Knocking Back</status> the target.<br><br>Upon reaching their terminus or colliding with an enemy or terrain, the <status>Knocked Back</status> enemy will explode dealing <magicDamage>@Calc_Damage@ magic damage</magicDamage> to nearby enemies.<br><br><rules>The explosion of this augment can chain.<br><br>Enemies Dropkicked: @f3.0@<br>Healing: @f2.0@<br>Damage Dealt: @f1.0@</rules>",
+    "calculations": {
+      "0x31e71824": {
+        "mDisplayAsPercent": true,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.05000000074505806,
+            "~class": "NumberCalculationPart"
+          },
+          {
+            "mCoefficient": 1.9999999494757503e-05,
+            "mStat": 12,
+            "mStatFormula": 2,
+            "~class": "StatByCoefficientCalculationPart"
+          },
+          {
+            "mCoefficient": 0.0003000000142492354,
+            "mStat": 2,
+            "mStatFormula": 1,
+            "~class": "StatByCoefficientCalculationPart"
+          }
+        ],
+        "mPrecision": 1,
+        "~class": "GameCalculation"
+      },
+      "0xecce0397": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 300.0,
+            "mStartValue": 100.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          },
+          {
+            "mCoefficient": 0.25,
+            "mStat": 12,
+            "mStatFormula": 2,
+            "~class": "StatByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "Calc_Damage": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 500.0,
+            "mStartValue": 150.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          },
+          {
+            "mCoefficient": 1.0,
+            "mStat": 1,
+            "mStatFormula": 2,
+            "~class": "StatByCoefficientCalculationPart"
+          },
+          {
+            "mCoefficient": 1.0,
+            "mStat": 6,
+            "mStatFormula": 2,
+            "~class": "StatByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/Dropkick_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/Dropkick_large.tex"
+    ]
+  },
+  {
+    "id": 2007,
+    "apiName": "ARAM_LittleDevil",
+    "name": "Devil on Your Shoulder",
+    "rarity": "Prismatic",
+    "desc": "Forge a pact with The Little Devil himself. He drains your life over time but rewards you for violence with bonus true damage against champions and creating healing remnants for you to acquire.",
+    "tooltip": "You've forged a pact with the Little Devil himself, he <omnivamp>drains @Calc_Drain_Per_Second_Non_Combat@ of your current health per second, increased to @Calc_Drain_Per_Second@ if there are nearby enemies</omnivamp>.<br><br>As compensation The Little Devil grants you amplifies your Attacks and Abilities to deal an additional <trueDamage>@Calc_Damage_Amp@ true damage</trueDamage> and they cause a <omnivamp>Life Remnant</omnivamp> to appear nearby for @Remnant_Duration@ seconds.<br><br>Absorbing a <omnivamp>Life Remnant</omnivamp> <healing>heals you for @Calc_Remnant_Healing@</healing> and grants you <speed>@Calc_Move_Speed@ Movement Speed</speed> for @Move_Speed_Duration@ second.<br><br><rules>Life Essence Drained @f1.0@<br>Damage Dealt: @f2.0@<br>Remnants Acquired: @f4.0@<br>Life Essence Restored: @f5.0@</rules>",
+    "dataValues": {
+      "Amp_Duration": 8.0,
+      "Amp": 2.0,
+      "Remnant_Duration": 5.0,
+      "Move_Speed_Duration": 1.0,
+      "Detection_Radius": 1000.0,
+      "Remnant_Spawn_Cooldown": 0.75
+    },
+    "calculations": {
+      "0x21a86d0d": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 150.0,
+            "mStartValue": 50.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          },
+          {
+            "mCoefficient": 0.5,
+            "mStat": 2,
+            "mStatFormula": 2,
+            "~class": "StatByCoefficientCalculationPart"
+          },
+          {
+            "mCoefficient": 0.25,
+            "~class": "StatByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0x6b74500e": {
+        "mDisplayAsPercent": true,
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.20000000298023224,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "mSimpleTooltipCalculationDisplay": 5,
+        "~class": "GameCalculation"
+      },
+      "0x820b6b7a": {
+        "mDisplayAsPercent": true,
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mDataValue": "Amp",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          {
+            "mNumber": -1.0,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "mSimpleTooltipCalculationDisplay": 5,
+        "~class": "GameCalculation"
+      },
+      "0xaccae6f3": {
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mModifiedGameCalculation": "0xaf406daa",
+        "mMultiplier": {
+          "mNumber": 0.10000000149011612,
+          "~class": "NumberCalculationPart"
+        },
+        "mSimpleTooltipCalculationDisplay": 5,
+        "~class": "GameCalculationModified"
+      },
+      "0xaf406daa": {
+        "mDisplayAsPercent": true,
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.07500000298023224,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "mPrecision": 2,
+        "mSimpleTooltipCalculationDisplay": 5,
+        "~class": "GameCalculation"
+      },
+      "Calc_Damage_Amp": {
+        "mDisplayAsPercent": true,
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.20000000298023224,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "mSimpleTooltipCalculationDisplay": 5,
+        "~class": "GameCalculation"
+      },
+      "Calc_Move_Speed": {
+        "mDisplayAsPercent": true,
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.15000000596046448,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "mSimpleTooltipCalculationDisplay": 5,
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/LittleDevil_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/LittleDevil_large.tex"
+    ]
+  },
+  {
+    "id": 2008,
+    "apiName": "ARAM_WeightedPopoffs",
+    "name": "Weighted Popoffs",
+    "rarity": "Silver",
+    "desc": "Striking enemies with abilities grants you stacks of Popoff causing your non-ultimate Ability cooldowns to tick faster.",
+    "tooltip": "Striking enemy champions with Abilities grants you stacks of <keyword>Popoff</keyword> (max: @Stacks_Max@) for @Stack_Duration@ seconds.<br><br>Each stack of <keyword>Popoff</keyword> causes your non-ultimatee Ability cooldowns to tick @Calc_Cooldown_Acceleration@ faster, increased to @Calc_Cooldown_Acceleration_Maximum@ at @Stacks_Max@ stacks.<br><br><rules>Cooldown Time Accelerated: @f1.1@</rules>",
+    "dataValues": {
+      "Stacks_Max": 6.0,
+      "Stack_Duration": 6.0
+    },
+    "calculations": {
+      "0x7536985c": {
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mModifiedGameCalculation": "0xc4c1a8c1",
+        "mMultiplier": {
+          "mNumber": 2.0,
+          "~class": "NumberCalculationPart"
+        },
+        "mSimpleTooltipCalculationDisplay": 5,
+        "~class": "GameCalculationModified"
+      },
+      "0xc4c1a8c1": {
+        "mDisplayAsPercent": true,
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.02500000037252903,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "mPrecision": 1,
+        "mSimpleTooltipCalculationDisplay": 5,
+        "~class": "GameCalculation"
+      },
+      "0xc6d3894": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 100.0,
+            "mStartValue": 25.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          },
+          {
+            "mCoefficient": 0.3499999940395355,
+            "mStat": 2,
+            "mStatFormula": 2,
+            "~class": "StatByCoefficientCalculationPart"
+          },
+          {
+            "mCoefficient": 0.25,
+            "~class": "StatByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xfa8236f6": {
+        "mModifiedGameCalculation": "0xc6d3894",
+        "mMultiplier": {
+          "mNumber": 2.0,
+          "~class": "NumberCalculationPart"
+        },
+        "~class": "GameCalculationModified"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/WeightedPopoffs_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/WeightedPopoffs_large.tex"
+    ]
+  },
+  {
+    "id": 2009,
+    "apiName": "ARAM_Zealot",
+    "name": "Zealot",
+    "rarity": "Silver",
+    "desc": "Gain <attention>@Calc_Crit_Chance@ Critical Strike Chance</attention> and <attackSpeed>@Calc_AS@ Attack Speed</attackSpeed>.",
+    "tooltip": "Gain <attention>@Calc_Crit_Chance@ Critical Strike Chance</attention> and <attackSpeed>@Calc_AS@ Attack Speed</attackSpeed>.",
+    "calculations": {
+      "0x3cddad9": {
+        "mDisplayAsPercent": true,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.3499999940395355,
+            "~class": "NumberCalculationPart"
+          },
+          {
+            "mCoefficient": 0.0005000000237487257,
+            "~class": "StatByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xc91fac52": {
+        "mDisplayAsPercent": true,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.25,
+            "~class": "NumberCalculationPart"
+          },
+          {
+            "mCoefficient": 0.0005000000237487257,
+            "~class": "StatByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Cherry/Augments/Icons/Typhoon_small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Typhoon_large.tex"
+    ]
+  },
+  {
+    "id": 2010,
+    "apiName": "ARAM_DoubleTap",
+    "name": "Double Tap",
+    "rarity": "Silver",
+    "desc": "Your Critical Strikes apply <OnHit>%i:OnHit% On-Hit</OnHit> effects an additional time. Gain Critical Strike Chance.",
+    "tooltip": "Your Critical Strikes apply <OnHit>%i:OnHit% On-Hit</OnHit> effects an additional time. Gain @Calc_Crit_Chance@ Critical Strike Chance.",
+    "calculations": {
+      "0xc91fac52": {
+        "mDisplayAsPercent": true,
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.25,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "mSimpleTooltipCalculationDisplay": 5,
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Cherry/Augments/Icons/Typhoon_small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Typhoon_large.tex"
+    ]
+  },
+  {
+    "id": 2016,
+    "apiName": "ARAM_Juiced",
+    "name": "Juiced",
+    "rarity": "Silver",
+    "desc": "<OnHit>%i:OnHit% On-Hit</OnHit> consume <scaleMana>@Calc_Mana_Cost@ Mana</scaleMana> to deal <magicDamage>@Calc_Damage@ magic damage</magicDamage>, this damage can Strike Critically.",
+    "tooltip": "<OnHit> %i:OnHit% On-Hit</OnHit> consume <scaleMana>@Calc_Mana_Cost@ Mana</scaleMana> to deal <magicDamage>@Calc_Damage@ magic damage</magicDamage>, this damage can Strike Critically.<br><br><rules>Damage Dealt: @f1.0@<br>Mana Consumed: @f2.0@</rules>",
+    "calculations": {
+      "0x89615869": {
+        "mModifiedGameCalculation": "Calc_Damage",
+        "mMultiplier": {
+          "mCoefficient": 1.0,
+          "mStat": 9,
+          "~class": "StatByCoefficientCalculationPart"
+        },
+        "~class": "GameCalculationModified"
+      },
+      "0xaa5cf752": {
+        "mFormulaParts": [
+          {
+            "mCoefficient": 0.02500000037252903,
+            "~class": "AbilityResourceByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "Calc_Damage": {
+        "mFormulaParts": [
+          {
+            "mCoefficient": 0.03500000014901161,
+            "~class": "AbilityResourceByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Cherry/Augments/Icons/ADAPt_small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/ADAPt_large.tex"
+    ]
+  },
+  {
+    "id": 2018,
+    "apiName": "ARAM_Purist_Caster",
+    "name": "Purist - Caster",
+    "rarity": "Silver",
+    "desc": "Gain percent cooldown reduction and convert all of your <attackSpeed>Attack Speed</attackSpeed> into Ability Haste.",
+    "tooltip": "Gain @Calc_CDR@ Cooldown Reduction and convert all of your <attackSpeed>Attack Speed</attackSpeed> into Ability Haste (current: @f1.1@ Ability Haste).<br><br><rules>Conversion Rate: @Haste_Per_AS@ Ability Haste per <attackSpeed>1% Attack Speed</attackSpeed></rules>",
+    "dataValues": {
+      "Haste_Per_AS": 0.6499999761581421
+    },
+    "calculations": {
+      "0x7755186c": {
+        "mDisplayAsPercent": true,
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.10000000149011612,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "mSimpleTooltipCalculationDisplay": 5,
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Cherry/Augments/Icons/ADAPt_small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/ADAPt_large.tex"
+    ]
+  },
+  {
+    "id": 2024,
+    "apiName": "CritNCast",
+    "name": "Crit 'n Cast",
+    "rarity": "Silver",
+    "desc": "Gain Ability Haste equal to @CritToHasteConversion*100@% of your %i:scaleCrit% Critical Strike Chance.<br>",
+    "tooltip": "Gain @f1@ Ability Haste (@CritToHasteConversion*100@%%i:scaleCrit%).",
+    "dataValues": {
+      "CritToHasteConversion": 0.4000000059604645
+    },
+    "calculations": {
+      "0xb75add86": {
+        "mFormulaParts": [
+          {
+            "mDataValue": "0xef0f14c7",
+            "mStat": 8,
+            "~class": "StatByNamedDataValueCalculationPart"
+          }
+        ],
+        "mMultiplier": {
+          "mNumber": 100.0,
+          "~class": "NumberCalculationPart"
+        },
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "ASSETS/UX/Cherry/Augments/Icons/TankItOrLeaveIt_small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/TankItOrLeaveIt_large.tex"
+    ]
+  },
+  {
+    "id": 2026,
+    "apiName": "KillSecured",
+    "name": "Kill Secured",
+    "rarity": "Silver",
+    "desc": "Gain increased <speed>Movement speed</speed> towards enemies at low health.",
+    "tooltip": "Gain <speed>@MovementSpeed*100@% Movement speed</speed> towards enemies below <health>@HealthThreshold*100@% health</health>.",
+    "dataValues": {
+      "MovementSpeed": 1.0,
+      "HealthThreshold": 0.4000000059604645
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/KillSecure_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/KillSecure_large.tex"
     ]
   },
   {

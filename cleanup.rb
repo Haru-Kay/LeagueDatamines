@@ -653,7 +653,7 @@ print "done.\n"
     }
 
     $aramMayhem = {}
-    File.open("temp/data/maps/modespecificdata/map12/augments.json", 'rb') { |f| $aramMayhem = JSON.parse(f.read()) }
+    File.open("temp/data/maps/modespecificdata/map12/kiwi.json", 'rb') { |f| $aramMayhem = JSON.parse(f.read()) }
     $aramMayhem = $aramMayhem.fetch("entries", $aramMayhem)
     aramAugments = []
     aramOther = {}
