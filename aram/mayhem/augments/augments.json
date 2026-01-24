@@ -549,11 +549,11 @@
     "tooltip": "Gain the <spellName>First Strike</spellName> and <spellName>Dark Harvest</spellName> Keystone Runes.<br><li><spellName>First Strike</spellName>: When you initiate champion combat, deal @DamageAmp*100@% extra damage for @AugDuration@ seconds and gain Gold based on damage dealt.<br><li><spellName>Dark Harvest</spellName>: Damaging a low Health champion inflicts <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_AdaptiveDmg'>adaptive damage</lol-uikit-tooltipped-keyword> and harvests a soul from the victim.<br><br>Damage Dealt: @f2@<br>Gold Gained: @f3@",
     "dataValues": {
       "AugDuration": 3.0,
-      "DamageAmp": 0.07000000029802322,
+      "DamageAmp": 0.10000000149011612,
       "OOCTimer": 10.0,
-      "GoldProcBonus": 10.0,
-      "GoldPercentBonus": 0.5,
-      "GoldPercentBonusRanged": 0.3499999940395355,
+      "GoldProcBonus": 20.0,
+      "GoldPercentBonus": 0.6000000238418579,
+      "GoldPercentBonusRanged": 0.41999998688697815,
       "GraceWindow": 0.25,
       "MissileNoiseNumberLimiter": 3.0,
       "MissileNoiseRangeLimiter": 1500.0,
@@ -901,7 +901,7 @@
       "OnHitDamage": 40.0,
       "TotalASValue": 0.20000000298023224,
       "SlowResistValue": 1.0,
-      "Breakpoint1": 3.5
+      "Breakpoint1": 2.5
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/LightningStrikes_small.tex",
@@ -1778,7 +1778,8 @@
     "tooltip": "Your Item and damage over time effects can Critically Strike for @CritDamage*100@% extra damage. Gain @CritChance*100@% Crit Chance.<br><br>Damage Dealt: @f2@",
     "dataValues": {
       "CritDamage": 1.4500000476837158,
-      "CritChance": 0.25
+      "CritChance": 0.25,
+      "SpellIDCD": 5.0
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/Vulnerability_small.tex",
@@ -2022,7 +2023,9 @@
     "tooltip": "Your <healing>healing</healing> and <shield>Shields</shield> can Critically Strike for @CritHeal*100@% bonus amount. Gain %i:scaleCrit% @CritChance*100@% Crit Chance. ",
     "dataValues": {
       "CritHeal": 0.4000000059604645,
-      "CritChance": 0.25
+      "CritChance": 0.25,
+      "SpellIDCD": 5.0,
+      "CriticalMissleTriggerRange": 550.0
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/CriticalHealing_small.tex",
@@ -2047,10 +2050,6 @@
             "~class": "StatByNamedDataValueCalculationPart"
           }
         ],
-        "mMultiplier": {
-          "mDataValue": "APRatio",
-          "~class": "NamedDataValueCalculationPart"
-        },
         "~class": "GameCalculation"
       }
     },
@@ -3018,22 +3017,6 @@
     ]
   },
   {
-    "id": 1317,
-    "apiName": "ARAM_Upgrade_Cutlass",
-    "name": "Upgrade Cutlass",
-    "rarity": "Silver",
-    "desc": "Reduce <attention>Spectral Cutlass</attention> and <attention>Lifeline's</attention> Cooldown to @UpgradeCD@ seconds. When active, gain @DamageAmp*100@% damage amplification.<br><br>Gain <gold>250 Gold</gold>.",
-    "tooltip": "Reduce <attention>Spectral Cutlass</attention> and <attention>Lifeline's</attention> Cooldown to @UpgradeCD@ seconds. When active, gain @DamageAmp*100@% damage amplification.<br>",
-    "dataValues": {
-      "DamageAmp": 0.25,
-      "UpgradeCD": 30.0
-    },
-    "icons": [
-      "ASSETS/UX/Kiwi/Augments/Icons/UpgradeCutlass_small.tex",
-      "ASSETS/UX/Kiwi/Augments/Icons/UpgradeCutlass_large.tex"
-    ]
-  },
-  {
     "id": 1318,
     "apiName": "ARAM_Upgrade_ZH",
     "name": "Upgrade Zhonya's",
@@ -3417,8 +3400,9 @@
       "ShieldDuration": 3.0,
       "ShieldRatioAP": 1.0,
       "ShieldRatioBHealth": 0.10000000149011612,
-      "DelayMovingTime": 0.5,
-      "HSAmp": 0.15000000596046448
+      "DelayMovingTime": 0.25,
+      "HSAmp": 0.15000000596046448,
+      "MoveSpeed": 4000.0
     },
     "calculations": {
       "ShieldAmount": {
@@ -3598,7 +3582,7 @@
       "PercentMovespeedGain": 0.25,
       "TimerDuration": 30.0,
       "APRatio": 0.20000000298023224,
-      "GoldPerProc": 5.0,
+      "GoldPerProc": 10.0,
       "TotalLoops": 3.0,
       "BonusADRatio": 0.4000000059604645
     },
@@ -3736,8 +3720,8 @@
       "TotalHeal": {
         "mFormulaParts": [
           {
-            "mEndValue": 430.0,
-            "mStartValue": 150.0,
+            "mEndValue": 560.0,
+            "mStartValue": 195.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           },
           {
@@ -4056,13 +4040,13 @@
     "apiName": "CriticalMissile",
     "name": "Critical Missile",
     "rarity": "Gold",
-    "desc": "When you <crit>Crit</crit>, fire 1 plus @AdditionalMis@ <keyworkMajor> Firecrackers</keyworkMajor> that deals <magicDamage>@Damage@ magic damage</magicDamage> each. Additionally, gain <crit>@CrtiChance*100@%</crit> critical strike chance.",
-    "tooltip": "When you <crit>Crit</crit>, fire 1 plus @AdditionalMis@ <keyworkMajor> Firecrackers</keyworkMajor> that deals <magicDamage>@Damage@ magic damage</magicDamage> each. Additionally, gain <crit>@CrtiChance*100@%</crit> critical strike chance.",
+    "desc": "When you <crit>Crit</crit>, fire 1 plus @AdditionalMis@ <keyworkMajor> Firecrackers</keyworkMajor> that deals <magicDamage>@Damage@ magic damage</magicDamage> each. Additionally, gain <crit>@CrtiChance*100@%</crit> critical strike chance.<br><br><rules><crit>Crit</crit> works when your basic attacks, healing, spells, or items critically strike, and when you critically defend against damage.</rules>",
+    "tooltip": "When you <crit>Crit</crit>, fire 1 plus @AdditionalMis@ <keyworkMajor> Firecrackers</keyworkMajor> that deals <magicDamage>@Damage@ magic damage</magicDamage> each. Additionally, gain <crit>@CrtiChance*100@%</crit> critical strike chance.<br><br><rules><crit>Crit</crit> works when your basic attacks, healing, spells, or items critically strike, and when you critically defend against damage.</rules>",
     "dataValues": {
-      "ADRatio": 0.15000000596046448,
+      "ADRatio": 0.07000000029802322,
       "CrtiChance": 0.25,
       "AdditionalMisDivision": 3.0,
-      "APRatio": 0.15000000596046448,
+      "APRatio": 0.10000000149011612,
       "Cooldown": 4.0
     },
     "calculations": {
@@ -4079,7 +4063,7 @@
       "Damage": {
         "mFormulaParts": [
           {
-            "mEndValue": 80.0,
+            "mEndValue": 40.0,
             "mStartValue": 11.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           },
@@ -4259,13 +4243,12 @@
     "apiName": "Upgrade_SwordOfBlossom",
     "name": "Upgrade Sword of Blossoming Dawn",
     "rarity": "Prismatic",
-    "desc": "Your attack deal @AttackDamageNerf*100@% damages but you gain massive <speed>Attack Speed</speed> and <heal>Heal Shield Power</heal>.<br><br>Increase healing by @PercentInc*100@%.",
-    "tooltip": "Your attack deal @AttackDamageNerf*100@% damages but you gain <speed>@AttackSpeed*100@% Attack Speed</speed> and <heal>@HSPower*100@% Heal Shield Power</heal>.<br><br>Increase healing by @PercentInc*100@%.",
+    "desc": "Your attack deal @AttackDamageNerf*100@% damages but you gain massive <speed>Attack Speed</speed>. Increase healing by <scaleHealth>@PercentInc*100@%</scaleHealth> from Sword of Blossoming Dawn.",
+    "tooltip": "Your attack deal @AttackDamageNerf*100@% damages but you gain <speed>@AttackSpeed*100@% Attack Speed</speed>.<br><br>Increase healing by <scaleHealth>@PercentInc*100@%</scaleHealth> from Sword of Blossoming Dawn.",
     "dataValues": {
       "AttackSpeed": 1.0,
-      "HSPower": 0.30000001192092896,
       "AttackDamageNerf": 0.10000000149011612,
-      "PercentInc": 3.0
+      "PercentInc": 2.5
     },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/UpgradeMikaelsBlessing_small.tex",
@@ -4317,7 +4300,8 @@
       "ResetCooldownToSet": 0.5,
       "DistanceShiftTowardsWall": 175.0,
       "E3LockoutDuration": 0.5,
-      "SpinDuration": 25000.0
+      "SpinDuration": 25000.0,
+      "AttackRange": 500.0
     },
     "calculations": {
       "ASModDamageToDeal": {
@@ -4507,8 +4491,8 @@
       "Cooldown": 6.0,
       "MinDamage": 120.0,
       "MaxDamage": 360.0,
-      "BonusADRatio": [],
-      "APRatio": [],
+      "BonusADRatio": 0.4000000059604645,
+      "APRatio": 0.30000001192092896,
       "HitsRequired": 3.0,
       "TimeBetweenHits": 4.0,
       "AmpPotencyMaxSelf": 0.15000000596046448,
@@ -5050,10 +5034,10 @@
     "desc": "On ability damage, fire 1 plus @AdditionalMis@ <keyworkMajor> Firecrackers</keyworkMajor> that deals <magicDamage>@Damage@ magic damage</magicDamage> each. Additionally, gain <crit>@CrtiChance*100@%</crit> critical strike chance.",
     "tooltip": "{{Kiwi_TwinFire_Summary}}",
     "dataValues": {
-      "ADRatio": 0.15000000596046448,
+      "ADRatio": 0.07000000029802322,
       "CrtiChance": 0.15000000596046448,
       "AdditionalMisDivision": 3.0,
-      "APRatio": 0.10000000149011612,
+      "APRatio": 0.07000000029802322,
       "Cooldown": 5.0
     },
     "calculations": {
@@ -5166,7 +5150,11 @@
     "dataValues": {
       "BaseDmg": 100.0,
       "BaseHeal": 100.0,
-      "MaxMult": 2.0
+      "MaxMult": 2.0,
+      "bADRatio": 0.4000000059604645,
+      "APRatio": 0.30000001192092896,
+      "bADRatio_Healing": 0.30000001192092896,
+      "APRatio_Healing": 0.20000000298023224
     },
     "calculations": {
       "0x4f1ed7f6": {
@@ -5175,6 +5163,16 @@
             "mEndValue": 200.0,
             "mStartValue": 50.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
+          },
+          {
+            "mDataValue": "0x4122f46",
+            "~class": "StatByNamedDataValueCalculationPart"
+          },
+          {
+            "mDataValue": "0xbc50df9a",
+            "mStat": 2,
+            "mStatFormula": 2,
+            "~class": "StatByNamedDataValueCalculationPart"
           }
         ],
         "~class": "GameCalculation"
@@ -5185,6 +5183,16 @@
             "mEndValue": 300.0,
             "mStartValue": 100.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
+          },
+          {
+            "mDataValue": "APRatio",
+            "~class": "StatByNamedDataValueCalculationPart"
+          },
+          {
+            "mDataValue": "BADRatio",
+            "mStat": 2,
+            "mStatFormula": 2,
+            "~class": "StatByNamedDataValueCalculationPart"
           }
         ],
         "~class": "GameCalculation"
@@ -5827,7 +5835,7 @@
     "id": 2010,
     "apiName": "ARAM_DoubleTap",
     "name": "Double Tap",
-    "rarity": "Silver",
+    "rarity": "Gold",
     "desc": "Your Critical Strikes apply <OnHit>%i:OnHit% On-Hit</OnHit> effects an additional time. Gain Critical Strike Chance.",
     "tooltip": "Your Critical Strikes apply <OnHit>%i:OnHit% On-Hit</OnHit> effects an additional time. Gain @Calc_Crit_Chance@ Critical Strike Chance.",
     "calculations": {
@@ -5845,8 +5853,8 @@
       }
     },
     "icons": [
-      "ASSETS/UX/Cherry/Augments/Icons/Typhoon_small.tex",
-      "ASSETS/UX/Cherry/Augments/Icons/Typhoon_large.tex"
+      "ASSETS/UX/Kiwi/Augments/Icons/CriticalRhythm_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/CriticalRhythm_large.tex"
     ]
   },
   {

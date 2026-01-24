@@ -314,6 +314,75 @@ def augmentSearcher(key, data, version=0)
     return nil
 end
 
+def augmentSetBuilder(key, data, version=0)
+    if data["~class"]&.eql?("0x27bc6378")
+        set = {
+            "apiName" => data.fetch("0x3a942548", ""),
+            "name" => data.fetch("0x746ade9", ""),
+            "desc" => data.fetch("0x97e82990", ""),
+            "descEx" => "",
+            "icons" => data.fetch("0x4217d741", ""),
+        }
+        if data["TierData"]
+            set["breakpoints"] = []
+            i = 2
+            data["TierData"].each { |tier|
+                next if tier["Enabled"] == false
+                set["breakpoints"].push(i)
+                i += 1
+            }
+        else
+            set["breakpoints"] = [2, 3, 4]
+        end
+
+        setData = $aramMayhem[data.fetch("0x96b4b430")]
+        puts set["name"] if !setData
+        
+        set["data"] = {
+            "dataValues" => {},
+            "calculations" => {}
+        }
+
+        mSpell = setData.fetch("mSpell", {})
+        dataValues = mSpell.fetch("DataValues", [])
+
+        dataValues.each { |component|
+            name = component["mName"]
+            values = component["mValues"] || []
+            puts "#{spellName} ::: #{name}" if !values
+            values = values[1..set["breakpoints"].length]
+            values = values[0] if values.uniq.length == 1
+            set["data"]["dataValues"].store(name, values)
+        }
+        
+        clientData = mSpell.fetch("mClientData", {})
+        if clientData
+            descEx = clientData.dig("mTooltipData")&.dig("mLocKeys")&.dig("keyTooltip")
+            set["descEx"] = descEx ? $lang.fetch(descEx.downcase, "") : ""
+        end
+        set.delete("descEx") if set["descEx"].empty?
+
+        calcs = mSpell.fetch("mSpellCalculations", {})
+        set["data"]["calculations"] = calcs
+
+        set["augments"] = []
+        data["augments"].each { |aug|
+            augdata = $aramMayhem[aug]
+            if !augdata
+                set["augments"].push(aug)
+                next
+            end
+            name = augdata["NameTra"] ? $lang.fetch(augdata["NameTra"].downcase, aug) : aug
+            set["augments"].push(name)
+        }
+        
+        set["name"] = $lang.fetch(set["name"].downcase, set["name"])
+        set["desc"] = $lang.fetch(set["desc"].downcase, set["desc"])
+        return set
+    end
+    return nil
+end
+
 def applyLang(obj)
     case obj
         when Hash
@@ -652,6 +721,7 @@ print "done.\n"
         Dir.mkdir("aram/mayhem/#{dir}") unless Dir.exist?("aram/mayhem/#{dir}")
     }
 
+    aramSets = []
     $aramMayhem = {}
     File.open("temp/data/maps/modespecificdata/map12/kiwi.json", 'rb') { |f| $aramMayhem = JSON.parse(f.read()) }
     $aramMayhem = $aramMayhem.fetch("entries", $aramMayhem)
@@ -667,11 +737,17 @@ print "done.\n"
 
         type = data["~class"]
 
+        if type == "0x27bc6378"
+            aramSets.push(augmentSetBuilder(key, data, 1))
+            next
+        end
+
         next if !type
         aramOther[type] ||= {}
         aramOther[type].store(key, data)
     }
     File.open("aram/mayhem/augments/augments.json", 'wb') { |f| f.write(JSON.pretty_generate(aramAugments.sort_by { |a| a["id"] })) }
+    File.open("aram/mayhem/augments/sets.json", 'wb') { |f| f.write(JSON.pretty_generate(aramSets)) }
     aramOther.each { |key, data|
         loc = key.downcase.include?("vfx") ? "vfxData" : "data"
         data = data.sort_by { |k, v| v["ObjectName"] }.to_h if key == "SpellObject"
