@@ -325,11 +325,11 @@ def augmentSetBuilder(key, data, version=0)
         }
         if data["TierData"]
             set["breakpoints"] = []
-            i = 2
+            i = 1
             data["TierData"].each { |tier|
+                i += 1
                 next if tier["Enabled"] == false
                 set["breakpoints"].push(i)
-                i += 1
             }
         else
             set["breakpoints"] = [2, 3, 4]
@@ -350,7 +350,11 @@ def augmentSetBuilder(key, data, version=0)
             name = component["mName"]
             values = component["mValues"] || []
             puts "#{spellName} ::: #{name}" if !values
-            values = values[1..set["breakpoints"].length]
+            out = []
+            for i in set["breakpoints"]
+                out.push(values[i - 1])
+            end
+            values = out
             values = values[0] if values.uniq.length == 1
             set["data"]["dataValues"].store(name, values)
         }
@@ -359,6 +363,15 @@ def augmentSetBuilder(key, data, version=0)
         if clientData
             descEx = clientData.dig("mTooltipData")&.dig("mLocKeys")&.dig("keyTooltip")
             set["descEx"] = descEx ? $lang.fetch(descEx.downcase, "") : ""
+            if set["descEx"].start_with?("{{")
+                str = set["descEx"].downcase
+                out = {}
+                for i in set["breakpoints"]
+                    strSub = str[2...-2].gsub("@level@", (i - 1).to_s)
+                    out.store(i, $lang.fetch(strSub, strSub))
+                end
+                set["descEx"] = out
+            end
         end
         set.delete("descEx") if set["descEx"].empty?
 
