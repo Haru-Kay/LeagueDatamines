@@ -11537,7 +11537,6 @@
         }
       ],
       "bHaveHitBone": true,
-      "castConeDistance": 100.0,
       "castFrame": 14.800000190734863,
       "castRadius": [
         210.0,
@@ -11573,7 +11572,7 @@
       "mAnimationName": "Spell3",
       "mCantCancelWhileChanneling": true,
       "mCantCancelWhileWindingUp": true,
-      "mCastType": 3,
+      "mCastType": 1,
       "mClientData": {
         "mTargeterDefinitions": [
           {
@@ -11588,6 +11587,7 @@
       "mIgnoreRangeCheck": true,
       "mIsDisabledWhileDead": false,
       "mLineWidth": 120.0,
+      "mMissileEffectEnemyKey": "0x61e14d44",
       "mMissileEffectKey": "0x3141f537",
       "mMissileSpec": {
         "behaviors": [
@@ -11599,10 +11599,8 @@
           }
         ],
         "heightSolver": {
-          "0x922c17e5": 300.0,
-          "0xf0814377": true,
-          "mGravity": 300.0,
-          "~class": "GravityHeightSolver"
+          "mInitialTargetHeightOffset": 1200.0,
+          "~class": "CurveTheDifferenceHeightSolver"
         },
         "movementComponent": {
           "mOffsetInitialTargetHeight": 100.0,
@@ -11620,13 +11618,10 @@
             ],
             "~class": "HermiteSplineInfo"
           },
-          "mStartBoneName": "L_Buffbone_Engine",
+          "mStartBoneName": "",
           "mTargetBoneName": "C_Buffbone_Glb_Center_Loc",
           "mTargetHeightAugment": 100.0,
           "~class": "FixedSpeedSplineMovement"
-        },
-        "verticalFacing": {
-          "~class": "VerticalFacingFaceTarget"
         },
         "~class": "MissileSpecification"
       },
@@ -11710,7 +11705,6 @@
         }
       ],
       "bHaveHitBone": true,
-      "castConeDistance": 100.0,
       "castFrame": 14.800000190734863,
       "castRadius": [
         210.0,
@@ -11746,7 +11740,7 @@
       "mAnimationName": "Spell3",
       "mCantCancelWhileChanneling": true,
       "mCantCancelWhileWindingUp": true,
-      "mCastType": 3,
+      "mCastType": 1,
       "mClientData": {
         "mTargeterDefinitions": [
           {
@@ -11761,6 +11755,7 @@
       "mIgnoreRangeCheck": true,
       "mIsDisabledWhileDead": false,
       "mLineWidth": 120.0,
+      "mMissileEffectEnemyKey": "0x61e14d44",
       "mMissileEffectKey": "0x3141f537",
       "mMissileSpec": {
         "behaviors": [
@@ -11772,10 +11767,8 @@
           }
         ],
         "heightSolver": {
-          "0x922c17e5": 700.0,
-          "0xf0814377": true,
-          "mGravity": 5000.0,
-          "~class": "GravityHeightSolver"
+          "mInitialTargetHeightOffset": 1200.0,
+          "~class": "CurveTheDifferenceHeightSolver"
         },
         "movementComponent": {
           "mOffsetInitialTargetHeight": 100.0,
@@ -11792,14 +11785,11 @@
             ],
             "~class": "HermiteSplineInfo"
           },
-          "mStartBoneName": "L_Buffbone_Engine",
+          "mStartBoneName": "",
           "mTargetBoneName": "C_Buffbone_Glb_Center_Loc",
           "mTargetHeightAugment": 100.0,
           "mTravelTime": 0.5,
           "~class": "FixedTimeSplineMovement"
-        },
-        "verticalFacing": {
-          "~class": "VerticalFacingFaceTarget"
         },
         "~class": "MissileSpecification"
       },
@@ -21168,6 +21158,19 @@
         {
           "mName": "BaseHealBonus",
           "mValues": [
+            70.0,
+            70.0,
+            70.0,
+            70.0,
+            70.0,
+            70.0,
+            70.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "PerAdditionalFireHealBonus",
+          "mValues": [
             50.0,
             50.0,
             50.0,
@@ -21175,19 +21178,6 @@
             50.0,
             50.0,
             50.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "PerAdditionalFireHealBonus",
-          "mValues": [
-            30.0,
-            30.0,
-            30.0,
-            30.0,
-            30.0,
-            30.0,
-            30.0
           ],
           "~class": "SpellDataValue"
         }
@@ -23447,7 +23437,7 @@
       "mTooltipData": {
         "mFormat": "0xb34f999a",
         "mLocKeys": {
-          "keyName": "Augment_DivineIntervention_Invulnerability_Buff_Name",
+          "keyName": "Kiwi_PromQueen_Name",
           "keyTooltip": "Kiwi_GeneralAugmentCooldown_BuffBar"
         },
         "mObjectName": "Augment_PromQueen_Cooldown",
@@ -24306,13 +24296,13 @@
         {
           "mName": "Chance",
           "mValues": [
-            15.0,
-            15.0,
-            15.0,
-            15.0,
-            15.0,
-            15.0,
-            15.0
+            9.0,
+            9.0,
+            9.0,
+            9.0,
+            9.0,
+            9.0,
+            9.0
           ],
           "~class": "SpellDataValue"
         },
@@ -24345,13 +24335,13 @@
         {
           "mName": "AnvilLife",
           "mValues": [
-            30.0,
-            30.0,
-            30.0,
-            30.0,
-            30.0,
-            30.0,
-            30.0
+            5000.0,
+            5000.0,
+            5000.0,
+            5000.0,
+            5000.0,
+            5000.0,
+            5000.0
           ],
           "~class": "SpellDataValue"
         }
@@ -27227,55 +27217,6 @@
     },
     "~class": "SpellObject"
   },
-  "0xbb10280f": {
-    "ObjectName": "Augment_Upgrade_SwordOfBlossom",
-    "mScriptName": "Augment_Upgrade_SwordOfBlossom",
-    "mSpell": {
-      "DataValues": [
-        {
-          "mName": "AttackSpeed",
-          "mValues": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "AttackDamageNerf",
-          "mValues": [
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "PercentInc",
-          "mValues": [
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5
-          ],
-          "~class": "SpellDataValue"
-        }
-      ],
-      "~class": "SpellDataResource"
-    },
-    "~class": "SpellObject"
-  },
   "0x3b77cf1": {
     "ObjectName": "Augment_Upgrade_Thornmail",
     "mScriptName": "Augment_Upgrade_Thornmail",
@@ -27290,7 +27231,7 @@
             0.800000011920929,
             0.800000011920929,
             0.800000011920929,
-            0.800000011920929
+            0.4000000059604645
           ],
           "~class": "SpellDataValue"
         },
@@ -27825,6 +27766,7 @@
           }
         ],
         "mTooltipData": {
+          "EnableExtendedTooltip": false,
           "mFormat": "0xd7c27163",
           "mLocKeys": {
             "keyName": "Kiwi_YouSpinMeRightRound_Name",
