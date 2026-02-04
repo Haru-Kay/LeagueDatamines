@@ -147,19 +147,34 @@
             "~class": "ContextualRule"
           },
           {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
             "mAudioAction": {
+              "mMaxOccurences": 1,
               "mSelfEventName": "Attack2DElder",
               "~class": "ContextualActionPlayVO"
             },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/sru_dragon_elder/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              },
+              {
+                "mRuleCooldown": 30.0,
+                "~class": "ContextualConditionRuleCooldown"
+              }
+            ],
             "mRuleName": "Elder Dragon",
-            "~class": "ContextualRule"
-          },
-          {
-            "mAudioAction": {
-              "mSelfEventName": "Attack2DElementalDragon",
-              "~class": "ContextualActionPlayVO"
-            },
-            "mRuleName": "Elemental Dragons",
             "~class": "ContextualRule"
           },
           {

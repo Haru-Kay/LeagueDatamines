@@ -509,6 +509,58 @@
     "~class": "SpellObject"
   },
   "0x85ed8107": {
+    "BotData": {
+      "0x38382c53": [
+        {
+          "0xe38f54f7": 2,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0xe38f54f7": 8,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0xe38f54f7": 32,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0xe38f54f7": 128,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0xe38f54f7": 512,
+          "~class": "0x150d1b92"
+        }
+      ],
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "0x3de6ce2d": "SecondHitDamage",
+            "SourceObject": "Characters/Zaahen/Spells/ZaahenQAbility/ZaahenQ",
+            "~class": "0xba007871"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xec17e271": [
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "0x137cf12a": "KnockupDuration",
+                "SourceObject": "Characters/Zaahen/Spells/ZaahenQAbility/ZaahenQ",
+                "~class": "0x9e9e2e5c"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 16777216,
+          "~class": "0xb09016f6"
+        }
+      ],
+      "DamageTag": 0,
+      "~class": "BotsSpellData"
+    },
     "ObjectName": "ZaahenQ2",
     "mBuff": {
       "PersistentEffectConditions": [
@@ -523,6 +575,7 @@
           "~class": "PersistentEffectConditionData"
         }
       ],
+      "mBuffAttributeFlag": 32,
       "mTooltipData": {
         "mFormat": "0xb34f999a",
         "mLocKeys": {
@@ -957,6 +1010,60 @@
     "~class": "SpellObject"
   },
   "Characters/Zaahen/Spells/ZaahenEAbility/ZaahenE": {
+    "BotData": {
+      "0x38382c53": [
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 1,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 4,
+          "~class": "0x150d1b92"
+        }
+      ],
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "mSubparts": [
+              {
+                "mSpellCalculationKey": "BonusDamageCalc",
+                "~class": "0xf3cbe7b2"
+              },
+              {
+                "0xa8cb9c14": true,
+                "mStat": 12,
+                "mSubpart": {
+                  "mPart1": {
+                    "mDataValue": "PercentHPDamage",
+                    "~class": "NamedDataValueCalculationPart"
+                  },
+                  "mPart2": {
+                    "mNumber": 100.0,
+                    "~class": "NumberCalculationPart"
+                  },
+                  "~class": "ProductOfSubPartsCalculationPart"
+                },
+                "~class": "StatBySubPartCalculationPart"
+              }
+            ],
+            "~class": "SumOfSubPartsCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xec17e271": [
+        {
+          "EffectCalculation": {
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 128,
+          "~class": "0xb09016f6"
+        }
+      ],
+      "~class": "BotsSpellData"
+    },
     "ObjectName": "ZaahenE",
     "mScriptName": "ZaahenE",
     "mSpell": {
@@ -1069,13 +1176,13 @@
         {
           "mName": "MonsterDamageBonus",
           "mValues": [
-            50.0,
-            50.0,
-            50.0,
-            50.0,
-            50.0,
-            50.0,
-            50.0
+            75.0,
+            75.0,
+            75.0,
+            75.0,
+            75.0,
+            75.0,
+            75.0
           ],
           "~class": "SpellDataValue"
         },
@@ -1269,7 +1376,8 @@
         }
       },
       "mSpellTags": [
-        "PositiveEffect_MoveBlock"
+        "PositiveEffect_MoveBlock",
+        "Trait_PlayerSelectedDashDirection"
       ],
       "mTargetingTypeData": {
         "~class": "Location"
@@ -1290,6 +1398,67 @@
     "~class": "SpellObject"
   },
   "Characters/Zaahen/Spells/ZaahenQAbility/ZaahenQ": {
+    "BotData": {
+      "0x38382c53": [
+        {
+          "0xe38f54f7": 2,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0xe38f54f7": 8,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0xe38f54f7": 32,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0xe38f54f7": 128,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0xe38f54f7": 512,
+          "~class": "0x150d1b92"
+        }
+      ],
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "mSpellCalculationKey": "InitialDamage",
+            "~class": "0xf3cbe7b2"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xec17e271": [
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mStat": 12,
+                "mSubpart": {
+                  "mPart1": {
+                    "mDataValue": "HealPercent",
+                    "~class": "NamedDataValueCalculationPart"
+                  },
+                  "mPart2": {
+                    "mNumber": 100.0,
+                    "~class": "NumberCalculationPart"
+                  },
+                  "~class": "ProductOfSubPartsCalculationPart"
+                },
+                "~class": "StatBySubPartCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 8,
+          "~class": "0xb09016f6"
+        }
+      ],
+      "DamageTag": 0,
+      "~class": "BotsSpellData"
+    },
     "ObjectName": "ZaahenQ",
     "mBuff": {
       "PersistentEffectConditions": [
@@ -1304,6 +1473,7 @@
           "~class": "PersistentEffectConditionData"
         }
       ],
+      "mBuffAttributeFlag": 32,
       "mTooltipData": {
         "mFormat": "0xb34f999a",
         "mLocKeys": {
@@ -1438,13 +1608,13 @@
         {
           "mName": "MonsterDamagePercent",
           "mValues": [
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1634,6 +1804,113 @@
     "~class": "SpellObject"
   },
   "Characters/Zaahen/Spells/ZaahenRAbility/ZaahenR": {
+    "BotData": {
+      "0x38382c53": [
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 1,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 4,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0xe38f54f7": 8,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 16,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 1024,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0xe38f54f7": 2048,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0xe38f54f7": 4096,
+          "~class": "0x150d1b92"
+        }
+      ],
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "mSpellCalculationKey": "DamageEndCalc",
+            "~class": "0xf3cbe7b2"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xec17e271": [
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mPart1": {
+                  "mDataValue": "HealPercent",
+                  "~class": "NamedDataValueCalculationPart"
+                },
+                "mPart2": {
+                  "mPart1": {
+                    "mNumber": 100.0,
+                    "~class": "NumberCalculationPart"
+                  },
+                  "mPart2": {
+                    "mSpellCalculationKey": "DamageEndCalc",
+                    "~class": "0xf3cbe7b2"
+                  },
+                  "~class": "ProductOfSubPartsCalculationPart"
+                },
+                "~class": "ProductOfSubPartsCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 8,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 128,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mStat": 13,
+                "mSubpart": {
+                  "mPart1": {
+                    "mDataValue": "DamageReduction",
+                    "~class": "NamedDataValueCalculationPart"
+                  },
+                  "mPart2": {
+                    "mNumber": 100.0,
+                    "~class": "NumberCalculationPart"
+                  },
+                  "~class": "ProductOfSubPartsCalculationPart"
+                },
+                "~class": "StatBySubPartCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 524288,
+          "~class": "0xb09016f6"
+        }
+      ],
+      "DamageTag": 0,
+      "~class": "BotsSpellData"
+    },
     "ObjectName": "ZaahenR",
     "mBuff": {
       "mTooltipData": {
@@ -1956,7 +2233,8 @@
       },
       "mSpellTags": [
         "Trait_Ultimate",
-        "PositiveEffect_MoveBlock"
+        "PositiveEffect_MoveBlock",
+        "Trait_PlayerSelectedDashDirection"
       ],
       "mTargetingTypeData": {
         "~class": "Location"
@@ -1977,6 +2255,92 @@
     "~class": "SpellObject"
   },
   "Characters/Zaahen/Spells/ZaahenWAbility/ZaahenW": {
+    "BotData": {
+      "0x38382c53": [
+        {
+          "0xe38f54f7": 2,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0xe38f54f7": 8,
+          "~class": "0x150d1b92"
+        }
+      ],
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "mSubparts": [
+              {
+                "mSpellCalculationKey": "InitialDamage",
+                "~class": "0xf3cbe7b2"
+              },
+              {
+                "mSpellCalculationKey": "SecondaryDamage",
+                "~class": "0xf3cbe7b2"
+              }
+            ],
+            "~class": "SumOfSubPartsCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xec17e271": [
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mDataValue": "MaximumPullDistance",
+                "~class": "NamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 65536,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mNumber": 0.25,
+                "~class": "NumberCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 16384,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mNumber": 0.25,
+                "~class": "NumberCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 2048,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mNumber": 0.25,
+                "~class": "NumberCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 4096,
+          "~class": "0xb09016f6"
+        }
+      ],
+      "DamageTag": 0,
+      "~class": "BotsSpellData"
+    },
     "ObjectName": "ZaahenW",
     "mBuff": {
       "mTooltipData": {
