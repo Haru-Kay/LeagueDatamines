@@ -1130,6 +1130,48 @@
     "~class": "SpellObject"
   },
   "0xdb953014": {
+    "BotData": {
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "mSubparts": [
+              {
+                "0x3de6ce2d": "Calc_Damage_2_Max",
+                "SourceObject": "Characters/Ambessa/Spells/AmbessaQAbility/AmbessaQ",
+                "~class": "0xba007871"
+              },
+              {
+                "mPart1": {
+                  "0xa8cb9c14": true,
+                  "mCoefficient": 1.0,
+                  "mStat": 12,
+                  "~class": "StatByCoefficientCalculationPart"
+                },
+                "mPart2": {
+                  "0x3de6ce2d": "Calc_Damage_2_Percent_Max",
+                  "SourceObject": "Characters/Ambessa/Spells/AmbessaQAbility/AmbessaQ",
+                  "~class": "0xba007871"
+                },
+                "~class": "ProductOfSubPartsCalculationPart"
+              }
+            ],
+            "~class": "SumOfSubPartsCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xec17e271": [
+        {
+          "EffectCalculation": {
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 128,
+          "~class": "0xb09016f6"
+        }
+      ],
+      "DamageTag": 0,
+      "~class": "BotsSpellData"
+    },
     "ObjectName": "AmbessaQEmpowerReady",
     "mBuff": {
       "mDescription": "<titleLeft>D I S R E S P E C T</titleLeft><mainText>Ambessa has prepared her Sundering Slam.<br><br><flavorText>\"Find out what it means to me\" — Ambessa Medarda</flavorText></mainText>",
@@ -1452,6 +1494,41 @@
     "~class": "SpellObject"
   },
   "Characters/Ambessa/Spells/AmbessaEAbility/AmbessaE": {
+    "BotData": {
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "mSpellCalculationKey": "Calc_Damage_Flat",
+            "~class": "0xf3cbe7b2"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xec17e271": [
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mDataValue": "Slow_Duration",
+                "~class": "NamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 1,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 128,
+          "~class": "0xb09016f6"
+        }
+      ],
+      "DamageTag": 0,
+      "~class": "BotsSpellData"
+    },
     "ObjectName": "AmbessaE",
     "mScriptName": "AmbessaE",
     "mSpell": {
@@ -1632,6 +1709,46 @@
     "~class": "SpellObject"
   },
   "Characters/Ambessa/Spells/AmbessaQAbility/AmbessaQ": {
+    "BotData": {
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "mSubparts": [
+              {
+                "mSpellCalculationKey": "Calc_Damage_1_Max",
+                "~class": "0xf3cbe7b2"
+              },
+              {
+                "mPart1": {
+                  "0xa8cb9c14": true,
+                  "mCoefficient": 1.0,
+                  "mStat": 12,
+                  "~class": "StatByCoefficientCalculationPart"
+                },
+                "mPart2": {
+                  "mSpellCalculationKey": "Calc_Damage_1_Percent_Max",
+                  "~class": "0xf3cbe7b2"
+                },
+                "~class": "ProductOfSubPartsCalculationPart"
+              }
+            ],
+            "~class": "SumOfSubPartsCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xec17e271": [
+        {
+          "EffectCalculation": {
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 128,
+          "~class": "0xb09016f6"
+        }
+      ],
+      "DamageTag": 0,
+      "~class": "BotsSpellData"
+    },
     "ObjectName": "AmbessaQ",
     "mScriptName": "AmbessaQ",
     "mSpell": {
@@ -2140,6 +2257,84 @@
     "~class": "SpellObject"
   },
   "Characters/Ambessa/Spells/AmbessaRAbility/AmbessaR": {
+    "BotData": {
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "mSpellCalculationKey": "Calc_Damage",
+            "~class": "0xf3cbe7b2"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xec17e271": [
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mDataValue": "Stun_Duration",
+                "~class": "NamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 16384,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mDataValue": "Stun_Duration",
+                "~class": "NamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 4096,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mDataValue": "Stun_Duration",
+                "~class": "NamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 2048,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mStat": 2,
+                "mSubpart": {
+                  "mSpellCalculationKey": "Calc_Omnivamp",
+                  "~class": "0xf3cbe7b2"
+                },
+                "~class": "StatBySubPartCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 32,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 256,
+          "~class": "0xb09016f6"
+        }
+      ],
+      "DamageTag": 0,
+      "~class": "BotsSpellData"
+    },
     "ObjectName": "AmbessaR",
     "mScriptName": "AmbessaR",
     "mSpell": {
@@ -2426,6 +2621,59 @@
     "~class": "SpellObject"
   },
   "Characters/Ambessa/Spells/AmbessaWAbility/AmbessaW": {
+    "BotData": {
+      "0x38382c53": [
+        {
+          "0xe38f54f7": 2,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0xe38f54f7": 8,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0xe38f54f7": 2048,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0xe38f54f7": 4096,
+          "~class": "0x150d1b92"
+        }
+      ],
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "mSpellCalculationKey": "Calc_Damage_High",
+            "~class": "0xf3cbe7b2"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xec17e271": [
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mSpellCalculationKey": "Calc_Shield",
+                "~class": "0xf3cbe7b2"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 524288,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 128,
+          "~class": "0xb09016f6"
+        }
+      ],
+      "DamageTag": 0,
+      "~class": "BotsSpellData"
+    },
     "ObjectName": "AmbessaW",
     "mBuff": {
       "mDescription": "<titleLeft>Antici—</titleLeft><mainText>Ambessa is bracing herself.<br><br><flavorText>—pation</flavorText></mainText>",

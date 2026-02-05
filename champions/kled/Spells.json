@@ -13,6 +13,11 @@
     "mScriptName": "KledE2Target",
     "~class": "SpellObject"
   },
+  "0xdcb5f24b": {
+    "ObjectName": "KledRFormswapper",
+    "mScriptName": "KledRFormswapper",
+    "~class": "SpellObject"
+  },
   "Characters/Kled/Spells/KledBasicAttack": {
     "ObjectName": "KledBasicAttack",
     "mScriptName": "KledBasicAttack",
@@ -202,6 +207,40 @@
     "~class": "SpellObject"
   },
   "Characters/Kled/Spells/KledEAbility/KledE": {
+    "BotData": {
+      "0x38382c53": [
+        {
+          "0xe38f54f7": 8192,
+          "~class": "0x150d1b92"
+        }
+      ],
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "mSpellCalculationKey": "TotalDamage",
+            "~class": "0xf3cbe7b2"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xec17e271": [
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mDataValue": "MoveSpeedDuration",
+                "~class": "NamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 2,
+          "~class": "0xb09016f6"
+        }
+      ],
+      "DamageTag": 0,
+      "~class": "BotsSpellData"
+    },
     "ObjectName": "KledE",
     "mScriptName": "KledE",
     "mSpell": {
@@ -439,6 +478,36 @@
     "~class": "SpellObject"
   },
   "Characters/Kled/Spells/KledEAbility/KledE2": {
+    "BotData": {
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "0x3de6ce2d": "TotalDamage",
+            "SourceObject": "Characters/Kled/Spells/KledEAbility/KledE",
+            "~class": "0xba007871"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xec17e271": [
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "0x137cf12a": "MoveSpeedDuration",
+                "SourceObject": "Characters/Kled/Spells/KledEAbility/KledE",
+                "~class": "0x9e9e2e5c"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 2,
+          "~class": "0xb09016f6"
+        }
+      ],
+      "DamageTag": 0,
+      "~class": "BotsSpellData"
+    },
     "ObjectName": "KledE2",
     "mBuff": {
       "mDescription": "<titleLeft>Jousting</titleLeft><mainText>Kled can dash back through his initial target, dealing the same damage.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
@@ -1007,6 +1076,69 @@
     "~class": "SpellObject"
   },
   "Characters/Kled/Spells/KledQAbility/KledQ": {
+    "BotData": {
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "mSubparts": [
+              {
+                "mSpellCalculationKey": "TotalDamage",
+                "~class": "0xf3cbe7b2"
+              },
+              {
+                "mSpellCalculationKey": "TotalYankDamage",
+                "~class": "0xf3cbe7b2"
+              }
+            ],
+            "~class": "SumOfSubPartsCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xec17e271": [
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mDataValue": "SlowDuration",
+                "~class": "NamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 1,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mDataValue": "MissileSpawnCheckRadius",
+                "~class": "NamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 65536,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mNumber": 90.0,
+                "~class": "NumberCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 32768,
+          "~class": "0xb09016f6"
+        }
+      ],
+      "DamageTag": 0,
+      "~class": "BotsSpellData"
+    },
     "ObjectName": "KledQ",
     "mScriptName": "KledQ",
     "mSpell": {
@@ -1511,6 +1643,90 @@
     "~class": "SpellObject"
   },
   "Characters/Kled/Spells/KledRAbility/KledR": {
+    "BotData": {
+      "0x38382c53": [
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 8,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 4096,
+          "~class": "0x150d1b92"
+        }
+      ],
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "0xa8cb9c14": true,
+            "mStat": 12,
+            "mSubpart": {
+              "mSpellCalculationKey": "MaximumChargeDamage",
+              "~class": "0xf3cbe7b2"
+            },
+            "~class": "StatBySubPartCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xec17e271": [
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mNumber": 15.0,
+                "~class": "NumberCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 2,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mSpellCalculationKey": "MaximumShield",
+                "~class": "0xf3cbe7b2"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 524288,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mNumber": 15.0,
+                "~class": "NumberCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 4,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mNumber": 150.0,
+                "~class": "NumberCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 16777216,
+          "~class": "0xb09016f6"
+        }
+      ],
+      "DamageTag": 1,
+      "~class": "BotsSpellData"
+    },
     "ObjectName": "KledR",
     "mScriptName": "KledR",
     "mSpell": {
@@ -2834,6 +3050,59 @@
     "~class": "SpellObject"
   },
   "Characters/Kled/Spells/KledWAbility/KledW": {
+    "BotData": {
+      "0x38382c53": [
+        {
+          "0xe38f54f7": 2,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0xe38f54f7": 8,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0xe38f54f7": 128,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0xe38f54f7": 512,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0xe38f54f7": 2048,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0xe38f54f7": 4096,
+          "~class": "0x150d1b92"
+        }
+      ],
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "mSubparts": [
+              {
+                "0xa8cb9c14": true,
+                "mStat": 12,
+                "mSubpart": {
+                  "mSpellCalculationKey": "PercentDamage",
+                  "~class": "0xf3cbe7b2"
+                },
+                "~class": "StatBySubPartCalculationPart"
+              },
+              {
+                "mDataValue": "BaseFlatDamage",
+                "~class": "NamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "SumOfSubPartsCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "DamageTag": 0,
+      "~class": "BotsSpellData"
+    },
     "ObjectName": "KledW",
     "mScriptName": "KledW",
     "mSpell": {
