@@ -12058,6 +12058,7 @@
       "mHitEffectKey": "Augment_ARAM_OkBoomerang_tar",
       "mLineWidth": 90.0,
       "mMinimapIconDisplayFlag": 0,
+      "mMissileEffectEnemyKey": "Augment_ARAM_OkBoomerang_Missile_Return_Enemy",
       "mMissileEffectKey": "Augment_ARAM_OkBoomerang_Missile_Return",
       "mMissileSpec": {
         "behaviors": [
@@ -12203,6 +12204,7 @@
       "mHitEffectKey": "Augment_ARAM_OkBoomerang_tar",
       "mLineWidth": 90.0,
       "mMinimapIconDisplayFlag": 0,
+      "mMissileEffectEnemyKey": "Augment_ARAM_OkBoomerang_Missile_Out_Enemy",
       "mMissileEffectKey": "Augment_ARAM_OkBoomerang_Missile_Out",
       "mMissileSpec": {
         "behaviors": [
@@ -18528,7 +18530,7 @@
           "mDisplayAsPercent": true,
           "mFormulaParts": [
             {
-              "mEndValue": 0.44999998807907104,
+              "mEndValue": 0.5,
               "mStartValue": 0.15000000596046448,
               "~class": "ByCharLevelInterpolationCalculationPart"
             }
@@ -21177,32 +21179,6 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "BaseMSBoost",
-          "mValues": [
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "mName": "BaseVampBonus",
-          "mValues": [
-            0.05000000074505806,
-            0.05000000074505806,
-            0.05000000074505806,
-            0.05000000074505806,
-            0.05000000074505806,
-            0.05000000074505806,
-            0.05000000074505806
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "mName": "MSDuration",
           "mValues": [
             0.75,
@@ -21444,57 +21420,7 @@
         "0xaab73d3a"
       ],
       "mSpellCalculations": {
-        "0x4ff47e2": {
-          "mFormulaParts": [
-            {
-              "mDataValue": "BaseFireDamagePerSecond",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mPart1": {
-                "mDataValue": "MaxBurnCount",
-                "~class": "NamedDataValueCalculationPart"
-              },
-              "mPart2": {
-                "mDataValue": "FireDamagePerBurn",
-                "~class": "NamedDataValueCalculationPart"
-              },
-              "~class": "ProductOfSubPartsCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "0xda8a5191": {
-          "mDisplayAsPercent": true,
-          "mFormulaParts": [
-            {
-              "mDataValue": "BaseVampBonus",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mPart1": {
-                "mSubparts": [
-                  {
-                    "mDataValue": "MaxBurnCount",
-                    "~class": "NamedDataValueCalculationPart"
-                  },
-                  {
-                    "mNumber": -1.0,
-                    "~class": "NumberCalculationPart"
-                  }
-                ],
-                "~class": "SumOfSubPartsCalculationPart"
-              },
-              "mPart2": {
-                "mDataValue": "PerAdditionalFireHealBonus",
-                "~class": "NamedDataValueCalculationPart"
-              },
-              "~class": "ProductOfSubPartsCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "CurrentEnemyBlazeBurn": {
+        "0xfa20c4ce": {
           "mFormulaParts": [
             {
               "mDataValue": "BaseFireDamagePerSecond",
@@ -21504,50 +21430,6 @@
               "mPart1": {
                 "mBuffName": "0x7b8aee93",
                 "mDataValue": "FireDamagePerBurn",
-                "~class": "BuffCounterByNamedDataValueCalculationPart"
-              },
-              "mPart2": {
-                "mNumber": 1.0,
-                "~class": "NumberCalculationPart"
-              },
-              "~class": "ProductOfSubPartsCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "CurrentTotalMSBonus": {
-          "mDisplayAsPercent": true,
-          "mFormulaParts": [
-            {
-              "mDataValue": "BaseMSBoost",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mPart1": {
-                "mBuffName": "0x7b8aee93",
-                "mDataValue": "PerAdditionalStackMSBoost",
-                "~class": "BuffCounterByNamedDataValueCalculationPart"
-              },
-              "mPart2": {
-                "mNumber": 1.0,
-                "~class": "NumberCalculationPart"
-              },
-              "~class": "ProductOfSubPartsCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "CurrentTotalVampBonus": {
-          "mDisplayAsPercent": true,
-          "mFormulaParts": [
-            {
-              "mDataValue": "BaseVampBonus",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mPart1": {
-                "mBuffName": "0x7b8aee93",
-                "mDataValue": "PerAdditionalFireVampBonus",
                 "~class": "BuffCounterByNamedDataValueCalculationPart"
               },
               "mPart2": {
@@ -21585,36 +21467,6 @@
               "mPart2": {
                 "mNumber": 1.0,
                 "~class": "NumberCalculationPart"
-              },
-              "~class": "ProductOfSubPartsCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "MaxMoveSpeed": {
-          "mDisplayAsPercent": true,
-          "mFormulaParts": [
-            {
-              "mDataValue": "BaseMSBoost",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mPart1": {
-                "mSubparts": [
-                  {
-                    "mDataValue": "MaxBurnCount",
-                    "~class": "NamedDataValueCalculationPart"
-                  },
-                  {
-                    "mNumber": -1.0,
-                    "~class": "NumberCalculationPart"
-                  }
-                ],
-                "~class": "SumOfSubPartsCalculationPart"
-              },
-              "mPart2": {
-                "mDataValue": "PerAdditionalFireHealBonus",
-                "~class": "NamedDataValueCalculationPart"
               },
               "~class": "ProductOfSubPartsCalculationPart"
             }
@@ -24662,6 +24514,112 @@
       "mResourceResolvers": [
         "0x91c152af"
       ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0xcfeeea8b": {
+    "ObjectName": "Augment_Set_Gamble_AnvilCounter",
+    "mBuff": {
+      "mDescription": "buff_desc_Augment_Set_Gamble_AnvilCounter",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Augment_Set_Gamble_AnvilCounter",
+    "mSpell": {
+      "castFrame": 7.934999942779541,
+      "castRange": [
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 7182,
+      "mCantCancelWhileWindingUp": true,
+      "mCastType": 3,
+      "mHitEffectOrientType": 2,
+      "mMissileEffectKey": "Augment_Set_Gamble_AnvilOrb",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "mGravity": 1500.0,
+          "~class": "GravityHeightSolver"
+        },
+        "movementComponent": {
+          "mSpeed": 500.0,
+          "mStartBoneName": "Buffbone_Glb_Ground_Loc",
+          "mTracksTarget": false,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mResourceResolvers": [
+        "0x91c152af"
+      ],
+      "mTargetingTypeData": {
+        "~class": "LocationClamped"
+      },
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0xb89db0b": {
+    "ObjectName": "Augment_Set_Gamble_AnvilMissile",
+    "mScriptName": "Augment_Set_Gamble_AnvilMissile",
+    "mSpell": {
+      "castFrame": 7.934999942779541,
+      "castRange": [
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 7182,
+      "mCantCancelWhileWindingUp": true,
+      "mCastType": 3,
+      "mHitEffectOrientType": 2,
+      "mMissileEffectKey": "Augment_Set_Gamble_AnvilOrb",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "mGravity": 1500.0,
+          "~class": "GravityHeightSolver"
+        },
+        "movementComponent": {
+          "mSpeed": 500.0,
+          "mStartBoneName": "Buffbone_Glb_Ground_Loc",
+          "mTracksTarget": false,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mResourceResolvers": [
+        "0x91c152af"
+      ],
+      "mTargetingTypeData": {
+        "~class": "LocationClamped"
+      },
       "~class": "SpellDataResource"
     },
     "~class": "SpellObject"
