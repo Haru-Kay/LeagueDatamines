@@ -1582,7 +1582,8 @@
     "dataValues": {
       "DamageReduction": 0.20000000298023224,
       "CritChance": 0.25,
-      "MaxChance": 0.5
+      "MaxChance": 0.5,
+      "SpellIDCD": 5.0
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/TankItOrLeaveIt_small.tex",
@@ -3938,7 +3939,7 @@
     "desc": "You cannot be healed by allies or gain <healing>Health Regen</healing>. Gain <omnivamp>@OmniVamp*100@%</omnivamp> Omnivamp.",
     "tooltip": "You cannot be healed by allies or gain <healing>Health Regen</healing>. Gain <omnivamp>@OmniVamp*100@%</omnivamp> Omnivamp.",
     "dataValues": {
-      "OmniVamp": 0.30000001192092896
+      "OmniVamp": 0.25
     },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/Vampired_small.tex",
@@ -4040,6 +4041,7 @@
     "apiName": "CriticalMissile",
     "name": "Critical Missile",
     "rarity": "Gold",
+    "disabled": true,
     "desc": "When you <crit>Crit</crit>, fire 1 plus @AdditionalMis@ <keyworkMajor>Firecrackers</keyworkMajor> that deal <magicDamage>@Damage@ magic damage</magicDamage> each. Additionally, gain <crit>@CrtiChance*100@%</crit> Critical Strike Chance.",
     "tooltip": "When you <crit>Crit</crit>, fire 1 plus @AdditionalMis@ <keyworkMajor>Firecrackers</keyworkMajor> that deal <magicDamage>@Damage@ magic damage</magicDamage> each. Additionally, gain <crit>@CrtiChance*100@%</crit> Critical Strike Chance.",
     "dataValues": {
@@ -4170,10 +4172,10 @@
     "tooltip": "Takedowns grant a stack that makes you @SizeReductionPerStack*100@% smaller, grants <speed>@HastePerStack@ Ability Haste</speed>, and <speed>@MoveSpeedAmpPerStack*100@% Movement Speed</speed>.<br><br>Lose @PercentOfStacksLost*100@% stacks on death.<br>------------------------------------------------------------<br>You currently have <font color=\"#80eeff\">@f3@</font> stacks, granting you:<br>+ <font color=\"#f2deff\">@f1@</font> Ability Haste<br>+ <font color=\"#f2deff\">@f2@%</font> Movement Speed",
     "dataValues": {
       "SizeReductionPerStack": 0.03999999910593033,
-      "MoveSpeedAmpPerStack": 0.019999999552965164,
+      "MoveSpeedAmpPerStack": 0.009999999776482582,
       "MinSize": 20.0,
       "PercentOfStacksLost": 0.6499999761581421,
-      "HastePerStack": 10.0
+      "HastePerStack": 8.0
     },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/ShrinkEngine_small.tex",
@@ -4246,7 +4248,7 @@
     "desc": "Get <font color=\"#ffd138\">@GoldAmount@</font> Gold. No questions asked.",
     "tooltip": "Receive <font color=\"#ffd138\">@GoldAmount@</font> Gold. Thanks chat! :)",
     "dataValues": {
-      "GoldAmount": 2500.0,
+      "GoldAmount": 1750.0,
       "IncFrequency": 10.0
     },
     "icons": [
@@ -4367,7 +4369,7 @@
     "desc": "Gain <scaleAP>@AFAmp*100@% Adaptive Force</scaleAP>. Nearby allied minions are greatly empowered.",
     "tooltip": "Gain <scaleAP>@AFAmp*100@% Adaptive Force</scaleAP>. Nearby allied minions are greatly empowered.",
     "dataValues": {
-      "AFAmp": 0.33000001311302185
+      "AFAmp": 0.25
     },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/HandofBaron_small.tex",
@@ -4414,8 +4416,8 @@
       "0x563f018c": {
         "mFormulaParts": [
           {
-            "mEndValue": 58.0,
-            "mStartValue": 28.0,
+            "mEndValue": 46.0,
+            "mStartValue": 22.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           }
         ],
@@ -4424,8 +4426,8 @@
       "0x64529f4e": {
         "mFormulaParts": [
           {
-            "mEndValue": 18.0,
-            "mStartValue": 10.0,
+            "mEndValue": 15.0,
+            "mStartValue": 8.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           }
         ],
@@ -4588,7 +4590,7 @@
     "desc": "Gain @AmountOfStatAnvils@ Stat Anvils, with a higher chance of Gold and Prismatic Anvils!<br><br>On your next Augment selection, gain one additional reroll per slot.",
     "tooltip": "Gain @AmountOfStatAnvils@ Stat Anvils, with a higher chance of Gold and Prismatic Anvils!<br><br>On your next Augment selection, gain one additional reroll per slot.",
     "dataValues": {
-      "AmountOfStatAnvils": 5.0
+      "AmountOfStatAnvils": 4.0
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/StatsOnStatsOnStats_small.tex",
@@ -4603,7 +4605,7 @@
     "desc": "Gain @AmountOfStatAnvils@ Stat Anvils, with a higher chance of Gold and Prismatic Anvils!",
     "tooltip": "Gain @AmountOfStatAnvils@ Stat Anvils, with a higher chance of Gold and Prismatic Anvils!",
     "dataValues": {
-      "AmountOfStatAnvils": 4.0
+      "AmountOfStatAnvils": 3.0
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/StatsOnStats_small.tex",
@@ -4618,7 +4620,7 @@
     "desc": "Gain @AmountOfStatAnvils@ Stat Anvils!",
     "tooltip": "Gain @AmountOfStatAnvils@ Stat Anvils!",
     "dataValues": {
-      "AmountOfStatAnvils": 3.0
+      "AmountOfStatAnvils": 2.0
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/Stats_small.tex",
@@ -4633,8 +4635,8 @@
     "desc": "Gain <speed>@SpeedPerHit@ Movement Speed</speed> when damaging an enemy champion with an Ability, decaying over @SpeedDuration@ seconds.",
     "tooltip": "Gain <speed>@SpeedPerHit@ Movement Speed</speed> when damaging an enemy champion with an Ability, decaying over @SpeedDuration@ seconds.",
     "dataValues": {
-      "SpeedPerHit": 350.0,
-      "SpeedDuration": 2.0
+      "SpeedPerHit": 200.0,
+      "SpeedDuration": 1.0
     },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/SpeedDemon_small.tex",
@@ -4865,7 +4867,8 @@
     "desc": "You gather Poros over time. Damaging an enemy fires all Poros at them, each dealing <trueDamage>max Health true damage</trueDamage> and briefly <status>Knocking Back</status>.",
     "tooltip": "You gather Poros over time. Damaging an enemy fires all Poros at them, each dealing target's <trueDamage>@MaxHealthRatio*100@% max Health true damage</trueDamage> and briefly <status>Knocking Back</status>.",
     "dataValues": {
-      "MaxHealthRatio": 0.029999999329447746
+      "MaxHealthRatio": 0.029999999329447746,
+      "SpawnFrequency_Seconds": 5.0
     },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/PoroBlast_small.tex",
@@ -5137,7 +5140,7 @@
     "name": "???",
     "rarity": "Prismatic",
     "desc": "Your <passive>Missing Pings</passive> will launch a missile at the pinged location that <magicdamage>damages</magicdamage> enemies and <heal>heals</heal> allies.",
-    "tooltip": "Your <passive>Missing Pings</passive> will launch a missile at the pinged location that deals <magicdamage>@BaseDmgCalc@ + @DamageHPRatio*100@% missing Health magic damage</magicdamage> to enemies and heals allies for <heal>@BaseHealingCalc@ + @HealingHPRatio*100@% missing Health magic damage</heal>.",
+    "tooltip": "Your <passive>Missing Pings</passive> will launch a missile at the pinged location that deals <magicDamage>@BaseDmgCalc@ + @DamageHPRatio*100@% missing Health magic damage</magicDamage> to enemies and heals allies for <scaleHealth>@BaseHealingCalc@ + @HealingHPRatio*100@% missing Health</scaleHealth>.",
     "dataValues": {
       "BaseDmg": 100.0,
       "BaseHeal": 50.0,
@@ -5221,7 +5224,7 @@
       "Slow_Duration": 0.5,
       "Radius": 300.0,
       "Gold_Healing_Interval": 1000.0,
-      "Gold": 200.0,
+      "Gold": 150.0,
       "Catch_Gold": 15.0,
       "Distance_Outlier_Threshold": 4500.0
     },
@@ -5241,7 +5244,7 @@
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
-            "mEndValue": 0.20000000298023224,
+            "mEndValue": 0.15000000596046448,
             "mStartValue": 0.05000000074505806,
             "~class": "ByCharLevelInterpolationCalculationPart"
           }
@@ -5254,7 +5257,7 @@
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
-            "mNumber": 0.5,
+            "mNumber": 0.25,
             "~class": "NumberCalculationPart"
           }
         ],
@@ -5600,8 +5603,8 @@
     "apiName": "ARAM_LittleDevil",
     "name": "Devil on Your Shoulder",
     "rarity": "Prismatic",
-    "desc": "Forge a pact with The Little Devil himself. He drains your life over time but rewards you for violence by applying bonus true damage against champions and creating healing remnants for you to acquire. Champion takedowns send him into a frenzy, amplifying the effects of this Augment for a short duration.",
-    "tooltip": "You've forged a pact with the Little Devil himself. He <omnivamp>drains @Calc_Drain_Per_Second_Non_Combat@ of your current Health per second, increased to @Calc_Drain_Per_Second@ if there are nearby enemies</omnivamp>.<br><br>In return, he amplifies your Attacks and Abilities to deal an additional <trueDamage>@Calc_Damage_Amp@ true damage</trueDamage>, which cause a <omnivamp>Life Remnant</omnivamp> to appear nearby for @Remnant_Duration@ seconds.<br><br>Absorbing a <omnivamp>Life Remnant</omnivamp> <healing>heals you for @Calc_Remnant_Healing@</healing> and grants you <speed>@Calc_Move_Speed@ Movement Speed</speed> for @Move_Speed_Duration@ second.<br><br>Scoring a takedown amplifies the effects of this Augment by @TT_Calc_Amp@ for @Amp_Duration@ seconds.<br><br><rules>Health Drained: @f1.0@<br>Damage Dealt: @f2.0@<br>Remnants Acquired: @f4.0@<br>Health Restored: @f5.0@</rules>",
+    "desc": "Forge a pact with The Little Devil himself. He drains your life over time but rewards you for violence by applying bonus true damage against champions and creating healing remnants for you to acquire.",
+    "tooltip": "You've forged a pact with the Little Devil himself. He <omnivamp>drains @Calc_Drain_Per_Second_Non_Combat@ of your current Health per second, increased to @Calc_Drain_Per_Second@ if there are nearby enemies</omnivamp>.<br><br>In return, he amplifies your Attacks and Abilities to deal an additional <trueDamage>@Calc_Damage_Amp@ true damage</trueDamage>, which cause a <omnivamp>Life Remnant</omnivamp> to appear nearby for @Remnant_Duration@ seconds.<br><br>Absorbing a <omnivamp>Life Remnant</omnivamp> <healing>heals you for @Calc_Remnant_Healing@</healing> and grants you <speed>@Calc_Move_Speed@ Movement Speed</speed> for @Move_Speed_Duration@ second.<br><br><rules>Health Drained: @f1.0@<br>Damage Dealt: @f2.0@<br>Remnants Acquired: @f4.0@<br>Health Restored: @f5.0@</rules>",
     "dataValues": {
       "Amp_Duration": 8.0,
       "Amp": 2.0,
@@ -5674,7 +5677,7 @@
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
-            "mNumber": 0.07500000298023224,
+            "mNumber": 0.05000000074505806,
             "~class": "NumberCalculationPart"
           }
         ],
@@ -5687,7 +5690,7 @@
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
-            "mNumber": 0.20000000298023224,
+            "mNumber": 0.15000000596046448,
             "~class": "NumberCalculationPart"
           }
         ],
@@ -5958,7 +5961,7 @@
     "desc": "Gain increased <speed>Movement Speed</speed> towards enemies at low Health.",
     "tooltip": "Gain <speed>@MovementSpeed*100@% Movement Speed</speed> towards enemies below <health>@HealthThreshold*100@% health</health>.",
     "dataValues": {
-      "MovementSpeed": 1.0,
+      "MovementSpeed": 0.6000000238418579,
       "HealthThreshold": 0.4000000059604645
     },
     "icons": [
