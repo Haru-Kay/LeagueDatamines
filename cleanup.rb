@@ -3,6 +3,30 @@ require 'fileutils'
 require 'hashie'
 require 'digest/xxhash'
 
+def manualHash 
+    {
+        "b35aa769" => "BaseValue", #EXACT
+        "1262a25" => "MRPerLevel", #EXACT
+        "18956a21" => "armorPerLevel",
+        "4af40dc3" => "baseDamage",
+        "4d37af28" => "hpPerLevel",
+        "836cc82a" => "attackSpeed",
+        "7bd4b298" => "attackRange",
+        "4f89c991" => "attackSpeedRatio",
+        "8662cf12" => "baseHP",
+        "913157bb" => "hpRegenPerLevel",
+        "9eedebad" => "baseStaticHPRegen",
+        "b9f2b365" => "attackSpeedPerLevel",
+        "e2b5d80d" => "damagePerLevel",
+        "e62d9d92" => "baseMoveSpeed",
+        "ea6100d5" => "baseArmor",
+        "726ee5cd" => "arBase",
+        "c4ab3550" => "arBaseStaticRegen",
+        "6216bf7b" => "arPerLevel",
+        "3a509002" => "arRegenPerLevel",
+    }
+end
+
 def xxh3(s)
     return s if s.to_i(16).to_s(16) == s
     digest = Digest::XXH3_64bits.hexdigest(s)
@@ -42,6 +66,8 @@ class LangHashWrapper
             key = key[2..] if key.start_with?("0x")
             key = xxh3(key)
         end
+        ret = manualHash.dig(key)
+        return ret if !ret.nil?
         @hash.fetch(key, *args[1..])
     end
 
@@ -900,6 +926,16 @@ Dir.each_child("temp/data/characters") { |path|
                     clazz = "Eternals"
                 when "CharacterRecord"
                     clazz = "BaseStats"
+                    d.transform_keys! { |k| $lang.fetch(k.downcase, k) }
+                    d = d.sort_by { |k, v| k }.to_h
+                    if d["primaryAbilityResource"]
+                        d["primaryAbilityResource"].transform_keys! { |k| $lang.fetch(k.downcase, k) }
+                        d["primaryAbilityResource"] = d["primaryAbilityResource"].sort_by { |k, v| k }.to_h
+                    end
+                    if d["secondaryAbilityResource"]
+                        d["secondaryAbilityResource"].transform_keys! { |k| $lang.fetch(k.downcase, k) }
+                        d["secondaryAbilityResource"] = d["secondaryAbilityResource"].sort_by { |k, v| k }.to_h
+                    end
                 when "ItemRecommendationOverrideSet", "RecSpellRankUpInfolist", "ItemRecommendationContextList",
                     "ChampionRuneRecommendationsContext", "JunglePathRecommendation", "SkinCharacterMetaDataProperties"
                     next
