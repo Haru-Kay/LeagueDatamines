@@ -1,0 +1,294 @@
+{
+  "Characters/HA_AP_Viking/CAC/Shopkeeper_CAC_Template": {
+    "mCooldown": 15.0,
+    "mObjectPath": "Characters/HA_AP_Viking/CAC/Shopkeeper_CAC_Template",
+    "mSituations": {
+      "Ambient": {
+        "mRules": [
+          {
+            "mAudioAction": {
+              "mAllyEventName": "Ambient3DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCustomTimer": 25.0,
+                "~class": "ContextualConditionCustomTimer"
+              }
+            ],
+            "mRuleName": "Ambient - 25s",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "Browsing": {
+        "mRules": [
+          {
+            "mAudioAction": {
+              "mAllyEventName": "Browsing2DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCustomTimer": 22.0,
+                "~class": "ContextualConditionCustomTimer"
+              }
+            ],
+            "mRuleName": "Browsing - 22s",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "Purchase": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Purchase2DMinimumPrice2900",
+              "mMaxOccurences": 3,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mItemPriceMinimum": 2900,
+                "~class": "ContextualConditionItemPriceMinimum"
+              }
+            ],
+            "mRuleName": "MinimumPrice",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Purchase2DChempunkChainsword",
+              "mMaxOccurences": 1,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mItems": [
+                  "Chempunk Chainsword",
+                  "Arena/Chempunk Chainsword"
+                ],
+                "~class": "ContextualConditionItemID"
+              }
+            ],
+            "mRuleName": "Specific Item",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Purchase2DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "General",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "ShopClose": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "DontResetTimer": true,
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Close3DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "Close",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "DontResetTimer": true,
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Close3DGameTimerTwentyFive",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "Game Timer",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "DontResetTimer": true,
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Close3DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "General",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "ShopOpen": {
+        "mRules": [
+          {
+            "mAudioAction": {
+              "mAllyEventName": "Open2DFirst",
+              "mMaxOccurences": 1,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "First",
+            "~class": "ContextualRule"
+          },
+          {
+            "mAudioAction": {
+              "mAllyEventName": "Open2DGameTimerTwentyFive",
+              "mMaxOccurences": 3,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mGameTimeInMinutes": 25.0,
+                "~class": "ContextualConditionGameTimer"
+              }
+            ],
+            "mRuleName": "Game Timer",
+            "~class": "ContextualRule"
+          },
+          {
+            "mAudioAction": {
+              "mAllyEventName": "Open2DNearbyEnemyCountTwo",
+              "mMaxOccurences": 3,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCompareOp": 3,
+                "mCount": 2,
+                "mTeamCompareOp": 1,
+                "~class": "ContextualConditionNearbyChampionCount"
+              }
+            ],
+            "mRuleName": "Nearby Enemy Count",
+            "~class": "ContextualRule"
+          },
+          {
+            "mAudioAction": {
+              "mAllyEventName": "Open2DGold3000",
+              "mMaxOccurences": 3,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mGold": 3000.0,
+                "~class": "ContextualConditionHasGold"
+              }
+            ],
+            "mRuleName": "Gold",
+            "~class": "ContextualRule"
+          },
+          {
+            "mAudioAction": {
+              "mAllyEventName": "Open2DCountTen",
+              "mMaxOccurences": 3,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mShopOpenCount": 10,
+                "~class": "ContextualConditionShopOpenCount"
+              }
+            ],
+            "mRuleName": "Open Count",
+            "~class": "ContextualRule"
+          },
+          {
+            "mAudioAction": {
+              "mAllyEventName": "Open2DBlitzcrank",
+              "mMaxOccurences": 1,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Blitzcrank/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "Specific Champion",
+            "~class": "ContextualRule"
+          },
+          {
+            "mAudioAction": {
+              "mAllyEventName": "Open2DPiltover",
+              "mMaxOccurences": 1,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCategory": "faction",
+                    "mData": "piltover",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "Specific Faction/Race",
+            "~class": "ContextualRule"
+          },
+          {
+            "mAudioAction": {
+              "mAllyEventName": "Open2DNearbyAllyCountTwo",
+              "mMaxOccurences": 3,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCompareOp": 3,
+                "mCount": 2,
+                "~class": "ContextualConditionNearbyChampionCount"
+              }
+            ],
+            "mRuleName": "Nearby Ally Count",
+            "~class": "ContextualRule"
+          },
+          {
+            "mAudioAction": {
+              "mAllyEventName": "Open2DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "General",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      }
+    },
+    "~class": "ContextualActionData"
+  }
+}

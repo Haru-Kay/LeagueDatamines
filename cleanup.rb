@@ -24,6 +24,8 @@ def manualHash
         "c4ab3550" => "arBaseStaticRegen",
         "6216bf7b" => "arPerLevel",
         "3a509002" => "arRegenPerLevel",
+        "2290fc9a" => "baseFactorHPRegen",
+        "452033bb" => "arBaseFactorRegen"
     }
 end
 
@@ -430,6 +432,20 @@ def applyLang(obj)
             obj.map { |v| applyLang(v) }
         when String
             return itemNameLangFix($lang.fetch(obj.downcase, obj))
+        else
+            return obj
+    end
+end
+
+# yes I know this isn't a great way to handle this but I also don't care
+def applyLangKeys(obj)
+    case obj
+        when Hash
+            obj.transform_keys { |v| applyLangKeys(v) }
+        when Array
+            obj.map { |v| applyLangKeys(v) }
+        when String
+            return $lang.fetch(obj.downcase, obj)
         else
             return obj
     end
@@ -900,69 +916,90 @@ manual = [
 print "Loading and formatting character data..."
 FileUtils.rm_rf(Dir.glob("champions/*"))
 FileUtils.rm_rf(Dir.glob("characters/*"))
-Dir.each_child("temp/data/characters") { |path|
-    basepath = "temp/data/characters/" + path
-    if path.include?("_") && !manual.include?(path)
-        outdir = "characters/" + path.split("_")[0]
-        Dir.mkdir("#{outdir}") if !Dir.exist?("#{outdir}")
-    elsif !$champLang.include?(path)
-        outdir = "characters"
-    else
-        outdir = "champions"
-    end
-    Dir.mkdir("#{outdir}/#{path}") if !Dir.exist?("#{outdir}/#{path}")
-    Dir.each_child(basepath) { |file|
-        filepath = basepath + "/" + file
-        champ = {}
-        File.open(filepath, 'rb') { |f| champ = JSON.parse(f.read()) }
-        champ = champ.fetch("entries", champ)
-        out = {}
-        champ.each { |obj, data|
-            d = applyLang(data)
-            clazz = d["~class"] || "Misc"
-            
-            case clazz
-                when "StatStoneSet", "StatStoneData"
-                    clazz = "Eternals"
-                when "CharacterRecord"
-                    clazz = "BaseStats"
-                    d.transform_keys! { |k| $lang.fetch(k.downcase, k) }
-                    d = d.sort_by { |k, v| k }.to_h
-                    if d["primaryAbilityResource"]
-                        d["primaryAbilityResource"].transform_keys! { |k| $lang.fetch(k.downcase, k) }
-                        d["primaryAbilityResource"] = d["primaryAbilityResource"].sort_by { |k, v| k }.to_h
-                    end
-                    if d["secondaryAbilityResource"]
-                        d["secondaryAbilityResource"].transform_keys! { |k| $lang.fetch(k.downcase, k) }
-                        d["secondaryAbilityResource"] = d["secondaryAbilityResource"].sort_by { |k, v| k }.to_h
-                    end
-                when "ItemRecommendationOverrideSet", "RecSpellRankUpInfolist", "ItemRecommendationContextList",
-                    "ChampionRuneRecommendationsContext", "JunglePathRecommendation", "SkinCharacterMetaDataProperties"
-                    next
-                when "SpellObject"
-                    clazz = "Spells"
-                else
-                    #do nothing
-            end
+Dir.mkdir("characters/summonersRift")
+Dir.mkdir("characters/aram")
+Dir.mkdir("characters/shared")
+["", "/map11", "/map12"].each { |r|
+    root = "temp#{r}/data/characters/"
+    r2 = "/shared" if r == ""
+    r2 = "/summonersRift" if r == "/map11"
+    r2 = "/aram" if r == "/map12"
+    Dir.each_child(root) { |path|
+        basepath = root + path
+        if path.include?("_") && !manual.include?(path)
+            outdir = "characters#{r2}/" + path.split("_")[0]
+            Dir.mkdir("#{outdir}") if !Dir.exist?("#{outdir}")
+        elsif !$champLang.include?(path)
+            outdir = "characters#{r2}"
+        else
+            outdir = "champions"
+        end
 
-            out[clazz] ||= {}
-            out[clazz].store(obj, d)
-        }
-        next if out.empty?
+        Dir.mkdir("#{outdir}/#{path}") if !Dir.exist?("#{outdir}/#{path}")
+        Dir.each_child(basepath) { |file|
+            filepath = basepath + "/" + file
+            champ = {}
+            File.open(filepath, 'rb') { |f| champ = JSON.parse(f.read()) }
+            champ = champ.fetch("entries", champ)
+            out = {}
+            champ.each { |obj, data|
+                d = applyLang(data)
+                clazz = d["~class"] || "Misc"
+                
+                case clazz
+                    when "StatStoneSet", "StatStoneData"
+                        clazz = "Eternals"
+                    when "CharacterRecord"
+                        clazz = "BaseStats"
+                        d = applyLangKeys(d)
+                        d = d.sort_by { |k, v| k }.to_h
+                        d.keys.each { |k|
+                            if d[k].is_a?(Hash) && d[k]["~class"] == "0xce9b917b"
+                                d[k] = applyLangKeys(d[k])
+                            end
+                        }
+                        if d["primaryAbilityResource"]
+                            d["primaryAbilityResource"] = applyLangKeys(d["primaryAbilityResource"])
+                            d["primaryAbilityResource"] = d["primaryAbilityResource"].sort_by { |k, v| k }.to_h
+                            d["primaryAbilityResource"].keys.each { |k|
+                                d["primaryAbilityResource"][k] = applyLangKeys(d["primaryAbilityResource"][k])
+                            }
+                        end
+                        if d["secondaryAbilityResource"]
+                            d["secondaryAbilityResource"] = applyLangKeys(d["secondaryAbilityResource"])
+                            d["secondaryAbilityResource"] = d["secondaryAbilityResource"].sort_by { |k, v| k }.to_h
+                            d["secondaryAbilityResource"].keys.each { |k|
+                                d["secondaryAbilityResource"][k] = applyLangKeys(d["secondaryAbilityResource"][k])
+                            }
+                        end
+                    when "ItemRecommendationOverrideSet", "RecSpellRankUpInfolist", "ItemRecommendationContextList",
+                        "ChampionRuneRecommendationsContext", "JunglePathRecommendation", "SkinCharacterMetaDataProperties"
+                        next
+                    when "SpellObject"
+                        clazz = "Spells"
+                    else
+                        #do nothing
+                end
 
-        champ.extend(Hashie::Extensions::DeepFind)
-        dataNames = {}
-        champ.deep_find_all("mName")&.each { |n|
-            dataNames.store("0x#{fnv(n.downcase)}", n)
-        }
-
-        out.each { |filename, json|
-            json = json.sort_by { |k, v| v["ObjectName"] } if filename == "SpellObject"
-            str = JSON.pretty_generate(json)
-            dataNames.each { |h, n|
-                str.gsub!(h, n)
+                out[clazz] ||= {}
+                out[clazz].store(obj, d)
             }
-            File.open("#{outdir}/#{path}/#{filename}.json", 'wb') { |f| f.write(str) }
+            next if out.empty?
+
+            champ.extend(Hashie::Extensions::DeepFind)
+            dataNames = {}
+            champ.deep_find_all("mName")&.each { |n|
+                dataNames.store("0x#{fnv(n.downcase)}", n)
+            }
+
+            out.each { |filename, json|
+                json = json.sort_by { |k, v| v["ObjectName"] } if filename == "SpellObject"
+                str = JSON.pretty_generate(json)
+                dataNames.each { |h, n|
+                    str.gsub!(h, n)
+                }
+                File.open("#{outdir}/#{path}/#{filename}.json", 'wb') { |f| f.write(str) }
+            }
         }
     }
 }
