@@ -44,7 +44,7 @@
         ],
         "~class": "SpellDataResourceClient"
       },
-      "mMissileEffectName": "EvelynnBasicAttack_mis.troy",
+      "mMissileEffectName": "doesnotexist.troy",
       "missileSpeed": 467.0,
       "~class": "SpellDataResource"
     },
@@ -96,7 +96,7 @@
         ],
         "~class": "SpellDataResourceClient"
       },
-      "mMissileEffectName": "EvelynnBasicAttack_mis.troy",
+      "mMissileEffectName": "doesnotexist.troy",
       "missileSpeed": 467.0,
       "~class": "SpellDataResource"
     },
@@ -457,6 +457,63 @@
     "~class": "SpellObject"
   },
   "Characters/Irelia/Spells/IreliaEAbility/IreliaE2": {
+    "BotData": {
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "0x3de6ce2d": "TotalDamage",
+            "SourceObject": "Characters/Irelia/Spells/IreliaEAbility/IreliaE",
+            "~class": "0xba007871"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xec17e271": [
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "0x137cf12a": "StunDuration",
+                "SourceObject": "Characters/Irelia/Spells/IreliaEAbility/IreliaE",
+                "~class": "0x9e9e2e5c"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 2048,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "0x137cf12a": "StunDuration",
+                "SourceObject": "Characters/Irelia/Spells/IreliaEAbility/IreliaE",
+                "~class": "0x9e9e2e5c"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 4096,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "0x137cf12a": "StunDuration",
+                "SourceObject": "Characters/Irelia/Spells/IreliaEAbility/IreliaE",
+                "~class": "0x9e9e2e5c"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 16384,
+          "~class": "0xb09016f6"
+        }
+      ],
+      "~class": "BotsSpellData"
+    },
     "ObjectName": "IreliaE2",
     "mScriptName": "IreliaE2",
     "mSpell": {
@@ -1199,6 +1256,23 @@
   },
   "Characters/Irelia/Spells/IreliaRAbility/IreliaR": {
     "BotData": {
+      "0x38382c53": [
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 8,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 2048,
+          "~class": "0x150d1b92"
+        },
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 4096,
+          "~class": "0x150d1b92"
+        }
+      ],
       "0x6d548702": {
         "mFormulaParts": [
           {
@@ -1213,7 +1287,7 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mDataValue": "SlowAmount",
+                "mDataValue": "CCDuration",
                 "~class": "NamedDataValueCalculationPart"
               }
             ],
@@ -1232,7 +1306,7 @@
             ],
             "~class": "GameCalculation"
           },
-          "EffectTag": 16777216,
+          "EffectTag": 4194304,
           "~class": "0xb09016f6"
         }
       ],
@@ -1721,7 +1795,7 @@
       "0x6d548702": {
         "mFormulaParts": [
           {
-            "mSpellCalculationKey": "MinDamageCalc",
+            "mSpellCalculationKey": "MaxDamageCalc",
             "~class": "0xf3cbe7b2"
           }
         ],
@@ -1730,9 +1804,15 @@
       "0xec17e271": [
         {
           "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mDataValue": "MaxDuration",
+                "~class": "NamedDataValueCalculationPart"
+              }
+            ],
             "~class": "GameCalculation"
           },
-          "EffectTag": 524288,
+          "EffectTag": 131072,
           "~class": "0xb09016f6"
         }
       ],

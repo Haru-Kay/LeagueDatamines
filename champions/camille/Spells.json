@@ -355,19 +355,6 @@
             ],
             "~class": "GameCalculation"
           },
-          "EffectTag": 1024,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "KnockupDuration",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
           "EffectTag": 16384,
           "~class": "0xb09016f6"
         },
@@ -381,7 +368,7 @@
             ],
             "~class": "GameCalculation"
           },
-          "EffectTag": 4194304,
+          "EffectTag": 16777216,
           "~class": "0xb09016f6"
         },
         {
@@ -664,7 +651,7 @@
           "mLocKeys": {
             "keyName": "Hookshot",
             "keySummary": "Camille pulls herself to a wall, leaping off and knocking up enemy champions upon landing.",
-            "keyTooltip": "Camille fires a hookshot that attaches to terrain, pulling her to it for 1 second and allowing this Ability to be <recast>Recast</recast>.<br><br><recast>Recast:</recast> Camille dashes from the wall, colliding with the first enemy champion hit. Upon landing, she deals <physicalDamage>@TotalDamage@ physical damage</physicalDamage> to nearby enemies and <status>Stuns</status> enemy champions for @KnockupDuration@ seconds. Dashes towards enemy champions travel twice as far and grant <attackSpeed>@ASBuff*100@% Attack Speed</attackSpeed> for @ASDuration@ seconds on impact."
+            "keyTooltip": "Camille fires a hookshot that attaches to terrain, pulling her to it for 1 second and allowing this Ability to be <recast>Recast</recast>.<br><br><recast>Recast:</recast> Camille dashes from the wall, colliding with the first enemy champion hit. Upon landing, she gains <attackSpeed>@ASBuff*100@% Attack Speed</attackSpeed> for @ASDuration@ seconds, deals <physicalDamage>@TotalDamage@ physical damage</physicalDamage> to nearby enemies, and <status>Stuns</status> enemy champions for @KnockupDuration@ seconds. Dashes towards enemy champions travel twice as far."
           },
           "mObjectName": "CamilleE",
           "~class": "TooltipInstanceSpell"
@@ -749,6 +736,85 @@
     "~class": "SpellObject"
   },
   "Characters/Camille/Spells/CamilleEAbility/CamilleEDash2": {
+    "BotData": {
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "0x3de6ce2d": "TotalDamage",
+            "SourceObject": "Characters/Camille/Spells/CamilleEAbility/CamilleE",
+            "~class": "0xba007871"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xec17e271": [
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "0x137cf12a": "KnockupDuration",
+                "SourceObject": "Characters/Camille/Spells/CamilleEAbility/CamilleE",
+                "~class": "0x9e9e2e5c"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 16384,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "0x137cf12a": "KnockupDuration",
+                "SourceObject": "Characters/Camille/Spells/CamilleEAbility/CamilleE",
+                "~class": "0x9e9e2e5c"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 4096,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "0x137cf12a": "KnockupDuration",
+                "SourceObject": "Characters/Camille/Spells/CamilleEAbility/CamilleE",
+                "~class": "0x9e9e2e5c"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 8192,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "0x137cf12a": "KnockupDuration",
+                "SourceObject": "Characters/Camille/Spells/CamilleEAbility/CamilleE",
+                "~class": "0x9e9e2e5c"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 16777216,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 128,
+          "~class": "0xb09016f6"
+        }
+      ],
+      "DamageTag": 0,
+      "~class": "BotsSpellData"
+    },
     "ObjectName": "CamilleEDash2",
     "mBuff": {
       "mDescription": "<titleLeft>Wall Dive</titleLeft><mainText>Camille is dashing off the wall.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
@@ -1771,15 +1837,37 @@
   },
   "Characters/Camille/Spells/CamilleQAbility/CamilleQ": {
     "BotData": {
+      "0x38382c53": [
+        {
+          "0xe38f54f7": 128,
+          "~class": "0x150d1b92"
+        }
+      ],
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "mSpellCalculationKey": "BonusDamage",
+            "~class": "0xf3cbe7b2"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
       "0xec17e271": [
         {
           "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mDataValue": "MSDuration",
+                "~class": "NamedDataValueCalculationPart"
+              }
+            ],
             "~class": "GameCalculation"
           },
           "EffectTag": 2,
           "~class": "0xb09016f6"
         }
       ],
+      "DamageTag": 0,
       "~class": "BotsSpellData"
     },
     "ObjectName": "CamilleQ",
@@ -2062,8 +2150,29 @@
     "~class": "SpellObject"
   },
   "Characters/Camille/Spells/CamilleQAbility/CamilleQ2": {
+    "BotData": {
+      "0x38382c53": [
+        {
+          "0xe38f54f7": 128,
+          "~class": "0x150d1b92"
+        }
+      ],
+      "0x6d548702": {
+        "mFormulaParts": [
+          {
+            "0x3de6ce2d": "EmpoweredBonusDamage",
+            "SourceObject": "Characters/Camille/Spells/CamilleQAbility/CamilleQ",
+            "~class": "0xba007871"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "DamageTag": 2,
+      "~class": "BotsSpellData"
+    },
     "ObjectName": "CamilleQ2",
     "mBuff": {
+      "mBuffAttributeFlag": 32,
       "mDescription": "<titleLeft>Precision Protocol</titleLeft><mainText>Camille's next attack will deal bonus damage.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
       "~class": "BuffData"
     },
@@ -2471,6 +2580,19 @@
           },
           "EffectTag": 4194304,
           "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mDataValue": "RDuration",
+                "~class": "NamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 4096,
+          "~class": "0xb09016f6"
         }
       ],
       "DamageTag": 1,
@@ -2811,8 +2933,19 @@
       "0x6d548702": {
         "mFormulaParts": [
           {
-            "mSpellCalculationKey": "BaseDamageTotal",
-            "~class": "0xf3cbe7b2"
+            "mSubparts": [
+              {
+                "0xa8cb9c14": true,
+                "mDataValue": "OuterConeMaxHPDamage",
+                "mStat": 12,
+                "~class": "StatByNamedDataValueCalculationPart"
+              },
+              {
+                "mSpellCalculationKey": "BaseDamageTotal",
+                "~class": "0xf3cbe7b2"
+              }
+            ],
+            "~class": "SumOfSubPartsCalculationPart"
           }
         ],
         "~class": "GameCalculation"
@@ -2822,7 +2955,7 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mDataValue": "SlowPercentage",
+                "mDataValue": "SlowDuration",
                 "~class": "NamedDataValueCalculationPart"
               }
             ],
@@ -2835,8 +2968,26 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mDataValue": "SlowPercentage",
-                "~class": "NamedDataValueCalculationPart"
+                "mPart1": {
+                  "mDataValue": "OuterConeHealingRatio",
+                  "~class": "NamedDataValueCalculationPart"
+                },
+                "mPart2": {
+                  "mSubparts": [
+                    {
+                      "0xa8cb9c14": true,
+                      "mDataValue": "OuterConeMaxHPDamage",
+                      "mStat": 12,
+                      "~class": "StatByNamedDataValueCalculationPart"
+                    },
+                    {
+                      "mSpellCalculationKey": "BaseDamageTotal",
+                      "~class": "0xf3cbe7b2"
+                    }
+                  ],
+                  "~class": "SumOfSubPartsCalculationPart"
+                },
+                "~class": "ProductOfSubPartsCalculationPart"
               }
             ],
             "~class": "GameCalculation"

@@ -322,7 +322,8 @@
         "mFormulaParts": [
           {
             "mDataValue": "BaseDamageTransferPercent",
-            "~class": "NamedDataValueCalculationPart"
+            "mStat": 2,
+            "~class": "StatByNamedDataValueCalculationPart"
           }
         ],
         "~class": "GameCalculation"
@@ -339,6 +340,19 @@
             "~class": "GameCalculation"
           },
           "EffectTag": 1,
+          "~class": "0xb09016f6"
+        },
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "mNumber": 50.0,
+                "~class": "NumberCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 32768,
           "~class": "0xb09016f6"
         }
       ],
@@ -1073,12 +1087,29 @@
       "0x6d548702": {
         "mFormulaParts": [
           {
-            "mDataValue": "TentacleDamageAmp",
-            "~class": "NamedDataValueCalculationPart"
+            "mSpellCalculationKey": "TentacleDamageTotal",
+            "~class": "0xf3cbe7b2"
           }
         ],
         "~class": "GameCalculation"
       },
+      "0xec17e271": [
+        {
+          "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "0x137cf12a": "MissingHPPercentHeal",
+                "0xa519b194": "Characters/Illaoi/Spells/IllaoiPassiveAbility/IllaoiPassive",
+                "mStat": 15,
+                "~class": "0x1d452085"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "EffectTag": 8,
+          "~class": "0xb09016f6"
+        }
+      ],
       "DamageTag": 0,
       "~class": "BotsSpellData"
     },
@@ -1352,7 +1383,7 @@
         "TentacleDamageTotal": {
           "mFormulaParts": [
             {
-              "mEndValue": 162.0,
+              "mEndValue": 180.0,
               "mStartValue": 9.0,
               "~class": "ByCharLevelInterpolationCalculationPart"
             },
@@ -1684,8 +1715,13 @@
       "0x6d548702": {
         "mFormulaParts": [
           {
-            "mSpellCalculationKey": "HealthPercentTotal",
-            "~class": "0xf3cbe7b2"
+            "0xa8cb9c14": true,
+            "mStat": 12,
+            "mSubpart": {
+              "mSpellCalculationKey": "HealthPercentTotal",
+              "~class": "0xf3cbe7b2"
+            },
+            "~class": "StatBySubPartCalculationPart"
           }
         ],
         "~class": "GameCalculation"

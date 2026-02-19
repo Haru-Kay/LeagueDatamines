@@ -2723,7 +2723,7 @@
     "name": "FireFox",
     "rarity": "Silver",
     "desc": "<keywordMajor>Autocast</keywordMajor><br>Gain movement speed and conjure three flames that orbit you, targetting the closest visible enemy in range and dealing adaptive damage.",
-    "tooltip": "<keywordMajor>Autocast</keywordMajor>: Gain <speed>@MovementSpeed*100@% movement speed</speed> and conjure three flames that orbit you every @Cooldown@ seconds, targetting the closest visible enemy in range and dealing @SingleFireDamage@ adaptive damage. Subsequent hits do @RepeatDamageMod*100@% damage.<br><br>Damage Dealt Total: @f2@",
+    "tooltip": "<keywordMajor>Autocast</keywordMajor>: Gain <speed>@MovementSpeed*100@% movement speed</speed> and conjure three flames that orbit you every @Cooldown@ seconds, targetting the closest visible enemy in range and dealing @SingleFireDamage@ adaptive damage. Subsequent hits do @RepeatDamageMod*100@% damage.<br><br>Damage Dealt Total: @f1@",
     "dataValues": {
       "MovementSpeed": 0.4000000059604645,
       "MovementSpeedDuration": 2.0,
@@ -4137,7 +4137,7 @@
     "name": "I'm a Baby Kitty Where is Mama",
     "rarity": "Prismatic",
     "desc": "Standing next to an ally marks them as your mama. <br>Gain <speed>Movement Speed</speed> when moving towards Mama. Gain <speed>Movement Speed</speed> and <healing>heal</healing> and <shield>Shield Power</shield> when close to your mama.",
-    "tooltip": "Standing next to an ally marks them as your mama. <br>Gain <speed>@HuntPercentMS*100@% Movement Speed</speed> when moving towards Mama. Gain <speed>@MamaBonusPercentMS*100@% Movement Speed</speed> and @FLATBonusHSP*100@% <healing>Heal</healing> and <shield>Shield</shield> Power when close to your mama.",
+    "tooltip": "Standing next to an ally marks them as your mama. <br>Gain <speed>@HuntPercentMS*100@% Movement Speed</speed> when moving towards Mama. Gain <speed>@MamaBonusPercentMS*100@% Movement Speed</speed> and <scaleLevel>@BonusHSP@</scaleLevel> <healing>Heal</healing> and <shield>Shield</shield> Power when close to your mama.",
     "dataValues": {
       "MamaRadius": 400.0,
       "FLATBonusHSP": 0.5,
@@ -4150,7 +4150,7 @@
         "mDisplayAsPercent": true,
         "mFormulaParts": [
           {
-            "mEndValue": 0.44999998807907104,
+            "mEndValue": 0.5,
             "mStartValue": 0.15000000596046448,
             "~class": "ByCharLevelInterpolationCalculationPart"
           }
@@ -4587,6 +4587,7 @@
     "apiName": "ARAM_StatsOnStatsOnStats",
     "name": "Stats on Stats on Stats!",
     "rarity": "Prismatic",
+    "disabled": true,
     "desc": "Gain @AmountOfStatAnvils@ Stat Anvils, with a higher chance of Gold and Prismatic Anvils!<br><br>On your next Augment selection, gain one additional reroll per slot.",
     "tooltip": "Gain @AmountOfStatAnvils@ Stat Anvils, with a higher chance of Gold and Prismatic Anvils!<br><br>On your next Augment selection, gain one additional reroll per slot.",
     "dataValues": {
@@ -4602,6 +4603,7 @@
     "apiName": "ARAM_StatsOnStats",
     "name": "Stats on Stats!",
     "rarity": "Gold",
+    "disabled": true,
     "desc": "Gain @AmountOfStatAnvils@ Stat Anvils, with a higher chance of Gold and Prismatic Anvils!",
     "tooltip": "Gain @AmountOfStatAnvils@ Stat Anvils, with a higher chance of Gold and Prismatic Anvils!",
     "dataValues": {
@@ -4617,6 +4619,7 @@
     "apiName": "ARAM_Stats",
     "name": "Stats!",
     "rarity": "Silver",
+    "disabled": true,
     "desc": "Gain @AmountOfStatAnvils@ Stat Anvils!",
     "tooltip": "Gain @AmountOfStatAnvils@ Stat Anvils!",
     "dataValues": {
@@ -4648,14 +4651,12 @@
     "apiName": "GrandmasChiliOil",
     "name": "Grandma's Chili Oil",
     "rarity": "Gold",
-    "desc": "Applying a <keywordMajor>Burn</keywordMajor> drops a pool of <keywordMajor>Chili Oil</keywordMajor> nearby. <keywordMajor>Chili Oil</keywordMajor> restores <healing>Health</healing> and <keywordMajor>Burns</keywordMajor> enemies.<br><br><keywordMajor>Chili Oil</keywordMajor> effects become stronger for each <keywordMajor>Burn</keywordMajor> you apply.",
-    "tooltip": "Applying a <keywordMajor>Burn</keywordMajor> drops a <keywordMajor>Chili Oil</keywordMajor> pool nearby for @GroundDuration@ seconds. <keywordMajor>Chili Oil</keywordMajor> restores <healing>@HealPerSecond@ Health</healing> and <keywordMajor>Burns</keywordMajor> enemies for <magicDamage>@CurrentEnemyBlazeBurn@ magic damage</magicDamage> per second. <br><br><keywordMajor>Chili Oil</keywordMajor> effects become stronger for each <keywordMajor>Burn</keywordMajor> you apply.",
+    "desc": "Basic attacks and ability hits against enemies inflicts them with a <keywordMajor>Burn</keywordMajor> that drops a pool of <keywordMajor>Chili Oil</keywordMajor> nearby. <keywordMajor>Chili Oil</keywordMajor> restores <healing>Health</healing> and <keywordMajor>Burns</keywordMajor> enemies.<br><br><keywordMajor>Chili Oil</keywordMajor> effects become stronger for each <keywordMajor>Burn</keywordMajor> you apply.",
+    "tooltip": "Basic attacks and ability hits against enemies inflicts them with a Burn that deals <magicDamage>@FireStarterDamage@ magic damage</magicDamage> for @FireStarterDuration@ seconds. Applying a <keywordMajor>Burn</keywordMajor> drops a <keywordMajor>Chili Oil</keywordMajor> pool nearby for @GroundDuration@ seconds. <keywordMajor>Chili Oil</keywordMajor> restores <healing>@HealPerSecond@ Health</healing> and <keywordMajor>Burns</keywordMajor> enemies for <magicDamage>@CurrentEnemyBlazeBurnPerSecond@ magic damage</magicDamage> per second. <br><br><rules><keywordMajor>Chili Oil</keywordMajor> effects become stronger for each <keywordMajor>Burn</keywordMajor> you apply.<br><keywordMajor>Burn</keywordMajor> damage euqals to @BaseFireDamagePerSecond@ plus @FireDamagePerBurn@ per Burn source, up to 10 sources.</rules>",
     "dataValues": {
       "GroundDuration": 5.0,
       "BaseFireDamagePerSecond": 100.0,
       "FireDamagePerBurn": 60.0,
-      "BaseMSBoost": 0.20000000298023224,
-      "BaseVampBonus": 0.05000000074505806,
       "MSDuration": 0.75,
       "Cooldown": 3.0,
       "AoESizePerAdditionalStack": 40.0,
@@ -4676,57 +4677,7 @@
       "PerAdditionalFireHealBonus": 50.0
     },
     "calculations": {
-      "0x4ff47e2": {
-        "mFormulaParts": [
-          {
-            "mDataValue": "BaseFireDamagePerSecond",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          {
-            "mPart1": {
-              "mDataValue": "MaxBurnCount",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            "mPart2": {
-              "mDataValue": "FireDamagePerBurn",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            "~class": "ProductOfSubPartsCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "0xda8a5191": {
-        "mDisplayAsPercent": true,
-        "mFormulaParts": [
-          {
-            "mDataValue": "BaseVampBonus",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          {
-            "mPart1": {
-              "mSubparts": [
-                {
-                  "mDataValue": "MaxBurnCount",
-                  "~class": "NamedDataValueCalculationPart"
-                },
-                {
-                  "mNumber": -1.0,
-                  "~class": "NumberCalculationPart"
-                }
-              ],
-              "~class": "SumOfSubPartsCalculationPart"
-            },
-            "mPart2": {
-              "mDataValue": "PerAdditionalFireHealBonus",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            "~class": "ProductOfSubPartsCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "CurrentEnemyBlazeBurn": {
+      "0xfa20c4ce": {
         "mFormulaParts": [
           {
             "mDataValue": "BaseFireDamagePerSecond",
@@ -4736,50 +4687,6 @@
             "mPart1": {
               "mBuffName": "0x7b8aee93",
               "mDataValue": "FireDamagePerBurn",
-              "~class": "BuffCounterByNamedDataValueCalculationPart"
-            },
-            "mPart2": {
-              "mNumber": 1.0,
-              "~class": "NumberCalculationPart"
-            },
-            "~class": "ProductOfSubPartsCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "CurrentTotalMSBonus": {
-        "mDisplayAsPercent": true,
-        "mFormulaParts": [
-          {
-            "mDataValue": "BaseMSBoost",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          {
-            "mPart1": {
-              "mBuffName": "0x7b8aee93",
-              "mDataValue": "PerAdditionalStackMSBoost",
-              "~class": "BuffCounterByNamedDataValueCalculationPart"
-            },
-            "mPart2": {
-              "mNumber": 1.0,
-              "~class": "NumberCalculationPart"
-            },
-            "~class": "ProductOfSubPartsCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "CurrentTotalVampBonus": {
-        "mDisplayAsPercent": true,
-        "mFormulaParts": [
-          {
-            "mDataValue": "BaseVampBonus",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          {
-            "mPart1": {
-              "mBuffName": "0x7b8aee93",
-              "mDataValue": "PerAdditionalFireVampBonus",
               "~class": "BuffCounterByNamedDataValueCalculationPart"
             },
             "mPart2": {
@@ -4817,36 +4724,6 @@
             "mPart2": {
               "mNumber": 1.0,
               "~class": "NumberCalculationPart"
-            },
-            "~class": "ProductOfSubPartsCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "MaxMoveSpeed": {
-        "mDisplayAsPercent": true,
-        "mFormulaParts": [
-          {
-            "mDataValue": "BaseMSBoost",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          {
-            "mPart1": {
-              "mSubparts": [
-                {
-                  "mDataValue": "MaxBurnCount",
-                  "~class": "NamedDataValueCalculationPart"
-                },
-                {
-                  "mNumber": -1.0,
-                  "~class": "NumberCalculationPart"
-                }
-              ],
-              "~class": "SumOfSubPartsCalculationPart"
-            },
-            "mPart2": {
-              "mDataValue": "PerAdditionalFireHealBonus",
-              "~class": "NamedDataValueCalculationPart"
             },
             "~class": "ProductOfSubPartsCalculationPart"
           }
@@ -5203,7 +5080,7 @@
     "name": "Upgrade Sheen",
     "rarity": "Gold",
     "desc": "Your <passive>Spellblade</passive> effects deal <physical>additional damage</physical> and <heal>heal</heal> you for a percent of the target's health. Additionally, gain <gold>250 Gold</gold>.",
-    "tooltip": "Your <passive>Spellblade</passive> effects deal additional <physicalDamage>target max Health physical damage</physicalDamage> and <healing>heal</healing> you. Additionally, gain <gold>250 Gold</gold>.<br><br>Damage Dealt: @f1@<br>Total Healing Done: @f2@",
+    "tooltip": "Your <passive>Spellblade</passive> effects deal <physicalDamage>additional damage</physicalDamage> equal to @DamageMaxHP*100@% of the target's health and <healing>heal</healing> you for @HealMaxHP*100@% of the target's health. Additionally, gain <gold>250 Gold</gold>.<br><br>Damage Dealt: @f1@<br>Total Healing Done: @f2@",
     "dataValues": {
       "DamageMaxHP": 0.03999999910593033,
       "HealMaxHP": 0.03500000014901161

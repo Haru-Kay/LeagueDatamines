@@ -208,7 +208,7 @@
         "~class": "SpellDataResourceClient"
       },
       "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
-      "mHitEffectName": "globalhit_physical_crit.troy",
+      "mHitEffectName": "doesnotexist.troy",
       "mHitEffectOrientType": 2,
       "mMissileEffectKey": "Lulu_BA_mis",
       "mMissileSpec": {
@@ -350,6 +350,39 @@
           "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "mName": "DamageAPRatio",
+              "mValues": [
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "mName": "ShieldAPRatio",
+              "mValues": [
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "bIsToggleSpell": true,
       "castConeDistance": 100.0,
       "castFrame": 7.5,
@@ -600,8 +633,41 @@
             3.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "mName": "APRatioPerHit",
+          "mValues": [
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806
+          ],
+          "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "mName": "APRatioPerHit",
+              "mValues": [
+                0.07500000298023224,
+                0.07500000298023224,
+                0.07500000298023224,
+                0.07500000298023224,
+                0.07500000298023224,
+                0.07500000298023224,
+                0.07500000298023224
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "castRange": [
         0.0,
         0.0,
@@ -644,8 +710,8 @@
               "~class": "ByCharLevelInterpolationCalculationPart"
             },
             {
-              "mCoefficient": 0.05000000074505806,
-              "~class": "StatByCoefficientCalculationPart"
+              "mDataValue": "APRatioPerHit",
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"

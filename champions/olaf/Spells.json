@@ -267,6 +267,13 @@
   },
   "Characters/Olaf/Spells/OlafAxeThrowCastAbility/OlafAxeThrowCast": {
     "BotData": {
+      "0x38382c53": [
+        {
+          "0x717e686": false,
+          "0xe38f54f7": 8192,
+          "~class": "0x150d1b92"
+        }
+      ],
       "0x6d548702": {
         "mFormulaParts": [
           {
@@ -1306,8 +1313,25 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mSpellCalculationKey": "ShieldCalc",
-                "~class": "0xf3cbe7b2"
+                "mSubparts": [
+                  {
+                    "mDataValue": "BaseShield",
+                    "~class": "NamedDataValueCalculationPart"
+                  },
+                  {
+                    "mPart1": {
+                      "mDataValue": "ShieldPercMissingHP",
+                      "mStat": 16,
+                      "~class": "StatByNamedDataValueCalculationPart"
+                    },
+                    "mPart2": {
+                      "mNumber": 100.0,
+                      "~class": "NumberCalculationPart"
+                    },
+                    "~class": "ProductOfSubPartsCalculationPart"
+                  }
+                ],
+                "~class": "SumOfSubPartsCalculationPart"
               }
             ],
             "~class": "GameCalculation"
@@ -1607,7 +1631,7 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mDataValue": "Haste",
+                "mDataValue": "HasteDuration",
                 "~class": "NamedDataValueCalculationPart"
               }
             ],
@@ -2094,16 +2118,7 @@
         ],
         "~class": "GameCalculation"
       },
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 8,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "DamageTag": 0,
+      "DamageTag": 2,
       "~class": "BotsSpellData"
     },
     "ObjectName": "OlafRecklessStrike",

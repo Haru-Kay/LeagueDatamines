@@ -1,4 +1,9 @@
 {
+  "0x3112b579": {
+    "ObjectName": "ZacRebirthStart",
+    "mScriptName": "ZacRebirthStart",
+    "~class": "SpellObject"
+  },
   "0x45a34608": {
     "ObjectName": "ZacQAttack",
     "mScriptName": "ZacQAttack",
@@ -1154,6 +1159,47 @@
     },
     "mScriptName": "ZacQ",
     "mSpell": {
+      "DataValues": [
+        {
+          "mName": "BaseDamage",
+          "mValues": [
+            30.0,
+            60.0,
+            90.0,
+            120.0,
+            150.0,
+            180.0,
+            210.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "APRatio",
+          "mValues": [
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "HealthRatio",
+          "mValues": [
+            0.029999999329447746,
+            0.029999999329447746,
+            0.029999999329447746,
+            0.029999999329447746,
+            0.029999999329447746,
+            0.029999999329447746,
+            0.029999999329447746
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "alwaysSnapFacing": true,
       "bIsToggleSpell": true,
       "castFrame": 10.0,
@@ -1249,7 +1295,7 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
+                  "type": "BaseDamage",
                   "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
                 },
@@ -1274,19 +1320,8 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.30000001192092896,
-      "mCoefficient2": 0.029999999329447746,
       "mEffectAmount": [
         {
-          "value": [
-            25.0,
-            40.0,
-            55.0,
-            70.0,
-            85.0,
-            100.0,
-            100.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
@@ -1449,6 +1484,7 @@
           "~class": "GameCalculation"
         },
         "MaxDamageTooltip": {
+          "mExpandedTooltipCalculationDisplay": 6,
           "mFormulaParts": [
             {
               "mPart1": {
@@ -1467,17 +1503,18 @@
         "TotalDamage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.30000001192092896,
-              "~class": "StatByCoefficientCalculationPart"
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.029999999329447746,
+              "mDataValue": "HealthRatio",
               "mStat": 12,
-              "~class": "StatByCoefficientCalculationPart"
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -1574,13 +1611,13 @@
         {
           "mName": "BaseDamageBounce",
           "mValues": [
-            70.0,
-            140.0,
-            210.0,
-            280.0,
-            350.0,
-            420.0,
-            490.0
+            50.0,
+            120.0,
+            190.0,
+            260.0,
+            330.0,
+            400.0,
+            470.0
           ],
           "~class": "SpellDataValue"
         },
@@ -1825,15 +1862,6 @@
       "mDoNotNeedToFaceTarget": true,
       "mEffectAmount": [
         {
-          "value": [
-            150.0,
-            150.0,
-            250.0,
-            350.0,
-            350.0,
-            350.0,
-            350.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
