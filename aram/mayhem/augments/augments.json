@@ -1870,8 +1870,8 @@
     "apiName": "ARAM_BreadAndButter",
     "name": "Bread And Butter",
     "rarity": "Gold",
-    "desc": "Your Q gains @QAbilityHaste@ Ability Haste.",
-    "tooltip": "Your Q gains @QAbilityHaste@ Ability Haste.",
+    "desc": "Your @spell1KeyBind@ gains @QAbilityHaste@ Ability Haste.",
+    "tooltip": "Your @spell1KeyBind@ gains @QAbilityHaste@ Ability Haste.",
     "dataValues": {
       "QAbilityHaste": 100.0,
       "QReducedAbilityHaste": 100.0
@@ -2196,8 +2196,8 @@
     "apiName": "ARAM_BreadAndJam",
     "name": "Bread And Jam",
     "rarity": "Gold",
-    "desc": "Your W gains @WAbilityHaste@ Ability Haste.",
-    "tooltip": "Your W gains @WAbilityHaste@ Ability Haste.",
+    "desc": "Your @spell2KeyBind@ gains @WAbilityHaste@ Ability Haste.",
+    "tooltip": "Your @spell2KeyBind@ gains @WAbilityHaste@ Ability Haste.",
     "dataValues": {
       "WAbilityHaste": 100.0
     },
@@ -2211,8 +2211,8 @@
     "apiName": "ARAM_BreadAndCheese",
     "name": "Bread and Cheese",
     "rarity": "Gold",
-    "desc": "Your E gains @EAbilityHaste@ Ability Haste.",
-    "tooltip": "Your E gains @EAbilityHaste@ Ability Haste.",
+    "desc": "Your @spell3KeyBind@ gains @EAbilityHaste@ Ability Haste.",
+    "tooltip": "Your @spell3KeyBind@ gains @EAbilityHaste@ Ability Haste.",
     "dataValues": {
       "EAbilityHaste": 100.0
     },
@@ -2511,8 +2511,8 @@
     "apiName": "ARAM_ItsKillingTime",
     "name": "It's Killing Time",
     "rarity": "Gold",
-    "desc": "After casting your Ultimate, mark all enemies and store up damage dealt to them. When it ends, detonate the damage.",
-    "tooltip": "After casting your Ultimate, mark all enemies and store @DamageStorePercentage*100@% of damage dealt. After @MarkDuration@ seconds, detonate the stored damage (@Cooldown@ second Cooldown).<br><br>Damage Dealt: @f2@",
+    "desc": "After casting your Ultimate, mark all enemies and store up damage you deal to them. When it ends, detonate the damage.",
+    "tooltip": "After casting your Ultimate, mark all enemies and store @DamageStorePercentage*100@% of damage you deal to them. After @MarkDuration@ seconds, detonate the stored damage (@Cooldown@ second Cooldown).<br><br>Damage Dealt: @f2@",
     "dataValues": {
       "MarkDuration": 5.0,
       "Cooldown": 8.0,
@@ -2687,6 +2687,7 @@
     "apiName": "ARAM_DivineIntervention",
     "name": "Divine Intervention",
     "rarity": "Gold",
+    "disabled": true,
     "desc": "@InitalDelay@ seconds into combat, call upon a protective star that slowly descends upon you. When it lands, you and nearby allies become <keywordMajor>Invulnerable</keywordMajor> for a few seconds. Then <keywordMajor>Autocast</keywordMajor> this every @BaseCD@ seconds.",
     "tooltip": "@InitalDelay@ seconds into combat, call upon a protective star that slowly descends upon you. When it lands, you and nearby allies become <keywordMajor>Invulnerable</keywordMajor> for @InvulnerabilityDuration@ seconds. Then <keywordMajor>Autocast</keywordMajor> this every @BaseCD@ seconds.",
     "dataValues": {
@@ -3786,7 +3787,7 @@
     "name": "Hat on a Hat",
     "rarity": "Silver",
     "desc": "Headwear items and hats give an extra <scaleAP>Ability Power</scaleAP>  and <scaleMR>Magic Resist</scaleMR>. ",
-    "tooltip": "Headwear items and hats give <scaleAP>@HatAPAdd@ Ability Power</scaleAP> and <scaleMR>@HatMRAdd@ Magic Resist</scaleMR>.<br>Cappa Juice gives <scaleAP>@CapAPAdd@ Ability Power</scaleAP> and <scaleMR>@CapMRAdd@ Magic Resist</scaleMR>.<br><br>Your headwear items and hats are currently granting:<li>@f1.1@ magic damage<li>@f2.1@ Magic Resist",
+    "tooltip": "Headwear items and hats give <scaleAP>@HatAPAdd@ Ability Power</scaleAP> and <scaleMR>@HatMRAdd@ Magic Resist</scaleMR>.<br>Cappa Juice gives <scaleAP>@CapAPAdd@ Ability Power</scaleAP> and <scaleMR>@CapMRAdd@ Magic Resist</scaleMR>.<br><br>Your headwear items and hats are currently granting:<li>@f1.1@ Ability Power<li>@f2.1@ Magic Resist",
     "dataValues": {
       "HatAPAdd": 15.0,
       "HatMRAdd": 8.0,
@@ -4241,6 +4242,23 @@
     ]
   },
   {
+    "id": 1379,
+    "apiName": "Upgrade_SwordOfBlossom",
+    "name": "Upgrade Sword of Blossoming Dawn",
+    "rarity": "Prismatic",
+    "desc": "Gain <speed>@AttackSpeed*100@% Attack Speed</speed>.<br><br>Your attacks against champions deal @AttackDamageNerf*100@% damage but increase Sword of Blossoming Dawn's healing by <scaleHealth>@PercentInc*100@%</scaleHealth>",
+    "tooltip": "{{Kiwi_Upgrade_SwordOfBlossom_Summary}}",
+    "dataValues": {
+      "AttackSpeed": 1.0,
+      "AttackDamageNerf": 0.5,
+      "PercentInc": 2.0
+    },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/UpgradeMikaelsBlessing_small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/UpgradeMikaelsBlessing_large.tex"
+    ]
+  },
+  {
     "id": 1384,
     "apiName": "Donation",
     "name": "Donation",
@@ -4399,8 +4417,8 @@
     "apiName": "RedEnvelopes",
     "name": "Red Envelopes",
     "rarity": "Gold",
-    "desc": "Red envelopes appear around you randomly. Picking them up gives you Gold and a small amount of a random stat.",
-    "tooltip": "Red envelopes appear randomly around you every @TimeBetweenEnvelopes@ seconds. Picking them up gives you between <font color=\"#ffd138\">@EnvelopeValueMin@</font> and <font color=\"#ffd138\">@EnvelopeValueMax@</font> Gold, plus <speed>@MSBuff@ Move Speed@BuffDuration@</speed> for seconds.<br><br><br>You have opened @f1@ red envelopes and received <font color=\"#ffd138\">@f2@</font> Gold from them.<br><br>Additional stats: <physicalDamage>@f3@ Attack Damage,</physicalDamage> <magicDamage>@f4@ Ability Power,</magicDamage> <speed>@f5@ Haste,</speed> <scaleArmor>@f6@ Armor,</scaleArmor> <scaleMr>@f7@ Magic Resitance,</scaleMr> <scaleHealth>@f8@ Health,</scaleHealth> <attackSpeed>@f9*100@% Attack Speed,</attackSpeed> <speed>@f10@ Movement Speed,</speed> <scaleLethality>@f11@ Lehtality,</scaleLethality> <scaleMPen>@f12@ Magic Penetration.</scaleMPen> ",
+    "desc": "Red envelopes appear around you randomly. Picking them up gives you Gold and a small amount of a random Stats.",
+    "tooltip": "<keyword>Red Envelopes</keyword> appear randomly around you every @TimeBetweenEnvelopes@ seconds. Picking them up gives you between <font color=\"#ffd138\">@EnvelopeValueMin@</font> and <font color=\"#ffd138\">@EnvelopeValueMax@</font> Gold, plus <speed>@MSBuff@ Move Speed</speed> for @BuffDuration@ seconds.<br><br>You have opened <important>@f1@</important> <keyword>Red Envelopes</keyword> and received <font color=\"#ffd138\">@f2@</font> Gold from them.<br><br>Additional Stats Gained:<br>- <physicalDamage>@f3@ Attack Damage</physicalDamage><br>- <magicDamage>@f4@ Ability Power</magicDamage><br>- <scaleCooldown>@f5@ Haste</scaleCooldown><br>- <scaleArmor>@f6@ Armor</scaleArmor><br>- <scaleMR>@f7@ Magic Resistance</scaleMR><br>- <scaleHealth>@f8@ Health</scaleHealth><br>- <attackSpeed>@f9*100@% Attack Speed</attackSpeed><br>- <speed>@f10@ Movement Speed</speed><br>- <scaleLethality>@f11@ Lethality</scaleLethality><br>- <scaleMPen>@f12@ Magic Penetration</scaleMPen> ",
     "dataValues": {
       "BuffDuration": 4.0,
       "MSBuff": 150.0,
@@ -4652,7 +4670,7 @@
     "name": "Grandma's Chili Oil",
     "rarity": "Gold",
     "desc": "Basic attacks and ability hits against enemies inflicts them with a <keywordMajor>Burn</keywordMajor> that drops a pool of <keywordMajor>Chili Oil</keywordMajor> nearby. <keywordMajor>Chili Oil</keywordMajor> restores <healing>Health</healing> and <keywordMajor>Burns</keywordMajor> enemies.<br><br><keywordMajor>Chili Oil</keywordMajor> effects become stronger for each <keywordMajor>Burn</keywordMajor> you apply.",
-    "tooltip": "Basic attacks and ability hits against enemies inflicts them with a Burn that deals <magicDamage>@FireStarterDamage@ magic damage</magicDamage> for @FireStarterDuration@ seconds. Applying a <keywordMajor>Burn</keywordMajor> drops a <keywordMajor>Chili Oil</keywordMajor> pool nearby for @GroundDuration@ seconds. <keywordMajor>Chili Oil</keywordMajor> restores <healing>@HealPerSecond@ Health</healing> and <keywordMajor>Burns</keywordMajor> enemies for <magicDamage>@CurrentEnemyBlazeBurnPerSecond@ magic damage</magicDamage> per second. <br><br><rules><keywordMajor>Chili Oil</keywordMajor> effects become stronger for each <keywordMajor>Burn</keywordMajor> you apply.<br><keywordMajor>Burn</keywordMajor> damage euqals to @BaseFireDamagePerSecond@ plus @FireDamagePerBurn@ per Burn source, up to 10 sources.</rules>",
+    "tooltip": "Basic attacks and ability hits against enemies inflicts them with a Burn that deals <magicDamage>@FireStarterDamage@ magic damage</magicDamage> for @FireStarterDuration@ seconds. Applying a <keywordMajor>Burn</keywordMajor> drops a <keywordMajor>Chili Oil</keywordMajor> pool nearby for @GroundDuration@ seconds. <keywordMajor>Chili Oil</keywordMajor> restores <healing>@HealPerSecond@ Health</healing> and <keywordMajor>Burns</keywordMajor> enemies for <magicDamage>@CurrentEnemyBlazeBurnPerSecond@ magic damage</magicDamage> per second. <br><br><rules><keywordMajor>Chili Oil</keywordMajor> effects become stronger for each <keywordMajor>Burn</keywordMajor> you apply.<br><keywordMajor>Burn</keywordMajor> damage equals to @BaseFireDamagePerSecond@ plus @FireDamagePerBurn@ per Burn source, up to 10 sources.</rules>",
     "dataValues": {
       "GroundDuration": 5.0,
       "BaseFireDamagePerSecond": 100.0,
