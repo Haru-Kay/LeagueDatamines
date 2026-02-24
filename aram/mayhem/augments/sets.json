@@ -104,20 +104,28 @@
   {
     "apiName": "AugmentSet_Ambulance",
     "name": "Wee Woo Wee Woo",
-    "desc": "<b>Set Bonus</b><br>Gain <speed>Movement Speed</speed> towards allies below @HealthThreshold*100@% Health.",
-    "descEx": "Your next heal or shield is @EmpoweredRatio*100@% stronger. (@EmpowereProcCooldown@ seconds cooldown)",
+    "desc": "<b>Set Bonus</b><br>Gain bonus effects towards allies below @HealthThreshold*100@% Health. ",
+    "descEx": {
+      "2": "Gain <speed>@MovementSpeed*100@% Movement Speed</speed>.",
+      "3": "Your next heal or shield restores <scaleHealth>@MissinghealthRatio*100@%</scaleHealth> of the target's missing health. (@EmpowereProcCooldown@ seconds cooldown per target)"
+    },
     "icons": "ASSETS/UX/Kiwi/AugmentSets/Trait_WeeWooWeeWoo.tex",
     "breakpoints": [
-      2
+      2,
+      3
     ],
     "data": {
       "dataValues": {
-        "MovementSpeed": 0.30000001192092896,
+        "MovementSpeed": 0.5,
         "HealthThreshold": 0.5,
         "HSPower": null,
-        "EffectiveRange": 650.0,
+        "EffectiveRange": [
+          650.0,
+          750.0
+        ],
         "EmpoweredRatio": 2.0,
-        "EmpowereProcCooldown": 5.0
+        "EmpowereProcCooldown": 10.0,
+        "MissinghealthRatio": 0.11999999731779099
       },
       "calculations": {}
     },
