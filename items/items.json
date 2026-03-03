@@ -55625,6 +55625,19 @@
     "~class": "ItemData"
   },
   "Runic Compass": {
+    "0xfe87f21e": [
+      {
+        "0x1987941": [
+          {
+            "0xd6b6109c": "Shared/Spells/S14_Support_Charge_Display",
+            "0xfbd4eefd": 2,
+            "~class": "0xbf62176c"
+          }
+        ],
+        "0x6166b756": "0x79b6144b",
+        "~class": "0xfe87f21e"
+      }
+    ],
     "DataValuesModeOverride": {
       "SWIFTPLAY": {
         "DataValues": [
@@ -55726,6 +55739,15 @@
       32
     ],
     "mItemCalculations": {
+      "0x1755c90e": {
+        "mFormulaParts": [
+          {
+            "mDataValue": "0x9f631779",
+            "~class": "NamedDataValueCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
       "0x6387172": {
         "mFormulaParts": [
           {
@@ -55744,6 +55766,68 @@
         ],
         "~class": "GameCalculation"
       },
+      "0x79b6144b": {
+        "0x353099b0": true,
+        "0x72c5c2a8": 2,
+        "mConditionalCalculationRequirements": {
+          "mSubRequirements": [
+            {
+              "0x6166b756": "0xbc842179",
+              "mInvertResult": true,
+              "~class": "0x43b8e695"
+            },
+            {
+              "mRange": 1300.0,
+              "mUnitsRequirements": [
+                {
+                  "~class": "SameTeamCastRequirement"
+                },
+                {
+                  "mUnitTags": {
+                    "mObjectTagList": [
+                      "champion"
+                    ],
+                    "~class": "ObjectTags"
+                  },
+                  "~class": "HasUnitTagsCastRequirement"
+                }
+              ],
+              "~class": "HasNNearbyVisibleUnitsRequirement"
+            }
+          ],
+          "~class": "HasAllSubRequirementsCastRequirement"
+        },
+        "mConditionalGameCalculation": "ExecuteDamage",
+        "~class": "GameCalculationConditional"
+      },
+      "0xbc842179": {
+        "mFormulaParts": [
+          {
+            "0xa8cb9c14": true,
+            "mStat": 12,
+            "mSubpart": {
+              "mSpellCalculationKey": "ExecutePercent",
+              "~class": "0xf3cbe7b2"
+            },
+            "~class": "StatBySubPartCalculationPart"
+          },
+          {
+            "mCoefficient": 1.0,
+            "mStat": 2,
+            "~class": "StatByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xbdd8f3f7": {
+        "mFormulaParts": [
+          {
+            "mDataValue": "0xd4217cda",
+            "~class": "NamedDataValueCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
       "ChampRange": {
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
@@ -55752,6 +55836,30 @@
         "mDefaultGameCalculation": "0x792cf56b",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
+        "~class": "GameCalculationConditional"
+      },
+      "ExecuteDamage": {
+        "mFormulaParts": [
+          {
+            "0xa8cb9c14": true,
+            "mCoefficient": 1.0,
+            "mStat": 12,
+            "~class": "StatByCoefficientCalculationPart"
+          },
+          {
+            "mCoefficient": 1.0,
+            "mStat": 2,
+            "~class": "StatByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "ExecutePercent": {
+        "mConditionalCalculationRequirements": {
+          "~class": "IsRangedCastRequirement"
+        },
+        "mConditionalGameCalculation": "0x1755c90e",
+        "mDefaultGameCalculation": "0xbdd8f3f7",
         "~class": "GameCalculationConditional"
       },
       "MeleeItemCalcValue": {
