@@ -27,8 +27,8 @@
     "mSpell": {
       "DataValues": [
         {
-          "mName": "ModesMSMod",
-          "mValues": [
+          "name": "ModesMSMod",
+          "values": [
             1.0,
             1.0,
             1.0,
@@ -44,8 +44,8 @@
         "cherry": {
           "SpellDataValues": [
             {
-              "mName": "ModesMSMod",
-              "mValues": [
+              "name": "ModesMSMod",
+              "values": [
                 0.699999988079071,
                 0.699999988079071,
                 0.699999988079071,
@@ -333,8 +333,8 @@
     "mSpell": {
       "DataValues": [
         {
-          "mName": "BasicAPRatio",
-          "mValues": [
+          "name": "BasicAPRatio",
+          "values": [
             0.10000000149011612,
             0.10000000149011612,
             0.10000000149011612,
@@ -346,8 +346,8 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "BonusDamage",
-          "mValues": [
+          "name": "BonusDamage",
+          "values": [
             0.0,
             20.0,
             43.0,
@@ -359,8 +359,8 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "BonusAPRatio",
-          "mValues": [
+          "name": "BonusAPRatio",
+          "values": [
             0.550000011920929,
             0.550000011920929,
             0.550000011920929,
@@ -372,8 +372,8 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "HealRatio",
-          "mValues": [
+          "name": "HealRatio",
+          "values": [
             0.08500000089406967,
             0.10000000149011612,
             0.11500000208616257,
@@ -385,8 +385,8 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "MinionReductionModifier",
-          "mValues": [
+          "name": "MinionReductionModifier",
+          "values": [
             0.25,
             0.25,
             0.25,
@@ -396,14 +396,18 @@
             0.25
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "HealingRatio",
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
         "cherry": {
           "SpellDataValues": [
             {
-              "mName": "HealRatio",
-              "mValues": [
+              "name": "HealRatio",
+              "values": [
                 0.06499999761581421,
                 0.07000000029802322,
                 0.07500000298023224,
@@ -415,8 +419,8 @@
               "~class": "SpellDataValue"
             },
             {
-              "mName": "BonusAPRatio",
-              "mValues": [
+              "name": "BonusAPRatio",
+              "values": [
                 0.4000000059604645,
                 0.4000000059604645,
                 0.4000000059604645,
@@ -701,8 +705,8 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mEffectIndex": 4,
-                "~class": "EffectValueCalculationPart"
+                "mDataValue": "ChampHitMSDuration",
+                "~class": "NamedDataValueCalculationPart"
               }
             ],
             "~class": "GameCalculation"
@@ -715,12 +719,12 @@
             "mFormulaParts": [
               {
                 "mPart1": {
-                  "mEffectIndex": 1,
-                  "~class": "EffectValueCalculationPart"
+                  "mDataValue": "baseDamage",
+                  "~class": "NamedDataValueCalculationPart"
                 },
                 "mPart2": {
-                  "mEffectIndex": 2,
-                  "~class": "EffectValueCalculationPart"
+                  "mDataValue": "PoisonDuration",
+                  "~class": "NamedDataValueCalculationPart"
                 },
                 "~class": "ProductOfSubPartsCalculationPart"
               }
@@ -741,6 +745,73 @@
     },
     "mScriptName": "CassiopeiaQ",
     "mSpell": {
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            30.0,
+            75.0,
+            110.0,
+            145.0,
+            180.0,
+            215.0,
+            250.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "PoisonDuration",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ChampHitMSBonus",
+          "values": [
+            25.0,
+            30.0,
+            35.0,
+            40.0,
+            45.0,
+            50.0,
+            50.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ChampHitMSDuration",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "NumDamageTicks",
+          "values": [
+            7.0,
+            7.0,
+            7.0,
+            7.0,
+            7.0,
+            7.0,
+            7.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "bHaveHitBone": true,
       "castConeDistance": 100.0,
       "castFrame": 6.5,
@@ -831,7 +902,7 @@
           "mLocKeys": {
             "keyName": "Noxious Blast",
             "keySummary": "Cassiopeia blasts an area with Poison after a brief delay, granting her increased Move Speed if she hits an enemy champion.",
-            "keyTooltip": "Cassiopeia blasts noxious gas, <keywordMajor>Poisoning</keywordMajor> enemies and dealing <magicDamage>@TooltipTotalDamage@ magic damage</magicDamage> over @Effect2Amount@ seconds. Hitting a champion grants Cassiopeia <speed>@Effect3Amount@% Move Speed</speed> decaying over @Effect4Amount@ seconds."
+            "keyTooltip": "Cassiopeia blasts noxious gas, <keywordMajor>Poisoning</keywordMajor> enemies and dealing <magicDamage>@TooltipTotalDamage@ magic damage</magicDamage> over @PoisonDuration@ seconds. Hitting a champion grants Cassiopeia <speed>@ChampHitMSBonus@% Move Speed</speed> decaying over @ChampHitMSDuration@ seconds."
           },
           "mObjectName": "CassiopeiaQ",
           "~class": "TooltipInstanceSpell"
@@ -942,8 +1013,8 @@
         "TooltipTotalDamage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.6499999761581421,
@@ -1074,8 +1145,8 @@
     "mSpell": {
       "DataValues": [
         {
-          "mName": "RCCDuration",
-          "mValues": [
+          "name": "RCCDuration",
+          "values": [
             2.0,
             2.0,
             2.0,
@@ -1087,8 +1158,8 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "RSlowPercent",
-          "mValues": [
+          "name": "RSlowPercent",
+          "values": [
             40.0,
             40.0,
             40.0,
@@ -1100,8 +1171,8 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "RBaseDamage",
-          "mValues": [
+          "name": "RBaseDamage",
+          "values": [
             50.0,
             150.0,
             250.0,
@@ -1113,8 +1184,8 @@
           "~class": "SpellDataValue"
         },
         {
-          "mName": "APRatio",
-          "mValues": [
+          "name": "APRatio",
+          "values": [
             0.5,
             0.5,
             0.5,
@@ -1130,8 +1201,8 @@
         "cherry": {
           "SpellDataValues": [
             {
-              "mName": "RBaseDamage",
-              "mValues": [
+              "name": "RBaseDamage",
+              "values": [
                 25.0,
                 100.0,
                 175.0,
@@ -1143,8 +1214,8 @@
               "~class": "SpellDataValue"
             },
             {
-              "mName": "APRatio",
-              "mValues": [
+              "name": "APRatio",
+              "values": [
                 0.4000000059604645,
                 0.4000000059604645,
                 0.4000000059604645,
@@ -1456,8 +1527,8 @@
         "mFormulaParts": [
           {
             "mPart1": {
-              "mEffectIndex": 4,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "CloudDuration",
+              "~class": "NamedDataValueCalculationPart"
             },
             "mPart2": {
               "mSpellCalculationKey": "DamagePerSecond",
@@ -1473,8 +1544,8 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mEffectIndex": 2,
-                "~class": "EffectValueCalculationPart"
+                "mDataValue": "SlowPercent",
+                "~class": "NamedDataValueCalculationPart"
               }
             ],
             "~class": "GameCalculation"
@@ -1527,6 +1598,60 @@
           "~class": "SpellEffectAmount"
         }
       },
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            20.0,
+            20.0,
+            25.0,
+            30.0,
+            35.0,
+            40.0,
+            45.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowPercent",
+          "values": [
+            30.0,
+            40.0,
+            50.0,
+            60.0,
+            70.0,
+            80.0,
+            90.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "PoisonDuration",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "CloudDuration",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "bHaveHitBone": true,
       "castConeDistance": 100.0,
       "castFrame": 7.5,
@@ -1662,7 +1787,7 @@
           "mLocKeys": {
             "keyName": "Miasma",
             "keySummary": "Cassiopeia releases several clouds of poison, slowing, grounding, and lightly damaging enemies that pass through them. Grounded enemies cannot use Movement abilities.",
-            "keyTooltip": "Cassiopeia spews venom, leaving toxic clouds for @Effect4Amount@ seconds. Enemies in the clouds take <magicDamage>@DamagePerSecond@ magic damage</magicDamage> per second, are <keywordMajor>Poisoned</keywordMajor>, <status>Grounded</status>, and <status>Slowed</status> by @Effect2Amount@%."
+            "keyTooltip": "Cassiopeia spews venom, leaving toxic clouds for @CloudDuration@ seconds. Enemies in the clouds take <magicDamage>@DamagePerSecond@ magic damage</magicDamage> per second, are <keywordMajor>Poisoned</keywordMajor>, <status>Grounded</status>, and <status>Slowed</status> by @SlowPercent@%."
           },
           "mObjectName": "CassiopeiaW",
           "~class": "TooltipInstanceSpell"
@@ -1747,8 +1872,8 @@
         "DamagePerSecond": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.10000000149011612,

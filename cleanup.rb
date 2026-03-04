@@ -318,8 +318,8 @@ def augmentSearcher(key, data, version=0)
                 dataValues = mSpell.fetch("DataValues", [])
 
                 dataValues.each { |component|
-                    name = component["mName"]
-                    values = component["mValues"] || []
+                    name = component["name"]
+                    values = component["values"] || []
                     puts "#{spellName} ::: #{name}" if !values
                     values = values[0] if values.uniq.length == 1
                     aug["dataValues"].store(name, values)
@@ -375,8 +375,8 @@ def augmentSetBuilder(key, data, version=0)
         dataValues = mSpell.fetch("DataValues", [])
 
         dataValues.each { |component|
-            name = component["mName"]
-            values = component["mValues"] || []
+            name = component["name"]
+            values = component["values"] || []
             puts "#{spellName} ::: #{name}" if !values
             out = []
             for i in set["breakpoints"]
@@ -988,7 +988,7 @@ Dir.mkdir("characters/shared")
 
             champ.extend(Hashie::Extensions::DeepFind)
             dataNames = {}
-            champ.deep_find_all("mName")&.each { |n|
+            champ.deep_find_all("name")&.each { |n|
                 dataNames.store("0x#{fnv(n.downcase)}", n)
             }
 
