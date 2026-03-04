@@ -25,8 +25,12 @@ champs.each { |champ|
 }
 
 pool.post { 
-    system("./wadtools -L error --progress false e -i \"#{path}Maps/Shipping/Map11.wad.client\" -o \"#{Dir.getwd}/bins\" -x \"^data/characters/(.*?)/\\1\\.bin$\"")
-    puts "Generated #{champ} bin"
+    system("./wadtools -L error --progress false e -i \"#{path}Maps/Shipping/Map11.wad.client\" -o \"#{Dir.getwd}/bins/map11\" -x \"^data/characters/(.*?)/\\1\\.bin$\"")
+    puts "Generated Map 11 character bins"
+}
+pool.post { 
+    system("./wadtools -L error --progress false e -i \"#{path}Maps/Shipping/Map12.wad.client\" -o \"#{Dir.getwd}/bins/map12\" -x \"^data/characters/(.*?)/\\1\\.bin$\"")
+    puts "Generated Map 12 character bins"
 }
 
 pool.post {

@@ -2949,13 +2949,13 @@
         {
           "mName": "BaseDamageMax",
           "mValues": [
-            0.0,
+            10.0,
             80.0,
-            160.0,
-            240.0,
-            320.0,
-            400.0,
-            480.0
+            150.0,
+            220.0,
+            290.0,
+            360.0,
+            430.0
           ],
           "~class": "SpellDataValue"
         },
@@ -2975,13 +2975,13 @@
         {
           "mName": "tADRatioMax",
           "mValues": [
-            1.2000000476837158,
-            1.2999999523162842,
-            1.399999976158142,
             1.5,
-            1.600000023841858,
-            1.7000000476837158,
-            1.7999999523162842
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
           ],
           "~class": "SpellDataValue"
         },
@@ -3160,11 +3160,6 @@
                 {
                   "nameOverride": "Maximum Damage",
                   "type": "BaseDamageMax",
-                  "~class": "TooltipInstanceListElement"
-                },
-                {
-                  "nameOverride": "Bonus AD Ratio",
-                  "type": "tADRatioMax",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -4893,6 +4888,18 @@
     },
     "mScriptName": "VarusW",
     "mSpell": {
+      "0xfe87f21e": [
+        {
+          "0x1987941": [
+            {
+              "level": 1,
+              "~class": "SpellSlotEqualOrGreaterThanLevelRequirement"
+            }
+          ],
+          "0x6166b756": "OnHitDamage",
+          "~class": "0xfe87f21e"
+        }
+      ],
       "DataValues": [
         {
           "mName": "VarusWDebuffDuration",
@@ -5008,6 +5015,19 @@
             0.25,
             0.25,
             0.25
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "mName": "OnHitADRatio",
+          "mValues": [
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448
           ],
           "~class": "SpellDataValue"
         },
@@ -5235,6 +5255,7 @@
           "~class": "GameCalculationModified"
         },
         "OnHitDamage": {
+          "0x72c5c2a8": 1,
           "mFormulaParts": [
             {
               "mDataValue": "VarusWOnHitDamage",
@@ -5242,6 +5263,12 @@
             },
             {
               "mDataValue": "OnHitRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "OnHitADRatio",
+              "mStat": 2,
+              "mStatFormula": 2,
               "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
