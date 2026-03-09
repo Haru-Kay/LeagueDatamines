@@ -1295,7 +1295,7 @@
             "keyCost": "No Cost",
             "keyName": "Molten Burst",
             "keySummary": "Shyvana launches a fireball that explodes upon striking a large target and slows them. In Dragon Form, it passes through and explodes upon striking large enemies, leaving behind a trail of fire.",
-            "keyTooltip": "Shyvana launches a fireball at the target location dealing <magicDamage>@Damage@ magic damage</magicDamage> and <status>Slowing by @Calc_Slow@ for @SlowDuration@ seconds</status>. It explodes upon striking an enemy or reaching its terminus.<br><br><keywordMajor>Dragon Form</keywordMajor> Shyvana's fireball is larger and pierces through enemies. Upon striking a champion, large monster, or reaching its terminus it triggers a pulse of fire that deals <magicDamage>@Calc_Dragon_Damage@ magic damage</magicDamage> and <status>Slows by @Calc_Slow_Dragon@ for @SlowDuration@ seconds</status>. The fireball leaves behind a trail for @GroundLingerDuration@ seconds that deals <magicDamage>@DamagePerSecond@ magic damage per second</magicDamage>. ",
+            "keyTooltip": "Shyvana launches a fireball at the target location dealing <magicDamage>@Damage@ magic damage</magicDamage> and <status>Slowing by @Calc_Slow@ for @SlowDuration@ seconds</status>. It explodes upon striking an enemy or reaching its terminus.<br><br><keywordMajor>Dragon Form:</keywordMajor> Shyvana's fireball is larger and pierces through enemies. Upon striking a champion, large monster, or reaching its terminus it triggers a pulse of fire that deals <magicDamage>@Calc_Dragon_Damage@ magic damage</magicDamage> and <status>Slows by @Calc_Slow_Dragon@ for @SlowDuration@ seconds</status>. The fireball leaves behind a trail for @GroundLingerDuration@ seconds that deals <magicDamage>@DamagePerSecond@ magic damage per second</magicDamage>. ",
             "keyTooltipExtendedBelowLine": "<rules>Overlapping <keywordMajor>Dragon Form</keywordMajor> explosions deal @Calc_Multihit_Efficacy@ damage.</rules>"
           },
           "mObjectName": "ShyvanaE",
@@ -1536,6 +1536,39 @@
           "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "BonusArmor",
+              "values": [
+                1.2000000476837158,
+                1.2000000476837158,
+                1.2000000476837158,
+                1.2000000476837158,
+                1.2000000476837158,
+                1.2000000476837158,
+                1.2000000476837158
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "BonusMagicResist",
+              "values": [
+                0.800000011920929,
+                0.800000011920929,
+                0.800000011920929,
+                0.800000011920929,
+                0.800000011920929,
+                0.800000011920929,
+                0.800000011920929
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "castRange": [
         0.0,
         0.0,
@@ -1556,7 +1589,7 @@
           "mLocKeys": {
             "keyName": "Scalemail",
             "keySummary": "Takedowns on enemy champions, large minions, and large monsters grant Shyvana Scalemail stacks, improving her defenses.",
-            "keyTooltip": "Takedowns on champions, large minions, and monsters earn Shyvana stacks of <spellName>{{Spell_Shyvana_Passive_Name}} %i:Shyvana%</spellName>, each stack of grants Shyvana permanent <scaleArmor>@BonusArmor@ Armor</scaleArmor> and <scaleMR>@BonusMagicResist@ Magic Resist</scaleMR>.<br><br><scaleArmor>Bonus Armor: @Calc_Bonus_Armor@</scaleArmor><br><scaleMR>Bonus Magic Resist: @Calc_Bonus_MR@</scaleMR>",
+            "keyTooltip": "Takedowns on champions, large minions, and monsters earn Shyvana stacks of <spellName>{{Spell_Shyvana_Passive_Name}} %i:Shyvana%</spellName>, each stack grants Shyvana permanent <scaleArmor>@BonusArmor@ Armor</scaleArmor> and <scaleMR>@BonusMagicResist@ Magic Resist</scaleMR>.<br><br><scaleArmor>Bonus Armor: @Calc_Bonus_Armor@</scaleArmor><br><scaleMR>Bonus Magic Resist: @Calc_Bonus_MR@</scaleMR>",
             "keyTooltipExtended": "{{Spell_Shyvana_Passive_Tooltip}}<br><br><rules>Large monsters and siege minions grant @Stacks_Per_Large_Monster@ stack.<br>Champions and Epic monsters grant @Stacks_Per_Epic_Monster@ stacks.</rules>"
           },
           "mObjectName": "ShyvanaPassive",
@@ -1864,9 +1897,9 @@
             "keyCost": "No Cost",
             "keyName": "Emberstrike",
             "keySummary": "Shyvana's next attack strikes both the target and the surrounding area. This Ability can be recast. While in Dragon Form, it gains an additional recast, dealing massive damage to a single target.",
-            "keyTooltip": "<spellPassive>Passive</spellPassive>: Shyvana Attacks deals <magicDamage>@Calc_Max_Health_Damage@ max Health magic Damage</magicDamage> <OnHit>%i:OnHit% On-Hit</OnHit> and reduce this Ability's cooldown by @Cooldown_Reduction@ seconds.<br><br><spellActive>Active</spellActive> Shyvana's next Attack strikes the target and the surrounding area dealing <physicalDamage>@Calc_Damage@ physical damage</physicalDamage>. This Ability may be <recast>Recast</recast> after an Attack or short delay within the next @RecastDuration@ seconds.<br><br><keywordMajor>Dragon Form</keywordMajor>: Shyvana gains an additional <recast>Recast</recast>, causing her to bite the target of her next Attack dealing <trueDamage>@Calc_Dragon_Form_Damage@ true damage</trueDamage>.",
-            "keyTooltipExtended": "<spellPassive>Passive</spellPassive>: Shyvana Attacks deals <magicDamage>@Calc_Max_Health_Damage@ max Health magic Damage</magicDamage> <OnHit>%i:OnHit% On-Hit</OnHit> and reduce this Ability's cooldown by @Cooldown_Reduction@ seconds.<br><br><spellActive>Active</spellActive>: Shyvana's next Attack strikes in a cone around the target, dealing <physicalDamage>@Calc_Damage@ physical damage</physicalDamage>. This Ability may be <recast>Recast</recast> after an Attack or a short delay within @RecastDuration@ seconds; the <recast>Recast</recast> strikes in a circle around the target.<br><br><keywordMajor>Dragon Form</keywordMajor>: Shyvana gains an additional <recast>Recast</recast>, causing her to bite the target of her next Attack dealing <trueDamage>@Calc_Dragon_Form_Damage@ true damage</trueDamage>.",
-            "keyTooltipExtendedBelowLine": "<rules>Deals @Calc_Monster_Bonus@ damage to monsters.<br>Maximum health does not affect structures and against non-champions has a minimum of @Calc_Max_Health_Monster_Minimum@ and maximum of @Calc_Max_Health_Monster_Maximum@.<br><keywordMajor>Dragon Form</keywordMajor>'s final <recast>Recast</recast> cannot critically strike.</rules>"
+            "keyTooltip": "<spellPassive>Passive:</spellPassive> Shyvana's Attacks deal <magicDamage>@Calc_Max_Health_Damage@ max Health magic damage</magicDamage> <OnHit>%i:OnHit% On-Hit</OnHit> and reduce this Ability's cooldown by @Cooldown_Reduction@ seconds.<br><br><spellActive>Active:</spellActive> Shyvana's next Attack strikes the target and the surrounding area dealing <physicalDamage>@Calc_Damage@ physical damage</physicalDamage>. This Ability may be <recast>Recast</recast> after an Attack or short delay within the next @RecastDuration@ seconds.<br><br><keywordMajor>Dragon Form:</keywordMajor> Shyvana gains an additional <recast>Recast</recast>, causing her to bite the target of her next Attack dealing <trueDamage>@Calc_Dragon_Form_Damage@ true damage</trueDamage>.",
+            "keyTooltipExtended": "<spellPassive>Passive:</spellPassive> Shyvana's Attacks deal <magicDamage>@Calc_Max_Health_Damage@ max Health magic damage</magicDamage> <OnHit>%i:OnHit% On-Hit</OnHit> and reduce this Ability's cooldown by @Cooldown_Reduction@ seconds.<br><br><spellActive>Active:</spellActive> Shyvana's next Attack strikes in a cone around the target, dealing <physicalDamage>@Calc_Damage@ physical damage</physicalDamage>. This Ability may be <recast>Recast</recast> after an Attack or a short delay within @RecastDuration@ seconds; the <recast>Recast</recast> strikes in a circle around the target.<br><br><keywordMajor>Dragon Form</keywordMajor>: Shyvana gains an additional <recast>Recast</recast>, causing her to bite the target of her next Attack dealing <trueDamage>@Calc_Dragon_Form_Damage@ true damage</trueDamage>.",
+            "keyTooltipExtendedBelowLine": "<rules>Deals @Calc_Monster_Bonus@ additional damage to monsters.<br>Maximum health damage does not affect structures and against non-champions has a minimum of @Calc_Max_Health_Monster_Minimum@ and maximum of @Calc_Max_Health_Monster_Maximum@.<br><keywordMajor>Dragon Form's</keywordMajor> final <recast>Recast</recast> cannot critically strike.</rules>"
           },
           "mObjectName": "ShyvanaQ",
           "~class": "TooltipInstanceSpell"
@@ -2211,6 +2244,52 @@
           "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "Fury_Generation",
+              "values": [
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "FuryDragonFormMult",
+              "values": [
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "FuryGain",
+              "values": [
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "cantCastWhileRooted": true,
       "castRange": [
         1050.0,
@@ -2602,7 +2681,7 @@
             "keyCost": "No Cost",
             "keyName": "Inferno Aegis",
             "keySummary": "Shyvana gains a shield, movement speed, and after a short delay, the area around her detonates.  While in Dragon Form, the explosion will heal her if it strikes an enemy champion.",
-            "keyTooltip": "Shyvana wraps herself in flames for @Duration@ seconds, gaining <shield>@Calc_Shield@ shield</shield>, increased by <shield>@Calc_Shield_Per_Nearby_Champion@</shield> per nearby enemy champion and <speed>@MoveSpeed@ Move Speed</speed>, increased to <speed>@MoveSpeedTowardsEnemies@</speed> when moving towards enemies.<br><br>When the effect ends, the <shield>shield</shield> is broken, or upon <recast>Recast</recast> the area around her detonates, dealing <magicDamage>@Damage@ magic damage</magicDamage>.<br><br><keywordMajor>Dragon Form</keywordMajor>: If the detonation hits an enemy champion Shyvana <healing>restores from @Calc_Heal_Min@ to @Calc_Heal_Max@</healing>Health based on her missing Health."
+            "keyTooltip": "Shyvana wraps herself in flames for @Duration@ seconds, gaining <shield>@Calc_Shield@ Shield</shield>, increased by <shield>@Calc_Shield_Per_Nearby_Champion@</shield> per nearby enemy champion and <speed>@MoveSpeed@ Move Speed</speed>, increased to <speed>@MoveSpeedTowardsEnemies@</speed> when moving towards enemy champions.<br><br>When the effect ends, the <shield>shield</shield> is broken, or upon <recast>Recast</recast> the area around her detonates, dealing <magicDamage>@Damage@ magic damage</magicDamage>.<br><br><keywordMajor>Dragon Form:</keywordMajor> If the detonation hits an enemy champion Shyvana <healing>restores from @Calc_Heal_Min@ to @Calc_Heal_Max@</healing> Health based on her missing Health."
           },
           "mObjectName": "ShyvanaW",
           "~class": "TooltipInstanceSpell"
