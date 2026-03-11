@@ -1089,26 +1089,26 @@
         {
           "name": "SlowDuration",
           "values": [
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
           ],
           "~class": "SpellDataValue"
         },
         {
           "name": "SlowAmount",
           "values": [
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929
+            0.25,
+            0.30000001192092896,
+            0.3499999940395355,
+            0.4000000059604645,
+            0.44999998807907104,
+            0.5,
+            0.550000011920929
           ],
           "~class": "SpellDataValue"
         },
@@ -1285,6 +1285,13 @@
                   "nameOverride": "Damage",
                   "type": "BaseDamage",
                   "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Slow",
+                  "type": "SlowAmount",
+                  "~class": "TooltipInstanceListElement"
                 }
               ],
               "levelCount": 5,
@@ -1354,7 +1361,7 @@
           "mExpandedTooltipCalculationDisplay": 5,
           "mModifiedGameCalculation": "Calc_Slow",
           "mMultiplier": {
-            "mNumber": 0.5,
+            "mNumber": 1.0,
             "~class": "NumberCalculationPart"
           },
           "mSimpleTooltipCalculationDisplay": 6,
@@ -1389,6 +1396,12 @@
             {
               "mDataValue": "baseDamage",
               "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.5,
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByCoefficientCalculationPart"
             },
             {
               "mCoefficient": 0.699999988079071,
@@ -1447,26 +1460,26 @@
         {
           "name": "BonusArmor",
           "values": [
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645
           ],
           "~class": "SpellDataValue"
         },
         {
           "name": "BonusMagicResist",
           "values": [
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645
           ],
           "~class": "SpellDataValue"
         },
@@ -1611,19 +1624,8 @@
               "~class": "BuffCounterByNamedDataValueCalculationPart"
             }
           ],
-          "mPrecision": 2,
+          "mPrecision": 1,
           "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculation"
-        },
-        "0x88790bb8": {
-          "mFormulaParts": [
-            {
-              "mBuffName": "0xbba88b2a",
-              "mCoefficient": 2.0,
-              "mIconKey": "%i:Shyvana%",
-              "~class": "BuffCounterByCoefficientCalculationPart"
-            }
-          ],
           "~class": "GameCalculation"
         },
         "0xdb8f0776": {
@@ -1636,19 +1638,8 @@
               "~class": "BuffCounterByNamedDataValueCalculationPart"
             }
           ],
-          "mPrecision": 2,
+          "mPrecision": 1,
           "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculation"
-        },
-        "0xff538a86": {
-          "mFormulaParts": [
-            {
-              "mBuffName": "0xbba88b2a",
-              "mCoefficient": 1.0,
-              "mIconKey": "%i:Shyvana%",
-              "~class": "BuffCounterByCoefficientCalculationPart"
-            }
-          ],
           "~class": "GameCalculation"
         }
       },
@@ -1820,13 +1811,13 @@
         {
           "name": "Damage_Monster_Bonus",
           "values": [
-            15.0,
-            15.0,
-            15.0,
-            15.0,
-            15.0,
-            15.0,
-            15.0
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1947,7 +1938,7 @@
           "mExpandedTooltipCalculationDisplay": 6,
           "mFormulaParts": [
             {
-              "mNumber": 30.0,
+              "mNumber": 10.0,
               "~class": "NumberCalculationPart"
             }
           ],
@@ -2168,13 +2159,13 @@
         {
           "name": "FearDuration",
           "values": [
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
           ],
           "~class": "SpellDataValue"
         },
@@ -2233,13 +2224,13 @@
         {
           "name": "FuryGainPerUltHaste",
           "values": [
-            0.02500000037252903,
-            0.02500000037252903,
-            0.02500000037252903,
-            0.02500000037252903,
-            0.02500000037252903,
-            0.02500000037252903,
-            0.02500000037252903
+            0.014999999664723873,
+            0.014999999664723873,
+            0.014999999664723873,
+            0.014999999664723873,
+            0.014999999664723873,
+            0.014999999664723873,
+            0.014999999664723873
           ],
           "~class": "SpellDataValue"
         }
@@ -2411,7 +2402,7 @@
             "keyCost": "Requires 100 <keywordMajor>Dragon Fury</keywordMajor>",
             "keyName": "Dragon's Descent",
             "keySummary": "Shyvana transforms into a Dragon and leaps forward causing enemies along her path to flee. While in Dragon form she becomes larger and her basic abilities are empowered.",
-            "keyTooltip": "<spellPassive>Passive</spellPassive>: Shyvana generates <keywordMajor>@Fury_Generation@ Dragon Fury</keywordMajor> by striking enemies with Attacks and Abilities, increased by @TT_Fury_Mult@ while in <keywordMajor>Dragon Form</keywordMajor>, and reduced @TT_Fury_AoE_Penalty@ by when striking in an area against non-champions.<br><br><spellActive>Active</spellActive>: Shyvana transforms into her <keywordMajor>Dragon Form</keywordMajor>, becoming <attention>Unstoppable</attention>, and flying to the target location breathing fire on enemies below dealing <magicDamage>@Damage@ magic damage</magicDamage> and causing them <status>Flee for @FearDuration@ seconds</status>.<br><br>While transformed, Shyvana's basic Abilities are upgraded, she gains <scaleHealth>@Calc_Bonus_Health@ bonus Health</scaleHealth>, size, and Attack Range. Shyvana loses <keywordMajor>Dragon Fury</keywordMajor> over time and her transformation ends when she has no <keywordMajor>Dragon Fury</keywordMajor> remaining.",
+            "keyTooltip": "<spellPassive>Passive</spellPassive>: Shyvana generates <keywordMajor>@Fury_Generation@ Dragon Fury</keywordMajor> by striking enemies with Attacks and Abilities, increased by @TT_Fury_Mult@ while in <keywordMajor>Dragon Form</keywordMajor>, and reduced @TT_Fury_AoE_Penalty@ by when striking in an area against non-champions.<br><br><spellActive>Active</spellActive>: Shyvana transforms into her <keywordMajor>Dragon Form</keywordMajor>, becoming <attention>Unstoppable</attention>, and flying to the target location breathing fire on enemies below dealing <magicDamage>@Damage@ magic damage</magicDamage> and causing them <status>Flee for @FearDuration@ second</status>.<br><br>While transformed, Shyvana's basic Abilities are upgraded, she gains <scaleHealth>@Calc_Bonus_Health@ bonus Health</scaleHealth>, size, and Attack Range. Shyvana loses <keywordMajor>Dragon Fury</keywordMajor> over time and her transformation ends when she has no <keywordMajor>Dragon Fury</keywordMajor> remaining.",
             "keyTooltipExtendedBelowLine": "<rules>Shyvana gains <keywordMajor>@FuryGainPerUltHaste.3@ Fury generation</keywordMajor> per second per 1 Ultimate Ability Haste.</rules>"
           },
           "mObjectName": "ShyvanaR",
@@ -2745,9 +2736,8 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.07500000298023224,
+              "mCoefficient": 0.05000000074505806,
               "mStat": 12,
-              "mStatFormula": 2,
               "~class": "StatByCoefficientCalculationPart"
             }
           ],

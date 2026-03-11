@@ -696,7 +696,7 @@
     "desc": "Your <status>Slowing</status> effects reduce <speed>Movement Speed</speed> by an extra @ExtraSlowAmount@.",
     "tooltip": "Your <status>Slowing</status> effects reduce <speed>Movement Speed</speed> by an extra @ExtraSlowAmount@.",
     "dataValues": {
-      "ExtraSlowAmount": 100.0,
+      "ExtraSlowAmount": 75.0,
       "SlowDuration": 1.0
     },
     "icons": [
@@ -2585,7 +2585,7 @@
     "desc": "Attacks fire a bolt that applies {{ Item_Keyword_OnHit }} effects at reduced strength. Gain <attackSpeed>@AttackSpeed*100@% total Attack Speed</attackSpeed>.",
     "tooltip": "When you Attack, fire a bolt that deals @AttackReduction*100@% damage and applies your {{ Item_Keyword_OnHit }} effects at @OnHitMod*100@% effectiveness. Gain <attackSpeed>@AttackSpeed*100@% total Attack Speed</attackSpeed>.",
     "dataValues": {
-      "AttackSpeed": 0.20000000298023224,
+      "AttackSpeed": 0.10000000149011612,
       "AttackReduction": 0.4000000059604645,
       "OnHitMod": 0.4000000059604645,
       "SecondMissileDelay": 0.15000000596046448
@@ -2657,9 +2657,9 @@
     "desc": "Your <speed>Attack Speed</speed> becomes @StaticRatio@. All Bonus <speed>Attack Speed</speed> is converted to <scaleAD>Attack Damage</scaleAD>. (<scaleAD>@BaseAD@ Plus @ADPerAS@AD</scaleAD> per <speed>1% AS</speed>).<br>",
     "tooltip": "{{Kiwi_SlowAndSteady_Summary}}<br><br>Currently Gaining: @f1@ <scaleAD>Attack Damage</scaleAD>",
     "dataValues": {
-      "StaticRatio": 0.625,
-      "ASMultiplier": 100.0,
-      "BaseAD": 25.0
+      "StaticRatio": 1.0,
+      "ASMultiplier": 60.0,
+      "BaseAD": 40.0
     },
     "calculations": {
       "ADPerAS": {
@@ -2725,7 +2725,7 @@
     "desc": "<keywordMajor>Autocast</keywordMajor><br>Gain movement speed and conjure three flames that orbit you, targetting the closest visible enemy in range and dealing adaptive damage.",
     "tooltip": "<keywordMajor>Autocast</keywordMajor>: Gain <speed>@MovementSpeed*100@% movement speed</speed> and conjure three flames that orbit you every @Cooldown@ seconds, targetting the closest visible enemy in range and dealing @SingleFireDamage@ adaptive damage. Subsequent hits do @RepeatDamageMod*100@% damage.<br><br>Damage Dealt Total: @f1@",
     "dataValues": {
-      "MovementSpeed": 0.4000000059604645,
+      "MovementSpeed": 0.25,
       "MovementSpeedDuration": 2.0,
       "MinionBonusDamageMultiplier": 2.0,
       "MinionBonusDamageThreshold": 0.20000000298023224,
@@ -4642,7 +4642,7 @@
     "tooltip": "Gain <speed>@SpeedPerHit@ Movement Speed</speed> when damaging an enemy champion with an Ability, decaying over @SpeedDuration@ seconds.",
     "dataValues": {
       "SpeedPerHit": 200.0,
-      "SpeedDuration": 1.0
+      "SpeedDuration": 0.75
     },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/SpeedDemon_small.tex",
@@ -4858,14 +4858,14 @@
     "desc": "Gain <spellName>Droppybara</spellName> as a Summoner Spell.<br><br><rules>After a delay, call down a capybara that deals <trueDamage>@DamagetoChampions*100@% max Health true damage</trueDamage>.</rules>",
     "tooltip": "After @LaserDelay@ seconds, a Capybara lands on the ground, dealing <trueDamage>@DamagetoChampions*100@% max Health true damage</trueDamage>.",
     "dataValues": {
-      "DamagetoChampions": 0.25,
-      "AOESize": 550.0,
+      "DamagetoChampions": 0.30000001192092896,
+      "AOESize": 650.0,
       "CastRange": 1000.0,
       "TickRate": 0.25,
       "GroundDuration": 3.0,
       "LaserDelay": 2.0,
       "MinionMod": 0.699999988079071,
-      "SlowAmount": 0.3499999940395355
+      "SlowAmount": 0.44999998807907104
     },
     "calculations": {
       "DamagePerTick": {
@@ -5004,7 +5004,7 @@
     "tooltip": "Every @BaseCD@ seconds, <keywordMajor>Autocast</keywordMajor> a sparkly tiara descends upon you. When it lands, gain Rakan's Ultimate, charming enemies you touch.",
     "dataValues": {
       "BaseCD": 25.0,
-      "CharmDuration": 2.0,
+      "CharmDuration": 1.5,
       "Radius": 300.0,
       "WarningDelay": 2.5,
       "MoveSpeedPercent": 0.5,
@@ -5106,7 +5106,7 @@
       "Radius": 300.0,
       "Gold_Healing_Interval": 1000.0,
       "Gold": 150.0,
-      "Catch_Gold": 15.0,
+      "Catch_Gold": 50.0,
       "Distance_Outlier_Threshold": 4500.0
     },
     "calculations": {
@@ -5318,16 +5318,16 @@
         "mFormulaParts": [
           {
             "mEndValue": 40.0,
-            "mStartValue": 10.0,
+            "mStartValue": 20.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           },
           {
-            "mCoefficient": 0.3499999940395355,
+            "mCoefficient": 0.4000000059604645,
             "mStat": 2,
             "~class": "StatByCoefficientCalculationPart"
           },
           {
-            "mCoefficient": 0.20000000298023224,
+            "mCoefficient": 0.25,
             "~class": "StatByCoefficientCalculationPart"
           }
         ],
@@ -5375,7 +5375,7 @@
                 "~class": "Breakpoint"
               }
             ],
-            "mLevel1Value": 0.027499999850988388,
+            "mLevel1Value": 0.042500000447034836,
             "~class": "ByCharLevelBreakpointsCalculationPart"
           }
         ],
@@ -5746,7 +5746,7 @@
       "Calc_Damage": {
         "mFormulaParts": [
           {
-            "mCoefficient": 0.03500000014901161,
+            "mCoefficient": 0.04500000178813934,
             "~class": "AbilityResourceByCoefficientCalculationPart"
           }
         ],
