@@ -1325,26 +1325,26 @@
         {
           "name": "SpearLength",
           "values": [
-            370.0,
-            370.0,
-            370.0,
-            370.0,
-            370.0,
-            370.0,
-            370.0
+            325.0,
+            325.0,
+            325.0,
+            325.0,
+            325.0,
+            325.0,
+            325.0
           ],
           "~class": "SpellDataValue"
         },
         {
           "name": "APRatio",
           "values": [
+            0.30000001192092896,
             0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355
+            0.4000000059604645,
+            0.44999998807907104,
+            0.5,
+            0.550000011920929,
+            0.6000000238418579
           ],
           "~class": "SpellDataValue"
         }
@@ -1448,8 +1448,15 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
+                  "type": "BaseDamage",
                   "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Total AP Ratio",
+                  "type": "APRatio",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -1481,15 +1488,6 @@
       "mDoesNotConsumeMana": true,
       "mEffectAmount": [
         {
-          "value": [
-            60.0,
-            60.0,
-            80.0,
-            100.0,
-            120.0,
-            140.0,
-            160.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
@@ -1544,15 +1542,6 @@
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            325.0,
-            325.0,
-            325.0,
-            325.0,
-            325.0,
-            325.0,
-            325.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
@@ -1591,15 +1580,14 @@
         "TotalDamage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mDataValue": "APRatio",
               "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
-          "tooltipOnly": true,
           "~class": "GameCalculation"
         }
       },
@@ -2208,13 +2196,13 @@
         {
           "name": "APRatio",
           "values": [
-            0.25,
-            0.32499998807907104,
-            0.4000000059604645,
-            0.4749999940395355,
-            0.550000011920929,
-            0.625,
-            0.699999988079071
+            0.2750000059604645,
+            0.3499999940395355,
+            0.42500001192092896,
+            0.5,
+            0.574999988079071,
+            0.6499999761581421,
+            0.7250000238418579
           ],
           "~class": "SpellDataValue"
         },
@@ -2574,7 +2562,7 @@
             {
               "mBreakpoints": [
                 {
-                  "mBonusPerLevelAtAndAfter": 7.0,
+                  "mBonusPerLevelAtAndAfter": 8.0,
                   "mLevel": 10,
                   "~class": "Breakpoint"
                 }
