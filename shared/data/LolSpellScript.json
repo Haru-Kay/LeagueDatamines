@@ -1,0 +1,893 @@
+{
+  "0x23ab76e2": {
+    "ScriptName": "_GlobalWASDAttackHandler",
+    "globalProperties": {
+      "PersistsThroughDeath": true,
+      "~class": "ScriptGlobalProperties"
+    },
+    "path": "0x23ab76e2",
+    "sequences": {
+      "0x2b218079": {
+        "blocks": [
+          {
+            "0xd851ffa3": "1faace7e-e764-4faa-8d5c-820db8352d2b",
+            "Condition": {
+              "~class": "0x0"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "31e0e32e-625b-4644-9e7d-f581b72b295d",
+                  "Condition": {
+                    "~class": "0x0"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "0xd851ffa3": "0842c2f1-2537-46e6-afcd-2b3301ac8cce",
+                        "Condition": {
+                          "Operation": 2,
+                          "Value1": {
+                            "Var": "0xabe0217",
+                            "~class": "ScriptTableGet"
+                          },
+                          "Value2": {
+                            "~class": "FloatGet"
+                          },
+                          "~class": "ComparisonScriptCondition"
+                        },
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "~class": "0x0"
+                            },
+                            {
+                              "~class": "0x0"
+                            },
+                            {
+                              "0xd851ffa3": "fd478738-8532-4686-bf47-9fe947c0e207",
+                              "Dest": {
+                                "Var": "moveFollowUpPos",
+                                "~class": "ScriptTableSet"
+                              },
+                              "Formula": "(ptp.outMoveInput * (ptp.ownerMoveSpeed * 0.5)) + ptp.ownerPosition",
+                              "~class": "0x15ebaa9c"
+                            },
+                            {
+                              "~class": "0x0"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "~class": "0xe524b2fc"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0x6742f5c2": {
+        "blocks": [
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "6132ed53-962e-4df0-aa0d-4a188f9b67aa",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "AttackQueued",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "BoolGet"
+            },
+            "~class": "SetVarInTableBlock"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0x69523460": {
+        "blocks": [
+          {
+            "0xd851ffa3": "bc0036b6-c0b3-40d5-a1f1-e24016728dd1",
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "78835a57-5403-4539-9769-8ed34d2f0a82",
+                  "~class": "ScriptCommentBlock"
+                },
+                {
+                  "0xd851ffa3": "aeddc71f-84bb-4231-8413-2cbf23dc12c3",
+                  "Dest": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "AllowCancel",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "~class": "BoolGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "0xd851ffa3": "b45801af-3d4e-4053-8cea-f1c11893821d",
+                  "~class": "ScriptCommentBlock"
+                },
+                {
+                  "0xd851ffa3": "1afa5e58-6535-4e50-b68b-b37350fedccd",
+                  "Dest": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "RangeForgiveness",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "~class": "BoolGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "0xd851ffa3": "a10964de-02c6-4b6a-8691-519f17ea8512",
+                  "Dest": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "ForgivenessDistance",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": 100.0,
+                    "~class": "FloatGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "0xd851ffa3": "d5850aff-ade2-4327-befd-1715f3b1ab3c",
+                  "Dest": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "ForgivenessDuration",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": 0.25,
+                    "~class": "FloatGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "0xd851ffa3": "c407c500-b895-4af8-926a-9fb3ca80d4d9",
+                  "Dest": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "ForgivenessOverrideExpirationTime",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": 0.25,
+                    "~class": "FloatGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "0xd851ffa3": "897ac768-9e80-4993-afed-83489498573d",
+                  "~class": "ScriptCommentBlock"
+                },
+                {
+                  "0xd851ffa3": "d08e7d8d-26db-4ac0-bcf9-5d9117538fa7",
+                  "Dest": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "TimingForgiveness",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": true,
+                    "~class": "BoolGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "0xd851ffa3": "8064c045-b707-4c11-9c28-e23117f30bde",
+                  "Dest": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "QueueDuration",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": 0.5,
+                    "~class": "FloatGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "ScriptCommentBlock"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "d38ae9f1-9d76-4206-9fd1-b041df0c2e8a",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "AttackFinishedTime",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "df038475-0490-4137-885e-47e183525be3",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "AttackQueued",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "BoolGet"
+            },
+            "~class": "SetVarInTableBlock"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0x72b0d61f": {
+        "blocks": [
+          {
+            "0xd851ffa3": "c966d873-0caf-4994-81be-e2c714186fca",
+            "Condition": {
+              "Value1": {
+                "Table": {
+                  "~class": "InstanceVars"
+                },
+                "Var": "0x3321a580",
+                "~class": "BoolTableGet"
+              },
+              "Value2": {
+                "~class": "BoolGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "eb112f23-20ab-44a6-ae43-e5ba63f2a74b",
+                  "Condition": {
+                    "Value1": {
+                      "Var": "0xf12e3a42",
+                      "~class": "BoolTableGet"
+                    },
+                    "Value2": {
+                      "value": true,
+                      "~class": "BoolGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "12848623-c33d-43a4-8a42-1a6f13b3402b",
+                        "Condition": {
+                          "Value1": {
+                            "Var": "Order",
+                            "~class": "IntTableGet"
+                          },
+                          "Value2": {
+                            "value": 2,
+                            "~class": "IntGet"
+                          },
+                          "~class": "ComparisonScriptCondition"
+                        },
+                        "~class": "0xe524b2fc"
+                      },
+                      {
+                        "0xd851ffa3": "3a1f62a7-6778-4eb7-8b63-3b8de85f260f",
+                        "Condition": {
+                          "Value1": {
+                            "Var": "Order",
+                            "~class": "IntTableGet"
+                          },
+                          "Value2": {
+                            "value": 10,
+                            "~class": "IntGet"
+                          },
+                          "~class": "ComparisonScriptCondition"
+                        },
+                        "type": 2,
+                        "~class": "0xe524b2fc"
+                      },
+                      {
+                        "0xd851ffa3": "ab48dd8c-ad3c-4e17-b561-84c6a4ae7381",
+                        "Condition": {
+                          "Value1": {
+                            "Var": "Order",
+                            "~class": "IntTableGet"
+                          },
+                          "Value2": {
+                            "value": 1,
+                            "~class": "IntGet"
+                          },
+                          "~class": "ComparisonScriptCondition"
+                        },
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "~class": "0x0"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "type": 2,
+                        "~class": "0xe524b2fc"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "f32b3d83-a216-452a-82c3-513f3ad50f2d",
+            "Condition": {
+              "Value1": {
+                "Table": {
+                  "~class": "InstanceVars"
+                },
+                "Var": "0xf1f44f2b",
+                "~class": "BoolTableGet"
+              },
+              "Value2": {
+                "value": true,
+                "~class": "BoolGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "0287f0c8-8305-4340-9578-14d8e0cb69b9",
+                  "Condition": {
+                    "Value1": {
+                      "Var": "Order",
+                      "~class": "IntTableGet"
+                    },
+                    "Value2": {
+                      "value": 3,
+                      "~class": "IntGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "0xd851ffa3": "6afa54e9-a05b-4d86-90c3-dee819e1f0c8",
+                        "Dest": {
+                          "Var": "AllowedAttackDistance",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Formula": "ptp.CurrentAttackRange + iv.ForgivenessDistance",
+                        "~class": "0x15ebaa9c"
+                      },
+                      {
+                        "0xd851ffa3": "b6dd0675-59b9-4956-bab0-9eb5b83cdd9f",
+                        "Condition": {
+                          "Operation": 5,
+                          "Value1": {
+                            "Var": "Distance",
+                            "~class": "FloatTableGet"
+                          },
+                          "Value2": {
+                            "Var": "0x34ac39b4",
+                            "~class": "FloatTableGet"
+                          },
+                          "~class": "ComparisonScriptCondition"
+                        },
+                        "~class": "0xe524b2fc"
+                      },
+                      {
+                        "0xd851ffa3": "9561e027-a7bb-4a03-b12d-72d4893e5ba9",
+                        "Condition": {
+                          "Operation": 2,
+                          "Value1": {
+                            "Var": "Distance",
+                            "~class": "FloatTableGet"
+                          },
+                          "Value2": {
+                            "Var": "0x25156ea3",
+                            "~class": "FloatTableGet"
+                          },
+                          "~class": "ComparisonScriptCondition"
+                        },
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "~class": "0x0"
+                            },
+                            {
+                              "0xd851ffa3": "5864528c-3d8e-4394-991d-6e311eeba804",
+                              "Dest": {
+                                "Table": {
+                                  "~class": "InstanceVars"
+                                },
+                                "Var": "ForgivenessOverrideExpirationTime",
+                                "~class": "ScriptTableSet"
+                              },
+                              "Formula": "ptp.CurrentTime + iv.ForgivenessDuration",
+                              "~class": "0x15ebaa9c"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "type": 1,
+                        "~class": "0xe524b2fc"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "65f96fc2-2665-4fff-9cd4-a6fdb9853706",
+                  "Condition": {
+                    "Value1": {
+                      "Var": "Order",
+                      "~class": "IntTableGet"
+                    },
+                    "Value2": {
+                      "value": 2,
+                      "~class": "IntGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "78c5d0b5-1b76-4f49-af23-028776045262",
+                  "Condition": {
+                    "Value1": {
+                      "Var": "Order",
+                      "~class": "IntTableGet"
+                    },
+                    "Value2": {
+                      "value": 10,
+                      "~class": "IntGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "type": 2,
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "6abf7046-b142-4137-bbe1-74e05591eb01",
+                  "Condition": {
+                    "Value1": {
+                      "Var": "Order",
+                      "~class": "IntTableGet"
+                    },
+                    "Value2": {
+                      "value": 1,
+                      "~class": "IntGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "0xd851ffa3": "b4f84486-94b9-4dcb-af19-5106875669d0",
+                        "Dest": {
+                          "Var": "PostAttackTime",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Formula": "iv.AttackFinishedTime + iv.ForgivenessDuration",
+                        "~class": "0x15ebaa9c"
+                      },
+                      {
+                        "0xd851ffa3": "796dbd1f-39f0-4014-ad6e-4470b9610c91",
+                        "Condition": {
+                          "Operation": 4,
+                          "Value1": {
+                            "Var": "currentTime",
+                            "~class": "FloatTableGet"
+                          },
+                          "Value2": {
+                            "Table": {
+                              "~class": "InstanceVars"
+                            },
+                            "Var": "0x8fbf4a4e",
+                            "~class": "FloatTableGet"
+                          },
+                          "~class": "ComparisonScriptCondition"
+                        },
+                        "~class": "0xe524b2fc"
+                      },
+                      {
+                        "0xd851ffa3": "bea5b6c6-7ebd-47a2-b4d9-183a9079c3e2",
+                        "Condition": {
+                          "Value1": {
+                            "Var": "currentTime",
+                            "~class": "FloatTableGet"
+                          },
+                          "Value2": {
+                            "Var": "0x96d235de",
+                            "~class": "FloatTableGet"
+                          },
+                          "~class": "ComparisonScriptCondition"
+                        },
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "~class": "0x0"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "type": 1,
+                        "~class": "0xe524b2fc"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "type": 2,
+                  "~class": "0xe524b2fc"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "f0c3d3e4-df3b-41e7-bc43-47f49b04ffdd",
+            "Condition": {
+              "Value1": {
+                "Table": {
+                  "~class": "InstanceVars"
+                },
+                "Var": "0x90b6a18c",
+                "~class": "BoolTableGet"
+              },
+              "Value2": {
+                "value": true,
+                "~class": "BoolGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "17b37bc1-f161-4380-9119-83e29a30304d",
+                  "Condition": {
+                    "Value1": {
+                      "Var": "Order",
+                      "~class": "IntTableGet"
+                    },
+                    "Value2": {
+                      "value": 3,
+                      "~class": "IntGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "0xd851ffa3": "3696c206-bc0c-4d0d-acac-0a39e88e2093",
+                        "Condition": {
+                          "Value1": {
+                            "Table": {
+                              "~class": "InstanceVars"
+                            },
+                            "Var": "0x11325f6c",
+                            "~class": "BoolTableGet"
+                          },
+                          "Value2": {
+                            "~class": "BoolGet"
+                          },
+                          "~class": "ComparisonScriptCondition"
+                        },
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "0xd851ffa3": "efd2c483-79c1-459e-b7e3-f6d34a02e837",
+                              "Dest": {
+                                "Table": {
+                                  "~class": "InstanceVars"
+                                },
+                                "Var": "AttackQueued",
+                                "~class": "ScriptTableSet"
+                              },
+                              "Src": {
+                                "value": true,
+                                "~class": "BoolGet"
+                              },
+                              "~class": "SetVarInTableBlock"
+                            },
+                            {
+                              "0xd851ffa3": "0aa93763-fff1-4156-bacf-6ba966a754d0",
+                              "Dest": {
+                                "Var": "QueueDuration",
+                                "~class": "ScriptTableSet"
+                              },
+                              "Src": {
+                                "value": 0.5,
+                                "~class": "FloatGet"
+                              },
+                              "~class": "SetVarInTableBlock"
+                            },
+                            {
+                              "0xd851ffa3": "8fa091f5-b3df-413b-8314-d2be18b28768",
+                              "Dest": {
+                                "Var": "QueuedCommandInterval",
+                                "~class": "ScriptTableSet"
+                              },
+                              "Src": {
+                                "value": 0.03500000014901161,
+                                "~class": "FloatGet"
+                              },
+                              "~class": "SetVarInTableBlock"
+                            },
+                            {
+                              "0xd851ffa3": "315cb501-f924-4693-bfbd-9f546e5f9614",
+                              "Dest": {
+                                "Var": "Iterations",
+                                "~class": "ScriptTableSet"
+                              },
+                              "Formula": "ptp.QueueDuration / ptp.QueuedCommandInterval",
+                              "~class": "0x15ebaa9c"
+                            },
+                            {
+                              "0xd851ffa3": "b8eea718-7a5a-4746-848a-8f25ea2aeb1c",
+                              "Dest": {
+                                "Var": "DelayTable",
+                                "~class": "CustomTableSet"
+                              },
+                              "~class": "CreateCustomTableBlock"
+                            },
+                            {
+                              "0xd851ffa3": "dc46b180-e692-4d56-a848-b3c758712a18",
+                              "Dest": {
+                                "Var": "i",
+                                "~class": "IntTableSet"
+                              },
+                              "End": {
+                                "value": "Iterations",
+                                "~class": "0xed030d64"
+                              },
+                              "Sequence": {
+                                "blocks": [
+                                  {
+                                    "0xd851ffa3": "c4e07041-6660-4c05-a792-85b6f642defb",
+                                    "Dest": {
+                                      "Var": "ThisDelay",
+                                      "~class": "ScriptTableSet"
+                                    },
+                                    "Formula": "ptp.QueuedCommandInterval * ptp.i",
+                                    "~class": "0x15ebaa9c"
+                                  },
+                                  {
+                                    "0xd851ffa3": "29c224b3-d09d-4437-9ce1-0a03a5f00cdd",
+                                    "DestTable": {
+                                      "Var": "0xd6eefe5c",
+                                      "~class": "CustomTableGet"
+                                    },
+                                    "value": {
+                                      "Var": "0x3acb5b74",
+                                      "~class": "FloatTableGet"
+                                    },
+                                    "~class": "InsertIntoCustomTableBlock"
+                                  }
+                                ],
+                                "~class": "ScriptSequence"
+                              },
+                              "Start": {
+                                "~class": "IntGet"
+                              },
+                              "~class": "LoopBlock"
+                            },
+                            {
+                              "0xd851ffa3": "b5730411-7e9f-4f3c-aa03-112379824553",
+                              "DestKey": {
+                                "Var": "unused",
+                                "~class": "ScriptTableSet"
+                              },
+                              "DestValue": {
+                                "Var": "Delay",
+                                "~class": "ScriptTableSet"
+                              },
+                              "Sequence": {
+                                "blocks": [
+                                  {
+                                    "~class": "0x0"
+                                  }
+                                ],
+                                "~class": "ScriptSequence"
+                              },
+                              "SortedByKeys": {
+                                "~class": "BoolGet"
+                              },
+                              "Table": {
+                                "Var": "0xd6eefe5c",
+                                "~class": "CustomTableGet"
+                              },
+                              "~class": "ForEachInCustomTableBlock"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "~class": "0xe524b2fc"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0xa7f1cc4e": {
+        "blocks": [
+          {
+            "0xd851ffa3": "fd750fb0-88c8-4bbe-8f53-409f8f9de9a1",
+            "Condition": {
+              "~class": "0x0"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "0cb3a101-8177-4981-b4bd-76948f0d0e30",
+                  "Condition": {
+                    "~class": "0x0"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "0xd851ffa3": "66efe2ef-4a0b-43c1-a52c-99f8ea74db22",
+                        "Condition": {
+                          "Operation": 2,
+                          "Value1": {
+                            "Var": "0xabe0217",
+                            "~class": "ScriptTableGet"
+                          },
+                          "Value2": {
+                            "~class": "FloatGet"
+                          },
+                          "~class": "ComparisonScriptCondition"
+                        },
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "~class": "0x0"
+                            },
+                            {
+                              "~class": "0x0"
+                            },
+                            {
+                              "0xd851ffa3": "690535e7-e591-4e07-ae5f-2ec52fceb2f6",
+                              "Dest": {
+                                "Var": "moveFollowUpPos",
+                                "~class": "ScriptTableSet"
+                              },
+                              "Formula": "(ptp.outMoveInput * (ptp.ownerMoveSpeed * 0.5)) + ptp.ApproxPos",
+                              "~class": "0x15ebaa9c"
+                            },
+                            {
+                              "~class": "0x0"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "~class": "0xe524b2fc"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0xc3eeee42": {
+        "blocks": [
+          {
+            "0xd851ffa3": "8d6f9eb5-6299-4116-a345-3c866f0a488e",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "InAttack",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "value": true,
+              "~class": "BoolGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "859423a5-3afd-4295-8658-885f2cd061fd",
+            "Dest": {
+              "Table": {
+                "~class": "InstanceVars"
+              },
+              "Var": "AttackQueued",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "BoolGet"
+            },
+            "~class": "SetVarInTableBlock"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      }
+    },
+    "~class": "LolSpellScript"
+  }
+}
