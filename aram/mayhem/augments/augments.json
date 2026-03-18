@@ -5211,11 +5211,11 @@
     "apiName": "ARAM_Poro_Blast",
     "name": "Poro Blaster",
     "rarity": "Gold",
-    "desc": "You gather Poros over time. Damaging an enemy fires all Poros at them, each dealing <trueDamage>max Health true damage</trueDamage> and briefly <status>Knocking Back</status>.",
-    "tooltip": "You gather Poros over time. Damaging an enemy fires all Poros at them, each dealing target's <trueDamage>@MaxHealthRatio*100@% max Health true damage</trueDamage> and briefly <status>Knocking Back</status>.",
+    "desc": "You gather Poros over time. Damaging an enemy fires all Poros at them, each dealing <trueDamage>max Health true damage</trueDamage>. If you have 5 Poros, they will <status>Knock Back</status> once.",
+    "tooltip": "You gather Poros over time. Damaging an enemy fires all Poros at them, each dealing target's <trueDamage>@MaxHealthRatio*100@% max Health true damage</trueDamage>. If you have 5 Poros, they will <status>Knock Back</status> once.",
     "dataValues": {
       "MaxHealthRatio": 0.029999999329447746,
-      "SpawnFrequency_Seconds": 5.0
+      "SpawnFrequency_Seconds": 3.5
     },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/PoroBlast_small.tex",
@@ -6204,24 +6204,25 @@
       "Remnant_Duration": 5.0,
       "Move_Speed_Duration": 1.0,
       "Detection_Radius": 1000.0,
-      "Remnant_Spawn_Cooldown": 0.75
+      "Remnant_Spawn_Cooldown": 0.75,
+      "DotDamageCooldown": 1.5
     },
     "calculations": {
       "0x21a86d0d": {
         "mFormulaParts": [
           {
-            "mEndValue": 150.0,
-            "mStartValue": 50.0,
+            "mEndValue": 250.0,
+            "mStartValue": 100.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           },
           {
-            "mCoefficient": 0.5,
+            "mCoefficient": 0.6000000238418579,
             "mStat": 2,
             "mStatFormula": 2,
             "~class": "StatByCoefficientCalculationPart"
           },
           {
-            "mCoefficient": 0.25,
+            "mCoefficient": 0.30000001192092896,
             "~class": "StatByCoefficientCalculationPart"
           }
         ],
@@ -6233,22 +6234,6 @@
         "mFormulaParts": [
           {
             "mNumber": 0.20000000298023224,
-            "~class": "NumberCalculationPart"
-          }
-        ],
-        "mSimpleTooltipCalculationDisplay": 5,
-        "~class": "GameCalculation"
-      },
-      "0x820b6b7a": {
-        "mDisplayAsPercent": true,
-        "mExpandedTooltipCalculationDisplay": 5,
-        "mFormulaParts": [
-          {
-            "mDataValue": "Amp",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          {
-            "mNumber": -1.0,
             "~class": "NumberCalculationPart"
           }
         ],
