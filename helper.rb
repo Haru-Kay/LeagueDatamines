@@ -25,3 +25,8 @@ files.each { |f|
 }
 
 File.open("persists.json", 'wb') { |f| f.write(JSON.pretty_generate(spells)) }
+
+s = {}
+File.open("champions/shyvana/Spells.json",'rb') { |f| s = JSON.parse(f.read()) }
+s = s.sort_by { |k, v| v["ObjectName"] }.to_h
+File.open("champions/shyvana/Spells.json", 'wb') { |f| f.write(JSON.pretty_generate(s))}

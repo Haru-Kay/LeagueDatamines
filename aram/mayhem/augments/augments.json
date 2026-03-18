@@ -696,7 +696,7 @@
     "desc": "Your <status>Slowing</status> effects reduce <speed>Movement Speed</speed> by an extra @ExtraSlowAmount@.",
     "tooltip": "Your <status>Slowing</status> effects reduce <speed>Movement Speed</speed> by an extra @ExtraSlowAmount@.",
     "dataValues": {
-      "ExtraSlowAmount": 100.0,
+      "ExtraSlowAmount": 75.0,
       "SlowDuration": 1.0
     },
     "icons": [
@@ -1218,6 +1218,57 @@
         "~class": "GameCalculation"
       }
     },
+    "add": {
+      "Augment_ARAM_QuantumComputing_CamilleW": {
+        "dataValues": {
+          "BaseDamage": [
+            40.0,
+            70.0,
+            100.0,
+            130.0,
+            160.0,
+            190.0,
+            220.0
+          ],
+          "BADRatio": 0.6000000238418579,
+          "SlowDuration": 2.0,
+          "ChargeDuration": 0.75,
+          "SlowPercentage": 80.0,
+          "OuterConeMaxHPDamage": 0.10000000149011612,
+          "ADRequiredFor1PercentDamage": 35.0,
+          "ADRequiredTooltipOnly": 0.0002500000118743628,
+          "MonsterDamageReduction": 50.0,
+          "OuterConeHealingRatio": 80.0,
+          "MonsterHealingCap": 0.10000000149011612,
+          "BlastLength": 650.0,
+          "ConeAngle": 45.0,
+          "APRequiredFor1PercentDamage": 60.0,
+          "BonusHPRequiredFor1PercentDamag": 600.0
+        },
+        "calcs": {
+          "BaseDamageTotal": {
+            "mFormulaParts": [
+              {
+                "mEndValue": 350.0,
+                "mStartValue": 200.0,
+                "~class": "ByCharLevelInterpolationCalculationPart"
+              },
+              {
+                "mCoefficient": 0.8500000238418579,
+                "mStat": 2,
+                "mStatFormula": 2,
+                "~class": "StatByCoefficientCalculationPart"
+              },
+              {
+                "mCoefficient": 0.5,
+                "~class": "StatByCoefficientCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          }
+        }
+      }
+    },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/QuantumComputing_small.tex",
       "ASSETS/UX/Cherry/Augments/Icons/QuantumComputing_large.tex"
@@ -1704,6 +1755,25 @@
         "~class": "GameCalculation"
       }
     },
+    "add": {
+      "Augment_ARAM_TrueshotProdigy_EzrealR": {
+        "dataValues": {
+          "BaseDamage": [
+            200.0,
+            350.0,
+            500.0,
+            650.0,
+            800.0,
+            950.0,
+            1100.0
+          ],
+          "DamageReductionPerHit": 0.10000000149011612,
+          "MinimumDamagePercent": 0.30000001192092896,
+          "DamageReductionWaveclear": 0.5
+        },
+        "calcs": {}
+      }
+    },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/TrueshotProdigy_small.tex",
       "ASSETS/UX/Cherry/Augments/Icons/TrueshotProdigy_large.tex"
@@ -1745,6 +1815,14 @@
     "tooltip": "Refresh your Ultimate after casting it (@Cooldown@ seconds Cooldown or reset on death).",
     "dataValues": {
       "Cooldown": 75.0
+    },
+    "add": {
+      "Augment_ARAM_UltimateRevolution_Cooldown": {
+        "dataValues": {
+          "Cooldown": 90.0
+        },
+        "calcs": {}
+      }
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/UltimateRevolution_small.tex",
@@ -1909,6 +1987,15 @@
       "MovementSpeed": 1.0,
       "Duration": 10.0,
       "DisableCooldown": 3.0
+    },
+    "add": {
+      "Augment_ARAM_Homeguard_Duration": {
+        "dataValues": {
+          "DisableDuration": 3.0,
+          "MovementSpeed": 1.0
+        },
+        "calcs": {}
+      }
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/Homeguard_small.tex",
@@ -2385,6 +2472,14 @@
       "PolyCooldown": 15.0,
       "PolyDuration": 2.0
     },
+    "add": {
+      "Augment_ARAM_FeyMagic_Cooldown": {
+        "dataValues": {
+          "Cooldown": 8.0
+        },
+        "calcs": {}
+      }
+    },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/FeyMagic_small.tex",
       "ASSETS/UX/Cherry/Augments/Icons/FeyMagic_large.tex"
@@ -2585,7 +2680,7 @@
     "desc": "Attacks fire a bolt that applies {{ Item_Keyword_OnHit }} effects at reduced strength. Gain <attackSpeed>@AttackSpeed*100@% total Attack Speed</attackSpeed>.",
     "tooltip": "When you Attack, fire a bolt that deals @AttackReduction*100@% damage and applies your {{ Item_Keyword_OnHit }} effects at @OnHitMod*100@% effectiveness. Gain <attackSpeed>@AttackSpeed*100@% total Attack Speed</attackSpeed>.",
     "dataValues": {
-      "AttackSpeed": 0.20000000298023224,
+      "AttackSpeed": 0.10000000149011612,
       "AttackReduction": 0.4000000059604645,
       "OnHitMod": 0.4000000059604645,
       "SecondMissileDelay": 0.15000000596046448
@@ -2725,7 +2820,7 @@
     "desc": "<keywordMajor>Autocast</keywordMajor><br>Gain movement speed and conjure three flames that orbit you, targetting the closest visible enemy in range and dealing adaptive damage.",
     "tooltip": "<keywordMajor>Autocast</keywordMajor>: Gain <speed>@MovementSpeed*100@% movement speed</speed> and conjure three flames that orbit you every @Cooldown@ seconds, targetting the closest visible enemy in range and dealing @SingleFireDamage@ adaptive damage. Subsequent hits do @RepeatDamageMod*100@% damage.<br><br>Damage Dealt Total: @f1@",
     "dataValues": {
-      "MovementSpeed": 0.4000000059604645,
+      "MovementSpeed": 0.25,
       "MovementSpeedDuration": 2.0,
       "MinionBonusDamageMultiplier": 2.0,
       "MinionBonusDamageThreshold": 0.20000000298023224,
@@ -2777,6 +2872,66 @@
           }
         ],
         "~class": "GameCalculation"
+      }
+    },
+    "add": {
+      "Augment_ARAM_Firefox_Spell": {
+        "dataValues": {
+          "MovementSpeed": 0.25,
+          "MovementSpeedDuration": 2.0,
+          "MinionBonusDamageMultiplier": 2.0,
+          "MinionBonusDamageThreshold": 0.20000000298023224,
+          "BaseDamage": [
+            80.0,
+            105.0,
+            130.0,
+            155.0,
+            180.0,
+            205.0,
+            230.0
+          ],
+          "RepeatDamageMod": 0.30000001192092896,
+          "AcquisitionRange": 550.0,
+          "BonusAcquisitionRange": 725.0,
+          "InitialDelay": 0.25,
+          "SecondaryDelay": 0.4000000059604645,
+          "FlameDuration": 2.5,
+          "OrbitRadius": 150.0,
+          "Cooldown": 7.0
+        },
+        "calcs": {
+          "MultiFireDamage": {
+            "mModifiedGameCalculation": "SingleFireDamage",
+            "mMultiplier": {
+              "mDataValue": "RepeatDamageMod",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            "mSimpleTooltipCalculationDisplay": 6,
+            "~class": "GameCalculationModified"
+          },
+          "SingleFireDamage": {
+            "mExpandedTooltipCalculationDisplay": 4,
+            "mFormulaParts": [
+              {
+                "mEndValue": 200.0,
+                "mStartValue": 45.0,
+                "~class": "ByCharLevelInterpolationCalculationPart"
+              },
+              {
+                "mCoefficient": 0.4000000059604645,
+                "~class": "StatByCoefficientCalculationPart"
+              },
+              {
+                "mCoefficient": 0.25,
+                "mStat": 2,
+                "mStatFormula": 2,
+                "~class": "StatByCoefficientCalculationPart"
+              }
+            ],
+            "mSimpleTooltipCalculationDisplay": 4,
+            "~class": "GameCalculation"
+          }
+        }
       }
     },
     "icons": [
@@ -2862,6 +3017,154 @@
           }
         ],
         "~class": "GameCalculation"
+      }
+    },
+    "add": {
+      "Augment_ARAM_ClownCollege_Backstab": {
+        "dataValues": {
+          "PerUnitCD": 3.0,
+          "MonsterCritMod": 2.0,
+          "APRatio": 0.4000000059604645,
+          "CloneMult": 0.75,
+          "ShivSlowAmount": -0.4000000059604645,
+          "ShredDuration": 4.0,
+          "ShivExecuteDamagePercent": 1.5,
+          "AttackBonusADRatio": 0.5
+        },
+        "calcs": {
+          "0x3445d362": {
+            "mFormulaParts": [
+              {
+                "mCoefficient": 1.0,
+                "mStat": 9,
+                "mStatFormula": 1,
+                "~class": "StatByCoefficientCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "BasicAttackDamage": {
+            "mFormulaParts": [
+              {
+                "mEndValue": 35.0,
+                "mStartValue": 20.0,
+                "~class": "ByCharLevelInterpolationCalculationPart"
+              },
+              {
+                "mDataValue": "AttackBonusADRatio",
+                "mStat": 2,
+                "mStatFormula": 2,
+                "~class": "StatByNamedDataValueCalculationPart"
+              },
+              {
+                "mCoefficient": 0.3499999940395355,
+                "~class": "StatByCoefficientCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "MonsterDamageTooltip": {
+            "mFormulaParts": [
+              {
+                "mStat": 2,
+                "mSubpart": {
+                  "mSubparts": [
+                    {
+                      "mDataValue": "MonsterCritMod",
+                      "~class": "NamedDataValueCalculationPart"
+                    },
+                    {
+                      "mCoefficient": 1.0,
+                      "mStat": 9,
+                      "mStatFormula": 2,
+                      "~class": "StatByCoefficientCalculationPart"
+                    }
+                  ],
+                  "~class": "SumOfSubPartsCalculationPart"
+                },
+                "~class": "StatBySubPartCalculationPart"
+              },
+              {
+                "mDataValue": "APRatio",
+                "~class": "StatByNamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "ShivDamage": {
+            "mFormulaParts": [
+              {
+                "mEndValue": 50.0,
+                "mStartValue": 15.0,
+                "~class": "ByCharLevelInterpolationCalculationPart"
+              },
+              {
+                "mCoefficient": 0.10000000149011612,
+                "~class": "StatByCoefficientCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "ShivDamageExecute": {
+            "mModifiedGameCalculation": "ShivDamage",
+            "mMultiplier": {
+              "mDataValue": "ShivExecuteDamagePercent",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            "~class": "GameCalculationModified"
+          }
+        }
+      },
+      "Augment_ARAM_ClownCollege_Deceive": {
+        "dataValues": {
+          "BaseDamage": 100.0,
+          "StealthDuration": 3.0,
+          "CDRefund": 2.5,
+          "ExtraAATime": 0.25,
+          "PseudoCastTime": 0.125
+        },
+        "calcs": {
+          "QCritDamageMod": {
+            "mDisplayAsPercent": true,
+            "mFormulaParts": [
+              {
+                "mSubparts": [
+                  {
+                    "mNumber": 1.5499999523162842,
+                    "~class": "NumberCalculationPart"
+                  },
+                  {
+                    "mCoefficient": 1.0,
+                    "mStat": 9,
+                    "mStatFormula": 2,
+                    "~class": "StatByCoefficientCalculationPart"
+                  }
+                ],
+                "~class": "SumOfSubPartsCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "TotalDamage": {
+            "mFormulaParts": [
+              {
+                "mDataValue": "baseDamage",
+                "~class": "NamedDataValueCalculationPart"
+              },
+              {
+                "mCoefficient": 1.5,
+                "mStat": 2,
+                "mStatFormula": 2,
+                "~class": "StatByCoefficientCalculationPart"
+              },
+              {
+                "mCoefficient": 0.550000011920929,
+                "~class": "StatByCoefficientCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          }
+        }
       }
     },
     "icons": [
@@ -3327,6 +3630,17 @@
       "MaxStack": 10.0,
       "BuffDuration": 6.0
     },
+    "add": {
+      "Augment_CriticalRhythmBuff": {
+        "dataValues": {
+          "ASPerStack": 0.05999999865889549,
+          "CritChance": 0.25,
+          "MaxStack": 10.0,
+          "BuffDuration": 6.0
+        },
+        "calcs": {}
+      }
+    },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/CriticalRhythm_small.tex",
       "ASSETS/UX/Kiwi/Augments/Icons/CriticalRhythm_large.tex"
@@ -3425,6 +3739,54 @@
           }
         ],
         "~class": "GameCalculation"
+      }
+    },
+    "add": {
+      "Augment_LaserHeal_LaserBeam": {
+        "dataValues": {
+          "DegreesPerSec": 40.0,
+          "BeamWidth": 175.0,
+          "APRatio": 0.5,
+          "HealAPRatio": 0.699999988079071,
+          "bHealthRatio": 0.5,
+          "MoveSpeedMod": 0.20000000298023224
+        },
+        "calcs": {
+          "TotalDamage": {
+            "mFormulaParts": [
+              {
+                "mEndValue": 300.0,
+                "mStartValue": 50.0,
+                "~class": "ByCharLevelInterpolationCalculationPart"
+              },
+              {
+                "mDataValue": "APRatio",
+                "~class": "StatByNamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "TotalHeal": {
+            "mFormulaParts": [
+              {
+                "mEndValue": 550.0,
+                "mStartValue": 200.0,
+                "~class": "ByCharLevelInterpolationCalculationPart"
+              },
+              {
+                "mDataValue": "HealAPRatio",
+                "~class": "StatByNamedDataValueCalculationPart"
+              },
+              {
+                "mDataValue": "0x434a3b2a",
+                "mStat": 12,
+                "mStatFormula": 2,
+                "~class": "StatByNamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          }
+        }
       }
     },
     "icons": [
@@ -3739,6 +4101,54 @@
         "~class": "GameCalculation"
       }
     },
+    "add": {
+      "Augment_LaserHeal_LaserBeam": {
+        "dataValues": {
+          "DegreesPerSec": 40.0,
+          "BeamWidth": 175.0,
+          "APRatio": 0.5,
+          "HealAPRatio": 0.699999988079071,
+          "bHealthRatio": 0.5,
+          "MoveSpeedMod": 0.20000000298023224
+        },
+        "calcs": {
+          "TotalDamage": {
+            "mFormulaParts": [
+              {
+                "mEndValue": 300.0,
+                "mStartValue": 50.0,
+                "~class": "ByCharLevelInterpolationCalculationPart"
+              },
+              {
+                "mDataValue": "APRatio",
+                "~class": "StatByNamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "TotalHeal": {
+            "mFormulaParts": [
+              {
+                "mEndValue": 550.0,
+                "mStartValue": 200.0,
+                "~class": "ByCharLevelInterpolationCalculationPart"
+              },
+              {
+                "mDataValue": "HealAPRatio",
+                "~class": "StatByNamedDataValueCalculationPart"
+              },
+              {
+                "mDataValue": "0x434a3b2a",
+                "mStat": 12,
+                "mStatFormula": 2,
+                "~class": "StatByNamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          }
+        }
+      }
+    },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/LaseHeal_small.tex",
       "ASSETS/UX/Kiwi/Augments/Icons/LaseHeal_large.tex"
@@ -3773,6 +4183,31 @@
           }
         ],
         "~class": "GameCalculation"
+      }
+    },
+    "add": {
+      "Augment_Upgrade_MikaelsBlessing_MilioR": {
+        "dataValues": {
+          "TenacityDuration": 3.0,
+          "TenacityAmount": 0.6499999761581421,
+          "HealFXDelay": 0.10000000149011612
+        },
+        "calcs": {
+          "HealCalc": {
+            "mFormulaParts": [
+              {
+                "mEndValue": 450.0,
+                "mStartValue": 150.0,
+                "~class": "ByCharLevelInterpolationCalculationPart"
+              },
+              {
+                "mCoefficient": 0.5,
+                "~class": "StatByCoefficientCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          }
+        }
       }
     },
     "icons": [
@@ -3906,6 +4341,29 @@
           }
         ],
         "~class": "GameCalculation"
+      }
+    },
+    "add": {
+      "Augment_FinalForm_Buff": {
+        "dataValues": {
+          "MaxHealthShield": 0.5,
+          "LifeSteal": 0.20000000298023224,
+          "MSBonus": 0.30000001192092896,
+          "AugDuration": 10.0,
+          "Cooldown": 20.0
+        },
+        "calcs": {
+          "ShieldAmount": {
+            "mFormulaParts": [
+              {
+                "mDataValue": "MaxHealthShield",
+                "mStat": 12,
+                "~class": "StatByNamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          }
+        }
       }
     },
     "icons": [
@@ -4466,6 +4924,15 @@
       "InvulnerabilityDuration": 1.5,
       "Haste": 100.0
     },
+    "add": {
+      "Augment_GoldenSnowball_InvulnerabilityBuff": {
+        "dataValues": {
+          "InvulnerabilityDuration": 1.0,
+          "Haste": 100.0
+        },
+        "calcs": {}
+      }
+    },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/GoldenSnowball_small.tex",
       "ASSETS/UX/Kiwi/Augments/Icons/GoldenSnowball_large.tex"
@@ -4593,7 +5060,6 @@
     "apiName": "ARAM_StatsOnStatsOnStats",
     "name": "Stats on Stats on Stats!",
     "rarity": "Prismatic",
-    "disabled": true,
     "desc": "Gain @AmountOfStatAnvils@ Stat Anvils, with a higher chance of Gold and Prismatic Anvils!<br><br>On your next Augment selection, gain one additional reroll per slot.",
     "tooltip": "Gain @AmountOfStatAnvils@ Stat Anvils, with a higher chance of Gold and Prismatic Anvils!<br><br>On your next Augment selection, gain one additional reroll per slot.",
     "dataValues": {
@@ -4609,7 +5075,6 @@
     "apiName": "ARAM_StatsOnStats",
     "name": "Stats on Stats!",
     "rarity": "Gold",
-    "disabled": true,
     "desc": "Gain @AmountOfStatAnvils@ Stat Anvils, with a higher chance of Gold and Prismatic Anvils!",
     "tooltip": "Gain @AmountOfStatAnvils@ Stat Anvils, with a higher chance of Gold and Prismatic Anvils!",
     "dataValues": {
@@ -4625,7 +5090,6 @@
     "apiName": "ARAM_Stats",
     "name": "Stats!",
     "rarity": "Silver",
-    "disabled": true,
     "desc": "Gain @AmountOfStatAnvils@ Stat Anvils!",
     "tooltip": "Gain @AmountOfStatAnvils@ Stat Anvils!",
     "dataValues": {
@@ -4645,7 +5109,7 @@
     "tooltip": "Gain <speed>@SpeedPerHit@ Movement Speed</speed> when damaging an enemy champion with an Ability, decaying over @SpeedDuration@ seconds.",
     "dataValues": {
       "SpeedPerHit": 200.0,
-      "SpeedDuration": 1.0
+      "SpeedDuration": 0.75
     },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/SpeedDemon_small.tex",
@@ -4861,14 +5325,14 @@
     "desc": "Gain <spellName>Droppybara</spellName> as a Summoner Spell.<br><br><rules>After a delay, call down a capybara that deals <trueDamage>@DamagetoChampions*100@% max Health true damage</trueDamage>.</rules>",
     "tooltip": "After @LaserDelay@ seconds, a Capybara lands on the ground, dealing <trueDamage>@DamagetoChampions*100@% max Health true damage</trueDamage>.",
     "dataValues": {
-      "DamagetoChampions": 0.25,
-      "AOESize": 550.0,
+      "DamagetoChampions": 0.30000001192092896,
+      "AOESize": 650.0,
       "CastRange": 1000.0,
       "TickRate": 0.25,
       "GroundDuration": 3.0,
       "LaserDelay": 2.0,
       "MinionMod": 0.699999988079071,
-      "SlowAmount": 0.3499999940395355
+      "SlowAmount": 0.44999998807907104
     },
     "calculations": {
       "DamagePerTick": {
@@ -4993,6 +5457,146 @@
     "dataValues": {
       "Cooldown": 10.0
     },
+    "add": {
+      "Augment_Sonata_SonaE": {
+        "dataValues": {
+          "SelfBaseMovementSpeed": 0.30000001192092896,
+          "AllyBaseMovementSpeed": [
+            0.20000000298023224,
+            0.2199999988079071,
+            0.23999999463558197,
+            0.25999999046325684,
+            0.2800000011920929,
+            0.30000001192092896,
+            0.3199999928474426
+          ],
+          "SelfMovementSpeedDurationMin": 3.0,
+          "SelfMovementSpeedDurationMax": 7.0,
+          "AllyMovementSpeedDuration": 3.0,
+          "AuraRange": 400.0,
+          "AuraDuration": 3.0,
+          "BaseGlobalCD": 0.5,
+          "TempoDuration": 2.0
+        },
+        "calcs": {
+          "TotalAllyMovementSpeed": {
+            "mDisplayAsPercent": true,
+            "mFormulaParts": [
+              {
+                "mDataValue": "AllyBaseMovementSpeed",
+                "~class": "NamedDataValueCalculationPart"
+              },
+              {
+                "mCoefficient": 0.00019999999494757503,
+                "~class": "StatByCoefficientCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "TotalSelfMovementSpeed": {
+            "mDisplayAsPercent": true,
+            "mFormulaParts": [
+              {
+                "mDataValue": "SelfBaseMovementSpeed",
+                "~class": "NamedDataValueCalculationPart"
+              },
+              {
+                "mCoefficient": 0.00019999999494757503,
+                "~class": "StatByCoefficientCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "TotalTempoMoveSpeedSlow": {
+            "mDisplayAsPercent": true,
+            "mFormulaParts": [
+              {
+                "mNumber": 0.5,
+                "~class": "NumberCalculationPart"
+              },
+              {
+                "mCoefficient": 0.00039999998989515007,
+                "~class": "StatByCoefficientCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          }
+        }
+      },
+      "Augment_Sonata_SonaW": {
+        "dataValues": {
+          "BaseHeal": [
+            60.0,
+            75.0,
+            90.0,
+            105.0,
+            120.0,
+            135.0,
+            150.0
+          ],
+          "AuraDuration": 3.0,
+          "AuraRange": 400.0,
+          "BaseGlobalCD": 0.5,
+          "DiminuendoDuration": 3.0,
+          "HealRange": 1000.0,
+          "ShieldDuration": 1.5,
+          "AccelerandoShieldBreakpoint": [
+            5.0,
+            25.0,
+            45.0,
+            65.0,
+            85.0,
+            105.0,
+            125.0
+          ],
+          "HealRatio": 0.6000000238418579,
+          "ShieldRatio": 0.4000000059604645,
+          "BaseShield": 80.0
+        },
+        "calcs": {
+          "TotalDiminuendoWeakenPercent": {
+            "mDisplayAsPercent": true,
+            "mFormulaParts": [
+              {
+                "mNumber": 0.25,
+                "~class": "NumberCalculationPart"
+              },
+              {
+                "mCoefficient": 0.00039999998989515007,
+                "~class": "StatByCoefficientCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "TotalHeal": {
+            "mFormulaParts": [
+              {
+                "mDataValue": "BaseHeal",
+                "~class": "NamedDataValueCalculationPart"
+              },
+              {
+                "mDataValue": "HealRatio",
+                "~class": "StatByNamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "TotalShield": {
+            "mFormulaParts": [
+              {
+                "mDataValue": "BaseShield",
+                "~class": "NamedDataValueCalculationPart"
+              },
+              {
+                "mDataValue": "ShieldRatio",
+                "~class": "StatByNamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          }
+        }
+      }
+    },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/Sonata_small.tex",
       "ASSETS/UX/Kiwi/Augments/Icons/Sonata_large.tex"
@@ -5007,10 +5611,11 @@
     "tooltip": "Every @BaseCD@ seconds, <keywordMajor>Autocast</keywordMajor> a sparkly tiara descends upon you. When it lands, gain Rakan's Ultimate, charming enemies you touch.",
     "dataValues": {
       "BaseCD": 25.0,
-      "CharmDuration": 2.0,
+      "CharmDuration": 1.5,
       "Radius": 300.0,
       "WarningDelay": 2.5,
-      "MoveSpeedPercent": 0.5
+      "MoveSpeedPercent": 0.5,
+      "PromQueenDuration": 6.0
     },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/PromQueen_small.tex",
@@ -5075,6 +5680,66 @@
         "~class": "GameCalculation"
       }
     },
+    "add": {
+      "Augment_ARAM_MissingPingAugment_Mis": {
+        "dataValues": {
+          "BaseDmg": 100.0,
+          "BaseHeal": 100.0,
+          "MaxMult": 2.0
+        },
+        "calcs": {
+          "0x4f1ed7f6": {
+            "mFormulaParts": [
+              {
+                "mEndValue": 200.0,
+                "mStartValue": 50.0,
+                "~class": "ByCharLevelInterpolationCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "0xe77cbd0c": {
+            "mFormulaParts": [
+              {
+                "mEndValue": 300.0,
+                "mStartValue": 100.0,
+                "~class": "ByCharLevelInterpolationCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          }
+        }
+      },
+      "Augment_ARAM_MissingPingAugment_Mis2": {
+        "dataValues": {
+          "BaseDmg": 100.0,
+          "BaseHeal": 100.0,
+          "MaxMult": 2.0
+        },
+        "calcs": {
+          "0x4f1ed7f6": {
+            "mFormulaParts": [
+              {
+                "mEndValue": 200.0,
+                "mStartValue": 50.0,
+                "~class": "ByCharLevelInterpolationCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "0xe77cbd0c": {
+            "mFormulaParts": [
+              {
+                "mEndValue": 300.0,
+                "mStartValue": 100.0,
+                "~class": "ByCharLevelInterpolationCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          }
+        }
+      }
+    },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/MissingPing_small.tex",
       "ASSETS/UX/Kiwi/Augments/Icons/MissingPing_large.tex"
@@ -5108,7 +5773,7 @@
       "Radius": 300.0,
       "Gold_Healing_Interval": 1000.0,
       "Gold": 150.0,
-      "Catch_Gold": 15.0,
+      "Catch_Gold": 50.0,
       "Distance_Outlier_Threshold": 4500.0
     },
     "calculations": {
@@ -5211,7 +5876,7 @@
     "name": "Bounce of the Poro King",
     "rarity": "Prismatic",
     "desc": "Replace a Summoner Spell with <spellName>Bounce of the Poro King</spellName>!<br><br><rules><spellName>Bounce of the Poro King</spellName>: Transform into the Poro King, becoming Unstoppable and Ghosted. Gain damage reduction and <speed>Movement Speed</speed>, but become Silenced and unable to Attack. Additionally, bounce repeatedly, dealing <physicalDamage>physical damage</physicalDamage> and <status>Knocking Back</status> nearby enemies.</rules>",
-    "tooltip": "Replace a Summoner Spell with <spellName>Bounce of the Poro King</spellName>!<br><br><spellName>Bounce of the Poro King</spellName>: For @Buff_Duration@ seconds, transform into the Poro King! You are now Unstoppable and Ghosted. Gain @Calc_Damage_Reduction@ damage reduction and <speed>@Calc_MoveSpeed@ Movement Speed</speed>, but become Silenced and unable to Attack.<br><br>Additionally, bounce every 1 second, dealing <physicalDamage>@Calc_Damage@ physical damage</physicalDamage> and <status>Knock Back</status> nearby enemies on landing.<br><br><rules>The Poro King cannot <status>Knock Back</status> the same enemy more than once per cast.<br><br>Damage Prevented: @f1.0@<br>Damage Dealt: @f2.0@<br>Enemies Bounced: @f3.0@</rules>",
+    "tooltip": "Replace a Summoner Spell with <spellName>Bounce of the Poro King</spellName>!<br><br><spellName>Bounce of the Poro King</spellName>: For @Buff_Duration@ seconds, transform into the Poro King! You are now Unstoppable and Ghosted. Gain @Calc_Damage_Reduction@ damage reduction and <speed>@Calc_MoveSpeed@ Movement Speed</speed>, but become Silenced and unable to Attack.<br><br>Additionally, bounce every 1 second, dealing <physicalDamage>@Calc_Damage@ physical damage</physicalDamage> and <status>Knock Back</status> nearby enemy champions on landing.<br><br><rules>The Poro King cannot <status>Knock Back</status> the same enemy more than once per cast.<br><br>Damage Prevented: @f1.0@<br>Damage Dealt: @f2.0@<br>Enemies Bounced: @f3.0@</rules>",
     "dataValues": {
       "Poro_Augment_Amp": 1.0,
       "Buff_Duration": 3.0
@@ -5252,6 +5917,67 @@
         "~class": "GameCalculation"
       }
     },
+    "add": {
+      "Augment_ARAM_PoroKing_Transform": {
+        "dataValues": {
+          "Poro_Augment_Amp": 1.0,
+          "Buff_Duration": 3.0
+        },
+        "calcs": {
+          "0x6b74500e": {
+            "mDisplayAsPercent": true,
+            "mExpandedTooltipCalculationDisplay": 5,
+            "mFormulaParts": [
+              {
+                "mNumber": 0.8500000238418579,
+                "~class": "NumberCalculationPart"
+              }
+            ],
+            "mSimpleTooltipCalculationDisplay": 5,
+            "~class": "GameCalculation"
+          },
+          "Calc_Damage": {
+            "mFormulaParts": [
+              {
+                "mEndValue": 300.0,
+                "mStartValue": 100.0,
+                "~class": "ByCharLevelInterpolationCalculationPart"
+              },
+              {
+                "mCoefficient": 0.05000000074505806,
+                "mStat": 12,
+                "mStatFormula": 2,
+                "~class": "StatByCoefficientCalculationPart"
+              },
+              {
+                "mCoefficient": 1.0,
+                "mStat": 2,
+                "mStatFormula": 2,
+                "~class": "StatByCoefficientCalculationPart"
+              },
+              {
+                "mCoefficient": 0.5,
+                "mStatFormula": 2,
+                "~class": "StatByCoefficientCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "Calc_MoveSpeed": {
+            "mDisplayAsPercent": true,
+            "mExpandedTooltipCalculationDisplay": 5,
+            "mFormulaParts": [
+              {
+                "mNumber": 0.25,
+                "~class": "NumberCalculationPart"
+              }
+            ],
+            "mSimpleTooltipCalculationDisplay": 5,
+            "~class": "GameCalculation"
+          }
+        }
+      }
+    },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/PoroKing_small.tex",
       "ASSETS/UX/Kiwi/Augments/Icons/PoroKing_large.tex"
@@ -5266,7 +5992,8 @@
     "tooltip": "<healing>Healing</healing> or <shield>Shielding</shield> an ally blesses them for @Buff_Duration@ seconds. When blessed allies deal damage to enemy champions, gain stacks of <keywordMajor>Devotion</keywordMajor>. At @Devotion_Threshold@ <keywordMajor>Devotion</keywordMajor>, unleash a shockwave that deals <magicDamage>@Calc_Damage@ magic damage</magicDamage> and executes enemies below <scaleHealth>@Calc_Execute_Threshold@ Health</scaleHealth>.<br><br><rules>Damage Dealt: @f1.0@<br>Faithless Killed: @f2.0@</rules>",
     "dataValues": {
       "Buff_Duration": 8.0,
-      "Devotion_Threshold": 50.0
+      "Devotion_Threshold": 50.0,
+      "Dot_Cooldown": 1.0
     },
     "calculations": {
       "0x31e71824": {
@@ -5319,16 +6046,16 @@
         "mFormulaParts": [
           {
             "mEndValue": 40.0,
-            "mStartValue": 10.0,
+            "mStartValue": 20.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           },
           {
-            "mCoefficient": 0.3499999940395355,
+            "mCoefficient": 0.4000000059604645,
             "mStat": 2,
             "~class": "StatByCoefficientCalculationPart"
           },
           {
-            "mCoefficient": 0.20000000298023224,
+            "mCoefficient": 0.25,
             "~class": "StatByCoefficientCalculationPart"
           }
         ],
@@ -5376,7 +6103,7 @@
                 "~class": "Breakpoint"
               }
             ],
-            "mLevel1Value": 0.027499999850988388,
+            "mLevel1Value": 0.042500000447034836,
             "~class": "ByCharLevelBreakpointsCalculationPart"
           }
         ],
@@ -5747,7 +6474,7 @@
       "Calc_Damage": {
         "mFormulaParts": [
           {
-            "mCoefficient": 0.03500000014901161,
+            "mCoefficient": 0.04500000178813934,
             "~class": "AbilityResourceByCoefficientCalculationPart"
           }
         ],

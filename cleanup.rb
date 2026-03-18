@@ -304,11 +304,14 @@ def augmentSearcher(key, data, version=0)
             "tooltip" => data.fetch("AugmentTooltipTra", ""),
             "dataValues" => {},
             "calculations" => {},
+            "add" => {},
             "icons" => [
                 data.fetch("AugmentSmallIconPath", ""),
                 data.fetch("AugmentLargeIconPath", "")            
             ]
         }
+
+        linkedObjects = data.fetch("0x40c7b66f", [])
 
         spellName = data.dig("RootSpell")
         if spellName
@@ -318,8 +321,8 @@ def augmentSearcher(key, data, version=0)
                 dataValues = mSpell.fetch("DataValues", [])
 
                 dataValues.each { |component|
-                    name = component["mName"]
-                    values = component["mValues"] || []
+                    name = component["name"]
+                    values = component["values"] || []
                     puts "#{spellName} ::: #{name}" if !values
                     values = values[0] if values.uniq.length == 1
                     aug["dataValues"].store(name, values)
@@ -330,9 +333,31 @@ def augmentSearcher(key, data, version=0)
                 
             end
         end
+        linkedObjects.each { |obj|
+            spellObject = (version == 0 ? $arena : $aramMayhem).dig(obj)
+            if spellObject && spellObject["~class"] == "SpellObject" && spellObject.key?("mSpell")
+                mSpell = spellObject.fetch("mSpell", {})
+                dataValues = mSpell.fetch("DataValues", [])
+                str = spellObject.fetch("ObjectName", obj)
+                aug["add"][str] = { "dataValues" => {}, "calcs" => {} }
+                
+                dataValues.each { |component|
+                    name = component["name"]
+                    values = component["values"] || []
+                    puts "#{spellName} ::: #{name}" if !values
+                    values = values[0] if values.uniq.length == 1
+                    aug["add"][str]["dataValues"].store(name, values)
+                }
+
+                calcs = mSpell.fetch("mSpellCalculations", {})
+                aug["add"][str]["calcs"] = calcs
+                
+            end
+        }
+        aug["add"]&.delete_if { |augKey, augValue| ["dataValues", "calculations"].any? { |a| augValue[a]&.empty? }}
         aug.delete_if { |augKey, augValue|
             (augKey == "disabled" && augValue == false) ||
-            (["dataValues", "calculations"].any? { |a| augKey == a } && augValue.empty?)
+            (["dataValues", "calculations", "add"].any? { |a| augKey == a } && augValue.empty?)
         }
         aug["name"] = $lang.fetch(aug["name"].downcase, aug["name"])
         aug["desc"] = $lang.fetch(aug["desc"].downcase, aug["desc"])
@@ -375,8 +400,8 @@ def augmentSetBuilder(key, data, version=0)
         dataValues = mSpell.fetch("DataValues", [])
 
         dataValues.each { |component|
-            name = component["mName"]
-            values = component["mValues"] || []
+            name = component["name"]
+            values = component["values"] || []
             puts "#{spellName} ::: #{name}" if !values
             out = []
             for i in set["breakpoints"]
@@ -553,7 +578,7 @@ print "done.\n"
         Dir.mkdir("shared/#{dir}") unless Dir.exist?("shared/#{dir}")
     }
     shared = {}
-    File.open("temp/data/maps/shipping/map12/map12.json", 'rb') { |f| shared = JSON.parse(f.read()) }
+    File.open("temp/data/maps/shipping/common/common.json", 'rb') { |f| shared = JSON.parse(f.read()) }
     shared = shared.fetch("entries", shared)
     sharedSort = {}
     shared.each { |key, data|
@@ -988,7 +1013,7 @@ Dir.mkdir("characters/shared")
 
             champ.extend(Hashie::Extensions::DeepFind)
             dataNames = {}
-            champ.deep_find_all("mName")&.each { |n|
+            champ.deep_find_all("name")&.each { |n|
                 dataNames.store("0x#{fnv(n.downcase)}", n)
             }
 
