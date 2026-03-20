@@ -3843,7 +3843,7 @@
     "name": "Snowball Upgrade",
     "rarity": "Gold",
     "desc": "Gain @AbilityHaste@ Ability Haste on <spellName>Snowball</spellName>. Hitting an enemy creates a snowfall that deals <magic>AoE damage</magic> and <status>Slows</status> nearby enemies.<br><br><rules>If you don't have one, gain a <spellName>Snowball</spellName>.</rules><br>",
-    "tooltip": "Gain @AbilityHaste@ Ability Haste on your Snowball. <br>Hitting a target reveals an area, <status>Slowing</status> enemies by @TotalSlowAmount@ and dealing <magicDamage>@TotalDamagePerSecond@ magic damage</magicDamage> per second for @BaseDuration@ seconds (total <magicDamage>@TotalDamage@ magic damage</magicDamage>).",
+    "tooltip": "Gain @AbilityHaste@ Ability Haste on your Snowball. <br>Hitting a target creates an area that <status>Slows</status> enemies by @TotalSlowAmount@ and deals <magicDamage>@TotalDamagePerSecond@ magic damage</magicDamage> per second for @BaseDuration@ seconds (total <magicDamage>@TotalDamage@ magic damage</magicDamage>).<br><br><br>",
     "dataValues": {
       "AbilityHaste": 50.0,
       "BaseDamagePerSecond": 100.0,
@@ -5775,12 +5775,13 @@
     "name": "Void Rift",
     "rarity": "Prismatic",
     "desc": "Damaging enemies with Abilities creates a Void scar. If there is another Void scar nearby, both are consumed to create a rift between them, dealing <magicDamage>magic damage</magicDamage> and <status>Slowing</status> enemies inside.",
-    "tooltip": "Damaging enemies with an Ability creates a Void scar for @Lifetime@ seconds. If another Void scar is created nearby, both are consumed to create a rift between them, dealing <magicDamage>@Calc_Damage@ magic damage</magicDamage> to enemies inside and <status>Slowing by @Calc_Slow_Amount@</status>, decaying over @Slow_Duration@ second.<br><br><rules>Damage Dealt: @f1.0@</rules>",
+    "tooltip": "Damaging enemies with an Ability creates a Void scar for @Lifetime@ seconds. If another Void scar is created nearby, both are consumed to create a rift between them, dealing <magicDamage>@Calc_Damage@ magic damage</magicDamage> to enemies inside and <status>Slowing by @Calc_Slow_Amount@</status>, decaying over @Slow_Duration@ second. (@Cooldown@ second cooldown)<br><br><rules>Damage Dealt: @f1.0@</rules>",
     "dataValues": {
       "Cast_Delay": 0.6000000238418579,
       "Detection_Range": 1250.0,
       "Lifetime": 6.0,
-      "Slow_Duration": 1.0
+      "Slow_Duration": 1.0,
+      "Cooldown": 1.0
     },
     "calculations": {
       "0x300db355": {
@@ -6148,7 +6149,7 @@
     "name": "Devil on Your Shoulder",
     "rarity": "Prismatic",
     "desc": "Forge a pact with The Little Devil himself. He drains your life over time but rewards you for violence by applying bonus true damage against champions and creating healing remnants for you to acquire.",
-    "tooltip": "You've forged a pact with the Little Devil himself. He <omnivamp>drains @Calc_Drain_Per_Second_Non_Combat@ of your current Health per second, increased to @Calc_Drain_Per_Second@ if there are nearby enemies</omnivamp>.<br><br>In return, he amplifies your Attacks and Abilities to deal an additional <trueDamage>@Calc_Damage_Amp@ true damage</trueDamage>, which cause a <omnivamp>Life Remnant</omnivamp> to appear nearby for @Remnant_Duration@ seconds.<br><br>Absorbing a <omnivamp>Life Remnant</omnivamp> <healing>heals you for @Calc_Remnant_Healing@</healing> and grants you <speed>@Calc_Move_Speed@ Movement Speed</speed> for @Move_Speed_Duration@ second.<br><br><rules>Health Drained: @f1.0@<br>Damage Dealt: @f2.0@<br>Remnants Acquired: @f4.0@<br>Health Restored: @f5.0@</rules>",
+    "tooltip": "You've forged a pact with the Little Devil himself. He <omnivamp>drains @Calc_Drain_Per_Second_Non_Combat@ of your current Health per second, increased to @Calc_Drain_Per_Second@ if there are nearby enemies</omnivamp>.<br><br>In return, he amplifies your Attacks and Abilities to deal an additional <trueDamage>@Calc_Damage_Amp@ true damage</trueDamage>, which cause a <omnivamp>Life Remnant</omnivamp> to appear nearby for @Remnant_Duration@ seconds.<br><br>Absorbing a <omnivamp>Life Remnant</omnivamp> <healing>heals you for @Calc_Remnant_Healing@</healing> and grants you <speed>@Calc_Move_Speed@ Movement Speed</speed> for @Move_Speed_Duration@ second.<br><br><rules>Health Drained: @f1.0@<br>Damage Dealt: @f2.0@<br>Remnants Acquired: @f4.0@<br>Health Restored: @f5.0@<br>Periodic damage has a @DotDamageCooldown@ second cooldown</rules>",
     "dataValues": {
       "Amp_Duration": 8.0,
       "Amp": 2.0,
