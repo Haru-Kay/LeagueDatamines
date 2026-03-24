@@ -2,76 +2,31 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 ## Champions
 
-**If a champion is not listed here, they now match the data shown in [Phroxzon's post](https://x.com/RiotPhroxzon/status/2031605723172659310).**
+**Nami**
 
-**Azir**
+* W Bounce Multiplier: -10% (+10% AP) -> -20% (+15% AP)
 
-* Q AP Ratio: 35% AP -> 35/40/45/50/55% AP
-* Q Spear Length: 370 -> 325 
-  * Note: Azir used a mix of two value definitions, with them at different values. This change first happened in V13.7. It was likely changed using the older value definition back then, but I am noting it regardless.
+**Ornn**
 
-**Skarner**
+* Brittle Damage: 10-18% max Health -> 9-16% max Health
+  * Level 20 Damage: 18.94% -> 16.82%
 
-* E Cooldown from last post still present (22-18s -> 22-16s).
+**Rell**
 
-**Zaahen**
+* E Bonus MS: 10/25% MS -> 15/30% MS
+* R Damage per Second: 60/100/140 (+55% AP) -> 75/125/175 (+55% AP)
+  * Damage per Tick: 15/25/35 (13.75% AP) -> 18.75/31.25/43.75 (+13.75% AP)
 
-* W1 Damage: Unchanged, 40-120 (+50% bonus AD)
-* W2 Damage: 40/60/80/100/120 (+50% bonus AD) -> 30/50/70/90/110 (+30% bonus AD)
+**Renekton**
 
-## Arena (Items)
+* Casting W will now break stealth.
 
-**Crown of the Shattered Queen**
+**Shyvana**
 
-* Shield Damage Reduction: 50% -> 90%
-* Shield Linger Duration: 3 seconds -> 1.25 seconds
+* Ult Haste bonus: +0.015 per Ult Haste per Second -> 1% per Ult Haste bonus Fury from *all generation sources*
+ * This is a slight nerf to passive Fury gain, but a 6-126% increase to *active* Fury gain, given items and runes
+ * Reasonably 30/61% bonus, with Ult Haste + Hexplate
 
-**Diamond-Tipped Spear**
+**Veigar**
 
-* Damage Amp Max Range: 1000 units -> 800 units
-* Max Ability Damage Amp: 40% -> 50%
-
-**Divine Sunderer**
-
-* Max Health Damage: 4% melee/2% ranged -> 6% melee/4% ranged
-* Damage to Healing Ratio: 55% -> 70%
-
-**Endless Hunger**
-
-* Item Anvil description changed back to the incorrect version?
-
-**Fiendhunter Bolts**
-
-* Cooldown: 60 seconds -> 20 seconds
-
-**Goredrinker**
-
-* Heal: 15% (+20% base AD) missing Health -> 18% (+35% base AD) missing Health
-
-**Hexoptics C44**
-
-* Damage Amp Max Range: 700 units -> 500 units
-
-**Night Harvester**
-
-* Damage: 125 (+15% AP) -> 160 (+40% AP)
-
-**Omnivamp Anvil**
-
-* Ranged Value: 12.5% -> 15%
-
-**Zeke's Convergence**
-
-* Cooldown: 30 seconds -> 20 seconds
-
-## ARAM: Mayhem (Augments)
-
-**Slow and Steady**
-
-* Reverted back to live.
-
-## ARAM: Mayhem (Items)
-
-**Atma's Reckoning**
-
-* Now correctly shows that it grants 10 ability haste.
+* R Cooldown: 100/80/60 seconds -> 120/90/60 seconds
