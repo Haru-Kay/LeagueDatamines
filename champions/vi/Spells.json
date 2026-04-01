@@ -455,8 +455,71 @@
             110.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "UnnamedEffectAmount0",
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BonusRange",
+          "values": [
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "AttackBuffDuration",
+          "values": [
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "StaticCooldown",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "ADRatio",
+              "values": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "bHaveHitBone": true,
       "castConeDistance": 100.0,
       "castFrame": 0.5,
@@ -1164,8 +1227,8 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mEffectIndex": 4,
-                "~class": "EffectValueCalculationPart"
+                "mDataValue": "SelfSlow",
+                "~class": "NamedDataValueCalculationPart"
               }
             ],
             "~class": "GameCalculation"
@@ -1351,6 +1414,45 @@
             0.5,
             0.5,
             0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SelfSlow",
+          "values": [
+            15.0,
+            15.0,
+            15.0,
+            15.0,
+            15.0,
+            15.0,
+            15.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ChargeDuration",
+          "values": [
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "VFXChargeDuration",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1550,7 +1652,7 @@
           "mLocKeys": {
             "keyName": "Vault Breaker",
             "keySummary": "Vi charges her gauntlets and unleashes a vault shattering punch, carrying her forward. Enemies she hits are knocked back and receive a stack of Denting Blows.",
-            "keyTooltip": "<charge>Begin Charging:</charge> Vi begins charging a powerful punch, <status>Slowing</status> herself by @Effect4Amount@%.<br><br><release>Release:</release> Vi dashes forward dealing between <physicalDamage>@TotalDamage@ and @MaxDamageTooltip@ physical damage</physicalDamage> based on charge time and applying <spellName>Denting Blows</spellName> to all enemies hit. Vi stops upon colliding with an enemy champion, and <status>Knocks</status> them <status>Back</status>.",
+            "keyTooltip": "<charge>Begin Charging:</charge> Vi begins charging a powerful punch, <status>Slowing</status> herself by @SelfSlow@%.<br><br><release>Release:</release> Vi dashes forward dealing between <physicalDamage>@TotalDamage@ and @MaxDamageTooltip@ physical damage</physicalDamage> based on charge time and applying <spellName>Denting Blows</spellName> to all enemies hit. Vi stops upon colliding with an enemy champion, and <status>Knocks</status> them <status>Back</status>.",
             "keyTooltipExtendedBelowLine": "<rules>Non-champions hit are pulled towards Vi.<br>If the charge is interrupted, this Ability goes on a 3 second Cooldown.</rules>"
           },
           "mObjectName": "ViQ",

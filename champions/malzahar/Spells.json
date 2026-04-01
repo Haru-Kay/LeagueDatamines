@@ -308,6 +308,10 @@
             4.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "UnnamedEffectAmount2",
+          "~class": "SpellDataValue"
         }
       ],
       "castConeDistance": 100.0,
@@ -708,8 +712,8 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mEffectIndex": 2,
-                "~class": "EffectValueCalculationPart"
+                "mDataValue": "SilenceDuration",
+                "~class": "NamedDataValueCalculationPart"
               }
             ],
             "~class": "GameCalculation"
@@ -725,6 +729,47 @@
     "mScriptName": "MalzaharQ",
     "mSpell": {
       "0x11704a2b": 0.25,
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            70.0,
+            70.0,
+            105.0,
+            140.0,
+            175.0,
+            210.0,
+            245.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SilenceDuration",
+          "values": [
+            1.0,
+            1.0,
+            1.25,
+            1.5,
+            1.75,
+            2.0,
+            2.25
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DelayPostCast",
+          "values": [
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "alwaysSnapFacing": true,
       "castConeDistance": 100.0,
       "castFrame": 7.5,
@@ -826,7 +871,7 @@
           "mLocKeys": {
             "keyName": "Call of the Void",
             "keySummary": "Malzahar opens up two portals to the Void. After a short delay, they fire projectiles that deal Magic Damage and silence enemy champions.",
-            "keyTooltip": "Malzahar opens two portals to the Void that fire projectiles inward, dealing <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage> and <status>Silencing</status> for @Effect2Amount@ second(s)."
+            "keyTooltip": "Malzahar opens two portals to the Void that fire projectiles inward, dealing <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage> and <status>Silencing</status> for @SilenceDuration@ second(s)."
           },
           "mObjectName": "MalzaharQ",
           "~class": "TooltipInstanceSpell"
@@ -900,8 +945,8 @@
         "TotalDamageTooltip": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.550000011920929,
@@ -1106,8 +1151,8 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mEffectIndex": 4,
-                "~class": "EffectValueCalculationPart"
+                "mDataValue": "CCDuration",
+                "~class": "NamedDataValueCalculationPart"
               }
             ],
             "~class": "GameCalculation"
@@ -1119,8 +1164,8 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mEffectIndex": 4,
-                "~class": "EffectValueCalculationPart"
+                "mDataValue": "CCDuration",
+                "~class": "NamedDataValueCalculationPart"
               }
             ],
             "~class": "GameCalculation"
@@ -1132,8 +1177,8 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mEffectIndex": 4,
-                "~class": "EffectValueCalculationPart"
+                "mDataValue": "CCDuration",
+                "~class": "NamedDataValueCalculationPart"
               }
             ],
             "~class": "GameCalculation"
@@ -1271,6 +1316,32 @@
             1250.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "PoolDuration",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "CCDuration",
+          "values": [
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -1387,7 +1458,7 @@
           "mLocKeys": {
             "keyName": "Nether Grasp",
             "keySummary": "Malzahar channels the essence of the Void to suppress an enemy champion over a zone of damaging negative energy.",
-            "keyTooltip": "Malzahar <status>Suppresses</status> an enemy champion and deals <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage> over @Effect4Amount@ seconds. A zone of negative energy is created around his target dealing <magicDamage>@ZoneDamageTooltip@ max Health magic damage</magicDamage> over @Effect3Amount@ seconds.",
+            "keyTooltip": "Malzahar <status>Suppresses</status> an enemy champion and deals <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage> over @CCDuration@ seconds. A zone of negative energy is created around his target dealing <magicDamage>@ZoneDamageTooltip@ max Health magic damage</magicDamage> over @PoolDuration@ seconds.",
             "keyTooltipExtendedBelowLine": "<rules>This Ability <status>Knocks Down</status> enemies.</rules>"
           },
           "mObjectName": "MalzaharR",
@@ -1670,6 +1741,32 @@
             0.20000000298023224,
             0.20000000298023224,
             0.20000000298023224
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "StackDuration",
+          "values": [
+            25000.0,
+            25000.0,
+            25000.0,
+            25000.0,
+            25000.0,
+            25000.0,
+            25000.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxStacks",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
           ],
           "~class": "SpellDataValue"
         }
@@ -2123,6 +2220,32 @@
             0.20000000298023224,
             0.20000000298023224,
             0.20000000298023224
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "StackDuration",
+          "values": [
+            25000.0,
+            25000.0,
+            25000.0,
+            25000.0,
+            25000.0,
+            25000.0,
+            25000.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxStacks",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
           ],
           "~class": "SpellDataValue"
         }
