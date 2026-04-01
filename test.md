@@ -2,76 +2,54 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 ## Champions
 
-**If a champion is not listed here, they now match the data shown in [Phroxzon's post](https://x.com/RiotPhroxzon/status/2031605723172659310).**
+**Braum**
 
-**Azir**
+* Q Base Damage: 75/120/165/210/255 -> 75/125/175/225/275
 
-* Q AP Ratio: 35% AP -> 35/40/45/50/55% AP
-* Q Spear Length: 370 -> 325 
-  * Note: Azir used a mix of two value definitions, with them at different values. This change first happened in V13.7. It was likely changed using the older value definition back then, but I am noting it regardless.
+**Hwei**
 
-**Skarner**
+* P New Rule: Slows from Hwei's abilities stack with each other at a diminishing rate (but not items or other sources)
+    * R slows (which already stack like this) will now stack with QE, EQ, EE slows.
 
-* E Cooldown from last post still present (22-18s -> 22-16s).
+**LeBlanc**
 
-**Zaahen**
+* W AP Ratio: 80% AP -> 70% AP
+* RW AP Ratio: 80% AP -> 75% AP
+* RE2 AP Ratio: 85% AP -> 80% AP
 
-* W1 Damage: Unchanged, 40-120 (+50% bonus AD)
-* W2 Damage: 40/60/80/100/120 (+50% bonus AD) -> 30/50/70/90/110 (+30% bonus AD)
+**Poppy**
 
-## Arena (Items)
+* Q Health Damage Cap vs Non-Champions: 50/80/110/140/170 -> 30/60/90/120/150
 
-**Crown of the Shattered Queen**
+## Items
 
-* Shield Damage Reduction: 50% -> 90%
-* Shield Linger Duration: 3 seconds -> 1.25 seconds
+**Staff of Flowing Water**
 
-**Diamond-Tipped Spear**
+* Buff tooltip no longer incorrectly states that it grants move speed.
 
-* Damage Amp Max Range: 1000 units -> 800 units
-* Max Ability Damage Amp: 40% -> 50%
+## Arena (Champions)
 
-**Divine Sunderer**
+**Braum**
 
-* Max Health Damage: 4% melee/2% ranged -> 6% melee/4% ranged
-* Damage to Healing Ratio: 55% -> 70%
+* Q Max Health Damage: 5% -> 2.5%
+    * Likely a mistake, today's PBE deploy was fixing many older champion's ability definitions, Braum Q being one of them.
 
-**Endless Hunger**
+**Ryze**
 
-* Item Anvil description changed back to the incorrect version?
+* Overload Bonus Damage: 10/30/50/70% -> 20/40/60/80%
+    * Yes this is hilarious given the current state of Ryze in Arena. He's likely getting nerfed elsewhere.
 
-**Fiendhunter Bolts**
+**Swain**
 
-* Cooldown: 60 seconds -> 20 seconds
+* R Base Damage per Second: 10/15/20 -> 20/30/40
+* R Base Heal per Second: 10/15/20 -> 20/30/40
 
-**Goredrinker**
+**Trundle**
 
-* Heal: 15% (+20% base AD) missing Health -> 18% (+35% base AD) missing Health
+* Q Damage: 10/30/50/70/90 (+15/25/35/45/55% AD) -> 10/30/50/70/90 (+5/15/25/35/45% AD)
+* Q Bonus AD: 20/25/30/35/40 -> 10/15/20/25/30
+* Q Target AD Reduction: 10/12.5/15/17.5/20 -> 5/7.5/10/12.5/15
 
-**Hexoptics C44**
+**Vi**
 
-* Damage Amp Max Range: 700 units -> 500 units
-
-**Night Harvester**
-
-* Damage: 125 (+15% AP) -> 160 (+40% AP)
-
-**Omnivamp Anvil**
-
-* Ranged Value: 12.5% -> 15%
-
-**Zeke's Convergence**
-
-* Cooldown: 30 seconds -> 20 seconds
-
-## ARAM: Mayhem (Augments)
-
-**Slow and Steady**
-
-* Reverted back to live.
-
-## ARAM: Mayhem (Items)
-
-**Atma's Reckoning**
-
-* Now correctly shows that it grants 10 ability haste.
+* E AD Ratio: 110% AD -> 100% AD

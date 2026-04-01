@@ -1830,25 +1830,6 @@
     ]
   },
   {
-    "id": 1091,
-    "apiName": "ARAM_VirtuousCycle",
-    "name": "Virtuous Cycle",
-    "rarity": "Silver",
-    "disabled": true,
-    "desc": "Your <healing>Heals</healing> grant extra <shield>Shield</shield> and your <shield>Shields</shield> grant extra <healing>Healing</healing>.",
-    "tooltip": "Your <healing>heals</healing> grant an extra <shield>@ShieldFromHealPercentage*100@% Shield</shield> and your <shield>Shields</shield> grant an extra <healing>@HealFromShieldPercentage*100@% Healing</healing>.<br><br>Total Healing Done: @f1@<br>Shields Generated: @f2@",
-    "dataValues": {
-      "ShieldFromHealPercentage": 0.20000000298023224,
-      "HealFromShieldPercentage": 0.20000000298023224,
-      "ShieldDuration": 5.0,
-      "MinimumTrigger": 1.0
-    },
-    "icons": [
-      "ASSETS/UX/Cherry/Augments/Icons/VirtuousCycle_small.tex",
-      "ASSETS/UX/Cherry/Augments/Icons/VirtuousCycle_large.tex"
-    ]
-  },
-  {
     "id": 1092,
     "apiName": "ARAM_Vulnerability",
     "name": "Vulnerability",
@@ -2643,7 +2624,7 @@
     "desc": "Attacks fire @AdditionalBolts@ extra <keywordMajor>Firecrackers</keywordMajor> that deal more damage with distance. Each direction has its own Cooldown.",
     "tooltip": "When you Attack, fire @AdditionalBolts@ additional <keywordMajor>Firecrackers</keywordMajor> that each deal <physicalDamage>@DamagePerBolt@ physical damage</physicalDamage>, increased up to @MaxDamageAmp*100@% with distance traveled. Each cardinal direction has a @Cooldown@ second Cooldown.<br><br>Each bolt can Critically Strike and applies On-Hits at @OnHitRatio*100@% effectiveness.<br><br>Damage Dealt: @f2@",
     "dataValues": {
-      "Cooldown": 15.0,
+      "Cooldown": 8.0,
       "AdditionalBolts": 5.0,
       "OnHitRatio": 0.20000000298023224,
       "MaxDamageAmp": 0.5,
@@ -3862,7 +3843,7 @@
     "name": "Snowball Upgrade",
     "rarity": "Gold",
     "desc": "Gain @AbilityHaste@ Ability Haste on <spellName>Snowball</spellName>. Hitting an enemy creates a snowfall that deals <magic>AoE damage</magic> and <status>Slows</status> nearby enemies.<br><br><rules>If you don't have one, gain a <spellName>Snowball</spellName>.</rules><br>",
-    "tooltip": "Gain @AbilityHaste@ Ability Haste on your Snowball. <br>Hitting a target reveals an area, <status>Slowing</status> enemies by @TotalSlowAmount@ and dealing <magicDamage>@TotalDamagePerSecond@ magic damage</magicDamage> per second for @BaseDuration@ seconds (total <magicDamage>@TotalDamage@ magic damage</magicDamage>).",
+    "tooltip": "Gain @AbilityHaste@ Ability Haste on your Snowball. <br>Hitting a target creates an area that <status>Slows</status> enemies by @TotalSlowAmount@ and deals <magicDamage>@TotalDamagePerSecond@ magic damage</magicDamage> per second for @BaseDuration@ seconds (total <magicDamage>@TotalDamage@ magic damage</magicDamage>).<br><br><br>",
     "dataValues": {
       "AbilityHaste": 50.0,
       "BaseDamagePerSecond": 100.0,
@@ -4630,36 +4611,6 @@
     ]
   },
   {
-    "id": 1374,
-    "apiName": "Fetch",
-    "name": "Fetch",
-    "rarity": "Silver",
-    "disabled": true,
-    "desc": "Gain bonus <speed>Movement Speed</speed> toward enemies marked by <spellName>Snowball</spellName>. You can pick up an ally's Snowball to refresh your own.<br><br><rules>If you don't have one, gain a <spellName>Snowball</spellName>.</rules>",
-    "tooltip": "Gain <speed>@MSBonus*100@% bonus Movement Speed</speed> toward enemies marked by Snowball for @MSDuration@ seconds. You can pick up an ally's Snowball to reset your own.",
-    "dataValues": {
-      "MSBonus": 0.4000000059604645,
-      "MSDuration": 3.0,
-      "MSBonusTriggerDistance": 2000.0
-    },
-    "calculations": {
-      "Damage": {
-        "mFormulaParts": [
-          {
-            "mEndValue": 250.0,
-            "mStartValue": 100.0,
-            "~class": "ByCharLevelInterpolationCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      }
-    },
-    "icons": [
-      "ASSETS/UX/Kiwi/Augments/Icons/Fetch_small.tex",
-      "ASSETS/UX/Kiwi/Augments/Icons/Fetch_large.tex"
-    ]
-  },
-  {
     "id": 1375,
     "apiName": "SoulEater",
     "name": "Soul Eater",
@@ -4864,7 +4815,7 @@
     "name": "Red Envelopes",
     "rarity": "Gold",
     "desc": "Red envelopes appear around you randomly. Picking them up gives you Gold and a small amount of a random Stats.",
-    "tooltip": "<keyword>Red Envelopes</keyword> appear randomly around you every @TimeBetweenEnvelopes@ seconds. Picking them up gives you between <font color=\"#ffd138\">@EnvelopeValueMin@</font> and <font color=\"#ffd138\">@EnvelopeValueMax@</font> Gold, plus <speed>@MSBuff@ Move Speed</speed> for @BuffDuration@ seconds.<br><br>You have opened <important>@f1@</important> <keyword>Red Envelopes</keyword> and received <font color=\"#ffd138\">@f2@</font> Gold from them.<br><br>Additional Stats Gained:<br>- <physicalDamage>@f3@ Attack Damage</physicalDamage><br>- <magicDamage>@f4@ Ability Power</magicDamage><br>- <scaleCooldown>@f5@ Haste</scaleCooldown><br>- <scaleArmor>@f6@ Armor</scaleArmor><br>- <scaleMR>@f7@ Magic Resistance</scaleMR><br>- <scaleHealth>@f8@ Health</scaleHealth><br>- <attackSpeed>@f9*100@% Attack Speed</attackSpeed><br>- <speed>@f10@ Movement Speed</speed><br>- <scaleLethality>@f11@ Lethality</scaleLethality><br>- <scaleMPen>@f12@ Magic Penetration</scaleMPen> ",
+    "tooltip": "<keyword>Red Envelopes</keyword> appear randomly around you every @TimeBetweenEnvelopes@ seconds. Picking them up gives you between <font color=\"#ffd138\">@EnvelopeValueMin@</font> and <font color=\"#ffd138\">@EnvelopeValueMax@</font> Gold, plus <speed>@MSBuff@ Move Speed</speed> for @BuffDuration@ seconds.<br><br>You have opened <important>@f1@</important> <keyword>Red Envelopes</keyword> and received <font color=\"#ffd138\">@f2@</font> Gold from them.<br><br>Additional Stats Gained:<br>%i:scaleAH% <scaleAbilityHaste>Ability Haste</scaleAbilityHaste>: @f5@<br>%i:scaleMS% <speed>Move Speed</speed>: @f10@<br>%i:scaleAD% <scaleAD>Attack Damage</scaleAD>: @f3@<br>%i:scaleAP% <scaleAP>Ability Power</scaleAP>: @f4@<br>%i:scaleArmor% <scaleArmor>Armor</scaleArmor>: @f6@<br>%i:scaleMR% <scaleMR>Magic Resistance</scaleMR>: @f7@<br>%i:scaleHealth% <scaleHealth>Health</scaleHealth>: @f8@<br>%i:scaleAS% <attackSpeed>Attack Speed</attackSpeed>: @f9*100@%<br>%i:scaleAPen% <armorPen>Lethality</armorPen>: @f11@<br>%i:scaleMPen% <magicPen>Magic Penetration</magicPen>: @f12@",
     "dataValues": {
       "BuffDuration": 4.0,
       "MSBuff": 150.0,
@@ -5211,11 +5162,13 @@
     "apiName": "ARAM_Poro_Blast",
     "name": "Poro Blaster",
     "rarity": "Gold",
-    "desc": "You gather Poros over time. Damaging an enemy fires all Poros at them, each dealing <trueDamage>max Health true damage</trueDamage> and briefly <status>Knocking Back</status>.",
-    "tooltip": "You gather Poros over time. Damaging an enemy fires all Poros at them, each dealing target's <trueDamage>@MaxHealthRatio*100@% max Health true damage</trueDamage> and briefly <status>Knocking Back</status>.",
+    "desc": "You gather Poros over time. Damaging an enemy fires all Poros at them, each dealing <trueDamage>max Health true damage</trueDamage>. If you have 5 Poros, they will <status>Knock Back</status> once.",
+    "tooltip": "You gather Poros over time. Damaging an enemy fires all Poros at them, each dealing target's <trueDamage>@MaxHealthRatio*100@% max Health true damage</trueDamage>. If you have 5 Poros, they will <status>Knock Back</status> once.",
     "dataValues": {
       "MaxHealthRatio": 0.029999999329447746,
-      "SpawnFrequency_Seconds": 5.0
+      "SpawnFrequency_Seconds": 3.5,
+      "KnockbackDistance": 100.0,
+      "KnockbackDuration": 0.5
     },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/PoroBlast_small.tex",
@@ -5824,12 +5777,13 @@
     "name": "Void Rift",
     "rarity": "Prismatic",
     "desc": "Damaging enemies with Abilities creates a Void scar. If there is another Void scar nearby, both are consumed to create a rift between them, dealing <magicDamage>magic damage</magicDamage> and <status>Slowing</status> enemies inside.",
-    "tooltip": "Damaging enemies with an Ability creates a Void scar for @Lifetime@ seconds. If another Void scar is created nearby, both are consumed to create a rift between them, dealing <magicDamage>@Calc_Damage@ magic damage</magicDamage> to enemies inside and <status>Slowing by @Calc_Slow_Amount@</status>, decaying over @Slow_Duration@ second.<br><br><rules>Damage Dealt: @f1.0@</rules>",
+    "tooltip": "Damaging enemies with an Ability creates a Void scar for @Lifetime@ seconds. If another Void scar is created nearby, both are consumed to create a rift between them, dealing <magicDamage>@Calc_Damage@ magic damage</magicDamage> to enemies inside and <status>Slowing by @Calc_Slow_Amount@</status>, decaying over @Slow_Duration@ second. (@Cooldown@ second cooldown)<br><br><rules>Damage Dealt: @f1.0@</rules>",
     "dataValues": {
       "Cast_Delay": 0.6000000238418579,
       "Detection_Range": 1250.0,
       "Lifetime": 6.0,
-      "Slow_Duration": 1.0
+      "Slow_Duration": 1.0,
+      "Cooldown": 0.75
     },
     "calculations": {
       "0x300db355": {
@@ -6197,31 +6151,32 @@
     "name": "Devil on Your Shoulder",
     "rarity": "Prismatic",
     "desc": "Forge a pact with The Little Devil himself. He drains your life over time but rewards you for violence by applying bonus true damage against champions and creating healing remnants for you to acquire.",
-    "tooltip": "You've forged a pact with the Little Devil himself. He <omnivamp>drains @Calc_Drain_Per_Second_Non_Combat@ of your current Health per second, increased to @Calc_Drain_Per_Second@ if there are nearby enemies</omnivamp>.<br><br>In return, he amplifies your Attacks and Abilities to deal an additional <trueDamage>@Calc_Damage_Amp@ true damage</trueDamage>, which cause a <omnivamp>Life Remnant</omnivamp> to appear nearby for @Remnant_Duration@ seconds.<br><br>Absorbing a <omnivamp>Life Remnant</omnivamp> <healing>heals you for @Calc_Remnant_Healing@</healing> and grants you <speed>@Calc_Move_Speed@ Movement Speed</speed> for @Move_Speed_Duration@ second.<br><br><rules>Health Drained: @f1.0@<br>Damage Dealt: @f2.0@<br>Remnants Acquired: @f4.0@<br>Health Restored: @f5.0@</rules>",
+    "tooltip": "You've forged a pact with the Little Devil himself. He <omnivamp>drains @Calc_Drain_Per_Second_Non_Combat@ of your current Health per second, increased to @Calc_Drain_Per_Second@ if there are nearby enemies</omnivamp>.<br><br>In return, he amplifies your Attacks and Abilities to deal an additional <trueDamage>@Calc_Damage_Amp@ true damage</trueDamage>, which cause a <omnivamp>Life Remnant</omnivamp> to appear nearby for @Remnant_Duration@ seconds.<br><br>Absorbing a <omnivamp>Life Remnant</omnivamp> <healing>heals you for @Calc_Remnant_Healing@</healing> and grants you <speed>@Calc_Move_Speed@ Movement Speed</speed> for @Move_Speed_Duration@ second.<br><br><rules>Health Drained: @f1.0@<br>Damage Dealt: @f2.0@<br>Remnants Acquired: @f4.0@<br>Health Restored: @f5.0@<br>Periodic damage has a @DotDamageCooldown@ second cooldown</rules>",
     "dataValues": {
       "Amp_Duration": 8.0,
       "Amp": 2.0,
       "Remnant_Duration": 5.0,
       "Move_Speed_Duration": 1.0,
       "Detection_Radius": 1000.0,
-      "Remnant_Spawn_Cooldown": 0.75
+      "Remnant_Spawn_Cooldown": 0.75,
+      "DotDamageCooldown": 1.5
     },
     "calculations": {
       "0x21a86d0d": {
         "mFormulaParts": [
           {
-            "mEndValue": 150.0,
-            "mStartValue": 50.0,
+            "mEndValue": 250.0,
+            "mStartValue": 100.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           },
           {
-            "mCoefficient": 0.5,
+            "mCoefficient": 0.6000000238418579,
             "mStat": 2,
             "mStatFormula": 2,
             "~class": "StatByCoefficientCalculationPart"
           },
           {
-            "mCoefficient": 0.25,
+            "mCoefficient": 0.30000001192092896,
             "~class": "StatByCoefficientCalculationPart"
           }
         ],
@@ -6233,22 +6188,6 @@
         "mFormulaParts": [
           {
             "mNumber": 0.20000000298023224,
-            "~class": "NumberCalculationPart"
-          }
-        ],
-        "mSimpleTooltipCalculationDisplay": 5,
-        "~class": "GameCalculation"
-      },
-      "0x820b6b7a": {
-        "mDisplayAsPercent": true,
-        "mExpandedTooltipCalculationDisplay": 5,
-        "mFormulaParts": [
-          {
-            "mDataValue": "Amp",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          {
-            "mNumber": -1.0,
             "~class": "NumberCalculationPart"
           }
         ],
