@@ -4,7 +4,7 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 **Braum**
 
-* Q Base Damage: 75/120/165/210/255 -> 75/125/175/225/275
+* Q Base Damage: Reverted to live value.
 
 **Hwei**
 
@@ -19,7 +19,7 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 **Poppy**
 
-* Q Health Damage Cap vs Non-Champions: 50/80/110/140/170 -> 30/60/90/120/150
+* Q Health Damage Cap vs Non-Champions: Reverted to live value.
 
 ## Items
 
@@ -31,24 +31,20 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 **Braum**
 
-* Q Max Health Damage: 5% -> 2.5%
-    * Likely a mistake, today's PBE deploy was fixing many older champion's ability definitions, Braum Q being one of them.
+* Q Max Health Damage: Reverted to live value.
 
 **Ryze**
 
-* Overload Bonus Damage: 10/30/50/70% -> 20/40/60/80%
-    * Yes this is hilarious given the current state of Ryze in Arena. He's likely getting nerfed elsewhere.
+* Overload Bonus Damage: Reverted to live value.
 
 **Swain**
 
-* R Base Damage per Second: 10/15/20 -> 20/30/40
-* R Base Heal per Second: 10/15/20 -> 20/30/40
+* R Base Damage per Second: Reverted to live value.
+* R Base Heal per Second: Reverted to live value.
 
 **Trundle**
 
-* Q Damage: 10/30/50/70/90 (+15/25/35/45/55% AD) -> 10/30/50/70/90 (+5/15/25/35/45% AD)
-* Q Bonus AD: 20/25/30/35/40 -> 10/15/20/25/30
-* Q Target AD Reduction: 10/12.5/15/17.5/20 -> 5/7.5/10/12.5/15
+* Q Modifiers: Reverted to live values.
 
 **Vi**
 
