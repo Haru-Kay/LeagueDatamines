@@ -1421,7 +1421,7 @@
         "HealAmount": {
           "mFormulaParts": [
             {
-              "mEndValue": 110.0,
+              "mEndValue": 160.0,
               "mStartValue": 20.0,
               "~class": "ByCharLevelInterpolationCalculationPart"
             },
@@ -3335,13 +3335,13 @@
         {
           "name": "BaseHealPerWave",
           "values": [
-            20.0,
+            10.0,
             30.0,
-            40.0,
             50.0,
-            60.0,
             70.0,
-            80.0
+            90.0,
+            110.0,
+            130.0
           ],
           "~class": "SpellDataValue"
         },
@@ -3395,23 +3395,6 @@
             10.0,
             10.0
           ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "AllyHealingPerc",
-          "values": [
-            1.2999999523162842,
-            1.2999999523162842,
-            1.2999999523162842,
-            1.2999999523162842,
-            1.2999999523162842,
-            1.2999999523162842,
-            1.2999999523162842
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "BaseBonusResistances",
           "~class": "SpellDataValue"
         }
       ],
@@ -3545,15 +3528,22 @@
       "mLineWidth": 100.0,
       "mShowChannelBar": false,
       "mSpellCalculations": {
-        "0xea105dd6": {
+        "AllyHealingPerc": {
           "mFormulaParts": [
             {
-              "mDataValue": "BaseBonusResistances",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mCoefficient": 0.10000000149011612,
-              "~class": "StatByCoefficientCalculationPart"
+              "mBreakpoints": [
+                {
+                  "mBonusPerLevelAtAndAfter": 0.05000000074505806,
+                  "mLevel": 7,
+                  "~class": "Breakpoint"
+                },
+                {
+                  "mLevel": 13,
+                  "~class": "Breakpoint"
+                }
+              ],
+              "mLevel1Value": 1.2999999523162842,
+              "~class": "ByCharLevelBreakpointsCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -3561,8 +3551,8 @@
         "EnhancedHealPerWave": {
           "mModifiedGameCalculation": "TotalHealPerWave",
           "mMultiplier": {
-            "mDataValue": "AllyHealingPerc",
-            "~class": "NamedDataValueCalculationPart"
+            "mSpellCalculationKey": "AllyHealingPerc",
+            "~class": "0xf3cbe7b2"
           },
           "~class": "GameCalculationModified"
         },

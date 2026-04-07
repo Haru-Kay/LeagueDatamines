@@ -1,51 +1,45 @@
 Just a reminder that PBE changes are not final and subject to change. Some changes, such as bugfixes, may not be able to be viewed. 
 
-## Champions
+## ARAM (Items)
 
-**Braum**
+**Locket of the Iron Solari**
 
-* Q Base Damage: Reverted to live value.
+* Cooldown: 90 seconds -> 75 seconds
 
-**Hwei**
+**Protoplasm Harness**
 
-* P New Rule: Slows from Hwei's abilities stack with each other at a diminishing rate (but not items or other sources)
-    * R slows (which already stack like this) will now stack with QE, EQ, EE slows.
+* Cooldown: 90 seconds -> 75 seconds
 
-**LeBlanc**
+**Randuin's Omen**
 
-* W AP Ratio: 80% AP -> 70% AP
-* RW AP Ratio: 80% AP -> 75% AP
-* RE2 AP Ratio: 85% AP -> 80% AP
+* Cooldown: 90 seconds -> 75 seconds
 
-**Poppy**
+## ARAM: Mayhem (Items)
 
-* Q Health Damage Cap vs Non-Champions: Reverted to live value.
+**Immortal Shieldbow**
 
-## Items
+* Cooldown: 90 seconds -> 60 seconds
 
-**Staff of Flowing Water**
+**Locket of the Iron Solari**
 
-* Buff tooltip no longer incorrectly states that it grants move speed.
+* Cooldown: 90 seconds -> 75 seconds
 
-## Arena (Champions)
+**Maw of Malmortius**
 
-**Braum**
+* Cooldown: 75 seconds -> 60 seconds
 
-* Q Max Health Damage: Reverted to live value.
+**Protoplasm Harness**
 
-**Ryze**
+* Cooldown: 90 seconds -> 60 seconds
 
-* Overload Bonus Damage: Reverted to live value.
+**Randuin's Omen**
 
-**Swain**
+* Cooldown: 90 seconds -> 60 seconds
 
-* R Base Damage per Second: Reverted to live value.
-* R Base Heal per Second: Reverted to live value.
+**Shurelya's Battlesong**
 
-**Trundle**
+* Cooldown: 75 seconds -> 60 seconds
 
-* Q Modifiers: Reverted to live values.
+**Sterak's Gage**
 
-**Vi**
-
-* E AD Ratio: 110% AD -> 100% AD
+* Cooldown: 75 seconds -> 60 seconds
