@@ -25,7 +25,10 @@ def manualHash
         "6216bf7b" => "arPerLevel",
         "3a509002" => "arRegenPerLevel",
         "2290fc9a" => "baseFactorHPRegen",
-        "452033bb" => "arBaseFactorRegen"
+        "452033bb" => "arBaseFactorRegen",
+
+        "988fea51" => "AugmentSets",
+        "9bfe08c0" => "AugmentList"
     }
 end
 
@@ -807,6 +810,7 @@ print "done.\n"
     $aramMayhem = $aramMayhem.fetch("entries", $aramMayhem)
     aramAugments = []
     aramOther = {}
+    augmentList = []
     $aramMayhem.each { |key, data|
         v = augmentSearcher(key, data, 1)
 
@@ -816,16 +820,30 @@ print "done.\n"
         end
 
         type = data["~class"]
-
-        if type == "0x27bc6378"
-            aramSets.push(augmentSetBuilder(key, data, 1))
-            next
+        case type 
+            when "0x27bc6378"
+                aramSets.push(augmentSetBuilder(key, data, 1))
+                next
+            when "0xeb5adb26"
+                type = "DefaultAugmentData"
+                data = applyLangKeys(data)
+                augmentList = data["AugmentList"]
+            else
+                #do nothing
         end
 
         next if !type
         aramOther[type] ||= {}
         aramOther[type].store(key, data)
     }
+    aramAugments.each { |augment|
+        id = "Maps/ModeSpecificData/Augments/" + augment["apiName"]
+        idHex = "0x" + fnv(id.downcase)
+        if augmentList.include?(idHex)
+            augmentList[augmentList.index(idHex)] = id
+        end
+    }
+    aramOther["DefaultAugmentData"].values[0]["AugmentList"] = augmentList
     File.open("aram/mayhem/augments/augments.json", 'wb') { |f| f.write(JSON.pretty_generate(aramAugments.sort_by { |a| a["id"] })) }
     File.open("aram/mayhem/augments/sets.json", 'wb') { |f| f.write(JSON.pretty_generate(aramSets)) }
     aramOther.each { |key, data|
