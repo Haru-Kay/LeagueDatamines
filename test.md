@@ -4,6 +4,124 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 ### Guests of Honor
 
+**I was not able to locate most of the custom effects that aren't explicitly mentioned in the Guest of Honor tooltips, so for now I cannot give further information that what I've already given.**
+
+**Annie**
+
+* Wall of Fire
+* Replace the Ring of Fire with a Wall of Fire
+
+**Atakhan**
+
+* Absolute Carnage
+* Atakahan rewards you every 3 kills, if the victim is Hotstreaking they are worth double.
+    * 3: Gain a Silver Stat Anvil
+    * 6: Gain a Prismatic Stat Anvil
+    * 9: Gain a Bonus Augment Level
+    * 12: +1500 gold
+    * 15: Increase Damage taken and dealt
+
+**Evelynn**
+
+* Just a Fling
+* Augment selection rounds grant +1 Augment.
+* All teams are set to 50 health.
+
+**Fiddlesticks**
+
+* A Harmless Scarecrow
+* Augments grant additional bonuses or curses when selected.
+  * Leveled Up: This augment will gain an Augment Level
+  * Wealthy: +500 gold
+  * Personalized: +1 Stat Anvil
+  * Lucky: Gain an 2 Rerolls on your next augment offering
+  * Revitalized: Gain 10 Team HP
+  * Expensive: -500 gold
+  * Draining: Stat Anvils grant 10 reduced stats
+  * Unlucky: Lose 2 Rerolls on your next augment offering
+
+**Garen**
+
+* Perseverance
+* All remaining teams below 50 Health gain 20 Health.
+
+**Hwei**
+
+* Blank Canvas
+* During Augment Selection, augments are marked, selecting these grants additional stats.
+  * Red Shard: Grants Adaptive Force.
+  * Blue Shard: Grants Movement Speed.
+  * Green Shard: Grants Health.
+
+**Jarvan IV**
+
+* Heavy is the Crown
+* A crown is offered to the lower health team, the crown holder becomes the King granting 15% Damage Reduction and deals an 15% additional damage.
+* When the King is killed the killer becomes the new King.
+
+**Kayle**
+
+* Divine Ascent
+* All teams gain a shield preventing them from losing health on their next round loss. Losing a round breaks this shield, for that team, granting them a reward based on how long shield lasted.
+  *  2 rounds: +1000 Gold
+  *  6 rounds: +1 Gold Stat Anvil
+  * 10 rounds: +1 random Augment Level
+
+**Kindred**
+
+* Death and Rebirth
+* Ally with Wolf or Lamb to manipulate your revives.
+* Wolf's Frenzy: 
+  * Lose 1 revive. Increase your Health by 10% and size by 20% (?).
+  * If you would leave an enemy at below 10% health, instead execute them.
+* Lamb's Respite:
+  * Gain 2 additional revives, and cut the time needed to revive by 50%.
+  * Lose 20% size (?)
+
+**Lux**
+
+* Light of Demacia
+* During combat gain a shield that refreshes when you're out of combat for 5 seconds. 
+* The strength of this shield scales with your level and the number of rounds you've lost.
+
+**Morgana**
+
+* Tormented Shadow
+* On Death leave behind a Tormented Shadow dealing magic damage to enemies inside.
+
+**Nocturne**
+
+* Darkness
+* Create zones of darkness, no one can see into the darkness zone from the outside.
+
+**Ornn**
+
+* The Forge God
+* Unlock the rotating prismatic item shop.
+  * The prismatic shop opens every 2 rounds, with a small, rotating, selection of prismatic items you can purchase directly for 2750 gold.
+  * The price of Ornn's prismatic items increases by +500 gold each time you purchase a prismatic item.
+
+**Poppy**
+
+* Rightful Wielder
+* Gain a Prismatic Item Anvil, Prismatic Item Anvils are no longer purchasable.
+
+**Shaco**
+
+* Absolute Chaos
+* Offered Augments can be from any tier.
+
+**Tamh Kench**
+
+* Dark Bargain
+* Every few rounds Tahm Kench will offer a deal, for Wealth, Power, or Risk at the cost of your max Health.
+* See below for the specific effects.
+
+**Taric**
+
+* Dauntless Vanguard
+* Stars periodically fall from the sky blessing those at its landing site with invulnerability for 2.5s.
+
 **Abstain From Wealth**
 
 * Restore 5% of the health you've sacrificed to Tahm Kench. Gain 500 gold.
@@ -40,35 +158,21 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 * Sacrifice 15% of your max health to Tahm Kench. Gain 1 Prismatic Augment.
 
-**Wolf's Frenzy**
-
-* Lose 1 revive. Increase your Health by 10% and size by 20% (?).
-* If you would leave an enemy at below 10% health, instead execute them.
-
-**Lamb's Respite**
-
-* Gain 2 additional revives, and cut the time needed to revive by 50%.
-* Lose 20% size (?)
-
 **Gain a Prismatic Stat Anvil**
 
 * Gain a Prismatic Stat Anvil.
-* Dummy augment for Guests of Honor.
 
 **Gain a Stat Anvil**
 
 * Gain a random Stat Anvil.
-* Dummy augment for Guests of Honor.
 
 **Gain an Augment Slot**
 
 * Unlock a 5th Augment slot. In 3 rounds, select a Silver Augment.
-* Dummy augment for Guests of Honor.
 
 **Level Augments**
 
 * Remove an Augment. Gain 2 random Augment Levels in 3 rounds.
-* Dummy augment for Guests of Honor.
 
 **Replace Augment**
 
@@ -230,13 +334,13 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 **Chroma Flux (Prismatic) (NEW)**
 
 * Gain a modified Tristana E
-* Every 15 seconds, Autocast a magical orb that sticks to the first champion, structure, or epic jungle monster hit for 4 seconds. <br><br>
+* Every 15 seconds, Autocast a magical orb that sticks to the first champion, structure, or epic jungle monster hit for 4 seconds.
   * Target must be within 1200 units.
-* Hitting that target with an Attack or Ability, it detonates it, dealing <magicDamage>75 (+30% bonus AD) (+50% AP) magic damage</magicDamage>, grants you <speed>5 Movement Speed</speed>, and 10 <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> for 3 seconds.
+* Hitting that target with an Attack or Ability, it detonates it, dealing 75 (+30% bonus AD) (+50% AP) magic damage, grants you 5 Movement Speed, and 10 Armor and Magic Resist for 3 seconds.
 * Gain shards when selecting augments:
-  * Red Shard: Deal <magicDamage>75 (+30% bonus AD) (+50% AP) additional damage</magicDamage> per %i:SpellcraftRedShard%.
-  * Blue Shard: Gain <speed>20 Movement Speed</speed> per Blue Shard
-  * Green Shard: Gain 30 <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> per %i:SpellcraftGreenShard%.
+  * Red Shard: Deal 75 (+30% bonus AD) (+50% AP) additional damage per Red Shard.
+  * Blue Shard: Gain 20 Movement Speed per Blue Shard
+  * Green Shard: Gain 30 Armor and Magic Resist per Green Shard.
 
 **Circle of Death**
 
@@ -1058,7 +1162,7 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 **Trash to Treasure (Silver) (NEW)**
 
-* When <keywordMajor>Trash To Treasure</keywordMajor> is removed or replaced gain a <keywordMajor>Prismatic Augment</keywordMajor> selection.
+* When Trash To Treasure is removed or replaced gain a Prismatic Augment selection.
 
 **Trickster Demon**
 

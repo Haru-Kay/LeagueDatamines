@@ -971,6 +971,7 @@ print "done.\n"
                     type = "HotkeyControls"
                 when "0x5c8aed6"
                     type = "GuestOfHonorData"
+                    data = applyLangKeys(applyLang(data))
                 when "0x276246d8"
                     type = "AnnouncerBark"
                 when "0xeb5adb26"
