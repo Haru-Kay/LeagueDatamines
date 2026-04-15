@@ -1,5 +1,44 @@
 require 'json'
 
+def fnv(item, size: 32)
+    offset_basis = 0x811c9dc5
+    prime = 16777619
+
+    hash = offset_basis
+    item.to_s.each_byte { |byte|
+        hash ^= byte
+        hash *= prime
+        hash &= 4294967295
+    }
+    
+    return hash.to_s(16)
+end
+
+hash = {}
+File.open("arena/augments/augments.json", 'rb') { |f| 
+    JSON.parse(f.read).each { |aug|
+        dataValues = aug.dig("dataValues")
+        next if !dataValues
+        dataValues.each { |name, value|
+            hash.store(fnv(name.downcase), name)
+        }
+    }
+}
+
+str = ""
+hash.each { |obf, name|
+    str += "#{obf} #{name}\n"
+}
+
+File.open("lang/manualhash.txt", 'wb') { |f| f.write(str) } 
+
+
+
+
+
+
+
+=begin
 kiwi = {}
 
 
@@ -15,7 +54,6 @@ kiwi["entries"].each { |key, data|
     augTags[tag].push(name)
 }
 
-=begin
 -1  : Generic
 2   : Mage-related
 4   : AD/AS-related

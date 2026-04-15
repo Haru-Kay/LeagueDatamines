@@ -3,8 +3,16 @@ require 'fileutils'
 require 'hashie'
 require 'digest/xxhash'
 
+$manualHash2 = {}
+
+txt = ""
+File.open("lang/manualhash.txt", 'rb') { |f| txt = f.read }
+txt.split("\n").each { |f|
+    obf, name = f.split(" ")
+    $manualHash2.store(obf, name)
+}
 def manualHash 
-    {
+    ret = {
         "b35aa769" => "BaseValue", #EXACT
         "1262a25" => "MRPerLevel", #EXACT
         "18956a21" => "armorPerLevel",
@@ -30,6 +38,9 @@ def manualHash
         "988fea51" => "AugmentSets",
         "9bfe08c0" => "AugmentList"
     }
+
+
+    return ret.merge($manualHash2)
 end
 
 def xxh3(s)
@@ -297,6 +308,9 @@ end
 
 def augmentSearcher(key, data, version=0)
     if data["~class"]&.eql?("AugmentData")
+        source = $arena
+        source = $aramMayhem if version == 1
+        source = version if version.is_a?(Hash)
         aug = {
             "id" => data.fetch("AugmentPlatformId", -1),
             "apiName" => data.fetch("AugmentNameId", ""),
@@ -320,14 +334,25 @@ def augmentSearcher(key, data, version=0)
 
         spellName = data.dig("RootSpell")
         if spellName
-            spellObject = (version == 0 ? $arena : $aramMayhem).dig(spellName)
+            spellObject = source.dig(spellName)
             if spellObject
                 mSpell = spellObject.fetch("mSpell", {})
                 dataValues = mSpell.fetch("DataValues", [])
+                modes = mSpell.dig("DataValuesModeOverride")
+                if modes && version.is_a?(Hash)
+                    o = modes["cherry"]["SpellDataValues"]
+                    overrides = {}
+                    o.each { |f| 
+                        overrides.store(f["name"], f["values"])
+                    }
+                end
 
                 dataValues.each { |component|
                     name = component["name"]
                     values = component["values"] || []
+                    if overrides
+                        values = overrides[name] || values
+                    end
                     puts "#{spellName} ::: #{name}" if !values
                     values = values[0] if values.uniq.length == 1
                     aug["dataValues"].store(name, values)
@@ -339,7 +364,7 @@ def augmentSearcher(key, data, version=0)
             end
         end
         linkedObjects.each { |obj|
-            spellObject = (version == 0 ? $arena : $aramMayhem).dig(obj)
+            spellObject = source.dig(obj)
             if spellObject && spellObject["~class"] == "SpellObject" && spellObject.key?("mSpell")
                 mSpell = spellObject.fetch("mSpell", {})
                 dataValues = mSpell.fetch("DataValues", [])
@@ -372,11 +397,7 @@ def augmentSearcher(key, data, version=0)
             (augKey == "disabled" && augValue == false) ||
             (["dataValues", "calculations", "add", "maxLevelTooltip", "maxLevelSummary"].any? { |a| augKey == a } && augValue.empty?)
         }
-        aug["name"] = $lang.fetch(aug["name"].downcase, aug["name"])
-        aug["desc"] = $lang.fetch(aug["desc"].downcase, aug["desc"])
-        aug["tooltip"] = $lang.fetch(aug["tooltip"].downcase, aug["tooltip"])
-        aug["maxLevelTooltip"] = $lang.fetch(aug["maxLevelTooltip"].downcase, aug["maxLevelTooltip"]) if aug["maxLevelTooltip"]
-        aug["maxLevelSummary"] = $lang.fetch(aug["maxLevelSummary"].downcase, aug["maxLevelSummary"]) if aug["maxLevelSummary"]
+        aug = applyLangKeys(applyLang(aug))
         aug.delete("maxLevelSummary") if aug["maxLevelSummary"]&.strip == aug["maxLevelTooltip"]&.strip
         return aug
     end
@@ -878,6 +899,7 @@ print "done.\n"
     $arena = $arena.fetch("entries", $arena)
     augments = []
     arenaOther = {}
+    augmentList = []
     $arena.each { |key, data|
         v = augmentSearcher(key, data)
         if v
@@ -937,7 +959,7 @@ print "done.\n"
 
         json.each { |key, data|
             type = data["~class"]
-            v = augmentSearcher(key, data)
+            v = augmentSearcher(key, data, json)
             if v
                 augments.push(v) 
                 next
@@ -951,6 +973,10 @@ print "done.\n"
                     type = "GuestOfHonorData"
                 when "0x276246d8"
                     type = "AnnouncerBark"
+                when "0xeb5adb26"
+                    type = "DefaultAugmentData"
+                    data = applyLangKeys(data)
+                    augmentList = data["AugmentList"]
                 else
                     type = "MiscData" if type.start_with?("0x")
             end
@@ -963,6 +989,17 @@ print "done.\n"
             File.open("arena/#{map}/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
         }
     }
+    augments.each { |augment|
+        id = "Maps/ModeSpecificData/Augments/" + augment["apiName"]
+        idHex = "0x" + fnv(id.downcase)
+        if augmentList.include?(idHex)
+            augmentList[augmentList.index(idHex)] = id
+        end
+    }
+    augments.delete_if {|aug|
+        aug["id"] > 1000 && !augmentList.any? {|a| a.end_with?(aug["apiName"])}
+    }
+    arenaOther["DefaultAugmentData"].values[0]["AugmentList"] = augmentList
     
     File.open("arena/augments/augments.json", 'wb') { |f| f.write(JSON.pretty_generate(augments.sort_by { |a| a["id"] })) }
     arenaOther.each { |key, data|

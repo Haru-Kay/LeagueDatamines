@@ -16,6 +16,30 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 * Restore 5% of the health you've sacrificed to Tahm Kench. Gain 1 Silver Augment.
 
+**Craving For Wealth**
+
+* Sacrifice 10% of your max health to Tahm Kench. Gain 1500 gold.
+
+**Craving For Power**
+
+* Sacrifice 10% of your max health to Tahm Kench. Gain 1 Gold Stat Anvil.
+
+**Craving For Risk**
+
+* Sacrifice 10% of your max health to Tahm Kench. Gain 1 Gold Augment.
+
+**Compulsion For Wealth**
+
+* Sacrifice 15% of your max health to Tahm Kench. Gain 3000 gold.
+
+**Compulsion For Power**
+
+* Sacrifice 15% of your max health to Tahm Kench. Gain 1 Prismatic Stat Anvil.
+
+**Compulsion For Risk**
+
+* Sacrifice 15% of your max health to Tahm Kench. Gain 1 Prismatic Augment.
+
 **Wolf's Frenzy**
 
 * Lose 1 revive. Increase your Health by 10% and size by 20% (?).
@@ -52,7 +76,7 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 ### Augments
 
-**For my own sanity I will not be listing the usual A -> B format unless I feel they're important, most changes are tuning down augments for lower levels and having the max level to be equal or slightly stronger.**
+**For my own sanity I will not be listing the usual A -> B format unless I feel they're important, most changes are tuning down augments for lower levels and having the max level to be equal or slightly stronger. Same deal with augments transferred from Mayhem.**
 
 **Max Level Bonuses: Certain Augments will have bonus effects at their max level. If they are not listed, they do not have one.**
 
@@ -61,6 +85,10 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 **Accelerating Sorcery**
 
 * Haste per Cast: 8/12/18
+
+**Adamant (Silver) (NEW)**
+
+* Resists per Stack: 8/12
 
 **ADAPt**
 
@@ -132,6 +160,10 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
   * Shield can no longer stack.
   * Gain 20% for both the user and ally if it would trigger on an ally.
 
+**Bounce of the Poro King (Prismatic) (NEW)**
+
+* Same as ARAM: Mayhem
+
 **Bravest of the Brave**
 
 * Future Augment Tier Boost: 1/2 tiers
@@ -195,6 +227,17 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 * Ability Haste: 110/170
 * Attack Speed: 60/85%
 
+**Chroma Flux (Prismatic) (NEW)**
+
+* Gain a modified Tristana E
+* Every 15 seconds, Autocast a magical orb that sticks to the first champion, structure, or epic jungle monster hit for 4 seconds. <br><br>
+  * Target must be within 1200 units.
+* Hitting that target with an Attack or Ability, it detonates it, dealing <magicDamage>75 (+30% bonus AD) (+50% AP) magic damage</magicDamage>, grants you <speed>5 Movement Speed</speed>, and 10 <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> for 3 seconds.
+* Gain shards when selecting augments:
+  * Red Shard: Deal <magicDamage>75 (+30% bonus AD) (+50% AP) additional damage</magicDamage> per %i:SpellcraftRedShard%.
+  * Blue Shard: Gain <speed>20 Movement Speed</speed> per Blue Shard
+  * Green Shard: Gain 30 <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> per %i:SpellcraftGreenShard%.
+
 **Circle of Death**
 
 * Healing to Damage: 50/100%
@@ -205,7 +248,12 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 **Clown College**
 
-* may have been replaced by other format
+* Seems to have a lot of incorrect formatting, may be overwritten by Mayhem's data. Has a Max level of 3.
+
+**Combination Fried Rice (Prismatic) (NEW)**
+
+* Your abilities deal 100% bonus damage and do 75% bonus healing and shielding, but lost 100 Haste.
+* Casting an ability grants 40% Move Speed for 2 seconds.
 
 **Contract Killer**
 
@@ -217,11 +265,25 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 * Max Level Bonus:
   * Each proc also increases your Size by 5% and your Tenacity by 1%
 
+**Crack Open That Egg (Silver) (NEW)**
+
+* Shield Damage Multipler: 100/200/300%
+
 **Critical Healing**
 
 * Critical Heal/Shield: 35/55% increase
 * Critical Heals/Shields now scale with 100% bonus Critical Strike Damage
 * Ally must be within 550 units to trigger
+
+**Critical Missile (Gold) (NEW)**
+
+* Same as ARAM: Mayhem
+
+**Critical Rhythm (Gold) (NEW)**
+
+* Max Stacks: 10/20/30
+* Max Level Bonus:
+  * Uncap Attack Speed
 
 **Dark Blessing**
 
@@ -261,14 +323,27 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 * Adaptive Force: 10/20 per takedown per round.
 * Gain 30 Adaptive Force if picked after round 4.
 
+**Demonic Clasp (Gold) (NEW)**
+
+* Gain a modified Mordekaiser E.
+  * May use the Quest Slot or Summoner Flee, unsure.
+* Active: Call forth 1/3/5 claws, pulling enemies in your direction, dealing 10/100/1000 (+40% AP) magic damage.
+* Max Level Bonus:
+  * Sends out 3 more claws after 1 second.
+
 **Desecrator**
 
 * Bonus Resists: 20/30% Curse Power
 
-**Despoil**
+**Despoil (Silver) (NEW)**
 
 * Dashing or Blinking grants you 2 Curse Power if there is an enemy within 800 units. 
 * Gain MS equal to 35% Curse Power
+
+**Devil on Your Shoulder (Prismatic) (NEW)**
+
+* Damage Amp: 10/20/30% as true damage
+* Move Speed Amp: 20/30/50%
 
 **Die Another Day**
 
@@ -280,13 +355,21 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 * Max Level Bonus:
   * The Autocast is additionally triggered the first time you drop to 50% max Health
 
-**Doomsayer**
+**Donation (Gold) (NEW)**
 
-* Adaptive Force: 100/140/180% Curse Power
+* Same as ARAM: Mayhem
 
 **Don't Blink**
 
 * Bonus Damage: 0.1/0.2% per 10 MS
+
+**Doomsayer**
+
+* Adaptive Force: 100/140/180% Curse Power
+
+**Double Tap (Silver) (NEW)**
+
+* Additional On-Hits: 1/2
 
 **Draw Your Sword**
 
@@ -326,6 +409,10 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 * Gain 1 AD per 1.67/2.22 AP
 * Gain 10/20% total AD
 
+**Escape Plan (Silver) (NEW)**
+
+* Same as ARAM: Mayhem
+
 **Ethereal Weapon**
 
 * On-Hit Applications: 1/2
@@ -364,6 +451,11 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 * Max Level Bonus:
   * Each subsequent proc from a different direction increases the amount of bolts fired by 1 until the end of the round.
 
+**Final Form (Prismatic) (NEW)**
+
+* Shield: 30/45% max Health
+* Omnivamp: 15/20%
+
 **Firebrand**
 
 * Burn Damage: 0.3/0.4% max Health
@@ -395,6 +487,10 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 * Legendary Cost Reduction: 500/750 Gold
 * Stat Anvil Cost Reduction: 150/300 Gold
 
+**Get Excited! (Gold) (NEW)**
+
+* Bonus MS on Takedown: 100/200%
+
 **Giant Slayer**
 
 * Size Mod: 20/25/30%
@@ -405,6 +501,10 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
   * Large: 25/30/35%
   * XL: 30/35/40%
     * I don't know how they calculate S/M/L/XL.
+
+**Glass Cannon (Prismatic) (NEW)**
+
+* Bonus True Damage: 15/20/30%
 
 **Goliath**
 
@@ -422,6 +522,11 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
   * Shield Reave does not affect Magic Shields
   * Follows normal Arena Grievous Wound rules.
 
+**Growth Spurt (Gold) (NEW)**
+
+* Bonus Health: 250/450 (+20% max Health)
+* Buff Duration: 6/10 seconds
+
 **Guilty Pleasure**
 
 * Healing: 10/20%
@@ -431,6 +536,10 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 * Bonus Damage: 3.5/5% max Health
 * Max Level Bonus:
   * Attacks deal an additional 50% bonus Size physical damage
+
+**Hextech Soul (Silver) (NEW)**
+
+* Same as ARAM: Mayhem
 
 **Hive Mind**
 
@@ -506,6 +615,14 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 * Disabled.
 
+**Juiced (Silver) (NEW)**
+
+* Same as ARAM: Mayhem
+
+**Kill Secured (Silver) (NEW)**
+
+* Same as ARAM: Mayhem
+
 **Laser Eyes**
 
 * Laser Length: 600/800/1000 units
@@ -563,6 +680,10 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 * AP Ratio: 75/115% AP
 
+**Mercy (Gold) (NEW)**
+
+* The first time your team triggers Combo Breaker each round, you enter a frenzy, causing your immobilizing effects to deal 30/45% bonus Health as magic damage.
+
 **Mind to Matter**
 
 * Bonus Health: 60/140% Mana
@@ -580,6 +701,11 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 **OK Boomerang**
 
 * Damage: 30/100 (+9.5 per level) (+22% bonus AD) (+15% AP)
+
+**Ominous Pact (Prismatic) (NEW)**
+
+* Max Omnivamp: 15/25%
+* Max MS: 50/75%
 
 **Omni Soul**
 
@@ -627,6 +753,18 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 * Max Level Bonus:
   * Gain 10% total AP
 
+**Pinball (Gold) (NEW)**
+
+* Same as ARAM: Mayhem
+
+**Protein Shake (Prismatic) (NEW)**
+
+* Same as ARAM: Mayhem
+
+**Purist - Caster (Silver) (NEW)**
+
+* Same as ARAM: Mayhem
+
 **Quantum Computing**
 
 * Damage: 150/225/300 (+85% bonus AD) (+50% AP)
@@ -637,6 +775,10 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
     * 2 times: 25%
     * 3 times: 10%
     * 4 times: 1%
+
+**Quest: Icathia's Fall (Prismatic) (NEW)**
+
+* Same as ARAM: Mayhem. See yeterday's post for Bami's stats.
 
 **Quest: Mad Hatter**
 
@@ -681,9 +823,33 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 * Health Ratio: 1.6/3% max Health
 
+**Rice and Chicken (Gold) (NEW)**
+
+* Your Q gains 50/75% increased damage, 30/50% bonus Healing and Shielding, but loses 100 Haste.
+* Max Level Bonus:
+  * Casting your Q grants 40% MS for 2 seconds.
+
+**Rice and Fish (Gold) (NEW)**
+
+* Your W gains 50/75% increased damage, 30/50% bonus Healing and Shielding, but loses 100 Haste.
+* Max Level Bonus:
+  * Casting your W grants 40% MS for 2 seconds.
+
+**Rice and Pork (Gold) (NEW)**
+
+* Your E gains 50/75% increased damage, 30/50% bonus Healing and Shielding, but loses 100 Haste.
+* Max Level Bonus:
+  * Casting your E grants 40% MS for 2 seconds.
+
 **Righteous Fury**
 
 * Spell Damage per Stack: 2/4/6%
+
+**Scavenger (Gold) (NEW)**
+
+* Increase your augment count to 6. When you defeat a team, gain one of their Augments.
+* Augment Selection phases only grant Augment Level ups.
+* If there are no valid Augments, gain 500 Gold.
 
 **Scoped Weapons**
 
@@ -716,6 +882,10 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 * Bonus MS: 200/400 MS
 * Buff Duration: 2/3 seconds
+
+**Shrink Engine (Gold) (NEW)**
+
+* Stacks lost on death: 50/0%
 
 **Shrink Ray**
 
@@ -751,7 +921,7 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 **Snowball Fight!**
 
-* Disabled.
+* Disabled. See other Snowball Augments.
 
 **Sonic Boom**
 
@@ -764,6 +934,23 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 * Heal Percent: 10/20% damage done by Critical Strikes
 
+**Speed Demon (Silver) (NEW)**
+
+* MS per Ability Hit: 150/300 MS
+
+**Spellcraft (Prismatic) (NEW)**
+
+* Gain a modified Camille W
+  * May use the Quest Slot or Summoner Flee, unsure.
+* Wind up and release a burst of energy, dealing damage in a cone. This deals increased damage to enemies hit with the outer edge, Slowing them by 20% for 2 seconds.
+  * Damage: 50 (+10% bonus AD) (+15% AP)
+  * Outer Edge (200%): 100 (+20% bonus AD) (+30% AP)
+* Hitting at least one enemy champion with the outer edge restores 5% of your missing Health.
+* Gain Shards as you select augments that enhance your spell:
+  * Red Shard: Increases damage by 75 (+50% bonus AD) (+40% AP) per Red Shard.
+  * Blue Shard: Increases Slow by 30% per Blue Shard
+  * Green Shard: Increases healing by 20% per Green Shard
+
 **Spellwake**
 
 * Damage: 100-325 (+145/165/185% bonus AD) (+20/30/40% AP)
@@ -772,6 +959,10 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
   * NEW: Explodes based on distance, up to 1 second delay, from 50-1000 units.
 * Max Level Bonus:
   * Fire an additional wave after 0.5 seconds
+
+**Spin Me Right Round (Silver) (NEW)**
+
+* Same as ARAM: Mayhem
 
 **Spin to Win**
 
@@ -808,6 +999,10 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 * Gain 4/5/6 Stat Anvils
 * Max Level Bonus:
   * Gain 1 Prismatic Anvil. Increase stats gained by 10%
+
+**Stuck In Here With Me (Prismatic) (NEW)**
+
+* Same as ARAM: Mayhem
 
 **Summoner Revolution**
 
@@ -857,6 +1052,14 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 * Burn Percent: 3.5/5% max Health
 
+**Transmute: Silver (Prismatic) (NEW)**
+
+* Fill your remaining augment slots with random Silver Augments.
+
+**Trash to Treasure (Silver) (NEW)**
+
+* When <keywordMajor>Trash To Treasure</keywordMajor> is removed or replaced gain a <keywordMajor>Prismatic Augment</keywordMajor> selection.
+
 **Trickster Demon**
 
 * Bonus Damage: 100-300 (+100/300 flat damage from Augment Level) (+30/40% bonus AD) (+40/60% AP)
@@ -870,6 +1073,10 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 **Twice Thrice**
 
 * Proc Cadence: Every 3/2 Attacks
+
+**Twinfire (Silver) (NEW)**
+
+* Bonus Missiles: 1 per 33.3/25% Critical Strike Chance
 
 **Typhoon**
 
@@ -892,12 +1099,33 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 * Ultimate Haste: 50 -> 60
 * Refund 20% of Hijack's Cooldown on takedown.
 
+**Unstable Transmission (Gold) (NEW)**
+
+* At the start of each round, this augment transforms into a random augment at its max level.
+
+**Upgrade Collector (Silver) (NEW)**
+
+* Upgraded Gold per Kill: 200/500 Gold
+* Execute Threshold per Stack: 1/2% max Health
+
+**Upgrade Hubris (Gold) (NEW)**
+
+* Heal Amount on Takedown: 5% (+1% per Stack) max Health
+
+**Upgrade Sword of Blossoming Dawn (PRismatic) (NEW)**
+
+* Same as ARAM: Mayhem
+
 **Vanish**
 
 * Stealth Duration: 3/6 seconds
 * Max Level Bonus:
   * Gain 25/40% MS
     * This is what the tooltip says. Not sure if it means while invisible or in general.
+
+**Veil of Warding (Silver) (NEW)**
+
+* Gain a Sepll Shield every 20/10 seconds.
 
 **Vengeance**
 
@@ -922,11 +1150,26 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 * Max Level Bonus:
   * You can now move in Stasis
 
+**Weighted Popoffs (Silver) (NEW)**
+
+* CDR per Stack: 2.5/5% of ability cooldown
+
+**Wild Fire (Prismatic) (NEW)**
+
+* Autocast fling a bouncing fireball every 15 seconds.
+* The fireball deals 250/350/450 (+30% bonus AD) (+40% AP) and can bounce between yourself and enemy champions within 750 range, up to 3/4/6 times.
+* Max Level Bonus:
+  * Increase bounce count by 1, up to 7.
+
 **Willing Sacrifice**
 
 * Shield Granted: 25/35% of 25% of your maximum health
 * Max Level Bonus:
   * Additionally, cleanse that teammate.
+
+**Wind Beneath Blade (Silver) (NEW)**
+
+* Same as ARAM: Mayhem
 
 **Wisdom of Ages**
 
@@ -940,6 +1183,14 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 **With Haste**
 
 * MS: 120/225% AH
+
+**Zealot (Silver) (NEW)**
+
+* Same as ARAM: Mayhem
+
+**??? (Prismatic) (NEW)**
+
+* Same as ARAM: Mayhem
 
 ### Disabled/Scrapped Augments
 
