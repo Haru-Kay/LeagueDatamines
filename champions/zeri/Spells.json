@@ -253,26 +253,13 @@
         {
           "name": "BonusDamageBase",
           "values": [
-            15.0,
-            17.0,
-            19.0,
-            21.0,
-            23.0,
-            25.0,
-            27.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "BonusADRatio",
-          "values": [
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612
+            20.0,
+            22.0,
+            24.0,
+            26.0,
+            28.0,
+            30.0,
+            32.0
           ],
           "~class": "SpellDataValue"
         },
@@ -327,6 +314,19 @@
             1.5
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "CDReductionModNonChamp",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "cantCastWhileRooted": true,
@@ -350,11 +350,11 @@
         25000.0
       ],
       "cooldownTime": [
-        22.0,
-        22.0,
+        24.0,
+        24.0,
+        22.5,
         21.0,
-        20.0,
-        19.0,
+        19.5,
         18.0,
         18.0
       ],
@@ -466,9 +466,9 @@
           },
           "mLocKeys": {
             "keyName": "Spark Surge",
-            "keySummary": "Zeri dashes a short distance and energizes her next 3 shots of Burst Fire, causing them to pierce through enemies. She will vault and grind over any terrain she touches.",
-            "keyTooltip": "Zeri dashes a short distance and vaults over any terrain she touches, greatly extending the dash range. For the next @BuffDuration@ seconds, her shots of <spellName>{{Spell_ZeriQ_Name}}</spellName> pierce dealing @PenDamagePercent*100@% damage to enemies after the first and an additional <magicDamage>@BonusDamageTotal@ magic damage</magicDamage> On-Hit to the first target struck. <br><br>Hitting an enemy champion with an Attack or Ability reduces this Ability's cooldown by @CDReductionPerHit@ seconds. Critical strikes reduce the cooldown by @CritCDReductionPerHit@ seconds instead.",
-            "keyTooltipExtendedBelowLine": "<rules>On-hit damage is increased by Zeri's Critical Strike Chance and Critical Strike Damage at @CritScalingMod*100@% effectiveness.<br>Pierce damage can critically strike but does not apply On-Hit effects.<br>Uncharged Attacks do not reduce this ability's cooldown.</rules>"
+            "keySummary": "Zeri dashes a short distance and energizes Burst Fire to pierce through enemies. She will vault and grind over any terrain she touches.",
+            "keyTooltip": "Zeri dashes a short distance and vaults over any terrain she touches, greatly extending the dash range. For the next @BuffDuration@ seconds, her shots of <spellName>{{Spell_ZeriQ_Name}}</spellName> pierce dealing @PenDamagePercent*100@% damage to enemies after the first and an additional <magicDamage>@BonusDamageTotal@ magic damage</magicDamage> On-Hit to the first target struck. <br><br>Hitting an enemy with an Attack reduces this Ability's cooldown by @CDReductionPerHit@ seconds. Critical strikes reduce the cooldown by @CritCDReductionPerHit@ seconds instead.",
+            "keyTooltipExtendedBelowLine": "<rules>On-hit damage is increased by Zeri's Critical Strike Chance and Critical Strike Damage at @CritScalingMod*100@% effectiveness.<br>Pierce damage can critically strike but does not apply On-Hit effects.</rules>"
           },
           "mObjectName": "ZeriE",
           "~class": "TooltipInstanceSpell"
@@ -518,12 +518,6 @@
             {
               "mDataValue": "BonusDamageBase",
               "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mDataValue": "BonusADRatio",
-              "mStat": 2,
-              "mStatFormula": 2,
-              "~class": "StatByNamedDataValueCalculationPart"
             },
             {
               "mDataValue": "BonusAPRatio",
@@ -867,6 +861,9 @@
     "mScriptName": "ZeriQ",
     "mSpell": {
       "0x11704a2b": 0.25,
+      "0x8958fee2": {
+        "~class": "0x8958fee2"
+      },
       "0xf26881a0": 0.25,
       "0xfe87f21e": [
         {
@@ -905,26 +902,26 @@
         {
           "name": "ExcessAttackSpeedToADMult",
           "values": [
-            0.699999988079071,
-            0.699999988079071,
-            0.699999988079071,
-            0.699999988079071,
-            0.699999988079071,
-            0.699999988079071,
-            0.699999988079071
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
           ],
           "~class": "SpellDataValue"
         },
         {
           "name": "BaseDamage",
           "values": [
-            13.0,
-            15.0,
-            17.0,
-            19.0,
+            18.0,
             21.0,
-            23.0,
-            25.0
+            24.0,
+            27.0,
+            30.0,
+            33.0,
+            36.0
           ],
           "~class": "SpellDataValue"
         },
@@ -932,12 +929,12 @@
           "name": "ActiveADRatio",
           "values": [
             1.0,
+            1.0199999809265137,
             1.0399999618530273,
+            1.059999942779541,
             1.0800000429153442,
-            1.1200000047683716,
-            1.159999966621399,
-            1.2000000476837158,
-            1.2400000095367432
+            1.100000023841858,
+            1.1200000047683716
           ],
           "~class": "SpellDataValue"
         },
@@ -1076,6 +1073,7 @@
         0.0,
         0.0
       ],
+      "flags": 32,
       "mAffectsTypeFlags": 6154,
       "mAnimationName": "Spell1",
       "mCantCancelWhileWindingUp": true,
@@ -2687,13 +2685,13 @@
         {
           "name": "MSPercent",
           "values": [
-            0.009999999776482582,
-            0.009999999776482582,
-            0.009999999776482582,
-            0.009999999776482582,
-            0.009999999776482582,
-            0.009999999776482582,
-            0.009999999776482582
+            0.014999999664723873,
+            0.014999999664723873,
+            0.014999999664723873,
+            0.014999999664723873,
+            0.014999999664723873,
+            0.014999999664723873,
+            0.014999999664723873
           ],
           "~class": "SpellDataValue"
         },
@@ -2769,26 +2767,26 @@
         {
           "name": "BaseBonusMS",
           "values": [
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448
           ],
           "~class": "SpellDataValue"
         },
         {
           "name": "MaxHyperchargeDuration",
           "values": [
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5
           ],
           "~class": "SpellDataValue"
         },
@@ -2883,6 +2881,13 @@
                   "~class": "TooltipInstanceListElement"
                 },
                 {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Move Speed",
+                  "type": "MSPercent",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
                   "type": "Cooldown",
                   "~class": "TooltipInstanceListElement"
                 }
@@ -2936,7 +2941,7 @@
               "~class": "StatByCoefficientCalculationPart"
             },
             {
-              "mCoefficient": 1.0,
+              "mCoefficient": 0.6000000238418579,
               "mStat": 2,
               "mStatFormula": 2,
               "~class": "StatByCoefficientCalculationPart"
@@ -3049,13 +3054,13 @@
         {
           "name": "CriticalEffectiveness",
           "values": [
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
           ],
           "~class": "SpellDataValue"
         },
@@ -3381,7 +3386,7 @@
               "~class": "StatByNamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.25,
+              "mCoefficient": 0.5,
               "~class": "StatByCoefficientCalculationPart"
             }
           ],

@@ -1,8 +1,6 @@
 Just a reminder that PBE changes are not final and subject to change. Some changes, such as bugfixes, may not be able to be viewed. 
 
-## Arena
-
-### Guests of Honor
+## Guests of Honor
 
 **I was not able to locate most of the custom effects that aren't explicitly mentioned in the Guest of Honor tooltips, so for now I cannot give further information that what I've already given.**
 
@@ -178,7 +176,7 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 * Replace one of your Augments with one a tier higher.
 
-### Augments
+## Augments
 
 **For my own sanity I will not be listing the usual A -> B format unless I feel they're important, most changes are tuning down augments for lower levels and having the max level to be equal or slightly stronger. Same deal with augments transferred from Mayhem.**
 
@@ -1296,11 +1294,11 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 * Same as ARAM: Mayhem
 
-### Disabled/Scrapped Augments
+## Disabled/Scrapped Augments
 
 **The following augments are leftover data in the original Arena augment location. Based on ID numbers and PBE data from the last Arena Update, these are leftovers from development from back then.**
 
-**Blood Mage**
+**Blood Mage (Prismatic)**
 
 * Your Abilities cost 3/5% max Health instead of Mana/Energy and deal up to 40/50% increased damage based on your missing Health, up to 70% missing Health.
 * Gain 8/15% Omnivamp.

@@ -927,13 +927,13 @@
         {
           "name": "BaseDamageAPRatio",
           "values": [
-            0.15000000596046448,
-            0.15000000596046448,
-            0.15000000596046448,
-            0.15000000596046448,
-            0.15000000596046448,
-            0.15000000596046448,
-            0.15000000596046448
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645
           ],
           "~class": "SpellDataValue"
         }
@@ -988,13 +988,13 @@
             {
               "name": "BaseDamageAPRatio",
               "values": [
-                0.30000001192092896,
-                0.30000001192092896,
-                0.30000001192092896,
-                0.30000001192092896,
-                0.30000001192092896,
-                0.30000001192092896,
-                0.30000001192092896
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5
               ],
               "~class": "SpellDataValue"
             }
@@ -1281,28 +1281,28 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "DamageReductionWaveclear",
+          "name": "RAPRatio",
           "values": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
+            1.100000023841858,
+            1.100000023841858,
+            1.100000023841858,
+            1.100000023841858,
+            1.100000023841858,
+            1.100000023841858,
+            1.100000023841858
           ],
           "~class": "SpellDataValue"
         },
         {
-          "name": "RAPRatio",
+          "name": "BaseDamageMinionMonster",
           "values": [
-            0.8999999761581421,
-            0.8999999761581421,
-            0.8999999761581421,
-            0.8999999761581421,
-            0.8999999761581421,
-            0.8999999761581421,
-            0.8999999761581421
+            75.0,
+            150.0,
+            225.0,
+            300.0,
+            375.0,
+            450.0,
+            525.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1410,6 +1410,11 @@
                   "~class": "TooltipInstanceListElement"
                 },
                 {
+                  "nameOverride": "Non Champion Damage",
+                  "type": "BaseDamageMinionMonster",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
                   "type": "Cooldown",
                   "~class": "TooltipInstanceListElement"
                 }
@@ -1421,7 +1426,7 @@
           "mLocKeys": {
             "keyName": "Trueshot Barrage",
             "keySummary": "Ezreal winds up before firing a powerful barrage of energy that deals massive damage to each unit it passes through (damage is reduced for minions and non-epic monsters).",
-            "keyTooltip": "Ezreal fires a massive energy arc that deals <magicDamage>@Damage@ magic damage</magicDamage>. The arc deals @DamageReductionWaveclear.0*100@% damage to minions and non-epic jungle monsters."
+            "keyTooltip": "Ezreal fires a massive energy arc that deals <magicDamage>@Damage@ magic damage</magicDamage>. Damage to minions and non-epic jungle monsters is reduced to <magicDamage>@DamageMinionMonster@ magic damage</magicDamage>."
           },
           "mObjectName": "EzrealR",
           "~class": "TooltipInstanceSpell"
@@ -1492,6 +1497,25 @@
         "~class": "MissileSpecification"
       },
       "mSpellCalculations": {
+        "0x37fb638c": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "BaseDamageMinionMonster",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 1.0,
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByCoefficientCalculationPart"
+            },
+            {
+              "mCoefficient": 1.100000023841858,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
         "Damage": {
           "mFormulaParts": [
             {
@@ -1612,13 +1636,13 @@
         {
           "name": "APRatio",
           "values": [
-            0.6499999761581421,
-            0.699999988079071,
-            0.75,
-            0.800000011920929,
-            0.8500000238418579,
             0.8999999761581421,
-            0.949999988079071
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421
           ],
           "~class": "SpellDataValue"
         }
@@ -1737,13 +1761,6 @@
                   "nameOverride": "Damage",
                   "type": "BaseDamage",
                   "typeIndex": 1,
-                  "~class": "TooltipInstanceListElement"
-                },
-                {
-                  "Style": 1,
-                  "multiplier": 100.0,
-                  "nameOverride": "Total AP Ratio",
-                  "type": "APRatio",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
