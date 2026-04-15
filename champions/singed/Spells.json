@@ -83,6 +83,73 @@
     "mSpell": {
       "0x11704a2b": 0.25,
       "0xf26881a0": 1.0,
+      "DataValues": [
+        {
+          "name": "BaseDamageValue",
+          "values": [
+            50.0,
+            50.0,
+            60.0,
+            70.0,
+            80.0,
+            90.0,
+            100.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "RootDuration",
+          "values": [
+            0.75,
+            1.0,
+            1.25,
+            1.5,
+            1.75,
+            2.0,
+            2.25
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxHPDamage",
+          "values": [
+            6.0,
+            6.0,
+            6.5,
+            7.0,
+            7.5,
+            8.0,
+            8.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "FlingDistance",
+          "values": [
+            420.0,
+            420.0,
+            420.0,
+            420.0,
+            420.0,
+            420.0,
+            420.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "NonChampionDamageCap",
+          "values": [
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "bHaveHitEffect": true,
       "castConeDistance": 100.0,
       "castFrame": 7.5,
@@ -205,7 +272,7 @@
           "mLocKeys": {
             "keyName": "Fling",
             "keySummary": "Damages target enemy unit and flings them into the air behind Singed. If the target Singed flings lands in his Mega Adhesive, they are also rooted.",
-            "keyTooltip": "Singed flings an enemy over his shoulder, dealing <magicDamage>@BaseDamage@ plus @Effect3Amount@% max Health magic damage</magicDamage>.<br><br>If Singed flings a target into his <spellName>{{Spell_MegaAdhesive_Name}}</spellName>, they are <status>Rooted</status> for @Effect2Amount@ seconds.",
+            "keyTooltip": "Singed flings an enemy over his shoulder, dealing <magicDamage>@BaseDamage@ plus @MaxHPDamage@% max Health magic damage</magicDamage>.<br><br>If Singed flings a target into his <spellName>{{Spell_MegaAdhesive_Name}}</spellName>, they are <status>Rooted</status> for @RootDuration@ seconds.",
             "keyTooltipExtendedBelowLine": "<rules>Max Health damage is capped at 300 against minions and jungle monsters.</rules>"
           },
           "mObjectName": "Fling",
@@ -300,8 +367,8 @@
         "baseDamage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "BaseDamageValue",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.550000011920929,
@@ -559,6 +626,10 @@
             0.375
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "Radius",
+          "~class": "SpellDataValue"
         }
       ],
       "bHaveHitBone": true,
@@ -760,6 +831,10 @@
             8.0,
             8.0
           ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DamagePerTick",
           "~class": "SpellDataValue"
         }
       ],

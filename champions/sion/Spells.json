@@ -4247,6 +4247,32 @@
             15.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "ShieldAPRatio",
+          "values": [
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DamageAPRatio",
+          "values": [
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -4422,6 +4448,32 @@
                 45.0
               ],
               "~class": "SpellDataValue"
+            },
+            {
+              "name": "ShieldAPRatio",
+              "values": [
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "DamageAPRatio",
+              "values": [
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579
+              ],
+              "~class": "SpellDataValue"
             }
           ],
           "~class": "SpellDataValueVector"
@@ -4529,7 +4581,7 @@
           "mLocKeys": {
             "keyName": "Soul Furnace",
             "keySummary": "Sion shields himself and can reactivate after 3 seconds to deal Magic Damage to enemies nearby. When Sion kills enemies, he passively gains maximum Health.",
-            "keyTooltip": "<spellPassive>Passive</spellPassive>: Sion gains <scaleHealth>@HPPerKill@ max Health</scaleHealth> when he kills a unit, or @HPPerChampKill@ for champion takedowns, large minions and large monsters.<br><br><spellActive>Active</spellActive>: Sion gains <shield>@TotalShield@ Shield</shield> for 6 seconds. After @Effect7Amount@ seconds if the shield still holds, Sion can <recast>Recast</recast> to detonate the shield to deal <magicDamage>@TotalDamage@ plus @Effect4Amount@% max Health magic damage</magicDamage>.",
+            "keyTooltip": "<spellPassive>Passive</spellPassive>: Sion gains <scaleHealth>@HPPerKill@ max Health</scaleHealth> when he kills a unit, or <scaleHealth>@HPPerChampKill@</scaleHealth> for champion takedowns, large minions and large monsters.<br><br><spellActive>Active</spellActive>: Sion gains <shield>@TotalShield@ Shield</shield> for 6 seconds. After @Effect7Amount@ seconds if the shield still holds, Sion can <recast>Recast</recast> to detonate the shield to deal <magicDamage>@TotalDamage@ plus @Effect4Amount@% max Health magic damage</magicDamage>.",
             "keyTooltipExtended": "{{Spell_SionW_Tooltip}}<br><br>Current Bonus Health: <statTracking>@f1@</statTracking>",
             "keyTooltipExtendedBelowLine": "<rules>Max 400 bonus damage to minions and monsters.</rules>"
           },
@@ -4688,8 +4740,8 @@
               "~class": "EffectValueCalculationPart"
             },
             {
-              "mCoefficient": 0.4000000059604645,
-              "~class": "StatByCoefficientCalculationPart"
+              "mDataValue": "DamageAPRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -4701,8 +4753,8 @@
               "~class": "EffectValueCalculationPart"
             },
             {
-              "mCoefficient": 0.4000000059604645,
-              "~class": "StatByCoefficientCalculationPart"
+              "mDataValue": "ShieldAPRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
             },
             {
               "mDataValue": "ShieldPercentHealthTooltip",

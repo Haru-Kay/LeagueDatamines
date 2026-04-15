@@ -467,8 +467,54 @@
             0.8500000238418579
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "SpellShieldDuration",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "HealAPRatio",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "HealAPRatio",
+              "values": [
+                1.2000000476837158,
+                1.2000000476837158,
+                1.2000000476837158,
+                1.2000000476837158,
+                1.2000000476837158,
+                1.2000000476837158,
+                1.2000000476837158
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "castConeDistance": 100.0,
       "castFrame": 7.5,
       "castRadius": [
@@ -528,7 +574,7 @@
           "mLocKeys": {
             "keyName": "Spell Shield",
             "keySummary": "Creates a magical barrier that blocks a single enemy ability cast on Sivir. She receives health and a burst of movement speed if a spell is blocked.",
-            "keyTooltip": "Sivir creates a magical barrier for @Effect1Amount@ seconds that blocks the next incoming enemy Ability. If an ability is blocked, Sivir restores <healing>@TotalHeal@ health</healing> and triggers Fleet of Foot.",
+            "keyTooltip": "Sivir creates a magical barrier for @SpellShieldDuration@ seconds that blocks the next incoming enemy Ability. If an ability is blocked, Sivir restores <healing>@TotalHeal@ health</healing> and triggers Fleet of Foot.",
             "keyTooltipExtendedBelowLine": "<rules>This shield blocks both champion and item Abilities.</rules>"
           },
           "mObjectName": "SivirE",
@@ -614,8 +660,8 @@
               "~class": "StatByNamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.5,
-              "~class": "StatByCoefficientCalculationPart"
+              "mDataValue": "HealAPRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -886,8 +932,41 @@
             0.4000000059604645
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatio",
+          "values": [
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579
+          ],
+          "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "APRatio",
+              "values": [
+                0.800000011920929,
+                0.800000011920929,
+                0.800000011920929,
+                0.800000011920929,
+                0.800000011920929,
+                0.800000011920929,
+                0.800000011920929
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "bHaveHitBone": true,
       "castConeDistance": 100.0,
       "castFrame": 12.0,
@@ -1071,8 +1150,8 @@
               "~class": "StatByNamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.6000000238418579,
-              "~class": "StatByCoefficientCalculationPart"
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "mMultiplier": {
@@ -1576,6 +1655,19 @@
             3.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "AttackCooldownRefund",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "castConeDistance": 100.0,
@@ -1648,7 +1740,7 @@
           "mLocKeys": {
             "keyName": "On The Hunt",
             "keySummary": "Sivir leads her allies in battle, granting them a surge of Move Speed for a period of time. In addition, Sivir's attacks reduce her spell cooldowns.",
-            "keyTooltip": "Sivir rallies her nearby allies, granting them <speed>@MaxMS*100@% Move Speed</speed> for @UltDuration@ seconds.<br><br>Sivir's attacks against champions while On The Hunt reduce the cooldown of her basic abilities by 0.5 seconds.<br><br>Takedowns on recently damaged enemies refreshes the duration of the hunt.",
+            "keyTooltip": "Sivir rallies her nearby allies, granting them <speed>@MaxMS*100@% Move Speed</speed> for @UltDuration@ seconds.<br><br>Sivir's attacks against champions while On The Hunt reduce the cooldown of her basic abilities by @AttackCooldownRefund@ seconds.<br><br>Takedowns on recently damaged enemies refreshes the duration of the hunt.",
             "keyTooltipExtendedBelowLine": ""
           },
           "mObjectName": "SivirR",
@@ -1665,21 +1757,6 @@
           "champion"
         ],
         "~class": "ObjectTags"
-      },
-      "mSpellCalculations": {
-        "MaxDuration": {
-          "mFormulaParts": [
-            {
-              "mEffectIndex": 4,
-              "~class": "EffectValueCalculationPart"
-            },
-            {
-              "mEffectIndex": 6,
-              "~class": "EffectValueCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        }
       },
       "mSpellCooldownOrSealedQueueThreshold": 0.5,
       "mSpellTags": [

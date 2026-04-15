@@ -550,8 +550,8 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mEffectIndex": 4,
-                "~class": "EffectValueCalculationPart"
+                "mDataValue": "MoveSpeedPercent",
+                "~class": "NamedDataValueCalculationPart"
               }
             ],
             "~class": "GameCalculation"
@@ -576,6 +576,45 @@
             0.15000000596046448,
             0.15000000596046448,
             0.15000000596046448
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ShieldHoldDuration",
+          "values": [
+            2.75,
+            3.0,
+            3.25,
+            3.5,
+            3.75,
+            4.0,
+            4.25
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ShieldFacingDRAmount",
+          "values": [
+            30.0,
+            35.0,
+            40.0,
+            45.0,
+            50.0,
+            55.0,
+            60.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MoveSpeedPercent",
+          "values": [
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0
           ],
           "~class": "SpellDataValue"
         }
@@ -684,7 +723,7 @@
           "mLocKeys": {
             "keyName": "Unbreakable",
             "keySummary": "Braum raises his shield in a direction for several seconds, intercepting all projectiles causing them to hit him and be destroyed. He negates the damage of the first attack completely and reduces the damage of all subsequent attacks from this direction.",
-            "keyTooltip": "Braum raises his shield for @Effect2Amount@ seconds, intercepting enemy missiles from the chosen direction, causing them to hit Braum and then be destroyed. The first missile Braum blocks deals no damage, and subsequent projectiles deal @Effect3Amount@% reduced damage.<br><br>Braum gains <speed>@Effect4Amount@% Move Speed</speed> while his shield is raised."
+            "keyTooltip": "Braum raises his shield for @ShieldHoldDuration@ seconds, intercepting enemy missiles from the chosen direction, causing them to hit Braum and then be destroyed. The first missile Braum blocks deals no damage, and subsequent projectiles deal @ShieldFacingDRAmount@% reduced damage.<br><br>Braum gains <speed>@MoveSpeedPercent@% Move Speed</speed> while his shield is raised."
           },
           "mObjectName": "BraumE",
           "~class": "TooltipInstanceSpell"
@@ -1926,114 +1965,6 @@
     "mScriptName": "BraumPulseLineKnockup",
     "~class": "SpellObject"
   },
-  "Characters/Braum/Spells/BraumPulseLinePopup": {
-    "ObjectName": "BraumPulseLinePopup",
-    "mScriptName": "BraumPulseLinePopup",
-    "mSpell": {
-      "0x11704a2b": 0.25,
-      "0xf26881a0": 1.0,
-      "bHaveHitBone": true,
-      "castConeDistance": 100.0,
-      "castFrame": 18.0,
-      "castRadius": [
-        120.0,
-        120.0,
-        120.0,
-        120.0,
-        120.0,
-        120.0,
-        120.0
-      ],
-      "castRange": [
-        25000.0,
-        25000.0,
-        25000.0,
-        25000.0,
-        25000.0,
-        25000.0,
-        25000.0
-      ],
-      "cooldownTime": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "flags": 4,
-      "mAffectsTypeFlags": 6154,
-      "mAlternateName": "BraumPulseKnockup",
-      "mAnimationName": "Idle1",
-      "mCantCancelWhileWindingUp": true,
-      "mCastTime": 0.625,
-      "mClientData": {
-        "mTargeterDefinitions": [
-          {
-            "useCasterBoundingBox": false,
-            "~class": "TargeterDefinitionRange"
-          }
-        ],
-        "~class": "SpellDataResourceClient"
-      },
-      "mCoefficient": 1.0,
-      "mEffectAmount": [
-        {
-          "value": [
-            75.0,
-            250.0,
-            425.0,
-            600.0,
-            0.0,
-            0.0,
-            175.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
-      "mHitBoneName": "root",
-      "mImgIconName": [
-        "Bowmaster_EnchantedArrow.dds"
-      ],
-      "mIsDisabledWhileDead": false,
-      "mSpellRevealsChampion": false,
-      "mTargetingTypeData": {
-        "~class": "Location"
-      },
-      "missileSpeed": 1600.0,
-      "selectionPriority": 1,
-      "~class": "SpellDataResource"
-    },
-    "~class": "SpellObject"
-  },
   "Characters/Braum/Spells/BraumPulseLineSlow": {
     "ObjectName": "BraumPulseLineSlow",
     "mBuff": {
@@ -2283,8 +2214,8 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mEffectIndex": 2,
-                "~class": "EffectValueCalculationPart"
+                "mDataValue": "InitialSlow",
+                "~class": "NamedDataValueCalculationPart"
               }
             ],
             "~class": "GameCalculation"
@@ -2338,6 +2269,71 @@
             0.02500000037252903,
             0.02500000037252903,
             0.02500000037252903
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "InitialSlow",
+          "values": [
+            70.0,
+            70.0,
+            70.0,
+            70.0,
+            70.0,
+            70.0,
+            70.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MinSlow",
+          "values": [
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowDuration",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MissileRange",
+          "values": [
+            1050.0,
+            1050.0,
+            1050.0,
+            1050.0,
+            1050.0,
+            1050.0,
+            1050.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DebuffDuration",
+          "values": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
           ],
           "~class": "SpellDataValue"
         }
@@ -2461,7 +2457,7 @@
           "mLocKeys": {
             "keyName": "Winter's Bite",
             "keySummary": "Braum propels freezing ice from his shield, slowing and dealing magic damage.<br><br>Applies a stack of <font color='#FFF673'>Concussive Blows</font>.",
-            "keyTooltip": "Braum propels freezing ice from his shield, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> to the first enemy hit and <status>Slowing</status> them by @Effect2Amount@% decaying over @Effect5Amount@ seconds.<br><br>Applies a stack of <keywordMajor>Concussive Blows</keywordMajor>. "
+            "keyTooltip": "Braum propels freezing ice from his shield, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> to the first enemy hit and <status>Slowing</status> them by @InitialSlow@% decaying over @SlowDuration@ seconds.<br><br>Applies a stack of <keywordMajor>Concussive Blows</keywordMajor>. "
           },
           "mObjectName": "BraumQ",
           "~class": "TooltipInstanceSpell"
@@ -3502,6 +3498,32 @@
             45.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "Duration",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BonusDashSpeed",
+          "values": [
+            750.0,
+            750.0,
+            750.0,
+            750.0,
+            750.0,
+            750.0,
+            750.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -3633,7 +3655,7 @@
           "mLocKeys": {
             "keyName": "Stand Behind Me",
             "keySummary": "Braum leaps to a target allied champion or minion. On arrival, Braum and the ally gain Armor and Magic Resist for a few seconds.",
-            "keyTooltip": "Braum leaps to an allied champion or minion. On arrival, Braum grants the target <scaleArmor>@GrantedAllyArmor@ Armor</scaleArmor> and <scaleMR>@GrantedAllyMR@ Magic Resist</scaleMR> for @Effect1Amount@ seconds. Braum grants himself <scaleArmor>@GrantedBraumArmor@ Armor</scaleArmor> and <scaleMR>@GrantedBraumMR@ Magic Resist</scaleMR> for the same duration."
+            "keyTooltip": "Braum leaps to an allied champion or minion. On arrival, Braum grants the target <scaleArmor>@GrantedAllyArmor@ Armor</scaleArmor> and <scaleMR>@GrantedAllyMR@ Magic Resist</scaleMR> for @Duration@ seconds. Braum grants himself <scaleArmor>@GrantedBraumArmor@ Armor</scaleArmor> and <scaleMR>@GrantedBraumMR@ Magic Resist</scaleMR> for the same duration."
           },
           "mObjectName": "BraumW",
           "~class": "TooltipInstanceSpell"
