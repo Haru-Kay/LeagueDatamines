@@ -170,8 +170,8 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mEffectIndex": 1,
-                "~class": "EffectValueCalculationPart"
+                "mDataValue": "SlowAmount",
+                "~class": "NamedDataValueCalculationPart"
               }
             ],
             "~class": "GameCalculation"
@@ -195,6 +195,47 @@
     "mSpell": {
       "0x11704a2b": 0.25,
       "0xf26881a0": 1.0,
+      "DataValues": [
+        {
+          "name": "SlowAmount",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseDamage",
+          "values": [
+            40.0,
+            40.0,
+            65.0,
+            90.0,
+            115.0,
+            140.0,
+            140.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowDecayTime",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "cantCastWhileRooted": true,
       "castConeDistance": 100.0,
       "castFrame": 7.5,
@@ -275,8 +316,7 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 2,
+                  "type": "BaseDamage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -291,7 +331,7 @@
           "mLocKeys": {
             "keyName": "Vault",
             "keySummary": "Quinn dashes to an enemy, dealing physical damage and slowing the target's Move Speed. Upon reaching the target, she leaps off the target, briefly interrupting it, and lands near her maximum Attack Range away from the target.",
-            "keyTooltip": "Quinn dashes to an enemy, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and marking them <keywordMajor>Vulnerable</keywordMajor>. Quinn then leaps backwards from the target, slightly <status>Knocking</status> them <status>Back</status> and <status>Slowing</status> them by @Effect1Amount*100@%, decaying over @Effect3Amount@ seconds."
+            "keyTooltip": "Quinn dashes to an enemy, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and marking them <keywordMajor>Vulnerable</keywordMajor>. Quinn then leaps backwards from the target, slightly <status>Knocking</status> them <status>Back</status> and <status>Slowing</status> them by @SlowAmount*100@%, decaying over @SlowDecayTime@ seconds."
           },
           "mObjectName": "QuinnE",
           "~class": "TooltipInstanceSpell"
@@ -366,8 +406,8 @@
         "TotalDamage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 2,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.20000000298023224,
@@ -381,7 +421,8 @@
       },
       "mSpellTags": [
         "PositiveEffect_MoveBlock",
-        "Trait_ImmobilizingCCSpell"
+        "Trait_ImmobilizingCCSpell",
+        "Trait_AttackReset"
       ],
       "mana": [
         50.0,
@@ -571,7 +612,7 @@
           "mLocKeys": {
             "keyName": "Harrier",
             "keySummary": "Valor, Quinn's Demacian eagle, periodically marks enemies as <font color='#FFF673'>Vulnerable</font>. Quinn's first basic attack against <font color='#FFF673'>Vulnerable</font> targets will deal bonus physical damage.",
-            "keyTooltip": "Every @f1@ seconds, Valor marks a nearby enemy as <keywordMajor>Vulnerable</keywordMajor>, revealing it for @RevealDuration@ seconds and causing Quinn's next Attack against them to deal <physicalDamage>@BonusDamage@ bonus physical damage</physicalDamage>.",
+            "keyTooltip": "Every @f1@ seconds, Valor marks a nearby enemy as <keywordMajor>Vulnerable</keywordMajor>, revealing it for @RevealDuration@ seconds and causing Quinn's next Attack %i:OnHit% <OnHit>On-Hit</OnHit> against them to deal <physicalDamage>@BonusDamage@ bonus physical damage</physicalDamage>.",
             "keyTooltipExtended": "{{Spell_QuinnPassive_Tooltip}}<br><br><rules>Cooldown is reduced by Critical Strike Chance.</rules>"
           },
           "mObjectName": "QuinnPassive",
@@ -711,6 +752,32 @@
             0.5
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "VisionReductionRadius",
+          "values": [
+            -1000.0,
+            -1000.0,
+            -1000.0,
+            -1000.0,
+            -1000.0,
+            -1000.0,
+            -1000.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "VisionReductionDuration",
+          "values": [
+            1.75,
+            1.75,
+            1.75,
+            1.75,
+            1.75,
+            1.75,
+            1.75
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -843,7 +910,7 @@
           "mLocKeys": {
             "keyName": "Blinding Assault",
             "keySummary": "Quinn calls Valor to mark an enemy and hinder its vision before damaging all enemies in the immediate area.",
-            "keyTooltip": "Quinn orders Valor to dive, making the first enemy hit <keywordMajor>Vulnerable</keywordMajor>, reducing their vision radius for @Effect3Amount@ seconds and dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> to all surrounding enemies.<br><br>If the first enemy struck is not a champion, it is <status>Disarmed</status> for @Effect3Amount@ seconds."
+            "keyTooltip": "Quinn orders Valor to dive, making the first enemy hit <keywordMajor>Vulnerable</keywordMajor>, reducing their vision radius for @VisionReductionDuration@ seconds and dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> to all surrounding enemies.<br><br>If the first enemy struck is not a champion, it is <status>Disarmed</status> for @VisionReductionDuration@ seconds."
           },
           "mObjectName": "QuinnQ",
           "~class": "TooltipInstanceSpell"
@@ -1627,8 +1694,8 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mEffectIndex": 3,
-                "~class": "EffectValueCalculationPart"
+                "mDataValue": "MoveSpeedAmount",
+                "~class": "NamedDataValueCalculationPart"
               }
             ],
             "~class": "GameCalculation"
@@ -1686,6 +1753,58 @@
             100.0,
             100.0,
             100.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BuffDuration",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MovespeedAmount",
+          "values": [
+            0.15000000596046448,
+            0.20000000298023224,
+            0.25,
+            0.30000001192092896,
+            0.3499999940395355,
+            0.4000000059604645,
+            0.44999998807907104
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "VisionRadius",
+          "values": [
+            2100.0,
+            2100.0,
+            2100.0,
+            2100.0,
+            2100.0,
+            2100.0,
+            2100.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "VisionDuration",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1779,8 +1898,7 @@
                   "Style": 1,
                   "multiplier": 100.0,
                   "nameOverride": "Move Speed",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 3,
+                  "type": "MovespeedAmount",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -1796,7 +1914,7 @@
             "keyCost": "No Cost",
             "keyName": "Heightened Senses",
             "keySummary": "Passively grants Quinn Attack Speed and Move Speed after she attacks a <font color='#FFF673'>Vulnerable</font> target. Activate to have Valor reveal a large area nearby.",
-            "keyTooltip": "<spellPassive>Passive:</spellPassive> Attacking a <keywordMajor>Vulnerable</keywordMajor> target grants Quinn <attackSpeed>@AttackSpeedBonus*100@% Attack Speed</attackSpeed> and <speed>@Effect3Amount*100@% Move Speed</speed> for @Effect1Amount@ seconds.<br><br><spellActive>Active:</spellActive> Valor reveals a large area nearby for @Effect5Amount@ seconds."
+            "keyTooltip": "<spellPassive>Passive:</spellPassive> Attacking a <keywordMajor>Vulnerable</keywordMajor> target grants Quinn <attackSpeed>@AttackSpeedBonus*100@% Attack Speed</attackSpeed> and <speed>@MovespeedAmount*100@% Move Speed</speed> for @BuffDuration@ seconds.<br><br><spellActive>Active:</spellActive> Valor reveals a large area nearby for @VisionDuration@ seconds."
           },
           "mObjectName": "QuinnW",
           "~class": "TooltipInstanceSpell"

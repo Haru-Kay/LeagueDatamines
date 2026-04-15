@@ -524,13 +524,10 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mEffectIndex": 3,
-                "~class": "EffectValueCalculationPart"
+                "mDataValue": "RootDuration",
+                "~class": "NamedDataValueCalculationPart"
               }
             ],
-            "mMultiplier": {
-              "~class": "EffectValueCalculationPart"
-            },
             "~class": "GameCalculation"
           },
           "EffectTag": 4096,
@@ -582,6 +579,19 @@
             0.75,
             0.75,
             0.75
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "RootDuration",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
           ],
           "~class": "SpellDataValue"
         }
@@ -704,8 +714,8 @@
           "mLocKeys": {
             "keyName": "Light Binding",
             "keySummary": "Lux releases a sphere of light that binds and deals damage to up to two enemy units.",
-            "keyTooltip": "Lux fires a ball of light, <status>Rooting</status> the first two enemies for @Effect3Amount@ seconds and dealing <magicDamage>@TotalDamageTT@ magic damage</magicDamage> to each.",
-            "keyTooltipSimple": "Roots two enemies for @Effect3Amount@ second(s) and damages them."
+            "keyTooltip": "Lux fires a ball of light, <status>Rooting</status> the first two enemies for @RootDuration@ seconds and dealing <magicDamage>@TotalDamageTT@ magic damage</magicDamage> to each.",
+            "keyTooltipSimple": "Roots two enemies for @RootDuration@ second(s) and damages them."
           },
           "mObjectName": "LuxLightBinding",
           "~class": "TooltipInstanceSpell"
@@ -1045,8 +1055,8 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mEffectIndex": 3,
-                "~class": "EffectValueCalculationPart"
+                "mDataValue": "SlowZoneDuration",
+                "~class": "NamedDataValueCalculationPart"
               }
             ],
             "~class": "GameCalculation"
@@ -1112,6 +1122,19 @@
             5.0,
             5.0,
             5.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseDamage",
+          "values": [
+            20.0,
+            65.0,
+            115.0,
+            165.0,
+            215.0,
+            265.0,
+            315.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1191,8 +1214,7 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 2,
+                  "type": "BaseDamage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -1218,7 +1240,7 @@
           "mLocKeys": {
             "keyName": "Lucent Singularity",
             "keySummary": "Fires an anomaly of twisted light to an area, which slows nearby enemies. Lux can detonate it to damage enemies in the area of effect.",
-            "keyTooltip": "Lux creates a light zone that <status>Slows</status> by @Effect1Amount@% and reveals the area. After @Effect3Amount@ seconds or on <recast>Recasting</recast> this Ability, it detonates, dealing <magicDamage>@TotalDamageTT@ magic damage</magicDamage> and <status>Slowing</status> for an additional @SlowLingerDuration@ second.",
+            "keyTooltip": "Lux creates a light zone that <status>Slows</status> by @SlowPercent@% and reveals the area. After @SlowZoneDuration@ seconds or on <recast>Recasting</recast> this Ability, it detonates, dealing <magicDamage>@TotalDamageTT@ magic damage</magicDamage> and <status>Slowing</status> for an additional @SlowLingerDuration@ second.",
             "keyTooltipSimple": "Creates a ball of light, slowing enemies within.<br><br>Re-activate to detonate and damage all enemies inside."
           },
           "mObjectName": "LuxLightStrikeKugel",
@@ -1353,8 +1375,8 @@
         "TotalDamageTT": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 2,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.800000011920929,
@@ -1802,7 +1824,7 @@
           "mLocKeys": {
             "keyName": "Prismatic Barrier",
             "keySummary": "Lux throws her wand and bends the light around any friendly target it touches, protecting them from enemy damage.",
-            "keyTooltip": "Lux throws her wand, granting <shield>@TotalShieldTT@ Shield</shield> for @Effect3Amount@ seconds to allies it passes through. Then it returns, granting the same <shield>Shield</shield> on its return.",
+            "keyTooltip": "Lux throws her wand, granting <shield>@TotalShieldTT@ Shield</shield> for @ShieldDuration@ seconds to allies it passes through. Then it returns, granting the same <shield>Shield</shield> on its return.",
             "keyTooltipExtendedBelowLine": "<rules>Both instances of Shield can stack.</rules>",
             "keyTooltipSimple": "Shields Lux and allies struck.<br><br>Units may be shielded twice per cast."
           },

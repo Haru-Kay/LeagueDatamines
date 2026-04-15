@@ -349,8 +349,8 @@
           "mLocKeys": {
             "keyName": "Electrical Surge",
             "keySummary": "Kennen passively deals extra damage and adds a Mark of the Storm to his target every few attacks, and he can activate this ability to damage and add another Mark of the Storm to targets who are already marked.",
-            "keyTooltip": "<spellPassive>Passive:</spellPassive> Every 5th Attack deals an additional <magicDamage>@TotalDamagePassive@ magic damage</magicDamage>.<br><br><spellActive>Active:</spellActive> Kennen sends out a blast of electricity, dealing <magicDamage>@TotalDamageActive@ magic damage</magicDamage> to nearby enemies affected by <spellName>Mark of the Storm</spellName>.<br>",
-            "keyTooltipExtendedBelowLine": "<rules>The passive also applies <spellName>Mark of the Storm</spellName>.<br>Attacking structures will stack the passive, but not expend it. The active automatically hits enemies inside of <spellName>Slicing Maelstrom</spellName>.</rules>"
+            "keyTooltip": "<spellPassive>Passive:</spellPassive> Every 5th Attack deals an additional <magicDamage>@TotalDamagePassive@ magic damage</magicDamage> %i:OnHit% <OnHit>On-Hit</OnHit>.<br><br><spellActive>Active:</spellActive> Kennen sends out a blast of electricity, dealing <magicDamage>@TotalDamageActive@ magic damage</magicDamage> to nearby enemies affected by <spellName>Mark of the Storm</spellName>.<br>",
+            "keyTooltipExtendedBelowLine": "<rules>The passive also applies <spellName>Mark of the Storm</spellName> and can critically strike for @TotalDamagePassiveCrit@ instead.<br>Attacking structures will stack the passive, but not expend it. The active automatically hits enemies inside of <spellName>Slicing Maelstrom</spellName>.</rules>"
           },
           "mObjectName": "KennenBringTheLight",
           "~class": "TooltipInstanceSpell"
@@ -438,6 +438,25 @@
         "ASSETS/Characters/Kennen/HUD/Icons2D/Kennen_W.dds"
       ],
       "mSpellCalculations": {
+        "0xfd1ba675": {
+          "mModifiedGameCalculation": "TotalDamagePassive",
+          "mMultiplier": {
+            "mSubparts": [
+              {
+                "mNumber": 1.399999976158142,
+                "~class": "NumberCalculationPart"
+              },
+              {
+                "mCoefficient": 0.4000000059604645,
+                "mStat": 9,
+                "mStatFormula": 2,
+                "~class": "StatByCoefficientCalculationPart"
+              }
+            ],
+            "~class": "SumOfSubPartsCalculationPart"
+          },
+          "~class": "GameCalculationModified"
+        },
         "TotalDamageActive": {
           "mFormulaParts": [
             {
@@ -936,7 +955,7 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "AttackSpeed",
+          "name": "TotalAS",
           "values": [
             0.30000001192092896,
             0.4000000059604645,
@@ -997,6 +1016,19 @@
             0.15000000596046448,
             0.15000000596046448,
             0.15000000596046448
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "CritDurationBonus",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1067,7 +1099,7 @@
                   "Style": 1,
                   "multiplier": 100.0,
                   "nameOverride": "Attack Speed",
-                  "type": "AttackSpeed",
+                  "type": "TotalAS",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -1078,8 +1110,8 @@
           "mLocKeys": {
             "keyName": "Lightning Rush",
             "keySummary": "Kennen morphs into a lightning form, enabling him to pass through units and apply a Mark of the Storm. Kennen gains Move Speed when entering this form, and attack speed when leaving it.",
-            "keyTooltip": "Kennen turns into a ball of lightning, gaining <speed>@MovementSpeed*100@% Move Speed</speed>, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> to enemies he passes through, and becoming Ghosted for @DurationAsBall@ seconds. If Kennen damages at least one enemy, he gains @EnergyRefund@ Energy. <br><br>After this ability ends, Kennen gains <attackSpeed>@AttackSpeed*100@% Attack Speed</attackSpeed> for @DurationAfterBall@ seconds. Kennen can <recast>Recast</recast> to end this Ability early.",
-            "keyTooltipExtendedBelowLine": "<rules>Ghosted units can pass through other units.<br>Deals @DamageToMinions*100@% damage to minions and jungle monsters.</rules>"
+            "keyTooltip": "Kennen turns into a ball of lightning, gaining <speed>@MovementSpeed*100@% Move Speed</speed>, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> to enemies he passes through, and becoming Ghosted for @DurationAsBall@ seconds. If Kennen damages at least one enemy, he gains @EnergyRefund@ Energy. <br><br>After this ability ends, Kennen gains <attackSpeed>@TotalAS*100@% Attack Speed</attackSpeed> for @DurationAfterBall@ seconds. Critical Strikes extend this duration by @CritDurationBonus@ second(s). Kennen can <recast>Recast</recast> to end this Ability early.",
+            "keyTooltipExtendedBelowLine": "<rules>Ghosted units can pass through other units.<br>Deals @DamageToMinions*100@% damage to minions and jungle monsters.<br>Duration cannot be extended beyond its initial value.</rules>"
           },
           "mObjectName": "KennenLightningRush",
           "~class": "TooltipInstanceSpell"
@@ -1711,6 +1743,21 @@
     "mSpell": {
       "0x11704a2b": 0.17500001192092896,
       "0xf26881a0": 0.6000000238418579,
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            25.0,
+            75.0,
+            125.0,
+            175.0,
+            225.0,
+            275.0,
+            325.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "bHaveHitBone": true,
       "castConeDistance": 100.0,
       "castFrame": 10.229999542236328,
@@ -1798,7 +1845,7 @@
                 },
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
+                  "type": "BaseDamage",
                   "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
                 }
@@ -1817,48 +1864,6 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.75,
-      "mEffectAmount": [
-        {
-          "value": [
-            30.0,
-            75.0,
-            125.0,
-            175.0,
-            225.0,
-            275.0,
-            325.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mHitBoneName": "C_BuffBone_Glb_Center_Loc",
       "mImgIconName": [
         "ASSETS/Characters/Kennen/HUD/Icons2D/Kennen_Q.dds"
@@ -1896,8 +1901,8 @@
         "TotalDamage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.75,
@@ -1905,7 +1910,6 @@
             }
           ],
           "mSimpleTooltipCalculationDisplay": 6,
-          "tooltipOnly": true,
           "~class": "GameCalculation"
         }
       },

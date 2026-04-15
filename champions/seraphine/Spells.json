@@ -131,13 +131,22 @@
       "0xf26881a0": 0.0,
       "canCastWhileDisabled": true,
       "castRange": [
-        25000.0,
-        25000.0,
-        25000.0,
-        25000.0,
-        25000.0,
-        25000.0,
-        25000.0
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0
+      ],
+      "castRangeDisplayOverride": [
+        350.0,
+        350.0,
+        350.0,
+        350.0,
+        350.0,
+        350.0,
+        350.0
       ],
       "castRangeUseBoundingBoxes": true,
       "cooldownTime": [
@@ -149,11 +158,11 @@
         0.0,
         0.0
       ],
-      "luaOnMissileUpdateDistanceInterval": 50.000999450683594,
+      "flags": 32,
       "mAffectsTypeFlags": 6154,
       "mAnimationName": "none",
       "mCantCancelWhileWindingUp": true,
-      "mCastType": 3,
+      "mCastType": 7,
       "mCastingBreaksStealth": true,
       "mFloatVarsDecimals": [
         0,
@@ -178,7 +187,7 @@
         "0xc195fba6": true,
         "behaviors": [
           {
-            "~class": "CastOnMovementComplete"
+            "~class": "CastOnHit"
           },
           {
             "~class": "DestroyOnMovementComplete"
@@ -187,11 +196,12 @@
         "heightSolver": {
           "~class": "BlendedLinearHeightSolver"
         },
+        "mMissileWidth": 50.0,
         "movementComponent": {
+          "mSpeed": 600.0,
           "mStartBoneName": "R_buffbone_Glb_Foot_Loc",
           "mTargetHeightAugment": 100.0,
-          "mTravelTime": 0.4000000059604645,
-          "~class": "FixedTimeMovement"
+          "~class": "FixedSpeedMovement"
         },
         "verticalFacing": {
           "~class": "VeritcalFacingMatchVelocity"
@@ -199,9 +209,9 @@
         "~class": "MissileSpecification"
       },
       "mTargetingTypeData": {
-        "~class": "Location"
+        "~class": "direction"
       },
-      "selectionPriority": 1,
+      "missileSpeed": 400.0,
       "useAnimatorFramerate": true,
       "~class": "SpellDataResource"
     },
@@ -382,14 +392,6 @@
       "mTargetingTypeData": {
         "~class": "Location"
       },
-      "mana": [
-        1.0,
-        1.0,
-        1.0,
-        1.0,
-        1.0,
-        1.0
-      ],
       "selectionPriority": 1,
       "useAnimatorFramerate": true,
       "~class": "SpellDataResource"
@@ -538,14 +540,6 @@
       "mTargetingTypeData": {
         "~class": "direction"
       },
-      "mana": [
-        1.0,
-        1.0,
-        1.0,
-        1.0,
-        1.0,
-        1.0
-      ],
       "selectionPriority": 1,
       "~class": "SpellDataResource"
     },
@@ -2884,14 +2878,6 @@
       "mTargetingTypeData": {
         "~class": "Self"
       },
-      "mana": [
-        1.0,
-        1.0,
-        1.0,
-        1.0,
-        1.0,
-        1.0
-      ],
       "selectionPriority": 2,
       "useAnimatorFramerate": true,
       "~class": "SpellDataResource"

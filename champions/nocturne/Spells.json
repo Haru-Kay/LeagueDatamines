@@ -193,8 +193,8 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mEffectIndex": 3,
-                "~class": "EffectValueCalculationPart"
+                "mDataValue": "TrailDuration",
+                "~class": "NamedDataValueCalculationPart"
               }
             ],
             "~class": "GameCalculation"
@@ -252,6 +252,19 @@
             45.0,
             55.0,
             65.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "TrailDuration",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
           ],
           "~class": "SpellDataValue"
         }
@@ -366,7 +379,7 @@
           "mLocKeys": {
             "keyName": "Duskbringer",
             "keySummary": "Nocturne throws a shadow blade that deals damage, leaves a Dusk Trail, and causes champions to leave a Dusk Trail. While on the trail, Nocturne can move through units and has increased Move Speed and Attack Damage.",
-            "keyTooltip": "Nocturne throws a shadow blade, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and leaving a dusk trail for @Effect3Amount@ seconds. Enemy champions hit also leave a trail. <br><br>While on the trail, Nocturne is Ghosted and gains <speed>@MoveSpeed@% Move Speed</speed> and <physicalDamage>@BonusTrailAD@ Attack Damage</physicalDamage>.",
+            "keyTooltip": "Nocturne throws a shadow blade, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and leaving a dusk trail for @TrailDuration@ seconds. Enemy champions hit also leave a trail. <br><br>While on the trail, Nocturne is Ghosted and gains <speed>@MoveSpeed@% Move Speed</speed> and <physicalDamage>@BonusTrailAD@ Attack Damage</physicalDamage>.",
             "keyTooltipExtendedBelowLine": "<rules>{{Reminder_Ghosted}}</rules>",
             "keyTooltipSimple": "Throws a shadow blade, damaging enemeis struck and leaving a Dusk Trail.<br><br>Nocturne gains @MoveSpeed@% Move Speed and @BonusTrailAD@ Attack Damage on the trail."
           },
@@ -1348,8 +1361,8 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mEffectIndex": 3,
-                "~class": "EffectValueCalculationPart"
+                "mDataValue": "ShieldDuration",
+                "~class": "NamedDataValueCalculationPart"
               }
             ],
             "~class": "GameCalculation"
@@ -1368,6 +1381,60 @@
     "mScriptName": "NocturneShroudofDarkness",
     "mSpell": {
       "0xf26881a0": 1.3600000143051147,
+      "DataValues": [
+        {
+          "name": "ActiveAS",
+          "values": [
+            30.0,
+            30.0,
+            35.0,
+            40.0,
+            45.0,
+            50.0,
+            55.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "PassiveAS",
+          "values": [
+            0.30000001192092896,
+            0.30000001192092896,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ShieldDuration",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DoubleASDuration",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "castConeDistance": 100.0,
       "castFrame": 7.5,
       "castRadius": [
@@ -1411,8 +1478,7 @@
                 {
                   "Style": 1,
                   "nameOverride": "Bonus Attack Speed",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "ActiveAS",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -1427,9 +1493,9 @@
           "mLocKeys": {
             "keyName": "Shroud of Darkness",
             "keySummary": "Nocturne empowers his blades, passively gaining Attack Speed. Activating Shroud of Darkness allows Nocturne to fade into the shadows, creating a magical barrier which blocks a single enemy ability and doubles his passive Attack Speed if successful.",
-            "keyTooltip": "<spellPassive>Passive:</spellPassive> Nocturne gains <attackSpeed>@Effect1Amount@% Attack Speed</attackSpeed>.<br><br><spellActive>Active:</spellActive> Nocturne creates a shadow barrier for 1.5 seconds that blocks the next enemy Ability. If an Ability is blocked, this Ability's passive effect is increased to <attackSpeed>@Effect1Amount*2@% Attack Speed</attackSpeed> for @Effect4Amount@ seconds.",
+            "keyTooltip": "<spellPassive>Passive:</spellPassive> Nocturne gains <attackSpeed>@ActiveAS@% Attack Speed</attackSpeed>.<br><br><spellActive>Active:</spellActive> Nocturne creates a shadow barrier for 1.5 seconds that blocks the next enemy Ability. If an Ability is blocked, this Ability's passive effect is increased to <attackSpeed>@ActiveAS*2@% Attack Speed</attackSpeed> for @DoubleASDuration@ seconds.",
             "keyTooltipExtendedBelowLine": "<rules>This Ability will remain active during <spellName>Paranoia's</spellName> flight.</rules>",
-            "keyTooltipSimple": "<font color='#FF9900'>Passive:</font> Nocturne gains @Effect1Amount@% Attack Speed.<br><br><font color='#FF9900'>Active:</font> Block the next enemy ability that hits him within 1.5 second(s)."
+            "keyTooltipSimple": "<font color='#FF9900'>Passive:</font> Nocturne gains @ActiveAS@% Attack Speed.<br><br><font color='#FF9900'>Active:</font> Block the next enemy ability that hits him within 1.5 second(s)."
           },
           "mObjectName": "NocturneShroudofDarkness",
           "~class": "TooltipInstanceSpell"
@@ -1598,8 +1664,8 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mEffectIndex": 2,
-                "~class": "EffectValueCalculationPart"
+                "mDataValue": "CCDuration",
+                "~class": "NamedDataValueCalculationPart"
               }
             ],
             "~class": "GameCalculation"
@@ -1611,8 +1677,8 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mEffectIndex": 2,
-                "~class": "EffectValueCalculationPart"
+                "mDataValue": "CCDuration",
+                "~class": "NamedDataValueCalculationPart"
               }
             ],
             "~class": "GameCalculation"
@@ -1624,8 +1690,8 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mEffectIndex": 2,
-                "~class": "EffectValueCalculationPart"
+                "mDataValue": "CCDuration",
+                "~class": "NamedDataValueCalculationPart"
               }
             ],
             "~class": "GameCalculation"
@@ -1657,6 +1723,58 @@
             0.8999999761581421,
             0.8999999761581421,
             0.8999999761581421
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DamageToDeal",
+          "values": [
+            35.0,
+            80.0,
+            125.0,
+            170.0,
+            215.0,
+            260.0,
+            305.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "CCDuration",
+          "values": [
+            1.0,
+            1.25,
+            1.5,
+            1.75,
+            2.0,
+            2.25,
+            2.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "LeashDuration",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "LeashBreakRange",
+          "values": [
+            465.0,
+            465.0,
+            465.0,
+            465.0,
+            465.0,
+            465.0,
+            465.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1710,14 +1828,12 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "DamageToDeal",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Fear Duration",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 2,
+                  "type": "CCDuration",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -1736,8 +1852,8 @@
           "mLocKeys": {
             "keyName": "Unspeakable Horror",
             "keySummary": "Nocturne plants a nightmare into his target's mind, dealing damage each second and applying fear to the target if they do not get out of range by the end of the duration.",
-            "keyTooltip": "<spellPassive>Passive:</spellPassive> Nocturne gains <speed>@TooltipFearMS*100@% Move Speed</speed> toward <status>Feared</status> enemies.<br><br><spellActive>Active:</spellActive> Nocturne plants a nightmare tether into his target, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> over @Effect3Amount@ seconds. If the tether remains unbroken, the target is <status>Feared</status> for @Effect2Amount@ second(s).",
-            "keyTooltipSimple": "<font color='#FF9900'>Passive:</font> Gain massively increased Move Speed toward feared enemies.<br><br><font color='#FF9900'>Active:</font> Damages an enemy over @Effect3Amount@ second(s). If this completes, the target is feared for @Effect2Amount@ second(s)."
+            "keyTooltip": "<spellPassive>Passive:</spellPassive> Nocturne gains <speed>@TooltipFearMS*100@% Move Speed</speed> toward <status>Feared</status> enemies.<br><br><spellActive>Active:</spellActive> Nocturne plants a nightmare tether into his target, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> over @LeashDuration@ seconds. If the tether remains unbroken, the target is <status>Feared</status> for @CCDuration@ second(s).",
+            "keyTooltipSimple": "<font color='#FF9900'>Passive:</font> Gain massively increased Move Speed toward feared enemies.<br><br><font color='#FF9900'>Active:</font> Damages an enemy over @LeashDuration@ second(s). If this completes, the target is feared for @CCDuration@ second(s)."
           },
           "mObjectName": "NocturneUnspeakableHorror",
           "~class": "TooltipInstanceSpell"
@@ -1820,8 +1936,8 @@
         "TotalDamage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "DamageToDeal",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 1.0,

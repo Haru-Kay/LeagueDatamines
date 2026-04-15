@@ -666,6 +666,19 @@
             4.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "GroundDuration",
+          "values": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -783,7 +796,7 @@
           "mLocKeys": {
             "keyName": "Hail of Arrows",
             "keySummary": "Varus fires a hail of arrows that deal physical damage and desecrate the ground. Desecrated ground slows enemies' Move Speed and reduces their self healing and regeneration.",
-            "keyTooltip": "Varus fires a hail of arrows that deals <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and desecrates the ground for @Effect3Amount@ seconds, <status>Slowing</status> enemies by @SlowPercent*-100@% and applying @GrievousAmount*100@% Grievous Wounds.",
+            "keyTooltip": "Varus fires a hail of arrows that deals <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and desecrates the ground for @GroundDuration@ seconds, <status>Slowing</status> enemies by @SlowPercent*-100@% and applying @GrievousAmount*100@% Grievous Wounds.",
             "keyTooltipExtendedBelowLine": "<rules>{{Reminder_GrievousWounds}}</rules>"
           },
           "mObjectName": "VarusE",
@@ -3017,6 +3030,84 @@
             0.5
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "FalloffPercent",
+          "values": [
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ManaRefund",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxChannelDuration",
+          "values": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "CDRefund",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MoveSpeedMod",
+          "values": [
+            -0.20000000298023224,
+            -0.20000000298023224,
+            -0.20000000298023224,
+            -0.20000000298023224,
+            -0.20000000298023224,
+            -0.20000000298023224,
+            -0.20000000298023224
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MinDamagePercent",
+          "values": [
+            0.33000001311302185,
+            0.33000001311302185,
+            0.33000001311302185,
+            0.33000001311302185,
+            0.33000001311302185,
+            0.33000001311302185,
+            0.33000001311302185
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "castConeDistance": 100.0,
@@ -3198,7 +3289,7 @@
           "mLocKeys": {
             "keyName": "Piercing Arrow",
             "keySummary": "Varus readies and then fires a powerful shot that gains extra range and damage the longer he spends preparing to fire.",
-            "keyTooltip": "<attention>Begin Charging:</attention> Varus draws back his next shot, <status>Slowing</status> himself by @Effect7Amount*-100@%. After @Effect5Amount@ seconds, if not fired, Varus will cancel the Ability and refund @Effect4Amount*100@% of its Mana cost.<br><br><attention>Release:</attention> Varus releases the arrow, dealing <physicalDamage>@TotalDamageMinTooltip@ physical damage</physicalDamage>, reduced by @Effect3Amount*100@% per enemy hit (minimum @Effect9Amount*100@%). Damage and <keywordMajor>Blight</keywordMajor> detonation effects are increased by up to @MaxChargeAmp*100@% based on charge time (maximum <physicalDamage>@TotalDamageMax@</physicalDamage>) ."
+            "keyTooltip": "<attention>Begin Charging:</attention> Varus draws back his next shot, <status>Slowing</status> himself by @MoveSpeedMod*-100@%. After @MaxChannelDuration@ seconds, if not fired, Varus will cancel the Ability and refund @ManaRefund*100@% of its Mana cost.<br><br><attention>Release:</attention> Varus releases the arrow, dealing <physicalDamage>@TotalDamageMinTooltip@ physical damage</physicalDamage>, reduced by @FalloffPercent*100@% per enemy hit (minimum @MinDamagePercent*100@%). Damage and <keywordMajor>Blight</keywordMajor> detonation effects are increased by up to @MaxChargeAmp*100@% based on charge time (maximum <physicalDamage>@TotalDamageMax@</physicalDamage>) ."
           },
           "mObjectName": "VarusQ",
           "~class": "TooltipInstanceSpell"
@@ -3903,6 +3994,19 @@
             3.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "PassiveStacks",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "alwaysSnapFacing": true,
@@ -4013,8 +4117,7 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "BaseDamage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -4029,7 +4132,7 @@
           "mLocKeys": {
             "keyName": "Chain of Corruption",
             "keySummary": "Varus flings out a damaging tendril of corruption that immobilizes the first enemy champion hit and then spreads towards nearby uninfected champions, immobilizing them too on contact.",
-            "keyTooltip": "Varus flings out a tendril of corruption, <status>Rooting</status> the first champion hit for @Effect2Amount@ seconds and dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>. <status>Rooted</status> enemies gain @Effect4Amount@ <keywordMajor>Blight</keywordMajor> stacks over the duration.<br><br>The corruption spreads from its target to uninfected enemy champions. If it reaches them, they take the same damage and <status>Root</status>."
+            "keyTooltip": "Varus flings out a tendril of corruption, <status>Rooting</status> the first champion hit for @RootDuration@ seconds and dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>. <status>Rooted</status> enemies gain @PassiveStacks@ <keywordMajor>Blight</keywordMajor> stacks over the duration.<br><br>The corruption spreads from its target to uninfected enemy champions. If it reaches them, they take the same damage and <status>Root</status>."
           },
           "mObjectName": "VarusR",
           "~class": "TooltipInstanceSpell"
@@ -5063,6 +5166,32 @@
             0.1599999964237213
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "DebuffDuration",
+          "values": [
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxStacks",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "bIsToggleSpell": true,
@@ -5146,7 +5275,7 @@
             "keyCost": "No Cost",
             "keyName": "Blighted Quiver",
             "keySummary": "Passive: Varus' basic attacks deal bonus magic damage and apply Blight. Varus' other abilities detonate Blight, dealing magic damage based on the target's maximum Health. Active: Varus empowers his next Piercing Arrow.",
-            "keyTooltip": "<spellPassive>Passive: </spellPassive>Varus' Attacks deal an additional <magicDamage>@OnHitDamage@ magic damage</magicDamage> and apply a <keywordMajor>Blight</keywordMajor> stack for @Effect3Amount@ seconds (max @Effect4Amount@ stacks).<br><br>Varus' other Abilities detonate <keywordMajor>Blight</keywordMajor> stacks dealing <magicDamage>@PercentHPPerStack@ max Health magic damage</magicDamage> per stack (max <magicDamage>@MaxPercentHPPerStack@ max Health damage</magicDamage>). Detonating <keywordMajor>Blight</keywordMajor> on champions and epic monsters also reduces his basic Abilities' Cooldowns by @CDRPerBlightStack*100@% of their Maximum per stack.<br><br><spellActive>Active:</spellActive> Varus' next <spellName>{{Spell_VarusQ_Name}}</spellName> deals an additional <magicDamage>@QEmpowerPercentHP@ missing Health magic damage</magicDamage>, increased up to <magicDamage>@MaxQEmpowerPercentHP@ missing Health damage</magicDamage> based on charge time.",
+            "keyTooltip": "<spellPassive>Passive: </spellPassive>Varus' Attacks deal an additional <magicDamage>@OnHitDamage@ magic damage</magicDamage> and apply a <keywordMajor>Blight</keywordMajor> stack for @DebuffDuration@ seconds (max @MaxStacks@ stacks).<br><br>Varus' other Abilities detonate <keywordMajor>Blight</keywordMajor> stacks dealing <magicDamage>@PercentHPPerStack@ max Health magic damage</magicDamage> per stack (max <magicDamage>@MaxPercentHPPerStack@ max Health damage</magicDamage>). Detonating <keywordMajor>Blight</keywordMajor> on champions and epic monsters also reduces his basic Abilities' Cooldowns by @CDRPerBlightStack*100@% of their Maximum per stack.<br><br><spellActive>Active:</spellActive> Varus' next <spellName>{{Spell_VarusQ_Name}}</spellName> deals an additional <magicDamage>@QEmpowerPercentHP@ missing Health magic damage</magicDamage>, increased up to <magicDamage>@MaxQEmpowerPercentHP@ missing Health damage</magicDamage> based on charge time.",
             "keyTooltipExtendedBelowLine": "<rules>Passive damage from <keywordMajor>Blight</keywordMajor> detonations is capped at @MaxMonsterDamage@ damage per stack against jungle monsters.</rules>"
           },
           "mObjectName": "VarusW",

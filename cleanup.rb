@@ -178,7 +178,7 @@ def diff
     output = ""
     champDiff = {}
     champExceptions = [
-        "anticheat", "dynamic", "behavior"
+        "anticheat", "dynamic", "behavior", "statanvil", "phenomenalevil", "augment"
     ]
     removedStrings.each { |key, tl|
         champion = nil
@@ -304,6 +304,8 @@ def augmentSearcher(key, data, version=0)
             "rarity" => ["Silver", "Gold", "Prismatic"][data.fetch("rarity", 0).to_i.clamp(0, 2)],
             "disabled" => data.dig("Enabled") == false,
             "desc" => data.fetch("DescriptionTra", ""),
+            "maxLevelTooltip" => {},
+            "maxLevelSummary" => {},
             "tooltip" => data.fetch("AugmentTooltipTra", ""),
             "dataValues" => {},
             "calculations" => {},
@@ -357,14 +359,25 @@ def augmentSearcher(key, data, version=0)
                 
             end
         }
+
+        maxAugmentData = data.dig("0x791eb92e")&.dig("0x5753a320")
+        if maxAugmentData
+            aug["maxLevelTooltip"] = maxAugmentData.fetch("0x5835d27", {})
+            aug["maxLevelSummary"] = maxAugmentData.fetch("0xc98a82ca", {})
+        end
+
+
         aug["add"]&.delete_if { |augKey, augValue| ["dataValues", "calculations"].any? { |a| augValue[a]&.empty? }}
         aug.delete_if { |augKey, augValue|
             (augKey == "disabled" && augValue == false) ||
-            (["dataValues", "calculations", "add"].any? { |a| augKey == a } && augValue.empty?)
+            (["dataValues", "calculations", "add", "maxLevelTooltip", "maxLevelSummary"].any? { |a| augKey == a } && augValue.empty?)
         }
         aug["name"] = $lang.fetch(aug["name"].downcase, aug["name"])
         aug["desc"] = $lang.fetch(aug["desc"].downcase, aug["desc"])
         aug["tooltip"] = $lang.fetch(aug["tooltip"].downcase, aug["tooltip"])
+        aug["maxLevelTooltip"] = $lang.fetch(aug["maxLevelTooltip"].downcase, aug["maxLevelTooltip"]) if aug["maxLevelTooltip"]
+        aug["maxLevelSummary"] = $lang.fetch(aug["maxLevelSummary"].downcase, aug["maxLevelSummary"]) if aug["maxLevelSummary"]
+        aug.delete("maxLevelSummary") if aug["maxLevelSummary"]&.strip == aug["maxLevelTooltip"]&.strip
         return aug
     end
     return nil
@@ -892,6 +905,7 @@ print "done.\n"
                 augmentPools.each { |pool|
                     for i in 0...pool["AugmentPool"].length
                         augment = pool["AugmentPool"][i]
+                        next
                         name = $lang.dig($arena.dig(augment, "NameTra")&.downcase) || augment
                         data["0x857c9848"][augmentPools.index(pool)]["AugmentPool"][i] = name
                     end
@@ -909,12 +923,6 @@ print "done.\n"
         arenaOther[type].store(key, data)
     }
 
-    File.open("arena/augments/augments.json", 'wb') { |f| f.write(JSON.pretty_generate(augments.sort_by { |a| a["id"] })) }
-    arenaOther.each { |key, data|
-        loc = key.downcase.include?("vfx") ? "vfxData" : "data"
-        data = data.sort_by { |k, v| v["ObjectName"] }.to_h if key == "SpellObject"
-        File.open("arena/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
-    }
 
 
     mapBins[30].each { |map|
@@ -929,6 +937,11 @@ print "done.\n"
 
         json.each { |key, data|
             type = data["~class"]
+            v = augmentSearcher(key, data)
+            if v
+                augments.push(v) 
+                next
+            end
 
             next if !type
             case type
@@ -949,6 +962,13 @@ print "done.\n"
             data = data.sort_by { |k, v| v["ObjectName"] }.to_h if key == "SpellObject"
             File.open("arena/#{map}/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
         }
+    }
+    
+    File.open("arena/augments/augments.json", 'wb') { |f| f.write(JSON.pretty_generate(augments.sort_by { |a| a["id"] })) }
+    arenaOther.each { |key, data|
+        loc = key.downcase.include?("vfx") ? "vfxData" : "data"
+        data = data.sort_by { |k, v| v["ObjectName"] }.to_h if key == "SpellObject"
+        File.open("arena/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
     }
     print "done.\n"
 # Arena handling end
