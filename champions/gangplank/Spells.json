@@ -52,8 +52,8 @@
                 "~class": "StatByCoefficientCalculationPart"
               },
               {
-                "mDataValue": "BonusDamageToChampions",
-                "~class": "NamedDataValueCalculationPart"
+                "mEffectIndex": 3,
+                "~class": "EffectValueCalculationPart"
               }
             ],
             "~class": "SumOfSubPartsCalculationPart"
@@ -94,123 +94,6 @@
             70.0,
             80.0,
             90.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "MaxBarrels",
-          "values": [
-            3.0,
-            3.0,
-            3.0,
-            4.0,
-            4.0,
-            5.0,
-            5.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "DebuffDuration",
-          "values": [
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "BonusDamageToChampions",
-          "values": [
-            55.0,
-            75.0,
-            95.0,
-            115.0,
-            135.0,
-            155.0,
-            175.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "BarrelDuration",
-          "values": [
-            25.0,
-            25.0,
-            25.0,
-            25.0,
-            25.0,
-            25.0,
-            25.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "BarrelBaseDecay",
-          "values": [
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "BarrelEnemyGoldBounty",
-          "values": [
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "MinionDamagePercentage",
-          "values": [
-            100.0,
-            100.0,
-            100.0,
-            100.0,
-            100.0,
-            100.0,
-            100.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "CooldownBetweenBarrels",
-          "values": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "BarrelArmorPenetration",
-          "values": [
-            40.0,
-            40.0,
-            40.0,
-            40.0,
-            40.0,
-            40.0,
-            40.0
           ],
           "~class": "SpellDataValue"
         }
@@ -277,12 +160,14 @@
               "Elements": [
                 {
                   "nameOverride": "Bonus Damage Against Champions",
-                  "type": "BonusDamageToChampions",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 3,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Max Charges",
-                  "type": "MaxBarrels",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -306,7 +191,7 @@
             "keyCost": "No Cost",
             "keyName": "Powder Keg",
             "keySummary": "Gangplank uncovers a powder keg at target location. If he attacks it, it explodes, spreading the attack's damage to enemies in the area, slowing them.",
-            "keyTooltip": "Gangplank places a powder keg that can be attacked by Gangplank and enemy champions for @BarrelDuration@ seconds. When an enemy destroys it, the keg is defused. When Gangplank destroys it, it explodes, <status>Slowing</status> by @FinalSlowAmount@% for @DebuffDuration@ seconds and dealing the <physicalDamage>Attack's damage</physicalDamage>, ignoring @BarrelArmorPenetration@% Armor. Champions take an additional <physicalDamage>@BonusDamageToChampions@ physical damage</physicalDamage>.<br><br>Keg health decays every @BarrelDecayTime@ seconds. Keg explosions detonate other kegs with overlapping blast zones, but don't deal damage to the same target more than once. Keg explosions triggered by <spellName>{{Spell_GangplankQWrapper_Name}}</spellName> will grant the bonus gold for targets killed.",
+            "keyTooltip": "Gangplank places a powder keg that can be attacked by Gangplank and enemy champions for @Effect5Amount@ seconds. When an enemy destroys it, the keg is defused. When Gangplank destroys it, it explodes, <status>Slowing</status> by @FinalSlowAmount@% for @Effect2Amount@ seconds and dealing the <physicalDamage>Attack's damage</physicalDamage>, ignoring @Effect10Amount@% Armor. Champions take an additional <physicalDamage>@Effect3Amount@ physical damage</physicalDamage>.<br><br>Keg health decays every @BarrelDecayTime@ seconds. Keg explosions detonate other kegs with overlapping blast zones, but don't deal damage to the same target more than once. Keg explosions triggered by <spellName>{{Spell_GangplankQWrapper_Name}}</spellName> will grant the bonus gold for targets killed.",
             "keyTooltipExtendedBelowLine": "<rules>Keg decay rate increases at level 7 and 13.</rules>"
           },
           "mObjectName": "GangplankE",
@@ -713,34 +598,6 @@
     "mScriptName": "GangplankESpellPassive",
     "mSpell": {
       "0xf26881a0": 0.0,
-      "DataValues": [
-        {
-          "name": "ChampionBonusDamage",
-          "values": [
-            80.0,
-            80.0,
-            105.0,
-            130.0,
-            155.0,
-            180.0,
-            205.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "SlowAmount",
-          "values": [
-            30.0,
-            40.0,
-            50.0,
-            60.0,
-            70.0,
-            80.0,
-            90.0
-          ],
-          "~class": "SpellDataValue"
-        }
-      ],
       "castFrame": 10.0,
       "castRadius": [
         325.0,
@@ -808,12 +665,14 @@
                 {
                   "Style": 1,
                   "nameOverride": "Slow",
-                  "type": "SlowAmount",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 4,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Bonus Damage Against Champions",
-                  "type": "ChampionBonusDamage",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 3,
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -1397,49 +1256,6 @@
             1.0
           ],
           "~class": "SpellDataValue"
-        },
-        {
-          "name": "GoldProc",
-          "values": [
-            2.0,
-            3.0,
-            4.0,
-            5.0,
-            6.0,
-            7.0,
-            8.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "SSProc",
-          "values": [
-            3.0,
-            4.0,
-            5.0,
-            6.0,
-            7.0,
-            8.0,
-            9.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "ManaRefundPercent",
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "PlunderThreshold",
-          "values": [
-            500.0,
-            500.0,
-            500.0,
-            500.0,
-            500.0,
-            500.0,
-            500.0
-          ],
-          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -1502,12 +1318,14 @@
                 },
                 {
                   "nameOverride": "Plunder Gold",
-                  "type": "GoldProc",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 2,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Plunder Silver Serpents",
-                  "type": "SSProc",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 5,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -2698,8 +2516,8 @@
                   {
                     "mStat": 15,
                     "mSubpart": {
-                      "mDataValue": "PercentHeal",
-                      "~class": "NamedDataValueCalculationPart"
+                      "mEffectIndex": 2,
+                      "~class": "EffectValueCalculationPart"
                     },
                     "~class": "StatBySubPartCalculationPart"
                   }
@@ -2726,73 +2544,6 @@
     "ObjectName": "GangplankW",
     "mScriptName": "GangplankW",
     "mSpell": {
-      "DataValues": [
-        {
-          "name": "BaseHeal",
-          "values": [
-            20.0,
-            45.0,
-            70.0,
-            95.0,
-            120.0,
-            145.0,
-            170.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "PercentHeal",
-          "values": [
-            13.0,
-            13.0,
-            13.0,
-            13.0,
-            13.0,
-            13.0,
-            13.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "BuffDuration_unused",
-          "values": [
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "HasteAmount",
-          "values": [
-            200.0,
-            200.0,
-            200.0,
-            200.0,
-            200.0,
-            200.0,
-            200.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "SteroidAmount_unused",
-          "values": [
-            20.0,
-            30.0,
-            40.0,
-            50.0,
-            60.0,
-            70.0,
-            80.0
-          ],
-          "~class": "SpellDataValue"
-        }
-      ],
       "canCastWhileDisabled": true,
       "cannotBeSuppressed": true,
       "castFrame": 10.0,
@@ -2817,7 +2568,8 @@
               "Elements": [
                 {
                   "nameOverride": "Healing",
-                  "type": "BaseHeal",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -2836,7 +2588,7 @@
           "mLocKeys": {
             "keyName": "Remove Scurvy",
             "keySummary": "Eats citrus to cure crowd control effects and restore Health.",
-            "keyTooltip": "Gangplank consumes a large amount of citrus fruit, removing all <status>Disabling</status> effects and restoring <healing>@BaseHealth@ plus @PercentHeal@% missing Health</healing>."
+            "keyTooltip": "Gangplank consumes a large amount of citrus fruit, removing all <status>Disabling</status> effects and restoring <healing>@BaseHealth@ plus @Effect2Amount@% missing Health</healing>."
           },
           "mObjectName": "GangplankW",
           "~class": "TooltipInstanceSpell"
@@ -2946,8 +2698,8 @@
         "BaseHealth": {
           "mFormulaParts": [
             {
-              "mDataValue": "BaseHeal",
-              "~class": "NamedDataValueCalculationPart"
+              "mEffectIndex": 1,
+              "~class": "EffectValueCalculationPart"
             },
             {
               "mCoefficient": 0.8999999761581421,

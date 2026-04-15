@@ -194,8 +194,8 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mDataValue": "EnemyDisplacementRange",
-                "~class": "NamedDataValueCalculationPart"
+                "mEffectIndex": 6,
+                "~class": "EffectValueCalculationPart"
               }
             ],
             "~class": "GameCalculation"
@@ -207,8 +207,8 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mDataValue": "SlowAmount",
-                "~class": "NamedDataValueCalculationPart"
+                "mEffectIndex": 2,
+                "~class": "EffectValueCalculationPart"
               }
             ],
             "~class": "GameCalculation"
@@ -228,112 +228,6 @@
     "mSpell": {
       "0x11704a2b": 0.25,
       "0xf26881a0": 1.0,
-      "DataValues": [
-        {
-          "name": "PillarDuration",
-          "values": [
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "SlowAmount",
-          "values": [
-            30.0,
-            34.0,
-            38.0,
-            42.0,
-            46.0,
-            50.0,
-            54.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "SlowRadius",
-          "values": [
-            360.0,
-            360.0,
-            360.0,
-            360.0,
-            360.0,
-            360.0,
-            360.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "KnockbackRadius",
-          "values": [
-            225.0,
-            225.0,
-            225.0,
-            225.0,
-            225.0,
-            225.0,
-            225.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "AllyDisplacementRange",
-          "values": [
-            150.0,
-            150.0,
-            150.0,
-            150.0,
-            150.0,
-            150.0,
-            150.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "EnemyDisplacementRange",
-          "values": [
-            225.0,
-            225.0,
-            225.0,
-            225.0,
-            225.0,
-            225.0,
-            225.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "EnemyDisplacementSpeed",
-          "values": [
-            400.0,
-            400.0,
-            400.0,
-            400.0,
-            400.0,
-            400.0,
-            400.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "EnemyDisplacementGravity",
-          "values": [
-            60.0,
-            60.0,
-            60.0,
-            60.0,
-            60.0,
-            60.0,
-            60.0
-          ],
-          "~class": "SpellDataValue"
-        }
-      ],
       "SpellEventToAudioEventSuffix": {
         "12": "Play_sfx_Trundle_TrundleCircle_OnCast"
       },
@@ -426,7 +320,8 @@
                 {
                   "Style": 1,
                   "nameOverride": "Slow",
-                  "type": "SlowAmount",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 2,
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -437,7 +332,7 @@
           "mLocKeys": {
             "keyName": "Pillar of Ice",
             "keySummary": "Trundle creates an ice pillar at target location, becoming impassable terrain and slowing all nearby enemy units.",
-            "keyTooltip": "Trundle creates an icy pillar for @PillarDuration@ seconds, briefly <status>Knocking Back</status> enemies directly over it and <status>Slowing</status> nearby enemies by @SlowAmount@%."
+            "keyTooltip": "Trundle creates an icy pillar for @Effect1Amount@ seconds, briefly <status>Knocking Back</status> enemies directly over it and <status>Slowing</status> nearby enemies by @Effect2Amount@%."
           },
           "mObjectName": "TrundleCircle",
           "~class": "TooltipInstanceSpell"
@@ -1730,8 +1625,8 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mDataValue": "MSBonus",
-                "~class": "NamedDataValueCalculationPart"
+                "mEffectIndex": 1,
+                "~class": "EffectValueCalculationPart"
               }
             ],
             "~class": "GameCalculation"
@@ -1747,60 +1642,6 @@
     "mSpell": {
       "0x11704a2b": 0.25,
       "0xf26881a0": 1.0,
-      "DataValues": [
-        {
-          "name": "MSBonus",
-          "values": [
-            0.20000000298023224,
-            0.20000000298023224,
-            0.2800000011920929,
-            0.36000001430511475,
-            0.4399999976158142,
-            0.5199999809265137,
-            0.6000000238418579
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "ASBonus",
-          "values": [
-            0.30000001192092896,
-            0.30000001192092896,
-            0.44999998807907104,
-            0.6000000238418579,
-            0.75,
-            0.8999999761581421,
-            0.8999999761581421
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "HealingBonus",
-          "values": [
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "Duration",
-          "values": [
-            8.0,
-            8.0,
-            8.0,
-            8.0,
-            8.0,
-            8.0,
-            8.0
-          ],
-          "~class": "SpellDataValue"
-        }
-      ],
       "SpellEventToAudioEventSuffix": {
         "12": "Play_sfx_Trundle_TrundleDesecrate_OnCast"
       },
@@ -1873,14 +1714,16 @@
                   "Style": 1,
                   "multiplier": 100.0,
                   "nameOverride": "Move Speed",
-                  "type": "MSBonus",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "Style": 1,
                   "multiplier": 100.0,
                   "nameOverride": "Attack Speed",
-                  "type": "ASBonus",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 2,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -1895,7 +1738,7 @@
           "mLocKeys": {
             "keyName": "Frozen Domain",
             "keySummary": "Trundle turns target location into his domain, gaining Attack Speed, Move Speed, and increased healing from all sources while on it.",
-            "keyTooltip": "Trundle freezes an area for @Duration@ seconds. While inside he gains <speed>@MSBonus*100@% Move Speed</speed>, <attackSpeed>@ASBonus*100@% Attack Speed</attackSpeed>, and @HealingBonus*100@% increased healing."
+            "keyTooltip": "Trundle freezes an area for @Effect4Amount@ seconds. While inside he gains <speed>@Effect1Amount*100@% Move Speed</speed>, <attackSpeed>@Effect2Amount*100@% Attack Speed</attackSpeed>, and @Effect3Amount*100@% increased healing."
           },
           "mObjectName": "trundledesecrate",
           "~class": "TooltipInstanceSpell"

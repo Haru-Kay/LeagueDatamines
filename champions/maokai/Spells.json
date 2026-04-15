@@ -1942,19 +1942,6 @@
             2.0
           ],
           "~class": "SpellDataValue"
-        },
-        {
-          "name": "RootDuration",
-          "values": [
-            0.6000000238418579,
-            0.6000000238418579,
-            0.6000000238418579,
-            0.6000000238418579,
-            0.6000000238418579,
-            0.6000000238418579,
-            0.6000000238418579
-          ],
-          "~class": "SpellDataValue"
         }
       ],
       "alwaysSnapFacing": true,
@@ -2484,8 +2471,8 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mDataValue": "RootDuration",
-                "~class": "NamedDataValueCalculationPart"
+                "mEffectIndex": 2,
+                "~class": "EffectValueCalculationPart"
               }
             ],
             "~class": "GameCalculation"
@@ -2514,36 +2501,6 @@
             160.0,
             185.0
           ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "RootDuration",
-          "values": [
-            0.8999999761581421,
-            1.0,
-            1.100000023841858,
-            1.2000000476837158,
-            1.2999999523162842,
-            1.399999976158142,
-            1.5
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "DashSpeed",
-          "values": [
-            1300.0,
-            1300.0,
-            1300.0,
-            1300.0,
-            1300.0,
-            1300.0,
-            1300.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "DashAcceleration",
           "~class": "SpellDataValue"
         }
       ],
@@ -2602,7 +2559,8 @@
                 },
                 {
                   "nameOverride": "Root Duration",
-                  "type": "RootDuration",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 2,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -2617,7 +2575,7 @@
           "mLocKeys": {
             "keyName": "Twisted Advance",
             "keySummary": "Maokai contorts into a mass of moving roots, becoming untargetable and dashing to the target. Upon arrival, he roots the target.",
-            "keyTooltip": "Maokai transforms into a moving mass of roots, becoming Untargetable and dashing to an enemy. Upon arrival, he <status>Roots</status> the enemy for @RootDuration@ second(s) and deals <magicDamage>@TotalDamage@ magic damage</magicDamage>. "
+            "keyTooltip": "Maokai transforms into a moving mass of roots, becoming Untargetable and dashing to an enemy. Upon arrival, he <status>Roots</status> the enemy for @Effect2Amount@ second(s) and deals <magicDamage>@TotalDamage@ magic damage</magicDamage>. "
           },
           "mObjectName": "MaokaiW",
           "~class": "TooltipInstanceSpell"

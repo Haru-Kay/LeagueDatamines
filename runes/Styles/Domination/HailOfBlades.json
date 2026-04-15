@@ -32,39 +32,17 @@
         "~class": "SpellObject"
       },
       "~class": "PerkBuff"
-    },
-    {
-      "mBuffScriptName": "ASSETS/Perks/Styles/Domination/HailOfBlades/HailOfBladesCD.lua",
-      "mBuffSpellObject": {
-        "mBuff": {
-          "mDescription": "<titleLeft>{{perk_displayname_HailOfBlades}}</titleLeft><mainText>{{perk_displayname_HailOfBlades}} is unable to reset as you are in combat.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
-          "~class": "BuffData"
-        },
-        "~class": "SpellObject"
-      },
-      "~class": "PerkBuff"
-    },
-    {
-      "mBuffScriptName": "ASSETS/Perks/Styles/Domination/HailOfBlades/HailOfBladesBuff.lua",
-      "mBuffSpellObject": {
-        "mBuff": {
-          "mDescription": "<titleLeft>{{perk_displayname_HailOfBlades}}</titleLeft><mainText>{{perk_displayname_HailOfBlades}} is unable to reset as you are in combat.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
-          "~class": "BuffData"
-        },
-        "~class": "SpellObject"
-      },
-      "~class": "PerkBuff"
     }
   ],
   "mDisplayNameLocalizationKey": "Hail of Blades",
   "mDisplayStatLocalizationKey": "@f1@",
   "mEndOfGameStatDescriptions": [
     "Attacks made with extra Attack Speed: @eogvar1@",
-    "Damage Dealt: @eogvar2@"
+    "Percentage of Hail attacks landed: @eogvar2@%"
   ],
   "mIconTextureName": "ASSETS/Perks/Styles/Domination/HailOfBlades/HailOfBlades.tex",
-  "mLongDescLocalizationKey": "Gain @ASBoost*100@% (@ASBoostRanged*100@% for ranged champions) Attack Speed and <trueDamage>bonus true damage</trueDamage> when you attack an enemy champion for up to @NumHits@ attacks.<br><br>No more than @Duration@s can elapse between attacks or this effect will end.<br><br>Cooldown: @Cooldown@s.<br>On-Hit Damage: @BonusDamageMin@ - @BonusDamageMax@ (+@BonusADRatio.-1@ bonus AD, +@APRatio.-1@ AP) damage.<br><br><rules>Attack resets increase the attack limit by 1.<br>Allows you to temporarily exceed the Attack Speed limit.</rules>",
-  "mMajorChangePatchVersion": "16.9",
+  "mLongDescLocalizationKey": "Gain @ASBoostMin*100@% (@ASBoostRanged*100@% for ranged champions) Attack Speed when you attack an enemy champion for up to @NumHits@ attacks.<br><br>No more than @Duration@s can elapse between attacks or this effect will end.<br><br>Cooldown: @Cooldown@s.<br><br><rules>Attack resets increase the attack limit by 1.<br>Allows you to temporarily exceed the Attack Speed limit.</rules>",
+  "mMajorChangePatchVersion": "8.11",
   "mPerkId": 9923,
   "mPerkName": "HailOfBlades",
   "mScript": {
@@ -88,26 +66,6 @@
           ],
           "~class": "GameCalculation"
         },
-        "BonusDamage": {
-          "mFormulaParts": [
-            {
-              "0x589a59c": "0x6d5d9467",
-              "0xb65bc23": "BonusDamageMax",
-              "~class": "0xee18a47b"
-            },
-            {
-              "mDataValue": "APRatio",
-              "~class": "StatByNamedDataValueCalculationPart"
-            },
-            {
-              "mDataValue": "BonusADRatio",
-              "mStat": 2,
-              "mStatFormula": 2,
-              "~class": "StatByNamedDataValueCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
         "ChampRange": {
           "mConditionalCalculationRequirements": {
             "~class": "IsRangedCastRequirement"
@@ -119,7 +77,7 @@
         "MeleeItemCalcValue": {
           "mFormulaParts": [
             {
-              "mDataValue": "ASBoost",
+              "mDataValue": "ASBoostMax",
               "~class": "NamedDataValueCalculationPart"
             }
           ],
@@ -144,13 +102,9 @@
         }
       },
       "mEffectAmount": {
-        "0x1d02880a": 2.0,
-        "0x6d5d9467": 4.0,
-        "APRatio": 0.05999999865889549,
-        "ASBoost": 1.2000000476837158,
-        "ASBoostRanged": 0.6000000238418579,
-        "BonusADRatio": 0.07999999821186066,
-        "BonusDamageMax": 20.0,
+        "ASBoostMax": 1.600000023841858,
+        "ASBoostMin": 1.600000023841858,
+        "ASBoostRanged": 0.800000011920929,
         "Cooldown": 10.0,
         "NumHits": 3.0,
         "duration": 3.0
@@ -158,8 +112,8 @@
       "mEffectAmountGameMode": {
         "ARAM": {
           "mEffectAmountPerMode": {
-            "ASBoost": 1.2000000476837158,
-            "ASBoostRanged": 0.800000011920929
+            "ASBoostMax": 1.399999976158142,
+            "ASBoostRanged": 1.0
           },
           "~class": "PerkEffectAmountPerMode"
         }
@@ -169,8 +123,8 @@
     "mSpellScriptName": "ASSETS/Perks/Styles/Domination/HailOfBlades/HailOfBlades.lua",
     "~class": "PerkScript"
   },
-  "mShortDescLocalizationKey": "Gain a large amount of Attack Speed and <trueDamage>bonus true damage</trueDamage> for the first @NumHits@ attacks made against enemy champions.",
-  "mTooltipNameLocalizationKey": "When you attack an enemy champion, for up to @NumHits@ attacks, gain {{ Item_Melee_Ranged_Split }}% Attack Speed and deal <font color='#48C4B7'>@BonusDamage@</font> <trueDamage>bonus true damage</trueDamage>. <br><br>Cooldown: @Cooldown@s.<br><hr><br>Hail of Blades attacks: @f1@<br>Damage Dealt: @f2@<br>Percentage of Hail attacks landed: @f3@%<br><br><rules>Basic Attack resets increase the attack limit by +1, up to +@MaxBonusHits@.<br>Allows you to temporarily exceed the Attack Speed limit.</rules>",
+  "mShortDescLocalizationKey": "Gain a large amount of Attack Speed for the first @NumHits@ attacks made against enemy champions.",
+  "mTooltipNameLocalizationKey": "Gain {{ Item_Melee_Ranged_Split }}% Attack Speed when you attack an enemy champion for up to @NumHits@ attacks. <br><br>Cooldown: @Cooldown@s.<br><hr><br>Hail of Blades attacks: @f1@<br>Percentage of Hail attacks landed: @f2@%<br><br><rules>Basic Attack resets increase the attack limit by 1.<br>Allows you to temporarily exceed the Attack Speed limit.</rules>",
   "mVFXResourceResolver": {
     "resourceMap": {
       "Perks_HailOfBlades_Buff": "Perks/Styles/Domination/HailOfBlades/Particles/Perks_HailOfBlades_Buff",

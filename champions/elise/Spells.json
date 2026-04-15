@@ -31,32 +31,6 @@
             250.0
           ],
           "~class": "SpellDataValue"
-        },
-        {
-          "name": "RappelCooldown",
-          "values": [
-            22.0,
-            22.0,
-            21.0,
-            20.0,
-            19.0,
-            18.0,
-            18.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "RappelDamageAmp",
-          "values": [
-            25.0,
-            40.0,
-            55.0,
-            70.0,
-            85.0,
-            100.0,
-            115.0
-          ],
-          "~class": "SpellDataValue"
         }
       ],
       "bHaveHitBone": true,
@@ -140,7 +114,8 @@
               "Elements": [
                 {
                   "nameOverride": "Stun Duration:",
-                  "type": "StunDuration",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 5,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -150,13 +125,15 @@
                 },
                 {
                   "nameOverride": "Cooldown (Rappel)",
-                  "type": "RappelCooldown",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 3,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "Style": 1,
                   "nameOverride": "Damage and Healing Increase",
-                  "type": "RappelDamageAmp",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 6,
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -167,7 +144,7 @@
           "mLocKeys": {
             "keyName": "Cocoon / Rappel",
             "keySummary": "Human Form: Stuns the first enemy unit hit and reveals them if they are not stealthed.<br><br>Spider Form: Elise and her Spiderlings ascend into the air and then descend upon target enemy. After descending on an enemy target, Elise's bonus damage and healing from Spider Queen is increased.",
-            "keyTooltip": "<keywordMajor>Human Form</keywordMajor>: Elise fires a cocoon, <status>Stunning</status> and revealing the first enemy hit for @TotalStunDuration@ seconds.",
+            "keyTooltip": "<keywordMajor>Human Form</keywordMajor>: Elise fires a cocoon, <status>Stunning</status> and revealing the first enemy hit for @StunDuration@ seconds.",
             "keyTooltipExtended": "{{Spell_EliseHumanE_Tooltip}}<br><br>{{Spell_EliseSpiderE_Tooltip}}"
           },
           "mObjectName": "EliseHumanEMissile",
@@ -778,8 +755,8 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mSpellCalculationKey": "TotalStunDuration",
-                "~class": "0xf3cbe7b2"
+                "mDataValue": "StunDuration",
+                "~class": "NamedDataValueCalculationPart"
               }
             ],
             "~class": "GameCalculation"
@@ -791,8 +768,8 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mSpellCalculationKey": "TotalStunDuration",
-                "~class": "0xf3cbe7b2"
+                "mDataValue": "StunDuration",
+                "~class": "NamedDataValueCalculationPart"
               }
             ],
             "~class": "GameCalculation"
@@ -804,8 +781,8 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mSpellCalculationKey": "TotalStunDuration",
-                "~class": "0xf3cbe7b2"
+                "mDataValue": "StunDuration",
+                "~class": "NamedDataValueCalculationPart"
               }
             ],
             "~class": "GameCalculation"
@@ -836,7 +813,7 @@
       "0xf26881a0": 1.0,
       "DataValues": [
         {
-          "name": "BaseStunDuration",
+          "name": "StunDuration",
           "values": [
             1.399999976158142,
             1.600000023841858,
@@ -858,32 +835,6 @@
             250.0,
             250.0,
             250.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "RappelCooldown",
-          "values": [
-            22.0,
-            22.0,
-            21.0,
-            20.0,
-            19.0,
-            18.0,
-            18.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "RappelDamageAmp",
-          "values": [
-            25.0,
-            40.0,
-            55.0,
-            70.0,
-            85.0,
-            100.0,
-            115.0
           ],
           "~class": "SpellDataValue"
         }
@@ -970,7 +921,8 @@
               "Elements": [
                 {
                   "nameOverride": "Stun Duration:",
-                  "type": "BaseStunDuration",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 5,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -980,13 +932,15 @@
                 },
                 {
                   "nameOverride": "Cooldown (Rappel)",
-                  "type": "RappelCooldown",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 3,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "Style": 1,
                   "nameOverride": "Damage and Healing Increase",
-                  "type": "RappelDamageAmp",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 6,
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -997,7 +951,7 @@
           "mLocKeys": {
             "keyName": "Cocoon / Rappel",
             "keySummary": "Human Form: Stuns the first enemy unit hit and reveals them if they are not stealthed.<br><br>Spider Form: Elise and her Spiderlings ascend into the air and then descend upon target enemy. After descending on an enemy target, Elise's bonus damage and healing from Spider Queen is increased.",
-            "keyTooltip": "<keywordMajor>Human Form</keywordMajor>: Elise fires a cocoon, <status>Stunning</status> and revealing the first enemy hit for @TotalStunDuration@ seconds.",
+            "keyTooltip": "<keywordMajor>Human Form</keywordMajor>: Elise fires a cocoon, <status>Stunning</status> and revealing the first enemy hit for @StunDuration@ seconds.",
             "keyTooltipExtended": "{{Spell_EliseHumanE_Tooltip}}<br><br>{{Spell_EliseSpiderE_Tooltip}}"
           },
           "mObjectName": "EliseHumanE",
@@ -1056,6 +1010,15 @@
           "~class": "SpellEffectAmount"
         },
         {
+          "value": [
+            1.600000023841858,
+            1.600000023841858,
+            1.7999999523162842,
+            2.0,
+            2.200000047683716,
+            2.4000000953674316,
+            2.4000000953674316
+          ],
           "~class": "SpellEffectAmount"
         },
         {
@@ -1098,18 +1061,6 @@
         "ASSETS/Characters/Elise/HUD/Icons2D/EliseHumanE.DDS"
       ],
       "mLineWidth": 55.0,
-      "mSpellCalculations": {
-        "TotalStunDuration": {
-          "mFormulaParts": [
-            {
-              "mDataValue": "BaseStunDuration",
-              "~class": "NamedDataValueCalculationPart"
-            }
-          ],
-          "mPrecision": 1,
-          "~class": "GameCalculation"
-        }
-      },
       "mSpellTags": [
         "Trait_ImmobilizingCCSpell"
       ],
@@ -1718,6 +1669,32 @@
     "mSpell": {
       "DataValues": [
         {
+          "name": "SpiderlingBaseHP",
+          "values": [
+            80.0,
+            80.0,
+            80.0,
+            80.0,
+            80.0,
+            80.0,
+            80.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SpiderlingMagicDamage",
+          "values": [
+            2.0,
+            8.0,
+            14.0,
+            20.0,
+            26.0,
+            32.0,
+            38.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
           "name": "SpiderlingAPRatio",
           "values": [
             0.15000000596046448,
@@ -1759,7 +1736,7 @@
           "mLocKeys": {
             "keyName": "Spider Queen",
             "keySummary": "Human Form: When Elise's abilities hit an enemy, she gains a dormant Spiderling.<br><br>Spider Form: Basic attacks deal bonus magic damage and restore health to Elise.",
-            "keyTooltip": "Elise begins the game with a point in her Ultimate, allowing her to shapeshift between <keywordMajor>Human Form</keywordMajor> and <keywordMajor>Spider Form</keywordMajor>.<br><br><keywordMajor>Human Form:</keywordMajor> Elise's Ability hits grant her a dormant <keywordMajor>Spiderling</keywordMajor>, up to @spell.EliseR:BaseSpiderlingsStored@.<br><br><keywordMajor>Spider Form:</keywordMajor> Attacks deal an additional <magicDamage>@spell.EliseR:PassiveTotalDamage@ magic damage</magicDamage> and restore <healing>@spell.EliseR:PassiveTotalHealing@ Health</healing>."
+            "keyTooltip": "Elise begins the game with a point in her Ultimate, allowing her to shapeshift between <keywordMajor>Human Form</keywordMajor> and <keywordMajor>Spider Form</keywordMajor>.<br><br><keywordMajor>Human Form:</keywordMajor> Elise's Ability hits grant her a dormant <keywordMajor>Spiderling</keywordMajor> (max @spell.EliseR:SpiderlingsStored@).<br><br><keywordMajor>Spider Form:</keywordMajor> Attacks deal an additional <magicDamage>@spell.EliseR:PassiveTotalDamage@ magic damage</magicDamage> and restore <healing>@spell.EliseR:PassiveTotalHealing@ Health</healing>."
           },
           "mObjectName": "ElisePassive",
           "~class": "TooltipInstanceSpell"
@@ -1884,9 +1861,9 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "BaseSpiderlingsStored",
+          "name": "SpiderlingsStored",
           "values": [
-            2.0,
+            1.0,
             2.0,
             3.0,
             4.0,
@@ -1937,45 +1914,6 @@
         },
         {
           "name": "UnnamedEffectAmount0",
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "SpiderlingArmor",
-          "values": [
-            0.0,
-            30.0,
-            50.0,
-            70.0,
-            90.0,
-            0.0,
-            0.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "SpiderlingsStoredCap",
-          "values": [
-            20.0,
-            20.0,
-            20.0,
-            20.0,
-            20.0,
-            20.0,
-            20.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "SpiderlingMagicResist",
-          "values": [
-            0.0,
-            50.0,
-            70.0,
-            90.0,
-            110.0,
-            0.0,
-            0.0
-          ],
           "~class": "SpellDataValue"
         }
       ],
@@ -2035,18 +1973,20 @@
                 },
                 {
                   "nameOverride": "Maximum Number of Spiderlings",
-                  "type": "BaseSpiderlingsStored",
+                  "type": "SpiderlingsStored",
                   "typeIndex": 5,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Spiderling Armor",
-                  "type": "SpiderlingArmor",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 6,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Spiderling Magic Resist",
-                  "type": "SpiderlingMagicResist",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 7,
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -2281,73 +2221,6 @@
     "mScriptName": "EliseRSpider",
     "mSpell": {
       "0x11704a2b": 0.5286999940872192,
-      "DataValues": [
-        {
-          "name": "SpiderlingDamageTooltipOnly",
-          "values": [
-            0.0,
-            10.0,
-            20.0,
-            30.0,
-            40.0,
-            0.0,
-            0.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "EliseBiteDamage",
-          "values": [
-            0.0,
-            12.0,
-            22.0,
-            32.0,
-            42.0,
-            0.0,
-            0.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "SpiderlingCap",
-          "values": [
-            0.0,
-            2.0,
-            3.0,
-            4.0,
-            5.0,
-            0.0,
-            0.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "SpiderlingArmor",
-          "values": [
-            0.0,
-            30.0,
-            50.0,
-            70.0,
-            90.0,
-            0.0,
-            0.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "SpiderlingMagicResist",
-          "values": [
-            0.0,
-            50.0,
-            70.0,
-            90.0,
-            110.0,
-            0.0,
-            0.0
-          ],
-          "~class": "SpellDataValue"
-        }
-      ],
       "bHaveHitBone": true,
       "bHaveHitEffect": true,
       "bIsToggleSpell": true,
@@ -2392,27 +2265,32 @@
               "Elements": [
                 {
                   "nameOverride": "Spider Form Bite Damage",
-                  "type": "EliseBiteDamage",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 2,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Spiderling Bonus Damage",
-                  "type": "SpiderlingDamageTooltipOnly",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Maximum Number of Spiderlings",
-                  "type": "SpiderlingCap",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 5,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Spiderling Armor",
-                  "type": "SpiderlingArmor",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 6,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Spiderling Magic Resist",
-                  "type": "SpiderlingMagicResist",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 7,
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -3786,12 +3664,39 @@
           "~class": "SpellEffectAmount"
         },
         {
+          "value": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
           "~class": "SpellEffectAmount"
         },
         {
+          "value": [
+            0.0,
+            5.0,
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+          ],
           "~class": "SpellEffectAmount"
         },
         {
+          "value": [
+            0.6000000238418579,
+            0.6000000238418579,
+            0.699999988079071,
+            0.800000011920929,
+            0.8999999761581421,
+            1.0,
+            1.100000023841858
+          ],
           "~class": "SpellEffectAmount"
         },
         {

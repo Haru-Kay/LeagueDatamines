@@ -41,7 +41,7 @@
     "Total Damage Dealt: @eogvar1@"
   ],
   "mIconTextureName": "ASSETS/Perks/Styles/Sorcery/ArcaneComet/ArcaneComet.tex",
-  "mLongDescLocalizationKey": "Damaging a champion with an ability hurls a comet at their location, dealing increased damage based on distance.<br><br><lol-uikit-tooltipped-keyword key='LinkTooltip_Description_AdaptiveDmg'><font color='#48C4B7'>Adaptive Damage</font></lol-uikit-tooltipped-keyword>: @DamageBase@ - @DamageMax@ based on level (<scaleAP>+@APRatio.-1@ AP</scaleAP> and <scaleAD>+@ADRatio.-1@ bonus AD</scaleAD>)<br>Cooldown: @RechargeTime@ - @RechargeTimeMin@s<br><rules><br>Damage amplification scales up to @MaxDamageAmp*100@% at @MaxRange@ range.<br></rules>",
+  "mLongDescLocalizationKey": "Damaging a champion with an ability hurls a comet at their location, or, if Arcane Comet is on cooldown, reduces its remaining cooldown.<br><br><lol-uikit-tooltipped-keyword key='LinkTooltip_Description_AdaptiveDmg'><font color='#48C4B7'>Adaptive Damage</font></lol-uikit-tooltipped-keyword>: @DamageBase@ - @DamageMax@ based on level (<scaleAP>+@APRatio.-1@ AP</scaleAP> and <scaleAD>+@ADRatio.-1@ bonus AD</scaleAD>)<br>Cooldown: @RechargeTime@ - @RechargeTimeMin@s<br><rules><br>Cooldown Reduction:<br>Single Target: @PercentRefund*100@%.<br>Area of Effect: @AoEPercentRefund*100@%.<br>Damage over Time: @DotPercentRefund*100@%.<br></rules>",
   "mPerkId": 8229,
   "mPerkName": "ArcaneComet",
   "mScript": {
@@ -67,8 +67,8 @@
         "DamageCalc": {
           "mFormulaParts": [
             {
-              "mEndValue": 100.0,
-              "mStartValue": 15.0,
+              "mEndValue": 130.0,
+              "mStartValue": 30.0,
               "~class": "ByCharLevelInterpolationCalculationPart"
             },
             {
@@ -90,14 +90,12 @@
         "ADRatio": 0.10000000149011612,
         "APRatio": 0.05000000074505806,
         "AoEPercentRefund": 0.10000000149011612,
-        "DamageBase": 15.0,
-        "DamageMax": 100.0,
+        "DamageBase": 30.0,
+        "DamageMax": 130.0,
         "DotPercentRefund": 0.05000000074505806,
-        "MaxDamageAmp": 1.0,
         "PercentRefund": 0.20000000298023224,
         "RechargeTime": 20.0,
-        "RechargeTimeMin": 8.0,
-        "maxRange": 750.0
+        "RechargeTimeMin": 8.0
       },
       "mEffectAmountGameMode": {
         "ARAM": {
@@ -113,7 +111,7 @@
     "~class": "PerkScript"
   },
   "mShortDescLocalizationKey": "Damaging a champion with an ability hurls a damaging comet at their location.",
-  "mTooltipNameLocalizationKey": "Damaging a champion with an ability hurls a comet at their location, dealing increased damage based on how far away they are.<br><br>Damage: @DamageCalc@<br>Cooldown: @CooldownCalc@s<br><rules><br>Damage amplification scales up to @MaxDamageAmp*100@% at @MaxRange@ range.<br></rules><br>You have hit with @f3@% of comets fired, for a total of @f1@ damage to champions.",
+  "mTooltipNameLocalizationKey": "Damaging a champion with an ability hurls a comet at their location, or, if Arcane Comet is on cooldown, reduces its remaining cooldown.<br><br>Damage: @DamageCalc@<br>Cooldown: @CooldownCalc@s<br><rules><br>Cooldown Reduction:<br>Single Target: @PercentRefund*100@%.<br>Area of Effect: @AoEPercentRefund*100@%.<br>Damage over Time: @DotPercentRefund*100@%.<br></rules><br>You have hit with @f3@% of comets fired, for a total of @f1@ damage to champions.",
   "mVFXResourceResolver": {
     "resourceMap": {
       "Perks_Meteor_AOE_Ring": "Perks/Styles/Sorcery/ArcaneComet/Particles/Perks_Meteor_AOE_Ring",

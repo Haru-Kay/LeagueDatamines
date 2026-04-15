@@ -793,32 +793,6 @@
             360.0
           ],
           "~class": "SpellDataValue"
-        },
-        {
-          "name": "ImpactDelay",
-          "values": [
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "BaseCooldown",
-          "values": [
-            8.0,
-            8.0,
-            8.0,
-            8.0,
-            8.0,
-            8.0,
-            8.0
-          ],
-          "~class": "SpellDataValue"
         }
       ],
       "bHaveHitBone": true,
@@ -1184,8 +1158,8 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mDataValue": "StunDuration",
-                "~class": "NamedDataValueCalculationPart"
+                "mEffectIndex": 1,
+                "~class": "EffectValueCalculationPart"
               }
             ],
             "~class": "GameCalculation"
@@ -1197,8 +1171,8 @@
           "EffectCalculation": {
             "mFormulaParts": [
               {
-                "mDataValue": "StunDuration",
-                "~class": "NamedDataValueCalculationPart"
+                "mEffectIndex": 1,
+                "~class": "EffectValueCalculationPart"
               }
             ],
             "~class": "GameCalculation"
@@ -1208,6 +1182,11 @@
         },
         {
           "EffectCalculation": {
+            "mFormulaParts": [
+              {
+                "~class": "EffectValueCalculationPart"
+              }
+            ],
             "~class": "GameCalculation"
           },
           "EffectTag": 2048,
@@ -1271,34 +1250,6 @@
           "~class": "SpellEffectAmount"
         }
       },
-      "DataValues": [
-        {
-          "name": "StunDuration",
-          "values": [
-            1.25,
-            1.5,
-            1.75,
-            2.0,
-            2.25,
-            2.5,
-            2.75
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "CageDelay",
-          "values": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
-          ],
-          "~class": "SpellDataValue"
-        }
-      ],
       "bHaveHitBone": true,
       "castConeDistance": 100.0,
       "castFrame": 20.15999984741211,
@@ -1363,7 +1314,8 @@
               "Elements": [
                 {
                   "nameOverride": "Stun Duration:",
-                  "type": "StunDuration",
+                  "type": "Effect%dAmount",
+                  "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -1382,7 +1334,7 @@
           "mLocKeys": {
             "keyName": "Event Horizon",
             "keySummary": "Veigar twists the edges of space, creating a cage that Stuns enemies that pass through.",
-            "keyTooltip": "Veigar twists the edges of space, creating a cage that <status>Stuns</status> enemies that pass through for @StunDuration@ seconds. The cage lasts for 3 seconds.",
+            "keyTooltip": "Veigar twists the edges of space, creating a cage that <status>Stuns</status> enemies that pass through for @Effect1Amount@ seconds. The cage lasts for 3 seconds.",
             "keyTooltipExtendedBelowLine": "<rules>This Ability <status>Knocks Down</status> enemies.</rules>"
           },
           "mObjectName": "VeigarEventHorizon",
