@@ -407,7 +407,7 @@ end
 def augmentSetBuilder(key, data, version=0)
     if data["~class"]&.eql?("0x27bc6378")
         set = {
-            "apiName" => data.fetch("0x3a942548", ""),
+            "apiName" => data.fetch("SetName", ""),
             "name" => data.fetch("0x746ade9", ""),
             "desc" => data.fetch("0x97e82990", ""),
             "descEx" => "",

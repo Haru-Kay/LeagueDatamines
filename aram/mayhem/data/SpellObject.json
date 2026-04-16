@@ -3247,7 +3247,7 @@
         "0xd61e58c9"
       ],
       "mSpellCalculations": {
-        "0xc91fac52": {
+        "Calc_Crit_Chance": {
           "mDisplayAsPercent": true,
           "mExpandedTooltipCalculationDisplay": 5,
           "mFormulaParts": [
@@ -3441,7 +3441,29 @@
         "0xd61e58c9"
       ],
       "mSpellCalculations": {
-        "0x31e71824": {
+        "Calc_Damage": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 500.0,
+              "mStartValue": 150.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            },
+            {
+              "mCoefficient": 1.0,
+              "mStat": 1,
+              "mStatFormula": 2,
+              "~class": "StatByCoefficientCalculationPart"
+            },
+            {
+              "mCoefficient": 1.0,
+              "mStat": 6,
+              "mStatFormula": 2,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "Calc_Execute_Threshold": {
           "mDisplayAsPercent": true,
           "mFormulaParts": [
             {
@@ -3464,7 +3486,7 @@
           "mPrecision": 1,
           "~class": "GameCalculation"
         },
-        "0xecce0397": {
+        "Calc_Heal": {
           "mFormulaParts": [
             {
               "mEndValue": 300.0,
@@ -3474,28 +3496,6 @@
             {
               "mCoefficient": 0.25,
               "mStat": 12,
-              "mStatFormula": 2,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "Calc_Damage": {
-          "mFormulaParts": [
-            {
-              "mEndValue": 500.0,
-              "mStartValue": 150.0,
-              "~class": "ByCharLevelInterpolationCalculationPart"
-            },
-            {
-              "mCoefficient": 1.0,
-              "mStat": 1,
-              "mStatFormula": 2,
-              "~class": "StatByCoefficientCalculationPart"
-            },
-            {
-              "mCoefficient": 1.0,
-              "mStat": 6,
               "mStatFormula": 2,
               "~class": "StatByCoefficientCalculationPart"
             }
@@ -3855,17 +3855,6 @@
         "0x8903d61f"
       ],
       "mSpellCalculations": {
-        "0x31e71824": {
-          "mDisplayAsPercent": true,
-          "mFormulaParts": [
-            {
-              "mCoefficient": 0.25,
-              "mStat": 34,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
         "Calc_Damage": {
           "mFormulaParts": [
             {
@@ -3875,6 +3864,17 @@
             },
             {
               "mCoefficient": 750.0,
+              "mStat": 34,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "Calc_Execute_Threshold": {
+          "mDisplayAsPercent": true,
+          "mFormulaParts": [
+            {
+              "mCoefficient": 0.25,
               "mStat": 34,
               "~class": "StatByCoefficientCalculationPart"
             }
@@ -7285,7 +7285,7 @@
         "~class": "SpellDataResourceClient"
       },
       "mImgIconName": [
-        "ASSETS/Spells/Icons2D/Lissandra_Root.Kiwi.dds"
+        "ASSETS/Spells/Icons2D/Lissandra_Root.dds"
       ],
       "~class": "SpellDataResource"
     },
@@ -7308,7 +7308,7 @@
     "mScriptName": "Augment_ARAM_FrostWraithRooted",
     "mSpell": {
       "mImgIconName": [
-        "ASSETS/Spells/Icons2D/Lissandra_Root.Kiwi.dds"
+        "ASSETS/Spells/Icons2D/Lissandra_Root.dds"
       ],
       "~class": "SpellDataResource"
     },
@@ -8823,7 +8823,28 @@
         "0xacaa25ce"
       ],
       "mSpellCalculations": {
-        "0xb12f97e5": {
+        "Calc_Crit_Damage_Per_Shot": {
+          "mModifiedGameCalculation": "Calc_Damage_Per_Shot",
+          "mMultiplier": {
+            "mCoefficient": 1.0,
+            "mStat": 9,
+            "~class": "StatByCoefficientCalculationPart"
+          },
+          "~class": "GameCalculationModified"
+        },
+        "Calc_Crit_Threshold": {
+          "mDisplayAsPercent": true,
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mFormulaParts": [
+            {
+              "mNumber": 0.30000001192092896,
+              "~class": "NumberCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 6,
+          "~class": "GameCalculation"
+        },
+        "Calc_Damage_Per_Shot": {
           "mFormulaParts": [
             {
               "mEndValue": 40.0,
@@ -8842,28 +8863,7 @@
           ],
           "~class": "GameCalculation"
         },
-        "0xedf4ef00": {
-          "mModifiedGameCalculation": "0xb12f97e5",
-          "mMultiplier": {
-            "mCoefficient": 1.0,
-            "mStat": 9,
-            "~class": "StatByCoefficientCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
-        "0xfd4d70e5": {
-          "mDisplayAsPercent": true,
-          "mExpandedTooltipCalculationDisplay": 5,
-          "mFormulaParts": [
-            {
-              "mNumber": 0.30000001192092896,
-              "~class": "NumberCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 6,
-          "~class": "GameCalculation"
-        },
-        "0xff4e3458": {
+        "Calc_Style_MS_Per_Stack": {
           "mDisplayAsPercent": true,
           "mFormulaParts": [
             {
@@ -9284,7 +9284,7 @@
         "ASSETS/Spells/Icons2D/Terrify.dds"
       ],
       "mSpellCalculations": {
-        "0x47725e9c": {
+        "CritGranted": {
           "mDisplayAsPercent": true,
           "mFormulaParts": [
             {
@@ -9386,19 +9386,19 @@
           },
           "~class": "GameCalculationModified"
         },
-        "0xaa5cf752": {
+        "Calc_Damage": {
           "mFormulaParts": [
             {
-              "mCoefficient": 0.02500000037252903,
+              "mCoefficient": 0.04500000178813934,
               "~class": "AbilityResourceByCoefficientCalculationPart"
             }
           ],
           "~class": "GameCalculation"
         },
-        "Calc_Damage": {
+        "Calc_Mana_Cost": {
           "mFormulaParts": [
             {
-              "mCoefficient": 0.04500000178813934,
+              "mCoefficient": 0.02500000037252903,
               "~class": "AbilityResourceByCoefficientCalculationPart"
             }
           ],
@@ -11070,7 +11070,66 @@
         "0xd1070e48"
       ],
       "mSpellCalculations": {
-        "0x21a86d0d": {
+        "Calc_Damage_Amp": {
+          "mDisplayAsPercent": true,
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mFormulaParts": [
+            {
+              "mDataValue": "BaseDamageAmp",
+              "~class": "NamedDataValueCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 5,
+          "~class": "GameCalculation"
+        },
+        "Calc_Damage_Reduction": {
+          "mDisplayAsPercent": true,
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mFormulaParts": [
+            {
+              "mDataValue": "BaseDamageReduction",
+              "~class": "NamedDataValueCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 5,
+          "~class": "GameCalculation"
+        },
+        "Calc_Drain_Per_Second": {
+          "mDisplayAsPercent": true,
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mFormulaParts": [
+            {
+              "mNumber": 0.05000000074505806,
+              "~class": "NumberCalculationPart"
+            }
+          ],
+          "mPrecision": 2,
+          "mSimpleTooltipCalculationDisplay": 5,
+          "~class": "GameCalculation"
+        },
+        "Calc_Drain_Per_Second_Non_Combat": {
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mModifiedGameCalculation": "Calc_Drain_Per_Second",
+          "mMultiplier": {
+            "mNumber": 0.10000000149011612,
+            "~class": "NumberCalculationPart"
+          },
+          "mSimpleTooltipCalculationDisplay": 5,
+          "~class": "GameCalculationModified"
+        },
+        "Calc_Move_Speed": {
+          "mDisplayAsPercent": true,
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mFormulaParts": [
+            {
+              "mDataValue": "MSAmp",
+              "~class": "NamedDataValueCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 5,
+          "~class": "GameCalculation"
+        },
+        "Calc_Remnant_Healing": {
           "mFormulaParts": [
             {
               "mEndValue": 250.0,
@@ -11088,65 +11147,6 @@
               "~class": "StatByCoefficientCalculationPart"
             }
           ],
-          "~class": "GameCalculation"
-        },
-        "0x6b74500e": {
-          "mDisplayAsPercent": true,
-          "mExpandedTooltipCalculationDisplay": 5,
-          "mFormulaParts": [
-            {
-              "mDataValue": "BaseDamageReduction",
-              "~class": "NamedDataValueCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculation"
-        },
-        "0xaccae6f3": {
-          "mExpandedTooltipCalculationDisplay": 5,
-          "mModifiedGameCalculation": "0xaf406daa",
-          "mMultiplier": {
-            "mNumber": 0.10000000149011612,
-            "~class": "NumberCalculationPart"
-          },
-          "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculationModified"
-        },
-        "0xaf406daa": {
-          "mDisplayAsPercent": true,
-          "mExpandedTooltipCalculationDisplay": 5,
-          "mFormulaParts": [
-            {
-              "mNumber": 0.05000000074505806,
-              "~class": "NumberCalculationPart"
-            }
-          ],
-          "mPrecision": 2,
-          "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculation"
-        },
-        "Calc_Damage_Amp": {
-          "mDisplayAsPercent": true,
-          "mExpandedTooltipCalculationDisplay": 5,
-          "mFormulaParts": [
-            {
-              "mDataValue": "BaseDamageAmp",
-              "~class": "NamedDataValueCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculation"
-        },
-        "Calc_Move_Speed": {
-          "mDisplayAsPercent": true,
-          "mExpandedTooltipCalculationDisplay": 5,
-          "mFormulaParts": [
-            {
-              "mDataValue": "MSAmp",
-              "~class": "NamedDataValueCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 5,
           "~class": "GameCalculation"
         }
       },
@@ -13163,7 +13163,17 @@
       ],
       "mShowChannelBar": false,
       "mSpellCalculations": {
-        "0x6b74500e": {
+        "Calc_Damage": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 700.0,
+              "mStartValue": 100.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "Calc_Damage_Reduction": {
           "mDisplayAsPercent": true,
           "mExpandedTooltipCalculationDisplay": 5,
           "mFormulaParts": [
@@ -13173,16 +13183,6 @@
             }
           ],
           "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculation"
-        },
-        "Calc_Damage": {
-          "mFormulaParts": [
-            {
-              "mEndValue": 700.0,
-              "mStartValue": 100.0,
-              "~class": "ByCharLevelInterpolationCalculationPart"
-            }
-          ],
           "~class": "GameCalculation"
         },
         "Calc_MoveSpeed": {
@@ -13286,18 +13286,6 @@
       ],
       "mShowChannelBar": false,
       "mSpellCalculations": {
-        "0x6b74500e": {
-          "mDisplayAsPercent": true,
-          "mExpandedTooltipCalculationDisplay": 5,
-          "mFormulaParts": [
-            {
-              "mNumber": 0.8500000238418579,
-              "~class": "NumberCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculation"
-        },
         "Calc_Damage": {
           "mFormulaParts": [
             {
@@ -13323,6 +13311,18 @@
               "~class": "StatByCoefficientCalculationPart"
             }
           ],
+          "~class": "GameCalculation"
+        },
+        "Calc_Damage_Reduction": {
+          "mDisplayAsPercent": true,
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mFormulaParts": [
+            {
+              "mNumber": 0.8500000238418579,
+              "~class": "NumberCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 5,
           "~class": "GameCalculation"
         },
         "Calc_MoveSpeed": {
@@ -13589,7 +13589,7 @@
         "0xd61e58c9"
       ],
       "mSpellCalculations": {
-        "0x7755186c": {
+        "Calc_CDR": {
           "mDisplayAsPercent": true,
           "mExpandedTooltipCalculationDisplay": 5,
           "mFormulaParts": [
@@ -16000,7 +16000,7 @@
         "0x58f94e0d"
       ],
       "mSpellCalculations": {
-        "0xc5c8ca6b": {
+        "DamageMitigation": {
           "mDisplayAsPercent": true,
           "mExpandedTooltipCalculationDisplay": 5,
           "mFormulaParts": [
@@ -18192,18 +18192,6 @@
         "0x239f5ca7"
       ],
       "mSpellCalculations": {
-        "0x300db355": {
-          "mDisplayAsPercent": true,
-          "mExpandedTooltipCalculationDisplay": 5,
-          "mFormulaParts": [
-            {
-              "mNumber": 0.9900000095367432,
-              "~class": "NumberCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculation"
-        },
         "Calc_Damage": {
           "mFormulaParts": [
             {
@@ -18222,6 +18210,18 @@
               "~class": "StatByCoefficientCalculationPart"
             }
           ],
+          "~class": "GameCalculation"
+        },
+        "Calc_Slow_Amount": {
+          "mDisplayAsPercent": true,
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mFormulaParts": [
+            {
+              "mNumber": 0.9900000095367432,
+              "~class": "NumberCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 5,
           "~class": "GameCalculation"
         }
       },
@@ -18408,17 +18408,7 @@
         "0x823fc7d4"
       ],
       "mSpellCalculations": {
-        "0xdb8f1217": {
-          "mFormulaParts": [
-            {
-              "mEndValue": 250.0,
-              "mStartValue": 50.0,
-              "~class": "ByCharLevelInterpolationCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "0xecce0397": {
+        "Calc_Heal": {
           "mDisplayAsPercent": true,
           "mExpandedTooltipCalculationDisplay": 5,
           "mFormulaParts": [
@@ -18429,6 +18419,16 @@
             }
           ],
           "mSimpleTooltipCalculationDisplay": 5,
+          "~class": "GameCalculation"
+        },
+        "Calc_Heal_Flat": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 250.0,
+              "mStartValue": 50.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            }
+          ],
           "~class": "GameCalculation"
         },
         "Calc_Slow": {
@@ -18685,17 +18685,7 @@
         "0xccb01020"
       ],
       "mSpellCalculations": {
-        "0x7536985c": {
-          "mExpandedTooltipCalculationDisplay": 5,
-          "mModifiedGameCalculation": "0xc4c1a8c1",
-          "mMultiplier": {
-            "mNumber": 2.0,
-            "~class": "NumberCalculationPart"
-          },
-          "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculationModified"
-        },
-        "0xc4c1a8c1": {
+        "Calc_Cooldown_Acceleration": {
           "mDisplayAsPercent": true,
           "mExpandedTooltipCalculationDisplay": 5,
           "mFormulaParts": [
@@ -18708,7 +18698,25 @@
           "mSimpleTooltipCalculationDisplay": 5,
           "~class": "GameCalculation"
         },
-        "0xc6d3894": {
+        "Calc_Cooldown_Acceleration_Maximum": {
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mModifiedGameCalculation": "Calc_Cooldown_Acceleration",
+          "mMultiplier": {
+            "mNumber": 2.0,
+            "~class": "NumberCalculationPart"
+          },
+          "mSimpleTooltipCalculationDisplay": 5,
+          "~class": "GameCalculationModified"
+        },
+        "Calc_Heal_Max": {
+          "mModifiedGameCalculation": "Calc_Heal_Min",
+          "mMultiplier": {
+            "mNumber": 2.0,
+            "~class": "NumberCalculationPart"
+          },
+          "~class": "GameCalculationModified"
+        },
+        "Calc_Heal_Min": {
           "mFormulaParts": [
             {
               "mEndValue": 100.0,
@@ -18727,14 +18735,6 @@
             }
           ],
           "~class": "GameCalculation"
-        },
-        "0xfa8236f6": {
-          "mModifiedGameCalculation": "0xc6d3894",
-          "mMultiplier": {
-            "mNumber": 2.0,
-            "~class": "NumberCalculationPart"
-          },
-          "~class": "GameCalculationModified"
         }
       },
       "missileSpeed": 0.0,
@@ -18995,7 +18995,7 @@
         "0xd61e58c9"
       ],
       "mSpellCalculations": {
-        "0x3cddad9": {
+        "Calc_AS": {
           "mDisplayAsPercent": true,
           "mFormulaParts": [
             {
@@ -19009,7 +19009,7 @@
           ],
           "~class": "GameCalculation"
         },
-        "0xc91fac52": {
+        "Calc_Crit_Chance": {
           "mDisplayAsPercent": true,
           "mFormulaParts": [
             {
@@ -19334,7 +19334,7 @@
         "ASSETS/Spells/Icons2D/Terrify.dds"
       ],
       "mSpellCalculations": {
-        "0xc9af967f": {
+        "BonusHSP": {
           "mDisplayAsPercent": true,
           "mFormulaParts": [
             {
@@ -19805,7 +19805,7 @@
         "0x91c152af"
       ],
       "mSpellCalculations": {
-        "0x7e859db7": {
+        "AdditionalMis": {
           "mFormulaParts": [
             {
               "mDataValue": "AdditionalMisDivision",
@@ -22173,7 +22173,7 @@
         "0xaab73d3a"
       ],
       "mSpellCalculations": {
-        "0xfa20c4ce": {
+        "CurrentEnemyBlazeBurnPerSecond": {
           "mFormulaParts": [
             {
               "mDataValue": "BaseFireDamagePerSecond",
@@ -22853,7 +22853,7 @@
         "ASSETS/Spells/Icons2D/Terrify.dds"
       ],
       "mSpellCalculations": {
-        "0x984a86b5": {
+        "CurrentHaste": {
           "mExpandedTooltipCalculationDisplay": 5,
           "mFormulaParts": [
             {
@@ -23123,7 +23123,7 @@
     "mScriptName": "Augment_KingMeBuff",
     "mSpell": {
       "mImgIconName": [
-        "ASSETS/Spells/Icons2D/Augment_KingMe.Kiwi.dds"
+        "ASSETS/Spells/Icons2D/Augment_KingMe.dds"
       ],
       "~class": "SpellDataResource"
     },
@@ -23944,7 +23944,18 @@
           ],
           "~class": "GameCalculation"
         },
-        "0x576258e9": {
+        "0xb38c4ac0": {
+          "mFormulaParts": [
+            {
+              "0xa8cb9c14": true,
+              "mDataValue": "DamageHPRatio",
+              "mStat": 16,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "BaseDmgCalc": {
           "mFormulaParts": [
             {
               "mEndValue": 400.0,
@@ -23954,23 +23965,12 @@
           ],
           "~class": "GameCalculation"
         },
-        "0x9633b2b": {
+        "BaseHealingCalc": {
           "mFormulaParts": [
             {
               "mEndValue": 200.0,
               "mStartValue": 50.0,
               "~class": "ByCharLevelInterpolationCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "0xb38c4ac0": {
-          "mFormulaParts": [
-            {
-              "0xa8cb9c14": true,
-              "mDataValue": "DamageHPRatio",
-              "mStat": 16,
-              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -24486,7 +24486,7 @@
         "~class": "SpellDataResourceClient"
       },
       "mImgIconName": [
-        "ASSETS/Spells/Icons2D/Icon_SummonerSpell_Augment_Poltergeist.Kiwi.dds"
+        "ASSETS/Spells/Icons2D/Icon_SummonerSpell_Augment_Poltergeist.dds"
       ],
       "mResourceResolvers": [
         "0xaa31d2ff"
@@ -25120,7 +25120,7 @@
         "0xdd4e0595"
       ],
       "mSpellCalculations": {
-        "0x563f018c": {
+        "EnvelopeValueMax": {
           "mFormulaParts": [
             {
               "mEndValue": 46.0,
@@ -25130,7 +25130,7 @@
           ],
           "~class": "GameCalculation"
         },
-        "0x64529f4e": {
+        "EnvelopeValueMin": {
           "mFormulaParts": [
             {
               "mEndValue": 15.0,
@@ -25140,7 +25140,7 @@
           ],
           "~class": "GameCalculation"
         },
-        "0xca0d7079": {
+        "TimeBetweenEnvelopes": {
           "mFormulaParts": [
             {
               "mEndValue": 15.0,
@@ -27432,7 +27432,7 @@
         "0xd7dccf38"
       ],
       "mSpellCalculations": {
-        "0xaef2f649": {
+        "HealthGained": {
           "mFormulaParts": [
             {
               "mBuffName": "0x14cf4ae0",
@@ -28176,7 +28176,7 @@
         "0x91c152af"
       ],
       "mSpellCalculations": {
-        "0x7e859db7": {
+        "AdditionalMis": {
           "mFormulaParts": [
             {
               "mDataValue": "AdditionalMisDivision",
@@ -28883,17 +28883,7 @@
         "0x77039dd5"
       ],
       "mSpellCalculations": {
-        "0x821d5daa": {
-          "mFormulaParts": [
-            {
-              "mEndValue": 5.0,
-              "mStartValue": 20.0,
-              "~class": "ByCharLevelInterpolationCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "0xe84c6f2e": {
+        "ThornShieldDamage": {
           "mFormulaParts": [
             {
               "mEndValue": 250.0,
@@ -28914,6 +28904,16 @@
               "mCoefficient": 0.30000001192092896,
               "mStat": 6,
               "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "ThornshieldCooldown": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 5.0,
+              "mStartValue": 20.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
             }
           ],
           "~class": "GameCalculation"
