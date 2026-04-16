@@ -844,12 +844,14 @@ print "done.\n"
     $aramMayhem = $aramMayhem.fetch("entries", $aramMayhem)
     aramAugments = []
     aramOther = {}
+    aramOther["AugmentInfo"] = {}
     augmentList = []
     $aramMayhem.each { |key, data|
         v = augmentSearcher(key, data, 1)
 
         if v
             aramAugments.push(v)
+            aramOther["AugmentInfo"].store(key, applyLang(data))
             next
         end
 
@@ -859,8 +861,8 @@ print "done.\n"
                 aramSets.push(augmentSetBuilder(key, data, 1))
                 next
             when "0xeb5adb26"
-                type = "DefaultAugmentData"
-                data = applyLangKeys(data)
+                type = "AugmentList"
+                data = applyLangKeys(applyLang(data))
                 augmentList = data["AugmentList"]
             else
                 #do nothing
@@ -877,12 +879,12 @@ print "done.\n"
             augmentList[augmentList.index(idHex)] = id
         end
     }
-    aramOther["DefaultAugmentData"].values[0]["AugmentList"] = augmentList
     File.open("aram/mayhem/augments/augments.json", 'wb') { |f| f.write(JSON.pretty_generate(aramAugments.sort_by { |a| a["id"] })) }
     File.open("aram/mayhem/augments/sets.json", 'wb') { |f| f.write(JSON.pretty_generate(aramSets)) }
     aramOther.each { |key, data|
         loc = key.downcase.include?("vfx") ? "vfxData" : "data"
         data = data.sort_by { |k, v| v["ObjectName"] }.to_h if key == "SpellObject"
+        data = data.sort_by { |k, v| v["AugmentPlatformId"] }.to_h if key == "AugmentInfo"
         File.open("aram/mayhem/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
     }
     print "done.\n"
@@ -899,11 +901,13 @@ print "done.\n"
     $arena = $arena.fetch("entries", $arena)
     augments = []
     arenaOther = {}
+    arenaOther["AugmentInfo"] = {}
     augmentList = []
     $arena.each { |key, data|
         v = augmentSearcher(key, data)
         if v
             augments.push(v) 
+            arenaOther["AugmentInfo"].store(key, applyLang(data))
             next
         end
 
@@ -932,6 +936,7 @@ print "done.\n"
                         data["0x857c9848"][augmentPools.index(pool)]["AugmentPool"][i] = name
                     end
                 }
+                fallbackPools = data["0x857c9848"]
             when "0x23433cc1"
                 type = "AugmentNameModifiers"
             when "GameModeItemList"
@@ -956,12 +961,14 @@ print "done.\n"
         File.open("temp/data/maps/modespecificdata/map30/#{map}.json", 'rb') { |f| json = JSON.parse(f.read()) }
         json = json.fetch("entries", json)
         jsonSort = {}
+        jsonSort["AugmentInfo"] = {}
 
         json.each { |key, data|
             type = data["~class"]
             v = augmentSearcher(key, data, json)
             if v
                 augments.push(v) 
+                jsonSort["AugmentInfo"].store(key, applyLang(data))
                 next
             end
 
@@ -975,8 +982,8 @@ print "done.\n"
                 when "0x276246d8"
                     type = "AnnouncerBark"
                 when "0xeb5adb26"
-                    type = "DefaultAugmentData"
-                    data = applyLangKeys(data)
+                    type = "AugmentList"
+                    data = applyLangKeys(applyLang(data))
                     augmentList = data["AugmentList"]
                 else
                     type = "MiscData" if type.start_with?("0x")
@@ -987,6 +994,7 @@ print "done.\n"
         jsonSort.each { |key, data|
             loc = key.downcase.include?("vfx") ? "vfxData" : "data"
             data = data.sort_by { |k, v| v["ObjectName"] }.to_h if key == "SpellObject"
+            data = data.sort_by { |k, v| v["AugmentPlatformId"] }.to_h if key == "AugmentInfo"
             File.open("arena/#{map}/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
         }
     }
@@ -1000,12 +1008,12 @@ print "done.\n"
     augments.delete_if {|aug|
         aug["id"] > 1000 && !augmentList.any? {|a| a.end_with?(aug["apiName"])}
     }
-    arenaOther["DefaultAugmentData"].values[0]["AugmentList"] = augmentList
     
     File.open("arena/augments/augments.json", 'wb') { |f| f.write(JSON.pretty_generate(augments.sort_by { |a| a["id"] })) }
     arenaOther.each { |key, data|
         loc = key.downcase.include?("vfx") ? "vfxData" : "data"
         data = data.sort_by { |k, v| v["ObjectName"] }.to_h if key == "SpellObject"
+        data = data.sort_by { |k, v| v["AugmentPlatformId"] }.to_h if key == "AugmentInfo"
         File.open("arena/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
     }
     print "done.\n"
