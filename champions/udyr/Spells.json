@@ -570,7 +570,7 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "MoveSpeed",
+          "name": "BaseMoveSpeed",
           "values": [
             0.1899999976158142,
             0.25,
@@ -698,7 +698,7 @@
                   "Style": 1,
                   "multiplier": 100.0,
                   "nameOverride": "Move Speed",
-                  "type": "MoveSpeed",
+                  "type": "BaseMoveSpeed",
                   "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
                 },
@@ -715,7 +715,7 @@
           "mLocKeys": {
             "keyName": "Blazing Stampede",
             "keySummary": "Udyr gains movement speed and his first attack against each target will Stun them. Recast: Gain even more movement speed and immunity to immobilizing effects for a couple seconds. ",
-            "keyTooltip": "<spellActive>Stampede Stance:</spellActive> Udyr gains <speed>@MoveSpeed*100@% Move Speed</speed>, decaying over @MoveSpeedDuration@ seconds. Additionally, Udyr's Attacks dash him to the target and <status>Stun</status> for @StunDuration@ seconds (@ICD@ second Cooldown per target).<br><br><keywordMajor>Awaken:</keywordMajor> Grants immunity to <status>Immobilizing</status> and <status>Disabling</status> effects and an additional <speed>@MoveSpeedBonus@ Move Speed</speed> for @UnstoppableDuration@ seconds.",
+            "keyTooltip": "<spellActive>Stampede Stance:</spellActive> Udyr gains <speed>@MoveSpeed@ Move Speed</speed>, decaying over @MoveSpeedDuration@ seconds. Additionally, Udyr's Attacks dash him to the target and <status>Stun</status> for @StunDuration@ seconds (@ICD@ second Cooldown per target).<br><br><keywordMajor>Awaken:</keywordMajor> Grants immunity to <status>Immobilizing</status> and <status>Disabling</status> effects and an additional <speed>@MoveSpeedBonus@ Move Speed</speed> for @UnstoppableDuration@ seconds.",
             "keyTooltipExtendedBelowLine": "<rules>Udyr moves through units during the Move Speed boost, and his Attacks in this <keywordMajor>Stance</keywordMajor> can't be cancelled.</rules>"
           },
           "mObjectName": "UdyrE",
@@ -779,6 +779,22 @@
           ],
           "~class": "GameCalculation"
         },
+        "MoveSpeed": {
+          "mDisplayAsPercent": true,
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseMoveSpeed",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.0005000000237487257,
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
         "MoveSpeedBonus": {
           "mDisplayAsPercent": true,
           "mFormulaParts": [
@@ -786,6 +802,12 @@
               "mEndValue": 0.4000000059604645,
               "mStartValue": 0.30000001192092896,
               "~class": "ByCharLevelInterpolationCalculationPart"
+            },
+            {
+              "mCoefficient": 0.0010000000474974513,
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByCoefficientCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -1328,13 +1350,13 @@
         {
           "name": "LightningAPRatio",
           "values": [
-            0.00007999999797903001,
-            0.00007999999797903001,
-            0.00007999999797903001,
-            0.00007999999797903001,
-            0.00007999999797903001,
-            0.00007999999797903001,
-            0.00007999999797903001
+            0.00005999999848427251,
+            0.00005999999848427251,
+            0.00005999999848427251,
+            0.00005999999848427251,
+            0.00005999999848427251,
+            0.00005999999848427251,
+            0.00005999999848427251
           ],
           "~class": "SpellDataValue"
         },
@@ -1367,39 +1389,39 @@
         {
           "name": "BaseDamage",
           "values": [
-            -3.0,
-            5.0,
-            13.0,
-            21.0,
-            29.0,
-            37.0,
-            45.0
+            -0.0,
+            6.0,
+            12.0,
+            18.0,
+            24.0,
+            30.0,
+            36.0
           ],
           "~class": "SpellDataValue"
         },
         {
           "name": "MaxHPADRatio",
           "values": [
-            0.00039999998989515007,
-            0.00039999998989515007,
-            0.00039999998989515007,
-            0.00039999998989515007,
-            0.00039999998989515007,
-            0.00039999998989515007,
-            0.00039999998989515007
+            0.0003499999875202775,
+            0.0003499999875202775,
+            0.0003499999875202775,
+            0.0003499999875202775,
+            0.0003499999875202775,
+            0.0003499999875202775,
+            0.0003499999875202775
           ],
           "~class": "SpellDataValue"
         },
         {
           "name": "Q2MaxHPADRatio",
           "values": [
-            0.000699999975040555,
-            0.000699999975040555,
-            0.000699999975040555,
-            0.000699999975040555,
-            0.000699999975040555,
-            0.000699999975040555,
-            0.000699999975040555
+            0.0005000000237487257,
+            0.0005000000237487257,
+            0.0005000000237487257,
+            0.0005000000237487257,
+            0.0005000000237487257,
+            0.0005000000237487257,
+            0.0005000000237487257
           ],
           "~class": "SpellDataValue"
         },
@@ -1465,6 +1487,19 @@
             0.699999988079071,
             0.699999988079071,
             0.699999988079071
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "OnHitBonusHPRatio",
+          "values": [
+            0.014999999664723873,
+            0.014999999664723873,
+            0.014999999664723873,
+            0.014999999664723873,
+            0.014999999664723873,
+            0.014999999664723873,
+            0.014999999664723873
           ],
           "~class": "SpellDataValue"
         }
@@ -1684,7 +1719,6 @@
             },
             {
               "mDataValue": "LightningAPRatio",
-              "mStatFormula": 2,
               "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
@@ -1703,9 +1737,9 @@
                     "~class": "StatByNamedDataValueCalculationPart"
                   },
                   {
-                    "mEndValue": 0.029999999329447746,
-                    "mStartValue": 0.014999999664723873,
-                    "~class": "ByCharLevelInterpolationCalculationPart"
+                    "0x589a59c": "LightningDamageLevel1",
+                    "0xb65bc23": "LightningDamageLevel18",
+                    "~class": "0xee18a47b"
                   }
                 ],
                 "~class": "SumOfSubPartsCalculationPart"
@@ -1822,10 +1856,16 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.25,
+              "mCoefficient": 0.20000000298023224,
               "mStat": 2,
               "mStatFormula": 2,
               "~class": "StatByCoefficientCalculationPart"
+            },
+            {
+              "mDataValue": "OnHitBonusHPRatio",
+              "mStat": 12,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -1847,6 +1887,12 @@
               "mStat": 2,
               "mStatFormula": 2,
               "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.000009999999747378752,
+              "mStat": 12,
+              "mStatFormula": 2,
+              "~class": "StatByCoefficientCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -3478,6 +3524,12 @@
               "mCoefficient": 0.07999999821186066,
               "mStat": 12,
               "~class": "StatByCoefficientCalculationPart"
+            },
+            {
+              "mCoefficient": 1.0,
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByCoefficientCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -3496,6 +3548,12 @@
             {
               "mDataValue": "ShieldAPRatio",
               "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.5,
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByCoefficientCalculationPart"
             }
           ],
           "~class": "GameCalculation"

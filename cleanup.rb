@@ -3,45 +3,39 @@ require 'fileutils'
 require 'hashie'
 require 'digest/xxhash'
 
-$manualHash2 = {}
+$manualHash = {}
 
 txt = ""
 File.open("lang/manualhash.txt", 'rb') { |f| txt = f.read }
 txt.split("\n").each { |f|
     obf, name = f.split(" ")
-    $manualHash2.store(obf, name)
+    $manualHash.store(obf, name)
 }
-def manualHash 
-    ret = {
-        "b35aa769" => "BaseValue", #EXACT
-        "1262a25" => "MRPerLevel", #EXACT
-        "18956a21" => "armorPerLevel",
-        "4af40dc3" => "baseDamage",
-        "4d37af28" => "hpPerLevel",
-        "836cc82a" => "attackSpeed",
-        "7bd4b298" => "attackRange",
-        "4f89c991" => "attackSpeedRatio",
-        "8662cf12" => "baseHP",
-        "913157bb" => "hpRegenPerLevel",
-        "9eedebad" => "baseStaticHPRegen",
-        "b9f2b365" => "attackSpeedPerLevel",
-        "e2b5d80d" => "damagePerLevel",
-        "e62d9d92" => "baseMoveSpeed",
-        "ea6100d5" => "baseArmor",
-        "726ee5cd" => "arBase",
-        "c4ab3550" => "arBaseStaticRegen",
-        "6216bf7b" => "arPerLevel",
-        "3a509002" => "arRegenPerLevel",
-        "2290fc9a" => "baseFactorHPRegen",
-        "452033bb" => "arBaseFactorRegen",
-
-        "988fea51" => "AugmentSets",
-        "9bfe08c0" => "AugmentList"
-    }
-
-
-    return ret.merge($manualHash2)
-end
+$manualHash.merge!({
+    "b35aa769" => "BaseValue", #EXACT
+    "1262a25" => "MRPerLevel", #EXACT
+    "18956a21" => "armorPerLevel",
+    "4af40dc3" => "baseDamage",
+    "4d37af28" => "hpPerLevel",
+    "836cc82a" => "attackSpeed",
+    "7bd4b298" => "attackRange",
+    "4f89c991" => "attackSpeedRatio",
+    "8662cf12" => "baseHP",
+    "913157bb" => "hpRegenPerLevel",
+    "9eedebad" => "baseStaticHPRegen",
+    "b9f2b365" => "attackSpeedPerLevel",
+    "e2b5d80d" => "damagePerLevel",
+    "e62d9d92" => "baseMoveSpeed",
+    "ea6100d5" => "baseArmor",
+    "726ee5cd" => "arBase",
+    "c4ab3550" => "arBaseStaticRegen",
+    "6216bf7b" => "arPerLevel",
+    "3a509002" => "arRegenPerLevel",
+    "2290fc9a" => "baseFactorHPRegen",
+    "452033bb" => "arBaseFactorRegen",
+    "988fea51" => "AugmentSets",
+    "9bfe08c0" => "AugmentList"
+})
 
 def xxh3(s)
     return s if s.to_i(16).to_s(16) == s
@@ -82,7 +76,7 @@ class LangHashWrapper
             key = key[2..] if key.start_with?("0x")
             key = xxh3(key)
         end
-        ret = manualHash.dig(key)
+        ret = $manualHash.dig(key)
         return ret if !ret.nil?
         @hash.fetch(key, *args[1..])
     end

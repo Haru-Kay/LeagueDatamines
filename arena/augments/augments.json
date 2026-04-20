@@ -80,8 +80,8 @@
       "DamageAmp": [
         0.25,
         0.25,
-        0.3499999940395355,
-        0.5,
+        0.30000001192092896,
+        0.44999998807907104,
         0.5,
         0.5,
         0.5
@@ -89,8 +89,8 @@
       "HealingAmp": [
         0.25,
         0.25,
-        0.3499999940395355,
-        0.5,
+        0.30000001192092896,
+        0.44999998807907104,
         0.5,
         0.5,
         0.5
@@ -98,8 +98,8 @@
       "ShieldingAmp": [
         0.25,
         0.25,
-        0.3499999940395355,
-        0.5,
+        0.30000001192092896,
+        0.44999998807907104,
         0.5,
         0.5,
         0.5
@@ -1431,10 +1431,10 @@
         1.0
       ],
       "HealthAmp": [
-        0.30000001192092896,
+        0.15000000596046448,
+        0.15000000596046448,
         0.30000001192092896,
         0.5,
-        0.75,
         0.75,
         0.75,
         0.75
@@ -6982,71 +6982,15 @@
     "tooltip": "<spellName>Backstab</spellName>: You deal @BasicAttackDamage@ <physicalDamage>bonus physical damage</physicalDamage> when striking from behind.<br><br><spellName>Deceive</spellName>: You teleport and become <keywordStealth>Invisible</keywordStealth> for @StealthDuration@ seconds. Your next Attack while <keywordStealth>Invisible</keywordStealth> deals an additional <physicalDamage>@TotalDamage@ physical damage</physicalDamage>. If striking from behind, this Attack critically strikes for @QCritDamageMod@ damage.<br><br><spellName>Hallucinate: Death</spellName>: On death, deal <trueDamage>@FearDamage*100@% maximum Health true damage</trueDamage> and fear for @FearDuration@s around you.",
     "dataValues": {
       "StealthDuration": 3.0,
-      "PseudoCastTime": [
-        0.125,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "ExtraAATime": [
-        1.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "CastRange": [
-        400.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "FearDuration": [
-        1.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "FearRadius": [
-        350.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "FearDamage": [
-        0.25,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
+      "PseudoCastTime": 0.125,
+      "ExtraAATime": 1.0,
+      "CastRange": 400.0,
+      "FearDuration": 1.0,
+      "FearRadius": 350.0,
+      "FearDamage": 0.25,
       "EDITDECEIVEFORREALVALUES": [],
-      "BaseDamage": [
-        100.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "MaxLevel": 3.0
+      "BaseDamage": 100.0,
+      "MaxLevel": 1.0
     },
     "calculations": {
       "BasicAttackDamage": {
@@ -7234,8 +7178,8 @@
         0.019999999552965164,
         0.019999999552965164,
         0.05000000074505806,
+        0.07500000298023224,
         0.10000000149011612,
-        0.125,
         0.125,
         0.125
       ],
@@ -7842,6 +7786,7 @@
     "apiName": "Despoil",
     "name": "Despoil",
     "rarity": "Silver",
+    "disabled": true,
     "desc": "Dashing or Teleporting grants you <keywordMajor>Cursed Power</keywordMajor> if there is an enemy nearby. Gain <speed>Move Speed</speed> scaling with your <keywordMajor>Cursed Power</keywordMajor>.",
     "tooltip": "Dashing or Blinking grants you <keywordMajor>@CurseCounter@ Cursed Power</keywordMajor> if there is an enemy nearby. Gain <speed>Move Speed</speed> scaling with your <keywordMajor>Cursed Power</keywordMajor>.<br><br>Gain <speed>@f1@ Move Speed</speed> (@MSRatio*100@% of your <keywordMajor>Cursed Power</keywordMajor>).<br><br>{{ Cherry_CurseShared }}",
     "dataValues": {
@@ -8114,10 +8059,22 @@
     "name": "Level Augments",
     "rarity": "Prismatic",
     "desc": "Remove an <keywordMajor>%i:Augment% Augment</keywordMajor>. <br><br>Gain @AugmentLevelsToGrant@ random <keywordMajor>%i:AugmentLevel% Augment Levels</keywordMajor>.",
-    "tooltip": "Remove an <keywordMajor>%i:Augment% Augment</keywordMajor>. <br><br>Gain @AugmentLevelsToGrant@ random <keywordMajor>%i:AugmentLevel% Augment Levels</keywordMajor>.",
+    "tooltip": "Remove an <keywordMajor>%i:Augment% Augment</keywordMajor>. <br><br>Gain @AugmentLevelsToGrant@ random <keywordMajor>%i:AugmentLevel% Augment Levels</keywordMajor>.<br><br><attention>You have @LevelableAugmentCount@ %i:AugmentLevel% levelable augment(s).</attention>",
     "dataValues": {
       "RoundsUntilYouGetReward": 3.0,
       "AugmentLevelsToGrant": 2.0
+    },
+    "calculations": {
+      "0x903f4f4f": {
+        "mFormulaParts": [
+          {
+            "mBuffName": "0x7e05f704",
+            "mCoefficient": 1.0,
+            "~class": "BuffCounterByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/Crafting_SellAug_small.tex",
@@ -8191,8 +8148,8 @@
     "apiName": "MagicalGirl",
     "name": "Magical Girl",
     "rarity": "Prismatic",
-    "desc": "Each round a star falls, pick it up transforms you into a powerful Magical Girl.<br><br>As a Magical Girl stars rain down around you and your enemies, dealing <magicDamage>magic damage</magicDamage>.",
-    "tooltip": "Each round, a star falls over @TimeUntilStarLands@ seconds. After picking it up you transformation into a Magical Girl, knocking back nearby enemies, causing them to dance for @EnemyDanceDuration@ second, while granting you <scaleAF>@AdaptiveForce@ Adaptive Force</scaleAF> and a <shield>@TotalShield@ health Shield</shield>.<br><br>As a Magical Girl, every @FastSpawnRate@-@SlowSpawnRate@ seconds @StarsToSpawnPerWave@ stars fall from the sky striking around you and each of your enemies, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> to those hit.<br><br><rules><br>Dancing enemies are invulnerable.<br>Stars rain down more frequently on enemies within @EnemycheckDistance@ range of you.</rules>",
+    "desc": "Each round a star falls, picking it up transforms you into a powerful Magical Girl.<br><br>As a Magical Girl, stars rain down around you and your enemies, dealing <magicDamage>magic damage</magicDamage>.",
+    "tooltip": "Each round, a star falls over @TimeUntilStarLands@ seconds. After picking it up you transform into a Magical Girl, knocking back nearby enemies, causing them to dance for @EnemyDanceDuration@ second, while granting you <scaleAF>@AdaptiveForce@ Adaptive Force</scaleAF> and a <shield>@TotalShield@ health Shield</shield>.<br><br>As a Magical Girl, every @FastSpawnRate@-@SlowSpawnRate@ seconds @StarsToSpawnPerWave@ stars fall from the sky striking around you and each of your enemies, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> to those hit.<br><br><rules><br>Dancing enemies are invulnerable.<br>Stars rain down more frequently on enemies within @EnemycheckDistance@ range of you.</rules>",
     "dataValues": {
       "TimeUntilStarLands": 15.0,
       "PickupRadius": 200.0,
