@@ -4705,6 +4705,7 @@
     "apiName": "YouSpinMeRightRound",
     "name": "Spin Me Right Round",
     "rarity": "Silver",
+    "disabled": true,
     "desc": "Replace a Summoner Spell with <spellName>Heroic Swing</spellName>.<br><br><rules><spellName>Heroic Swing</spellName> fires a grappling hook, sticking into terrain, after which you can <recast>Recast</recast> to swing around it. While swinging, automatically Attack the nearest enemy. Colliding with an enemy champion or <recast>Recasting</recast> ends the swing.</rules>",
     "tooltip": "Replace a Summoner Spell with <spellName>Heroic Swing</spellName>.<br><br><rules><spellName>Heroic Swing</spellName> fires a grappling hook, sticking into terrain, after which you can <recast>Recast</recast> to swing around it. While swinging, automatically Attack the nearest enemy. Colliding with an enemy champion or <recast>Recasting</recast> ends the swing.</rules>",
     "dataValues": {
@@ -5109,8 +5110,8 @@
     "tooltip": "Basic attacks and ability hits against enemies inflicts them with a Burn that deals <magicDamage>@FireStarterDamage@ magic damage</magicDamage> for @FireStarterDuration@ seconds. Applying a <keywordMajor>Burn</keywordMajor> drops a <keywordMajor>Chili Oil</keywordMajor> pool nearby for @GroundDuration@ seconds. <keywordMajor>Chili Oil</keywordMajor> restores <healing>@HealPerSecond@ Health</healing> and <keywordMajor>Burns</keywordMajor> enemies for <magicDamage>@CurrentEnemyBlazeBurnPerSecond@ magic damage</magicDamage> per second. <br><br><rules><keywordMajor>Chili Oil</keywordMajor> effects become stronger for each <keywordMajor>Burn</keywordMajor> you apply.<br><keywordMajor>Burn</keywordMajor> damage equals to @BaseFireDamagePerSecond@ plus @FireDamagePerBurn@ per Burn source, up to 10 sources.</rules>",
     "dataValues": {
       "GroundDuration": 5.0,
-      "BaseFireDamagePerSecond": 100.0,
-      "FireDamagePerBurn": 60.0,
+      "BaseFireDamagePerSecond": 150.0,
+      "FireDamagePerBurn": 50.0,
       "MSDuration": 0.75,
       "Cooldown": 3.0,
       "AoESizePerAdditionalStack": 40.0,
@@ -5127,8 +5128,7 @@
       "FireStarterCD": 5.0,
       "FireStarterDuration": 3.0,
       "MaxBurnCount": 10.0,
-      "BaseHealBonus": 70.0,
-      "PerAdditionalFireHealBonus": 50.0
+      "PerAdditionalFireHealBonus": 25.0
     },
     "calculations": {
       "CurrentEnemyBlazeBurnPerSecond": {
@@ -5165,8 +5165,8 @@
       "HealPerSecond": {
         "mFormulaParts": [
           {
-            "mEndValue": 150.0,
-            "mStartValue": 60.0,
+            "mEndValue": 75.0,
+            "mStartValue": 30.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           },
           {
@@ -5599,7 +5599,7 @@
     "desc": "Every @BaseCD@ seconds, <keywordMajor>Autocast</keywordMajor> a sparkly tiara descends upon you. When it lands, gain Rakan's Ultimate, charming enemies you touch.",
     "tooltip": "Every @BaseCD@ seconds, <keywordMajor>Autocast</keywordMajor> a sparkly tiara descends upon you. When it lands, gain Rakan's Ultimate, charming enemies you touch.",
     "dataValues": {
-      "BaseCD": 25.0,
+      "BaseCD": 35.0,
       "CharmDuration": 1.5,
       "Radius": 300.0,
       "WarningDelay": 2.5,
