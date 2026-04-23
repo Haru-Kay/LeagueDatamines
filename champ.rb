@@ -10,4 +10,4 @@ Dir.each_child("champions") {|ch|
     }
 }
 
-puts champs.uniq.join(", ")
+puts champs.uniq.join("").gsub(/[^A-Za-z]/, "").downcase.count("p")
