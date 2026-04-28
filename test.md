@@ -10,7 +10,7 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 **Hubris**
 
-* Had a value for `BonusLethality` changed from 15 -> 12. The item still grants 18 Lethality.
+* Had a value for `BonusLethality` changed from 15 -> 12. Likely intended to have been for the Flat AD on takedown, as they were both 15. The item still grants 18 Lethality, as well as 15 Flat AD on takedown.
 
 ## ARAM
 
