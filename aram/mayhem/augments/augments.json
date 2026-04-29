@@ -1540,7 +1540,7 @@
     "name": "Symphony of War",
     "rarity": "Prismatic",
     "desc": "Gain the <spellName>Lethal Tempo</spellName> and <spellName>Conqueror</spellName> Keystone Runes.",
-    "tooltip": "Gain the <spellName>Lethal Tempo</spellName> and <spellName>Conqueror</spellName> Keystone Runes.<br><li><spellName>Lethal Tempo</spellName>: Attacking an enemy champion grants you Attack Speed up to @StackCap@ stacks. At max stacks, gain 50 bonus Attack Range and increase the Attack Speed cap up to @ASCap@.<li><spellName>Conqueror</spellName>: Gain stacks of Adaptive Force when attacking enemy champions. After reaching @MaxStacks@ stacks, heal for a portion of damage you deal to champions.",
+    "tooltip": "Gain the <spellName>Lethal Tempo</spellName> and <spellName>Conqueror</spellName> Keystone Runes.<br><li><spellName>Lethal Tempo</spellName> - Attacking champions grants <attackSpeed>Attack Speed</attackSpeed>, stacking up to 6 times. At 6 stacks, your Attacks launch a bolt that deals additional damage.<br><li><spellName>Conqueror</spellName>: Gain stacks of Adaptive Force when attacking enemy champions. After reaching @MaxStacks@ stacks, heal for a portion of damage you deal to champions.",
     "dataValues": {
       "MinAdaptivePerStack": 3.0,
       "MaxAdaptivePerStack": 5.5,
@@ -1622,6 +1622,35 @@
           }
         ],
         "~class": "GameCalculation"
+      },
+      "NoteDamage": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 30.0,
+            "mStartValue": 9.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          }
+        ],
+        "mMultiplier": {
+          "mSubparts": [
+            {
+              "mNumber": 1.0,
+              "~class": "NumberCalculationPart"
+            },
+            {
+              "mCoefficient": 1.0,
+              "mStat": 4,
+              "mStatFormula": 2,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "SumOfSubPartsCalculationPart"
+        },
+        "mRangedMultiplier": {
+          "mNumber": 0.800000011920929,
+          "~class": "NumberCalculationPart"
+        },
+        "~class": "0xe9a3c91d"
       }
     },
     "icons": [

@@ -1,69 +1,90 @@
 Just a reminder that PBE changes are not final and subject to change. Some changes, such as bugfixes, may not be able to be viewed. 
 
-## Champions
-
-**Bel'Veth**
-
-* Casting Q should now break stealth
-
-## Items
-
-**Hubris**
-
-* Had a value for `BonusLethality` changed from 15 -> 12. Likely intended to have been for the Flat AD on takedown, as they were both 15. The item still grants 18 Lethality, as well as 15 Flat AD on takedown.
-
-## ARAM
-
-### Champions
-
-**Ornn**
-
-* P Cooldown: 120 seconds -> 90-10 seconds
-
-## Summoner's Rift
-
-### Systems
-
-**Top Lane Quest**
-
-* XP per Takedown: 85 -> 80
-
 ## ARAM: Mayhem
 
 ### Augments
 
-**Spin to Win**
+**Big Brain**
 
-* Re-enabled.
+* Now also resets after 70 seconds.
 
-**Void Rift**
+**Juiced**
 
-* Flat Lethality/MPen Ratio: 550% -> 500%
+* Can now be leveled up.
+* At max level, everytime you spend 400 Mana, increase the damge this deals by 10% for the rest of the round.
+* Likely intended just for Arena. Either a flag wasn't set or my tools made a mistake pulling this data.
+
+**Outlaw's Grit**
+
+* Now displays a [buff icon](https://raw.communitydragon.org/latest/game/assets/spells/icons2d/chronokeeper_recall.png) indicating stack amount.
+
+**Phenomenal Evil**
+
+* Clarified that it activates when you *damage* enemies rather than hitting abilities.
+
+**Spin Me Right Round**
+
+* Re-enabled
+
+**Upgrade Zhonya's**
+
+* Now also grants 50% MS while in Zhonya's.
 
 ## Arena
 
+### Champions
+
+**Katarina**
+
+* P Cooldown Reduction on Takedown: 75 seconds -> 15 seconds (the standard value for other modes)
+
+### Guests of Honor
+
+**Tahm Kench**
+
+* Abstain from Wealth/Power/Risk
+  * Sacrifice Health Restore: 5% -> 10%
+
+* Compulsion For Wealth
+  * Gold Granted: 3000 Gold -> 2500 Gold
+
+* Compulsion For Power
+  * Prismatic Anvils: 2 anvils -> 1 anvil
+
 ### Augments
 
-**And My Axe!**
+**Bravest of the Brave**
 
-* Damage: 60/100 (+10/12 per level) (+80% bonus AD) (+45% AP) -> 60/180 (+5 per level) (+80% bonus AD) (+45% AP)
-* Slow: 25/35% -> 25/45%
+* Bonus Gold: 750 Gold -> 750/1500 Gold
+
+**Ethereal Weapon**
+
+* Max Level: 2 -> 3
+* On-Hit Procs: 1/2 -> 1/2/3
+
+**Fire Sale**
+
+* If this augment is removed or replaced, gain 30% of the Gold granted by Fire Sale.
 
 **Hive Mind**
 
-* Max Bee Stacks: 8 -> 8/12/16
-* Attack Speed Reduction: 0/3% > 0/30%
-  * I assume the 3% was intended to be per Bee, likely just applies in general now.
-  * It is also no longer indicated on the level-up tooltip, as it is intended to be the max level bonus.
-* Spells now have a 1 second cooldown on applying Bees.
+* Re-enabled
+* Tooltip no longer states it increases the Bee cap.
 
-### Items
+**Juiced**
 
-**Duskblade of Draktharr**
+* On-Hit Damage: 4.5% Mana -> 4.5/9.0% Mana
+* At max level, everytime you spend 400 Mana, increase the damge this deals by 10% for the rest of the round.
 
-* Ranged Damage now also scales with Lethality, but at a reduced 0.075% Lethality
-  * Note: Melee still has weird values in its calculation, tooltip may not be accurate.
+**Nesting Doll**
 
-**Radiant Virtue**
+* Max Level: 2 -> 3
+* Bonus Revives: 1/3 -> 1/2/3
 
-* Now states it grants Ultimate Haste again.
+**Rags to Riches (Silver) (NEW)**
+
+* If this augment is removed or replaced, gain 2500 Gold.
+
+**Spin Me Right Round**
+
+* Re-enabled
