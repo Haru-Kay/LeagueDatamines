@@ -267,27 +267,6 @@
     "~class": "SpellObject"
   },
   "Characters/Tryndamere/Spells/TryndamereEAbility/TryndamereE": {
-    "BotData": {
-      "0x6d548702": {
-        "mFormulaParts": [
-          {
-            "mSpellCalculationKey": "TotalDamage",
-            "~class": "0xf3cbe7b2"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 128,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "TryndamereE",
     "mScriptName": "TryndamereE",
     "mSpell": {
@@ -639,41 +618,6 @@
     "~class": "SpellObject"
   },
   "Characters/Tryndamere/Spells/TryndamereQAbility/TryndamereQ": {
-    "BotData": {
-      "0x38382c53": [
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 1,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 4,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 1024,
-          "~class": "0x150d1b92"
-        }
-      ],
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mSpellCalculationKey": "HealPerFury",
-                "~class": "0xf3cbe7b2"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 8,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "TryndamereQ",
     "mBuff": {
       "mDescription": "<titleLeft>Bloodlust @Stack@</titleLeft><mainText>Tryndamere is receiving @f1@ additional Attack Damage and his critical strikes hit @f2@% harder.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
@@ -989,24 +933,6 @@
     "~class": "SpellObject"
   },
   "Characters/Tryndamere/Spells/TryndamereWAbility/TryndamereW": {
-    "BotData": {
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "SlowPotency",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 1,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "TryndamereW",
     "mBuff": {
       "mDescription": "<titleLeft>Mocking Shout</titleLeft><mainText>This unit is quivering in fear and has reduced Attack Damage.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
@@ -1211,58 +1137,6 @@
     "~class": "SpellObject"
   },
   "Characters/Tryndamere/Spells/UndyingRageAbility/UndyingRage": {
-    "BotData": {
-      "0x38382c53": [
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 1,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 4,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 1024,
-          "~class": "0x150d1b92"
-        }
-      ],
-      "0x6d548702": {
-        "~class": "GameCalculation"
-      },
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "TryndRDuration",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 8388608,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "TryndRMinHealth",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 32,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "DamageTag": 0,
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "UndyingRage",
     "mScriptName": "UndyingRage",
     "mSpell": {
@@ -1359,14 +1233,12 @@
                 },
                 {
                   "nameOverride": "Minimum Health",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 2,
+                  "type": "TryndRMinHealth",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Fury Gained",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "TryndRFuryGain",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -1378,7 +1250,7 @@
             "keyCost": "No Cost",
             "keyName": "Undying Rage",
             "keySummary": "Tryndamere's lust for battle becomes so strong that he is unable to die, no matter how wounded he becomes.",
-            "keyTooltip": "Tryndamere becomes completely immune to death for @Effect3Amount@ seconds, refusing to be reduced below @Effect2Amount@ Health, and instantly gains <keywordMajor>@Effect1Amount@ Fury</keywordMajor>.",
+            "keyTooltip": "Tryndamere becomes completely immune to death for @TryndRDuration@ seconds, refusing to be reduced below @TryndRMinHealth@ Health, and instantly gains <keywordMajor>@TryndRFuryGain@ Fury</keywordMajor>.",
             "keyTooltipExtendedBelowLine": "<rules>This Ability can be used while <status>Disabled</status>.</rules>"
           },
           "mObjectName": "UndyingRage",

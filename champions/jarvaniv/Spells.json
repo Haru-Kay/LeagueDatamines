@@ -556,6 +556,19 @@
             0.800000011920929
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseAuraAS",
+          "values": [
+            0.17499999701976776,
+            0.20000000298023224,
+            0.22499999403953552,
+            0.25,
+            0.2750000059604645,
+            0.30000001192092896,
+            0.32499998807907104
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -674,7 +687,7 @@
                   "Style": 1,
                   "multiplier": 100.0,
                   "nameOverride": "Active Attack Speed",
-                  "type": "Effect%dAmount",
+                  "type": "BaseAuraAS",
                   "typeIndex": 3,
                   "~class": "TooltipInstanceListElement"
                 },
@@ -690,14 +703,13 @@
           "mLocKeys": {
             "keyName": "Demacian Standard",
             "keySummary": "Jarvan IV carries the pride of Demacia, passively granting him bonus Attack Speed. Activating Demacian Standard allows Jarvan IV to place a Demacian flag that deals magic damage on impact and grants Attack Speed to nearby allied champions.",
-            "keyTooltip": "<spellPassive>Passive:</spellPassive> Jarvan gains <attackSpeed>@PermanentAttackSpeed*100@% Attack Speed</attackSpeed>.<br><br><spellActive>Active:</spellActive> Jarvan throws a standard into the ground, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> and granting allies near the standard <attackSpeed>@Effect3Amount*100@% Attack Speed</attackSpeed> for @Effect4Amount@ seconds."
+            "keyTooltip": "<spellPassive>Passive:</spellPassive> Jarvan gains <attackSpeed>@PermanentAttackSpeed*100@% Attack Speed</attackSpeed>.<br><br><spellActive>Active:</spellActive> Jarvan throws a standard into the ground, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> and granting allies near the standard <attackSpeed>@BaseAuraAS*100@% Attack Speed</attackSpeed> for @Effect4Amount@ seconds."
           },
           "mObjectName": "JarvanIVDemacianStandard",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.800000011920929,
       "mEffectAmount": [
         {
           "value": [
@@ -724,15 +736,6 @@
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            0.17499999701976776,
-            0.20000000298023224,
-            0.22499999403953552,
-            0.25,
-            0.2750000059604645,
-            0.30000001192092896,
-            0.32499998807907104
-          ],
           "~class": "SpellEffectAmount"
         },
         {
@@ -848,6 +851,19 @@
             290.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseARShred",
+          "values": [
+            0.05999999865889549,
+            0.10000000149011612,
+            0.14000000059604645,
+            0.18000000715255737,
+            0.2199999988079071,
+            0.25999999046325684,
+            0.30000001192092896
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -947,8 +963,9 @@
                 },
                 {
                   "Style": 1,
+                  "multiplier": 100.0,
                   "nameOverride": "Armor Reduction",
-                  "type": "Effect%dAmount",
+                  "type": "BaseARShred",
                   "typeIndex": 2,
                   "~class": "TooltipInstanceListElement"
                 },
@@ -968,7 +985,7 @@
           "mLocKeys": {
             "keyName": "Dragon Strike",
             "keySummary": "Jarvan IV extends his lance, dealing physical damage and lowering the Armor of enemies in its path. Additionally, this will pull Jarvan to his Demacian Standard, knocking up enemies in his path.",
-            "keyTooltip": "Jarvan extends his lance, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and removing <scaleArmor>@Effect2Amount@% Armor</scaleArmor> for @Effect3Amount@ seconds.<br><br>If the lance connects with <spellName>{{Spell_JarvanIVDemacianStandard_Name}}</spellName>, Jarvan will pull himself to it, <status>Knocking Up</status> those in his path for 0.75 seconds.",
+            "keyTooltip": "Jarvan extends his lance, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and removing <scaleArmor>@BaseARShred*100@% Armor</scaleArmor> for @Effect3Amount@ seconds.<br><br>If the lance connects with <spellName>{{Spell_JarvanIVDemacianStandard_Name}}</spellName>, Jarvan will pull himself to it, <status>Knocking Up</status> those in his path for 0.75 seconds.",
             "keyTooltipExtendedBelowLine": "<rules>Jarvan can pull himself even while <status>Immobilized</status>.</rules>"
           },
           "mObjectName": "JarvanIVDragonStrike",
@@ -976,7 +993,6 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 1.4500000476837158,
       "mEffectAmount": [
         {
           "value": [
@@ -991,15 +1007,6 @@
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            6.0,
-            10.0,
-            14.0,
-            18.0,
-            22.0,
-            26.0,
-            30.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
@@ -1074,7 +1081,6 @@
               "~class": "StatByCoefficientCalculationPart"
             }
           ],
-          "tooltipOnly": true,
           "~class": "GameCalculation"
         }
       },
@@ -1127,6 +1133,21 @@
     "mSpell": {
       "0x11704a2b": 0.125,
       "0xf26881a0": 0.5,
+      "DataValues": [
+        {
+          "name": "BaseSlowAmount",
+          "values": [
+            0.10000000149011612,
+            0.15000000596046448,
+            0.20000000298023224,
+            0.25,
+            0.30000001192092896,
+            0.3499999940395355,
+            0.4000000059604645
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "castConeDistance": 100.0,
       "castFrame": 3.0,
       "castRadius": [
@@ -1181,8 +1202,9 @@
                 },
                 {
                   "Style": 1,
+                  "multiplier": 100.0,
                   "nameOverride": "Slow",
-                  "type": "Effect%dAmount",
+                  "type": "BaseSlowAmount",
                   "typeIndex": 2,
                   "~class": "TooltipInstanceListElement"
                 }
@@ -1194,14 +1216,13 @@
           "mLocKeys": {
             "keyName": "Golden Aegis",
             "keySummary": "Jarvan IV calls upon the ancient kings of Demacia to shield him from harm and slow surrounding enemies.",
-            "keyTooltip": "Jarvan summons an aegis, <status>Slowing</status> nearby enemies by @Effect2Amount@% for @Effect5Amount@ seconds and granting him a <shield>@BaseShield@ Shield</shield>, increased by <shield>@BonusShield@</shield> for each enemy champion hit."
+            "keyTooltip": "Jarvan summons an aegis, <status>Slowing</status> nearby enemies by @BaseSlowAmount*100@% for @Effect5Amount@ seconds and granting him a <shield>@TotalShield@ Shield</shield>, increased by <shield>@BonusShield@</shield> for each enemy champion hit."
           },
           "mObjectName": "JarvanIVGoldenAegis",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.800000011920929,
       "mEffectAmount": [
         {
           "value": [
@@ -1216,15 +1237,6 @@
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            10.0,
-            15.0,
-            20.0,
-            25.0,
-            30.0,
-            35.0,
-            40.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
@@ -1310,7 +1322,17 @@
         "ASSETS/Characters/JarvanIV/HUD/Icons2D/JarvanIVW.dds"
       ],
       "mSpellCalculations": {
-        "BaseShield": {
+        "BonusShield": {
+          "mFormulaParts": [
+            {
+              "mCoefficient": 0.013000000268220901,
+              "mStat": 12,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "TotalShield": {
           "mFormulaParts": [
             {
               "mEffectIndex": 1,
@@ -1320,16 +1342,6 @@
               "mCoefficient": 0.699999988079071,
               "mStat": 2,
               "mStatFormula": 2,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "BonusShield": {
-          "mFormulaParts": [
-            {
-              "mCoefficient": 0.013000000268220901,
-              "mStat": 12,
               "~class": "StatByCoefficientCalculationPart"
             }
           ],

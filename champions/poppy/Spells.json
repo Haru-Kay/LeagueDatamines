@@ -37,86 +37,6 @@
     "~class": "SpellObject"
   },
   "Characters/Poppy/Spells/PoppyEAbility/PoppyE": {
-    "BotData": {
-      "0x6d548702": {
-        "mFormulaParts": [
-          {
-            "mSpellCalculationKey": "TackleDamage",
-            "~class": "0xf3cbe7b2"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "DashSpeed",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 256,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "MaxEnemyPushbackDistance",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 4194304,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "StunDuration",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 4096,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "StunDuration",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 2048,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "StunDuration",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 16384,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "DamageTag": 0,
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "PoppyE",
     "mScriptName": "PoppyE",
     "mSpell": {
@@ -277,20 +197,17 @@
               "Elements": [
                 {
                   "nameOverride": "Initial Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "BaseDamageValue",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Wall Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 2,
+                  "type": "WallDamage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Stun Duration:",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 3,
+                  "type": "StunDuration",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -737,47 +654,6 @@
     "~class": "SpellObject"
   },
   "Characters/Poppy/Spells/PoppyQAbility/PoppyQ": {
-    "BotData": {
-      "0x6d548702": {
-        "mFormulaParts": [
-          {
-            "mSpellCalculationKey": "baseDamage",
-            "~class": "0xf3cbe7b2"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "SlowDuration",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 1,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "HealthDamagePercent",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 33554432,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "DamageTag": 0,
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "PoppyQ",
     "mScriptName": "PoppyQ",
     "mSpell": {
@@ -916,15 +792,13 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "BaseDamageValue",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "Style": 1,
                   "nameOverride": "Slow",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 3,
+                  "type": "Slow_",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -937,8 +811,7 @@
                 },
                 {
                   "nameOverride": "Monster Cap",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 6,
+                  "type": "MaxHealthDamageToNonHeroes",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -1150,47 +1023,6 @@
     "~class": "SpellObject"
   },
   "Characters/Poppy/Spells/PoppyRAbility/PoppyR": {
-    "BotData": {
-      "0x6d548702": {
-        "mFormulaParts": [
-          {
-            "mSpellCalculationKey": "Damage",
-            "~class": "0xf3cbe7b2"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "KnockupDurationCharged",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 4194304,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "KnockupDurationSnap",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 16777216,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "DamageTag": 0,
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "PoppyR",
     "mBuff": {
       "mDescription": "<titleLeft>On the Backswing</titleLeft><mainText>Poppy is channeling a huge knockback strike.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
@@ -1934,90 +1766,6 @@
     "~class": "SpellObject"
   },
   "Characters/Poppy/Spells/PoppyWAbility/PoppyW": {
-    "BotData": {
-      "0x38382c53": [
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 8192,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 4,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 1024,
-          "~class": "0x150d1b92"
-        }
-      ],
-      "0x6d548702": {
-        "mFormulaParts": [
-          {
-            "mSpellCalculationKey": "InterruptDamage",
-            "~class": "0xf3cbe7b2"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "PassiveResistPercent",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 524288,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "Haste",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 2,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "KnockupDuration",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 16777216,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "SlowAmount",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 1,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "DamageTag": 1,
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "PoppyW",
     "mScriptName": "PoppyW",
     "mSpell": {
@@ -2187,8 +1935,7 @@
                 },
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 5,
+                  "type": "DamageValue",
                   "~class": "TooltipInstanceListElement"
                 }
               ],

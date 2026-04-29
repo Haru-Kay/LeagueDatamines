@@ -804,11 +804,11 @@
       "cooldownTime": [
         12.0,
         12.0,
-        11.5,
         11.0,
-        10.5,
         10.0,
-        10.0
+        9.0,
+        8.0,
+        8.0
       ],
       "luaOnMissileUpdateDistanceInterval": 90.0,
       "mAffectsTypeFlags": 6154,
@@ -1026,13 +1026,13 @@
         {
           "name": "BaseDamage",
           "values": [
+            35.0,
             50.0,
+            65.0,
             80.0,
+            95.0,
             110.0,
-            140.0,
-            170.0,
-            200.0,
-            230.0
+            125.0
           ],
           "~class": "SpellDataValue"
         },
@@ -1104,13 +1104,13 @@
         {
           "name": "SlowAmount",
           "values": [
-            0.15000000596046448,
-            0.20000000298023224,
-            0.25,
             0.30000001192092896,
-            0.3499999940395355,
-            0.4000000059604645,
-            0.44999998807907104
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896
           ],
           "~class": "SpellDataValue"
         },
@@ -1165,6 +1165,45 @@
             0.25
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "DamageAPRatio",
+          "values": [
+            0.550000011920929,
+            0.6000000238418579,
+            0.6499999761581421,
+            0.699999988079071,
+            0.75,
+            0.800000011920929,
+            0.8500000238418579
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxHealthDamage",
+          "values": [
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DamageDragonMod",
+          "values": [
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "castRange": [
@@ -1180,11 +1219,11 @@
       "cooldownTime": [
         12.0,
         12.0,
-        11.5,
         11.0,
-        10.5,
         10.0,
-        10.0
+        9.0,
+        8.0,
+        8.0
       ],
       "luaOnMissileUpdateDistanceInterval": 90.0,
       "mAffectsTypeFlags": 6154,
@@ -1289,8 +1328,8 @@
                 {
                   "Style": 1,
                   "multiplier": 100.0,
-                  "nameOverride": "Slow",
-                  "type": "SlowAmount",
+                  "nameOverride": "Total AP Ratio",
+                  "type": "DamageAPRatio",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -1302,7 +1341,7 @@
             "keyCost": "No Cost",
             "keyName": "Molten Burst",
             "keySummary": "Shyvana launches a fireball that explodes upon striking a large target and slows them. In Dragon Form, it passes through and explodes upon striking large enemies, leaving behind a trail of fire.",
-            "keyTooltip": "Shyvana launches a fireball at the target location dealing <magicDamage>@Damage@ magic damage</magicDamage> and <status>Slowing by @Calc_Slow@ for @SlowDuration@ seconds</status>. It explodes upon striking an enemy or reaching its terminus.<br><br><keywordMajor>Dragon Form:</keywordMajor> Shyvana's fireball is larger and pierces through enemies. Upon striking a champion, large monster, or reaching its terminus it triggers a pulse of fire that deals <magicDamage>@Calc_Dragon_Damage@ magic damage</magicDamage> and <status>Slows by @Calc_Slow_Dragon@ for @SlowDuration@ seconds</status>. The fireball leaves behind a trail for @GroundLingerDuration@ seconds that deals <magicDamage>@DamagePerSecond@ magic damage per second</magicDamage>. ",
+            "keyTooltip": "Shyvana launches a fireball at the target location dealing <magicDamage>@Damage@ + @Calc_Max_Health_Damage@ Max health magic damage</magicDamage> and <status>Slowing by @Calc_Slow@ for @SlowDuration@ seconds</status>. It explodes upon striking an enemy or reaching its terminus.<br><br><keywordMajor>Dragon Form:</keywordMajor> Shyvana's fireball is larger and pierces through enemies. Upon striking a champion, large monster, or reaching its terminus it triggers a pulse of fire that deals <magicDamage>@Calc_Dragon_Damage@  + @Calc_Max_Health_Dragon_Damage@ Max Health magic damage</magicDamage> and <status>Slows by @Calc_Slow_Dragon@ for @SlowDuration@ seconds</status>. The fireball leaves behind a trail for @GroundLingerDuration@ seconds that deals <magicDamage>@DamagePerSecond@ magic damage per second</magicDamage>. ",
             "keyTooltipExtendedBelowLine": "<rules>Overlapping <keywordMajor>Dragon Form</keywordMajor> explosions deal @Calc_Multihit_Efficacy@ damage.</rules>"
           },
           "mObjectName": "ShyvanaE",
@@ -1349,7 +1388,17 @@
         "~class": "MissileSpecification"
       },
       "mSpellCalculations": {
-        "0x93257a1e": {
+        "0xbb85c3b6": {
+          "mExpandedTooltipCalculationDisplay": 6,
+          "mModifiedGameCalculation": "Calc_Max_Health_Damage",
+          "mMultiplier": {
+            "mDataValue": "DamageDragonMod",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "mSimpleTooltipCalculationDisplay": 5,
+          "~class": "GameCalculationModified"
+        },
+        "Calc_Dragon_Damage": {
           "mModifiedGameCalculation": "Damage",
           "mMultiplier": {
             "mNumber": 1.25,
@@ -1357,22 +1406,42 @@
           },
           "~class": "GameCalculationModified"
         },
-        "0xa428c732": {
-          "mExpandedTooltipCalculationDisplay": 5,
-          "mModifiedGameCalculation": "Calc_Slow",
-          "mMultiplier": {
-            "mNumber": 1.0,
-            "~class": "NumberCalculationPart"
-          },
-          "mSimpleTooltipCalculationDisplay": 6,
-          "~class": "GameCalculationModified"
-        },
-        "0xff31d3c2": {
+        "Calc_Max_Health_Damage": {
           "mDisplayAsPercent": true,
           "mExpandedTooltipCalculationDisplay": 5,
           "mFormulaParts": [
             {
-              "mNumber": 0.5,
+              "mDataValue": "MaxHealthDamage",
+              "~class": "NamedDataValueCalculationPart"
+            }
+          ],
+          "mPrecision": 1,
+          "mSimpleTooltipCalculationDisplay": 5,
+          "~class": "GameCalculation"
+        },
+        "Calc_Max_Health_Monster_Maximum": {
+          "mFormulaParts": [
+            {
+              "mNumber": 200.0,
+              "~class": "NumberCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "Calc_Max_Health_Monster_Minimum": {
+          "mFormulaParts": [
+            {
+              "~class": "NumberCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "Calc_Multihit_Efficacy": {
+          "mDisplayAsPercent": true,
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mFormulaParts": [
+            {
+              "mNumber": 0.4000000059604645,
               "~class": "NumberCalculationPart"
             }
           ],
@@ -1391,6 +1460,16 @@
           "mSimpleTooltipCalculationDisplay": 6,
           "~class": "GameCalculation"
         },
+        "Calc_Slow_Dragon": {
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mModifiedGameCalculation": "Calc_Slow",
+          "mMultiplier": {
+            "mNumber": 1.0,
+            "~class": "NumberCalculationPart"
+          },
+          "mSimpleTooltipCalculationDisplay": 6,
+          "~class": "GameCalculationModified"
+        },
         "Damage": {
           "mFormulaParts": [
             {
@@ -1398,14 +1477,8 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.3499999940395355,
-              "mStat": 2,
-              "mStatFormula": 2,
-              "~class": "StatByCoefficientCalculationPart"
-            },
-            {
-              "mCoefficient": 0.699999988079071,
-              "~class": "StatByCoefficientCalculationPart"
+              "mDataValue": "DamageAPRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -1614,7 +1687,7 @@
         "ASSETS/Characters/Shyvana/HUD/Icons2D/Shyvana_Passive.Shyvana_Rework.dds"
       ],
       "mSpellCalculations": {
-        "0x85edcc8c": {
+        "Calc_Bonus_Armor": {
           "mExpandedTooltipCalculationDisplay": 5,
           "mFormulaParts": [
             {
@@ -1628,7 +1701,7 @@
           "mSimpleTooltipCalculationDisplay": 5,
           "~class": "GameCalculation"
         },
-        "0xdb8f0776": {
+        "Calc_Bonus_MR": {
           "mExpandedTooltipCalculationDisplay": 5,
           "mFormulaParts": [
             {
@@ -1722,13 +1795,13 @@
         {
           "name": "Cooldown_Reduction",
           "values": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
           ],
           "~class": "SpellDataValue"
         },
@@ -1747,19 +1820,6 @@
         },
         {
           "name": "Max_Health_AD_Ratio",
-          "values": [
-            0.00011000000085914508,
-            0.00011000000085914508,
-            0.00011000000085914508,
-            0.00011000000085914508,
-            0.00011000000085914508,
-            0.00011000000085914508,
-            0.00011000000085914508
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "Max_Health_AP_Ratio",
           "values": [
             0.00011000000085914508,
             0.00011000000085914508,
@@ -1904,68 +1964,6 @@
         "ASSETS/Characters/Shyvana/HUD/Icons2D/Shyvana_Q1.Shyvana_Rework.dds"
       ],
       "mSpellCalculations": {
-        "0x136a56eb": {
-          "mModifiedGameCalculation": "Calc_Damage",
-          "mMultiplier": {
-            "mNumber": 1.5,
-            "~class": "NumberCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
-        "0x389419d8": {
-          "mExpandedTooltipCalculationDisplay": 5,
-          "mFormulaParts": [
-            {
-              "mNumber": 200.0,
-              "~class": "NumberCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculation"
-        },
-        "0x42c9fc79": {
-          "mExpandedTooltipCalculationDisplay": 5,
-          "mFormulaParts": [
-            {
-              "mDataValue": "Damage_Monster_Bonus",
-              "~class": "NamedDataValueCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculation"
-        },
-        "0x57e0cb52": {
-          "mExpandedTooltipCalculationDisplay": 6,
-          "mFormulaParts": [
-            {
-              "mNumber": 10.0,
-              "~class": "NumberCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 6,
-          "~class": "GameCalculation"
-        },
-        "0xa90da5f4": {
-          "mDisplayAsPercent": true,
-          "mFormulaParts": [
-            {
-              "mDataValue": "Max_Health_Damage",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mDataValue": "Max_Health_AD_Ratio",
-              "mStat": 2,
-              "mStatFormula": 2,
-              "~class": "StatByNamedDataValueCalculationPart"
-            },
-            {
-              "mDataValue": "Max_Health_AP_Ratio",
-              "~class": "StatByNamedDataValueCalculationPart"
-            }
-          ],
-          "mPrecision": 1,
-          "~class": "GameCalculation"
-        },
         "0xaee2a1e8": {
           "mDisplayAsPercent": true,
           "mFormulaParts": [
@@ -1988,10 +1986,68 @@
               "~class": "StatByNamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.25,
+              "mCoefficient": 0.30000001192092896,
               "~class": "StatByCoefficientCalculationPart"
             }
           ],
+          "~class": "GameCalculation"
+        },
+        "Calc_Dragon_Form_Damage": {
+          "mModifiedGameCalculation": "Calc_Damage",
+          "mMultiplier": {
+            "mNumber": 1.5,
+            "~class": "NumberCalculationPart"
+          },
+          "~class": "GameCalculationModified"
+        },
+        "Calc_Max_Health_Damage": {
+          "mDisplayAsPercent": true,
+          "mFormulaParts": [
+            {
+              "mDataValue": "Max_Health_Damage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "Max_Health_AD_Ratio",
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "mPrecision": 1,
+          "~class": "GameCalculation"
+        },
+        "Calc_Max_Health_Monster_Maximum": {
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mFormulaParts": [
+            {
+              "mNumber": 200.0,
+              "~class": "NumberCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 5,
+          "~class": "GameCalculation"
+        },
+        "Calc_Max_Health_Monster_Minimum": {
+          "mExpandedTooltipCalculationDisplay": 6,
+          "mFormulaParts": [
+            {
+              "mNumber": 10.0,
+              "~class": "NumberCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 6,
+          "~class": "GameCalculation"
+        },
+        "Calc_Monster_Bonus": {
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mFormulaParts": [
+            {
+              "mDataValue": "Damage_Monster_Bonus",
+              "~class": "NamedDataValueCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 5,
           "~class": "GameCalculation"
         }
       },
@@ -2436,7 +2492,40 @@
         "ASSETS/Characters/Shyvana/HUD/Icons2D/Shyvana_R.Shyvana_Rework.dds"
       ],
       "mSpellCalculations": {
-        "0x47c9f80c": {
+        "0x57d26a55": {
+          "mFormulaParts": [
+            {
+              "mNumber": 1050.0,
+              "~class": "NumberCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "Calc_Bonus_Health": {
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mFormulaParts": [
+            {
+              "mDataValue": "BonusHealth",
+              "~class": "NamedDataValueCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 5,
+          "~class": "GameCalculation"
+        },
+        "Damage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 1.0,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "TT_Fury_AoE_Penalty": {
           "mDisplayAsPercent": true,
           "mExpandedTooltipCalculationDisplay": 5,
           "mFormulaParts": [
@@ -2460,16 +2549,7 @@
           "tooltipOnly": true,
           "~class": "GameCalculation"
         },
-        "0x57d26a55": {
-          "mFormulaParts": [
-            {
-              "mNumber": 1050.0,
-              "~class": "NumberCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "0x869490c9": {
+        "TT_Fury_Mult": {
           "mDisplayAsPercent": true,
           "mExpandedTooltipCalculationDisplay": 5,
           "mFormulaParts": [
@@ -2485,35 +2565,12 @@
           "mSimpleTooltipCalculationDisplay": 6,
           "tooltipOnly": true,
           "~class": "GameCalculation"
-        },
-        "0x91d3acc7": {
-          "mExpandedTooltipCalculationDisplay": 5,
-          "mFormulaParts": [
-            {
-              "mDataValue": "BonusHealth",
-              "~class": "NamedDataValueCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculation"
-        },
-        "Damage": {
-          "mFormulaParts": [
-            {
-              "mDataValue": "baseDamage",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mCoefficient": 1.0,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
         }
       },
       "mSpellTags": [
         "Trait_Ultimate",
-        "Trait_Transformation"
+        "Trait_Transformation",
+        "Trait_PlayerSelectedDashDirection"
       ],
       "mTargetingTypeData": {
         "~class": "Area"
@@ -2560,13 +2617,13 @@
         {
           "name": "Shield",
           "values": [
-            40.0,
-            60.0,
-            80.0,
-            100.0,
-            120.0,
-            140.0,
-            160.0
+            55.0,
+            75.0,
+            95.0,
+            115.0,
+            135.0,
+            155.0,
+            175.0
           ],
           "~class": "SpellDataValue"
         },
@@ -2634,6 +2691,19 @@
             1.75
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "ShieldMaxHealth",
+          "values": [
+            0.11999999731779099,
+            0.11999999731779099,
+            0.11999999731779099,
+            0.11999999731779099,
+            0.11999999731779099,
+            0.11999999731779099,
+            0.11999999731779099
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "castRange": [
@@ -2646,13 +2716,13 @@
         350.0
       ],
       "cooldownTime": [
-        14.0,
-        14.0,
-        13.5,
         13.0,
-        12.5,
+        13.0,
         12.0,
-        12.0
+        11.0,
+        10.0,
+        9.0,
+        9.0
       ],
       "flags": 36,
       "mAffectsTypeFlags": 8192,
@@ -2690,7 +2760,7 @@
             "keyCost": "No Cost",
             "keyName": "Inferno Aegis",
             "keySummary": "Shyvana gains a shield, movement speed, and after a short delay, the area around her detonates.  While in Dragon Form, the explosion will heal her if it strikes an enemy champion.",
-            "keyTooltip": "Shyvana wraps herself in flames for @Duration@ seconds, gaining <shield>@Calc_Shield@ Shield</shield>, increased by <shield>@Calc_Shield_Per_Nearby_Champion@</shield> per nearby enemy champion and <speed>@MoveSpeed@ Move Speed</speed>, increased to <speed>@MoveSpeedTowardsEnemies@</speed> when moving towards enemy champions.<br><br>When the effect ends, the <shield>Shield</shield> is broken, or upon <recast>Recast</recast> the area around her detonates, dealing <magicDamage>@Damage@ magic damage</magicDamage>.<br><br><keywordMajor>Dragon Form:</keywordMajor> If the detonation hits an enemy champion Shyvana <healing>restores from @Calc_Heal_Min@ to @Calc_Heal_Max@ Health</healing> based on her missing Health."
+            "keyTooltip": "Shyvana wraps herself in flames for @Duration@ seconds, gaining <shield>@Calc_Shield@ Shield</shield>, increased by <shield>@Calc_Shield_Per_Nearby_Champion@</shield> per nearby enemy champion and <speed>@MoveSpeed@ Move Speed</speed>, increased to <speed>@MoveSpeedTowardsEnemies@</speed> when moving towards enemy champions.<br><br>When the effect ends, the <shield>Shield</shield> is broken, or upon <recast>Recast</recast> the area around her detonates, dealing <magicDamage>@Damage@ magic damage</magicDamage>.<br><br><keywordMajor>Dragon Form:</keywordMajor> If the detonation hits an enemy champion Shyvana <healing> @Calc_Base_Heal@ + @Calc_Missing_Health_Heal@ Missing Health</healing>."
           },
           "mObjectName": "ShyvanaW",
           "~class": "TooltipInstanceSpell"
@@ -2701,25 +2771,36 @@
         "ASSETS/Characters/Shyvana/HUD/Icons2D/Shyvana_W1.Shyvana_Rework.dds"
       ],
       "mSpellCalculations": {
-        "0x3af62e84": {
-          "mModifiedGameCalculation": "Calc_Shield",
-          "mMultiplier": {
-            "mNumber": 0.30000001192092896,
-            "~class": "NumberCalculationPart"
-          },
-          "~class": "GameCalculationModified"
+        "0xb35447ff": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 100.0,
+              "mStartValue": 60.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
         },
-        "0x80729703": {
-          "mExpandedTooltipCalculationDisplay": 5,
-          "mModifiedGameCalculation": "MoveSpeed",
+        "0xf468ef05": {
+          "mDisplayAsPercent": true,
+          "mFormulaParts": [
+            {
+              "mEndValue": 0.07999999821186066,
+              "mStartValue": 0.03999999910593033,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "Calc_Heal_Max": {
+          "mModifiedGameCalculation": "Calc_Heal_Min",
           "mMultiplier": {
-            "mDataValue": "MoveSpeedAmpTowardsEnemies",
+            "mDataValue": "MissingHealthHealMultiplier",
             "~class": "NamedDataValueCalculationPart"
           },
-          "mSimpleTooltipCalculationDisplay": 5,
           "~class": "GameCalculationModified"
         },
-        "0xc6d3894": {
+        "Calc_Heal_Min": {
           "mFormulaParts": [
             {
               "mEndValue": 200.0,
@@ -2739,14 +2820,6 @@
           ],
           "~class": "GameCalculation"
         },
-        "0xfa8236f6": {
-          "mModifiedGameCalculation": "0xc6d3894",
-          "mMultiplier": {
-            "mDataValue": "MissingHealthHealMultiplier",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
         "Calc_Shield": {
           "mFormulaParts": [
             {
@@ -2754,12 +2827,21 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.05000000074505806,
+              "mDataValue": "ShieldMaxHealth",
               "mStat": 12,
-              "~class": "StatByCoefficientCalculationPart"
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
+        },
+        "Calc_Shield_Per_Nearby_Champion": {
+          "mModifiedGameCalculation": "Calc_Shield",
+          "mMultiplier": {
+            "mNumber": 0.30000001192092896,
+            "~class": "NumberCalculationPart"
+          },
+          "~class": "GameCalculationModified"
         },
         "Damage": {
           "mFormulaParts": [
@@ -2768,13 +2850,7 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.4000000059604645,
-              "mStat": 2,
-              "mStatFormula": 2,
-              "~class": "StatByCoefficientCalculationPart"
-            },
-            {
-              "mCoefficient": 0.20000000298023224,
+              "mCoefficient": 0.6499999761581421,
               "~class": "StatByCoefficientCalculationPart"
             }
           ],
@@ -2791,6 +2867,16 @@
           ],
           "mSimpleTooltipCalculationDisplay": 5,
           "~class": "GameCalculation"
+        },
+        "MoveSpeedTowardsEnemies": {
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mModifiedGameCalculation": "MoveSpeed",
+          "mMultiplier": {
+            "mDataValue": "MoveSpeedAmpTowardsEnemies",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "mSimpleTooltipCalculationDisplay": 5,
+          "~class": "GameCalculationModified"
         }
       },
       "mTargetingTypeData": {

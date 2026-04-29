@@ -4,6 +4,11 @@
     "mScriptName": "TeemoWPassive",
     "~class": "SpellObject"
   },
+  "0x38aed395": {
+    "ObjectName": "TeemoEShared",
+    "mScriptName": "TeemoEShared",
+    "~class": "SpellObject"
+  },
   "0x51a365a3": {
     "ObjectName": "TeemoRDot",
     "mBuff": {
@@ -138,7 +143,7 @@
         "~class": "SpellDataResourceClient"
       },
       "mImgIconName": [
-        "ASSETS/Characters/Teemo/HUD/Icons2D/TeemoPassive.ASU_Teemo.dds"
+        "ASSETS/Characters/Teemo/HUD/Icons2D/TeemoPassive.dds"
       ],
       "mSpellCalculations": {
         "BonusAttackSpeed": {
@@ -317,7 +322,7 @@
     "mScriptName": "TeemoPAttackSpeedBuff",
     "mSpell": {
       "mImgIconName": [
-        "ASSETS/Characters/Teemo/HUD/Icons2D/TeemoPassive_Buff.ASU_Teemo.dds"
+        "ASSETS/Characters/Teemo/HUD/Icons2D/TeemoPassive_Buff.dds"
       ],
       "~class": "SpellDataResource"
     },
@@ -767,7 +772,7 @@
     "mScriptName": "TeemoWPassiveCooldown",
     "mSpell": {
       "mImgIconName": [
-        "ASSETS/Characters/Teemo/HUD/Icons2D/TeemoW_Grey.ASU_Teemo.dds"
+        "ASSETS/Characters/Teemo/HUD/Icons2D/TeemoW_Grey.dds"
       ],
       "~class": "SpellDataResource"
     },
@@ -957,19 +962,6 @@
     "~class": "SpellObject"
   },
   "Characters/Teemo/Spells/TeemoEAbility/TeemoE": {
-    "BotData": {
-      "0x6d548702": {
-        "mFormulaParts": [
-          {
-            "mSpellCalculationKey": "TotalDotDamage",
-            "~class": "0xf3cbe7b2"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "DamageTag": 1,
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "TeemoE",
     "mBuff": {
       "mDescription": "<titleLeft>Toxic Shot</titleLeft><mainText>This unit is poisoned, receiving damage each second.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
@@ -1080,6 +1072,32 @@
             1.600000023841858
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "TickBonusADRatio",
+          "values": [
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ImpactBonusADRatio",
+          "values": [
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "bHaveHitEffect": true,
@@ -1147,8 +1165,8 @@
             "keyCooldown": "",
             "keyCost": "<spellPassive>Passive</spellPassive>",
             "keyName": "Toxic Shot",
-            "keySummary": "Each of Teemo's attacks will poison the target, dealing damage on impact and each second after for 4 seconds.",
-            "keyTooltip": "<spellPassive>Passive:</spellPassive> Teemo's Attacks apply poison, dealing an additional <magicDamage>@ImpactCalculatedDamage@ magic damage</magicDamage> plus <magicDamage>@TotalDotDamage@ magic damage</magicDamage> over @PoisonDuration@ seconds.",
+            "keySummary": "Each of Teemo's attacks will poison the target %i:OnHit% <OnHit>On-Hit</OnHit>, dealing damage on impact and each second after for 4 seconds.",
+            "keyTooltip": "<spellPassive>Passive:</spellPassive> Teemo's Attacks apply poison %i:OnHit% <OnHit>On-Hit</OnHit>, dealing an additional <magicDamage>@ImpactCalculatedDamage@ magic damage</magicDamage> plus <magicDamage>@TotalDotDamage@ magic damage</magicDamage> over @PoisonDuration@ seconds.",
             "keyTooltipExtendedBelowLine": "<rules>This poison deals @MonsterMod*100@% damage to jungle monsters.</rules>"
           },
           "mObjectName": "TeemoE",
@@ -1159,7 +1177,7 @@
       "mHitEffectKey": "chill_glb_BV2",
       "mHitEffectOrientType": 2,
       "mImgIconName": [
-        "ASSETS/Characters/Teemo/HUD/Icons2D/TeemoE.ASU_Teemo.dds"
+        "ASSETS/Characters/Teemo/HUD/Icons2D/TeemoE.dds"
       ],
       "mMissileSpec": {
         "behaviors": [
@@ -1210,6 +1228,12 @@
             {
               "mDataValue": "ImpactAPRatio",
               "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "ImpactBonusADRatio",
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -1222,6 +1246,12 @@
             },
             {
               "mDataValue": "TickAPRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "TickBonusADRatio",
+              "mStat": 2,
+              "mStatFormula": 2,
               "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
@@ -1246,34 +1276,6 @@
     "~class": "SpellObject"
   },
   "Characters/Teemo/Spells/TeemoQAbility/TeemoQ": {
-    "BotData": {
-      "0x6d548702": {
-        "mFormulaParts": [
-          {
-            "mSpellCalculationKey": "CalculatedDamage",
-            "~class": "0xf3cbe7b2"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "BlindDuration",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 2048,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "DamageTag": 1,
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "TeemoQ",
     "mScriptName": "TeemoQ",
     "mSpell": {
@@ -1481,7 +1483,7 @@
       "mHitEffectKey": "Teemo_Q_tar",
       "mHitEffectOrientType": 2,
       "mImgIconName": [
-        "ASSETS/Characters/Teemo/HUD/Icons2D/TeemoQ.ASU_Teemo.dds"
+        "ASSETS/Characters/Teemo/HUD/Icons2D/TeemoQ.dds"
       ],
       "mMissileEffectKey": "Teemo_Q_mis",
       "mMissileSpec": {
@@ -1548,46 +1550,6 @@
     "~class": "SpellObject"
   },
   "Characters/Teemo/Spells/TeemoRAbility/TeemoR": {
-    "BotData": {
-      "0x38382c53": [
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 128,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 512,
-          "~class": "0x150d1b92"
-        }
-      ],
-      "0x6d548702": {
-        "mFormulaParts": [
-          {
-            "mSpellCalculationKey": "TotalDamage",
-            "~class": "0xf3cbe7b2"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "SlowAmount",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 1,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "DamageTag": 1,
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "TeemoR",
     "mBuff": {
       "mDescription": "<titleLeft>Noxious Trap</titleLeft><mainText>This trap will detonate if an enemy steps on it, poisoning nearby enemies.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
@@ -2124,7 +2086,7 @@
         2
       ],
       "mImgIconName": [
-        "ASSETS/Characters/Teemo/HUD/Icons2D/TeemoR.ASU_Teemo.dds"
+        "ASSETS/Characters/Teemo/HUD/Icons2D/TeemoR.dds"
       ],
       "mLineWidth": 120.0,
       "mMaxAmmo": [
@@ -2181,41 +2143,6 @@
     "~class": "SpellObject"
   },
   "Characters/Teemo/Spells/TeemoWAbility/TeemoW": {
-    "BotData": {
-      "0x38382c53": [
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 1,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 4,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 1024,
-          "~class": "0x150d1b92"
-        }
-      ],
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "ActiveMoveSpeedBonus",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 2,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "TeemoW",
     "mBuff": {
       "PersistentEffectConditions": [
@@ -2365,7 +2292,7 @@
         "~class": "SpellDataResourceClient"
       },
       "mImgIconName": [
-        "ASSETS/Characters/Teemo/HUD/Icons2D/TeemoW.ASU_Teemo.dds"
+        "ASSETS/Characters/Teemo/HUD/Icons2D/TeemoW.dds"
       ],
       "mRequiredUnitTags": {
         "mObjectTagList": [

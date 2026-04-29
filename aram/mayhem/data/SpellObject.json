@@ -1937,8 +1937,41 @@
             1.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "DamageMultiplier",
+              "values": [
+                1.0,
+                1.0,
+                2.0,
+                3.0,
+                3.0,
+                3.0,
+                3.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "castConeAngle": 0.0,
       "castConeDistance": 0.0,
       "castRange": [
@@ -1960,6 +1993,29 @@
         0.0
       ],
       "mAnimationName": "0",
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Spell_ListType_Shield",
+                  "type": "DamageMultiplier",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 2,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mObjectName": "Augment_ARAM_CrackOpenThatEgg",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
       "mImgIconName": [
         "ASSETS/Spells/Icons2D/Icon_SummonerSpell_Interference.dds"
       ],
@@ -3090,6 +3146,54 @@
     "mSpell": {
       "0x11704a2b": 0.0,
       "0xf26881a0": 0.0,
+      "DataValues": [
+        {
+          "name": "MaxLevel",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "AdditionalOnHitCount",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "AdditionalOnHitCount",
+              "values": [
+                1.0,
+                1.0,
+                2.0,
+                3.0,
+                4.0,
+                5.0,
+                6.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "castConeAngle": 0.0,
       "castConeDistance": 0.0,
       "castRange": [
@@ -3114,6 +3218,19 @@
       "mClientData": {
         "mTooltipData": {
           "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "ListType_OnHits_Applied",
+                  "type": "AdditionalOnHitCount",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 2,
+              "~class": "TooltipInstanceList"
+            }
+          },
           "mLocKeys": {
             "keyName": "Kiwi_ARAM_DoubleTap_Name",
             "keySummary": "Kiwi_DoubleTap_Tooltip"
@@ -3130,7 +3247,7 @@
         "0xd61e58c9"
       ],
       "mSpellCalculations": {
-        "0xc91fac52": {
+        "Calc_Crit_Chance": {
           "mDisplayAsPercent": true,
           "mExpandedTooltipCalculationDisplay": 5,
           "mFormulaParts": [
@@ -3324,7 +3441,29 @@
         "0xd61e58c9"
       ],
       "mSpellCalculations": {
-        "0x31e71824": {
+        "Calc_Damage": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 500.0,
+              "mStartValue": 150.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            },
+            {
+              "mCoefficient": 1.0,
+              "mStat": 1,
+              "mStatFormula": 2,
+              "~class": "StatByCoefficientCalculationPart"
+            },
+            {
+              "mCoefficient": 1.0,
+              "mStat": 6,
+              "mStatFormula": 2,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "Calc_Execute_Threshold": {
           "mDisplayAsPercent": true,
           "mFormulaParts": [
             {
@@ -3347,7 +3486,7 @@
           "mPrecision": 1,
           "~class": "GameCalculation"
         },
-        "0xecce0397": {
+        "Calc_Heal": {
           "mFormulaParts": [
             {
               "mEndValue": 300.0,
@@ -3357,28 +3496,6 @@
             {
               "mCoefficient": 0.25,
               "mStat": 12,
-              "mStatFormula": 2,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "Calc_Damage": {
-          "mFormulaParts": [
-            {
-              "mEndValue": 500.0,
-              "mStartValue": 150.0,
-              "~class": "ByCharLevelInterpolationCalculationPart"
-            },
-            {
-              "mCoefficient": 1.0,
-              "mStat": 1,
-              "mStatFormula": 2,
-              "~class": "StatByCoefficientCalculationPart"
-            },
-            {
-              "mCoefficient": 1.0,
-              "mStat": 6,
               "mStatFormula": 2,
               "~class": "StatByCoefficientCalculationPart"
             }
@@ -3738,17 +3855,6 @@
         "0x8903d61f"
       ],
       "mSpellCalculations": {
-        "0x31e71824": {
-          "mDisplayAsPercent": true,
-          "mFormulaParts": [
-            {
-              "mCoefficient": 0.25,
-              "mStat": 34,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
         "Calc_Damage": {
           "mFormulaParts": [
             {
@@ -3758,6 +3864,17 @@
             },
             {
               "mCoefficient": 750.0,
+              "mStat": 34,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "Calc_Execute_Threshold": {
+          "mDisplayAsPercent": true,
+          "mFormulaParts": [
+            {
+              "mCoefficient": 0.25,
               "mStat": 34,
               "~class": "StatByCoefficientCalculationPart"
             }
@@ -7168,7 +7285,7 @@
         "~class": "SpellDataResourceClient"
       },
       "mImgIconName": [
-        "ASSETS/Spells/Icons2D/Lissandra_Root.Kiwi.dds"
+        "ASSETS/Spells/Icons2D/Lissandra_Root.dds"
       ],
       "~class": "SpellDataResource"
     },
@@ -7191,7 +7308,7 @@
     "mScriptName": "Augment_ARAM_FrostWraithRooted",
     "mSpell": {
       "mImgIconName": [
-        "ASSETS/Spells/Icons2D/Lissandra_Root.Kiwi.dds"
+        "ASSETS/Spells/Icons2D/Lissandra_Root.dds"
       ],
       "~class": "SpellDataResource"
     },
@@ -7240,11 +7357,72 @@
             1.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "MSBuff",
+              "values": [
+                0.0,
+                1.0,
+                2.0,
+                3.0,
+                4.0,
+                5.0,
+                6.0
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "BuffDuration",
+              "values": [
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "mClientData": {
         "mTooltipData": {
           "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Spell_ListType_Cherry_MoveSpeedIncrease",
+                  "type": "MSBuff",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 2,
+              "~class": "TooltipInstanceList"
+            }
+          },
           "mLocKeys": {
             "keyName": "Kiwi_ARAM_GetExcited_Name",
             "keySummary": "Kiwi_GetExcited_Summary"
@@ -7436,6 +7614,19 @@
         },
         {
           "name": "APAmp",
+          "values": [
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "AFAmp",
           "values": [
             0.15000000596046448,
             0.15000000596046448,
@@ -8632,7 +8823,28 @@
         "0xacaa25ce"
       ],
       "mSpellCalculations": {
-        "0xb12f97e5": {
+        "Calc_Crit_Damage_Per_Shot": {
+          "mModifiedGameCalculation": "Calc_Damage_Per_Shot",
+          "mMultiplier": {
+            "mCoefficient": 1.0,
+            "mStat": 9,
+            "~class": "StatByCoefficientCalculationPart"
+          },
+          "~class": "GameCalculationModified"
+        },
+        "Calc_Crit_Threshold": {
+          "mDisplayAsPercent": true,
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mFormulaParts": [
+            {
+              "mNumber": 0.30000001192092896,
+              "~class": "NumberCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 6,
+          "~class": "GameCalculation"
+        },
+        "Calc_Damage_Per_Shot": {
           "mFormulaParts": [
             {
               "mEndValue": 40.0,
@@ -8651,28 +8863,7 @@
           ],
           "~class": "GameCalculation"
         },
-        "0xedf4ef00": {
-          "mModifiedGameCalculation": "0xb12f97e5",
-          "mMultiplier": {
-            "mCoefficient": 1.0,
-            "mStat": 9,
-            "~class": "StatByCoefficientCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
-        "0xfd4d70e5": {
-          "mDisplayAsPercent": true,
-          "mExpandedTooltipCalculationDisplay": 5,
-          "mFormulaParts": [
-            {
-              "mNumber": 0.30000001192092896,
-              "~class": "NumberCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 6,
-          "~class": "GameCalculation"
-        },
-        "0xff4e3458": {
+        "Calc_Style_MS_Per_Stack": {
           "mDisplayAsPercent": true,
           "mFormulaParts": [
             {
@@ -9093,9 +9284,13 @@
         "ASSETS/Spells/Icons2D/Terrify.dds"
       ],
       "mSpellCalculations": {
-        "APToCritConversion": {
+        "CritGranted": {
           "mDisplayAsPercent": true,
           "mFormulaParts": [
+            {
+              "mDataValue": "CritChance",
+              "~class": "NamedDataValueCalculationPart"
+            },
             {
               "mDataValue": "CritConverRatio",
               "~class": "StatByNamedDataValueCalculationPart"
@@ -9114,6 +9309,34 @@
     "mSpell": {
       "0x11704a2b": 0.0,
       "0xf26881a0": 0.0,
+      "DataValues": [
+        {
+          "name": "ManaPercentReduction",
+          "values": [
+            0.02500000037252903,
+            0.02500000037252903,
+            0.02500000037252903,
+            0.02500000037252903,
+            0.02500000037252903,
+            0.02500000037252903,
+            0.02500000037252903
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ManaPercentDamagePercent",
+          "values": [
+            0.04500000178813934,
+            0.04500000178813934,
+            0.04500000178813934,
+            0.04500000178813934,
+            0.04500000178813934,
+            0.04500000178813934,
+            0.04500000178813934
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "castConeAngle": 0.0,
       "castConeDistance": 0.0,
       "castRange": [
@@ -9163,19 +9386,19 @@
           },
           "~class": "GameCalculationModified"
         },
-        "0xaa5cf752": {
+        "Calc_Damage": {
           "mFormulaParts": [
             {
-              "mCoefficient": 0.02500000037252903,
+              "mCoefficient": 0.04500000178813934,
               "~class": "AbilityResourceByCoefficientCalculationPart"
             }
           ],
           "~class": "GameCalculation"
         },
-        "Calc_Damage": {
+        "Calc_Mana_Cost": {
           "mFormulaParts": [
             {
-              "mCoefficient": 0.04500000178813934,
+              "mCoefficient": 0.02500000037252903,
               "~class": "AbilityResourceByCoefficientCalculationPart"
             }
           ],
@@ -10702,8 +10925,93 @@
             1.5
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseDamageAmp",
+          "values": [
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseDamageReduction",
+          "values": [
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MSAmp",
+          "values": [
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448
+          ],
+          "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "BaseDamageAmp",
+              "values": [
+                0.0,
+                0.10000000149011612,
+                0.20000000298023224,
+                0.30000001192092896,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "MSAmp",
+              "values": [
+                0.20000000298023224,
+                0.20000000298023224,
+                0.30000001192092896,
+                0.5,
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "castConeAngle": 0.0,
       "castConeDistance": 0.0,
       "castRange": [
@@ -10725,6 +11033,36 @@
         0.0
       ],
       "mAnimationName": "",
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Spell_ListType_DamageAdditional",
+                  "type": "BaseDamageAmp",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Spell_ListType_MovementSpeed",
+                  "type": "MSAmp",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 3,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mObjectName": "Augment_ARAM_LittleDevil",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
       "mImgIconName": [
         "ASSETS/Spells/Icons2D/22.dds"
       ],
@@ -10732,7 +11070,66 @@
         "0xd1070e48"
       ],
       "mSpellCalculations": {
-        "0x21a86d0d": {
+        "Calc_Damage_Amp": {
+          "mDisplayAsPercent": true,
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mFormulaParts": [
+            {
+              "mDataValue": "BaseDamageAmp",
+              "~class": "NamedDataValueCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 5,
+          "~class": "GameCalculation"
+        },
+        "Calc_Damage_Reduction": {
+          "mDisplayAsPercent": true,
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mFormulaParts": [
+            {
+              "mDataValue": "BaseDamageReduction",
+              "~class": "NamedDataValueCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 5,
+          "~class": "GameCalculation"
+        },
+        "Calc_Drain_Per_Second": {
+          "mDisplayAsPercent": true,
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mFormulaParts": [
+            {
+              "mNumber": 0.05000000074505806,
+              "~class": "NumberCalculationPart"
+            }
+          ],
+          "mPrecision": 2,
+          "mSimpleTooltipCalculationDisplay": 5,
+          "~class": "GameCalculation"
+        },
+        "Calc_Drain_Per_Second_Non_Combat": {
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mModifiedGameCalculation": "Calc_Drain_Per_Second",
+          "mMultiplier": {
+            "mNumber": 0.10000000149011612,
+            "~class": "NumberCalculationPart"
+          },
+          "mSimpleTooltipCalculationDisplay": 5,
+          "~class": "GameCalculationModified"
+        },
+        "Calc_Move_Speed": {
+          "mDisplayAsPercent": true,
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mFormulaParts": [
+            {
+              "mDataValue": "MSAmp",
+              "~class": "NamedDataValueCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 5,
+          "~class": "GameCalculation"
+        },
+        "Calc_Remnant_Healing": {
           "mFormulaParts": [
             {
               "mEndValue": 250.0,
@@ -10750,65 +11147,6 @@
               "~class": "StatByCoefficientCalculationPart"
             }
           ],
-          "~class": "GameCalculation"
-        },
-        "0x6b74500e": {
-          "mDisplayAsPercent": true,
-          "mExpandedTooltipCalculationDisplay": 5,
-          "mFormulaParts": [
-            {
-              "mNumber": 0.20000000298023224,
-              "~class": "NumberCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculation"
-        },
-        "0xaccae6f3": {
-          "mExpandedTooltipCalculationDisplay": 5,
-          "mModifiedGameCalculation": "0xaf406daa",
-          "mMultiplier": {
-            "mNumber": 0.10000000149011612,
-            "~class": "NumberCalculationPart"
-          },
-          "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculationModified"
-        },
-        "0xaf406daa": {
-          "mDisplayAsPercent": true,
-          "mExpandedTooltipCalculationDisplay": 5,
-          "mFormulaParts": [
-            {
-              "mNumber": 0.05000000074505806,
-              "~class": "NumberCalculationPart"
-            }
-          ],
-          "mPrecision": 2,
-          "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculation"
-        },
-        "Calc_Damage_Amp": {
-          "mDisplayAsPercent": true,
-          "mExpandedTooltipCalculationDisplay": 5,
-          "mFormulaParts": [
-            {
-              "mNumber": 0.15000000596046448,
-              "~class": "NumberCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculation"
-        },
-        "Calc_Move_Speed": {
-          "mDisplayAsPercent": true,
-          "mExpandedTooltipCalculationDisplay": 5,
-          "mFormulaParts": [
-            {
-              "mNumber": 0.15000000596046448,
-              "~class": "NumberCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 5,
           "~class": "GameCalculation"
         }
       },
@@ -12732,6 +13070,45 @@
             3.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MSAmp",
+          "values": [
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DRAmount",
+          "values": [
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "castConeAngle": 0.0,
@@ -12766,7 +13143,7 @@
           }
         ],
         "mTooltipData": {
-          "mFormat": "0xb5df7ddb",
+          "mFormat": "0xd7c27163",
           "mLocKeys": {
             "keyName": "Kiwi_ARAM_PoroKing_Name",
             "keyTooltip": "Kiwi_ARAM_PoroKing_Tooltip"
@@ -12786,18 +13163,6 @@
       ],
       "mShowChannelBar": false,
       "mSpellCalculations": {
-        "0x6b74500e": {
-          "mDisplayAsPercent": true,
-          "mExpandedTooltipCalculationDisplay": 5,
-          "mFormulaParts": [
-            {
-              "mNumber": 0.699999988079071,
-              "~class": "NumberCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculation"
-        },
         "Calc_Damage": {
           "mFormulaParts": [
             {
@@ -12806,6 +13171,18 @@
               "~class": "ByCharLevelInterpolationCalculationPart"
             }
           ],
+          "~class": "GameCalculation"
+        },
+        "Calc_Damage_Reduction": {
+          "mDisplayAsPercent": true,
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mFormulaParts": [
+            {
+              "mDataValue": "DRAmount",
+              "~class": "NamedDataValueCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 5,
           "~class": "GameCalculation"
         },
         "Calc_MoveSpeed": {
@@ -12909,18 +13286,6 @@
       ],
       "mShowChannelBar": false,
       "mSpellCalculations": {
-        "0x6b74500e": {
-          "mDisplayAsPercent": true,
-          "mExpandedTooltipCalculationDisplay": 5,
-          "mFormulaParts": [
-            {
-              "mNumber": 0.8500000238418579,
-              "~class": "NumberCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculation"
-        },
         "Calc_Damage": {
           "mFormulaParts": [
             {
@@ -12946,6 +13311,18 @@
               "~class": "StatByCoefficientCalculationPart"
             }
           ],
+          "~class": "GameCalculation"
+        },
+        "Calc_Damage_Reduction": {
+          "mDisplayAsPercent": true,
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mFormulaParts": [
+            {
+              "mNumber": 0.8500000238418579,
+              "~class": "NumberCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 5,
           "~class": "GameCalculation"
         },
         "Calc_MoveSpeed": {
@@ -13093,6 +13470,19 @@
             25.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "mImgIconName": [
@@ -13144,6 +13534,19 @@
             0.6499999761581421
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "castConeAngle": 0.0,
@@ -13186,7 +13589,7 @@
         "0xd61e58c9"
       ],
       "mSpellCalculations": {
-        "0x7755186c": {
+        "Calc_CDR": {
           "mDisplayAsPercent": true,
           "mExpandedTooltipCalculationDisplay": 5,
           "mFormulaParts": [
@@ -15163,11 +15566,57 @@
             0.75
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "SpeedPerHit",
+              "values": [
+                150.0,
+                150.0,
+                300.0,
+                450.0,
+                450.0,
+                450.0,
+                450.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "mClientData": {
         "mTooltipData": {
           "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Spell_ListType_MovementSpeed",
+                  "type": "SpeedPerHit",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 2,
+              "~class": "TooltipInstanceList"
+            }
+          },
           "mLocKeys": {
             "keyName": "Cherry_Deft_Name",
             "keySummary": "Cherry_Deft_Tooltip"
@@ -15508,6 +15957,19 @@
             30.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "castConeAngle": 0.0,
@@ -15538,7 +16000,7 @@
         "0x58f94e0d"
       ],
       "mSpellCalculations": {
-        "0xc5c8ca6b": {
+        "DamageMitigation": {
           "mDisplayAsPercent": true,
           "mExpandedTooltipCalculationDisplay": 5,
           "mFormulaParts": [
@@ -16296,6 +16758,19 @@
             70.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "AugmentsToGrantToolTipOnly",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "mClientData": {
@@ -16712,6 +17187,19 @@
             1.5,
             1.5,
             1.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ProcCadence",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
           ],
           "~class": "SpellDataValue"
         }
@@ -17155,11 +17643,90 @@
             15.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "InstantGoldGain",
+          "values": [
+            250.0,
+            250.0,
+            250.0,
+            250.0,
+            250.0,
+            250.0,
+            250.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "ExecutionInc",
+              "values": [
+                0.009999999776482582,
+                0.009999999776482582,
+                0.019999999552965164,
+                0.029999999329447746,
+                0.03999999910593033,
+                0.05000000074505806,
+                0.05999999865889549
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "UpgradedGoldAmount",
+              "values": [
+                200.0,
+                200.0,
+                500.0,
+                750.0,
+                750.0,
+                750.0,
+                750.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "mClientData": {
         "mTooltipData": {
           "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "ListType_ExecuteThreshold",
+                  "type": "ExecutionInc",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "ListType_Gold",
+                  "type": "UpgradedGoldAmount",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 2,
+              "~class": "TooltipInstanceList"
+            }
+          },
           "mObjectName": "Augment_ARAM_Upgrade_Collector",
           "~class": "TooltipInstanceSpell"
         },
@@ -17267,8 +17834,67 @@
             5.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "InstantGoldGain",
+          "values": [
+            250.0,
+            250.0,
+            250.0,
+            250.0,
+            250.0,
+            250.0,
+            250.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "MaxHealthRestored",
+              "values": [
+                0.05000000074505806,
+                0.05000000074505806,
+                0.05000000074505806,
+                0.05000000074505806,
+                0.05000000074505806,
+                0.05000000074505806,
+                0.05000000074505806
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "MissingHealthStackAmount",
+              "values": [
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "mClientData": {
         "mTooltipData": {
           "mFormat": "0xd7c27163",
@@ -17579,7 +18205,27 @@
         "0x239f5ca7"
       ],
       "mSpellCalculations": {
-        "0x300db355": {
+        "Calc_Damage": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 450.0,
+              "mStartValue": 100.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            },
+            {
+              "mCoefficient": 5.0,
+              "mStat": 29,
+              "~class": "StatByCoefficientCalculationPart"
+            },
+            {
+              "mCoefficient": 5.0,
+              "mStat": 22,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "Calc_Slow_Amount": {
           "mDisplayAsPercent": true,
           "mExpandedTooltipCalculationDisplay": 5,
           "mFormulaParts": [
@@ -17589,26 +18235,6 @@
             }
           ],
           "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculation"
-        },
-        "Calc_Damage": {
-          "mFormulaParts": [
-            {
-              "mEndValue": 450.0,
-              "mStartValue": 100.0,
-              "~class": "ByCharLevelInterpolationCalculationPart"
-            },
-            {
-              "mCoefficient": 5.5,
-              "mStat": 29,
-              "~class": "StatByCoefficientCalculationPart"
-            },
-            {
-              "mCoefficient": 5.5,
-              "mStat": 22,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
           "~class": "GameCalculation"
         }
       },
@@ -17795,17 +18421,7 @@
         "0x823fc7d4"
       ],
       "mSpellCalculations": {
-        "0xdb8f1217": {
-          "mFormulaParts": [
-            {
-              "mEndValue": 250.0,
-              "mStartValue": 50.0,
-              "~class": "ByCharLevelInterpolationCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "0xecce0397": {
+        "Calc_Heal": {
           "mDisplayAsPercent": true,
           "mExpandedTooltipCalculationDisplay": 5,
           "mFormulaParts": [
@@ -17816,6 +18432,16 @@
             }
           ],
           "mSimpleTooltipCalculationDisplay": 5,
+          "~class": "GameCalculation"
+        },
+        "Calc_Heal_Flat": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 250.0,
+              "mStartValue": 50.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            }
+          ],
           "~class": "GameCalculation"
         },
         "Calc_Slow": {
@@ -17973,8 +18599,54 @@
             6.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ReductionAmount",
+          "values": [
+            0.02500000037252903,
+            0.02500000037252903,
+            0.02500000037252903,
+            0.02500000037252903,
+            0.02500000037252903,
+            0.02500000037252903,
+            0.02500000037252903
+          ],
+          "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "ReductionAmount",
+              "values": [
+                0.02500000037252903,
+                0.02500000037252903,
+                0.05000000074505806,
+                0.07500000298023224,
+                0.07500000298023224,
+                0.07500000298023224,
+                0.07500000298023224
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "castConeAngle": 0.0,
       "castConeDistance": 0.0,
       "castRange": [
@@ -17996,6 +18668,29 @@
         0.0
       ],
       "mAnimationName": "",
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "ListType_tickRate",
+                  "type": "ReductionAmount",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 2,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mObjectName": "Augment_ARAM_WeightedPopoffs",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
       "mImgIconName": [
         "ASSETS/Spells/Icons2D/Crepe_Zaun_Raidboss.HA_CREPE.dds"
       ],
@@ -18003,9 +18698,22 @@
         "0xccb01020"
       ],
       "mSpellCalculations": {
-        "0x7536985c": {
+        "Calc_Cooldown_Acceleration": {
+          "mDisplayAsPercent": true,
           "mExpandedTooltipCalculationDisplay": 5,
-          "mModifiedGameCalculation": "0xc4c1a8c1",
+          "mFormulaParts": [
+            {
+              "mDataValue": "ReductionAmount",
+              "~class": "NamedDataValueCalculationPart"
+            }
+          ],
+          "mPrecision": 1,
+          "mSimpleTooltipCalculationDisplay": 5,
+          "~class": "GameCalculation"
+        },
+        "Calc_Cooldown_Acceleration_Maximum": {
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mModifiedGameCalculation": "Calc_Cooldown_Acceleration",
           "mMultiplier": {
             "mNumber": 2.0,
             "~class": "NumberCalculationPart"
@@ -18013,20 +18721,15 @@
           "mSimpleTooltipCalculationDisplay": 5,
           "~class": "GameCalculationModified"
         },
-        "0xc4c1a8c1": {
-          "mDisplayAsPercent": true,
-          "mExpandedTooltipCalculationDisplay": 5,
-          "mFormulaParts": [
-            {
-              "mNumber": 0.02500000037252903,
-              "~class": "NumberCalculationPart"
-            }
-          ],
-          "mPrecision": 1,
-          "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculation"
+        "Calc_Heal_Max": {
+          "mModifiedGameCalculation": "Calc_Heal_Min",
+          "mMultiplier": {
+            "mNumber": 2.0,
+            "~class": "NumberCalculationPart"
+          },
+          "~class": "GameCalculationModified"
         },
-        "0xc6d3894": {
+        "Calc_Heal_Min": {
           "mFormulaParts": [
             {
               "mEndValue": 100.0,
@@ -18045,14 +18748,6 @@
             }
           ],
           "~class": "GameCalculation"
-        },
-        "0xfa8236f6": {
-          "mModifiedGameCalculation": "0xc6d3894",
-          "mMultiplier": {
-            "mNumber": 2.0,
-            "~class": "NumberCalculationPart"
-          },
-          "~class": "GameCalculationModified"
         }
       },
       "missileSpeed": 0.0,
@@ -18232,6 +18927,47 @@
     "mSpell": {
       "0x11704a2b": 0.0,
       "0xf26881a0": 0.0,
+      "DataValues": [
+        {
+          "name": "ASAPRatio",
+          "values": [
+            0.0005000000237487257,
+            0.0005000000237487257,
+            0.0005000000237487257,
+            0.0005000000237487257,
+            0.0005000000237487257,
+            0.0005000000237487257,
+            0.0005000000237487257
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "CritAPRatio",
+          "values": [
+            0.0005000000237487257,
+            0.0005000000237487257,
+            0.0005000000237487257,
+            0.0005000000237487257,
+            0.0005000000237487257,
+            0.0005000000237487257,
+            0.0005000000237487257
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "castConeAngle": 0.0,
       "castConeDistance": 0.0,
       "castRange": [
@@ -18272,7 +19008,7 @@
         "0xd61e58c9"
       ],
       "mSpellCalculations": {
-        "0x3cddad9": {
+        "Calc_AS": {
           "mDisplayAsPercent": true,
           "mFormulaParts": [
             {
@@ -18280,13 +19016,13 @@
               "~class": "NumberCalculationPart"
             },
             {
-              "mCoefficient": 0.0005000000237487257,
-              "~class": "StatByCoefficientCalculationPart"
+              "mDataValue": "ASAPRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
         },
-        "0xc91fac52": {
+        "Calc_Crit_Chance": {
           "mDisplayAsPercent": true,
           "mFormulaParts": [
             {
@@ -18294,8 +19030,8 @@
               "~class": "NumberCalculationPart"
             },
             {
-              "mCoefficient": 0.0005000000237487257,
-              "~class": "StatByCoefficientCalculationPart"
+              "mDataValue": "CritAPRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -18426,11 +19162,57 @@
             10.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "Resists",
+              "values": [
+                8.0,
+                8.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "mClientData": {
         "mTooltipData": {
           "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Spell_ListType_Cherry_Resists",
+                  "type": "Resists",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 2,
+              "~class": "TooltipInstanceList"
+            }
+          },
           "mLocKeys": {
             "keyName": "Kiwi_Adamant_Name",
             "keySummary": "Kiwi_Adamant_Tooltip"
@@ -18565,7 +19347,7 @@
         "ASSETS/Spells/Icons2D/Terrify.dds"
       ],
       "mSpellCalculations": {
-        "0xc9af967f": {
+        "BonusHSP": {
           "mDisplayAsPercent": true,
           "mFormulaParts": [
             {
@@ -18931,6 +19713,19 @@
             4.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "bHaveHitBone": true,
@@ -18967,6 +19762,11 @@
             "~class": "TargeterDefinitionRange"
           }
         ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mObjectName": "Augment_CriticalMissile",
+          "~class": "TooltipInstanceSpell"
+        },
         "~class": "SpellDataResourceClient"
       },
       "mFloatVarsDecimals": [
@@ -19018,7 +19818,7 @@
         "0x91c152af"
       ],
       "mSpellCalculations": {
-        "0x7e859db7": {
+        "AdditionalMis": {
           "mFormulaParts": [
             {
               "mDataValue": "AdditionalMisDivision",
@@ -19107,9 +19907,9 @@
         0
       ],
       "mHitBoneName": "C_Buffbone_Glb_Chest_Loc",
-      "mHitEffectKey": "Kiwi_Augment_Set_Firecracker_Tar",
-      "mMissileEffectEnemyKey": "Kiwi_Augment_Set_Firecracker_mis_Enemy",
-      "mMissileEffectKey": "0xa88a5f15",
+      "mHitEffectKey": "Augment_CriticalMissile_Tar",
+      "mMissileEffectEnemyKey": "Augment_CriticalMissile_Mis_Enemy",
+      "mMissileEffectKey": "Augment_CriticalMissile_Mis",
       "mMissileSpec": {
         "behaviors": [
           {
@@ -19223,9 +20023,9 @@
         0
       ],
       "mHitBoneName": "C_Buffbone_Glb_Chest_Loc",
-      "mHitEffectKey": "Kiwi_Augment_Set_Firecracker_Tar",
-      "mMissileEffectEnemyKey": "Kiwi_Augment_Set_Firecracker_mis_Enemy",
-      "mMissileEffectKey": "0xa88a5f15",
+      "mHitEffectKey": "Augment_CriticalMissile_Tar",
+      "mMissileEffectEnemyKey": "Augment_CriticalMissile_Mis_Enemy",
+      "mMissileEffectKey": "Augment_CriticalMissile_Mis",
       "mMissileSpec": {
         "behaviors": [
           {
@@ -19332,11 +20132,57 @@
             6.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "MaxStack",
+              "values": [
+                0.0,
+                10.0,
+                20.0,
+                30.0,
+                40.0,
+                50.0,
+                60.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "mClientData": {
         "mTooltipData": {
           "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Spell_ListType_MaxStacks",
+                  "type": "MaxStack",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 3,
+              "~class": "TooltipInstanceList"
+            }
+          },
           "mObjectName": "Augment_CriticalRhythm",
           "~class": "TooltipInstanceSpell"
         },
@@ -19454,6 +20300,19 @@
             10.0,
             10.0,
             10.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
           ],
           "~class": "SpellDataValue"
         }
@@ -19579,13 +20438,13 @@
         }
       ],
       "castRadius": [
-        550.0,
-        550.0,
-        550.0,
-        550.0,
-        550.0,
-        550.0,
-        550.0
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0
       ],
       "castRange": [
         1600.0,
@@ -19955,6 +20814,19 @@
             0.6499999761581421
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "mClientData": {
@@ -20080,11 +20952,92 @@
             20.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "MaxHealthShield",
+              "values": [
+                0.30000001192092896,
+                0.30000001192092896,
+                0.44999998807907104,
+                0.6000000238418579,
+                0.75,
+                0.75,
+                0.75
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "OmniVamp",
+              "values": [
+                0.15000000596046448,
+                0.15000000596046448,
+                0.20000000298023224,
+                0.20000000298023224,
+                0.20000000298023224,
+                0.20000000298023224,
+                0.20000000298023224
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "AugDuration",
+              "values": [
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "mClientData": {
         "mTooltipData": {
           "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Spell_ListType_ShieldHealthRatio",
+                  "type": "MaxHealthShield",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Spell_ListType_Omnivamp",
+                  "type": "OmniVamp",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 2,
+              "~class": "TooltipInstanceList"
+            }
+          },
           "mLocKeys": {
             "keyName": "Kiwi_FinalForm_Name",
             "keySummary": "Kiwi_FinalForm_Summary",
@@ -20593,11 +21546,59 @@
             0.30000001192092896
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "TrueDamagePerc",
+              "values": [
+                0.15000000596046448,
+                0.15000000596046448,
+                0.20000000298023224,
+                0.30000001192092896,
+                0.30000001192092896,
+                0.30000001192092896,
+                0.30000001192092896
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "mClientData": {
         "mTooltipData": {
           "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Spell_ListType_AdditionalDamage",
+                  "type": "TrueDamagePerc",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 3,
+              "~class": "TooltipInstanceList"
+            }
+          },
           "mLocKeys": {
             "keyName": "Kiwi_GlassCannon_Name",
             "keySummary": "Kiwi_GlassCannon_Summary"
@@ -20920,26 +21921,26 @@
         {
           "name": "BaseFireDamagePerSecond",
           "values": [
-            100.0,
-            100.0,
-            100.0,
-            100.0,
-            100.0,
-            100.0,
-            100.0
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0
           ],
           "~class": "SpellDataValue"
         },
         {
           "name": "FireDamagePerBurn",
           "values": [
-            60.0,
-            60.0,
-            60.0,
-            60.0,
-            60.0,
-            60.0,
-            60.0
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0
           ],
           "~class": "SpellDataValue"
         },
@@ -21152,28 +22153,15 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "BaseHealBonus",
-          "values": [
-            70.0,
-            70.0,
-            70.0,
-            70.0,
-            70.0,
-            70.0,
-            70.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "name": "PerAdditionalFireHealBonus",
           "values": [
-            50.0,
-            50.0,
-            50.0,
-            50.0,
-            50.0,
-            50.0,
-            50.0
+            25.0,
+            25.0,
+            25.0,
+            25.0,
+            25.0,
+            25.0,
+            25.0
           ],
           "~class": "SpellDataValue"
         }
@@ -21185,7 +22173,7 @@
         "0xaab73d3a"
       ],
       "mSpellCalculations": {
-        "0xfa20c4ce": {
+        "CurrentEnemyBlazeBurnPerSecond": {
           "mFormulaParts": [
             {
               "mDataValue": "BaseFireDamagePerSecond",
@@ -21219,8 +22207,8 @@
         "HealPerSecond": {
           "mFormulaParts": [
             {
-              "mEndValue": 150.0,
-              "mStartValue": 60.0,
+              "mEndValue": 75.0,
+              "mStartValue": 30.0,
               "~class": "ByCharLevelInterpolationCalculationPart"
             },
             {
@@ -21451,8 +22439,67 @@
             0.5
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "MaxLevel",
+              "values": [
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "BonusHealth",
+              "values": [
+                250.0,
+                250.0,
+                450.0,
+                600.0,
+                600.0,
+                600.0,
+                600.0
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "BuffDuration",
+              "values": [
+                6.0,
+                6.0,
+                10.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "castConeDistance": 100.0,
       "castFrame": 7.5,
       "castRadius": [
@@ -21506,8 +22553,25 @@
           }
         ],
         "mTooltipData": {
-          "EnableExtendedTooltip": false,
           "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Spell_ListType_BonusHealth",
+                  "type": "BonusHealth",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Spell_ListType_Duration",
+                  "type": "BuffDuration",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 2,
+              "~class": "TooltipInstanceList"
+            }
+          },
           "mLocKeys": {
             "keyName": "Kiwi_GrowthSpurt_Name",
             "keySummary": "Spell_GrowthSpurt_Summary",
@@ -21737,13 +22801,59 @@
             60.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "StartingHaste",
+              "values": [
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "HastePerStack",
+              "values": [
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "mImgIconName": [
         "ASSETS/Spells/Icons2D/Terrify.dds"
       ],
       "mSpellCalculations": {
-        "0x984a86b5": {
+        "CurrentHaste": {
           "mExpandedTooltipCalculationDisplay": 5,
           "mFormulaParts": [
             {
@@ -21795,6 +22905,19 @@
             0.4000000059604645,
             0.4000000059604645,
             0.4000000059604645
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
           ],
           "~class": "SpellDataValue"
         }
@@ -22000,7 +23123,7 @@
     "mScriptName": "Augment_KingMeBuff",
     "mSpell": {
       "mImgIconName": [
-        "ASSETS/Spells/Icons2D/Augment_KingMe.Kiwi.dds"
+        "ASSETS/Spells/Icons2D/Augment_KingMe.dds"
       ],
       "~class": "SpellDataResource"
     },
@@ -22767,6 +23890,19 @@
             0.10000000149011612
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "castRange": [
@@ -22808,7 +23944,18 @@
           ],
           "~class": "GameCalculation"
         },
-        "0x576258e9": {
+        "0xb38c4ac0": {
+          "mFormulaParts": [
+            {
+              "0xa8cb9c14": true,
+              "mDataValue": "DamageHPRatio",
+              "mStat": 16,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "BaseDmgCalc": {
           "mFormulaParts": [
             {
               "mEndValue": 400.0,
@@ -22818,23 +23965,12 @@
           ],
           "~class": "GameCalculation"
         },
-        "0x9633b2b": {
+        "BaseHealingCalc": {
           "mFormulaParts": [
             {
               "mEndValue": 200.0,
               "mStartValue": 50.0,
               "~class": "ByCharLevelInterpolationCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "0xb38c4ac0": {
-          "mFormulaParts": [
-            {
-              "0xa8cb9c14": true,
-              "mDataValue": "DamageHPRatio",
-              "mStat": 16,
-              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -22976,11 +24112,79 @@
             0.30000001192092896
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "MaxOmnivamp",
+              "values": [
+                0.15000000596046448,
+                0.15000000596046448,
+                0.25,
+                0.25,
+                0.25,
+                0.25,
+                0.25
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "MSMod",
+              "values": [
+                0.5,
+                0.5,
+                0.75,
+                0.75,
+                0.75,
+                0.75,
+                0.75
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "mClientData": {
         "mTooltipData": {
           "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Spell_ListType_Omnivamp",
+                  "type": "MaxOmnivamp",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Spell_ListType_MovementSpeed",
+                  "type": "MSMod",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 2,
+              "~class": "TooltipInstanceList"
+            }
+          },
           "mLocKeys": {
             "keyName": "Kiwi_OminousPact_Name",
             "keySummary": "Kiwi_OminousPact_Summary"
@@ -23166,6 +24370,19 @@
             0.10000000149011612
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "mClientData": {
@@ -23269,7 +24486,7 @@
         "~class": "SpellDataResourceClient"
       },
       "mImgIconName": [
-        "ASSETS/Spells/Icons2D/Icon_SummonerSpell_Augment_Poltergeist.Kiwi.dds"
+        "ASSETS/Spells/Icons2D/Icon_SummonerSpell_Augment_Poltergeist.dds"
       ],
       "mResourceResolvers": [
         "0xaa31d2ff"
@@ -23381,13 +24598,13 @@
         {
           "name": "BaseCD",
           "values": [
-            25.0,
-            25.0,
-            25.0,
-            25.0,
-            25.0,
-            25.0,
-            25.0
+            35.0,
+            35.0,
+            35.0,
+            35.0,
+            35.0,
+            35.0,
+            35.0
           ],
           "~class": "SpellDataValue"
         },
@@ -23903,7 +25120,7 @@
         "0xdd4e0595"
       ],
       "mSpellCalculations": {
-        "0x563f018c": {
+        "EnvelopeValueMax": {
           "mFormulaParts": [
             {
               "mEndValue": 46.0,
@@ -23913,7 +25130,7 @@
           ],
           "~class": "GameCalculation"
         },
-        "0x64529f4e": {
+        "EnvelopeValueMin": {
           "mFormulaParts": [
             {
               "mEndValue": 15.0,
@@ -23923,7 +25140,7 @@
           ],
           "~class": "GameCalculation"
         },
-        "0xca0d7079": {
+        "TimeBetweenEnvelopes": {
           "mFormulaParts": [
             {
               "mEndValue": 15.0,
@@ -24832,8 +26049,64 @@
             8.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "PercentOfStacksLost",
+              "values": [
+                0.5,
+                0.5,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Spell_ListType_StacksLost",
+                  "type": "PercentOfStacksLost",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 2,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mObjectName": "Augment_ShrinkEngine",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
       "mImgIconName": [
         "ASSETS/Spells/Icons2D/Terrify.dds"
       ],
@@ -26159,7 +27432,7 @@
         "0xd7dccf38"
       ],
       "mSpellCalculations": {
-        "0xaef2f649": {
+        "HealthGained": {
           "mFormulaParts": [
             {
               "mBuffName": "0x14cf4ae0",
@@ -26751,8 +28024,54 @@
             5.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "AdditionalMisDivision",
+              "values": [
+                2.0,
+                3.0,
+                4.0,
+                5.0,
+                6.0,
+                7.0,
+                8.0
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "CrtiChance",
+              "values": [
+                0.25,
+                0.25,
+                0.25,
+                0.25,
+                0.25,
+                0.25,
+                0.25
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "bHaveHitBone": true,
       "castConeDistance": 100.0,
       "castFrame": 7.960000038146973,
@@ -26786,6 +28105,26 @@
             "~class": "TargeterDefinitionRange"
           }
         ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "ListType_additionalMissile",
+                  "type": "AdditionalMisDivision",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 3,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mObjectName": "Augment_TwinFire",
+          "~class": "TooltipInstanceSpell"
+        },
         "~class": "SpellDataResourceClient"
       },
       "mFloatVarsDecimals": [
@@ -26837,7 +28176,7 @@
         "0x91c152af"
       ],
       "mSpellCalculations": {
-        "0x7e859db7": {
+        "AdditionalMis": {
           "mFormulaParts": [
             {
               "mDataValue": "AdditionalMisDivision",
@@ -26936,9 +28275,9 @@
         0
       ],
       "mHitBoneName": "C_Buffbone_Glb_Chest_Loc",
-      "mHitEffectKey": "Kiwi_Augment_Set_Firecracker_Tar",
-      "mMissileEffectEnemyKey": "Kiwi_Augment_Set_Firecracker_mis_Enemy",
-      "mMissileEffectKey": "0xa88a5f15",
+      "mHitEffectKey": "Augment_TwinFire_Tar",
+      "mMissileEffectEnemyKey": "Augment_TwinFire_Mis_Enemy",
+      "mMissileEffectKey": "Augment_TwinFire_Mis",
       "mMissileSpec": {
         "behaviors": [
           {
@@ -27052,9 +28391,9 @@
         0
       ],
       "mHitBoneName": "C_Buffbone_Glb_Chest_Loc",
-      "mHitEffectKey": "Kiwi_Augment_Set_Firecracker_Tar",
-      "mMissileEffectEnemyKey": "Kiwi_Augment_Set_Firecracker_mis_Enemy",
-      "mMissileEffectKey": "0xa88a5f15",
+      "mHitEffectKey": "Augment_TwinFire_Tar",
+      "mMissileEffectEnemyKey": "Augment_TwinFire_Mis_Enemy",
+      "mMissileEffectKey": "Augment_TwinFire_Mis",
       "mMissileSpec": {
         "behaviors": [
           {
@@ -27473,6 +28812,19 @@
             2.5
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "~class": "SpellDataResource"
@@ -27531,17 +28883,7 @@
         "0x77039dd5"
       ],
       "mSpellCalculations": {
-        "0x821d5daa": {
-          "mFormulaParts": [
-            {
-              "mEndValue": 5.0,
-              "mStartValue": 20.0,
-              "~class": "ByCharLevelInterpolationCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "0xe84c6f2e": {
+        "ThornShieldDamage": {
           "mFormulaParts": [
             {
               "mEndValue": 250.0,
@@ -27562,6 +28904,16 @@
               "mCoefficient": 0.30000001192092896,
               "mStat": 6,
               "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "ThornshieldCooldown": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 5.0,
+              "mStartValue": 20.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -27624,14 +28976,60 @@
             30.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "Cooldown",
+              "values": [
+                20.0,
+                20.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "mClientData": {
         "mTooltipData": {
           "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Spell_ListType_Cooldown",
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 2,
+              "~class": "TooltipInstanceList"
+            }
+          },
           "mLocKeys": {
             "keyName": "Cherry_FallenAegis_Name",
-            "keyTooltip": "Cherry_FallenAegis_Tooltip"
+            "keySummary": "Cherry_FallenAegis_Tooltip"
           },
           "mObjectName": "Augment_VeilOfWarding",
           "~class": "TooltipInstanceSpell"
@@ -27690,6 +29088,19 @@
             5.0,
             5.0,
             5.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
           ],
           "~class": "SpellDataValue"
         }
@@ -27941,6 +29352,19 @@
             500.0,
             500.0,
             500.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
           ],
           "~class": "SpellDataValue"
         }

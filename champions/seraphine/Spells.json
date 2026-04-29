@@ -131,13 +131,22 @@
       "0xf26881a0": 0.0,
       "canCastWhileDisabled": true,
       "castRange": [
-        25000.0,
-        25000.0,
-        25000.0,
-        25000.0,
-        25000.0,
-        25000.0,
-        25000.0
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0
+      ],
+      "castRangeDisplayOverride": [
+        350.0,
+        350.0,
+        350.0,
+        350.0,
+        350.0,
+        350.0,
+        350.0
       ],
       "castRangeUseBoundingBoxes": true,
       "cooldownTime": [
@@ -149,11 +158,11 @@
         0.0,
         0.0
       ],
-      "luaOnMissileUpdateDistanceInterval": 50.000999450683594,
+      "flags": 32,
       "mAffectsTypeFlags": 6154,
       "mAnimationName": "none",
       "mCantCancelWhileWindingUp": true,
-      "mCastType": 3,
+      "mCastType": 7,
       "mCastingBreaksStealth": true,
       "mFloatVarsDecimals": [
         0,
@@ -178,7 +187,7 @@
         "0xc195fba6": true,
         "behaviors": [
           {
-            "~class": "CastOnMovementComplete"
+            "~class": "CastOnHit"
           },
           {
             "~class": "DestroyOnMovementComplete"
@@ -187,11 +196,12 @@
         "heightSolver": {
           "~class": "BlendedLinearHeightSolver"
         },
+        "mMissileWidth": 50.0,
         "movementComponent": {
+          "mSpeed": 600.0,
           "mStartBoneName": "R_buffbone_Glb_Foot_Loc",
           "mTargetHeightAugment": 100.0,
-          "mTravelTime": 0.4000000059604645,
-          "~class": "FixedTimeMovement"
+          "~class": "FixedSpeedMovement"
         },
         "verticalFacing": {
           "~class": "VeritcalFacingMatchVelocity"
@@ -199,9 +209,9 @@
         "~class": "MissileSpecification"
       },
       "mTargetingTypeData": {
-        "~class": "Location"
+        "~class": "direction"
       },
-      "selectionPriority": 1,
+      "missileSpeed": 400.0,
       "useAnimatorFramerate": true,
       "~class": "SpellDataResource"
     },
@@ -382,14 +392,6 @@
       "mTargetingTypeData": {
         "~class": "Location"
       },
-      "mana": [
-        1.0,
-        1.0,
-        1.0,
-        1.0,
-        1.0,
-        1.0
-      ],
       "selectionPriority": 1,
       "useAnimatorFramerate": true,
       "~class": "SpellDataResource"
@@ -538,14 +540,6 @@
       "mTargetingTypeData": {
         "~class": "direction"
       },
-      "mana": [
-        1.0,
-        1.0,
-        1.0,
-        1.0,
-        1.0,
-        1.0
-      ],
       "selectionPriority": 1,
       "~class": "SpellDataResource"
     },
@@ -694,73 +688,6 @@
     "~class": "SpellObject"
   },
   "Characters/Seraphine/Spells/SeraphineEAbility/SeraphineE": {
-    "BotData": {
-      "0x6d548702": {
-        "mFormulaParts": [
-          {
-            "mSpellCalculationKey": "FinalDamage",
-            "~class": "0xf3cbe7b2"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "SlowDuration",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 2048,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "SlowDuration",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 4096,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "SlowDuration",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 16384,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "SlowValue",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 1,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "DamageTag": 1,
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "SeraphineE",
     "mScriptName": "SeraphineE",
     "mSpell": {
@@ -1616,42 +1543,6 @@
     "~class": "SpellObject"
   },
   "Characters/Seraphine/Spells/SeraphineQAbility/SeraphineQ": {
-    "BotData": {
-      "0x38382c53": [
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 8192,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0xe38f54f7": 2,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0xe38f54f7": 8,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0xe38f54f7": 4096,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0xe38f54f7": 2048,
-          "~class": "0x150d1b92"
-        }
-      ],
-      "0x6d548702": {
-        "mFormulaParts": [
-          {
-            "mSpellCalculationKey": "ExplosionDamage",
-            "~class": "0xf3cbe7b2"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "DamageTag": 1,
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "SeraphineQ",
     "mScriptName": "SeraphineQ",
     "mSpell": {
@@ -1878,84 +1769,6 @@
     "~class": "SpellObject"
   },
   "Characters/Seraphine/Spells/SeraphineRAbility/SeraphineR": {
-    "BotData": {
-      "0x38382c53": [
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 1,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "~class": "0x150d1b92"
-        }
-      ],
-      "0x6d548702": {
-        "mFormulaParts": [
-          {
-            "mSpellCalculationKey": "R1TotalDamage",
-            "~class": "0xf3cbe7b2"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "RMinSlow",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 1,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "RChannelDuration",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 2048,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "RChannelDuration",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 4096,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "RChannelDuration",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 16384,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "DamageTag": 1,
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "SeraphineR",
     "mScriptName": "SeraphineR",
     "mSpell": {
@@ -2387,105 +2200,6 @@
     "~class": "SpellObject"
   },
   "Characters/Seraphine/Spells/SeraphineWAbility/SeraphineW": {
-    "BotData": {
-      "0x38382c53": [
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 8192,
-          "~class": "0x150d1b92"
-        }
-      ],
-      "0x6d548702": {
-        "mFormulaParts": [
-          {
-            "mSpellCalculationKey": "TotalShieldStrength",
-            "~class": "0xf3cbe7b2"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mSpellCalculationKey": "WMSBonusTotal",
-                "~class": "0xf3cbe7b2"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 2,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mSpellCalculationKey": "WMSBonusTotal",
-                "~class": "0xf3cbe7b2"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 4,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mSpellCalculationKey": "WMissingHPHeal",
-                "~class": "0xf3cbe7b2"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 8,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mSpellCalculationKey": "WMissingHPHeal",
-                "~class": "0xf3cbe7b2"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 16,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mSpellCalculationKey": "TotalShieldStrength",
-                "~class": "0xf3cbe7b2"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 262144,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mSpellCalculationKey": "TotalShieldStrength",
-                "~class": "0xf3cbe7b2"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 524288,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "SeraphineW",
     "mScriptName": "SeraphineW",
     "mSpell": {
@@ -2884,14 +2598,6 @@
       "mTargetingTypeData": {
         "~class": "Self"
       },
-      "mana": [
-        1.0,
-        1.0,
-        1.0,
-        1.0,
-        1.0,
-        1.0
-      ],
       "selectionPriority": 2,
       "useAnimatorFramerate": true,
       "~class": "SpellDataResource"

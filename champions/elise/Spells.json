@@ -31,6 +31,32 @@
             250.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "RappelCooldown",
+          "values": [
+            22.0,
+            22.0,
+            21.0,
+            20.0,
+            19.0,
+            18.0,
+            18.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "RappelDamageAmp",
+          "values": [
+            25.0,
+            40.0,
+            55.0,
+            70.0,
+            85.0,
+            100.0,
+            115.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "bHaveHitBone": true,
@@ -114,8 +140,7 @@
               "Elements": [
                 {
                   "nameOverride": "Stun Duration:",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 5,
+                  "type": "StunDuration",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -125,15 +150,13 @@
                 },
                 {
                   "nameOverride": "Cooldown (Rappel)",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 3,
+                  "type": "RappelCooldown",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "Style": 1,
                   "nameOverride": "Damage and Healing Increase",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 6,
+                  "type": "RappelDamageAmp",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -144,7 +167,7 @@
           "mLocKeys": {
             "keyName": "Cocoon / Rappel",
             "keySummary": "Human Form: Stuns the first enemy unit hit and reveals them if they are not stealthed.<br><br>Spider Form: Elise and her Spiderlings ascend into the air and then descend upon target enemy. After descending on an enemy target, Elise's bonus damage and healing from Spider Queen is increased.",
-            "keyTooltip": "<keywordMajor>Human Form</keywordMajor>: Elise fires a cocoon, <status>Stunning</status> and revealing the first enemy hit for @StunDuration@ seconds.",
+            "keyTooltip": "<keywordMajor>Human Form</keywordMajor>: Elise fires a cocoon, <status>Stunning</status> and revealing the first enemy hit for @TotalStunDuration@ seconds.",
             "keyTooltipExtended": "{{Spell_EliseHumanE_Tooltip}}<br><br>{{Spell_EliseSpiderE_Tooltip}}"
           },
           "mObjectName": "EliseHumanEMissile",
@@ -749,63 +772,6 @@
     "~class": "SpellObject"
   },
   "Characters/Elise/Spells/EliseHumanEAbility/EliseHumanE": {
-    "BotData": {
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "StunDuration",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 16384,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "StunDuration",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 4096,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "StunDuration",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 2048,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mNumber": 55.0,
-                "~class": "NumberCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 32768,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "EliseHumanE",
     "mScriptName": "EliseHumanE",
     "mSpell": {
@@ -813,7 +779,7 @@
       "0xf26881a0": 1.0,
       "DataValues": [
         {
-          "name": "StunDuration",
+          "name": "BaseStunDuration",
           "values": [
             1.399999976158142,
             1.600000023841858,
@@ -835,6 +801,32 @@
             250.0,
             250.0,
             250.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "RappelCooldown",
+          "values": [
+            22.0,
+            22.0,
+            21.0,
+            20.0,
+            19.0,
+            18.0,
+            18.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "RappelDamageAmp",
+          "values": [
+            25.0,
+            40.0,
+            55.0,
+            70.0,
+            85.0,
+            100.0,
+            115.0
           ],
           "~class": "SpellDataValue"
         }
@@ -921,8 +913,7 @@
               "Elements": [
                 {
                   "nameOverride": "Stun Duration:",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 5,
+                  "type": "BaseStunDuration",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -932,15 +923,13 @@
                 },
                 {
                   "nameOverride": "Cooldown (Rappel)",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 3,
+                  "type": "RappelCooldown",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "Style": 1,
                   "nameOverride": "Damage and Healing Increase",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 6,
+                  "type": "RappelDamageAmp",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -951,7 +940,7 @@
           "mLocKeys": {
             "keyName": "Cocoon / Rappel",
             "keySummary": "Human Form: Stuns the first enemy unit hit and reveals them if they are not stealthed.<br><br>Spider Form: Elise and her Spiderlings ascend into the air and then descend upon target enemy. After descending on an enemy target, Elise's bonus damage and healing from Spider Queen is increased.",
-            "keyTooltip": "<keywordMajor>Human Form</keywordMajor>: Elise fires a cocoon, <status>Stunning</status> and revealing the first enemy hit for @StunDuration@ seconds.",
+            "keyTooltip": "<keywordMajor>Human Form</keywordMajor>: Elise fires a cocoon, <status>Stunning</status> and revealing the first enemy hit for @TotalStunDuration@ seconds.",
             "keyTooltipExtended": "{{Spell_EliseHumanE_Tooltip}}<br><br>{{Spell_EliseSpiderE_Tooltip}}"
           },
           "mObjectName": "EliseHumanE",
@@ -1010,15 +999,6 @@
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            1.600000023841858,
-            1.600000023841858,
-            1.7999999523162842,
-            2.0,
-            2.200000047683716,
-            2.4000000953674316,
-            2.4000000953674316
-          ],
           "~class": "SpellEffectAmount"
         },
         {
@@ -1061,6 +1041,18 @@
         "ASSETS/Characters/Elise/HUD/Icons2D/EliseHumanE.DDS"
       ],
       "mLineWidth": 55.0,
+      "mSpellCalculations": {
+        "TotalStunDuration": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "BaseStunDuration",
+              "~class": "NamedDataValueCalculationPart"
+            }
+          ],
+          "mPrecision": 1,
+          "~class": "GameCalculation"
+        }
+      },
       "mSpellTags": [
         "Trait_ImmobilizingCCSpell"
       ],
@@ -1083,37 +1075,6 @@
     "~class": "SpellObject"
   },
   "Characters/Elise/Spells/EliseHumanQAbility/EliseHumanQ": {
-    "BotData": {
-      "0x6d548702": {
-        "mFormulaParts": [
-          {
-            "mSubparts": [
-              {
-                "mDataValue": "baseDamage",
-                "~class": "NamedDataValueCalculationPart"
-              },
-              {
-                "mPart1": {
-                  "mSpellCalculationKey": "HumanPercentHealth",
-                  "~class": "0xf3cbe7b2"
-                },
-                "mPart2": {
-                  "0xa8cb9c14": true,
-                  "mCoefficient": 1.0,
-                  "mStat": 13,
-                  "~class": "StatByCoefficientCalculationPart"
-                },
-                "~class": "ProductOfSubPartsCalculationPart"
-              }
-            ],
-            "~class": "SumOfSubPartsCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "DamageTag": 1,
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "EliseHumanQ",
     "mScriptName": "EliseHumanQ",
     "mSpell": {
@@ -1360,34 +1321,6 @@
     "~class": "SpellObject"
   },
   "Characters/Elise/Spells/EliseHumanWAbility/EliseHumanW": {
-    "BotData": {
-      "0x6d548702": {
-        "mFormulaParts": [
-          {
-            "mSpellCalculationKey": "TotalDamage",
-            "~class": "0xf3cbe7b2"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mNumber": 100.0,
-                "~class": "NumberCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 32768,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "DamageTag": 1,
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "EliseHumanW",
     "mScriptName": "EliseHumanW",
     "mSpell": {
@@ -1669,32 +1602,6 @@
     "mSpell": {
       "DataValues": [
         {
-          "name": "SpiderlingBaseHP",
-          "values": [
-            80.0,
-            80.0,
-            80.0,
-            80.0,
-            80.0,
-            80.0,
-            80.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "SpiderlingMagicDamage",
-          "values": [
-            2.0,
-            8.0,
-            14.0,
-            20.0,
-            26.0,
-            32.0,
-            38.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "name": "SpiderlingAPRatio",
           "values": [
             0.15000000596046448,
@@ -1736,7 +1643,7 @@
           "mLocKeys": {
             "keyName": "Spider Queen",
             "keySummary": "Human Form: When Elise's abilities hit an enemy, she gains a dormant Spiderling.<br><br>Spider Form: Basic attacks deal bonus magic damage and restore health to Elise.",
-            "keyTooltip": "Elise begins the game with a point in her Ultimate, allowing her to shapeshift between <keywordMajor>Human Form</keywordMajor> and <keywordMajor>Spider Form</keywordMajor>.<br><br><keywordMajor>Human Form:</keywordMajor> Elise's Ability hits grant her a dormant <keywordMajor>Spiderling</keywordMajor> (max @spell.EliseR:SpiderlingsStored@).<br><br><keywordMajor>Spider Form:</keywordMajor> Attacks deal an additional <magicDamage>@spell.EliseR:PassiveTotalDamage@ magic damage</magicDamage> and restore <healing>@spell.EliseR:PassiveTotalHealing@ Health</healing>."
+            "keyTooltip": "Elise begins the game with a point in her Ultimate, allowing her to shapeshift between <keywordMajor>Human Form</keywordMajor> and <keywordMajor>Spider Form</keywordMajor>.<br><br><keywordMajor>Human Form:</keywordMajor> Elise's Ability hits grant her a dormant <keywordMajor>Spiderling</keywordMajor>, up to @spell.EliseR:BaseSpiderlingsStored@.<br><br><keywordMajor>Spider Form:</keywordMajor> Attacks deal an additional <magicDamage>@spell.EliseR:PassiveTotalDamage@ magic damage</magicDamage> and restore <healing>@spell.EliseR:PassiveTotalHealing@ Health</healing>."
           },
           "mObjectName": "ElisePassive",
           "~class": "TooltipInstanceSpell"
@@ -1861,9 +1768,9 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "SpiderlingsStored",
+          "name": "BaseSpiderlingsStored",
           "values": [
-            1.0,
+            2.0,
             2.0,
             3.0,
             4.0,
@@ -1914,6 +1821,45 @@
         },
         {
           "name": "UnnamedEffectAmount0",
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SpiderlingArmor",
+          "values": [
+            0.0,
+            30.0,
+            50.0,
+            70.0,
+            90.0,
+            0.0,
+            0.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SpiderlingsStoredCap",
+          "values": [
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SpiderlingMagicResist",
+          "values": [
+            0.0,
+            50.0,
+            70.0,
+            90.0,
+            110.0,
+            0.0,
+            0.0
+          ],
           "~class": "SpellDataValue"
         }
       ],
@@ -1973,20 +1919,18 @@
                 },
                 {
                   "nameOverride": "Maximum Number of Spiderlings",
-                  "type": "SpiderlingsStored",
+                  "type": "BaseSpiderlingsStored",
                   "typeIndex": 5,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Spiderling Armor",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 6,
+                  "type": "SpiderlingArmor",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Spiderling Magic Resist",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 7,
+                  "type": "SpiderlingMagicResist",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -2147,7 +2091,7 @@
           "mMultiplier": {
             "mSubparts": [
               {
-                "0x137cf12a": "PBonusIncrease",
+                "DataValue": "PBonusIncrease",
                 "SourceObject": "Characters/Elise/Spells/EliseSpiderEAbility/EliseSpiderEInitial",
                 "~class": "0x9e9e2e5c"
               },
@@ -2221,6 +2165,73 @@
     "mScriptName": "EliseRSpider",
     "mSpell": {
       "0x11704a2b": 0.5286999940872192,
+      "DataValues": [
+        {
+          "name": "SpiderlingDamageTooltipOnly",
+          "values": [
+            0.0,
+            10.0,
+            20.0,
+            30.0,
+            40.0,
+            0.0,
+            0.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "EliseBiteDamage",
+          "values": [
+            0.0,
+            12.0,
+            22.0,
+            32.0,
+            42.0,
+            0.0,
+            0.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SpiderlingCap",
+          "values": [
+            0.0,
+            2.0,
+            3.0,
+            4.0,
+            5.0,
+            0.0,
+            0.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SpiderlingArmor",
+          "values": [
+            0.0,
+            30.0,
+            50.0,
+            70.0,
+            90.0,
+            0.0,
+            0.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SpiderlingMagicResist",
+          "values": [
+            0.0,
+            50.0,
+            70.0,
+            90.0,
+            110.0,
+            0.0,
+            0.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "bHaveHitBone": true,
       "bHaveHitEffect": true,
       "bIsToggleSpell": true,
@@ -2265,32 +2276,27 @@
               "Elements": [
                 {
                   "nameOverride": "Spider Form Bite Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 2,
+                  "type": "EliseBiteDamage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Spiderling Bonus Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "SpiderlingDamageTooltipOnly",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Maximum Number of Spiderlings",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 5,
+                  "type": "SpiderlingCap",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Spiderling Armor",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 6,
+                  "type": "SpiderlingArmor",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Spiderling Magic Resist",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 7,
+                  "type": "SpiderlingMagicResist",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -2450,34 +2456,6 @@
     "~class": "SpellObject"
   },
   "Characters/Elise/Spells/EliseSpiderEAbility/EliseSpiderE": {
-    "BotData": {
-      "0x6d548702": {
-        "~class": "GameCalculation"
-      },
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mNumber": 2.0,
-                "~class": "NumberCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 131072,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 256,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "EliseSpiderE",
     "mScriptName": "EliseSpiderE",
     "mSpell": {
@@ -2813,22 +2791,6 @@
     "~class": "SpellObject"
   },
   "Characters/Elise/Spells/EliseSpiderEAbility/EliseSpiderEDescent": {
-    "BotData": {
-      "0x6d548702": {
-        "~class": "GameCalculation"
-      },
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 256,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "DamageTag": 1,
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "EliseSpiderEDescent",
     "mScriptName": "EliseSpiderEDescent",
     "mSpell": {
@@ -3244,37 +3206,6 @@
     "~class": "SpellObject"
   },
   "Characters/Elise/Spells/EliseSpiderQAbility/EliseSpiderQCast": {
-    "BotData": {
-      "0x6d548702": {
-        "mFormulaParts": [
-          {
-            "mSubparts": [
-              {
-                "mDataValue": "baseDamage",
-                "~class": "NamedDataValueCalculationPart"
-              },
-              {
-                "mPart1": {
-                  "mSpellCalculationKey": "MissingHPDamage",
-                  "~class": "0xf3cbe7b2"
-                },
-                "mPart2": {
-                  "0xa8cb9c14": true,
-                  "mCoefficient": 1.0,
-                  "mStat": 15,
-                  "~class": "StatByCoefficientCalculationPart"
-                },
-                "~class": "ProductOfSubPartsCalculationPart"
-              }
-            ],
-            "~class": "SumOfSubPartsCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "DamageTag": 1,
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "EliseSpiderQCast",
     "mBuff": {
       "mDescription": "game_buff_tooltip_EliseSpiderQCast",
@@ -3475,53 +3406,6 @@
     "~class": "SpellObject"
   },
   "Characters/Elise/Spells/EliseSpiderWAbility/EliseSpiderW": {
-    "BotData": {
-      "0x38382c53": [
-        {
-          "0xe38f54f7": 8192,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 1,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 8,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 2048,
-          "~class": "0x150d1b92"
-        }
-      ],
-      "0x6d548702": {
-        "mFormulaParts": [
-          {
-            "mPart1": {
-              "mPart1": {
-                "mDataValue": "ActiveAttackSpeed",
-                "~class": "NamedDataValueCalculationPart"
-              },
-              "mPart2": {
-                "mDataValue": "BuffDuration",
-                "~class": "NamedDataValueCalculationPart"
-              },
-              "~class": "ProductOfSubPartsCalculationPart"
-            },
-            "mPart2": {
-              "mStat": 2,
-              "~class": "StatByCoefficientCalculationPart"
-            },
-            "~class": "ProductOfSubPartsCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "EliseSpiderW",
     "mBuff": {
       "mBuffAttributeFlag": 32,
@@ -3664,39 +3548,12 @@
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            0.0,
-            5.0,
-            10.0,
-            15.0,
-            20.0,
-            25.0,
-            30.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            0.6000000238418579,
-            0.6000000238418579,
-            0.699999988079071,
-            0.800000011920929,
-            0.8999999761581421,
-            1.0,
-            1.100000023841858
-          ],
           "~class": "SpellEffectAmount"
         },
         {

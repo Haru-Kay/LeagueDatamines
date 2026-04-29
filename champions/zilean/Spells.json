@@ -15,21 +15,6 @@
     "~class": "SpellObject"
   },
   "Characters/Zilean/Spells/ChronoShiftAbility/ChronoShift": {
-    "BotData": {
-      "0x38382c53": [
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 4,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 1024,
-          "~class": "0x150d1b92"
-        }
-      ],
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "ChronoShift",
     "mBuff": {
       "mDescription": "<titleLeft>Chronoshift</titleLeft><mainText>Upon taking lethal damage, this unit will instead be reverted in time to before they took lethal damage.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
@@ -864,53 +849,6 @@
     "~class": "SpellObject"
   },
   "Characters/Zilean/Spells/TimeWarpAbility/TimeWarp": {
-    "BotData": {
-      "0x6d548702": {
-        "~class": "GameCalculation"
-      },
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mEffectIndex": 2,
-                "~class": "EffectValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 1,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mEffectIndex": 2,
-                "~class": "EffectValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 2,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mEffectIndex": 2,
-                "~class": "EffectValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 4,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "TimeWarp",
     "mBuff": {
       "mDescription": "<titleLeft>Time Warp</titleLeft><mainText>This unit's Move Speed is dramatically increased.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
@@ -946,6 +884,34 @@
           "~class": "SpellEffectAmount"
         }
       },
+      "DataValues": [
+        {
+          "name": "Duration",
+          "values": [
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SpeedAmount",
+          "values": [
+            25.0,
+            40.0,
+            55.0,
+            70.0,
+            85.0,
+            99.0,
+            114.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "castConeDistance": 100.0,
       "castFrame": 20.15999984741211,
       "castRadius": [
@@ -1005,15 +971,13 @@
                 {
                   "Style": 1,
                   "nameOverride": "Slow",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 2,
+                  "type": "SpeedAmount",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "Style": 1,
                   "nameOverride": "Move Speed",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 2,
+                  "type": "SpeedAmount",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -1024,7 +988,7 @@
           "mLocKeys": {
             "keyName": "Time Warp",
             "keySummary": "Zilean bends time around any unit, decreasing an enemy's Move Speed or increasing an ally's Move Speed for a short time.",
-            "keyTooltip": "Zilean <status>Slows</status> an enemy champion by @Effect2Amount@% or grants an allied champion <speed>@Effect2Amount@% Move Speed</speed> for @Effect1Amount@ seconds."
+            "keyTooltip": "Zilean <status>Slows</status> an enemy champion by @SpeedAmount@% or grants an allied champion <speed>@SpeedAmount@% Move Speed</speed> for @Duration@ seconds."
           },
           "mObjectName": "TimeWarp",
           "~class": "TooltipInstanceSpell"
@@ -1298,19 +1262,6 @@
     "~class": "SpellObject"
   },
   "Characters/Zilean/Spells/ZileanQAbility/ZileanQ": {
-    "BotData": {
-      "0x38382c53": [
-        {
-          "0xe38f54f7": 1,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0xe38f54f7": 4,
-          "~class": "0x150d1b92"
-        }
-      ],
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "ZileanQ",
     "mBuff": {
       "mDescription": "<titleLeft>Time Bomb</titleLeft><mainText>This unit has a bomb attached to them. The bomb will detonate soon, dealing damage to surrounding units.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
@@ -1370,6 +1321,19 @@
             1.399999976158142,
             1.5,
             1.600000023841858
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "FuseDuration",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1521,7 +1485,7 @@
           "mLocKeys": {
             "keyName": "Time Bomb",
             "keySummary": "Tosses a bomb to target area that sticks to units that come near it (prioritizes Champions). It detonates after 3 seconds, dealing area of effect damage. If a Time Bomb is detonated early by another Time Bomb, it also stuns enemies.",
-            "keyTooltip": "Zilean tosses a time-delayed bomb that sticks to the first unit which comes within a small area around it. After @Effect2Amount@ seconds it detonates, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>.<br><br>Placing a second bomb on a unit that already has one detonates the first bomb immediately and <status>Stuns</status> enemies in the blast for @Effect4Amount@ seconds.",
+            "keyTooltip": "Zilean tosses a time-delayed bomb that sticks to the first unit which comes within a small area around it. After @FuseDuration@ seconds it detonates, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>.<br><br>Placing a second bomb on a unit that already has one detonates the first bomb immediately and <status>Stuns</status> enemies in the blast for @StunDuration@ seconds.",
             "keyTooltipExtendedBelowLine": "<rules>The bomb will prioritize attaching to champions and units that already have a bomb.</rules>"
           },
           "mObjectName": "ZileanQ",
@@ -3341,30 +3305,6 @@
     "~class": "SpellObject"
   },
   "Characters/Zilean/Spells/ZileanWAbility/ZileanW": {
-    "BotData": {
-      "0x38382c53": [
-        {
-          "0xe38f54f7": 2,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 4,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 1024,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 8192,
-          "~class": "0x150d1b92"
-        }
-      ],
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "ZileanW",
     "mScriptName": "ZileanW",
     "mSpell": {
@@ -3408,6 +3348,38 @@
           "~class": "SpellEffectAmount"
         }
       },
+      "DataValues": [
+        {
+          "name": "CooldownReduction",
+          "values": [
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "UNUSED",
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ManaCost",
+          "values": [
+            35.0,
+            35.0,
+            35.0,
+            35.0,
+            35.0,
+            35.0,
+            35.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "canCastOrQueueWhileCasting": true,
       "castConeDistance": 100.0,
       "castFrame": 12.904999732971191,
@@ -3458,10 +3430,10 @@
             }
           },
           "mLocKeys": {
-            "keyCost": "@Effect3Amount@ Mana",
+            "keyCost": "@ManaCost@ Mana",
             "keyName": "Rewind",
             "keySummary": "Zilean can prepare himself for future confrontations, reducing the cooldowns of his other basic abilities.",
-            "keyTooltip": "Zilean turns time, reducing his other basic Ability Cooldowns by @Effect2Amount@ seconds."
+            "keyTooltip": "Zilean turns time, reducing his other basic Ability Cooldowns by @CooldownReduction@ seconds."
           },
           "mObjectName": "ZileanW",
           "~class": "TooltipInstanceSpell"
@@ -3484,15 +3456,6 @@
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {

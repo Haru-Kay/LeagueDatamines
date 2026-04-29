@@ -1888,54 +1888,6 @@
     "~class": "SpellObject"
   },
   "Characters/Mel/Spells/MelEAbility/MelE": {
-    "BotData": {
-      "0x38382c53": [
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 8,
-          "~class": "0x150d1b92"
-        }
-      ],
-      "0x6d548702": {
-        "mFormulaParts": [
-          {
-            "mSpellCalculationKey": "Damage",
-            "~class": "0xf3cbe7b2"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "RootDuration",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 4096,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "AreaSlowDuration",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 1,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "DamageTag": 1,
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "MelE",
     "mScriptName": "MelE",
     "mSpell": {
@@ -2326,19 +2278,6 @@
     "~class": "SpellObject"
   },
   "Characters/Mel/Spells/MelQAbility/MelQ": {
-    "BotData": {
-      "0x6d548702": {
-        "mFormulaParts": [
-          {
-            "mSpellCalculationKey": "AllDamageHit",
-            "~class": "0xf3cbe7b2"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "DamageTag": 1,
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "MelQ",
     "mScriptName": "MelQ",
     "mSpell": {
@@ -2601,23 +2540,10 @@
       ],
       "mShowChannelBar": false,
       "mSpellCalculations": {
-        "0xc6579b07": {
-          "mFormulaParts": [
-            {
-              "mDataValue": "InitialDamage",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mCoefficient": 0.550000011920929,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
         "AllDamageHit": {
           "mFormulaParts": [
             {
-              "mSpellCalculationKey": "0xc6579b07",
+              "mSpellCalculationKey": "InitialExplosionDamage",
               "~class": "0xf3cbe7b2"
             },
             {
@@ -2642,6 +2568,19 @@
             }
           ],
           "tooltipOnly": true,
+          "~class": "GameCalculation"
+        },
+        "InitialExplosionDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "InitialDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.550000011920929,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
           "~class": "GameCalculation"
         },
         "MonsterModTooltip": {
@@ -2706,41 +2645,6 @@
     "~class": "SpellObject"
   },
   "Characters/Mel/Spells/MelRAbility/MelR": {
-    "BotData": {
-      "0x38382c53": [
-        {
-          "0xe38f54f7": 8,
-          "~class": "0x150d1b92"
-        }
-      ],
-      "0x6d548702": {
-        "mFormulaParts": [
-          {
-            "mSubparts": [
-              {
-                "mSpellCalculationKey": "UltFlatDamage",
-                "~class": "0xf3cbe7b2"
-              },
-              {
-                "mPart1": {
-                  "mSpellCalculationKey": "UltStackDamage",
-                  "~class": "0xf3cbe7b2"
-                },
-                "mPart2": {
-                  "mNumber": 3.0,
-                  "~class": "NumberCalculationPart"
-                },
-                "~class": "ProductOfSubPartsCalculationPart"
-              }
-            ],
-            "~class": "SumOfSubPartsCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "DamageTag": 1,
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "MelR",
     "mScriptName": "MelR",
     "mSpell": {
@@ -3025,48 +2929,6 @@
     "~class": "SpellObject"
   },
   "Characters/Mel/Spells/MelWAbility/MelW": {
-    "BotData": {
-      "0x38382c53": [
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 1,
-          "~class": "0x150d1b92"
-        }
-      ],
-      "0x6d548702": {
-        "~class": "GameCalculation"
-      },
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "duration",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 268435456,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "duration",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 131072,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "DamageTag": 1,
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "MelW",
     "mScriptName": "MelW",
     "mSpell": {

@@ -810,103 +810,6 @@
     "~class": "SpellObject"
   },
   "Characters/Zoe/Spells/ZoeEAbility/ZoeE": {
-    "BotData": {
-      "0x38382c53": [
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 8,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 2048,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 4096,
-          "~class": "0x150d1b92"
-        }
-      ],
-      "0x6d548702": {
-        "mFormulaParts": [
-          {
-            "mSpellCalculationKey": "TotalDamageTooltip",
-            "~class": "0xf3cbe7b2"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mEffectIndex": 9,
-                "~class": "EffectValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 16384,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mEffectIndex": 9,
-                "~class": "EffectValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 4096,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mEffectIndex": 9,
-                "~class": "EffectValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 2048,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mEffectIndex": 5,
-                "~class": "EffectValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 1,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mNumber": 40.0,
-                "~class": "NumberCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 32768,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "DamageTag": 1,
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "ZoeE",
     "mScriptName": "ZoeE",
     "mSpell": {
@@ -950,6 +853,19 @@
             190.0,
             230.0,
             270.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "CooldownRefresh",
+          "values": [
+            0.125,
+            0.1599999964237213,
+            0.19499999284744263,
+            0.23000000417232513,
+            0.26499998569488525,
+            0.30000001192092896,
+            0.33500000834465027
           ],
           "~class": "SpellDataValue"
         }
@@ -1006,13 +922,13 @@
         800.0
       ],
       "cooldownTime": [
-        16.0,
+        18.0,
+        18.0,
+        17.0,
         16.0,
         15.0,
         14.0,
-        13.0,
-        12.0,
-        11.0
+        14.0
       ],
       "mAffectsTypeFlags": 6154,
       "mAlternateName": "ZoeE",
@@ -1042,6 +958,13 @@
                 {
                   "type": "Cooldown",
                   "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Cooldown Refresh",
+                  "type": "CooldownRefresh",
+                  "~class": "TooltipInstanceListElement"
                 }
               ],
               "levelCount": 5,
@@ -1051,7 +974,7 @@
           "mLocKeys": {
             "keyName": "Sleepy Trouble Bubble",
             "keySummary": "Causes the target to become drowsy, then fall asleep. While asleep, the target's Magic Resist is reduced. The first source of damage that breaks the sleep is doubled, up to a cap.",
-            "keyTooltip": "Zoe dropkicks a bubble that deals <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage>, lingering as a trap if it hits nothing. The bubble's range is extended when flying over terrain.<br><br>After a delay, the victim falls <status>Asleep</status> and have their <scaleMR>Magic Resist</scaleMR> reduced by @PercentPen*100@% for 2 seconds. Attacks and Ability hits wake them up but deal double damage, up to <trueDamage>@BreakDamageTooltip@ true damage</trueDamage>.",
+            "keyTooltip": "Zoe dropkicks a bubble that deals <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage>, lingering as a trap if it hits nothing. The bubble's range is extended when flying over terrain.<br><br>If either the bubble or trap hits an enemy champion she refreshes @CooldownRefresh*100@% of her cooldown.<br><br>After a delay, the victim falls <status>Asleep</status> and have their <scaleMR>Magic Resist</scaleMR> reduced by @PercentPen*100@% for 2 seconds. Attacks and Ability hits wake them up but deal double damage, up to <trueDamage>@BreakDamageTooltip@ true damage</trueDamage>.<br><br>",
             "keyTooltipExtendedBelowLine": "<rules>Before the target falls <status>Asleep</status>, they are <status>Drowsy</status>, becoming increasingly <status>Slowed</status> (up to @Effect5Amount*100@%).</rules>"
           },
           "mObjectName": "ZoeE",
@@ -3814,56 +3737,6 @@
     "~class": "SpellObject"
   },
   "Characters/Zoe/Spells/ZoeQAbility/ZoeQ": {
-    "BotData": {
-      "0x38382c53": [
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 1,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 4,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 1024,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 8192,
-          "~class": "0x150d1b92"
-        }
-      ],
-      "0x6d548702": {
-        "mFormulaParts": [
-          {
-            "mSpellCalculationKey": "TotalDamageTooltip",
-            "~class": "0xf3cbe7b2"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mNumber": 70.0,
-                "~class": "NumberCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 32768,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "DamageTag": 1,
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "ZoeQ",
     "mScriptName": "ZoeQ",
     "mSpell": {
@@ -5432,18 +5305,6 @@
     "~class": "SpellObject"
   },
   "Characters/Zoe/Spells/ZoeRAbility/ZoeR": {
-    "BotData": {
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 128,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "ZoeR",
     "mScriptName": "ZoeR",
     "mSpell": {
@@ -5731,40 +5592,6 @@
     "~class": "SpellObject"
   },
   "Characters/Zoe/Spells/ZoeWAbility/ZoeW": {
-    "BotData": {
-      "0x38382c53": [
-        {
-          "0xe38f54f7": 2,
-          "~class": "0x150d1b92"
-        }
-      ],
-      "0x6d548702": {
-        "mFormulaParts": [
-          {
-            "mSpellCalculationKey": "MissileDamageTooltip",
-            "~class": "0xf3cbe7b2"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mEffectIndex": 9,
-                "~class": "EffectValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 2,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "DamageTag": 1,
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "ZoeW",
     "mBuff": {
       "~class": "BuffData"
@@ -5776,26 +5603,26 @@
         {
           "name": "TotalBaseDamage",
           "values": [
-            10.0,
-            20.0,
-            30.0,
-            40.0,
-            50.0,
-            60.0,
-            70.0
+            5.0,
+            15.0,
+            25.0,
+            35.0,
+            45.0,
+            55.0,
+            65.0
           ],
           "~class": "SpellDataValue"
         },
         {
           "name": "TotalAPRatio",
           "values": [
-            0.15000000596046448,
-            0.15000000596046448,
-            0.15000000596046448,
-            0.15000000596046448,
-            0.15000000596046448,
-            0.15000000596046448,
-            0.15000000596046448
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612
           ],
           "~class": "SpellDataValue"
         },

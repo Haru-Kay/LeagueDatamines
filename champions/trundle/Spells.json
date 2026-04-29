@@ -176,49 +176,6 @@
     "~class": "SpellObject"
   },
   "Characters/Trundle/Spells/TrundleCircleAbility/TrundleCircle": {
-    "BotData": {
-      "0x38382c53": [
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 64,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 128,
-          "~class": "0x150d1b92"
-        }
-      ],
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mEffectIndex": 6,
-                "~class": "EffectValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 16777216,
-          "~class": "0xb09016f6"
-        },
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mEffectIndex": 2,
-                "~class": "EffectValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 1,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "TrundleCircle",
     "mBuff": {
       "mDescription": "<titleLeft>Pillar of Ice</titleLeft><mainText>This unit is being pushed by Trundle's Pillar of Ice.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
@@ -228,6 +185,112 @@
     "mSpell": {
       "0x11704a2b": 0.25,
       "0xf26881a0": 1.0,
+      "DataValues": [
+        {
+          "name": "PillarDuration",
+          "values": [
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowAmount",
+          "values": [
+            30.0,
+            34.0,
+            38.0,
+            42.0,
+            46.0,
+            50.0,
+            54.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowRadius",
+          "values": [
+            360.0,
+            360.0,
+            360.0,
+            360.0,
+            360.0,
+            360.0,
+            360.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "KnockbackRadius",
+          "values": [
+            225.0,
+            225.0,
+            225.0,
+            225.0,
+            225.0,
+            225.0,
+            225.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "AllyDisplacementRange",
+          "values": [
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "EnemyDisplacementRange",
+          "values": [
+            225.0,
+            225.0,
+            225.0,
+            225.0,
+            225.0,
+            225.0,
+            225.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "EnemyDisplacementSpeed",
+          "values": [
+            400.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "EnemyDisplacementGravity",
+          "values": [
+            60.0,
+            60.0,
+            60.0,
+            60.0,
+            60.0,
+            60.0,
+            60.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "SpellEventToAudioEventSuffix": {
         "12": "Play_sfx_Trundle_TrundleCircle_OnCast"
       },
@@ -320,8 +383,7 @@
                 {
                   "Style": 1,
                   "nameOverride": "Slow",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 2,
+                  "type": "SlowAmount",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -332,7 +394,7 @@
           "mLocKeys": {
             "keyName": "Pillar of Ice",
             "keySummary": "Trundle creates an ice pillar at target location, becoming impassable terrain and slowing all nearby enemy units.",
-            "keyTooltip": "Trundle creates an icy pillar for @Effect1Amount@ seconds, briefly <status>Knocking Back</status> enemies directly over it and <status>Slowing</status> nearby enemies by @Effect2Amount@%."
+            "keyTooltip": "Trundle creates an icy pillar for @PillarDuration@ seconds, briefly <status>Knocking Back</status> enemies directly over it and <status>Slowing</status> nearby enemies by @SlowAmount@%."
           },
           "mObjectName": "TrundleCircle",
           "~class": "TooltipInstanceSpell"
@@ -587,19 +649,6 @@
     "~class": "SpellObject"
   },
   "Characters/Trundle/Spells/TrundlePainAbility/TrundlePain": {
-    "BotData": {
-      "0x6d548702": {
-        "mFormulaParts": [
-          {
-            "mSpellCalculationKey": "TotalPercentHPDamage",
-            "~class": "0xf3cbe7b2"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "DamageTag": 1,
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "TrundlePain",
     "mBuff": {
       "mDescription": "<titleLeft>Subjugate</titleLeft><mainText>This unit's Health is being drained by Trundle.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
@@ -1243,49 +1292,6 @@
     "~class": "SpellObject"
   },
   "Characters/Trundle/Spells/TrundleTrollSmashAbility/TrundleTrollSmash": {
-    "BotData": {
-      "0x38382c53": [
-        {
-          "0xe38f54f7": 2,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0xe38f54f7": 512,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 8192,
-          "~class": "0x150d1b92"
-        }
-      ],
-      "0x6d548702": {
-        "mFormulaParts": [
-          {
-            "mSpellCalculationKey": "TotalDamage",
-            "~class": "0xf3cbe7b2"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "SlowAmount",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 1,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "DamageTag": 0,
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "TrundleTrollSmash",
     "mBuff": {
       "mDescription": "<titleLeft>Chomp</titleLeft><mainText>Trundle's next attack will deal bonus damage and drain Attack Damage from his target.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
@@ -1583,65 +1589,65 @@
     "~class": "SpellObject"
   },
   "Characters/Trundle/Spells/trundledesecrateAbility/trundledesecrate": {
-    "BotData": {
-      "0x38382c53": [
-        {
-          "0xe38f54f7": 2,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 4,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 8,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 1024,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 2048,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 4096,
-          "~class": "0x150d1b92"
-        },
-        {
-          "0x717e686": false,
-          "0xe38f54f7": 8192,
-          "~class": "0x150d1b92"
-        }
-      ],
-      "0xec17e271": [
-        {
-          "EffectCalculation": {
-            "mFormulaParts": [
-              {
-                "mEffectIndex": 1,
-                "~class": "EffectValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "EffectTag": 2,
-          "~class": "0xb09016f6"
-        }
-      ],
-      "~class": "BotsSpellData"
-    },
     "ObjectName": "trundledesecrate",
     "mScriptName": "trundledesecrate",
     "mSpell": {
       "0x11704a2b": 0.25,
       "0xf26881a0": 1.0,
+      "DataValues": [
+        {
+          "name": "MSBonus",
+          "values": [
+            0.20000000298023224,
+            0.20000000298023224,
+            0.2800000011920929,
+            0.36000001430511475,
+            0.4399999976158142,
+            0.5199999809265137,
+            0.6000000238418579
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ASBonus",
+          "values": [
+            0.30000001192092896,
+            0.30000001192092896,
+            0.44999998807907104,
+            0.6000000238418579,
+            0.75,
+            0.8999999761581421,
+            0.8999999761581421
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "HealingBonus",
+          "values": [
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Duration",
+          "values": [
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "SpellEventToAudioEventSuffix": {
         "12": "Play_sfx_Trundle_TrundleDesecrate_OnCast"
       },
@@ -1714,16 +1720,14 @@
                   "Style": 1,
                   "multiplier": 100.0,
                   "nameOverride": "Move Speed",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "MSBonus",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "Style": 1,
                   "multiplier": 100.0,
                   "nameOverride": "Attack Speed",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 2,
+                  "type": "ASBonus",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -1738,7 +1742,7 @@
           "mLocKeys": {
             "keyName": "Frozen Domain",
             "keySummary": "Trundle turns target location into his domain, gaining Attack Speed, Move Speed, and increased healing from all sources while on it.",
-            "keyTooltip": "Trundle freezes an area for @Effect4Amount@ seconds. While inside he gains <speed>@Effect1Amount*100@% Move Speed</speed>, <attackSpeed>@Effect2Amount*100@% Attack Speed</attackSpeed>, and @Effect3Amount*100@% increased healing."
+            "keyTooltip": "Trundle freezes an area for @Duration@ seconds. While inside he gains <speed>@MSBonus*100@% Move Speed</speed>, <attackSpeed>@ASBonus*100@% Attack Speed</attackSpeed>, and @HealingBonus*100@% increased healing."
           },
           "mObjectName": "trundledesecrate",
           "~class": "TooltipInstanceSpell"
