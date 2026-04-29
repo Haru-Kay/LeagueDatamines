@@ -1080,6 +1080,7 @@ Dir.mkdir("characters/shared")
                         next
                     when "SpellObject"
                         clazz = "Spells"
+                        d.delete_if { |key, values| values["~class"] == "BotsSpellData" }
                     else
                         #do nothing
                 end
