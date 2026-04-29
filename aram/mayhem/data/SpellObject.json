@@ -308,6 +308,29 @@
     },
     "~class": "SpellObject"
   },
+  "0x58f4e177": {
+    "ObjectName": "Augment_ARAM_BigBrain_Cooldown",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Kiwi_ARAM_BigBrain_Name",
+          "keyTooltip": "Kiwi_GeneralAugmentCooldown_BuffBar"
+        },
+        "mObjectName": "Augment_ARAM_BigBrain_Cooldown",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Augment_ARAM_BigBrain_Cooldown",
+    "mSpell": {
+      "mImgIconName": [
+        "ASSETS/Spells/Icons2D/Terrify.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
   "0x654af439": {
     "ObjectName": "Augment_ARAM_BladeWaltz",
     "mScriptName": "Augment_ARAM_BladeWaltz",
@@ -9335,8 +9358,67 @@
             0.04500000178813934
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevelManaSpendThreshold",
+          "values": [
+            400.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevelPerTriggerDamageAmp",
+          "values": [
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612
+          ],
+          "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "ManaPercentDamagePercent",
+              "values": [
+                0.04500000178813934,
+                0.04500000178813934,
+                0.09000000357627869,
+                0.13500000536441803,
+                0.13500000536441803,
+                0.13500000536441803,
+                0.13500000536441803
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "castConeAngle": 0.0,
       "castConeDistance": 0.0,
       "castRange": [
@@ -9361,6 +9443,21 @@
       "mClientData": {
         "mTooltipData": {
           "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Spell_ListType_AdditionalDamage",
+                  "type": "ManaPercentDamagePercent",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 2,
+              "~class": "TooltipInstanceList"
+            }
+          },
           "mLocKeys": {
             "keyName": "Kiwi_Juiced_Name",
             "keySummary": "Kiwi_Juiced_Tooltip"
@@ -9389,8 +9486,8 @@
         "Calc_Damage": {
           "mFormulaParts": [
             {
-              "mCoefficient": 0.04500000178813934,
-              "~class": "AbilityResourceByCoefficientCalculationPart"
+              "DataValue": "0x46a102eb",
+              "~class": "0x2b25a73a"
             }
           ],
           "~class": "GameCalculation"
@@ -12811,6 +12908,30 @@
           "~class": "GameCalculation"
         }
       },
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x18c10725": {
+    "ObjectName": "Augment_ARAM_OutlawsGrit_Count",
+    "mBuff": {
+      "mDescription": "Cherry_AugmentBuff_BlankTooltip",
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Kiwi_ARAM_OutlawsGrit_Name",
+          "keyTooltip": "Kiwi_OutlawsGritBuff_Tooltip"
+        },
+        "mObjectName": "Augment_ARAM_OutlawsGrit_Count",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Augment_ARAM_OutlawsGrit_Count",
+    "mSpell": {
+      "mImgIconName": [
+        "ASSETS/Spells/Icons2D/Chronokeeper_Recall.dds"
+      ],
       "~class": "SpellDataResource"
     },
     "~class": "SpellObject"
@@ -18070,6 +18191,19 @@
             45.0,
             45.0,
             45.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "UpgradeMS",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
           ],
           "~class": "SpellDataValue"
         }
@@ -27740,7 +27874,6 @@
       ],
       "mIsDisabledWhileDead": false,
       "mLineWidth": 160.0,
-      "mMinimapIconName": "ASSETS/Characters/Ezreal/HUD/Ezreal_TrueshotBarrage_Circle.tex",
       "mMinimapIconRotation": true,
       "mMissileEffectEnemyKey": "Kiwi_Augment_TrainOfTheDead_Missile_Enemy",
       "mMissileEffectKey": "Kiwi_Augment_TrainOfTheDead_Missile",
@@ -27902,7 +28035,6 @@
       ],
       "mIsDisabledWhileDead": false,
       "mLineWidth": 160.0,
-      "mMinimapIconName": "ASSETS/Characters/Ezreal/HUD/Ezreal_TrueshotBarrage_Circle.tex",
       "mMinimapIconRotation": true,
       "mMissileEffectEnemyKey": "Kiwi_Augment_TrainOfTheDead_WarningMissile_Enemy",
       "mMissileEffectKey": "Kiwi_Augment_TrainOfTheDead_WarningMissile",

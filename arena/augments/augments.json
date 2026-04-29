@@ -985,15 +985,15 @@
     "tooltip": "Your Abilities apply {{ Item_Keyword_OnHit }} effects @HitCount@ time(s) . @Cooldown@ second cooldown per target.<br><br>Times Triggered This Round: @f1@<br>Times Triggered Total: @f2@",
     "dataValues": {
       "Cooldown": 1.5,
-      "MaxLevel": 2.0,
+      "MaxLevel": 3.0,
       "HitCount": [
         1.0,
         1.0,
         2.0,
         3.0,
-        3.0,
-        3.0,
-        3.0
+        4.0,
+        4.0,
+        4.0
       ]
     },
     "icons": [
@@ -4882,15 +4882,15 @@
       ],
       "SelfReviveTimerModMax": 0.5,
       "SelfReviveTimerModMin": 0.4000000059604645,
-      "MaxLevel": 2.0,
+      "MaxLevel": 3.0,
       "BonusLives": [
         1.0,
         1.0,
+        2.0,
         3.0,
         4.0,
-        5.0,
-        6.0,
-        7.0
+        4.0,
+        4.0
       ],
       "CapstoneAllyBonusLives": 1.0
     },
@@ -6098,14 +6098,15 @@
     "apiName": "FireSale",
     "name": "Fire Sale",
     "rarity": "Silver",
-    "desc": "Instantly sell all your non-quest items for @SellValueTooltip@% of their direct buy price. Great for all those discounted anvils.",
-    "tooltip": "Instantly sell all your non-quest items for @SellValueTooltip@% of their direct buy price. Great for all those discounted anvils.",
+    "desc": "Instantly sell all your non-quest items for @SellValueTooltip@% of their direct buy price. <br><br>Great for all those discounted anvils.",
+    "tooltip": "Instantly sell all your non-quest items for @SellValueTooltip@% of their direct buy price. Great for all those discounted anvils.<br><br>When removed or replaced gain <gold>+%i:goldCoins% @f1@ gold</gold> equal to @RemovalGoalGainPercentage*100@% of the gold gained from <keywordMajor>FireSale</keywordMajor>.",
     "dataValues": {
       "SellValueTooltip": 100.0,
       "LegendarySellValue": 2500.0,
       "PrismaticSellValue": 3750.0,
       "BootsStarterSellValue": 500.0,
-      "MaxLevel": 1.0
+      "MaxLevel": 1.0,
+      "RemovalGoalGainPercentage": 0.30000001192092896
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/FireSale_small.tex",
@@ -6310,13 +6311,13 @@
       "GoldBonus": 1000.0,
       "PrismaticGoldBasisDiscount": 1250.0,
       "PrismaticCostReduction": [
-        -1500.0,
-        -1500.0,
-        -2000.0,
-        -2000.0,
-        -2000.0,
-        -2000.0,
-        -2000.0
+        1500.0,
+        1500.0,
+        2000.0,
+        2000.0,
+        2000.0,
+        2000.0,
+        2000.0
       ],
       "LegendaryCostReduction": [
         500.0,
@@ -7570,7 +7571,15 @@
     "desc": "Increase future augment offerings by @tierValueIncrease@ tier. If the augments were already Prismatic tier, gain a bonus @GoldAmount@ gold.",
     "tooltip": "Increase future %i:Augment%Augment offerings by @tierValueIncrease@ tier. If the Augment's tier was already Prismatic, gain <gold>+%i:goldCoins%@GoldAmount@ gold</gold>.",
     "dataValues": {
-      "GoldAmount": 750.0,
+      "GoldAmount": [
+        750.0,
+        750.0,
+        1500.0,
+        1500.0,
+        1500.0,
+        1500.0,
+        1500.0
+      ],
       "tierValueIncrease": [
         1.0,
         1.0,
@@ -7984,7 +7993,6 @@
     "apiName": "HiveMind",
     "name": "Hive Mind",
     "rarity": "Prismatic",
-    "disabled": true,
     "desc": "Start each round with @StartingBees@ Bee, gain additonal Bees by harvesting flowers. Damaging an enemy champion sends a Bee dealing <magicDamage>@BeeDamage@ magic damage</magicDamage> over @DebuffDuration@ seconds on arrival, before returning to you.<br>",
     "maxLevelTooltip": "At max level slow your target's <attackSpeed>attack speed by @ASReduction*100@%</attackSpeed>.",
     "tooltip": "Start each round with @StartingBees@ Bee, gain additonal Bees by harvesting flowers. Damaging an enemy champion sends a Bee dealing <magicDamage>@BeeDamage@ magic damage</magicDamage> over @DebuffDuration@ seconds on arrival, before returning to you.",
@@ -8415,7 +8423,7 @@
     "dataValues": {
       "HealthCost": [],
       "GoldToGrant": 500.0,
-      "HealthRestorePercent": 5.0
+      "HealthRestorePercent": 10.0
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/Wealth_Small.Arena_2026_S2.tex",
@@ -8430,7 +8438,7 @@
     "desc": "<healing>Restore @HealthRestorePercent@% of of the health</healing> you've sacrificed to Tahm Kench.<br><br>Gain <keywordMajor>@AnvilsGranted@ Silver Stat Anvil</keywordMajor>.",
     "tooltip": "<healing>Restore @HealthRestorePercent@% of of the health</healing> you've sacrificed to Tahm Kench.<br><br>Gain <keywordMajor>@AnvilsGranted@ Silver Stat Anvil</keywordMajor>.",
     "dataValues": {
-      "HealthRestorePercent": 5.0,
+      "HealthRestorePercent": 10.0,
       "AnvilsGranted": 1.0,
       "AnvilType": 1.0
     },
@@ -8470,7 +8478,7 @@
     "dataValues": {
       "HealthCost": [],
       "AugmentTierGranted": 1.0,
-      "HealthRestorePercent": 5.0
+      "HealthRestorePercent": 10.0
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/Risk_Small.Arena_2026_S2.tex",
@@ -8598,7 +8606,7 @@
     "tooltip": "Sacrifice <scaleHealth>@HealthReductionPercent@% of your max health</scaleHealth> to Tahm Kench. <br><br>Your total sacrifice will increase to <scaleHealth>-@MaxHealthReduction@% max health</scaleHealth>.<br><br>Gain <gold>+%i:goldCoins% @GoldToGrant@ gold</gold>.",
     "dataValues": {
       "HealthReductionPercent": 15.0,
-      "GoldToGrant": 3000.0
+      "GoldToGrant": 2500.0
     },
     "calculations": {
       "MaxHealthReduction": {
@@ -8635,7 +8643,7 @@
     "tooltip": "Sacrifice <scaleHealth>@HealthReductionPercent@% of your max health</scaleHealth> to Tahm Kench. <br><br>Your total sacrifice will increase to <scaleHealth>-@MaxHealthReduction@% max health</scaleHealth>.<br><br>Gain <keywordMajor>@AnvilsGranted@ Prismatic Stat Anvils</keywordMajor>.",
     "dataValues": {
       "HealthReductionPercent": 15.0,
-      "AnvilsGranted": 2.0,
+      "AnvilsGranted": 1.0,
       "AnvilType": 10.0
     },
     "calculations": {
@@ -9399,6 +9407,22 @@
     ]
   },
   {
+    "id": 391,
+    "apiName": "RagsToRiches",
+    "name": "Rags to Riches",
+    "rarity": "Silver",
+    "desc": "When <keywordMajor>Rags to Riches</keywordMajor> is removed or replaced gain <gold>+%i:goldt% @GoldToGrant@ gold</gold>. ",
+    "tooltip": "When <keywordMajor>Rags to Riches</keywordMajor> is removed or replaced gain <gold>+%i:goldt% @GoldToGrant@ gold</gold>. ",
+    "dataValues": {
+      "MaxLevel": 1.0,
+      "GoldToGrant": 2500.0
+    },
+    "icons": [
+      "ASSETS/UX/Cherry/Augments/Icons/Rags_to_Riches_small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Rags_to_Riches.tex"
+    ]
+  },
+  {
     "id": 404,
     "apiName": "Augment404",
     "name": "404 Augment Not Found",
@@ -9990,7 +10014,6 @@
     "apiName": "YouSpinMeRightRound",
     "name": "Spin Me Right Round",
     "rarity": "Silver",
-    "disabled": true,
     "desc": "Replace a Summoner Spell with <spellName>Heroic Swing</spellName>.<br><br><rules><spellName>Heroic Swing</spellName> fires a grappling hook, sticking into terrain, after which you can <recast>Recast</recast> to swing around it. While swinging, automatically Attack the nearest enemy. Colliding with an enemy champion or <recast>Recasting</recast> ends the swing.</rules>",
     "tooltip": "Replace a Summoner Spell with <spellName>Heroic Swing</spellName>.<br><br><rules><spellName>Heroic Swing</spellName> fires a grappling hook, sticking into terrain, after which you can <recast>Recast</recast> to swing around it. While swinging, automatically Attack the nearest enemy. Colliding with an enemy champion or <recast>Recasting</recast> ends the swing.</rules>",
     "dataValues": {
@@ -10810,10 +10833,22 @@
     "name": "Juiced",
     "rarity": "Silver",
     "desc": "<OnHit>%i:OnHit% On-Hit</OnHit> consume <scaleMana>@Calc_Mana_Cost@ Mana</scaleMana> to deal <magicDamage>@Calc_Damage@ magic damage</magicDamage>, this damage can <crit>Critically Strike</crit>.",
+    "maxLevelTooltip": "At max level, everytime you spend <scaleMana>@MaxLevelManaSpendThreshold@ Mana</scaleMana> increase the damge this deals by @MaxLevelPerTriggerDamageAmp*100@% for the rest of the round.",
     "tooltip": "<OnHit> %i:OnHit% On-Hit</OnHit> consume <scaleMana>@Calc_Mana_Cost@ Mana</scaleMana> to deal <magicDamage>@Calc_Damage@ magic damage</magicDamage>, this damage can <crit>Critically Strike</crit>.<br><br><rules>Damage Dealt: @f1.0@<br>Mana Consumed: @f2.0@</rules>",
     "dataValues": {
       "ManaPercentReduction": 0.02500000037252903,
-      "ManaPercentDamagePercent": 0.04500000178813934
+      "ManaPercentDamagePercent": [
+        0.04500000178813934,
+        0.04500000178813934,
+        0.09000000357627869,
+        0.13500000536441803,
+        0.13500000536441803,
+        0.13500000536441803,
+        0.13500000536441803
+      ],
+      "MaxLevel": 2.0,
+      "MaxLevelManaSpendThreshold": 400.0,
+      "MaxLevelPerTriggerDamageAmp": 0.10000000149011612
     },
     "calculations": {
       "0x89615869": {
@@ -10828,8 +10863,8 @@
       "Calc_Damage": {
         "mFormulaParts": [
           {
-            "mCoefficient": 0.04500000178813934,
-            "~class": "AbilityResourceByCoefficientCalculationPart"
+            "DataValue": "ManaPercentDamagePercent",
+            "~class": "0x2b25a73a"
           }
         ],
         "~class": "GameCalculation"

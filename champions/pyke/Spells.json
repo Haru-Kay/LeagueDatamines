@@ -230,6 +230,32 @@
             0.009999999776482582
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "DashDistance",
+          "values": [
+            550.0,
+            550.0,
+            550.0,
+            550.0,
+            550.0,
+            550.0,
+            550.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "StunDelay",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "cantCastWhileRooted": true,
@@ -631,6 +657,57 @@
             0.4000000059604645,
             0.4000000059604645,
             0.4000000059604645
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "HPPerBAD",
+          "values": [
+            14.0,
+            14.0,
+            14.0,
+            14.0,
+            14.0,
+            14.0,
+            14.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BonusDamagePercent",
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BonusADGain",
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BonusDamagePercentPerLevel",
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "CooldownPerChamp",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "AmmoCooldown",
+          "values": [
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0
           ],
           "~class": "SpellDataValue"
         }
@@ -2009,6 +2086,103 @@
     "mScriptName": "PykeW",
     "mSpell": {
       "0xf26881a0": 0.0,
+      "DataValues": [
+        {
+          "name": "BaseMoveSpeed",
+          "values": [
+            45.0,
+            45.0,
+            45.0,
+            45.0,
+            45.0,
+            45.0,
+            45.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "CooldownPerChamp",
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseHealCap",
+          "values": [
+            80.0,
+            80.0,
+            80.0,
+            80.0,
+            80.0,
+            80.0,
+            80.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxHPHealCap",
+          "values": [
+            0.550000011920929,
+            0.550000011920929,
+            0.550000011920929,
+            0.550000011920929,
+            0.550000011920929,
+            0.550000011920929,
+            0.550000011920929
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "HealADRatio",
+          "values": [
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "HealRampBase",
+          "values": [
+            0.009999999776482582,
+            0.009999999776482582,
+            0.009999999776482582,
+            0.009999999776482582,
+            0.009999999776482582,
+            0.009999999776482582,
+            0.009999999776482582
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "HealRampPerTick",
+          "values": [
+            1.149999976158142,
+            1.149999976158142,
+            1.149999976158142,
+            1.149999976158142,
+            1.149999976158142,
+            1.149999976158142,
+            1.149999976158142
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "CamoDuration",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "bIsToggleSpell": true,
       "castRange": [
         600.0,
@@ -2085,7 +2259,7 @@
           "mLocKeys": {
             "keyName": "Ghostwater Dive",
             "keySummary": "Pyke enters Camouflage and gains significant Move Speed that decays over time.",
-            "keyTooltip": "Pyke gains <keywordStealth>Camouflage</keywordStealth> and <speed>@MoveSpeed@% Move Speed</speed> decaying over @Effect10Amount@ seconds.",
+            "keyTooltip": "Pyke gains <keywordStealth>Camouflage</keywordStealth> and <speed>@MoveSpeed@% Move Speed</speed> decaying over @CamoDuration@ seconds.",
             "keyTooltipExtendedBelowLine": "<rules><speed>Move Speed</speed> scales with Lethality.<br>{{Reminder_Camouflage}}</rules>"
           },
           "mObjectName": "PykeW",
@@ -2255,8 +2429,8 @@
         "MoveSpeed": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseMoveSpeed",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 2.0,

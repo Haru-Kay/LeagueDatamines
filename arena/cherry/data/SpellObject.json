@@ -435,8 +435,67 @@
             0.04500000178813934
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevel",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevelManaSpendThreshold",
+          "values": [
+            400.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxLevelPerTriggerDamageAmp",
+          "values": [
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612
+          ],
+          "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "ManaPercentDamagePercent",
+              "values": [
+                0.04500000178813934,
+                0.04500000178813934,
+                0.09000000357627869,
+                0.13500000536441803,
+                0.13500000536441803,
+                0.13500000536441803,
+                0.13500000536441803
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "castConeAngle": 0.0,
       "castConeDistance": 0.0,
       "castRange": [
@@ -461,6 +520,21 @@
       "mClientData": {
         "mTooltipData": {
           "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Spell_ListType_AdditionalDamage",
+                  "type": "ManaPercentDamagePercent",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 2,
+              "~class": "TooltipInstanceList"
+            }
+          },
           "mLocKeys": {
             "keyName": "Kiwi_Juiced_Name",
             "keySummary": "Kiwi_Juiced_Tooltip"
@@ -489,8 +563,8 @@
         "Calc_Damage": {
           "mFormulaParts": [
             {
-              "mCoefficient": 0.04500000178813934,
-              "~class": "AbilityResourceByCoefficientCalculationPart"
+              "DataValue": "0x46a102eb",
+              "~class": "0x2b25a73a"
             }
           ],
           "~class": "GameCalculation"
@@ -5711,6 +5785,57 @@
           "~class": "GameCalculation"
         }
       },
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x6037d25f": {
+    "ObjectName": "Augment_RagsToRiches",
+    "mScriptName": "Augment_RagsToRiches",
+    "mSpell": {
+      "DataValues": [
+        {
+          "name": "MaxLevel",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "GoldToGrant",
+          "values": [
+            2500.0,
+            2500.0,
+            2500.0,
+            2500.0,
+            2500.0,
+            2500.0,
+            2500.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLocKeys": {
+            "keyName": "Cherry_TrashToTreasure_Name",
+            "keySummary": "Cherry_TrashToTreasure_Summary"
+          },
+          "mObjectName": "Augment_RagsToRiches",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "ASSETS/Spells/Icons2D/Terrify.dds"
+      ],
       "~class": "SpellDataResource"
     },
     "~class": "SpellObject"

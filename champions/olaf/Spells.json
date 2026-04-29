@@ -1883,6 +1883,71 @@
             125.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "ADRatio",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseHealthCost",
+          "values": [
+            10.0,
+            28.0,
+            46.0,
+            64.0,
+            82.0,
+            100.0,
+            118.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "HealthCostADRatio",
+          "values": [
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseDamage",
+          "values": [
+            25.0,
+            70.0,
+            115.0,
+            160.0,
+            205.0,
+            250.0,
+            295.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "HealthCostPercent",
+          "values": [
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -1950,7 +2015,7 @@
             }
           },
           "mLocKeys": {
-            "keyCost": "Costs <font color='#FF3300'>@f1@ Health</font>",
+            "keyCost": "Costs <font color='#FF3300'>@HealthCostCalc@ Health</font>",
             "keyName": "Reckless Swing",
             "keySummary": "Olaf attacks with such force that it deals true damage to his target and himself, refunding the Health cost if he destroys the target.",
             "keyTooltip": "Olaf ferociously swings his axes, dealing <trueDamage>@TotalDamage@ true damage</trueDamage>. If the enemy dies, the cost is refunded.<br><br>Attacks lower the Cooldown of this Ability by 1 second, increased to 2 seconds when attacking monsters.",
@@ -2034,11 +2099,33 @@
         "ASSETS/Characters/Olaf/HUD/Icons2D/OlafE.dds"
       ],
       "mSpellCalculations": {
+        "0x30412ba3": {
+          "mModifiedGameCalculation": "TotalDamage",
+          "mMultiplier": {
+            "mDataValue": "HealthCostPercent",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "~class": "GameCalculationModified"
+        },
+        "0xfcf1daee": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "BaseHealthCost",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "HealthCostADRatio",
+              "mStat": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
         "TotalDamage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.5,
@@ -2046,7 +2133,6 @@
               "~class": "StatByCoefficientCalculationPart"
             }
           ],
-          "tooltipOnly": true,
           "~class": "GameCalculation"
         }
       },

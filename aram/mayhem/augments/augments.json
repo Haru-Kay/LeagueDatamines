@@ -2360,8 +2360,8 @@
     "apiName": "ARAM_BigBrain",
     "name": "Big Brain",
     "rarity": "Gold",
-    "desc": "Gain<shield> @ShieldBase@ Shield </shield>for every <scaleAP>%i:scaleAP% @AP@ Ability Power</scaleAP>. Resets on death.",
-    "tooltip": "Gain a <shield>@TotalShield@ Shield</shield>. Resets on death.",
+    "desc": "Gain<shield> @ShieldBase@ Shield </shield>for every <scaleAP>%i:scaleAP% @AP@ Ability Power</scaleAP>. Resets on death or 70 seconds after depletion.",
+    "tooltip": "Gain a <shield>@TotalShield@ Shield</shield>. Resets on death or 70 seconds after depletion.",
     "dataValues": {
       "ShieldBase": 3.0,
       "APRatio": 3.0,
@@ -3315,10 +3315,11 @@
     "apiName": "ARAM_Upgrade_ZH",
     "name": "Upgrade Zhonya's",
     "rarity": "Silver",
-    "desc": "Reduce <attention>Zhonya's Hourglass</attention> Cooldown to @UpgradeCD@ seconds. You can now move when in <attention>Zhonya's Hourglass, Seeker's Armguard,</attention> or <attention>Wooglet's Witchcap</attention> stasis.<br><br>Gain <gold>250 Gold</gold>.",
-    "tooltip": "Reduce <attention>Zhonya's Hourglass</attention> Cooldown to @UpgradeCD@ seconds. You can now move when in <attention>Zhonya's Hourglass, Seeker's Armguard,</attention> or <attention>Wooglet's Witchcap</attention> stasis.<br>",
+    "desc": "Reduce <attention>Zhonya's Hourglass</attention> Cooldown to @UpgradeCD@ seconds. You can now move and gain <speed>Movement Speed</speed> when in <attention>Zhonya's Hourglass, Seeker's Armguard,</attention> or <attention>Wooglet's Witchcap</attention> stasis.<br><br>Gain <gold>250 Gold</gold>.",
+    "tooltip": "Reduce <attention>Zhonya's Hourglass</attention> Cooldown to @UpgradeCD@ seconds. You can now move when in <attention>Zhonya's Hourglass, Seeker's Armguard,</attention> or <attention>Wooglet's Witchcap</attention> stasis and gain <speed>@UpgradeMS*100@% Movement Speed</speed> during it.<br>",
     "dataValues": {
-      "UpgradeCD": 45.0
+      "UpgradeCD": 45.0,
+      "UpgradeMS": 0.5
     },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/UpgradeZH_small.tex",
@@ -4704,7 +4705,6 @@
     "apiName": "YouSpinMeRightRound",
     "name": "Spin Me Right Round",
     "rarity": "Silver",
-    "disabled": true,
     "desc": "Replace a Summoner Spell with <spellName>Heroic Swing</spellName>.<br><br><rules><spellName>Heroic Swing</spellName> fires a grappling hook, sticking into terrain, after which you can <recast>Recast</recast> to swing around it. While swinging, automatically Attack the nearest enemy. Colliding with an enemy champion or <recast>Recasting</recast> ends the swing.</rules>",
     "tooltip": "Replace a Summoner Spell with <spellName>Heroic Swing</spellName>.<br><br><rules><spellName>Heroic Swing</spellName> fires a grappling hook, sticking into terrain, after which you can <recast>Recast</recast> to swing around it. While swinging, automatically Attack the nearest enemy. Colliding with an enemy champion or <recast>Recasting</recast> ends the swing.</rules>",
     "dataValues": {
@@ -4827,8 +4827,8 @@
     "apiName": "ARAM_PhenomenalEvil",
     "name": "Phenomenal Evil",
     "rarity": "Gold",
-    "desc": "Permanently gain <scaleAP>@APPerProc@ Ability Power</scaleAP> when you hit enemies with Abilities.<br><br>If taken as your second Augment, starts with <scaleAP>@StartingAPIfSecondAugment@ Ability Power</scaleAP>.",
-    "tooltip": "Permanently gain <scaleAP>@APPerProc@ Ability Power</scaleAP> when you hit enemies with Abilities.<br><br>If taken as your second Augment, starts with <scaleAP>@StartingAPIfSecondAugment@ Ability Power</scaleAP>.<br><br>You have gained <scaleAP>@f1@ AP</scaleAP>. Veigar would be proud!",
+    "desc": "Permanently gain <scaleAP>@APPerProc@ Ability Power</scaleAP> when you damage enemy champions with Abilities.<br><br>If taken as your second Augment, starts with <scaleAP>@StartingAPIfSecondAugment@ Ability Power</scaleAP>.",
+    "tooltip": "Permanently gain <scaleAP>@APPerProc@ Ability Power</scaleAP> when you damage enemy champions with Abilities.<br><br>If taken as your second Augment, starts with <scaleAP>@StartingAPIfSecondAugment@ Ability Power</scaleAP>.<br><br>You have gained <scaleAP>@f1@ AP</scaleAP>. Veigar would be proud!",
     "dataValues": {
       "ProcCooldown": 1.0,
       "StartingAPIfSecondAugment": 40.0,
@@ -6444,10 +6444,14 @@
     "name": "Juiced",
     "rarity": "Silver",
     "desc": "<OnHit>%i:OnHit% On-Hit</OnHit> consume <scaleMana>@Calc_Mana_Cost@ Mana</scaleMana> to deal <magicDamage>@Calc_Damage@ magic damage</magicDamage>, this damage can <crit>Critically Strike</crit>.",
+    "maxLevelTooltip": "At max level, everytime you spend <scaleMana>@MaxLevelManaSpendThreshold@ Mana</scaleMana> increase the damge this deals by @MaxLevelPerTriggerDamageAmp*100@% for the rest of the round.",
     "tooltip": "<OnHit> %i:OnHit% On-Hit</OnHit> consume <scaleMana>@Calc_Mana_Cost@ Mana</scaleMana> to deal <magicDamage>@Calc_Damage@ magic damage</magicDamage>, this damage can <crit>Critically Strike</crit>.<br><br><rules>Damage Dealt: @f1.0@<br>Mana Consumed: @f2.0@</rules>",
     "dataValues": {
       "ManaPercentReduction": 0.02500000037252903,
-      "ManaPercentDamagePercent": 0.04500000178813934
+      "ManaPercentDamagePercent": 0.04500000178813934,
+      "MaxLevel": 2.0,
+      "MaxLevelManaSpendThreshold": 400.0,
+      "MaxLevelPerTriggerDamageAmp": 0.10000000149011612
     },
     "calculations": {
       "0x89615869": {
@@ -6462,8 +6466,8 @@
       "Calc_Damage": {
         "mFormulaParts": [
           {
-            "mCoefficient": 0.04500000178813934,
-            "~class": "AbilityResourceByCoefficientCalculationPart"
+            "DataValue": "ManaPercentDamagePercent",
+            "~class": "0x2b25a73a"
           }
         ],
         "~class": "GameCalculation"

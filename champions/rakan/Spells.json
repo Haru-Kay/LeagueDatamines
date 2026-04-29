@@ -315,6 +315,71 @@
             175.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "RecastWindow",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Duration",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Cooldown",
+          "values": [
+            20.0,
+            20.0,
+            18.0,
+            16.0,
+            14.0,
+            12.0,
+            12.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BonusDashSpeed",
+          "values": [
+            1150.0,
+            1150.0,
+            1150.0,
+            1150.0,
+            1150.0,
+            1150.0,
+            1150.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "XayahBonusDashSpeed",
+          "values": [
+            1250.0,
+            1250.0,
+            1250.0,
+            1250.0,
+            1250.0,
+            1250.0,
+            1250.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "TargetingForgivenessDefinitions": [
@@ -434,13 +499,13 @@
                 },
                 {
                   "nameOverride": "Cooldown",
-                  "type": "Effect%dAmount",
+                  "type": "Cooldown",
                   "typeIndex": 4,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "@AbilityResourceName@ Cost",
-                  "type": "Effect%dAmount",
+                  "type": "Cost",
                   "typeIndex": 5,
                   "~class": "TooltipInstanceListElement"
                 }
@@ -453,7 +518,7 @@
             "keyCooldown": "@f2@s %i:cooldown%",
             "keyName": "Battle Dance",
             "keySummary": "Flies to an allied champion granting them a shield. Can be re-cast for free for a short duration.",
-            "keyTooltip": "Rakan dashes to an allied champion, granting them <shield>@TotalShield@ Shield</shield> for @Effect3Amount@ seconds.<br><br>Rakan can <recast>Recast</recast> this Ability once within @Effect2Amount@ seconds.",
+            "keyTooltip": "Rakan dashes to an allied champion, granting them <shield>@TotalShield@ Shield</shield> for @Duration@ seconds.<br><br>Rakan can <recast>Recast</recast> this Ability once within @RecastWindow@ seconds.",
             "keyTooltipExtendedBelowLine": "<rules>Cast range is increased when cast on Xayah.</rules>"
           },
           "mObjectName": "RakanE",
@@ -2073,6 +2138,99 @@
     "mScriptName": "RakanR",
     "mSpell": {
       "0x11704a2b": 0.25,
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            100.0,
+            100.0,
+            200.0,
+            300.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Duration",
+          "values": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "CharmDuration",
+          "values": [
+            1.0,
+            1.0,
+            1.25,
+            1.5,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BuffExtensionDuration",
+          "values": [
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "InitialCastSpeed",
+          "values": [
+            75.0,
+            75.0,
+            75.0,
+            75.0,
+            75.0,
+            75.0,
+            75.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "TouchSpeed",
+          "values": [
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "TouchRadius",
+          "values": [
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "bIsToggleSpell": true,
       "castConeDistance": 100.0,
       "castFrame": 25.0,
@@ -2122,14 +2280,12 @@
               "Elements": [
                 {
                   "nameOverride": "Charm Duration",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 3,
+                  "type": "CharmDuration",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "BaseDamage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -2144,7 +2300,7 @@
           "mLocKeys": {
             "keyName": "The Quickness",
             "keySummary": "Gains Move Speed, charming and dealing magic damage to enemies touched.",
-            "keyTooltip": "Rakan gains <speed>@Effect5Amount@% Move Speed</speed> for @Effect2Amount@ seconds. Rakan deals <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage> and <status>Charms</status> enemies for @Effect3Amount@ second(s) the first time he touches them. The first champion touched grants Rakan <speed>@Effect6Amount@% decaying Move Speed</speed>."
+            "keyTooltip": "Rakan gains <speed>@InitialCastSpeed@% Move Speed</speed> for @Duration@ seconds. Rakan deals <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage> and <status>Charms</status> enemies for @CharmDuration@ second(s) the first time he touches them. The first champion touched grants Rakan <speed>@TouchSpeed@% decaying Move Speed</speed>."
           },
           "mObjectName": "RakanR",
           "~class": "TooltipInstanceSpell"
@@ -2276,8 +2432,8 @@
         "TotalDamageTooltip": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.5,
