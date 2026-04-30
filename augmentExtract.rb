@@ -1,5 +1,4 @@
-
-
+require 'json'
 
 def augmentExtract(key, data, augmentTags, buildTags)
     return augmentTags, buildTags if data.dig("Enabled") == false
