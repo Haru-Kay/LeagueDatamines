@@ -1,5 +1,19 @@
 Just a reminder that PBE changes are not final and subject to change. Some changes, such as bugfixes, may not be able to be viewed. 
 
+## Champions
+
+**Lee Sin**
+
+* W1 Shielding: 70/115/160/205/250 -> 60/105/150/195/240
+* W1 Cooldown: 12 seconds -> 7 seconds
+* W1 no longer refunds half its cooldown when targeting a Champion.
+* E1 AD Ratio: 100% AD -> 90% AD
+
+**Quinn**
+
+* P now deals 15-90 bonus damage against monsters.
+* Q now deals 150% damage against monsters
+
 ## ARAM: Mayhem
 
 ### Augments
@@ -7,6 +21,11 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 **Big Brain**
 
 * Now also resets after 70 seconds.
+
+**Fan the Hammer**
+
+* Now only procs against enemy Champions.
+  * Unsure how this interacts with Renata
 
 **Juiced**
 
@@ -32,13 +51,21 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 ## Arena
 
-### Champions
+### Systems
 
-**Katarina**
+**Gain an Augment Slot**
 
-* P Cooldown Reduction on Takedown: 75 seconds -> 15 seconds (the standard value for other modes)
+* Rounds until free augment: 5 rounds -> 4 rounds
 
 ### Guests of Honor
+
+**Jarvan IV**
+
+* Added missing event description after selection.
+
+**Kindred**
+
+* Revives lost from Wolf: 1 -> 2
 
 **Tahm Kench**
 
@@ -50,17 +77,29 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 * Compulsion For Power
   * Prismatic Anvils: 2 anvils -> 1 anvil
-
 ### Augments
 
 **Bravest of the Brave**
 
 * Bonus Gold: 750 Gold -> 750/1500 Gold
 
+**Chroma Flux**
+
+* Move Speed per Blue Shard: 20 MS -> 30MS
+
+**Combination Fried Rice**
+
+* Ability Haste: -100 -> -50
+
 **Ethereal Weapon**
 
 * Max Level: 2 -> 3
 * On-Hit Procs: 1/2 -> 1/2/3
+
+**Fan the Hammer**
+
+* Now only procs against enemy Champions.
+  * Unsure how this interacts with Renata
 
 **Fire Sale**
 
@@ -85,6 +124,23 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 * If this augment is removed or replaced, gain 2500 Gold.
 
+**Spellcraft**
+
+* Bonus Move Speed: 20% (+30% per Blue Shard) MS -> 10% (+40% per Blue Shard) MS
+
 **Spin Me Right Round**
 
 * Re-enabled
+
+### Champions
+
+**Katarina**
+
+* P Cooldown Reduction on Takedown: 75 seconds -> 15 seconds (the standard value for other modes)
+
+### Items
+
+**Twilight's Edge**
+
+* Bonus AD Threshold: 130 -> 100
+* AP Threshold: 180 -> 140
