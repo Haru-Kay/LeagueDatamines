@@ -2,145 +2,110 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 ## Champions
 
-**Lee Sin**
+**Ashe**
 
-* W1 Shielding: 70/115/160/205/250 -> 60/105/150/195/240
-* W1 Cooldown: 12 seconds -> 7 seconds
-* W1 no longer refunds half its cooldown when targeting a Champion.
-* E1 AD Ratio: 100% AD -> 90% AD
+* Q AD Ratio per Flurry Auto: 110/117.5/125/132.5/140% AD -> 110/115/120/125/130% AD
+  * Q AD Ratio per Arrow: 22/23.5/25/26.5/28% AD -> 22/23/24/25/26% AD
 
-**Quinn**
+### Items
 
-* P now deals 15-90 bonus damage against monsters.
-* Q now deals 150% damage against monsters
+**Gluttonous Greaves/Immortal Path**
 
-## ARAM: Mayhem
+* Omnivamp: 1% per Takedown, up to 6% -> 0.5% per Takedown, up to 6%
+* Upgrade Cost: 650 Gold -> 700 Gold
+  * Total Cost: 950 Gold -> 1000 Gold
 
-### Augments
+## Runes
 
-**Big Brain**
+**Deathfire Touch**
 
-* Now also resets after 70 seconds.
+* Base Damage: 4-12 based on level -> 3/14 based on level
 
-**Fan the Hammer**
+**Stormraider's Surge**
 
-* Now only procs against enemy Champions.
-  * Unsure how this interacts with Renata
-
-**Juiced**
-
-* Can now be leveled up.
-* At max level, everytime you spend 400 Mana, increase the damge this deals by 10% for the rest of the round.
-* Likely intended just for Arena. Either a flag wasn't set or my tools made a mistake pulling this data.
-
-**Outlaw's Grit**
-
-* Now displays a [buff icon](https://raw.communitydragon.org/latest/game/assets/spells/icons2d/chronokeeper_recall.png) indicating stack amount.
-
-**Phenomenal Evil**
-
-* Clarified that it activates when you *damage* enemies rather than hitting abilities.
-
-**Spin Me Right Round**
-
-* Re-enabled
-
-**Upgrade Zhonya's**
-
-* Now also grants 50% MS while in Zhonya's.
+* MS Duration: 3 seconds -> 4 seconds
 
 ## Arena
-
-### Systems
-
-**Gain an Augment Slot**
-
-* Rounds until free augment: 5 rounds -> 4 rounds
 
 ### Guests of Honor
 
 **Jarvan IV**
 
-* Added missing event description after selection.
-
-**Kindred**
-
-* Revives lost from Wolf: 1 -> 2
-
-**Tahm Kench**
-
-* Abstain from Wealth/Power/Risk
-  * Sacrifice Health Restore: 5% -> 10%
-
-* Compulsion For Wealth
-  * Gold Granted: 3000 Gold -> 2500 Gold
-
-* Compulsion For Power
-  * Prismatic Anvils: 2 anvils -> 1 anvil
-### Augments
-
-**Bravest of the Brave**
-
-* Bonus Gold: 750 Gold -> 750/1500 Gold
-
-**Chroma Flux**
-
-* Move Speed per Blue Shard: 20 MS -> 30MS
-
-**Combination Fried Rice**
-
-* Ability Haste: -100 -> -50
-
-**Ethereal Weapon**
-
-* Max Level: 2 -> 3
-* On-Hit Procs: 1/2 -> 1/2/3
-
-**Fan the Hammer**
-
-* Now only procs against enemy Champions.
-  * Unsure how this interacts with Renata
-
-**Fire Sale**
-
-* If this augment is removed or replaced, gain 30% of the Gold granted by Fire Sale.
-
-**Hive Mind**
-
-* Re-enabled
-* Tooltip no longer states it increases the Bee cap.
-
-**Juiced**
-
-* On-Hit Damage: 4.5% Mana -> 4.5/9.0% Mana
-* At max level, everytime you spend 400 Mana, increase the damge this deals by 10% for the rest of the round.
-
-**Nesting Doll**
-
-* Max Level: 2 -> 3
-* Bonus Revives: 1/3 -> 1/2/3
-
-**Rags to Riches (Silver) (NEW)**
-
-* If this augment is removed or replaced, gain 2500 Gold.
-
-**Spellcraft**
-
-* Bonus Move Speed: 20% (+30% per Blue Shard) MS -> 10% (+40% per Blue Shard) MS
-
-**Spin Me Right Round**
-
-* Re-enabled
+* Crown Size Amp: 20% -> 25%
 
 ### Champions
 
-**Katarina**
+**Shyvana**
 
-* P Cooldown Reduction on Takedown: 75 seconds -> 15 seconds (the standard value for other modes)
+* Q AD Ratio: 110% AD -> 100% AD
+
+**Xin Zhao**
+
+* Q AD Ratio: 40% bonus AD -> 30% bonus AD
+* Q Cooldown: 7/6.5/6/5.5/5 seconds -> 8/7.5/7/6.5/6 seconds
+* E Cooldown: 11 seconds -> 13 seconds
 
 ### Items
 
-**Twilight's Edge**
+**Void Immolation**
 
-* Bonus AD Threshold: 130 -> 100
-* AP Threshold: 180 -> 140
+* No longer mutually exclusive with Rabadon's Deathcap/Wooglet's Witchcap
+
+### Augments
+
+**Going forward, if values are not mentioned when max level decreases, assume the old values are the same.**
+
+**Banner of Command**
+
+* Targeting changed, likely able to be used on a specific ally in 3v3s now.
+  * Can still be self-casted.
+
+**Bread Sandwich**
+
+* Max Level: 1 -> 3
+* Ability Haste: 200 -> 200/300/400
+
+**Castle**
+
+* Targeting changed, likely able to be used on a specific ally in 3v3s now.
+  * Can still be self-casted.
+* Additionally matches Banner of Command flags
+
+**Combination Fried Rice**
+
+* Max Level: 1 -> 3
+* Damage Amp: 100% -> 100/125/150%
+* H&SP Amp: 75% -> 75/100/125%
+
+**Draw Your Sword**
+
+* HP/AD Bonus: 25/35/45%-> 25/30/35%
+* Move Speed Bonus: 20% -> 15%
+
+**Ethereal Weapons**
+
+* Max Level: 3 -> 2
+
+**Fan the Hammer**
+
+* Max Level: 3 -> 2
+* Cooldown per Direction: 7/6/5 seconds ->  7/5 seconds
+
+**Gamba Anvil**
+
+* Max Level: 2 -> 1
+* Legendary Anvil Discount: 500/750 Gold -> 750 Gold
+* Stat Anvil Discount: 150/300 Gold -> 250 Gold
+
+**Spellcraft**
+
+* Bonus AD Ratio per Red Shard: 30% -> 20%
+* AP Ratio per Red Shard: 40% -> 30%
+
+**Stats/ on Stats/ on Stats!**
+
+* Stat Anvil Amplifier: 10% -> 20%
+
+**The Brutalizer**
+
+* Max Level: 3 -> 2
