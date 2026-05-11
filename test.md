@@ -1,32 +1,22 @@
 Just a reminder that PBE changes are not final and subject to change. Some changes, such as bugfixes, may not be able to be viewed. 
 
-### **As usual, the full patch preview can be found [here](https://x.com/RiotPhroxzon/status/2051882812110942607). If not mentioned below, the data matches that of Phroxzon's post.**
+## Champions
 
-## Items
+**Naafiri**
 
-**Doran's Helm**
+* **Note: This appears to be [*instead* of the changes posted yesterday](https://x.com/RiotPhroxzon/status/2051882812110942607).**
+* Q2 Base Damage: 30/45/60/75/90 -> 30/42.5/55/67.5/80
+* R Base Damage: 150/250/350 -> 150/225/300
 
-* HP: 110 -> 140
+**Shyvana**
 
-**Voltaic Cyclosword**
-
-* Combine Cost: 863 Gold -> 963 Gold
-  * Total Gold: 2900 Gold -> 3000 Gold
+* **Note: This appears to be *in addition* to the changes posted yesterday.**
+* W Base Shield: 75/95/115/135/155 -> 60/80/100/120/140
 
 ## Arena
 
-### Champions
+### Items
 
-**Xin Zhao**
+**Essence Reaver**
 
-* E Attack Speed AP Ratio: 10% per 100 AP -> 5% per 100 AP
-
-### Augments
-
-**Jeweled Gauntlet**
-
-* Crit Damage: 140/160/180% -> 140/150/160%
-
-**Righteous Fury**
-
-* Damage Amp per Stack: 2/4/6% -> 2/3/4%
+* Now properly shows the Spellblade passive rather than last season's Essence Drain.
