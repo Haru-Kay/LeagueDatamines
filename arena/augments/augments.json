@@ -991,9 +991,9 @@
         1.0,
         2.0,
         3.0,
-        3.0,
-        3.0,
-        3.0
+        4.0,
+        4.0,
+        4.0
       ]
     },
     "icons": [
@@ -1702,8 +1702,8 @@
       "CritDamage": [
         1.399999976158142,
         1.399999976158142,
+        1.5,
         1.600000023841858,
-        1.7999999523162842,
         1.7999999523162842,
         1.7999999523162842,
         1.7999999523162842
@@ -3114,7 +3114,7 @@
         50.0,
         50.0
       ],
-      "MaxLevel": 3.0
+      "MaxLevel": 2.0
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/TheBrutalizer_small.tex",
@@ -4265,19 +4265,19 @@
     "tooltip": "You are now melee. Gain <physicalDamage>@BonusAD*100@% Attack Damage</physicalDamage>, <healing>@BonusHP*100@% Health</healing>, <attackSpeed>@BonusAS*100@% Attack Speed</attackSpeed>, <lifesteal>@BonusLifesteal*100@% Lifesteal</lifesteal>, and <speed>@BonusMS*100@% Move Speed</speed> (each further increased based on Attack Range lost).",
     "dataValues": {
       "BonusAD": [
-        0.15000000596046448,
         0.25,
+        0.25,
+        0.30000001192092896,
         0.3499999940395355,
-        0.44999998807907104,
         0.550000011920929,
         0.6499999761581421,
         0.75
       ],
       "BonusHP": [
-        0.15000000596046448,
         0.25,
+        0.25,
+        0.30000001192092896,
         0.3499999940395355,
-        0.44999998807907104,
         0.550000011920929,
         0.6499999761581421,
         0.75
@@ -4291,7 +4291,7 @@
         0.4000000059604645,
         0.44999998807907104
       ],
-      "BonusMS": 0.20000000298023224,
+      "BonusMS": 0.15000000596046448,
       "BonusLifesteal": 0.25,
       "MeleeAttackRange": 200.0,
       "MaxStatMod": 0.30000001192092896,
@@ -4882,15 +4882,15 @@
       ],
       "SelfReviveTimerModMax": 0.5,
       "SelfReviveTimerModMin": 0.4000000059604645,
-      "MaxLevel": 2.0,
+      "MaxLevel": 3.0,
       "BonusLives": [
         1.0,
         1.0,
+        2.0,
         3.0,
         4.0,
-        5.0,
-        6.0,
-        7.0
+        4.0,
+        4.0
       ],
       "CapstoneAllyBonusLives": 1.0
     },
@@ -5830,12 +5830,12 @@
     "rarity": "Prismatic",
     "desc": "When you Attack, fire @AdditionalBolts@ bolts that each deal <physicalDamage>physical damage</physicalDamage> and apply applies your {{ Item_Keyword_OnHit }}.",
     "maxLevelTooltip": "At max level, firing from a different directions increase the bolts fired by @MaxLevelAdditionalBolts@, for the rest of the round.",
-    "tooltip": "When you Attack, fire @AdditionalBolts@ bolts that each deal <physicalDamage>@DamagePerBolt@ physical damage</physicalDamage>. Each cardinal direction has a @Cooldown@ second Cooldown.<br><br>Each bolt can <crit>Critically Strike</crit> and applies {{ Item_Keyword_OnHit }} at @OnHitRatio*100@% effectiveness.",
+    "tooltip": "When you Attack enemy champions, fire @AdditionalBolts@ bolts that each deal <physicalDamage>@DamagePerBolt@ physical damage</physicalDamage>. Each cardinal direction has a @Cooldown@ second Cooldown.<br><br>Each bolt can <crit>Critically Strike</crit> and applies {{ Item_Keyword_OnHit }} at @OnHitRatio*100@% effectiveness.",
     "dataValues": {
       "Cooldown": [
         7.0,
         7.0,
-        6.0,
+        5.0,
         5.0,
         4.0,
         3.0,
@@ -5843,7 +5843,7 @@
       ],
       "AdditionalBolts": 5.0,
       "OnHitRatio": 0.20000000298023224,
-      "MaxLevel": 3.0,
+      "MaxLevel": 2.0,
       "BonusADRatio": 0.15000000596046448,
       "MaxLevelAdditionalBolts": 1.0
     },
@@ -6034,7 +6034,7 @@
         7.0
       ],
       "MaxLevel": 3.0,
-      "PercentStatAmp": 0.10000000149011612
+      "PercentStatAmp": 0.20000000298023224
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/Stats_small.tex",
@@ -6060,7 +6060,7 @@
         8.0
       ],
       "MaxLevel": 3.0,
-      "PercentStatAmp": 0.10000000149011612
+      "PercentStatAmp": 0.20000000298023224
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/StatsOnStats_small.tex",
@@ -6086,7 +6086,7 @@
         9.0
       ],
       "MaxLevel": 3.0,
-      "PercentStatAmp": 0.10000000149011612
+      "PercentStatAmp": 0.20000000298023224
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/StatsOnStatsOnStats_small.tex",
@@ -6098,14 +6098,15 @@
     "apiName": "FireSale",
     "name": "Fire Sale",
     "rarity": "Silver",
-    "desc": "Instantly sell all your non-quest items for @SellValueTooltip@% of their direct buy price. Great for all those discounted anvils.",
-    "tooltip": "Instantly sell all your non-quest items for @SellValueTooltip@% of their direct buy price. Great for all those discounted anvils.",
+    "desc": "Instantly sell all your non-quest items for @SellValueTooltip@% of their direct buy price. <br><br>Great for all those discounted anvils.",
+    "tooltip": "Instantly sell all your non-quest items for @SellValueTooltip@% of their direct buy price. Great for all those discounted anvils.<br><br>When removed or replaced gain <gold>+%i:goldCoins% @f1@ gold</gold> equal to @RemovalGoalGainPercentage*100@% of the gold gained from <keywordMajor>FireSale</keywordMajor>.",
     "dataValues": {
       "SellValueTooltip": 100.0,
       "LegendarySellValue": 2500.0,
       "PrismaticSellValue": 3750.0,
       "BootsStarterSellValue": 500.0,
-      "MaxLevel": 1.0
+      "MaxLevel": 1.0,
+      "RemovalGoalGainPercentage": 0.30000001192092896
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/FireSale_small.tex",
@@ -6310,26 +6311,18 @@
       "GoldBonus": 1000.0,
       "PrismaticGoldBasisDiscount": 1250.0,
       "PrismaticCostReduction": [
-        -1500.0,
-        -1500.0,
-        -2000.0,
-        -2000.0,
-        -2000.0,
-        -2000.0,
-        -2000.0
+        1500.0,
+        1500.0,
+        2000.0,
+        2000.0,
+        2000.0,
+        2000.0,
+        2000.0
       ],
-      "LegendaryCostReduction": [
-        500.0,
-        500.0,
-        750.0,
-        750.0,
-        750.0,
-        750.0,
-        750.0
-      ],
+      "LegendaryCostReduction": 750.0,
       "StatCostReduction": [
-        150.0,
-        150.0,
+        250.0,
+        250.0,
         300.0,
         300.0,
         300.0,
@@ -6337,7 +6330,7 @@
         300.0
       ],
       "LegendaryGoldBasisDiscount": 1000.0,
-      "MaxLevel": 2.0
+      "MaxLevel": 1.0
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/ThiefsGloves_small.tex",
@@ -7568,9 +7561,17 @@
     "name": "Bravest of the Brave",
     "rarity": "Silver",
     "desc": "Increase future augment offerings by @tierValueIncrease@ tier. If the augments were already Prismatic tier, gain a bonus @GoldAmount@ gold.",
-    "tooltip": "Increase future %i:Augment%Augment offerings by @tierValueIncrease@ tier. If the Augment's tier was already Prismatic, gain <gold>+%i:goldCoins%@GoldAmount@ gold</gold>.",
+    "tooltip": "Increase future %i:Augment%Augment offerings by @tierValueIncrease@ tier(s). If the Augment's tier was already Prismatic, gain <gold>+%i:goldCoins%@GoldAmount@ gold</gold>.",
     "dataValues": {
-      "GoldAmount": 750.0,
+      "GoldAmount": [
+        750.0,
+        750.0,
+        1500.0,
+        1500.0,
+        1500.0,
+        1500.0,
+        1500.0
+      ],
       "tierValueIncrease": [
         1.0,
         1.0,
@@ -7984,7 +7985,6 @@
     "apiName": "HiveMind",
     "name": "Hive Mind",
     "rarity": "Prismatic",
-    "disabled": true,
     "desc": "Start each round with @StartingBees@ Bee, gain additonal Bees by harvesting flowers. Damaging an enemy champion sends a Bee dealing <magicDamage>@BeeDamage@ magic damage</magicDamage> over @DebuffDuration@ seconds on arrival, before returning to you.<br>",
     "maxLevelTooltip": "At max level slow your target's <attackSpeed>attack speed by @ASReduction*100@%</attackSpeed>.",
     "tooltip": "Start each round with @StartingBees@ Bee, gain additonal Bees by harvesting flowers. Damaging an enemy champion sends a Bee dealing <magicDamage>@BeeDamage@ magic damage</magicDamage> over @DebuffDuration@ seconds on arrival, before returning to you.",
@@ -8076,7 +8076,7 @@
     "dataValues": {
       "SlotsToGrant": 1.0,
       "TooltipSlotToUnlock": 5.0,
-      "RoundsUntilFreeAugment": 5.0
+      "RoundsUntilFreeAugment": 4.0
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/Crafting_Slot_small.tex",
@@ -8122,9 +8122,9 @@
       "SpellDamagePerStack": [
         0.019999999552965164,
         0.019999999552965164,
+        0.029999999329447746,
         0.03999999910593033,
-        0.05999999865889549,
-        0.05999999865889549,
+        0.05000000074505806,
         0.07000000029802322,
         0.07999999821186066
       ],
@@ -8256,21 +8256,13 @@
         200.0,
         200.0,
         300.0,
-        300.0,
-        300.0,
-        300.0,
-        300.0
+        400.0,
+        400.0,
+        400.0,
+        400.0
       ],
-      "MaxLevel": 1.0,
-      "MoveSpeedAmp": [
-        0.0,
-        0.4000000059604645,
-        0.4000000059604645,
-        0.4000000059604645,
-        0.4000000059604645,
-        0.4000000059604645,
-        0.4000000059604645
-      ],
+      "MaxLevel": 3.0,
+      "MoveSpeedAmp": 0.4000000059604645,
       "MSDuration": 2.0
     },
     "icons": [
@@ -8363,7 +8355,7 @@
       "ExecuteThreshold": 0.10000000149011612,
       "HealthPercentageMod": 0.10000000149011612,
       "SizeMod": 0.20000000298023224,
-      "RevivesLost": 1.0
+      "RevivesLost": 2.0
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/Wolf_Small.Arena_2026_S2.tex",
@@ -8415,7 +8407,7 @@
     "dataValues": {
       "HealthCost": [],
       "GoldToGrant": 500.0,
-      "HealthRestorePercent": 5.0
+      "HealthRestorePercent": 10.0
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/Wealth_Small.Arena_2026_S2.tex",
@@ -8430,7 +8422,7 @@
     "desc": "<healing>Restore @HealthRestorePercent@% of of the health</healing> you've sacrificed to Tahm Kench.<br><br>Gain <keywordMajor>@AnvilsGranted@ Silver Stat Anvil</keywordMajor>.",
     "tooltip": "<healing>Restore @HealthRestorePercent@% of of the health</healing> you've sacrificed to Tahm Kench.<br><br>Gain <keywordMajor>@AnvilsGranted@ Silver Stat Anvil</keywordMajor>.",
     "dataValues": {
-      "HealthRestorePercent": 5.0,
+      "HealthRestorePercent": 10.0,
       "AnvilsGranted": 1.0,
       "AnvilType": 1.0
     },
@@ -8470,7 +8462,7 @@
     "dataValues": {
       "HealthCost": [],
       "AugmentTierGranted": 1.0,
-      "HealthRestorePercent": 5.0
+      "HealthRestorePercent": 10.0
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/Risk_Small.Arena_2026_S2.tex",
@@ -8598,7 +8590,7 @@
     "tooltip": "Sacrifice <scaleHealth>@HealthReductionPercent@% of your max health</scaleHealth> to Tahm Kench. <br><br>Your total sacrifice will increase to <scaleHealth>-@MaxHealthReduction@% max health</scaleHealth>.<br><br>Gain <gold>+%i:goldCoins% @GoldToGrant@ gold</gold>.",
     "dataValues": {
       "HealthReductionPercent": 15.0,
-      "GoldToGrant": 3000.0
+      "GoldToGrant": 2500.0
     },
     "calculations": {
       "MaxHealthReduction": {
@@ -8635,7 +8627,7 @@
     "tooltip": "Sacrifice <scaleHealth>@HealthReductionPercent@% of your max health</scaleHealth> to Tahm Kench. <br><br>Your total sacrifice will increase to <scaleHealth>-@MaxHealthReduction@% max health</scaleHealth>.<br><br>Gain <keywordMajor>@AnvilsGranted@ Prismatic Stat Anvils</keywordMajor>.",
     "dataValues": {
       "HealthReductionPercent": 15.0,
-      "AnvilsGranted": 2.0,
+      "AnvilsGranted": 1.0,
       "AnvilType": 10.0
     },
     "calculations": {
@@ -8844,12 +8836,28 @@
     "desc": "Your abilities gains @DamageAmp*100@% increase damage, and <healing>@HealShieldAmp*100@% increased Healing and Shielding</healing>.<br><br>Lose @AbilityHaste@ Ability Haste.<br><br>Casting an ability gants <speed>@MoveSpeedAmp*100@% Movement Speed for @MSDuration@ seconds</speed>.<br><br><flavorText>You have become a hearty meal, your doctor cries out for more vegetables, and you whisper \"No\".</flavorText>",
     "tooltip": "Your abilities gains @DamageAmp*100@% increase damage, and <healing>@HealShieldAmp*100@% increased Healing and Shielding</healing>.<br><br>Lose @AbilityHaste@ Ability Haste.<br><br>Casting an ability gants <speed>@MoveSpeedAmp*100@% Movement Speed for @MSDuration@ seconds</speed>.<br><br><flavorText>You have become a hearty meal, your doctor cries out for more vegetables, and you whisper \"No\".</flavorText>",
     "dataValues": {
-      "AbilityHaste": 100.0,
-      "MaxLevel": 1.0,
+      "AbilityHaste": 50.0,
+      "MaxLevel": 3.0,
       "MoveSpeedAmp": 0.4000000059604645,
       "MSDuration": 2.0,
-      "DamageAmp": 1.0,
-      "HealShieldAmp": 0.75
+      "DamageAmp": [
+        1.0,
+        1.0,
+        1.25,
+        1.5,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "HealShieldAmp": [
+        0.75,
+        0.75,
+        1.0,
+        1.25,
+        0.75,
+        0.75,
+        0.75
+      ]
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/Combination_Fried_Rice_Small.tex",
@@ -9061,13 +9069,13 @@
     "name": "Spellcraft",
     "rarity": "Prismatic",
     "desc": "<spellActive>Active:</spellActive> Wind up and release a burst of energy, dealing <magicDamage>magic damage</magicDamage> in a cone.<br><br>This spell grows more powerful as you select additional augments.<br>%i:SpellcraftRedShard%: +<magicDamage>Damage</magicDamage><br>%i:SpellcraftBlueShard%: +<status>Crowd Control</status><br>%i:SpellcraftGreenShard%: +<healing>Healing</healing>",
-    "tooltip": "<spellActive>Active:</spellActive> Wind up and release a burst of energy, dealing <magicDamage>@DamageTotal@ magic damage</magicDamage> in a cone.<br><br>This deals <magicDamage>@OuterRingDamageMult*100@% increased damage</magicDamage> to enemies hit with the outer edge, <status>Slowing them by @SlowAmountTotal@</status> for @SlowDuration@ seconds. Hitting at least one enemy champion with the outer edge restores <healing>@HealingTotal@ of your missing health</healing>.<br><br>@f1@ %i:SpellcraftRedShard%: Deal <magicDamage>@DamagePerRedTooltip@ additional damage</magicDamage> per %i:SpellcraftRedShard%.<br>@f2@ %i:SpellcraftBlueShard%: Increase the <status>Slow's</status> effectivness by @MoveSpeedModPerBlue*100@% per %i:SpellcraftBlueShard%.<br>@f3@ %i:SpellcraftGreenShard%: Gain <healing>@MissingHealthRatio*100@% increased healing</healing> per %i:SpellcraftGreenShard%.",
+    "tooltip": "<spellActive>Active:</spellActive> Wind up and release a burst of energy, dealing <magicDamage>@DamageTotal@ magic damage</magicDamage> in a cone.<br><br>This deals <magicDamage>@OuterRingDamageMult*100@% damage</magicDamage> to enemies hit with the outer edge, <status>Slowing them by @SlowAmountTotal@</status> for @SlowDuration@ seconds. Hitting at least one enemy champion with the outer edge restores <healing>@HealingTotal@ of your missing health</healing>.<br><br>@f1@ %i:SpellcraftRedShard%: Deal <magicDamage>@DamagePerRedTooltip@ additional damage</magicDamage> per %i:SpellcraftRedShard%.<br>@f2@ %i:SpellcraftBlueShard%: Increase the <status>Slow's</status> effectivness by @MoveSpeedModPerBlue*100@% per %i:SpellcraftBlueShard%.<br>@f3@ %i:SpellcraftGreenShard%: Gain <healing>@MissingHealthRatio*100@% increased healing</healing> per %i:SpellcraftGreenShard%.",
     "dataValues": {
       "BaseDamage": 50.0,
       "PerRedDamage": 75.0,
       "BADRatio": 0.10000000149011612,
       "APRatio": 0.15000000596046448,
-      "MoveSpeedModBase": 0.20000000298023224,
+      "MoveSpeedModBase": 0.10000000149011612,
       "MissingHealthRatio": 0.20000000298023224,
       "OuterRingDamageMult": 2.0,
       "SlowDuration": 2.0,
@@ -9077,9 +9085,9 @@
       "MaxLevel": 1.0,
       "TierUpThreshold": 3.0,
       "MissingHealBase": 0.05000000074505806,
-      "BADRatioPerRed": 0.30000001192092896,
-      "APRatioPerRed": 0.4000000059604645,
-      "MoveSpeedModPerBlue": 0.30000001192092896
+      "BADRatioPerRed": 0.20000000298023224,
+      "APRatioPerRed": 0.30000001192092896,
+      "MoveSpeedModPerBlue": 0.4000000059604645
     },
     "calculations": {
       "DamagePerRedTooltip": {
@@ -9239,7 +9247,7 @@
       "MinCDR": 1.0,
       "MarkDuration": 3.0,
       "TierUpDamageAmp": 0.25,
-      "MSBoostPerBlue": 20.0,
+      "MSBoostPerBlue": 30.0,
       "ArmorAndMRPerGreen": 30.0,
       "ArmorAndMRBase": 10.0,
       "MSBoostBase": 5.0,
@@ -9396,6 +9404,22 @@
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/UnstableTransmutation_small.tex",
       "ASSETS/UX/Cherry/Augments/Icons/UnstableTransmutation_large.tex"
+    ]
+  },
+  {
+    "id": 391,
+    "apiName": "RagsToRiches",
+    "name": "Rags to Riches",
+    "rarity": "Silver",
+    "desc": "When <keywordMajor>Rags to Riches</keywordMajor> is removed or replaced gain <gold>+%i:goldCoins% @GoldToGrant@ gold</gold>. ",
+    "tooltip": "When <keywordMajor>Rags to Riches</keywordMajor> is removed or replaced gain <gold>+%i:goldCoins% @GoldToGrant@ gold</gold>. ",
+    "dataValues": {
+      "MaxLevel": 1.0,
+      "GoldToGrant": 2500.0
+    },
+    "icons": [
+      "ASSETS/UX/Cherry/Augments/Icons/Rags_to_Riches_small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Rags_to_Riches.tex"
     ]
   },
   {
@@ -9990,7 +10014,6 @@
     "apiName": "YouSpinMeRightRound",
     "name": "Spin Me Right Round",
     "rarity": "Silver",
-    "disabled": true,
     "desc": "Replace a Summoner Spell with <spellName>Heroic Swing</spellName>.<br><br><rules><spellName>Heroic Swing</spellName> fires a grappling hook, sticking into terrain, after which you can <recast>Recast</recast> to swing around it. While swinging, automatically Attack the nearest enemy. Colliding with an enemy champion or <recast>Recasting</recast> ends the swing.</rules>",
     "tooltip": "Replace a Summoner Spell with <spellName>Heroic Swing</spellName>.<br><br><rules><spellName>Heroic Swing</spellName> fires a grappling hook, sticking into terrain, after which you can <recast>Recast</recast> to swing around it. While swinging, automatically Attack the nearest enemy. Colliding with an enemy champion or <recast>Recasting</recast> ends the swing.</rules>",
     "dataValues": {
@@ -10810,10 +10833,22 @@
     "name": "Juiced",
     "rarity": "Silver",
     "desc": "<OnHit>%i:OnHit% On-Hit</OnHit> consume <scaleMana>@Calc_Mana_Cost@ Mana</scaleMana> to deal <magicDamage>@Calc_Damage@ magic damage</magicDamage>, this damage can <crit>Critically Strike</crit>.",
+    "maxLevelTooltip": "At max level, everytime you spend <scaleMana>@MaxLevelManaSpendThreshold@ Mana</scaleMana> increase the damge this deals by @MaxLevelPerTriggerDamageAmp*100@% for the rest of the round.",
     "tooltip": "<OnHit> %i:OnHit% On-Hit</OnHit> consume <scaleMana>@Calc_Mana_Cost@ Mana</scaleMana> to deal <magicDamage>@Calc_Damage@ magic damage</magicDamage>, this damage can <crit>Critically Strike</crit>.<br><br><rules>Damage Dealt: @f1.0@<br>Mana Consumed: @f2.0@</rules>",
     "dataValues": {
       "ManaPercentReduction": 0.02500000037252903,
-      "ManaPercentDamagePercent": 0.04500000178813934
+      "ManaPercentDamagePercent": [
+        0.04500000178813934,
+        0.04500000178813934,
+        0.09000000357627869,
+        0.13500000536441803,
+        0.13500000536441803,
+        0.13500000536441803,
+        0.13500000536441803
+      ],
+      "MaxLevel": 2.0,
+      "MaxLevelManaSpendThreshold": 400.0,
+      "MaxLevelPerTriggerDamageAmp": 0.10000000149011612
     },
     "calculations": {
       "0x89615869": {
@@ -10828,8 +10863,8 @@
       "Calc_Damage": {
         "mFormulaParts": [
           {
-            "mCoefficient": 0.04500000178813934,
-            "~class": "AbilityResourceByCoefficientCalculationPart"
+            "DataValue": "ManaPercentDamagePercent",
+            "~class": "0x2b25a73a"
           }
         ],
         "~class": "GameCalculation"

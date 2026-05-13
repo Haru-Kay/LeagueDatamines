@@ -1,69 +1,125 @@
 Just a reminder that PBE changes are not final and subject to change. Some changes, such as bugfixes, may not be able to be viewed. 
 
-## Champions
-
-**Bel'Veth**
-
-* Casting Q should now break stealth
-
 ## Items
 
-**Hubris**
+**Black Cleaver**
 
-* Had a value for `BonusLethality` changed from 15 -> 12. Likely intended to have been for the Flat AD on takedown, as they were both 15. The item still grants 18 Lethality, as well as 15 Flat AD on takedown.
+* Can now only apply a stack to each champion every 0.2 seconds.
 
-## ARAM
+**Blodletter's Curse**
 
-### Champions
+* Individual Spell Cooldown: 0.3 seconds -> 0.2 seconds.
 
-**Ornn**
+**Dream Maker**
 
-* P Cooldown: 120 seconds -> 90-10 seconds
+* Bonus Damage: 50-170 -> 40-160
+* Damge Reduction: 75-255 -> 60-204
+
+**Echoes of Helia**
+
+* Pre-Mitigation Damage Stored: 35% -> 30%
+
+**Imperial Mandate (Rework)**
+
+* Ability Power: 65
+* Ability Haste: 15
+* Base Mana Regen: 150%
+* Control: Gain 15 Ability Haste for your abilities with Immobilizing effects.
+* Command: On Immobilizing an enemy champion, mark them as 6% Vulnerable for 4 seconds.
+  * Vulnerable: Take percent increased damage from all sources.
+* Immobilizing marked enemies extends the effect rather than stacking.
+  * This is currently wrong, the effect is not extended but instead stacks. Whoops.
+* Recipe:
+  * Blasting Wand + Bandleglass Mirror + 650 Gold
+  * Total cost: 2400 Gold
+
+**Knight's Vow**
+
+* Damage Redirection: 12% -> 14%
+* Ally Damage to Healing: 10% -> 12%
+
+**Locket of the Iron Solari**
+
+* Armor: 25 -> 30
+* MR: 25 -> 30
+
+**Zeke's Convergence**
+
+* Storm is summoned on Ultiamte use -> Storm is readied for up to 5 seconds, triggering once you are near an enemy champion.
+  * After 5 seconds, the Storm is triggered regardless.
+
+## Runes
+
+**Aftershock**
+
+* Armor/MR Flat Gain: 35 -> 45
+
+**Guardian**
+
+* Cooldown: 90-40 seconds -> 75-40 seconds
+
+**Summon Aery**
+
+* Base Shielding: 30-100 -> 20-100
 
 ## Summoner's Rift
 
 ### Systems
 
-**Top Lane Quest**
+**Mid Quest**
 
-* XP per Takedown: 85 -> 80
-
-## ARAM: Mayhem
-
-### Augments
-
-**Spin to Win**
-
-* Re-enabled.
-
-**Void Rift**
-
-* Flat Lethality/MPen Ratio: 550% -> 500%
+* Bonus AD + AP: 6% -> 8%
 
 ## Arena
 
+### Guests of Honor
+
+**Inner Hunt (Yone)**
+
+* Vote for your team to ally with Demons or Demon Hunters.
+* Demons:
+  * Gain an Augment Level when a Demon Hunter team is eliminated
+* Demon Hunters:
+  * Gain 500 additional Gold when you defeat a Demon team in combat.
+
+**Joyful Delight**
+
+* Reduce teh price of Legendary Item Anvils by 500 Gold. While Hotstreaking, gain a bonus reroll.
+
+**Tools of the Hunt (Vayne)**
+
+* Select from a pool of tools designed to counter your opponents.
+  * Bloodrazor: Dealing damage deals an addition 1.5% max Health physical damage. This effect has a 1 second cooldown per spell(?).
+  * Chemtech Putrifier: Dealing damage to champions applies 40% Grievous Wounds for 3 seconds.
+  * Dematerializer: Your damage executes champions that are below 10% Health.
+  * Enchanted Flask: Gain a Spell Shield every 10 seconds.
+  * Frozen Mallet: Dealing Damage applies a 25% Slow for 2 seconds.
+  * Remnant of the Watchers: Reduce the Attack Speed of champions within 1000 units by 25%.
+  
 ### Augments
 
-**And My Axe!**
+**Sonic Boom**
 
-* Damage: 60/100 (+10/12 per level) (+80% bonus AD) (+45% AP) -> 60/180 (+5 per level) (+80% bonus AD) (+45% AP)
-* Slow: 25/35% -> 25/45%
+* Effect Radius: 450/700 units -> 500 units
+* Slow amount: 30% -> 30/60% MS
+* Slow Duration: 2/3 seconds -> 1.5 seconds
+* Cooldown per Target: 2/1 seconds -> 2 seconds
 
-**Hive Mind**
+### System
 
-* Max Bee Stacks: 8 -> 8/12/16
-* Attack Speed Reduction: 0/3% > 0/30%
-  * I assume the 3% was intended to be per Bee, likely just applies in general now.
-  * It is also no longer indicated on the level-up tooltip, as it is intended to be the max level bonus.
-* Spells now have a 1 second cooldown on applying Bees.
+**Juices**
+
+* Juices are now automatically consumed when acquired (sorry Shardblade cheesers).
+
+**Shardblade**
+
+* Hone your Shardblade, instantly gain a Stat Anvil now and another every 3 rounds.
+* Seems to be a new replacement for Shardholder Value Shard? At the moment both this upgrade *and* Shardholder are disabled.
+  * Additionally will effect Gold/Silver Two Random Shard options, may increase the stat anvils granted. Also still disabled, however.
 
 ### Items
 
-**Duskblade of Draktharr**
+**Knight's Vow**
 
-* Ranged Damage now also scales with Lethality, but at a reduced 0.075% Lethality
-  * Note: Melee still has weird values in its calculation, tooltip may not be accurate.
-
-**Radiant Virtue**
-
-* Now states it grants Ultimate Haste again.
+* Ally Damage to Healing: 10% -> 12%
+* Currently missing other changes.

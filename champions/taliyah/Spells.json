@@ -540,6 +540,32 @@
             0.20000000298023224
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MineLifetime",
+          "values": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MineRadius",
+          "values": [
+            85.0,
+            85.0,
+            85.0,
+            85.0,
+            85.0,
+            85.0,
+            85.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "bIsToggleSpell": true,
@@ -1222,6 +1248,45 @@
             0.5
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "GroundExhaustDuration",
+          "values": [
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BigRockManaCost",
+          "values": [
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "GroundExhaustRadius",
+          "values": [
+            400.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -1322,7 +1387,7 @@
           "mLocKeys": {
             "keyName": "Threaded Volley",
             "keySummary": "Taliyah throws a volley of rocks in a target direction, moving freely as she casts. This creates Worked Ground below her. If Taliyah casts Threaded Volley on Worked Ground, she consumes the ground to throw a stronger boulder that slows enemies.",
-            "keyTooltip": "Taliyah hurls 5 rocks, each dealing <magicDamage>@RockDamage@ magic damage</magicDamage> in an area around the first enemy hit while creating Worked Ground at that area. Subsequent hits against the same enemy deal @ExtraMissileReducedDamagePercent@% less damage.<br><br>Casts on worked ground cost @Effect7Amount@ Mana and have @WorkedGroundCDR*100@% less Cooldown, consume the Worked Ground, and hurl a boulder that <status>Slows</status> enemies it hits by @SlowPercent*100@% for @SlowDuration@ seconds, dealing <magicDamage>@BigRockDamage@ magic damage</magicDamage> to the primary target. Monsters hit by the boulder are <status>Stunned</status> for @MonsterStunDuration@ seconds.",
+            "keyTooltip": "Taliyah hurls 5 rocks, each dealing <magicDamage>@RockDamage@ magic damage</magicDamage> in an area around the first enemy hit while creating Worked Ground at that area. Subsequent hits against the same enemy deal @ExtraMissileReducedDamagePercent@% less damage.<br><br>Casts on worked ground cost @BigRockManaCost@ Mana and have @WorkedGroundCDR*100@% less Cooldown, consume the Worked Ground, and hurl a boulder that <status>Slows</status> enemies it hits by @SlowPercent*100@% for @SlowDuration@ seconds, dealing <magicDamage>@BigRockDamage@ magic damage</magicDamage> to the primary target. Monsters hit by the boulder are <status>Stunned</status> for @MonsterStunDuration@ seconds.",
             "keyTooltipExtendedBelowLine": "<rules>Taliyah can move and use other Abilities while hurling rocks.<br>Casting this Ability on Worked Ground cannot reduce its Cooldown to less than @MinimumWorkedGroundCD@ seconds.<br>Total damage to a single target: <magicDamage>@MaxDamageTooltip@</magicDamage><br>Each rock deals <magicDamage>@TotalBonusFlatMonsterDamage@</magicDamage> additional damage to monsters.</rules>"
           },
           "mObjectName": "TaliyahQ",
@@ -1939,7 +2004,7 @@
           "mLocKeys": {
             "keyName": "Weaver's Wall",
             "keySummary": "Taliyah creates a very long wall and then surfs it.",
-            "keyTooltip": "Taliyah creates a massive earthen wall for @Effect1Amount@ seconds. If she immediately <recast>Recasts</recast>, she will ride along the wall as it unravels. Moving or being immobilized will end the ride.<br><br>This ability cannot be cast if Taliyah has taken damage from Champions or structures within the last @DamageLockoutTime@ seconds.",
+            "keyTooltip": "Taliyah creates a massive earthen wall for @WallDuration@ seconds. If she immediately <recast>Recasts</recast>, she will ride along the wall as it unravels. Moving or being immobilized will end the ride.<br><br>This ability cannot be cast if Taliyah has taken damage from Champions or structures within the last @DamageLockoutTime@ seconds.",
             "keyTooltipExtendedBelowLine": "<rules>Once the wall is fully formed, Taliyah can <recast>Recast</recast> to destroy it early.</rules>"
           },
           "mObjectName": "TaliyahR",
@@ -2258,74 +2323,6 @@
       "~class": "BuffData"
     },
     "mScriptName": "TaliyahRCastRoot",
-    "~class": "SpellObject"
-  },
-  "Characters/Taliyah/Spells/TaliyahRAbility/TaliyahRCurve": {
-    "ObjectName": "TaliyahRCurve",
-    "mBuff": {
-      "mDescription": "<titleLeft>Weaver's Wall (@Level@)</titleLeft><titleRight>[@Hotkey@]</titleRight><subtitleLeft>@Cost@ Mana</subtitleLeft><subtitleRight>@Cooldown@ sec Cooldown</subtitleRight><mainText>Cast once to create a wall. Recast immediately to ride ahead of the wall. Moving or receiving damage will cause Taliyah to stop.<br><br>Weaver's Wall lasts for @Effect1Amount@ seconds. Deactivate this spell to break the wall early.</mainText>",
-      "~class": "BuffData"
-    },
-    "mScriptName": "TaliyahRCurve",
-    "mSpell": {
-      "castFrame": 7.5,
-      "castRadius": [
-        2600.0,
-        2600.0,
-        2600.0,
-        2600.0,
-        2600.0,
-        2600.0,
-        2600.0
-      ],
-      "castRange": [
-        900.0,
-        900.0,
-        900.0,
-        900.0,
-        900.0,
-        900.0,
-        900.0
-      ],
-      "cooldownTime": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "flags": 4,
-      "luaOnMissileUpdateDistanceInterval": 100.0,
-      "mAffectsTypeFlags": 6154,
-      "mAnimationName": "Spell3",
-      "mCantCancelWhileWindingUp": true,
-      "mCastTime": 0.25,
-      "mClientData": {
-        "mTargeterDefinitions": [
-          {
-            "~class": "TargeterDefinitionRange"
-          },
-          {
-            "centerLocator": {
-              "basePosition": 3,
-              "~class": "DrawablePositionLocator"
-            },
-            "~class": "TargeterDefinitionAoe"
-          }
-        ],
-        "~class": "SpellDataResourceClient"
-      },
-      "mCoefficient": 1.0,
-      "mImgIconName": [
-        "ASSETS/Characters/Taliyah/HUD/Icons2D/Taliyah_R.dds"
-      ],
-      "mTargetingTypeData": {
-        "~class": "AreaClamped"
-      },
-      "~class": "SpellDataResource"
-    },
     "~class": "SpellObject"
   },
   "Characters/Taliyah/Spells/TaliyahRAbility/TaliyahRKnockAside": {
@@ -2900,91 +2897,6 @@
     "mScriptName": "TaliyahRSuperPassive",
     "~class": "SpellObject"
   },
-  "Characters/Taliyah/Spells/TaliyahRAbility/TaliyahRTerrainProto": {
-    "ObjectName": "TaliyahRTerrainProto",
-    "mScriptName": "TaliyahRTerrainProto",
-    "mSpell": {
-      "bIsToggleSpell": true,
-      "castRange": [
-        625.0,
-        625.0,
-        625.0,
-        625.0,
-        625.0,
-        625.0,
-        625.0
-      ],
-      "cooldownTime": [
-        110.0,
-        100.0,
-        90.0,
-        80.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "flags": 4,
-      "mAffectsTypeFlags": 6154,
-      "mCantCancelWhileWindingUp": true,
-      "mEffectAmount": [
-        {
-          "value": [
-            0.0,
-            10.0,
-            20.0,
-            30.0,
-            0.0,
-            0.0,
-            10.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
-      "mImgIconName": [
-        "ASSETS/Characters/Taliyah/HUD/Icons2D/Taliyah_R.dds"
-      ],
-      "mTargetingTypeData": {
-        "~class": "LocationClamped"
-      },
-      "mana": [
-        100.0,
-        100.0,
-        100.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "~class": "SpellDataResource"
-    },
-    "~class": "SpellObject"
-  },
   "Characters/Taliyah/Spells/TaliyahWVCAbility/TaliyahW": {
     "ObjectName": "TaliyahW",
     "mScriptName": "TaliyahW",
@@ -3287,6 +3199,34 @@
           "~class": "SpellEffectAmount"
         }
       },
+      "DataValues": [
+        {
+          "name": "KnockupDelay",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ThrowDistance",
+          "values": [
+            400.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "bIsToggleSpell": true,
       "castFrame": 7.5,
       "castRadius": [

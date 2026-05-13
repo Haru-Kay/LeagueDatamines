@@ -578,7 +578,7 @@
             "keyName": "Harrier",
             "keySummary": "Valor, Quinn's Demacian eagle, periodically marks enemies as <font color='#FFF673'>Vulnerable</font>. Quinn's first basic attack against <font color='#FFF673'>Vulnerable</font> targets will deal bonus physical damage.",
             "keyTooltip": "Every @f1@ seconds, Valor marks a nearby enemy as <keywordMajor>Vulnerable</keywordMajor>, revealing it for @RevealDuration@ seconds and causing Quinn's next Attack %i:OnHit% <OnHit>On-Hit</OnHit> against them to deal <physicalDamage>@BonusDamage@ bonus physical damage</physicalDamage>.",
-            "keyTooltipExtended": "{{Spell_QuinnPassive_Tooltip}}<br><br><rules>Cooldown is reduced by Critical Strike Chance.</rules>"
+            "keyTooltipExtended": "{{Spell_QuinnPassive_Tooltip}}<br><br><rules>Cooldown is reduced by Critical Strike Chance.<br>Deals @BonusMonsterDmg@ bonus damage to Monsters.</rules>"
           },
           "mObjectName": "QuinnPassive",
           "~class": "TooltipInstanceSpell"
@@ -607,6 +607,15 @@
         "ASSETS/Characters/Quinn/HUD/Icons2D/Quinn_Passive.dds"
       ],
       "mSpellCalculations": {
+        "0x929bc6f6": {
+          "mFormulaParts": [
+            {
+              "mNumber": 50.0,
+              "~class": "NumberCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
         "BonusDamage": {
           "mFormulaParts": [
             {
@@ -713,6 +722,19 @@
             1.75,
             1.75,
             1.75
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BonusMonsterDmgMult",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
           ],
           "~class": "SpellDataValue"
         }
@@ -847,7 +869,8 @@
           "mLocKeys": {
             "keyName": "Blinding Assault",
             "keySummary": "Quinn calls Valor to mark an enemy and hinder its vision before damaging all enemies in the immediate area.",
-            "keyTooltip": "Quinn orders Valor to dive, making the first enemy hit <keywordMajor>Vulnerable</keywordMajor>, reducing their vision radius for @VisionReductionDuration@ seconds and dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> to all surrounding enemies.<br><br>If the first enemy struck is not a champion, it is <status>Disarmed</status> for @VisionReductionDuration@ seconds."
+            "keyTooltip": "Quinn orders Valor to dive, making the first enemy hit <keywordMajor>Vulnerable</keywordMajor>, reducing their vision radius for @VisionReductionDuration@ seconds and dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> to all surrounding enemies.<br><br>If the first enemy struck is not a champion, it is <status>Disarmed</status> for @VisionReductionDuration@ seconds.",
+            "keyTooltipExtendedBelowLine": "<rules>Deals @BonusMonsterDmgMult*100@% increased damage to Monsters (@TotalDamageMonster@).</rules>"
           },
           "mObjectName": "QuinnQ",
           "~class": "TooltipInstanceSpell"
@@ -955,6 +978,23 @@
         "~class": "MissileSpecification"
       },
       "mSpellCalculations": {
+        "0xa06afe5e": {
+          "mModifiedGameCalculation": "TotalDamage",
+          "mMultiplier": {
+            "mSubparts": [
+              {
+                "mNumber": 1.0,
+                "~class": "NumberCalculationPart"
+              },
+              {
+                "mDataValue": "BonusMonsterDmgMult",
+                "~class": "NamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "SumOfSubPartsCalculationPart"
+          },
+          "~class": "GameCalculationModified"
+        },
         "TotalDamage": {
           "mFormulaParts": [
             {
@@ -1243,8 +1283,8 @@
       },
       "mUseMinimapTargeting": true,
       "mana": [
-        100.0,
         50.0,
+        25.0,
         0.0,
         0.0,
         0.0,

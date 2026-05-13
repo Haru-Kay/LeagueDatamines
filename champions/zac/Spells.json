@@ -356,6 +356,138 @@
       },
       "0xf26881a0": 0.0,
       "0xf4ca428f": 2,
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            60.0,
+            60.0,
+            105.0,
+            150.0,
+            195.0,
+            240.0,
+            240.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "HPCost",
+          "values": [
+            0.03999999910593033,
+            0.03999999910593033,
+            0.03999999910593033,
+            0.03999999910593033,
+            0.03999999910593033,
+            0.03999999910593033,
+            0.03999999910593033
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxRange",
+          "values": [
+            1050.0,
+            1200.0,
+            1350.0,
+            1500.0,
+            1650.0,
+            1800.0,
+            1950.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ChannelTime",
+          "values": [
+            0.800000011920929,
+            0.8999999761581421,
+            1.0,
+            1.100000023841858,
+            1.2000000476837158,
+            1.2999999523162842,
+            1.399999976158142
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MinimumStun",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MinimumSpeed",
+          "values": [
+            500.0,
+            500.0,
+            500.0,
+            500.0,
+            500.0,
+            500.0,
+            500.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaximumSpeed",
+          "values": [
+            1350.0,
+            1350.0,
+            1350.0,
+            1350.0,
+            1350.0,
+            1350.0,
+            1350.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DistanceToSpeedRatio",
+          "values": [
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "KnockupRadius",
+          "values": [
+            265.0,
+            265.0,
+            265.0,
+            265.0,
+            265.0,
+            265.0,
+            265.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "VFXWarningTime",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "alwaysSnapFacing": true,
       "castConeDistance": 100.0,
       "castFrame": 7.5,
@@ -505,14 +637,12 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "BaseDamage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Range",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 3,
+                  "type": "MaxRange",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -525,10 +655,10 @@
             }
           },
           "mLocKeys": {
-            "keyCost": "Costs @Effect2Amount*100@% of current Health (@HealthCostTooltip@)",
+            "keyCost": "Costs @HPCost*100@% of current Health (@HealthCostTooltip@)",
             "keyName": "Elastic Slingshot",
             "keySummary": "Zac attaches his arms to the ground and stretches back, launching himself forward.",
-            "keyTooltip": "<charge>Begin Charging:</charge> Zac pulls himself taut, charging up a dash over @Effect4Amount@ seconds.<br><br><release>Release:</release> Zac launches himself and <status>Knocks Up</status> enemies where he lands for up to @MaxStun@ second (based on charge time), dealing them <magicDamage>@Damage@ magic damage</magicDamage>. Zac spawns an extra chunk of <keywordMajor>Goo</keywordMajor> for each enemy champion hit.",
+            "keyTooltip": "<charge>Begin Charging:</charge> Zac pulls himself taut, charging up a dash over @ChannelTime@ seconds.<br><br><release>Release:</release> Zac launches himself and <status>Knocks Up</status> enemies where he lands for up to @MaxStun@ second (based on charge time), dealing them <magicDamage>@Damage@ magic damage</magicDamage>. Zac spawns an extra chunk of <keywordMajor>Goo</keywordMajor> for each enemy champion hit.",
             "keyTooltipExtendedBelowLine": "<rules>Can be cancelled by moving.<br>If cancelled, refunds half of the Ability's Cooldown and cost.</rules>"
           },
           "mObjectName": "ZacE",
@@ -687,8 +817,8 @@
         "Damage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.800000011920929,
@@ -702,8 +832,8 @@
           "mFormulaParts": [
             {
               "mPart1": {
-                "mEffectIndex": 2,
-                "~class": "EffectValueCalculationPart"
+                "mDataValue": "HPCost",
+                "~class": "NamedDataValueCalculationPart"
               },
               "mPart2": {
                 "mPart1": {
@@ -729,8 +859,8 @@
           "mFormulaParts": [
             {
               "mPart1": {
-                "mEffectIndex": 5,
-                "~class": "EffectValueCalculationPart"
+                "mDataValue": "MinimumStun",
+                "~class": "NamedDataValueCalculationPart"
               },
               "mPart2": {
                 "mNumber": 2.0,
@@ -1200,6 +1330,123 @@
             0.029999999329447746
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "HPCost",
+          "values": [
+            0.07999999821186066,
+            0.07999999821186066,
+            0.07999999821186066,
+            0.07999999821186066,
+            0.07999999821186066,
+            0.07999999821186066,
+            0.07999999821186066
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MissileRange",
+          "values": [
+            800.0,
+            800.0,
+            800.0,
+            800.0,
+            800.0,
+            800.0,
+            800.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowAmount",
+          "values": [
+            -0.4000000059604645,
+            -0.4000000059604645,
+            -0.4000000059604645,
+            -0.4000000059604645,
+            -0.4000000059604645,
+            -0.4000000059604645,
+            -0.4000000059604645
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowDuration",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "TetherDuration",
+          "values": [
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "TetherFalloffDistance",
+          "values": [
+            900.0,
+            900.0,
+            900.0,
+            900.0,
+            900.0,
+            900.0,
+            900.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxSlamDistance",
+          "values": [
+            700.0,
+            700.0,
+            700.0,
+            700.0,
+            700.0,
+            700.0,
+            700.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "YankDistance",
+          "values": [
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "CollisionAoE",
+          "values": [
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "alwaysSnapFacing": true,
@@ -1309,11 +1556,11 @@
             }
           },
           "mLocKeys": {
-            "keyCost": "Costs @Effect2Amount*100@% of current Health (@HealthCostTooltip@)",
+            "keyCost": "Costs @HPCost*100@% of current Health (@HealthCostTooltip@)",
             "keyName": "Stretching Strikes",
             "keySummary": "Zac stretches an arm, grabbing an enemy. Attacking a different enemy will cause him to throw both targets towards each other.",
             "keyTooltip": "Zac stretches his arm out, attaching it to the first enemy hit to deal <magicDamage>@TotalDamage@ magic damage</magicDamage> and briefly <status>Slow</status> them. Zac's next Attack gains increased range and applies the same damage and <status>Slow</status>. <br><br>If Zac hits a <i>different</i> enemy with this Attack, he <status>Knocks Up</status> both towards each other. If they collide, they and surrounding enemies take <magicDamage>@TotalDamage@ magic damage</magicDamage> and are briefly <status>Slowed</status>.",
-            "keyTooltipExtendedBelowLine": "<rules><status>Slows</status> by @Effect4Amount*-100@%. <br>Maximum magic damage: <magicDamage>@MaxDamageTooltip@.</magicDamage></rules>"
+            "keyTooltipExtendedBelowLine": "<rules><status>Slows</status> by @SlowAmount*-100@%. <br>Maximum magic damage: <magicDamage>@MaxDamageTooltip@.</magicDamage></rules>"
           },
           "mObjectName": "ZacQ",
           "~class": "TooltipInstanceSpell"
@@ -1461,8 +1708,8 @@
           "mFormulaParts": [
             {
               "mPart1": {
-                "mEffectIndex": 2,
-                "~class": "EffectValueCalculationPart"
+                "mDataValue": "HPCost",
+                "~class": "NamedDataValueCalculationPart"
               },
               "mPart2": {
                 "mPart1": {
@@ -1860,119 +2107,6 @@
       },
       "mCoefficient": 0.8999999761581421,
       "mDoNotNeedToFaceTarget": true,
-      "mEffectAmount": [
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            1.100000023841858,
-            1.100000023841858,
-            1.100000023841858,
-            1.100000023841858,
-            1.100000023841858,
-            1.100000023841858,
-            1.100000023841858
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            700.0,
-            700.0,
-            850.0,
-            1000.0,
-            1000.0,
-            1000.0,
-            1000.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            -0.30000001192092896,
-            -0.30000001192092896,
-            -0.4000000059604645,
-            -0.5,
-            -0.5,
-            -0.5,
-            -0.5
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            275.0,
-            275.0,
-            275.0,
-            275.0,
-            275.0,
-            275.0,
-            275.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            300.0,
-            300.0,
-            300.0,
-            300.0,
-            300.0,
-            300.0,
-            300.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612
-          ],
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         1,
         1,
@@ -2259,6 +2393,58 @@
             9.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "HPCost",
+          "values": [
+            0.03999999910593033,
+            0.03999999910593033,
+            0.03999999910593033,
+            0.03999999910593033,
+            0.03999999910593033,
+            0.03999999910593033,
+            0.03999999910593033
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "PercentHealthDamage",
+          "values": [
+            0.03999999910593033,
+            0.03999999910593033,
+            0.05000000074505806,
+            0.05999999865889549,
+            0.07000000029802322,
+            0.07999999821186066,
+            0.09000000357627869
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "RefundOnBlobPickup",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxMinionDamage",
+          "values": [
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "castConeAngle": 0.0,
@@ -2318,7 +2504,7 @@
             }
           },
           "mLocKeys": {
-            "keyCost": "Costs @Effect2Amount*100@% of current Health (@TooltipHealthCost@)",
+            "keyCost": "Costs @HPCost*100@% of current Health (@TooltipHealthCost@)",
             "keyName": "Unstable Matter",
             "keySummary": "Zac explodes outward towards nearby enemies, dealing a percentage of their maximum health as magic damage.",
             "keyTooltip": "Zac's body erupts, dealing <magicDamage>@BaseDamage@ + @DisplayPercentDamage@ max Health magic damage</magicDamage> to nearby enemies.<br><br>Absorbing <keywordMajor>Goo</keywordMajor> reduces this Ability's Cooldown by 1 second.",
@@ -2454,8 +2640,8 @@
           "mFormulaParts": [
             {
               "mPart1": {
-                "mEffectIndex": 2,
-                "~class": "EffectValueCalculationPart"
+                "mDataValue": "HPCost",
+                "~class": "NamedDataValueCalculationPart"
               },
               "mPart2": {
                 "mPart1": {

@@ -868,6 +868,71 @@
             0.33500000834465027
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "TrapLife",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DrowsySlow",
+          "values": [
+            0.10000000149011612,
+            0.10000000149011612,
+            0.15000000596046448,
+            0.20000000298023224,
+            0.25,
+            0.30000001192092896,
+            0.3499999940395355
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DrowsyDuration",
+          "values": [
+            1.399999976158142,
+            1.399999976158142,
+            1.399999976158142,
+            1.399999976158142,
+            1.399999976158142,
+            1.399999976158142,
+            1.399999976158142
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SleepDuration",
+          "values": [
+            2.25,
+            2.25,
+            2.25,
+            2.25,
+            2.25,
+            2.25,
+            2.25
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BrittleLinger",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -975,7 +1040,7 @@
             "keyName": "Sleepy Trouble Bubble",
             "keySummary": "Causes the target to become drowsy, then fall asleep. While asleep, the target's Magic Resist is reduced. The first source of damage that breaks the sleep is doubled, up to a cap.",
             "keyTooltip": "Zoe dropkicks a bubble that deals <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage>, lingering as a trap if it hits nothing. The bubble's range is extended when flying over terrain.<br><br>If either the bubble or trap hits an enemy champion she refreshes @CooldownRefresh*100@% of her cooldown.<br><br>After a delay, the victim falls <status>Asleep</status> and have their <scaleMR>Magic Resist</scaleMR> reduced by @PercentPen*100@% for 2 seconds. Attacks and Ability hits wake them up but deal double damage, up to <trueDamage>@BreakDamageTooltip@ true damage</trueDamage>.<br><br>",
-            "keyTooltipExtendedBelowLine": "<rules>Before the target falls <status>Asleep</status>, they are <status>Drowsy</status>, becoming increasingly <status>Slowed</status> (up to @Effect5Amount*100@%).</rules>"
+            "keyTooltipExtendedBelowLine": "<rules>Before the target falls <status>Asleep</status>, they are <status>Drowsy</status>, becoming increasingly <status>Slowed</status> (up to @DrowsySlow*100@%).</rules>"
           },
           "mObjectName": "ZoeE",
           "~class": "TooltipInstanceSpell"
@@ -3525,6 +3590,32 @@
             0.20000000298023224
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "WPickupDurationMinion",
+          "values": [
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "WPickupDurationChampion",
+          "values": [
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -3794,6 +3885,10 @@
             1.0,
             1.0
           ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "UnnamedEffectAmount1",
           "~class": "SpellDataValue"
         }
       ],
@@ -5651,6 +5746,45 @@
             3.25
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "DurationOfSummonerCanCast",
+          "values": [
+            60.0,
+            60.0,
+            60.0,
+            60.0,
+            60.0,
+            60.0,
+            60.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MovementSpeed",
+          "values": [
+            0.30000001192092896,
+            0.30000001192092896,
+            0.4000000059604645,
+            0.5,
+            0.6000000238418579,
+            0.699999988079071,
+            0.800000011920929
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MSDuration",
+          "values": [
+            2.0,
+            2.0,
+            2.25,
+            2.5,
+            2.75,
+            3.0,
+            3.25
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "bIsToggleSpell": true,
@@ -5745,7 +5879,7 @@
             "keyCost": "No Cost",
             "keyName": "Spell Thief",
             "keySummary": "Zoe can pick up the remnants of enemy summoner spell and active item casts and cast them once herself. Whenever she casts a summoner spell, she gains 3 missiles that fire at the nearest target.",
-            "keyTooltip": "<spellPassive>Passive:</spellPassive> Enemies drop spell shards when casting a Summoner Spell or using an Active Item. Specific minions also drop a spell shard when Zoe or a nearby ally kills them. Zoe can pick up this shard to cast that ability once.<br><br><spellPassive>Passive:</spellPassive> When Zoe casts this Ability or any Summoner Spell, she gains <speed>@Effect9Amount*100@% Move Speed</speed> for @Effect10Amount@ seconds and tosses 3 missiles at the target she Attacked most recently. These missiles deal <magicDamage>@MissileDamageTooltip@ magic damage</magicDamage> each.<br><br><spellActive>Active:</spellActive> Cast the Ability from a spell shard Zoe has picked up.",
+            "keyTooltip": "<spellPassive>Passive:</spellPassive> Enemies drop spell shards when casting a Summoner Spell or using an Active Item. Specific minions also drop a spell shard when Zoe or a nearby ally kills them. Zoe can pick up this shard to cast that ability once.<br><br><spellPassive>Passive:</spellPassive> When Zoe casts this Ability or any Summoner Spell, she gains <speed>@MovementSpeed*100@% Move Speed</speed> for @MSDuration@ seconds and tosses 3 missiles at the target she Attacked most recently. These missiles deal <magicDamage>@MissileDamageTooltip@ magic damage</magicDamage> each.<br><br><spellActive>Active:</spellActive> Cast the Ability from a spell shard Zoe has picked up.",
             "keyTooltipExtendedBelowLine": "<rules>Spell shards last on the ground for 40 seconds.<br>Each missile can apply <spellName>More Sparkles!</spellName></rules>"
           },
           "mObjectName": "ZoeW",

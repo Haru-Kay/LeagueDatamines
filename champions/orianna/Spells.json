@@ -727,6 +727,47 @@
     "mSpell": {
       "0x11704a2b": 0.25,
       "0xf26881a0": 1.0,
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            30.0,
+            60.0,
+            90.0,
+            120.0,
+            150.0,
+            180.0,
+            210.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ReducedDamagePercent",
+          "values": [
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MinimumDamagePercent",
+          "values": [
+            70.0,
+            70.0,
+            70.0,
+            70.0,
+            70.0,
+            70.0,
+            70.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "castConeDistance": 100.0,
       "castFrame": 7.5,
       "castRadius": [
@@ -830,7 +871,7 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
+                  "type": "BaseDamage",
                   "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
                 },
@@ -846,7 +887,7 @@
           "mLocKeys": {
             "keyName": "Command: Attack",
             "keySummary": "Orianna commands her Ball to fire toward a target location, dealing magic damage to targets along the way (deals less damage to subsequent targets). Her Ball remains at the target location after.",
-            "keyTooltip": "Orianna commands her <keywordMajor>Ball</keywordMajor> to move to an area, dealing <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage> to surrounding enemies and to enemies it passes through. Deals @Effect2Amount@% less damage to all enemies after the first."
+            "keyTooltip": "Orianna commands her <keywordMajor>Ball</keywordMajor> to move to an area, dealing <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage> to surrounding enemies and to enemies it passes through. Deals @ReducedDamagePercent@% less damage to all enemies after the first."
           },
           "mObjectName": "OrianaIzunaCommand",
           "~class": "TooltipInstanceSpell"
@@ -955,8 +996,8 @@
               "~class": "NumberCalculationPart"
             },
             "mPart2": {
-              "mEffectIndex": 3,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "MinimumDamagePercent",
+              "~class": "NamedDataValueCalculationPart"
             },
             "~class": "ProductOfSubPartsCalculationPart"
           },
@@ -966,8 +1007,8 @@
         "TotalDamageTooltip": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.550000011920929,
@@ -1157,6 +1198,60 @@
     "mSpell": {
       "0x11704a2b": 0.25,
       "0xf26881a0": 1.0,
+      "DataValues": [
+        {
+          "name": "ShieldAmount",
+          "values": [
+            20.0,
+            55.0,
+            90.0,
+            125.0,
+            160.0,
+            195.0,
+            230.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DefenseBonus",
+          "values": [
+            0.0,
+            6.0,
+            12.0,
+            18.0,
+            24.0,
+            30.0,
+            36.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseDamage",
+          "values": [
+            30.0,
+            60.0,
+            90.0,
+            120.0,
+            150.0,
+            180.0,
+            210.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ShieldDuration",
+          "values": [
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "TargetingForgivenessDefinitions": [
         {
           "ForgivenessRange": 175.0,
@@ -1268,25 +1363,25 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
+                  "type": "BaseDamage",
                   "typeIndex": 3,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Armor Bonus",
-                  "type": "Effect%dAmount",
+                  "type": "DefenseBonus",
                   "typeIndex": 2,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Magic Resist Bonus",
-                  "type": "Effect%dAmount",
+                  "type": "DefenseBonus",
                   "typeIndex": 2,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Shield Amount",
-                  "type": "Effect%dAmount",
+                  "type": "ShieldAmount",
                   "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
                 }
@@ -1298,7 +1393,7 @@
           "mLocKeys": {
             "keyName": "Command: Protect",
             "keySummary": "Orianna commands her Ball to attach to an allied champion, Shielding them and dealing magic damage to any enemies it passes through on the way. Additionally, the Ball grants additional Armor and Magic Resist to the champion it is attached to.",
-            "keyTooltip": "<spellPassive>Passive: </spellPassive>The <keywordMajor>Ball</keywordMajor> adds <scaleArmor>@Effect2Amount@ Armor</scaleArmor> and <scaleMR>@Effect2Amount@ Magic Resist</scaleMR> to the allied champion it is attached to.<br><br><spellActive>Active: </spellActive>Orianna commands her <keywordMajor>Ball</keywordMajor> to attach to an allied champion, granting them <shield>@TotalShieldTooltip@ Shield</shield> for @Effect5Amount@ seconds. Enemies the <keywordMajor>Ball</keywordMajor> passes through take <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage>."
+            "keyTooltip": "<spellPassive>Passive: </spellPassive>The <keywordMajor>Ball</keywordMajor> adds <scaleArmor>@DefenseBonus@ Armor</scaleArmor> and <scaleMR>@DefenseBonus@ Magic Resist</scaleMR> to the allied champion it is attached to.<br><br><spellActive>Active: </spellActive>Orianna commands her <keywordMajor>Ball</keywordMajor> to attach to an allied champion, granting them <shield>@TotalShieldTooltip@ Shield</shield> for @ShieldDuration@ seconds. Enemies the <keywordMajor>Ball</keywordMajor> passes through take <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage>."
           },
           "mObjectName": "OrianaRedactCommand",
           "~class": "TooltipInstanceSpell"
@@ -1416,8 +1511,8 @@
         "TotalDamageTooltip": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 3,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.30000001192092896,
@@ -1430,8 +1525,8 @@
         "TotalShieldTooltip": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "ShieldAmount",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.44999998807907104,

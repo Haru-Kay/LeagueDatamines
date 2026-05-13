@@ -1573,6 +1573,58 @@
             10.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowDuration",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SubsequentMineDamageMod",
+          "values": [
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "TriggerRange",
+          "values": [
+            135.0,
+            135.0,
+            135.0,
+            135.0,
+            135.0,
+            135.0,
+            135.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MinePerceptionBubbleSize",
+          "values": [
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -1772,7 +1824,7 @@
           "mLocKeys": {
             "keyName": "Hexplosive Minefield",
             "keySummary": "Ziggs scatters proximity mines that detonate on enemy contact, dealing magic damage and slowing. Successive mine detonations on the same target deal reduced damage.",
-            "keyTooltip": "Ziggs scatters proximity mines that detonate on enemy contact, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Slows</status> by @Slow*-100@% for @Effect4Amount@ seconds. Mines last @MineDuration@ seconds.",
+            "keyTooltip": "Ziggs scatters proximity mines that detonate on enemy contact, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Slows</status> by @Slow*-100@% for @SlowDuration@ seconds. Mines last @MineDuration@ seconds.",
             "keyTooltipExtendedBelowLine": "<rules>Mines beyond the first deal <magicDamage>@ReducedDamage@ damage</magicDamage>.</rules>"
           },
           "mObjectName": "ZiggsE",
@@ -1891,8 +1943,8 @@
         "ReducedDamage": {
           "mModifiedGameCalculation": "TotalDamage",
           "mMultiplier": {
-            "mEffectIndex": 5,
-            "~class": "EffectValueCalculationPart"
+            "mDataValue": "SubsequentMineDamageMod",
+            "~class": "NamedDataValueCalculationPart"
           },
           "mSimpleTooltipCalculationDisplay": 6,
           "tooltipOnly": true,
@@ -2957,6 +3009,45 @@
             225.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "BombTriggerRange",
+          "values": [
+            180.0,
+            180.0,
+            180.0,
+            180.0,
+            180.0,
+            180.0,
+            180.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ExplosionRadius",
+          "values": [
+            240.0,
+            240.0,
+            240.0,
+            240.0,
+            240.0,
+            240.0,
+            240.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BoundingBoxTrigger",
+          "values": [
+            70.0,
+            70.0,
+            70.0,
+            70.0,
+            70.0,
+            70.0,
+            70.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -3890,8 +3981,7 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "BaseDamage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
