@@ -14,6 +14,47 @@
     "mSpell": {
       "0x11704a2b": 0.25,
       "0xf26881a0": 1.0,
+      "DataValues": [
+        {
+          "name": "PassivePercentArmorPen",
+          "values": [
+            20.0,
+            20.0,
+            25.0,
+            30.0,
+            35.0,
+            40.0,
+            45.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowPercent",
+          "values": [
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowDuration",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "alwaysSnapFacing": true,
       "castConeAngle": 25.0,
       "castConeDistance": 550.0,
@@ -79,8 +120,7 @@
               "Elements": [
                 {
                   "nameOverride": "Percent Armor Penetration",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "PassivePercentArmorPen",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -99,8 +139,8 @@
           "mLocKeys": {
             "keyName": "Apprehend",
             "keySummary": "Darius hones his axe, passively causing his physical damage to ignore a percentage of his target's Armor. When activated, Darius sweeps up his enemies with his axe's hook and pulls them to him.",
-            "keyTooltip": "<spellPassive>Passive:</spellPassive> Darius gains @Effect1Amount@% Armor Penetration.<br><br><spellActive>Active:</spellActive> Darius hooks with his axe, <status>Pulling</status>, and <status>Knocking Up</status> and <status>Slowing</status> by @Effect2Amount@% for @Effect3Amount@ second.",
-            "keyTooltipSimple": "<font color='#FF9900'>Passive: </font>Gain @Effect1Amount@% Armor Penetration.<br><br><font color='#FF9900'>Active: </font>Pulls enemies to Darius."
+            "keyTooltip": "<spellPassive>Passive:</spellPassive> Darius gains @PassivePercentArmorPen@% Armor Penetration.<br><br><spellActive>Active:</spellActive> Darius hooks with his axe, <status>Pulling</status>, and <status>Knocking Up</status> and <status>Slowing</status> by @SlowPercent@% for @SlowDuration@ second.",
+            "keyTooltipSimple": "<font color='#FF9900'>Passive: </font>Gain @PassivePercentArmorPen@% Armor Penetration.<br><br><font color='#FF9900'>Active: </font>Pulls enemies to Darius."
           },
           "mObjectName": "DariusAxeGrabCone",
           "~class": "TooltipInstanceSpell"
@@ -380,6 +420,45 @@
             150.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseDamage",
+          "values": [
+            10.0,
+            50.0,
+            80.0,
+            110.0,
+            140.0,
+            170.0,
+            200.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "InnerCircleDamagePercent",
+          "values": [
+            35.0,
+            35.0,
+            35.0,
+            35.0,
+            35.0,
+            35.0,
+            35.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MissingHealPercent",
+          "values": [
+            51.0,
+            51.0,
+            51.0,
+            51.0,
+            51.0,
+            51.0,
+            51.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -494,15 +573,13 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 2,
+                  "type": "BaseDamage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "Style": 1,
                   "nameOverride": "Total AD Ratio",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "TotalADRatio",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -521,7 +598,7 @@
           "mLocKeys": {
             "keyName": "Decimate",
             "keySummary": "Darius winds up and swings his axe in a wide circle. Enemies struck by the blade take more damage than those struck by the handle. Darius heals based on enemy champions and large monsters hit by the blade.",
-            "keyTooltip": "Darius hefts his axe then swings it around, dealing <physicalDamage>@BladeDamage@ physical damage</physicalDamage> with the edge and <physicalDamage>@HandleDamage@ damage</physicalDamage> with the handle. Enemies hit with the handle do not take a <keywordMajor>Hemorrhage</keywordMajor> stack.<br><br>Darius restores <healing>@Effect5Amount@% missing Health</healing> per enemy champion and large jungle monster hit with the edge, up to a max of <healing>@Effect7Amount@%</healing>.",
+            "keyTooltip": "Darius hefts his axe then swings it around, dealing <physicalDamage>@BladeDamage@ physical damage</physicalDamage> with the edge and <physicalDamage>@HandleDamage@ damage</physicalDamage> with the handle. Enemies hit with the handle do not take a <keywordMajor>Hemorrhage</keywordMajor> stack.<br><br>Darius restores <healing>@MissingHealthHeal@% missing Health</healing> per enemy champion and large jungle monster hit with the edge, up to a max of <healing>@MissingHealPercent@%</healing>.",
             "keyTooltipSimple": "Darius cleaves his axe through nearby enemies, damaging them.<br><br>Enemies hit by the blade take significantly more damage and heal Darius."
           },
           "mObjectName": "DariusCleave",
@@ -650,15 +727,15 @@
         "BladeDamage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 2,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mStat": 2,
               "mSubpart": {
                 "mPart1": {
-                  "mEffectIndex": 1,
-                  "~class": "EffectValueCalculationPart"
+                  "mDataValue": "TotalADRatio",
+                  "~class": "NamedDataValueCalculationPart"
                 },
                 "mPart2": {
                   "mNumber": 0.009999999776482582,
@@ -1665,6 +1742,60 @@
           "~class": "SpellEffectAmount"
         }
       },
+      "DataValues": [
+        {
+          "name": "SlowPercent",
+          "values": [
+            90.0,
+            90.0,
+            90.0,
+            90.0,
+            90.0,
+            90.0,
+            90.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "PercentCDRefund",
+          "values": [
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ADRatio",
+          "values": [
+            1.5,
+            1.399999976158142,
+            1.4500000476837158,
+            1.5,
+            1.5499999523162842,
+            1.600000023841858,
+            1.649999976158142
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowDuration",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "bHaveHitBone": true,
       "castConeDistance": 100.0,
       "castFrame": 11.0,
@@ -1709,8 +1840,7 @@
                 {
                   "multiplier": 100.0,
                   "nameOverride": "Total AD Ratio",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 4,
+                  "type": "ADRatio",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -1721,7 +1851,7 @@
           "mLocKeys": {
             "keyName": "Crippling Strike",
             "keySummary": "Darius's next attack strikes an enemy's crucial artery. As they bleed out, their Move Speed is slowed.",
-            "keyTooltip": "Darius' next Attack deals <physicalDamage>@EmpoweredAttackDamage@ physical damage</physicalDamage> and <status>Slows</status> by @Effect2Amount@% for @Effect5Amount@ second.<br><br>This Ability refunds its Mana cost and reduces its Cooldown by @Effect3Amount@% if it kills the target.<br><br><rules>{{ buff_desc_SpellEffects }}</rules>",
+            "keyTooltip": "Darius' next Attack deals <physicalDamage>@EmpoweredAttackDamage@ physical damage</physicalDamage> and <status>Slows</status> by @SlowPercent@% for @SlowDuration@ second.<br><br>This Ability refunds its Mana cost and reduces its Cooldown by @PercentCDRefund@% if it kills the target.<br><br><rules>{{ buff_desc_SpellEffects }}</rules>",
             "keyTooltipSimple": "Darius's next basic attack deals increased damage and slows."
           },
           "mObjectName": "DariusNoxianTacticsONH",
@@ -1832,8 +1962,8 @@
             {
               "mStat": 2,
               "mSubpart": {
-                "mEffectIndex": 4,
-                "~class": "EffectValueCalculationPart"
+                "mDataValue": "ADRatio",
+                "~class": "NamedDataValueCalculationPart"
               },
               "~class": "StatBySubPartCalculationPart"
             }

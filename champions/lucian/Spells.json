@@ -331,6 +331,73 @@
     "mSpell": {
       "0x11704a2b": 0.15000000596046448,
       "0xf26881a0": 0.6000000238418579,
+      "DataValues": [
+        {
+          "name": "CDRefundBase",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "CDRefundChampion",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxDistance",
+          "values": [
+            425.0,
+            425.0,
+            425.0,
+            425.0,
+            425.0,
+            425.0,
+            425.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MinDistance",
+          "values": [
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DashSpeed",
+          "values": [
+            1350.0,
+            1350.0,
+            1350.0,
+            1350.0,
+            1350.0,
+            1350.0,
+            1350.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "cantCastWhileRooted": true,
       "castConeDistance": 100.0,
       "castRange": [
@@ -414,7 +481,7 @@
           "mLocKeys": {
             "keyName": "Relentless Pursuit",
             "keySummary": "Lucian quickly dashes a short distance. Lightslinger attacks reduce Relentless Pursuit's cooldown.",
-            "keyTooltip": "Lucian dashes.<br><br>Cooldown is reduced by @Effect1Amount@ second whenever Lucian hits an enemy with <spellName>Lightslinger</spellName> (@Effect2Amount@ seconds for champions). ",
+            "keyTooltip": "Lucian dashes.<br><br>Cooldown is reduced by @CDRefundBase@ second whenever Lucian hits an enemy with <spellName>Lightslinger</spellName> (@CDRefundChampion@ seconds for champions). ",
             "keyTooltipExtendedBelowLine": "<rules>Lucian can use other Abilities while dashing.</rules>"
           },
           "mObjectName": "LucianE",
@@ -1745,6 +1812,32 @@
             1050.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "VisionBubbleRadius",
+          "values": [
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "VisionBubbleDuration",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "bIsToggleSpell": true,
@@ -2358,6 +2451,97 @@
             250.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MoveSpeedAmount",
+          "values": [
+            55.0,
+            60.0,
+            65.0,
+            70.0,
+            75.0,
+            80.0,
+            85.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BuffDuration",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "VisionBubbleSize",
+          "values": [
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "VisionBubbleDuration",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DebuffDuration",
+          "values": [
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DebuffMarkerDuration",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ImpactRangeCheck",
+          "values": [
+            700.0,
+            700.0,
+            700.0,
+            700.0,
+            700.0,
+            700.0,
+            700.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "castFrame": 9.0,
@@ -2433,8 +2617,7 @@
                 },
                 {
                   "nameOverride": "Move Speed",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 2,
+                  "type": "MoveSpeedAmount",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -2449,7 +2632,7 @@
           "mLocKeys": {
             "keyName": "Ardent Blaze",
             "keySummary": "Lucian shoots a missile that explodes in a star shape, marking and briefly revealing enemies. Lucian gains Move Speed for attacking marked enemies.",
-            "keyTooltip": "Lucian fires a shot that explodes at the end of its range or on the first enemy hit, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>, briefly revealing enemies and marking them for 6 seconds.<br><br>When Lucian or an ally damages a marked enemy, Lucian gains <speed>@Effect2Amount@ Move Speed</speed> for 1 second. Allies triggering this effect will also grant Lucian <attention>Vigilance</attention>."
+            "keyTooltip": "Lucian fires a shot that explodes at the end of its range or on the first enemy hit, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>, briefly revealing enemies and marking them for 6 seconds.<br><br>When Lucian or an ally damages a marked enemy, Lucian gains <speed>@MoveSpeedAmount@ Move Speed</speed> for 1 second. Allies triggering this effect will also grant Lucian <attention>Vigilance</attention>."
           },
           "mObjectName": "LucianW",
           "~class": "TooltipInstanceSpell"

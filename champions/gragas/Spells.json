@@ -527,47 +527,6 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mEffectAmount": [
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         0,
         0,
@@ -790,6 +749,84 @@
             280.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowPercent",
+          "values": [
+            35.0,
+            40.0,
+            45.0,
+            50.0,
+            55.0,
+            60.0,
+            65.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowDuration",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BarrelMaxDuration",
+          "values": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BarrelCookMaxTime",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BarrelCookMaxAmp",
+          "values": [
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MinionDamageMod",
+          "values": [
+            70.0,
+            70.0,
+            70.0,
+            70.0,
+            70.0,
+            70.0,
+            70.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "bHaveHitBone": true,
@@ -858,14 +895,12 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "BaseDamage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Slow",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 2,
+                  "type": "SlowPercent",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -880,8 +915,8 @@
           "mLocKeys": {
             "keyName": "Barrel Roll",
             "keySummary": "Gragas rolls his cask to a location, which can be activated to explode or will explode on its own after 4 seconds. The potency of the explosion increases over time. Enemies struck by the blast have their Move Speed slowed.",
-            "keyTooltip": "Gragas rolls a cask that explodes after @Effect4Amount@ seconds, dealing between <magicDamage>@MinDamage@ magic damage</magicDamage> and <magicDamage>@MaxDamage@ magic damage</magicDamage> and <status>Slowing</status> for between @Effect2Amount@ and @Effect2Amount*1.5@% for @Effect3Amount@ seconds. The damage and <status>Slow</status> increase with time the cask spent before exploding. <br><br>Gragas can <recast>Recast</recast> to detonate the cask early.",
-            "keyTooltipExtendedBelowLine": "<rules>Deals @Effect7Amount@% damage to minions.</rules>"
+            "keyTooltip": "Gragas rolls a cask that explodes after @BarrelMaxDuration@ seconds, dealing between <magicDamage>@MinDamage@ magic damage</magicDamage> and <magicDamage>@MaxDamage@ magic damage</magicDamage> and <status>Slowing</status> for between @SlowPercent@ and @SlowPercent*1.5@% for @SlowDuration@ seconds. The damage and <status>Slow</status> increase with time the cask spent before exploding. <br><br>Gragas can <recast>Recast</recast> to detonate the cask early.",
+            "keyTooltipExtendedBelowLine": "<rules>Deals @MinionDamageMod@% damage to minions.</rules>"
           },
           "mObjectName": "GragasQ",
           "~class": "TooltipInstanceSpell"
@@ -1245,44 +1280,6 @@
             "~class": "TargeterDefinitionAoe"
           }
         ],
-        "mTooltipData": {
-          "mFormat": "0xd7c27163",
-          "mLists": {
-            "LevelUp": {
-              "Elements": [
-                {
-                  "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
-                  "~class": "TooltipInstanceListElement"
-                },
-                {
-                  "nameOverride": "Slow",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 2,
-                  "~class": "TooltipInstanceListElement"
-                },
-                {
-                  "type": "Cooldown",
-                  "~class": "TooltipInstanceListElement"
-                },
-                {
-                  "type": "Cost",
-                  "~class": "TooltipInstanceListElement"
-                }
-              ],
-              "levelCount": 5,
-              "~class": "TooltipInstanceList"
-            }
-          },
-          "mLocKeys": {
-            "keyName": "Barrel Roll",
-            "keySummary": "Gragas rolls his cask to a location, which can be activated to explode or will explode on its own after 4 seconds. The potency of the explosion increases over time. Enemies struck by the blast have their Move Speed slowed.",
-            "keyTooltip": "Gragas rolls a cask that explodes after @Effect4Amount@ seconds, dealing between <magicDamage>@MinDamage@ magic damage</magicDamage> and <magicDamage>@MaxDamage@ magic damage</magicDamage> and <status>Slowing</status> for between @Effect2Amount@ and @Effect2Amount*1.5@% for @Effect3Amount@ seconds. The damage and <status>Slow</status> increase with time the cask spent before exploding. <br><br>Gragas can <recast>Recast</recast> to detonate the cask early."
-          },
-          "mObjectName": "GragasQSpellPassive",
-          "~class": "TooltipInstanceSpell"
-        },
         "~class": "SpellDataResourceClient"
       },
       "mCoefficient": 0.699999988079071,
