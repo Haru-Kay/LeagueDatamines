@@ -45,7 +45,7 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 **Zeke's Convergence**
 
-* Storm is summoned on Ultiamte use -> Storm is readied for up to 5 seconds, triggering once you are near an enemy champion.
+* Storm is summoned on Ultiamte use -> Storm is readied for up to 5 seconds, triggering once you are within 350 units of an enemy champion.
   * After 5 seconds, the Storm is triggered regardless.
 
 ## Runes
