@@ -517,15 +517,22 @@ def itemNameLangFix(value)
     #generatedtip
     strings = value.split("/")
     id = strings.find { |str| str.match?(/\A[+-]?\d+\z/) }
-    ret = $lang.fetch("game_item_displayname_#{id}", $lang.fetch("item_#{id}_name", $lang.fetch("generatedtip_item_#{id}_displayname", value)))
+    ret = $lang.fetch("item_#{id}_name", $lang.fetch("game_item_displayname_#{id}", $lang.fetch("generatedtip_item_#{id}_displayname", value)))
     if ret.include?("Items") && id&.length == 6
         newid = id[2...]
-        ret = $lang.fetch("game_item_displayname_#{newid}", $lang.fetch("item_#{newid}_name", $lang.fetch("generatedtip_item_#{newid}_displayname", value)))
+        ret = $lang.fetch("item_#{newid}_name", $lang.fetch("game_item_displayname_#{newid}", $lang.fetch("generatedtip_item_#{newid}_displayname", value)))
         if ret.include?("Items")
             # Arena specific items moved to other modes
             newid = "44#{newid}"
-            ret = $lang.fetch("game_item_displayname_#{newid}", $lang.fetch("item_#{newid}_name", $lang.fetch("generatedtip_item_#{newid}_displayname", value)))
+            ret = $lang.fetch("item_#{newid}_name", $lang.fetch("game_item_displayname_#{newid}", $lang.fetch("generatedtip_item_#{newid}_displayname", value)))
         end
+    end
+
+    if ret.include?("{{")
+        ret.gsub!(/\{\{ .*? \}\}/) { |match|
+            expr = match[2..-3].strip.downcase
+            next $lang.fetch(expr, match)
+        }
     end
     
     if id&.length == 4
