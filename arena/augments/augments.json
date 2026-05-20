@@ -620,15 +620,15 @@
     "tooltip": "Your dash, leap, blink, or teleport Abilities gain <scaleAbilityHaste>@Haste@ Ability Haste</scaleAbilityHaste>.",
     "dataValues": {
       "Haste": [
-        125.0,
+        75.0,
         200.0,
-        275.0,
-        350.0,
-        425.0,
-        500.0,
-        575.0
+        325.0,
+        450.0,
+        575.0,
+        700.0,
+        825.0
       ],
-      "MaxLevel": 3.0,
+      "MaxLevel": 2.0,
       "Tenacity": 0.30000001192092896,
       "MaxLevelTenacityDuration": 3.0
     },
@@ -954,6 +954,7 @@
     },
     "calculations": {
       "MaxShredTooltipOnly": {
+        "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
             "mDataValue": "Shred",
@@ -962,12 +963,9 @@
           {
             "mDataValue": "maxStacks",
             "~class": "NamedDataValueCalculationPart"
-          },
-          {
-            "mNumber": 10.0,
-            "~class": "NumberCalculationPart"
           }
         ],
+        "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculation"
       }
     },
@@ -1684,7 +1682,7 @@
         1.0
       ],
       "MaxLevel": 2.0,
-      "CritDamageMultipler": 0.15000000596046448
+      "CritDamageMultipler": 0.25
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/ItsCritical_small.tex",
@@ -1889,13 +1887,13 @@
     "dataValues": {
       "OnHitDamage": 40.0,
       "TotalASValue": [
-        0.15000000596046448,
-        0.15000000596046448,
-        0.25,
-        0.25,
-        0.25,
-        0.25,
-        0.25
+        0.20000000298023224,
+        0.20000000298023224,
+        0.30000001192092896,
+        0.30000001192092896,
+        0.30000001192092896,
+        0.30000001192092896,
+        0.30000001192092896
       ],
       "Breakpoint1": 3.5,
       "MaxLevel": 2.0,
@@ -3811,7 +3809,7 @@
       "APcoefficient": [
         0.03999999910593033,
         0.03999999910593033,
-        0.07000000029802322,
+        0.05999999865889549,
         0.07000000029802322,
         0.07000000029802322,
         0.07000000029802322,
@@ -3820,7 +3818,7 @@
       "ADcoefficient": [
         0.07000000029802322,
         0.07000000029802322,
-        0.09000000357627869,
+        0.07999999821186066,
         0.09000000357627869,
         0.09000000357627869,
         0.09000000357627869,
@@ -3829,7 +3827,7 @@
       "Healthcoefficient": [
         0.004999999888241291,
         0.004999999888241291,
-        0.007499999832361937,
+        0.006500000134110451,
         0.007499999832361937,
         0.007499999832361937,
         0.007499999832361937,
@@ -4221,8 +4219,8 @@
       "NumberOfMissiles": [
         3.0,
         3.0,
+        3.0,
         5.0,
-        6.0,
         6.0,
         6.0,
         6.0
@@ -4852,9 +4850,9 @@
     "maxLevelTooltip": "At max level, each ally gains @CapstoneAllyBonusLives@ <keywordMajor>Nesting Doll</keywordMajor> revives. ",
     "tooltip": "You automatically begin <attention>Reviving</attention> yourself after @ReviveArmTime@ seconds and you can be <attention>Revived</attention> @BonusLives@ additional times. Each time you <attention>Revive</attention>, come back smaller and with <scaleHealth>@ReviveMod*100@% max Health</scaleHealth>.<br><br>When you <attention>revive</attention>, <status>knockback</status> enemies around you.",
     "dataValues": {
-      "ReviveMod": 0.800000011920929,
+      "ReviveMod": 0.699999988079071,
       "ReviveDuration": 1.5,
-      "SizeMod": 0.800000011920929,
+      "SizeMod": 0.699999988079071,
       "ReviveArmTime": [
         2.0,
         2.0,
@@ -5339,7 +5337,7 @@
       "InverseRate": [
         0.6000000238418579,
         0.6000000238418579,
-        0.800000011920929,
+        2.799999952316284,
         0.800000011920929,
         0.800000011920929,
         0.800000011920929,
@@ -5392,7 +5390,7 @@
       "InverseRate": [
         1.666659951210022,
         1.666659951210022,
-        0.0,
+        2.2219998836517334,
         2.2219998836517334,
         2.2219998836517334,
         2.2219998836517334,
@@ -7927,7 +7925,7 @@
       "MaximumDistanceRoF": 1500.0,
       "WispSpeed": 3500.0,
       "DelayMovingTime": 1.0,
-      "MaxLevel": 3.0,
+      "MaxLevel": 2.0,
       "CapstoneBuffDuration": 5.0,
       "CapstoneMaxHealPercent": 0.20000000298023224,
       "CapstoneMS": 0.30000001192092896
@@ -9672,8 +9670,16 @@
     "maxLevelTooltip": "At max level <attackSpeed>Attack Speed</attackSpeed> becomes uncapped.",
     "tooltip": "Gain <speed>@MSBuff*100@% Movement Speed</speed> and <attackSpeed>@ASBuff*100@% Attack Speed</attackSpeed> for @BuffDuration@ seconds on takedown.",
     "dataValues": {
-      "BuffDuration": 6.0,
-      "ASBuff": 0.15000000596046448,
+      "BuffDuration": 8.0,
+      "ASBuff": [
+        0.0,
+        0.30000001192092896,
+        0.6000000238418579,
+        0.8999999761581421,
+        1.2000000476837158,
+        1.5,
+        1.7999999523162842
+      ],
       "MSBuff": [
         0.0,
         1.0,
@@ -9698,8 +9704,8 @@
     "desc": "Gain <healing>%i:scaleHealShield%@BonusHSPower@% Heal and Shield Power</healing> based on bonus <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR>.",
     "tooltip": "Gain <healing>%i:scaleHealShield%@BonusHSPower@% Heal and Shield Power</healing> based on bonus <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR>.",
     "dataValues": {
-      "ConversionRate": 0.3499999940395355,
-      "InitialHS": 25.0,
+      "ConversionRate": 0.25,
+      "InitialHS": 15.0,
       "MaxLevel": 1.0
     },
     "calculations": {
@@ -9935,7 +9941,7 @@
     "dataValues": {
       "LethalityPerStack": 1.0,
       "MaxHealthRestored": 0.05000000074505806,
-      "MissingHealthStackAmount": 0.009999999776482582,
+      "MissingHealthStackAmount": 0.029999999329447746,
       "MSBase": 10.0,
       "MSBonusPerStack": 5.0,
       "InstantGoldGain": 250.0,
@@ -10072,15 +10078,7 @@
       "SizeReductionPerStack": 0.03999999910593033,
       "MoveSpeedAmpPerStack": 0.009999999776482582,
       "MinSize": 20.0,
-      "PercentOfStacksLost": [
-        0.5,
-        0.5,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
+      "PercentOfStacksLost": 0.6499999761581421,
       "HastePerStack": 8.0,
       "MaxLevel": 2.0
     },
@@ -10797,7 +10795,8 @@
         0.07500000298023224,
         0.07500000298023224,
         0.07500000298023224
-      ]
+      ],
+      "Cooldown": 5.0
     },
     "calculations": {
       "Calc_Cooldown_Acceleration": {
@@ -10867,15 +10866,17 @@
     "dataValues": {
       "ASAPRatio": 0.0005000000237487257,
       "CritAPRatio": 0.0005000000237487257,
-      "MaxLevel": 1.0
+      "MaxLevel": 1.0,
+      "BaseAttackSpd": 0.25,
+      "BaseCritChance": 0.125
     },
     "calculations": {
       "Calc_AS": {
         "mDisplayAsPercent": true,
         "mFormulaParts": [
           {
-            "mNumber": 0.3499999940395355,
-            "~class": "NumberCalculationPart"
+            "mDataValue": "0xe62fe141",
+            "~class": "NamedDataValueCalculationPart"
           },
           {
             "mDataValue": "ASAPRatio",
@@ -10888,8 +10889,8 @@
         "mDisplayAsPercent": true,
         "mFormulaParts": [
           {
-            "mNumber": 0.25,
-            "~class": "NumberCalculationPart"
+            "mDataValue": "baseCritChance",
+            "~class": "NamedDataValueCalculationPart"
           },
           {
             "mDataValue": "CritAPRatio",
@@ -11037,7 +11038,7 @@
     "desc": "Gain increased <speed>Movement Speed</speed> towards enemies at low Health.",
     "tooltip": "Gain <speed>@MovementSpeed*100@% Movement Speed</speed> towards enemies below <health>@HealthThreshold*100@% health</health>.",
     "dataValues": {
-      "MovementSpeed": 0.6000000238418579,
+      "MovementSpeed": 1.0,
       "HealthThreshold": 0.4000000059604645,
       "MaxLevel": 1.0
     },
