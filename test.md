@@ -6,8 +6,12 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 **Smolder**
 
-* PQ Bonus Damage: 40 (+0-20% Crit Chance) (+0-9% IE) P stacks -> 33 (+0-39.6% Crit Chance) (+0-11.88% IE) P stacks
-* EQ Bonus Damage: 12% P stacks -> 9% (0-5.4% Crit Chance) (0-1.62% IE) P stacks
+* PQ Bonus Damage: 33% (+0-39.6% Crit Chance) (+0-11.88% IE) -> 25% (+0-30% Crit Chance) (+0-9% IE) P stacks
+  * Or 33-72.6% (+0-11.88% IE) -> 25-55% (+0-9% IE)
+  * Live: 40-60% (+0-6% IE) 
+* PE Bonus Damage: 9% (0-5.4% Crit Chance) (0-1.62% IE) P stacks -> 8% (0-4.8% Crit Chance) (0-1.44% IE) P stacks
+  * Or 9-14.4% (+0-1.62% IE) -> 8-12.8% (+0-1.44% IE)
+  * Live: 12%
 
 ## Items
 
