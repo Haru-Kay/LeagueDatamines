@@ -250,6 +250,47 @@
     "mScriptName": "RivenFeint",
     "mSpell": {
       "0xf26881a0": 1.399999976158142,
+      "DataValues": [
+        {
+          "name": "ShieldAmount",
+          "values": [
+            45.0,
+            70.0,
+            95.0,
+            120.0,
+            145.0,
+            170.0,
+            195.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseShieldAmount",
+          "values": [
+            50.0,
+            70.0,
+            95.0,
+            120.0,
+            145.0,
+            170.0,
+            235.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ShieldDuration",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "cantCastWhileRooted": true,
       "castConeDistance": 100.0,
       "castFrame": 3.0399999618530273,
@@ -309,7 +350,7 @@
               "Elements": [
                 {
                   "nameOverride": "Shield Amount",
-                  "type": "Effect%dAmount",
+                  "type": "ShieldAmount",
                   "typeIndex": 2,
                   "~class": "TooltipInstanceListElement"
                 },
@@ -437,8 +478,8 @@
         "TotalShield": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "ShieldAmount",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 1.100000023841858,
@@ -969,6 +1010,34 @@
     "ObjectName": "RivenMartyr",
     "mScriptName": "RivenMartyr",
     "mSpell": {
+      "DataValues": [
+        {
+          "name": "StunDuration",
+          "values": [
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseDamage",
+          "values": [
+            30.0,
+            65.0,
+            95.0,
+            125.0,
+            155.0,
+            185.0,
+            215.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "bIsToggleSpell": true,
       "castConeDistance": 100.0,
       "castFrame": 8.0,
@@ -1028,7 +1097,7 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
+                  "type": "BaseDamage",
                   "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
                 },
@@ -1045,7 +1114,7 @@
             "keyCost": "No Cost",
             "keyName": "Ki Burst",
             "keySummary": "Riven emits a Ki Burst, damaging and stunning nearby enemies.",
-            "keyTooltip": "Riven's sword emits a burst of runic energy, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and <status>Stunning</status> for @Effect5Amount@ seconds."
+            "keyTooltip": "Riven's sword emits a burst of runic energy, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and <status>Stunning</status> for @StunDuration@ seconds."
           },
           "mObjectName": "RivenMartyr",
           "~class": "TooltipInstanceSpell"
@@ -1161,8 +1230,8 @@
         "TotalDamage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 1.0,

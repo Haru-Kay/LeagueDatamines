@@ -174,6 +174,11 @@
     },
     "~class": "SpellObject"
   },
+  "0x9473e5ed": {
+    "ObjectName": "IvernWPassive",
+    "mScriptName": "IvernWPassive",
+    "~class": "SpellObject"
+  },
   "0xf09d5cae": {
     "ObjectName": "IvernPNexusBlitz",
     "mBuff": {
@@ -1030,16 +1035,6 @@
         "ASSETS/Characters/Ivern/HUD/Icons2D/IvernP.dds"
       ],
       "mSpellCalculations": {
-        "0x60aa666f": {
-          "mFormulaParts": [
-            {
-              "mInitialBonusPerLevel": -0.8820000290870667,
-              "mLevel1Value": 15.0,
-              "~class": "ByCharLevelBreakpointsCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
         "0xc6433908": {
           "mFormulaParts": [
             {
@@ -1085,8 +1080,18 @@
           },
           "~class": "GameCalculation"
         },
+        "HealthCostPercent": {
+          "mFormulaParts": [
+            {
+              "mInitialBonusPerLevel": -0.8820000290870667,
+              "mLevel1Value": 15.0,
+              "~class": "ByCharLevelBreakpointsCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
         "HealthTooltip": {
-          "mModifiedGameCalculation": "0x60aa666f",
+          "mModifiedGameCalculation": "HealthCostPercent",
           "mMultiplier": {
             "mCoefficient": 0.009999999776482582,
             "mStat": 12,
@@ -1502,7 +1507,7 @@
           "mLocKeys": {
             "keyName": "Rootcaller",
             "keySummary": "Ivern conjures a vine, dealing damage and rooting enemy targets hit. Ivern's allies can dash to the rooted target.",
-            "keyTooltip": "Ivern conjures a vine dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Rooting</status> the first enemy hit for @RootDuration@ seconds. Allies that Attack a <status>Rooted</status> enemy dash into Attack Range. <br><br><recast>Recast:</recast> Ivern dashes directly onto the <status>Rooted</status> enemy.<br><br><rules>Hitting non-epic monsters reduces <spellName>{{ Spell_IvernQ_Name }}'s</spellName> cooldown by 50%.</rules>"
+            "keyTooltip": "Ivern conjures a vine dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Rooting</status> the first enemy hit for @RootDuration@ seconds. Allies that Attack a <status>Rooted</status> enemy dash into Attack Range. <br><br><recast>Recast:</recast> Ivern dashes directly onto the <status>Rooted</status> enemy.<br><br><rules>Hitting non-epic monsters reduces <spellName>Rootcaller's</spellName> cooldown by 50%.</rules>"
           },
           "mObjectName": "IvernQ",
           "~class": "TooltipInstanceSpell"

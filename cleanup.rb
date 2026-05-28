@@ -343,6 +343,7 @@ def augmentSearcher(key, data, version=0)
 
                 dataValues.each { |component|
                     name = component["name"]
+                    name = $lang.fetch(name, name)
                     values = component["values"] || []
                     if overrides
                         values = overrides[name] || values
@@ -353,7 +354,7 @@ def augmentSearcher(key, data, version=0)
                 }
 
                 calcs = mSpell.fetch("mSpellCalculations", {})
-                aug["calculations"] = calcs
+                aug["calculations"] = applyLangKeys(applyLang(calcs))
                 
             end
         end
@@ -367,6 +368,7 @@ def augmentSearcher(key, data, version=0)
                 
                 dataValues.each { |component|
                     name = component["name"]
+                    name = $lang.fetch(name, name)
                     values = component["values"] || []
                     puts "#{spellName} ::: #{name}" if !values
                     values = values[0] if values.uniq.length == 1
@@ -374,7 +376,7 @@ def augmentSearcher(key, data, version=0)
                 }
 
                 calcs = mSpell.fetch("mSpellCalculations", {})
-                aug["add"][str]["calcs"] = calcs
+                aug["add"][str]["calcs"] = applyLangKeys(applyLang(calcs))
                 
             end
         }
@@ -432,6 +434,7 @@ def augmentSetBuilder(key, data, version=0)
 
         dataValues.each { |component|
             name = component["name"]
+            name = $lang.fetch(name, name)
             values = component["values"] || []
             puts "#{spellName} ::: #{name}" if !values
             out = []
@@ -460,7 +463,7 @@ def augmentSetBuilder(key, data, version=0)
         set.delete("descEx") if set["descEx"].empty?
 
         calcs = mSpell.fetch("mSpellCalculations", {})
-        set["data"]["calculations"] = calcs
+        set["data"]["calculations"] = applyLangKeys(applyLang(calcs))
 
         set["augments"] = []
         data["augments"].each { |aug|
@@ -517,15 +520,22 @@ def itemNameLangFix(value)
     #generatedtip
     strings = value.split("/")
     id = strings.find { |str| str.match?(/\A[+-]?\d+\z/) }
-    ret = $lang.fetch("game_item_displayname_#{id}", $lang.fetch("item_#{id}_name", $lang.fetch("generatedtip_item_#{id}_displayname", value)))
+    ret = $lang.fetch("item_#{id}_name", $lang.fetch("game_item_displayname_#{id}", $lang.fetch("generatedtip_item_#{id}_displayname", value)))
     if ret.include?("Items") && id&.length == 6
         newid = id[2...]
-        ret = $lang.fetch("game_item_displayname_#{newid}", $lang.fetch("item_#{newid}_name", $lang.fetch("generatedtip_item_#{newid}_displayname", value)))
+        ret = $lang.fetch("item_#{newid}_name", $lang.fetch("game_item_displayname_#{newid}", $lang.fetch("generatedtip_item_#{newid}_displayname", value)))
         if ret.include?("Items")
             # Arena specific items moved to other modes
             newid = "44#{newid}"
-            ret = $lang.fetch("game_item_displayname_#{newid}", $lang.fetch("item_#{newid}_name", $lang.fetch("generatedtip_item_#{newid}_displayname", value)))
+            ret = $lang.fetch("item_#{newid}_name", $lang.fetch("game_item_displayname_#{newid}", $lang.fetch("generatedtip_item_#{newid}_displayname", value)))
         end
+    end
+
+    if ret.include?("{{")
+        ret.gsub!(/\{\{ .*? \}\}/) { |match|
+            expr = match[2..-3].strip.downcase
+            next $lang.fetch(expr, match)
+        }
     end
     
     if id&.length == 4

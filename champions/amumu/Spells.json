@@ -382,6 +382,47 @@
     "mSpell": {
       "0x11704a2b": 0.25,
       "0xf26881a0": 1.0,
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            45.0,
+            70.0,
+            95.0,
+            120.0,
+            145.0,
+            170.0,
+            195.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "StunDuration",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DashSpeed",
+          "values": [
+            1800.0,
+            1800.0,
+            1800.0,
+            1800.0,
+            1800.0,
+            1800.0,
+            1800.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "SpellEventToAudioEventSuffix": {
         "12": "Play_sfx_Amumu_BandageToss_OnCast"
       },
@@ -472,8 +513,7 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "BaseDamage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -490,7 +530,7 @@
             "keyCooldown": "@AmmoRechargeTime@s Recharge (@Cooldown@s %i:cooldown%)",
             "keyName": "Bandage Toss",
             "keySummary": "Amumu tosses a sticky bandage at a target, stunning and damaging the target while he pulls himself to them.",
-            "keyTooltip": "Amumu launches a bandage, pulling himself to the first enemy hit, <status>Stunning</status> them for @Effect2Amount@ second, and dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>.<br><br>This Ability has 2 charges."
+            "keyTooltip": "Amumu launches a bandage, pulling himself to the first enemy hit, <status>Stunning</status> them for @StunDuration@ second, and dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>.<br><br>This Ability has 2 charges."
           },
           "mObjectName": "BandageToss",
           "~class": "TooltipInstanceSpell"
@@ -577,8 +617,8 @@
         "TotalDamage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.8500000238418579,
@@ -989,6 +1029,58 @@
             0.5
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseDamage",
+          "values": [
+            35.0,
+            65.0,
+            95.0,
+            125.0,
+            155.0,
+            185.0,
+            215.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseDamageReduction",
+          "values": [
+            0.0,
+            5.0,
+            7.0,
+            9.0,
+            11.0,
+            13.0,
+            15.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "CDROnHit",
+          "values": [
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "PassiveScaling",
+          "values": [
+            0.029999999329447746,
+            0.029999999329447746,
+            0.029999999329447746,
+            0.029999999329447746,
+            0.029999999329447746,
+            0.029999999329447746,
+            0.029999999329447746
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -1041,8 +1133,7 @@
               "Elements": [
                 {
                   "nameOverride": "Damage Reduced",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "BaseDamageReduction",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -1051,8 +1142,7 @@
                 },
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 2,
+                  "type": "BaseDamage",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -1063,7 +1153,7 @@
           "mLocKeys": {
             "keyName": "Tantrum",
             "keySummary": "Permanently reduces the physical damage Amumu would take. Amumu can unleash his rage, dealing damage to surrounding enemies. Each time Amumu is hit, the cooldown on Tantrum is reduced.",
-            "keyTooltip": "<spellPassive>Passive:</spellPassive> Amumu takes @DamageReduction@ reduced physical damage. Additionally, when Amumu is hit by an Attack, this Ability's Cooldown is reduced by @Effect3Amount@ seconds.<br><br><spellActive>Active:</spellActive> Amumu throws a tantrum, dealing <magicDamage>@TantrumDamage@ magic damage</magicDamage> to nearby enemies.",
+            "keyTooltip": "<spellPassive>Passive:</spellPassive> Amumu takes @DamageReduction@ reduced physical damage. Additionally, when Amumu is hit by an Attack, this Ability's Cooldown is reduced by @CDROnHit@ seconds.<br><br><spellActive>Active:</spellActive> Amumu throws a tantrum, dealing <magicDamage>@TantrumDamage@ magic damage</magicDamage> to nearby enemies.",
             "keyTooltipExtendedBelowLine": "<rules>Damage reduction effect can't reduce the damage below @FlatDamageReductionMax*100@%.</rules>"
           },
           "mObjectName": "Tantrum",
@@ -1147,8 +1237,8 @@
         "DamageReduction": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "BaseDamageReduction",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.029999999329447746,
@@ -1169,8 +1259,8 @@
         "TantrumDamage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 2,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.5,

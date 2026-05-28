@@ -357,7 +357,7 @@
             "keyName": "Alpha Strike",
             "keySummary": "Master Yi teleports across the battlefield with blinding speed, dealing physical damage to multiple units in his path, while simultaneously becoming untargetable. Alpha Strike can critically strike and deals bonus physical damage to monsters. Basic attacks reduce Alpha Strike's cooldown.",
             "keyTooltip": "Master Yi becomes Untargetable and teleports to rapidly strike enemies near his target, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> to all enemies hit after @AlphaStrikeBounces@ hits. <br><br>This Ability can strike the same enemy repeatedly if there are no other targets, dealing @SubsequentHitMultiplier*100@% damage for subsequent hits (<physicalDamage>@SubesquentDamage@</physicalDamage>), for a maximum single target total of <physicalDamage>@SingleTotalDamage@ physical damage</physicalDamage>.",
-            "keyTooltipExtendedBelowLine": "<rules>Applies %i:OnHit% <OnHit>On-Hit</OnHit> effects at @BaseOnHitMultiplier*100@% damage. Subsequent hits are reduced to @SubsequentHitMultiplier*100@% of this.<br>Can critically strike for an additional <physicalDamage>@CritBonus@ physical damage</physicalDamage>. Subsequent hits are reduced to @SubsequentHitMultiplier*100@% of this, for a maximum single target total of <physicalDamage>@SingleCritTotalDamage@</physicalDamage>.<br>Jungle monsters take @BonusMonsterDamage@ bonus damage per strike.<br>Attacks reduce this Ability's Cooldown by @BasicAttackCDR@ second.<br><spellName>{{ Spell_AlphaStrike_Name }}</spellName> does not reduce its own cooldown or stack <spellName>{{ Passive_MasterYiPassive_Name }}</spellName> %i:OnHit% <OnHit>On-Hit</OnHit>.<br>Master Yi will reappear near the initial target.</rules><br>",
+            "keyTooltipExtendedBelowLine": "<rules>Applies %i:OnHit% <OnHit>On-Hit</OnHit> effects at @BaseOnHitMultiplier*100@% damage. Subsequent hits are reduced to @SubsequentHitMultiplier*100@% of this.<br>Can critically strike for an additional <physicalDamage>@CritBonus@ physical damage</physicalDamage>. Subsequent hits are reduced to @SubsequentHitMultiplier*100@% of this, for a maximum single target total of <physicalDamage>@SingleCritTotalDamage@</physicalDamage>.<br>Jungle monsters take @BonusMonsterDamage@ bonus damage per strike.<br>Attacks reduce this Ability's Cooldown by @BasicAttackCDR@ second.<br><spellName>Alpha Strike</spellName> does not reduce its own cooldown or stack <spellName>Double Strike</spellName> %i:OnHit% <OnHit>On-Hit</OnHit>.<br>Master Yi will reappear near the initial target.</rules><br>",
             "keyTooltipSimple": "Become untargetable and teleport to the targeted enemy, dealing damage to it and enemies nearby.<br><br>Basic attacks reduce the cooldown of Alpha Strike."
           },
           "mObjectName": "AlphaStrike",
@@ -1210,6 +1210,52 @@
           "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "RDuration",
+              "values": [
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "RCooldownRefund",
+              "values": [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "RKillAssistExtension",
+              "values": [
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "SpellEventToAudioEventSuffix": {
         "18": "Play_sfx_MasterYi_Highlander_OnBuffActivate\n",
         "19": "Play_sfx_MasterYi_Highlander_OnBuffDeactivate\n"
