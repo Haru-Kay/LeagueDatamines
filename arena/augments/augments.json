@@ -530,6 +530,7 @@
     "name": "Contract Killer",
     "rarity": "Silver",
     "desc": "Each round, mark an opposing champion. <br><br>That champion takes @DamageAmp*100@% extra damage and grants an <gold>+%i:goldCoins%@Gold@ gold</gold> when killed.",
+    "maxLevelTooltip": "At max level an additional enemy is marked.",
     "tooltip": "Each round, mark an opposing champion. <br><br>That champion takes @DamageAmp*100@% extra damage and grants an <gold>+%i:goldCoins% @Gold@ gold</gold> when killed.",
     "dataValues": {
       "DamageAmp": 0.15000000596046448,
@@ -2559,8 +2560,8 @@
     "name": "Scopier Weapons",
     "rarity": "Gold",
     "disabled": true,
-    "desc": "Gain @MeleeRangeIncrease@ Attack Range, reduced to @RangedRangeIncrease@ if you are Ranged.",
-    "tooltip": "Gain @MeleeRangeIncrease@ Attack Range, reduced to @RangedRangeIncrease@ if you are Ranged.",
+    "desc": "Gain @RangeIncrease@ Attack Range.",
+    "tooltip": "Gain @RangeIncrease@ Attack Range.",
     "dataValues": {
       "MeleeRangeIncrease": 200.0,
       "RangedRangeIncrease": 100.0,
@@ -3925,8 +3926,8 @@
     "apiName": "ScopiestWeapons",
     "name": "Scopiest Weapons",
     "rarity": "Prismatic",
-    "desc": "Gain @MeleeRangeIncrease@ Attack Range, reduced to @RangedRangeIncrease@ if you are Ranged.",
-    "tooltip": "Gain @MeleeRangeIncrease@ Attack Range, reduced to @RangedRangeIncrease@ if you are Ranged.",
+    "desc": "Gain @RangeIncrease@ Attack Range.",
+    "tooltip": "Gain @RangeIncrease@ Attack Range.",
     "dataValues": {
       "MeleeRangeIncrease": [
         150.0,
@@ -3938,15 +3939,32 @@
         450.0
       ],
       "RangedRangeIncrease": [
-        75.0,
-        75.0,
-        125.0,
-        175.0,
+        90.0,
+        90.0,
+        135.0,
+        180.0,
         250.0,
         300.0,
         350.0
       ],
       "MaxLevel": 3.0
+    },
+    "calculations": {
+      "RangeIncrease": {
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mDataValue": "MeleeRangeIncrease",
+            "~class": "NamedDataValueCalculationPart"
+          }
+        ],
+        "mRangedMultiplier": {
+          "mNumber": 0.6000000238418579,
+          "~class": "NumberCalculationPart"
+        },
+        "mSimpleTooltipCalculationDisplay": 5,
+        "~class": "0xe9a3c91d"
+      }
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/ScopiestWeapons_small.tex",
@@ -4549,7 +4567,7 @@
     "maxLevelTooltip": "At max level, increase the stats the item gives you by @MaxLevelPercentAmp*100@%.",
     "tooltip": "{{Cherry_Quest_UrfsChampion_Summary}}<br><br>Takedowns: @f1@",
     "dataValues": {
-      "TakedownsNeeded": 10.0,
+      "TakedownsNeeded": 1.0,
       "MaxLevel": 2.0,
       "MaxLevelPercentAmp": [
         1.0,
@@ -4636,8 +4654,8 @@
     "name": "Scoped Weapons",
     "rarity": "Silver",
     "disabled": true,
-    "desc": "Gain @MeleeRangeIncrease@ Attack Range, reduced to @RangedRangeIncrease@ if you are Ranged.",
-    "tooltip": "Gain @MeleeRangeIncrease@ Attack Range, reduced to @RangedRangeIncrease@ if you are Ranged.",
+    "desc": "Gain @RangeIncrease@ Attack Range.",
+    "tooltip": "Gain @RangeIncrease@ Attack Range.",
     "dataValues": {
       "MeleeRangeIncrease": 75.0,
       "RangedRangeIncrease": 50.0,
@@ -5307,8 +5325,8 @@
     "apiName": "StackosaurusRex",
     "name": "Stackosaurus Rex",
     "rarity": "Silver",
-    "desc": "When you gain permanent <keywordMajor>Stacks</keywordMajor> of an Ability, gain @StackModifier*100@% more!",
-    "tooltip": "When you gain permanent <keywordMajor>Stacks</keywordMajor> of an Ability, gain @StackModifier*100@% more!",
+    "desc": "When you gain permanent <keywordMajor>Stacks</keywordMajor> of an Ability, Augment, or Item gain @StackModifier*100@% more!",
+    "tooltip": "When you gain permanent <keywordMajor>Stacks</keywordMajor> of an Ability, Augment, or Item gain @StackModifier*100@% more!",
     "dataValues": {
       "StackModifier": 0.75,
       "MaxLevel": 1.0
@@ -5812,7 +5830,7 @@
     "name": "Fan the Hammer",
     "rarity": "Prismatic",
     "desc": "When you Attack, fire @AdditionalBolts@ bolts that each deal <physicalDamage>physical damage</physicalDamage> and applies your {{ Item_Keyword_OnHit }}.",
-    "maxLevelTooltip": "At max level, firing from a different directions increase the bolts fired by @MaxLevelAdditionalBolts@, for the rest of the round.",
+    "maxLevelTooltip": "At max level, firing from a different direction increases the bolts fired by @MaxLevelAdditionalBolts@, for the rest of the round.",
     "tooltip": "When you Attack enemy champions, fire @AdditionalBolts@ bolts that each deal <physicalDamage>@DamagePerBolt@ physical damage</physicalDamage>. Each cardinal direction has a @Cooldown@ second Cooldown.<br><br>Each bolt can <crit>Critically Strike</crit> and applies %i:OnHit% <OnHit>On-Hit</OnHit> at @OnHitRatio*100@% effectiveness.",
     "dataValues": {
       "Cooldown": [
@@ -9537,6 +9555,23 @@
     ]
   },
   {
+    "id": 392,
+    "apiName": "GoHSwindlersOrb",
+    "name": "Swindler's Orb",
+    "rarity": "Prismatic",
+    "desc": "Dealing damage to an enemy champion reduces their <shield>shields</shield>.",
+    "tooltip": "Dealing damage to an enemy champion reduces any <shield>shields</shield> they have or gain by @ShieldShred@% for @DebuffDuration@ seconds. <br><br><rules>Affects General and <physicalDamage>Physical Damage</physicalDamage> shields, but not purely <magicDamage>Magical Damage</magicDamage> blocking shields.</rules>",
+    "dataValues": {
+      "MaxLevel": 1.0,
+      "ShieldShred": 40.0,
+      "DebuffDuration": 3.0
+    },
+    "icons": [
+      "ASSETS/UX/Cherry/Augments/Icons/Swindlers_Orb_item_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Swindlers_Orb_item_Large.tex"
+    ]
+  },
+  {
     "id": 404,
     "apiName": "Augment404",
     "name": "404 Augment Not Found",
@@ -9598,6 +9633,7 @@
     "apiName": "WindBeneathBlade",
     "name": "Wind Beneath Blade",
     "rarity": "Silver",
+    "disabled": true,
     "desc": "The higher your <armorPen>Armor Penetration</armorPen> and <magicPen>Magic Penetration</magicPen> are, the faster you are.",
     "tooltip": "Gain <speed>@MSFromBasePen@ Movement Speed</speed> from flat <armorPen>%i:scaleAPen%Armor Penetration</armorPen> and <magicPen>%i:scaleMPen%Magic Penetration</magicPen>. Gain <speed>@PercentPenConversion@ Movement Speed</speed> every @PercentPenConversion@% of your percent <armorPen>%i:scaleAPen%Armor Penetration</armorPen> and <magicPen>%i:scaleMPen%Magic Penetration</magicPen><br><br>Gain <speed>@f2@ Movement Speed</speed>.",
     "dataValues": {
@@ -9779,6 +9815,7 @@
     "apiName": "Adamant",
     "name": "Adamant",
     "rarity": "Silver",
+    "disabled": true,
     "desc": "Each time you <status>Immobilize</status> or <status>Ground</status> an enemy, gain <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR>.",
     "tooltip": "Each time you <status>Immobilize</status> or <status>Ground</status> an enemy, gain @ResistsPerLevel@ <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> for @AugDuration@ seconds (up to @MaxStacks@ stacks).",
     "dataValues": {
@@ -9937,6 +9974,7 @@
     "apiName": "ARAM_Upgrade_Hubris",
     "name": "Upgrade Hubris",
     "rarity": "Gold",
+    "disabled": true,
     "desc": "On Takedown, Hubris <healing>heals</healing> you and grants <speed>Movement Speed</speed>, scaling with your <keywordMajor>Eminence</keywordMajor> stacks. <br><br>Gain <gold>+%i:goldCoins% 250 Gold.</gold>",
     "tooltip": "On takedown, Hubris <healing>restores @MaxHealthRestored*100@% of your max Health plus @MissingHealthStackAmount*100@% of your missing Health</healing> and grants <speed>@MSBase@ plus @MSBonusPerStack@ Movement Speed</speed> for the buff duration, both scaling with your stacks.<br><br>Gain <gold>+%i:goldCoins% 250 Gold.</gold>",
     "dataValues": {
@@ -10059,9 +10097,9 @@
   {
     "id": 1361,
     "apiName": "ARAM_Quest_VoidImmolation",
-    "name": "Quest: Icathia's Fall",
+    "name": "Icathia's Fall",
     "rarity": "Prismatic",
-    "desc": "Immediately: Gain a Bami's Cinder.<br><br>Requirement: Possess <keywordMajor>Sunfire Aegis</keywordMajor> and <keywordMajor>Hollow Radiance</keywordMajor>.<br><br>Reward: These Items combine into <keywordMajor>Void Immolation</keywordMajor>.",
+    "desc": "Immediately: Gain a Bami's Cinder.<br><br><font color='#F0C200'>QUEST:</font> Possess <keywordMajor>Sunfire Aegis</keywordMajor> and <keywordMajor>Hollow Radiance</keywordMajor>.<br><br><font color='#F0C200'>REWARD:</font> These Items combine into <keywordMajor>Void Immolation</keywordMajor>.",
     "tooltip": "Immediately: Gain a Bami's Cinder.<br><br>Requirement: Possess <keywordMajor>Sunfire Aegis</keywordMajor> and <keywordMajor>Hollow Radiance</keywordMajor>.<br><br>Reward: Combine <keywordMajor>Sunfire Aegis</keywordMajor> and <keywordMajor>Hollow Radiance</keywordMajor> into <keywordMajor>Void Immolation</keywordMajor>.",
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/Quest_VoidImmolation_small.tex",
@@ -10346,7 +10384,7 @@
     "apiName": "Twinfire",
     "name": "Twin Fire",
     "rarity": "Silver",
-    "desc": "On ability damage, fire 1 plus @AdditionalMis@ <keyworkMajor>Firecrackers</keyworkMajor> that deal <magicDamage>@Damage@ magic damage</magicDamage> each. <br><br>Gain <attention>%i:scaleCrit% @CrtiChance*100@% Critical Strike Chance</attention>.",
+    "desc": "On ability damage, fire 1 plus @AdditionalMis@ missiles that deal <magicDamage>@Damage@ magic damage</magicDamage> each. <br><br>Gain <attention>%i:scaleCrit% @CrtiChance*100@% Critical Strike Chance</attention>.",
     "tooltip": "{{Kiwi_TwinFire_Summary}}",
     "dataValues": {
       "ADRatio": 0.07000000029802322,
@@ -10444,6 +10482,7 @@
     "apiName": "ARAM_MissingPingAugment",
     "name": "???",
     "rarity": "Prismatic",
+    "disabled": true,
     "desc": "Your <passive>Missing Pings</passive> will launch a missile at the pinged location that <magicdamage>damages</magicdamage> enemies and <heal>heals</heal> allies.",
     "tooltip": "Your <passive>Missing Pings</passive> will launch a missile at the pinged location that deals <magicDamage>@BaseDmgCalc@ + @DamageHPRatio*100@% missing Health magic damage</magicDamage> to enemies and heals allies for <scaleHealth>@BaseHealingCalc@ + @HealingHPRatio*100@% missing Health</scaleHealth>.",
     "dataValues": {
@@ -10568,6 +10607,7 @@
     "apiName": "ARAM_PoroKing",
     "name": "Bounce of the Poro King",
     "rarity": "Prismatic",
+    "disabled": true,
     "desc": "Gain <spellName>Bounce of the Poro King</spellName>!<br><br><rules><spellName>Bounce of the Poro King</spellName>: Transform into the Poro King, bouncing repeatedly, dealing <physicalDamage>physical damage</physicalDamage> and <status>Knocking Back</status> nearby enemies.</rules>",
     "tooltip": "Gain <spellName>Bounce of the Poro King</spellName>!<br><br><spellName>Bounce of the Poro King</spellName>: For @Buff_Duration@ seconds, transform into the Poro King! You are now Unstoppable and Ghosted. Gain @Calc_Damage_Reduction@ damage reduction and <speed>@Calc_MoveSpeed@ Movement Speed</speed>, but become Silenced and unable to Attack.<br><br>Additionally, bounce every 1 second, dealing <physicalDamage>@Calc_Damage@ physical damage</physicalDamage> and <status>Knock Back</status> nearby enemy champions on landing.<br><br><rules>The Poro King cannot <status>Knock Back</status> the same enemy more than once per cast.<br><br>Damage Prevented: @f1.0@<br>Damage Dealt: @f2.0@<br>Enemies Bounced: @f3.0@</rules>",
     "dataValues": {
@@ -10684,6 +10724,7 @@
     "apiName": "ARAM_LittleDevil",
     "name": "Devil on Your Shoulder",
     "rarity": "Prismatic",
+    "disabled": true,
     "desc": "Forge a pact with The Little Devil himself. <br><br>He <omnivamp>drains your life over time</omnivamp> but rewards by applying <trueDamage>bonus true damage</trueDamage> against champions and creating <healing>healing remnants</healing> for you to acquire.",
     "tooltip": "You've forged a pact with the Little Devil himself. He <omnivamp>drains @Calc_Drain_Per_Second_Non_Combat@ of your current Health per second, increased to @Calc_Drain_Per_Second@ if there are nearby enemies</omnivamp>.<br><br>In return, he amplifies your Attacks and Abilities to deal an additional <trueDamage>@Calc_Damage_Amp@ true damage</trueDamage>, which cause a <omnivamp>Life Remnant</omnivamp> to appear nearby for @Remnant_Duration@ seconds.<br><br>Absorbing a <omnivamp>Life Remnant</omnivamp> <healing>heals you for @Calc_Remnant_Healing@</healing> and grants you <speed>@Calc_Move_Speed@ Movement Speed</speed> for @Move_Speed_Duration@ second.<br><br><rules>Health Drained: @f1.0@<br>Damage Dealt: @f2.0@<br>Remnants Acquired: @f4.0@<br>Health Restored: @f5.0@<br>Periodic damage has a @DotDamageCooldown@ second cooldown</rules>",
     "dataValues": {
