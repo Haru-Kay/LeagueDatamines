@@ -343,6 +343,7 @@ def augmentSearcher(key, data, version=0)
 
                 dataValues.each { |component|
                     name = component["name"]
+                    name = $lang.fetch(name, name)
                     values = component["values"] || []
                     if overrides
                         values = overrides[name] || values
@@ -353,7 +354,7 @@ def augmentSearcher(key, data, version=0)
                 }
 
                 calcs = mSpell.fetch("mSpellCalculations", {})
-                aug["calculations"] = calcs
+                aug["calculations"] = applyLangKeys(applyLang(calcs))
                 
             end
         end
@@ -367,6 +368,7 @@ def augmentSearcher(key, data, version=0)
                 
                 dataValues.each { |component|
                     name = component["name"]
+                    name = $lang.fetch(name, name)
                     values = component["values"] || []
                     puts "#{spellName} ::: #{name}" if !values
                     values = values[0] if values.uniq.length == 1
@@ -374,7 +376,7 @@ def augmentSearcher(key, data, version=0)
                 }
 
                 calcs = mSpell.fetch("mSpellCalculations", {})
-                aug["add"][str]["calcs"] = calcs
+                aug["add"][str]["calcs"] = applyLangKeys(applyLang(calcs))
                 
             end
         }
@@ -432,6 +434,7 @@ def augmentSetBuilder(key, data, version=0)
 
         dataValues.each { |component|
             name = component["name"]
+            name = $lang.fetch(name, name)
             values = component["values"] || []
             puts "#{spellName} ::: #{name}" if !values
             out = []
@@ -460,7 +463,7 @@ def augmentSetBuilder(key, data, version=0)
         set.delete("descEx") if set["descEx"].empty?
 
         calcs = mSpell.fetch("mSpellCalculations", {})
-        set["data"]["calculations"] = calcs
+        set["data"]["calculations"] = applyLangKeys(applyLang(calcs))
 
         set["augments"] = []
         data["augments"].each { |aug|

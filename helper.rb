@@ -31,57 +31,87 @@ txt.split("\n").each { |f|
     obf, name = f.split(" ")
     hash.store(obf, name)
 }
+File.open("aram/mayhem/augments/augments.json", 'rb') { |f| 
+    JSON.parse(f.read).each { |aug|
+        dataValues = aug.dig("dataValues")
+        if dataValues
+            dataValues.each { |name, value|
+                hash.store(fnv(name.downcase), name) unless hash[fnv(name.downcase)]
+            }
+        end
+
+        desc = aug.dig("desc")
+        if desc
+            str = desc.gsub(/@([^@]+)@/) { |m|
+                var = m[1..-2].split("*")[0]
+                hash.store(fnv(var.downcase), var) unless hash[fnv(var.downcase)]
+            }
+        end
+        tooltip = aug.dig("tooltip")
+        if tooltip
+            str = tooltip.gsub(/@([^@]+)@/) { |m|
+                var = m[1..-2].split("*")[0]
+                hash.store(fnv(var.downcase), var) unless hash[fnv(var.downcase)]
+            }
+        end
+    }
+}
+
+str = ""
+hash.each { |obf, name|
+    str += "#{obf} #{name}\n"
+}
 
 strangeChildren = {}
 
-Dir.each_child("champions") { |file|
-    path = "champions/#{file}/Spells.json"
-    File.open(path, 'rb') { |f| 
-        JSON.parse(f.read).each { |key, object|
-            mSpell = object.dig("mSpell")
-            spellName = object.fetch("ObjectName", key)
-            if mSpell
-                dataValues = mSpell["DataValues"]
-                dataValues&.each { |dv|
-                    name = dv["name"]
-                    name.gsub!(" ", "")
-                    hash.store(fnv(name.downcase), name)
+# Dir.each_child("champions") { |file|
+#     path = "champions/#{file}/Spells.json"
+#     File.open(path, 'rb') { |f| 
+#         JSON.parse(f.read).each { |key, object|
+#             mSpell = object.dig("mSpell")
+#             spellName = object.fetch("ObjectName", key)
+#             if mSpell
+#                 dataValues = mSpell["DataValues"]
+#                 dataValues&.each { |dv|
+#                     name = dv["name"]
+#                     name.gsub!(" ", "")
+#                     hash.store(fnv(name.downcase), name)
                     
-                    values = dv["values"]
-                    next if !values
-                    next if values.uniq.length == 1
-                    oldValue = (values[2] - values[1]).round(3)
-                    valueChecks = values[1...values.length - 1]
-                    valueChecks = values if ["jayce", "udyr"].include?(file)
-                    lastVal = valueChecks[0]
-                    count = {
-                        lastVal => 1
-                    }
-                    valueChecks.delete_if { |v| 
-                        next true if (v > lastVal && oldValue.negative?) || (v < lastVal && oldValue.positive?)
-                        next false if v == valueChecks[0]
-                        count[v] ||= 0
-                        count[v] += 1
-                        lastVal = v
-                        next false
-                    }
-                    count.each { |k, v|
-                        valueChecks.delete(k) if v > 1
-                    }
-                    for i in 2...valueChecks.length
-                        next if valueChecks.uniq.length == 3
-                        if (valueChecks[i] - valueChecks[i - 1]).round(3) != oldValue 
-                            strangeChildren[file] ||= {}
-                            strangeChildren[file][spellName] ||= {}
-                            strangeChildren[file][spellName][name] = values
-                            break
-                        end
-                    end
-                }
-            end
-        }
-    }
-}
+#                     values = dv["values"]
+#                     next if !values
+#                     next if values.uniq.length == 1
+#                     oldValue = (values[2] - values[1]).round(3)
+#                     valueChecks = values[1...values.length - 1]
+#                     valueChecks = values if ["jayce", "udyr"].include?(file)
+#                     lastVal = valueChecks[0]
+#                     count = {
+#                         lastVal => 1
+#                     }
+#                     valueChecks.delete_if { |v| 
+#                         next true if (v > lastVal && oldValue.negative?) || (v < lastVal && oldValue.positive?)
+#                         next false if v == valueChecks[0]
+#                         count[v] ||= 0
+#                         count[v] += 1
+#                         lastVal = v
+#                         next false
+#                     }
+#                     count.each { |k, v|
+#                         valueChecks.delete(k) if v > 1
+#                     }
+#                     for i in 2...valueChecks.length
+#                         next if valueChecks.uniq.length == 3
+#                         if (valueChecks[i] - valueChecks[i - 1]).round(3) != oldValue 
+#                             strangeChildren[file] ||= {}
+#                             strangeChildren[file][spellName] ||= {}
+#                             strangeChildren[file][spellName][name] = values
+#                             break
+#                         end
+#                     end
+#                 }
+#             end
+#         }
+#     }
+# }
 
 # File.open("items/items.json", 'rb') { |f| 
     
