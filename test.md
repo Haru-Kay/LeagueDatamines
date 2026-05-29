@@ -6,7 +6,7 @@ Just a reminder that PBE changes are not final and subject to change. Some chang
 
 * Cooldown: 30 seconds -> 20 seconds
 
-**Void Immolation**
+**Void Immolation (Arena/Mayhem)**
 
 * New effect: Killing an enemy deals 50 (+5% max HP) true damage in a 300 unit radius
 

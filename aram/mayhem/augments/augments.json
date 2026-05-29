@@ -5972,6 +5972,9 @@
     "rarity": "Gold",
     "desc": "Recasting <spellName>Snowball</spellName> deals increased damage, <status>Knocks Up</status> the target, and <status>Knocks Back</status> nearby enemies.",
     "tooltip": "Your <spellName>Snowball</spellName> gains 100 Ability Haste. The ability's recast deals 100% increased <magicDamage>damage</magicDamage>, <status>Knocks Up</status> the target, and knocks back nearby enemies.",
+    "dataValues": {
+      "AbilityHaste": 100.0
+    },
     "calculations": {
       "Damage": {
         "mFormulaParts": [
@@ -5992,6 +5995,35 @@
           }
         ],
         "~class": "GameCalculation"
+      }
+    },
+    "add": {
+      "Augment_Snowbomb": {
+        "dataValues": {
+          "AbilityHaste": 100.0
+        },
+        "calcs": {
+          "Damage": {
+            "mFormulaParts": [
+              {
+                "mEndValue": 275.0,
+                "mStartValue": 100.0,
+                "~class": "ByCharLevelInterpolationCalculationPart"
+              },
+              {
+                "mCoefficient": 0.4000000059604645,
+                "mStat": 2,
+                "mStatFormula": 2,
+                "~class": "StatByCoefficientCalculationPart"
+              },
+              {
+                "mCoefficient": 0.20000000298023224,
+                "~class": "StatByCoefficientCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          }
+        }
       }
     },
     "icons": [
@@ -6649,7 +6681,7 @@
     "name": "Spirit Bomb",
     "rarity": "Prismatic",
     "desc": "<healing>Healing</healing> and <shield>Shielding</shield> allied champions builds up a Spirit Bomb. At max stacks, toss the bomb onto <scaleHealth>lowest Health ally</scaleHealth> to <healing>heal</healing> and <shield>shield</shield> them and nearby allies.",
-    "tooltip": "<healing>Healing</healing> and <shield>Shielding</shield> builds up stacks of <keywordMajor>Spirit Bomb</keywordMajor>. At max stacks, toss <keywordMajor>Spirit Bomb</keywordMajor> at your <scaleHealth>lowest Health ally</scaleHealth>. After reaching the target, it <healing>heals nearby allies for @Calc_Heal@ of their missing Health</healing> and grants them a <shield>@Calc_Shield@ current Health shield</shield> for @Shield_Duration@ seconds.<br><br><rules>Spirit Bombs Tossed: @f1.0@<br>Healing: @f2.0@<br>Shielding: @f3.0@</rules>",
+    "tooltip": "<healing>Healing</healing> and <shield>Shielding</shield> builds up a <keywordMajor>Spirit Bomb</keywordMajor>. At max stacks, toss the <keywordMajor>Spirit Bomb</keywordMajor> at your <scaleHealth>lowest Health ally</scaleHealth>. After reaching the target, it <healing>heals nearby allies for @Calc_Heal@ of their missing Health</healing> and grants them a <shield>@Calc_Shield@ current Health shield</shield> for @Shield_Duration@ seconds.<br><br><rules>Spirit Bombs Tossed: @f1.0@<br>Healing: @f2.0@<br>Shielding: @f3.0@</rules>",
     "dataValues": {
       "Radius": 475.0,
       "Shield_Duration": 4.0,
@@ -7595,7 +7627,7 @@
     "name": "Porcupine",
     "rarity": "Gold",
     "desc": "Taking damage from champions builds up a burst of needles that fly out of you, dealing damage and slowing nearby enemies.",
-    "tooltip": "Taking damage from champions builds up stacks of needles. At max stacks, the needles burst, dealing <physicalDamage>@Calc_Damage@ physical damage</physicalDamage> and <status>Slowing </status> nearby enemies by @Calc_Slow@ for @Slow_Duration@ seconds.<br><br><rules>Bursts: @f1.0@<br>Damage: @f2.0@</rules>",
+    "tooltip": "Taking damage from champions builds up a burst of needles. At critical mass, the needles burst, dealing <physicalDamage>@Calc_Damage@ physical damage</physicalDamage> and <status>Slowing </status> nearby enemies by @Calc_Slow@ for @Slow_Duration@ seconds.<br><br><rules>Bursts: @f1.0@<br>Damage: @f2.0@</rules>",
     "dataValues": {
       "Radius": 400.0,
       "VFX_Breakpoint_1": 0.25,
