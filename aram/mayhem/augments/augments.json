@@ -6365,7 +6365,7 @@
   {
     "id": 2098,
     "apiName": "ARAM_EndlessHunt",
-    "name": "Vital to Sweetspot",
+    "name": "En Passant",
     "rarity": "Prismatic",
     "desc": "Periodically identify <keywordMajor>Vitals</keywordMajor> on enemy champions. Hitting them with Attacks or Abilities deals <trueDamage>max Health true damage</trueDamage>, <healing>restores Health</healing>, and grants <speed>Movement Speed</speed>. These effects can stack.",
     "tooltip": "Periodically identify <keywordMajor>Vitals</keywordMajor> on enemy champions. Hitting <keywordMajor>Vitals</keywordMajor> with Attacks or Abilities deals an additional <trueDamage>@BaseVitalDamage*100@% + @StackDamage*100@% per stack max Health true damage</trueDamage>, restores <healing>@VitalHeal@ + @MissingHealthHeal*100@% Missing Health</healing>, and grants<speed> @MovementSpeed@ + 5% per stack Bonus Movement Speed,</speed> decaying over @MSDuration@ seconds.<br><br>Most Vitals hit in a row: @f1@",
@@ -6471,7 +6471,7 @@
     "apiName": "ARAM_DivineDomain",
     "name": "Rite of Ascension",
     "rarity": "Prismatic",
-    "desc": "On takedown, enemy champions leave behind their Essence. Attacking the Essence grants movement speed and resets basic ability cooldowns.",
+    "desc": "On takedown, enemy champions leave behind their Essence. Attacking the Essence grants <speed>movement speed</speed> and resets basic ability cooldowns.",
     "tooltip": "Champion takedowns within @Kill_Track_Duration@ seconds of damaging them causes them to leave behind their <keywordMajor>Essence</keywordMajor> for @Soul_Duration@ seconds. Attacking an <keywordMajor>Essence</keywordMajor> consumes it.<br><br>Consuming an <keywordMajor>Essence</keywordMajor> blinks you to its location, makes you <attention>Untargetable</attention> and <attention>Unstoppable</attention>, grants <speed>@Calc_Move_Speed@ Move Speed</speed> decaying over @Move_Speed_Duration@ seconds, <healing>heals you @Calc_Heal_Min@ to @Calc_Heal_Max@ based on your Missing Health</healing>, and resets your basic Ability cooldowns. <br><br><rules>Healing: @f1.0@<br>Cooldown Time Refunded: @f3.0@</rules><br><br><flavorText>Today, you will see the power of Ascension! — Azir, the Emperor of the Sands</flavorText>",
     "dataValues": {
       "Soul_Duration": 8.0,
@@ -7029,7 +7029,7 @@
     "name": "Overextender",
     "rarity": "Gold",
     "desc": "Recall to enter your Cannon Launcher.  It has significantly increased range, travel speed, and damage.",
-    "tooltip": "Your Cannon Launcher has significantly increased range, travel speed, and damage. Recall to enter your Cannon Launcher. <br><br>Enemies Passed: @f1@",
+    "tooltip": "Your Cannon Launcher has significantly increased range, travel speed, and damage. Recall to enter your Cannon Launcher. <br><br>Units Travelled: @f1@",
     "dataValues": {
       "DamageIncrease": 0.5,
       "CannonRangeIncrease": 12000.0
@@ -7479,8 +7479,8 @@
     "apiName": "Overkill",
     "name": "Pin Cushion",
     "rarity": "Prismatic",
-    "desc": "Dealing damage during {{SpellName}} applies <keywordMajor>Marks</keywordMajor> that explode at end of the duration, dealing damage and granting Move Speed.",
-    "tooltip": "Dealing damage during {{SpellName}} applies <keywordMajor>Marks</keywordMajor> on enemy champions.<br><br>Marks detonate once {{SpellName}} expires, dealing <physicalDamage>@DamagePerStack@ Physical Damage</physicalDamage> and granting <speed>@MSPerStack@ Movement Speed</speed> and <attackSpeed>@ASPerStack*100@% Attack Speed</attackSpeed> per <keywordMajor>Mark</keywordMajor> for 3 seconds.<br><br>Most Marks Detonated: @f1@<br>Mark Damage: @f3@",
+    "desc": "Attacks during {{SpellName}} apply <keywordMajor>Marks</keywordMajor> that explode at the end of its duration, dealing damage and granting Move Speed.",
+    "tooltip": "Attacks during {{SpellName}} apply <keywordMajor>Marks</keywordMajor> on enemy champions.<br><br>Marks explode once {{SpellName}} expires, dealing <physicalDamage>@DamagePerStack@ Physical Damage</physicalDamage> and granting <speed>@MSPerStack@ Move Speed</speed> per stack for 3 seconds.<br><br>Most Marks Detonated: @f1@",
     "dataValues": {
       "MSPerStack": 10.0,
       "ASPerStack": 0.05000000074505806
@@ -7618,7 +7618,8 @@
     "desc": "Striking an enemy champion with {{SpellName}} grants you <attention>@Calc_Resists@</attention> <scaleArmor>Armor</scaleArmor> or <scaleMR>Magic Resist</scaleMR> based on their damage type for @Buff_Duration@ seconds. This effect can stack.",
     "tooltip": "<br>Striking an enemy champion with {{SpellName}} grants you <attention>@Calc_Resists@</attention> <scaleArmor>Armor</scaleArmor> or <scaleMR>Magic Resist</scaleMR> based on their damage type for @Buff_Duration@ seconds. This effect can stack.<br><br>Maximum Ward Level: @f2.0@",
     "dataValues": {
-      "Buff_Duration": 6.0
+      "Buff_Duration": 6.0,
+      "Cooldown": 4.0
     },
     "calculations": {
       "Calc_Resists": {
