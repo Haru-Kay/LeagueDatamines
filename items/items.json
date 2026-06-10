@@ -10237,7 +10237,7 @@
     "mDataValues": [
       {
         "mName": "AnvilRoundDelay",
-        "mValue": 3.0,
+        "mValue": 1.0,
         "~class": "ItemDataValue"
       }
     ],
@@ -15700,7 +15700,17 @@
         "DataValues": [
           {
             "mName": "DamageToHealthPercentage",
-            "mValue": 0.03999999910593033,
+            "mValue": 0.07000000029802322,
+            "~class": "ItemDataValue"
+          },
+          {
+            "mName": "ProcDamageHPRatio",
+            "mValue": 0.15000000596046448,
+            "~class": "ItemDataValue"
+          },
+          {
+            "mName": "ProcBaseDamage",
+            "mValue": 45.0,
             "~class": "ItemDataValue"
           }
         ],
@@ -15777,7 +15787,42 @@
       },
       {
         "mName": "DamageToHealthPercentage",
-        "mValue": 0.014999999664723873,
+        "mValue": 0.03500000014901161,
+        "~class": "ItemDataValue"
+      },
+      {
+        "mName": "ProcDPSMultiplier",
+        "mValue": 1.0,
+        "~class": "ItemDataValue"
+      },
+      {
+        "mName": "ChampProcDPSMultiplier",
+        "mValue": 1.5,
+        "~class": "ItemDataValue"
+      },
+      {
+        "mName": "Cooldown",
+        "mValue": 12.0,
+        "~class": "ItemDataValue"
+      },
+      {
+        "mName": "ProcAoE",
+        "mValue": 350.0,
+        "~class": "ItemDataValue"
+      },
+      {
+        "mName": "ChampProcAoE",
+        "mValue": 500.0,
+        "~class": "ItemDataValue"
+      },
+      {
+        "mName": "ProcDamageHPRatio",
+        "mValue": 0.019999999552965164,
+        "~class": "ItemDataValue"
+      },
+      {
+        "mName": "ProcBaseDamage",
+        "mValue": 20.0,
         "~class": "ItemDataValue"
       }
     ],
@@ -15818,6 +15863,7 @@
           {
             "mDataValue": "0x543f3cc3",
             "mStat": 12,
+            "mStatFormula": 2,
             "~class": "StatByNamedDataValueCalculationPart"
           }
         ],
@@ -15836,6 +15882,21 @@
           }
         ],
         "~class": "GameCalculation"
+      },
+      "ProcDamage": {
+        "mFormulaParts": [
+          {
+            "mDataValue": "0x5d12aa2d",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          {
+            "mDataValue": "0xd082d99f",
+            "mStat": 12,
+            "mStatFormula": 2,
+            "~class": "StatByNamedDataValueCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
       }
     },
     "mItemCalloutSpectator": true,
@@ -15849,9 +15910,9 @@
       "effectRadius": 400.0,
       "epicness": 6,
       "inventoryIcon": "ASSETS/Items/Icons2D/223069_Kiwi_VoidImmolation.MAYHEM_New_Augments.dds",
-      "mDescription": "<section></section><section><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleArmor% @FlatArmorMod@</attention> Armor<br><attention>%i:scaleMR% @FlatSpellBlockMod@</attention> Magic Resist<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste<br><attention>%i:scaleHPRegen% @PercentBaseHPRegenMod*100@%</attention> Base Health Regen</section><section><passive>Immolate</passive><br>After taking or dealing damage, <keywordMajor>Burn</keywordMajor> nearby enemies for <trueDamage>@DPS@ true damage</trueDamage> per second for @AuraDuration@ seconds. </section><section></section><section><flavorText>We will devour all...</flavorText></section>",
-      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Void Immolation</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Ramping Damage</subtitleLeft><subtitleRight>Unique: Immolate</subtitleRight><mainText><section><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleArmor% @FlatArmorMod@</attention> Armor<br><attention>%i:scaleMR% @FlatSpellBlockMod@</attention> Magic Resist<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste<br><attention>%i:scaleHPRegen% @PercentBaseHPRegenMod*100@%</attention> Base Health Regen@ExtendedStats@</section><section><passive>Immolate</passive><br>After taking or dealing damage, <keywordMajor>Burn</keywordMajor> nearby enemies for <trueDamage>@DPS@ true damage</trueDamage> per second for @AuraDuration@ seconds. </section><section></section><section><flavorText>We will devour all...</flavorText></section></mainText><postScriptLeft>Immolate Damage to Champions: <attention>@f1@</attention></postScriptLeft>",
-      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Void Immolation</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Ramping Damage</subtitleLeft><subtitleRight>Unique: Immolate</subtitleRight><mainText><section></section><section><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleArmor% @FlatArmorMod@</attention> Armor<br><attention>%i:scaleMR% @FlatSpellBlockMod@</attention> Magic Resist<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste<br><attention>%i:scaleHPRegen% @PercentBaseHPRegenMod*100@%</attention> Base Health Regen</section><section><passive>Immolate</passive><br>After taking or dealing damage, <keywordMajor>Burn</keywordMajor> nearby enemies for <trueDamage>@DPS@ true damage</trueDamage> per second for @AuraDuration@ seconds. </section><section></section><section><flavorText>We will devour all...</flavorText></section></mainText><br>",
+      "mDescription": "<section></section><section><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleArmor% @FlatArmorMod@</attention> Armor<br><attention>%i:scaleMR% @FlatSpellBlockMod@</attention> Magic Resist<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste<br><attention>%i:scaleHPRegen% @PercentBaseHPRegenMod*100@%</attention> Base Health Regen</section><section><passive>Immolate</passive><br>After taking or dealing damage, <keywordMajor>Burn</keywordMajor> nearby enemies for <magicDamage>@DPS@ true damage</magicDamage> per second for @AuraDuration@ seconds. <br><br><passive>Desolate</passive><br>Killing an enemy deals <magicDamage>@ProcDamage@ magic damage</magicDamage> around them.</section><section></section><section><flavorText>We will devour all...</flavorText></section>",
+      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Void Immolation</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Ramping Damage</subtitleLeft><subtitleRight>Unique: Immolate</subtitleRight><mainText><section><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleArmor% @FlatArmorMod@</attention> Armor<br><attention>%i:scaleMR% @FlatSpellBlockMod@</attention> Magic Resist<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste<br><attention>%i:scaleHPRegen% @PercentBaseHPRegenMod*100@%</attention> Base Health Regen@ExtendedStats@</section><section><passive>Immolate</passive><br>After taking or dealing damage, <keywordMajor>Burn</keywordMajor> nearby enemies for <magicDamage>@DPS@ true damage</magicDamage> per second for @AuraDuration@ seconds. <br><br><passive>Desolate</passive><br>Killing an enemy deals <magicDamage>@ProcDamage@ magic damage</magicDamage> around them.</section><section></section><section><flavorText>We will devour all...</flavorText></section></mainText><postScriptLeft>Immolate Damage to Champions: <attention>@f1@</attention></postScriptLeft>",
+      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Void Immolation</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Ramping Damage</subtitleLeft><subtitleRight>Unique: Immolate</subtitleRight><mainText><section></section><section><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleArmor% @FlatArmorMod@</attention> Armor<br><attention>%i:scaleMR% @FlatSpellBlockMod@</attention> Magic Resist<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste<br><attention>%i:scaleHPRegen% @PercentBaseHPRegenMod*100@%</attention> Base Health Regen</section><section><passive>Immolate</passive><br>After taking or dealing damage, <keywordMajor>Burn</keywordMajor> nearby enemies for <magicDamage>@DPS@ true damage</magicDamage> per second for @AuraDuration@ seconds. <br><br><passive>Desolate</passive><br>Killing an enemy deals <magicDamage>@ProcDamage@ magic damage</magicDamage> around them.</section><section></section><section><flavorText>We will devour all...</flavorText></section></mainText><br>",
       "mTooltipData": {
         "mFormat": "TooltipFormatA",
         "mLists": {
@@ -15889,9 +15950,9 @@
           "keyName": "Void Immolation",
           "keySecondaryBrief": "Unique: Immolate",
           "keySummary": "After taking or dealing damage, <keywordMajor>Burn</keywordMajor> nearby enemies, dealing <magicDamage>magic damage</magicDamage> scaling with your <scaleHealth>max Health</scaleHealth>.",
-          "keyTooltip": "<passive>Immolate</passive><br>After taking or dealing damage, <keywordMajor>Burn</keywordMajor> nearby enemies for <trueDamage>@DPS@ true damage</trueDamage> per second for @AuraDuration@ seconds. ",
+          "keyTooltip": "<passive>Immolate</passive><br>After taking or dealing damage, <keywordMajor>Burn</keywordMajor> nearby enemies for <magicDamage>@DPS@ true damage</magicDamage> per second for @AuraDuration@ seconds. <br><br><passive>Desolate</passive><br>Killing an enemy deals <magicDamage>@ProcDamage@ magic damage</magicDamage> around them.",
           "keyTooltipExtendedRules": "<rules><passive>Immolate</passive> deals @MinionMod*100@% increased damage to minions and monsters.</rules>",
-          "keyTooltipExternal": "<passive>Immolate</passive><br>After taking or dealing damage, deal <magicDamage>@DPS@ magic damage</magicDamage> per second to nearby enemies for @AuraDuration@ seconds. "
+          "keyTooltipExternal": "<passive>Immolate</passive><br>After taking or dealing damage, deal <magicDamage>@DPS@ magic damage</magicDamage> per second to nearby enemies for @AuraDuration@ seconds. <br><br><passive>Desolate</passive><br>Killing an enemy deals <magicDamage>magic damage</magicDamage> around them."
         },
         "mObjectName": "Arena/Void Immolation",
         "~class": "TooltipInstanceItem"
@@ -23336,9 +23397,6 @@
       0.0
     ],
     "mFlatMagicDamageMod": 60.0,
-    "mItemAdviceAttributes": [
-      "0xe625a35a"
-    ],
     "mItemAttributes": [
       32
     ],
@@ -51519,9 +51577,6 @@
       0.0
     ],
     "mFlatMagicDamageMod": 65.0,
-    "mItemAdviceAttributes": [
-      "0xe625a35a"
-    ],
     "mItemAttributes": [
       32,
       16
@@ -58057,9 +58112,6 @@
       0.0
     ],
     "mFlatMagicDamageMod": 65.0,
-    "mItemAdviceAttributes": [
-      "0xe625a35a"
-    ],
     "mItemAttributes": [
       32,
       16

@@ -650,6 +650,7 @@ File.open("game-data/champion-summary.json", 'rb') { |f|
         $champLang.push(champ["alias"].downcase)
     }
 }
+$champLang.push("locke")
 queues.each { |queue|
     next if !queue.is_a?(Hash)
     next if !queue["viableChampionRoster"]
