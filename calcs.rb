@@ -173,3 +173,7 @@ stat = {
     "bonus HSP"
   ]
 }
+
+def gameCalc(hash)
+  case 
+end

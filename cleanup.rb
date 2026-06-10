@@ -780,6 +780,8 @@ print "done.\n"
                 type = "LoadScreenData"
             when "0x409a5657"
                 type = "DefaultAugmentData"
+            when "0x5b559303"
+                type = "ChampionAugmentTagList"
             when "0x23433cc1"
                 type = "AugmentNameModifiers"
             when "0xc3a44766"
@@ -868,6 +870,10 @@ print "done.\n"
                 type = "AugmentList"
                 data = applyLangKeys(applyLang(data))
                 augmentList = data["AugmentList"]
+            when "0x8d31b69b"
+                type = "AugmentQuestData"
+            when "0xa0ffdf09"
+                type = "AugmentQuestList"
             else
                 #do nothing
         end
