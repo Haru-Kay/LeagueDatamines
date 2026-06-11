@@ -627,45 +627,10 @@ print "done.\n"
 $lang = nil
 File.open("lang/stringtable.json", 'rb') { |f| $lang = LangHashWrapper.new(JSON.parse(f.read())) }
 
-print "Loading and formatting miscellaneous game data..."
-Dir.each_child("game-data") { |path|
-    data = {}
-    File.open("game-data/#{path}", 'rb') { |f| data = JSON.parse(f.read()) }
-
-    File.open("game-data/#{path}", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
-}
-
-queues = {}
-File.open("game-data/queues.json", 'rb') { |f| queues = JSON.parse(f.read()) }
 champs = {}
 $champLang = []
-File.open("game-data/champion-summary.json", 'rb') { |f| 
-    c = JSON.parse(f.read()) 
-    c.each { |champ|
-        next if !champ.is_a?(Hash)
-        next if champ["alias"]&.include?("_")
-        id = champ["id"]
-        name = champ["name"]
-        champs.store(id, name)
-        $champLang.push(champ["alias"].downcase)
-    }
-}
-$champLang.push("locke")
-queues.each { |queue|
-    next if !queue.is_a?(Hash)
-    next if !queue["viableChampionRoster"]
-    queue["viableChampionRoster"] = queue["viableChampionRoster"].map { |v| champs.fetch(v, v) }
-}
-File.open("game-data/queues.json", 'wb') { |f| f.write(JSON.pretty_generate(queues)) }
-print "done.\n"
 
 diff()
-
-print "Loading and formatting map data..."
-$maps = {}
-File.open("game-data/maps.json", 'rb') { |f| $maps = JSON.parse(f.read()) }
-File.open("game-data/maps.json", 'wb') { |f| f.write(JSON.pretty_generate($maps)) }
-print "done.\n"
 
 # Common handling
     print "Loading and formatting Shared data..."
@@ -1109,23 +1074,25 @@ Dir.mkdir("characters/shared")
     r2 = "/shared" if r == ""
     r2 = "/summonersRift" if r == "/map11"
     r2 = "/aram" if r == "/map12"
+    r2 = "/arena" if r == "/map30"
+    r2 = "/swarm" if r == "/map33"
     Dir.each_child(root) { |path|
         basepath = root + path
-        if path.include?("_") && !manual.include?(path)
-            outdir = "characters#{r2}/" + path.split("_")[0]
-            Dir.mkdir("#{outdir}") if !Dir.exist?("#{outdir}")
-        elsif !$champLang.include?(path)
-            outdir = "characters#{r2}"
-        else
-            outdir = "champions"
-        end
 
-        Dir.mkdir("#{outdir}/#{path}") if !Dir.exist?("#{outdir}/#{path}")
         Dir.each_child(basepath) { |file|
             filepath = basepath + "/" + file
             champ = {}
             File.open(filepath, 'rb') { |f| champ = JSON.parse(f.read()) }
             champ = champ.fetch("entries", champ)
+
+            if path.include?("_") && !manual.include?(path)
+                outdir = "characters#{r2}/" + path.split("_")[0]
+                Dir.mkdir("#{outdir}") if !Dir.exist?("#{outdir}")
+            else
+                outdir = "characters#{r2}"
+            end
+            Dir.mkdir("#{outdir}/#{path}") if !Dir.exist?("#{outdir}/#{path}")
+
             out = {}
             champ.each { |obj, data|
                 d = applyLang(data)
@@ -1156,6 +1123,10 @@ Dir.mkdir("characters/shared")
                             d["secondaryAbilityResource"].keys.each { |k|
                                 d["secondaryAbilityResource"][k] = applyLangKeys(d["secondaryAbilityResource"][k])
                             }
+                        end
+                        if d["platformEnabled"]
+                            outdir = "champions"
+                            Dir.mkdir("#{outdir}/#{path}") if !Dir.exist?("#{outdir}/#{path}")
                         end
                     when "ItemRecommendationOverrideSet", "RecSpellRankUpInfolist", "ItemRecommendationContextList",
                         "ChampionRuneRecommendationsContext", "JunglePathRecommendation", "SkinCharacterMetaDataProperties"
