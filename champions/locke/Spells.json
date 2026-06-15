@@ -49,6 +49,40 @@
     "mScriptName": "LockeRSpellPassive",
     "~class": "SpellObject"
   },
+  "0x2e984c15": {
+    "ObjectName": "LockeRExecuteTracker",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Purgatory",
+          "keyTooltip": "This unit has been marked by Locke's artifact."
+        },
+        "mObjectName": "LockeRExecuteTracker",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "LockeRExecuteTracker",
+    "~class": "SpellObject"
+  },
+  "0x42ee5c34": {
+    "ObjectName": "LockeQNailsReady",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Nails Ready!",
+          "keyTooltip": "Locke is ready to throw his Soul Nails."
+        },
+        "mObjectName": "LockeQNailsReady",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "LockeQNailsReady",
+    "~class": "SpellObject"
+  },
   "0x7531bb00": {
     "ObjectName": "LockePassive",
     "mScriptName": "LockePassive",
@@ -131,8 +165,8 @@
           "mLocKeys": {
             "keyName": "Silver Stake",
             "keySummary": "Locke's attacks deal additional magic damage On-Hit, increased based on enemy missing Health.",
-            "keyTooltip": "Locke's attacks deal an additional <magicDamage>@MinOnHitDamage@ magic damage</magicDamage> on-hit, increased up to <magicDamage>@MaxOnHitDamage@ magic damage</magicDamage> based on enemy missing health.",
-            "keyTooltipExtended": "<rules>Effect has maximum power at 30% Health.</rules>"
+            "keyTooltip": "Locke's Attacks deal an additional <magicDamage>@MinOnHitDamage@ magic damage</magicDamage> on-hit, increased up to <magicDamage>@MaxOnHitDamage@ magic damage</magicDamage> based on the target's missing Health.",
+            "keyTooltipExtendedBelowLine": "<rules>Effect has maximum power at 30% Health.</rules>"
           },
           "mObjectName": "LockePassive",
           "~class": "TooltipInstanceSpell"
@@ -192,6 +226,23 @@
       },
       "~class": "SpellDataResource"
     },
+    "~class": "SpellObject"
+  },
+  "0x8051c8fd": {
+    "ObjectName": "LockeQSlow",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Slow",
+          "keyTooltip": "This unit is slowed."
+        },
+        "mObjectName": "LockeQSlow",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "LockeQSlow",
     "~class": "SpellObject"
   },
   "0x8cff8cc0": {
@@ -263,6 +314,23 @@
       },
       "~class": "SpellDataResource"
     },
+    "~class": "SpellObject"
+  },
+  "0x9b4c6fd1": {
+    "ObjectName": "LockeRSlow",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Slow",
+          "keyTooltip": "This unit is slowed."
+        },
+        "mObjectName": "LockeRSlow",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "LockeRSlow",
     "~class": "SpellObject"
   },
   "0xa9f38c0c": {
@@ -347,7 +415,7 @@
         "mFormat": "0xb34f999a",
         "mLocKeys": {
           "keyName": "Nailed!",
-          "keyTooltip": "Struck by Locke's nail. Taking damage from another Locke attack or ability will rip it out and deal damage."
+          "keyTooltip": "This unit is marked by Soul Nails."
         },
         "mObjectName": "LockeQMissile",
         "~class": "TooltipInstanceBuff"
@@ -539,7 +607,7 @@
         "mFormat": "0xb34f999a",
         "mLocKeys": {
           "keyName": "Nailed!",
-          "keyTooltip": "Struck by Locke's nail. Taking damage from another Locke attack or ability will rip it out and deal damage."
+          "keyTooltip": "This unit is marked by Soul Nails."
         },
         "mObjectName": "LockeRNailMissile",
         "~class": "TooltipInstanceBuff"
@@ -736,7 +804,7 @@
         "mFormat": "0xb34f999a",
         "mLocKeys": {
           "keyName": "Ashen Pursuit",
-          "keyTooltip": "Locke teleports to a location, dealing <magicDamage>@OnHitDamage@ magic damage</magicDamage> around him on arrival. On his next attack, he dashes to his target, dealing <magicDamage>@DashDamage@ magic damage</magicDamage> to all enemies in his path. Each hit consumes <keywordMajor>Soul Nails</keywordMajor>.<br><br>If Locke scores a takedown, the cooldown of this ability is reset.<br>"
+          "keyTooltip": "Locke teleports to a location, dealing <magicDamage>@OnHitDamage@ magic damage</magicDamage> around him on arrival. <br><br>On his next Attack, he dashes to his target, dealing <magicDamage>@DashDamage@ magic damage</magicDamage> to all enemies in his path. Each hit consumes <keywordMajor>Soul Nails</keywordMajor>.<br><br>If Locke scores a takedown, the Cooldown of this Ability is reset."
         },
         "mObjectName": "LockeWRecast",
         "~class": "TooltipInstanceBuff"
@@ -1743,7 +1811,6 @@
           }
         ],
         "mTooltipData": {
-          "EnableExtendedTooltip": false,
           "mFormat": "0xd7c27163",
           "mLists": {
             "LevelUp": {
@@ -1759,7 +1826,7 @@
                   "~class": "TooltipInstanceListElement"
                 },
                 {
-                  "nameOverride": "Blink Damage",
+                  "nameOverride": "Teleport Damage",
                   "type": "BaseOnHitDamage",
                   "~class": "TooltipInstanceListElement"
                 },
@@ -1776,7 +1843,7 @@
           "mLocKeys": {
             "keyName": "Ashen Pursuit",
             "keySummary": "Locke teleports to a location before dashing to attack his next target, dealing damage to enemies passed through.",
-            "keyTooltip": "Locke teleports to a location, dealing <magicDamage>@OnHitDamage@ magic damage</magicDamage> around him on arrival. On his next attack, he dashes to his target, dealing <magicDamage>@DashDamage@ magic damage</magicDamage> to all enemies in his path. Each hit consumes <keywordMajor>Soul Nails</keywordMajor>.<br><br>If Locke scores a takedown, the cooldown of this ability is reset.<br>"
+            "keyTooltip": "Locke teleports to a location, dealing <magicDamage>@OnHitDamage@ magic damage</magicDamage> around him on arrival. <br><br>On his next Attack, he dashes to his target, dealing <magicDamage>@DashDamage@ magic damage</magicDamage> to all enemies in his path. Each hit consumes <keywordMajor>Soul Nails</keywordMajor>.<br><br>If Locke scores a takedown, the Cooldown of this Ability is reset."
           },
           "mObjectName": "LockeE",
           "~class": "TooltipInstanceSpell"
@@ -1848,7 +1915,7 @@
         "mFormat": "0xb34f999a",
         "mLocKeys": {
           "keyName": "Nailed!",
-          "keyTooltip": "Struck by Locke's nail. Taking damage from another Locke attack or ability will rip it out and deal damage."
+          "keyTooltip": "This unit is marked by Soul Nails."
         },
         "mObjectName": "LockeQ",
         "~class": "TooltipInstanceBuff"
@@ -2065,6 +2132,32 @@
             0.375
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "TwoMarkBonusPercent",
+          "values": [
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ThreeMarkBonusPercent",
+          "values": [
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "castConeAngle": 0.0,
@@ -2147,11 +2240,6 @@
                   "nameOverride": "Cooldown",
                   "type": "Cooldown",
                   "~class": "TooltipInstanceListElement"
-                },
-                {
-                  "nameOverride": "Mana Cost",
-                  "type": "Cost",
-                  "~class": "TooltipInstanceListElement"
                 }
               ],
               "levelCount": 5,
@@ -2162,7 +2250,7 @@
             "keyName": "Ritual Nails",
             "keySummary": "Locke readies a set of Soul Nails to throw, dealing damage to and marking enemies hit. Locke can consume the marks to deal bonus damage with his attacks.",
             "keyTooltip": "Locke readies a set of <keywordMajor>Soul Nails</keywordMajor> to throw, dealing <magicDamage>@MissileDamage@ magic damage</magicDamage> and marking enemies hit. Nails apply a @SlowAmount1*100@/@SlowAmount2*100@/@SlowAmount3*100@% <status>Slow</status> for @SlowDuration1@/@SlowDuration2@/@SlowDuration3@ seconds, stacking with the amount of nails hit.<br><br>Attacking the enemy consumes the <keywordMajor>Soul Nails</keywordMajor>, dealing <magicDamage>@NailDamage@ magic damage</magicDamage> per stack, increased by @TwoMarkBonusPercent@% and @ThreeMarkBonusPercent@% for two and three nails respectively.",
-            "keyTooltipExtendedBelowLine": "<rules>Each remaining nail restores @AmmoCooldownReset@ Cooldown and Mana when this effect ends.</rules>"
+            "keyTooltipExtendedBelowLine": "<rules>Each remaining nail refunds @AmmoCooldownReset@ of Ability's Cooldown and Mana cost when this effect ends.</rules>"
           },
           "mObjectName": "LockeQ",
           "~class": "TooltipInstanceSpell"
@@ -2196,7 +2284,6 @@
       "mSpellCalculations": {
         "0xac10fc3d": {
           "mDisplayAsPercent": true,
-          "mExpandedTooltipCalculationDisplay": 5,
           "mFormulaParts": [
             {
               "mEndValue": 0.3499999940395355,
@@ -2204,7 +2291,6 @@
               "~class": "ByCharLevelInterpolationCalculationPart"
             }
           ],
-          "mSimpleTooltipCalculationDisplay": 5,
           "~class": "GameCalculation"
         },
         "0xae806e50": {
@@ -2530,8 +2616,8 @@
           "mLocKeys": {
             "keyName": "Purgatory",
             "keySummary": "Locke throws a binding artifact that deals damage and potentially executes enemies hit. Locke gains additional power for sealing away enemy champions.",
-            "keyTooltip": "Locke throws a binding artifact to a location, dealing <magicDamage>@Damage@ magic damage</magicDamage> to and <status>slowing</status> enemies in the area by @SlowAmount*100@%, decaying over @SlowDuration@ seconds. The artifact marks enemies hitfor @Duration@ seconds, sealing away marked enemy champions brought below @ExecutionThreshold*100@%, and resetting the duration of the mark on other affected champions.<br><br>After the duration ends, if at least one champion was sealed, the artifact lands on the ground.. Locke can pick up the artifact to permanently increase its Execution Threshold by @ExecuteThresholdPerStack*100@%, and refund @CooldownReduction@% of his current cooldown, for each champion sealed.<br>",
-            "keyTooltipExtendedBelowLine": "<rules>Locke has gained @ExecuteBonusCalc@ bonus execute threshold.</rules>"
+            "keyTooltip": "Locke throws a binding artifact to a location, dealing <magicDamage>@Damage@ magic damage</magicDamage> and <status>Slowing</status> enemies in the area by @SlowAmount*100@%, decaying over @SlowDuration@ seconds. The artifact marks enemies hit for @Duration@ seconds, sealing away marked enemy champions brought below @ExecutionThreshold*100@%, and resetting the duration of the mark on other affected champions.<br><br>After the duration ends, if at least one champion was sealed, the artifact lands on the ground. Locke can pick up the artifact to permanently increase its execution threshold by @ExecuteThresholdPerStack*100@%, and refund @CooldownReduction@% of his current Cooldown, for each champion sealed.<br>",
+            "keyTooltipExtendedBelowLine": "<rules>The artifact will linger on the ground for Purgatory's current Cooldown at the time of sealing. <br>Locke has gained @ExecuteBonusCalc@ bonus execute threshold.</rules>"
           },
           "mObjectName": "LockeR",
           "~class": "TooltipInstanceSpell"
@@ -2576,6 +2662,7 @@
       "mSpellCalculations": {
         "0x708b59ae": {
           "mDisplayAsPercent": true,
+          "mExpandedTooltipCalculationDisplay": 5,
           "mFormulaParts": [
             {
               "mBuffName": "0xb5c3348f",
@@ -2586,6 +2673,7 @@
             }
           ],
           "mPrecision": 1,
+          "mSimpleTooltipCalculationDisplay": 5,
           "~class": "GameCalculation"
         },
         "Damage": {
@@ -2630,8 +2718,8 @@
       "mTooltipData": {
         "mFormat": "0xb34f999a",
         "mLocKeys": {
-          "keyName": "Ashen Pursuit",
-          "keyTooltip": "Locke teleports to a location, dealing <magicDamage>@OnHitDamage@ magic damage</magicDamage> around him on arrival. On his next attack, he dashes to his target, dealing <magicDamage>@DashDamage@ magic damage</magicDamage> to all enemies in his path. Each hit consumes <keywordMajor>Soul Nails</keywordMajor>.<br><br>If Locke scores a takedown, the cooldown of this ability is reset.<br>"
+          "keyName": "Soul Ignited",
+          "keyTooltip": "Locke has ignited his soul."
         },
         "mObjectName": "LockeW",
         "~class": "TooltipInstanceBuff"
@@ -2722,13 +2810,13 @@
         {
           "name": "BaseDamageRestoreAmount",
           "values": [
-            20.0,
-            60.0,
-            100.0,
-            140.0,
-            180.0,
-            220.0,
-            260.0
+            0.0,
+            40.0,
+            80.0,
+            120.0,
+            160.0,
+            200.0,
+            240.0
           ],
           "~class": "SpellDataValue"
         },
@@ -2864,11 +2952,11 @@
             }
           },
           "mLocKeys": {
-            "keyCost": "@Cost@ Mana and @HealthCost*100@% Current Health Per Second",
+            "keyCost": "@Cost@ Mana and <font color='#CC3300'>@HealthCost*100@% Current Health</font> Per Second",
             "keyName": "Soul Ignition",
             "keySummary": "Locke ignites his soul, gaining Attack Speed and Move Speed, and dealing damage to himself. At the end of the duration, Locke will heal back a portion of the damage he takes during the effect.",
-            "keyTooltip": "Locke ignites his own soul, gaining @AttackSpeed@ Attack Speed and <speed>@MoveSpeed@ Move Speed</speed> that decay over time.<br>For @Duration@ seconds, he suffers <trueDamage>@HealthCost*100@% current health true damage</trueDamage> per second but heals back the last <healing>@DamageRestoreAmount@ damage taken</healing>,  and an additional <healing>@AdditionalHeal@ Health</healing> based on missing health and time passed, up to a maximum of<healing>@MaxHealingThreshold@ health remaining</healing>.<br><br>Can be <recast>Recast</recast> to end early.",
-            "keyTooltipExtendedBelowLine": "<rules>Move speed decays over @DecayTimeHelper@ seconds.<br>Can be recast while under crowd control effects.</rules>"
+            "keyTooltip": "Locke ignites his own soul, gaining <attackSpeed>@AttackSpeed@ Attack Speed</attackSpeed>and <speed>@MoveSpeed@ Move Speed</speed> that decays over @DecayTimeHelper@ seconds.<br><br>For @BaseDuration@ seconds, he suffers <trueDamage>@HealthCost*100@% current Health true damage</trueDamage> per second but <healing>Heals</healing> back the last <healing>@DamageRestoreAmount@</healing> damage taken, and an additional <healing>@AdditionalHeal@ Health</healing> based on missing Health and time passed, up to a maximum of <healing>@MaxHealingThreshold@ Health remaining</healing>.<br><br>Can be <recast>Recast</recast> to end early.",
+            "keyTooltipExtendedBelowLine": "<rules>Can be <recast>Recast</recast> while Disabled.</rules>"
           },
           "mObjectName": "LockeW",
           "~class": "TooltipInstanceSpell"
@@ -2917,12 +3005,12 @@
         "0x7ec943a6": {
           "mFormulaParts": [
             {
-              "mEndValue": 300.0,
-              "mStartValue": 60.0,
+              "mEndValue": 200.0,
+              "mStartValue": 40.0,
               "~class": "ByCharLevelInterpolationCalculationPart"
             },
             {
-              "mCoefficient": 0.4000000059604645,
+              "mCoefficient": 0.20000000298023224,
               "~class": "StatByCoefficientCalculationPart"
             }
           ],
@@ -2935,7 +3023,7 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 1.0,
+              "mCoefficient": 1.2000000476837158,
               "~class": "StatByCoefficientCalculationPart"
             }
           ],

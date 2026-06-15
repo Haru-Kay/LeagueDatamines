@@ -1,8 +1,24 @@
 **Just a reminder that PBE changes are not final and subject to change. Some changes, such as bugfixes, may not be able to be viewed.**
 
-## Locke
-
 ## Champions
+
+**Locke**
+
+* [Check the wiki for the full rundown.](https://wiki.leagueoflegends.com/en-us/Locke)
+* W Base Heal: 60/100/140/180/220 (+100% AP) -> 40/80/120/160/200 (+120% AP)
+* W Bonus Healing: 60-300 (+40% AP) -> 40-200 (+20% AP)
+* Locke Eternals Series 1:
+  * Some Pain, Some Gain: Damage healed by Soul Ignition (W)
+  * Souls Skewered: Number of times Ritual Nails' (Q) mark detonated on enemy * champions
+  * Past Forgiveness: Number of enemy champions sealed by Purgatory (R)
+* Locke Eternals Series 2:
+  * The Final Sermon: Number of times multiple enemy champions hit by Purgatory (R)
+  * Shifting Smoke: Skillshots dodged by Ashen Pursuit (E)
+  * Running Hot: Distanced traveled while Soul Ignition (W) is active
+
+**Naafiri**
+
+* W is no longer considered an Ultimate.
 
 ## Runes
 
@@ -26,6 +42,28 @@
 * Blue-P Empower Duration: 3 seconds -> 4 seconds
 
 ## ARAM: Mayhem
+
+### Augments
+
+**Combusting Interest**
+
+* Damage to Gold Ratio: 1% -> 0.75%
+
+**Pin Cushion**
+
+* Damage per Stack: 20-30 -> 20-50
+
+**Quickstep**
+
+* Prismatic -> Gold
+
+**Twin Fire**
+
+* Crit Chance: 15% -> 25%
+
+**Void Dash**
+
+* Base Damage: 80-300 -> 80-400
 
 ### Champions
 
