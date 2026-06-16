@@ -343,7 +343,7 @@
         "mFormat": "0xb34f999a",
         "mLocKeys": {
           "keyName": "Sealed Champions",
-          "keyTooltip": "Locke has sealed champions with his ultimate spell, granting him additional basic Ability Haste."
+          "keyTooltip": "Locke has sealed champions in his artifact, increasing its power."
         },
         "mObjectName": "LockeRStack",
         "~class": "TooltipInstanceBuff"
@@ -1734,6 +1734,19 @@
             275.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "E2AttackDelay",
+          "values": [
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "TargetingForgivenessDefinitions": [
@@ -1770,7 +1783,7 @@
       "mAffectsTypeFlags": 6154,
       "mAnimationName": "Spell4_landing",
       "mCantCancelWhileWindingUp": true,
-      "mCastTime": 0.25,
+      "mCastTime": 0.17499999701976776,
       "mCastingBreaksStealth": true,
       "mCastingRevealsCasterStealth": true,
       "mCharacterPassiveBuffs": [
@@ -1815,11 +1828,6 @@
           "mLists": {
             "LevelUp": {
               "Elements": [
-                {
-                  "nameOverride": "Cooldown",
-                  "type": "Cooldown",
-                  "~class": "TooltipInstanceListElement"
-                },
                 {
                   "nameOverride": "@AbilityResourceName@ Cost",
                   "type": "Cost",
@@ -2156,6 +2164,32 @@
             40.0,
             40.0,
             40.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "QMissileMinionMod",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "QMarkMinionMod",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
           ],
           "~class": "SpellDataValue"
         }
@@ -2617,7 +2651,7 @@
             "keyName": "Purgatory",
             "keySummary": "Locke throws a binding artifact that deals damage and potentially executes enemies hit. Locke gains additional power for sealing away enemy champions.",
             "keyTooltip": "Locke throws a binding artifact to a location, dealing <magicDamage>@Damage@ magic damage</magicDamage> and <status>Slowing</status> enemies in the area by @SlowAmount*100@%, decaying over @SlowDuration@ seconds. The artifact marks enemies hit for @Duration@ seconds, sealing away marked enemy champions brought below @ExecutionThreshold*100@%, and resetting the duration of the mark on other affected champions.<br><br>After the duration ends, if at least one champion was sealed, the artifact lands on the ground. Locke can pick up the artifact to permanently increase its execution threshold by @ExecuteThresholdPerStack*100@%, and refund @CooldownReduction@% of his current Cooldown, for each champion sealed.<br>",
-            "keyTooltipExtendedBelowLine": "<rules>The artifact will linger on the ground for Purgatory's current Cooldown at the time of sealing. <br>Locke has gained @ExecuteBonusCalc@ bonus execute threshold.</rules>"
+            "keyTooltipExtendedBelowLine": "<rules>The artifact will linger on the ground for this Ability's current Cooldown at the time of sealing. <br>Locke has gained @ExecuteBonusCalc@ bonus execute threshold.</rules>"
           },
           "mObjectName": "LockeR",
           "~class": "TooltipInstanceSpell"
@@ -2733,11 +2767,11 @@
         "0xa3e0478": 50.0,
         "values": [
           50.0,
-          50.0,
-          50.0,
-          50.0,
-          50.0,
-          50.0
+          55.0,
+          60.0,
+          65.0,
+          70.0,
+          75.0
         ],
         "~class": "0x630af303"
       },
@@ -2756,14 +2790,15 @@
       },
       "0xf26881a0": 0.0,
       "Cooldown": {
+        "0xa3e0478": 19.0,
         "values": [
-          20.0,
-          20.0,
+          19.0,
           18.0,
+          17.0,
           16.0,
+          15.0,
           14.0,
-          12.0,
-          12.0
+          13.0
         ],
         "~class": "0xa0eddc9"
       },
@@ -2955,8 +2990,8 @@
             "keyCost": "@Cost@ Mana and <font color='#CC3300'>@HealthCost*100@% Current Health</font> Per Second",
             "keyName": "Soul Ignition",
             "keySummary": "Locke ignites his soul, gaining Attack Speed and Move Speed, and dealing damage to himself. At the end of the duration, Locke will heal back a portion of the damage he takes during the effect.",
-            "keyTooltip": "Locke ignites his own soul, gaining <attackSpeed>@AttackSpeed@ Attack Speed</attackSpeed>and <speed>@MoveSpeed@ Move Speed</speed> that decays over @DecayTimeHelper@ seconds.<br><br>For @BaseDuration@ seconds, he suffers <trueDamage>@HealthCost*100@% current Health true damage</trueDamage> per second but <healing>Heals</healing> back the last <healing>@DamageRestoreAmount@</healing> damage taken, and an additional <healing>@AdditionalHeal@ Health</healing> based on missing Health and time passed, up to a maximum of <healing>@MaxHealingThreshold@ Health remaining</healing>.<br><br>Can be <recast>Recast</recast> to end early.",
-            "keyTooltipExtendedBelowLine": "<rules>Can be <recast>Recast</recast> while Disabled.</rules>"
+            "keyTooltip": "Locke ignites his own soul, gaining <attackSpeed>@AttackSpeed@ Attack Speed</attackSpeed> and <speed>@MoveSpeed@ Move Speed</speed> that decays over @DecayTimeHelper@ seconds.<br><br>For @BaseDuration@ seconds, he suffers <trueDamage>@HealthCost*100@% current Health true damage</trueDamage> per second but <healing>Heals</healing> back the last <healing>@DamageRestoreAmount@</healing> damage taken, and an additional <healing>@AdditionalHeal@ Health</healing> based on missing Health and time passed, up to a maximum of <healing>@MaxHealingThreshold@ Health remaining</healing>.<br><br>Can be <recast>Recast</recast> to end early.",
+            "keyTooltipExtendedBelowLine": "<rules>This Ability can be used while <status>Disabled</status>.</rules>"
           },
           "mObjectName": "LockeW",
           "~class": "TooltipInstanceSpell"
@@ -2991,12 +3026,12 @@
         "0x35921bc": {
           "mFormulaParts": [
             {
-              "mEndValue": 590.0,
-              "mStartValue": 250.0,
+              "mEndValue": 450.0,
+              "mStartValue": 150.0,
               "~class": "ByCharLevelInterpolationCalculationPart"
             },
             {
-              "mCoefficient": 1.0,
+              "mCoefficient": 0.6000000238418579,
               "~class": "StatByCoefficientCalculationPart"
             }
           ],
@@ -3041,7 +3076,6 @@
               "~class": "NamedDataValueCalculationPart"
             }
           ],
-          "mPrecision": 1,
           "mSimpleTooltipCalculationDisplay": 5,
           "~class": "GameCalculation"
         },
