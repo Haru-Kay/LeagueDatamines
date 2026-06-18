@@ -804,7 +804,7 @@
         "mFormat": "0xb34f999a",
         "mLocKeys": {
           "keyName": "Ashen Pursuit",
-          "keyTooltip": "Locke teleports to a location, dealing <magicDamage>@OnHitDamage@ magic damage</magicDamage> around him on arrival. <br><br>On his next Attack, he dashes to his target, dealing <magicDamage>@DashDamage@ magic damage</magicDamage> to all enemies in his path. Each hit consumes <keywordMajor>Soul Nails</keywordMajor>.<br><br>If Locke scores a takedown, the Cooldown of this Ability is reset."
+          "keyTooltip": "Locke teleports to a location, dealing <magicDamage>@OnHitDamage@ magic damage</magicDamage> to nearby enemies on arrival. <br><br>On his next Attack, he dashes to his target, dealing <magicDamage>@DashDamage@ magic damage</magicDamage> to all enemies in his path. Each hit consumes <keywordMajor>Soul Nails</keywordMajor>.<br><br>If Locke scores a takedown, the Cooldown of this Ability is reset."
         },
         "mObjectName": "LockeWRecast",
         "~class": "TooltipInstanceBuff"
@@ -968,6 +968,7 @@
         0.0
       ],
       "flags": 4,
+      "mAffectsStatusFlags": 32,
       "mAffectsTypeFlags": 8192,
       "mAmmoRechargeTime": [
         0.0,
@@ -1851,7 +1852,7 @@
           "mLocKeys": {
             "keyName": "Ashen Pursuit",
             "keySummary": "Locke teleports to a location before dashing to attack his next target, dealing damage to enemies passed through.",
-            "keyTooltip": "Locke teleports to a location, dealing <magicDamage>@OnHitDamage@ magic damage</magicDamage> around him on arrival. <br><br>On his next Attack, he dashes to his target, dealing <magicDamage>@DashDamage@ magic damage</magicDamage> to all enemies in his path. Each hit consumes <keywordMajor>Soul Nails</keywordMajor>.<br><br>If Locke scores a takedown, the Cooldown of this Ability is reset."
+            "keyTooltip": "Locke teleports to a location, dealing <magicDamage>@OnHitDamage@ magic damage</magicDamage> to nearby enemies on arrival. <br><br>On his next Attack, he dashes to his target, dealing <magicDamage>@DashDamage@ magic damage</magicDamage> to all enemies in his path. Each hit consumes <keywordMajor>Soul Nails</keywordMajor>.<br><br>If Locke scores a takedown, the Cooldown of this Ability is reset."
           },
           "mObjectName": "LockeE",
           "~class": "TooltipInstanceSpell"
@@ -1897,7 +1898,11 @@
       "mSpellTags": [
         "Trait_PlayerSelectedDashDirection",
         "PositiveEffect_Teleport",
-        "Trait_DamageAbility"
+        "Trait_DamageAbility",
+        "PositiveEffect_MoveBlock",
+        "Trait_RecastOrReplaceSpell",
+        "Trait_Melee_SmallWindup",
+        "Trait_AoE"
       ],
       "mTargetingTypeData": {
         "~class": "LocationClamped"
@@ -2276,7 +2281,7 @@
                   "~class": "TooltipInstanceListElement"
                 },
                 {
-                  "nameOverride": "Spell_ListType_SecondaryDamage",
+                  "nameOverride": "Damage per Stack",
                   "type": "MarkDamage",
                   "~class": "TooltipInstanceListElement"
                 }
@@ -2359,6 +2364,15 @@
           "~class": "GameCalculation"
         }
       },
+      "mSpellTags": [
+        "Trait_SignatureSpell",
+        "Trait_Ammo",
+        "Trait_DamageAbility",
+        "PositiveEffect_EmpowerAttack",
+        "Trait_RecastOrReplaceSpell",
+        "Trait_Ranged_StopsFirstHit",
+        "Trait_Ranged_Piercing"
+      ],
       "mTargetingTypeData": {
         "~class": "direction"
       },
@@ -2699,6 +2713,25 @@
         "~class": "MissileSpecification"
       },
       "mSpellCalculations": {
+        "0x6c540a3a": {
+          "mDisplayAsPercent": true,
+          "mFormulaParts": [
+            {
+              "mDataValue": "ExecutionThreshold",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mBuffName": "0xb5c3348f",
+              "mDataValue": "ExecuteThresholdPerStack",
+              "mIconKey": "%i:LockeR%",
+              "mScalingTagKey": "font color='#0bf7de'",
+              "~class": "BuffCounterByNamedDataValueCalculationPart"
+            }
+          ],
+          "mPrecision": 1,
+          "mSimpleTooltipCalculationDisplay": 5,
+          "~class": "GameCalculation"
+        },
         "0x708b59ae": {
           "mDisplayAsPercent": true,
           "mExpandedTooltipCalculationDisplay": 5,
@@ -2731,7 +2764,9 @@
       },
       "mSpellCooldownOrSealedQueueThreshold": 0.25,
       "mSpellTags": [
-        "Trait_Ultimate"
+        "Trait_Ultimate",
+        "Trait_DamageAbility",
+        "Trait_AoE"
       ],
       "mTargetingTypeData": {
         "~class": "Location"
@@ -2811,13 +2846,13 @@
         {
           "name": "BaseMoveSpeed",
           "values": [
+            0.3499999940395355,
+            0.4000000059604645,
             0.44999998807907104,
             0.5,
             0.550000011920929,
             0.6000000238418579,
-            0.6499999761581421,
-            0.699999988079071,
-            0.75
+            0.6499999761581421
           ],
           "~class": "SpellDataValue"
         },
@@ -3124,6 +3159,10 @@
         }
       },
       "mSpellRevealsChampion": false,
+      "mSpellTags": [
+        "Trait_SelfHeal",
+        "PositiveEffect_Boon"
+      ],
       "mTargetingTypeData": {
         "~class": "Self"
       },

@@ -216,31 +216,12 @@ augmentTags.each { |name, data|
     }
 }
 
-# traits = []
-# readoutsA["0xeedd1ba"].each { |f|
-#     puts f
-#     if traits.empty?
-#         traits = augmentTags[f].tags
-#     else
-#         traits = traits & augmentTags[f].tags
-#     end
-# }
-
-# puts traits
-
-#augmentTags.each { |a, v| puts a if !v.tags.include?("Trait_SignatureSpell")}
-
-readoutsB.each { |d, v|
-    n = false
-    [
-        "aphelios", "aurora", "hwei", "sona", "locke"
-    ].each { |f|
-        (n = true; break) if !v.include?(f)
-    }
-    next if n
-    puts "#{d} :: #{v.length}"
+readoutsA["MinionmancerAugments"].each { |f|
+    puts f
 }
 
+
+#augmentTags.each { |a, v| puts a if !v.tags.include?("Trait_SignatureSpell")}
 # puts "a: "
 # readoutsA.sort_by { |k, v| v.length }.to_h.each { |k, v|
 #     puts k + " :: " + v.length.to_s

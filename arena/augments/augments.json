@@ -8490,7 +8490,7 @@
     "tooltip": "Gain @RevivesToGain@ additional revive, and cuts the time needed to revive in half.",
     "dataValues": {
       "MaxLevel": 1.0,
-      "RevivesToGain": 2.0,
+      "RevivesToGain": 1.0,
       "SizeAdjustment": 0.20000000298023224,
       "LambRezDelayMod": 2.0,
       "LambRezTimerMod": 2.0
@@ -9823,7 +9823,7 @@
     "apiName": "GlassCannon",
     "name": "Glass Cannon",
     "rarity": "Prismatic",
-    "desc": "Reduce <scaleHealth>max Health by @HPReductionPerc*100@%</scaleHealth>. Deal an extra @TrueDamagePerc*100@% damage as <trueDamage>true damage</trueDamage>. ",
+    "desc": "Reduce <scaleHealth>max Health by @HPReductionPerc*100@%</scaleHealth>. Deal an extra @TrueDamagePercSplit@ damage as <trueDamage>true damage</trueDamage>. ",
     "tooltip": "{{Kiwi_GlassCannon_Summary}}<br><br>Damage Dealt: @f1@",
     "dataValues": {
       "TrueDamagePerc": [
@@ -9848,6 +9848,20 @@
           }
         ],
         "~class": "GameCalculation"
+      },
+      "0xdf58b3f4": {
+        "mDisplayAsPercent": true,
+        "mFormulaParts": [
+          {
+            "mDataValue": "TrueDamagePerc",
+            "~class": "NamedDataValueCalculationPart"
+          }
+        ],
+        "mRangedMultiplier": {
+          "mNumber": 0.6000000238418579,
+          "~class": "NumberCalculationPart"
+        },
+        "~class": "0xe9a3c91d"
       }
     },
     "icons": [
