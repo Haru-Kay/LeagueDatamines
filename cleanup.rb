@@ -380,6 +380,7 @@ def augmentSearcher(key, data, version=0)
             end
         end
         linkedObjects.each { |obj|
+            next if obj == spellName
             spellObject = source.dig(obj)
             if spellObject && spellObject["~class"] == "SpellObject" && spellObject.key?("mSpell")
                 mSpell = spellObject.fetch("mSpell", {})
