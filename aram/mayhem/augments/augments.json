@@ -124,7 +124,7 @@
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
-            "mNumber": 0.75,
+            "mNumber": 0.5,
             "~class": "NumberCalculationPart"
           }
         ],
@@ -136,7 +136,7 @@
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
-            "mNumber": 0.75,
+            "mNumber": 0.5,
             "~class": "NumberCalculationPart"
           }
         ],
@@ -4452,7 +4452,7 @@
     "tooltip": "{{Kiwi_TwinFire_Summary}}",
     "dataValues": {
       "ADRatio": 0.07000000029802322,
-      "CrtiChance": 0.15000000596046448,
+      "CrtiChance": 0.25,
       "AdditionalMisDivision": 3.0,
       "APRatio": 0.07000000029802322,
       "Cooldown": 5.0,
@@ -5682,15 +5682,15 @@
     "id": 2064,
     "apiName": "ARAM_Quickstep",
     "name": "Quickstep",
-    "rarity": "Prismatic",
+    "rarity": "Gold",
     "desc": "When you use {{SpellName}}, dash towards your cursor.",
     "tooltip": "{{Kiwi_Augment_Vanguard_Desc}}",
     "dataValues": {
       "ChargeRange": 350.0
     },
     "icons": [
-      "ASSETS/UX/Kiwi/Augments/Icons/GenericAbilityAugmentIcon_Prismatic.tex",
-      "ASSETS/UX/Kiwi/Augments/Icons/GenericAbilityAugmentIcon_Prismatic.tex"
+      "ASSETS/UX/Kiwi/Augments/Icons/GenericAbilityAugmentIcon_Gold.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/GenericAbilityAugmentIcon_Gold.tex"
     ]
   },
   {
@@ -6033,7 +6033,7 @@
         "mFormulaParts": [
           {
             "mBuffName": "0x76180b74",
-            "mCoefficient": 5.0,
+            "mCoefficient": 4.0,
             "mIconKey": "%i:KiwiAugmentBurstingTeeth%",
             "~class": "BuffCounterByCoefficientCalculationPart"
           }
@@ -6044,7 +6044,7 @@
         "mFormulaParts": [
           {
             "mBuffName": "0x76180b74",
-            "mCoefficient": 5.0,
+            "mCoefficient": 4.0,
             "mIconKey": "%i:KiwiAugmentBurstingTeeth%",
             "~class": "BuffCounterByCoefficientCalculationPart"
           }
@@ -6056,7 +6056,7 @@
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
-            "mNumber": 0.20000000298023224,
+            "mNumber": 0.25,
             "~class": "NumberCalculationPart"
           }
         ],
@@ -6089,15 +6089,15 @@
     "id": 2087,
     "apiName": "ARAM_Archmage",
     "name": "Archmage",
-    "rarity": "Gold",
+    "rarity": "Prismatic",
     "desc": "Casting a spell refunds another random spell's cost by @RefundPercent*100@% of the original spell's Cooldown.",
     "tooltip": "Casting a spell refunds another random spell's cost by @RefundPercent*100@% of the original spell's Cooldown.",
     "dataValues": {
       "RefundPercent": 0.30000001192092896
     },
     "icons": [
-      "ASSETS/UX/Kiwi/Augments/Icons/Archmage_small.tex",
-      "ASSETS/UX/Kiwi/Augments/Icons/Archmage_large.tex"
+      "ASSETS/UX/Cherry/Augments/Icons/Eureka_small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Eureka_large.tex"
     ]
   },
   {
@@ -6124,7 +6124,7 @@
     "desc": "On takedown, enemy champions drop coins nearby, which you and your allies can collect. Each is worth <gold>@GoldPerCoin@ gold</gold>.",
     "tooltip": "On takedown, enemy champions drop @Calc_Max_Coins_To_Drop@ coins nearby, which you and your allies can collect. Each is worth <gold>@GoldPerCoin@ gold</gold>.<br><br><rules>Out of @f5@ total Coins dropped from @f6@ voluntary donors, your team has gained @f3@ Gold, with @f4@ Gold picked by yourself.</rules>",
     "dataValues": {
-      "GoldPerCoin": 10.0,
+      "GoldPerCoin": 15.0,
       "AmountOfCoins": 1.0,
       "CoinDuration": 10.0,
       "CoinMovementDistance": 500.0
@@ -6133,8 +6133,8 @@
       "Calc_Max_Coins_To_Drop": {
         "mFormulaParts": [
           {
-            "mEndValue": 16.0,
-            "mStartValue": 8.0,
+            "mEndValue": 10.0,
+            "mStartValue": 6.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           }
         ],
@@ -6273,6 +6273,7 @@
     "apiName": "VoidDash",
     "name": "Void Dash",
     "rarity": "Gold",
+    "disabled": true,
     "desc": "Dashing with {{Spellname}} spawns a Void Zone that <status>Slows</status> enemy champions and deals magic damage.",
     "tooltip": "{{SpellName}} spawns a Void Zone at the targeted destination. It <status>Slows</status> enemy champions for @SlowAmount*100@% for @SlowDuration@ seconds, and deals <magicDamage>@TotalDamage@ magic damage</magicDamage>. <br><br>Champions Slowed: @f1@",
     "dataValues": {
@@ -6295,7 +6296,7 @@
       "TotalDamage": {
         "mFormulaParts": [
           {
-            "mEndValue": 300.0,
+            "mEndValue": 400.0,
             "mStartValue": 80.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           },
@@ -6654,7 +6655,7 @@
     "tooltip": "<healing>Healing</healing> and <shield>Shielding</shield> builds up a <keywordMajor>Spirit Bomb</keywordMajor>. At max stacks, toss the <keywordMajor>Spirit Bomb</keywordMajor> at your <scaleHealth>lowest Health ally</scaleHealth>. After reaching the target, it <healing>heals nearby allies for @Calc_Heal@ of their missing Health</healing> and grants them a <shield>@Calc_Shield@ current Health shield</shield> for @Shield_Duration@ seconds.<br><br><rules>Spirit Bombs Tossed: @f1.0@<br>Healing: @f2.0@<br>Shielding: @f3.0@</rules>",
     "dataValues": {
       "Radius": 475.0,
-      "Shield_Duration": 4.0,
+      "Shield_Duration": 2.0,
       "VFX_Breakpoint_1": 0.25,
       "VFX_Breakpoint_2": 0.5,
       "VFX_Breakpoint_3": 0.75,
@@ -6783,22 +6784,6 @@
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/Hellbent_small.tex",
       "ASSETS/UX/Kiwi/Augments/Icons/Hellbent_large.tex"
-    ]
-  },
-  {
-    "id": 2108,
-    "apiName": "SupportMain",
-    "name": "Support Main",
-    "rarity": "Silver",
-    "desc": "<font color='#F0C200'>QUEST:</font> <healing>Heal</healing> allied champions for @QuestRequirement@ Health. <br><br><font color='#F0C200'>REWARD:</font> Any healing you provide now also Heals Over Time after the initial heal.",
-    "tooltip": "<font color='#F0C200'>QUEST:</font> <healing>Heal</healing> allied champions for @QuestRequirement@ health.<br><br><font color='#F0C200'>REWARD:</font> Any healing you provide now also Heals Over Time for @HealPercent@% of the initial heal over @HealDuration@ seconds.<br><br>Healing Done: @QuestProgress@ / @QuestRequirement@<br>",
-    "dataValues": {
-      "HealPercent": 25.0,
-      "HealDuration": 3.0
-    },
-    "icons": [
-      "ASSETS/UX/Kiwi/Augments/Icons/QuestSupportMain_small.tex",
-      "ASSETS/UX/Kiwi/Augments/Icons/QuestSupportMain_large.tex"
     ]
   },
   {
@@ -6949,6 +6934,7 @@
     "apiName": "SpecializedEmpowerment",
     "name": "Pursuit of Power",
     "rarity": "Gold",
+    "disabled": true,
     "desc": "<font color='#F0C200'>QUEST:</font> Hit enemy champions with {{SpellName}} @QuestRequirement@ times.<br><br><font color='#F0C200'>REWARD:</font> Permanently increase {{SpellName}} damage.",
     "tooltip": "{{Augment_SpecializedEmpowerment_Tooltip@f6@}}",
     "dataValues": {
@@ -7121,7 +7107,7 @@
     "desc": "Burns and damage over time applied to champions generates <gold>gold</gold>.",
     "tooltip": "Burns and damage over time applied to champions generates <gold>@GoldPerProc@ + @PercentGoldFromDamage*100@% of damage dealt as Gold</gold>.<br><br>Gold Generated: <b>@f1@</b>",
     "dataValues": {
-      "PercentGoldFromDamage": 0.009999999776482582
+      "PercentGoldFromDamage": 0.007499999832361937
     },
     "calculations": {
       "GoldPerProc": {
@@ -7441,7 +7427,7 @@
       "DamagePerStack": {
         "mFormulaParts": [
           {
-            "mEndValue": 30.0,
+            "mEndValue": 60.0,
             "mScalePastDefaultMaxLevel": false,
             "mStartValue": 20.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
@@ -7460,7 +7446,7 @@
           "DamagePerStack": {
             "mFormulaParts": [
               {
-                "mEndValue": 30.0,
+                "mEndValue": 60.0,
                 "mScalePastDefaultMaxLevel": false,
                 "mStartValue": 20.0,
                 "~class": "ByCharLevelInterpolationCalculationPart"
@@ -7510,6 +7496,7 @@
     "apiName": "PatOnTheBack",
     "name": "Pat On The Back",
     "rarity": "Gold",
+    "disabled": true,
     "desc": "Allies encourage you when you walk past, granting you a <shield>Shield</shield> and <speed>Movement Speed</speed>.",
     "tooltip": "Allies encourage you when you walk past them, granting you <shield>@Calc_Shield@ Shield</shield> and <speed>@Calc_MS@ Movement Speed</speed> for @Buff_Duration@ seconds. This effect can stack.<br><br><rules>Each ally has a @Calc_Per_Target_Cooldown@ cooldown before they can pat you on the back again.<br><br>Encouragements Received: @f1.0@</rules>",
     "dataValues": {

@@ -1,27 +1,36 @@
-require 'json'
+require 'concurrent-ruby'
+require 'fileutils'
+loc, fluff = *ARGV 
+loc = "C:/Program Files (x86)/Riot Games/League of Legends/League of Legends" if !loc
+loc = "D:/Games/Riot Games/League of Legends (PBE)" if loc.to_i == 1
 
-path = "champions/"
-abilityflags = {}
-Dir.each_child(path) { |c|
-    File.open(path + c + "/AbilityObject.json", 'rb') { |f|
-        abilityObjects = JSON.parse(f.read)
-        abilityObjects.each { |_, data|
-            name = data["mName"]
-            flags = data["AbilityTraits"]
-            next if !flags
-            
-            n = 16
-            while n > 0 && flags > 0
-                tag = 2**n
-                if flags - tag >= 0
-                    abilityflags[tag] ||= []
-                    abilityflags[tag].push(c + ": " + name)
-                    flags -= tag
-                end
-                n -= 1
-            end
-        }
+path = "#{loc}/Game/DATA/FINAL/"
+
+pool = Concurrent::FixedThreadPool.new(7)
+maps = {
+    11 => ["classic", "ruby", "swiftplay", "ultbook", "urf"],
+    12 => ["aram", "augments", "firstblood", "ultbook", "kiwi"],
+    21 => ["nexusblitz"],
+    30 => ["cherry"],
+    33 => ["strawberry"],
+    35 => ["brawl"]
+}
+
+maps.each { |mapId, mapArr|
+    pool.post {
+        system("./wadtools -L error --progress false e -i \"#{path}Maps/Shipping/Map#{mapId}.wad.client\" -o \"#{Dir.getwd}/bins\" -x \"^data/maps/shipping/map#{mapId}/map#{mapId}.bin$\"")
+        puts "Generated map#{mapId} shipping bin"
+    }
+    Dir.mkdir("#{Dir.getwd}/bins/data/maps/modespecificdata/map#{mapId}/") unless Dir.exist?("#{Dir.getwd}/bins/data/maps/modespecificdata/map#{mapId}/")
+    Dir.mkdir("#{Dir.getwd}/bins/data/temp/map#{mapId}") unless Dir.exist?("#{Dir.getwd}/bins/data/temp/map#{mapId}")
+    pool.post {
+        system("./wadtools -L error --progress false e -i \"#{path}Maps/Shipping/Map#{mapId}.wad.client\" -o \"#{Dir.getwd}/bins/data/temp/map#{mapId}\" -x \"^maps/modespecificdata/.*?\.bin$\"")
+        
+        FileUtils.mv(Dir.glob("#{Dir.getwd}/bins/data/temp/map#{mapId}/maps/modespecificdata/*/*"), "#{Dir.getwd}/bins/data/maps/modespecificdata/map#{mapId}/")
+        FileUtils.mv(Dir.glob("#{Dir.getwd}/bins/data/temp/map#{mapId}/maps/modespecificdata/*"), "#{Dir.getwd}/bins/data/maps/modespecificdata/map#{mapId}/")
+        puts "Generated map#{mapId} modedata bins"
     }
 }
 
-puts abilityflags[2048]
+pool.shutdown
+pool.wait_for_termination

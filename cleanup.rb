@@ -556,7 +556,7 @@ end
 
 mapBins = {
     11 => ["classic", "ruby", "swiftplay", "ultbook", "urf"],
-    12 => ["aram", "augments", "firstblood", "ultbook"],
+    12 => ["aram", "firstblood", "ultbook"],
     21 => ["nexusblitz"],
     30 => ["cherry"],
     33 => ["strawberry"],
@@ -808,8 +808,9 @@ print "done.\n"
         File.open("aram/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
     }
 
-    mapBins[12].each { |map|
-        next if map == "augments"
+    Dir.children("temp/data/maps/modespecificdata/map12/").each { |map|
+        map = map[...-5]
+        next if map == "augments" || map == "kiwi"
         Dir.mkdir("aram/#{map}") unless Dir.exist?("aram/#{map}")
         ["data", "vfxData"].each { |dir|
             Dir.mkdir("aram/#{map}/#{dir}") unless Dir.exist?("aram/#{map}/#{dir}")
@@ -826,6 +827,10 @@ print "done.\n"
             case type
                 when "0xc8400f38"
                     type = "HotkeyControls"
+                when "0xadaf4f78"
+                    type = "AugmentOperators"
+                when "0xfead7e9b"
+                    type = "AugmentGroups"
                 else
                     type = "MiscData" if type.start_with?("0x")
             end

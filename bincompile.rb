@@ -56,17 +56,19 @@ maps = {
 maps.each { |mapId, mapArr|
     pool.post {
         system("./wadtools -L error --progress false e -i \"#{path}Maps/Shipping/Map#{mapId}.wad.client\" -o \"#{Dir.getwd}/bins\" -x \"^data/maps/shipping/map#{mapId}/map#{mapId}.bin$\"")
-        puts "Generated map#{mapId} bin"
+        puts "Generated map#{mapId} shipping bin"
     }
-    mapArr.each { |map|
-        Dir.mkdir("#{Dir.getwd}/bins/data/maps/modespecificdata/map#{mapId}/") unless Dir.exist?("#{Dir.getwd}/bins/data/maps/modespecificdata/map#{mapId}/")
-        pool.post {
-            system("./wadtools -L error --progress false e -i \"#{path}Maps/Shipping/Map#{mapId}.wad.client\" -o \"#{Dir.getwd}/bins/data\" -x \"^maps/modespecificdata/#{map}.bin$\"")
-            FileUtils.mv("#{Dir.getwd}/bins/data/maps/modespecificdata/#{map}.bin", "#{Dir.getwd}/bins/data/maps/modespecificdata/map#{mapId}/#{map}.bin")
-            puts "Generated #{map} bin"
-        }
+    Dir.mkdir("#{Dir.getwd}/bins/data/maps/modespecificdata/map#{mapId}/") unless Dir.exist?("#{Dir.getwd}/bins/data/maps/modespecificdata/map#{mapId}/")
+    Dir.mkdir("#{Dir.getwd}/bins/data/temp/map#{mapId}") unless Dir.exist?("#{Dir.getwd}/bins/data/temp/map#{mapId}")
+    pool.post {
+        system("./wadtools -L error --progress false e -i \"#{path}Maps/Shipping/Map#{mapId}.wad.client\" -o \"#{Dir.getwd}/bins/data/temp/map#{mapId}\" -x \"^maps/modespecificdata/.*?\.bin$\"")
+        
+        FileUtils.mv(Dir.glob("#{Dir.getwd}/bins/data/temp/map#{mapId}/maps/modespecificdata/*/*"), "#{Dir.getwd}/bins/data/maps/modespecificdata/map#{mapId}/")
+        FileUtils.mv(Dir.glob("#{Dir.getwd}/bins/data/temp/map#{mapId}/maps/modespecificdata/*"), "#{Dir.getwd}/bins/data/maps/modespecificdata/map#{mapId}/")
+        puts "Generated map#{mapId} modedata bins"
     }
 }
+
 pool.post {
     system("./wadtools -L error --progress false e -i \"#{path}Global.wad.client\" -o \"#{Dir.getwd}/bins/data\" -x \"^items$\"")
     puts "Generated items bin"
