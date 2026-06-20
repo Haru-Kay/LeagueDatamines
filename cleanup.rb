@@ -12,6 +12,23 @@ txt.split("\n").each { |f|
     $manualHash.store(obf, name)
 }
 $manualHash.merge!({
+    "e1136d1" => "CastRange",
+    "a0eddc9" => "SpellAttributeModifiable",
+    "210f9ec0" => "primaryResourceCost",
+    "a3e0478" => "Default",
+    "630af303" => "ResourceCostModifiable",
+    "787ccb97" => "Perk_Health",
+    "150d1b92" => "BotNonsense",
+    "b09016f6" => "BotCalculation",
+    "ee39916f" => "VFXEmissionOffset",
+    "32559c50" => "TooltipFormatA",
+    "6b06978" => "QuestIconPath",
+    "7a1cab0d" => "TexturePath",
+    "898bb7cb" => "MilestoneData",
+    "c88f1a9b" => "QuestTooltipTra",
+    "8d31b69b" => "QuestData",
+    "3ed971bd" => "LinkedQuest",
+    "e93de85a" => "LinkedQuestData",
     "b35aa769" => "BaseValue", #EXACT
     "1262a25" => "MRPerLevel", #EXACT
     "18956a21" => "armorPerLevel",
@@ -73,12 +90,15 @@ class LangHashWrapper
             while key.start_with?("{") && key.end_with?("}")
                 key = key[1..key.length - 1]
             end
-            key = key[2..] if key.start_with?("0x")
-            key = xxh3(key)
+            if key.start_with?("0x")
+                key = key[2..]
+            else
+                key = xxh3(key)
+            end
         end
         ret = $manualHash.dig(key)
         return ret if !ret.nil?
-        @hash.fetch(key, *args[1..])
+        return @hash.fetch(key, *args[1..])
     end
 
     def dig(key)
@@ -318,6 +338,7 @@ def augmentSearcher(key, data, version=0)
             "dataValues" => {},
             "calculations" => {},
             "add" => {},
+            "quest" => data.fetch("0x3ed971bd", ""),
             "icons" => [
                 data.fetch("AugmentSmallIconPath", ""),
                 data.fetch("AugmentLargeIconPath", "")            
@@ -395,9 +416,42 @@ def augmentSearcher(key, data, version=0)
         }
         aug = applyLangKeys(applyLang(aug))
         aug.delete("maxLevelSummary") if aug["maxLevelSummary"]&.strip == aug["maxLevelTooltip"]&.strip
+        (aug.delete("maxLevelTooltip"); aug.delete("maxLevelSummary")) if version == 1
+        aug.delete("quest") if aug["quest"] == ""
+        (aug.delete("quest")) if version == 0
         return aug
     end
     return nil
+end
+
+def buildAugmentQuest(augment, questData)
+    questHash = {
+        "apiName" => questData["QuestName"],
+        "TooltipOverride" => [],
+        "QuestBreakpoints" => [],
+        "icon" => questData["QuestIconPath"]["texturePath"]
+    }
+    questData["Milestones"].each_with_index { |milestone, i|
+        questHash["QuestBreakpoints"].push({
+            "QuestRequirement" => milestone["MilestoneValue"],
+            "QuestDesc" => milestone["MilestoneDescriptionTra"]
+        })
+    }
+    
+    tooltip = augment["tooltip"].dup
+    if tooltip[/\{\{(.*?)(@f[0-9]+@)(.*?)\}\}/]
+        string = $~[1]
+        for j in 0...questHash["QuestBreakpoints"].length
+            questHash["TooltipOverride"].push($~.pre_match + $lang.fetch((string + j.to_s).downcase, string + j.to_s) + $~.post_match)
+        end
+    end
+
+
+    questHash["QuestBreakpoints"].push({
+        "QuestDesc" => questData["QuestTooltipTra"]
+    })
+    
+    return questHash.delete_if { |k, v| v.empty? }
 end
 
 def augmentSetBuilder(key, data, version=0)
@@ -500,7 +554,7 @@ end
 def applyLangKeys(obj)
     case obj
         when Hash
-            obj.transform_keys { |v| applyLangKeys(v) }
+            obj.transform_keys { |v| applyLangKeys(v) }.transform_values { |v| applyLangKeys(v) }
         when Array
             obj.map { |v| applyLangKeys(v) }
         when String
@@ -877,8 +931,10 @@ print "done.\n"
                 augmentList = data["AugmentList"]
             when "0x8d31b69b"
                 type = "AugmentQuestData"
+                data = applyLangKeys(applyLang(data))
             when "0xa0ffdf09"
                 type = "AugmentQuestList"
+                data = applyLangKeys(applyLang(data))
             else
                 #do nothing
         end
@@ -892,6 +948,10 @@ print "done.\n"
         idHex = "0x" + fnv(id.downcase)
         if augmentList.include?(idHex)
             augmentList[augmentList.index(idHex)] = id
+        end
+
+        if augment["quest"]
+            augment["quest"] = buildAugmentQuest(augment, aramOther["AugmentQuestData"][augment["quest"]["QUEST"]])
         end
     }
     File.open("aram/mayhem/augments/augments.json", 'wb') { |f| f.write(JSON.pretty_generate(aramAugments.sort_by { |a| a["id"] })) }
