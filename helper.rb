@@ -216,9 +216,27 @@ augmentTags.each { |name, data|
     }
 }
 
-readoutsA["MinionmancerAugments"].each { |f|
-    puts f
+i = 1
+
+print "group #{i}: "
+readoutsA["TankAugments1"].each { |f|
+    print f
+    print f == readoutsA["TankAugments1"][-1] ? "\n" : ", "
 }
+
+i += 1
+print "group #{i}: "
+readoutsA["AllyHealShieldAugments4"].each { |f|
+    print f
+    print f == readoutsA["AllyHealShieldAugments4"][-1] ? "\n" : ", "
+}
+i += 1
+print "group #{i}: "
+readoutsA["TankAugments3"].each { |f|
+    print f
+    print f == readoutsA["TankAugments3"][-1] ? "\n" : ", "
+}
+i += 1
 
 
 #augmentTags.each { |a, v| puts a if !v.tags.include?("Trait_SignatureSpell")}
