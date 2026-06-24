@@ -113,89 +113,140 @@ end
 #     }
 # }
 
-File.open("characters/shared/locke/s.json", 'rb') { |f| 
+# File.open("characters/shared/locke/s.json", 'rb') { |f| 
     
-    # JSON.parse(f.read).each { |item, aug|
-    #     mDataValues = aug.dig("mDataValues")
-    #     next if !mDataValues
-    #     mDataValues.each { |dataValue|
-    #         name = dataValue["mName"]
-    #         name.gsub!(" ", "")
-    #         hash.store(fnv(name.downcase), name)
-    #     }
-    # }
-    # JSON.parse(f.read).each { |_, string|
-    #     #puts string.class
-    #     string.gsub(/@([^@]+)@/) { |m|
-    #         name = m[1..-2]
-    #         name = name[...name.index("*")] if name.include?("*")
-    #         name.gsub!(" ", "")
-    #         hash.store(fnv(name.downcase), name)
-    #         name
-    #     }
-    # }
-}
+#     # JSON.parse(f.read).each { |item, aug|
+#     #     mDataValues = aug.dig("mDataValues")
+#     #     next if !mDataValues
+#     #     mDataValues.each { |dataValue|
+#     #         name = dataValue["mName"]
+#     #         name.gsub!(" ", "")
+#     #         hash.store(fnv(name.downcase), name)
+#     #     }
+#     # }
+#     # JSON.parse(f.read).each { |_, string|
+#     #     #puts string.class
+#     #     string.gsub(/@([^@]+)@/) { |m|
+#     #         name = m[1..-2]
+#     #         name = name[...name.index("*")] if name.include?("*")
+#     #         name.gsub!(" ", "")
+#     #         hash.store(fnv(name.downcase), name)
+#     #         name
+#     #     }
+#     # }
+# }
 
-str = ""
-hash.each { |obf, name|
-    str += "#{obf} #{name}\n"
-}
+# str = ""
+# hash.each { |obf, name|
+#     str += "#{obf} #{name}\n"
+# }
 
-File.open("lang/manualhash.txt", 'wb') { |f| f.write(str) } 
+# File.open("lang/manualhash.txt", 'wb') { |f| f.write(str) } 
 
 # File.open("strangeChildrenInLeague.txt", 'wb') { |f| f.write(JSON.pretty_generate(strangeChildren)) }
 
 
-# class AugmentTags
-#     attr_accessor :fieldA
-#     attr_accessor :fieldB
-#     attr_accessor :champ
+class AugmentTags
+    attr_accessor :fieldA
+    attr_accessor :fieldB
+    attr_accessor :champ
+    attr_accessor :tags
 
-#     def initialize(name, data)
-#         @fieldA = data["0x248cf7db"]
-#         @fieldB = data["0xbefd6d18"]
-#         @champ = name
-#     end
-# end
+    def initialize(name, data)
+        @fieldA = data["0x248cf7db"]
+        @fieldB = data["0xbefd6d18"]
+        @champ = name
+        @tags = []
+    end
+end
 
-# augmentTags = {}
-# File.open("aram/data/ChampionAugmentTagList.json", 'rb') { |f| 
-#     json = JSON.parse(f.read) 
-#     json["0x287a10e0"]["0xbf9074a"].each { |c|
-#         name = c["championName"].split("/")[1]
-#         augmentTags[name] = AugmentTags.new(name, c)
-#     }
-# }
+augmentTags = {}
+File.open("aram/data/ChampionAugmentTagList.json", 'rb') { |f| 
+    json = JSON.parse(f.read) 
+    json["0x287a10e0"]["0xbf9074a"].each { |c|
+        name = c["championName"].split("/")[1].downcase
+        augmentTags[name] = AugmentTags.new(name, c)
+    }
+}
 
-# readoutsA = {}
-# readoutsB = {}
 
 # augmentTags.each { |name, data|
-#     data.fieldA.each { |f|
-#         readoutsA[f] ||= []
-#         readoutsA[f].push(name)
-#     }
-#     data.fieldB.each { |f|
-#         readoutsB[f] ||= []
-#         readoutsB[f].push(name)
-#     }
+#     print name + ", " if data.fieldA.include?("0x8b9b519f")
 # }
-
-# # puts "a: "
-# # readoutsA.sort_by { |k, v| v.length }.to_h.each { |k, v|
-# #     puts k + " :: " + v.length.to_s
-# # }
-
-# # puts "============================="
-# # puts "b: "
-# # readoutsB.sort_by { |k, v| v.length }.to_h.each { |k, v|
-# #     puts k + " :: " + v.length.to_s
-# # }
-
-# # augmentTags.each { |name, data|
-# #     print name + ", " if data.fieldA.include?("0x8b9b519f")
-# # }
 
 # augmentTags["RekSai"].fieldA.sort { |a, b| readoutsA[a].length <=> readoutsA[b].length }.each { |f|
 #     puts f + " :: " + readoutsA[f].length.to_s
+# }
+
+
+root = "champions/"
+
+Dir.each_child(root) { |child|
+    path = root + child + "/"
+    spells = []
+    File.open(path + "AbilityObject.json", 'rb') { |f|
+        j = JSON.parse(f.read)
+        j.each { |_, data|
+            spells.push(data["mRootSpell"])
+        }
+    }
+    spells.each { |s|
+        File.open(path + "Spells.json", 'rb') { |f|
+            j = JSON.parse(f.read)
+            if j[s]
+                spellTags = j[s]["mSpell"]["mSpellTags"] || []
+                augmentTags[child].tags += spellTags
+            end
+        }
+    }
+    augmentTags[child].tags.uniq!
+}
+
+readoutsA = {}
+readoutsB = {}
+
+augmentTags.each { |name, data|
+    data.fieldA.each { |f|
+        readoutsA[f] ||= []
+        readoutsA[f].push(name)
+    }
+    data.fieldB.each { |f|
+        readoutsB[f] ||= []
+        readoutsB[f].push(name)
+    }
+}
+
+i = 1
+
+print "group #{i}: "
+readoutsA["TankAugments1"].each { |f|
+    print f
+    print f == readoutsA["TankAugments1"][-1] ? "\n" : ", "
+}
+
+i += 1
+print "group #{i}: "
+readoutsA["AllyHealShieldAugments4"].each { |f|
+    print f
+    print f == readoutsA["AllyHealShieldAugments4"][-1] ? "\n" : ", "
+}
+i += 1
+print "group #{i}: "
+readoutsA["TankAugments3"].each { |f|
+    print f
+    print f == readoutsA["TankAugments3"][-1] ? "\n" : ", "
+}
+i += 1
+
+
+#augmentTags.each { |a, v| puts a if !v.tags.include?("Trait_SignatureSpell")}
+# puts "a: "
+# readoutsA.sort_by { |k, v| v.length }.to_h.each { |k, v|
+#     puts k + " :: " + v.length.to_s
+# }
+
+# puts "============================="
+# puts "b: "
+# readoutsB.sort_by { |k, v| v.length }.to_h.each { |k, v|
+#     puts k + " :: " + v.length.to_s
 # }

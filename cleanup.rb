@@ -29,8 +29,8 @@ $manualHash.merge!({
     "8d31b69b" => "QuestData",
     "3ed971bd" => "LinkedQuest",
     "e93de85a" => "LinkedQuestData",
-    "b35aa769" => "BaseValue", #EXACT
-    "1262a25" => "MRPerLevel", #EXACT
+    "b35aa769" => "BaseValue", 
+    "1262a25" => "MRPerLevel", 
     "18956a21" => "armorPerLevel",
     "4af40dc3" => "baseDamage",
     "4d37af28" => "hpPerLevel",
@@ -51,7 +51,162 @@ $manualHash.merge!({
     "2290fc9a" => "baseFactorHPRegen",
     "452033bb" => "arBaseFactorRegen",
     "988fea51" => "AugmentSets",
-    "9bfe08c0" => "AugmentList"
+    "9bfe08c0" => "AugmentList",
+    "9e2d4f1a" => "DrawYourSwordAugments",
+    "cf6aff38" => "GenericAugments",
+    "8aa4910b" => "AutocastAugments",
+    "9ba91e2" => "AbilityAugments1",
+    "26f3c5f8" => "AbilityAugments2",
+    "7763fdc6" => "MageAugments1",
+    "5c3ecd89" => "HealingAugments",
+    "960f008c" => "UltimateModifierAugments",
+    "4ff264e9" => "TankAugments1",
+    "6048422a" => "CCRequiredAugments",
+    "ef63b668" => "AllyHealShieldAugments1",
+    "137909a5" => "GenericAllyHealShieldAugments",
+    "4dec39ce" => "AllyHealShieldAugments2",
+    "7a335042" => "ArtilleryMageAugments",
+    "846f3ed8" => "SelfShieldAugments",
+    "bc548a54" => "MinionmancerAugments",
+    "b0323d4" => "ADAssassinAugments",
+    "305117cd" => "MarksmanAugments1",
+    "f9be0683" => "SupportAugments",
+    "1f59f0ea" => "AllyHealShieldAugments3",
+    "c9b3a4fe" => "CertainlySomeAugments",
+    "d4945128" => "ManaRequiredAugments",
+    "467626df" => "DashRequiredAugments",
+    "46769cf9" => "TankAugments2",
+    "ae3563dd" => "MageAugments2",
+    "4f393c4a" => "MageAugments3",
+    "64bf65b1" => "SnowballAugments",
+    "fcf570a0" => "UpgradeCutlassAugments",
+    "5552c904" => "AllyHealShieldAugments4",
+    "dfa9c99b" => "CritAugments",
+    "c720759c" => "CritAugments2",
+    "2aeeb6bd" => "BurnAugments",
+    "f39e5434" => "FighterAugments1",
+    "d738b93a" => "AssassinAugments",
+    "a5c10655" => "FighterAugments2",
+    "675477e6" => "MarksmanAugments2",
+    "cb05ea79" => "AllyShieldAugments",
+    "457e975e" => "CombustingInterestAugments",
+    "89959b3a" => "TankAugments3",
+    "6f09b290" => "MarksmanAugments3",
+    "6d7b6968" => "MarksmanAugments4",
+    "ca14bedb" => "MarksmanAugments5",
+    "46a73d75" => "FighterAugments3",
+    "8bcdc03a" => "GenericAllyHealShieldAugments2",
+    "5a66c417" => "MageAugments4",
+    "12765c7b" => "GenericAllyHealShieldAugments3",
+    "8c4ad0c1" => "SummonerSpellAugments",
+    "c1bd7919" => "AllyHealingAugments",
+    "f2d7018b" => "FighterAugments4",
+    "bd0d6670" => "MageAugments5",
+    "4de1e97f" => "FlashAugments",
+"1906630e" => "DrawYourSwordAugments",
+"1a253eaf" => "AutocastAugments",
+"1a2e3494" => "GenericAugments",
+"1c738926" => "AbilityAugments1",
+"226e7848" => "MageAugments1",
+"25968a1d" => "HealingAugments",
+"2b32dc70" => "UltimateModifierAugments",
+"2cc1d9b7" => "TankAugments1",
+"31f3dad6" => "CCRequiredAugments",
+"386d7104" => "AllyHealShieldAugments1",
+"3d84d761" => "GenericAllyHealShieldAugments",
+"40be09ea" => "AllyHealShieldAugments2",
+"42ed43f6" => "ArtilleryMageAugments",
+"443bd4c" => "SelfShieldAugments",
+"45b0a5c0" => "MinionmancerAugments",
+"4ce3559e" => "ADAssassinAugments",
+"4cf3e5af" => "MarksmanAugments1",
+"4dc07acd" => "SupportAugments",
+"53bec5de" => "AllyHealShieldAugments3",
+"5867542a" => "CertainlySomeAugments",
+"5a356b6c" => "ManaRequiredAugments",
+"5bcea8db" => "DashRequiredAugments",
+"5cdd7c8d" => "TankAugments2",
+"5f7ea1d7" => "MageAugments2",
+"61d74bee" => "MageAugments3",
+"6650bdcd" => "SnowballAugments",
+"684682dc" => "UpgradeCutlassAugments",
+"68be96a0" => "AllyHealShieldAugments4",
+"6be623e7" => "CritAugments",
+"7371b448" => "CritAugments2",
+"76177d2d" => "0xa5e176a1",
+"777bc47b" => "0xd51c7d0f",
+"7837d31" => "BurnAugments",
+"7fb5dbc8" => "FighterAugments1",
+"80fa3644" => "AssassinAugments",
+"82be41f7" => "FighterAugments2",
+"89e62252" => "MarksmanAugments2",
+"8b9b519f" => "AllyShieldAugments",
+"9e2b7952" => "CombustingInterestAugments",
+"a2b5cd4c" => "TankAugments3",
+"a4b73714" => "AbilityAugments2",
+"a76dacd4" => "MarksmanAugments3",
+"ac3ecfd6" => "MarksmanAugments4",
+"afc365a3" => "0xcebed1ff",
+"bd04e901" => "MarksmanAugments5",
+"c6b7c9f7" => "FighterAugments3",
+"c8e9bb76" => "GenericAllyHealShieldAugments2",
+"cea00b1d" => "MageAugments4",
+"cec837e9" => "0x7016fa35",
+"d763b947" => "GenericAllyHealShieldAugments3",
+"d94ff625" => "SummonerSpellAugments",
+"dbb3b455" => "AllyHealingAugments",
+"de3bcf55" => "FighterAugments4",
+"df052d62" => "MageAugments5",
+"eedd1ba" => "EMPTY_LIST",
+"f91022fb" => "FlashAugments",
+"177aa205" => "FighterAugments2",
+"1b0f66db" => "DashRequiredAugments",
+"1c9963de" => "MarksmanAugments4",
+"1e362736" => "CCRequiredAugments",
+"21095ed9" => "TankAugments2",
+"262ae83f" => "DashRequiredAugments",
+"2ddd6996" => "ArtilleryMageAugments",
+"3b833da" => "EMPTY_LIST",
+"3c3dc6c5" => "AllyHealingAugments",
+"3e6a3d21" => "HealingAugments",
+"3f1a1d9d" => "TankAugments2",
+"41d1197a" => "AllyHealShieldAugments4",
+"46272196" => "MinionmancerAugments",
+"4c29a55a" => "ADAssassinAugments",
+"4f5ff27f" => "SupportAugments",
+"0501bbc" => "AssassinAugments",
+"544654a7" => "MarksmanAugments5",
+"5973bb30" => "MarksmanAugments3",
+"5b4de74" => "ManaRequiredAugments",
+"5bb334a2" => "AbilityAugments2",
+"5c05211c" => "MinionmancerAugments",
+"6565fd6a" => "MageAugments3",
+"6bb16b1d" => "MageAugments4",
+"7671f90d" => "CritAugments",
+"768fe412" => "AllyHealShieldAugments2",
+"7a154b51" => "CritAugments",
+"81b5694e" => "MageAugments1",
+"855b48e5" => "MageAugments2",
+"8607a4f8" => "CombustingInterestAugments",
+"87e3bd5d" => "AllyShieldAugments",
+"8816b3cc" => "AllyHealShieldAugments4",
+"936a48a3" => "MarksmanAugments1",
+"9373dc19" => "FighterAugments3",
+"a30dd006" => "MageAugments5",
+"a4973c2" => "ManaRequiredAugments",
+"ac4f4126" => "MarksmanAugments2",
+"b81c093c" => "CCRequiredAugments",
+"beabeb18" => "AllyHealShieldAugments2",
+"d2a88ab0" => "MageAugments3",
+"d46a8e62" => "AllyHealShieldAugments1",
+"d8999557" => "TankAugments1",
+"e1254000" => "EMPTY_LIST",
+"ea727dcc" => "MarksmanAugments2",
+"f00b230e" => "MarksmanAugments3",
+"f282b91c" => "ArtilleryMageAugments",
+"f3814851" => "FighterAugments4",
+"fb4ac2e" => "SelfShieldAugments",
+"fc445cc" => "TankAugments3",
 })
 
 def xxh3(s)
@@ -380,6 +535,7 @@ def augmentSearcher(key, data, version=0)
             end
         end
         linkedObjects.each { |obj|
+            next if obj == spellName
             spellObject = source.dig(obj)
             if spellObject && spellObject["~class"] == "SpellObject" && spellObject.key?("mSpell")
                 mSpell = spellObject.fetch("mSpell", {})
@@ -627,44 +783,10 @@ print "done.\n"
 $lang = nil
 File.open("lang/stringtable.json", 'rb') { |f| $lang = LangHashWrapper.new(JSON.parse(f.read())) }
 
-print "Loading and formatting miscellaneous game data..."
-Dir.each_child("game-data") { |path|
-    data = {}
-    File.open("game-data/#{path}", 'rb') { |f| data = JSON.parse(f.read()) }
-
-    File.open("game-data/#{path}", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
-}
-
-queues = {}
-File.open("game-data/queues.json", 'rb') { |f| queues = JSON.parse(f.read()) }
 champs = {}
 $champLang = []
-File.open("game-data/champion-summary.json", 'rb') { |f| 
-    c = JSON.parse(f.read()) 
-    c.each { |champ|
-        next if !champ.is_a?(Hash)
-        next if champ["alias"]&.include?("_")
-        id = champ["id"]
-        name = champ["name"]
-        champs.store(id, name)
-        $champLang.push(champ["alias"].downcase)
-    }
-}
-queues.each { |queue|
-    next if !queue.is_a?(Hash)
-    next if !queue["viableChampionRoster"]
-    queue["viableChampionRoster"] = queue["viableChampionRoster"].map { |v| champs.fetch(v, v) }
-}
-File.open("game-data/queues.json", 'wb') { |f| f.write(JSON.pretty_generate(queues)) }
-print "done.\n"
 
 diff()
-
-print "Loading and formatting map data..."
-$maps = {}
-File.open("game-data/maps.json", 'rb') { |f| $maps = JSON.parse(f.read()) }
-File.open("game-data/maps.json", 'wb') { |f| f.write(JSON.pretty_generate($maps)) }
-print "done.\n"
 
 # Common handling
     print "Loading and formatting Shared data..."
@@ -836,6 +958,7 @@ print "done.\n"
                 type = "DefaultAugmentData"
             when "0x5b559303"
                 type = "ChampionAugmentTagList"
+                data = applyLangKeys(applyLang(data))
             when "0x23433cc1"
                 type = "AugmentNameModifiers"
             when "0xc3a44766"
@@ -883,8 +1006,10 @@ print "done.\n"
                     type = "HotkeyControls"
                 when "0xadaf4f78"
                     type = "AugmentOperators"
+                    data = applyLangKeys(applyLang(data))
                 when "0xfead7e9b"
                     type = "AugmentGroups"
+                    data = applyLangKeys(applyLang(data))
                 else
                     type = "MiscData" if type.start_with?("0x")
             end
@@ -1108,23 +1233,25 @@ Dir.mkdir("characters/shared")
     r2 = "/shared" if r == ""
     r2 = "/summonersRift" if r == "/map11"
     r2 = "/aram" if r == "/map12"
+    r2 = "/arena" if r == "/map30"
+    r2 = "/swarm" if r == "/map33"
     Dir.each_child(root) { |path|
         basepath = root + path
-        if path.include?("_") && !manual.include?(path)
-            outdir = "characters#{r2}/" + path.split("_")[0]
-            Dir.mkdir("#{outdir}") if !Dir.exist?("#{outdir}")
-        elsif !$champLang.include?(path)
-            outdir = "characters#{r2}"
-        else
-            outdir = "champions"
-        end
 
-        Dir.mkdir("#{outdir}/#{path}") if !Dir.exist?("#{outdir}/#{path}")
         Dir.each_child(basepath) { |file|
             filepath = basepath + "/" + file
             champ = {}
             File.open(filepath, 'rb') { |f| champ = JSON.parse(f.read()) }
             champ = champ.fetch("entries", champ)
+
+            if path.include?("_") && !manual.include?(path)
+                outdir = "characters#{r2}/" + path.split("_")[0]
+                Dir.mkdir("#{outdir}") if !Dir.exist?("#{outdir}")
+            else
+                outdir = "characters#{r2}"
+            end
+            Dir.mkdir("#{outdir}/#{path}") if !Dir.exist?("#{outdir}/#{path}")
+
             out = {}
             champ.each { |obj, data|
                 d = applyLang(data)
@@ -1155,6 +1282,10 @@ Dir.mkdir("characters/shared")
                             d["secondaryAbilityResource"].keys.each { |k|
                                 d["secondaryAbilityResource"][k] = applyLangKeys(d["secondaryAbilityResource"][k])
                             }
+                        end
+                        if d["platformEnabled"]
+                            outdir = "champions"
+                            Dir.mkdir("#{outdir}/#{path}") if !Dir.exist?("#{outdir}/#{path}")
                         end
                     when "ItemRecommendationOverrideSet", "RecSpellRankUpInfolist", "ItemRecommendationContextList",
                         "ChampionRuneRecommendationsContext", "JunglePathRecommendation", "SkinCharacterMetaDataProperties"

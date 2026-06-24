@@ -543,13 +543,13 @@
         {
           "name": "MaxLevelManaSpendThreshold",
           "values": [
-            400.0,
-            400.0,
-            400.0,
-            400.0,
-            400.0,
-            400.0,
-            400.0
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0
           ],
           "~class": "SpellDataValue"
         },
@@ -2510,8 +2510,8 @@
               "values": [
                 0.009999999776482582,
                 0.009999999776482582,
+                0.012500000186264515,
                 0.014999999664723873,
-                0.019999999552965164,
                 0.03999999910593033,
                 0.05000000074505806,
                 0.05999999865889549
@@ -2523,8 +2523,8 @@
               "values": [
                 200.0,
                 200.0,
+                300.0,
                 500.0,
-                750.0,
                 750.0,
                 750.0,
                 750.0
@@ -3534,13 +3534,13 @@
         {
           "name": "BaseCooldown",
           "values": [
-            15.0,
-            15.0,
-            15.0,
-            15.0,
-            15.0,
-            15.0,
-            15.0
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0
           ],
           "~class": "SpellDataValue"
         },
@@ -4833,6 +4833,29 @@
     },
     "~class": "SpellObject"
   },
+  "0x741c1387": {
+    "ObjectName": "Augment_DustToDiamonds",
+    "mScriptName": "Augment_DustToDiamonds",
+    "mSpell": {
+      "DataValues": [
+        {
+          "name": "AnvilsGranted",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
   "0xf4bb32bb": {
     "ObjectName": "Augment_EscapePlan",
     "mScriptName": "Augment_EscapePlan",
@@ -5076,7 +5099,7 @@
               "values": [
                 0.30000001192092896,
                 0.30000001192092896,
-                0.44999998807907104,
+                0.6000000238418579,
                 0.6000000238418579,
                 0.75,
                 0.75,
@@ -5089,8 +5112,8 @@
               "values": [
                 0.15000000596046448,
                 0.15000000596046448,
-                0.20000000298023224,
-                0.20000000298023224,
+                0.25,
+                0.30000001192092896,
                 0.20000000298023224,
                 0.20000000298023224,
                 0.20000000298023224
@@ -5100,13 +5123,13 @@
             {
               "name": "AugDuration",
               "values": [
-                5.0,
-                5.0,
-                5.0,
-                5.0,
-                5.0,
-                5.0,
-                5.0
+                7.5,
+                7.5,
+                7.5,
+                7.5,
+                7.5,
+                7.5,
+                7.5
               ],
               "~class": "SpellDataValue"
             }
@@ -5286,13 +5309,13 @@
         {
           "name": "TrueDamagePerc",
           "values": [
-            0.15000000596046448,
-            0.15000000596046448,
-            0.15000000596046448,
-            0.15000000596046448,
-            0.15000000596046448,
-            0.15000000596046448,
-            0.15000000596046448
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25
           ],
           "~class": "SpellDataValue"
         },
@@ -5383,6 +5406,20 @@
             }
           ],
           "~class": "GameCalculation"
+        },
+        "0xdf58b3f4": {
+          "mDisplayAsPercent": true,
+          "mFormulaParts": [
+            {
+              "mDataValue": "TrueDamagePerc",
+              "~class": "NamedDataValueCalculationPart"
+            }
+          ],
+          "mRangedMultiplier": {
+            "mNumber": 0.6000000238418579,
+            "~class": "NumberCalculationPart"
+          },
+          "~class": "0xe9a3c91d"
         }
       },
       "~class": "SpellDataResource"
@@ -7068,13 +7105,13 @@
         {
           "name": "BaseDamage",
           "values": [
-            50.0,
-            50.0,
-            50.0,
-            50.0,
-            50.0,
-            50.0,
-            50.0
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0
           ],
           "~class": "SpellDataValue"
         },
@@ -7276,13 +7313,13 @@
         {
           "name": "MoveSpeedModPerBlue",
           "values": [
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
           ],
           "~class": "SpellDataValue"
         }
@@ -9232,7 +9269,16 @@
       "mCastingBreaksStealth": true,
       "mCastingBreaksStealthWhileAttached": true,
       "mClientData": {
-        "mUseTooltipFromAnotherSpell": "Characters/Akshan/Spells/AkshanEAbility/AkshanE",
+        "mTooltipData": {
+          "EnableExtendedTooltip": false,
+          "mFormat": "0xd7c27163",
+          "mLocKeys": {
+            "keyName": "Kiwi_YouSpinMeRightRound_Name",
+            "keyTooltip": "Kiwi_ARAM_YouSpinMeRightRound_Tooltip"
+          },
+          "mObjectName": "Augment_YouSpinMeRightRound2",
+          "~class": "TooltipInstanceSpell"
+        },
         "~class": "SpellDataResourceClient"
       },
       "mDoesntBreakChannels": true,
@@ -9305,7 +9351,15 @@
       "flags": 36,
       "mAffectsTypeFlags": 8192,
       "mClientData": {
-        "mUseTooltipFromAnotherSpell": "Characters/Akshan/Spells/AkshanEAbility/AkshanE",
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLocKeys": {
+            "keyName": "Kiwi_YouSpinMeRightRound_Name",
+            "keyTooltip": "Kiwi_ARAM_YouSpinMeRightRound_Tooltip"
+          },
+          "mObjectName": "Augment_YouSpinMeRightRound3",
+          "~class": "TooltipInstanceSpell"
+        },
         "~class": "SpellDataResourceClient"
       },
       "mDoesntBreakChannels": true,

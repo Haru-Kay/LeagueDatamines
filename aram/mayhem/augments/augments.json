@@ -3206,7 +3206,7 @@
     "apiName": "GlassCannon",
     "name": "Glass Cannon",
     "rarity": "Prismatic",
-    "desc": "Reduce <scaleHealth>max Health by @HPReductionPerc*100@%</scaleHealth>. Deal an extra @TrueDamagePerc*100@% damage as <trueDamage>true damage</trueDamage>. ",
+    "desc": "Reduce <scaleHealth>max Health by @HPReductionPerc*100@%</scaleHealth>. Deal an extra @TrueDamagePercSplit@ damage as <trueDamage>true damage</trueDamage>. ",
     "tooltip": "{{Kiwi_GlassCannon_Summary}}<br><br>Damage Dealt: @f1@",
     "dataValues": {
       "TrueDamagePerc": 0.15000000596046448,
@@ -6098,35 +6098,6 @@
         "~class": "GameCalculation"
       }
     },
-    "add": {
-      "Augment_Snowbomb": {
-        "dataValues": {
-          "AbilityHaste": 100.0
-        },
-        "calcs": {
-          "Damage": {
-            "mFormulaParts": [
-              {
-                "mEndValue": 275.0,
-                "mStartValue": 100.0,
-                "~class": "ByCharLevelInterpolationCalculationPart"
-              },
-              {
-                "mCoefficient": 0.4000000059604645,
-                "mStat": 2,
-                "mStatFormula": 2,
-                "~class": "StatByCoefficientCalculationPart"
-              },
-              {
-                "mCoefficient": 0.20000000298023224,
-                "~class": "StatByCoefficientCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          }
-        }
-      }
-    },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/Snowbomb_small.tex",
       "ASSETS/UX/Kiwi/Augments/Icons/Snowbomb_large.tex"
@@ -6495,54 +6466,6 @@
           }
         ],
         "~class": "GameCalculation"
-      }
-    },
-    "add": {
-      "Augment_ARAM_EndlessHunt": {
-        "dataValues": {
-          "BaseVitalDamage": 0.05999999865889549,
-          "StackDamage": 0.014999999664723873,
-          "MSDuration": 2.0,
-          "VitalMaxHealthDamage": 0.05999999865889549,
-          "MS": 0.5,
-          "MissingHealthHeal": 0.05000000074505806
-        },
-        "calcs": {
-          "VitalHeal": {
-            "mFormulaParts": [
-              {
-                "mEndValue": 200.0,
-                "mStartValue": 50.0,
-                "~class": "ByCharLevelInterpolationCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "MovementSpeed": {
-            "mDisplayAsPercent": true,
-            "mFormulaParts": [
-              {
-                "mDataValue": "MS",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "VitalDamage": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "BaseVitalDamage",
-                "~class": "NamedDataValueCalculationPart"
-              },
-              {
-                "mBuffName": "0x866a6106",
-                "mCoefficient": 1.0,
-                "~class": "BuffCounterByCoefficientCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          }
-        }
       }
     },
     "icons": [
@@ -7182,15 +7105,6 @@
       "DamageIncrease": 0.5,
       "CannonRangeIncrease": 12000.0
     },
-    "add": {
-      "Augment_Overextender": {
-        "dataValues": {
-          "DamageIncrease": 0.5,
-          "CannonRangeIncrease": 12000.0
-        },
-        "calcs": {}
-      }
-    },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/Overextender_small.tex",
       "ASSETS/UX/Kiwi/Augments/Icons/Overextender_large.tex"
@@ -7255,27 +7169,6 @@
           }
         ],
         "~class": "GameCalculation"
-      }
-    },
-    "add": {
-      "Augment_KeepGoing": {
-        "dataValues": {
-          "Buff_Duration": 6.0,
-          "Radius": 300.0
-        },
-        "calcs": {
-          "Calc_Move_Speed": {
-            "mDisplayAsPercent": true,
-            "mFormulaParts": [
-              {
-                "mEndValue": 0.3499999940395355,
-                "mStartValue": 0.15000000596046448,
-                "~class": "ByCharLevelInterpolationCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          }
-        }
       }
     },
     "icons": [
@@ -7396,65 +7289,6 @@
         ],
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculation"
-      }
-    },
-    "add": {
-      "Augment_Terraind": {
-        "dataValues": {
-          "AHMin": 20.0,
-          "AHMax": 60.0,
-          "MinDamagePerTick": 40.0,
-          "MaxDamagePerTick": 70.0,
-          "APRatio": 0.05000000074505806
-        },
-        "calcs": {
-          "0x1261295": {
-            "mFormulaParts": [
-              {
-                "mEndValue": 45.0,
-                "mStartValue": 5.0,
-                "~class": "ByCharLevelInterpolationCalculationPart"
-              },
-              {
-                "mDataValue": "APRatio",
-                "~class": "StatByNamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "Calc_TT_Ult_Damage_Amp": {
-            "mDisplayAsPercent": true,
-            "mExpandedTooltipCalculationDisplay": 5,
-            "mFormulaParts": [
-              {
-                "mNumber": 2.0,
-                "~class": "NumberCalculationPart"
-              }
-            ],
-            "mSimpleTooltipCalculationDisplay": 5,
-            "~class": "GameCalculation"
-          },
-          "TickDamageTooltip": {
-            "mModifiedGameCalculation": "0x1261295",
-            "mMultiplier": {
-              "mNumber": 4.0,
-              "~class": "NumberCalculationPart"
-            },
-            "~class": "GameCalculationModified"
-          },
-          "0xe152c035": {
-            "mDisplayAsPercent": true,
-            "mExpandedTooltipCalculationDisplay": 5,
-            "mFormulaParts": [
-              {
-                "mNumber": 3.0,
-                "~class": "NumberCalculationPart"
-              }
-            ],
-            "mSimpleTooltipCalculationDisplay": 5,
-            "~class": "GameCalculation"
-          }
-        }
       }
     },
     "icons": [
@@ -7605,18 +7439,6 @@
       "ZoneMovementSpeed": 0.4000000059604645,
       "ZoneAbilityHaste": 50.0
     },
-    "add": {
-      "Surge Field": {
-        "dataValues": {
-          "Buff_Duration": 6.0,
-          "Radius": 300.0,
-          "MissileDamagePercent": 0.20000000298023224,
-          "ZoneMovementSpeed": 0.4000000059604645,
-          "ZoneAbilityHaste": 50.0
-        },
-        "calcs": {}
-      }
-    },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/SurgeField_small.tex",
       "ASSETS/UX/Kiwi/Augments/Icons/SurgeField_large.tex"
@@ -7644,27 +7466,6 @@
           }
         ],
         "~class": "GameCalculation"
-      }
-    },
-    "add": {
-      "Augment_Overkill": {
-        "dataValues": {
-          "MSPerStack": 10.0,
-          "ASPerStack": 0.05000000074505806
-        },
-        "calcs": {
-          "DamagePerStack": {
-            "mFormulaParts": [
-              {
-                "mEndValue": 60.0,
-                "mScalePastDefaultMaxLevel": false,
-                "mStartValue": 20.0,
-                "~class": "ByCharLevelInterpolationCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          }
-        }
       }
     },
     "icons": [
