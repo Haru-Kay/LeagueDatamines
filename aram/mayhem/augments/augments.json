@@ -4900,8 +4900,8 @@
     "apiName": "ARAM_Dropkick",
     "name": "Dropkick",
     "rarity": "Prismatic",
-    "desc": "Your Attacks execute low Health enemy champions, Knocking Back and causing an explosion while healing you.",
-    "tooltip": "Your Attacks execute enemy champions below <scaleHealth>@Calc_Execute_Threshold@ max Health</scaleHealth>, <healing>restoring @Calc_Heal@ Health</healing> and <status>Knocking Back</status> enemies.<br><br>Upon landing or colliding with an enemy or terrain, <status>Knocked Back</status> enemies will explode, dealing <magicDamage>@Calc_Damage@ magic damage</magicDamage> to nearby enemies.<br><br><rules>These explosions can chain.<br><br>Enemies Dropkicked: @f3.0@<br>Total Health Gained: @f2.0@<br>Damage Dealt: @f1.0@</rules>",
+    "desc": "Your Attacks and Abilities execute low Health enemy champions, Knocking Back and causing an explosion while healing you.",
+    "tooltip": "Your Attacks and Abilities execute enemy champions below <scaleHealth>@Calc_Execute_Threshold@ max Health</scaleHealth>, <healing>restoring @Calc_Heal@ Health</healing> and <status>Knocking Back</status> the target.<br><br>Upon colliding with an enemy or terrain or reaching their terminus, <status>Knocked Back</status> enemies will explode dealing <magicDamage>@Calc_Damage@ magic damage</magicDamage> to nearby enemies.<br><br><rules>These explosions can chain.<br><br>Enemies Dropkicked: @f3.0@<br>Total Health Gained: @f2.0@<br>Damage Dealt: @f1.0@</rules>",
     "calculations": {
       "Calc_Damage": {
         "mFormulaParts": [
@@ -6678,6 +6678,14 @@
           "~class": "NumberCalculationPart"
         },
         "~class": "GameCalculationModified"
+      },
+      "BleedDamageTooltip2": {
+        "mModifiedGameCalculation": "0xa242b94",
+        "mMultiplier": {
+          "mNumber": 0.6660000085830688,
+          "~class": "NumberCalculationPart"
+        },
+        "~class": "GameCalculationModified"
       }
     },
     "quest": {
@@ -7489,8 +7497,8 @@
     "apiName": "Overkill",
     "name": "Pin Cushion",
     "rarity": "Prismatic",
-    "desc": "Attacks during {{SpellName}} apply <keywordMajor>Marks</keywordMajor> that explode at the end of its duration, dealing damage and granting Move Speed.",
-    "tooltip": "Attacks during {{SpellName}} apply <keywordMajor>Marks</keywordMajor> on enemy champions.<br><br>Marks explode once {{SpellName}} expires, dealing <physicalDamage>@DamagePerStack@ Physical Damage</physicalDamage> and granting <speed>@MSPerStack@ Move Speed</speed> per stack for 3 seconds.<br><br>Most Marks Detonated: @f1@",
+    "desc": "Attacks during {{SpellName}} gouge your target with <keywordMajor>Nails</keywordMajor>. Nails accumulate damage, execute, and grant <MS>Movement Speed</MS> upon expiration.",
+    "tooltip": "Attacks during {{SpellName}} gouge your target with <keywordMajor>Nails</keywordMajor>.<br><br>Nails explode once {{SpellName}} expires, dealing <physicalDamage>@DamagePerStack@ Physical Damage</physicalDamage> and granting <speed>@MSPerStack@ Move Speed</speed> per stack for 3 seconds. Nails will explode early and execute if the accumulated damage would kill the enemy champion.<br><br>Most Nails Detonated: @f1@",
     "dataValues": {
       "MSPerStack": 10.0,
       "ASPerStack": 0.05000000074505806

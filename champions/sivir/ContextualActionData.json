@@ -880,6 +880,72 @@
               "~class": "ContextualActionCooldownModifications"
             },
             "mAudioAction": {
+              "mEnemyEventName": "Kill3DQuadra",
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Kill3DQuadra",
+              "mWaitForAnnouncerQueue": true,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mMultikillSize": 4,
+                "~class": "ContextualConditionMultikillSize"
+              }
+            ],
+            "mPriority": 30,
+            "mRuleName": "Quadra Kill",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mEnemyEventName": "Kill3DTriple",
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Kill3DTriple",
+              "mWaitForAnnouncerQueue": true,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mMultikillSize": 3,
+                "~class": "ContextualConditionMultikillSize"
+              }
+            ],
+            "mPriority": 30,
+            "mRuleName": "Triple Kill",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mEnemyEventName": "Kill3DDouble",
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Kill3DDouble",
+              "mWaitForAnnouncerQueue": true,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mMultikillSize": 2,
+                "~class": "ContextualConditionMultikillSize"
+              }
+            ],
+            "mPriority": 30,
+            "mRuleName": "Double Kill",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
               "mEnemyEventName": "Kill3DAce",
               "mSelfEventName": "Kill3DAce",
               "mWaitForAnnouncerQueue": true,
@@ -1326,17 +1392,26 @@
           },
           {
             "mAudioAction": {
-              "mSelfEventName": "Move2DLong",
+              "mSelfEventName": "Move2DAllyNear",
               "~class": "ContextualActionPlayVO"
             },
             "mConditions": [
               {
-                "mCompareOp": 2,
-                "mDistance": 2000.0,
+                "mCompareOp": 3,
+                "mDistance": 400.0,
                 "~class": "ContextualConditionMoveDistance"
+              },
+              {
+                "mChildConditions": [
+                  {
+                    "mDistance": 1000.0,
+                    "~class": "ContextualConditionCharacterDistance"
+                  }
+                ],
+                "~class": "ContextualConditionAnyOtherHero"
               }
             ],
-            "mRuleName": "Long",
+            "mRuleName": "Ally Near",
             "~class": "ContextualRule"
           },
           {
@@ -1348,11 +1423,6 @@
               {
                 "mCompareOp": 3,
                 "mDistance": 400.0,
-                "~class": "ContextualConditionMoveDistance"
-              },
-              {
-                "mCompareOp": 5,
-                "mDistance": 2000.0,
                 "~class": "ContextualConditionMoveDistance"
               }
             ],
@@ -1458,7 +1528,6 @@
               "~class": "ContextualActionCooldownModifications"
             },
             "mAudioAction": {
-              "mMaxOccurences": 1,
               "mSelfEventName": "Ping2DAssistMe",
               "~class": "ContextualActionPlayVO"
             },
@@ -1486,7 +1555,6 @@
               "~class": "ContextualActionCooldownModifications"
             },
             "mAudioAction": {
-              "mMaxOccurences": 1,
               "mSelfEventName": "Ping2DDanger",
               "~class": "ContextualActionPlayVO"
             },
@@ -1514,7 +1582,6 @@
               "~class": "ContextualActionCooldownModifications"
             },
             "mAudioAction": {
-              "mMaxOccurences": 1,
               "mSelfEventName": "Ping2DEnemyMissing",
               "~class": "ContextualActionPlayVO"
             },
@@ -1542,7 +1609,6 @@
               "~class": "ContextualActionCooldownModifications"
             },
             "mAudioAction": {
-              "mMaxOccurences": 1,
               "mSelfEventName": "Ping2DOnMyWay",
               "~class": "ContextualActionPlayVO"
             },
@@ -1570,7 +1636,6 @@
               "~class": "ContextualActionCooldownModifications"
             },
             "mAudioAction": {
-              "mMaxOccurences": 1,
               "mSelfEventName": "Ping2DTarget",
               "~class": "ContextualActionPlayVO"
             },
@@ -1797,10 +1862,10 @@
               "~class": "ContextualActionCooldownModifications"
             },
             "mAudioAction": {
-              "mAllyEventName": "cast3D",
-              "mEnemyEventName": "cast3D",
-              "mSelfEventName": "cast3D",
-              "mSpectatorEventName": "cast3D",
+              "mAllyEventName": "Spell3DRCast",
+              "mEnemyEventName": "Spell3DRCast",
+              "mSelfEventName": "Spell3DRCast",
+              "mSpectatorEventName": "Spell3DRCast",
               "~class": "ContextualActionPlayVO"
             },
             "mConditions": [
@@ -1820,10 +1885,10 @@
               "~class": "ContextualActionCooldownModifications"
             },
             "mAudioAction": {
-              "mAllyEventName": "cast3D",
-              "mEnemyEventName": "cast3D",
-              "mSelfEventName": "cast3D",
-              "mSpectatorEventName": "cast3D",
+              "mAllyEventName": "Spell3DQCast",
+              "mEnemyEventName": "Spell3DQCast",
+              "mSelfEventName": "Spell3DQCast",
+              "mSpectatorEventName": "Spell3DQCast",
               "~class": "ContextualActionPlayVO"
             },
             "mConditions": [
@@ -1846,10 +1911,10 @@
               "~class": "ContextualActionCooldownModifications"
             },
             "mAudioAction": {
-              "mAllyEventName": "cast3D",
-              "mEnemyEventName": "cast3D",
-              "mSelfEventName": "cast3D",
-              "mSpectatorEventName": "cast3D",
+              "mAllyEventName": "Spell3DWCast",
+              "mEnemyEventName": "Spell3DWCast",
+              "mSelfEventName": "Spell3DWCast",
+              "mSpectatorEventName": "Spell3DWCast",
               "~class": "ContextualActionPlayVO"
             },
             "mConditions": [
@@ -1872,10 +1937,10 @@
               "~class": "ContextualActionCooldownModifications"
             },
             "mAudioAction": {
-              "mAllyEventName": "cast3D",
-              "mEnemyEventName": "cast3D",
-              "mSelfEventName": "cast3D",
-              "mSpectatorEventName": "cast3D",
+              "mAllyEventName": "Spell3DECast",
+              "mEnemyEventName": "Spell3DECast",
+              "mSelfEventName": "Spell3DECast",
+              "mSpectatorEventName": "Spell3DECast",
               "~class": "ContextualActionPlayVO"
             },
             "mConditions": [
@@ -1898,10 +1963,36 @@
               "~class": "ContextualActionCooldownModifications"
             },
             "mAudioAction": {
-              "mAllyEventName": "cast3D",
-              "mEnemyEventName": "cast3D",
-              "mSelfEventName": "cast3D",
-              "mSpectatorEventName": "cast3D",
+              "mAllyEventName": "Spell3DPCast",
+              "mEnemyEventName": "Spell3DPCast",
+              "mSelfEventName": "Spell3DPCast",
+              "mSpectatorEventName": "Spell3DPCast",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mSpell": "Characters/Sivir/Spells/SivirPassiveAbility/SivirPassive",
+                "~class": "ContextualConditionSpellName"
+              },
+              {
+                "mPercentChanceToPlay": 50,
+                "~class": "ContextualConditionChanceToPlay"
+              }
+            ],
+            "mRuleName": "P",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "DontResetTimer": true,
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Spell3DBasic",
+              "mEnemyEventName": "Spell3DBasic",
+              "mSelfEventName": "Spell3DBasic",
+              "mSpectatorEventName": "Spell3DBasic",
               "~class": "ContextualActionPlayVO"
             },
             "mConditions": [
@@ -1924,10 +2015,10 @@
               "~class": "ContextualActionCooldownModifications"
             },
             "mAudioAction": {
-              "mAllyEventName": "cast3D",
-              "mEnemyEventName": "cast3D",
-              "mSelfEventName": "cast3D",
-              "mSpectatorEventName": "cast3D",
+              "mAllyEventName": "Spell3DBasic",
+              "mEnemyEventName": "Spell3DBasic",
+              "mSelfEventName": "Spell3DBasic",
+              "mSpectatorEventName": "Spell3DBasic",
               "~class": "ContextualActionPlayVO"
             },
             "mConditions": [
@@ -1954,8 +2045,11 @@
               "~class": "ContextualActionCooldownModifications"
             },
             "mAudioAction": {
+              "mAllyEventName": "hit3D",
+              "mEnemyEventName": "hit3D",
               "mMaxOccurences": 1,
               "mSelfEventName": "hit3D",
+              "mSpectatorEventName": "hit3D",
               "~class": "ContextualActionPlayVO"
             },
             "mConditions": [

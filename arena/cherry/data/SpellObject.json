@@ -1689,7 +1689,7 @@
       },
       "mIgnoreRangeCheck": true,
       "mImgIconName": [
-        "ASSETS/Spells/Icons2D/Kiwi_PoroKing.MAYHEM_New_Augments.dds"
+        "ASSETS/Spells/Icons2D/Kiwi_PoroKing.dds"
       ],
       "mProjectTargetToCastRange": true,
       "mResourceResolvers": [
@@ -1838,7 +1838,7 @@
       },
       "mIgnoreRangeCheck": true,
       "mImgIconName": [
-        "ASSETS/Spells/Icons2D/Kiwi_PoroKing.MAYHEM_New_Augments.dds"
+        "ASSETS/Spells/Icons2D/Kiwi_PoroKing.dds"
       ],
       "mProjectTargetToCastRange": true,
       "mResourceResolvers": [
@@ -2373,7 +2373,7 @@
       ],
       "mAnimationName": "0",
       "mImgIconName": [
-        "ASSETS/Spells/Icons2D/Crepe_Zaun_Raidboss.HA_CREPE.dds"
+        "ASSETS/Spells/Icons2D/Crepe_Zaun_Raidboss.dds"
       ],
       "mResourceResolvers": [
         "0x58f94e0d"
@@ -2905,7 +2905,7 @@
         "~class": "SpellDataResourceClient"
       },
       "mImgIconName": [
-        "ASSETS/Spells/Icons2D/Crepe_Zaun_Raidboss.HA_CREPE.dds"
+        "ASSETS/Spells/Icons2D/Crepe_Zaun_Raidboss.dds"
       ],
       "mResourceResolvers": [
         "0xccb01020"
@@ -3034,7 +3034,7 @@
       ],
       "mAnimationName": "",
       "mImgIconName": [
-        "ASSETS/Spells/Icons2D/Crepe_Zaun_Raidboss.HA_CREPE.dds"
+        "ASSETS/Spells/Icons2D/Crepe_Zaun_Raidboss.dds"
       ],
       "mResourceResolvers": [
         "0xccb01020"
@@ -5344,6 +5344,19 @@
             3.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "RangedTrueDamagePercDisplay",
+          "values": [
+            0.15000000596046448,
+            0.15000000596046448,
+            0.20000000298023224,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -5352,13 +5365,13 @@
             {
               "name": "TrueDamagePerc",
               "values": [
-                0.15000000596046448,
-                0.15000000596046448,
-                0.20000000298023224,
-                0.30000001192092896,
-                0.30000001192092896,
-                0.30000001192092896,
-                0.30000001192092896
+                0.25,
+                0.25,
+                0.3400000035762787,
+                0.5,
+                0.5,
+                0.5,
+                0.5
               ],
               "~class": "SpellDataValue"
             }
@@ -5375,8 +5388,15 @@
                 {
                   "Style": 1,
                   "multiplier": 100.0,
-                  "nameOverride": "Spell_ListType_AdditionalDamage",
+                  "nameOverride": "Spell_ListType_MeleeDamageIncrease",
                   "type": "TrueDamagePerc",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Spell_ListType_RangedDamageIncrease",
+                  "type": "RangedTrueDamagePercDisplay",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
