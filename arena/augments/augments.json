@@ -1691,7 +1691,15 @@
         1.0
       ],
       "MaxLevel": 2.0,
-      "CritDamageMultipler": 0.25
+      "CritDamageMultipler": [
+        0.0,
+        0.0,
+        0.25,
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ]
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/ItsCritical_small.tex",
@@ -6694,7 +6702,8 @@
       "InitalDelay": 12.0,
       "WarningDelay": 2.5,
       "MaxLevel": 2.0,
-      "MaxLevelHealthTriggerPercent": 0.5
+      "MaxLevelHealthTriggerPercent": 0.5,
+      "DivineInterventionCDReduction": 2.0
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/SlowActingPainkillers_small.tex",
@@ -7268,15 +7277,7 @@
         1.0,
         1.0
       ],
-      "DivineInterventionCD": [
-        5.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
+      "DivineInterventionCD": 5.0,
       "MaxLevel": 3.0
     },
     "icons": [
@@ -9725,10 +9726,10 @@
         750.0
       ],
       "ExecutionInc": [
+        0.004999999888241291,
+        5.0,
         0.009999999776482582,
         0.009999999776482582,
-        0.012500000186264515,
-        0.014999999664723873,
         0.03999999910593033,
         0.05000000074505806,
         0.05999999865889549
@@ -9938,7 +9939,8 @@
         60.0
       ],
       "BuffDuration": 6.0,
-      "MaxLevel": 3.0
+      "MaxLevel": 3.0,
+      "Cooldown": 4.0
     },
     "add": {
       "Augment_CriticalRhythmBuff": {
@@ -10034,28 +10036,6 @@
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/EscapePlan_small.tex",
       "ASSETS/UX/Kiwi/Augments/Icons/EscapePlan_large.tex"
-    ]
-  },
-  {
-    "id": 1338,
-    "apiName": "ARAM_Upgrade_Hubris",
-    "name": "Upgrade Hubris",
-    "rarity": "Gold",
-    "disabled": true,
-    "desc": "On Takedown, Hubris <healing>heals</healing> you and grants <speed>Movement Speed</speed>, scaling with your <keywordMajor>Eminence</keywordMajor> stacks. <br><br>Gain <gold>+%i:goldCoins% 250 Gold.</gold>",
-    "tooltip": "On takedown, Hubris <healing>restores @MaxHealthRestored*100@% of your max Health plus @MissingHealthStackAmount*100@% of your missing Health</healing> and grants <speed>@MSBase@ plus @MSBonusPerStack@ Movement Speed</speed> for the buff duration, both scaling with your stacks.<br><br>Gain <gold>+%i:goldCoins% 250 Gold.</gold>",
-    "dataValues": {
-      "LethalityPerStack": 1.0,
-      "MaxHealthRestored": 0.05000000074505806,
-      "MissingHealthStackAmount": 0.029999999329447746,
-      "MSBase": 10.0,
-      "MSBonusPerStack": 5.0,
-      "InstantGoldGain": 250.0,
-      "MaxLevel": 1.0
-    },
-    "icons": [
-      "ASSETS/UX/Kiwi/Augments/Icons/UpgradeHubris_small.tex",
-      "ASSETS/UX/Kiwi/Augments/Icons/UpgradeHubris_large.tex"
     ]
   },
   {
@@ -10415,66 +10395,6 @@
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/StuckInHereWithMe_small.tex",
       "ASSETS/UX/Kiwi/Augments/Icons/StuckInHereWithMe_large.tex"
-    ]
-  },
-  {
-    "id": 1415,
-    "apiName": "Twinfire",
-    "name": "Twin Fire",
-    "rarity": "Silver",
-    "desc": "On ability damage, fire 1 plus @AdditionalMis@ missiles that deal <magicDamage>@Damage@ magic damage</magicDamage> each. <br><br>Gain <attention>%i:scaleCrit% @CrtiChance*100@% Critical Strike Chance</attention>.",
-    "tooltip": "{{Kiwi_TwinFire_Summary}}",
-    "dataValues": {
-      "ADRatio": 0.07000000029802322,
-      "CrtiChance": 0.25,
-      "AdditionalMisDivision": [
-        2.0,
-        3.0,
-        4.0,
-        5.0,
-        6.0,
-        7.0,
-        8.0
-      ],
-      "APRatio": 0.07000000029802322,
-      "Cooldown": 5.0,
-      "MaxLevel": 3.0
-    },
-    "calculations": {
-      "AdditionalMis": {
-        "mFormulaParts": [
-          {
-            "mDataValue": "AdditionalMisDivision",
-            "mStat": 8,
-            "~class": "StatByNamedDataValueCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "Damage": {
-        "mFormulaParts": [
-          {
-            "mEndValue": 30.0,
-            "mStartValue": 10.0,
-            "~class": "ByCharLevelInterpolationCalculationPart"
-          },
-          {
-            "mDataValue": "ADRatio",
-            "mStat": 2,
-            "mStatFormula": 2,
-            "~class": "StatByNamedDataValueCalculationPart"
-          },
-          {
-            "mDataValue": "APRatio",
-            "~class": "StatByNamedDataValueCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      }
-    },
-    "icons": [
-      "ASSETS/UX/Kiwi/Augments/Icons/TwinFire_small.tex",
-      "ASSETS/UX/Kiwi/Augments/Icons/TwinFire_large.tex"
     ]
   },
   {
@@ -11026,7 +10946,8 @@
         4.0,
         5.0,
         6.0
-      ]
+      ],
+      "Cooldown": 4.0
     },
     "calculations": {
       "Calc_Crit_Chance": {
