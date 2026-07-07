@@ -63,8 +63,8 @@ maps.each { |mapId, mapArr|
     pool.post {
         system("./wadtools -L error --progress false e -i \"#{path}Maps/Shipping/Map#{mapId}.wad.client\" -o \"#{Dir.getwd}/bins/data/temp/map#{mapId}\" -x \"^maps/modespecificdata/.*?\.bin$\"")
         
-        FileUtils.mv(Dir.glob("#{Dir.getwd}/bins/data/temp/map#{mapId}/maps/modespecificdata/*/*"), "#{Dir.getwd}/bins/data/maps/modespecificdata/map#{mapId}/")
-        FileUtils.mv(Dir.glob("#{Dir.getwd}/bins/data/temp/map#{mapId}/maps/modespecificdata/*"), "#{Dir.getwd}/bins/data/maps/modespecificdata/map#{mapId}/")
+        FileUtils.mv(Dir.glob("#{Dir.getwd}/bins/data/temp/map#{mapId}/maps/modespecificdata/*/*"), "#{Dir.getwd}/bins/data/maps/modespecificdata/map#{mapId}/", force: true)
+        FileUtils.mv(Dir.glob("#{Dir.getwd}/bins/data/temp/map#{mapId}/maps/modespecificdata/*"), "#{Dir.getwd}/bins/data/maps/modespecificdata/map#{mapId}/", force: true)
         puts "Generated map#{mapId} modedata bins"
     }
 }
