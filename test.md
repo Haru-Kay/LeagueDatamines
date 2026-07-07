@@ -2,15 +2,33 @@
 
 ## ARAM: Mayhem
 
+### Systems
+
+* "Best In Slot" augments (the ones you see every other game) have had their weights reduced.
+  * Basically reduced "high rolls"
+* Ability upgrade augments have had their weights drastically reduced.
+
 ### Augments
+
+**Combusting Interest**
+
+* No longer offered to Smolder.
 
 **Dropkick**
 
 * Tooltip corrected to state Attacks *and Abilities* apply the execute.
 
+**Infernal Conduit**
+
+* Refund now only works on damage dealt to champions.
+
 **Pin Cushion**
 
 * Nail stacks will now automatically execute the target if the stored damage would kill them.
+
+**Stackosaurus Rex**
+
+* No longer grants bonus stacks to Augments or Items.
 
 ## Arena
 
@@ -27,6 +45,10 @@
 **Energetic Caster**
 
 * Still disabled, but appears to be getting worked on with its synergy with Divine Intervention.
+
+**Stackosaurus Rex**
+
+* No longer grants bonus stacks to Augments or Items.
 
 **Twinfire**
 
