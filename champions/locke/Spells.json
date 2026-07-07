@@ -111,7 +111,7 @@
               "~class": "AboveHealthPercentCastRequirement"
             }
           ],
-          "0x6166b756": "0x4228a892",
+          "0x6166b756": "MinOnHitDamage",
           "~class": "0xfe87f21e"
         },
         {
@@ -122,7 +122,7 @@
               "~class": "AboveHealthPercentCastRequirement"
             }
           ],
-          "0x6166b756": "0x65750594",
+          "0x6166b756": "MaxOnHitDamage",
           "~class": "0xfe87f21e"
         }
       ],
@@ -195,21 +195,7 @@
         "ASSETS/Characters/Locke/HUD/Icons2D/Locke_Passive.Locke.dds"
       ],
       "mSpellCalculations": {
-        "0x4228a892": {
-          "mFormulaParts": [
-            {
-              "mEndValue": 40.0,
-              "mStartValue": 5.0,
-              "~class": "ByCharLevelInterpolationCalculationPart"
-            },
-            {
-              "mCoefficient": 0.10000000149011612,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "0x65750594": {
+        "MaxOnHitDamage": {
           "mFormulaParts": [
             {
               "mEndValue": 80.0,
@@ -218,6 +204,20 @@
             },
             {
               "mCoefficient": 0.20000000298023224,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "MinOnHitDamage": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 40.0,
+              "mStartValue": 5.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            },
+            {
+              "mCoefficient": 0.10000000149011612,
               "~class": "StatByCoefficientCalculationPart"
             }
           ],
@@ -1025,7 +1025,20 @@
         "ASSETS/Characters/Locke/HUD/Icons2D/Locke_W2.Locke.dds"
       ],
       "mSpellCalculations": {
-        "0x98c0d8e": {
+        "Damage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.5,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "DamageRestoreAmount": {
           "mFormulaParts": [
             {
               "mDataValue": "BaseDamageRestoreAmount",
@@ -1038,19 +1051,6 @@
             {
               "mDataValue": "HealthCost",
               "~class": "NamedDataValueCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "Damage": {
-          "mFormulaParts": [
-            {
-              "mDataValue": "baseDamage",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mCoefficient": 0.5,
-              "~class": "StatByCoefficientCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -2326,26 +2326,13 @@
       "mLineDragLength": 350.0,
       "mLineWidth": 100.0,
       "mSpellCalculations": {
-        "0xac10fc3d": {
+        "AmmoCooldownReset": {
           "mDisplayAsPercent": true,
           "mFormulaParts": [
             {
               "mEndValue": 0.3499999940395355,
               "mStartValue": 0.20000000298023224,
               "~class": "ByCharLevelInterpolationCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "0xae806e50": {
-          "mFormulaParts": [
-            {
-              "mDataValue": "MarkRatio",
-              "~class": "StatByNamedDataValueCalculationPart"
-            },
-            {
-              "mDataValue": "MarkDamage",
-              "~class": "NamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -2359,6 +2346,19 @@
             {
               "mCoefficient": 0.20000000298023224,
               "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "NailDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "MarkRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "MarkDamage",
+              "~class": "NamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -2732,7 +2732,20 @@
           "mSimpleTooltipCalculationDisplay": 5,
           "~class": "GameCalculation"
         },
-        "0x708b59ae": {
+        "Damage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.6000000238418579,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "ExecuteBonusCalc": {
           "mDisplayAsPercent": true,
           "mExpandedTooltipCalculationDisplay": 5,
           "mFormulaParts": [
@@ -2746,19 +2759,6 @@
           ],
           "mPrecision": 1,
           "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculation"
-        },
-        "Damage": {
-          "mFormulaParts": [
-            {
-              "mDataValue": "baseDamage",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mCoefficient": 0.6000000238418579,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
           "~class": "GameCalculation"
         }
       },
@@ -3067,21 +3067,7 @@
         "ASSETS/Characters/Locke/HUD/Icons2D/Locke_W.Locke.dds"
       ],
       "mSpellCalculations": {
-        "0x35921bc": {
-          "mFormulaParts": [
-            {
-              "mEndValue": 450.0,
-              "mStartValue": 150.0,
-              "~class": "ByCharLevelInterpolationCalculationPart"
-            },
-            {
-              "mCoefficient": 0.6000000238418579,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "0x7ec943a6": {
+        "AdditionalHeal": {
           "mFormulaParts": [
             {
               "mEndValue": 200.0,
@@ -3095,7 +3081,7 @@
           ],
           "~class": "GameCalculation"
         },
-        "0x98c0d8e": {
+        "DamageRestoreAmount": {
           "mFormulaParts": [
             {
               "mDataValue": "BaseDamageRestoreAmount",
@@ -3108,7 +3094,7 @@
           ],
           "~class": "GameCalculation"
         },
-        "0xa375ef54": {
+        "DecayTimeHelper": {
           "mExpandedTooltipCalculationDisplay": 5,
           "mFormulaParts": [
             {
@@ -3121,6 +3107,20 @@
             }
           ],
           "mSimpleTooltipCalculationDisplay": 5,
+          "~class": "GameCalculation"
+        },
+        "MaxHealingThreshold": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 450.0,
+              "mStartValue": 150.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            },
+            {
+              "mCoefficient": 0.6000000238418579,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
           "~class": "GameCalculation"
         },
         "MoveSpeed": {

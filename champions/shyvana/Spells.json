@@ -1750,16 +1750,6 @@
         "~class": "MissileSpecification"
       },
       "mSpellCalculations": {
-        "0xbb85c3b6": {
-          "mExpandedTooltipCalculationDisplay": 6,
-          "mModifiedGameCalculation": "Calc_Max_Health_Damage",
-          "mMultiplier": {
-            "mDataValue": "DamageDragonMod",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculationModified"
-        },
         "Calc_Dragon_Damage": {
           "mModifiedGameCalculation": "Damage",
           "mMultiplier": {
@@ -1780,6 +1770,16 @@
           "mPrecision": 1,
           "mSimpleTooltipCalculationDisplay": 5,
           "~class": "GameCalculation"
+        },
+        "Calc_Max_Health_Dragon_Damage": {
+          "mExpandedTooltipCalculationDisplay": 6,
+          "mModifiedGameCalculation": "Calc_Max_Health_Damage",
+          "mMultiplier": {
+            "mDataValue": "DamageDragonMod",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "mSimpleTooltipCalculationDisplay": 5,
+          "~class": "GameCalculationModified"
         },
         "Calc_Max_Health_Monster_Maximum": {
           "mFormulaParts": [
@@ -3253,22 +3253,11 @@
         "ASSETS/Characters/Shyvana/HUD/Icons2D/Shyvana_W1.Shyvana_Rework.dds"
       ],
       "mSpellCalculations": {
-        "0xb35447ff": {
+        "Calc_Base_Heal": {
           "mFormulaParts": [
             {
               "mEndValue": 100.0,
               "mStartValue": 60.0,
-              "~class": "ByCharLevelInterpolationCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "0xf468ef05": {
-          "mDisplayAsPercent": true,
-          "mFormulaParts": [
-            {
-              "mEndValue": 0.07999999821186066,
-              "mStartValue": 0.03999999910593033,
               "~class": "ByCharLevelInterpolationCalculationPart"
             }
           ],
@@ -3298,6 +3287,17 @@
             {
               "mCoefficient": 0.05000000074505806,
               "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "Calc_Missing_Health_Heal": {
+          "mDisplayAsPercent": true,
+          "mFormulaParts": [
+            {
+              "mEndValue": 0.07999999821186066,
+              "mStartValue": 0.03999999910593033,
+              "~class": "ByCharLevelInterpolationCalculationPart"
             }
           ],
           "~class": "GameCalculation"

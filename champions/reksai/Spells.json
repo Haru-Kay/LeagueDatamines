@@ -1026,7 +1026,20 @@
           },
           "~class": "GameCalculationModified"
         },
-        "0x6178e02": {
+        "0x9db1c8": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "TunnelDurationMinutes",
+              "~class": "NamedDataValueCalculationPart"
+            }
+          ],
+          "mMultiplier": {
+            "mNumber": 60.0,
+            "~class": "NumberCalculationPart"
+          },
+          "~class": "GameCalculation"
+        },
+        "BaseDamageCalculation": {
           "mFormulaParts": [
             {
               "mDataValue": "baseDamage",
@@ -1041,27 +1054,6 @@
           ],
           "~class": "GameCalculation"
         },
-        "0x9db1c8": {
-          "mFormulaParts": [
-            {
-              "mDataValue": "TunnelDurationMinutes",
-              "~class": "NamedDataValueCalculationPart"
-            }
-          ],
-          "mMultiplier": {
-            "mNumber": 60.0,
-            "~class": "NumberCalculationPart"
-          },
-          "~class": "GameCalculation"
-        },
-        "0xd147e525": {
-          "mModifiedGameCalculation": "0x6178e02",
-          "mMultiplier": {
-            "mDataValue": "EmpoweredRatio",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
         "DashSpeed": {
           "mFormulaParts": [
             {
@@ -1075,6 +1067,14 @@
             }
           ],
           "~class": "GameCalculation"
+        },
+        "EmpoweredDamageCalculation": {
+          "mModifiedGameCalculation": "BaseDamageCalculation",
+          "mMultiplier": {
+            "mDataValue": "EmpoweredRatio",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "~class": "GameCalculationModified"
         }
       },
       "mSpellTags": [

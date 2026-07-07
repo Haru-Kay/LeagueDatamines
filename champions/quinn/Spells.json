@@ -735,15 +735,6 @@
         "ASSETS/Characters/Quinn/HUD/Icons2D/Quinn_Passive.dds"
       ],
       "mSpellCalculations": {
-        "0x929bc6f6": {
-          "mFormulaParts": [
-            {
-              "mNumber": 75.0,
-              "~class": "NumberCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
         "BonusDamage": {
           "mFormulaParts": [
             {
@@ -762,6 +753,15 @@
             "mDataValue": "ModesPassiveDamageMultiplier",
             "~class": "NamedDataValueCalculationPart"
           },
+          "~class": "GameCalculation"
+        },
+        "BonusMonsterDmg": {
+          "mFormulaParts": [
+            {
+              "mNumber": 75.0,
+              "~class": "NumberCalculationPart"
+            }
+          ],
           "~class": "GameCalculation"
         }
       },
@@ -1143,23 +1143,6 @@
         "~class": "MissileSpecification"
       },
       "mSpellCalculations": {
-        "0xa06afe5e": {
-          "mModifiedGameCalculation": "TotalDamage",
-          "mMultiplier": {
-            "mSubparts": [
-              {
-                "mNumber": 1.0,
-                "~class": "NumberCalculationPart"
-              },
-              {
-                "mDataValue": "BonusMonsterDmgMult",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "SumOfSubPartsCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
         "TotalDamage": {
           "mFormulaParts": [
             {
@@ -1178,6 +1161,23 @@
             }
           ],
           "~class": "GameCalculation"
+        },
+        "TotalDamageMonster": {
+          "mModifiedGameCalculation": "TotalDamage",
+          "mMultiplier": {
+            "mSubparts": [
+              {
+                "mNumber": 1.0,
+                "~class": "NumberCalculationPart"
+              },
+              {
+                "mDataValue": "BonusMonsterDmgMult",
+                "~class": "NamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "SumOfSubPartsCalculationPart"
+          },
+          "~class": "GameCalculationModified"
         }
       },
       "mSpellTags": [
