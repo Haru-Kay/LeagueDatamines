@@ -1,5 +1,6 @@
 **Just a reminder that PBE changes are not final and subject to change. Some changes, such as bugfixes, may not be able to be viewed.**
 
+**Patchly reminder that if a change is not mentioned in this post, it matches the preview posted by Phroxzon on Twitter.**
 
 ## ARAM: Mayhem
 
@@ -7,7 +8,9 @@
 
 **Critical Rhythm**
 
-* Appears to be getting a cooldown of 4 seconds. Getting a stack will likely refresh the entire duration.
+* Getting a IDCD (per spell ID, aka DOTs) of 4 seconds.
+* Augment should now work with Jeweled Gauntlet and Vulnerability crits.
+  * Thanks R0gueFool for the clarification.
 
 **Dimension Shift**
 
@@ -18,7 +21,8 @@
 
 **Double Tap**
 
-* Appears to be getting a cooldown of 4 seconds.
+* Getting a IDCD of 4 seconds.
+* Augment should now work with Jeweled Gauntlet and Vulnerability crits.
 
 **DropBear**
 
@@ -54,3 +58,28 @@
 
 * Lethality per Tooth: 4 -> 3
   * Magic Pen unchanged
+
+### Champions
+
+**Leona**
+
+* Q now counts as a "low damage" spell.
+
+## Arena
+
+### Augments
+
+**Critical Rhythm**
+
+* Getting a IDCD (per spell ID, aka DOTs) of 4 seconds.
+* Augment should now work with Jeweled Gauntlet and Vulnerability crits.
+  * Thanks R0gueFool for the clarification.
+
+**Double Tap**
+
+* Getting a IDCD of 4 seconds.
+* Augment should now work with Jeweled Gauntlet and Vulnerability crits.
+
+**Upgrade Collector**
+
+* Execution Increment: 500/1% -> 1/1.5%
