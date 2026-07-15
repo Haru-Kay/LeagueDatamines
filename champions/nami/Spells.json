@@ -926,6 +926,19 @@
             0.5
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "StunDuration",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -1031,7 +1044,7 @@
           "mLocKeys": {
             "keyName": "Aqua Prison",
             "keySummary": "Sends a bubble to a target area, dealing damage and stunning all enemies on impact.",
-            "keyTooltip": "Nami hurls a bubble, <status>Stunning</status> for @Effect2Amount@ seconds and dealing <magicDamage>@TotalDamageTT@ magic damage</magicDamage>."
+            "keyTooltip": "Nami hurls a bubble, <status>Stunning</status> for @StunDuration@ seconds and dealing <magicDamage>@TotalDamageTT@ magic damage</magicDamage>."
           },
           "mObjectName": "NamiQ",
           "~class": "TooltipInstanceSpell"
@@ -1636,6 +1649,84 @@
             650.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "PassiveUpdateAreaLength",
+          "values": [
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "KnockupDuration",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MinSlowDuration",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxSlowDuration",
+          "values": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DistToSlowRatio",
+          "values": [
+            0.0020000000949949026,
+            0.0020000000949949026,
+            0.0020000000949949026,
+            0.0020000000949949026,
+            0.0020000000949949026,
+            0.0020000000949949026,
+            0.0020000000949949026
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowAmount",
+          "values": [
+            70.0,
+            70.0,
+            70.0,
+            70.0,
+            70.0,
+            70.0,
+            70.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "castConeDistance": 100.0,
@@ -1776,8 +1867,8 @@
           "mLocKeys": {
             "keyName": "Tidal Wave",
             "keySummary": "Summons a massive Tidal Wave that knocks up, slows, and damages enemies. Allies hit gain double the effect of Surging Tides.",
-            "keyTooltip": "Nami summons a tidal wave, <status>Knocking Up</status> for 0.5 seconds, <status>Slowing</status> by @Effect4Amount@%, and dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>. The duration of the <status>Slow</status> increases based on distance the wave traveled, up to @Effect5Amount@ seconds.<br><br>Allies hit by the wave gain double the effect of <spellName>Surging Tides</spellName>.",
-            "keyTooltipExtendedBelowLine": "<rules>The <status>Slow</status> has a minimum duration of @Effect3Amount@ seconds.</rules>"
+            "keyTooltip": "Nami summons a tidal wave, <status>Knocking Up</status> for 0.5 seconds, <status>Slowing</status> by @SlowAmount@%, and dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>. The duration of the <status>Slow</status> increases based on distance the wave traveled, up to @MaxSlowDuration@ seconds.<br><br>Allies hit by the wave gain double the effect of <spellName>Surging Tides</spellName>.",
+            "keyTooltipExtendedBelowLine": "<rules>The <status>Slow</status> has a minimum duration of @MinSlowDuration@ seconds.</rules>"
           },
           "mObjectName": "NamiR",
           "~class": "TooltipInstanceSpell"

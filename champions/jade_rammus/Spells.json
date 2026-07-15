@@ -1,0 +1,1328 @@
+{
+  "0x105d806e": {
+    "ObjectName": "Jade_RammusQ_Slow",
+    "mBuff": {
+      "mDescription": "<titleLeft>Powerball Slow</titleLeft><mainText>This unit is slowed.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_RammusQ_Slow",
+    "mSpell": {
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Rammus_Powerball.project_jade.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x1472aa28": {
+    "ObjectName": "Jade_RammusE_ArmorDebuff",
+    "mBuff": {
+      "mDescription": "<titleLeft>Punctured Armor</titleLeft><mainText>This unit's Armor is reduced.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_RammusE_ArmorDebuff",
+    "mSpell": {
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Rammus_ScaledPlating.project_jade.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x18bd22a0": {
+    "ObjectName": "Jade_Rammus_TauntsEveryone",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Rammus Taunts Everyone",
+          "keyTooltip": "<flavorText>{{Jade_Rammus_Taunts@f1@}}</flavorText>"
+        },
+        "mObjectName": "Jade_Rammus_TauntsEveryone",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_Rammus_TauntsEveryone",
+    "mSpell": {
+      "0xe1136d1": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "ImgIconPath": "ASSETS/UX/Jade/S3Icons/SameSized/Rammus_TauntsEverything.project_jade.tex",
+      "castRange": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0x476ec0b8",
+          "mObjectName": "Jade_Rammus_TauntsEveryone",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x3fe998f2": {
+    "ObjectName": "Jade_RammusPassive",
+    "mScriptName": "Jade_RammusPassive",
+    "mSpell": {
+      "0xe1136d1": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "ArmorRatio",
+          "values": [
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "castRange": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyName": "Spiked Shell",
+            "keySummary": "Rammus gains additional damage as his shell becomes reinforced, converting 25% of his armor into Attack Damage.",
+            "keyTooltip": "Rammus converts @ArmorRatio*100@% of his Armor into <physicalDamage>Attack Damage</physicalDamage>.<br><br><physicalDamage>Bonus Attack Damage: @f1@</physicalDamage>"
+          },
+          "mObjectName": "Jade_RammusPassive",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Rammus_ScavengeArmor.project_jade.dds"
+      ],
+      "mSpellCalculations": {
+        "DamageIncrease": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "ArmorRatio",
+              "mStat": 1,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0xb00b975b": {
+    "ObjectName": "Jade_RammusQ_Stun",
+    "mBuff": {
+      "mDescription": "<titleLeft>Powerball Stun</titleLeft><mainText>This unit is stunned.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_RammusQ_Stun",
+    "mSpell": {
+      "SpellEventToAudioEventSuffix": {
+        "20": "Play_sfx_Rammus_PowerBall_hit"
+      },
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Rammus_Powerball.project_jade.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Rammus/Spells/Jade_RammusBasicAttack": {
+    "ObjectName": "Jade_RammusBasicAttack",
+    "mScriptName": "Jade_RammusBasicAttack",
+    "mSpell": {
+      "0x11704a2b": 0.3109999895095825,
+      "0xe1136d1": {
+        "0xa3e0478": 600.0,
+        "values": [
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Rammus_RammusBasicAttack_OnCast",
+        "13": "Play_sfx_Rammus_RammusBasicAttack_OnHit"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 11.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 5327,
+      "mAlternateName": "Jade_RammusBasicAttack",
+      "mAnimationName": "attack1",
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "0x3c6b4d75",
+      "missileSpeed": 0.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Rammus/Spells/Jade_RammusBasicAttack2": {
+    "ObjectName": "Jade_RammusBasicAttack2",
+    "mScriptName": "Jade_RammusBasicAttack2",
+    "mSpell": {
+      "0x11704a2b": 0.3109999895095825,
+      "0xe1136d1": {
+        "0xa3e0478": 600.0,
+        "values": [
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Rammus_RammusBasicAttack_OnCast",
+        "13": "Play_sfx_Rammus_RammusBasicAttack_OnHit"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 11.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 5327,
+      "mAlternateName": "Jade_RammusBasicAttack2",
+      "mAnimationName": "Attack2",
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "0x3c6b4d75",
+      "missileSpeed": 0.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Rammus/Spells/Jade_RammusCritAttack": {
+    "ObjectName": "Jade_RammusCritAttack",
+    "mScriptName": "Jade_RammusCritAttack",
+    "mSpell": {
+      "0x11704a2b": 0.3109999895095825,
+      "0xe1136d1": {
+        "0xa3e0478": 600.0,
+        "values": [
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Rammus_RammusCritAttack_OnCast",
+        "13": "Play_sfx_Rammus_RammusCritAttack_OnHit"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 11.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 5327,
+      "mAnimationName": "Crit",
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "0x55b5c87c",
+      "missileSpeed": 0.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Rammus/Spells/Jade_RammusEAbility/Jade_RammusE": {
+    "ObjectName": "Jade_RammusE",
+    "mScriptName": "Jade_RammusE",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0x210f9ec0": {
+        "values": [
+          50.0,
+          60.0,
+          70.0,
+          80.0,
+          90.0,
+          90.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "0xe1136d1": {
+        "0xa3e0478": 325.0,
+        "values": [
+          325.0,
+          325.0,
+          325.0,
+          325.0,
+          325.0,
+          325.0,
+          325.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 0.5,
+      "Cooldown": {
+        "0xa3e0478": 12.0,
+        "values": [
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "Duration",
+          "values": [
+            0.5,
+            1.0,
+            1.5,
+            2.0,
+            2.5,
+            3.0,
+            3.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatio",
+          "values": [
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ArmourReduction",
+          "values": [
+            -5.0,
+            -10.0,
+            -15.0,
+            -20.0,
+            -25.0,
+            -30.0,
+            -35.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Rammus_PuncturingTaunt_OnCast",
+        "13": "Play_sfx_Rammus_PuncturingTaunt_OnHit"
+      },
+      "alwaysSnapFacing": true,
+      "castConeDistance": 100.0,
+      "castFrame": 7.5,
+      "castRadius": [
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0
+      ],
+      "castRange": [
+        325.0,
+        325.0,
+        325.0,
+        325.0,
+        325.0,
+        325.0,
+        325.0
+      ],
+      "castRangeDisplayOverride": [
+        325.0,
+        325.0,
+        325.0,
+        325.0,
+        325.0,
+        325.0,
+        325.0
+      ],
+      "cooldownTime": [
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0
+      ],
+      "mAffectsTypeFlags": 6146,
+      "mAlternateName": "Jade_Rammus_PuncturingTaunt",
+      "mAnimationName": "Spell3",
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.25,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Duration",
+                  "type": "Duration",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Mana Cost",
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "multiplier": -1.0,
+                  "nameOverride": "Armor Reduction",
+                  "type": "ArmourReduction",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Puncturing Taunt",
+            "keySummary": "Rammus taunts an enemy champion or monster into a reckless assault against Rammus' hard shell, reducing Armor temporarily.",
+            "keyTooltip": "<mainText>Rammus <status>Taunts</status> the enemy champion or monster into a reckless assault, reducing their Armor by @ArmourReduction*-1@ and forcing them to attack Rammus for @Duration@ second(s).</mainText>",
+            "keyTooltipExtendedBelowLine": "<flavorText>ok</flavorText>"
+          },
+          "mObjectName": "Jade_RammusE",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Rammus_ScaledPlating.project_jade.dds"
+      ],
+      "mSpellTags": [
+        "Trait_ImmobilizingCCSpell"
+      ],
+      "mana": [
+        50.0,
+        60.0,
+        70.0,
+        80.0,
+        90.0,
+        90.0
+      ],
+      "missileSpeed": 0.0,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Rammus/Spells/Jade_RammusQAbility/Jade_RammusQ": {
+    "ObjectName": "Jade_RammusQ",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Powerball",
+          "keyTooltip": "Rammus is accelerating and on impact he will deal damage and slow targets around him."
+        },
+        "mObjectName": "Jade_RammusQ",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_RammusQ",
+    "mSpell": {
+      "0x11704a2b": 0.0,
+      "0x210f9ec0": {
+        "values": [
+          70.0,
+          80.0,
+          90.0,
+          100.0,
+          110.0,
+          110.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "0xe1136d1": {
+        "0xa3e0478": 300.0,
+        "values": [
+          300.0,
+          300.0,
+          300.0,
+          300.0,
+          300.0,
+          300.0,
+          300.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 0.0,
+      "DataValues": [
+        {
+          "name": "AOEDamage",
+          "values": [
+            50.0,
+            100.0,
+            150.0,
+            200.0,
+            250.0,
+            300.0,
+            350.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowPercent",
+          "values": [
+            -0.15000000596046448,
+            -0.20000000298023224,
+            -0.25,
+            -0.30000001192092896,
+            -0.3499999940395355,
+            -0.4000000059604645,
+            -0.44999998807907104
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MoveSpeedMod",
+          "values": [
+            0.029999999329447746,
+            0.029999999329447746,
+            0.029999999329447746,
+            0.029999999329447746,
+            0.029999999329447746,
+            0.029999999329447746,
+            0.029999999329447746
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "18": "Play_sfx_Rammus_PowerBall_OnBuffActivate"
+      },
+      "bIsToggleSpell": true,
+      "castConeDistance": 100.0,
+      "castFrame": 10.0,
+      "castRadius": [
+        250.0,
+        250.0,
+        250.0,
+        250.0,
+        250.0,
+        250.0,
+        250.0
+      ],
+      "castRadiusSecondary": [
+        75.0,
+        75.0,
+        75.0,
+        75.0,
+        75.0,
+        75.0,
+        75.0
+      ],
+      "castRange": [
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 9221,
+      "mAnimationName": "Spell1",
+      "mCanMoveWhileChanneling": true,
+      "mCantCancelWhileWindingUp": true,
+      "mChannelDuration": [
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0
+      ],
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "AOEDamage",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "multiplier": -100.0,
+                  "nameOverride": "Slow",
+                  "type": "SlowPercent",
+                  "typeIndex": 2,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Powerball",
+            "keySummary": "Rammus accelerates in a ball towards his enemies, dealing damage and slowing targets affected by the impact.",
+            "keyTooltip": "Rammus accelerates in a ball over 7 seconds towards his enemies, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> to nearby enemies on impact and <status>Slowing</status> them by @SlowPercent*-100@% for 3 seconds.<br><br><recast>Recast</recast> to remove this effect.",
+            "keyTooltipExtendedBelowLine": "<flavorText>ok</flavorText>"
+          },
+          "mObjectName": "Jade_RammusQ",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mDoNotNeedToFaceTarget": true,
+      "mEffectAmount": [
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            1000.0,
+            1000.0,
+            1000.0,
+            1000.0,
+            1000.0,
+            1000.0,
+            1000.0
+          ],
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Rammus_Powerball.project_jade.dds"
+      ],
+      "mRequiredUnitTags": {
+        "mObjectTagList": [
+          "champion"
+        ],
+        "~class": "ObjectTags"
+      },
+      "mSpellCalculations": {
+        "TotalDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "AoEDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 1.0,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "Trait_ImmobilizingCCSpell"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Self"
+      },
+      "mana": [
+        70.0,
+        80.0,
+        90.0,
+        100.0,
+        110.0,
+        110.0
+      ],
+      "missileSpeed": 0.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Rammus/Spells/Jade_RammusRAbility/Jade_RammusR": {
+    "ObjectName": "Jade_RammusR",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Tremors",
+          "keyTooltip": "<mainText>Tremors beneath Rammus cause damage to units and structures around him.</mainText>"
+        },
+        "mObjectName": "Jade_RammusR",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_RammusR",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0x210f9ec0": {
+        "0xa3e0478": 120.0,
+        "values": [
+          120.0,
+          120.0,
+          120.0,
+          120.0,
+          120.0,
+          120.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "0xe1136d1": {
+        "0xa3e0478": 25000.0,
+        "values": [
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.0,
+      "Cooldown": {
+        "0xa3e0478": 60.0,
+        "values": [
+          60.0,
+          60.0,
+          60.0,
+          60.0,
+          60.0,
+          60.0,
+          60.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            0.0,
+            65.0,
+            130.0,
+            195.0,
+            260.0,
+            325.0,
+            390.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Rammus_Tremors2_OnCast"
+      },
+      "castConeDistance": 100.0,
+      "castFrame": 3.1500000953674316,
+      "castRadius": [
+        375.0,
+        375.0,
+        375.0,
+        375.0,
+        375.0,
+        375.0,
+        375.0
+      ],
+      "castRange": [
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0
+      ],
+      "cooldownTime": [
+        60.0,
+        60.0,
+        60.0,
+        60.0,
+        60.0,
+        60.0,
+        60.0
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 4106,
+      "mAlternateName": "Jade_Rammus_Tremors2",
+      "mAnimationName": "Idle1",
+      "mCantCancelWhileWindingUp": true,
+      "mCantCancelWhileWindingUpTargetingChampion": true,
+      "mCastingBreaksStealth": true,
+      "mChannelIsInterruptedByAttacking": false,
+      "mChannelIsInterruptedByDisables": false,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "centerLocator": {
+              "distanceOffset": 300.0,
+              "~class": "DrawablePositionLocator"
+            },
+            "constraintPosLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "isConstrainedToRange": true,
+            "overrideRadius": {
+              "mPerLevelValues": [
+                600.0,
+                600.0,
+                600.0,
+                600.0,
+                600.0,
+                600.0
+              ],
+              "~class": "FloatPerSpellLevel"
+            },
+            "~class": "TargeterDefinitionAoe"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "BaseDamage",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 3,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Tremors",
+            "keySummary": "Rammus creates waves of destruction pulsing through the ground, causing damage to units and structures near him.",
+            "keyTooltip": "Rammus creates tremors beneath him, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> every second to nearby units and structures for 8 seconds.",
+            "keyTooltipExtendedBelowLine": "<flavorText>ok</flavorText>"
+          },
+          "mObjectName": "Jade_RammusR",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mDimensionBehavior": 2,
+      "mDoesntBreakChannels": true,
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Rammus_RecklessCharge.project_jade.dds"
+      ],
+      "mLineWidth": 75.0,
+      "mShowChannelBar": false,
+      "mSpellCalculations": {
+        "TotalDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.30000001192092896,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "Trait_Ultimate",
+        "PositiveEffect_MoveBlock",
+        "Trait_ImmobilizingCCSpell",
+        "Trait_PlayerSelectedDashDirection"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Self"
+      },
+      "mana": [
+        120.0,
+        120.0,
+        120.0,
+        120.0,
+        120.0,
+        120.0
+      ],
+      "missileSpeed": 0.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Rammus/Spells/Jade_RammusWAbility/Jade_RammusW": {
+    "ObjectName": "Jade_RammusW",
+    "mBuff": {
+      "mDescription": "Rammus is in a defensive ball curl. His Armor and Magic Resist are increased, and attackers receive returned damage.",
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Defensive Ball Curl",
+          "keyTooltip": "Rammus is in a defensive ball curl. His Armor and Magic Resist are increased, and attackers receive returned damage."
+        },
+        "mObjectName": "Jade_RammusW",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_RammusW",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0x210f9ec0": {
+        "0xa3e0478": 40.0,
+        "values": [
+          40.0,
+          40.0,
+          40.0,
+          40.0,
+          40.0,
+          40.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "0xe1136d1": {
+        "0xa3e0478": 300.0,
+        "values": [
+          300.0,
+          300.0,
+          300.0,
+          300.0,
+          300.0,
+          300.0,
+          300.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.0,
+      "Cooldown": {
+        "0xa3e0478": 14.0,
+        "values": [
+          14.0,
+          14.0,
+          14.0,
+          14.0,
+          14.0,
+          14.0,
+          14.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "Armour",
+          "values": [
+            20.0,
+            40.0,
+            60.0,
+            80.0,
+            100.0,
+            120.0,
+            140.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseDamage",
+          "values": [
+            5.0,
+            15.0,
+            25.0,
+            35.0,
+            45.0,
+            55.0,
+            65.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Rammus_DefensiveBallCurl_OnCast",
+        "18": "Play_sfx_Rammus_DefensiveBallCurl_OnBuffActivate",
+        "19": "Play_sfx_Rammus_DefensiveBallCurl_OnBuffDeactivate"
+      },
+      "bIsToggleSpell": true,
+      "castConeDistance": 100.0,
+      "castFrame": 2.0,
+      "castRadius": [
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0
+      ],
+      "castRange": [
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0
+      ],
+      "cooldownTime": [
+        7.0,
+        7.0,
+        7.0,
+        7.0,
+        7.0,
+        7.0,
+        7.0
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 9221,
+      "mAlternateName": "Jade_Rammus_DefensiveBallCurl",
+      "mAnimationName": "Idle1",
+      "mCantCancelWhileWindingUp": true,
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Return Damage",
+                  "type": "BaseDamage",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Armor Bonus",
+                  "type": "Armour",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Magic Resist Bonus",
+                  "type": "Armour",
+                  "typeIndex": 6,
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Defensive Ball Curl",
+            "keySummary": "Rammus goes into a defensive formation, vastly increasing his armor and magic resistance, while returning damage to attacks.",
+            "keyTooltip": "Rammus goes into a defensive formation for 6 seconds, increasing his <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> by @Armour@ and returning <magicDamage>@TotalDamage@ magic damage</magicDamage> to attackers.<br><br><recast>Recast</recast> to remove this effect.",
+            "keyTooltipExtendedBelowLine": "<flavorText>ok</flavorText>"
+          },
+          "mObjectName": "Jade_RammusW",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Rammus_ShellBash.project_jade.dds"
+      ],
+      "mRequiredUnitTags": {
+        "mObjectTagList": [
+          "champion"
+        ],
+        "~class": "ObjectTags"
+      },
+      "mSpellCalculations": {
+        "TotalDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.10000000149011612,
+              "mStat": 1,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mTargetingTypeData": {
+        "~class": "Self"
+      },
+      "mana": [
+        40.0,
+        40.0,
+        40.0,
+        40.0,
+        40.0,
+        40.0
+      ],
+      "missileSpeed": 0.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  }
+}

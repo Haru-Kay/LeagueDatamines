@@ -15,8 +15,12 @@ Dir.each_child(path + "Champions") { |d|
     champs.push(d.split(".")[0])
     champs.uniq!
 }
-
 pool = Concurrent::FixedThreadPool.new(7)
+
+pool.post { 
+    puts("./wadtools -L error --progress false e -i \"#{path}Maps/Shipping/Map12.wad.client\" -o \"#{Dir.getwd}/bins/map12\" -x \"^410b3796f165ef3e.bin$\"")
+    puts "Generated Map 12 character bins"
+}
 champs.each { |champ|
     pool.post { 
         system("./wadtools -L error --progress false e -i \"#{path}Champions/#{champ}.wad.client\" -o \"#{Dir.getwd}/bins\" -x \"^data/characters/(.*?)/\\1\\.bin$\"")
@@ -50,7 +54,8 @@ maps = {
     21 => ["nexusblitz"],
     30 => ["cherry"],
     33 => ["strawberry"],
-    35 => ["brawl"]
+    35 => ["brawl"],
+    453 => ["jade"]
 }
 
 maps.each { |mapId, mapArr|

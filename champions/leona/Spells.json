@@ -452,6 +452,34 @@
         ],
         "~class": "SpellAttributeModifiable"
       },
+      "DataValues": [
+        {
+          "name": "StunDuration",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseDamage",
+          "values": [
+            10.0,
+            10.0,
+            35.0,
+            60.0,
+            85.0,
+            110.0,
+            135.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "bHaveHitBone": true,
       "castConeDistance": 100.0,
       "castFrame": 7.5,
@@ -497,8 +525,7 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 2,
+                  "type": "BaseDamage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -513,7 +540,7 @@
           "mLocKeys": {
             "keyName": "Shield of Daybreak",
             "keySummary": "Leona uses her shield to perform her next basic attack, dealing bonus magic damage and stunning the target.",
-            "keyTooltip": "Leona's next Attack <status>Stuns</status> for @Effect1Amount@ seconds and deals an additional <magicDamage>@TotalDamageTooltip@</magicDamage> magic damage.",
+            "keyTooltip": "Leona's next Attack <status>Stuns</status> for @StunDuration@ seconds and deals an additional <magicDamage>@TotalDamageTooltip@</magicDamage> magic damage.",
             "keyTooltipExtendedBelowLine": "<rules>The Attack must be used within 6 seconds or it is lost.</rules>"
           },
           "mObjectName": "LeonaShieldOfDaybreak",
@@ -598,8 +625,8 @@
         "TotalDamageTooltip": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 2,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.30000001192092896,
@@ -902,6 +929,58 @@
             0.4000000059604645
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "ExplosionBaseDamage",
+          "values": [
+            45.0,
+            45.0,
+            45.0,
+            45.0,
+            45.0,
+            45.0,
+            45.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MRBaseBonus",
+          "values": [
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ArmorBaseBonus",
+          "values": [
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ArmorMRDuration",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "castConeDistance": 100.0,
@@ -960,13 +1039,13 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
+                  "type": "ExplosionBaseDamage",
                   "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Armor and Magic Resist",
-                  "type": "Effect%dAmount",
+                  "type": "ArmorBaseBonus",
                   "typeIndex": 4,
                   "~class": "TooltipInstanceListElement"
                 },
@@ -988,7 +1067,7 @@
           "mLocKeys": {
             "keyName": "Eclipse",
             "keySummary": "Leona raises her shield to gain Damage Reduction, Armor, and Magic Resist. When the duration first ends, if there are nearby enemies, she will deal magic damage to them and prolong the duration of the effect.",
-            "keyTooltip": "Leona raises her shield, reducing incoming damage by @FlatDamageReduction@ and gaining <scaleArmor>@BonusArmorTooltip@ Armor</scaleArmor> and <scaleMR>@BonusMRTooltip@ Magic Resist</scaleMR> for @Effect3Amount@ seconds. Afterwards, her shield detonates, dealing <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage> to nearby enemies. If she hits at least one, she retains the <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> bonuses for an additional @Effect3Amount@ seconds.<br>",
+            "keyTooltip": "Leona raises her shield, reducing incoming damage by @FlatDamageReduction@ and gaining <scaleArmor>@BonusArmorTooltip@ Armor</scaleArmor> and <scaleMR>@BonusMRTooltip@ Magic Resist</scaleMR> for @ArmorMRDuration@ seconds. Afterwards, her shield detonates, dealing <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage> to nearby enemies. If she hits at least one, she retains the <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> bonuses for an additional @ArmorMRDuration@ seconds.<br>",
             "keyTooltipExtendedBelowLine": "<rules>Damage reduction effect can't reduce the damage below @FlatDamageReductionMax*100@%.</rules>"
           },
           "mObjectName": "LeonaSolarBarrier",
@@ -1091,8 +1170,8 @@
         "BonusArmorTooltip": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 4,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "ArmorBaseBonus",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.20000000298023224,
@@ -1107,8 +1186,8 @@
         "BonusMRTooltip": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 4,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "ArmorBaseBonus",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.20000000298023224,
@@ -1123,8 +1202,8 @@
         "TotalDamageTooltip": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "ExplosionBaseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mDataValue": "APRatio",
@@ -1730,6 +1809,34 @@
         ],
         "~class": "SpellAttributeModifiable"
       },
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            10.0,
+            50.0,
+            90.0,
+            130.0,
+            170.0,
+            210.0,
+            250.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "RootDuration",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "cantCastWhileRooted": true,
       "castConeDistance": 100.0,
       "castFrame": 7.5,
@@ -1810,8 +1917,7 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "BaseDamage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -1830,7 +1936,7 @@
           "mLocKeys": {
             "keyName": "Zenith Blade",
             "keySummary": "Leona projects a solar image of her sword, dealing magic damage to all enemies in a line. When the image fades, the last enemy champion struck will be briefly immobilized and Leona will dash to them.",
-            "keyTooltip": "Leona thrusts with a sword of light, dealing <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage>. The last champion struck will be <status>Rooted</status> for @Effect2Amount@ seconds and Leona will dash to them."
+            "keyTooltip": "Leona thrusts with a sword of light, dealing <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage>. The last champion struck will be <status>Rooted</status> for @RootDuration@ seconds and Leona will dash to them."
           },
           "mObjectName": "LeonaZenithBlade",
           "~class": "TooltipInstanceSpell"
@@ -1920,8 +2026,8 @@
         "TotalDamageTooltip": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.4000000059604645,

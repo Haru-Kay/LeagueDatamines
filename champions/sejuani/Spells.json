@@ -816,6 +816,58 @@
             0.699999988079071
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "CCDuration",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxStacks",
+          "values": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "StackDuration",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "AuraRange",
+          "values": [
+            1100.0,
+            1100.0,
+            1100.0,
+            1100.0,
+            1100.0,
+            1100.0,
+            1100.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -994,7 +1046,7 @@
           "mLocKeys": {
             "keyName": "Permafrost",
             "keySummary": "Sejuani freezes and stuns an enemy champion that has maximum Frost stacks.",
-            "keyTooltip": "<spellPassive>Passive:</spellPassive> Nearby melee allied champions' Attacks apply a stack to champions and jungle monsters.<br><br><spellPassive>Active:</spellPassive> Sejuani deals <magicDamage>@TotalDamage@ magic damage</magicDamage> to target enemy with 4 stacks and <status>Stuns</status> them for @Effect1Amount@ second. ",
+            "keyTooltip": "<spellPassive>Passive:</spellPassive> Nearby melee allied champions' Attacks apply a stack to champions and jungle monsters.<br><br><spellPassive>Active:</spellPassive> Sejuani deals <magicDamage>@TotalDamage@ magic damage</magicDamage> to target enemy with 4 stacks and <status>Stuns</status> them for @CCDuration@ second. ",
             "keyTooltipExtendedBelowLine": "<rules>Champions <status>Stunned</status> by Sejuani can't gain stacks for @PerChampionCD@ seconds.<br>Enemies <status>Stunned</status> by this Ability are slightly <status>Knocked Back</status>.<br>Permafrost will target the closest valid enemy to your cursor (prioritizing champions).<br>This Ability <status>Knocks Down</status> enemies.</rules>"
           },
           "mObjectName": "SejuaniE",
@@ -1516,6 +1568,45 @@
             0.75
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxTravelDistance",
+          "values": [
+            625.0,
+            625.0,
+            625.0,
+            625.0,
+            625.0,
+            625.0,
+            625.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DashSpeed",
+          "values": [
+            1000.0,
+            1000.0,
+            1000.0,
+            1000.0,
+            1000.0,
+            1000.0,
+            1000.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "KnockupDurationTOOLTIPONLY",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -1651,7 +1742,7 @@
           "mLocKeys": {
             "keyName": "Arctic Assault",
             "keySummary": "Sejuani charges forward, knocking enemies into the air. The charge stops after hitting an enemy champion.",
-            "keyTooltip": "Sejuani charges, dealing <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage> to enemies and <status>Knocking</status> them <status>Up</status> for @Effect4Amount@ seconds. The charge ends after hitting an enemy champion."
+            "keyTooltip": "Sejuani charges, dealing <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage> to enemies and <status>Knocking</status> them <status>Up</status> for @KnockupDurationTOOLTIPONLY@ seconds. The charge ends after hitting an enemy champion."
           },
           "mObjectName": "SejuaniQ",
           "~class": "TooltipInstanceSpell"
@@ -1837,6 +1928,112 @@
         ],
         "~class": "SpellAttributeModifiable"
       },
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            0.0,
+            125.0,
+            150.0,
+            175.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseStunDuration",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ZoneDuration",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ExplosionSlowAmount",
+          "values": [
+            80.0,
+            80.0,
+            80.0,
+            80.0,
+            80.0,
+            80.0,
+            80.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ExplosionSlowDuration",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "EmpoweredStunDuration",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "EmpoweredBaseDamage",
+          "values": [
+            0.0,
+            200.0,
+            300.0,
+            400.0,
+            0.0,
+            0.0,
+            30.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ZoneSlowAmount",
+          "values": [
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "castConeAngle": 0.0,
       "castConeDistance": 0.0,
       "castFrame": 7.5,
@@ -1928,14 +2125,12 @@
               "Elements": [
                 {
                   "nameOverride": "Minimum Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "BaseDamage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Maximum Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 7,
+                  "type": "EmpoweredBaseDamage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -1950,7 +2145,7 @@
           "mLocKeys": {
             "keyName": "Glacial Prison",
             "keySummary": "Sejuani throws her bola that freezes and stuns the first champion hit and creates an ice storm that slows other enemies.",
-            "keyTooltip": "Sejuani throws her True Ice bola, <status>Stunning</status> and revealing the first enemy champion hit for @Effect2Amount@ second and dealing <magicDamage>@MinorDamageTooltip@ magic damage</magicDamage>.<br><br>If the bola travels at least 25% of its range, it <status>Stuns</status> and reveals for @Effect6Amount@ seconds instead. It then also creates an ice storm that <status>Slows</status> surrounding enemies by @Effect4Amount@% for @Effect3Amount@ seconds. All affected enemies take <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage>.",
+            "keyTooltip": "Sejuani throws her True Ice bola, <status>Stunning</status> and revealing the first enemy champion hit for @BaseStunDuration@ second and dealing <magicDamage>@MinorDamageTooltip@ magic damage</magicDamage>.<br><br>If the bola travels at least 25% of its range, it <status>Stuns</status> and reveals for @EmpoweredStunDuration@ seconds instead. It then also creates an ice storm that <status>Slows</status> surrounding enemies by @ExplosionSlowAmount@% for @ZoneDuration@ seconds. All affected enemies take <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage>.",
             "keyTooltipExtendedBelowLine": "<rules>The <status>Stunned</status> enemy takes damage immediately, while enemies inside the storm take damage after it ends. Enemies in the storm are also <status>Slowed</status> for an additional 1 second.</rules>"
           },
           "mObjectName": "SejuaniR",
@@ -2096,8 +2291,8 @@
         "MinorDamageTooltip": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.4000000059604645,
@@ -2109,8 +2304,8 @@
         "TotalDamageTooltip": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 7,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "EmpoweredBaseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.800000011920929,

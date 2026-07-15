@@ -1201,8 +1201,7 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "BaseDamage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -1939,6 +1938,19 @@
             1.25,
             1.25,
             1.25
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowAmount",
+          "values": [
+            -0.800000011920929,
+            -0.800000011920929,
+            -0.800000011920929,
+            -0.800000011920929,
+            -0.800000011920929,
+            -0.800000011920929,
+            -0.800000011920929
           ],
           "~class": "SpellDataValue"
         }
@@ -4569,6 +4581,71 @@
             0.4000000059604645
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseShield",
+          "values": [
+            60.0,
+            60.0,
+            75.0,
+            90.0,
+            105.0,
+            120.0,
+            120.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseDamage",
+          "values": [
+            15.0,
+            40.0,
+            65.0,
+            90.0,
+            115.0,
+            140.0,
+            165.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxHPDamageRatio",
+          "values": [
+            14.0,
+            14.0,
+            14.0,
+            14.0,
+            14.0,
+            14.0,
+            14.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DetonateRecastCooldown",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ShieldDuration",
+          "values": [
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -4842,14 +4919,12 @@
               "Elements": [
                 {
                   "nameOverride": "Shield Amount",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "BaseShield",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 2,
+                  "type": "BaseDamage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -4877,7 +4952,7 @@
           "mLocKeys": {
             "keyName": "Soul Furnace",
             "keySummary": "Sion shields himself and can reactivate after 3 seconds to deal Magic Damage to enemies nearby. When Sion kills enemies, he passively gains maximum Health.",
-            "keyTooltip": "<spellPassive>Passive</spellPassive>: Sion gains <scaleHealth>@HPPerKill@ max Health</scaleHealth> when he kills a unit, or <scaleHealth>@HPPerChampKill@</scaleHealth> for champion takedowns, large minions and large monsters.<br><br><spellActive>Active</spellActive>: Sion gains <shield>@TotalShield@ Shield</shield> for 6 seconds. After @Effect7Amount@ seconds if the shield still holds, Sion can <recast>Recast</recast> to detonate the shield to deal <magicDamage>@TotalDamage@ plus @Effect4Amount@% max Health magic damage</magicDamage>.",
+            "keyTooltip": "<spellPassive>Passive</spellPassive>: Sion gains <scaleHealth>@HPPerKill@ max Health</scaleHealth> when he kills a unit, or <scaleHealth>@HPPerChampKill@</scaleHealth> for champion takedowns, large minions and large monsters.<br><br><spellActive>Active</spellActive>: Sion gains <shield>@TotalShield@ Shield</shield> for 6 seconds. After @DetonateRecastCooldown@ seconds if the shield still holds, Sion can <recast>Recast</recast> to detonate the shield to deal <magicDamage>@TotalDamage@ plus @MaxHPDamageRatio@% max Health magic damage</magicDamage>.",
             "keyTooltipExtended": "{{Spell_SionW_Tooltip}}<br><br>Current Bonus Health: <statTracking>@f1@</statTracking>",
             "keyTooltipExtendedBelowLine": "<rules>Max 400 bonus damage to minions and monsters.</rules>"
           },
@@ -5032,8 +5107,8 @@
         "TotalDamage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 2,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mDataValue": "DamageAPRatio",
@@ -5045,8 +5120,8 @@
         "TotalShield": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "BaseShield",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mDataValue": "ShieldAPRatio",

@@ -560,14 +560,12 @@
               "Elements": [
                 {
                   "nameOverride": "Damage Per Second",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "DamagePerSecond",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Mana Restore",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 2,
+                  "type": "ManaRestoreOnKill",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -583,7 +581,7 @@
             "keyCost": "@Cost@ Mana per Second",
             "keyName": "Defile",
             "keySummary": "Karthus passively steals energy from his victims, gaining Mana on each kill. Alternatively, Karthus can surround himself in the souls of his prey, dealing damage to nearby enemies, but quickly draining his own Mana.",
-            "keyTooltip": "<spellPassive>Passive: </spellPassive>When Karthus kills a unit, he restores <scaleMana>@Effect2Amount@ Mana</scaleMana>.<br><br><toggle>Toggle: </toggle>Karthus creates a necrotic aura, dealing <magicDamage>@TotalDPS@ magic damage</magicDamage> per second to nearby enemies."
+            "keyTooltip": "<spellPassive>Passive: </spellPassive>When Karthus kills a unit, he restores <scaleMana>@ManaRestoreOnKill@ Mana</scaleMana>.<br><br><toggle>Toggle: </toggle>Karthus creates a necrotic aura, dealing <magicDamage>@TotalDPS@ magic damage</magicDamage> per second to nearby enemies."
           },
           "mObjectName": "KarthusDefile",
           "~class": "TooltipInstanceSpell"
@@ -3367,6 +3365,73 @@
         ],
         "~class": "SpellAttributeModifiable"
       },
+      "DataValues": [
+        {
+          "name": "MagicResistShred",
+          "values": [
+            25.0,
+            25.0,
+            25.0,
+            25.0,
+            25.0,
+            25.0,
+            25.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "TT_WallWidth",
+          "values": [
+            700.0,
+            800.0,
+            900.0,
+            1000.0,
+            1100.0,
+            1200.0,
+            1300.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowPercent",
+          "values": [
+            30.0,
+            40.0,
+            50.0,
+            60.0,
+            70.0,
+            80.0,
+            90.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "WallDuration",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DebuffDuration",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "castConeDistance": 100.0,
       "castFrame": 19.684999465942383,
       "castRadius": [
@@ -3447,15 +3512,13 @@
               "Elements": [
                 {
                   "nameOverride": "Wall Width",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 2,
+                  "type": "TT_WallWidth",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "Style": 1,
                   "nameOverride": "Move Speed Slow",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 3,
+                  "type": "SlowPercent",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -3466,7 +3529,7 @@
           "mLocKeys": {
             "keyName": "Wall of Pain",
             "keySummary": "Karthus creates a passable screen of leeching energy. Any enemy units that walk through the screen have their Move Speed and Magic Resist reduced for a period.",
-            "keyTooltip": "Karthus creates a wall that lasts for @Effect4Amount@ seconds. Enemies that pass through lose <scaleMR>@Effect1Amount@% Magic Resist</scaleMR> for @Effect5Amount@ seconds and are <status>Slowed</status> by @Effect3Amount@% decaying over the duration."
+            "keyTooltip": "Karthus creates a wall that lasts for @WallDuration@ seconds. Enemies that pass through lose <scaleMR>@MagicResistShred@% Magic Resist</scaleMR> for @DebuffDuration@ seconds and are <status>Slowed</status> by @SlowPercent@% decaying over the duration."
           },
           "mObjectName": "KarthusWallOfPain",
           "~class": "TooltipInstanceSpell"

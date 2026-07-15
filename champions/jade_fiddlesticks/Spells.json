@@ -1,0 +1,1709 @@
+{
+  "0x25bd2aee": {
+    "ObjectName": "Jade_FiddlesticksPassive",
+    "mBuff": {
+      "mDescription": "Enemy units near Fiddlesticks have their Magic Resist reduced by 10.",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_FiddlesticksPassive",
+    "mSpell": {
+      "0xe1136d1": {
+        "0xa3e0478": 800.0,
+        "values": [
+          800.0,
+          800.0,
+          800.0,
+          800.0,
+          800.0,
+          800.0,
+          800.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "PassiveRange",
+          "values": [
+            800.0,
+            800.0,
+            800.0,
+            800.0,
+            800.0,
+            800.0,
+            800.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "PassiveMagicResistShred",
+          "values": [
+            -10.0,
+            -10.0,
+            -10.0,
+            -10.0,
+            -10.0,
+            -10.0,
+            -10.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "castRange": [
+        800.0,
+        800.0,
+        800.0,
+        800.0,
+        800.0,
+        800.0,
+        800.0
+      ],
+      "mClientData": {
+        "mTooltipData": {
+          "EnableExtendedTooltip": false,
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyName": "Dread",
+            "keySummary": "Nearby enemies have reduced Magic Resist.",
+            "keyTooltip": "Enemy units near Fiddlesticks have reduced <scaleMR>@PassiveMagicResistShred*-1@ Magic Resist</scaleMR>"
+          },
+          "mObjectName": "Jade_FiddlesticksPassive",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Fiddlesticks_Paranoia.project_jade.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x6e6d8e46": {
+    "ObjectName": "Jade_FiddlesticksEMissile",
+    "mScriptName": "Jade_FiddlesticksEMissile",
+    "mSpell": {
+      "0xe1136d1": {
+        "0xa3e0478": 25000.0,
+        "values": [
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "13": "Play_sfx_Fiddlesticks_FiddlesticksE_hit_regular"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castRadius": [
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0
+      ],
+      "castRange": [
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0
+      ],
+      "flags": 4194304,
+      "mAffectsTypeFlags": 6154,
+      "mCastType": 1,
+      "mHitBoneName": "C_Buffbone_Glb_Chest_Loc",
+      "mHitEffectKey": "Jade_Fiddlesticks_Q_1_tar",
+      "mMissileEffectKey": "0x6aa69363",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 75.0,
+          "mSpeed": 1200.0,
+          "mStartBoneName": "C_Buffbone_Glb_Chest_Loc",
+          "mTargetBoneName": "C_Buffbone_Glb_Chest_Loc",
+          "mTargetHeightAugment": 75.0,
+          "mUseHeightOffsetAtEnd": true,
+          "~class": "FixedSpeedMovement"
+        },
+        "visibilityComponent": {
+          "~class": "EnterFOWVisibility"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 1800.0,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x832b4961": {
+    "ObjectName": "Jade_FiddlesticksPassive_Debuff",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Dread",
+          "keyTooltip": "This unit has reduced Magic Resist."
+        },
+        "mObjectName": "Jade_FiddlesticksPassive_Debuff",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_FiddlesticksPassive_Debuff",
+    "mSpell": {
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Fiddlesticks_Paranoia.project_jade.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0xa22884d": {
+    "ObjectName": "Jade_FiddlesticksESilence",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Dark Wind",
+          "keyTooltip": "This unit cannot use Abilities."
+        },
+        "mObjectName": "Jade_FiddlesticksESilence",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_FiddlesticksESilence",
+    "mSpell": {
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Fiddlesticks_DarkWind.project_jade.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0xacb182ec": {
+    "ObjectName": "Jade_FiddlesticksWDrainCheck",
+    "mScriptName": "Jade_FiddlesticksWDrainCheck",
+    "mSpell": {
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Fiddlesticks_ConjureScarecrow.project_jade.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0xace9222": {
+    "ObjectName": "Jade_FiddlesticksWSelfMarker",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Drain",
+          "keyTooltip": "Fiddlesticks is draining Health from his target.<br>"
+        },
+        "mObjectName": "Jade_FiddlesticksWSelfMarker",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_FiddlesticksWSelfMarker",
+    "mSpell": {
+      "SpellEventToAudioEventSuffix": {
+        "18": "Play_sfx_Fiddlesticks_FiddlesticksWdrain_OnBuffActivate"
+      },
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Fiddlesticks_ConjureScarecrow.project_jade.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Fiddlesticks/Spells/Jade_FiddlesticksBasicAttack": {
+    "ObjectName": "Jade_FiddlesticksBasicAttack",
+    "mScriptName": "Jade_FiddlesticksBasicAttack",
+    "mSpell": {
+      "0x11704a2b": 0.3734000027179718,
+      "0xe1136d1": {
+        "0xa3e0478": 500.0,
+        "values": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "0": "Play_sfx_Fiddlesticks_FiddlesticksBasicAttack_OnCast",
+        "13": "Play_sfx_Fiddlesticks_FiddlesticksBasicAttack_OnHit",
+        "16": "Play_sfx_Fiddlesticks_FiddlesticksBasicAttack_OnMissileLaunch"
+      },
+      "bHaveHitBone": true,
+      "castConeDistance": 100.0,
+      "castFrame": 11.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 24527,
+      "mAlternateName": "Jade_FiddlesticksBasicAttack",
+      "mApplyAttackDamage": true,
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "0xe36da696",
+      "mHitEffectOrientType": 2,
+      "mMissileEffectKey": "0x24577cc1",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 1750.0,
+          "mStartBoneName": "R_Demon_Arm_Hand",
+          "mTargetBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mTurnSpeedScalar": 10.0,
+      "missileSpeed": 1750.0,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Fiddlesticks/Spells/Jade_FiddlesticksBasicAttack2": {
+    "ObjectName": "Jade_FiddlesticksBasicAttack2",
+    "mScriptName": "Jade_FiddlesticksBasicAttack2",
+    "mSpell": {
+      "0x11704a2b": 0.3734000027179718,
+      "0xe1136d1": {
+        "0xa3e0478": 500.0,
+        "values": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "0": "Play_sfx_Fiddlesticks_FiddlesticksBasicAttack_OnCast",
+        "13": "Play_sfx_Fiddlesticks_FiddlesticksBasicAttack_OnHit",
+        "16": "Play_sfx_Fiddlesticks_FiddlesticksBasicAttack_OnMissileLaunch"
+      },
+      "bHaveHitBone": true,
+      "castConeDistance": 100.0,
+      "castFrame": 10.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 24527,
+      "mAlternateName": "Jade_FiddlesticksBasicAttack2",
+      "mAnimationName": "Attack2",
+      "mApplyAttackDamage": true,
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "0xe36da696",
+      "mMissileEffectKey": "0x24577cc1",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 1750.0,
+          "mStartBoneName": "L_Demon_Arm_Hand",
+          "mTargetBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mTurnSpeedScalar": 10.0,
+      "missileSpeed": 1750.0,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Fiddlesticks/Spells/Jade_FiddlesticksCritAttack": {
+    "ObjectName": "Jade_FiddlesticksCritAttack",
+    "mScriptName": "Jade_FiddlesticksCritAttack",
+    "mSpell": {
+      "0x11704a2b": 0.3734000027179718,
+      "0xe1136d1": {
+        "0xa3e0478": 500.0,
+        "values": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "0": "Play_sfx_Fiddlesticks_FiddlesticksCritAttack_OnCast",
+        "13": "Play_sfx_Fiddlesticks_FiddlesticksCritAttack_OnHit",
+        "16": "Play_sfx_Fiddlesticks_FiddlesticksCritAttack_OnMissileLaunch"
+      },
+      "bHaveHitBone": true,
+      "castConeDistance": 100.0,
+      "castFrame": 11.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 24527,
+      "mAfterEffectName": "doesnotexist.troy",
+      "mAnimationName": "Crit",
+      "mApplyAttackDamage": true,
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "root",
+      "mHitEffectKey": "0xe36da696",
+      "mMissileEffectKey": "0x24577cc1",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 1750.0,
+          "mStartBoneName": "L_hand",
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 1750.0,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Fiddlesticks/Spells/Jade_FiddlesticksEAbility/Jade_FiddlesticksE": {
+    "ObjectName": "Jade_FiddlesticksE",
+    "mScriptName": "Jade_FiddlesticksE",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0x210f9ec0": {
+        "0xa3e0478": 50.0,
+        "values": [
+          50.0,
+          70.0,
+          90.0,
+          110.0,
+          130.0,
+          150.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "0xe1136d1": {
+        "0xa3e0478": 750.0,
+        "values": [
+          750.0,
+          750.0,
+          750.0,
+          750.0,
+          750.0,
+          750.0,
+          750.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.0,
+      "Cooldown": {
+        "values": [
+          15.0,
+          15.0,
+          14.0,
+          13.0,
+          12.0,
+          11.0,
+          10.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            40.0,
+            55.0,
+            70.0,
+            85.0,
+            100.0,
+            115.0,
+            130.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BounceRange",
+          "values": [
+            600.0,
+            600.0,
+            600.0,
+            600.0,
+            600.0,
+            600.0,
+            600.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SilenceDuration",
+          "values": [
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatio",
+          "values": [
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxNumberOfBounces",
+          "values": [
+            0.0,
+            2.0,
+            4.0,
+            6.0,
+            8.0,
+            10.0,
+            12.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Fiddlesticks_FiddlesticksQpassiveterrify_OnBuffActivate",
+        "13": "Play_sfx_Fiddlesticks_FiddlesticksE_hit_slowed"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 6.400000095367432,
+      "castRadius": [
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0
+      ],
+      "castRange": [
+        750.0,
+        750.0,
+        750.0,
+        750.0,
+        750.0,
+        750.0,
+        750.0
+      ],
+      "cooldownTime": [
+        15.0,
+        15.0,
+        14.0,
+        13.0,
+        12.0,
+        11.0,
+        10.0
+      ],
+      "luaOnMissileUpdateDistanceInterval": 51.0,
+      "mAffectsTypeFlags": 6154,
+      "mAmmoUsed": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "mAnimationName": "Spell3",
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.4000000059604645,
+      "mCastType": 1,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "BaseDamage",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Bounces",
+                  "type": "MaxNumberOfBounces",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "@AbilityResourceName@ Cost",
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Cooldown",
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Dark Wind",
+            "keySummary": "A wisp of wind strikes an enemy unit and then bounces to nearby enemy units, dealing damage and silencing the victims.",
+            "keyTooltip": "A wisp of wind strikes an enemy target and then bounces up to @MaxNumberOfBounces@ times to nearby enemy units. Deals <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Silences</status> for @SilenceDuration@ seconds for each strike. Targets are only <status>Silenced</status> once per cast.",
+            "keyTooltipExtended": "{{Spell_FiddleSticksE_Jade_Tooltip}}<br><br><rules>Damage to minions and neutral monsters is increased by 50%.</rules>"
+          },
+          "mObjectName": "Jade_FiddlesticksE",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_Buffbone_Glb_Chest_Loc",
+      "mHitEffectKey": "Jade_Fiddlesticks_Q_1_tar",
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Fiddlesticks_DarkWind.project_jade.dds"
+      ],
+      "mMaxAmmo": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -13,
+        -1,
+        -1
+      ],
+      "mMissileEffectKey": "0x6aa69363",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "mHeightOffset": 100.0,
+          "~class": "FollowTerrainHeightSolver"
+        },
+        "movementComponent": {
+          "mProjectTargetToCastRange": true,
+          "mSpeed": 1100.0,
+          "mStartBoneName": "C_Buffbone_Glb_Center_Loc",
+          "mUseHeightOffsetAtEnd": true,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VerticalFacingFaceTarget"
+        },
+        "visibilityComponent": {
+          "~class": "EnterFOWVisibility"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mSpellCalculations": {
+        "TotalDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellCooldownOrSealedQueueThreshold": 0.0,
+      "mTurnSpeedScalar": 4.0,
+      "mana": [
+        50.0,
+        70.0,
+        90.0,
+        110.0,
+        130.0,
+        150.0
+      ],
+      "missileSpeed": 1800.0,
+      "selectionPriority": 1,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Fiddlesticks/Spells/Jade_FiddlesticksQAbility/Jade_FiddlesticksQ": {
+    "ObjectName": "Jade_FiddlesticksQ",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Terrify",
+          "keyTooltip": "This unit is running around aimlessly in panic.<br>It ignores all orders."
+        },
+        "mObjectName": "Jade_FiddlesticksQ",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_FiddlesticksQ",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0x210f9ec0": {
+        "0xa3e0478": 65.0,
+        "values": [
+          65.0,
+          75.0,
+          85.0,
+          95.0,
+          105.0,
+          115.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "0xe1136d1": {
+        "0xa3e0478": 575.0,
+        "values": [
+          575.0,
+          575.0,
+          575.0,
+          575.0,
+          575.0,
+          575.0,
+          575.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.0,
+      "Cooldown": {
+        "0xa3e0478": 16.0,
+        "values": [
+          16.0,
+          15.0,
+          14.0,
+          13.0,
+          12.0,
+          11.0,
+          10.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "FearDuration",
+          "values": [
+            0.5,
+            1.0,
+            1.5,
+            2.0,
+            2.5,
+            3.0,
+            3.5
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "13": "Play_sfx_Fiddlesticks_FiddlesticksQ_OnHit"
+      },
+      "alwaysSnapFacing": true,
+      "castConeDistance": 100.0,
+      "castFrame": 19.0,
+      "castRadius": [
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0
+      ],
+      "castRange": [
+        575.0,
+        575.0,
+        575.0,
+        575.0,
+        575.0,
+        575.0,
+        575.0
+      ],
+      "cooldownTime": [
+        16.0,
+        15.0,
+        14.0,
+        13.0,
+        12.0,
+        11.0,
+        10.0
+      ],
+      "mAffectsTypeFlags": 6154,
+      "mAnimationName": "Spell1",
+      "mCantCancelWhileWindingUp": true,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Duration",
+                  "type": "FearDuration",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "BaseCost",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Terrify",
+            "keySummary": "Strikes a target unit with fear, causing it to flee in terror for a duration.",
+            "keyTooltip": "Fiddlesticks strikes a target enemy with fear, causing it to aimlessly <status>Flee</status> for @FearDuration@ second(s)."
+          },
+          "mObjectName": "Jade_FiddlesticksQ",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 1.0,
+      "mHitBoneName": "head",
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Fiddlesticks_Terrify.project_jade.dds"
+      ],
+      "mSpellCooldownOrSealedQueueThreshold": 0.0,
+      "mSpellTags": [
+        "Trait_ImmobilizingCCSpell"
+      ],
+      "mana": [
+        65.0,
+        75.0,
+        85.0,
+        95.0,
+        105.0,
+        115.0
+      ],
+      "missileSpeed": 20.0,
+      "selectionPriority": 1,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Fiddlesticks/Spells/Jade_FiddlesticksRAbility/Jade_FiddlesticksR": {
+    "ObjectName": "Jade_FiddlesticksR",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Crowstorm",
+          "keyTooltip": "Fiddlesicks is dealing massive area damage around him."
+        },
+        "mObjectName": "Jade_FiddlesticksR",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_FiddlesticksR",
+    "mSpell": {
+      "0x11704a2b": 0.0,
+      "0x210f9ec0": {
+        "values": [
+          150.0,
+          200.0,
+          250.0,
+          250.0,
+          250.0,
+          250.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "0xe1136d1": {
+        "0xa3e0478": 25000.0,
+        "values": [
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 0.0,
+      "0xf9c2333e": {
+        "0xa110bc47": {
+          "value": [
+            140.0,
+            140.0,
+            130.0,
+            120.0,
+            120.0,
+            120.0,
+            120.0
+          ],
+          "~class": "SpellEffectAmount"
+        }
+      },
+      "Cooldown": {
+        "values": [
+          150.0,
+          150.0,
+          140.0,
+          130.0,
+          130.0,
+          130.0,
+          130.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "DamagePerSecond",
+          "values": [
+            25.0,
+            125.0,
+            225.0,
+            325.0,
+            425.0,
+            525.0,
+            625.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatio",
+          "values": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Duration",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ChannelTime",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Fiddlesticks_FiddlesticksR_OnCast",
+        "18": "Play_sfx_Fiddlesticks_FiddlesticksR_OnBuffActivate"
+      },
+      "cantCastWhileRooted": true,
+      "castConeDistance": 100.0,
+      "castFrame": 6.0,
+      "castRadius": [
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0
+      ],
+      "castRange": [
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0
+      ],
+      "castRangeDisplayOverride": [
+        800.0,
+        800.0,
+        800.0,
+        800.0,
+        800.0,
+        800.0,
+        800.0
+      ],
+      "cooldownTime": [
+        150.0,
+        150.0,
+        140.0,
+        130.0,
+        130.0,
+        130.0,
+        130.0
+      ],
+      "mAffectsTypeFlags": 5135,
+      "mAnimationName": "Spell4",
+      "mCantCancelWhileChanneling": true,
+      "mCantCancelWhileWindingUp": true,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "centerLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "overrideRadius": {
+              "mPerLevelValues": [
+                590.0,
+                590.0,
+                590.0,
+                590.0,
+                590.0,
+                590.0
+              ],
+              "mValueType": 2,
+              "~class": "FloatPerSpellLevel"
+            },
+            "textureRadiusOverrideName": "ASSETS/Spells/Textures/AOE_brand.tex",
+            "~class": "TargeterDefinitionAoe"
+          },
+          {
+            "textureOverrideName": "ASSETS/Spells/Textures/CircularRangeIndicator_Dark.tex",
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage Per Second",
+                  "type": "DamagePerSecond",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 3,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Crowstorm",
+            "keySummary": "A murder of crows flock wildly around Fiddlesticks, dealing damage each second to all enemy units in the area.",
+            "keyTooltip": "Fiddlesticks channels for @ChannelTime@ seconds, then teleports and unleashes a murder of crows, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> over @Duration@ seconds."
+          },
+          "mObjectName": "Jade_FiddlesticksR",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.44999998807907104,
+      "mDimensionBehavior": 1,
+      "mEffectAmount": [
+        {
+          "value": [
+            125.0,
+            125.0,
+            225.0,
+            325.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Fiddlesticks_Crowstorm.project_jade.dds"
+      ],
+      "mRequiredUnitTags": {
+        "mObjectTagList": [
+          "champion"
+        ],
+        "~class": "ObjectTags"
+      },
+      "mSpellCalculations": {
+        "0xd0d3db7f": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "DamagePerSecond",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "tooltipOnly": true,
+          "~class": "GameCalculation"
+        },
+        "APRatioFullDuration": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "mMultiplier": {
+            "mDataValue": "duration",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "~class": "GameCalculation"
+        },
+        "APRatioTick": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "DamageDone": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "DamagePerSecond",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "mMultiplier": {
+            "mNumber": 0.5,
+            "~class": "NumberCalculationPart"
+          },
+          "~class": "GameCalculation"
+        },
+        "TotalDamage": {
+          "mModifiedGameCalculation": "0xd0d3db7f",
+          "mMultiplier": {
+            "mDataValue": "duration",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "tooltipOnly": true,
+          "~class": "GameCalculationModified"
+        }
+      },
+      "mSpellTags": [
+        "Trait_Ultimate",
+        "PositiveEffect_Teleport",
+        "Trait_ChannelSpell"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Location"
+      },
+      "mana": [
+        150.0,
+        150.0,
+        200.0,
+        250.0,
+        250.0,
+        250.0
+      ],
+      "missileSpeed": 20.0,
+      "selectionPriority": 2,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Fiddlesticks/Spells/Jade_FiddlesticksWAbility/Jade_FiddlesticksW": {
+    "ObjectName": "Jade_FiddlesticksW",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Drain",
+          "keyTooltip": "Fiddlesticks is draining Health from his target.<br>"
+        },
+        "mObjectName": "Jade_FiddlesticksW",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_FiddlesticksW",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0x210f9ec0": {
+        "values": [
+          80.0,
+          90.0,
+          100.0,
+          110.0,
+          120.0,
+          120.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "0xe1136d1": {
+        "0xa3e0478": 650.0,
+        "values": [
+          650.0,
+          650.0,
+          650.0,
+          650.0,
+          650.0,
+          650.0,
+          650.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.0,
+      "Cooldown": {
+        "values": [
+          10.0,
+          10.0,
+          9.0,
+          8.0,
+          7.0,
+          6.0,
+          6.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "DamagePerSecond",
+          "values": [
+            30.0,
+            60.0,
+            90.0,
+            120.0,
+            150.0,
+            180.0,
+            210.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "TicksPerSecond",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "VampPercentage",
+          "values": [
+            0.550000011920929,
+            0.6000000238418579,
+            0.6499999761581421,
+            0.699999988079071,
+            0.75,
+            0.800000011920929,
+            0.8500000238418579
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DrainDuration",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatio",
+          "values": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "castConeDistance": 100.0,
+      "castFrame": 20.239999771118164,
+      "castRadius": [
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0
+      ],
+      "castRange": [
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0
+      ],
+      "cooldownTime": [
+        10.0,
+        10.0,
+        9.0,
+        8.0,
+        7.0,
+        6.0,
+        6.0
+      ],
+      "mAffectsTypeFlags": 6154,
+      "mAnimationLoopName": "Spell2_Channel",
+      "mAnimationName": "Spell2",
+      "mAnimationWinddownName": "Spell2_hit",
+      "mCantCancelWhileWindingUp": true,
+      "mCastingBreaksStealth": true,
+      "mChannelDuration": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage Per Second",
+                  "type": "DamagePerSecond",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Percent Healed",
+                  "type": "VampPercentage",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Drain",
+            "keySummary": "Fiddlesticks saps the life force of an enemy, dealing damage to a target over time and healing himself.",
+            "keyTooltip": "Fiddlesticks channels for @DrainDuration@ seconds and drains an enemy dealing <magicDamage>@TotalDamagePerSecond@ magic damage</magicDamage> each second to target unit and Fiddlesticks restores <healing>@VampPercentage*100@% of damage as Health</healing>"
+          },
+          "mObjectName": "Jade_FiddlesticksW",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Fiddlesticks_ConjureScarecrow.project_jade.dds"
+      ],
+      "mNoWinddownIfCancelled": true,
+      "mPingableWhileDisabled": true,
+      "mSpellCalculations": {
+        "0x1873d7bd": {
+          "0x72c5c2a8": 1,
+          "mFormulaParts": [
+            {
+              "mSpellCalculationKey": "TotalDamagePerSecond",
+              "~class": "0xf3cbe7b2"
+            }
+          ],
+          "mMultiplier": {
+            "mDataValue": "TicksPerSecond",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "~class": "GameCalculation"
+        },
+        "TotalDamagePerSecond": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "DamagePerSecond",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellCooldownOrSealedQueueThreshold": 0.5,
+      "mana": [
+        80.0,
+        90.0,
+        100.0,
+        110.0,
+        120.0,
+        120.0
+      ],
+      "missileSpeed": 0.0,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  }
+}

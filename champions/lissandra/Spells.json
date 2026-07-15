@@ -362,6 +362,21 @@
         ],
         "~class": "SpellAttributeModifiable"
       },
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            25.0,
+            70.0,
+            105.0,
+            140.0,
+            175.0,
+            210.0,
+            245.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "bHaveHitBone": true,
       "bIsToggleSpell": true,
       "castConeDistance": 100.0,
@@ -443,8 +458,7 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "BaseDamage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -548,8 +562,8 @@
         "TotalDamage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.6000000238418579,
@@ -1511,6 +1525,32 @@
             -0.4000000059604645
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowDuration",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowPercentage",
+          "values": [
+            -0.1599999964237213,
+            -0.20000000298023224,
+            -0.23999999463558197,
+            -0.2800000011920929,
+            -0.3199999928474426,
+            -0.36000001430511475,
+            -0.4000000059604645
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "castConeDistance": 100.0,
@@ -1597,8 +1637,7 @@
                   "Style": 1,
                   "multiplier": -100.0,
                   "nameOverride": "Slow",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 3,
+                  "type": "SlowPercentage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -1617,7 +1656,7 @@
           "mLocKeys": {
             "keyName": "Ice Shard",
             "keySummary": "Throws a spear of ice that shatters when it hits an enemy, dealing magic damage and slowing Move Speed. Shards pass through the target, dealing the same damage to other enemies hit.",
-            "keyTooltip": "Lissandra throws a spear of ice that shatters on the first enemy hit, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>, <status>Slowing</status> them by @Effect3Amount*-100@% for @Effect2Amount@ seconds, and also damaging and slowing the enemies behind them."
+            "keyTooltip": "Lissandra throws a spear of ice that shatters on the first enemy hit, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>, <status>Slowing</status> them by @SlowPercentage*-100@% for @SlowDuration@ seconds, and also damaging and slowing the enemies behind them."
           },
           "mObjectName": "LissandraQ",
           "~class": "TooltipInstanceSpell"
@@ -3494,6 +3533,60 @@
         ],
         "~class": "SpellAttributeModifiable"
       },
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            30.0,
+            70.0,
+            105.0,
+            140.0,
+            175.0,
+            210.0,
+            245.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SnareDuration",
+          "values": [
+            1.25,
+            1.25,
+            1.350000023841858,
+            1.4500000476837158,
+            1.5499999523162842,
+            1.649999976158142,
+            1.649999976158142
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "TargetsToHit",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "FreeCastCD",
+          "values": [
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "castConeAngle": 20.0,
       "castConeDistance": 600.0,
       "castFrame": 7.5,
@@ -3544,14 +3637,12 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "BaseDamage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Root Duration",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 2,
+                  "type": "SnareDuration",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -3566,7 +3657,7 @@
           "mLocKeys": {
             "keyName": "Ring of Frost",
             "keySummary": "Freezes nearby enemies in ice, dealing magic damage and rooting them.",
-            "keyTooltip": "Lissandra creates an ice field, <status>Rooting</status> nearby enemies for @Effect2Amount@ seconds and dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>."
+            "keyTooltip": "Lissandra creates an ice field, <status>Rooting</status> nearby enemies for @SnareDuration@ seconds and dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>."
           },
           "mObjectName": "LissandraW",
           "~class": "TooltipInstanceSpell"
@@ -3673,8 +3764,8 @@
         "TotalDamage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.699999988079071,

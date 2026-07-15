@@ -970,6 +970,60 @@
         ],
         "~class": "SpellAttributeModifiable"
       },
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            25.0,
+            50.0,
+            75.0,
+            100.0,
+            125.0,
+            150.0,
+            175.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DashDistance",
+          "values": [
+            350.0,
+            350.0,
+            350.0,
+            350.0,
+            350.0,
+            350.0,
+            350.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BuffDuration",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "AttackRangeIncrease",
+          "values": [
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "bIsToggleSpell": true,
       "cantCastWhileRooted": true,
       "castConeDistance": 100.0,
@@ -1057,8 +1111,7 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "BaseDamage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -1180,8 +1233,8 @@
         "TotalDamage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.4000000059604645,
@@ -1436,6 +1489,32 @@
             1.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MonsterMod",
+          "values": [
+            2.700000047683716,
+            2.700000047683716,
+            2.700000047683716,
+            2.700000047683716,
+            2.700000047683716,
+            2.700000047683716,
+            2.700000047683716
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "LockoutTime",
+          "values": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -1473,7 +1552,7 @@
           "mLocKeys": {
             "keyName": "Z-Drive Resonance",
             "keySummary": "Every third attack or damaging spell on the same target deals bonus magic damage, and grants Ekko a burst of speed if the target is a champion.<br><br>",
-            "keyTooltip": "Every third Attack or damaging Ability on the same target deals an additional <magicDamage>@ThreeHitDamage@ magic damage</magicDamage>. If the target is a champion, Ekko gains <speed>@BonusMS@ Move Speed</speed> for @SpeedDuration@ seconds. This effect can't trigger on the same enemy more than once every 4 seconds.",
+            "keyTooltip": "Every third Attack or damaging Ability on the same target deals an additional <magicDamage>@ThreeHitDamage@ magic damage</magicDamage>. If the target is a champion, Ekko gains <speed>@BonusMS@ Move Speed</speed> for @SpeedDuration@ seconds. This effect can't trigger on the same enemy more than once every @LockoutTime@ seconds.",
             "keyTooltipExtended": "{{Spell_EkkoPassive_Tooltip}}<br><br><rules>This effect deals @f5@% damage to monsters.</rules>"
           },
           "mObjectName": "EkkoPassive",
@@ -1730,6 +1809,49 @@
             165.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowPercent",
+          "values": [
+            -0.25,
+            -0.4000000059604645,
+            -0.44999998807907104,
+            -0.5,
+            -0.550000011920929,
+            -0.6000000238418579,
+            -0.6700000166893005
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowAPRatio",
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowZoneRadius",
+          "values": [
+            165.0,
+            165.0,
+            165.0,
+            165.0,
+            165.0,
+            165.0,
+            165.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ExpandDuration",
+          "values": [
+            1.75,
+            1.75,
+            1.75,
+            1.75,
+            1.75,
+            1.75,
+            1.75
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -1875,8 +1997,7 @@
                   "Style": 1,
                   "multiplier": -100.0,
                   "nameOverride": "Slow",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 2,
+                  "type": "SlowPercent",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -1893,7 +2014,7 @@
           "mLocKeys": {
             "keyName": "Timewinder",
             "keySummary": "Ekko throws a temporal grenade that expands into a time-distortion field upon hitting an enemy champion, slowing and damaging anyone caught inside. After a delay, the grenade rewinds back to Ekko, dealing damage on its return.",
-            "keyTooltip": "Ekko throws a device dealing <magicDamage>@InitialDamage@ magic damage</magicDamage>. On hitting a champion or reaching the end of its range, it expands into a field that <status>Slows</status> enemies inside by @Effect2Amount*-100@%. After it expands, Ekko recalls it, dealing <magicDamage>@RecallDamage@ magic damage</magicDamage>."
+            "keyTooltip": "Ekko throws a device dealing <magicDamage>@InitialDamage@ magic damage</magicDamage>. On hitting a champion or reaching the end of its range, it expands into a field that <status>Slows</status> enemies inside by @SlowPercent*-100@%. After it expands, Ekko recalls it, dealing <magicDamage>@RecallDamage@ magic damage</magicDamage>."
           },
           "mObjectName": "EkkoQ",
           "~class": "TooltipInstanceSpell"
@@ -3047,6 +3168,97 @@
             150.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "AoERadius",
+          "values": [
+            375.0,
+            375.0,
+            375.0,
+            375.0,
+            375.0,
+            375.0,
+            375.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "StunDuration",
+          "values": [
+            2.25,
+            2.25,
+            2.25,
+            2.25,
+            2.25,
+            2.25,
+            2.25
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ShieldBase",
+          "values": [
+            80.0,
+            100.0,
+            120.0,
+            140.0,
+            160.0,
+            180.0,
+            200.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowZoneDuration",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DelayBeforeDetonation",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DelayBeforeEnemyCanSee",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowPercent",
+          "values": [
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -3125,8 +3337,7 @@
               "Elements": [
                 {
                   "nameOverride": "Shield Amount",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 4,
+                  "type": "ShieldBase",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -3145,8 +3356,8 @@
           "mLocKeys": {
             "keyName": "Parallel Convergence",
             "keySummary": "Ekko's basic attacks deal bonus magic damage to low health enemies. He can cast Parallel Convergence to split the timeline, creating an anomaly after a few seconds that slows enemies caught inside. If Ekko enters the anomaly, he gains shielding and stuns enemies by suspending them in time.",
-            "keyTooltip": "<spellPassive>Passive:</spellPassive> Ekko's Attacks against enemies below 30% Health deal <magicDamage>@MissingHealthPercent@ missing Health magic damage</magicDamage>.<br><br><spellActive>Active:</spellActive> Ekko launches a chronosphere lasting 1.5 seconds after a delay that <status>Slows</status> enemies inside by @Effect10Amount@%. If Ekko enters the sphere, he detonates it, <status>Stunning</status> for @Effect2Amount@ seconds and gaining <shield>@TotalShield@ Shield</shield>.",
-            "keyTooltipExtendedBelowLine": "<rules>Bonus Attack damage deals a min of <magicDamage>@Effect6Amount@</magicDamage> and a max of <magicDamage>@Effect5Amount@ damage</magicDamage> against minions and monsters.</rules>"
+            "keyTooltip": "<spellPassive>Passive:</spellPassive> Ekko's Attacks against enemies below @BelowHealthThreshold*100@% Health deal <magicDamage>@MissingHealthPercent@ missing Health magic damage</magicDamage>.<br><br><spellActive>Active:</spellActive> Ekko launches a chronosphere lasting @SlowZoneDuration@ seconds after a delay that <status>Slows</status> enemies inside by @SlowPercent@%. If Ekko enters the sphere, he detonates it, <status>Stunning</status> for @StunDuration@ seconds and gaining <shield>@TotalShield@ Shield</shield>.",
+            "keyTooltipExtendedBelowLine": "<rules>Bonus Attack damage deals a min of <magicDamage>@OnHitMinMinionDamage@</magicDamage> and a max of <magicDamage>@OnHitMaxMinionDamage@ damage</magicDamage> against minions and monsters.</rules>"
           },
           "mObjectName": "EkkoW",
           "~class": "TooltipInstanceSpell"
@@ -3315,15 +3526,14 @@
         "TotalShield": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 4,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "ShieldBase",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 1.5,
               "~class": "StatByCoefficientCalculationPart"
             }
           ],
-          "tooltipOnly": true,
           "~class": "GameCalculation"
         }
       },
