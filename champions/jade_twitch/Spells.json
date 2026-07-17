@@ -305,6 +305,27 @@
     },
     "~class": "SpellObject"
   },
+  "0xd1650076": {
+    "ObjectName": "Jade_Twitch_Rexpeita",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Rexpeita o Rato!",
+          "keyTooltip": "<flavorText>\"Twitch goes BrTT\"</flavorText>"
+        },
+        "mObjectName": "Jade_Twitch_Rexpeita",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_Twitch_Rexpeita",
+    "mSpell": {
+      "ImgIconPath": "ASSETS/UX/Jade/S3Icons/SameSized/Twitch_Ambush.project_jade.dds",
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
   "0xda2e76f2": {
     "ObjectName": "Jade_TwitchR_Ult",
     "mBuff": {
@@ -312,6 +333,116 @@
       "~class": "BuffData"
     },
     "mScriptName": "Jade_TwitchR_Ult",
+    "~class": "SpellObject"
+  },
+  "0xdb34071e": {
+    "ObjectName": "Jade_TwitchWMissile",
+    "mScriptName": "Jade_TwitchWMissile",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0xe1136d1": {
+        "0xa3e0478": 1500.0,
+        "values": [
+          1500.0,
+          1500.0,
+          1500.0,
+          1500.0,
+          1500.0,
+          1500.0,
+          1500.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.0,
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "canCastWhileDisabled": true,
+      "castConeDistance": 100.0,
+      "castFrame": 7.974999904632568,
+      "castRadius": [
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0
+      ],
+      "castRange": [
+        1500.0,
+        1500.0,
+        1500.0,
+        1500.0,
+        1500.0,
+        1500.0,
+        1500.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "flags": 4194304,
+      "mAffectsTypeFlags": 23567,
+      "mAlternateName": "TwitchVenomCask",
+      "mAnimationName": "Spell3",
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mLineWidth": 120.0,
+      "mMissileEffectKey": "Jade_Twitch_W_Mis",
+      "mMissileSpec": {
+        "0xc195fba6": true,
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "mGravity": 4000.0,
+          "~class": "GravityHeightSolver"
+        },
+        "mMissileWidth": 120.0,
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 60.0,
+          "mSpeed": 1400.0,
+          "mStartBoneName": "Root",
+          "mTargetHeightAugment": 60.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 1400.0,
+      "~class": "SpellDataResource"
+    },
     "~class": "SpellObject"
   },
   "Characters/Jade_Twitch/Spells/Jade_TwitchBasicAttack": {
@@ -788,6 +919,7 @@
       },
       "0xf26881a0": 1.0,
       "Cooldown": {
+        "0xa3e0478": 13.0,
         "values": [
           13.0,
           12.0,
@@ -795,7 +927,7 @@
           10.0,
           9.0,
           8.0,
-          8.0
+          7.0
         ],
         "~class": "SpellAttributeModifiable"
       },
@@ -866,39 +998,6 @@
           "~class": "SpellDataValue"
         }
       ],
-      "DataValuesModeOverride": {
-        "cherry": {
-          "SpellDataValues": [
-            {
-              "name": "bADRatioPerStack",
-              "values": [
-                0.4000000059604645,
-                0.4000000059604645,
-                0.4000000059604645,
-                0.4000000059604645,
-                0.4000000059604645,
-                0.4000000059604645,
-                0.4000000059604645
-              ],
-              "~class": "SpellDataValue"
-            },
-            {
-              "name": "APRatioPerStack",
-              "values": [
-                0.3499999940395355,
-                0.3499999940395355,
-                0.3499999940395355,
-                0.3499999940395355,
-                0.3499999940395355,
-                0.3499999940395355,
-                0.3499999940395355
-              ],
-              "~class": "SpellDataValue"
-            }
-          ],
-          "~class": "SpellDataValueVector"
-        }
-      },
       "SpellEventToAudioEventSuffix": {
         "12": "Play_sfx_Twitch_TwitchExpunge_OnCast"
       },
@@ -974,7 +1073,7 @@
           "mLocKeys": {
             "keyName": "Expunge",
             "keySummary": "All nearby enemies secrete Twitch's toxic venoms from their bodies, dealing damage for each stack.",
-            "keyTooltip": "<mainText>Twitch deals <physicalDamage>@BaseDamage@ physical damage</physicalDamage> plus <physicalDamage>@TotalStackDamage@</physicalDamage> per stack of <keywordMajor>Deadly Venom</keywordMajor> to all marked nearby enemies, consuming all nearby stacks.</mainText>"
+            "keyTooltip": "Twitch deals <physicalDamage>@BaseDamage@ physical damage</physicalDamage> plus <physicalDamage>@TotalStackDamage@</physicalDamage> per stack of <keywordMajor>Deadly Venom</keywordMajor> to all marked nearby enemies."
           },
           "mObjectName": "Jade_TwitchE",
           "~class": "TooltipInstanceSpell"
@@ -1078,15 +1177,15 @@
       },
       "0xf26881a0": 0.18299999833106995,
       "Cooldown": {
-        "0xa3e0478": 11.0,
+        "0xa3e0478": 16.0,
         "values": [
-          11.0,
-          11.0,
-          11.0,
-          11.0,
-          11.0,
-          11.0,
-          11.0
+          16.0,
+          16.0,
+          16.0,
+          16.0,
+          16.0,
+          16.0,
+          16.0
         ],
         "~class": "SpellAttributeModifiable"
       },
@@ -1107,52 +1206,13 @@
         {
           "name": "AttackSpeedDuration",
           "values": [
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "StealthDuration",
-          "values": [
-            0.0,
-            10.0,
-            20.0,
-            30.0,
-            40.0,
-            50.0,
-            60.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "MaxFadeTime",
-          "values": [
-            1.25,
-            1.25,
-            1.25,
-            1.25,
-            1.25,
-            1.25,
-            1.25
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "StealthDetectionRange",
-          "values": [
-            500.0,
-            500.0,
-            500.0,
-            500.0,
-            500.0,
-            500.0,
-            500.0
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
           ],
           "~class": "SpellDataValue"
         },
@@ -1170,28 +1230,41 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "MoveBonusRange",
+          "name": "StealthDuration",
           "values": [
-            1000.0,
-            1000.0,
-            1000.0,
-            1000.0,
-            1000.0,
-            1000.0,
-            1000.0
+            3.0,
+            4.0,
+            5.0,
+            6.0,
+            7.0,
+            8.0,
+            9.0
           ],
           "~class": "SpellDataValue"
         },
         {
-          "name": "HiddenSpeed",
+          "name": "MaxFadeTime",
           "values": [
-            30.0,
-            30.0,
-            30.0,
-            30.0,
-            30.0,
-            30.0,
-            30.0
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxDelayTime",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1235,41 +1308,23 @@
       "mAnimationName": "Spell1",
       "mCantCancelWhileWindingUp": true,
       "mClientData": {
-        "mTargeterDefinitions": [
-          {
-            "overrideRadius": {
-              "mPerLevelValues": [
-                500.0,
-                500.0,
-                500.0,
-                500.0,
-                500.0,
-                500.0
-              ],
-              "mValueType": 1,
-              "~class": "FloatPerSpellLevel"
-            },
-            "textureRadiusOverrideName": "ASSETS/Spells/Textures/CircularRangeIndicator_Dark.tex",
-            "~class": "TargeterDefinitionAoe"
-          }
-        ],
         "mTooltipData": {
           "mFormat": "0xd7c27163",
           "mLists": {
             "LevelUp": {
               "Elements": [
                 {
+                  "nameOverride": "Invisibility Duration",
+                  "type": "StealthDuration",
+                  "typeIndex": 2,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
                   "Style": 1,
                   "multiplier": 100.0,
                   "nameOverride": "Attack Speed",
                   "type": "AttackSpeedMod",
                   "typeIndex": 1,
-                  "~class": "TooltipInstanceListElement"
-                },
-                {
-                  "nameOverride": "Invisibility Duration",
-                  "type": "StealthDuration",
-                  "typeIndex": 2,
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -1279,55 +1334,14 @@
           },
           "mLocKeys": {
             "keyName": "Ambush",
-            "keySummary": "Twitch becomes invisible for a short duration, while invisible Twitch gains movement speed. When leaving invisibility twitch gains Attack Speed for a short duration.",
-            "keyTooltip": "<mainText>After @MaxFadeTime@ seconds, Twitch <keywordStealth>Camouflages</keywordStealth> for @StealthDuration@ seconds.<br><br>Twitch gains <attackSpeed>@AttackSpeedMod*100@% Attack Speed</attackSpeed> for @AttackSpeedDuration@ seconds after coming out of <keywordStealth>Camouflage.</keywordStealth></mainText>"
+            "keySummary": "Twitch turns Invisible for several seconds, gaining Move Speed. He then gains Attack Speed after coming out of Invisibility.",
+            "keyTooltip": "After @MaxFadeTime@ seconds of not taking damage or after @MaxDelayTime@ seconds, Twitch turns <keywordStealth>Invisible</keywordStealth> for @StealthDuration@ seconds, gaining <speed>@MoveSpeedMod*100@% Move Speed</speed>.<br><br>Twitch gains <attackSpeed>@AttackSpeedMod*100@% Attack Speed</attackSpeed> for @AttackSpeedDuration@ seconds after coming out of <keywordStealth>Invisibility</keywordStealth>."
           },
           "mObjectName": "Jade_TwitchQ",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mEffectAmount": [
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mImgIconName": [
         "ASSETS/UX/Jade/S3Icons/SameSized/Twitch_AlterEgo.project_jade.dds",
         "ASSETS/UX/Jade/S3Icons/SameSized/Twitch_AlterEgo.project_jade.dds"
@@ -1337,18 +1351,6 @@
           "champion"
         ],
         "~class": "ObjectTags"
-      },
-      "mSpellCalculations": {
-        "0x5ab32811": {
-          "mFormulaParts": [
-            {
-              "mNumber": 10.0,
-              "~class": "NumberCalculationPart"
-            }
-          ],
-          "tooltipOnly": true,
-          "~class": "GameCalculation"
-        }
       },
       "mTargetingTypeData": {
         "~class": "Self"
@@ -1371,13 +1373,14 @@
     "mScriptName": "Jade_TwitchR",
     "mSpell": {
       "0x210f9ec0": {
+        "0xa3e0478": 100.0,
         "values": [
           100.0,
           125.0,
           150.0,
-          0.0,
-          0.0,
-          0.0
+          175.0,
+          200.0,
+          225.0
         ],
         "~class": "ResourceCostModifiable"
       },
@@ -1395,14 +1398,15 @@
         "~class": "SpellAttributeModifiable"
       },
       "Cooldown": {
+        "0xa3e0478": 130.0,
         "values": [
-          90.0,
+          130.0,
           120.0,
           110.0,
           100.0,
           90.0,
-          90.0,
-          90.0
+          80.0,
+          70.0
         ],
         "~class": "SpellAttributeModifiable"
       },
@@ -1583,14 +1587,13 @@
           "mLocKeys": {
             "keyName": "Spray and Pray",
             "keySummary": "Twitch closes his eyes and fires his crossbow, rapidly spraying powerful piercing bolts ahead of him.",
-            "keyTooltip": "<mainText>For @Duration@ seconds Twitch gains @BonusRange@ Attack Range, <physicalDamage>@BonusAD@ Attack Damage</physicalDamage> and his basic attacks become piercing bolts that deal @FallOffDamage*100@% less damage to subsequent targets down to a minimum of @MinimumFallOffDamage*100@%.</mainText>"
+            "keyTooltip": "For @Duration@ seconds Twitch gains @BonusRange@ Attack Range, <physicalDamage>@BonusAD@ Attack Damage</physicalDamage> and his basic attacks become piercing bolts that deal @FallOffDamage*100@% less damage to subsequent targets down to a minimum of @MinimumFallOffDamage*100@%."
           },
           "mObjectName": "Jade_TwitchR",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 1.0,
       "mFloatVarsDecimals": [
         0,
         0,
@@ -1636,129 +1639,151 @@
   "Characters/Jade_Twitch/Spells/Jade_TwitchWAbility/Jade_TwitchW": {
     "ObjectName": "Jade_TwitchW",
     "mBuff": {
-      "mDescription": "<titleLeft>Debilitating Poison</titleLeft><mainText>This unit's movement speed is reduced.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "mDescription": "<titleLeft>Venom Cask</titleLeft><mainText>This unit's movement speed is reduced.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
       "~class": "BuffData"
     },
     "mScriptName": "Jade_TwitchW",
     "mSpell": {
-      "0x11704a2b": 0.0,
+      "0x11704a2b": 0.25,
       "0x210f9ec0": {
-        "0xa3e0478": 80.0,
+        "0xa3e0478": 50.0,
         "values": [
-          80.0,
-          80.0,
-          80.0,
-          80.0,
-          80.0,
-          80.0
+          50.0,
+          50.0,
+          50.0,
+          50.0,
+          50.0,
+          50.0
         ],
         "~class": "ResourceCostModifiable"
       },
       "0xe1136d1": {
-        "0xa3e0478": 1200.0,
+        "0xa3e0478": 950.0,
         "values": [
-          1200.0,
-          1200.0,
-          1200.0,
-          1200.0,
-          1200.0,
-          1200.0,
-          1200.0
+          950.0,
+          950.0,
+          950.0,
+          950.0,
+          950.0,
+          950.0,
+          950.0
         ],
         "~class": "SpellAttributeModifiable"
       },
-      "0xf26881a0": 0.0,
+      "0xf26881a0": 1.0,
+      "Cooldown": {
+        "values": [
+          14.0,
+          13.0,
+          12.0,
+          11.0,
+          10.0,
+          9.0,
+          9.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
       "DataValues": [
         {
-          "name": "SlowPercent",
+          "name": "BaseSlowAmount",
           "values": [
-            -0.20000000298023224,
-            -0.20000000298023224,
-            -0.20000000298023224,
-            -0.20000000298023224,
-            -0.20000000298023224,
-            -0.20000000298023224,
-            -0.20000000298023224
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "PassiveStackSlowPercent",
-          "values": [
-            -0.07999999821186066,
-            -0.07999999821186066,
-            -0.07999999821186066,
-            -0.07999999821186066,
-            -0.07999999821186066,
-            -0.07999999821186066,
-            -0.07999999821186066
+            20.0,
+            25.0,
+            30.0,
+            35.0,
+            40.0,
+            45.0,
+            50.0
           ],
           "~class": "SpellDataValue"
         },
         {
           "name": "Duration",
           "values": [
-            1.399999976158142,
-            2.0,
-            2.5999999046325684,
-            3.200000047683716,
-            3.799999952316284,
-            4.400000095367432,
-            5.0
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
           ],
           "~class": "SpellDataValue"
         },
         {
           "name": "AoERadius",
           "values": [
-            1200.0,
-            1200.0,
-            1200.0,
-            1200.0,
-            1200.0,
-            1200.0,
-            1200.0
+            275.0,
+            275.0,
+            275.0,
+            275.0,
+            275.0,
+            275.0,
+            275.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "StacksAdded",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
           ],
           "~class": "SpellDataValue"
         }
       ],
-      "SpellEventToAudioEventSuffix": {
-        "12": "Play_sfx_Twitch_TwitchVenomCask_OnCast",
-        "13": "Play_sfx_Twitch_TwitchVenomCaskMissile_OnHitLocation",
-        "18": "Play_sfx_Twitch_TwitchVenomCaskMissile_OnMissileLaunch"
-      },
       "castConeDistance": 100.0,
-      "castFrame": 12.03499984741211,
+      "castFrame": 8.5,
       "castRadius": [
-        1200.0,
-        1200.0,
-        1200.0,
-        1200.0,
-        1200.0,
-        1200.0,
-        1200.0
+        275.0,
+        275.0,
+        275.0,
+        275.0,
+        275.0,
+        275.0,
+        275.0
       ],
       "castRange": [
-        1200.0,
-        1200.0,
-        1200.0,
-        1200.0,
-        1200.0,
-        1200.0,
-        1200.0
+        950.0,
+        950.0,
+        950.0,
+        950.0,
+        950.0,
+        950.0,
+        950.0
       ],
       "castTargetAdditionalUnitsRadius": 325.0,
+      "cooldownTime": [
+        14.0,
+        13.0,
+        12.0,
+        11.0,
+        10.0,
+        9.0,
+        9.0
+      ],
       "mAffectsTypeFlags": 1029,
-      "mAlternateName": "Jade_TwitchDebilitatingPoison",
+      "mAlternateName": "TwitchVenomCask",
       "mAnimationName": "Spell2",
       "mCantCancelWhileWindingUp": true,
-      "mCastTime": 0.25,
       "mCastingBreaksStealth": true,
       "mClientData": {
         "mTargeterDefinitions": [
           {
             "useCasterBoundingBox": false,
             "~class": "TargeterDefinitionRange"
+          },
+          {
+            "centerLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "~class": "TargeterDefinitionAoe"
           }
         ],
         "mTooltipData": {
@@ -1767,8 +1792,13 @@
             "LevelUp": {
               "Elements": [
                 {
-                  "nameOverride": "Duration",
-                  "type": "Duration",
+                  "Style": 1,
+                  "nameOverride": "Move Speed Slow",
+                  "type": "BaseSlowAmount",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -1777,9 +1807,9 @@
             }
           },
           "mLocKeys": {
-            "keyName": "Debilitating Poison",
-            "keySummary": "Twitch infects all nearby champions with Debilitating Poison, slowing their movement speed.",
-            "keyTooltip": "Twitch <status>Slows</status> nearby enemy champions by @SlowPercent*-100@% for @Duration@ seconds, increased by @PassiveStackSlowPercent*-100@% per <keywordMajor>Deadly Venom</keywordMajor> stack (max: @MaxSlowTooltip@).<br><br>Adding more <keywordMajor>Deadly Venom</keywordMajor> stacks after the <status>Slow</status> is applied will further reduce their <speed>Movement Speed</speed>."
+            "keyName": "Venom Cask",
+            "keySummary": "Twitch hurls a cask of venom that explodes, inflicting Deadly Venom and slowing enemies in the area.",
+            "keyTooltip": "Twitch hurls an exploding cask of venom, inflicting @StacksAdded@ stacks of <keywordMajor>Deadly Venom</keywordMajor> and <status>Slowing</status> enemies by @BaseSlowAmount@% for @Duration@ seconds."
           },
           "mObjectName": "Jade_TwitchW",
           "~class": "TooltipInstanceSpell"
@@ -1805,7 +1835,7 @@
         2
       ],
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Twitch_Fade.project_jade.dds"
+        "ASSETS/UX/Jade/S3Icons/SameSized/Twitch_VenomCask.project_jade.dds"
       ],
       "mProjectTargetToCastRange": true,
       "mRequiredUnitTags": {
@@ -1814,47 +1844,23 @@
         ],
         "~class": "ObjectTags"
       },
-      "mSpellCalculations": {
-        "0xde22a89f": {
-          "mDisplayAsPercent": true,
-          "mFormulaParts": [
-            {
-              "mDataValue": "SlowPercent",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mPart1": {
-                "mDataValue": "PassiveStackSlowPercent",
-                "~class": "NamedDataValueCalculationPart"
-              },
-              "mPart2": {
-                "DataValue": "maxStacks",
-                "SourceObject": "0x9831422a",
-                "~class": "0x9e9e2e5c"
-              },
-              "~class": "ProductOfSubPartsCalculationPart"
-            }
-          ],
-          "mMultiplier": {
-            "mNumber": -1.0,
-            "~class": "NumberCalculationPart"
-          },
-          "~class": "GameCalculation"
-        }
-      },
       "mSpellRevealsChampion": false,
+      "mSpellTags": [
+        "Trait_Target_Area",
+        "Trait_AoE"
+      ],
       "mTargetingTypeData": {
-        "~class": "SelfAoe"
+        "~class": "Area"
       },
       "mana": [
-        80.0,
-        80.0,
-        80.0,
-        80.0,
-        80.0,
-        80.0
+        70.0,
+        70.0,
+        70.0,
+        70.0,
+        70.0,
+        70.0
       ],
-      "missileSpeed": 601.0999755859375,
+      "missileSpeed": 1750.0,
       "selectionPriority": 1,
       "useAnimatorFramerate": true,
       "~class": "SpellDataResource"
