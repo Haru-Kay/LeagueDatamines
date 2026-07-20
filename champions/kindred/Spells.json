@@ -3087,8 +3087,8 @@
           "mLocKeys": {
             "keyName": "Mark of the Kindred",
             "keySummary": "Kindred can mark targets to Hunt. Successfully completing a Hunt permanently empowers Kindred's basic abilities. Every 4 hunts completed also increases Kindred's basic attack range.",
-            "keyTooltip": "Kindred can designate a champion to hunt by clicking their portrait above their inventory. They also designate certain jungle monsters to hunt with an icon on the minimap automatically.<br><br>Getting a takedown on a hunted target grants Kindred a <keywordMajor>Mark</keywordMajor>, empowering them. After @f2@ <keywordMajor>Marks</keywordMajor>, Kindred gains @f8@ Attack Range. Every @f7@ <keywordMajor>Marks</keywordMajor> after the fourth grants a further @f9@ Attack Range.<br><br><keywordMajor>Marks</keywordMajor> empower Kindred's basic Abilities:<li><spellName>{{Spell_KindredQ_Name}}</spellName> grants an additional <attackSpeed>@QMarkBonus@ Attack Speed</attackSpeed><li><spellName>{{Spell_KindredW_Name}}</spellName> deal an additional <magicDamage>@WMarkBonus@ current Health damage</magicDamage>.<li><spellName>{{Spell_KindredEWrapper_Name}}</spellName> deal an additional <physicalDamage>@EMarkBonus@ missing Health damage</physicalDamage>.",
-            "keyTooltipExtended": "{{Spell_KindredPassiveManager_Tooltip}}<br><br>Currently granting <statTracking>@f3@ Attack Range</statTracking>.<br><br><rules>The hunted jungle monsters change as Kindred gains <keywordMajor>Marks</keywordMajor>, moving further into the enemy jungle, eventually hunting epic monsters.</rules>"
+            "keyTooltip": "Kindred can designate a champion to hunt by clicking their portrait above their inventory. They also designate certain jungle monsters to hunt with an icon on the minimap automatically.<br><br>Getting a takedown on a hunted target grants Kindred a <keywordMajor>Mark</keywordMajor>, empowering them. After @InitialMarkThreshold@ <keywordMajor>Marks</keywordMajor>, Kindred gains @FirstTierRangeIncreaseTT@ Attack Range. Every @AdditionalMarkThreshold@ <keywordMajor>Marks</keywordMajor> after the fourth grants a further @RangeIncrease@ Attack Range.<br><br><keywordMajor>Marks</keywordMajor> empower Kindred's basic Abilities:<li><spellName>{{Spell_KindredQ_Name}}</spellName> grants an additional <attackSpeed>@QMarkBonus@ Attack Speed</attackSpeed><li><spellName>{{Spell_KindredW_Name}}</spellName> deal an additional <magicDamage>@WMarkBonus@ current Health damage</magicDamage>.<li><spellName>{{Spell_KindredEWrapper_Name}}</spellName> deal an additional <physicalDamage>@EMarkBonus@ missing Health damage</physicalDamage>.",
+            "keyTooltipExtended": "{{Spell_KindredPassiveManager_Tooltip}}<br><br>Currently granting <statTracking>@f1@ Attack Range</statTracking>.<br><br><rules>The hunted jungle monsters change as Kindred gains <keywordMajor>Marks</keywordMajor>, moving further into the enemy jungle, eventually hunting epic monsters.</rules>"
           },
           "mObjectName": "KindredPassiveManager",
           "~class": "TooltipInstanceSpell"
@@ -3212,6 +3212,19 @@
         "ASSETS/Characters/Kindred/HUD/Icons2D/Kindred_Passive.dds"
       ],
       "mSpellCalculations": {
+        "0xd34fc902": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "RangeIncrease",
+              "~class": "NamedDataValueCalculationPart"
+            }
+          ],
+          "mMultiplier": {
+            "mDataValue": "FirstTierMultiplier",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "~class": "GameCalculation"
+        },
         "EMarkBonus": {
           "mDisplayAsPercent": true,
           "mFormulaParts": [
@@ -3354,13 +3367,13 @@
         {
           "name": "BaseDamage",
           "values": [
-            25.0,
+            15.0,
             40.0,
-            55.0,
-            70.0,
-            85.0,
-            100.0,
-            115.0
+            65.0,
+            90.0,
+            115.0,
+            140.0,
+            165.0
           ],
           "~class": "SpellDataValue"
         },
@@ -4406,13 +4419,13 @@
         {
           "name": "BaseDamage",
           "values": [
-            25.0,
+            15.0,
             40.0,
-            55.0,
-            70.0,
-            85.0,
-            100.0,
-            115.0
+            65.0,
+            90.0,
+            115.0,
+            140.0,
+            165.0
           ],
           "~class": "SpellDataValue"
         },

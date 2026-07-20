@@ -1494,10 +1494,6 @@
               "mDataValue": "BaseDamageADRatio",
               "mStat": 2,
               "~class": "StatByNamedDataValueCalculationPart"
-            },
-            {
-              "mDataValue": "BaseDamageAPRatio",
-              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "mSimpleTooltipCalculationDisplay": 6,
@@ -1939,26 +1935,26 @@
         {
           "name": "BaseDamage",
           "values": [
-            25.0,
-            70.0,
-            115.0,
-            160.0,
-            205.0,
-            250.0,
-            295.0
+            30.0,
+            80.0,
+            130.0,
+            180.0,
+            230.0,
+            280.0,
+            330.0
           ],
           "~class": "SpellDataValue"
         },
         {
           "name": "AttackSpeed",
           "values": [
-            15.0,
+            17.0,
             20.0,
-            25.0,
-            30.0,
-            35.0,
-            40.0,
-            45.0
+            23.0,
+            26.0,
+            29.0,
+            32.0,
+            35.0
           ],
           "~class": "SpellDataValue"
         },
@@ -2112,11 +2108,6 @@
                   "~class": "TooltipInstanceListElement"
                 },
                 {
-                  "nameOverride": "Healing",
-                  "type": "HealingValue",
-                  "~class": "TooltipInstanceListElement"
-                },
-                {
                   "nameOverride": "Mana Cost",
                   "type": "Cost",
                   "~class": "TooltipInstanceListElement"
@@ -2205,17 +2196,12 @@
           "~class": "GameCalculation"
         },
         "TotalHeal": {
-          "mFormulaParts": [
-            {
-              "mDataValue": "HealingValue",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mDataValue": "HealingAPRatio",
-              "~class": "StatByNamedDataValueCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
+          "mModifiedGameCalculation": "Damage",
+          "mMultiplier": {
+            "mNumber": 0.5,
+            "~class": "NumberCalculationPart"
+          },
+          "~class": "GameCalculationModified"
         }
       },
       "mSpellCooldownOrSealedQueueThreshold": 0.5,

@@ -349,19 +349,6 @@
       },
       "DataValues": [
         {
-          "name": "TakedownWindow",
-          "values": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "name": "MaxStacks",
           "values": [
             9.0,
@@ -371,6 +358,19 @@
             9.0,
             9.0,
             9.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "HealAPRatio",
+          "values": [
+            0.09000000357627869,
+            0.09000000357627869,
+            0.09000000357627869,
+            0.09000000357627869,
+            0.09000000357627869,
+            0.09000000357627869,
+            0.09000000357627869
           ],
           "~class": "SpellDataValue"
         }
@@ -403,8 +403,8 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Essence Theft",
-            "keySummary": "Gains a charge of Essence Theft whenever a spell hits an enemy (max: 3 charges per spell). Upon reaching 9 charges, the next spell has 35% Spell Vamp.",
-            "keyTooltip": "Gains a charge of <spellName>Essence Theft</spellName> whenever a spell hits an enemy (max: 3 charges per spell). Upon reaching 9 charges, the next spell has 35% Spell Vamp."
+            "keySummary": "Gains a charge of Essence Theft whenever a spell hits an enemy. Upon reaching maximum charges, the next spell restores Ahri's Health.",
+            "keyTooltip": "Ability hits on enemies grant Ahri a charge of <spellName>Essence Theft</spellName> (max: 3 charges per ability). Upon reaching @MaxStacks@ charges, her next Ability consumes them to restore <healing>@HealPerHit@ Health</healing> per enemy hit."
           },
           "mObjectName": "Jade_AhriPassive",
           "~class": "TooltipInstanceSpell"
@@ -433,30 +433,16 @@
         "ASSETS/UX/Jade/S3Icons/SameSized/Ahri_SoulEater.project_jade.dds"
       ],
       "mSpellCalculations": {
-        "ChampionHeal": {
+        "0x29c2c1eb": {
           "mFormulaParts": [
             {
-              "mEndValue": 165.0,
-              "mStartValue": 75.0,
+              "mEndValue": 20.0,
+              "mStartValue": 3.0,
               "~class": "ByCharLevelInterpolationCalculationPart"
             },
             {
-              "mCoefficient": 0.30000001192092896,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "MinionHeal": {
-          "mFormulaParts": [
-            {
-              "mEndValue": 95.0,
-              "mStartValue": 35.0,
-              "~class": "ByCharLevelInterpolationCalculationPart"
-            },
-            {
-              "mCoefficient": 0.20000000298023224,
-              "~class": "StatByCoefficientCalculationPart"
+              "mDataValue": "HealAPRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -1393,6 +1379,307 @@
     "mScriptName": "Jade_AhriSkin27Manager",
     "~class": "SpellObject"
   },
+  "0xe547714": {
+    "ObjectName": "Jade_AhriE_Amp",
+    "mBuff": {
+      "PersistentEffectConditions": [
+        {
+          "~class": "PersistentEffectConditionData"
+        }
+      ],
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Charm",
+          "keyTooltip": "This unit takes increased damage from Ahri."
+        },
+        "mObjectName": "Jade_AhriE_Amp",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_AhriE_Amp",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0x210f9ec0": {
+        "0xa3e0478": 50.0,
+        "values": [
+          50.0,
+          65.0,
+          80.0,
+          95.0,
+          110.0,
+          125.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "0xe1136d1": {
+        "0xa3e0478": 10000.0,
+        "values": [
+          10000.0,
+          10000.0,
+          10000.0,
+          10000.0,
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.0,
+      "Cooldown": {
+        "0xa3e0478": 12.0,
+        "values": [
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            30.0,
+            60.0,
+            90.0,
+            120.0,
+            150.0,
+            180.0,
+            210.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowPercent",
+          "values": [
+            -0.6499999761581421,
+            -0.6499999761581421,
+            -0.6499999761581421,
+            -0.6499999761581421,
+            -0.6499999761581421,
+            -0.6499999761581421,
+            -0.6499999761581421
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "CharmDuration",
+          "values": [
+            0.75,
+            1.0,
+            1.25,
+            1.5,
+            1.75,
+            2.0,
+            2.25
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatio",
+          "values": [
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DamageAmp",
+          "values": [
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DamageAmpDuration",
+          "values": [
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Ahri_AhriE_OnCast"
+      },
+      "alwaysSnapFacing": true,
+      "bHaveHitBone": true,
+      "castConeDistance": 100.0,
+      "castRadius": [
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0
+      ],
+      "castRange": [
+        10000.0,
+        10000.0,
+        10000.0,
+        10000.0,
+        10000.0,
+        10000.0,
+        10000.0
+      ],
+      "castRangeDisplayOverride": [
+        975.0,
+        975.0,
+        975.0,
+        975.0,
+        975.0,
+        975.0,
+        975.0
+      ],
+      "cooldownTime": [
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0
+      ],
+      "mAffectsTypeFlags": 13327,
+      "mAlternateName": "Jade_AhriSeduce",
+      "mAnimationName": "Spell3",
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.25,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "hideWithLineIndicator": true,
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "endLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "lineStopsAtEndPosition": false,
+            "lineWidth": {
+              "mPerLevelValues": [
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0
+              ],
+              "mValueType": 2,
+              "~class": "FloatPerSpellLevel"
+            },
+            "~class": "TargeterDefinitionLine"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "BaseDamage",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Duration",
+                  "type": "CharmDuration",
+                  "typeIndex": 2,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Charm",
+            "keySummary": "Ahri blows a kiss that damages and Charms the first enemy hit. They also take more damage from her for several seconds.",
+            "keyTooltip": "Ahri blows a kiss that deals <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Charms</status> the first enemy hit for @CharmDuration@ seconds. They also take @DamageAmp@% more damage from her for @DamageAmpDuration@ seconds."
+          },
+          "mObjectName": "Jade_AhriE_Amp",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "head",
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Ahri_Charm.project_jade.dds"
+      ],
+      "mLineWidth": 60.0,
+      "mRequiredUnitTags": {
+        "mObjectTagList": [
+          "champion"
+        ],
+        "~class": "ObjectTags"
+      },
+      "mSpellCalculations": {
+        "TotalDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "Trait_ImmobilizingCCSpell",
+        "Trait_SignatureSpell"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Location"
+      },
+      "mana": [
+        50.0,
+        65.0,
+        80.0,
+        95.0,
+        110.0,
+        110.0
+      ],
+      "missileSpeed": 1200.0,
+      "selectionPriority": 2,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
   "0xe64c8c2": {
     "ObjectName": "Jade_AhriPassive_Counter",
     "mBuff": {
@@ -1755,13 +2042,14 @@
     "mSpell": {
       "0x11704a2b": 0.25,
       "0x210f9ec0": {
+        "0xa3e0478": 50.0,
         "values": [
           50.0,
           65.0,
           80.0,
           95.0,
           110.0,
-          110.0
+          125.0
         ],
         "~class": "ResourceCostModifiable"
       },
@@ -1779,20 +2067,6 @@
         "~class": "SpellAttributeModifiable"
       },
       "0xf26881a0": 1.0,
-      "0xf9c2333e": {
-        "cherry": {
-          "value": [
-            12.0,
-            12.0,
-            12.0,
-            12.0,
-            12.0,
-            12.0,
-            12.0
-          ],
-          "~class": "SpellEffectAmount"
-        }
-      },
       "Cooldown": {
         "0xa3e0478": 12.0,
         "values": [
@@ -1856,6 +2130,32 @@
             0.3499999940395355,
             0.3499999940395355,
             0.3499999940395355
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DamageAmp",
+          "values": [
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DamageAmpDuration",
+          "values": [
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1964,8 +2264,8 @@
           },
           "mLocKeys": {
             "keyName": "Charm",
-            "keySummary": "Ahri blows a kiss that damages and charms an enemy it encounters, causing them to walk harmlessly towards her.",
-            "keyTooltip": "Blows a kiss dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Charms</status> an enemy causing them to walk harmlessly towards Ahri for @CharmDuration@ second(s)."
+            "keySummary": "Ahri blows a kiss that damages and Charms the first enemy hit. They also take more damage from her for several seconds.",
+            "keyTooltip": "Ahri blows a kiss that deals <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Charms</status> the first enemy hit for @CharmDuration@ seconds. They also take @DamageAmp@% more damage from her for @DamageAmpDuration@ seconds."
           },
           "mObjectName": "Jade_AhriE",
           "~class": "TooltipInstanceSpell"
@@ -1995,7 +2295,6 @@
               "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
-          "mSimpleTooltipCalculationDisplay": 6,
           "~class": "GameCalculation"
         }
       },
@@ -2076,19 +2375,6 @@
             115.0,
             140.0,
             165.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "FlatMovementSpeedMod",
-          "values": [
-            40.0,
-            40.0,
-            40.0,
-            40.0,
-            40.0,
-            40.0,
-            40.0
           ],
           "~class": "SpellDataValue"
         }
@@ -2190,7 +2476,7 @@
           "mLocKeys": {
             "keyName": "Orb of Deception",
             "keySummary": "Ahri sends out and pulls back her orb, dealing magic damage on the way out and true damage on the way back.",
-            "keyTooltip": "Deals <magicDamage>@TotalDamage@ magic damage</magicDamage> on the way out, and <trueDamage>@TotalDamage@ true damage</trueDamage> on the way back. Ahri gains <speed>@FlatMovementSpeedMod@ Movement Speed</speed> while the spell is in flight."
+            "keyTooltip": "Ahri throws then pulls back her orb, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> on the way out and <trueDamage>@TotalDamage@ true damage</trueDamage> on the way back."
           },
           "mObjectName": "Jade_AhriQ",
           "~class": "TooltipInstanceSpell"
@@ -2220,7 +2506,6 @@
               "~class": "StatByCoefficientCalculationPart"
             }
           ],
-          "mSimpleTooltipCalculationDisplay": 6,
           "~class": "GameCalculation"
         }
       },
@@ -2349,14 +2634,15 @@
         "~class": "SpellAttributeModifiable"
       },
       "Cooldown": {
+        "0xa3e0478": 125.0,
         "values": [
-          110.0,
+          125.0,
           110.0,
           95.0,
           80.0,
-          80.0,
-          80.0,
-          80.0
+          65.0,
+          50.0,
+          35.0
         ],
         "~class": "SpellAttributeModifiable"
       },
@@ -2364,13 +2650,26 @@
         {
           "name": "BaseDamage",
           "values": [
-            45.0,
-            85.0,
-            125.0,
-            165.0,
-            205.0,
-            245.0,
-            285.0
+            30.0,
+            70.0,
+            110.0,
+            150.0,
+            190.0,
+            230.0,
+            270.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatio",
+          "values": [
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896
           ],
           "~class": "SpellDataValue"
         }
@@ -2459,7 +2758,7 @@
           "mLocKeys": {
             "keyName": "Spirit Rush",
             "keySummary": "Ahri dashes forward and fires essence bolts, damaging 3 nearby enemies (prioritizes Champions). Spirit Rush can be cast up to three times before going on cooldown.",
-            "keyTooltip": "Nimbly dashes forward firing 3 essence bolts at nearby enemies (prioritizes Champions) dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>.<br><br>Can be <recast>Recast </recast> up to 2 more times within 10 seconds."
+            "keyTooltip": "Ahri nimbly dashes, firing 3 essence bolts at nearby enemies, prioritizing champions. These bolts deal <magicDamage>@TotalDamage@ magic damage</magicDamage> each. <spellName>Spirit Rush</spellName> can be <recast>Recast</recast> up to 2 more times within 10 seconds."
           },
           "mObjectName": "Jade_AhriR",
           "~class": "TooltipInstanceSpell"
@@ -2495,8 +2794,8 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.3499999940395355,
-              "~class": "StatByCoefficientCalculationPart"
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -2534,14 +2833,14 @@
     "mSpell": {
       "0x11704a2b": 0.25,
       "0x210f9ec0": {
-        "0xa3e0478": 60.0,
+        "0xa3e0478": 50.0,
         "values": [
-          60.0,
-          60.0,
-          60.0,
-          60.0,
-          60.0,
-          60.0
+          50.0,
+          50.0,
+          50.0,
+          50.0,
+          50.0,
+          50.0
         ],
         "~class": "ResourceCostModifiable"
       },
@@ -2567,7 +2866,7 @@
           7.0,
           6.0,
           5.0,
-          5.0
+          4.0
         ],
         "~class": "SpellAttributeModifiable"
       },
@@ -2582,6 +2881,32 @@
             115.0,
             140.0,
             165.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatio",
+          "values": [
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SecondaryHitMod",
+          "values": [
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896
           ],
           "~class": "SpellDataValue"
         }
@@ -2675,7 +3000,7 @@
           "mLocKeys": {
             "keyName": "Fox-Fire",
             "keySummary": "Ahri releases three fox-fires, that lock onto and attack nearby enemies.",
-            "keyTooltip": "Releases three fox-fires that lock on to nearby enemies (prioritizes Champions) dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>. Enemies hit with multiple fox-fires take <magicDamage>@HalfDamage@ magic damage</magicDamage> from each additional fox-fire."
+            "keyTooltip": "Ahri releases 3 fox-fires that seek nearby enemies and deal <magicDamage>@TotalDamage@ magic damage</magicDamage>, reduced to <magicDamage>@HalfDamage@ damage</magicDamage> beyond the first."
           },
           "mObjectName": "Jade_AhriW",
           "~class": "TooltipInstanceSpell"
@@ -2708,8 +3033,8 @@
         "HalfDamage": {
           "mModifiedGameCalculation": "TotalDamage",
           "mMultiplier": {
-            "mNumber": 0.5,
-            "~class": "NumberCalculationPart"
+            "mDataValue": "SecondaryHitMod",
+            "~class": "NamedDataValueCalculationPart"
           },
           "~class": "GameCalculationModified"
         },
@@ -2720,8 +3045,8 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.4000000059604645,
-              "~class": "StatByCoefficientCalculationPart"
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"

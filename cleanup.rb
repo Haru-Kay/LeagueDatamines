@@ -931,7 +931,7 @@ diff()
 # SR handling end
 
 # jade handling
-    print "Loading and formatting SR data..."
+    print "Loading and formatting Jade data..."
     gameType = "jade"
     mapId = 453
     FileUtils.rm_rf(Dir.glob("#{gameType}/*"))
@@ -939,60 +939,60 @@ diff()
         Dir.mkdir("#{gameType}/#{dir}") unless Dir.exist?("#{gameType}/#{dir}")
     }
     json = {}
-    # File.open("temp/data/maps/shipping/map#{mapId}/map#{mapId}.json", 'rb') { |f| json = JSON.parse(f.read()) }
-    # json = json.fetch("entries", json)
-    # jsonSort = {}
-    # json.each { |key, data|
-    #     type = data["~class"]
+    File.open("temp/data/maps/shipping/map#{mapId}/map#{mapId}.json", 'rb') { |f| json = JSON.parse(f.read()) }
+    json = json.fetch("entries", json)
+    jsonSort = {}
+    json.each { |key, data|
+        type = data["~class"]
 
-    #     next if !type
-    #     case type
-    #         when "0x1ff0e246"
-    #             type = "GameEndUI"
-    #         when "0x5a92b195"
-    #             type = "GamemodeKeybinds"
-    #         when "0x276246d8"
-    #             type = "AnnouncerBark"
-    #         when "0x3f04641e"
-    #             type = "CampMapNames"
-    #         when "0x9d9f60d2", "0xad65d8c4"
-    #             type = "MinionSkinData"
-    #         when "0xb26bd951", "0xe8c34b52", "0xeb5adb26", "0x409a5657", "0x23433cc1"
-    #             type = "skip"
-    #         when "0x60e2ec74"
-    #             type = "LoadScreenData"
-    #         when "0xc3a44766"
-    #             type = "DamageFeedbackVFX"
-    #         when "0xe2b34203"
-    #             type = "SharedScriptSkeleton"
-    #         when "0x6b91544a"
-    #             type = "VfxSystemDefinitionData"
-    #         when "0x64ee2fb1"
-    #             type = "DragonMinimapData"
-    #         when "0x610a14d0"
-    #             type = "BossCountdown"
-    #         when "0x5858e503"
-    #             type = "Events"
-    #         when "0x8873e4c8"
-    #             type = "JungleObjectiveScriptData"
-    #         when "0x292991be"
-    #             type = "DragonSoulNames"
-    #         when "0xb26bd951"
-    #             type = "MapUnitSkinData"
-    #         when "GameModeItemList"
-    #             data["mItems"] = data["mItems"].map { |i| itemNameLangFix(i) }
-    #         else
-    #             type = "MiscData" if type.start_with?("0x")
-    #     end
-    #     jsonSort[type] ||= {}
-    #     jsonSort[type].store(key, data)
-    # }
-    # jsonSort.each { |key, data|
-    #     next if key == "skip"
-    #     loc = key.downcase.include?("vfx") ? "vfxData" : "data"
-    #     data = data.sort_by { |k, v| v["ObjectName"] }.to_h if key == "SpellObject"
-    #     File.open("#{gameType}/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
-    # }
+        next if !type
+        case type
+            when "0x1ff0e246"
+                type = "GameEndUI"
+            when "0x5a92b195"
+                type = "GamemodeKeybinds"
+            when "0x276246d8"
+                type = "AnnouncerBark"
+            when "0x3f04641e"
+                type = "CampMapNames"
+            when "0x9d9f60d2", "0xad65d8c4"
+                type = "MinionSkinData"
+            when "0xb26bd951", "0xe8c34b52", "0xeb5adb26", "0x409a5657", "0x23433cc1"
+                type = "skip"
+            when "0x60e2ec74"
+                type = "LoadScreenData"
+            when "0xc3a44766"
+                type = "DamageFeedbackVFX"
+            when "0xe2b34203"
+                type = "SharedScriptSkeleton"
+            when "0x6b91544a"
+                type = "VfxSystemDefinitionData"
+            when "0x64ee2fb1"
+                type = "DragonMinimapData"
+            when "0x610a14d0"
+                type = "BossCountdown"
+            when "0x5858e503"
+                type = "Events"
+            when "0x8873e4c8"
+                type = "JungleObjectiveScriptData"
+            when "0x292991be"
+                type = "DragonSoulNames"
+            when "0xb26bd951"
+                type = "MapUnitSkinData"
+            when "GameModeItemList"
+                data["mItems"] = data["mItems"].map { |i| itemNameLangFix(i) }
+            else
+                type = "MiscData" if type.start_with?("0x")
+        end
+        jsonSort[type] ||= {}
+        jsonSort[type].store(key, data)
+    }
+    jsonSort.each { |key, data|
+        next if key == "skip"
+        loc = key.downcase.include?("vfx") ? "vfxData" : "data"
+        data = data.sort_by { |k, v| v["ObjectName"] }.to_h if key == "SpellObject"
+        File.open("#{gameType}/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
+    }
 
 
     mapBins[mapId].each { |map|
@@ -1085,7 +1085,7 @@ diff()
 
     Dir.children("temp/data/maps/modespecificdata/map12/").each { |map|
         map = map[...-5]
-        next if map == "augments" || map == "kiwi"
+        next if map == "augments" || map == "kiwi" || map == "kiwi_jade"
         Dir.mkdir("aram/#{map}") unless Dir.exist?("aram/#{map}")
         ["data", "vfxData"].each { |dir|
             Dir.mkdir("aram/#{map}/#{dir}") unless Dir.exist?("aram/#{map}/#{dir}")
@@ -1192,7 +1192,7 @@ diff()
     print "done.\n"
 
     $aramMayhem = {}
-    File.open("temp/410b3796f165ef3e.json", 'rb') { |f| $aramMayhem = JSON.parse(f.read()) }
+    File.open("temp/data/maps/modespecificdata/map12/kiwi_jade.json", 'rb') { |f| $aramMayhem = JSON.parse(f.read()) }
     $aramMayhem = $aramMayhem.fetch("entries", $aramMayhem)
     aramAugments = []
     aramOther = {}
@@ -1245,7 +1245,11 @@ diff()
     aramOther.each { |key, data|
         loc = key.downcase.include?("vfx") ? "vfxData" : "data"
         data = data.sort_by { |k, v| v["ObjectName"] }.to_h if key == "SpellObject"
-        data = data.sort_by { |k, v| v["AugmentPlatformId"] }.to_h if key == "AugmentInfo"
+        begin
+            data = data.sort_by { |k, v| v["AugmentPlatformId"] }.to_h if key == "AugmentInfo"
+        rescue
+            puts "broke on #{key}"
+        end
         File.open("aram/jade/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
     }
     print "done.\n"

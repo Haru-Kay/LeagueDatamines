@@ -351,6 +351,21 @@
         ],
         "~class": "SpellAttributeModifiable"
       },
+      "DataValues": [
+        {
+          "name": "PassiveBlockChance",
+          "values": [
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "castRange": [
         0.0,
         0.0,
@@ -366,7 +381,7 @@
           "mLocKeys": {
             "keyName": "Feel No Pain",
             "keySummary": "Sion has a 40% chance to ignore up to 30/40/50 damage each time he is attacked.",
-            "keyTooltip": "40% chance to reduce incoming <physicalDamage>Attack Damage</physicalDamage> by @f1@."
+            "keyTooltip": "Sion has a @PassiveBlockChance@% chance to reduce incoming <physicalDamage>Attack Damage</physicalDamage> by @PassiveBlockAmount@."
           },
           "mObjectName": "Jade_SionPassive",
           "~class": "TooltipInstanceSpell"
@@ -376,6 +391,29 @@
       "mImgIconName": [
         "ASSETS/UX/Jade/S3Icons/SameSized/Sion_FeelNoPain.project_jade.dds"
       ],
+      "mSpellCalculations": {
+        "0x6c3efacf": {
+          "mFormulaParts": [
+            {
+              "mBreakpoints": [
+                {
+                  "mAdditionalBonusAtThisLevel": 10.0,
+                  "mLevel": 7,
+                  "~class": "Breakpoint"
+                },
+                {
+                  "mAdditionalBonusAtThisLevel": 10.0,
+                  "mLevel": 13,
+                  "~class": "Breakpoint"
+                }
+              ],
+              "mLevel1Value": 30.0,
+              "~class": "ByCharLevelBreakpointsCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
       "~class": "SpellDataResource"
     },
     "~class": "SpellObject"
