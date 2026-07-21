@@ -1,17 +1,5 @@
 [
   {
-    "id": -1,
-    "apiName": "SummonersSafari",
-    "name": "Summoner's Safari",
-    "rarity": "Silver",
-    "desc": "While in the jungle or river, occasionly discover a consumable.",
-    "tooltip": "While in the jungle or river, occasionly discover a consumable.",
-    "icons": [
-      "ASSETS/UX/Kiwi/Augments/Icons/Stabby_Stabby_Small.tex",
-      "ASSETS/UX/Kiwi/Augments/Icons/Stabby_Stabby.tex"
-    ]
-  },
-  {
     "id": 1001,
     "apiName": "ARAM_ImTheJuggernaut",
     "name": "Titan's Resolve",
@@ -4205,51 +4193,6 @@
     ]
   },
   {
-    "id": 2004,
-    "apiName": "ARAM_EmpoweredByTheFaithful",
-    "name": "Empowered By The Faithful",
-    "rarity": "Prismatic",
-    "desc": "<healing>Healing</healing> or <shield>Shielding</shield> allies blesses them, causing their damage to fill you with <keyword>devotion</keyword>. <br><br>When you have enough <keyword>devotion</keyword>, unleash a shockwave dealing <magicDamage>magic damage</magicDamage> and executes low health enemies.",
-    "tooltip": "<healing>Healing</healing> or <shield>Shielding</shield> an ally blesses them for @Buff_Duration@ seconds. When blessed allies deal damage to enemy champions, gain stacks of <keywordMajor>Devotion</keywordMajor>. At @Devotion_Threshold@ <keywordMajor>Devotion</keywordMajor>, unleash a shockwave that deals <magicDamage>@Calc_Damage@ magic damage</magicDamage> and executes enemies below <scaleHealth>@Calc_Execute_Threshold@ Health</scaleHealth>.<br><br><rules>Damage Dealt: @f1.0@<br>Faithless Killed: @f2.0@</rules>",
-    "dataValues": {
-      "Buff_Duration": 8.0,
-      "Devotion_Threshold": 50.0,
-      "Dot_Cooldown": 1.0
-    },
-    "calculations": {
-      "Calc_Damage": {
-        "mFormulaParts": [
-          {
-            "mEndValue": 300.0,
-            "mStartValue": 50.0,
-            "~class": "ByCharLevelInterpolationCalculationPart"
-          },
-          {
-            "mCoefficient": 750.0,
-            "mStat": 34,
-            "~class": "StatByCoefficientCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "Calc_Execute_Threshold": {
-        "mDisplayAsPercent": true,
-        "mFormulaParts": [
-          {
-            "mCoefficient": 0.25,
-            "mStat": 34,
-            "~class": "StatByCoefficientCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      }
-    },
-    "icons": [
-      "ASSETS/UX/Kiwi/Augments/Icons/EmpoweredByTheFaithful_small.tex",
-      "ASSETS/UX/Kiwi/Augments/Icons/EmpoweredByTheFaithful_large.tex"
-    ]
-  },
-  {
     "id": 2005,
     "apiName": "ARAM_InfernoTriggered",
     "name": "Triggered Inferno",
@@ -4935,111 +4878,6 @@
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/NatureIsHealing_small.tex",
       "ASSETS/UX/Kiwi/Augments/Icons/NatureIsHealing_large.tex"
-    ]
-  },
-  {
-    "id": 2046,
-    "apiName": "PoroCharge_Active",
-    "name": "Poro Stampede",
-    "rarity": "Prismatic",
-    "desc": "<font color='#F0C200'>QUEST:</font> Gather Poro Snax and feed @QuestRequirement@ Poros.<br><br><font color='#F0C200'>REWARD:</font> Gain the Poro Charge Summoner Spell, which launches waves of Poros at the enemy team. Additional waves unlock per Quest Level.<br><br><flavorText>\"Oho! Look how charming they are!\" — Poro Herder</flavorText>",
-    "tooltip": "Poro Snax appear around you every <attention>@TimeBetweenSnax@</attention> seconds. Feeding <keyword>Poros</keyword> gives you stacks of <spellName>Poro Love</spellName>. At <attention>@WaveRequirement1@</attention> stacks, unlock the <spellName>Poro Charge</spellName> Summoner Spell. Feeding more <keyword>Poros</keyword> increases how many waves you launch.<br><br><spellName>Poro Charge</spellName>: Launch waves of <keyword>Poros</keyword> that deal <physicalDamage>@Damage@ physical damage</physicalDamage> to enemy champions. <br><br>You currently launch <attention>@f1@</attention> waves of <keyword>Poros</keyword>. <br><br><rules>Poros can only hit a single enemy, and only the first wave knocks enemies up.</rules><br><br><flavorText>\"Oho! Look how charming they are!\" — Poro Herder</flavorText>",
-    "dataValues": {
-      "WaveRequirement1": 5.0,
-      "WaveRequirement2": 12.0,
-      "WaveRequirement3": 20.0,
-      "WaveRequirement4": 30.0,
-      "WaveRequirement5": 44.0,
-      "WaveRequirement6": 63.0,
-      "WaveRequirement7": 90.0,
-      "WaveRequirement8": 129.0,
-      "WaveRequirement9": 187.0,
-      "WaveRequirement10": 275.0,
-      "SlowStrength": 0.8500000238418579,
-      "SlowDuration": 2.0,
-      "MinionDamagePercent": 0.15000000596046448,
-      "DamageReductionIfAlreadyHit": 0.5
-    },
-    "calculations": {
-      "Damage": {
-        "mFormulaParts": [
-          {
-            "mEndValue": 200.0,
-            "mStartValue": 100.0,
-            "~class": "ByCharLevelInterpolationCalculationPart"
-          },
-          {
-            "mBuffName": "0x515f1819",
-            "mCoefficient": 20.0,
-            "mIconKey": "%i:KiwiAugmentPoroCharge%",
-            "~class": "BuffCounterByCoefficientCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "TimeBetweenSnax": {
-        "mFormulaParts": [
-          {
-            "mEndValue": 15.0,
-            "mStartValue": 25.0,
-            "~class": "ByCharLevelInterpolationCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      }
-    },
-    "quest": {
-      "apiName": "PoroChargeQuest",
-      "QuestBreakpoints": [
-        {
-          "QuestRequirement": 5,
-          "QuestDesc": "<font color='#F0C200'>QUEST:</font> Collect @QuestRequirement@ Poro Snax and feed them to Poros.<br><br><font color='#F0C200'>REWARD:</font> Unlock the Poro Charge Summoner Spell.<br><br>Poros Fed: @QuestProgress@/@QuestRequirement@<br><rules>Poro Snax appear around you every <attention>@TimeBetweenSnax@</attention> seconds.</rules><br><br><flavorText>\"Oho! Look how charming they are!\" — Poro Herder</flavorText>"
-        },
-        {
-          "QuestRequirement": 12,
-          "QuestDesc": "Poro Charge fires @f5@ wave(s) of Poros at the enemy team.<br><br><font color='#F0C200'>QUEST:</font> Collect @QuestRequirement@ Poro Snax and feed them to Poros.<br><br><font color='#F0C200'>REWARD:</font> Poro Charge fires an additional wave of Poros.<br><br>Poros Fed: @QuestProgress@/@QuestRequirement@<br><br><rules>Poro Snax appear around you every <attention>@TimeBetweenSnax@</attention> seconds.</rules><br><br><flavorText>\"Oho! Look how charming they are!\" — Poro Herder</flavorText>"
-        },
-        {
-          "QuestRequirement": 20,
-          "QuestDesc": "Poro Charge fires @f5@ wave(s) of Poros at the enemy team.<br><br><font color='#F0C200'>QUEST:</font> Collect @QuestRequirement@ Poro Snax and feed them to Poros.<br><br><font color='#F0C200'>REWARD:</font> Poro Charge fires an additional wave of Poros.<br><br>Poros Fed: @QuestProgress@/@QuestRequirement@<br><br><rules>Poro Snax appear around you every <attention>@TimeBetweenSnax@</attention> seconds.</rules><br><br><flavorText>\"Oho! Look how charming they are!\" — Poro Herder</flavorText>"
-        },
-        {
-          "QuestRequirement": 30,
-          "QuestDesc": "Poro Charge fires @f5@ wave(s) of Poros at the enemy team.<br><br><font color='#F0C200'>QUEST:</font> Collect @QuestRequirement@ Poro Snax and feed them to Poros.<br><br><font color='#F0C200'>REWARD:</font> Poro Charge fires an additional wave of Poros.<br><br>Poros Fed: @QuestProgress@/@QuestRequirement@<br><br><rules>Poro Snax appear around you every <attention>@TimeBetweenSnax@</attention> seconds.</rules><br><br><flavorText>\"Oho! Look how charming they are!\" — Poro Herder</flavorText>"
-        },
-        {
-          "QuestRequirement": 44,
-          "QuestDesc": "Poro Charge fires @f5@ wave(s) of Poros at the enemy team.<br><br><font color='#F0C200'>QUEST:</font> Collect @QuestRequirement@ Poro Snax and feed them to Poros.<br><br><font color='#F0C200'>REWARD:</font> Poro Charge fires an additional wave of Poros.<br><br>Poros Fed: @QuestProgress@/@QuestRequirement@<br><br><rules>Poro Snax appear around you every <attention>@TimeBetweenSnax@</attention> seconds.</rules><br><br><flavorText>\"Oho! Look how charming they are!\" — Poro Herder</flavorText>"
-        },
-        {
-          "QuestRequirement": 63,
-          "QuestDesc": "Poro Charge fires @f5@ wave(s) of Poros at the enemy team.<br><br><font color='#F0C200'>QUEST:</font> Collect @QuestRequirement@ Poro Snax and feed them to Poros.<br><br><font color='#F0C200'>REWARD:</font> Poro Charge fires an additional wave of Poros.<br><br>Poros Fed: @QuestProgress@/@QuestRequirement@<br><br><rules>Poro Snax appear around you every <attention>@TimeBetweenSnax@</attention> seconds.</rules><br><br><flavorText>\"Oho! Look how charming they are!\" — Poro Herder</flavorText>"
-        },
-        {
-          "QuestRequirement": 90,
-          "QuestDesc": "Poro Charge fires @f5@ wave(s) of Poros at the enemy team.<br><br><font color='#F0C200'>QUEST:</font> Collect @QuestRequirement@ Poro Snax and feed them to Poros.<br><br><font color='#F0C200'>REWARD:</font> Poro Charge fires an additional wave of Poros.<br><br>Poros Fed: @QuestProgress@/@QuestRequirement@<br><br><rules>Poro Snax appear around you every <attention>@TimeBetweenSnax@</attention> seconds.</rules><br><br><flavorText>\"Oho! Look how charming they are!\" — Poro Herder</flavorText>"
-        },
-        {
-          "QuestRequirement": 129,
-          "QuestDesc": "Poro Charge fires @f5@ wave(s) of Poros at the enemy team.<br><br><font color='#F0C200'>QUEST:</font> Collect @QuestRequirement@ Poro Snax and feed them to Poros.<br><br><font color='#F0C200'>REWARD:</font> Poro Charge fires an additional wave of Poros.<br><br>Poros Fed: @QuestProgress@/@QuestRequirement@<br><br><rules>Poro Snax appear around you every <attention>@TimeBetweenSnax@</attention> seconds.</rules><br><br><flavorText>\"Oho! Look how charming they are!\" — Poro Herder</flavorText>"
-        },
-        {
-          "QuestRequirement": 187,
-          "QuestDesc": "Poro Charge fires @f5@ wave(s) of Poros at the enemy team.<br><br><font color='#F0C200'>QUEST:</font> Collect @QuestRequirement@ Poro Snax and feed them to Poros.<br><br><font color='#F0C200'>REWARD:</font> Poro Charge fires an additional wave of Poros.<br><br>Poros Fed: @QuestProgress@/@QuestRequirement@<br><br><rules>Poro Snax appear around you every <attention>@TimeBetweenSnax@</attention> seconds.</rules><br><br><flavorText>\"Oho! Look how charming they are!\" — Poro Herder</flavorText>"
-        },
-        {
-          "QuestRequirement": 275,
-          "QuestDesc": "Poro Charge fires @f5@ wave(s) of Poros at the enemy team.<br><br><font color='#F0C200'>QUEST:</font> Collect @QuestRequirement@ Poro Snax and feed them to Poros.<br><br><font color='#F0C200'>REWARD:</font> Poro Charge fires an additional wave of Poros.<br><br>Poros Fed: @QuestProgress@/@QuestRequirement@<br><br><rules>Poro Snax appear around you every <attention>@TimeBetweenSnax@</attention> seconds.</rules><br><br><flavorText>\"Oho! Look how charming they are!\" — Poro Herder</flavorText>"
-        },
-        {
-          "QuestDesc": "Poro Charge fires @f5@ wave(s) of Poros at the enemy team.<br><br>Quest Complete.<br>Poros Fed: @QuestProgress@<br><br><flavorText>\"Oho! Look how charming they are!\" — Poro Herder</flavorText>"
-        }
-      ],
-      "icon": "ASSETS/UX/Kiwi/Augments/Icons/PoroKing_large.tex"
-    },
-    "icons": [
-      "ASSETS/UX/Kiwi/Augments/Icons/QuestPoroCharge_small.tex",
-      "ASSETS/UX/Kiwi/Augments/Icons/QuestPoroCharge_large.tex"
     ]
   },
   {
@@ -6578,56 +6416,6 @@
     ]
   },
   {
-    "id": 2133,
-    "apiName": "MercysStrike",
-    "name": "Mercy's Strike",
-    "rarity": "Gold",
-    "desc": "After healing or shielding your ally with {{SpellName}}, your next basic attack gains <attention>attack range</attention>, <speed>attack speed</speed> and deals bonus <magicDamage>max Health magic damage</magicDamage>.",
-    "tooltip": "After healing or shielding your ally with {{SpellName}}, your next basic attack gains <attention>@AttackRangeInc@ bonus attack range</attention>, <speed>@ASBonus*100@% attack speed</speed> and deals an additional <magicDamage>@MaxHealthDamage@ max Health magic damage</magicDamage>.<br><br>Total Damage Dealt: @f1.0@<br><rules>Turret take @HealthPercentBase*100@% max health magic damage. </rules>",
-    "dataValues": {
-      "AttackRangeInc": 300.0,
-      "HealthPercentBase": 0.02500000037252903,
-      "HSPercent": 0.20000000298023224,
-      "ASBonus": 0.75
-    },
-    "calculations": {
-      "0x9458241": {
-        "mDisplayAsPercent": true,
-        "mFormulaParts": [
-          {
-            "mDataValue": "HealthPercentBase",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          {
-            "mDataValue": "HSPercent",
-            "mStat": 34,
-            "~class": "StatByNamedDataValueCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "MaxHealthDamage": {
-        "mDisplayAsPercent": true,
-        "mFormulaParts": [
-          {
-            "mDataValue": "HealthPercentBase",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          {
-            "mDataValue": "HSPercent",
-            "mStat": 34,
-            "~class": "StatByNamedDataValueCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      }
-    },
-    "icons": [
-      "ASSETS/UX/Kiwi/Augments/Icons/GenericAbilityAugmentIcon_Gold.tex",
-      "ASSETS/UX/Kiwi/Augments/Icons/GenericAbilityAugmentIcon_Gold.tex"
-    ]
-  },
-  {
     "id": 2135,
     "apiName": "Overkill",
     "name": "Pin Cushion",
@@ -6905,8 +6693,8 @@
     "apiName": "DoOrDie",
     "name": "Do or Die",
     "rarity": "Prismatic",
-    "desc": "Double the max stacks of <keywordMajor>Mejai's Soulstealer</keywordMajor>, <keywordMajor>Leviathan</keywordMajor>, and <keywordMajor>Sword of the Occult</keywordMajor>, but lose twice as many stacks on death.",
-    "tooltip": "Double the max stacks of <keywordMajor>Mejai's Soulstealer</keywordMajor>, <keywordMajor>Leviathan</keywordMajor>, and <keywordMajor>Sword of the Occult</keywordMajor>, but lose twice as many stacks on death.<br><br><flavorText>'No no Jarvan I said do OR die'</flavorText>",
+    "desc": "Double the max stacks of <keywordMajor>Mejai's Soulstealer</keywordMajor>, <keywordMajor>Leviathan</keywordMajor>, and <keywordMajor>Sword of the Occult</keywordMajor>.",
+    "tooltip": "Double the max stacks of <keywordMajor>Mejai's Soulstealer</keywordMajor>, <keywordMajor>Leviathan</keywordMajor>, and <keywordMajor>Sword of the Occult</keywordMajor>.<br><br><flavorText>'No no Jarvan I said do OR die'</flavorText>",
     "dataValues": {
       "Multiplier": 2.0
     },
@@ -7002,7 +6790,7 @@
     "desc": "Each purchase of <keywordMajor>Doran's Blade</keywordMajor>, <keywordMajor>Ring</keywordMajor>, and <keywordMajor>Shield</keywordMajor> beyond the first grants a stack to the original item. <br><br>Each stack grants @EffectivenessMod*100@% of the item's stats.",
     "tooltip": "Each purchase of <keywordMajor>Doran's Blade</keywordMajor>, <keywordMajor>Ring</keywordMajor>, and <keywordMajor>Shield</keywordMajor> beyond the first grants a stack to the original item. <br><br>Each stack grants @EffectivenessMod*100@% of the item's stats.<br><br><rules>The passive effects of these items do not increase. Your respective <keywordMajor>Doran's items</keywordMajor> are no longer sellable.</rules><br><br><flavorText>Like 30 Doran's Items</flavorText>",
     "dataValues": {
-      "EffectivenessMod": 1.0
+      "EffectivenessMod": 1.25
     },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/Dorans_Fan_Small.tex",
@@ -7097,11 +6885,11 @@
     "apiName": "SpiritOfTheJungleMain",
     "name": "Spirit of the Jungle Main",
     "rarity": "Gold",
-    "desc": "Your jungle item's primary stats are increased by @TootlipStatAmp*100@%.",
-    "tooltip": "Your jungle item's primary stats are increased by @TootlipStatAmp*100@%.<br><br><rules><keywordMajor>Spirit of the Spectral Wraith</keywordMajor>, <keywordMajor>Ancient Golem</keywordMajor>, <keywordMajor>Elder Lizard</keywordMajor>, <keywordMajor>Madred's Bloodrazor</keywordMajor>, <keywordMajor>Wriggle's Lantern</keywordMajor>, and <keywordMajor>Feral Flare</keywordMajor>.</rules>",
+    "desc": "The primary stats of jungle items you own are increased by @TootlipStatAmp*100@%.",
+    "tooltip": "The primary stats of jungle items you own are increased by @TootlipStatAmp*100@%.<br><br><rules>Only one copy of each item has its stats increased.</rules><br><br><rules><keywordMajor>Spirit of the Spectral Wraith</keywordMajor>, <keywordMajor>Ancient Golem</keywordMajor>, <keywordMajor>Elder Lizard</keywordMajor>, <keywordMajor>Madred's Bloodrazor</keywordMajor>, <keywordMajor>Wriggle's Lantern</keywordMajor>, and <keywordMajor>Feral Flare</keywordMajor>.</rules>",
     "dataValues": {
-      "StatAmp": 2.5,
-      "TootlipStatAmp": 1.5,
+      "StatAmp": 2.25,
+      "TootlipStatAmp": 1.25,
       "MaxLevel": 1.0
     },
     "icons": [
@@ -7119,6 +6907,18 @@
     "dataValues": {
       "DodgeChance": 0.10000000149011612
     },
+    "icons": [
+      "ASSETS/UX/Kiwi/Augments/Icons/Stabby_Stabby_Small.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/Stabby_Stabby.tex"
+    ]
+  },
+  {
+    "id": 7015,
+    "apiName": "SummonersSafari",
+    "name": "Summoner's Safari",
+    "rarity": "Silver",
+    "desc": "While in the jungle or river,  you quickly discover consumables.",
+    "tooltip": "While in the jungle or river,  you quickly discover consumables.<br><br><flavorText>'Mid? Where we're going we don't need mid!'</flavorText>",
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/Stabby_Stabby_Small.tex",
       "ASSETS/UX/Kiwi/Augments/Icons/Stabby_Stabby.tex"

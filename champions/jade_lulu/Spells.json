@@ -34,9 +34,8 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Pix, Faerie Companion",
-            "keySummary": "Pix is a wild Faerie that accompanies Lulu. Pix will fire a barrage of magical energy at targets that Lulu attacks.",
-            "keyTooltip": "Pix will fire a barrage of 3 magical energy bolts at targets that Lulu attacks, dealing <magicDamage>@FairyDamage@ magic damage</magicDamage> each.",
-            "keyTooltipExtended": "Pix will fire a barrage of 3 magical energy bolts at targets that Lulu attacks, dealing <magicDamage>@FairyDamage@ magic damage</magicDamage> each. These bolts are homing but can be blocked by other units."
+            "keySummary": "Pix fires magical bolts of energy whenever the champion he's following attacks another enemy unit. These bolts are homing, but can be intercepted by other units.",
+            "keyTooltip": "Lulu is assisted by Pix the faerie. When Lulu Attacks, Pix fires 3 bolts at her target, dealing <magicDamage>@TotalDamageCalc@ magic damage</magicDamage> to the first enemy hit."
           },
           "mObjectName": "Jade_LuluPassive",
           "~class": "TooltipInstanceSpell"
@@ -44,54 +43,67 @@
         "~class": "SpellDataResourceClient"
       },
       "mImgIconName": [
-        "ASSETS/Characters/Jade_Lulu/HUD/Icons2D/Jade_Lulu_PixFaerieCompanion.project_jade.dds"
+        "ASSETS/Characters/Jade_Lulu/HUD/Icons2D/Jade_Lulu_PixFaerieCompanion.dds"
       ],
       "mSpellCalculations": {
         "0x7816c04b": {
           "mFormulaParts": [
             {
-              "values": [
-                0.0,
-                1.2999999523162842,
-                3.0,
-                6.0,
-                6.0,
-                9.0,
-                9.0,
-                12.0,
-                12.0,
-                15.0,
-                15.0,
-                18.0,
-                18.0,
-                21.0,
-                21.0,
-                24.0,
-                24.0,
-                27.0,
-                27.0,
-                27.0,
-                27.0,
-                27.0,
-                27.0,
-                27.0,
-                27.0,
-                27.0,
-                27.0,
-                27.0,
-                27.0,
-                27.0,
-                27.0
+              "mBreakpoints": [
+                {
+                  "mAdditionalBonusAtThisLevel": 4.0,
+                  "mLevel": 3,
+                  "~class": "Breakpoint"
+                },
+                {
+                  "mAdditionalBonusAtThisLevel": 4.0,
+                  "mLevel": 5,
+                  "~class": "Breakpoint"
+                },
+                {
+                  "mAdditionalBonusAtThisLevel": 4.0,
+                  "mLevel": 7,
+                  "~class": "Breakpoint"
+                },
+                {
+                  "mAdditionalBonusAtThisLevel": 4.0,
+                  "mLevel": 9,
+                  "~class": "Breakpoint"
+                },
+                {
+                  "mAdditionalBonusAtThisLevel": 4.0,
+                  "mLevel": 11,
+                  "~class": "Breakpoint"
+                },
+                {
+                  "mAdditionalBonusAtThisLevel": 4.0,
+                  "mLevel": 13,
+                  "~class": "Breakpoint"
+                },
+                {
+                  "mAdditionalBonusAtThisLevel": 4.0,
+                  "mLevel": 15,
+                  "~class": "Breakpoint"
+                },
+                {
+                  "mAdditionalBonusAtThisLevel": 4.0,
+                  "mLevel": 17,
+                  "~class": "Breakpoint"
+                }
               ],
-              "~class": "ByCharLevelFormulaCalculationPart"
-            },
-            {
-              "mCoefficient": 0.05000000074505806,
-              "mStatFormula": 2,
-              "~class": "StatByCoefficientCalculationPart"
+              "mLevel1Value": 3.0,
+              "~class": "ByCharLevelBreakpointsCalculationPart"
             }
           ],
           "~class": "GameCalculation"
+        },
+        "TotalDamageCalc": {
+          "mModifiedGameCalculation": "0x7816c04b",
+          "mMultiplier": {
+            "mNumber": 3.0,
+            "~class": "NumberCalculationPart"
+          },
+          "~class": "GameCalculationModified"
         }
       },
       "~class": "SpellDataResource"
@@ -107,7 +119,7 @@
     "mScriptName": "Jade_LuluFaerieBurn",
     "mSpell": {
       "mImgIconName": [
-        "ASSETS/Characters/Jade_Lulu/HUD/Icons2D/Jade_Lulu_CommandPix.project_jade.dds"
+        "ASSETS/Characters/Jade_Lulu/HUD/Icons2D/Jade_Lulu_CommandPix.dds"
       ],
       "~class": "SpellDataResource"
     },
@@ -122,7 +134,7 @@
     "mScriptName": "Jade_LuluFaerieShield",
     "mSpell": {
       "mImgIconName": [
-        "ASSETS/Characters/Jade_Lulu/HUD/Icons2D/Jade_Lulu_CommandPix.project_jade.dds"
+        "ASSETS/Characters/Jade_Lulu/HUD/Icons2D/Jade_Lulu_CommandPix.dds"
       ],
       "~class": "SpellDataResource"
     },
@@ -142,7 +154,7 @@
     "mScriptName": "Jade_LuluQSlow",
     "mSpell": {
       "mImgIconName": [
-        "ASSETS/Characters/Jade_Lulu/HUD/Icons2D/Jade_Lulu_Glitterbolt.project_jade.dds"
+        "ASSETS/Characters/Jade_Lulu/HUD/Icons2D/Jade_Lulu_Glitterbolt.dds"
       ],
       "~class": "SpellDataResource"
     },
@@ -287,13 +299,13 @@
         }
       ],
       "mHitBoneName": "root",
-      "mHitEffectKey": "0x65e0f902",
+      "mHitEffectKey": "Jade_Lulu_Pix_BA_tar",
       "mHitEffectOrientType": 2,
       "mImgIconName": [
-        "ASSETS/Characters/Jade_Lulu/HUD/Icons2D/Jade_Lulu_PixFaerieCompanion.project_jade.dds"
+        "ASSETS/Characters/Jade_Lulu/HUD/Icons2D/Jade_Lulu_PixFaerieCompanion.dds"
       ],
       "mLineWidth": 30.0,
-      "mMissileEffectKey": "0xbbd46c76",
+      "mMissileEffectKey": "Jade_Lulu_Pix_BA_mis",
       "mMissileSpec": {
         "behaviors": [
           {
@@ -536,7 +548,7 @@
         "19": "Play_sfx_Lulu_LuluWBuff_OnBuffDeactivate"
       },
       "mImgIconName": [
-        "ASSETS/Characters/Jade_Lulu/HUD/Icons2D/Jade_Lulu_Whimsy.project_jade.dds"
+        "ASSETS/Characters/Jade_Lulu/HUD/Icons2D/Jade_Lulu_Whimsy.dds"
       ],
       "~class": "SpellDataResource"
     },
@@ -748,7 +760,7 @@
     "mScriptName": "Jade_LuluRBoom",
     "mSpell": {
       "mImgIconName": [
-        "ASSETS/Characters/Jade_Lulu/HUD/Icons2D/Jade_Lulu_GiantGrowth.project_jade.dds"
+        "ASSETS/Characters/Jade_Lulu/HUD/Icons2D/Jade_Lulu_GiantGrowth.dds"
       ],
       "~class": "SpellDataResource"
     },
@@ -920,7 +932,7 @@
           "~class": "SpellEffectAmount"
         }
       ],
-      "mHitEffectKey": "0x6a93acbc",
+      "mHitEffectKey": "Jade_Lulu_W_tar_01",
       "mImgIconName": [
         "ASSETS/Characters/Fiddlesticks/HUD/Icons2D/fiddlestick_puppywind.dds"
       ],
@@ -969,7 +981,7 @@
     "mScriptName": "Jade_LuluRSlow",
     "mSpell": {
       "mImgIconName": [
-        "ASSETS/Characters/Jade_Lulu/HUD/Icons2D/Jade_Lulu_GiantGrowth.project_jade.dds"
+        "ASSETS/Characters/Jade_Lulu/HUD/Icons2D/Jade_Lulu_GiantGrowth.dds"
       ],
       "~class": "SpellDataResource"
     },
@@ -1143,7 +1155,7 @@
         "ASSETS/Characters/Morgana/HUD/Icons2D/FallenAngel_DarkBinding.dds"
       ],
       "mLineWidth": 1.0,
-      "mMissileEffectKey": "0x4cfd1561",
+      "mMissileEffectKey": "Jade_Lulu_P_Faerie_Flash_01",
       "mMissileSpec": {
         "behaviors": [
           {
@@ -1346,7 +1358,7 @@
           "~class": "SpellEffectAmount"
         }
       ],
-      "mHitEffectKey": "0x6a93acbc",
+      "mHitEffectKey": "Jade_Lulu_W_tar_01",
       "mImgIconName": [
         "ASSETS/Characters/Fiddlesticks/HUD/Icons2D/fiddlestick_puppywind.dds"
       ],
@@ -1465,9 +1477,9 @@
         "~class": "SpellDataResourceClient"
       },
       "mHitBoneName": "C_BuffBone_Glb_Center_Loc",
-      "mHitEffectKey": "0x65c073d0",
+      "mHitEffectKey": "Jade_Lulu_BA_tar",
       "mHitEffectOrientType": 2,
-      "mMissileEffectKey": "0x78ff4c94",
+      "mMissileEffectKey": "Jade_Lulu_BA_mis",
       "mMissileSpec": {
         "behaviors": [
           {
@@ -1576,9 +1588,9 @@
         "~class": "SpellDataResourceClient"
       },
       "mHitBoneName": "C_BuffBone_Glb_Center_Loc",
-      "mHitEffectKey": "0x65c073d0",
+      "mHitEffectKey": "Jade_Lulu_BA_tar",
       "mHitEffectOrientType": 2,
-      "mMissileEffectKey": "0x78ff4c94",
+      "mMissileEffectKey": "Jade_Lulu_BA_mis",
       "mMissileSpec": {
         "behaviors": [
           {
@@ -1689,7 +1701,7 @@
       "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
       "mHitEffectName": "doesnotexist.troy",
       "mHitEffectOrientType": 2,
-      "mMissileEffectKey": "0x78ff4c94",
+      "mMissileEffectKey": "Jade_Lulu_BA_mis",
       "mMissileSpec": {
         "behaviors": [
           {
@@ -1966,7 +1978,7 @@
         }
       ],
       "mImgIconName": [
-        "ASSETS/Characters/Jade_Lulu/HUD/Icons2D/Jade_Lulu_CommandPix.project_jade.dds"
+        "ASSETS/Characters/Jade_Lulu/HUD/Icons2D/Jade_Lulu_CommandPix.dds"
       ],
       "mSpellCalculations": {
         "TotalDamage": {
@@ -2059,28 +2071,15 @@
       },
       "DataValues": [
         {
-          "name": "MinionMod",
+          "name": "BaseDamage",
           "values": [
-            0.699999988079071,
-            0.699999988079071,
-            0.699999988079071,
-            0.699999988079071,
-            0.699999988079071,
-            0.699999988079071,
-            0.699999988079071
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "DoubleHitBonus",
-          "values": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
+            35.0,
+            80.0,
+            125.0,
+            170.0,
+            215.0,
+            260.0,
+            305.0
           ],
           "~class": "SpellDataValue"
         },
@@ -2094,19 +2093,6 @@
             0.5,
             0.5,
             0.5
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "BaseDamage",
-          "values": [
-            25.0,
-            80.0,
-            125.0,
-            170.0,
-            215.0,
-            260.0,
-            235.0
           ],
           "~class": "SpellDataValue"
         },
@@ -2126,44 +2112,14 @@
         {
           "name": "SlowDuration",
           "values": [
-            2.0,
+            0.75,
             1.0,
             1.25,
             1.5,
             1.75,
             2.0,
-            2.0
+            2.25
           ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "SlowDecayTicks",
-          "values": [
-            8.0,
-            8.0,
-            8.0,
-            8.0,
-            8.0,
-            8.0,
-            8.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "MaxTicks",
-          "values": [
-            3.0,
-            4.0,
-            5.0,
-            6.0,
-            7.0,
-            8.0,
-            9.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "AttactkSpeedMod",
           "~class": "SpellDataValue"
         }
       ],
@@ -2313,12 +2269,12 @@
                   "~class": "TooltipInstanceListElement"
                 },
                 {
-                  "type": "Cost",
+                  "nameOverride": "Slow Duration",
+                  "type": "SlowDuration",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
-                  "nameOverride": "Slow Duration",
-                  "type": "SlowDuration",
+                  "type": "Cost",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -2329,7 +2285,7 @@
           "mLocKeys": {
             "keyName": "Glitterlance",
             "keySummary": "Pix and Lulu each fire a bolt of magical energy that heavily slows all enemies it hits. An enemy can only be damaged by one bolt.",
-            "keyTooltip": "<mainText>Lulu and Pix each fire a piercing bolt dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>, enemies hit are <status>Slowed</status> by @SlowAmount*-100@% for @SlowDuration@ second(s). This slow decays over time to a minimum of @MinMoveSpeedMod@% (Minimum is capped at 80%).<br><br>An enemy can only be damaged by one bolt.</mainText>"
+            "keyTooltip": "Lulu and Pix each fire a piercing bolt dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>, enemies hit are <status>Slowed</status> by @SlowAmount*-100@%, decaying over @SlowDuration@ seconds.<br><br>An enemy can only be damaged by one bolt."
           },
           "mObjectName": "Jade_LuluQ",
           "~class": "TooltipInstanceSpell"
@@ -2355,7 +2311,7 @@
         -1
       ],
       "mImgIconName": [
-        "ASSETS/Characters/Jade_Lulu/HUD/Icons2D/Jade_Lulu_Glitterbolt.project_jade.dds"
+        "ASSETS/Characters/Jade_Lulu/HUD/Icons2D/Jade_Lulu_Glitterbolt.dds"
       ],
       "mLineWidth": 80.0,
       "mRequiredUnitTags": {
@@ -2365,33 +2321,6 @@
         "~class": "ObjectTags"
       },
       "mSpellCalculations": {
-        "0x5c9388bf": {
-          "mFormulaParts": [
-            {
-              "mCoefficient": 0.15000000596046448,
-              "mStatFormula": 2,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "BonusMissileDamage": {
-          "mFormulaParts": [
-            {
-              "mDataValue": "baseDamage",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mDataValue": "APRatio",
-              "~class": "StatByNamedDataValueCalculationPart"
-            }
-          ],
-          "mMultiplier": {
-            "mDataValue": "DoubleHitBonus",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          "~class": "GameCalculation"
-        },
         "TotalDamage": {
           "mFormulaParts": [
             {
@@ -2677,7 +2606,7 @@
         "~class": "SpellDataResourceClient"
       },
       "mImgIconName": [
-        "ASSETS/Characters/Jade_Lulu/HUD/Icons2D/Jade_Lulu_GiantGrowth.project_jade.dds"
+        "ASSETS/Characters/Jade_Lulu/HUD/Icons2D/Jade_Lulu_GiantGrowth.dds"
       ],
       "mRequiredUnitTags": {
         "mObjectTagList": [
@@ -2858,6 +2787,11 @@
             "LevelUp": {
               "Elements": [
                 {
+                  "nameOverride": "Bonus Ability Power",
+                  "type": "APBoost",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
                   "nameOverride": "Polymorph Duration",
                   "type": "PolymorphDuration",
                   "typeIndex": 3,
@@ -2869,11 +2803,6 @@
                 },
                 {
                   "type": "Cost",
-                  "~class": "TooltipInstanceListElement"
-                },
-                {
-                  "nameOverride": "Bonus Ability Power",
-                  "type": "APBoost",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -2892,96 +2821,8 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.6000000238418579,
-      "mCoefficient2": 0.05000000074505806,
-      "mEffectAmount": [
-        {
-          "value": [
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            1.0,
-            1.5,
-            1.75,
-            2.0,
-            2.25,
-            2.5,
-            2.200000047683716
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            -60.0,
-            -60.0,
-            -60.0,
-            -60.0,
-            -60.0,
-            -60.0,
-            -60.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            2.75,
-            3.0,
-            3.25,
-            3.5,
-            3.75,
-            4.0,
-            4.25
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.009999999776482582,
-            0.009999999776482582,
-            0.009999999776482582,
-            0.009999999776482582,
-            0.009999999776482582,
-            0.009999999776482582,
-            0.009999999776482582
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.20000000298023224,
-            0.20000000298023224,
-            0.22499999403953552,
-            0.25,
-            0.2750000059604645,
-            0.30000001192092896,
-            0.30000001192092896
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mImgIconName": [
-        "ASSETS/Characters/Jade_Lulu/HUD/Icons2D/Jade_Lulu_Whimsy.project_jade.dds"
+        "ASSETS/Characters/Jade_Lulu/HUD/Icons2D/Jade_Lulu_Whimsy.dds"
       ],
       "mMinimapIconDisplayFlag": 0,
       "mRequiredUnitTags": {
