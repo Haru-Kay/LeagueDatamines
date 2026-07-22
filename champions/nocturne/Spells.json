@@ -783,6 +783,71 @@
             0.5
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "HealingAPRatio",
+          "values": [
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "HealLevel1Value",
+          "values": [
+            13.0,
+            13.0,
+            13.0,
+            13.0,
+            13.0,
+            13.0,
+            13.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "HealLevel18Value",
+          "values": [
+            32.0,
+            32.0,
+            32.0,
+            32.0,
+            32.0,
+            32.0,
+            32.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "TotalDamageNoCritADRatio",
+          "values": [
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "TotalDamageCritADRatio",
+          "values": [
+            1.100000023841858,
+            1.100000023841858,
+            1.100000023841858,
+            1.100000023841858,
+            1.100000023841858,
+            1.100000023841858,
+            1.100000023841858
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -798,6 +863,58 @@
                 9.0,
                 9.0,
                 9.0
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "HealLevel1Value",
+              "values": [
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "HealLevel18Value",
+              "values": [
+                50.0,
+                50.0,
+                50.0,
+                50.0,
+                50.0,
+                50.0,
+                50.0
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "TotalDamageNoCritADRatio",
+              "values": [
+                1.2999999523162842,
+                1.2999999523162842,
+                1.2999999523162842,
+                1.2999999523162842,
+                1.2999999523162842,
+                1.2999999523162842,
+                1.2999999523162842
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "TotalDamageCritADRatio",
+              "values": [
+                1.2000000476837158,
+                1.2000000476837158,
+                1.2000000476837158,
+                1.2000000476837158,
+                1.2000000476837158,
+                1.2000000476837158,
+                1.2000000476837158
               ],
               "~class": "SpellDataValue"
             }
@@ -845,9 +962,9 @@
         "TotalDamageCrit": {
           "mFormulaParts": [
             {
-              "mCoefficient": 1.100000023841858,
+              "mDataValue": "TotalDamageCritADRatio",
               "mStat": 2,
-              "~class": "StatByCoefficientCalculationPart"
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -855,9 +972,9 @@
         "TotalDamageNoCrit": {
           "mFormulaParts": [
             {
-              "mCoefficient": 1.2000000476837158,
+              "mDataValue": "TotalDamageNoCritADRatio",
               "mStat": 2,
-              "~class": "StatByCoefficientCalculationPart"
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -865,13 +982,13 @@
         "TotalHealing": {
           "mFormulaParts": [
             {
-              "mEndValue": 30.0,
-              "mStartValue": 13.0,
-              "~class": "ByCharLevelInterpolationCalculationPart"
+              "0x589a59c": "HealLevel1Value",
+              "0xb65bc23": "HealLevel18Value",
+              "~class": "0xee18a47b"
             },
             {
-              "mCoefficient": 0.30000001192092896,
-              "~class": "StatByCoefficientCalculationPart"
+              "mDataValue": "HealingAPRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -1022,6 +1139,18 @@
             80.0,
             80.0,
             80.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        "cherry": {
+          "value": [
+            100.0,
+            100.0,
+            70.0,
+            40.0,
+            0.0,
+            0.0,
+            0.0
           ],
           "~class": "SpellEffectAmount"
         }

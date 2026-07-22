@@ -14,7 +14,7 @@
       "Calc_AF": {
         "mFormulaParts": [
           {
-            "mEndValue": 50.0,
+            "mEndValue": 75.0,
             "mStartValue": 25.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           }
@@ -24,8 +24,8 @@
       "Calc_Defenses": {
         "mFormulaParts": [
           {
-            "mEndValue": 8.0,
-            "mStartValue": 4.0,
+            "mEndValue": 10.0,
+            "mStartValue": 5.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           }
         ],
@@ -71,22 +71,6 @@
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/IAmTheJuggernaut_small.tex",
       "ASSETS/UX/Kiwi/Augments/Icons/IAmTheJuggernaut_large.tex"
-    ]
-  },
-  {
-    "id": 1002,
-    "apiName": "ARAM_ApexInventor",
-    "name": "Apex Inventor",
-    "rarity": "Gold",
-    "desc": "Gain <scaleBonus>@ItemHaste@ Item Haste</scaleBonus> (equivalent to @TooltipCDR@% Item CDR).<br><br><rules>Item Haste reduces the cooldown %i:cooldown% of all Item Abilities.</rules>",
-    "tooltip": "Gain <scaleBonus>@ItemHaste@ Item Haste</scaleBonus> (equivalent to @TooltipCDR@% Item CDR).<br><br><rules>Item Haste reduces the cooldown %i:cooldown% of all Item Abilities.</rules>",
-    "dataValues": {
-      "ItemHaste": 100.0,
-      "TooltipCDR": 50.0
-    },
-    "icons": [
-      "ASSETS/UX/Cherry/Augments/Icons/ApexInventor_small.tex",
-      "ASSETS/UX/Cherry/Augments/Icons/ApexInventor_large.tex"
     ]
   },
   {
@@ -366,8 +350,8 @@
       "Damage": {
         "mFormulaParts": [
           {
-            "mEndValue": 210.0,
-            "mStartValue": 70.0,
+            "mEndValue": 250.0,
+            "mStartValue": 90.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           },
           {
@@ -2659,7 +2643,7 @@
       "CritChance": 0.25,
       "MaxStack": 10.0,
       "BuffDuration": 6.0,
-      "MaxLevel": 3.0,
+      "MaxLevel": 2.0,
       "Cooldown": 4.0
     },
     "add": {
@@ -3020,8 +3004,8 @@
       "DegreesPerSec": 40.0,
       "BeamWidth": 175.0,
       "APRatio": 0.5,
-      "HealAPRatio": 0.699999988079071,
-      "bHealthRatio": 0.25,
+      "HealAPRatio": 0.6000000238418579,
+      "bHealthRatio": 0.20000000298023224,
       "MoveSpeedMod": 0.20000000298023224
     },
     "calculations": {
@@ -3318,8 +3302,8 @@
       "Damage": {
         "mFormulaParts": [
           {
-            "mEndValue": 100.0,
-            "mStartValue": 20.0,
+            "mEndValue": 85.0,
+            "mStartValue": 15.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           }
         ],
@@ -4617,7 +4601,7 @@
     "dataValues": {
       "FlatPenConversion": 2.0,
       "PercentPenConversion": 5.0,
-      "StunDuration": 1.5,
+      "StunDuration": 0.5,
       "MSModifier": -350.0
     },
     "calculations": {
@@ -4707,7 +4691,8 @@
       "TibbersHealth": {
         "mFormulaParts": [
           {
-            "mEndValue": 4500.0,
+            "mEndValue": 6500.0,
+            "mStartValue": 1000.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           },
           {
@@ -5257,7 +5242,7 @@
     "name": "Chain Reaction",
     "rarity": "Prismatic",
     "desc": "If a target <status>Knocked Back</status> by {{SpellName}} hits another champion, they are <status>Knocked Up</status> and dealt <magicDamage>damage</magicDamage>. When colliding with terrain, the <status>Knock Up</status> duration is extended and they are dealt <magicDamage>bonus damage</magicDamage>.",
-    "tooltip": "If a champion you <status>Knock Back</status> with {{SpellName}} hits another champion, they are <status>Knocked Up</status> for @ChampCollideKnockupDuration@ seconds and are dealt <magicDamage>@EnemyHitDamage@ magic damage</magicDamage>. If enemy champions collide with terrain, they are <status>Knocked Up</status> for @MinKnockUpDuration@ seconds and are dealt <magicDamage>@WallCollisionDamage@ magic damage</magicDamage>.<br><br>Enemies Knocked Up: @f1@<br>Walls Hit: @f2@<br><br><rules>Knock Up Duration and Height scale with your spell's cooldown.</rules>",
+    "tooltip": "If a champion you <status>Knock Back</status> with {{SpellName}} hits another champion, they are <status>Knocked Up</status> for @ChampCollideKnockupDuration@ seconds and are dealt <magicDamage>@EnemyHitDamage@ magic damage</magicDamage>. If enemy champions collide with terrain, they are <status>Knocked Up</status> for @MinKnockUpDuration@ seconds and are dealt <magicDamage>@WallCollisionDamage@ magic damage</magicDamage>.<br><br>Enemies Knocked Up: @f1@<br>Walls Hit: @f2@<br><br><rules>Knock Up Duration and Height scale with your spell's cooldown.<br><rules>Damage is increased to @Ult_DamageAmp@ for Ultimate Abilities.</rules></rules>",
     "dataValues": {
       "WallStunDuration": 0.5,
       "MinKnockUpHeight": 1.2300000190734863,
@@ -5273,6 +5258,16 @@
       "ChampCollideKnockupDuration": 0.5
     },
     "calculations": {
+      "0x166093f6": {
+        "mDisplayAsPercent": true,
+        "mFormulaParts": [
+          {
+            "mNumber": 2.5,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
       "EnemyHitDamage": {
         "mFormulaParts": [
           {
@@ -5479,7 +5474,7 @@
     "desc": "While in combat, <keywordMajor>Autocast</keywordMajor> a circular axe that deals <physicalDamage>physical damage</physicalDamage>. Enemies on the outer edge take additional damage and <healing>heal</healing> you.",
     "tooltip": "<keywordMajor>Autocast</keywordMajor> a circular axe swing that deals <physicalDamage>physical damage</physicalDamage> every @Cooldown@ seconds in combat. Enemies along the outer edge take increased damage (@FullDamage@) and <healing>heal you @BaseHealPercent*100@% of your Missing Health</healing>. Each enemy hit along the outer edge reduces this ability's cooldown by 10% down to a minimum of 3 seconds.",
     "dataValues": {
-      "BaseHealPercent": 0.15000000596046448,
+      "BaseHealPercent": 0.18000000715255737,
       "InnerRadiusDamageMod": 0.5,
       "Cooldown": 8.0,
       "WindupLength": 1.25,
@@ -5976,7 +5971,7 @@
     "tooltip": "Striking enemy champions with Attacks or Abilities grants you a stack of <attention>Revivemaxxing</attention> for @Stacks_Duration@ seconds (max: @Stacks_Max@). At max stacks become <danger>Hellbent</danger>.<br><br><danger>Hellbent</danger>: Upon dying, <attention>revive</attention> over the course of @Revive_Duration@ seconds at <scaleHealth>@Calc_Revive_Max_Health@ max Health</scaleHealth>. Afterwards, you gain <attention>@Calc_AdaptiveForce@ Adaptive Force</attention>, <speed>@Calc_MoveSpeed@ Move Speed towards enemy champions</speed>, and <lifeSteal>@Calc_Omnivamp@ Omnivamp</lifeSteal> for @Buff_Duration@ seconds.<br><br>This has a @Cooldown@ second cooldown.",
     "dataValues": {
       "Revive_Duration": 4.0,
-      "Cooldown": 120.0,
+      "Cooldown": 90.0,
       "Buff_Duration": 15.0,
       "Stacks_Duration": 6.0,
       "Stacks_Max": 10.0
@@ -6130,7 +6125,7 @@
     "desc": "Occasionally send out squishy, slappy hands towards all nearby enemy champions, tethering them. Your next attack will pull in all tethered enemies.",
     "tooltip": "Occasionally send out Squishy Slappy Hands that latch on to all nearby enemy champions for @Buff_Duration@ seconds. While you're latched onto enemies, your next attack will <status>pull</status> them to you, deal <magicDamage>@Calc_Damage@ magic damage</magicDamage>, and <status>stun them for @Stun_Duration@ seconds</status>. You gain <shield>@Calc_Shield@ shield</shield> for @Shield_Duration@ seconds per <status>pulled</status> enemy.<br><br>This has a @Cooldown@ second cooldown.<br><br><rules>Enemies Yoinked: @f1.0@<br>Damage Dealt: @f2.0@<br>Shield Gained: @f3.0@</rules>",
     "dataValues": {
-      "Cooldown": 45.0,
+      "Cooldown": 35.0,
       "Buff_Duration": 4.0,
       "Cast_Radius": 450.0,
       "Radius": 800.0,
@@ -6281,32 +6276,6 @@
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/LightningStrikes_small.tex",
       "ASSETS/UX/Cherry/Augments/Icons/LightningStrikes_large.tex"
-    ]
-  },
-  {
-    "id": 2127,
-    "apiName": "ForgedByTheMaster",
-    "name": "Forged By The Master",
-    "rarity": "Silver",
-    "desc": "Increase your Item and Augment damage by <attention>@Calc_Damage_Amp@</attention>.",
-    "tooltip": "Your <attention>Item</attention> and <attention>Augment</attention> damage are increased by <attention>@Calc_Damage_Amp@</attention>.<br><br><rules>Bonus Damage: @f1.0@</rules>",
-    "calculations": {
-      "Calc_Damage_Amp": {
-        "mDisplayAsPercent": true,
-        "mExpandedTooltipCalculationDisplay": 5,
-        "mFormulaParts": [
-          {
-            "mNumber": 0.44999998807907104,
-            "~class": "NumberCalculationPart"
-          }
-        ],
-        "mSimpleTooltipCalculationDisplay": 5,
-        "~class": "GameCalculation"
-      }
-    },
-    "icons": [
-      "ASSETS/UX/Kiwi/Augments/Icons/ForgedByTheMaster_small.tex",
-      "ASSETS/UX/Kiwi/Augments/Icons/ForgedByTheMaster_large.tex"
     ]
   },
   {
@@ -6546,8 +6515,8 @@
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
-            "mEndValue": 10.0,
-            "mStartValue": 5.0,
+            "mEndValue": 12.0,
+            "mStartValue": 7.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           }
         ],

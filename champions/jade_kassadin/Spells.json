@@ -1908,6 +1908,19 @@
             110.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatio",
+          "values": [
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -2024,6 +2037,34 @@
         "ASSETS/UX/Jade/S3Icons/SameSized/Kassadin_Riftwalk.dds"
       ],
       "mSpellCalculations": {
+        "0x40d36ab1": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "Damage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mBuffName": "0xf791e40e",
+              "mDataValue": "Damage",
+              "~class": "BuffCounterByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "0x50a3f8e1": {
+          "mFormulaParts": [
+            {
+              "mBuffName": "0xf791e40e",
+              "mDataValue": "Damage",
+              "~class": "BuffCounterByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
         "TotalDamage": {
           "mFormulaParts": [
             {
@@ -2031,8 +2072,8 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.699999988079071,
-              "~class": "StatByCoefficientCalculationPart"
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"

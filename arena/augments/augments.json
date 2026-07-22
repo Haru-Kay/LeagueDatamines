@@ -899,7 +899,7 @@
         1.2000000476837158
       ],
       "PerwaveDamageCD": 0.5,
-      "MaxLevel": 3.0,
+      "MaxLevel": 2.0,
       "MaxLevelMultiCastDelay": 1.0
     },
     "calculations": {
@@ -2140,14 +2140,14 @@
     "dataValues": {
       "Cooldown": 7.0,
       "MaxLevel": 2.0,
-      "BonusCastCount": [
-        0.0,
-        0.0,
-        0.0,
+      "Missiles": [
         1.0,
         1.0,
-        1.0,
-        1.0
+        2.0,
+        3.0,
+        2.0,
+        2.0,
+        2.0
       ],
       "BADRatio": 0.2199999988079071,
       "APRatio": 0.15000000596046448,
@@ -2160,7 +2160,8 @@
         100.0,
         100.0
       ],
-      "BonusPerLevel": 9.5
+      "BonusPerLevel": 9.5,
+      "Range": 1450.0
     },
     "calculations": {
       "Damage": {
@@ -3058,7 +3059,7 @@
         18.0
       ],
       "MSToASConversion": 0.0010000000474974513,
-      "MaxLevel": 3.0
+      "MaxLevel": 2.0
     },
     "calculations": {
       "MSToASConversionCalc": {
@@ -4334,24 +4335,24 @@
       "Cooldown": 6.0,
       "PerwaveDamageCD": 0.5,
       "APRatio": [
-        0.20000000298023224,
-        0.20000000298023224,
         0.30000001192092896,
+        0.30000001192092896,
+        0.4000000059604645,
         0.4000000059604645,
         0.4000000059604645,
         0.4000000059604645,
         0.4000000059604645
       ],
       "BonusADRatio": [
-        1.4500000476837158,
-        1.4500000476837158,
         1.649999976158142,
+        1.649999976158142,
+        1.850000023841858,
         1.850000023841858,
         1.850000023841858,
         1.850000023841858,
         1.850000023841858
       ],
-      "MaxLevel": 3.0,
+      "MaxLevel": 2.0,
       "MaxLevelMultiCastDelay": 0.5,
       "ExplosionDelayTimeMax": 1.0,
       "ExplosionDelayDistanceMin": 50.0,
@@ -4741,7 +4742,7 @@
       "LaserLength": [
         600.0,
         600.0,
-        800.0,
+        1000.0,
         1000.0,
         1000.0,
         1000.0,
@@ -4752,7 +4753,7 @@
       "APRatio": 0.09000000357627869,
       "ADRatioTooltip": 0.5600000023841858,
       "APRatioTooltip": 0.36000001430511475,
-      "MaxLevel": 3.0,
+      "MaxLevel": 2.0,
       "PercentageGrowth": 0.009999999776482582,
       "MaxLevelGrowthDuration": 0.6000000238418579
     },
@@ -6578,6 +6579,7 @@
     "apiName": "SlowAndSteady",
     "name": "Slow and Steady",
     "rarity": "Gold",
+    "disabled": true,
     "desc": "Your <speed>Attack Speed</speed> can not go above @StaticRatio@. All Bonus <speed>Attack Speed</speed> is converted to <scaleAD>Attack Damage</scaleAD>.<br>",
     "maxLevelTooltip": "At max level gain <lifeSteal>@Vamp*100@% Lifesteal</lifeSteal>.",
     "tooltip": "Your <speed>Attack Speed</speed> can not go above @StaticRatio@. All bonus <speed>Attack Speed</speed> is converted to <scaleAD>Attack Damage</scaleAD> (<scaleAD>@ADPerAS@ AD</scaleAD> per <speed>1% AS</speed>).<br><br>Currently Gaining: @f1@ <scaleAD>Attack Damage</scaleAD>",
@@ -8030,12 +8032,12 @@
       ],
       "StartingBees": [
         0.0,
-        1.0,
         2.0,
-        3.0,
         4.0,
-        5.0,
-        6.0
+        6.0,
+        8.0,
+        10.0,
+        12.0
       ],
       "MaxLevel": 3.0,
       "BaseDamageMax": 120.0,
@@ -8056,9 +8058,8 @@
             "~class": "StatByCoefficientCalculationPart"
           },
           {
-            "mCoefficient": 0.20000000298023224,
+            "mCoefficient": 0.25,
             "mStat": 2,
-            "mStatFormula": 2,
             "~class": "StatByCoefficientCalculationPart"
           }
         ],
@@ -9154,9 +9155,9 @@
       "Damage": [
         100.0,
         100.0,
-        200.0,
-        250.0,
-        250.0,
+        300.0,
+        500.0,
+        500.0,
         250.0,
         250.0
       ],
@@ -9164,7 +9165,7 @@
       "MaxDistance": 550.0,
       "KnockTowardsDistance": 250.0,
       "StandAsideRange": 900.0,
-      "MaxLevel": 3.0,
+      "MaxLevel": 2.0,
       "ClawCount": [
         1.0,
         1.0,
@@ -9939,7 +9940,7 @@
         60.0
       ],
       "BuffDuration": 6.0,
-      "MaxLevel": 3.0,
+      "MaxLevel": 2.0,
       "Cooldown": 4.0
     },
     "add": {
@@ -9967,22 +9968,22 @@
     "tooltip": "Gain <magicDamage>@APPerLevel@ Ability Power</magicDamage>, <speed>@MSMod*100@% Movement Speed</speed>, and <omnivamp>@MaxOmnivamp*100@% Omnivamp</omnivamp> based on <scaleHealth>missing Health</scaleHealth>. Spell casts cost @SpellHealthCost*100@% of your current Health.<br><br><rules>Max benefit at @HealthThresholdTT*100@% Health.</rules><br>",
     "dataValues": {
       "MaxOmnivamp": [
-        0.15000000596046448,
-        0.15000000596046448,
-        0.25,
-        0.25,
-        0.25,
-        0.25,
-        0.25
+        0.20000000298023224,
+        0.20000000298023224,
+        0.3499999940395355,
+        0.4000000059604645,
+        0.4000000059604645,
+        0.4000000059604645,
+        0.4000000059604645
       ],
       "MSMod": [
         0.5,
         0.5,
-        0.75,
-        0.75,
-        0.75,
-        0.75,
-        0.75
+        1.0,
+        1.25,
+        1.25,
+        1.25,
+        1.25
       ],
       "SpellHealthCost": 0.05000000074505806,
       "HealthThresholdTT": 0.30000001192092896,
