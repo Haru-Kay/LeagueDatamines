@@ -1782,13 +1782,13 @@
         {
           "name": "ChampionDamageMultiplier",
           "values": [
-            1.25,
-            1.25,
-            1.25,
-            1.25,
-            1.25,
-            1.25,
-            1.25
+            2.25,
+            2.25,
+            2.25,
+            2.25,
+            2.25,
+            2.25,
+            2.25
           ],
           "~class": "SpellDataValue"
         },
@@ -1971,12 +1971,25 @@
         "ASSETS/UX/Jade/S3Icons/SameSized/KogMaw_LivingArtillery.dds"
       ],
       "mSpellCalculations": {
-        "0x5d79b569": {
-          "0x72c5c2a8": 1,
+        "0x3196f833": {
           "mFormulaParts": [
             {
               "mDataValue": "Damage",
               "~class": "NamedDataValueCalculationPart"
+            }
+          ],
+          "mMultiplier": {
+            "mDataValue": "ChampionDamageMultiplier",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "~class": "GameCalculation"
+        },
+        "0x5d79b569": {
+          "0x72c5c2a8": 1,
+          "mFormulaParts": [
+            {
+              "mSpellCalculationKey": "0x3196f833",
+              "~class": "0xf3cbe7b2"
             },
             {
               "mDataValue": "APRatio",
@@ -1989,10 +2002,6 @@
               "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
-          "mMultiplier": {
-            "mDataValue": "ChampionDamageMultiplier",
-            "~class": "NamedDataValueCalculationPart"
-          },
           "~class": "GameCalculation"
         },
         "TotalDamage": {

@@ -700,7 +700,7 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "BonusMonsterDamage",
+          "name": "TotalMonsterDamage",
           "values": [
             200.0,
             260.0,
@@ -828,7 +828,7 @@
                 },
                 {
                   "nameOverride": "Bonus Monster Damage",
-                  "type": "BonusMonsterDamage",
+                  "type": "TotalMonsterDamage",
                   "typeIndex": 3,
                   "~class": "TooltipInstanceListElement"
                 },
@@ -901,10 +901,14 @@
         "~class": "MissileSpecification"
       },
       "mSpellCalculations": {
-        "0xfa0ccfe4": {
+        "MonsterDamageCalc": {
           "mFormulaParts": [
             {
-              "mDataValue": "BonusMonsterDamage",
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "TotalMonsterDamage",
               "~class": "NamedDataValueCalculationPart"
             },
             {
@@ -925,7 +929,6 @@
               "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
-          "mSimpleTooltipCalculationDisplay": 6,
           "~class": "GameCalculation"
         }
       },
