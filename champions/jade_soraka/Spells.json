@@ -1,0 +1,1321 @@
+{
+  "0x5a840f56": {
+    "ObjectName": "Jade_SorakaPassive_Buff",
+    "mBuff": {
+      "mDescription": "<titleLeft>Consecration</titleLeft><mainText>This unit has 16 increased Magic Resist.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_SorakaPassive_Buff",
+    "mSpell": {
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Soraka_Consecration.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x985fedb6": {
+    "ObjectName": "Jade_SorakaPassive",
+    "mScriptName": "Jade_SorakaPassive",
+    "mSpell": {
+      "0xe1136d1": {
+        "0xa3e0478": 1000.0,
+        "values": [
+          1000.0,
+          1000.0,
+          1000.0,
+          1000.0,
+          1000.0,
+          1000.0,
+          1000.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "MovementSpeed",
+          "values": [
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "HealthThreshold",
+          "values": [
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "castRange": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0
+      ],
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyName": "Consecration",
+            "keySummary": "Increases surrounding allies' Magic Resist by 16.",
+            "keyTooltip": "<mainText>Soraka increases the <scaleMR>Magic Resist</scaleMR> of herself and nearby allied champions by 16.</mainText>"
+          },
+          "mObjectName": "Jade_SorakaPassive",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Soraka_Consecration.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Soraka/Spells/Jade_SorakaBasicAttack": {
+    "ObjectName": "Jade_SorakaBasicAttack",
+    "mScriptName": "Jade_SorakaBasicAttack",
+    "mSpell": {
+      "0xe1136d1": {
+        "0xa3e0478": 622.7000122070313,
+        "values": [
+          622.7000122070313,
+          622.7000122070313,
+          622.7000122070313,
+          622.7000122070313,
+          622.7000122070313,
+          622.7000122070313,
+          622.7000122070313
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Soraka_SorakaBasicAttack_OnCast",
+        "13": "Play_sfx_Soraka_SorakaBasicAttack_OnHit",
+        "16": "Play_sfx_Soraka_SorakaBasicAttack_OnMissileLaunch"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 8.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        622.7000122070313,
+        622.7000122070313,
+        622.7000122070313,
+        622.7000122070313,
+        622.7000122070313,
+        622.7000122070313,
+        622.7000122070313
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 5327,
+      "mAlternateName": "Jade_SorakaBasicAttack",
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "Buffbone_Glb_Ground_Loc",
+      "mHitEffectKey": "Jade_Soraka_BA_tar",
+      "mMissileEffectKey": "Jade_Soraka_BA_mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 1000.0,
+          "mStartBoneName": "Buffbone_Cstm_Weapon",
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 1000.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Soraka/Spells/Jade_SorakaBasicAttack2": {
+    "ObjectName": "Jade_SorakaBasicAttack2",
+    "mScriptName": "Jade_SorakaBasicAttack2",
+    "mSpell": {
+      "0xe1136d1": {
+        "0xa3e0478": 622.7000122070313,
+        "values": [
+          622.7000122070313,
+          622.7000122070313,
+          622.7000122070313,
+          622.7000122070313,
+          622.7000122070313,
+          622.7000122070313,
+          622.7000122070313
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Soraka_SorakaBasicAttack_OnCast",
+        "13": "Play_sfx_Soraka_SorakaBasicAttack_OnHit",
+        "16": "Play_sfx_Soraka_SorakaBasicAttack_OnMissileLaunch"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 9.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        622.7000122070313,
+        622.7000122070313,
+        622.7000122070313,
+        622.7000122070313,
+        622.7000122070313,
+        622.7000122070313,
+        622.7000122070313
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 5327,
+      "mAlternateName": "Jade_SorakaBasicAttack2",
+      "mAnimationName": "Attack2",
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "Buffbone_Glb_Ground_Loc",
+      "mHitEffectKey": "Jade_Soraka_BA_tar",
+      "mMissileEffectKey": "Jade_Soraka_BA_mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 1000.0,
+          "mStartBoneName": "Buffbone_Cstm_Weapon",
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 1000.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Soraka/Spells/Jade_SorakaCritAttack": {
+    "ObjectName": "Jade_SorakaCritAttack",
+    "mScriptName": "Jade_SorakaCritAttack",
+    "mSpell": {
+      "0xe1136d1": {
+        "0xa3e0478": 622.7000122070313,
+        "values": [
+          622.7000122070313,
+          622.7000122070313,
+          622.7000122070313,
+          622.7000122070313,
+          622.7000122070313,
+          622.7000122070313,
+          622.7000122070313
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Soraka_SorakaCritAttack_OnCast",
+        "13": "Play_sfx_Soraka_SorakaCritAttack_OnHit",
+        "16": "Play_sfx_Soraka_SorakaCritAttack_OnMissileLaunch"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 6.5,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        622.7000122070313,
+        622.7000122070313,
+        622.7000122070313,
+        622.7000122070313,
+        622.7000122070313,
+        622.7000122070313,
+        622.7000122070313
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 5327,
+      "mAlternateName": "Jade_SorakaCritAttack",
+      "mAnimationName": "Crit",
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "Buffbone_Glb_Ground_Loc",
+      "mHitEffectKey": "Jade_Soraka_BA_crit_tar",
+      "mMissileEffectKey": "Jade_Soraka_BA_mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 1000.0,
+          "mStartBoneName": "R_forarm",
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 1000.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Soraka/Spells/Jade_SorakaEAbility/Jade_SorakaE": {
+    "ObjectName": "Jade_SorakaE",
+    "mScriptName": "Jade_SorakaE",
+    "mSpell": {
+      "0xe1136d1": {
+        "0xa3e0478": 725.0,
+        "values": [
+          725.0,
+          725.0,
+          725.0,
+          725.0,
+          725.0,
+          725.0,
+          725.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "Mana",
+          "values": [
+            0.0,
+            40.0,
+            80.0,
+            120.0,
+            160.0,
+            200.0,
+            240.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Damage",
+          "values": [
+            0.0,
+            50.0,
+            100.0,
+            150.0,
+            200.0,
+            250.0,
+            300.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatio",
+          "values": [
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Duration",
+          "values": [
+            1.25,
+            1.5,
+            1.75,
+            2.0,
+            2.25,
+            2.5,
+            2.75
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Soraka_SorakaE_OnCast"
+      },
+      "castConeDistance": 100.0,
+      "castFrame": 7.5,
+      "castRadius": [
+        260.0,
+        260.0,
+        260.0,
+        260.0,
+        260.0,
+        260.0,
+        260.0
+      ],
+      "castRange": [
+        725.0,
+        725.0,
+        725.0,
+        725.0,
+        725.0,
+        725.0,
+        725.0
+      ],
+      "mAffectsTypeFlags": 22539,
+      "mAnimationName": "Spell3",
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.25,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Mana Restore",
+                  "type": "Mana",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Damage",
+                  "type": "Damage",
+                  "typeIndex": 2,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Silence Duration",
+                  "type": "Duration",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Infuse",
+            "keySummary": "Restores Mana to an ally, or deals damage to an enemy and silences them for a short duration.",
+            "keyTooltip": "Target an allied champion to restore <scaleMana>@Mana@ Mana</scaleMana> (cannot be cast on self).<br><br>Target an enemy to deal <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Silence</status> them for @Duration@ seconds."
+          },
+          "mObjectName": "Jade_SorakaE",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Soraka_Wish.dds"
+      ],
+      "mSpellCalculations": {
+        "TotalDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "Damage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellRevealsChampion": false,
+      "mSpellTags": [
+        "Trait_Silence"
+      ],
+      "missileSpeed": 0.0,
+      "selectionPriority": 1,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Soraka/Spells/Jade_SorakaQAbility/Jade_SorakaQ": {
+    "ObjectName": "Jade_SorakaQ",
+    "mBuff": {
+      "mDescription": "<titleLeft>Starcall (@Stack@)</titleLeft><mainText>This unit's Magic Resist is reduced.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_SorakaQ",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0x210f9ec0": {
+        "0xa3e0478": 20.0,
+        "values": [
+          20.0,
+          35.0,
+          50.0,
+          65.0,
+          80.0,
+          95.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "0xe1136d1": {
+        "0xa3e0478": 625.0,
+        "values": [
+          625.0,
+          625.0,
+          625.0,
+          625.0,
+          625.0,
+          625.0,
+          625.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.0,
+      "Cooldown": {
+        "0xa3e0478": 2.5,
+        "values": [
+          2.5,
+          2.5,
+          2.5,
+          2.5,
+          2.5,
+          2.5,
+          2.5
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            35.0,
+            60.0,
+            85.0,
+            110.0,
+            135.0,
+            160.0,
+            185.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatio",
+          "values": [
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Shred",
+          "values": [
+            -7.0,
+            -8.0,
+            -9.0,
+            -10.0,
+            -11.0,
+            -12.0,
+            -13.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DebuffDuration",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxStacks",
+          "values": [
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "TargetRadius",
+          "values": [
+            675.0,
+            675.0,
+            675.0,
+            675.0,
+            675.0,
+            675.0,
+            675.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Soraka_SorakaQ_OnCast"
+      },
+      "castConeDistance": 100.0,
+      "castFrame": 8.5,
+      "castRadius": [
+        230.0,
+        230.0,
+        230.0,
+        230.0,
+        230.0,
+        230.0,
+        230.0
+      ],
+      "castRange": [
+        625.0,
+        625.0,
+        625.0,
+        625.0,
+        625.0,
+        625.0,
+        625.0
+      ],
+      "castTargetAdditionalUnitsRadius": 325.0,
+      "cooldownTime": [
+        2.5,
+        2.5,
+        2.5,
+        2.5,
+        2.5,
+        2.5,
+        2.5
+      ],
+      "mAffectsTypeFlags": 6154,
+      "mAnimationName": "Spell1",
+      "mCantCancelWhileWindingUp": true,
+      "mCastRequirementsCaster": [
+        {
+          "0x675c02b0": 22538,
+          "mDistanceType": 1,
+          "mRange": 625.0,
+          "mUnitsRequired": 1,
+          "mUnitsRequirements": [
+            {
+              "mInvertResult": true,
+              "~class": "SameTeamCastRequirement"
+            }
+          ],
+          "~class": "HasNNearbyUnitsRequirement"
+        }
+      ],
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "BaseDamage",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "multiplier": -1.0,
+                  "nameOverride": "Magic Resist Shred",
+                  "type": "Shred",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Starcall",
+            "keySummary": "A shower of stars falls from the sky, striking all nearby enemies for magic damage and reducing their Magic Resist for a short duration.",
+            "keyTooltip": "Soraka calls upon the stars to strike all nearby enemies for <magicDamage>@TotalDamage@ magic damage</magicDamage> and reduce their <scaleMR>Magic Resist</scaleMR> by @Shred*-1@ for @DebuffDuration@ seconds, stacking up to @MaxStacks@ times."
+          },
+          "mObjectName": "Jade_SorakaQ",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Soraka_Starcall.dds"
+      ],
+      "mProjectTargetToCastRange": true,
+      "mSpellCalculations": {
+        "TotalDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        ""
+      ],
+      "mTargetingTypeData": {
+        "~class": "SelfAoe"
+      },
+      "mana": [
+        20.0,
+        35.0,
+        50.0,
+        65.0,
+        80.0,
+        95.0
+      ],
+      "missileSpeed": 1750.0,
+      "selectionPriority": 1,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Soraka/Spells/Jade_SorakaRAbility/Jade_SorakaR": {
+    "ObjectName": "Jade_SorakaR",
+    "mScriptName": "Jade_SorakaR",
+    "mSpell": {
+      "0x210f9ec0": {
+        "0xa3e0478": 100.0,
+        "values": [
+          100.0,
+          175.0,
+          250.0,
+          325.0,
+          400.0,
+          475.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "0xe1136d1": {
+        "0xa3e0478": 25000.0,
+        "values": [
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "Cooldown": {
+        "0xa3e0478": 175.0,
+        "values": [
+          175.0,
+          160.0,
+          145.0,
+          130.0,
+          115.0,
+          100.0,
+          85.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "BaseHeal",
+          "values": [
+            80.0,
+            200.0,
+            320.0,
+            440.0,
+            560.0,
+            680.0,
+            800.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatio",
+          "values": [
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Soraka_SorakaR_OnCast"
+      },
+      "castConeDistance": 100.0,
+      "castFrame": 7.5,
+      "castRadius": [
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0
+      ],
+      "castRange": [
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0
+      ],
+      "cooldownTime": [
+        150.0,
+        160.0,
+        145.0,
+        130.0,
+        10.0,
+        10.0,
+        10.0
+      ],
+      "mAffectsStatusFlags": 32,
+      "mAffectsTypeFlags": 1,
+      "mAnimationName": "Spell4",
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.25,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Healing",
+                  "type": "BaseHeal",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 3,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Wish",
+            "keySummary": "Soraka fills her allies with hope, instantly restoring health to herself and all friendly champions.",
+            "keyTooltip": "<mainText>Calls upon divine powers to instantly restore <healing>@HealingCalc@ Health</healing> to all allied Champions.</mainText>"
+          },
+          "mObjectName": "Jade_SorakaR",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Soraka_Purify.dds"
+      ],
+      "mRequiredUnitTags": {
+        "mObjectTagList": [
+          "champion"
+        ],
+        "~class": "ObjectTags"
+      },
+      "mSpellCalculations": {
+        "HealingCalc": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "BaseHeal",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "Trait_Ultimate",
+        "PositiveEffect_Boon"
+      ],
+      "mTargetingTypeData": {
+        "~class": "SelfAoe"
+      },
+      "mana": [
+        100.0,
+        175.0,
+        250.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "missileSpeed": 0.0,
+      "selectionPriority": 2,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Soraka/Spells/Jade_SorakaWAbility/Jade_SorakaW": {
+    "ObjectName": "Jade_SorakaW",
+    "mBuff": {
+      "mDescription": "<titleLeft>Astral Blessing</titleLeft><mainText>This unit has increased Armor.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_SorakaW",
+    "mSpell": {
+      "0x210f9ec0": {
+        "0xa3e0478": 80.0,
+        "values": [
+          80.0,
+          110.0,
+          140.0,
+          170.0,
+          200.0,
+          230.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "0xe1136d1": {
+        "0xa3e0478": 750.0,
+        "values": [
+          750.0,
+          750.0,
+          750.0,
+          750.0,
+          750.0,
+          750.0,
+          750.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 0.5,
+      "Cooldown": {
+        "0xa3e0478": 20.0,
+        "values": [
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "BaseHeal",
+          "values": [
+            0.0,
+            70.0,
+            140.0,
+            210.0,
+            280.0,
+            350.0,
+            420.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Armour",
+          "values": [
+            5.0,
+            25.0,
+            45.0,
+            65.0,
+            85.0,
+            105.0,
+            125.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BuffDuration",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatio",
+          "values": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Soraka_SorakaW_OnCast",
+        "13": "Play_sfx_Soraka_SorakaWParticleMissile_OnMissileLaunch"
+      },
+      "TargetingForgivenessDefinitions": [
+        {
+          "ForgivenessRange": 175.0,
+          "TargetForgivenessDefinitions": [
+            {
+              "mUnitTags": {
+                "mObjectTagList": [
+                  "champion"
+                ],
+                "~class": "ObjectTags"
+              },
+              "~class": "HasUnitTagsCastRequirement"
+            }
+          ],
+          "~class": "TargetingForgivenessDefinitions"
+        }
+      ],
+      "castConeDistance": 100.0,
+      "castFrame": 7.5,
+      "castRadius": [
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0
+      ],
+      "castRange": [
+        750.0,
+        750.0,
+        750.0,
+        750.0,
+        750.0,
+        750.0,
+        750.0
+      ],
+      "cooldownTime": [
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0
+      ],
+      "mAffectsTypeFlags": 1,
+      "mAnimationName": "Spell2",
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.25,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Healing",
+                  "type": "BaseHeal",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Armor",
+                  "type": "Armour",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Astral Blessing",
+            "keySummary": "Soraka blesses a friendly unit, restoring health and increasing Armor for a short time.",
+            "keyTooltip": "<mainText>Restores <healing>@TotalHeal@ Health</healing>, and temporarily grants <scaleArmor>@Armour@ Armor</scaleArmor> to an ally for 3 seconds.</mainText>"
+          },
+          "mObjectName": "Jade_SorakaW",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mFloatVarsDecimals": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Soraka_Bless.dds"
+      ],
+      "mRequiredUnitTags": {
+        "mObjectTagList": [
+          "champion"
+        ],
+        "~class": "ObjectTags"
+      },
+      "mSpellCalculations": {
+        "TotalHeal": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "BaseHeal",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "PositiveEffect_Boon"
+      ],
+      "mana": [
+        80.0,
+        110.0,
+        140.0,
+        170.0,
+        200.0,
+        230.0
+      ],
+      "missileSpeed": 0.0,
+      "selectionPriority": 2,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  }
+}

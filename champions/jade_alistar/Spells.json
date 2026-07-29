@@ -1,0 +1,1642 @@
+{
+  "0x6145da51": {
+    "ObjectName": "Jade_AlistarPassive",
+    "mBuff": {
+      "mDescription": "<titleLeft>Trample</titleLeft><mainText>Alistar is Ghosted and is damaging nearby enemy units and buildings.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_AlistarPassive",
+    "mSpell": {
+      "0xe1136d1": {
+        "0xa3e0478": 365.0,
+        "values": [
+          365.0,
+          365.0,
+          365.0,
+          365.0,
+          365.0,
+          365.0,
+          365.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "Cooldown": {
+        "0xa3e0478": 3.0,
+        "values": [
+          3.0,
+          3.0,
+          3.0,
+          3.0,
+          3.0,
+          3.0,
+          3.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "APRatio",
+          "values": [
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Duration",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MinionMonsterDamageMod",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "castRange": [
+        365.0,
+        365.0,
+        365.0,
+        365.0,
+        365.0,
+        365.0,
+        365.0
+      ],
+      "castRangeDisplayOverride": [
+        365.0,
+        365.0,
+        365.0,
+        365.0,
+        365.0,
+        365.0,
+        365.0
+      ],
+      "cooldownTime": [
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0
+      ],
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyName": "Trample",
+            "keySummary": "Each time Alistar casts a spell, he Tramples nearby units and turrets for a few seconds, dealing damage to units he walks over.",
+            "keyTooltip": "After casting an ability, Alistar becomes <status>Ghosted</status> and deals <magicDamage>@TotalDamageOverDuration@ magic damage</magicDamage> to nearby enemy units and buildings over @Duration@ seconds.",
+            "keyTooltipExtended": "{{Spell_AlistarPassive_Jade_Tooltip}}<br><br><rules>Ghosted units ignore collision with other units.</rules><br><rules>Deals @MinionMonsterDamageMod*100@% damage to minions and monsters.</rules>"
+          },
+          "mObjectName": "Jade_AlistarPassive",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Alistar_ColossalStrength.dds"
+      ],
+      "mSpellCalculations": {
+        "0x9ce452fe": {
+          "mModifiedGameCalculation": "TotalDamage",
+          "mMultiplier": {
+            "mDataValue": "duration",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "tooltipOnly": true,
+          "~class": "GameCalculationModified"
+        },
+        "TotalDamage": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 24.0,
+              "mStartValue": 7.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "PositiveEffect_Boon"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0xa5545298": {
+    "ObjectName": "Jade_AlistarW_Marker",
+    "mScriptName": "Jade_AlistarW_Marker",
+    "mSpell": {
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Alistar_Headbutt.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0xc8b8d391": {
+    "ObjectName": "Jade_AlistarPassive_Tooltip",
+    "mBuff": {
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_AlistarPassive_Tooltip",
+    "mSpell": {
+      "0xe1136d1": {
+        "0xa3e0478": 950.0,
+        "values": [
+          950.0,
+          950.0,
+          950.0,
+          950.0,
+          950.0,
+          950.0,
+          950.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "Cooldown": {
+        "0xa3e0478": 3.0,
+        "values": [
+          3.0,
+          3.0,
+          3.0,
+          3.0,
+          3.0,
+          3.0,
+          3.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "A",
+          "values": [
+            15.0,
+            15.0,
+            15.0,
+            15.0,
+            15.0,
+            15.0,
+            15.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "castRange": [
+        950.0,
+        950.0,
+        950.0,
+        950.0,
+        950.0,
+        950.0,
+        950.0
+      ],
+      "cooldownTime": [
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0
+      ],
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyName": "Trample",
+            "keySummary": "Each time Alistar casts a spell, he Tramples nearby units and turrets for a few seconds, dealing damage to units he walks over.",
+            "keyTooltip": "After casting an ability, Alistar becomes <status>Ghosted</status> and deals <magicDamage>@TotalDamageOverDuration@ magic damage</magicDamage> to nearby enemy units and buildings over @Duration@ seconds."
+          },
+          "mObjectName": "Jade_AlistarPassive_Tooltip",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Alistar_ColossalStrength.dds"
+      ],
+      "mSpellTags": [
+        "PositiveEffect_Boon"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0xf7d59123": {
+    "ObjectName": "Jade_AlistarW_Target",
+    "mBuff": {
+      "mDescription": "<titleLeft>Headbutt</titleLeft><mainText>This unit is airborne, it can take no actions.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_AlistarW_Target",
+    "mSpell": {
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Alistar_Headbutt.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Alistar/Spells/Jade_AlistarBasicAttack": {
+    "ObjectName": "Jade_AlistarBasicAttack",
+    "mScriptName": "Jade_AlistarBasicAttack",
+    "mSpell": {
+      "0x11704a2b": 0.34389999508857727,
+      "0xe1136d1": {
+        "0xa3e0478": 49.400001525878906,
+        "values": [
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Alistar_AlistarBasicAttack_OnCast",
+        "13": "Play_sfx_Alistar_AlistarBasicAttack_OnHit"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 10.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 8143,
+      "mAlternateName": "Jade_AlistarBasicAttack",
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "centerLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "textureRadiusOverrideName": "ASSETS/Spells/Textures/AOE.tex",
+            "~class": "TargeterDefinitionAoe"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Jade_Alistar_BA_tar_01",
+      "mTargetingTypeData": {
+        "~class": "Area"
+      },
+      "missileSpeed": 0.0,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Alistar/Spells/Jade_AlistarBasicAttack2": {
+    "ObjectName": "Jade_AlistarBasicAttack2",
+    "mScriptName": "Jade_AlistarBasicAttack2",
+    "mSpell": {
+      "0x11704a2b": 0.34389999508857727,
+      "0xe1136d1": {
+        "0xa3e0478": 49.400001525878906,
+        "values": [
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Alistar_AlistarBasicAttack2_OnCast",
+        "13": "Play_sfx_Alistar_AlistarBasicAttack2_OnHit"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 10.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 8143,
+      "mAlternateName": "Jade_AlistarBasicAttack2",
+      "mAnimationName": "Attack2",
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "centerLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "textureRadiusOverrideName": "ASSETS/Spells/Textures/AOE.tex",
+            "~class": "TargeterDefinitionAoe"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Jade_Alistar_BA_tar_01",
+      "mTargetingTypeData": {
+        "~class": "Area"
+      },
+      "missileSpeed": 0.0,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Alistar/Spells/Jade_AlistarCritAttack": {
+    "ObjectName": "Jade_AlistarCritAttack",
+    "mScriptName": "Jade_AlistarCritAttack",
+    "mSpell": {
+      "0x11704a2b": 0.34389999508857727,
+      "0xe1136d1": {
+        "0xa3e0478": 49.400001525878906,
+        "values": [
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Alistar_AlistarCritAttack_OnCast",
+        "13": "Play_sfx_Alistar_AlistarCritAttack_OnHit"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 10.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 8143,
+      "mAnimationName": "Crit",
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "centerLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "~class": "TargeterDefinitionAoe"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Jade_Alistar_BA_tar_crit_01",
+      "mTargetingTypeData": {
+        "~class": "Area"
+      },
+      "missileSpeed": 0.0,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Alistar/Spells/Jade_AlistarEAbility/Jade_AlistarE": {
+    "ObjectName": "Jade_AlistarE",
+    "mScriptName": "Jade_AlistarE",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0x210f9ec0": {
+        "0xa3e0478": 40.0,
+        "values": [
+          40.0,
+          50.0,
+          60.0,
+          70.0,
+          80.0,
+          90.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "0xe1136d1": {
+        "0xa3e0478": 575.0,
+        "values": [
+          575.0,
+          575.0,
+          575.0,
+          575.0,
+          575.0,
+          575.0,
+          575.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.0,
+      "Cooldown": {
+        "0xa3e0478": 12.0,
+        "values": [
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "BaseHealAmount",
+          "values": [
+            30.0,
+            60.0,
+            90.0,
+            120.0,
+            150.0,
+            180.0,
+            210.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatio",
+          "values": [
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "AllyHealMod",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "NearbyDeathCDR",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Alistar_AlistarP_cast"
+      },
+      "castConeDistance": 100.0,
+      "castFrame": 20.760000228881836,
+      "castRadius": [
+        575.0,
+        575.0,
+        575.0,
+        575.0,
+        575.0,
+        575.0,
+        575.0
+      ],
+      "castRange": [
+        575.0,
+        575.0,
+        575.0,
+        575.0,
+        575.0,
+        575.0,
+        575.0
+      ],
+      "cooldownTime": [
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0
+      ],
+      "mAffectsTypeFlags": 9221,
+      "mAfterEffectKey": "Jade_Alistar_E_Meditate_01",
+      "mAlternateName": "TriumphantRoar",
+      "mAnimationName": "Spell3",
+      "mCantCancelWhileWindingUp": true,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Healing",
+                  "type": "BaseHealAmount",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Triumphant Roar",
+            "keySummary": "Alistar lets out a commanding war cry, restoring health to himself and nearby allies. Nearby enemy deaths reduce the cooldown.",
+            "keyTooltip": "Alistar roars restoring <healing>@TotalHeal@ Health</healing> to Alistar and <healing>@AllyHeal@ Health</healing> to nearby allies. <br><br>Nearby enemy deaths reduce this Ability's Cooldown by @NearbyDeathCDR@ seconds."
+          },
+          "mObjectName": "Jade_AlistarE",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Alistar_TriumphantRoar.dds"
+      ],
+      "mSpellCalculations": {
+        "AllyHeal": {
+          "mModifiedGameCalculation": "TotalHeal",
+          "mMultiplier": {
+            "mDataValue": "AllyHealMod",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "~class": "GameCalculationModified"
+        },
+        "TotalHeal": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "BaseHealAmount",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mTargetingTypeData": {
+        "~class": "Self"
+      },
+      "mana": [
+        40.0,
+        50.0,
+        60.0,
+        70.0,
+        80.0,
+        90.0
+      ],
+      "missileSpeed": 0.0,
+      "selectionPriority": 2,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Alistar/Spells/Jade_AlistarQAbility/Jade_AlistarQ": {
+    "ObjectName": "Jade_AlistarQ",
+    "mBuff": {
+      "mDescription": "<titleLeft>Pulverize</titleLeft><mainText>This unit is knocked up.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_AlistarQ",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0x210f9ec0": {
+        "0xa3e0478": 70.0,
+        "values": [
+          70.0,
+          80.0,
+          90.0,
+          100.0,
+          110.0,
+          120.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "0xe1136d1": {
+        "0xa3e0478": 375.0,
+        "values": [
+          375.0,
+          375.0,
+          375.0,
+          375.0,
+          375.0,
+          375.0,
+          375.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.0,
+      "0xf9c2333e": {
+        "cherry": {
+          "value": [
+            17.0,
+            17.0,
+            16.0,
+            15.0,
+            14.0,
+            13.0,
+            13.0
+          ],
+          "~class": "SpellEffectAmount"
+        }
+      },
+      "Cooldown": {
+        "0xa3e0478": 18.0,
+        "values": [
+          18.0,
+          17.0,
+          16.0,
+          15.0,
+          14.0,
+          13.0,
+          12.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            15.0,
+            60.0,
+            105.0,
+            150.0,
+            195.0,
+            240.0,
+            285.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatio",
+          "values": [
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "AoERadius",
+          "values": [
+            375.0,
+            375.0,
+            375.0,
+            375.0,
+            375.0,
+            375.0,
+            375.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "KnockupDuration",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Alistar_Pulverize_OnCast"
+      },
+      "castConeDistance": 100.0,
+      "castFrame": 11.779999732971191,
+      "castRadius": [
+        365.0,
+        365.0,
+        365.0,
+        365.0,
+        365.0,
+        365.0,
+        365.0
+      ],
+      "castRange": [
+        375.0,
+        375.0,
+        375.0,
+        375.0,
+        375.0,
+        375.0,
+        375.0
+      ],
+      "castRangeDisplayOverride": [
+        365.0,
+        365.0,
+        365.0,
+        365.0,
+        365.0,
+        365.0,
+        365.0
+      ],
+      "cooldownTime": [
+        18.0,
+        17.0,
+        16.0,
+        15.0,
+        14.0,
+        13.0,
+        12.0
+      ],
+      "mAffectsTypeFlags": 14346,
+      "mAlternateName": "Jade_Alistar_Pulverize",
+      "mAnimationName": "Spell1",
+      "mCantCancelWhileWindingUp": true,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "BaseDamage",
+                  "typeIndex": 2,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Pulverize",
+            "keySummary": "Alistar smashes the ground, dealing damage to all nearby enemies and tossing them into the air. On landing, enemies are stunned.",
+            "keyTooltip": "Alistar smashes the ground, <status>Knocking Up</status> enemies for @KnockupDuration@ second and dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>."
+          },
+          "mObjectName": "Jade_AlistarQ",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Alistar_Pulverize.dds"
+      ],
+      "mSpellCalculations": {
+        "TotalDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 6,
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "Trait_ImmobilizingCCSpell"
+      ],
+      "mTargetingTypeData": {
+        "~class": "SelfAoe"
+      },
+      "mana": [
+        70.0,
+        80.0,
+        90.0,
+        100.0,
+        110.0,
+        120.0
+      ],
+      "missileSpeed": 20.0,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Alistar/Spells/Jade_AlistarRAbility/Jade_AlistarR": {
+    "ObjectName": "Jade_AlistarR",
+    "mBuff": {
+      "mDescription": "<titleLeft>Unbreakable Will</titleLeft><mainText>Alistar has increased Attack Damage and is nearly impervious to harm.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_AlistarR",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0x210f9ec0": {
+        "values": [
+          100.0,
+          100.0,
+          100.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "0xe1136d1": {
+        "0xa3e0478": 1.0,
+        "values": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.0,
+      "0xf9c2333e": {
+        "cherry": {
+          "value": [
+            180.0,
+            180.0,
+            150.0,
+            120.0,
+            100.0,
+            100.0,
+            100.0
+          ],
+          "~class": "SpellEffectAmount"
+        }
+      },
+      "Cooldown": {
+        "values": [
+          120.0,
+          120.0,
+          100.0,
+          80.0,
+          120.0,
+          120.0,
+          120.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "RDuration",
+          "values": [
+            7.0,
+            7.0,
+            7.0,
+            7.0,
+            7.0,
+            7.0,
+            7.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "RDamageReduction",
+          "values": [
+            40.0,
+            50.0,
+            60.0,
+            70.0,
+            80.0,
+            90.0,
+            100.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BonusDamage",
+          "values": [
+            45.0,
+            60.0,
+            75.0,
+            90.0,
+            105.0,
+            120.0,
+            135.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "DataValuesModeOverride": {
+        "URF": {
+          "SpellDataValues": [
+            {
+              "name": "RDuration",
+              "values": [
+                3.5,
+                3.5,
+                3.5,
+                3.5,
+                3.5,
+                3.5,
+                3.5
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        },
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "RDamageReduction",
+              "values": [
+                40.0,
+                50.0,
+                60.0,
+                70.0,
+                80.0,
+                90.0,
+                100.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Alistar_FerociousHowl_OnCast",
+        "18": "Play_sfx_Alistar_FerociousHowl_OnBuffActivate"
+      },
+      "canCastWhileDisabled": true,
+      "cannotBeSuppressed": true,
+      "castConeDistance": 100.0,
+      "castFrame": 20.799999237060547,
+      "castRange": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "cooldownTime": [
+        120.0,
+        120.0,
+        100.0,
+        80.0,
+        120.0,
+        120.0,
+        120.0
+      ],
+      "mAffectsTypeFlags": 6154,
+      "mAlternateName": "Jade_Alistar_FerociousHowl",
+      "mAnimationName": "None",
+      "mCantCancelWhileWindingUp": true,
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Attack Damage",
+                  "type": "BonusDamage",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "nameOverride": "Damage Reduction",
+                  "type": "RDamageReduction",
+                  "typeIndex": 2,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 3,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Unbreakable Will",
+            "keySummary": "Alistar lets out a wild roar, gaining bonus damage, removing all crowd-control effects on himself, and reducing incoming physical and magical damage for the duration.",
+            "keyTooltip": "Alistar immediately cleanses all <status>Disabling</status> effects, gains <physicalDamage>@BonusDamage@ Attack Damage</physicalDamage> and takes @RDamageReduction@% reduced damage for @RDuration@ seconds."
+          },
+          "mObjectName": "Jade_AlistarR",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Alistar_FerociousHowl.dds"
+      ],
+      "mSpellTags": [
+        "Trait_Ultimate",
+        "SpecialCase_StasisLocked"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Self"
+      },
+      "mana": [
+        100.0,
+        100.0,
+        100.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "missileSpeed": 828.5,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Alistar/Spells/Jade_AlistarWAbility/Jade_AlistarW": {
+    "ObjectName": "Jade_AlistarW",
+    "mBuff": {
+      "mDescription": "<titleLeft>Headbutt</titleLeft><mainText>This unit is airborne, it can take no actions.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_AlistarW",
+    "mSpell": {
+      "0x11704a2b": 0.5055999755859375,
+      "0x210f9ec0": {
+        "0xa3e0478": 70.0,
+        "values": [
+          70.0,
+          80.0,
+          90.0,
+          100.0,
+          110.0,
+          120.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "0xe1136d1": {
+        "0xa3e0478": 650.0,
+        "values": [
+          650.0,
+          650.0,
+          650.0,
+          650.0,
+          650.0,
+          650.0,
+          650.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 0.8999999761581421,
+      "0xf9c2333e": {
+        "cherry": {
+          "value": [
+            18.0,
+            17.0,
+            16.0,
+            15.0,
+            14.0,
+            13.0,
+            12.0
+          ],
+          "~class": "SpellEffectAmount"
+        }
+      },
+      "Cooldown": {
+        "values": [
+          15.0,
+          14.0,
+          13.0,
+          12.0,
+          11.0,
+          10.0,
+          10.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "KnockBackDistance",
+          "values": [
+            700.0,
+            700.0,
+            700.0,
+            700.0,
+            700.0,
+            700.0,
+            700.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Damage",
+          "values": [
+            0.0,
+            55.0,
+            110.0,
+            165.0,
+            220.0,
+            275.0,
+            330.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "StunDuration",
+          "values": [
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "KnockUpDuration",
+          "values": [
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatio",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DashSpeed",
+          "values": [
+            1200.0,
+            1200.0,
+            1200.0,
+            1200.0,
+            1200.0,
+            1200.0,
+            1200.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Alistar_Headbutt_OnCast"
+      },
+      "cantCastWhileRooted": true,
+      "castConeDistance": 100.0,
+      "castFrame": 23.0049991607666,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0
+      ],
+      "cooldownTime": [
+        15.0,
+        14.0,
+        13.0,
+        12.0,
+        11.0,
+        10.0,
+        10.0
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 6154,
+      "mAlternateName": "Jade_Alistar_Headbutt",
+      "mAnimationName": "Spell2",
+      "mCantCancelWhileChanneling": true,
+      "mCantCancelWhileWindingUp": true,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "endLocator": {
+              "basePosition": 2,
+              "distanceOffset": 100.0,
+              "orientationType": 2,
+              "~class": "DrawablePositionLocator"
+            },
+            "lineWidth": {
+              "mPerLevelValues": [
+                40.0,
+                40.0,
+                40.0,
+                40.0,
+                40.0,
+                40.0
+              ],
+              "mValueType": 2,
+              "~class": "FloatPerSpellLevel"
+            },
+            "overrideBaseRange": {
+              "mPerLevelValues": [
+                700.0,
+                700.0,
+                700.0,
+                700.0,
+                700.0,
+                700.0
+              ],
+              "mValueType": 2,
+              "~class": "FloatPerSpellLevel"
+            },
+            "startLocator": {
+              "basePosition": 2,
+              "~class": "DrawablePositionLocator"
+            },
+            "~class": "TargeterDefinitionLine"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "Damage",
+                  "typeIndex": 2,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Headbutt",
+            "keySummary": "Alistar rams a target with his head, dealing damage and knocking the target back.",
+            "keyTooltip": "Alistar rams into an enemy, <status>Knocking</status> them <status>Back</status> and dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>."
+          },
+          "mObjectName": "Jade_AlistarW",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mEffectAmount": [
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            700.0,
+            700.0,
+            700.0,
+            700.0,
+            700.0,
+            700.0,
+            700.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mHitBoneName": "C_BuffBone_Glb_Center_Loc",
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Alistar_Headbutt.dds"
+      ],
+      "mSpellCalculations": {
+        "TotalDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "Damage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 6,
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "PositiveEffect_MoveBlock",
+        "Trait_ImmobilizingCCSpell"
+      ],
+      "mana": [
+        70.0,
+        80.0,
+        90.0,
+        100.0,
+        110.0,
+        120.0
+      ],
+      "missileSpeed": 0.0,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  }
+}

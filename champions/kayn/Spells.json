@@ -552,6 +552,97 @@
             70.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MS",
+          "values": [
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "WallWalkDuration",
+          "values": [
+            7.0,
+            7.0,
+            7.5,
+            8.0,
+            8.5,
+            9.0,
+            9.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "LingerTime",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "WarningParticleRange",
+          "values": [
+            1250.0,
+            1250.0,
+            1250.0,
+            1250.0,
+            1250.0,
+            1250.0,
+            1250.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxInCombatTime",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "HealAmount",
+          "values": [
+            80.0,
+            90.0,
+            100.0,
+            110.0,
+            120.0,
+            130.0,
+            140.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "HealBADRatio",
+          "values": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -644,14 +735,12 @@
               "Elements": [
                 {
                   "nameOverride": "Duration",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 2,
+                  "type": "WallWalkDuration",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Healing",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 7,
+                  "type": "HealAmount",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -666,7 +755,7 @@
             "keyName": "Shadow Step",
             "keySummary": "Kayn can walk through terrain.",
             "keyTooltip": "{{ game_spell_Kayn_E_main_@f1@ }}",
-            "keyTooltipExtendedBelowLine": "<rules>{{Reminder_Ghosted}}<br>Maximum duration in combat with enemy champions is @Effect6Amount@ seconds.<br></rules>"
+            "keyTooltipExtendedBelowLine": "<rules>{{Reminder_Ghosted}}<br>Maximum duration in combat with enemy champions is @MaxInCombatTime@ seconds.<br></rules>"
           },
           "mObjectName": "KaynE",
           "~class": "TooltipInstanceSpell"
@@ -805,8 +894,8 @@
         "TotalHealing": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 7,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "HealAmount",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.44999998807907104,
@@ -2360,6 +2449,71 @@
             0.8500000238418579
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseDamage",
+          "values": [
+            75.0,
+            75.0,
+            105.0,
+            135.0,
+            165.0,
+            195.0,
+            195.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlayTADRatio",
+          "values": [
+            0.6499999761581421,
+            0.6499999761581421,
+            0.6499999761581421,
+            0.6499999761581421,
+            0.6499999761581421,
+            0.6499999761581421,
+            0.6499999761581421
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxDmgToMonsters",
+          "values": [
+            175.0,
+            200.0,
+            250.0,
+            300.0,
+            350.0,
+            400.0,
+            0.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "FlatBonusDmgToMonsters",
+          "values": [
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "AoERadius",
+          "values": [
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0,
+            300.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -2537,8 +2691,7 @@
                 },
                 {
                   "nameOverride": "Base Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "BaseDamage",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -2550,7 +2703,7 @@
             "keyName": "Reaping Slash",
             "keySummary": "Kayn dashes, then slashes. Both deal damage.",
             "keyTooltip": "{{ game_spell_Kayn_Q_main_@f1@ }}",
-            "keyTooltipExtendedBelowLine": "<rules>Deals an additional <physicalDamage>@Effect6Amount@ physical damage</physicalDamage> to minions and jungle monsters (max: @Effect5Amount@).</rules>"
+            "keyTooltipExtendedBelowLine": "<rules>Deals an additional <physicalDamage>@FlatBonusDmgToMonsters@ physical damage</physicalDamage> to minions and jungle monsters (max: @MaxDmgToMonsters@).</rules>"
           },
           "mObjectName": "KaynQ",
           "~class": "TooltipInstanceSpell"
@@ -2714,8 +2867,8 @@
         "TotalDamage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mDataValue": "BonusADRatio",
@@ -3142,6 +3295,19 @@
             500.0,
             500.0,
             500.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "AssCastRange",
+          "values": [
+            750.0,
+            750.0,
+            750.0,
+            750.0,
+            750.0,
+            750.0,
+            750.0
           ],
           "~class": "SpellDataValue"
         }
@@ -3896,6 +4062,47 @@
         ],
         "~class": "SpellAttributeModifiable"
       },
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            90.0,
+            90.0,
+            135.0,
+            180.0,
+            225.0,
+            270.0,
+            315.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "KnockupDuration",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowAmount",
+          "values": [
+            -0.6000000238418579,
+            -0.6000000238418579,
+            -0.6000000238418579,
+            -0.6000000238418579,
+            -0.6000000238418579,
+            -0.6000000238418579,
+            -0.6000000238418579
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "alwaysSnapFacing": true,
       "castRange": [
         900.0,
@@ -4115,6 +4322,86 @@
         ],
         "~class": "SpellAttributeModifiable"
       },
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            85.0,
+            85.0,
+            130.0,
+            175.0,
+            220.0,
+            265.0,
+            265.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "KnockupDuration",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowIntensity",
+          "values": [
+            -0.8999999761581421,
+            -0.8999999761581421,
+            -0.8999999761581421,
+            -0.8999999761581421,
+            -0.8999999761581421,
+            -0.8999999761581421,
+            -0.8999999761581421
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BoxWidth",
+          "values": [
+            160.0,
+            160.0,
+            160.0,
+            160.0,
+            160.0,
+            160.0,
+            160.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowDuration",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "AssRange",
+          "values": [
+            900.0,
+            900.0,
+            900.0,
+            900.0,
+            900.0,
+            900.0,
+            900.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "alwaysSnapFacing": true,
       "castFrame": 16.5,
       "castRange": [
@@ -4175,8 +4462,7 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "BaseDamage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -4316,8 +4602,8 @@
         "TotalDamage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 1.100000023841858,

@@ -770,7 +770,8 @@ mapBins = {
     21 => ["nexusblitz"],
     30 => ["cherry"],
     33 => ["strawberry"],
-    35 => ["brawl"]
+    35 => ["brawl"],
+    453 => ["classic"]
 }
 
 print "Loading and formatting stringtable..."
@@ -929,6 +930,103 @@ diff()
     print "done.\n"
 # SR handling end
 
+# jade handling
+    print "Loading and formatting Jade data..."
+    gameType = "jade"
+    mapId = 453
+    FileUtils.rm_rf(Dir.glob("#{gameType}/*"))
+    ["data", "vfxData"].each { |dir|
+        Dir.mkdir("#{gameType}/#{dir}") unless Dir.exist?("#{gameType}/#{dir}")
+    }
+    json = {}
+    File.open("temp/data/maps/shipping/map#{mapId}/map#{mapId}.json", 'rb') { |f| json = JSON.parse(f.read()) }
+    json = json.fetch("entries", json)
+    jsonSort = {}
+    json.each { |key, data|
+        type = data["~class"]
+
+        next if !type
+        case type
+            when "0x1ff0e246"
+                type = "GameEndUI"
+            when "0x5a92b195"
+                type = "GamemodeKeybinds"
+            when "0x276246d8"
+                type = "AnnouncerBark"
+            when "0x3f04641e"
+                type = "CampMapNames"
+            when "0x9d9f60d2", "0xad65d8c4"
+                type = "MinionSkinData"
+            when "0xb26bd951", "0xe8c34b52", "0xeb5adb26", "0x409a5657", "0x23433cc1"
+                type = "skip"
+            when "0x60e2ec74"
+                type = "LoadScreenData"
+            when "0xc3a44766"
+                type = "DamageFeedbackVFX"
+            when "0xe2b34203"
+                type = "SharedScriptSkeleton"
+            when "0x6b91544a"
+                type = "VfxSystemDefinitionData"
+            when "0x64ee2fb1"
+                type = "DragonMinimapData"
+            when "0x610a14d0"
+                type = "BossCountdown"
+            when "0x5858e503"
+                type = "Events"
+            when "0x8873e4c8"
+                type = "JungleObjectiveScriptData"
+            when "0x292991be"
+                type = "DragonSoulNames"
+            when "0xb26bd951"
+                type = "MapUnitSkinData"
+            when "GameModeItemList"
+                data["mItems"] = data["mItems"].map { |i| itemNameLangFix(i) }
+            else
+                type = "MiscData" if type.start_with?("0x")
+        end
+        jsonSort[type] ||= {}
+        jsonSort[type].store(key, data)
+    }
+    jsonSort.each { |key, data|
+        next if key == "skip"
+        loc = key.downcase.include?("vfx") ? "vfxData" : "data"
+        data = data.sort_by { |k, v| v["ObjectName"] }.to_h if key == "SpellObject"
+        File.open("#{gameType}/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
+    }
+
+
+    mapBins[mapId].each { |map|
+        Dir.mkdir("#{gameType}/#{map}") unless Dir.exist?("#{gameType}/#{map}")
+        ["data", "vfxData"].each { |dir|
+            Dir.mkdir("#{gameType}/#{map}/#{dir}") unless Dir.exist?("#{gameType}/#{map}/#{dir}")
+        }
+        json = {}
+        File.open("temp/data/maps/modespecificdata/map#{mapId}/#{map}.json", 'rb') { |f| json = JSON.parse(f.read()) }
+        json = json.fetch("entries", json)
+        jsonSort = {}
+
+        json.each { |key, data|
+            type = data["~class"]
+
+            next if !type
+            case type
+                when "0xc8400f38", "0x5307f5e1"
+                    type = "HotkeyControls"
+                else
+                    type = "MiscData" if type.start_with?("0x")
+            end
+            jsonSort[type] ||= {}
+            jsonSort[type].store(key, data)
+        }
+        jsonSort.each { |key, data|
+            loc = key.downcase.include?("vfx") ? "vfxData" : "data"
+            data = data.sort_by { |k, v| v["ObjectName"] }.to_h if key == "SpellObject"
+            File.open("#{gameType}/#{map}/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
+        }
+    }
+    print "done.\n"
+# jade handling end
+
 # ARAM handling
     print "Loading and formatting ARAM data..."
     FileUtils.rm_rf(Dir.glob("aram/*"))
@@ -987,7 +1085,7 @@ diff()
 
     Dir.children("temp/data/maps/modespecificdata/map12/").each { |map|
         map = map[...-5]
-        next if map == "augments" || map == "kiwi"
+        next if map == "augments" || map == "kiwi" || map == "kiwi_jade"
         Dir.mkdir("aram/#{map}") unless Dir.exist?("aram/#{map}")
         ["data", "vfxData"].each { |dir|
             Dir.mkdir("aram/#{map}/#{dir}") unless Dir.exist?("aram/#{map}/#{dir}")
@@ -1026,6 +1124,10 @@ diff()
     Dir.mkdir("aram/mayhem") unless Dir.exist?("aram/mayhem")
     ["augments", "data", "vfxData"].each { |dir|
         Dir.mkdir("aram/mayhem/#{dir}") unless Dir.exist?("aram/mayhem/#{dir}")
+    }
+    Dir.mkdir("aram/jade") unless Dir.exist?("aram/jade")
+    ["augments", "data", "vfxData"].each { |dir|
+        Dir.mkdir("aram/jade/#{dir}") unless Dir.exist?("aram/jade/#{dir}")
     }
 
     aramSets = []
@@ -1086,6 +1188,69 @@ diff()
         data = data.sort_by { |k, v| v["ObjectName"] }.to_h if key == "SpellObject"
         data = data.sort_by { |k, v| v["AugmentPlatformId"] }.to_h if key == "AugmentInfo"
         File.open("aram/mayhem/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
+    }
+    print "done.\n"
+
+    $aramMayhem = {}
+    File.open("temp/data/maps/modespecificdata/map12/kiwi_jade.json", 'rb') { |f| $aramMayhem = JSON.parse(f.read()) }
+    $aramMayhem = $aramMayhem.fetch("entries", $aramMayhem)
+    aramAugments = []
+    aramOther = {}
+    aramOther["AugmentInfo"] = {}
+    augmentList = []
+    $aramMayhem.each { |key, data|
+        v = augmentSearcher(key, data, 1)
+
+        if v
+            aramAugments.push(v)
+            aramOther["AugmentInfo"].store(key, applyLang(data))
+            next
+        end
+
+        type = data["~class"]
+        case type 
+            when "0x27bc6378"
+                aramSets.push(augmentSetBuilder(key, data, 1))
+                next
+            when "0xeb5adb26"
+                type = "AugmentList"
+                data = applyLangKeys(applyLang(data))
+                augmentList = data["AugmentList"]
+            when "0x8d31b69b"
+                type = "AugmentQuestData"
+                data = applyLangKeys(applyLang(data))
+            when "0xa0ffdf09"
+                type = "AugmentQuestList"
+                data = applyLangKeys(applyLang(data))
+            else
+                #do nothing
+        end
+
+        next if !type
+        aramOther[type] ||= {}
+        aramOther[type].store(key, data)
+    }
+    aramAugments.each { |augment|
+        id = "Maps/ModeSpecificData/Augments/" + augment["apiName"]
+        idHex = "0x" + fnv(id.downcase)
+        if augmentList.include?(idHex)
+            augmentList[augmentList.index(idHex)] = id
+        end
+
+        if augment["quest"]
+            augment["quest"] = buildAugmentQuest(augment, aramOther["AugmentQuestData"][augment["quest"]["QUEST"]])
+        end
+    }
+    File.open("aram/jade/augments/augments.json", 'wb') { |f| f.write(JSON.pretty_generate(aramAugments.sort_by { |a| a["id"] })) }
+    aramOther.each { |key, data|
+        loc = key.downcase.include?("vfx") ? "vfxData" : "data"
+        data = data.sort_by { |k, v| v["ObjectName"] }.to_h if key == "SpellObject"
+        begin
+            data = data.sort_by { |k, v| v["AugmentPlatformId"] }.to_h if key == "AugmentInfo"
+        rescue
+            puts "broke on #{key}"
+        end
+        File.open("aram/jade/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
     }
     print "done.\n"
 # ARAM handling end

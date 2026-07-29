@@ -1,0 +1,494 @@
+{
+  "0x835de583": {
+    "ScriptName": "charscriptJade_Tristana",
+    "path": "0x835de583",
+    "sequences": {
+      "0x6a7835b9": {
+        "blocks": [
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "023160ac-d2a3-45b8-9974-e63b745042b1",
+            "Dest": {
+              "Table": {
+                "~class": "CharacterVars"
+              },
+              "Var": "BonusRange",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          },
+          {
+            "0xd851ffa3": "90049c13-309f-4e25-82d1-d379b826ffac",
+            "Dest": {
+              "Table": {
+                "~class": "CharacterVars"
+              },
+              "Var": "EBonusRange",
+              "~class": "ScriptTableSet"
+            },
+            "Src": {
+              "~class": "IntGet"
+            },
+            "~class": "SetVarInTableBlock"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0x6b1c1b08": {
+        "blocks": [
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "88cd8855-682c-49f0-8f5e-a62d1ea60303",
+            "Dest": {
+              "Var": "EBonusRangeTemp",
+              "~class": "ScriptTableSet"
+            },
+            "Formula": "iv.EBaseRange + cv.EBonusRange",
+            "~class": "0x15ebaa9c"
+          },
+          {
+            "~class": "0x0"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0xbd909891": {
+        "blocks": [
+          {
+            "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "30d3ce30-f21e-4740-815e-4b6ce2f3faa4",
+            "Condition": {
+              "Value1": {
+                "Var": "<font color='#F0C200'>@SpellName@</font>",
+                "~class": "ScriptTableGet"
+              },
+              "Value2": {
+                "value": "Jade_TristanaW",
+                "~class": "StringGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "65100ba7-20b1-44a1-984f-7d93802c6c58",
+                  "Dest": {
+                    "Var": "UnpathablePointCount",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "~class": "IntGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "1795a51e-722f-4924-b537-86667ea98056",
+                  "Condition": {
+                    "Operation": 2,
+                    "Value1": {
+                      "Var": "Distance",
+                      "~class": "ScriptTableGet"
+                    },
+                    "Value2": {
+                      "value": 900,
+                      "~class": "IntGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "64f5c5e0-44c8-420e-a79e-252eade822f4",
+                        "Dest": {
+                          "Var": "Distance",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Src": {
+                          "value": 900,
+                          "~class": "IntGet"
+                        },
+                        "~class": "SetVarInTableBlock"
+                      },
+                      {
+                        "0xd851ffa3": "c5e52617-8227-4c3a-b75b-4fd29b4fe553",
+                        "Dest": {
+                          "Var": "Distance",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Formula": "ptp.Distance - 50",
+                        "~class": "0x15ebaa9c"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "b3b6a347-79b3-4ba3-96f7-2b425e8b166f",
+                  "Dest": {
+                    "Var": "Distance",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Formula": "ptp.Distance - 50",
+                  "~class": "0x15ebaa9c"
+                },
+                {
+                  "0xd851ffa3": "d6162891-2382-4942-b418-3dc64b7f36a0",
+                  "Dest": {
+                    "Var": "DistanceToCenter",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Formula": "ptp.Distance / 2",
+                  "~class": "0x15ebaa9c"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "a8317a5f-b0ca-4020-abd0-04f5bb1c6f40",
+                  "Dest": {
+                    "Var": "NearbyChamp",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "~class": "IntGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "0xd851ffa3": "bf8cca31-cf6a-42ab-aa46-af9bd760c831",
+                  "Dest": {
+                    "Var": "NearbyTargetChamp",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "~class": "IntGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "0xd851ffa3": "a57b6f38-2cfd-46bb-b6ab-857874c610ef",
+                  "Condition": {
+                    "Operation": 5,
+                    "Value1": {
+                      "Var": "0x95c4bf69",
+                      "~class": "ScriptTableGet"
+                    },
+                    "Value2": {
+                      "value": 0.25,
+                      "~class": "FloatGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "0xd851ffa3": "b95d33bd-98eb-4bec-984d-5c2cb0f801bb",
+                        "Condition": {
+                          "Value1": {
+                            "Var": "0xa387b91d",
+                            "~class": "ScriptTableGet"
+                          },
+                          "Value2": {
+                            "value": 1,
+                            "~class": "IntGet"
+                          },
+                          "~class": "ComparisonScriptCondition"
+                        },
+                        "IsDisabled": true,
+                        "Sequence": {
+                          "blocks": [
+                            {
+                              "0xd851ffa3": "cc8d9bd3-e1e1-4c4c-acf0-76a1e78d785a",
+                              "Condition": {
+                                "Value1": {
+                                  "Var": "0x617cbf6e",
+                                  "~class": "ScriptTableGet"
+                                },
+                                "Value2": {
+                                  "~class": "IntGet"
+                                },
+                                "~class": "ComparisonScriptCondition"
+                              },
+                              "Sequence": {
+                                "blocks": [
+                                  {
+                                    "0xd851ffa3": "e156cd7f-06c4-4ecb-abef-4f334323c944",
+                                    "Var": {
+                                      "Var": "Attacker",
+                                      "~class": "0x622705af"
+                                    },
+                                    "~class": "0x851b8dc5"
+                                  },
+                                  {
+                                    "~class": "0x0"
+                                  }
+                                ],
+                                "~class": "ScriptSequence"
+                              },
+                              "~class": "0xe524b2fc"
+                            }
+                          ],
+                          "~class": "ScriptSequence"
+                        },
+                        "~class": "0xe524b2fc"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "25e57f45-6bf5-4c35-84f2-4b93fcb4116b",
+                  "Dest": {
+                    "Table": {
+                      "~class": "CharacterVars"
+                    },
+                    "Var": "Long",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "~class": "IntGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "cb341f34-d231-4104-afa0-023defc7aadd",
+                  "Condition": {
+                    "Operation": 3,
+                    "Value1": {
+                      "Var": "Distance",
+                      "~class": "ScriptTableGet"
+                    },
+                    "Value2": {
+                      "value": 700,
+                      "~class": "IntGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "0xd851ffa3": "e96e6a09-322b-453e-9667-23b9867ca509",
+                        "Dest": {
+                          "Table": {
+                            "~class": "CharacterVars"
+                          },
+                          "Var": "Long",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Src": {
+                          "value": 1,
+                          "~class": "IntGet"
+                        },
+                        "~class": "SetVarInTableBlock"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "87a29f1c-e2f1-47b7-a4a8-a44832a186dd",
+                  "Condition": {
+                    "Operation": 3,
+                    "Value1": {
+                      "Var": "Distance",
+                      "~class": "ScriptTableGet"
+                    },
+                    "Value2": {
+                      "value": 400,
+                      "~class": "IntGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "a6be137c-b246-4d91-8aa1-79bbb0134fbb",
+                        "Dest": {
+                          "Table": {
+                            "~class": "CharacterVars"
+                          },
+                          "Var": "Long",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Src": {
+                          "value": 2,
+                          "~class": "IntGet"
+                        },
+                        "~class": "SetVarInTableBlock"
+                      },
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "type": 3,
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "ba61306e-ec9e-4543-bf80-190520c88425",
+                  "Condition": {
+                    "Operation": 3,
+                    "Value1": {
+                      "Var": "Distance",
+                      "~class": "ScriptTableGet"
+                    },
+                    "Value2": {
+                      "~class": "IntGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "type": 3,
+                  "~class": "0xe524b2fc"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0xeb530788": {
+        "blocks": [
+          {
+            "0xd851ffa3": "95d93c0d-2b10-4108-833f-66a2ae97732f",
+            "Condition": {
+              "~class": "0x0"
+            },
+            "~class": "0xe524b2fc"
+          },
+          {
+            "0xd851ffa3": "6b4d385d-d5c4-4dd8-bb8b-2f1bb243f826",
+            "Sequence": {
+              "blocks": [
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "79caa99a-5ee9-4f71-990d-4c8e0e349d0b",
+                  "Condition": {
+                    "Operation": 3,
+                    "Value1": {
+                      "Var": "level",
+                      "~class": "ScriptTableGet"
+                    },
+                    "Value2": {
+                      "value": 1,
+                      "~class": "IntGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0xedb2eab3": {
+        "blocks": [
+          {
+            "0xd851ffa3": "9c4ac57b-6265-44cf-82bd-37f17b2ac1a4",
+            "Dest": {
+              "Table": {
+                "~class": "CharacterVars"
+              },
+              "Var": "EBonusRange",
+              "~class": "ScriptTableSet"
+            },
+            "Formula": "9 + cv.EBonusRange",
+            "~class": "0x15ebaa9c"
+          },
+          {
+            "0xd851ffa3": "e611e254-5075-45a0-8778-5ddbbe7e4fe7",
+            "Dest": {
+              "Table": {
+                "~class": "CharacterVars"
+              },
+              "Var": "BonusRange",
+              "~class": "ScriptTableSet"
+            },
+            "Formula": "cv.EBonusRange",
+            "~class": "0x15ebaa9c"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      }
+    },
+    "~class": "CharScript"
+  }
+}

@@ -1,0 +1,2774 @@
+{
+  "0x1c39d2c2": {
+    "ObjectName": "Jade_LeeSinWOneShield",
+    "mBuff": {
+      "PersistentEffectConditions": [
+        {
+          "ForceRenderVfx": true,
+          "PersistentVfxs": [
+            {
+              "boneName": "C_Buffbone_GLB_Center_Loc",
+              "effectKey": "0x9742c01",
+              "~class": "PersistentVfxData"
+            }
+          ],
+          "~class": "PersistentEffectConditionData"
+        }
+      ],
+      "mDescription": "<titleLeft>Safeguard</titleLeft><mainText>Absorbs the next @f1@ damage taken.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_LeeSinWOneShield",
+    "mSpell": {
+      "SpellEventToAudioEventSuffix": {
+        "18": "Play_sfx_LeeSin_LeeSinWOneShield_OnBuffActivate",
+        "19": "Play_sfx_LeeSin_LeeSinWOneShield_OnBuffDeactivate"
+      },
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/BlindMonkWOne.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x36b95290": {
+    "ObjectName": "Jade_LeeSinWManager",
+    "mScriptName": "Jade_LeeSinWManager",
+    "~class": "SpellObject"
+  },
+  "0x37048a17": {
+    "ObjectName": "Jade_LeeSinWOneDash",
+    "mBuff": {
+      "PersistentEffectConditions": [
+        {
+          "PersistentVfxs": [
+            {
+              "effectKey": "Jade_LeeSin_W_Dash_ToAlly_Trail",
+              "~class": "PersistentVfxData"
+            }
+          ],
+          "~class": "PersistentEffectConditionData"
+        }
+      ],
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_LeeSinWOneDash",
+    "mSpell": {
+      "SpellEventToAudioEventSuffix": {
+        "18": "Play_sfx_LeeSin_LeeSinWOneDash_OnBuffActivate"
+      },
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x484d002e": {
+    "ObjectName": "Jade_LeeSinBlindedEgg",
+    "mBuff": {
+      "mDescription": "<titleLeft>Blind leading the blind</titleLeft><mainText>Lee Sin reduces the length of all blinds by 0.25 seconds</mainText><br><flavorText>You can't blind a blind man</flavorText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_LeeSinBlindedEgg",
+    "mSpell": {
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/BlindMonk_BlindingStrike.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x4bf7ce09": {
+    "ObjectName": "Jade_LeeSinPassive",
+    "mBuff": {
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_LeeSinPassive",
+    "mSpell": {
+      "0xe1136d1": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "PassiveAS",
+          "values": [
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "FirstHitEnergyMult",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "castRange": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyName": "Flurry",
+            "keySummary": "After Lee Sin uses an ability, his next 2 basic attacks gain 40% Attack Speed and return 15 Energy each.",
+            "keyTooltip": "After Lee Sin uses an ability, his next 2 basic attacks gain <attackSpeed>40% Attack Speed</attackSpeed> and return 15 Energy each."
+          },
+          "mObjectName": "Jade_LeeSinPassive",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/LeeSinPassive.dds"
+      ],
+      "mSpellCalculations": {
+        "EnergyReturn": {
+          "mFormulaParts": [
+            {
+              "mBreakpoints": [
+                {
+                  "mAdditionalBonusAtThisLevel": 5.0,
+                  "mLevel": 7,
+                  "~class": "Breakpoint"
+                },
+                {
+                  "mAdditionalBonusAtThisLevel": 5.0,
+                  "mLevel": 13,
+                  "~class": "Breakpoint"
+                }
+              ],
+              "mLevel1Value": 10.0,
+              "~class": "ByCharLevelBreakpointsCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 6,
+          "~class": "GameCalculation"
+        },
+        "TTFirstHitEnergy": {
+          "mModifiedGameCalculation": "EnergyReturn",
+          "mMultiplier": {
+            "mDataValue": "FirstHitEnergyMult",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "mSimpleTooltipCalculationDisplay": 6,
+          "~class": "GameCalculationModified"
+        }
+      },
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x5df00a05": {
+    "ObjectName": "Jade_LeeSinWTwo",
+    "mBuff": {
+      "mDescription": "<titleLeft>Iron Will</titleLeft><mainText>Lee Sin has increased Lifesteal, Spell Vamp, and Armor.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_LeeSinWTwo",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0x210f9ec0": {
+        "0xa3e0478": 30.0,
+        "values": [
+          30.0,
+          30.0,
+          30.0,
+          30.0,
+          30.0,
+          30.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "0xe1136d1": {
+        "0xa3e0478": 350.0,
+        "values": [
+          350.0,
+          350.0,
+          350.0,
+          350.0,
+          350.0,
+          350.0,
+          350.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.0,
+      "Cooldown": {
+        "0xa3e0478": 12.0,
+        "values": [
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_LeeSin_LeeSinWTwo_OnCast"
+      },
+      "castConeDistance": 100.0,
+      "castFrame": 7.5,
+      "castRadius": [
+        350.0,
+        350.0,
+        350.0,
+        350.0,
+        350.0,
+        350.0,
+        350.0
+      ],
+      "castRange": [
+        350.0,
+        350.0,
+        350.0,
+        350.0,
+        350.0,
+        350.0,
+        350.0
+      ],
+      "castRangeDisplayOverride": [
+        350.0,
+        350.0,
+        350.0,
+        350.0,
+        350.0,
+        350.0,
+        350.0
+      ],
+      "cooldownTime": [
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 6154,
+      "mAlternateName": "Jade_LeeSinWOne",
+      "mAnimationName": "Spell2b",
+      "mCantCancelWhileWindingUp": true,
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0x3b504ce3",
+          "mObjectName": "Jade_LeeSinWTwo",
+          "~class": "TooltipInstanceSpell"
+        },
+        "mUseDeathRecapTooltipFromAnotherSpell": "Characters/Jade_LeeSin/Spells/Jade_LeeSinWOneAbility/Jade_LeeSinWOne",
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 1.0,
+      "mEffectAmount": [
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            1350.0,
+            1350.0,
+            1350.0,
+            1350.0,
+            1350.0,
+            1350.0,
+            1350.0
+          ],
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/BlindMonkWTwo.dds"
+      ],
+      "mSpellRevealsChampion": false,
+      "mTargetingTypeData": {
+        "~class": "Self"
+      },
+      "mana": [
+        25.0,
+        25.0,
+        25.0,
+        25.0,
+        25.0,
+        25.0
+      ],
+      "missileSpeed": 1500.0,
+      "selectionPriority": 1,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x637b7255": {
+    "ObjectName": "Jade_LeeSinSkin11Manager",
+    "mScriptName": "Jade_LeeSinSkin11Manager",
+    "~class": "SpellObject"
+  },
+  "0x68448977": {
+    "ObjectName": "Jade_LeeSinSkin31Manager",
+    "mScriptName": "Jade_LeeSinSkin31Manager",
+    "~class": "SpellObject"
+  },
+  "0x80daf119": {
+    "ObjectName": "Jade_LeeSinPassive_Cosmetic",
+    "mBuff": {
+      "PersistentEffectConditions": [
+        {
+          "PersistentVfxs": [
+            {
+              "boneName": "L_hand",
+              "effectKey": "Jade_LeeSin_P_buf_L",
+              "~class": "PersistentVfxData"
+            },
+            {
+              "boneName": "R_hand",
+              "effectKey": "Jade_LeeSin_P_buf_R",
+              "~class": "PersistentVfxData"
+            }
+          ],
+          "~class": "PersistentEffectConditionData"
+        }
+      ],
+      "mDescription": "<titleLeft>Flurry</titleLeft><mainText>Lee Sin has increased Attack Speed and his attacks restore 15 energy.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_LeeSinPassive_Cosmetic",
+    "mSpell": {
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/LeeSinPassive.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0xaba11c1d": {
+    "ObjectName": "Jade_LeeSinETwo",
+    "mBuff": {
+      "mDescription": "This unit's Movement and Attack Speed are reduced. They will gradually return to normal over the duration of this debuff.<br>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_LeeSinETwo",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0x210f9ec0": {
+        "0xa3e0478": 30.0,
+        "values": [
+          30.0,
+          30.0,
+          30.0,
+          30.0,
+          30.0,
+          30.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "0xe1136d1": {
+        "0xa3e0478": 575.0,
+        "values": [
+          575.0,
+          575.0,
+          575.0,
+          575.0,
+          575.0,
+          575.0,
+          575.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.0,
+      "Cooldown": {
+        "0xa3e0478": 8.0,
+        "values": [
+          8.0,
+          8.0,
+          8.0,
+          8.0,
+          8.0,
+          8.0,
+          8.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_LeeSin_LeeSinETwo_OnCast"
+      },
+      "castConeDistance": 100.0,
+      "castFrame": 7.5,
+      "castRadius": [
+        575.0,
+        575.0,
+        575.0,
+        575.0,
+        575.0,
+        575.0,
+        575.0
+      ],
+      "castRange": [
+        575.0,
+        575.0,
+        575.0,
+        575.0,
+        575.0,
+        575.0,
+        575.0
+      ],
+      "castRangeDisplayOverride": [
+        750.0,
+        750.0,
+        750.0,
+        750.0,
+        750.0,
+        750.0,
+        750.0
+      ],
+      "cooldownTime": [
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 6154,
+      "mAlternateName": "Jade_LeeSinETwo",
+      "mAnimationName": "Spell3b",
+      "mCantCancelWhileWindingUp": true,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0x3b504ce3",
+          "mObjectName": "Jade_LeeSinETwo",
+          "~class": "TooltipInstanceSpell"
+        },
+        "mUseDeathRecapTooltipFromAnotherSpell": "Characters/Jade_LeeSin/Spells/Jade_LeeSinEOneAbility/Jade_LeeSinEOne",
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 1.0,
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mHitBoneName": "pelvis",
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/BlindMonkETwo.dds"
+      ],
+      "mTargetingTypeData": {
+        "~class": "SelfAoe"
+      },
+      "mana": [
+        25.0,
+        25.0,
+        25.0,
+        25.0,
+        25.0,
+        25.0
+      ],
+      "missileSpeed": 2000.0,
+      "selectionPriority": 1,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0xad38124e": {
+    "ObjectName": "Jade_LeeSinSkin52Manager",
+    "mScriptName": "Jade_LeeSinSkin52Manager",
+    "~class": "SpellObject"
+  },
+  "0xb35d30d8": {
+    "ObjectName": "Jade_LeeSinEManager",
+    "mScriptName": "Jade_LeeSinEManager",
+    "~class": "SpellObject"
+  },
+  "0xbf2a5c10": {
+    "ObjectName": "Jade_LeeSinQManager",
+    "mBuff": {
+      "PersistentEffectConditions": [
+        {
+          "OwnerCondition": {
+            "~class": "IsLocalPlayerBoolDriver"
+          },
+          "PersistentVfxs": [
+            {
+              "effectKey": "Jade_LeeSin_Q_ResonatingStrike_Range_01",
+              "~class": "PersistentVfxData"
+            }
+          ],
+          "~class": "PersistentEffectConditionData"
+        }
+      ],
+      "mDescription": "<flavorText>My mind is telling me no...</flavorText>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_LeeSinQManager",
+    "mSpell": {
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/BlindMonKQOne.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0xc661bab": {
+    "ObjectName": "Jade_LeeSinETwoMissile",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Tempest / Cripple",
+          "keyTooltip": "This unit's Movement and Attack Speed are reduced. They will gradually return to normal over the duration of this debuff.<br>"
+        },
+        "mObjectName": "Jade_LeeSinETwoMissile",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_LeeSinETwoMissile",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0xe1136d1": {
+        "0xa3e0478": 1000.0,
+        "values": [
+          1000.0,
+          1000.0,
+          1000.0,
+          1000.0,
+          1000.0,
+          1000.0,
+          1000.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.0,
+      "Cooldown": {
+        "values": [
+          11.0,
+          10.0,
+          9.0,
+          8.0,
+          7.0,
+          6.0,
+          6.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "castConeDistance": 100.0,
+      "castFrame": 7.5,
+      "castRadius": [
+        710.0,
+        710.0,
+        710.0,
+        710.0,
+        710.0,
+        710.0,
+        710.0
+      ],
+      "castRange": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0
+      ],
+      "cooldownTime": [
+        11.0,
+        10.0,
+        9.0,
+        8.0,
+        7.0,
+        6.0,
+        6.0
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 6154,
+      "mAlternateName": "Jade_LeeSinETwo",
+      "mAnimationName": "Spell3",
+      "mCantCancelWhileWindingUp": true,
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.699999988079071,
+      "mHitBoneName": "C_BuffBone_Glb_Center_Loc",
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/BlindMonkETwo.dds"
+      ],
+      "mMissileEffectKey": "Jade_LeeSin_E_mis_01",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "DestroyOnMovementComplete"
+          },
+          {
+            "~class": "CastOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mSpeed": 1600.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 1600.0,
+      "selectionPriority": 1,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0xc6bb7b85": {
+    "ObjectName": "Jade_LeeSinQTwo",
+    "mScriptName": "Jade_LeeSinQTwo",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0x210f9ec0": {
+        "0xa3e0478": 30.0,
+        "values": [
+          30.0,
+          30.0,
+          30.0,
+          30.0,
+          30.0,
+          30.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "0xe1136d1": {
+        "0xa3e0478": 1250.0,
+        "values": [
+          1250.0,
+          1250.0,
+          1250.0,
+          1250.0,
+          1250.0,
+          1250.0,
+          1250.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.0,
+      "Cooldown": {
+        "values": [
+          11.0,
+          10.0,
+          9.0,
+          8.0,
+          7.0,
+          6.0,
+          6.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_LeeSin_LeeSinQTwo_OnCast"
+      },
+      "cantCastWhileRooted": true,
+      "castConeDistance": 100.0,
+      "castFrame": 25.850000381469727,
+      "castRadius": [
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0
+      ],
+      "castRange": [
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0
+      ],
+      "cooldownTime": [
+        11.0,
+        10.0,
+        9.0,
+        8.0,
+        7.0,
+        6.0,
+        6.0
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 23567,
+      "mAlternateName": "Jade_LeeSinQTwo",
+      "mAnimationName": "Spell2",
+      "mCantCancelWhileWindingUp": true,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "EnableExtendedTooltip": false,
+          "mFormat": "0x3b504ce3",
+          "mObjectName": "Jade_LeeSinQTwo",
+          "~class": "TooltipInstanceSpell"
+        },
+        "mUseDeathRecapTooltipFromAnotherSpell": "Characters/Jade_LeeSin/Spells/Jade_LeeSinQOneAbility/Jade_LeeSinQOne",
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient2": 2.0,
+      "mFloatVarsDecimals": [
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/BlindMonkQTwo.dds"
+      ],
+      "mSpellTags": [
+        "PositiveEffect_MoveBlock"
+      ],
+      "mTargetingTypeData": {
+        "~class": "SelfAoe"
+      },
+      "mana": [
+        25.0,
+        25.0,
+        25.0,
+        25.0,
+        25.0,
+        25.0
+      ],
+      "missileSpeed": 0.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0xe14e71b5": {
+    "ObjectName": "Jade_LeeSinQTwoDash",
+    "mBuff": {
+      "mDescription": "<titleLeft>Sonic Wave</titleLeft><mainText>Lee Sin is dashing towards his target.</mainText><br>{{Spell_LeeSinQEgg_Jade_Tooltip@f1@}}<postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_LeeSinQTwoDash",
+    "mSpell": {
+      "0xe1136d1": {
+        "0xa3e0478": 800.0,
+        "values": [
+          800.0,
+          800.0,
+          800.0,
+          800.0,
+          800.0,
+          800.0,
+          800.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "Cooldown": {
+        "values": [
+          2.5,
+          2.0,
+          1.5,
+          1.0,
+          1.5,
+          1.5,
+          1.5
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "bHaveHitEffect": true,
+      "cantCastWhileRooted": true,
+      "castConeDistance": 100.0,
+      "castFrame": 7.934999942779541,
+      "castRadius": [
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0
+      ],
+      "castRange": [
+        800.0,
+        800.0,
+        800.0,
+        800.0,
+        800.0,
+        800.0,
+        800.0
+      ],
+      "cooldownTime": [
+        2.5,
+        2.0,
+        1.5,
+        1.0,
+        1.5,
+        1.5,
+        1.5
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 6154,
+      "mAlternateName": "Jade_LeeSinQTwo",
+      "mApplyAttackEffect": true,
+      "mCantCancelWhileWindingUp": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.5,
+      "mHitBoneName": "C_BuffBone_Glb_Center_Loc",
+      "mHitEffectKey": "Jade_LeeSin_Q_tar",
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/BlindMonkQTwo.dds"
+      ],
+      "missileSpeed": 2200.0,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0xe23cabb2": {
+    "ObjectName": "Jade_Lee_200IQ",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "My IQ is 200",
+          "keyTooltip": "<flavorText>\"Pure Intellect.\"</flavorText>"
+        },
+        "mObjectName": "Jade_Lee_200IQ",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_Lee_200IQ",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0x210f9ec0": {
+        "0xa3e0478": 50.0,
+        "values": [
+          50.0,
+          50.0,
+          50.0,
+          50.0,
+          50.0,
+          50.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "0xe1136d1": {
+        "0xa3e0478": 1200.0,
+        "values": [
+          1200.0,
+          1200.0,
+          1200.0,
+          1200.0,
+          1200.0,
+          1200.0,
+          1200.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.0,
+      "0xf9c2333e": {
+        "cherry": {
+          "value": [
+            9.5,
+            8.5,
+            7.5,
+            6.5,
+            5.5,
+            4.5,
+            3.5
+          ],
+          "~class": "SpellEffectAmount"
+        }
+      },
+      "Cooldown": {
+        "values": [
+          11.0,
+          11.0,
+          10.0,
+          9.0,
+          8.0,
+          7.0,
+          7.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "ImgIconPath": "ASSETS/UX/Jade/S3Icons/SameSized/BlindMonk_Hardiness.tex",
+      "bHaveHitBone": true,
+      "castConeDistance": 100.0,
+      "castFrame": 7.5,
+      "castRadius": [
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0
+      ],
+      "castRange": [
+        1200.0,
+        1200.0,
+        1200.0,
+        1200.0,
+        1200.0,
+        1200.0,
+        1200.0
+      ],
+      "castRangeDisplayOverride": [
+        1100.0,
+        1100.0,
+        1100.0,
+        1100.0,
+        1100.0,
+        1100.0,
+        1100.0
+      ],
+      "cooldownTime": [
+        11.0,
+        11.0,
+        10.0,
+        9.0,
+        8.0,
+        7.0,
+        7.0
+      ],
+      "mAffectsTypeFlags": 6154,
+      "mAlternateName": "Jade_LeeSinQOne_Jade",
+      "mAnimationName": "Spell1",
+      "mCantCancelWhileWindingUp": true,
+      "mCastType": 3,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "hideWithLineIndicator": true,
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "endLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "lineStopsAtEndPosition": false,
+            "lineWidth": {
+              "mPerLevelValues": [
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0
+              ],
+              "mValueType": 2,
+              "~class": "FloatPerSpellLevel"
+            },
+            "~class": "TargeterDefinitionLine"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient2": 2.0,
+      "mFloatVarsDecimals": [
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mHitBoneName": "C_BuffBone_Glb_Center_Loc",
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/BlindMonk_Hardiness.dds"
+      ],
+      "mLineWidth": 60.0,
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnHit"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "~class": "BlendedLinearHeightSolver"
+        },
+        "mMissileWidth": 60.0,
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mProjectTargetToCastRange": true,
+          "mSpeed": 1800.0,
+          "mStartBoneName": "L_Hand",
+          "mTracksTarget": false,
+          "mUseHeightOffsetAtEnd": true,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VerticalFacingFaceTarget"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mTargetingTypeData": {
+        "~class": "direction"
+      },
+      "mTurnSpeedScalar": 2.0,
+      "mana": [
+        50.0,
+        50.0,
+        50.0,
+        50.0,
+        50.0,
+        50.0
+      ],
+      "missileSpeed": 1800.0,
+      "selectionPriority": 1,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_LeeSin/Spells/Jade_LeeSinBasicAttack": {
+    "ObjectName": "Jade_LeeSinBasicAttack",
+    "mScriptName": "Jade_LeeSinBasicAttack",
+    "mSpell": {
+      "0x11704a2b": 0.41214999556541443,
+      "0xe1136d1": {
+        "0xa3e0478": 200.0,
+        "values": [
+          200.0,
+          200.0,
+          200.0,
+          200.0,
+          200.0,
+          200.0,
+          200.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "Cooldown": {
+        "0xa3e0478": -100.0,
+        "values": [
+          -100.0,
+          -100.0,
+          -100.0,
+          -100.0,
+          -100.0,
+          -100.0,
+          -100.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_LeeSin_LeeSinBasicAttack_OnCast",
+        "13": "Play_sfx_LeeSin_LeeSinBasicAttack_OnHit"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 9.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        200.0,
+        200.0,
+        200.0,
+        200.0,
+        200.0,
+        200.0,
+        200.0
+      ],
+      "cooldownTime": [
+        -100.0,
+        -100.0,
+        -100.0,
+        -100.0,
+        -100.0,
+        -100.0,
+        -100.0
+      ],
+      "mAffectsTypeFlags": 5327,
+      "mAlternateName": "Jade_LeeSinBasicAttack_Jade",
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Jade_LeeSin_BA_01",
+      "missileSpeed": 0.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_LeeSin/Spells/Jade_LeeSinBasicAttack2": {
+    "ObjectName": "Jade_LeeSinBasicAttack2",
+    "mScriptName": "Jade_LeeSinBasicAttack2",
+    "mSpell": {
+      "0x11704a2b": 0.41214999556541443,
+      "0xe1136d1": {
+        "0xa3e0478": 200.0,
+        "values": [
+          200.0,
+          200.0,
+          200.0,
+          200.0,
+          200.0,
+          200.0,
+          200.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "Cooldown": {
+        "0xa3e0478": -100.0,
+        "values": [
+          -100.0,
+          -100.0,
+          -100.0,
+          -100.0,
+          -100.0,
+          -100.0,
+          -100.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_LeeSin_LeeSinBasicAttack_OnCast",
+        "13": "Play_sfx_LeeSin_LeeSinBasicAttack_OnHit"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 9.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        200.0,
+        200.0,
+        200.0,
+        200.0,
+        200.0,
+        200.0,
+        200.0
+      ],
+      "cooldownTime": [
+        -100.0,
+        -100.0,
+        -100.0,
+        -100.0,
+        -100.0,
+        -100.0,
+        -100.0
+      ],
+      "mAffectsTypeFlags": 5327,
+      "mAlternateName": "Jade_LeeSinBasicAttack2_Jade",
+      "mAnimationName": "Attack2",
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Jade_LeeSin_BA_01",
+      "missileSpeed": 0.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_LeeSin/Spells/Jade_LeeSinBasicAttack3": {
+    "ObjectName": "Jade_LeeSinBasicAttack3",
+    "mScriptName": "Jade_LeeSinBasicAttack3",
+    "mSpell": {
+      "0x11704a2b": 0.41214999556541443,
+      "0xe1136d1": {
+        "0xa3e0478": 200.0,
+        "values": [
+          200.0,
+          200.0,
+          200.0,
+          200.0,
+          200.0,
+          200.0,
+          200.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "Cooldown": {
+        "0xa3e0478": -100.0,
+        "values": [
+          -100.0,
+          -100.0,
+          -100.0,
+          -100.0,
+          -100.0,
+          -100.0,
+          -100.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_LeeSin_LeeSinBasicAttack_OnCast",
+        "13": "Play_sfx_LeeSin_LeeSinBasicAttack_OnHit"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 9.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        200.0,
+        200.0,
+        200.0,
+        200.0,
+        200.0,
+        200.0,
+        200.0
+      ],
+      "cooldownTime": [
+        -100.0,
+        -100.0,
+        -100.0,
+        -100.0,
+        -100.0,
+        -100.0,
+        -100.0
+      ],
+      "mAffectsTypeFlags": 5327,
+      "mAlternateName": "Jade_LeeSinBasicAttack3_Jade",
+      "mAnimationName": "Attack3",
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Jade_LeeSin_BA_01",
+      "missileSpeed": 0.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_LeeSin/Spells/Jade_LeeSinBasicAttack4": {
+    "ObjectName": "Jade_LeeSinBasicAttack4",
+    "mScriptName": "Jade_LeeSinBasicAttack4",
+    "mSpell": {
+      "0x11704a2b": 0.41214999556541443,
+      "0xe1136d1": {
+        "0xa3e0478": 200.0,
+        "values": [
+          200.0,
+          200.0,
+          200.0,
+          200.0,
+          200.0,
+          200.0,
+          200.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "Cooldown": {
+        "0xa3e0478": -100.0,
+        "values": [
+          -100.0,
+          -100.0,
+          -100.0,
+          -100.0,
+          -100.0,
+          -100.0,
+          -100.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_LeeSin_LeeSinBasicAttack_OnCast",
+        "13": "Play_sfx_LeeSin_LeeSinBasicAttack_OnHit"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 9.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        200.0,
+        200.0,
+        200.0,
+        200.0,
+        200.0,
+        200.0,
+        200.0
+      ],
+      "cooldownTime": [
+        -100.0,
+        -100.0,
+        -100.0,
+        -100.0,
+        -100.0,
+        -100.0,
+        -100.0
+      ],
+      "mAffectsTypeFlags": 5327,
+      "mAlternateName": "Jade_LeeSinBasicAttack4_Jade",
+      "mAnimationName": "Attack4",
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Jade_LeeSin_BA_01",
+      "missileSpeed": 0.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_LeeSin/Spells/Jade_LeeSinCritAttack": {
+    "ObjectName": "Jade_LeeSinCritAttack",
+    "mScriptName": "Jade_LeeSinCritAttack",
+    "mSpell": {
+      "0x11704a2b": 0.41214999556541443,
+      "0xe1136d1": {
+        "0xa3e0478": 200.0,
+        "values": [
+          200.0,
+          200.0,
+          200.0,
+          200.0,
+          200.0,
+          200.0,
+          200.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "Cooldown": {
+        "0xa3e0478": -100.0,
+        "values": [
+          -100.0,
+          -100.0,
+          -100.0,
+          -100.0,
+          -100.0,
+          -100.0,
+          -100.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_LeeSin_LeeSinCritAttack_OnCast",
+        "13": "Play_sfx_LeeSin_LeeSinCritAttack_OnHit"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 9.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        200.0,
+        200.0,
+        200.0,
+        200.0,
+        200.0,
+        200.0,
+        200.0
+      ],
+      "cooldownTime": [
+        -100.0,
+        -100.0,
+        -100.0,
+        -100.0,
+        -100.0,
+        -100.0,
+        -100.0
+      ],
+      "mAffectsTypeFlags": 5327,
+      "mAlternateName": "Jade_LeeSinCritAttack_Jade",
+      "mAnimationName": "Crit",
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Jade_LeeSin_BA_crit_01",
+      "missileSpeed": 0.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_LeeSin/Spells/Jade_LeeSinEOneAbility/Jade_LeeSinEOne": {
+    "ObjectName": "Jade_LeeSinEOne",
+    "mBuff": {
+      "PersistentEffectConditions": [
+        {
+          "PersistentVfxs": [
+            {
+              "effectKey": "0xa5f5b530",
+              "~class": "PersistentVfxData"
+            }
+          ],
+          "~class": "PersistentEffectConditionData"
+        }
+      ],
+      "mDescription": "<titleLeft>Tempest</titleLeft><mainText>Lee Sin is tracking this unit and can hit them with Cripple.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_LeeSinEOne",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0x210f9ec0": {
+        "0xa3e0478": 50.0,
+        "values": [
+          50.0,
+          50.0,
+          50.0,
+          50.0,
+          50.0,
+          50.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "0xe1136d1": {
+        "0xa3e0478": 350.0,
+        "values": [
+          350.0,
+          350.0,
+          350.0,
+          350.0,
+          350.0,
+          350.0,
+          350.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.0,
+      "DataValues": [
+        {
+          "name": "SlowAmount",
+          "values": [
+            22.5,
+            30.0,
+            37.5,
+            45.0,
+            52.5,
+            60.0,
+            67.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "E1Damage",
+          "values": [
+            25.0,
+            60.0,
+            95.0,
+            130.0,
+            165.0,
+            200.0,
+            235.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ReactivateTime",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowDuration",
+          "values": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "E2PercentReducion",
+          "values": [
+            -0.10000000149011612,
+            -0.20000000298023224,
+            -0.30000001192092896,
+            -0.4000000059604645,
+            -0.5,
+            -0.6000000238418579,
+            -0.699999988079071
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_LeeSin_LeeSinEOne_OnCast",
+        "14": "Play_sfx_LeeSin_LeeSinEOne_OnHitLocation",
+        "18": "Play_sfx_LeeSin_LeeSinEOne_OnBuffActivate"
+      },
+      "bIsToggleSpell": true,
+      "castConeDistance": 100.0,
+      "castFrame": 7.5,
+      "castRadius": [
+        350.0,
+        350.0,
+        350.0,
+        350.0,
+        350.0,
+        350.0,
+        350.0
+      ],
+      "castRange": [
+        350.0,
+        350.0,
+        350.0,
+        350.0,
+        350.0,
+        350.0,
+        350.0
+      ],
+      "castRangeDisplayOverride": [
+        425.0,
+        425.0,
+        425.0,
+        425.0,
+        425.0,
+        425.0,
+        425.0
+      ],
+      "mAffectsTypeFlags": 6154,
+      "mAlternateName": "Jade_LeeSinEOne",
+      "mAnimationName": "Spell3",
+      "mApplyAttackEffect": true,
+      "mCantCancelWhileWindingUp": true,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Tempest Damage",
+                  "type": "E1Damage",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "nameOverride": "Cripple Movement and Attack Speed % reduction",
+                  "type": "SlowAmount",
+                  "typeIndex": 2,
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Tempest / Cripple",
+            "keySummary": "Tempest: Lee Sin smashes the ground sending out a shockwave that deals magic damage and reveals enemy units hit. If Tempest hits an enemy, Lee Sin can cast cripple for the next 3 seconds.<br>Cripple: Lee Sin cripples nearby enemies revealed by Tempest, reducing their Movement and Attack Speed for 4 seconds. Movement and Attack Speed recover gradually over the duration.",
+            "keyTooltip": "<spellName>Tempest: </spellName>Lee Sin smashes the ground, sending out a shockwave that deals <magicDamage>@InitialDamage@ magic damage</magicDamage> and reveals enemy units hit for 4 seconds. If <spellName>Tempest</spellName> hits an enemy, Lee Sin can cast <spellName>Cripple</spellName> for the next 3 seconds.<br><br><spellName>Cripple: </spellName>Lee Sin cripples nearby enemies revealed by <spellName>Tempest</spellName> for 4 seconds, <status>Slowing</status> their <speed>Movement</speed> and <attackSpeed>Attack Speed</attackSpeed> by @SlowAmount@%. <speed>Movement</speed> and <attackSpeed>Attack Speed</attackSpeed> recover gradually over the duration."
+          },
+          "mObjectName": "Jade_LeeSinEOne",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 1.0,
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/BlindMonkEOne.dds"
+      ],
+      "mSpellCalculations": {
+        "InitialDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "E1Damage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 1.0,
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mTargetingTypeData": {
+        "~class": "SelfAoe"
+      },
+      "mana": [
+        50.0,
+        50.0,
+        50.0,
+        50.0,
+        50.0,
+        50.0
+      ],
+      "missileSpeed": 0.0,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_LeeSin/Spells/Jade_LeeSinQOneAbility/Jade_LeeSinQOne": {
+    "ObjectName": "Jade_LeeSinQOne",
+    "mBuff": {
+      "PersistentEffectConditions": [
+        {
+          "PersistentVfxs": [
+            {
+              "effectKey": "Jade_LeeSin_Q_tar_indicator",
+              "~class": "PersistentVfxData"
+            }
+          ],
+          "~class": "PersistentEffectConditionData"
+        }
+      ],
+      "mDescription": "<titleLeft>Sonic Wave</titleLeft><mainText>Lee Sin is tracking this unit and can attack them with Resonating Strike.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_LeeSinQOne",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0x210f9ec0": {
+        "0xa3e0478": 50.0,
+        "values": [
+          50.0,
+          50.0,
+          50.0,
+          50.0,
+          50.0,
+          50.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "0xe1136d1": {
+        "0xa3e0478": 1150.0,
+        "values": [
+          1150.0,
+          1150.0,
+          1150.0,
+          1150.0,
+          1150.0,
+          1150.0,
+          1150.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.0,
+      "0xf9c2333e": {
+        "cherry": {
+          "value": [
+            9.5,
+            8.5,
+            7.5,
+            6.5,
+            5.5,
+            4.5,
+            3.5
+          ],
+          "~class": "SpellEffectAmount"
+        }
+      },
+      "Cooldown": {
+        "values": [
+          11.0,
+          11.0,
+          10.0,
+          9.0,
+          8.0,
+          7.0,
+          7.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "Q1BaseDamage",
+          "values": [
+            20.0,
+            50.0,
+            80.0,
+            110.0,
+            140.0,
+            170.0,
+            200.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Q2BaseDamage",
+          "values": [
+            20.0,
+            50.0,
+            80.0,
+            110.0,
+            140.0,
+            170.0,
+            200.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Q2ADRatio",
+          "values": [
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Q2MaxMissingHealthMod",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ReactivateTime",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "CherryBonusHaste",
+          "values": [
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DashSpeed",
+          "values": [
+            1350.0,
+            1350.0,
+            1350.0,
+            1350.0,
+            1350.0,
+            1350.0,
+            1350.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_LeeSin_LeeSinQOne_OnCast",
+        "13": "Play_sfx_LeeSin_LeeSinQOne_OnHit",
+        "16": "Play_sfx_LeeSin_LeeSinQOne_OnMissileLaunch",
+        "18": "Play_sfx_LeeSin_LeeSinQOne_OnBuffActivate",
+        "19": "Play_sfx_LeeSin_LeeSinQOne_OnBuffDeactivate"
+      },
+      "bHaveHitBone": true,
+      "castConeDistance": 100.0,
+      "castFrame": 7.5,
+      "castRadius": [
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0
+      ],
+      "castRange": [
+        1200.0,
+        1200.0,
+        1200.0,
+        1200.0,
+        1200.0,
+        1200.0,
+        1200.0
+      ],
+      "castRangeDisplayOverride": [
+        1100.0,
+        1100.0,
+        1100.0,
+        1100.0,
+        1100.0,
+        1100.0,
+        1100.0
+      ],
+      "cooldownTime": [
+        11.0,
+        11.0,
+        10.0,
+        9.0,
+        8.0,
+        7.0,
+        7.0
+      ],
+      "mAffectsTypeFlags": 6154,
+      "mAlternateName": "Jade_LeeSinQOne_Jade",
+      "mAnimationName": "Spell1",
+      "mCantCancelWhileWindingUp": true,
+      "mCastType": 3,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "hideWithLineIndicator": true,
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "endLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "lineStopsAtEndPosition": false,
+            "lineWidth": {
+              "mPerLevelValues": [
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0
+              ],
+              "mValueType": 2,
+              "~class": "FloatPerSpellLevel"
+            },
+            "~class": "TargeterDefinitionLine"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Sonic Wave Damage",
+                  "type": "Q1BaseDamage",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Resonating Strike Minimum Base Damage",
+                  "type": "Q2BaseDamage",
+                  "typeIndex": 2,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Sonic Wave / Resonating Strike",
+            "keySummary": "Sonic Wave: Lee Sin projects a discordant wave of sound to locate his enemies, dealing physical damage to the first enemy it encounters. If Sonic Wave hits, Lee Sin can cast Resonating Strike for the next 3 seconds.<br>Resonating Strike: Lee Sin dashes to the enemy hit by Sonic Wave, dealing physical damage plus 8% of their missing health.",
+            "keyTooltip": "<spellName>Sonic Wave: </spellName>Lee Sin projects a discordant wave of sound to locate his enemies, dealing <physicalDamage>@InitialDamage@ physical damage</physicalDamage> to the first enemy it encounters. If <spellName>Sonic Wave</spellName> hits, Lee Sin can cast <spellName>Resonating Strike</spellName> for the next 3 seconds.<br><br><spellName>Resonating Strike: </spellName>Lee Sin dashes to the enemy hit by Sonic Wave, dealing <physicalDamage>@RecastDamage@ physical damage</physicalDamage> plus 8% of their missing Health."
+          },
+          "mObjectName": "Jade_LeeSinQOne",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient2": 2.0,
+      "mFloatVarsDecimals": [
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mHitBoneName": "C_BuffBone_Glb_Center_Loc",
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/BlindMonKQOne.dds"
+      ],
+      "mLineWidth": 60.0,
+      "mMissileEffectKey": "Jade_LeeSin_Q_mis_01",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnHit"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "~class": "BlendedLinearHeightSolver"
+        },
+        "mMissileWidth": 60.0,
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mProjectTargetToCastRange": true,
+          "mSpeed": 1800.0,
+          "mStartBoneName": "L_Hand",
+          "mTracksTarget": false,
+          "mUseHeightOffsetAtEnd": true,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VerticalFacingFaceTarget"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mSpellCalculations": {
+        "EmpoweredDamage": {
+          "mModifiedGameCalculation": "RecastDamage",
+          "mMultiplier": {
+            "mNumber": 2.0,
+            "~class": "NumberCalculationPart"
+          },
+          "mSimpleTooltipCalculationDisplay": 6,
+          "tooltipOnly": true,
+          "~class": "GameCalculationModified"
+        },
+        "InitialDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "Q1BaseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.8999999761581421,
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 6,
+          "~class": "GameCalculation"
+        },
+        "RecastDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "Q2BaseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "Q2ADRatio",
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 6,
+          "~class": "GameCalculation"
+        }
+      },
+      "mTargetingTypeData": {
+        "~class": "direction"
+      },
+      "mTurnSpeedScalar": 2.0,
+      "mana": [
+        50.0,
+        50.0,
+        50.0,
+        50.0,
+        50.0,
+        50.0
+      ],
+      "missileSpeed": 1800.0,
+      "selectionPriority": 1,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_LeeSin/Spells/Jade_LeeSinRAbility/Jade_LeeSinR": {
+    "ObjectName": "Jade_LeeSinR",
+    "mBuff": {
+      "PersistentEffectConditions": [
+        {
+          "PersistentVfxs": [
+            {
+              "boneName": "C_Buffbone_Glb_Chest_Loc",
+              "effectKey": "Jade_LeeSin_R_self_mis",
+              "~class": "PersistentVfxData"
+            }
+          ],
+          "~class": "PersistentEffectConditionData"
+        }
+      ],
+      "mDescription": "<titleLeft>Dragon's Rage</titleLeft><mainText>This unit will damage and knock up any allied units it collides with.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_LeeSinR",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0xe1136d1": {
+        "0xa3e0478": 375.0,
+        "values": [
+          375.0,
+          375.0,
+          375.0,
+          375.0,
+          375.0,
+          375.0,
+          375.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.0,
+      "Cooldown": {
+        "values": [
+          90.0,
+          90.0,
+          75.0,
+          60.0,
+          60.0,
+          60.0,
+          60.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            0.0,
+            200.0,
+            400.0,
+            600.0,
+            800.0,
+            1000.0,
+            1200.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "PercentHPCarryThrough",
+          "values": [
+            12.0,
+            12.0,
+            15.0,
+            18.0,
+            21.0,
+            24.0,
+            27.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "KickDistance",
+          "values": [
+            800.0,
+            800.0,
+            800.0,
+            800.0,
+            800.0,
+            800.0,
+            800.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_LeeSin_LeeSinR_OnCast",
+        "13": "Play_sfx_LeeSin_LeeSinR_OnHit"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 7.5,
+      "castRadius": [
+        375.0,
+        375.0,
+        375.0,
+        375.0,
+        375.0,
+        375.0,
+        375.0
+      ],
+      "castRange": [
+        375.0,
+        375.0,
+        375.0,
+        375.0,
+        375.0,
+        375.0,
+        375.0
+      ],
+      "cooldownTime": [
+        90.0,
+        90.0,
+        75.0,
+        60.0,
+        60.0,
+        60.0,
+        60.0
+      ],
+      "mAffectsTypeFlags": 4106,
+      "mAlternateName": "Jade_LeeSinRKick",
+      "mAnimationName": "Spell4",
+      "mCantCancelWhileWindingUp": true,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "endLocator": {
+              "basePosition": 2,
+              "distanceOffset": 100.0,
+              "orientationType": 2,
+              "~class": "DrawablePositionLocator"
+            },
+            "lineWidth": {
+              "mPerLevelValues": [
+                40.0,
+                40.0,
+                40.0,
+                40.0,
+                40.0,
+                40.0
+              ],
+              "mValueType": 2,
+              "~class": "FloatPerSpellLevel"
+            },
+            "overrideBaseRange": {
+              "mPerLevelValues": [
+                700.0,
+                700.0,
+                700.0,
+                700.0,
+                700.0,
+                700.0
+              ],
+              "mValueType": 2,
+              "~class": "FloatPerSpellLevel"
+            },
+            "startLocator": {
+              "basePosition": 2,
+              "~class": "DrawablePositionLocator"
+            },
+            "~class": "TargeterDefinitionLine"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "BaseDamage",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 3,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Dragon's Rage",
+            "keySummary": "Lee Sin performs a powerful roundhouse kick launching his target back, dealing physical damage to the target and any enemies they collide with. Enemies the target collides with are knocked into the air for a short duration. This technique was taught to him by Jesse Perring, although Lee Sin does not kick players off the map.",
+            "keyTooltip": "Lee Sin performs a powerful roundhouse kick <status>Knocking</status> an enemy champion back, dealing <physicalDamage>@Damage@ physical damage</physicalDamage> to the target and any enemies they collide with. Enemies the target collides with are <status>Knocked</status> into the air for a short duration.",
+            "keyTooltipExtendedBelowLine": "Kicking bodies like he was always meant to be."
+          },
+          "mObjectName": "Jade_LeeSinR",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient2": 0.5,
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mHitBoneName": "C_Buffbone_Glb_Center_Loc",
+      "mHitEffectKey": "Jade_LeeSin_R_impact",
+      "mHitEffectOrientType": 2,
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/BlindMonkR.dds"
+      ],
+      "mRequiredUnitTags": {
+        "mObjectTagList": [
+          "champion"
+        ],
+        "~class": "ObjectTags"
+      },
+      "mSpellCalculations": {
+        "Damage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 2.0,
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 6,
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "Trait_Ultimate",
+        "Trait_ImmobilizingCCSpell"
+      ],
+      "missileSpeed": 1500.0,
+      "selectionPriority": 1,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_LeeSin/Spells/Jade_LeeSinWOneAbility/Jade_LeeSinWOne": {
+    "ObjectName": "Jade_LeeSinWOne",
+    "mScriptName": "Jade_LeeSinWOne",
+    "mSpell": {
+      "0x210f9ec0": {
+        "0xa3e0478": 50.0,
+        "values": [
+          50.0,
+          50.0,
+          50.0,
+          50.0,
+          50.0,
+          50.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "0xe1136d1": {
+        "0xa3e0478": 700.0,
+        "values": [
+          700.0,
+          700.0,
+          700.0,
+          700.0,
+          700.0,
+          700.0,
+          700.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "Cooldown": {
+        "0xa3e0478": 9.0,
+        "values": [
+          9.0,
+          9.0,
+          9.0,
+          9.0,
+          9.0,
+          9.0,
+          9.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "LifestealAndSpellVamp",
+          "values": [
+            1.0,
+            5.0,
+            9.0,
+            13.0,
+            17.0,
+            21.0,
+            25.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ShieldValue",
+          "values": [
+            0.0,
+            40.0,
+            80.0,
+            120.0,
+            160.0,
+            200.0,
+            240.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ShieldDuration",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DashSpeed",
+          "values": [
+            1350.0,
+            1350.0,
+            1350.0,
+            1350.0,
+            1350.0,
+            1350.0,
+            1350.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "W1ReactivateTime",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "W1CooldownRecovered",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "LifestealAndSpellVampTime",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ArmorBonus",
+          "values": [
+            5.0,
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0,
+            35.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_LeeSin_LeeSinWOne_OnCast"
+      },
+      "cantCastWhileRooted": true,
+      "castConeDistance": 100.0,
+      "castFrame": 7.934999942779541,
+      "castRadius": [
+        750.0,
+        750.0,
+        750.0,
+        750.0,
+        750.0,
+        750.0,
+        750.0
+      ],
+      "castRange": [
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0
+      ],
+      "cooldownTime": [
+        9.0,
+        9.0,
+        9.0,
+        9.0,
+        9.0,
+        9.0,
+        9.0
+      ],
+      "flags": 4,
+      "mAffectsStatusFlags": 16,
+      "mAffectsTypeFlags": 1045,
+      "mAlternateName": "Jade_LeeSinWOne",
+      "mCantCancelWhileWindingUp": true,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Safeguard Shield Absorption",
+                  "type": "ShieldValue",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "nameOverride": "Iron Will Lifesteal / Spell Vamp %",
+                  "type": "LifestealAndSpellVamp",
+                  "typeIndex": 2,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Iron Will Armor",
+                  "type": "ArmorBonus",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Safeguard / Iron Will",
+            "keySummary": "Safeguard: Lee Sin rushes towards a target ally, shielding them both from damage. After using Safeguard, Lee Sin can cast Iron Will for the next 3 seconds.<br>Iron Will: Lee Sin's intense training allows him to thrive in battle. For 4 seconds, Lee Sin gains Life Steal, Spell Vamp, and Armor.",
+            "keyTooltip": "<spellName>Safeguard: </spellName>Lee Sin rushes towards a target ally, <shield>shielding</shield> them both for @ShieldAmount@ damage over the next 5 seconds. After using <spellName>Safeguard</spellName>, Lee Sin can cast <spellName>Iron Will</spellName> for the next 3 seconds.<br><br><spellName>Iron Will: </spellName>Lee Sin's intense training allows him to thrive in battle. For 5 seconds, Lee Sin gains @LifestealAndSpellVamp@% Life Steal, Spell Vamp, and <scaleArmor>@ArmorBonus@ Armor</scaleArmor>."
+          },
+          "mObjectName": "Jade_LeeSinWOne",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.800000011920929,
+      "mExcludedUnitTags": {
+        "mObjectTagList": [
+          "structure",
+          "0x6f573685"
+        ],
+        "~class": "ObjectTags"
+      },
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/BlindMonkWOne.dds"
+      ],
+      "mSpellCalculations": {
+        "ShieldAmount": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "ShieldValue",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.800000011920929,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 6,
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellRevealsChampion": false,
+      "mSpellTags": [
+        "PositiveEffect_MoveBlock",
+        "PositiveEffect_Boon"
+      ],
+      "mana": [
+        50.0,
+        50.0,
+        50.0,
+        50.0,
+        50.0,
+        50.0
+      ],
+      "missileSpeed": 1500.0,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  }
+}

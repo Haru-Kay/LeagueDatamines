@@ -1,0 +1,218 @@
+{
+  "0xacad3f3c": {
+    "ScriptName": "CharScriptSRU_OrderMinionSiege_Jade",
+    "path": "0xacad3f3c",
+    "sequences": {
+      "0x6a7835b9": {
+        "blocks": [
+          {
+            "0xd851ffa3": "926eb9bd-b0c1-4b9c-b351-3a4e8a8ebfb7",
+            "IsDisabled": true,
+            "ToSay": {
+              "value": "Jade Order Siege",
+              "~class": "StringGet"
+            },
+            "~class": "DebugPrintToChatBlock"
+          },
+          {
+            "0xd851ffa3": "15c58689-c11b-4356-bb32-f57ecc855cf8",
+            "IsDisabled": true,
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "ff44aa24-5156-48f4-a33f-934af628761b",
+                  "~class": "ScriptCommentBlock"
+                },
+                {
+                  "0xd851ffa3": "41616ea2-91f9-4376-95dd-b8bd517e5e2c",
+                  "Dest": {
+                    "Var": "InhibsDestroyed",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "~class": "IntGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "0xd851ffa3": "7bf72c54-febc-4334-8783-09eb09977dcc",
+                  "Dest": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "HpInhibitor",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": 200,
+                    "~class": "IntGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "0xd851ffa3": "ffbb4b74-9461-44f4-86a3-82900fdebe44",
+                  "Dest": {
+                    "Table": {
+                      "~class": "InstanceVars"
+                    },
+                    "Var": "DamageInhibitor",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Src": {
+                    "value": 25,
+                    "~class": "IntGet"
+                  },
+                  "~class": "SetVarInTableBlock"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "890ff66f-d90a-4f9b-b892-cebb715feb37",
+                  "Condition": {
+                    "Value1": {
+                      "Var": "0x358b1671",
+                      "~class": "ScriptTableGet"
+                    },
+                    "Value2": {
+                      "~class": "IntGet"
+                    },
+                    "~class": "ComparisonScriptCondition"
+                  },
+                  "~class": "0xe524b2fc"
+                },
+                {
+                  "0xd851ffa3": "2824b99c-5a4b-4302-83cf-fd1e1e737416",
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "35ef9ec9-8ebb-49ff-bfa0-dcca0adf241a",
+                        "Dest": {
+                          "Table": {
+                            "~class": "InstanceVars"
+                          },
+                          "Var": "DamageInhibitor",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Formula": "iv.DamageInhibitor * ptp.InhibsDestroyed",
+                        "~class": "0x15ebaa9c"
+                      },
+                      {
+                        "0xd851ffa3": "607cf98a-5ea7-426c-832e-a0ae0b3c7f77",
+                        "Dest": {
+                          "Table": {
+                            "~class": "InstanceVars"
+                          },
+                          "Var": "HpInhibitor",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Formula": "iv.HpInhibitor * ptp.InhibsDestroyed",
+                        "~class": "0x15ebaa9c"
+                      },
+                      {
+                        "~class": "0x0"
+                      },
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "ScriptCommentBlock"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0xd576330f": {
+        "blocks": [
+          {
+            "0xd851ffa3": "2e61d6bd-5cd1-44ae-9245-7e1d013d4216",
+            "Condition": {
+              "~class": "0x0"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "5271add2-7ef3-4c91-b678-fbc76351e505",
+                  "Dest": {
+                    "Var": "DamageAmount",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Formula": "ptp.DamageAmount * 2",
+                  "~class": "0x15ebaa9c"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      },
+      "0xe22f9f8c": {
+        "blocks": [
+          {
+            "0xd851ffa3": "b770facb-561a-457f-a906-4753cc4c9eae",
+            "Condition": {
+              "~class": "0x0"
+            },
+            "IsDisabled": true,
+            "Sequence": {
+              "blocks": [
+                {
+                  "0xd851ffa3": "a0f780d6-70b9-4070-8403-d94e4e6af139",
+                  "Var": {
+                    "Var": "Attacker",
+                    "~class": "0x622705af"
+                  },
+                  "~class": "0x851b8dc5"
+                },
+                {
+                  "0xd851ffa3": "8b3e3a41-a5b1-448f-8030-33752d02acc7",
+                  "Condition": {
+                    "~class": "0x0"
+                  },
+                  "Sequence": {
+                    "blocks": [
+                      {
+                        "0xd851ffa3": "47f78b44-2810-467f-9bef-14c77e7ac50b",
+                        "Dest": {
+                          "Var": "DamageAmount",
+                          "~class": "ScriptTableSet"
+                        },
+                        "Formula": "0.5 * ptp.DamageAmount",
+                        "~class": "0x15ebaa9c"
+                      },
+                      {
+                        "0xd851ffa3": "25a61218-5702-45f7-9f41-188e0db313ff",
+                        "Var": {
+                          "Var": "Target",
+                          "~class": "0x622705af"
+                        },
+                        "~class": "0x851b8dc5"
+                      },
+                      {
+                        "~class": "0x0"
+                      }
+                    ],
+                    "~class": "ScriptSequence"
+                  },
+                  "~class": "0xe524b2fc"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
+          }
+        ],
+        "~class": "RootScriptSequence"
+      }
+    },
+    "~class": "CharScript"
+  }
+}

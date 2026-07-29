@@ -161,7 +161,7 @@
     "name": "Blade Waltz",
     "rarity": "Prismatic",
     "desc": "Gain the <spellName>Blade Waltz</spellName> Summoner Spell.<br><br><rules><spellName>Blade Waltz</spellName> makes you untargetable while you dash at and damage enemies @TotalHits@ times.</rules>",
-    "maxLevelTooltip": " After <spellName>Blade Waltz</spellName> finishes, drop a <healing>healing zone that restores @HealthPerSecondCalc@ health</healing> per second for @MaxLvlHealDuration@ seconds.",
+    "maxLevelTooltip": "At max level after <spellName>Blade Waltz</spellName> finishes, drop a <healing>healing zone that restores @HealthPerSecondCalc@ health</healing> per second for @MaxLvlHealDuration@ seconds.",
     "tooltip": "Makes you untargetable while you dash at and deal @Damage@ damage to enemies @TotalHits@ times (deals 50% on-hit damage).<br><br>Damage Dealt This Round: @f1@<br>Damage Dealt Total: @f2@<br>",
     "dataValues": {
       "TotalHits": [
@@ -616,8 +616,7 @@
     "name": "Dashing",
     "rarity": "Prismatic",
     "desc": "Your dash, leap, blink, or teleport Abilities gain <scaleAbilityHaste>@Haste@ Ability Haste</scaleAbilityHaste>.",
-    "maxLevelTooltip": "At max level, your dash, leap, blink, or teleport Abilities grant %i:scaleTenacity% @Tenacity*100@ for @MaxLevelTenacityDuration@ as well.",
-    "maxLevelSummary": "At max level, your dash, leap, blink, or teleport Abilities grant %i:scaleTenacity% tenacity as well.",
+    "maxLevelTooltip": "At max level, your dash, leap, blink, or teleport Abilities grant <tenacity>@Tenacity*100@% %i:scaleTenacity% Tenacity</tenacity> for @MaxLevelTenacityDuration@ seconds.",
     "tooltip": "Your dash, leap, blink, or teleport Abilities gain <scaleAbilityHaste>@Haste@ Ability Haste</scaleAbilityHaste>.",
     "dataValues": {
       "Haste": [
@@ -900,7 +899,7 @@
         1.2000000476837158
       ],
       "PerwaveDamageCD": 0.5,
-      "MaxLevel": 3.0,
+      "MaxLevel": 2.0,
       "MaxLevelMultiCastDelay": 1.0
     },
     "calculations": {
@@ -1692,7 +1691,15 @@
         1.0
       ],
       "MaxLevel": 2.0,
-      "CritDamageMultipler": 0.25
+      "CritDamageMultipler": [
+        0.0,
+        0.0,
+        0.25,
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ]
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/ItsCritical_small.tex",
@@ -2133,14 +2140,14 @@
     "dataValues": {
       "Cooldown": 7.0,
       "MaxLevel": 2.0,
-      "BonusCastCount": [
-        0.0,
-        0.0,
-        0.0,
+      "Missiles": [
         1.0,
         1.0,
-        1.0,
-        1.0
+        2.0,
+        3.0,
+        2.0,
+        2.0,
+        2.0
       ],
       "BADRatio": 0.2199999988079071,
       "APRatio": 0.15000000596046448,
@@ -2153,7 +2160,8 @@
         100.0,
         100.0
       ],
-      "BonusPerLevel": 9.5
+      "BonusPerLevel": 9.5,
+      "Range": 1450.0
     },
     "calculations": {
       "Damage": {
@@ -3051,7 +3059,7 @@
         18.0
       ],
       "MSToASConversion": 0.0010000000474974513,
-      "MaxLevel": 3.0
+      "MaxLevel": 2.0
     },
     "calculations": {
       "MSToASConversionCalc": {
@@ -4327,24 +4335,24 @@
       "Cooldown": 6.0,
       "PerwaveDamageCD": 0.5,
       "APRatio": [
-        0.20000000298023224,
-        0.20000000298023224,
         0.30000001192092896,
+        0.30000001192092896,
+        0.4000000059604645,
         0.4000000059604645,
         0.4000000059604645,
         0.4000000059604645,
         0.4000000059604645
       ],
       "BonusADRatio": [
-        1.4500000476837158,
-        1.4500000476837158,
         1.649999976158142,
+        1.649999976158142,
+        1.850000023841858,
         1.850000023841858,
         1.850000023841858,
         1.850000023841858,
         1.850000023841858
       ],
-      "MaxLevel": 3.0,
+      "MaxLevel": 2.0,
       "MaxLevelMultiCastDelay": 0.5,
       "ExplosionDelayTimeMax": 1.0,
       "ExplosionDelayDistanceMin": 50.0,
@@ -4572,7 +4580,7 @@
     "name": "Quest: Urf's Champion",
     "rarity": "Gold",
     "desc": "Requirement: Score @TakedownsNeeded@ takedowns.<br><br>Reward: Golden Spatula",
-    "maxLevelTooltip": "At max level, increase the stats the item gives you by @MaxLevelPercentAmp*100@%.",
+    "maxLevelTooltip": "At max level, increase the stats the item gives you to @MaxLevelPercentAmp*100@%.",
     "tooltip": "{{Cherry_Quest_UrfsChampion_Summary}}<br><br>Takedowns: @f1@",
     "dataValues": {
       "TakedownsNeeded": 10.0,
@@ -4734,7 +4742,7 @@
       "LaserLength": [
         600.0,
         600.0,
-        800.0,
+        1000.0,
         1000.0,
         1000.0,
         1000.0,
@@ -4745,7 +4753,7 @@
       "APRatio": 0.09000000357627869,
       "ADRatioTooltip": 0.5600000023841858,
       "APRatioTooltip": 0.36000001430511475,
-      "MaxLevel": 3.0,
+      "MaxLevel": 2.0,
       "PercentageGrowth": 0.009999999776482582,
       "MaxLevelGrowthDuration": 0.6000000238418579
     },
@@ -5334,8 +5342,8 @@
     "apiName": "StackosaurusRex",
     "name": "Stackosaurus Rex",
     "rarity": "Silver",
-    "desc": "When you gain permanent <keywordMajor>Stacks</keywordMajor> of an Ability, Augment, or Item gain @StackModifier*100@% more!",
-    "tooltip": "When you gain permanent <keywordMajor>Stacks</keywordMajor> of an Ability, Augment, or Item gain @StackModifier*100@% more!",
+    "desc": "When you gain permanent <keywordMajor>Stacks</keywordMajor> of an Ability, gain @StackModifier*100@% more!",
+    "tooltip": "When you gain permanent <keywordMajor>Stacks</keywordMajor> of an Ability, gain @StackModifier*100@% more!",
     "dataValues": {
       "StackModifier": 0.75,
       "MaxLevel": 1.0
@@ -6571,6 +6579,7 @@
     "apiName": "SlowAndSteady",
     "name": "Slow and Steady",
     "rarity": "Gold",
+    "disabled": true,
     "desc": "Your <speed>Attack Speed</speed> can not go above @StaticRatio@. All Bonus <speed>Attack Speed</speed> is converted to <scaleAD>Attack Damage</scaleAD>.<br>",
     "maxLevelTooltip": "At max level gain <lifeSteal>@Vamp*100@% Lifesteal</lifeSteal>.",
     "tooltip": "Your <speed>Attack Speed</speed> can not go above @StaticRatio@. All bonus <speed>Attack Speed</speed> is converted to <scaleAD>Attack Damage</scaleAD> (<scaleAD>@ADPerAS@ AD</scaleAD> per <speed>1% AS</speed>).<br><br>Currently Gaining: @f1@ <scaleAD>Attack Damage</scaleAD>",
@@ -6695,7 +6704,8 @@
       "InitalDelay": 12.0,
       "WarningDelay": 2.5,
       "MaxLevel": 2.0,
-      "MaxLevelHealthTriggerPercent": 0.5
+      "MaxLevelHealthTriggerPercent": 0.5,
+      "DivineInterventionCDReduction": 2.0
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/SlowActingPainkillers_small.tex",
@@ -7269,15 +7279,7 @@
         1.0,
         1.0
       ],
-      "DivineInterventionCD": [
-        5.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
+      "DivineInterventionCD": 5.0,
       "MaxLevel": 3.0
     },
     "icons": [
@@ -8030,12 +8032,12 @@
       ],
       "StartingBees": [
         0.0,
-        1.0,
         2.0,
-        3.0,
         4.0,
-        5.0,
-        6.0
+        6.0,
+        8.0,
+        10.0,
+        12.0
       ],
       "MaxLevel": 3.0,
       "BaseDamageMax": 120.0,
@@ -8056,9 +8058,8 @@
             "~class": "StatByCoefficientCalculationPart"
           },
           {
-            "mCoefficient": 0.20000000298023224,
+            "mCoefficient": 0.25,
             "mStat": 2,
-            "mStatFormula": 2,
             "~class": "StatByCoefficientCalculationPart"
           }
         ],
@@ -8302,8 +8303,8 @@
       "MaxLevel": 1.0
     },
     "icons": [
-      "ASSETS/UX/Cherry/Augments/Icons/ChemtechPurifier_Small.Arena_2026_S2_A2.tex",
-      "ASSETS/UX/Cherry/Augments/Icons/ChemtechPurifier_Large.Arena_2026_S2_A2.tex"
+      "ASSETS/UX/Cherry/Augments/Icons/ChemtechPurifier_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/ChemtechPurifier_Large.tex"
     ]
   },
   {
@@ -8319,8 +8320,8 @@
       "MaxLevel": 1.0
     },
     "icons": [
-      "ASSETS/UX/Cherry/Augments/Icons/BloodRazor_Small.Arena_2026_S2_A2.tex",
-      "ASSETS/UX/Cherry/Augments/Icons/BloodRazor_Large.Arena_2026_S2_A2.tex"
+      "ASSETS/UX/Cherry/Augments/Icons/BloodRazor_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/BloodRazor_Large.tex"
     ]
   },
   {
@@ -8335,8 +8336,8 @@
       "MaxLevel": 1.0
     },
     "icons": [
-      "ASSETS/UX/Cherry/Augments/Icons/Dematerializer_Small.Arena_2026_S2_A2.tex",
-      "ASSETS/UX/Cherry/Augments/Icons/Dematerializer_Large.Arena_2026_S2_A2.tex"
+      "ASSETS/UX/Cherry/Augments/Icons/Dematerializer_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Dematerializer_Large.tex"
     ]
   },
   {
@@ -8351,8 +8352,8 @@
       "MaxLevel": 1.0
     },
     "icons": [
-      "ASSETS/UX/Cherry/Augments/Icons/CrystallineFlask_Small.Arena_2026_S2_A2.tex",
-      "ASSETS/UX/Cherry/Augments/Icons/CrystallineFlask_Large.Arena_2026_S2_A2.tex"
+      "ASSETS/UX/Cherry/Augments/Icons/CrystallineFlask_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/CrystallineFlask_Large.tex"
     ]
   },
   {
@@ -8368,8 +8369,8 @@
       "MaxLevel": 1.0
     },
     "icons": [
-      "ASSETS/UX/Cherry/Augments/Icons/FrozenMallet_Small.Arena_2026_S2_A2.tex",
-      "ASSETS/UX/Cherry/Augments/Icons/FrozenMallet_Large.Arena_2026_S2_A2.tex"
+      "ASSETS/UX/Cherry/Augments/Icons/FrozenMallet_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/FrozenMallet_Large.tex"
     ]
   },
   {
@@ -8385,8 +8386,8 @@
       "MaxLevel": 1.0
     },
     "icons": [
-      "ASSETS/UX/Cherry/Augments/Icons/RemnantOfTheWatchers_Small.Arena_2026_S2_A2.tex",
-      "ASSETS/UX/Cherry/Augments/Icons/RemnantOfTheWatchers_Large.Arena_2026_S2_A2.tex"
+      "ASSETS/UX/Cherry/Augments/Icons/RemnantOfTheWatchers_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/RemnantOfTheWatchers_Large.tex"
     ]
   },
   {
@@ -8477,8 +8478,8 @@
       "RevivesLost": 2.0
     },
     "icons": [
-      "ASSETS/UX/Cherry/Augments/Icons/Wolf_Small.Arena_2026_S2.tex",
-      "ASSETS/UX/Cherry/Augments/Icons/Wolf_Large.Arena_2026_S2.tex"
+      "ASSETS/UX/Cherry/Augments/Icons/Wolf_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Wolf_Large.tex"
     ]
   },
   {
@@ -8496,8 +8497,8 @@
       "LambRezTimerMod": 2.0
     },
     "icons": [
-      "ASSETS/UX/Cherry/Augments/Icons/Lamb_Small.Arena_2026_S2.tex",
-      "ASSETS/UX/Cherry/Augments/Icons/Lamb_Large.Arena_2026_S2.tex"
+      "ASSETS/UX/Cherry/Augments/Icons/Lamb_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Lamb_Large.tex"
     ]
   },
   {
@@ -8511,8 +8512,8 @@
       "MaxLevel": 1.0
     },
     "icons": [
-      "ASSETS/UX/Cherry/Augments/Icons/YoneDemon_Small.Arena_2026_S2_A2.tex",
-      "ASSETS/UX/Cherry/Augments/Icons/YoneDemon_Large.Arena_2026_S2_A2.tex"
+      "ASSETS/UX/Cherry/Augments/Icons/YoneDemon_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/YoneDemon_Large.tex"
     ]
   },
   {
@@ -8527,8 +8528,8 @@
       "MaxLevel": 1.0
     },
     "icons": [
-      "ASSETS/UX/Cherry/Augments/Icons/YoneHunter_Small.Arena_2026_S2_A2.tex",
-      "ASSETS/UX/Cherry/Augments/Icons/YoneHunter_Large.Arena_2026_S2_A2.tex"
+      "ASSETS/UX/Cherry/Augments/Icons/YoneHunter_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/YoneHunter_Large.tex"
     ]
   },
   {
@@ -8560,8 +8561,8 @@
       "HealthRestorePercent": 10.0
     },
     "icons": [
-      "ASSETS/UX/Cherry/Augments/Icons/Wealth_Small.Arena_2026_S2.tex",
-      "ASSETS/UX/Cherry/Augments/Icons/Wealth_Large.Arena_2026_S2.tex"
+      "ASSETS/UX/Cherry/Augments/Icons/Wealth_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Wealth_Large.tex"
     ]
   },
   {
@@ -8598,8 +8599,8 @@
       }
     },
     "icons": [
-      "ASSETS/UX/Cherry/Augments/Icons/Power_Small.Arena_2026_S2.tex",
-      "ASSETS/UX/Cherry/Augments/Icons/Power_Large.Arena_2026_S2.tex"
+      "ASSETS/UX/Cherry/Augments/Icons/Power_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Power_Large.tex"
     ]
   },
   {
@@ -8615,8 +8616,8 @@
       "HealthRestorePercent": 10.0
     },
     "icons": [
-      "ASSETS/UX/Cherry/Augments/Icons/Risk_Small.Arena_2026_S2.tex",
-      "ASSETS/UX/Cherry/Augments/Icons/Risk_Large.Arena_2026_S2.tex"
+      "ASSETS/UX/Cherry/Augments/Icons/Risk_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Risk_Large.tex"
     ]
   },
   {
@@ -8652,8 +8653,8 @@
       }
     },
     "icons": [
-      "ASSETS/UX/Cherry/Augments/Icons/Wealth_Large.Arena_2026_S2.tex",
-      "ASSETS/UX/Cherry/Augments/Icons/Wealth_Large.Arena_2026_S2.tex"
+      "ASSETS/UX/Cherry/Augments/Icons/Wealth_Large.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Wealth_Large.tex"
     ]
   },
   {
@@ -8690,8 +8691,8 @@
       }
     },
     "icons": [
-      "ASSETS/UX/Cherry/Augments/Icons/Power_Small.Arena_2026_S2.tex",
-      "ASSETS/UX/Cherry/Augments/Icons/Power_Large.Arena_2026_S2.tex"
+      "ASSETS/UX/Cherry/Augments/Icons/Power_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Power_Large.tex"
     ]
   },
   {
@@ -8727,8 +8728,8 @@
       }
     },
     "icons": [
-      "ASSETS/UX/Cherry/Augments/Icons/Risk_Small.Arena_2026_S2.tex",
-      "ASSETS/UX/Cherry/Augments/Icons/Risk_Large.Arena_2026_S2.tex"
+      "ASSETS/UX/Cherry/Augments/Icons/Risk_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Risk_Large.tex"
     ]
   },
   {
@@ -8764,8 +8765,8 @@
       }
     },
     "icons": [
-      "ASSETS/UX/Cherry/Augments/Icons/Wealth_Small.Arena_2026_S2.tex",
-      "ASSETS/UX/Cherry/Augments/Icons/Wealth_Large.Arena_2026_S2.tex"
+      "ASSETS/UX/Cherry/Augments/Icons/Wealth_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Wealth_Large.tex"
     ]
   },
   {
@@ -8802,8 +8803,8 @@
       }
     },
     "icons": [
-      "ASSETS/UX/Cherry/Augments/Icons/Power_Small.Arena_2026_S2.tex",
-      "ASSETS/UX/Cherry/Augments/Icons/Power_Large.Arena_2026_S2.tex"
+      "ASSETS/UX/Cherry/Augments/Icons/Power_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Power_Large.tex"
     ]
   },
   {
@@ -8839,8 +8840,8 @@
       }
     },
     "icons": [
-      "ASSETS/UX/Cherry/Augments/Icons/Risk_Small.Arena_2026_S2.tex",
-      "ASSETS/UX/Cherry/Augments/Icons/Risk_Large.Arena_2026_S2.tex"
+      "ASSETS/UX/Cherry/Augments/Icons/Risk_Small.tex",
+      "ASSETS/UX/Cherry/Augments/Icons/Risk_Large.tex"
     ]
   },
   {
@@ -9154,9 +9155,9 @@
       "Damage": [
         100.0,
         100.0,
-        200.0,
-        250.0,
-        250.0,
+        300.0,
+        500.0,
+        500.0,
         250.0,
         250.0
       ],
@@ -9164,7 +9165,7 @@
       "MaxDistance": 550.0,
       "KnockTowardsDistance": 250.0,
       "StandAsideRange": 900.0,
-      "MaxLevel": 3.0,
+      "MaxLevel": 2.0,
       "ClawCount": [
         1.0,
         1.0,
@@ -9726,13 +9727,13 @@
         750.0
       ],
       "ExecutionInc": [
+        0.0,
+        0.004999999888241291,
         0.009999999776482582,
-        0.009999999776482582,
-        0.012500000186264515,
         0.014999999664723873,
-        0.03999999910593033,
-        0.05000000074505806,
-        0.05999999865889549
+        0.019999999552965164,
+        0.02500000037252903,
+        0.029999999329447746
       ],
       "MaxCount": 15.0,
       "InstantGoldGain": 250.0,
@@ -9827,6 +9828,17 @@
     "tooltip": "{{Kiwi_GlassCannon_Summary}}<br><br>Damage Dealt: @f1@",
     "dataValues": {
       "TrueDamagePerc": [
+        0.25,
+        0.25,
+        0.3400000035762787,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "HPReductionPerc": 0.30000001192092896,
+      "MaxLevel": 3.0,
+      "RangedTrueDamagePercDisplay": [
         0.15000000596046448,
         0.15000000596046448,
         0.20000000298023224,
@@ -9834,9 +9846,7 @@
         0.30000001192092896,
         0.30000001192092896,
         0.30000001192092896
-      ],
-      "HPReductionPerc": 0.30000001192092896,
-      "MaxLevel": 3.0
+      ]
     },
     "calculations": {
       "0x3fb72b56": {
@@ -9930,7 +9940,8 @@
         60.0
       ],
       "BuffDuration": 6.0,
-      "MaxLevel": 3.0
+      "MaxLevel": 2.0,
+      "Cooldown": 4.0
     },
     "add": {
       "Augment_CriticalRhythmBuff": {
@@ -9957,22 +9968,22 @@
     "tooltip": "Gain <magicDamage>@APPerLevel@ Ability Power</magicDamage>, <speed>@MSMod*100@% Movement Speed</speed>, and <omnivamp>@MaxOmnivamp*100@% Omnivamp</omnivamp> based on <scaleHealth>missing Health</scaleHealth>. Spell casts cost @SpellHealthCost*100@% of your current Health.<br><br><rules>Max benefit at @HealthThresholdTT*100@% Health.</rules><br>",
     "dataValues": {
       "MaxOmnivamp": [
-        0.15000000596046448,
-        0.15000000596046448,
-        0.25,
-        0.25,
-        0.25,
-        0.25,
-        0.25
+        0.20000000298023224,
+        0.20000000298023224,
+        0.3499999940395355,
+        0.4000000059604645,
+        0.4000000059604645,
+        0.4000000059604645,
+        0.4000000059604645
       ],
       "MSMod": [
         0.5,
         0.5,
-        0.75,
-        0.75,
-        0.75,
-        0.75,
-        0.75
+        1.0,
+        1.25,
+        1.25,
+        1.25,
+        1.25
       ],
       "SpellHealthCost": 0.05000000074505806,
       "HealthThresholdTT": 0.30000001192092896,
@@ -10026,28 +10037,6 @@
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/EscapePlan_small.tex",
       "ASSETS/UX/Kiwi/Augments/Icons/EscapePlan_large.tex"
-    ]
-  },
-  {
-    "id": 1338,
-    "apiName": "ARAM_Upgrade_Hubris",
-    "name": "Upgrade Hubris",
-    "rarity": "Gold",
-    "disabled": true,
-    "desc": "On Takedown, Hubris <healing>heals</healing> you and grants <speed>Movement Speed</speed>, scaling with your <keywordMajor>Eminence</keywordMajor> stacks. <br><br>Gain <gold>+%i:goldCoins% 250 Gold.</gold>",
-    "tooltip": "On takedown, Hubris <healing>restores @MaxHealthRestored*100@% of your max Health plus @MissingHealthStackAmount*100@% of your missing Health</healing> and grants <speed>@MSBase@ plus @MSBonusPerStack@ Movement Speed</speed> for the buff duration, both scaling with your stacks.<br><br>Gain <gold>+%i:goldCoins% 250 Gold.</gold>",
-    "dataValues": {
-      "LethalityPerStack": 1.0,
-      "MaxHealthRestored": 0.05000000074505806,
-      "MissingHealthStackAmount": 0.029999999329447746,
-      "MSBase": 10.0,
-      "MSBonusPerStack": 5.0,
-      "InstantGoldGain": 250.0,
-      "MaxLevel": 1.0
-    },
-    "icons": [
-      "ASSETS/UX/Kiwi/Augments/Icons/UpgradeHubris_small.tex",
-      "ASSETS/UX/Kiwi/Augments/Icons/UpgradeHubris_large.tex"
     ]
   },
   {
@@ -10380,8 +10369,8 @@
     "apiName": "ARAM_StuckInHereWithMe",
     "name": "Stuck In Here With Me",
     "rarity": "Prismatic",
-    "desc": "Using your <keywordMajor>Ultimate</keywordMajor> <status>Taunts</status> nearby enemies and grants you damage reduction.",
-    "tooltip": "After using your <keywordMajor>Ultimate</keywordMajor>, gain @DamageMitigation@ damage reduction for @TauntChannelTime@ seconds, after which you <status>Taunt</status> enemies inside for @TauntDuration@ seconds.",
+    "desc": "Using your <keywordMajor>Ultimate</keywordMajor> <status>Taunts</status> nearby enemies and grants you damage reduction. <br><br>Gain @UltimateHaste@ Ultimate Ability Haste.",
+    "tooltip": "After using your <keywordMajor>Ultimate</keywordMajor>, gain @DamageMitigation@ damage reduction for @TauntChannelTime@ seconds, after which you <status>Taunt</status> enemies inside for @TauntDuration@ seconds. <br><br>Gain @UltimateHaste@ Ultimate Ability Haste.",
     "dataValues": {
       "TauntRadius": 500.0,
       "TauntDuration": 2.0,
@@ -10407,66 +10396,6 @@
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/StuckInHereWithMe_small.tex",
       "ASSETS/UX/Kiwi/Augments/Icons/StuckInHereWithMe_large.tex"
-    ]
-  },
-  {
-    "id": 1415,
-    "apiName": "Twinfire",
-    "name": "Twin Fire",
-    "rarity": "Silver",
-    "desc": "On ability damage, fire 1 plus @AdditionalMis@ missiles that deal <magicDamage>@Damage@ magic damage</magicDamage> each. <br><br>Gain <attention>%i:scaleCrit% @CrtiChance*100@% Critical Strike Chance</attention>.",
-    "tooltip": "{{Kiwi_TwinFire_Summary}}",
-    "dataValues": {
-      "ADRatio": 0.07000000029802322,
-      "CrtiChance": 0.25,
-      "AdditionalMisDivision": [
-        2.0,
-        3.0,
-        4.0,
-        5.0,
-        6.0,
-        7.0,
-        8.0
-      ],
-      "APRatio": 0.07000000029802322,
-      "Cooldown": 5.0,
-      "MaxLevel": 3.0
-    },
-    "calculations": {
-      "AdditionalMis": {
-        "mFormulaParts": [
-          {
-            "mDataValue": "AdditionalMisDivision",
-            "mStat": 8,
-            "~class": "StatByNamedDataValueCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "Damage": {
-        "mFormulaParts": [
-          {
-            "mEndValue": 30.0,
-            "mStartValue": 10.0,
-            "~class": "ByCharLevelInterpolationCalculationPart"
-          },
-          {
-            "mDataValue": "ADRatio",
-            "mStat": 2,
-            "mStatFormula": 2,
-            "~class": "StatByNamedDataValueCalculationPart"
-          },
-          {
-            "mDataValue": "APRatio",
-            "~class": "StatByNamedDataValueCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      }
-    },
-    "icons": [
-      "ASSETS/UX/Kiwi/Augments/Icons/TwinFire_small.tex",
-      "ASSETS/UX/Kiwi/Augments/Icons/TwinFire_large.tex"
     ]
   },
   {
@@ -10505,248 +10434,6 @@
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/CrackOpenThatEgg_small.tex",
       "ASSETS/UX/Kiwi/Augments/Icons/CrackOpenThatEgg_large.tex"
-    ]
-  },
-  {
-    "id": 1424,
-    "apiName": "ARAM_MissingPingAugment",
-    "name": "???",
-    "rarity": "Prismatic",
-    "disabled": true,
-    "desc": "Your <passive>Missing Pings</passive> will launch a missile at the pinged location that <magicdamage>damages</magicdamage> enemies and <heal>heals</heal> allies.",
-    "tooltip": "Your <passive>Missing Pings</passive> will launch a missile at the pinged location that deals <magicDamage>@BaseDmgCalc@ + @DamageHPRatio*100@% missing Health magic damage</magicDamage> to enemies and heals allies for <scaleHealth>@BaseHealingCalc@ + @HealingHPRatio*100@% missing Health</scaleHealth>.",
-    "dataValues": {
-      "BaseDmg": 100.0,
-      "BaseHeal": 50.0,
-      "MaxMult": 2.0,
-      "HealingHPRatio": 0.10000000149011612,
-      "DamageHPRatio": 0.10000000149011612,
-      "MaxLevel": 1.0
-    },
-    "calculations": {
-      "0x2d5f543d": {
-        "mFormulaParts": [
-          {
-            "0xa8cb9c14": true,
-            "mDataValue": "HealingHPRatio",
-            "mStat": 16,
-            "~class": "StatByNamedDataValueCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "0xb38c4ac0": {
-        "mFormulaParts": [
-          {
-            "0xa8cb9c14": true,
-            "mDataValue": "DamageHPRatio",
-            "mStat": 16,
-            "~class": "StatByNamedDataValueCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "BaseDmgCalc": {
-        "mFormulaParts": [
-          {
-            "mEndValue": 400.0,
-            "mStartValue": 100.0,
-            "~class": "ByCharLevelInterpolationCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "BaseHealingCalc": {
-        "mFormulaParts": [
-          {
-            "mEndValue": 200.0,
-            "mStartValue": 50.0,
-            "~class": "ByCharLevelInterpolationCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      }
-    },
-    "add": {
-      "Augment_ARAM_MissingPingAugment_Mis": {
-        "dataValues": {
-          "BaseDmg": 100.0,
-          "BaseHeal": 100.0,
-          "MaxMult": 2.0
-        },
-        "calcs": {
-          "0x4f1ed7f6": {
-            "mFormulaParts": [
-              {
-                "mEndValue": 200.0,
-                "mStartValue": 50.0,
-                "~class": "ByCharLevelInterpolationCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "0xe77cbd0c": {
-            "mFormulaParts": [
-              {
-                "mEndValue": 300.0,
-                "mStartValue": 100.0,
-                "~class": "ByCharLevelInterpolationCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          }
-        }
-      },
-      "Augment_ARAM_MissingPingAugment_Mis2": {
-        "dataValues": {
-          "BaseDmg": 100.0,
-          "BaseHeal": 100.0,
-          "MaxMult": 2.0
-        },
-        "calcs": {
-          "0x4f1ed7f6": {
-            "mFormulaParts": [
-              {
-                "mEndValue": 200.0,
-                "mStartValue": 50.0,
-                "~class": "ByCharLevelInterpolationCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "0xe77cbd0c": {
-            "mFormulaParts": [
-              {
-                "mEndValue": 300.0,
-                "mStartValue": 100.0,
-                "~class": "ByCharLevelInterpolationCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          }
-        }
-      }
-    },
-    "icons": [
-      "ASSETS/UX/Kiwi/Augments/Icons/MissingPing_small.tex",
-      "ASSETS/UX/Kiwi/Augments/Icons/MissingPing_large.tex"
-    ]
-  },
-  {
-    "id": 2003,
-    "apiName": "ARAM_PoroKing",
-    "name": "Bounce of the Poro King",
-    "rarity": "Prismatic",
-    "disabled": true,
-    "desc": "Gain <spellName>Bounce of the Poro King</spellName>!<br><br><rules><spellName>Bounce of the Poro King</spellName>: Transform into the Poro King, bouncing repeatedly, dealing <physicalDamage>physical damage</physicalDamage> and <status>Knocking Back</status> nearby enemies.</rules>",
-    "tooltip": "Gain <spellName>Bounce of the Poro King</spellName>!<br><br><spellName>Bounce of the Poro King</spellName>: For @Buff_Duration@ seconds, transform into the Poro King! You are now Unstoppable and Ghosted. Gain @Calc_Damage_Reduction@ damage reduction and <speed>@Calc_MoveSpeed@ Movement Speed</speed>, but become Silenced and unable to Attack.<br><br>Additionally, bounce every 1 second, dealing <physicalDamage>@Calc_Damage@ physical damage</physicalDamage> and <status>Knock Back</status> nearby enemy champions on landing.<br><br><rules>The Poro King cannot <status>Knock Back</status> the same enemy more than once per cast.<br><br>Damage Prevented: @f1.0@<br>Damage Dealt: @f2.0@<br>Enemies Bounced: @f3.0@</rules>",
-    "dataValues": {
-      "Poro_Augment_Amp": 1.0,
-      "Buff_Duration": 3.0,
-      "MaxLevel": 1.0,
-      "MSAmp": 0.25,
-      "DRAmount": 0.699999988079071
-    },
-    "calculations": {
-      "Calc_Damage": {
-        "mFormulaParts": [
-          {
-            "mEndValue": 700.0,
-            "mStartValue": 100.0,
-            "~class": "ByCharLevelInterpolationCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "Calc_Damage_Reduction": {
-        "mDisplayAsPercent": true,
-        "mExpandedTooltipCalculationDisplay": 5,
-        "mFormulaParts": [
-          {
-            "mDataValue": "DRAmount",
-            "~class": "NamedDataValueCalculationPart"
-          }
-        ],
-        "mSimpleTooltipCalculationDisplay": 5,
-        "~class": "GameCalculation"
-      },
-      "Calc_MoveSpeed": {
-        "mDisplayAsPercent": true,
-        "mExpandedTooltipCalculationDisplay": 5,
-        "mFormulaParts": [
-          {
-            "mNumber": 0.4000000059604645,
-            "~class": "NumberCalculationPart"
-          }
-        ],
-        "mSimpleTooltipCalculationDisplay": 5,
-        "~class": "GameCalculation"
-      }
-    },
-    "add": {
-      "Augment_ARAM_PoroKing_Transform": {
-        "dataValues": {
-          "Poro_Augment_Amp": 1.0,
-          "Buff_Duration": 3.0
-        },
-        "calcs": {
-          "Calc_Damage": {
-            "mFormulaParts": [
-              {
-                "mEndValue": 300.0,
-                "mStartValue": 100.0,
-                "~class": "ByCharLevelInterpolationCalculationPart"
-              },
-              {
-                "mCoefficient": 0.05000000074505806,
-                "mStat": 12,
-                "mStatFormula": 2,
-                "~class": "StatByCoefficientCalculationPart"
-              },
-              {
-                "mCoefficient": 1.0,
-                "mStat": 2,
-                "mStatFormula": 2,
-                "~class": "StatByCoefficientCalculationPart"
-              },
-              {
-                "mCoefficient": 0.5,
-                "mStatFormula": 2,
-                "~class": "StatByCoefficientCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "Calc_Damage_Reduction": {
-            "mDisplayAsPercent": true,
-            "mExpandedTooltipCalculationDisplay": 5,
-            "mFormulaParts": [
-              {
-                "mNumber": 0.8500000238418579,
-                "~class": "NumberCalculationPart"
-              }
-            ],
-            "mSimpleTooltipCalculationDisplay": 5,
-            "~class": "GameCalculation"
-          },
-          "Calc_MoveSpeed": {
-            "mDisplayAsPercent": true,
-            "mExpandedTooltipCalculationDisplay": 5,
-            "mFormulaParts": [
-              {
-                "mNumber": 0.25,
-                "~class": "NumberCalculationPart"
-              }
-            ],
-            "mSimpleTooltipCalculationDisplay": 5,
-            "~class": "GameCalculation"
-          }
-        }
-      }
-    },
-    "icons": [
-      "ASSETS/UX/Kiwi/Augments/Icons/PoroKing_small.tex",
-      "ASSETS/UX/Kiwi/Augments/Icons/PoroKing_large.tex"
     ]
   },
   {
@@ -11018,7 +10705,8 @@
         4.0,
         5.0,
         6.0
-      ]
+      ],
+      "Cooldown": 5.0
     },
     "calculations": {
       "Calc_Crit_Chance": {

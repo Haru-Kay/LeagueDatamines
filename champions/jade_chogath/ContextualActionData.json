@@ -1,0 +1,224 @@
+{
+  "Characters/Jade_Chogath/CAC/Jade_Chogath_Skin02": {
+    "mCooldown": 15.0,
+    "mObjectPath": "Characters/Jade_Chogath/CAC/Jade_Chogath_Skin02",
+    "mSituations": {
+      "AttackChampion2D": {
+        "mRules": [
+          {
+            "mAudioAction": {
+              "mSelfEventName": "Attack2DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "Attack - Champion",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "AttackMinion2D": {
+        "mRules": [
+          {
+            "mAudioAction": {
+              "mSelfEventName": "Attack2DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "Attack - Minion",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "AttackNeutral2D": {
+        "mRules": [
+          {
+            "mAudioAction": {
+              "mSelfEventName": "Attack2DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "Attack - Neutral",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "FirstMove2D": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Move2DStandard",
+              "mWaitTimeout": -1.0,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "First Move",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "Joke": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Joke3DGeneral",
+              "mEnemyEventName": "Joke3DGeneral",
+              "mSelfEventName": "Joke3DGeneral",
+              "mSpectatorEventName": "Joke3DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "Joke",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "Laugh": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Laugh3DGeneral",
+              "mEnemyEventName": "Laugh3DGeneral",
+              "mSelfEventName": "Laugh3DGeneral",
+              "mSpectatorEventName": "Laugh3DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "Laugh",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "MoveOrder2D": {
+        "mRules": [
+          {
+            "mAudioAction": {
+              "mSelfEventName": "Move2DStandard",
+              "mWaitTimeout": -1.0,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCompareOp": 3,
+                "mDistance": 400.0,
+                "~class": "ContextualConditionMoveDistance"
+              }
+            ],
+            "mRuleName": "Move - Standard",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "SpellCast": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "DontResetTimer": true,
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "0x9449aa71": true,
+              "mAllyEventName": "Spell3DQCast",
+              "mEnemyEventName": "Spell3DQCast",
+              "mSelfEventName": "Spell3DQCast",
+              "mSpectatorEventName": "Spell3DQCast",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mSpell": "Characters/Jade_Chogath/Spells/Jade_ChogathQAbility/Jade_ChogathQ",
+                "~class": "ContextualConditionSpellName"
+              }
+            ],
+            "mRuleName": "Q",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "DontResetTimer": true,
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "0x9449aa71": true,
+              "mAllyEventName": "Spell3DWCast",
+              "mEnemyEventName": "Spell3DWCast",
+              "mSelfEventName": "Spell3DWCast",
+              "mSpectatorEventName": "Spell3DWCast",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mSpell": "Characters/Jade_Chogath/Spells/Jade_ChogathWAbility/Jade_ChogathW",
+                "~class": "ContextualConditionSpellName"
+              }
+            ],
+            "mRuleName": "W",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "DontResetTimer": true,
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "0x9449aa71": true,
+              "mAllyEventName": "Spell3DRCast",
+              "mEnemyEventName": "Spell3DRCast",
+              "mSelfEventName": "Spell3DRCast",
+              "mSpectatorEventName": "Spell3DRCast",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mSpell": "Characters/Jade_Chogath/Spells/Jade_ChogathRAbility/Jade_ChogathR",
+                "~class": "ContextualConditionSpellName"
+              }
+            ],
+            "mPriority": 100,
+            "mRuleName": "R",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "taunt": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Taunt3DGeneral",
+              "mEnemyEventName": "Taunt3DGeneral",
+              "mSelfEventName": "Taunt3DGeneral",
+              "mSpectatorEventName": "Taunt3DGeneral",
+              "mWaitForAnnouncerQueue": true,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "Taunt",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      }
+    },
+    "~class": "ContextualActionData"
+  }
+}

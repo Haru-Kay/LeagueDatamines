@@ -314,6 +314,32 @@
             235.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowAmountPlantAttack",
+          "values": [
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowDurationPlantAttack",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "castConeDistance": 100.0,
@@ -476,7 +502,7 @@
           "mLocKeys": {
             "keyName": "Grasping Roots",
             "keySummary": "Zyra sends forth vines through the ground to ensnare her target, dealing damage and rooting enemies they come across. If cast near a seed, Grasping Roots grows a Vine Lasher, whose short range attacks reduce enemy Move Speed.",
-            "keyTooltip": "Zyra sends vines forward, <status>Rooting</status> for @Effect5Amount@ second(s) and dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>. <br><br>If this Ability passes near a <keywordMajor>Seed</keywordMajor>, the <keywordMajor>Seed</keywordMajor> grows into a Vine Lasher that deals <magicDamage>@spell.ZyraP:PlantDamage@ magic damage</magicDamage> and lasts @spell.ZyraP:PlantDuration@ seconds. Vine Lashers have 400 range, and their Attacks <status>Slow</status> by @Effect2Amount@% for @Effect3Amount@ seconds. The <status>Slow</status> from multiple Vine Lashers stacks up to @MaxSlowStacks@ times."
+            "keyTooltip": "Zyra sends vines forward, <status>Rooting</status> for @RootDuration@ second(s) and dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>. <br><br>If this Ability passes near a <keywordMajor>Seed</keywordMajor>, the <keywordMajor>Seed</keywordMajor> grows into a Vine Lasher that deals <magicDamage>@spell.ZyraP:PlantDamage@ magic damage</magicDamage> and lasts @spell.ZyraP:PlantDuration@ seconds. Vine Lashers have 400 range, and their Attacks <status>Slow</status> by @SlowAmountPlantAttack@% for @SlowDurationPlantAttack@ seconds. The <status>Slow</status> from multiple Vine Lashers stacks up to @MaxSlowStacks@ times."
           },
           "mObjectName": "ZyraE",
           "~class": "TooltipInstanceSpell"
@@ -1823,6 +1849,21 @@
         ],
         "~class": "SpellAttributeModifiable"
       },
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            60.0,
+            60.0,
+            100.0,
+            140.0,
+            180.0,
+            220.0,
+            260.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "bHaveHitBone": true,
       "castConeDistance": 100.0,
       "castFrame": 7.5,
@@ -1970,8 +2011,7 @@
                 },
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "BaseDamage",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -2086,8 +2126,8 @@
         "InitialDamage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.6499999761581421,
@@ -2586,6 +2626,58 @@
             50.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "KnockupDuration",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "EnragedBonusHealthPercent",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseDamage",
+          "values": [
+            200.0,
+            200.0,
+            300.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "EnragePlantsBonusDamage",
+          "values": [
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "bIsToggleSpell": true,
@@ -2650,8 +2742,7 @@
                 },
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 3,
+                  "type": "BaseDamage",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -2662,7 +2753,7 @@
           "mLocKeys": {
             "keyName": "Stranglethorns",
             "keySummary": "Zyra summons a twisted thicket at her target location, dealing damage to enemies as it expands and knocking them airborne as it contracts. Plants within the thicket are enraged.",
-            "keyTooltip": "Zyra summons the fury of nature, growing a twisted thicket that deals <magicDamage>@TotalDamage@ magic damage</magicDamage>. After 2 seconds, the vines snap upwards, <status>Knocking Up</status> for @Effect1Amount@ second.<br><br>Zyra's plants within the thicket become enraged, resetting their duration, gaining <healing>@Effect2Amount*100@% Health</healing> and Attacking for @PlantDamageBonus@% bonus damage."
+            "keyTooltip": "Zyra summons the fury of nature, growing a twisted thicket that deals <magicDamage>@TotalDamage@ magic damage</magicDamage>. After 2 seconds, the vines snap upwards, <status>Knocking Up</status> for @KnockupDuration@ second.<br><br>Zyra's plants within the thicket become enraged, resetting their duration, gaining <healing>@EnragedBonusHealthPercent*100@% Health</healing> and Attacking for @PlantDamageBonus@% bonus damage."
           },
           "mObjectName": "ZyraR",
           "~class": "TooltipInstanceSpell"
@@ -2763,8 +2854,8 @@
         "TotalDamage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 3,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.699999988079071,
@@ -3218,6 +3309,64 @@
         ],
         "~class": "SpellAttributeModifiable"
       },
+      "DataValues": [
+        {
+          "name": "KillAmmoRefundMinion",
+          "values": [
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "KillAmmoRefundChamp",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "VisionGranted",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SeedDuration",
+          "values": [
+            60.0,
+            60.0,
+            60.0,
+            60.0,
+            60.0,
+            60.0,
+            60.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "FlurryDamageBonus",
+          "~class": "SpellDataValue"
+        }
+      ],
       "castConeDistance": 100.0,
       "castFrame": 7.539999961853027,
       "castRadius": [
@@ -3317,7 +3466,7 @@
             "keyCost": "1 Seed",
             "keyName": "Rampant Growth",
             "keySummary": "Zyra plants a seed, lasting up to 60 seconds. Deadly Spines and Grasping Roots cast near seeds will turn them into plants who fight for Zyra. Zyra can store multiple seeds at once, and killing enemies reduces Rampant Growth's recharge time.",
-            "keyTooltip": "Zyra plants a <keywordMajor>Seed</keywordMajor> that lasts @Effect6Amount@ seconds. These <keywordMajor>Seeds</keywordMajor> grant <keywordStealth>True Sight</keywordStealth> of enemy champions that step on them for @Effect3Amount@ seconds, but are still destroyed.<br><br>This Ability has 2 charges with a @AmmoRechargeTime@ second recharge time. Killing an enemy minion or monster reduces the recharge time by @Effect1Amount*100@%. Champion takedowns reduce the recharge time by @Effect2Amount*100@% instead."
+            "keyTooltip": "Zyra plants a <keywordMajor>Seed</keywordMajor> that lasts @SeedDuration@ seconds. These <keywordMajor>Seeds</keywordMajor> grant <keywordStealth>True Sight</keywordStealth> of enemy champions that step on them for @VisionGranted@ seconds, but are still destroyed.<br><br>This Ability has 2 charges with a @AmmoRechargeTime@ second recharge time. Killing an enemy minion or monster reduces the recharge time by @KillAmmoRefundMinion*100@%. Champion takedowns reduce the recharge time by @KillAmmoRefundChamp*100@% instead."
           },
           "mObjectName": "ZyraW",
           "~class": "TooltipInstanceSpell"

@@ -14,7 +14,7 @@
       "Calc_AF": {
         "mFormulaParts": [
           {
-            "mEndValue": 50.0,
+            "mEndValue": 75.0,
             "mStartValue": 25.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           }
@@ -24,8 +24,8 @@
       "Calc_Defenses": {
         "mFormulaParts": [
           {
-            "mEndValue": 8.0,
-            "mStartValue": 4.0,
+            "mEndValue": 10.0,
+            "mStartValue": 5.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           }
         ],
@@ -399,8 +399,8 @@
       "Damage": {
         "mFormulaParts": [
           {
-            "mEndValue": 210.0,
-            "mStartValue": 70.0,
+            "mEndValue": 250.0,
+            "mStartValue": 90.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           },
           {
@@ -668,7 +668,7 @@
     "name": "Infernal Conduit",
     "rarity": "Prismatic",
     "desc": "Your Abilities apply stacking <keywordMajor>Burn</keywordMajor> that deals damage over time.<br><br>Your <keywordMajor>Burn</keywordMajor> effects reduce your basic Ability Cooldowns.",
-    "tooltip": "Your Abilities apply an infinitely stacking <keywordMajor>Burn</keywordMajor>, dealing <magicDamage>@BleedDamageTooltip@ magic damage</magicDamage> per second for @BleedDuration@ seconds.<br><br>All your <keywordMajor>Burn</keywordMajor> effects lower your basic Ability Cooldowns by @FlatCooldownRefundPerTick@ seconds when they damage enemies.<br><br>Damage Dealt: @f2@",
+    "tooltip": "Your Abilities apply an infinitely stacking <keywordMajor>Burn</keywordMajor>, dealing <magicDamage>@BleedDamageTooltip@ magic damage</magicDamage> per second for @BleedDuration@ seconds.<br><br>All your <keywordMajor>Burn</keywordMajor> effects lower your basic Ability Cooldowns by @FlatCooldownRefundPerTick@ seconds when they damage enemy champions.<br><br>Damage Dealt: @f2@",
     "dataValues": {
       "BleedDuration": 3.0,
       "FlatCooldownRefundPerTick": 0.07999999821186066,
@@ -954,7 +954,7 @@
     "desc": "<keywordMajor>Autocast</keywordMajor> throw a boomerang at a nearby enemy every @Cooldown@s.",
     "tooltip": "<keywordMajor>Autocast</keywordMajor> a boomerang at a nearby enemy every @BaseCooldown@ seconds, dealing @Damage@ adaptive damage to enemies hit.<br><br>Damage Dealt: @f2@",
     "dataValues": {
-      "BaseCooldown": 10.0
+      "BaseCooldown": 7.0
     },
     "calculations": {
       "Damage": {
@@ -2345,8 +2345,8 @@
     "apiName": "ARAM_StackosaurusRex",
     "name": "Stackosaurus Rex",
     "rarity": "Silver",
-    "desc": "When you gain permanent <keywordMajor>Stacks</keywordMajor> of an Ability, Augment, or Item gain @StackModifier*100@% more!",
-    "tooltip": "When you gain permanent <keywordMajor>Stacks</keywordMajor> of an Ability, Augment, or Item gain @StackModifier*100@% more!",
+    "desc": "When you gain permanent <keywordMajor>Stacks</keywordMajor> of an Ability, gain @StackModifier*100@% more!",
+    "tooltip": "When you gain permanent <keywordMajor>Stacks</keywordMajor> of an Ability, gain @StackModifier*100@% more!",
     "dataValues": {
       "StackModifier": 1.0
     },
@@ -2561,8 +2561,8 @@
     "apiName": "ARAM_DivineIntervention",
     "name": "Divine Intervention",
     "rarity": "Gold",
-    "desc": "Shortly after combat starts, call a protective star. Upon its landing, you and nearby allies become <keywordMajor>Invulnerable</keywordMajor> for a few seconds. <br><br>Then <keywordMajor>Autocast</keywordMajor> this every @BaseCD@ seconds.",
-    "tooltip": "@InitalDelay@ seconds into combat, call upon a protective star that slowly descends upon you. When it lands, you and nearby allies become <keywordMajor>Invulnerable</keywordMajor> for @InvulnerabilityDuration@ seconds. Then <keywordMajor>Autocast</keywordMajor> this every @BaseCD@ seconds.",
+    "desc": "Every @BaseCD@ seconds, <keywordMajor>Autocast</keywordMajor> a protective star. Upon its landing, you and nearby allies become <keywordMajor>Invulnerable</keywordMajor> for a few seconds. ",
+    "tooltip": "Every @BaseCD@ seconds, <keywordMajor>Autocast</keywordMajor> a protective star that slowly descends upon you. When it lands, you and nearby allies become <keywordMajor>Invulnerable</keywordMajor> for @InvulnerabilityDuration@ seconds. ",
     "dataValues": {
       "BaseCD": 35.0,
       "InvulnerabilityDuration": 2.5,
@@ -2716,240 +2716,6 @@
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/Firfox_small.tex",
       "ASSETS/UX/Cherry/Augments/Icons/Firfox_large.tex"
-    ]
-  },
-  {
-    "id": 1310,
-    "apiName": "ARAM_ClownCollege",
-    "name": "Clown College",
-    "rarity": "Prismatic",
-    "disabled": true,
-    "desc": "Gain <spellName>Deceive</spellName> Summoner Spell.<br>Gain <spellName>Backstab</spellName> Passive.<br><br>When you die, spawn an exploding box that deals a large amount of <trueDamage>true damage</trueDamage> and <status>Fear</status> nearby enemies.",
-    "tooltip": "<spellName>Backstab</spellName>: You deal @BasicAttackDamage@ <physicalDamage>bonus physical damage</physicalDamage> when striking from behind.<br><br><spellName>Deceive</spellName>: You teleport and become <keywordStealth>Invisible</keywordStealth> for @StealthDuration@ seconds. Your next Attack while <keywordStealth>Invisible</keywordStealth> deals an additional <physicalDamage>@TotalDamage@ physical damage</physicalDamage>. If striking from behind, this Attack critically strikes for @QCritDamageMod@ damage.<br><br><spellName>Hallucinate: Death</spellName>: On death, deal <magicDamage>@FearDamage*100@% maximum Health magic damage</magicDamage> and fear for @FearDuration@s around you.",
-    "dataValues": {
-      "StealthDuration": 3.0,
-      "PseudoCastTime": 0.125,
-      "ExtraAATime": 1.0,
-      "CastRange": 400.0,
-      "FearDuration": 1.0,
-      "FearRadius": 350.0,
-      "FearDamage": 0.25,
-      "EDITDECEIVEFORREALVALUES": [],
-      "BaseDamage": 100.0
-    },
-    "calculations": {
-      "BasicAttackDamage": {
-        "mFormulaParts": [
-          {
-            "mEndValue": 35.0,
-            "mStartValue": 20.0,
-            "~class": "ByCharLevelInterpolationCalculationPart"
-          },
-          {
-            "mCoefficient": 0.3499999940395355,
-            "~class": "StatByCoefficientCalculationPart"
-          },
-          {
-            "mCoefficient": 0.5,
-            "mStat": 2,
-            "mStatFormula": 2,
-            "~class": "StatByCoefficientCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "QCritDamageMod": {
-        "mDisplayAsPercent": true,
-        "mFormulaParts": [
-          {
-            "mSubparts": [
-              {
-                "mNumber": 1.5499999523162842,
-                "~class": "NumberCalculationPart"
-              },
-              {
-                "mCoefficient": 1.0,
-                "mStat": 9,
-                "mStatFormula": 2,
-                "~class": "StatByCoefficientCalculationPart"
-              }
-            ],
-            "~class": "SumOfSubPartsCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "TotalDamage": {
-        "mFormulaParts": [
-          {
-            "mDataValue": "baseDamage",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          {
-            "mCoefficient": 1.5,
-            "mStat": 2,
-            "mStatFormula": 2,
-            "~class": "StatByCoefficientCalculationPart"
-          },
-          {
-            "mCoefficient": 0.550000011920929,
-            "~class": "StatByCoefficientCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      }
-    },
-    "add": {
-      "Augment_ARAM_ClownCollege_Backstab": {
-        "dataValues": {
-          "PerUnitCD": 3.0,
-          "MonsterCritMod": 2.0,
-          "APRatio": 0.4000000059604645,
-          "CloneMult": 0.75,
-          "ShivSlowAmount": -0.4000000059604645,
-          "ShredDuration": 4.0,
-          "ShivExecuteDamagePercent": 1.5,
-          "AttackBonusADRatio": 0.5
-        },
-        "calcs": {
-          "0x3445d362": {
-            "mFormulaParts": [
-              {
-                "mCoefficient": 1.0,
-                "mStat": 9,
-                "mStatFormula": 1,
-                "~class": "StatByCoefficientCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "BasicAttackDamage": {
-            "mFormulaParts": [
-              {
-                "mEndValue": 35.0,
-                "mStartValue": 20.0,
-                "~class": "ByCharLevelInterpolationCalculationPart"
-              },
-              {
-                "mDataValue": "AttackBonusADRatio",
-                "mStat": 2,
-                "mStatFormula": 2,
-                "~class": "StatByNamedDataValueCalculationPart"
-              },
-              {
-                "mCoefficient": 0.3499999940395355,
-                "~class": "StatByCoefficientCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "MonsterDamageTooltip": {
-            "mFormulaParts": [
-              {
-                "mStat": 2,
-                "mSubpart": {
-                  "mSubparts": [
-                    {
-                      "mDataValue": "MonsterCritMod",
-                      "~class": "NamedDataValueCalculationPart"
-                    },
-                    {
-                      "mCoefficient": 1.0,
-                      "mStat": 9,
-                      "mStatFormula": 2,
-                      "~class": "StatByCoefficientCalculationPart"
-                    }
-                  ],
-                  "~class": "SumOfSubPartsCalculationPart"
-                },
-                "~class": "StatBySubPartCalculationPart"
-              },
-              {
-                "mDataValue": "APRatio",
-                "~class": "StatByNamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "ShivDamage": {
-            "mFormulaParts": [
-              {
-                "mEndValue": 50.0,
-                "mStartValue": 15.0,
-                "~class": "ByCharLevelInterpolationCalculationPart"
-              },
-              {
-                "mCoefficient": 0.10000000149011612,
-                "~class": "StatByCoefficientCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "ShivDamageExecute": {
-            "mModifiedGameCalculation": "ShivDamage",
-            "mMultiplier": {
-              "mDataValue": "ShivExecuteDamagePercent",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            "~class": "GameCalculationModified"
-          }
-        }
-      },
-      "Augment_ARAM_ClownCollege_Deceive": {
-        "dataValues": {
-          "BaseDamage": 100.0,
-          "StealthDuration": 3.0,
-          "CDRefund": 2.5,
-          "ExtraAATime": 0.25,
-          "PseudoCastTime": 0.125
-        },
-        "calcs": {
-          "QCritDamageMod": {
-            "mDisplayAsPercent": true,
-            "mFormulaParts": [
-              {
-                "mSubparts": [
-                  {
-                    "mNumber": 1.5499999523162842,
-                    "~class": "NumberCalculationPart"
-                  },
-                  {
-                    "mCoefficient": 1.0,
-                    "mStat": 9,
-                    "mStatFormula": 2,
-                    "~class": "StatByCoefficientCalculationPart"
-                  }
-                ],
-                "~class": "SumOfSubPartsCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          },
-          "TotalDamage": {
-            "mFormulaParts": [
-              {
-                "mDataValue": "baseDamage",
-                "~class": "NamedDataValueCalculationPart"
-              },
-              {
-                "mCoefficient": 1.5,
-                "mStat": 2,
-                "mStatFormula": 2,
-                "~class": "StatByCoefficientCalculationPart"
-              },
-              {
-                "mCoefficient": 0.550000011920929,
-                "~class": "StatByCoefficientCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          }
-        }
-      }
-    },
-    "icons": [
-      "ASSETS/UX/Cherry/Augments/Icons/ClownCollege_small.tex",
-      "ASSETS/UX/Cherry/Augments/Icons/ClownCollege_large.tex"
     ]
   },
   {
@@ -3211,7 +2977,16 @@
     "dataValues": {
       "TrueDamagePerc": 0.25,
       "HPReductionPerc": 0.30000001192092896,
-      "MaxLevel": 3.0
+      "MaxLevel": 3.0,
+      "RangedTrueDamagePercDisplay": [
+        0.15000000596046448,
+        0.15000000596046448,
+        0.20000000298023224,
+        0.30000001192092896,
+        0.30000001192092896,
+        0.30000001192092896,
+        0.30000001192092896
+      ]
     },
     "calculations": {
       "0x3fb72b56": {
@@ -3305,7 +3080,8 @@
       "CritChance": 0.25,
       "MaxStack": 10.0,
       "BuffDuration": 6.0,
-      "MaxLevel": 3.0
+      "MaxLevel": 2.0,
+      "Cooldown": 4.0
     },
     "add": {
       "Augment_CriticalRhythmBuff": {
@@ -3410,7 +3186,7 @@
           "BeamWidth": 175.0,
           "APRatio": 0.5,
           "HealAPRatio": 0.699999988079071,
-          "bHealthRatio": 0.5,
+          "bHealthRatio": 0.25,
           "MoveSpeedMod": 0.20000000298023224
         },
         "calcs": {
@@ -3973,8 +3749,8 @@
       "Damage": {
         "mFormulaParts": [
           {
-            "mEndValue": 100.0,
-            "mStartValue": 20.0,
+            "mEndValue": 85.0,
+            "mStartValue": 15.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           }
         ],
@@ -4292,46 +4068,6 @@
     ]
   },
   {
-    "id": 1400,
-    "apiName": "TrainOfTheDead",
-    "name": "Final City Transit",
-    "rarity": "Gold",
-    "disabled": true,
-    "desc": "When you die, launch a train towards your killer, dealing <physicalDamage>@Damage@ physical damage</physicalDamage> to enemies it hits. The train does not stop.",
-    "tooltip": "When you die, launch a train towards your killer, dealing <physicalDamage>@Damage@ physical damage</physicalDamage> to enemies it hits. The train does not stop.<br><br>Your locomotive has dealt a total of <attention>@f2@</attention> damage to <attention>@f1@</attention> enemy champions.<br>It has \"accidentally\" killed <attention>@f3@</attention>.",
-    "calculations": {
-      "Damage": {
-        "mFormulaParts": [
-          {
-            "mEndValue": 750.0,
-            "mStartValue": 150.0,
-            "~class": "ByCharLevelInterpolationCalculationPart"
-          },
-          {
-            "mCoefficient": 0.15000000596046448,
-            "mStat": 12,
-            "~class": "StatByCoefficientCalculationPart"
-          },
-          {
-            "mCoefficient": 0.5,
-            "~class": "StatByCoefficientCalculationPart"
-          },
-          {
-            "mCoefficient": 0.6499999761581421,
-            "mStat": 2,
-            "mStatFormula": 2,
-            "~class": "StatByCoefficientCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      }
-    },
-    "icons": [
-      "ASSETS/UX/Kiwi/Augments/Icons/Nightstalking_small.tex",
-      "ASSETS/UX/Kiwi/Augments/Icons/Nightstalking_large.tex"
-    ]
-  },
-  {
     "id": 1401,
     "apiName": "GrowthSpurt",
     "name": "Growth Spurt",
@@ -4427,8 +4163,8 @@
     "apiName": "ARAM_StuckInHereWithMe",
     "name": "Stuck In Here With Me",
     "rarity": "Prismatic",
-    "desc": "Using your <keywordMajor>Ultimate</keywordMajor> <status>Taunts</status> nearby enemies and grants you damage reduction.",
-    "tooltip": "After using your <keywordMajor>Ultimate</keywordMajor>, gain @DamageMitigation@ damage reduction for @TauntChannelTime@ seconds, after which you <status>Taunt</status> enemies inside for @TauntDuration@ seconds.",
+    "desc": "Using your <keywordMajor>Ultimate</keywordMajor> <status>Taunts</status> nearby enemies and grants you damage reduction. <br><br>Gain @UltimateHaste@ Ultimate Ability Haste.",
+    "tooltip": "After using your <keywordMajor>Ultimate</keywordMajor>, gain @DamageMitigation@ damage reduction for @TauntChannelTime@ seconds, after which you <status>Taunt</status> enemies inside for @TauntDuration@ seconds. <br><br>Gain @UltimateHaste@ Ultimate Ability Haste.",
     "dataValues": {
       "TauntRadius": 500.0,
       "TauntDuration": 2.0,
@@ -4454,57 +4190,6 @@
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/StuckInHereWithMe_small.tex",
       "ASSETS/UX/Kiwi/Augments/Icons/StuckInHereWithMe_large.tex"
-    ]
-  },
-  {
-    "id": 1414,
-    "apiName": "Dropybara_Active",
-    "name": "Droppybara",
-    "rarity": "Prismatic",
-    "disabled": true,
-    "desc": "Gain <spellName>Droppybara</spellName> as a Summoner Spell.<br><br><rules>After a delay, call down a capybara that deals <trueDamage>@DamagetoChampions*100@% max Health true damage</trueDamage>.</rules>",
-    "tooltip": "After @LaserDelay@ seconds, a Capybara lands on the ground, dealing <trueDamage>@DamagetoChampions*100@% max Health true damage</trueDamage>.",
-    "dataValues": {
-      "DamagetoChampions": 0.30000001192092896,
-      "AOESize": 650.0,
-      "CastRange": 1000.0,
-      "TickRate": 0.25,
-      "GroundDuration": 3.0,
-      "LaserDelay": 2.0,
-      "MinionMod": 0.699999988079071,
-      "SlowAmount": 0.44999998807907104
-    },
-    "calculations": {
-      "DamagePerTick": {
-        "mFormulaParts": [
-          {
-            "mEndValue": 50.0,
-            "mStartValue": 30.0,
-            "~class": "ByCharLevelInterpolationCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "TotalDamageOverTimeTooltip": {
-        "mModifiedGameCalculation": "DamagePerTick",
-        "mMultiplier": {
-          "mPart1": {
-            "mDataValue": "GroundDuration",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          "mPart2": {
-            "mNumber": 4.0,
-            "~class": "NumberCalculationPart"
-          },
-          "~class": "ProductOfSubPartsCalculationPart"
-        },
-        "tooltipOnly": true,
-        "~class": "GameCalculationModified"
-      }
-    },
-    "icons": [
-      "ASSETS/UX/Cherry/Augments/Icons/OrbitalLaser_small.tex",
-      "ASSETS/UX/Cherry/Augments/Icons/OrbitalLaser_large.tex"
     ]
   },
   {
@@ -4900,8 +4585,8 @@
     "apiName": "ARAM_Dropkick",
     "name": "Dropkick",
     "rarity": "Prismatic",
-    "desc": "Your Attacks execute low Health enemy champions, Knocking Back and causing an explosion while healing you.",
-    "tooltip": "Your Attacks execute enemy champions below <scaleHealth>@Calc_Execute_Threshold@ max Health</scaleHealth>, <healing>restoring @Calc_Heal@ Health</healing> and <status>Knocking Back</status> enemies.<br><br>Upon landing or colliding with an enemy or terrain, <status>Knocked Back</status> enemies will explode, dealing <magicDamage>@Calc_Damage@ magic damage</magicDamage> to nearby enemies.<br><br><rules>These explosions can chain.<br><br>Enemies Dropkicked: @f3.0@<br>Total Health Gained: @f2.0@<br>Damage Dealt: @f1.0@</rules>",
+    "desc": "Your Attacks and Abilities execute low Health enemy champions, Knocking Back and causing an explosion while healing you.",
+    "tooltip": "Your Attacks and Abilities execute enemy champions below <scaleHealth>@Calc_Execute_Threshold@ max Health</scaleHealth>, <healing>restoring @Calc_Heal@ Health</healing> and <status>Knocking Back</status> the target.<br><br>Upon colliding with an enemy or terrain or reaching their terminus, <status>Knocked Back</status> enemies will explode dealing <magicDamage>@Calc_Damage@ magic damage</magicDamage> to nearby enemies.<br><br><rules>These explosions can chain.<br><br>Enemies Dropkicked: @f3.0@<br>Total Health Gained: @f2.0@<br>Damage Dealt: @f1.0@</rules>",
     "calculations": {
       "Calc_Damage": {
         "mFormulaParts": [
@@ -4929,17 +4614,17 @@
         "mDisplayAsPercent": true,
         "mFormulaParts": [
           {
-            "mNumber": 0.05000000074505806,
+            "mNumber": 0.03999999910593033,
             "~class": "NumberCalculationPart"
           },
           {
-            "mCoefficient": 0.000019999999494757503,
+            "mCoefficient": 0.000009999999747378752,
             "mStat": 12,
             "mStatFormula": 2,
             "~class": "StatByCoefficientCalculationPart"
           },
           {
-            "mCoefficient": 0.0003499999875202775,
+            "mCoefficient": 0.0005499999970197678,
             "mStat": 2,
             "mStatFormula": 1,
             "~class": "StatByCoefficientCalculationPart"
@@ -5135,7 +4820,8 @@
     "tooltip": "Your Critical Strikes apply <OnHit>%i:OnHit% On-Hit</OnHit> effects an additional time.<br><br>Gain <attention>%i:scaleCrit% @Calc_Crit_Chance@ Crit chance</attention>.",
     "dataValues": {
       "MaxLevel": 2.0,
-      "AdditionalOnHitCount": 1.0
+      "AdditionalOnHitCount": 1.0,
+      "Cooldown": 5.0
     },
     "calculations": {
       "Calc_Crit_Chance": {
@@ -5292,7 +4978,7 @@
     "dataValues": {
       "FlatPenConversion": 2.0,
       "PercentPenConversion": 5.0,
-      "StunDuration": 1.5,
+      "StunDuration": 0.5,
       "MSModifier": -350.0
     },
     "calculations": {
@@ -5382,8 +5068,8 @@
       "TibbersHealth": {
         "mFormulaParts": [
           {
-            "mEndValue": 6000.0,
-            "mStartValue": 1500.0,
+            "mEndValue": 6500.0,
+            "mStartValue": 1000.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           },
           {
@@ -5583,8 +5269,8 @@
       "Damage": {
         "mFormulaParts": [
           {
-            "mEndValue": 100.0,
-            "mStartValue": 50.0,
+            "mEndValue": 200.0,
+            "mStartValue": 100.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           },
           {
@@ -5599,8 +5285,8 @@
       "TimeBetweenSnax": {
         "mFormulaParts": [
           {
-            "mEndValue": 20.0,
-            "mStartValue": 35.0,
+            "mEndValue": 15.0,
+            "mStartValue": 25.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           }
         ],
@@ -5780,8 +5466,8 @@
       "ADIncrease": {
         "mFormulaParts": [
           {
-            "mEndValue": 100.0,
-            "mStartValue": 25.0,
+            "mEndValue": 150.0,
+            "mStartValue": 35.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           }
         ],
@@ -5790,8 +5476,8 @@
       "APIncrease": {
         "mFormulaParts": [
           {
-            "mEndValue": 100.0,
-            "mStartValue": 25.0,
+            "mEndValue": 150.0,
+            "mStartValue": 35.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           }
         ],
@@ -5800,8 +5486,8 @@
       "HealthIncrease": {
         "mFormulaParts": [
           {
-            "mEndValue": 1000.0,
-            "mStartValue": 200.0,
+            "mEndValue": 1500.0,
+            "mStartValue": 300.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           }
         ],
@@ -6038,7 +5724,7 @@
     "name": "Chain Reaction",
     "rarity": "Prismatic",
     "desc": "If a target <status>Knocked Back</status> by {{SpellName}} hits another champion, they are <status>Knocked Up</status> and dealt <magicDamage>damage</magicDamage>. When colliding with terrain, the <status>Knock Up</status> duration is extended and they are dealt <magicDamage>bonus damage</magicDamage>.",
-    "tooltip": "If a champion you <status>Knock Back</status> with {{SpellName}} hits another champion, they are <status>Knocked Up</status> for @ChampCollideKnockupDuration@ seconds and are dealt <magicDamage>@EnemyHitDamage@ magic damage</magicDamage>. If enemy champions collide with terrain, they are <status>Knocked Up</status> for @MinKnockUpDuration@ seconds and are dealt <magicDamage>@WallCollisionDamage@ magic damage</magicDamage>.<br><br>Enemies Knocked Up: @f1@<br>Walls Hit: @f2@<br><br><rules>Knock Up Duration and Height scale with your spell's cooldown.</rules>",
+    "tooltip": "If a champion you <status>Knock Back</status> with {{SpellName}} hits another champion, they are <status>Knocked Up</status> for @ChampCollideKnockupDuration@ seconds and are dealt <magicDamage>@EnemyHitDamage@ magic damage</magicDamage>. If enemy champions collide with terrain, they are <status>Knocked Up</status> for @MinKnockUpDuration@ seconds and are dealt <magicDamage>@WallCollisionDamage@ magic damage</magicDamage>.<br><br>Enemies Knocked Up: @f1@<br>Walls Hit: @f2@<br><br><rules>Knock Up Duration and Height scale with your spell's cooldown.<br><rules>Damage is increased to @Ult_DamageAmp@ for Ultimate Abilities.</rules></rules>",
     "dataValues": {
       "WallStunDuration": 0.5,
       "MinKnockUpHeight": 1.2300000190734863,
@@ -6054,6 +5740,16 @@
       "ChampCollideKnockupDuration": 0.5
     },
     "calculations": {
+      "0x166093f6": {
+        "mDisplayAsPercent": true,
+        "mFormulaParts": [
+          {
+            "mNumber": 2.5,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
       "EnemyHitDamage": {
         "mFormulaParts": [
           {
@@ -6086,27 +5782,17 @@
     "name": "Snowblast",
     "rarity": "Gold",
     "desc": "Recasting <spellName>Snowball</spellName> deals increased damage, <status>Knocks Up</status> the target, and <status>Knocks Back</status> nearby enemies.",
-    "tooltip": "Your <spellName>Snowball</spellName> gains 100 Ability Haste. The ability's recast deals 100% increased <magicDamage>damage</magicDamage>, <status>Knocks Up</status> the target, and knocks back nearby enemies.",
+    "tooltip": "Your <spellName>Snowball</spellName> gains @AbilityHaste@ Ability Haste. The ability's recast deals @DamageAmp@ increased <magicDamage>damage</magicDamage>, <status>Knocks Up</status> the target, and knocks back nearby enemies.<br><br>Units knocked back: @f1@",
     "dataValues": {
       "AbilityHaste": 100.0
     },
     "calculations": {
-      "Damage": {
+      "DamageAmp": {
+        "mDisplayAsPercent": true,
         "mFormulaParts": [
           {
-            "mEndValue": 275.0,
-            "mStartValue": 100.0,
-            "~class": "ByCharLevelInterpolationCalculationPart"
-          },
-          {
-            "mCoefficient": 0.4000000059604645,
-            "mStat": 2,
-            "mStatFormula": 2,
-            "~class": "StatByCoefficientCalculationPart"
-          },
-          {
-            "mCoefficient": 0.20000000298023224,
-            "~class": "StatByCoefficientCalculationPart"
+            "mNumber": 1.0,
+            "~class": "NumberCalculationPart"
           }
         ],
         "~class": "GameCalculation"
@@ -6177,7 +5863,7 @@
         "mFormulaParts": [
           {
             "mBuffName": "0x76180b74",
-            "mCoefficient": 4.0,
+            "mCoefficient": 3.0,
             "mIconKey": "%i:KiwiAugmentBurstingTeeth%",
             "~class": "BuffCounterByCoefficientCalculationPart"
           }
@@ -6188,7 +5874,7 @@
         "mFormulaParts": [
           {
             "mBuffName": "0x76180b74",
-            "mCoefficient": 4.0,
+            "mCoefficient": 3.0,
             "mIconKey": "%i:KiwiAugmentBurstingTeeth%",
             "~class": "BuffCounterByCoefficientCalculationPart"
           }
@@ -6270,7 +5956,7 @@
     "desc": "While in combat, <keywordMajor>Autocast</keywordMajor> a circular axe that deals <physicalDamage>physical damage</physicalDamage>. Enemies on the outer edge take additional damage and <healing>heal</healing> you.",
     "tooltip": "<keywordMajor>Autocast</keywordMajor> a circular axe swing that deals <physicalDamage>physical damage</physicalDamage> every @Cooldown@ seconds in combat. Enemies along the outer edge take increased damage (@FullDamage@) and <healing>heal you @BaseHealPercent*100@% of your Missing Health</healing>. Each enemy hit along the outer edge reduces this ability's cooldown by 10% down to a minimum of 3 seconds.",
     "dataValues": {
-      "BaseHealPercent": 0.15000000596046448,
+      "BaseHealPercent": 0.18000000715255737,
       "InnerRadiusDamageMod": 0.5,
       "Cooldown": 8.0,
       "WindupLength": 1.25,
@@ -6327,12 +6013,12 @@
     "desc": "Nearby enemies have a chance to drop Stat Anvils on death.",
     "tooltip": "Nearby enemies have a chance to drop Stat Anvils on death.",
     "dataValues": {
-      "SpawnChance": 7.0,
       "SpawnRadius_Inner": 200.0,
       "SpawnRadius_Outer": 300.0,
       "AnvilLife": 5000.0,
       "SilverThreshold": 65.0,
-      "GoldThreshold": 90.0
+      "GoldThreshold": 90.0,
+      "AnvilTrackerRate": 1.5
     },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/HighRoller_small.tex",
@@ -6848,7 +6534,7 @@
     "tooltip": "Striking enemy champions with Attacks or Abilities grants you a stack of <attention>Revivemaxxing</attention> for @Stacks_Duration@ seconds (max: @Stacks_Max@). At max stacks become <danger>Hellbent</danger>.<br><br><danger>Hellbent</danger>: Upon dying, <attention>revive</attention> over the course of @Revive_Duration@ seconds at <scaleHealth>@Calc_Revive_Max_Health@ max Health</scaleHealth>. Afterwards, you gain <attention>@Calc_AdaptiveForce@ Adaptive Force</attention>, <speed>@Calc_MoveSpeed@ Move Speed towards enemy champions</speed>, and <lifeSteal>@Calc_Omnivamp@ Omnivamp</lifeSteal> for @Buff_Duration@ seconds.<br><br>This has a @Cooldown@ second cooldown.",
     "dataValues": {
       "Revive_Duration": 4.0,
-      "Cooldown": 120.0,
+      "Cooldown": 90.0,
       "Buff_Duration": 15.0,
       "Stacks_Duration": 6.0,
       "Stacks_Max": 10.0
@@ -7031,7 +6717,7 @@
     "desc": "Occasionally send out squishy, slappy hands towards all nearby enemy champions, tethering them. Your next attack will pull in all tethered enemies.",
     "tooltip": "Occasionally send out Squishy Slappy Hands that latch on to all nearby enemy champions for @Buff_Duration@ seconds. While you're latched onto enemies, your next attack will <status>pull</status> them to you, deal <magicDamage>@Calc_Damage@ magic damage</magicDamage>, and <status>stun them for @Stun_Duration@ seconds</status>. You gain <shield>@Calc_Shield@ shield</shield> for @Shield_Duration@ seconds per <status>pulled</status> enemy.<br><br>This has a @Cooldown@ second cooldown.<br><br><rules>Enemies Yoinked: @f1.0@<br>Damage Dealt: @f2.0@<br>Shield Gained: @f3.0@</rules>",
     "dataValues": {
-      "Cooldown": 45.0,
+      "Cooldown": 35.0,
       "Buff_Duration": 4.0,
       "Cast_Radius": 450.0,
       "Radius": 800.0,
@@ -7062,8 +6748,8 @@
       "Calc_Shield": {
         "mFormulaParts": [
           {
-            "mEndValue": 75.0,
-            "mStartValue": 25.0,
+            "mEndValue": 150.0,
+            "mStartValue": 35.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           },
           {
@@ -7247,8 +6933,8 @@
     "apiName": "BloodMoneyBurn",
     "name": "Combusting Interest",
     "rarity": "Gold",
-    "desc": "Burns and damage over time applied to champions generates <gold>gold</gold>.",
-    "tooltip": "Burns and damage over time applied to champions generates <gold>@GoldPerProc@ + @PercentGoldFromDamage*100@% of damage dealt as Gold</gold>.<br><br>Gold Generated: <b>@f1@</b>",
+    "desc": "Burn and damage-over-time on champions generate <gold>gold</gold>.",
+    "tooltip": "Burn and damage-over-time on champions generate <gold>@GoldPerProc@ + @PercentGoldFromDamage*100@% of damage dealt as Gold</gold>.<br><br>Gold Generated: <b>@f1@</b>",
     "dataValues": {
       "PercentGoldFromDamage": 0.007499999832361937
     },
@@ -7420,8 +7106,8 @@
     "apiName": "MercysStrike",
     "name": "Mercy's Strike",
     "rarity": "Gold",
-    "desc": "After using {{SpellName}}, your next basic attack gains <attention>attack range</attention>, <speed>attack speed</speed> and deals bonus <magicDamage>max Health magic damage</magicDamage>.",
-    "tooltip": "After using {{SpellName}}, your next basic attack gains <attention>@AttackRangeInc@ bonus attack range</attention>, <speed>@ASBonus*100@% attack speed</speed> and deals an additional <magicDamage>@MaxHealthDamage@ max Health magic damage</magicDamage>.<br><br>Total Damage Dealt: @f1.0@",
+    "desc": "After healing or shielding your ally with {{SpellName}}, your next basic attack gains <attention>attack range</attention>, <speed>attack speed</speed> and deals bonus <magicDamage>max Health magic damage</magicDamage>.",
+    "tooltip": "After healing or shielding your ally with {{SpellName}}, your next basic attack gains <attention>@AttackRangeInc@ bonus attack range</attention>, <speed>@ASBonus*100@% attack speed</speed> and deals an additional <magicDamage>@MaxHealthDamage@ max Health magic damage</magicDamage>.<br><br>Total Damage Dealt: @f1.0@<br><rules>Turret take @HealthPercentBase*100@% max health magic damage. </rules>",
     "dataValues": {
       "AttackRangeInc": 300.0,
       "HealthPercentBase": 0.02500000037252903,
@@ -7489,8 +7175,8 @@
     "apiName": "Overkill",
     "name": "Pin Cushion",
     "rarity": "Prismatic",
-    "desc": "Attacks during {{SpellName}} apply <keywordMajor>Marks</keywordMajor> that explode at the end of its duration, dealing damage and granting Move Speed.",
-    "tooltip": "Attacks during {{SpellName}} apply <keywordMajor>Marks</keywordMajor> on enemy champions.<br><br>Marks explode once {{SpellName}} expires, dealing <physicalDamage>@DamagePerStack@ Physical Damage</physicalDamage> and granting <speed>@MSPerStack@ Move Speed</speed> per stack for 3 seconds.<br><br>Most Marks Detonated: @f1@",
+    "desc": "Attacks during {{SpellName}} gouge your target with <keywordMajor>Nails</keywordMajor>. Nails accumulate damage, execute, and grant <MS>Movement Speed</MS> upon expiration.",
+    "tooltip": "Attacks during {{SpellName}} gouge your target with <keywordMajor>Nails</keywordMajor>.<br><br>Nails explode once {{SpellName}} expires, dealing <physicalDamage>@DamagePerStack@ Physical Damage</physicalDamage> and granting <speed>@MSPerStack@ Move Speed</speed> per stack for 3 seconds. Nails will explode early and execute if the accumulated damage would kill the enemy champion.<br><br>Most Nails Detonated: @f1@",
     "dataValues": {
       "MSPerStack": 10.0,
       "ASPerStack": 0.05000000074505806
@@ -7615,8 +7301,8 @@
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
-            "mEndValue": 10.0,
-            "mStartValue": 5.0,
+            "mEndValue": 12.0,
+            "mStartValue": 7.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           }
         ],

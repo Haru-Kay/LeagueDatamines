@@ -1452,6 +1452,32 @@
             0.18000000715255737
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "BoxDuration",
+          "values": [
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ArmTime",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -1620,7 +1646,7 @@
           "mLocKeys": {
             "keyName": "Jack In The Box",
             "keySummary": "Shaco creates a hidden animated Jack-in-the-Box. When triggered, it will fear and attack nearby enemies.",
-            "keyTooltip": "Shaco creates a trap that stealths itself after @Effect5Amount@ seconds and lasts for @TrapDuration@ seconds. It activates when an enemy comes near or when revealed, <status>Fearing</status> nearby enemy Champions for @FearDuration@ seconds, or @MinionFearDuration@ seconds for minions and jungle monsters.<br><br>Once activated, the trap fires at all nearby enemies for 5 seconds, dealing <magicDamage>@AoEDamage@ magic damage</magicDamage>, or <magicDamage>@STDamage@ damage</magicDamage> if focused on a single target.<br><br>Jack in the Box's attacks deal an additional <magicDamage>@MonsterBonusDamage@</magicDamage> damage to monsters."
+            "keyTooltip": "Shaco creates a trap that stealths itself after @ArmTime@ seconds and lasts for @TrapDuration@ seconds. It activates when an enemy comes near or when revealed, <status>Fearing</status> nearby enemy Champions for @FearDuration@ seconds, or @MinionFearDuration@ seconds for minions and jungle monsters.<br><br>Once activated, the trap fires at all nearby enemies for 5 seconds, dealing <magicDamage>@AoEDamage@ magic damage</magicDamage>, or <magicDamage>@STDamage@ damage</magicDamage> if focused on a single target.<br><br>Jack in the Box's attacks deal an additional <magicDamage>@MonsterBonusDamage@</magicDamage> damage to monsters."
           },
           "mObjectName": "JackInTheBox",
           "~class": "TooltipInstanceSpell"
@@ -1739,8 +1765,8 @@
         "TrapDuration": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 4,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "BoxDuration",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.10000000149011612,

@@ -515,6 +515,123 @@
             0.699999988079071
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "ActiveBaseDamage",
+          "values": [
+            75.0,
+            75.0,
+            120.0,
+            165.0,
+            210.0,
+            255.0,
+            300.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ActiveSlowPercentage",
+          "values": [
+            20.0,
+            20.0,
+            25.0,
+            30.0,
+            35.0,
+            40.0,
+            45.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowDuration",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "PassiveDmgPerSoul",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DmgPerSoul",
+          "values": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "FullChargeDuration",
+          "values": [
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Icon1ThresholdPercentage",
+          "values": [
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Icon2ThresholdPercentage",
+          "values": [
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Icon3ThresholdPercentage",
+          "values": [
+            0.9750000238418579,
+            0.9750000238418579,
+            0.9750000238418579,
+            0.9750000238418579,
+            0.9750000238418579,
+            0.9750000238418579,
+            0.9750000238418579
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -556,6 +673,19 @@
                 0.8999999761581421,
                 0.8999999761581421,
                 0.8999999761581421
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "FullChargeDuration",
+              "values": [
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0
               ],
               "~class": "SpellDataValue"
             }
@@ -630,15 +760,13 @@
                 },
                 {
                   "nameOverride": "Active Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "ActiveBaseDamage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "Style": 1,
                   "nameOverride": "Slow",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 2,
+                  "type": "ActiveSlowPercentage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -657,7 +785,7 @@
           "mLocKeys": {
             "keyName": "Flay",
             "keySummary": "Thresh's attacks wind up, dealing more damage the longer he waits between attacks. When activated, Thresh sweeps his chain, knocking all enemies hit in the direction of the blow.",
-            "keyTooltip": "<spellPassive>Passive:</spellPassive> Thresh's Attacks deal additional damage based on how long since he last Attacked. They deal between <magicDamage>@PAttackDamageMin@</magicDamage> and <magicDamage>@PAttackDamageMax@ magic damage</magicDamage>.<br><br><spellActive>Active:</spellActive> Thresh whips his chains, <status>Pulling</status> or <status>Pushing</status> enemies in the direction of the swing. Enemies hit are also <status>Slowed</status> by @Effect2Amount@% for @Effect4Amount@ second and take <magicDamage>@TotalDamage@ magic damage</magicDamage>.",
+            "keyTooltip": "<spellPassive>Passive:</spellPassive> Thresh's Attacks deal additional damage based on how long since he last Attacked. They deal between <magicDamage>@PAttackDamageMin@</magicDamage> and <magicDamage>@PAttackDamageMax@ magic damage</magicDamage>.<br><br><spellActive>Active:</spellActive> Thresh whips his chains, <status>Pulling</status> or <status>Pushing</status> enemies in the direction of the swing. Enemies hit are also <status>Slowed</status> by @ActiveSlowPercentage@% for @SlowDuration@ second and take <magicDamage>@TotalDamage@ magic damage</magicDamage>.",
             "keyTooltipExtendedBelowLine": "<rules>Passive damage scales with number of <keywordMajor>Souls</keywordMajor> collected.</rules>"
           },
           "mObjectName": "ThreshE",
@@ -806,8 +934,8 @@
         "TotalDamage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "ActiveBaseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mDataValue": "APRatio",
@@ -1274,6 +1402,24 @@
           "~class": "SpellDataValueVector"
         },
         "URF": {
+          "SpellDataValues": [
+            {
+              "name": "SoulsToGainOnPickUp",
+              "values": [
+                3.0,
+                3.0,
+                3.0,
+                3.0,
+                3.0,
+                3.0,
+                3.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        },
+        "cherry": {
           "SpellDataValues": [
             {
               "name": "SoulsToGainOnPickUp",
@@ -2809,6 +2955,20 @@
         "~class": "SpellAttributeModifiable"
       },
       "0xf26881a0": 1.0,
+      "0xf9c2333e": {
+        "cherry": {
+          "value": [
+            90.0,
+            90.0,
+            60.0,
+            30.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "~class": "SpellEffectAmount"
+        }
+      },
       "Cooldown": {
         "values": [
           120.0,
@@ -2873,6 +3033,58 @@
             1.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "Damage",
+          "values": [
+            0.0,
+            250.0,
+            400.0,
+            550.0,
+            175.0,
+            175.0,
+            0.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowDuration",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowAmount",
+          "values": [
+            99.0,
+            99.0,
+            99.0,
+            99.0,
+            99.0,
+            99.0,
+            99.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "WallDuration",
+          "values": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -2888,6 +3100,19 @@
                 1.2999999523162842,
                 1.2999999523162842,
                 1.2999999523162842
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "Damage",
+              "values": [
+                0.0,
+                350.0,
+                500.0,
+                650.0,
+                0.0,
+                0.0,
+                0.0
               ],
               "~class": "SpellDataValue"
             }
@@ -2956,8 +3181,7 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "Damage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -2972,7 +3196,7 @@
           "mLocKeys": {
             "keyName": "The Box",
             "keySummary": "A prison of walls that slow and deal damage if broken.",
-            "keyTooltip": "Thresh creates a prison of spectral walls, <status>Slowing</status> champions by @Effect3Amount@% for @Effect2Amount@ seconds and dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>. Walls break after one collision, and after one is broken, the rest deal no damage and <status>Slow</status> for half duration."
+            "keyTooltip": "Thresh creates a prison of spectral walls, <status>Slowing</status> champions by @SlowAmount@% for @SlowDuration@ seconds and dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>. Walls break after one collision, and after one is broken, the rest deal no damage and <status>Slow</status> for half duration."
           },
           "mObjectName": "ThreshRPenta",
           "~class": "TooltipInstanceSpell"
@@ -3081,8 +3305,8 @@
         "TotalDamage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "Damage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mDataValue": "APRatio",
@@ -4022,6 +4246,20 @@
           950.0
         ],
         "~class": "SpellAttributeModifiable"
+      },
+      "0xf9c2333e": {
+        "cherry": {
+          "value": [
+            15.0,
+            15.0,
+            14.0,
+            13.0,
+            12.0,
+            11.0,
+            0.0
+          ],
+          "~class": "SpellEffectAmount"
+        }
       },
       "Cooldown": {
         "values": [

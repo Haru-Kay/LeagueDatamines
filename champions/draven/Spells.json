@@ -842,6 +842,45 @@
             250.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowAmount",
+          "values": [
+            15.0,
+            20.0,
+            25.0,
+            30.0,
+            35.0,
+            40.0,
+            45.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowDuration",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "KnockbackDuration",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "castConeDistance": 100.0,
@@ -923,15 +962,14 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
+                  "type": "BaseDamage",
                   "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "Style": 1,
                   "nameOverride": "Slow",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 2,
+                  "type": "SlowAmount",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -946,7 +984,7 @@
           "mLocKeys": {
             "keyName": "Stand Aside",
             "keySummary": "Draven throws his axes, dealing physical damage to targets hit and knocking them aside. Targets hit are slowed.",
-            "keyTooltip": "Draven chucks a sideways axe that deals <physicalDamage>@TotalDamage@ physical damage</physicalDamage>, <status>Knocks Back</status>, and <status>Slows</status> by @Effect2Amount@% for @Effect3Amount@ seconds."
+            "keyTooltip": "Draven chucks a sideways axe that deals <physicalDamage>@TotalDamage@ physical damage</physicalDamage>, <status>Knocks Back</status>, and <status>Slows</status> by @SlowAmount@% for @SlowDuration@ seconds."
           },
           "mObjectName": "DravenDoubleShot",
           "~class": "TooltipInstanceSpell"
@@ -1385,6 +1423,71 @@
             1.5
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "Temp_MSMod",
+          "values": [
+            45.0,
+            50.0,
+            55.0,
+            60.0,
+            65.0,
+            70.0,
+            75.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Temp_MSDuration",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Temp_AS",
+          "values": [
+            20.0,
+            20.0,
+            25.0,
+            30.0,
+            35.0,
+            40.0,
+            45.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Temp_ASDuration",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Temp_MSDecay",
+          "values": [
+            -0.0560000017285347,
+            -0.06199999898672104,
+            -0.0689999982714653,
+            -0.07500000298023224,
+            -0.08100000023841858,
+            -0.08699999749660492,
+            -0.09399999678134918
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "castConeDistance": 100.0,
@@ -1456,7 +1559,7 @@
           "mLocKeys": {
             "keyName": "Blood Rush",
             "keySummary": "Draven gains increased Move Speed and Attack Speed. The Move Speed bonus decreases rapidly over its duration. Catching a Spinning Axe will refresh the cooldown of Blood Rush.",
-            "keyTooltip": "Draven becomes Ghosted, gains <speed>@Effect2Amount@% Move Speed</speed> decaying over @Effect3Amount@ seconds and <attackSpeed>@Effect4Amount@% Attack Speed</attackSpeed> for @Effect5Amount@ seconds.<br><br>When Draven catches a <keywordMajor>Spinning Axe</keywordMajor>, this Ability's Cooldown is refreshed.",
+            "keyTooltip": "Draven becomes Ghosted, gains <speed>@Temp_MSMod@% Move Speed</speed> decaying over @Temp_MSDuration@ seconds and <attackSpeed>@Temp_AS@% Attack Speed</attackSpeed> for @Temp_ASDuration@ seconds.<br><br>When Draven catches a <keywordMajor>Spinning Axe</keywordMajor>, this Ability's Cooldown is refreshed.",
             "keyTooltipExtendedBelowLine": "<rules>Ghosted units can pass through other units.</rules>"
           },
           "mObjectName": "DravenFury",
@@ -2662,6 +2765,19 @@
             6.0,
             6.0,
             6.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "AxeDuration",
+          "values": [
+            5.75,
+            5.75,
+            5.75,
+            5.75,
+            5.75,
+            5.75,
+            5.75
           ],
           "~class": "SpellDataValue"
         }

@@ -1,0 +1,2191 @@
+{
+  "Characters/Jade_Morgana/CAC/Jade_Morgana_Conversation_Base": {
+    "mCooldown": 9.0,
+    "mObjectPath": "Characters/Jade_Morgana/CAC/Jade_Morgana_Conversation_Base",
+    "mSituations": {
+      "MoveOrder2D": {
+        "mCoolDownTime": 15.0,
+        "~class": "ContextualSituation"
+      }
+    },
+    "~class": "ContextualActionData"
+  },
+  "Characters/Jade_Morgana/CAC/Jade_Morgana_Skin80": {
+    "mCooldown": 15.0,
+    "mObjectPath": "Characters/Jade_Morgana/CAC/Jade_Morgana_Skin80",
+    "mSituations": {
+      "0x220f1ff5": {
+        "mRules": [
+          {
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Idle3DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mPercentChanceToPlay": 10,
+                "~class": "ContextualConditionChanceToPlay"
+              }
+            ],
+            "mRuleName": "Idle",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "AssistKill": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Assist3DAsheSkin76",
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Assist3DAsheSkin76",
+              "mWaitForAnnouncerQueue": true,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Jade_Ashe/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mIsAlly": true,
+                    "~class": "ContextualConditionIsAlly"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  }
+                ],
+                "~class": "ContextualConditionAnyOtherHero"
+              }
+            ],
+            "mRuleName": "Assist AsheSkin76",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Assist3DKayleSkin78",
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Assist3DKayleSkin78",
+              "mWaitForAnnouncerQueue": true,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Jade_Kayle/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mIsAlly": true,
+                    "~class": "ContextualConditionIsAlly"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  }
+                ],
+                "~class": "ContextualConditionAnyOtherHero"
+              }
+            ],
+            "mRuleName": "Assist KayleSkin78",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Assist3DGeneral",
+              "mMaxOccurences": 4,
+              "mSelfEventName": "Assist3DGeneral",
+              "mWaitForAnnouncerQueue": true,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "Assist Kill",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "AttackChampion2D": {
+        "mRules": [
+          {
+            "mAudioAction": {
+              "mSelfEventName": "Attack2DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "Champion",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "AttackNeutral2D": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Attack2DBaron",
+              "mWaitTimeout": -1.0,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/SRU_Baron/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              },
+              {
+                "mRuleCooldown": 30.0,
+                "~class": "ContextualConditionRuleCooldown"
+              }
+            ],
+            "mRuleName": "Baron",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Attack2DDragon",
+              "mWaitTimeout": -1.0,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCategory": "monstertype",
+                    "mData": "dragon",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              },
+              {
+                "mRuleCooldown": 30.0,
+                "~class": "ContextualConditionRuleCooldown"
+              }
+            ],
+            "mRuleName": "Dragon",
+            "~class": "ContextualRule"
+          },
+          {
+            "mAudioAction": {
+              "mSelfEventName": "Attack2DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "Neutral",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "BuffCounterSet": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Spell3DRStunHitThree",
+              "mEnemyEventName": "Spell3DRStunHitThree",
+              "mSelfEventName": "Spell3DRStunHitThree",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mBuff": "0xcceef281",
+                "mCounterHighestReached": 5,
+                "~class": "ContextualConditionBuffCounterSetToZeroAfterLimitReached"
+              }
+            ],
+            "mPriority": 102,
+            "mRuleName": "Stun Hit 5",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Spell3DRStunHitThree",
+              "mEnemyEventName": "Spell3DRStunHitThree",
+              "mSelfEventName": "Spell3DRStunHitThree",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mBuff": "0xcceef281",
+                "mCounterHighestReached": 3,
+                "~class": "ContextualConditionBuffCounterSetToZeroAfterLimitReached"
+              }
+            ],
+            "mPriority": 102,
+            "mRuleName": "Stun Hit 4",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Spell3DRStunHitThree",
+              "mEnemyEventName": "Spell3DRStunHitThree",
+              "mSelfEventName": "Spell3DRStunHitThree",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mBuff": "0xcceef281",
+                "mCounterHighestReached": 4,
+                "~class": "ContextualConditionBuffCounterSetToZeroAfterLimitReached"
+              }
+            ],
+            "mPriority": 102,
+            "mRuleName": "Stun Hit 3",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Spell3DRStunHitTwo",
+              "mEnemyEventName": "Spell3DRStunHitTwo",
+              "mSelfEventName": "Spell3DRStunHitTwo",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mBuff": "0xcceef281",
+                "mCounterHighestReached": 2,
+                "~class": "ContextualConditionBuffCounterSetToZeroAfterLimitReached"
+              }
+            ],
+            "mPriority": 101,
+            "mRuleName": "Stun Hit 2",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Spell3DRStunHitOne",
+              "mEnemyEventName": "Spell3DRStunHitOne",
+              "mSelfEventName": "Spell3DRStunHitOne",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mBuff": "0xcceef281",
+                "mCounterHighestReached": 1,
+                "~class": "ContextualConditionBuffCounterSetToZeroAfterLimitReached"
+              }
+            ],
+            "mPriority": 100,
+            "mRuleName": "Stun Hit 1",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "EnemyEncounter": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DAhriSkin29",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Jade_Ahri/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  },
+                  {
+                    "~class": "0xb6da23cb"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "First Encounter Ahri Skin29",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DAkaliSkin92",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Akali/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  },
+                  {
+                    "~class": "0xb6da23cb"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "First Encounter Akali Skin92",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DAsheSkin76",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Jade_Ashe/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  },
+                  {
+                    "~class": "0xb6da23cb"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "First Encounter Ashe Skin76",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DBardSkin37",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Bard/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  },
+                  {
+                    "~class": "0xb6da23cb"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "First Encounter Bard Skin37",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DHweiSkin11",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Hwei/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  },
+                  {
+                    "~class": "0xb6da23cb"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "First Encounter Hwei Skin11",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DIreliaSkin55",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Irelia/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  },
+                  {
+                    "~class": "0xb6da23cb"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "First Encounter Irelia Skin55",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DIvernSkin30",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Ivern/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  },
+                  {
+                    "~class": "0xb6da23cb"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "First Encounter Ivern Skin30",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DKarmaSkin70",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Karma/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  },
+                  {
+                    "~class": "0xb6da23cb"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "First Encounter Karma Skin70",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DKayleSkin78",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Jade_Kayle/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  },
+                  {
+                    "~class": "0xb6da23cb"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "First Encounter Kayle Skin78",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DLuxSkin70",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Jade_Lux/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  },
+                  {
+                    "~class": "0xb6da23cb"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "First Encounter Lux Skin70",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DNidaleeSkin58",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Jade_Nidalee/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  },
+                  {
+                    "~class": "0xb6da23cb"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "First Encounter Nidalee Skin58",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DSettSkin38",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Sett/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  },
+                  {
+                    "~class": "0xb6da23cb"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "First Encounter Sett Skin38",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DThreshSkin19",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Thresh/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  },
+                  {
+                    "~class": "0xb6da23cb"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "First Encounter Thresh Skin19",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DVarusSkin60",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Varus/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  },
+                  {
+                    "~class": "0xb6da23cb"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "First Encounter Varus Skin60",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DZedSkin69",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Zed/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  },
+                  {
+                    "~class": "0xb6da23cb"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "First Encounter Zed Skin69",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DZyraSkin64",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Zyra/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  },
+                  {
+                    "~class": "0xb6da23cb"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "First Encounter Zyra Skin64",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DAkana",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCategory": "subskinline",
+                    "mData": "akana",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  },
+                  {
+                    "~class": "0xb6da23cb"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "First Encounter Akana",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DKanmei",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCategory": "subskinline",
+                    "mData": "kanmei",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  },
+                  {
+                    "~class": "0xb6da23cb"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "First Encounter Kanmei",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "~class": "0xb6da23cb"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "General",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "FirstMove2D": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Move2DFirstAllyAsheSkin76",
+              "mWaitTimeout": -1.0,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mChildConditions": [
+                  {
+                    "mIsAlly": true,
+                    "~class": "ContextualConditionIsAlly"
+                  },
+                  {
+                    "mCharacters": [
+                      "Characters/Jade_Ashe/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  }
+                ],
+                "~class": "ContextualConditionAnyOtherHero"
+              }
+            ],
+            "mRuleName": "First Move Ally Ashe Skin76",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Move2DFirstAllyKayleSkin78",
+              "mWaitTimeout": -1.0,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mChildConditions": [
+                  {
+                    "mIsAlly": true,
+                    "~class": "ContextualConditionIsAlly"
+                  },
+                  {
+                    "mCharacters": [
+                      "Characters/Jade_Kayle/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  }
+                ],
+                "~class": "ContextualConditionAnyOtherHero"
+              }
+            ],
+            "mRuleName": "First Move Ally Kayle Skin78",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Move2DFirstEnemyKarmaSkin70",
+              "mWaitTimeout": -1.0,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mChildConditions": [
+                  {
+                    "~class": "ContextualConditionIsAlly"
+                  },
+                  {
+                    "mCharacters": [
+                      "Characters/Karma/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  }
+                ],
+                "~class": "ContextualConditionAnyOtherHero"
+              }
+            ],
+            "mRuleName": "First Move Enemy Karma Skin70",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Move2DFirstEnemyKayleSkin78",
+              "mWaitTimeout": -1.0,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mChildConditions": [
+                  {
+                    "~class": "ContextualConditionIsAlly"
+                  },
+                  {
+                    "mCharacters": [
+                      "Characters/Jade_Kayle/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  }
+                ],
+                "~class": "ContextualConditionAnyOtherHero"
+              }
+            ],
+            "mRuleName": "First Move Enemy Kayle Skin78",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Move2DFirst",
+              "mWaitTimeout": -1.0,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "First Move",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "GearEquipped": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Unique3DGearNew",
+              "mEnemyEventName": "Unique3DGearNew",
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Unique3DGearNew",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "0x20941997": 3,
+                "0xaa8fd0c5": true,
+                "0xdba9e788": true,
+                "~class": "0x61b427f"
+              }
+            ],
+            "mPriority": 90,
+            "mRuleName": "Form 1->2 (Mask 1)",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Unique3DGearNew",
+              "mEnemyEventName": "Unique3DGearNew",
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Unique3DGearNew",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "0x20941997": 4,
+                "0x262bfa2e": 1,
+                "0xaa8fd0c5": true,
+                "0xdba9e788": true,
+                "~class": "0x61b427f"
+              }
+            ],
+            "mPriority": 90,
+            "mRuleName": "Form 1->2 (Mask 2)",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Unique3DGearNew",
+              "mEnemyEventName": "Unique3DGearNew",
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Unique3DGearNew",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "0x20941997": 5,
+                "0x262bfa2e": 2,
+                "0xaa8fd0c5": true,
+                "0xdba9e788": true,
+                "~class": "0x61b427f"
+              }
+            ],
+            "mPriority": 90,
+            "mRuleName": "Form 1->2 (Mask 3)",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mSelfEventName": "Unique2DGearNew",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "0xaa8fd0c5": true,
+                "~class": "0x61b427f"
+              },
+              {
+                "mRuleCooldown": 60.0,
+                "~class": "ContextualConditionRuleCooldown"
+              }
+            ],
+            "mPriority": -10,
+            "mRuleName": "New Mask 1, Form 1",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mSelfEventName": "Unique2DGearNew",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "0x20941997": 3,
+                "0x262bfa2e": 2,
+                "0xaa8fd0c5": true,
+                "~class": "0x61b427f"
+              },
+              {
+                "mRuleCooldown": 60.0,
+                "~class": "ContextualConditionRuleCooldown"
+              }
+            ],
+            "mPriority": -10,
+            "mRuleName": "New Mask 1, Form 2",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mSelfEventName": "Unique2DGearNew",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "0x20941997": 1,
+                "0x262bfa2e": 2,
+                "0xaa8fd0c5": true,
+                "~class": "0x61b427f"
+              },
+              {
+                "mRuleCooldown": 60.0,
+                "~class": "ContextualConditionRuleCooldown"
+              }
+            ],
+            "mPriority": -10,
+            "mRuleName": "New Mask 2, Form 1",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mSelfEventName": "Unique2DGearNew",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "0x20941997": 4,
+                "0x262bfa2e": 2,
+                "0xaa8fd0c5": true,
+                "~class": "0x61b427f"
+              },
+              {
+                "mRuleCooldown": 60.0,
+                "~class": "ContextualConditionRuleCooldown"
+              }
+            ],
+            "mPriority": -10,
+            "mRuleName": "New Mask 2, Form 2",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mSelfEventName": "Unique2DGearNew",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "0x20941997": 2,
+                "0x262bfa2e": 2,
+                "0xaa8fd0c5": true,
+                "~class": "0x61b427f"
+              },
+              {
+                "mRuleCooldown": 60.0,
+                "~class": "ContextualConditionRuleCooldown"
+              }
+            ],
+            "mPriority": -10,
+            "mRuleName": "New Mask 3, Form 1",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mSelfEventName": "Unique2DGearNew",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "0x20941997": 5,
+                "0x262bfa2e": 2,
+                "0xaa8fd0c5": true,
+                "~class": "0x61b427f"
+              },
+              {
+                "mRuleCooldown": 60.0,
+                "~class": "ContextualConditionRuleCooldown"
+              }
+            ],
+            "mPriority": -10,
+            "mRuleName": "New Mask 3, Form 2",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "GotFirstBlood": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mEnemyEventName": "Kill3DFirst",
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Kill3DFirst",
+              "mWaitForAnnouncerQueue": true,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mPriority": 130,
+            "mRuleName": "First Blood",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "Joke": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Joke3DGeneral",
+              "mEnemyEventName": "Joke3DGeneral",
+              "mSelfEventName": "Joke3DGeneral",
+              "mSpectatorEventName": "Joke3DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "Joke",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "JokeEndedNearby": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "JokeTauntResponse3DGeneral",
+              "mEnemyEventName": "JokeTauntResponse3DGeneral",
+              "mMaxOccurences": 1,
+              "mSelfEventName": "JokeTauntResponse3DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "Joke Response",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "KillChampion": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Kill3DPenta",
+              "mEnemyEventName": "Kill3DPenta",
+              "mSelfEventName": "Kill3DPenta",
+              "mWaitForAnnouncerQueue": true,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mMultikillSize": 5,
+                "~class": "ContextualConditionMultikillSize"
+              }
+            ],
+            "mPriority": 200,
+            "mRuleName": "Pentakill",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mEnemyEventName": "Kill3DAhriSkin29",
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Kill3DAhriSkin29",
+              "mWaitForAnnouncerQueue": true,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Jade_Ahri/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mPriority": 30,
+            "mRuleName": "Kill Ahri Skin29",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mEnemyEventName": "Kill3DAsheSkin76",
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Kill3DAsheSkin76",
+              "mWaitForAnnouncerQueue": true,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Jade_Ashe/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mPriority": 30,
+            "mRuleName": "Kill Ashe Skin76",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mEnemyEventName": "Kill3DIreliaSkin55",
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Kill3DIreliaSkin55",
+              "mWaitForAnnouncerQueue": true,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Irelia/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mPriority": 30,
+            "mRuleName": "Kill Irelia Skin55",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mEnemyEventName": "Kill3DKarmaSkin70",
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Kill3DKarmaSkin70",
+              "mWaitForAnnouncerQueue": true,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Karma/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mPriority": 30,
+            "mRuleName": "Kill KarmaSkin70",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mEnemyEventName": "Kill3DKayleSkin78",
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Kill3DKayleSkin78",
+              "mWaitForAnnouncerQueue": true,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Jade_Kayle/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mPriority": 30,
+            "mRuleName": "Kill Kayle Skin78",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mEnemyEventName": "Kill3DSettSkin38",
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Kill3DSettSkin38",
+              "mWaitForAnnouncerQueue": true,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Sett/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mPriority": 30,
+            "mRuleName": "Kill Sett Skin38",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mEnemyEventName": "Kill3DThreshSkin19",
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Kill3DThreshSkin19",
+              "mWaitForAnnouncerQueue": true,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Thresh/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "mCategory": "skinline",
+                    "mData": "spiritblossom",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mPriority": 30,
+            "mRuleName": "Kill Thresh Skin19",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mEnemyEventName": "Kill3DAkana",
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Kill3DAkana",
+              "mWaitForAnnouncerQueue": true,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCategory": "subskinline",
+                    "mData": "akana",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mPriority": 30,
+            "mRuleName": "Kill Akana",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mEnemyEventName": "Kill3DKanmei",
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Kill3DKanmei",
+              "mWaitForAnnouncerQueue": true,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCategory": "subskinline",
+                    "mData": "kanmei",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mPriority": 30,
+            "mRuleName": "Kill Kanmei",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mEnemyEventName": "Kill3DGeneral",
+              "mSelfEventName": "Kill3DGeneral",
+              "mWaitForAnnouncerQueue": true,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mPriority": 30,
+            "mRuleName": "General",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "Laugh": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Laugh3DGeneral",
+              "mEnemyEventName": "Laugh3DGeneral",
+              "mSelfEventName": "Laugh3DGeneral",
+              "mSpectatorEventName": "Laugh3DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "Laugh",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "MoveOrder2D": {
+        "mRules": [
+          {
+            "mAudioAction": {
+              "mSelfEventName": "Move2DLong",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCompareOp": 2,
+                "mDistance": 2000.0,
+                "~class": "ContextualConditionMoveDistance"
+              }
+            ],
+            "mRuleName": "Long",
+            "~class": "ContextualRule"
+          },
+          {
+            "mAudioAction": {
+              "mSelfEventName": "Move2DStandard",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCompareOp": 3,
+                "mDistance": 400.0,
+                "~class": "ContextualConditionMoveDistance"
+              },
+              {
+                "mCompareOp": 5,
+                "mDistance": 2000.0,
+                "~class": "ContextualConditionMoveDistance"
+              }
+            ],
+            "mRuleName": "Standard",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "RecallLeadIn": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mSelfEventName": "Recall3DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mPercentChanceToPlay": 50,
+                "~class": "ContextualConditionChanceToPlay"
+              },
+              {
+                "mRuleCooldown": 10.0,
+                "~class": "ContextualConditionRuleCooldown"
+              }
+            ],
+            "mRuleName": "Recall",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "Respawn2D": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mSelfEventName": "Respawn2DGeneral",
+              "mWaitTimeout": -1.0,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mPercentChanceToPlay": 75,
+                "~class": "ContextualConditionChanceToPlay"
+              }
+            ],
+            "mPriority": 0,
+            "mRuleName": "Respawn",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "SpellBuffCast": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mSelfEventName": "Spell3DQWCombo_hit3D",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "SpellBuff": "0xdcfe77c3",
+                "~class": "ContextualConditionSpellBuffName"
+              }
+            ],
+            "mRuleName": "QW Combo",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mSelfEventName": "Spell3DEBlockCC",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "SpellBuff": "0xbebe2f75",
+                "~class": "ContextualConditionSpellBuffName"
+              }
+            ],
+            "mRuleName": "E Block CC",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "SpellCast": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "0x9449aa71": true,
+              "mAllyEventName": "Spell3DRCast",
+              "mEnemyEventName": "Spell3DRCast",
+              "mSelfEventName": "Spell3DRCast",
+              "mSpectatorEventName": "Spell3DRCast",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mSpell": "Characters/Jade_Morgana/Spells/Jade_MorganaRAbility/Jade_MorganaR",
+                "~class": "ContextualConditionSpellName"
+              }
+            ],
+            "mPriority": 100,
+            "mRuleName": "R",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "DontResetTimer": true,
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "0x9449aa71": true,
+              "mAllyEventName": "Spell3DQCast",
+              "mEnemyEventName": "Spell3DQCast",
+              "mSelfEventName": "Spell3DQCast",
+              "mSpectatorEventName": "Spell3DQCast",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mSpell": "Characters/Jade_Morgana/Spells/Jade_MorganaQAbility/Jade_MorganaQ",
+                "~class": "ContextualConditionSpellName"
+              },
+              {
+                "mPercentChanceToPlay": 30,
+                "~class": "ContextualConditionChanceToPlay"
+              }
+            ],
+            "mRuleName": "Q",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "DontResetTimer": true,
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "0x9449aa71": true,
+              "mAllyEventName": "Spell3DWCast",
+              "mEnemyEventName": "Spell3DWCast",
+              "mSelfEventName": "Spell3DWCast",
+              "mSpectatorEventName": "Spell3DWCast",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mSpell": "Characters/Jade_Morgana/Spells/Jade_MorganaWAbility/Jade_MorganaW",
+                "~class": "ContextualConditionSpellName"
+              },
+              {
+                "mPercentChanceToPlay": 50,
+                "~class": "ContextualConditionChanceToPlay"
+              }
+            ],
+            "mRuleName": "W",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "DontResetTimer": true,
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "0x9449aa71": true,
+              "mAllyEventName": "Spell3DECast",
+              "mEnemyEventName": "Spell3DECast",
+              "mSelfEventName": "Spell3DECast",
+              "mSpectatorEventName": "Spell3DECast",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mSpell": "Characters/Jade_Morgana/Spells/Jade_MorganaEAbility/Jade_MorganaE",
+                "~class": "ContextualConditionSpellName"
+              },
+              {
+                "mPercentChanceToPlay": 50,
+                "~class": "ContextualConditionChanceToPlay"
+              }
+            ],
+            "mRuleName": "E",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "DontResetTimer": true,
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "0x9449aa71": true,
+              "mAllyEventName": "Spell3DBasic",
+              "mEnemyEventName": "Spell3DBasic",
+              "mSelfEventName": "Spell3DBasic",
+              "mSpectatorEventName": "Spell3DBasic",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mSpell": "Characters/Jade_Morgana/Spells/Jade_MorganaCritAttack",
+                "~class": "ContextualConditionSpellName"
+              },
+              {
+                "mPercentChanceToPlay": 30,
+                "~class": "ContextualConditionChanceToPlay"
+              }
+            ],
+            "mRuleName": "Crit 1",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "DontResetTimer": true,
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "0x9449aa71": true,
+              "mAllyEventName": "Spell3DBasic",
+              "mEnemyEventName": "Spell3DBasic",
+              "mSelfEventName": "Spell3DBasic",
+              "mSpectatorEventName": "Spell3DBasic",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mSpell": "Characters/Jade_Morgana/Spells/Jade_MorganaBasicAttack2",
+                "~class": "ContextualConditionSpellName"
+              },
+              {
+                "mPercentChanceToPlay": 30,
+                "~class": "ContextualConditionChanceToPlay"
+              }
+            ],
+            "mRuleName": "Basic 2",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "DontResetTimer": true,
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "0x9449aa71": true,
+              "mAllyEventName": "Spell3DBasic",
+              "mEnemyEventName": "Spell3DBasic",
+              "mSelfEventName": "Spell3DBasic",
+              "mSpectatorEventName": "Spell3DBasic",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mSpell": "0x4b5daa29",
+                "~class": "ContextualConditionSpellName"
+              },
+              {
+                "mPercentChanceToPlay": 30,
+                "~class": "ContextualConditionChanceToPlay"
+              }
+            ],
+            "mRuleName": "Basic 1",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "TauntEndedNearby": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "JokeTauntResponse3DGeneral",
+              "mEnemyEventName": "JokeTauntResponse3DGeneral",
+              "mMaxOccurences": 1,
+              "mSelfEventName": "JokeTauntResponse3DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "Taunt Response",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "UseItem": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "UseItem2DWard",
+              "mWaitTimeout": -1.0,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mPercentChanceToPlay": 30,
+                "~class": "ContextualConditionChanceToPlay"
+              },
+              {
+                "mItemVOGroupHash": "Ward",
+                "~class": "ContextualConditionItemVOGroup"
+              }
+            ],
+            "mRuleName": "Ward",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "taunt": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Taunt3DGeneral",
+              "mEnemyEventName": "Taunt3DGeneral",
+              "mSelfEventName": "Taunt3DGeneral",
+              "mSpectatorEventName": "Taunt3DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "Taunt",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      }
+    },
+    "~class": "ContextualActionData"
+  }
+}

@@ -2992,6 +2992,84 @@
             2.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "InitialMarkThreshold",
+          "values": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "RangeIncrease",
+          "values": [
+            25.0,
+            25.0,
+            25.0,
+            25.0,
+            25.0,
+            25.0,
+            25.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "FirstTierMultiplier",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ASPerMark",
+          "values": [
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "EDamagePerMark",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "AdditionalMarkThreshold",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "castRange": [
@@ -3009,8 +3087,8 @@
           "mLocKeys": {
             "keyName": "Mark of the Kindred",
             "keySummary": "Kindred can mark targets to Hunt. Successfully completing a Hunt permanently empowers Kindred's basic abilities. Every 4 hunts completed also increases Kindred's basic attack range.",
-            "keyTooltip": "Kindred can designate a champion to hunt by clicking their portrait above their inventory. They also designate certain jungle monsters to hunt with an icon on the minimap automatically.<br><br>Getting a takedown on a hunted target grants Kindred a <keywordMajor>Mark</keywordMajor>, empowering them. After @f2@ <keywordMajor>Marks</keywordMajor>, Kindred gains @f8@ Attack Range. Every @f7@ <keywordMajor>Marks</keywordMajor> after the fourth grants a further @f9@ Attack Range.<br><br><keywordMajor>Marks</keywordMajor> empower Kindred's basic Abilities:<li><spellName>{{Spell_KindredQ_Name}}</spellName> grants an additional <attackSpeed>@QMarkBonus@ Attack Speed</attackSpeed><li><spellName>{{Spell_KindredW_Name}}</spellName> deal an additional <magicDamage>@WMarkBonus@ current Health damage</magicDamage>.<li><spellName>{{Spell_KindredEWrapper_Name}}</spellName> deal an additional <physicalDamage>@EMarkBonus@ missing Health damage</physicalDamage>.",
-            "keyTooltipExtended": "{{Spell_KindredPassiveManager_Tooltip}}<br><br>Currently granting <statTracking>@f3@ Attack Range</statTracking>.<br><br><rules>The hunted jungle monsters change as Kindred gains <keywordMajor>Marks</keywordMajor>, moving further into the enemy jungle, eventually hunting epic monsters.</rules>"
+            "keyTooltip": "Kindred can designate a champion to hunt by clicking their portrait above their inventory. They also designate certain jungle monsters to hunt with an icon on the minimap automatically.<br><br>Getting a takedown on a hunted target grants Kindred a <keywordMajor>Mark</keywordMajor>, empowering them. After @InitialMarkThreshold@ <keywordMajor>Marks</keywordMajor>, Kindred gains @FirstTierRangeIncreaseTT@ Attack Range. Every @AdditionalMarkThreshold@ <keywordMajor>Marks</keywordMajor> after the fourth grants a further @RangeIncrease@ Attack Range.<br><br><keywordMajor>Marks</keywordMajor> empower Kindred's basic Abilities:<li><spellName>{{Spell_KindredQ_Name}}</spellName> grants an additional <attackSpeed>@QMarkBonus@ Attack Speed</attackSpeed><li><spellName>{{Spell_KindredW_Name}}</spellName> deal an additional <magicDamage>@WMarkBonus@ current Health damage</magicDamage>.<li><spellName>{{Spell_KindredEWrapper_Name}}</spellName> deal an additional <physicalDamage>@EMarkBonus@ missing Health damage</physicalDamage>.",
+            "keyTooltipExtended": "{{Spell_KindredPassiveManager_Tooltip}}<br><br>Currently granting <statTracking>@f1@ Attack Range</statTracking>.<br><br><rules>The hunted jungle monsters change as Kindred gains <keywordMajor>Marks</keywordMajor>, moving further into the enemy jungle, eventually hunting epic monsters.</rules>"
           },
           "mObjectName": "KindredPassiveManager",
           "~class": "TooltipInstanceSpell"
@@ -3134,6 +3212,19 @@
         "ASSETS/Characters/Kindred/HUD/Icons2D/Kindred_Passive.dds"
       ],
       "mSpellCalculations": {
+        "0xd34fc902": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "RangeIncrease",
+              "~class": "NamedDataValueCalculationPart"
+            }
+          ],
+          "mMultiplier": {
+            "mDataValue": "FirstTierMultiplier",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "~class": "GameCalculation"
+        },
         "EMarkBonus": {
           "mDisplayAsPercent": true,
           "mFormulaParts": [
@@ -3272,6 +3363,32 @@
             1.5
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseDamage",
+          "values": [
+            15.0,
+            40.0,
+            65.0,
+            90.0,
+            115.0,
+            140.0,
+            165.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseBonusAS",
+          "values": [
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -3384,13 +3501,13 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
+                  "type": "BaseDamage",
                   "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Cooldown in Wolf's Frenzy",
-                  "type": "Effect%dAmount",
+                  "type": "CDNewValue",
                   "typeIndex": 4,
                   "~class": "TooltipInstanceListElement"
                 }
@@ -3402,7 +3519,7 @@
           "mLocKeys": {
             "keyName": "Dance of Arrows",
             "keySummary": "Kindred tumbles and shoots up to three arrows at nearby targets.",
-            "keyTooltip": "Kindred vaults, firing an arrow at up to 3 enemies, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and gaining <attackSpeed>@TotalQAttackSpeed@ Attack Speed</attackSpeed> for @Effect8Amount@ seconds.<br><br>While inside of <spellName>{{Spell_KindredW_Name}}</spellName>, this Ability's Cooldown is reduced to @Effect4Amount@ seconds.",
+            "keyTooltip": "Kindred vaults, firing an arrow at up to 3 enemies, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and gaining <attackSpeed>@TotalQAttackSpeed@ Attack Speed</attackSpeed> for @BaseASDuration@ seconds.<br><br>While inside of <spellName>{{Spell_KindredW_Name}}</spellName>, this Ability's Cooldown is reduced to @CDNewValue@ seconds.",
             "keyTooltipExtendedBelowLine": "<rules>Attack Speed scales with <keywordMajor>Marks</keywordMajor> taken.</rules>"
           },
           "mObjectName": "KindredQ",
@@ -3532,8 +3649,8 @@
         "TotalDamage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.75,
@@ -3548,8 +3665,8 @@
           "mDisplayAsPercent": true,
           "mFormulaParts": [
             {
-              "mEffectIndex": 7,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "BaseBonusAS",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mBuffName": "0x64290302",
@@ -4298,6 +4415,32 @@
             1.5
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseDamage",
+          "values": [
+            15.0,
+            40.0,
+            65.0,
+            90.0,
+            115.0,
+            140.0,
+            165.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseBonusAS",
+          "values": [
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -4410,13 +4553,13 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
+                  "type": "BaseDamage",
                   "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Cooldown in Wolf's Frenzy",
-                  "type": "Effect%dAmount",
+                  "type": "CDNewValue",
                   "typeIndex": 4,
                   "~class": "TooltipInstanceListElement"
                 }
@@ -4428,7 +4571,7 @@
           "mLocKeys": {
             "keyName": "Dance of Arrows",
             "keySummary": "Kindred tumbles and shoots up to three arrows at nearby targets.",
-            "keyTooltip": "Kindred vaults, firing an arrow at up to 3 enemies, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and gaining <attackSpeed>@TotalQAttackSpeed@ Attack Speed</attackSpeed> for @Effect8Amount@ seconds.<br><br>While inside of <spellName>{{Spell_KindredW_Name}}</spellName>, this Ability's Cooldown is reduced to @Effect4Amount@ seconds.",
+            "keyTooltip": "Kindred vaults, firing an arrow at up to 3 enemies, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and gaining <attackSpeed>@TotalQAttackSpeed@ Attack Speed</attackSpeed> for @BaseASDuration@ seconds.<br><br>While inside of <spellName>{{Spell_KindredW_Name}}</spellName>, this Ability's Cooldown is reduced to @CDNewValue@ seconds.",
             "keyTooltipExtendedBelowLine": "<rules>Attack Speed scales with <keywordMajor>Marks</keywordMajor> taken.</rules>"
           },
           "mObjectName": "KindredQ_URFWrapper",
@@ -4558,8 +4701,8 @@
         "TotalDamage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.75,
@@ -4574,8 +4717,8 @@
           "mDisplayAsPercent": true,
           "mFormulaParts": [
             {
-              "mEffectIndex": 7,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "BaseBonusAS",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mBuffName": "0x64290302",
@@ -4939,8 +5082,7 @@
               "Elements": [
                 {
                   "nameOverride": "Healing",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "HealFlat",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -4955,7 +5097,7 @@
           "mLocKeys": {
             "keyName": "Lamb's Respite",
             "keySummary": "Lamb grants all living things inside a zone a respite from death. Until the effect ends, nothing can die. At the end, units are healed.",
-            "keyTooltip": "Kindred blesses the ground for @Effect2Amount@ seconds, allowing no unit, ally, enemy, or neutral to die while inside. Upon reaching 10% Health, units can't be damaged or healed while still inside the zone.<br><br>When the blessing ends, all units inside heal for <healing>@Effect1Amount@ Health</healing>."
+            "keyTooltip": "Kindred blesses the ground for @BuffDuration@ seconds, allowing no unit, ally, enemy, or neutral to die while inside. Upon reaching 10% Health, units can't be damaged or healed while still inside the zone.<br><br>When the blessing ends, all units inside heal for <healing>@HealFlat@ Health</healing>."
           },
           "mObjectName": "KindredR",
           "~class": "TooltipInstanceSpell"
@@ -5959,6 +6101,58 @@
             0.009999999776482582
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseCurrentHealthDamage",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ZoneDuration",
+          "values": [
+            8.5,
+            8.5,
+            8.5,
+            8.5,
+            8.5,
+            8.5,
+            8.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MonsterBonusDmg",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MonsterSlowAmount",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "DataValuesModeOverride": {
@@ -6112,8 +6306,7 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 5,
+                  "type": "CloneDamageFlat",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -6129,7 +6322,7 @@
             "keyName": "Wolf's Frenzy",
             "keySummary": "Wolf enrages and attacks enemies around him.  Lamb passively gains stacks by moving and attacking. When fully charged, Lamb's next attack restores health.",
             "keyTooltip": "<spellPassive>Passive:</spellPassive> Kindred gains stacks as they move and attack. At 100 stacks, Kindred's next Attack restores up to <healing>@AttackHeal@ Health</healing> based on their missing Health.<br><br><spellActive>Active:</spellActive> Kindred claims a territory, ordering Wolf to bite at the last enemy Lamb Attacked. Wolf's bites deal <magicDamage>@BaseWolfDamage@</magicDamage> plus <magicDamage>@PercentWolfDamage@ current Health magic damage</magicDamage>.",
-            "keyTooltipExtendedBelowLine": "<rules>Wolf strikes faster based on Kindred's <attackSpeed>Attack Speed</attackSpeed>. Against jungle monsters, Wolf deals @Effect7Amount*100@% increased damage and <status>Slows</status> them by @Effect8Amount*100@% for 2 seconds.</rules>"
+            "keyTooltipExtendedBelowLine": "<rules>Wolf strikes faster based on Kindred's <attackSpeed>Attack Speed</attackSpeed>. Against jungle monsters, Wolf deals @MonsterBonusDmg*100@% increased damage and <status>Slows</status> them by @MonsterSlowAmount*100@% for 2 seconds.</rules>"
           },
           "mObjectName": "KindredW",
           "~class": "TooltipInstanceSpell"
@@ -6266,6 +6459,20 @@
         "ASSETS/Characters/Kindred/HUD/Icons2D/Kindred_W.dds"
       ],
       "mSpellCalculations": {
+        "0xfe248f68": {
+          "0x72c5c2a8": 1,
+          "mModifiedGameCalculation": "PercentWolfDamage",
+          "mMultiplier": {
+            "0xa8cb9c14": true,
+            "mStat": 13,
+            "mSubpart": {
+              "mNumber": 1.0,
+              "~class": "NumberCalculationPart"
+            },
+            "~class": "StatBySubPartCalculationPart"
+          },
+          "~class": "GameCalculationModified"
+        },
         "AttackHeal": {
           "mFormulaParts": [
             {
@@ -6310,7 +6517,6 @@
             }
           ],
           "mPrecision": 1,
-          "tooltipOnly": true,
           "~class": "GameCalculation"
         }
       },

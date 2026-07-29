@@ -1,0 +1,2716 @@
+{
+  "0x2f9db95b": {
+    "ObjectName": "Jade_GragasPassive_Heal",
+    "mBuff": {
+      "mDescription": "<titleLeft>Happy Hour</titleLeft><mainText>Gragas is regaining health.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_GragasPassive_Heal",
+    "mSpell": {
+      "0xe1136d1": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "Cooldown": {
+        "0xa3e0478": 12.0,
+        "values": [
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "ArenaCooldownMod",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "HealRatio",
+          "values": [
+            0.054999999701976776,
+            0.054999999701976776,
+            0.054999999701976776,
+            0.054999999701976776,
+            0.054999999701976776,
+            0.054999999701976776,
+            0.054999999701976776
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "HealRatio",
+              "values": [
+                0.03500000014901161,
+                0.03500000014901161,
+                0.03500000014901161,
+                0.03500000014901161,
+                0.03500000014901161,
+                0.03500000014901161,
+                0.03500000014901161
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
+      "castRange": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cooldownTime": [
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0
+      ],
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyName": "Happy Hour",
+            "keySummary": "On ability use, Gragas takes a drink, restoring some of his Health.",
+            "keyTooltip": "Whenever Gragas casts a spell, he regains <healing>@HealAmount@ Health</healing> over 4 seconds."
+          },
+          "mObjectName": "Jade_GragasPassive_Heal",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/GragasPassiveHeal.dds"
+      ],
+      "mSpellCalculations": {
+        "HealAmount": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "HealRatio",
+              "mStat": 12,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "HealCooldown": {
+          "mFormulaParts": [
+            {
+              "mBreakpoints": [
+                {
+                  "mAdditionalBonusAtThisLevel": -2.0,
+                  "mLevel": 6,
+                  "~class": "Breakpoint"
+                },
+                {
+                  "mAdditionalBonusAtThisLevel": -2.0,
+                  "mLevel": 11,
+                  "~class": "Breakpoint"
+                },
+                {
+                  "mAdditionalBonusAtThisLevel": -2.0,
+                  "mLevel": 16,
+                  "~class": "Breakpoint"
+                }
+              ],
+              "mLevel1Value": 12.0,
+              "~class": "ByCharLevelBreakpointsCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x36930a89": {
+    "ObjectName": "Jade_GragasE_TargetSlow",
+    "mBuff": {
+      "mDescription": "<titleLeft>Body Slam Slow</titleLeft><mainText>This unit has been slowed.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_GragasE_TargetSlow",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0x210f9ec0": {
+        "0xa3e0478": 75.0,
+        "values": [
+          75.0,
+          75.0,
+          75.0,
+          75.0,
+          75.0,
+          75.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "0xe1136d1": {
+        "0xa3e0478": 25000.0,
+        "values": [
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.0,
+      "0xf9c2333e": {
+        "cherry": {
+          "value": [
+            15.0,
+            15.0,
+            14.5,
+            14.0,
+            13.5,
+            13.0,
+            13.0
+          ],
+          "~class": "SpellEffectAmount"
+        }
+      },
+      "Cooldown": {
+        "0xa3e0478": 7.0,
+        "values": [
+          7.0,
+          7.0,
+          7.0,
+          7.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "DashSpeed",
+          "values": [
+            900.0,
+            900.0,
+            900.0,
+            900.0,
+            900.0,
+            900.0,
+            900.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BonusDamage",
+          "values": [
+            40.0,
+            80.0,
+            120.0,
+            160.0,
+            200.0,
+            240.0,
+            280.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MinDamage",
+          "values": [
+            25.0,
+            50.0,
+            75.0,
+            100.0,
+            125.0,
+            150.0,
+            175.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "cantCastWhileRooted": true,
+      "castFrame": 9.0,
+      "castRange": [
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0
+      ],
+      "castRangeDisplayOverride": [
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0
+      ],
+      "cooldownTime": [
+        7.0,
+        7.0,
+        7.0,
+        7.0,
+        7.0,
+        7.0,
+        7.0
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 6154,
+      "mAnimationName": "Spell1",
+      "mCantCancelWhileWindingUp": true,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "endLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "lineStopsAtEndPosition": true,
+            "lineWidth": {
+              "mPerLevelValues": [
+                180.0,
+                180.0,
+                180.0,
+                180.0,
+                180.0,
+                180.0
+              ],
+              "mValueType": 2,
+              "~class": "FloatPerSpellLevel"
+            },
+            "~class": "TargeterDefinitionLine"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Base Damage",
+                  "type": "BonusDamage",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Minimum Damage",
+                  "type": "MinDamage",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Body Slam",
+            "keySummary": "Gragas charges forward, colliding with the first enemy, damaging nearby enemies and Slowing them.",
+            "keyTooltip": "Gragas charges forward, colliding with the first enemy, splitting <magicDamage>@SplitDamageCalc@ magic damage</magicDamage> among nearby enemies and <status>Slowing</status> them by @Slow*-100@% for @SlowDuration@ seconds."
+          },
+          "mObjectName": "Jade_GragasE_TargetSlow",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mEffectAmount": [
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/GragasBodySlam.dds"
+      ],
+      "mLineWidth": 50.0,
+      "mSpellCalculations": {
+        "APDamage": {
+          "mFormulaParts": [
+            {
+              "mCoefficient": 0.5,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "TotalDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "BonusDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.6600000262260437,
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "PositiveEffect_MoveBlock",
+        "Trait_ImmobilizingCCSpell",
+        "Trait_PlayerSelectedDashDirection"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Location"
+      },
+      "mana": [
+        75.0,
+        75.0,
+        75.0,
+        75.0,
+        75.0,
+        75.0
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x392847cf": {
+    "ObjectName": "Jade_GragasR_Debuff",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Barrel Roll",
+          "keyTooltip": "This unit has reduced attack speed."
+        },
+        "mObjectName": "Jade_GragasR_Debuff",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_GragasR_Debuff",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0xe1136d1": {
+        "0xa3e0478": 1300.0,
+        "values": [
+          1300.0,
+          1300.0,
+          1300.0,
+          1300.0,
+          1300.0,
+          1300.0,
+          1300.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.0,
+      "Cooldown": {
+        "values": [
+          13.0,
+          12.0,
+          11.0,
+          10.0,
+          9.0,
+          8.0,
+          8.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "bHaveHitBone": true,
+      "castConeDistance": 100.0,
+      "castFrame": 30.600000381469727,
+      "castRadius": [
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0
+      ],
+      "castRange": [
+        1300.0,
+        1300.0,
+        1300.0,
+        1300.0,
+        1300.0,
+        1300.0,
+        1300.0
+      ],
+      "cooldownTime": [
+        13.0,
+        12.0,
+        11.0,
+        10.0,
+        9.0,
+        8.0,
+        8.0
+      ],
+      "flags": 4194308,
+      "mAffectsTypeFlags": 7183,
+      "mAnimationName": "Spell4",
+      "mCantCancelWhileChanneling": true,
+      "mCantCancelWhileWindingUp": true,
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "hideWithLineIndicator": true,
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "endLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "lineStopsAtEndPosition": false,
+            "lineWidth": {
+              "mPerLevelValues": [
+                120.0,
+                120.0,
+                120.0,
+                120.0,
+                120.0,
+                120.0
+              ],
+              "mValueType": 2,
+              "~class": "FloatPerSpellLevel"
+            },
+            "~class": "TargeterDefinitionLine"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.4000000059604645,
+      "mEffectAmount": [
+        {
+          "value": [
+            50.0,
+            80.0,
+            110.0,
+            140.0,
+            170.0,
+            200.0,
+            230.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            13.0,
+            12.0,
+            11.0,
+            10.0,
+            9.0,
+            8.0,
+            7.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mHitBoneName": "pelvis",
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/GragasBarrelRoll.dds"
+      ],
+      "mLineWidth": 120.0,
+      "mMissileEffectKey": "Jade_Gragas_R_Mis",
+      "mMissileSpec": {
+        "0xc195fba6": true,
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "mGravity": 7000.0,
+          "~class": "GravityHeightSolver"
+        },
+        "mMissileWidth": 120.0,
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 30.0,
+          "mStartBoneName": "head",
+          "mTargetHeightAugment": 30.0,
+          "mTravelTime": 0.5,
+          "~class": "FixedTimeMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mTargetingTypeData": {
+        "~class": "Location"
+      },
+      "missileSpeed": 1800.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x46bce518": {
+    "ObjectName": "Jade_GragasPassive",
+    "mBuff": {
+      "mDescription": "game_buff_tooltip_Jade_GragasPassive",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_GragasPassive",
+    "mSpell": {
+      "0xe1136d1": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "Cooldown": {
+        "0xa3e0478": 12.0,
+        "values": [
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "ArenaCooldownMod",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "HealRatio",
+          "values": [
+            0.019999999552965164,
+            0.019999999552965164,
+            0.019999999552965164,
+            0.019999999552965164,
+            0.019999999552965164,
+            0.019999999552965164,
+            0.019999999552965164
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "castRange": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cooldownTime": [
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0
+      ],
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyName": "Happy Hour",
+            "keySummary": "On ability use, Gragas takes a drink, restoring some of his Health.",
+            "keyTooltip": "Whenever Gragas casts a spell, he regains <healing>@HealAmount@ Health</healing> over 4 seconds."
+          },
+          "mObjectName": "Jade_GragasPassive",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/GragasPassiveHeal.dds"
+      ],
+      "mSpellCalculations": {
+        "HealAmount": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "HealRatio",
+              "mStat": 12,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "HealCooldown": {
+          "mFormulaParts": [
+            {
+              "mBreakpoints": [
+                {
+                  "mAdditionalBonusAtThisLevel": -2.0,
+                  "mLevel": 6,
+                  "~class": "Breakpoint"
+                },
+                {
+                  "mAdditionalBonusAtThisLevel": -2.0,
+                  "mLevel": 11,
+                  "~class": "Breakpoint"
+                },
+                {
+                  "mAdditionalBonusAtThisLevel": -2.0,
+                  "mLevel": 16,
+                  "~class": "Breakpoint"
+                }
+              ],
+              "mLevel1Value": 12.0,
+              "~class": "ByCharLevelBreakpointsCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x50e52061": {
+    "ObjectName": "Jade_GragasQ_Toggle",
+    "mScriptName": "Jade_GragasQ_Toggle",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0xe1136d1": {
+        "0xa3e0478": 1100.0,
+        "values": [
+          1100.0,
+          1100.0,
+          1100.0,
+          1100.0,
+          1100.0,
+          1100.0,
+          1100.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.0,
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            40.0,
+            80.0,
+            120.0,
+            160.0,
+            200.0,
+            240.0,
+            280.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "bHaveHitBone": true,
+      "bIsToggleSpell": true,
+      "castConeDistance": 100.0,
+      "castFrame": 15.0,
+      "castRadius": [
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0
+      ],
+      "castRange": [
+        1100.0,
+        1100.0,
+        1100.0,
+        1100.0,
+        1100.0,
+        1100.0,
+        1100.0
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 14346,
+      "mAlternateName": "Jade_GragasQ",
+      "mAnimationName": "Spell4",
+      "mCantCancelWhileWindingUp": true,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0x3b504ce3",
+          "mLocKeys": {
+            "keyCooldown": "&nbsp;",
+            "keyCost": "&nbsp;",
+            "keyTooltip": "Recast to explode the barrel."
+          },
+          "mObjectName": "Jade_GragasQ_Toggle",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "pelvis",
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/GragasBarrelRoll.dds",
+        "ASSETS/UX/Jade/S3Icons/SameSized/GragasBarrelRoll.dds"
+      ],
+      "mLineWidth": 110.0,
+      "mSpellCalculations": {
+        "MinDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.800000011920929,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "Trait_FreeRecast"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Self"
+      },
+      "missileSpeed": 800.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x605f0c9f": {
+    "ObjectName": "Jade_GragasW_Self",
+    "mBuff": {
+      "mDescription": "<titleLeft>Drunken Rage</titleLeft><mainText>Gragas has has increased Attack Damage and takes reduced damage.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_GragasW_Self",
+    "mSpell": {
+      "0x11704a2b": 0.4393500089645386,
+      "0xe1136d1": {
+        "0xa3e0478": 20.0,
+        "values": [
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.149999976158142,
+      "Cooldown": {
+        "0xa3e0478": 25.0,
+        "values": [
+          25.0,
+          25.0,
+          25.0,
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "DamageIncrease",
+          "values": [
+            20.0,
+            30.0,
+            40.0,
+            50.0,
+            60.0,
+            70.0,
+            80.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DamageReduction",
+          "values": [
+            0.10000000149011612,
+            0.11999999731779099,
+            0.14000000059604645,
+            0.1599999964237213,
+            0.18000000715255737,
+            0.20000000298023224,
+            0.2199999988079071
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ManaRestored",
+          "values": [
+            15.0,
+            30.0,
+            45.0,
+            60.0,
+            75.0,
+            90.0,
+            105.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "castConeAngle": 0.0,
+      "castConeDistance": 0.0,
+      "castFrame": 10.289999961853027,
+      "castRange": [
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0
+      ],
+      "cooldownTime": [
+        25.0,
+        25.0,
+        25.0,
+        25.0,
+        25.0,
+        25.0,
+        25.0
+      ],
+      "flags": 32,
+      "mAffectsTypeFlags": 6154,
+      "mAnimationLoopName": "Spell2_Loop",
+      "mAnimationName": "Spell2_Loop",
+      "mAnimationWinddownName": "Spell2_Winddown",
+      "mCanMoveWhileChanneling": true,
+      "mCantCancelWhileChanneling": true,
+      "mCastTime": 0.0010000000474974513,
+      "mChannelDuration": [
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75
+      ],
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Damage Reduction",
+                  "type": "DamageReduction",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Bonus Damage",
+                  "type": "DamageIncrease",
+                  "typeIndex": 3,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Mana Restore",
+                  "type": "ManaRestored",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Drunken Rage",
+            "keySummary": "Gragas guzzles down brew from his cask, restoring Mana. He then gains Attack Damage and reduces damage taken for several seconds.",
+            "keyTooltip": "Gragas guzzles down brew from his cask, restoring <scaleMana>@ManaRestored@ Mana</scaleMana>. He then gains <physicalDamage>@DamageIncrease@ Attack Damage</physicalDamage> and reduces damage taken by @DamageReduction*100@% for @Duration@ seconds."
+          },
+          "mObjectName": "Jade_GragasW_Self",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mDoNotNeedToFaceTarget": true,
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/GragasDrunkenRage.dds"
+      ],
+      "mSpellCalculations": {
+        "0xdda2232f": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "ManaRestored",
+              "~class": "NamedDataValueCalculationPart"
+            }
+          ],
+          "mMultiplier": {
+            "mNumber": 0.5,
+            "~class": "NumberCalculationPart"
+          },
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellRevealsChampion": false,
+      "mTargetingTypeData": {
+        "~class": "Self"
+      },
+      "missileSpeed": 828.5,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x92366c1f": {
+    "ObjectName": "Jade_GragasQ_Missile",
+    "mBuff": {
+      "mDescription": "game_buff_tooltip_Jade_GragasBarrelRollMissile",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_GragasQ_Missile",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0xe1136d1": {
+        "0xa3e0478": 25000.0,
+        "values": [
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.0,
+      "Cooldown": {
+        "values": [
+          13.0,
+          12.0,
+          11.0,
+          10.0,
+          9.0,
+          8.0,
+          8.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "bHaveHitBone": true,
+      "bIsToggleSpell": true,
+      "castConeDistance": 100.0,
+      "castFrame": 7.5,
+      "castRadius": [
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0
+      ],
+      "castRange": [
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0
+      ],
+      "cooldownTime": [
+        13.0,
+        12.0,
+        11.0,
+        10.0,
+        9.0,
+        8.0,
+        8.0
+      ],
+      "flags": 4194308,
+      "mAffectsTypeFlags": 6154,
+      "mAlternateName": "Jade_GragasQ",
+      "mAnimationName": "Spell1",
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.25,
+      "mCastType": 3,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "hideWithLineIndicator": true,
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "endLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "lineStopsAtEndPosition": true,
+            "lineWidth": {
+              "mPerLevelValues": [
+                110.0,
+                110.0,
+                110.0,
+                110.0,
+                110.0,
+                110.0
+              ],
+              "mValueType": 2,
+              "~class": "FloatPerSpellLevel"
+            },
+            "~class": "TargeterDefinitionLine"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "pelvis",
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/GragasBarrelRoll.dds"
+      ],
+      "mLineWidth": 110.0,
+      "mMissileEffectKey": "Jade_Gragas_Q_Mis",
+      "mMissileSpec": {
+        "0xc195fba6": true,
+        "behaviors": [
+          {
+            "~class": "CastOnHit"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "~class": "BlendedLinearHeightSolver"
+        },
+        "mMissileWidth": 110.0,
+        "movementComponent": {
+          "0x3046674": true,
+          "mSpeed": 1000.0,
+          "mStartBoneName": "R_PARENTING_HAND_LOC",
+          "mTargetHeightAugment": 60.0,
+          "mTracksTarget": false,
+          "mUseHeightOffsetAtEnd": true,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VerticalFacingFaceTarget"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mProjectTargetToCastRange": true,
+      "mSpellTags": [
+        "Trait_FreeRecast"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Location"
+      },
+      "missileSpeed": 1000.0,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "0x987768b2": {
+    "ObjectName": "Jade_GragasR_Boom",
+    "mScriptName": "Jade_GragasR_Boom",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0xe1136d1": {
+        "0xa3e0478": 1300.0,
+        "values": [
+          1300.0,
+          1300.0,
+          1300.0,
+          1300.0,
+          1300.0,
+          1300.0,
+          1300.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.0,
+      "Cooldown": {
+        "values": [
+          13.0,
+          12.0,
+          11.0,
+          10.0,
+          9.0,
+          8.0,
+          8.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "bHaveHitBone": true,
+      "castConeDistance": 100.0,
+      "castFrame": 30.600000381469727,
+      "castRadius": [
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0
+      ],
+      "castRange": [
+        1300.0,
+        1300.0,
+        1300.0,
+        1300.0,
+        1300.0,
+        1300.0,
+        1300.0
+      ],
+      "cooldownTime": [
+        13.0,
+        12.0,
+        11.0,
+        10.0,
+        9.0,
+        8.0,
+        8.0
+      ],
+      "flags": 4194308,
+      "mAffectsTypeFlags": 7183,
+      "mAnimationName": "Spell4",
+      "mCantCancelWhileChanneling": true,
+      "mCantCancelWhileWindingUp": true,
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "hideWithLineIndicator": true,
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "endLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "lineStopsAtEndPosition": false,
+            "lineWidth": {
+              "mPerLevelValues": [
+                120.0,
+                120.0,
+                120.0,
+                120.0,
+                120.0,
+                120.0
+              ],
+              "mValueType": 2,
+              "~class": "FloatPerSpellLevel"
+            },
+            "~class": "TargeterDefinitionLine"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.4000000059604645,
+      "mHitBoneName": "pelvis",
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/GragasExplosiveCask.dds"
+      ],
+      "mLineWidth": 120.0,
+      "mMissileEffectKey": "Jade_Gragas_R_Mis",
+      "mMissileSpec": {
+        "0xc195fba6": true,
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "mGravity": 7000.0,
+          "~class": "GravityHeightSolver"
+        },
+        "mMissileWidth": 120.0,
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 30.0,
+          "mSpeed": 1800.0,
+          "mStartBoneName": "head",
+          "mTargetHeightAugment": 30.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mTargetingTypeData": {
+        "~class": "Location"
+      },
+      "missileSpeed": 1800.0,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Gragas/Spells/Jade_GragasBasicAttack": {
+    "ObjectName": "Jade_GragasBasicAttack",
+    "mScriptName": "Jade_GragasBasicAttack",
+    "mSpell": {
+      "0x11704a2b": 0.34389999508857727,
+      "0xe1136d1": {
+        "0xa3e0478": 49.400001525878906,
+        "values": [
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Gragas_GragasBasicAttack_OnCast",
+        "13": "Play_sfx_Gragas_GragasBasicAttack_OnHit"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 13.539999961853027,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 8143,
+      "mAlternateName": "Jade_GragasBasicAttack",
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "centerLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "textureRadiusOverrideName": "ASSETS/Spells/Textures/AOE.tex",
+            "~class": "TargeterDefinitionAoe"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "0xc2379813",
+      "mTargetingTypeData": {
+        "~class": "Area"
+      },
+      "missileSpeed": 0.0,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Gragas/Spells/Jade_GragasBasicAttack2": {
+    "ObjectName": "Jade_GragasBasicAttack2",
+    "mScriptName": "Jade_GragasBasicAttack2",
+    "mSpell": {
+      "0x11704a2b": 0.34389999508857727,
+      "0xe1136d1": {
+        "0xa3e0478": 49.400001525878906,
+        "values": [
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Gragas_GragasBasicAttack_OnCast",
+        "13": "Play_sfx_Gragas_GragasBasicAttack_OnHit"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 13.539999961853027,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 8143,
+      "mAlternateName": "Jade_GragasBasicAttack2",
+      "mAnimationName": "Attack2",
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "centerLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "textureRadiusOverrideName": "ASSETS/Spells/Textures/AOE.tex",
+            "~class": "TargeterDefinitionAoe"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "0xc2379813",
+      "mTargetingTypeData": {
+        "~class": "Area"
+      },
+      "missileSpeed": 0.0,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Gragas/Spells/Jade_GragasCritAttack": {
+    "ObjectName": "Jade_GragasCritAttack",
+    "mScriptName": "Jade_GragasCritAttack",
+    "mSpell": {
+      "0x11704a2b": 0.34389999508857727,
+      "0xe1136d1": {
+        "0xa3e0478": 49.400001525878906,
+        "values": [
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Gragas_GragasCritAttack_OnCast",
+        "13": "Play_sfx_Gragas_GragasCritAttack_OnHit"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 21.700000762939453,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906
+      ],
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 8143,
+      "mAnimationName": "Crit",
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "centerLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "~class": "TargeterDefinitionAoe"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "0x59983a40",
+      "mTargetingTypeData": {
+        "~class": "Area"
+      },
+      "missileSpeed": 0.0,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Gragas/Spells/Jade_GragasEAbility/Jade_GragasE": {
+    "ObjectName": "Jade_GragasE",
+    "mBuff": {
+      "mDescription": "Buff_GragasE_Jade_Tooltip",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_GragasE",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0x210f9ec0": {
+        "0xa3e0478": 75.0,
+        "values": [
+          75.0,
+          75.0,
+          75.0,
+          75.0,
+          75.0,
+          75.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "0xe1136d1": {
+        "0xa3e0478": 25000.0,
+        "values": [
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.0,
+      "0xf9c2333e": {
+        "cherry": {
+          "value": [
+            15.0,
+            15.0,
+            14.5,
+            14.0,
+            13.5,
+            13.0,
+            13.0
+          ],
+          "~class": "SpellEffectAmount"
+        }
+      },
+      "Cooldown": {
+        "0xa3e0478": 7.0,
+        "values": [
+          7.0,
+          7.0,
+          7.0,
+          7.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "DashSpeed",
+          "values": [
+            900.0,
+            900.0,
+            900.0,
+            900.0,
+            900.0,
+            900.0,
+            900.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseDamage",
+          "values": [
+            40.0,
+            80.0,
+            120.0,
+            160.0,
+            200.0,
+            240.0,
+            280.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MinimumDamage",
+          "values": [
+            25.0,
+            50.0,
+            75.0,
+            100.0,
+            125.0,
+            150.0,
+            175.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ADRatio",
+          "values": [
+            0.6600000262260437,
+            0.6600000262260437,
+            0.6600000262260437,
+            0.6600000262260437,
+            0.6600000262260437,
+            0.6600000262260437,
+            0.6600000262260437
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatio",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Slow",
+          "values": [
+            -0.3499999940395355,
+            -0.3499999940395355,
+            -0.3499999940395355,
+            -0.3499999940395355,
+            -0.3499999940395355,
+            -0.3499999940395355,
+            -0.3499999940395355
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowDuration",
+          "values": [
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MinimumDistance",
+          "values": [
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0,
+            200.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Gragas_GragasE_OnCast"
+      },
+      "cantCastWhileRooted": true,
+      "castFrame": 9.0,
+      "castRange": [
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0
+      ],
+      "castRangeDisplayOverride": [
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0
+      ],
+      "cooldownTime": [
+        7.0,
+        7.0,
+        7.0,
+        7.0,
+        7.0,
+        7.0,
+        7.0
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 6154,
+      "mAnimationName": "Spell1",
+      "mCantCancelWhileWindingUp": true,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "endLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "lineStopsAtEndPosition": true,
+            "lineWidth": {
+              "mPerLevelValues": [
+                180.0,
+                180.0,
+                180.0,
+                180.0,
+                180.0,
+                180.0
+              ],
+              "mValueType": 2,
+              "~class": "FloatPerSpellLevel"
+            },
+            "minimumDisplayedRange": 150.0,
+            "~class": "TargeterDefinitionLine"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Base Damage",
+                  "type": "BaseDamage",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Minimum Damage",
+                  "type": "MinimumDamage",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Body Slam",
+            "keySummary": "Gragas charges forward, colliding with the first enemy, damaging nearby enemies and Slowing them.",
+            "keyTooltip": "Gragas charges forward, colliding with the first enemy, splitting <magicDamage>@SplitDamageCalc@ magic damage</magicDamage> among nearby enemies and <status>Slowing</status> them by @Slow*-100@% for @SlowDuration@ seconds.",
+            "keyTooltipExtendedBelowLine": "<rules>Enemies take a minimum of @MinimumDamageCalc@ damage.</rules>"
+          },
+          "mObjectName": "Jade_GragasE",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/GragasBodySlam.dds"
+      ],
+      "mLineWidth": 50.0,
+      "mSpellCalculations": {
+        "0xaaffb967": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "ADRatio",
+              "mStat": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "0xc529f643": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "MinimumDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "PositiveEffect_MoveBlock",
+        "Trait_ImmobilizingCCSpell",
+        "Trait_PlayerSelectedDashDirection"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Location"
+      },
+      "mana": [
+        75.0,
+        75.0,
+        75.0,
+        75.0,
+        75.0,
+        75.0
+      ],
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Gragas/Spells/Jade_GragasQAbility/Jade_GragasQ": {
+    "ObjectName": "Jade_GragasQ",
+    "mScriptName": "Jade_GragasQ",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0x210f9ec0": {
+        "0xa3e0478": 80.0,
+        "values": [
+          80.0,
+          90.0,
+          100.0,
+          110.0,
+          120.0,
+          130.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "0xe1136d1": {
+        "0xa3e0478": 1100.0,
+        "values": [
+          1100.0,
+          1100.0,
+          1100.0,
+          1100.0,
+          1100.0,
+          1100.0,
+          1100.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.0,
+      "Cooldown": {
+        "0xa3e0478": 12.5,
+        "values": [
+          12.5,
+          11.5,
+          10.5,
+          9.5,
+          8.5,
+          7.5,
+          6.5
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "ASDebuff",
+          "values": [
+            -0.15000000596046448,
+            -0.20000000298023224,
+            -0.25,
+            -0.30000001192092896,
+            -0.3499999940395355,
+            -0.4000000059604645,
+            -0.44999998807907104
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseDamage",
+          "values": [
+            35.0,
+            85.0,
+            135.0,
+            185.0,
+            235.0,
+            285.0,
+            335.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DebuffDuration",
+          "values": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BarrelDuration",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Gragas_GragasQ_OnCast"
+      },
+      "bHaveHitBone": true,
+      "bIsToggleSpell": true,
+      "castConeDistance": 100.0,
+      "castFrame": 7.5,
+      "castRadius": [
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0
+      ],
+      "castRange": [
+        1100.0,
+        1100.0,
+        1100.0,
+        1100.0,
+        1100.0,
+        1100.0,
+        1100.0
+      ],
+      "cooldownTime": [
+        11.0,
+        11.0,
+        10.0,
+        9.0,
+        8.0,
+        7.0,
+        6.0
+      ],
+      "flags": 4194304,
+      "mAffectsTypeFlags": 6154,
+      "mAnimationName": "Spell1",
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.25,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "centerLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "~class": "TargeterDefinitionAoe"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Base Damage",
+                  "type": "BaseDamage",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "multiplier": -100.0,
+                  "nameOverride": "Attack Speed Reduction",
+                  "type": "ASDebuff",
+                  "typeIndex": 2,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Barrel Roll",
+            "keySummary": "Gragas rolls a barrel that explodes after a short delay, damaging and slowing Attack Speed. Recast to detonate the barrel early.",
+            "keyTooltip": "Gragas rolls a barrel that explodes after @BarrelDuration@ seconds, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Slowing Attack Speed</status> by @ASDebuff*-100@% for @DebuffDuration@ seconds.<br><br><recast>Recast</recast>: Detonate the barrel early."
+          },
+          "mObjectName": "Jade_GragasQ",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mFloatVarsDecimals": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mHitBoneName": "pelvis",
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/GragasBarrelRoll.dds"
+      ],
+      "mLineWidth": 110.0,
+      "mProjectTargetToCastRange": true,
+      "mSpellCalculations": {
+        "TotalDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.8999999761581421,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellRevealsChampion": false,
+      "mSpellTags": [
+        "Trait_DamageAbility",
+        "Trait_RecastOrReplaceSpell",
+        "Trait_SignatureSpell",
+        "Trait_Target_Area",
+        "Trait_AoE"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Area"
+      },
+      "mana": [
+        80.0,
+        90.0,
+        100.0,
+        110.0,
+        120.0,
+        130.0
+      ],
+      "missileSpeed": 1000.0,
+      "selectionPriority": 1,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Gragas/Spells/Jade_GragasRAbility/Jade_GragasR": {
+    "ObjectName": "Jade_GragasR",
+    "mScriptName": "Jade_GragasR",
+    "mSpell": {
+      "0x11704a2b": 0.25,
+      "0x210f9ec0": {
+        "values": [
+          100.0,
+          125.0,
+          150.0,
+          100.0,
+          100.0,
+          100.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "0xe1136d1": {
+        "0xa3e0478": 1050.0,
+        "values": [
+          1050.0,
+          1050.0,
+          1050.0,
+          1050.0,
+          1050.0,
+          1050.0,
+          1050.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.0,
+      "Cooldown": {
+        "values": [
+          100.0,
+          100.0,
+          90.0,
+          80.0,
+          70.0,
+          70.0,
+          70.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            75.0,
+            200.0,
+            325.0,
+            450.0,
+            575.0,
+            700.0,
+            825.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Gragas_GragasR_OnCast"
+      },
+      "bHaveHitBone": true,
+      "castConeDistance": 100.0,
+      "castFrame": 7.5,
+      "castRadius": [
+        350.0,
+        350.0,
+        350.0,
+        350.0,
+        350.0,
+        350.0,
+        350.0
+      ],
+      "castRange": [
+        1050.0,
+        1050.0,
+        1050.0,
+        1050.0,
+        1050.0,
+        1050.0,
+        1050.0
+      ],
+      "castRangeDisplayOverride": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0
+      ],
+      "castTargetAdditionalUnitsRadius": 400.0,
+      "cooldownTime": [
+        100.0,
+        100.0,
+        90.0,
+        80.0,
+        70.0,
+        70.0,
+        70.0
+      ],
+      "flags": 4194304,
+      "mAffectsTypeFlags": 7183,
+      "mAnimationName": "Spell4",
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.25,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "centerLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "textureRadiusOverrideName": "ASSETS/Spells/Textures/AOE.tex",
+            "~class": "TargeterDefinitionAoe"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Base Damage",
+                  "type": "BaseDamage",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "BaseCost",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 3,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Explosive Cask",
+            "keySummary": "Gragas hurls his cask, damaging and Knocking Away enemies from the impact.",
+            "keyTooltip": "Gragas hurls his cask, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Knocking Away</status> enemies from the impact."
+          },
+          "mObjectName": "Jade_GragasR",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.800000011920929,
+      "mHitBoneName": "pelvis",
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/GragasExplosiveCask.dds"
+      ],
+      "mLineWidth": 120.0,
+      "mSpellCalculations": {
+        "TotalDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 1.0,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellRevealsChampion": false,
+      "mSpellTags": [
+        "Trait_Ultimate",
+        "Trait_ImmobilizingCCSpell"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Area"
+      },
+      "mana": [
+        100.0,
+        125.0,
+        150.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "missileSpeed": 200.0,
+      "selectionPriority": 2,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Gragas/Spells/Jade_GragasWAbility/Jade_GragasW": {
+    "ObjectName": "Jade_GragasW",
+    "mBuff": {
+      "mDescription": "<titleLeft>Drunken Rage</titleLeft><mainText>Gragas is regenerating mana.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_GragasW",
+    "mSpell": {
+      "0x11704a2b": 0.4393500089645386,
+      "0xe1136d1": {
+        "0xa3e0478": 20.0,
+        "values": [
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "0xf26881a0": 1.149999976158142,
+      "Cooldown": {
+        "0xa3e0478": 25.0,
+        "values": [
+          25.0,
+          25.0,
+          25.0,
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "DamageIncrease",
+          "values": [
+            20.0,
+            30.0,
+            40.0,
+            50.0,
+            60.0,
+            70.0,
+            80.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DamageReduction",
+          "values": [
+            0.07999999821186066,
+            0.10000000149011612,
+            0.11999999731779099,
+            0.14000000059604645,
+            0.1599999964237213,
+            0.18000000715255737,
+            0.20000000298023224
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ManaRestored",
+          "values": [
+            15.0,
+            30.0,
+            45.0,
+            60.0,
+            75.0,
+            90.0,
+            105.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Duration",
+          "values": [
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Gragas_GragasW_OnCast",
+        "18": "Play_sfx_Gragas_GragasWSelf_OnBuffActivate"
+      },
+      "castConeAngle": 0.0,
+      "castConeDistance": 0.0,
+      "castFrame": 10.289999961853027,
+      "castRange": [
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0
+      ],
+      "cooldownTime": [
+        25.0,
+        25.0,
+        25.0,
+        25.0,
+        25.0,
+        25.0,
+        25.0
+      ],
+      "flags": 32,
+      "mAffectsTypeFlags": 6154,
+      "mAnimationLoopName": "Spell2_Loop",
+      "mAnimationName": "Spell2_Windup",
+      "mAnimationWinddownName": "Spell2_Winddown",
+      "mCantCancelWhileChanneling": true,
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.25,
+      "mChannelDuration": [
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75
+      ],
+      "mChannelIsInterruptedByAttacking": false,
+      "mChannelIsInterruptedByDisables": false,
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Damage Reduction",
+                  "type": "DamageReduction",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Bonus Damage",
+                  "type": "DamageIncrease",
+                  "typeIndex": 3,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Mana Restore",
+                  "type": "ManaRestored",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Drunken Rage",
+            "keySummary": "Gragas guzzles down brew from his cask, restoring Mana. He then gains Attack Damage and reduces damage taken for several seconds.",
+            "keyTooltip": "Gragas guzzles down brew from his cask, restoring <scaleMana>@ManaRestored@ Mana</scaleMana>. He then gains <physicalDamage>@DamageIncrease@ Attack Damage</physicalDamage> and reduces damage taken by @DamageReduction*100@% for @Duration@ seconds."
+          },
+          "mObjectName": "Jade_GragasW",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mDoNotNeedToFaceTarget": true,
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/GragasDrunkenRage.dds"
+      ],
+      "mSpellCalculations": {
+        "0xdda2232f": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "ManaRestored",
+              "~class": "NamedDataValueCalculationPart"
+            }
+          ],
+          "mMultiplier": {
+            "mNumber": 0.5,
+            "~class": "NumberCalculationPart"
+          },
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellRevealsChampion": false,
+      "mTargetingTypeData": {
+        "~class": "Self"
+      },
+      "missileSpeed": 828.5,
+      "~class": "SpellDataResource"
+    },
+    "~class": "SpellObject"
+  }
+}
