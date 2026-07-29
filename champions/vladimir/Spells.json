@@ -98,6 +98,7 @@
       "missileSpeed": 4000.0,
       "~class": "SpellDataResource"
     },
+    "objectPath": "0x8606bf4",
     "~class": "SpellObject"
   },
   "0xd3a3b479": {
@@ -107,6 +108,7 @@
       "~class": "BuffData"
     },
     "mScriptName": "VladimirESlow",
+    "objectPath": "0xd3a3b479",
     "~class": "SpellObject"
   },
   "Characters/Vladimir/Spells/VladimirBasicAttack": {
@@ -180,6 +182,7 @@
       "selectionPriority": 1,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Vladimir/Spells/VladimirBasicAttack",
     "~class": "SpellObject"
   },
   "Characters/Vladimir/Spells/VladimirBasicAttack2": {
@@ -254,6 +257,7 @@
       "selectionPriority": 1,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Vladimir/Spells/VladimirBasicAttack2",
     "~class": "SpellObject"
   },
   "Characters/Vladimir/Spells/VladimirBasicAttack3": {
@@ -328,6 +332,7 @@
       "selectionPriority": 1,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Vladimir/Spells/VladimirBasicAttack3",
     "~class": "SpellObject"
   },
   "Characters/Vladimir/Spells/VladimirBasicAttack4": {
@@ -402,6 +407,7 @@
       "selectionPriority": 1,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Vladimir/Spells/VladimirBasicAttack4",
     "~class": "SpellObject"
   },
   "Characters/Vladimir/Spells/VladimirBloodBallVFXBuff": {
@@ -422,6 +428,7 @@
       "~class": "BuffData"
     },
     "mScriptName": "VladimirBloodBallVFXBuff",
+    "objectPath": "Characters/Vladimir/Spells/VladimirBloodBallVFXBuff",
     "~class": "SpellObject"
   },
   "Characters/Vladimir/Spells/VladimirBloodGorgedAbility/VladimirBloodGorged": {
@@ -445,6 +452,34 @@
         ],
         "~class": "SpellAttributeModifiable"
       },
+      "DataValues": [
+        {
+          "name": "HPforAP",
+          "values": [
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatioBonusHP",
+          "values": [
+            1.600000023841858,
+            1.600000023841858,
+            1.600000023841858,
+            1.600000023841858,
+            1.600000023841858,
+            1.600000023841858,
+            1.600000023841858
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "castRange": [
         0.0,
         0.0,
@@ -461,7 +496,7 @@
           "mLocKeys": {
             "keyName": "Crimson Pact",
             "keySummary": "Every 30 points of bonus Health gives Vladimir 1 Ability Power and every 1 point of Ability Power gives Vladimir 1.6 bonus Health (does not stack with itself).",
-            "keyTooltip": "Vladimir gains <scaleAP>1 Ability Power</scaleAP> for every <scaleHealth>@Effect1Amount@ bonus Health</scaleHealth>. He also gains <scaleHealth>@Effect2Amount@ max Health</scaleHealth> per <scaleAP>1 Ability Power</scaleAP>.<br><br><scaleAP>Bonus Ability Power: @ApproximateAPBonusAvoidingRecursion@</scaleAP><br><scaleHealth>Bonus Health: @ApproximateHPBonusAvoidingRecursion@</scaleHealth>",
+            "keyTooltip": "Vladimir gains <scaleAP>1 Ability Power</scaleAP> for every <scaleHealth>@HPforAP@ bonus Health</scaleHealth>. He also gains <scaleHealth>@APRatioBonusHP@ max Health</scaleHealth> per <scaleAP>1 Ability Power</scaleAP>.<br><br><scaleAP>Bonus Ability Power: @ApproximateAPBonusAvoidingRecursion@</scaleAP><br><scaleHealth>Bonus Health: @ApproximateHPBonusAvoidingRecursion@</scaleHealth>",
             "keyTooltipExtended": "{{Spell_VladimirP_Tooltip}}<br><br><rules>These bonuses don't count for each other.</rules>"
           },
           "mObjectName": "VladimirBloodGorged",
@@ -537,8 +572,8 @@
                   },
                   {
                     "mPart1": {
-                      "mEffectIndex": 2,
-                      "~class": "EffectValueCalculationPart"
+                      "mDataValue": "APRatioBonusHP",
+                      "~class": "NamedDataValueCalculationPart"
                     },
                     "mPart2": {
                       "mCoefficient": -1.0,
@@ -610,8 +645,8 @@
                   "~class": "NumberCalculationPart"
                 },
                 "mPart2": {
-                  "mEffectIndex": 2,
-                  "~class": "EffectValueCalculationPart"
+                  "mDataValue": "APRatioBonusHP",
+                  "~class": "NamedDataValueCalculationPart"
                 },
                 "~class": "ProductOfSubPartsCalculationPart"
               },
@@ -624,6 +659,7 @@
       },
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Vladimir/Spells/VladimirBloodGorgedAbility/VladimirBloodGorged",
     "~class": "SpellObject"
   },
   "Characters/Vladimir/Spells/VladimirCritAttack": {
@@ -698,6 +734,7 @@
       "selectionPriority": 1,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Vladimir/Spells/VladimirCritAttack",
     "~class": "SpellObject"
   },
   "Characters/Vladimir/Spells/VladimirEAbility/VladimirE": {
@@ -749,6 +786,84 @@
             55.0,
             60.0,
             65.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxHealthCost",
+          "values": [
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseDamage",
+          "values": [
+            15.0,
+            30.0,
+            45.0,
+            60.0,
+            75.0,
+            90.0,
+            105.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "TotalMaxHPDamage",
+          "values": [
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxChannelTime",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "TimetoRampMaxDamage",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseMaxDamage",
+          "values": [
+            30.0,
+            60.0,
+            90.0,
+            120.0,
+            150.0,
+            180.0,
+            210.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1402,21 +1517,18 @@
               "Elements": [
                 {
                   "nameOverride": "Minimum Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 3,
+                  "type": "BaseDamage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Maximum Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 10,
+                  "type": "BaseMaxDamage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "Style": 1,
                   "nameOverride": "Slow",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 9,
+                  "type": "SlowPercent",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -1429,11 +1541,11 @@
             }
           },
           "mLocKeys": {
-            "keyCost": "Channeling Cost <font color='#CC3300'>@Effect2Amount@% of max Health (@ChargeHealthTooltip@)</font>",
+            "keyCost": "Channeling Cost <font color='#CC3300'>@MaxHealthCost@% of max Health (@ChargeHealthTooltip@)</font>",
             "keyName": "Tides of Blood",
             "keySummary": "Vladimir pays his own health to charge up a reservoir of blood which, when released, deals damage in the area around him but can be blocked by enemy units.",
             "keyTooltip": "<charge>Begin Charging: </charge>Vladimir charges up a reservoir of blood, spending up to <font color='#CC3300'>@ChargeHealthTooltip@ Health</font>. While at full charge, Vladimir is <status>Slowed</status> by 20%.<br><br><release>Release: </release>Vladimir unleashes a torrent of blood missiles at surrounding enemies, dealing between <magicDamage>@MinDamageTooltip@</magicDamage> and <magicDamage>@MaxDamageTooltip@ magic damage</magicDamage> based on charge time. If this Ability was charged for at least 1 second, it also <status>Slows</status> targets by @SlowPercent@% for 0.5 seconds.",
-            "keyTooltipExtendedBelowLine": "<rules>This Ability releases automatically after @Effect7Amount@ seconds.<br>Enemies can be hit by multiple blood missiles, but take no damage after the first.<br></rules>"
+            "keyTooltipExtendedBelowLine": "<rules>This Ability releases automatically after @MaxChannelTime@ seconds.<br>Enemies can be hit by multiple blood missiles, but take no damage after the first.<br></rules>"
           },
           "mObjectName": "VladimirE",
           "~class": "TooltipInstanceSpell"
@@ -1585,8 +1697,8 @@
         "MaxDamageTooltip": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 10,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "BaseMaxDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.05999999865889549,
@@ -1603,8 +1715,8 @@
         "MinDamageTooltip": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 3,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.014999999664723873,
@@ -1632,6 +1744,7 @@
       "mUseChargeChanneling": true,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Vladimir/Spells/VladimirEAbility/VladimirE",
     "~class": "SpellObject"
   },
   "Characters/Vladimir/Spells/VladimirHemoplagueAbility/VladimirHemoplague": {
@@ -1669,6 +1782,73 @@
         ],
         "~class": "SpellAttributeModifiable"
       },
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            150.0,
+            150.0,
+            250.0,
+            350.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DamageAmp",
+          "values": [
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "VampPercentFirstChamp",
+          "values": [
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Duration",
+          "values": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "VampPercentAdditionalChamp",
+          "values": [
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "bIsToggleSpell": true,
       "castConeDistance": 100.0,
       "castRadius": [
@@ -1726,8 +1906,7 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "BaseDamage",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -1739,7 +1918,7 @@
             "keyCost": "No Cost",
             "keyName": "Hemoplague",
             "keySummary": "Vladimir infects an area with a virulent plague. Affected enemies take increased damage for the duration. After a few seconds, Hemoplague deals magic damage to infected enemies and heals Vladimir for each enemy Champion hit.",
-            "keyTooltip": "Vladimir creates a virulent plague, causing its victims to take @Effect2Amount@% increased damage from all sources for @Effect4Amount@ seconds. After it expires, Vladimir deals <magicDamage>@Damage@ magic damage</magicDamage> to all infected targets. Vladimir restores <healing>@Damage@ Health</healing> if he hits a champion, and restores an additional <healing>@SecondaryHealingTooltip@ Health</healing> for each champion beyond the first."
+            "keyTooltip": "Vladimir creates a virulent plague, causing its victims to take @DamageAmp@% increased damage from all sources for @Duration@ seconds. After it expires, Vladimir deals <magicDamage>@Damage@ magic damage</magicDamage> to all infected targets. Vladimir restores <healing>@Damage@ Health</healing> if he hits a champion, and restores an additional <healing>@SecondaryHealingTooltip@ Health</healing> for each champion beyond the first."
           },
           "mObjectName": "VladimirHemoplague",
           "~class": "TooltipInstanceSpell"
@@ -1852,8 +2031,8 @@
         "Damage": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.699999988079071,
@@ -1884,6 +2063,7 @@
       "missileSpeed": 1200.0,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Vladimir/Spells/VladimirHemoplagueAbility/VladimirHemoplague",
     "~class": "SpellObject"
   },
   "Characters/Vladimir/Spells/VladimirHemoplagueDebuff": {
@@ -1909,6 +2089,7 @@
       "~class": "BuffData"
     },
     "mScriptName": "VladimirHemoplagueDebuff",
+    "objectPath": "Characters/Vladimir/Spells/VladimirHemoplagueDebuff",
     "~class": "SpellObject"
   },
   "Characters/Vladimir/Spells/VladimirHemoplagueMissile": {
@@ -2047,6 +2228,7 @@
       "missileSpeed": 1800.0,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Vladimir/Spells/VladimirHemoplagueMissile",
     "~class": "SpellObject"
   },
   "Characters/Vladimir/Spells/VladimirQAbility/VladimirQ": {
@@ -2105,6 +2287,84 @@
             0.3499999940395355,
             0.3499999940395355,
             0.3499999940395355
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseDamage",
+          "values": [
+            60.0,
+            80.0,
+            100.0,
+            120.0,
+            140.0,
+            160.0,
+            180.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseHeal",
+          "values": [
+            15.0,
+            20.0,
+            25.0,
+            30.0,
+            35.0,
+            40.0,
+            45.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Empowered___HealPer100AP_0_1_",
+          "values": [
+            0.03999999910593033,
+            0.03999999910593033,
+            0.03999999910593033,
+            0.03999999910593033,
+            0.03999999910593033,
+            0.03999999910593033,
+            0.03999999910593033
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DamagePercentAmp",
+          "values": [
+            85.0,
+            85.0,
+            85.0,
+            85.0,
+            85.0,
+            85.0,
+            85.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "FrenzyDuration",
+          "values": [
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MinionHealPercent",
+          "values": [
+            35.0,
+            35.0,
+            35.0,
+            35.0,
+            35.0,
+            35.0,
+            35.0
           ],
           "~class": "SpellDataValue"
         }
@@ -2173,14 +2433,12 @@
               "Elements": [
                 {
                   "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 1,
+                  "type": "BaseDamage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Healing",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 2,
+                  "type": "BaseHeal",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -2196,7 +2454,7 @@
             "keyCost": "No Cost",
             "keyName": "Transfusion",
             "keySummary": "Vladimir steals life from the target enemy. When Vladimir's resource is full, Transfusion will benefit from massively increased damage and healing for a brief time.",
-            "keyTooltip": "Vladimir drains his target's lifeforce, dealing <magicDamage>@BaseDamageTooltip@ magic damage</magicDamage> and restoring <healing>@BaseHealTooltip@ Health</healing>. After using this Ability twice, Vladimir gains <speed>@MovementSpeedOnQ2@% Move Speed</speed> for 0.5 seconds and empowers the next use of this Ability for @Effect8Amount@ seconds.<br><br>The empowered version of this Ability deals <magicDamage>@EmpoweredDamageTooltip@ magic damage</magicDamage> instead and restores an additional <healing>@EmpoweredHealTooltip@ plus @EmpoweredHealPercentTooltip@ missing Health</healing>.",
+            "keyTooltip": "Vladimir drains his target's lifeforce, dealing <magicDamage>@BaseDamageTooltip@ magic damage</magicDamage> and restoring <healing>@BaseHealTooltip@ Health</healing>. After using this Ability twice, Vladimir gains <speed>@MovementSpeedOnQ2@% Move Speed</speed> for 0.5 seconds and empowers the next use of this Ability for @FrenzyDuration@ seconds.<br><br>The empowered version of this Ability deals <magicDamage>@EmpoweredDamageTooltip@ magic damage</magicDamage> instead and restores an additional <healing>@EmpoweredHealTooltip@ plus @EmpoweredHealPercentTooltip@ missing Health</healing>.",
             "keyTooltipExtendedBelowLine": "<rules>Empowered healing reduced to 30% against minions.</rules>"
           },
           "mObjectName": "VladimirQ",
@@ -2337,8 +2595,8 @@
         "BaseDamageTooltip": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.6000000238418579,
@@ -2350,8 +2608,8 @@
         "BaseHealTooltip": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 2,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "BaseHeal",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mDataValue": "HealAPRatio",
@@ -2452,6 +2710,7 @@
       "selectionPriority": 1,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Vladimir/Spells/VladimirQAbility/VladimirQ",
     "~class": "SpellObject"
   },
   "Characters/Vladimir/Spells/VladimirQBuild": {
@@ -2461,6 +2720,7 @@
       "~class": "BuffData"
     },
     "mScriptName": "VladimirQBuild",
+    "objectPath": "Characters/Vladimir/Spells/VladimirQBuild",
     "~class": "SpellObject"
   },
   "Characters/Vladimir/Spells/VladimirQFrenzy": {
@@ -2470,6 +2730,7 @@
       "~class": "BuffData"
     },
     "mScriptName": "VladimirQFrenzy",
+    "objectPath": "Characters/Vladimir/Spells/VladimirQFrenzy",
     "~class": "SpellObject"
   },
   "Characters/Vladimir/Spells/VladimirRHealMissile": {
@@ -2564,6 +2825,7 @@
       "missileSpeed": 1500.0,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Vladimir/Spells/VladimirRHealMissile",
     "~class": "SpellObject"
   },
   "Characters/Vladimir/Spells/VladimirSanguinePoolAbility/VladimirSanguinePool": {
@@ -2863,6 +3125,7 @@
       "selectionPriority": 1,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Vladimir/Spells/VladimirSanguinePoolAbility/VladimirSanguinePool",
     "~class": "SpellObject"
   },
   "Characters/Vladimir/Spells/VladimirSanguinePoolSlow": {
@@ -2873,6 +3136,7 @@
       "~class": "BuffData"
     },
     "mScriptName": "VladimirSanguinePoolSlow",
+    "objectPath": "Characters/Vladimir/Spells/VladimirSanguinePoolSlow",
     "~class": "SpellObject"
   },
   "Characters/Vladimir/Spells/VladimirTidesofBlood": {
@@ -3046,6 +3310,7 @@
       "selectionPriority": 1,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Vladimir/Spells/VladimirTidesofBlood",
     "~class": "SpellObject"
   },
   "Characters/Vladimir/Spells/VladimirTidesofBloodCost": {
@@ -3055,6 +3320,7 @@
       "~class": "BuffData"
     },
     "mScriptName": "VladimirTidesofBloodCost",
+    "objectPath": "Characters/Vladimir/Spells/VladimirTidesofBloodCost",
     "~class": "SpellObject"
   },
   "Characters/Vladimir/Spells/VladimirTidesofBloodHeal": {
@@ -3203,6 +3469,7 @@
       "selectionPriority": 1,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Vladimir/Spells/VladimirTidesofBloodHeal",
     "~class": "SpellObject"
   },
   "Characters/Vladimir/Spells/VladimirTidesofBloodNuke": {
@@ -3350,6 +3617,7 @@
       "selectionPriority": 1,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Vladimir/Spells/VladimirTidesofBloodNuke",
     "~class": "SpellObject"
   },
   "Characters/Vladimir/Spells/VladimirTransfusionHeal": {
@@ -3441,6 +3709,7 @@
       "missileSpeed": 1500.0,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Vladimir/Spells/VladimirTransfusionHeal",
     "~class": "SpellObject"
   }
 }

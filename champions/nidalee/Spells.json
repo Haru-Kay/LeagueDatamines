@@ -474,6 +474,7 @@
       "missileSpeed": 943.7999877929688,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Nidalee/Spells/AspectOfTheCougarAbility/AspectOfTheCougar",
     "~class": "SpellObject"
   },
   "Characters/Nidalee/Spells/BushwhackAbility/Bushwhack": {
@@ -526,6 +527,58 @@
       "DataValues": [
         {
           "name": "ModesBonusMaxTraps",
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DotDuration",
+          "values": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseDamagePerTick",
+          "values": [
+            0.0,
+            10.0,
+            20.0,
+            30.0,
+            40.0,
+            50.0,
+            60.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "TrapLifetime",
+          "values": [
+            120.0,
+            120.0,
+            120.0,
+            120.0,
+            120.0,
+            120.0,
+            120.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "TotalFlatDamage",
+          "values": [
+            0.0,
+            40.0,
+            80.0,
+            120.0,
+            160.0,
+            200.0,
+            240.0
+          ],
           "~class": "SpellDataValue"
         }
       ],
@@ -620,8 +673,7 @@
               "Elements": [
                 {
                   "nameOverride": "Trap Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 7,
+                  "type": "TotalFlatDamage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -642,7 +694,7 @@
           "mLocKeys": {
             "keyName": "Bushwhack / Pounce",
             "keySummary": "In human form, Nidalee lays a trap for unwary opponents that, when sprung, damages and reveals its target. As a cougar, she jumps in a direction, dealing damage in an area where she lands.",
-            "keyTooltip": "<keywordMajor>Human Form:</keywordMajor> Nidalee places an invisible trap for 2 minutes. When an enemy walks over it, they are dealt <magicDamage>@DamagePerSecond@ magic damage</magicDamage> per second for @Effect3Amount@ seconds.<br><br>@MaxTraps@ traps may be active at once.",
+            "keyTooltip": "<keywordMajor>Human Form:</keywordMajor> Nidalee places an invisible trap for 2 minutes. When an enemy walks over it, they are dealt <magicDamage>@DamagePerSecond@ magic damage</magicDamage> per second for @DotDuration@ seconds.<br><br>@MaxTraps@ traps may be active at once.",
             "keyTooltipExtended": "{{Spell_Bushwhack_Tooltip}}<br><br>{{Spell_Pounce_Tooltip}}"
           },
           "mObjectName": "Bushwhack",
@@ -770,8 +822,8 @@
         "DamagePerSecond": {
           "mFormulaParts": [
             {
-              "mEffectIndex": 5,
-              "~class": "EffectValueCalculationPart"
+              "mDataValue": "BaseDamagePerTick",
+              "~class": "NamedDataValueCalculationPart"
             },
             {
               "mCoefficient": 0.05000000074505806,
@@ -837,6 +889,7 @@
       "selectionPriority": 1,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Nidalee/Spells/BushwhackAbility/Bushwhack",
     "~class": "SpellObject"
   },
   "Characters/Nidalee/Spells/BushwhackAbility/BushwhackDamage": {
@@ -846,6 +899,7 @@
       "~class": "BuffData"
     },
     "mScriptName": "BushwhackDamage",
+    "objectPath": "Characters/Nidalee/Spells/BushwhackAbility/BushwhackDamage",
     "~class": "SpellObject"
   },
   "Characters/Nidalee/Spells/JavelinTossAbility/JavelinToss": {
@@ -955,6 +1009,19 @@
             3.25,
             3.25,
             3.25
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "RangeThreshold",
+          "values": [
+            525.0,
+            525.0,
+            525.0,
+            525.0,
+            525.0,
+            525.0,
+            525.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1347,6 +1414,7 @@
       "useAnimatorFramerate": true,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Nidalee/Spells/JavelinTossAbility/JavelinToss",
     "~class": "SpellObject"
   },
   "Characters/Nidalee/Spells/NidaleeBasicAttack": {
@@ -1453,6 +1521,7 @@
       "useAnimatorFramerate": true,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Nidalee/Spells/NidaleeBasicAttack",
     "~class": "SpellObject"
   },
   "Characters/Nidalee/Spells/NidaleeBasicAttack2": {
@@ -1560,6 +1629,7 @@
       "useAnimatorFramerate": true,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Nidalee/Spells/NidaleeBasicAttack2",
     "~class": "SpellObject"
   },
   "Characters/Nidalee/Spells/NidaleeCougarBasicAttack": {
@@ -1607,6 +1677,7 @@
       "useAnimatorFramerate": true,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Nidalee/Spells/NidaleeCougarBasicAttack",
     "~class": "SpellObject"
   },
   "Characters/Nidalee/Spells/NidaleeCougarBasicAttack2": {
@@ -1655,6 +1726,7 @@
       "useAnimatorFramerate": true,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Nidalee/Spells/NidaleeCougarBasicAttack2",
     "~class": "SpellObject"
   },
   "Characters/Nidalee/Spells/NidaleeCougarCritAttack": {
@@ -1703,6 +1775,7 @@
       "useAnimatorFramerate": true,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Nidalee/Spells/NidaleeCougarCritAttack",
     "~class": "SpellObject"
   },
   "Characters/Nidalee/Spells/NidaleeCougarScent": {
@@ -1718,6 +1791,7 @@
       ],
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Nidalee/Spells/NidaleeCougarScent",
     "~class": "SpellObject"
   },
   "Characters/Nidalee/Spells/NidaleeCougarTakedownAttack": {
@@ -1744,6 +1818,7 @@
       "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Nidalee/Spells/NidaleeCougarTakedownAttack",
     "~class": "SpellObject"
   },
   "Characters/Nidalee/Spells/NidaleeCritAttack": {
@@ -1848,6 +1923,7 @@
       "useAnimatorFramerate": true,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Nidalee/Spells/NidaleeCritAttack",
     "~class": "SpellObject"
   },
   "Characters/Nidalee/Spells/NidaleePassiveHuntAbility/BrushPassive": {
@@ -1857,6 +1933,7 @@
       "~class": "BuffData"
     },
     "mScriptName": "BrushPassive",
+    "objectPath": "Characters/Nidalee/Spells/NidaleePassiveHuntAbility/BrushPassive",
     "~class": "SpellObject"
   },
   "Characters/Nidalee/Spells/NidaleePassiveHuntAbility/NidaleePassiveHunt": {
@@ -1909,6 +1986,7 @@
       "mUseMinimapTargeting": true,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Nidalee/Spells/NidaleePassiveHuntAbility/NidaleePassiveHunt",
     "~class": "SpellObject"
   },
   "Characters/Nidalee/Spells/NidaleePassiveHuntAbility/NidaleePassiveHunted": {
@@ -1924,6 +2002,7 @@
       ],
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Nidalee/Spells/NidaleePassiveHuntAbility/NidaleePassiveHunted",
     "~class": "SpellObject"
   },
   "Characters/Nidalee/Spells/NidaleePassiveHuntAbility/NidaleePassiveHunting": {
@@ -1939,6 +2018,7 @@
       ],
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Nidalee/Spells/NidaleePassiveHuntAbility/NidaleePassiveHunting",
     "~class": "SpellObject"
   },
   "Characters/Nidalee/Spells/NidaleeTakedownAttack": {
@@ -2038,6 +2118,7 @@
       "useAnimatorFramerate": true,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Nidalee/Spells/NidaleeTakedownAttack",
     "~class": "SpellObject"
   },
   "Characters/Nidalee/Spells/Pounce": {
@@ -2072,6 +2153,21 @@
         ],
         "~class": "SpellAttributeModifiable"
       },
+      "DataValues": [
+        {
+          "name": "EnhancedPounceRange",
+          "values": [
+            750.0,
+            750.0,
+            750.0,
+            750.0,
+            750.0,
+            750.0,
+            750.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "cantCastWhileRooted": true,
       "castConeDistance": 100.0,
       "castFrame": 9.0,
@@ -2279,6 +2375,7 @@
       "missileSpeed": 0.0,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Nidalee/Spells/Pounce",
     "~class": "SpellObject"
   },
   "Characters/Nidalee/Spells/PounceBlocker": {
@@ -2287,6 +2384,7 @@
     "mSpell": {
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Nidalee/Spells/PounceBlocker",
     "~class": "SpellObject"
   },
   "Characters/Nidalee/Spells/PounceEnabler": {
@@ -2295,6 +2393,7 @@
     "mSpell": {
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Nidalee/Spells/PounceEnabler",
     "~class": "SpellObject"
   },
   "Characters/Nidalee/Spells/PounceMS": {
@@ -2310,6 +2409,7 @@
       ],
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Nidalee/Spells/PounceMS",
     "~class": "SpellObject"
   },
   "Characters/Nidalee/Spells/PrimalSurgeAbility/PrimalSurge": {
@@ -2614,6 +2714,7 @@
       "selectionPriority": 1,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Nidalee/Spells/PrimalSurgeAbility/PrimalSurge",
     "~class": "SpellObject"
   },
   "Characters/Nidalee/Spells/Prowl": {
@@ -2629,6 +2730,7 @@
       ],
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Nidalee/Spells/Prowl",
     "~class": "SpellObject"
   },
   "Characters/Nidalee/Spells/Swipe": {
@@ -2806,6 +2908,7 @@
       "useAnimatorFramerate": true,
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Nidalee/Spells/Swipe",
     "~class": "SpellObject"
   },
   "Characters/Nidalee/Spells/SwipeBlocker": {
@@ -2814,6 +2917,7 @@
     "mSpell": {
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Nidalee/Spells/SwipeBlocker",
     "~class": "SpellObject"
   },
   "Characters/Nidalee/Spells/Takedown": {
@@ -2864,6 +2968,32 @@
             0.75,
             0.75,
             0.75
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BuffDuration",
+          "values": [
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BonusAttackRange",
+          "values": [
+            75.0,
+            75.0,
+            75.0,
+            75.0,
+            75.0,
+            75.0,
+            75.0
           ],
           "~class": "SpellDataValue"
         }
@@ -3072,6 +3202,7 @@
       },
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Nidalee/Spells/Takedown",
     "~class": "SpellObject"
   },
   "Characters/Nidalee/Spells/TakedownBlocker": {
@@ -3080,6 +3211,7 @@
     "mSpell": {
       "~class": "SpellDataResource"
     },
+    "objectPath": "Characters/Nidalee/Spells/TakedownBlocker",
     "~class": "SpellObject"
   }
 }
