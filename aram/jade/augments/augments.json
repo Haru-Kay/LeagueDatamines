@@ -1372,7 +1372,7 @@
     "desc": "<keywordMajor>Snipe</keywordMajor> an enemy with a non-Ultimate Ability refunds @ReducedCooldownPercent*100@% Cooldown (@PeriodicReductionAmount*100@% for periodic Abilities).",
     "tooltip": "<keywordMajor>Snipe</keywordMajor> an enemy with a non-Ultimate Ability refunds @ReducedCooldownPercent*100@% Cooldown (@PeriodicReductionAmount*100@% for periodic Abilities).<br><br><rules><keywordMajor>Snipe</keywordMajor> - Damage enemies over @SnipeDistance@ distance away</rules><br><br>",
     "dataValues": {
-      "SnipeDistance": 700.0,
+      "SnipeDistance": 600.0,
       "ReducedCooldownPercent": 0.800000011920929,
       "PeriodicReductionAmount": 0.6499999761581421
     },
@@ -2587,12 +2587,13 @@
     "apiName": "Nightstalking",
     "name": "Nightstalking",
     "rarity": "Gold",
-    "desc": "Takedowns against enemy champions within @TakedownWindow@ seconds of damaging them renders you invisible.",
-    "tooltip": "Takedowns against enemy champions within @TakedownWindow@ seconds of damaging them renders you invisible for @StealthDuration@ seconds.",
+    "desc": "Takedowns against enemy champions within @TakedownWindow@ seconds of damaging them grants you <speed>Movement Speed</speed> and renders you invisible.",
+    "tooltip": "Takedowns against enemy champions within @TakedownWindow@ seconds of damaging them grants you <speed>@StealthMoveSpeed*100@% Move Speed</speed> and renders you invisible for @StealthDuration@ seconds.",
     "dataValues": {
       "StealthDuration": 1.5,
       "TakedownWindow": 3.0,
-      "Cooldown": 10.0
+      "Cooldown": 10.0,
+      "StealthMoveSpeed": 0.4000000059604645
     },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/Nightstalking_small.tex",
@@ -3384,13 +3385,38 @@
     "apiName": "SoulEater",
     "name": "Soul Eater",
     "rarity": "Gold",
-    "desc": "<status>Immobilizing</status> an enemy champion grants <scaleHealth>@HealthGainPerStack@ max Health</scaleHealth>.",
-    "tooltip": "<status>Immobilizing</status> an enemy champion grants <scaleHealth>@HealthGainPerStack@ max Health</scaleHealth>.<br><br>Total Health Gained: <scaleHealth>@HealthGained@</scaleHealth>",
+    "desc": "<status>Immobilizing</status> an enemy champion grants <scaleHealth>@HealthGainPerStack@ max Health</scaleHealth>.<br><br>If taken as your second Augment, starts with <scaleHealth>@StartingHPIfSecondAugmentTT@ Health</scaleHealth>.",
+    "tooltip": "<status>Immobilizing</status> an enemy champion grants <scaleHealth>@HealthGainPerStack@ max Health</scaleHealth>.<br><br>Total Health Gained: <scaleHealth>@HealthGained@</scaleHealth><br><rules>If taken as your second Augment, starts with <scaleHealth>@StartingHPIfSecondAugmentTT@ Health</scaleHealth>.</rules>",
     "dataValues": {
       "HealthGainPerStack": 20.0,
       "SpellIDCD": 5.0
     },
     "calculations": {
+      "0x37029355": {
+        "mFormulaParts": [
+          {
+            "mNumber": 300.0,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xb709bd5f": {
+        "mFormulaParts": [
+          {
+            "mPart1": {
+              "mSpellCalculationKey": "0x37029355",
+              "~class": "0xf3cbe7b2"
+            },
+            "mPart2": {
+              "mNumber": 0.05000000074505806,
+              "~class": "NumberCalculationPart"
+            },
+            "~class": "ProductOfSubPartsCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
       "HealthGained": {
         "mFormulaParts": [
           {
@@ -4650,6 +4676,7 @@
         "~class": "GameCalculation"
       },
       "AoEDamage": {
+        "mExpandedTooltipCalculationDisplay": 6,
         "mFormulaParts": [
           {
             "mEndValue": 750.0,
@@ -4671,6 +4698,7 @@
             "~class": "StatByNamedDataValueCalculationPart"
           }
         ],
+        "mSimpleTooltipCalculationDisplay": 6,
         "~class": "GameCalculation"
       },
       "MoveSpeed": {
@@ -4844,16 +4872,18 @@
     "apiName": "NatureIsHealing",
     "name": "Nature is Healing",
     "rarity": "Gold",
-    "desc": "Standing in <keyword>Brush</keyword> regenerates <healing>@MaxHealthHealPerSecond@ max Health</healing> per second.",
-    "tooltip": "Regenerate <healing>@MaxHealthHealPerSecond@ max Health</healing> per second while in <keyword>Brush</keyword>.<br><br>Total Healing: @f1.0@",
+    "desc": "Entering <keyword>Brush</keyword> regenerates <healing>a large amount of Health</healing>.",
+    "tooltip": "Entering <keyword>Brush</keyword> regenerates <healing>@MaxHealthHealPerSecond@ max Health</healing>, @Cooldown@ second cooldown per brush.<br><br>Total Healing: @f1.0@",
+    "dataValues": {
+      "BrushCooldown": 20.0
+    },
     "calculations": {
       "MaxHealthHealPerSecond": {
         "mDisplayAsPercent": true,
         "mFormulaParts": [
           {
-            "mEndValue": 0.020999999716877937,
-            "mStartValue": 0.006000000052154064,
-            "~class": "ByCharLevelInterpolationCalculationPart"
+            "mNumber": 0.15000000596046448,
+            "~class": "NumberCalculationPart"
           }
         ],
         "mPrecision": 2,
@@ -5108,7 +5138,7 @@
     "name": "Stay Resolute",
     "rarity": "Silver",
     "desc": "When {{Spellname}} damages enemy champions, gain @ARMR_Inc@ <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resistance</scaleMR>.",
-    "tooltip": "Damaging enemy champions with {{SpellName}} grants you @ARMR_Inc@ <scaleArmor>Armor</scaleArmor> or <scaleMR>Magic Resistance</scaleMR> based on their %i:miniAdaptiveForce% Damage Type. <br><br>Bonus <scaleArmor>Armor</scaleArmor>: @f1@<br>Bonus <scaleMR>Magic Resistance</scaleMR>: @f2@<br><br><br><rules> If this is not your first augment, gain @AdditionalARMR@ <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resistance</scaleMR>.<br>@SpellIDCD@ seconds cooldown per target.</rules>",
+    "tooltip": "Damaging enemy champions with {{SpellName}} grants you @ARMR_Inc@ <scaleArmor>Armor</scaleArmor> or <scaleMR>Magic Resistance</scaleMR> based on their %i:miniAdaptiveForce% Damage Type. <br><br>Bonus <scaleArmor>Armor</scaleArmor>: @f1@<br>Bonus <scaleMR>Magic Resistance</scaleMR>: @f2@<br><br><br><rules>If this is not your first augment, gain @AdditionalARMR@ <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resistance</scaleMR>.</rules>",
     "dataValues": {
       "AdditionalARMR": 20.0,
       "SpellIDCD": 5.0
@@ -5842,7 +5872,7 @@
     "desc": "<font color='#F0C200'>QUEST:</font> <keywordMajor>Snipe</keywordMajor> @QuestRequirement@ enemy champions with abilities<br><br><font color='#F0C200'>REWARD:</font> Send a meteor at <keywordMajor>Sniped</keywordMajor> enemy champions, dealing <magicDamage>Magic damage</magicDamage> in an area around them",
     "tooltip": "{{Augment_BangBang_Tooltip@f3@}}<br><br><flavorText>Bang! Bang! Oh, what a shot!</flavorText>",
     "dataValues": {
-      "SnipeDistance": 700.0,
+      "SnipeDistance": 600.0,
       "AOE": [
         120.0,
         180.0,
