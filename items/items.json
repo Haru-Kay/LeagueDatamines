@@ -85083,22 +85083,8 @@
     ],
     "mDataValues": [
       {
-        "mName": "BoltMinPercent",
-        "mValue": 50.0,
-        "~class": "ItemDataValue"
-      },
-      {
-        "mName": "BoltMaxPercent",
-        "mValue": 50.0,
-        "~class": "ItemDataValue"
-      },
-      {
         "mName": "ExtraRangeonBoltCheck",
         "mValue": 65.0,
-        "~class": "ItemDataValue"
-      },
-      {
-        "mName": "OnHitDamage",
         "~class": "ItemDataValue"
       },
       {
@@ -85110,16 +85096,21 @@
         "mName": "BoltPercent",
         "mValue": 0.5,
         "~class": "ItemDataValue"
+      },
+      {
+        "mName": "BonusTargets",
+        "mValue": 2.0,
+        "~class": "ItemDataValue"
       }
     ],
     "mDisplayName": "Runaan's Hurricane",
     "mEffectAmount": [
       0.0,
-      40.0,
-      2.0,
       0.0,
-      40.0,
-      1.0
+      0.0,
+      0.0,
+      0.0,
+      0.0
     ],
     "mItemAdviceAttributes": [
       "0x3868804c"
@@ -85149,21 +85140,13 @@
       "BoltDamage": {
         "mFormulaParts": [
           {
-            "mSubparts": [
-              {
-                "mStat": 2,
-                "mSubpart": {
-                  "mDataValue": "0x199b589f",
-                  "~class": "NamedDataValueCalculationPart"
-                },
-                "~class": "StatBySubPartCalculationPart"
-              },
-              {
-                "mDataValue": "ExtraBoltDamage",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "SumOfSubPartsCalculationPart"
+            "mDataValue": "ExtraBoltDamage",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          {
+            "mDataValue": "0x199b589f",
+            "mStat": 2,
+            "~class": "StatByNamedDataValueCalculationPart"
           }
         ],
         "~class": "GameCalculation"
@@ -85184,9 +85167,9 @@
     "mItemDataClient": {
       "epicness": 5,
       "inventoryIcon": "ASSETS/Items/Icons2D/3085_Runaans_Hurricane.tex",
-      "mDescription": "<section></section><section><attention>%i:scaleAS% @PercentAttackSpeedMod*100@%</attention> Attack Speed</section><section><jadeUnique>Hurricane Volley:</jadeUnique> When Attacking, bolts are fired at up to @Effect3Amount@ enemies near the target, each dealing each dealing @ExtraBoltDamage@ (<physicalDamage>@BoltPercent*100@% of Attack Damage</physicalDamage>) physical damage. These bolts apply on-hit effects.</section><section></section><section><flavorText></flavorText></section>",
-      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Runaan's Hurricane</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Multishot</subtitleLeft><subtitleRight></subtitleRight><mainText><section><attention>%i:scaleAS% @PercentAttackSpeedMod*100@%</attention> Attack Speed@ExtendedStats@</section><section><jadeUnique>Hurricane Volley:</jadeUnique> When Attacking, bolts are fired at up to @Effect3Amount@ enemies near the target, each dealing each dealing @ExtraBoltDamage@ (<physicalDamage>@BoltPercent*100@% of Attack Damage</physicalDamage>) physical damage. These bolts apply on-hit effects.</section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft></postScriptLeft>",
-      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Runaan's Hurricane</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Multishot</subtitleLeft><subtitleRight></subtitleRight><mainText><section></section><section><attention>%i:scaleAS% @PercentAttackSpeedMod*100@%</attention> Attack Speed</section><section><jadeUnique>Hurricane Volley:</jadeUnique> When Attacking, bolts are fired at up to @Effect3Amount@ enemies near the target, each dealing each dealing @ExtraBoltDamage@ (<physicalDamage>@BoltPercent*100@% of Attack Damage</physicalDamage>) physical damage. These bolts apply on-hit effects.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
+      "mDescription": "<section></section><section><attention>%i:scaleAS% @PercentAttackSpeedMod*100@%</attention> Attack Speed</section><section><jadeUnique>Hurricane Volley:</jadeUnique> When Attacking, bolts are fired at up to @BonusTargets@ enemies near the target, each dealing each dealing <physicalDamage>@BoltDamage@ physical damage</physicalDamage>. These bolts apply on-hit effects.</section><section></section><section><flavorText></flavorText></section>",
+      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Runaan's Hurricane</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Multishot</subtitleLeft><subtitleRight></subtitleRight><mainText><section><attention>%i:scaleAS% @PercentAttackSpeedMod*100@%</attention> Attack Speed@ExtendedStats@</section><section><jadeUnique>Hurricane Volley:</jadeUnique> When Attacking, bolts are fired at up to @BonusTargets@ enemies near the target, each dealing each dealing <physicalDamage>@BoltDamage@ physical damage</physicalDamage>. These bolts apply on-hit effects.</section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft></postScriptLeft>",
+      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Runaan's Hurricane</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Multishot</subtitleLeft><subtitleRight></subtitleRight><mainText><section></section><section><attention>%i:scaleAS% @PercentAttackSpeedMod*100@%</attention> Attack Speed</section><section><jadeUnique>Hurricane Volley:</jadeUnique> When Attacking, bolts are fired at up to @BonusTargets@ enemies near the target, each dealing each dealing <physicalDamage>@BoltDamage@ physical damage</physicalDamage>. These bolts apply on-hit effects.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
       "mTooltipData": {
         "EnableExtendedTooltip": false,
         "mFormat": "TooltipFormatA",
@@ -85205,7 +85188,7 @@
           "keyBrief": "Multishot",
           "keyColloquialism": ";rav hydra;waveclear;wave clear;push;farm",
           "keyName": "Runaan's Hurricane",
-          "keyTooltip": "<jadeUnique>Hurricane Volley:</jadeUnique> When Attacking, bolts are fired at up to @Effect3Amount@ enemies near the target, each dealing each dealing @ExtraBoltDamage@ (<physicalDamage>@BoltPercent*100@% of Attack Damage</physicalDamage>) physical damage. These bolts apply on-hit effects."
+          "keyTooltip": "<jadeUnique>Hurricane Volley:</jadeUnique> When Attacking, bolts are fired at up to @BonusTargets@ enemies near the target, each dealing each dealing <physicalDamage>@BoltDamage@ physical damage</physicalDamage>. These bolts apply on-hit effects."
         },
         "mObjectName": "77/Runaan's Hurricane",
         "~class": "TooltipInstanceItem"
@@ -89231,6 +89214,15 @@
     "epicness": 5,
     "itemID": 773154,
     "mCanBeSold": true,
+    "mCategories": [
+      "Armor",
+      "Damage",
+      "LifeSteal",
+      "Vision",
+      "Active",
+      "OnHit",
+      "Jungle"
+    ],
     "mDataValues": [
       {
         "mName": "Duration",
