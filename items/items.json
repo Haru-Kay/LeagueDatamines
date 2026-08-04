@@ -16029,11 +16029,16 @@
         "mName": "ShredPerStack",
         "mValue": 0.05999999865889549,
         "~class": "ItemDataValue"
+      },
+      {
+        "mName": "RangedMod",
+        "mValue": 0.75,
+        "~class": "ItemDataValue"
       }
     ],
     "mDisplayName": "Black Cleaver",
     "mFlatHPPoolMod": 350.0,
-    "mFlatPhysicalDamageMod": 40.0,
+    "mFlatPhysicalDamageMod": 45.0,
     "mItemAdviceAttributes": [
       "0x72256343",
       "0xe625a35a"
@@ -16041,6 +16046,22 @@
     "mItemAttributes": [
       1
     ],
+    "mItemCalculations": {
+      "MSBonusSplit": {
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mDataValue": "MoveSpeedBonus",
+            "~class": "NamedDataValueCalculationPart"
+          }
+        ],
+        "mRangedMultiplier": {
+          "mDataValue": "RangedMod",
+          "~class": "NamedDataValueCalculationPart"
+        },
+        "~class": "0xe9a3c91d"
+      }
+    },
     "mItemCalloutSpectator": true,
     "mItemDataAvailability": {
       "mInStore": true,
@@ -25302,17 +25323,12 @@
         "~class": "ItemDataValue"
       },
       {
-        "mName": "HealAmount",
-        "mValue": 0.20000000298023224,
-        "~class": "ItemDataValue"
-      },
-      {
         "mName": "Cooldown",
         "mValue": 8.0,
         "~class": "ItemDataValue"
       },
       {
-        "mName": "HealRatio",
+        "mName": "HealBaseADRatio",
         "mValue": 1.5,
         "~class": "ItemDataValue"
       },
@@ -25334,63 +25350,20 @@
       1
     ],
     "mItemCalculations": {
-      "0x6387172": {
+      "0x1099b16": {
         "mFormulaParts": [
           {
-            "mNumber": 2.0,
-            "~class": "NumberCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "0x792cf56b": {
-        "mFormulaParts": [
-          {
-            "mNumber": 1.0,
-            "~class": "NumberCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "ChampRange": {
-        "mConditionalCalculationRequirements": {
-          "~class": "IsRangedCastRequirement"
-        },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
-        "mExpandedTooltipCalculationDisplay": 5,
-        "mSimpleTooltipCalculationDisplay": 5,
-        "~class": "GameCalculationConditional"
-      },
-      "HealProc": {
-        "mFormulaParts": [
-          {
-            "mDataValue": "HealRatio",
+            "mDataValue": "HealBaseADRatio",
             "mStat": 2,
-            "mStatFormula": 1,
+            "mStatFormula": 2,
             "~class": "StatByNamedDataValueCalculationPart"
           }
         ],
-        "~class": "GameCalculation"
-      },
-      "MeleeItemCalcValue": {
-        "mFormulaParts": [
-          {
-            "mDataValue": "HealRatio",
-            "mStat": 2,
-            "mStatFormula": 1,
-            "~class": "StatByNamedDataValueCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "RangedItemCalcValue": {
-        "mModifiedGameCalculation": "MeleeItemCalcValue",
-        "mMultiplier": {
+        "mRangedMultiplier": {
           "mDataValue": "RangedHealMod",
           "~class": "NamedDataValueCalculationPart"
         },
-        "~class": "GameCalculationModified"
+        "~class": "0xe9a3c91d"
       }
     },
     "mItemDataAvailability": {
@@ -28987,14 +28960,6 @@
   },
   "Arena/Eclipse": {
     "ShowCooldownVfxToAllies": false,
-    "StringCalculations": {
-      "0x4217e5fd": {
-        "DefaultResult": "@MaxHealthPercent@",
-        "MeleeResult": "@MaxHealthPercent@",
-        "RangedResult": "@RangedMaxHealthPercent@",
-        "~class": "0x4750ceb6"
-      }
-    },
     "epicness": 5,
     "itemID": 226692,
     "mAbilityHasteMod": 15.0,
@@ -29011,13 +28976,13 @@
         "~class": "ItemDataValue"
       },
       {
-        "mName": "MeleeItemCalcValueB",
-        "mValue": 6.0,
+        "mName": "MeleePercMaxHP",
+        "mValue": 0.07999999821186066,
         "~class": "ItemDataValue"
       },
       {
-        "mName": "RangedItemCalcValueB",
-        "mValue": 4.0,
+        "mName": "RangedPercMaxHPMult",
+        "mValue": 0.625,
         "~class": "ItemDataValue"
       },
       {
@@ -29036,23 +29001,13 @@
         "~class": "ItemDataValue"
       },
       {
-        "mName": "RangedBaseShield",
-        "mValue": 150.0,
-        "~class": "ItemDataValue"
-      },
-      {
-        "mName": "MeleeShieldADRatio",
+        "mName": "MeleeBonusADShieldRatio",
         "mValue": 0.5,
         "~class": "ItemDataValue"
       },
       {
-        "mName": "RangedShieldADRatio",
-        "mValue": 0.20000000298023224,
-        "~class": "ItemDataValue"
-      },
-      {
-        "mName": "MaxHealthDamage",
-        "mValue": 10.0,
+        "mName": "RangedShieldMult",
+        "mValue": 0.5,
         "~class": "ItemDataValue"
       }
     ],
@@ -29066,76 +29021,38 @@
       1
     ],
     "mItemCalculations": {
-      "0x6387172": {
-        "mFormulaParts": [
-          {
-            "mNumber": 2.0,
-            "~class": "NumberCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "0x792cf56b": {
-        "mFormulaParts": [
-          {
-            "mNumber": 1.0,
-            "~class": "NumberCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "ChampRange": {
-        "mConditionalCalculationRequirements": {
-          "~class": "IsRangedCastRequirement"
-        },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
-        "mExpandedTooltipCalculationDisplay": 5,
-        "mSimpleTooltipCalculationDisplay": 5,
-        "~class": "GameCalculationConditional"
-      },
-      "MaxHealthDamageCalc": {
-        "mFormulaParts": [
-          {
-            "mDataValue": "MaxHealthDamage",
-            "~class": "NamedDataValueCalculationPart"
-          }
-        ],
-        "mRangedMultiplier": {
-          "mNumber": 0.6669999957084656,
-          "~class": "NumberCalculationPart"
-        },
-        "~class": "0xe9a3c91d"
-      },
-      "MeleeItemCalcValue": {
+      "0xd02ea590": {
         "mFormulaParts": [
           {
             "mDataValue": "MeleeBaseShield",
             "~class": "NamedDataValueCalculationPart"
           },
           {
-            "mDataValue": "MeleeShieldADRatio",
+            "mDataValue": "0xe367e801",
             "mStat": 2,
             "mStatFormula": 2,
             "~class": "StatByNamedDataValueCalculationPart"
           }
         ],
-        "~class": "GameCalculation"
+        "mRangedMultiplier": {
+          "mDataValue": "0x51df2a01",
+          "~class": "NamedDataValueCalculationPart"
+        },
+        "~class": "0xe9a3c91d"
       },
-      "RangedItemCalcValue": {
+      "MaxHealthDamageCalc": {
+        "mDisplayAsPercent": true,
         "mFormulaParts": [
           {
-            "mDataValue": "RangedBaseShield",
+            "mDataValue": "0xb1f09313",
             "~class": "NamedDataValueCalculationPart"
-          },
-          {
-            "mDataValue": "RangedShieldADRatio",
-            "mStat": 2,
-            "mStatFormula": 2,
-            "~class": "StatByNamedDataValueCalculationPart"
           }
         ],
-        "~class": "GameCalculation"
+        "mRangedMultiplier": {
+          "mDataValue": "0x4b5548be",
+          "~class": "NamedDataValueCalculationPart"
+        },
+        "~class": "0xe9a3c91d"
       }
     },
     "mItemCalloutSpectator": true,
@@ -30985,6 +30902,11 @@
         "mName": "ShredPerStack",
         "mValue": 0.05999999865889549,
         "~class": "ItemDataValue"
+      },
+      {
+        "mName": "RangedMod",
+        "mValue": 0.5,
+        "~class": "ItemDataValue"
       }
     ],
     "mDisplayName": "Obsidian Cleaver",
@@ -30997,15 +30919,31 @@
     "mItemAttributes": [
       1
     ],
+    "mItemCalculations": {
+      "MSBonusSplit": {
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mDataValue": "MoveSpeedBonus",
+            "~class": "NamedDataValueCalculationPart"
+          }
+        ],
+        "mRangedMultiplier": {
+          "mDataValue": "RangedMod",
+          "~class": "NamedDataValueCalculationPart"
+        },
+        "~class": "0xe9a3c91d"
+      }
+    },
     "mItemCalloutSpectator": true,
     "mItemDataClient": {
       "InventoryIconLarge": "ASSETS/Items/Icons2D/AutoAtlas/LargeIcons/3380_The_Forge_Cleaver.png",
       "InventoryIconSmall": "ASSETS/Items/Icons2D/AutoAtlas/SmallIcons/3380_The_Forge_Cleaver.png",
       "epicness": 5,
       "inventoryIcon": "ASSETS/Items/Icons2D/3380_The_Forge_Cleaver.dds",
-      "mDescription": "<section></section><section><ornnBonus>%i:scaleAD% @FlatPhysicalDamageMod@</ornnBonus> Attack Damage<br><ornnBonus>%i:scaleHealth% @FlatHPPoolMod@</ornnBonus> Health<br><ornnBonus>%i:scaleCooldown% @AbilityHasteMod@</ornnBonus> Ability Haste</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MoveSpeedBonus@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section>",
-      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Obsidian Cleaver</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Anti-Armor</subtitleLeft><subtitleRight>Unique: Fatality</subtitleRight><mainText><section><ornnBonus>%i:scaleAD% @FlatPhysicalDamageMod@</ornnBonus> Attack Damage<br><ornnBonus>%i:scaleHealth% @FlatHPPoolMod@</ornnBonus> Health<br><ornnBonus>%i:scaleCooldown% @AbilityHasteMod@</ornnBonus> Ability Haste@ExtendedStats@</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MoveSpeedBonus@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft></postScriptLeft>",
-      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Obsidian Cleaver</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Anti-Armor</subtitleLeft><subtitleRight>Unique: Fatality</subtitleRight><mainText><section></section><section><ornnBonus>%i:scaleAD% @FlatPhysicalDamageMod@</ornnBonus> Attack Damage<br><ornnBonus>%i:scaleHealth% @FlatHPPoolMod@</ornnBonus> Health<br><ornnBonus>%i:scaleCooldown% @AbilityHasteMod@</ornnBonus> Ability Haste</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MoveSpeedBonus@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
+      "mDescription": "<section></section><section><ornnBonus>%i:scaleAD% @FlatPhysicalDamageMod@</ornnBonus> Attack Damage<br><ornnBonus>%i:scaleHealth% @FlatHPPoolMod@</ornnBonus> Health<br><ornnBonus>%i:scaleCooldown% @AbilityHasteMod@</ornnBonus> Ability Haste</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MSBonusSplit@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section>",
+      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Obsidian Cleaver</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Anti-Armor</subtitleLeft><subtitleRight>Unique: Fatality</subtitleRight><mainText><section><ornnBonus>%i:scaleAD% @FlatPhysicalDamageMod@</ornnBonus> Attack Damage<br><ornnBonus>%i:scaleHealth% @FlatHPPoolMod@</ornnBonus> Health<br><ornnBonus>%i:scaleCooldown% @AbilityHasteMod@</ornnBonus> Ability Haste@ExtendedStats@</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MSBonusSplit@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft></postScriptLeft>",
+      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Obsidian Cleaver</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Anti-Armor</subtitleLeft><subtitleRight>Unique: Fatality</subtitleRight><mainText><section></section><section><ornnBonus>%i:scaleAD% @FlatPhysicalDamageMod@</ornnBonus> Attack Damage<br><ornnBonus>%i:scaleHealth% @FlatHPPoolMod@</ornnBonus> Health<br><ornnBonus>%i:scaleCooldown% @AbilityHasteMod@</ornnBonus> Ability Haste</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MSBonusSplit@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
       "mTooltipData": {
         "mFormat": "TooltipFormatA",
         "mLists": {
@@ -31035,7 +30973,7 @@
           "keyColloquialism": ";bc",
           "keyName": "Obsidian Cleaver",
           "keySecondaryBrief": "Unique: Fatality",
-          "keyTooltip": "<passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MoveSpeedBonus@ Move Speed</speed> for @MoveSpeedDuration@ seconds."
+          "keyTooltip": "<passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MSBonusSplit@ Move Speed</speed> for @MoveSpeedDuration@ seconds."
         },
         "mObjectName": "Arena/Obsidian Cleaver",
         "~class": "TooltipInstanceItem"
@@ -35009,7 +34947,7 @@
       "Items/ItemGroups/Boots",
       "Items/ItemGroups/BootsWithoutActives"
     ],
-    "mPercentAttackSpeedMod": 0.25,
+    "mPercentAttackSpeedMod": 0.30000001192092896,
     "maxStack": 1,
     "price": 300,
     "recipeItemLinks": [
@@ -37616,7 +37554,7 @@
       },
       {
         "mName": "ADtoAD",
-        "mValue": 0.44999998807907104,
+        "mValue": 0.5,
         "~class": "ItemDataValue"
       },
       {
@@ -38220,7 +38158,7 @@
       },
       {
         "mName": "MinionMod",
-        "mValue": 0.6000000238418579,
+        "mValue": 0.5,
         "~class": "ItemDataValue"
       },
       {
@@ -38234,12 +38172,11 @@
       },
       {
         "mName": "StackDuration",
-        "mValue": 1.0,
         "~class": "ItemDataValue"
       },
       {
         "mName": "MonsterMod",
-        "mValue": 1.0,
+        "mValue": 0.800000011920929,
         "~class": "ItemDataValue"
       },
       {
@@ -38259,12 +38196,12 @@
       },
       {
         "mName": "HPRatioPerTickTOOLTIPONLY",
-        "mValue": 1.0,
+        "mValue": 1.5,
         "~class": "ItemDataValue"
       }
     ],
     "mDisplayName": "Sunfire Aegis",
-    "mFlatArmorMod": 50.0,
+    "mFlatArmorMod": 45.0,
     "mFlatHPPoolMod": 350.0,
     "mItemAdviceAttributes": [
       "0x165d7c1f"
@@ -38296,7 +38233,7 @@
             "~class": "NumberCalculationPart"
           },
           {
-            "mCoefficient": 0.009999999776482582,
+            "mCoefficient": 0.014999999664723873,
             "mStat": 12,
             "mStatFormula": 2,
             "~class": "StatByCoefficientCalculationPart"
@@ -38316,9 +38253,9 @@
       "effectRadius": 325.0,
       "epicness": 6,
       "inventoryIcon": "ASSETS/Items/Icons2D/3068_Tank_T4_SunfireAegis.dds",
-      "mDescription": "<section></section><section><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleArmor% @FlatArmorMod@</attention> Armor<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Immolate</passive><br>After taking or dealing damage, deal <magicDamage>@DPS@ magic damage</magicDamage> per second to nearby enemies for @AuraDuration@ seconds. </section><section></section><section><flavorText></flavorText></section>",
-      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Sunfire Aegis</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Sustained Damage</subtitleLeft><subtitleRight>Unique: Immolate</subtitleRight><mainText><section><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleArmor% @FlatArmorMod@</attention> Armor<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste@ExtendedStats@</section><section><passive>Immolate</passive><br>After taking or dealing damage, deal <magicDamage>@DPS@ magic damage</magicDamage> per second to nearby enemies for @AuraDuration@ seconds. </section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft>Immolate Damage to champions: <attention>@f1@</attention></postScriptLeft>",
-      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Sunfire Aegis</itemName@ItemActiveness@></titleLeft><titleRight>{{ Item_Gold_Value }}</titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Sustained Damage</subtitleLeft><subtitleRight>Unique: Immolate</subtitleRight><mainText><section></section><section><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleArmor% @FlatArmorMod@</attention> Armor<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Immolate</passive><br>After taking or dealing damage, deal <magicDamage>@DPS@ magic damage</magicDamage> per second to nearby enemies for @AuraDuration@ seconds. </section><section></section><section><flavorText></flavorText></section></mainText><br>",
+      "mDescription": "<section></section><section><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleArmor% @FlatArmorMod@</attention> Armor<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Immolate</passive><br>After taking or dealing damage, deal <magicDamage>@DPS@ magic damage</magicDamage> per second to nearby enemies for @AuraDuration@ seconds.</section><section></section><section><flavorText></flavorText></section>",
+      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Sunfire Aegis</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Sustained Damage</subtitleLeft><subtitleRight>Unique: Immolate</subtitleRight><mainText><section><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleArmor% @FlatArmorMod@</attention> Armor<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste@ExtendedStats@</section><section><passive>Immolate</passive><br>After taking or dealing damage, deal <magicDamage>@DPS@ magic damage</magicDamage> per second to nearby enemies for @AuraDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft>Immolate Damage to champions: <attention>@f1@</attention></postScriptLeft>",
+      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Sunfire Aegis</itemName@ItemActiveness@></titleLeft><titleRight>{{ Item_Gold_Value }}</titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Sustained Damage</subtitleLeft><subtitleRight>Unique: Immolate</subtitleRight><mainText><section></section><section><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleArmor% @FlatArmorMod@</attention> Armor<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Immolate</passive><br>After taking or dealing damage, deal <magicDamage>@DPS@ magic damage</magicDamage> per second to nearby enemies for @AuraDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
       "mTooltipData": {
         "mFormat": "TooltipFormatA",
         "mLists": {
@@ -38346,7 +38283,7 @@
           "keyInventoryOnlyText": "Immolate Damage to champions: <attention>@f1@</attention>",
           "keyName": "Sunfire Aegis",
           "keySecondaryBrief": "Unique: Immolate",
-          "keyTooltip": "<passive>Immolate</passive><br>After taking or dealing damage, deal <magicDamage>@DPS@ magic damage</magicDamage> per second to nearby enemies for @AuraDuration@ seconds. ",
+          "keyTooltip": "<passive>Immolate</passive><br>After taking or dealing damage, deal <magicDamage>@DPS@ magic damage</magicDamage> per second to nearby enemies for @AuraDuration@ seconds.",
           "keyTooltipExtendedRules": "<rules><passive>Immolate</passive> deals @MinionMod*100@% increased damage to minions and @MonsterMod*100@% increased damage to monsters.</rules>",
           "keyTooltipExternal": "<passive>Immolate</passive><br>After taking or dealing damage, deal <magicDamage>magic damage</magicDamage> per second to nearby enemies for @AuraDuration@ seconds. "
         },
@@ -38371,7 +38308,7 @@
       "~class": "ResourceResolver"
     },
     "maxStack": 1,
-    "price": 600,
+    "price": 700,
     "recipeItemLinks": [
       "Bami's Cinder",
       "Chain Vest",
@@ -38647,11 +38584,16 @@
         "mName": "ShredPerStack",
         "mValue": 0.05999999865889549,
         "~class": "ItemDataValue"
+      },
+      {
+        "mName": "RangedMod",
+        "mValue": 0.5,
+        "~class": "ItemDataValue"
       }
     ],
     "mDisplayName": "Black Cleaver",
     "mFlatHPPoolMod": 400.0,
-    "mFlatPhysicalDamageMod": 40.0,
+    "mFlatPhysicalDamageMod": 45.0,
     "mItemAdviceAttributes": [
       "0x72256343",
       "0xe625a35a"
@@ -38659,6 +38601,22 @@
     "mItemAttributes": [
       1
     ],
+    "mItemCalculations": {
+      "MSBonusSplit": {
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mDataValue": "MoveSpeedBonus",
+            "~class": "NamedDataValueCalculationPart"
+          }
+        ],
+        "mRangedMultiplier": {
+          "mDataValue": "RangedMod",
+          "~class": "NamedDataValueCalculationPart"
+        },
+        "~class": "0xe9a3c91d"
+      }
+    },
     "mItemCalloutSpectator": true,
     "mItemDataAvailability": {
       "mInStore": true,
@@ -38669,9 +38627,9 @@
       "InventoryIconSmall": "ASSETS/Items/Icons2D/AutoAtlas/SmallIcons/3071_Fighter_T3_BlackCleaver.png",
       "epicness": 5,
       "inventoryIcon": "ASSETS/Items/Icons2D/3071_Fighter_T3_BlackCleaver.dds",
-      "mDescription": "<section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MoveSpeedBonus@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section>",
-      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Black Cleaver</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Anti-Armor</subtitleLeft><subtitleRight>Unique: Fatality</subtitleRight><mainText><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste@ExtendedStats@</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MoveSpeedBonus@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft></postScriptLeft>",
-      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Black Cleaver</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Anti-Armor</subtitleLeft><subtitleRight>Unique: Fatality</subtitleRight><mainText><section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MoveSpeedBonus@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
+      "mDescription": "<section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MSBonusSplit@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section>",
+      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Black Cleaver</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Anti-Armor</subtitleLeft><subtitleRight>Unique: Fatality</subtitleRight><mainText><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste@ExtendedStats@</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MSBonusSplit@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft></postScriptLeft>",
+      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Black Cleaver</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Anti-Armor</subtitleLeft><subtitleRight>Unique: Fatality</subtitleRight><mainText><section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MSBonusSplit@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
       "mTooltipData": {
         "mFormat": "TooltipFormatA",
         "mLists": {
@@ -38698,7 +38656,7 @@
           "keyColloquialism": ";bc",
           "keyName": "Black Cleaver",
           "keySecondaryBrief": "Unique: Fatality",
-          "keyTooltip": "<passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MoveSpeedBonus@ Move Speed</speed> for @MoveSpeedDuration@ seconds."
+          "keyTooltip": "<passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MSBonusSplit@ Move Speed</speed> for @MoveSpeedDuration@ seconds."
         },
         "mObjectName": "Black Cleaver",
         "~class": "TooltipInstanceItem"
@@ -39477,7 +39435,7 @@
     ],
     "mDeathRecapName": "ItemTiamat",
     "mDisplayName": "Tiamat",
-    "mFlatPhysicalDamageMod": 20.0,
+    "mFlatPhysicalDamageMod": 25.0,
     "mItemAttributes": [
       1,
       8,
@@ -46739,7 +46697,7 @@
       "0x9e360ad4",
       "Items/ItemGroups/Boots"
     ],
-    "mPercentAttackSpeedMod": 0.4000000059604645,
+    "mPercentAttackSpeedMod": 0.44999998807907104,
     "mPercentLifeStealMod": 0.05000000074505806,
     "mRequiredBuffCurrencyName": "Feats_NoxianBootPurchaseBuff",
     "maxStack": 1,
@@ -46779,7 +46737,7 @@
     ],
     "mDisplayName": "Chainlaced Crushers",
     "mFlatMovementSpeedMod": 45.0,
-    "mFlatSpellBlockMod": 30.0,
+    "mFlatSpellBlockMod": 25.0,
     "mItemCalculations": {
       "0x5e4a31e2": {
         "mFormulaParts": [
@@ -47009,7 +46967,7 @@
       "MagicPenetration"
     ],
     "mDisplayName": "Spellslinger's Shoes",
-    "mFlatMagicPenetrationMod": 18.0,
+    "mFlatMagicPenetrationMod": 20.0,
     "mFlatMovementSpeedMod": 45.0,
     "mItemCalculations": {
       "0x5e4a31e2": {
@@ -56057,17 +56015,17 @@
       },
       {
         "mName": "GoldOnHit",
-        "mValue": 20.0,
+        "mValue": 18.0,
         "~class": "ItemDataValue"
       },
       {
         "mName": "GoldOnHitMelee",
-        "mValue": 22.0,
+        "mValue": 18.0,
         "~class": "ItemDataValue"
       },
       {
         "mName": "ExecuteMinionGold",
-        "mValue": 15.0,
+        "mValue": 18.0,
         "~class": "ItemDataValue"
       },
       {
@@ -56389,17 +56347,17 @@
       },
       {
         "mName": "GoldOnHit",
-        "mValue": 22.0,
+        "mValue": 21.0,
         "~class": "ItemDataValue"
       },
       {
         "mName": "GoldOnHitMelee",
-        "mValue": 24.0,
+        "mValue": 21.0,
         "~class": "ItemDataValue"
       },
       {
         "mName": "ExecuteMinionGold",
-        "mValue": 20.0,
+        "mValue": 21.0,
         "~class": "ItemDataValue"
       },
       {
@@ -70027,7 +69985,7 @@
       "URF": {
         "DataValues": [
           {
-            "mName": "HealRatio",
+            "mName": "HealBaseADRatio",
             "mValue": 1.100000023841858,
             "~class": "ItemDataValue"
           },
@@ -70059,23 +70017,18 @@
         "~class": "ItemDataValue"
       },
       {
-        "mName": "HealAmount",
-        "mValue": 0.20000000298023224,
-        "~class": "ItemDataValue"
-      },
-      {
         "mName": "Cooldown",
         "mValue": 10.0,
         "~class": "ItemDataValue"
       },
       {
-        "mName": "HealRatio",
-        "mValue": 1.0,
+        "mName": "HealBaseADRatio",
+        "mValue": 0.8999999761581421,
         "~class": "ItemDataValue"
       },
       {
         "mName": "MissingHealthHeal",
-        "mValue": 0.05999999865889549,
+        "mValue": 0.03999999910593033,
         "~class": "ItemDataValue"
       },
       {
@@ -70085,69 +70038,26 @@
       }
     ],
     "mDisplayName": "Sundered Sky",
-    "mFlatHPPoolMod": 400.0,
+    "mFlatHPPoolMod": 450.0,
     "mFlatPhysicalDamageMod": 45.0,
     "mItemAttributes": [
       1
     ],
     "mItemCalculations": {
-      "0x6387172": {
+      "0x1099b16": {
         "mFormulaParts": [
           {
-            "mNumber": 2.0,
-            "~class": "NumberCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "0x792cf56b": {
-        "mFormulaParts": [
-          {
-            "mNumber": 1.0,
-            "~class": "NumberCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "ChampRange": {
-        "mConditionalCalculationRequirements": {
-          "~class": "IsRangedCastRequirement"
-        },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
-        "mExpandedTooltipCalculationDisplay": 5,
-        "mSimpleTooltipCalculationDisplay": 5,
-        "~class": "GameCalculationConditional"
-      },
-      "HealProc": {
-        "mFormulaParts": [
-          {
-            "mDataValue": "HealRatio",
+            "mDataValue": "HealBaseADRatio",
             "mStat": 2,
-            "mStatFormula": 1,
+            "mStatFormula": 2,
             "~class": "StatByNamedDataValueCalculationPart"
           }
         ],
-        "~class": "GameCalculation"
-      },
-      "MeleeItemCalcValue": {
-        "mFormulaParts": [
-          {
-            "mDataValue": "HealRatio",
-            "mStat": 2,
-            "mStatFormula": 1,
-            "~class": "StatByNamedDataValueCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "RangedItemCalcValue": {
-        "mModifiedGameCalculation": "MeleeItemCalcValue",
-        "mMultiplier": {
+        "mRangedMultiplier": {
           "mDataValue": "RangedHealMod",
           "~class": "NamedDataValueCalculationPart"
         },
-        "~class": "GameCalculationModified"
+        "~class": "0xe9a3c91d"
       }
     },
     "mItemDataAvailability": {
@@ -70159,9 +70069,9 @@
       "InventoryIconSmall": "ASSETS/Items/Icons2D/AutoAtlas/SmallIcons/6610_SunderedSky44.png",
       "epicness": 5,
       "inventoryIcon": "ASSETS/Items/Icons2D/6610_SunderedSky.dds",
-      "mDescription": "<section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Lightshield Strike</passive> %i:cooldown% (@Cooldown@s) per target<br>Your first Attack against a champion <attention>Critically Strikes</attention> for @CritModifier*100@% of your normal Critical Strike damage and <healing>restores {{ Item_Range_Mod_@ChampRange@_Dynamic }} plus @MissingHealthHeal*100@%</healing> of missing Health.</section><section></section><section><flavorText></flavorText></section>",
-      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Sundered Sky</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Sustained Combat</subtitleLeft><subtitleRight></subtitleRight><mainText><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste@ExtendedStats@</section><section><passive>Lightshield Strike</passive> %i:cooldown% (@Cooldown@s) per target<br>Your first Attack against a champion <attention>Critically Strikes</attention> for @CritModifier*100@% of your normal Critical Strike damage and <healing>restores {{ Item_Range_Mod_@ChampRange@_Dynamic }} plus @MissingHealthHeal*100@%</healing> of missing Health.</section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft>Healing Done: <attention>@f2@</attention></postScriptLeft>",
-      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Sundered Sky</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Sustained Combat</subtitleLeft><subtitleRight></subtitleRight><mainText><section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Lightshield Strike</passive> %i:cooldown% (@Cooldown@s) per target<br>Your first Attack against a champion <attention>Critically Strikes</attention> for @CritModifier*100@% of your normal Critical Strike damage and <healing>restores {{ Item_Range_Mod_@ChampRange@_Dynamic }} plus @MissingHealthHeal*100@%</healing> of missing Health.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
+      "mDescription": "<section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Lightshield Strike</passive> %i:cooldown% (@Cooldown@s) per target<br>Your first Attack against a champion <attention>Critically Strikes</attention> for @CritModifier*100@% of your normal Critical Strike damage and <healing>restores @HealADSplit@ plus @MissingHealthHeal*100@%</healing> of missing Health.</section><section></section><section><flavorText></flavorText></section>",
+      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Sundered Sky</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Sustained Combat</subtitleLeft><subtitleRight></subtitleRight><mainText><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste@ExtendedStats@</section><section><passive>Lightshield Strike</passive> %i:cooldown% (@Cooldown@s) per target<br>Your first Attack against a champion <attention>Critically Strikes</attention> for @CritModifier*100@% of your normal Critical Strike damage and <healing>restores @HealADSplit@ plus @MissingHealthHeal*100@%</healing> of missing Health.</section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft>Healing Done: <attention>@f2@</attention></postScriptLeft>",
+      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Sundered Sky</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Sustained Combat</subtitleLeft><subtitleRight></subtitleRight><mainText><section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Lightshield Strike</passive> %i:cooldown% (@Cooldown@s) per target<br>Your first Attack against a champion <attention>Critically Strikes</attention> for @CritModifier*100@% of your normal Critical Strike damage and <healing>restores @HealADSplit@ plus @MissingHealthHeal*100@%</healing> of missing Health.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
       "mTooltipData": {
         "mFormat": "TooltipFormatA",
         "mLists": {
@@ -70187,7 +70097,7 @@
           "keyBrief": "Sustained Combat",
           "keyInventoryOnlyText": "Healing Done: <attention>@f2@</attention>",
           "keyName": "Sundered Sky",
-          "keyTooltip": "<passive>Lightshield Strike</passive> %i:cooldown% (@Cooldown@s) per target<br>Your first Attack against a champion <attention>Critically Strikes</attention> for @CritModifier*100@% of your normal Critical Strike damage and <healing>restores {{ Item_Range_Mod_@ChampRange@_Dynamic }} plus @MissingHealthHeal*100@%</healing> of missing Health.",
+          "keyTooltip": "<passive>Lightshield Strike</passive> %i:cooldown% (@Cooldown@s) per target<br>Your first Attack against a champion <attention>Critically Strikes</attention> for @CritModifier*100@% of your normal Critical Strike damage and <healing>restores @HealADSplit@ plus @MissingHealthHeal*100@%</healing> of missing Health.",
           "keyTooltipExtendedRules": "<br><br><rules>Excess healing is granted as temporary bonus Health.</rules>",
           "keyTooltipExternal": "<passive>Lightshield Strike</passive><br>Your first Attack against a champion <attention>Critically Strikes</attention> and <healing>restores Health</healing>."
         },
@@ -70211,8 +70121,7 @@
     "price": 500,
     "recipeItemLinks": [
       "Tunneler",
-      "Caulfield's Warhammer",
-      "Ruby Crystal"
+      "Caulfield's Warhammer"
     ],
     "~class": "ItemData"
   },
@@ -76047,11 +75956,6 @@
             "mName": "MeleeShieldADRatio",
             "mValue": 0.5,
             "~class": "ItemDataValue"
-          },
-          {
-            "mName": "RangedShieldADRatio",
-            "mValue": 0.25,
-            "~class": "ItemDataValue"
           }
         ],
         "~class": "ItemDataValues"
@@ -76062,25 +75966,12 @@
             "mName": "MeleeShieldADRatio",
             "mValue": 0.5,
             "~class": "ItemDataValue"
-          },
-          {
-            "mName": "RangedShieldADRatio",
-            "mValue": 0.25,
-            "~class": "ItemDataValue"
           }
         ],
         "~class": "ItemDataValues"
       }
     },
     "ShowCooldownVfxToAllies": false,
-    "StringCalculations": {
-      "0x4217e5fd": {
-        "DefaultResult": "@MaxHealthPercent@",
-        "MeleeResult": "@MaxHealthPercent@",
-        "RangedResult": "@RangedMaxHealthPercent@",
-        "~class": "0x4750ceb6"
-      }
-    },
     "epicness": 5,
     "itemID": 6692,
     "mAbilityHasteMod": 15.0,
@@ -76097,13 +75988,13 @@
         "~class": "ItemDataValue"
       },
       {
-        "mName": "MeleeItemCalcValueB",
-        "mValue": 6.0,
+        "mName": "MeleePercMaxHP",
+        "mValue": 0.07999999821186066,
         "~class": "ItemDataValue"
       },
       {
-        "mName": "RangedItemCalcValueB",
-        "mValue": 4.0,
+        "mName": "RangedPercMaxHPMult",
+        "mValue": 0.625,
         "~class": "ItemDataValue"
       },
       {
@@ -76118,22 +76009,17 @@
       },
       {
         "mName": "MeleeBaseShield",
-        "mValue": 160.0,
+        "mValue": 150.0,
         "~class": "ItemDataValue"
       },
       {
-        "mName": "RangedBaseShield",
-        "mValue": 80.0,
-        "~class": "ItemDataValue"
-      },
-      {
-        "mName": "MeleeShieldADRatio",
+        "mName": "MeleeBonusADShieldRatio",
         "mValue": 0.4000000059604645,
         "~class": "ItemDataValue"
       },
       {
-        "mName": "RangedShieldADRatio",
-        "mValue": 0.20000000298023224,
+        "mName": "RangedShieldMult",
+        "mValue": 0.5,
         "~class": "ItemDataValue"
       }
     ],
@@ -76147,76 +76033,38 @@
       1
     ],
     "mItemCalculations": {
-      "0x6387172": {
-        "mFormulaParts": [
-          {
-            "mNumber": 2.0,
-            "~class": "NumberCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "0x792cf56b": {
-        "mFormulaParts": [
-          {
-            "mNumber": 1.0,
-            "~class": "NumberCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "ChampRange": {
-        "mConditionalCalculationRequirements": {
-          "~class": "IsRangedCastRequirement"
-        },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
-        "mExpandedTooltipCalculationDisplay": 5,
-        "mSimpleTooltipCalculationDisplay": 5,
-        "~class": "GameCalculationConditional"
-      },
-      "MaxHealthDamageCalc": {
-        "mFormulaParts": [
-          {
-            "mNumber": 6.0,
-            "~class": "NumberCalculationPart"
-          }
-        ],
-        "mRangedMultiplier": {
-          "mNumber": 0.6669999957084656,
-          "~class": "NumberCalculationPart"
-        },
-        "~class": "0xe9a3c91d"
-      },
-      "MeleeItemCalcValue": {
+      "0xd02ea590": {
         "mFormulaParts": [
           {
             "mDataValue": "MeleeBaseShield",
             "~class": "NamedDataValueCalculationPart"
           },
           {
-            "mDataValue": "MeleeShieldADRatio",
+            "mDataValue": "0xe367e801",
             "mStat": 2,
             "mStatFormula": 2,
             "~class": "StatByNamedDataValueCalculationPart"
           }
         ],
-        "~class": "GameCalculation"
+        "mRangedMultiplier": {
+          "mDataValue": "0x51df2a01",
+          "~class": "NamedDataValueCalculationPart"
+        },
+        "~class": "0xe9a3c91d"
       },
-      "RangedItemCalcValue": {
+      "MaxHealthDamageCalc": {
+        "mDisplayAsPercent": true,
         "mFormulaParts": [
           {
-            "mDataValue": "RangedBaseShield",
+            "mDataValue": "0xb1f09313",
             "~class": "NamedDataValueCalculationPart"
-          },
-          {
-            "mDataValue": "RangedShieldADRatio",
-            "mStat": 2,
-            "mStatFormula": 2,
-            "~class": "StatByNamedDataValueCalculationPart"
           }
         ],
-        "~class": "GameCalculation"
+        "mRangedMultiplier": {
+          "mDataValue": "0x4b5548be",
+          "~class": "NamedDataValueCalculationPart"
+        },
+        "~class": "0xe9a3c91d"
       }
     },
     "mItemCalloutSpectator": true,
@@ -76229,9 +76077,9 @@
       "InventoryIconSmall": "ASSETS/Items/Icons2D/AutoAtlas/SmallIcons/6692_Assassin_T4_Eclipse.png",
       "epicness": 6,
       "inventoryIcon": "ASSETS/Items/Icons2D/6692_Assassin_T4_Eclipse.dds",
-      "mDescription": "<section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@% max health physical damage</physicalDamage> and grants you a <shield>{{ Item_Range_Mod_@ChampRange@_Dynamic }} Shield</shield> for @ShieldDuration@ seconds.</section><section></section><section><flavorText></flavorText></section>",
-      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Eclipse</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Dueling</subtitleLeft><subtitleRight></subtitleRight><mainText><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste@ExtendedStats@</section><section><br><br><passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@% max health physical damage</physicalDamage> and grants you a <shield>{{ Item_Range_Mod_@ChampRange@_Dynamic }} Shield</shield> for @ShieldDuration@ seconds.<br><br><rules>Item performance differs for %i:meleeInactive% melee and %i:rangedInactive% ranged users.</rules></section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft>Damage blocked: <attention>@f3@</attention></postScriptLeft>",
-      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Eclipse</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Dueling</subtitleLeft><subtitleRight></subtitleRight><mainText><section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@% max health physical damage</physicalDamage> and grants you a <shield>{{ Item_Range_Mod_@ChampRange@_Dynamic }} Shield</shield> for @ShieldDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
+      "mDescription": "<section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@ max health physical damage</physicalDamage> and grants you a <shield>@ShieldSplit@ Shield</shield> for @ShieldDuration@ seconds.</section><section></section><section><flavorText></flavorText></section>",
+      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Eclipse</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Dueling</subtitleLeft><subtitleRight></subtitleRight><mainText><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste@ExtendedStats@</section><section><br><br><passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@ max health physical damage</physicalDamage> and grants you a <shield>@ShieldSplit@ Shield</shield> for @ShieldDuration@ seconds.<br><br><rules>Item performance differs for %i:meleeInactive% melee and %i:rangedInactive% ranged users.</rules></section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft>Damage blocked: <attention>@f3@</attention></postScriptLeft>",
+      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Eclipse</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Dueling</subtitleLeft><subtitleRight></subtitleRight><mainText><section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@ max health physical damage</physicalDamage> and grants you a <shield>@ShieldSplit@ Shield</shield> for @ShieldDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
       "mTooltipData": {
         "mFormat": "TooltipFormatA",
         "mLists": {
@@ -76253,9 +76101,9 @@
           "keyBrief": "Dueling",
           "keyInventoryOnlyText": "Damage blocked: <attention>@f3@</attention>",
           "keyName": "Eclipse",
-          "keyTooltip": "<passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@% max health physical damage</physicalDamage> and grants you a <shield>{{ Item_Range_Mod_@ChampRange@_Dynamic }} Shield</shield> for @ShieldDuration@ seconds.",
+          "keyTooltip": "<passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@ max health physical damage</physicalDamage> and grants you a <shield>@ShieldSplit@ Shield</shield> for @ShieldDuration@ seconds.",
           "keyTooltipExternal": "<passive>Ever Rising Moon</passive><br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds grants you a <shield>Shield</shield> for @ShieldDuration@ seconds.",
-          "keyTooltipInventory": "<br><br><passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@% max health physical damage</physicalDamage> and grants you a <shield>{{ Item_Range_Mod_@ChampRange@_Dynamic }} Shield</shield> for @ShieldDuration@ seconds.<br><br><rules>Item performance differs for %i:meleeInactive% melee and %i:rangedInactive% ranged users.</rules>"
+          "keyTooltipInventory": "<br><br><passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@ max health physical damage</physicalDamage> and grants you a <shield>@ShieldSplit@ Shield</shield> for @ShieldDuration@ seconds.<br><br><rules>Item performance differs for %i:meleeInactive% melee and %i:rangedInactive% ranged users.</rules>"
         },
         "mObjectName": "Eclipse",
         "~class": "TooltipInstanceItem"

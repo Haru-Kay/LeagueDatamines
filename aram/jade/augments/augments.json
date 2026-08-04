@@ -513,40 +513,32 @@
     "name": "Infernal Conduit",
     "rarity": "Prismatic",
     "desc": "Your Abilities apply stacking <keywordMajor>Burn</keywordMajor> that deals damage over time.<br><br>Your <keywordMajor>Burn</keywordMajor> effects reduce your basic Ability Cooldowns.",
-    "tooltip": "Your Abilities apply an infinitely stacking <keywordMajor>Burn</keywordMajor>, dealing <magicDamage>@BleedDamageTooltip@ magic damage</magicDamage> per second for @BleedDuration@ seconds.<br><br>All your <keywordMajor>Burn</keywordMajor> effects lower your basic Ability Cooldowns by @FlatCooldownRefundPerTick@ seconds when they damage enemy champions.<br><br>Damage Dealt: @f2@",
+    "tooltip": "Your Abilities apply an infinitely stacking <keywordMajor>Burn</keywordMajor>, dealing <magicDamage>@BleedDamagePerSecond@ magic damage</magicDamage> per second for @BleedDuration@ seconds.<br><br>All your <keywordMajor>Burn</keywordMajor> effects lower your basic Ability Cooldowns by @FlatCooldownRefundPerTick@ seconds when they damage enemy champions.<br><br>Damage Dealt: @f2@",
     "dataValues": {
       "BleedDuration": 3.0,
       "FlatCooldownRefundPerTick": 0.07999999821186066,
       "ProcCooldown": 1.0
     },
     "calculations": {
-      "0xa242b94": {
+      "0xd5b286d1": {
         "mFormulaParts": [
           {
-            "mEndValue": 60.0,
-            "mStartValue": 6.0,
+            "mEndValue": 20.0,
+            "mStartValue": 2.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           },
           {
-            "mCoefficient": 0.05999999865889549,
+            "mCoefficient": 0.012000000104308128,
             "~class": "StatByCoefficientCalculationPart"
           },
           {
-            "mCoefficient": 0.14000000059604645,
+            "mCoefficient": 0.02800000086426735,
             "mStat": 2,
             "mStatFormula": 2,
             "~class": "StatByCoefficientCalculationPart"
           }
         ],
         "~class": "GameCalculation"
-      },
-      "BleedDamageTooltip": {
-        "mModifiedGameCalculation": "0xa242b94",
-        "mMultiplier": {
-          "mNumber": 0.20000000298023224,
-          "~class": "NumberCalculationPart"
-        },
-        "~class": "GameCalculationModified"
       }
     },
     "icons": [
@@ -4873,7 +4865,7 @@
     "name": "Nature is Healing",
     "rarity": "Gold",
     "desc": "Entering <keyword>Brush</keyword> regenerates <healing>a large amount of Health</healing>.",
-    "tooltip": "Entering <keyword>Brush</keyword> regenerates <healing>@MaxHealthHealPerSecond@ max Health</healing>, @Cooldown@ second cooldown per brush.<br><br>Total Healing: @f1.0@",
+    "tooltip": "Entering <keyword>Brush</keyword> regenerates <healing>@MaxHealthHealPerSecond@ max Health</healing>, @BrushCooldown@ second cooldown per brush.<br><br>Total Healing: @f1.0@",
     "dataValues": {
       "BrushCooldown": 20.0
     },
@@ -5874,13 +5866,13 @@
     "dataValues": {
       "SnipeDistance": 600.0,
       "AOE": [
-        120.0,
-        180.0,
-        270.0,
-        405.0,
-        607.5,
-        911.25,
-        1366.875
+        150.0,
+        225.0,
+        337.5,
+        506.25,
+        759.375,
+        1139.0625,
+        1708.59375
       ],
       "MaxDistanceForScaling": 3000.0,
       "MaxAOEDistanceScaling": 2.0,
@@ -5912,15 +5904,15 @@
     "quest": {
       "apiName": "BangBangQuest",
       "TooltipOverride": [
-        "<keywordMajor>Snipe</keywordMajor> enemies to unlock a delayed damaging explosion that occurs at enemy champions you Snipe.<br><br><keywordMajor>Snipe</keywordMajor> - Damage enemies over 700 distance away<br><br>Snipe Hits: @f1@ / @f2@<br><br><flavorText>Bang! Bang! Oh, what a shot!</flavorText>"
+        "<keywordMajor>Snipe</keywordMajor> enemies to unlock a delayed damaging explosion that occurs at enemy champions you Snipe.<br><br><keywordMajor>Snipe</keywordMajor> - Damage enemies over 600 distance away<br><br>Snipe Hits: @f1@ / @f2@<br><br><flavorText>Bang! Bang! Oh, what a shot!</flavorText>"
       ],
       "QuestBreakpoints": [
         {
           "QuestRequirement": 15,
-          "QuestDesc": "<font color='#F0C200'>QUEST:</font> <keywordMajor>Snipe</keywordMajor> @QuestRequirement@ enemy champions with abilities.<br><br><keywordMajor>Snipe</keywordMajor> - Damage enemies over 700 distance away.<br><br><font color='#F0C200'>REWARD:</font> A meteor flies at enemy champions you Snipe, dealing @Damage@ damage in an area around them. The damage and size of the area increase the further the target is away from you.<br><br>Quest Progress: @QuestProgress@ / @QuestRequirement@<br><br><flavorText>Bang! Bang! Oh, what a shot!</flavorText>"
+          "QuestDesc": "<font color='#F0C200'>QUEST:</font> <keywordMajor>Snipe</keywordMajor> @QuestRequirement@ enemy champions with abilities.<br><br><keywordMajor>Snipe</keywordMajor> - Damage enemies over 600 distance away.<br><br><font color='#F0C200'>REWARD:</font> A meteor flies at enemy champions you Snipe, dealing @Damage@ damage in an area around them. The damage and size of the area increase the further the target is away from you.<br><br>Quest Progress: @QuestProgress@ / @QuestRequirement@<br><br><flavorText>Bang! Bang! Oh, what a shot!</flavorText>"
         },
         {
-          "QuestDesc": "A meteor flies at enemy champions you <keywordMajor>Snipe</keywordMajor>, dealing @Damage@ damage in an area around them. The damage and size of the area increase the further the target is away from you.<br><br><keywordMajor>Snipe</keywordMajor> - Damage enemies over 700 distance away.<br><br>Quest Complete.<br>Enemies Sniped: @QuestProgress@<br><br><flavorText>Bang! Bang! Oh, what a shot!</flavorText>"
+          "QuestDesc": "A meteor flies at enemy champions you <keywordMajor>Snipe</keywordMajor>, dealing @Damage@ damage in an area around them. The damage and size of the area increase the further the target is away from you.<br><br><keywordMajor>Snipe</keywordMajor> - Damage enemies over 600 distance away.<br><br>Quest Complete.<br>Enemies Sniped: @QuestProgress@<br><br><flavorText>Bang! Bang! Oh, what a shot!</flavorText>"
         }
       ],
       "icon": "ASSETS/UX/Cherry/Augments/Icons/SkilledSniper_large.tex"

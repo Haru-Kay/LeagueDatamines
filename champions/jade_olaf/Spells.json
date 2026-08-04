@@ -595,6 +595,18 @@
     "objectPath": "0xe39046b7",
     "~class": "SpellObject"
   },
+  "0xf6d7a50f": {
+    "ObjectName": "Jade_OlafRPassiveBuff",
+    "mScriptName": "Jade_OlafRPassiveBuff",
+    "mSpell": {
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/OlafRagnarok.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0xf6d7a50f",
+    "~class": "SpellObject"
+  },
   "Characters/Jade_Olaf/Spells/Jade_OlafBasicAttack": {
     "ObjectName": "Jade_OlafBasicAttack",
     "mScriptName": "Jade_OlafBasicAttack",
@@ -994,19 +1006,6 @@
             400.0
           ],
           "~class": "SpellDataValue"
-        },
-        {
-          "name": "ADRatio",
-          "values": [
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645
-          ],
-          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -1167,12 +1166,6 @@
             {
               "mDataValue": "baseDamage",
               "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mDataValue": "ADRatio",
-              "mStat": 2,
-              "mStatFormula": 2,
-              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -1287,13 +1280,13 @@
         {
           "name": "MinCastRange",
           "values": [
-            400.0,
-            400.0,
-            400.0,
-            400.0,
-            400.0,
-            400.0,
-            400.0
+            250.0,
+            250.0,
+            250.0,
+            250.0,
+            250.0,
+            250.0,
+            250.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1397,7 +1390,7 @@
           "mLocKeys": {
             "keyName": "Undertow",
             "keySummary": "Olaf throws an axe into the ground at a target location, dealing damage to units it passes through and slowing their movement speed. If Olaf picks up the axe, the ability's cooldown is reduced.",
-            "keyTooltip": "Olaf throws an axe to a target location, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> to units it passes through and <status>Slowing</status> them by @SlowAmount*100@% decaying over @DebuffDuration@ seconds. <br><br>If Olaf picks up the axe, the ability's cooldown is reduced by @CooldownRefund@ seconds."
+            "keyTooltip": "Olaf throws an axe to a target location, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> to units it passes through and <status>Slowing</status> them by @SlowAmount*100@% over @DebuffDuration@ seconds. <br><br>If Olaf picks up the axe, the ability's cooldown is reduced by @CooldownRefund@ seconds."
           },
           "mObjectName": "Jade_OlafQ",
           "~class": "TooltipInstanceSpell"
@@ -1497,7 +1490,7 @@
         "mFormat": "0xb34f999a",
         "mLocKeys": {
           "keyName": "Ragnarok",
-          "keyTooltip": "Olaf is immune to disables and has increased Armor, Magic Resist, and Lethality."
+          "keyTooltip": "Olaf is immune to disables and has increased Armor and Magic Resist."
         },
         "mObjectName": "Jade_OlafR",
         "~class": "TooltipInstanceBuff"
@@ -1632,7 +1625,7 @@
           "mLocKeys": {
             "keyName": "Ragnarok",
             "keySummary": "Olaf temporarily becomes immune to disables and gains bonus Armor, Magic Resist, and Lethality.",
-            "keyTooltip": "Olaf cleanses all <status>Immobilizing</status> and <status>Disabling</status> effects on himself and becomes immune to them the next @Duration@ seconds. During this time, Olaf gains <scaleArmor>@Resists@ Armor</scaleArmor>, <scaleMR>@Resists@ Magic Resist</scaleMR>, and @ArmorPen@ Lethality.<br><br>"
+            "keyTooltip": "<spellActive>Active:</spellActive> Olaf cleanses all <status>Immobilizing</status> and <status>Disabling</status> effects on himself and becomes immune to them the next @Duration@ seconds. During this time, Olaf gains <scaleArmor>@Resists@ Armor</scaleArmor> and <scaleMR>@Resists@ Magic Resist</scaleMR>.<br><br><spellPassive>Passive:</spellPassive> Olaf gains an additional @ArmorPen@ Lethality."
           },
           "mObjectName": "Jade_OlafR",
           "~class": "TooltipInstanceSpell"
@@ -1731,15 +1724,15 @@
       },
       "0xf26881a0": 1.0,
       "Cooldown": {
-        "0xa3e0478": 16.0,
+        "0xa3e0478": 12.0,
         "values": [
-          16.0,
-          16.0,
-          16.0,
-          16.0,
-          16.0,
-          16.0,
-          16.0
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0
         ],
         "~class": "SpellAttributeModifiable"
       },

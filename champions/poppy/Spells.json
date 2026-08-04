@@ -806,13 +806,13 @@
         {
           "name": "HealthDamagePercent",
           "values": [
+            6.5,
+            7.0,
+            7.5,
+            8.0,
+            8.5,
             9.0,
-            9.0,
-            9.0,
-            9.0,
-            9.0,
-            9.0,
-            9.0
+            9.5
           ],
           "~class": "SpellDataValue"
         },
@@ -843,15 +843,15 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "Slow_",
+          "name": "BaseMoveSpeedMod",
           "values": [
-            15.0,
-            20.0,
-            25.0,
-            30.0,
-            35.0,
-            40.0,
-            45.0
+            0.17000000178813934,
+            0.20000000298023224,
+            0.23000000417232513,
+            0.25999999046325684,
+            0.28999999165534973,
+            0.3199999928474426,
+            0.3499999940395355
           ],
           "~class": "SpellDataValue"
         },
@@ -871,13 +871,13 @@
         {
           "name": "MaxHealthDamageToNonHeroes",
           "values": [
-            45.0,
-            75.0,
-            105.0,
-            135.0,
-            165.0,
-            195.0,
-            225.0
+            50.0,
+            85.0,
+            120.0,
+            155.0,
+            190.0,
+            225.0,
+            260.0
           ],
           "~class": "SpellDataValue"
         }
@@ -940,8 +940,15 @@
                 },
                 {
                   "Style": 1,
+                  "nameOverride": "% Max Health",
+                  "type": "HealthDamagePercent",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
                   "nameOverride": "Slow",
-                  "type": "Slow_",
+                  "type": "BaseMoveSpeedMod",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -965,7 +972,7 @@
           "mLocKeys": {
             "keyName": "Hammer Shock",
             "keySummary": "Poppy swings her hammer, dealing damage and creating a zone that will slow enemies and explode after a delay.",
-            "keyTooltip": "Poppy smashes the ground, dealing <physicalDamage>@BaseDamage@</physicalDamage> plus <physicalDamage>@HealthDamagePercent@% max Health physical damage</physicalDamage> and making the ground unstable. <br><br>The unstable area <status>Slows</status> enemies by @Slow_@% and erupts after @DelayBetweenTwoHits@ second, dealing <physicalDamage>@BaseDamage@</physicalDamage> plus <physicalDamage>@HealthDamagePercent@% max Health physical damage</physicalDamage> again.",
+            "keyTooltip": "Poppy smashes the ground, dealing <physicalDamage>@BaseDamage@</physicalDamage> plus <physicalDamage>@HealthDamagePercent@% max Health physical damage</physicalDamage> and making the ground unstable. <br><br>The unstable area <status>Slows</status> enemies by @MoveSpeedMod@% and erupts after @DelayBetweenTwoHits@ second, dealing <physicalDamage>@BaseDamage@</physicalDamage> plus <physicalDamage>@HealthDamagePercent@% max Health physical damage</physicalDamage> again.",
             "keyTooltipExtendedBelowLine": "<rules>Percent Health damage deals a max of @MaxHealthDamageToNonHeroes@ damage to minions and jungle monsters per hit.</rules>"
           },
           "mObjectName": "PoppyQ",
@@ -973,102 +980,6 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 1.0,
-      "mEffectAmount": [
-        {
-          "value": [
-            30.0,
-            30.0,
-            55.0,
-            80.0,
-            105.0,
-            130.0,
-            130.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            15.0,
-            20.0,
-            25.0,
-            30.0,
-            35.0,
-            40.0,
-            45.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            9.0,
-            9.0,
-            9.0,
-            9.0,
-            9.0,
-            9.0,
-            9.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            50.0,
-            50.0,
-            80.0,
-            110.0,
-            140.0,
-            170.0,
-            170.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            100.0,
-            100.0,
-            100.0,
-            100.0,
-            100.0,
-            100.0,
-            100.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mIgnoreRangeCheck": true,
       "mImgIconName": [
         "ASSETS/Characters/Poppy/HUD/Icons2D/Poppy_Q.dds",
@@ -1077,6 +988,22 @@
       "mLineWidth": 100.0,
       "mMinimapIconDisplayFlag": 3,
       "mSpellCalculations": {
+        "MoveSpeedMod": {
+          "mDisplayAsPercent": true,
+          "mFormulaParts": [
+            {
+              "mDataValue": "BaseMoveSpeedMod",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.00007999999797903001,
+              "mStat": 12,
+              "mStatFormula": 2,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
         "baseDamage": {
           "mFormulaParts": [
             {
@@ -1084,7 +1011,7 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 1.0,
+              "mCoefficient": 0.75,
               "mStat": 2,
               "mStatFormula": 2,
               "~class": "StatByCoefficientCalculationPart"
@@ -2137,13 +2064,13 @@
         {
           "name": "PassiveResistPercent",
           "values": [
-            0.11999999731779099,
-            0.11999999731779099,
-            0.11999999731779099,
-            0.11999999731779099,
-            0.11999999731779099,
-            0.11999999731779099,
-            0.11999999731779099
+            0.1599999964237213,
+            0.1599999964237213,
+            0.1599999964237213,
+            0.1599999964237213,
+            0.1599999964237213,
+            0.1599999964237213,
+            0.1599999964237213
           ],
           "~class": "SpellDataValue"
         },
