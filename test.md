@@ -4,66 +4,117 @@
 
 ### Champions 
 
-**ADC Champs**
+**Bel'Veth**
+
+* HP Growth: 110 -> 105
+* R Bonus Total AS: 5/15/25% -> 6/13/20%
+* R Bonus Size: 5/15/25% -> 5/13/21%
+
+**Gwen**
+
+* P Healing: 50% damage -> 66% damage
+* P Healing Cap: 10-25 (+6.5% AP) -> 12-40 (+7% AP)
+
+**Kennen**
+
+* R Damage per Strike: 40/75/110 (+22.5% AP) -> 40/80/120 (+25% AP)
+  * Max Damage: 300/562.5/825 (+168.75% AP) -> 300/600/900 (187.5% AP)
+* R Bonus Resists: 20/40/60 -> 30/55/80
+
+**Sivir**
 
 * Base MR: 30 -> 33
 * MR Growth: 1.3 -> 1.1
 
-* ADC Champs include: Akshan, Aphelios, Ashe, Caitlyn, Ezreal, Graves, Jhin, Jinx, Kai'Sa, Kalista, Kindred, Kog'Maw, Lucian, Miss Fortune, Quinn, Samira, Senna, Smolder, Twitch, Varus, Vayne, Yunara, Zeri
+**Xayah**
 
-**Camille**
-
-* Base Mana: 339 -> 375
-* P Shielding Max Health Ratio: 20% -> 10/15/20/20% (Levels 1/7/13/19)
-* P Cooldown: 18/14/10/6 seconds (Levels 1/7/13/19) -> 14/11/8 seconds (Levels 1/7/13)
-* W Max Health Damage: 6/6.5/7/7.5/8% -> 7/7.5/8/8.5/9% 
-* W Cooldown: 15/14/13/12/11 seconds -> 12/11.5/11/10.5/10 seconds
-
-**Poppy**
-
-* Base AD: 60 -> 56
-* Base HP Regen: 1.6 Health per second -> 1.8 Health per second
-  * HP5: 8 -> 9
-* Base Mana: 280 -> 300
-* Mana Growth: 40 -> 45
-* Q AD Ratio: 100% bonus AD -> 75% bonus AD
-* Q Max Health Damage: 9% -> 7/7.5/8/8.5/9%
-  * Non-Champ Cap: 75/105/135/165/195 -> 85/120/155/190/225
-* Q Slow: 20/25/30/35/40% -> 20/23/26/29/32% (+0.008% per 100 bonus Health)
-* W Passive Bonus Resistances: 12% -> 16%
-
-**Tristana**
-
-* Base MR: 28 -> 31
+* Base MR: 30 -> 33
 * MR Growth: 1.3 -> 1.1
 
 ### Items
 
-**Berserker's Greaves**
+**Runaan's Hurricane**
 
-* Attack Speed: 25% -> 30%
+* Move Speed: 4% -> 5%
+* Bolt Damage: 55% AD -> 65% AD
 
-**Black Cleaver**
+**Sundered Sky**
 
-* Attack Damage: 40 -> 45
-* NEW: Ranged Champions get 50% effectiveness from Move Speed bonus
+* Heal AD ratio corrected to base AD.
+* Combine Cost: 500 Gold -> 900 Gold
+  * Total Cost: Unchanged from LIVE at 3100
 
-**Chainlaced Crushers**
+**Sunfire Aegis**
 
-* Magic Resist: 30 -> 25
+* Armor: 45 -> 50
 
-**Eclipse**
+## Arena
 
-* Proc Damage: 6/4% maximum Health (Melee/Ranged) -> 8/6.25% maximum Health
-* Shielding: 160/80 (+40/20% bonus AD) (Melee/Ranged) -> 150/75 (+40/20% bonus AD)
+### Champions
 
-**Gunmetal Greaves**
+**Aurelion Sol**
 
-* Attack Speed: 40% -> 45%
+* Q Max Health Damage per Stack reverted to 0.031% per Stack
+* E Cooldown reverted to 12 seconds.
 
-**Spellslinger's Shoes**
+**Bel'Veth**
 
-* Flat Magic Pen: 18 -> 20
+* P AS per Stack Levels 6-10: 0.1% -> 0.08%
+* P AS per Stack Levels 11+: 0.15% -> 0.10%
+  * Level 18 AS per Stack: 2% -> 1.5%
+* R Bonus Health reverted to 100/250/400
+
+**Gnar**
+
+* E Max Health Damage: 6% maximum Health -> 8% maximum Health
+* E Attack Speed: 40/45/50/55/60% -> 50/55/60/65/70%
+* W Max Health Base Damage: 6/8/10/12/14% -> 10/12/14/16/18%
+* R Cooldown: 90/60/30 seconds -> 70/50/30 seconds
+* Potential future changes to Mega Gnar bonus Health and Rage cooldown.
+
+**Heimerdinger**
+
+* Q Base Damage reverted to 7/11/15/19/23
+
+**LeBlanc**
+
+* P Cooldown: 10 seconds -> 5 seconds
+* Q Base Damage: 85/110/135/160/185 -> 105/130/155/180/205
+* Q Cooldown Refund on Kill: 60% -> 100%
+* E Cooldown: 14/13.25/12.5/11.75/11 seconds -> 12/11.25/10.5/9.75/9 seconds
+
+**Mordekaiser**
+
+* R Stat Steal reverted to 10%
+
+**Ornn**
+
+* W Cooldown: 10 seconds -> 10.5/10/9.5/9/8.5 seconds
+
+**Poppy**
+
+* Q Max Health Damage reverted to 7/7.5/8/8.5/9%
+* W Bonus Resists reverted to 16%
+* W Cooldown reverted to 20/18/16/14/12 seconds
+
+**Rek'Sai**
+
+* P Fury Consumption Healing: 9-20% maximum Health -> 10-45% maximum Health
+* BurQ Prey Seeker Cooldown: 10 seconds -> 7.5 seconds
+* Burrowed Bonus Move Speed: 5/10/15/20/25 -> 10/20/30/40/50
+* BurE Tunnel Cooldown: 18/17/16/15/14 seconds -> 9/8/7/6/5 seconds
+* BurE Tunnel Reuse Cooldown: 6/5/4/3/2 seconds -> 4/3/2/1/0 seconds
+
+**Samira**
+
+* R Damage per Bullet reverted to 20/40/60/80/100
+
+**Shaco**
+
+* Q AD Ratio: 60% bonus AD -> 85% bonus AD
+* E AD Ratio: 80% bonus AD -> 100% bonus AD
+
+### Items
 
 **Sterak's Gage**
 
@@ -71,81 +122,9 @@
 
 **Sundered Sky**
 
-* HP: 400 -> 450
-* Healing: 100/50% base AD (Melee/Ranged) + 6% missing Health -> 90% bonus AD + 4% missing Health
-  * Note: Bonus AD may be a mistake, variable name is called `HealBaseADRatio`
-* No longer builds out of Ruby Crystal
-  * Total Cost: 3100 Gold -> 2700 Gold
+* HP: 350 -> 400
+* Heal AD ratio corrected to base AD.
 
-**Sunfire Aegis**
+**Void Immolation**
 
-* Armor: 50 -> 45
-* Damage HP Ratio: 1% bonus Health -> 1.5% bonus Health
-* Minion Damage: 160% -> 150%
-* Monster Damage: 200% -> 180%
-* Combine Cost: 600 Gold -> 700 Gold
-  * Total Cost 2700 Gold -> 2800 Gold
-
-**Tiamat**
-
-* Attack Damage: 20 -> 25
-
-### Runes
-
-**Fleet Footwork**
-
-* Base Healing: 10-130 -> 15-160
-
-**Hail of Blades**
-
-* Damage: 4-20 (+8% bonus AD) (+6% AP) -> 2-20 (+12% bonus AD) (+10% AP)
-* Melee Attack Speed: 120% -> 90%
-
-### System
-
-**Support Quest**
-
-* Gold On Champion/Tower Damage 22/24 (20/22 Ranged) -> 18/21
-* Gold On Minion Execute: 15/20 -> 18/21
-
-## ARAM: Mayhem
-
-### Augments
-
-**From Downtown**
-
-* Size of meteors adjusted for new `Snipe` distance
-
-**Infernal Conduit**
-
-* Burn Base Damge: 1.2-12 damage per second -> 2-20 damage per second
-
-## Arena
-
-### Augments
-
-**Nesting Doll**
-
-* Revive Time: 2/3/3 Seconds -> 3 seconds
-
-**Now You See Me**
-
-* Max Level Bonus: Increased Portal Count -> Spawn a Clone at your previous location, lasting 4 seconds.
-  * Portal Count seems to be added to regular rank up info but augment description makes no mention of it.
-* Bonus MS: 50/75% -> 75%
-
-## League Classic
-
-### Champions
-
-**Ashe**
-
-* Base AD: 49 -> 49.15
-* AD Growth: 3 -> 2.85
-
-**Olaf**
-
-* Q Minimum Cast Range: 400 units -> 250 units
-* W Cooldown: 16 seconds -> 12 seconds
-* E no longer scales with bonus AD
-* R no longer grants Lethality
+* Immolate Health Ratio: 7% max Health -> 10% max Health
