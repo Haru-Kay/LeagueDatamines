@@ -534,72 +534,6 @@
       "mImgIconName": [
         "ASSETS/UX/Jade/S3Icons/SameSized/MissFortune_Strut.dds"
       ],
-      "mSpellCalculations": {
-        "MinionDamage": {
-          "mModifiedGameCalculation": "TotalDamage",
-          "mMultiplier": {
-            "mNumber": 0.5,
-            "~class": "NumberCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
-        "TotalDamage": {
-          "mFormulaParts": [
-            {
-              "mStat": 2,
-              "mSubpart": {
-                "mBreakpoints": [
-                  {
-                    "mAdditionalBonusAtThisLevel": 0.10000000149011612,
-                    "mLevel": 4,
-                    "~class": "Breakpoint"
-                  },
-                  {
-                    "mAdditionalBonusAtThisLevel": 0.10000000149011612,
-                    "mLevel": 7,
-                    "~class": "Breakpoint"
-                  },
-                  {
-                    "mAdditionalBonusAtThisLevel": 0.10000000149011612,
-                    "mLevel": 9,
-                    "~class": "Breakpoint"
-                  },
-                  {
-                    "mAdditionalBonusAtThisLevel": 0.10000000149011612,
-                    "mLevel": 11,
-                    "~class": "Breakpoint"
-                  },
-                  {
-                    "mAdditionalBonusAtThisLevel": 0.10000000149011612,
-                    "mLevel": 13,
-                    "~class": "Breakpoint"
-                  },
-                  {
-                    "mAdditionalBonusAtThisLevel": 0.10000000149011612,
-                    "mLevel": 20,
-                    "~class": "Breakpoint"
-                  },
-                  {
-                    "mAdditionalBonusAtThisLevel": 0.10000000149011612,
-                    "mLevel": 25,
-                    "~class": "Breakpoint"
-                  },
-                  {
-                    "mAdditionalBonusAtThisLevel": 0.10000000149011612,
-                    "mLevel": 30,
-                    "~class": "Breakpoint"
-                  }
-                ],
-                "mLevel1Value": 0.5,
-                "~class": "ByCharLevelBreakpointsCalculationPart"
-              },
-              "~class": "StatBySubPartCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 6,
-          "~class": "GameCalculation"
-        }
-      },
       "mSpellTags": [
         "Trait_NonPrimaryAttack"
       ],
@@ -1275,19 +1209,6 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "BaseCritDamageMultiplier",
-          "values": [
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "name": "BaseChannelDuration",
           "values": [
             3.0,
@@ -1303,26 +1224,13 @@
         {
           "name": "tADRatio",
           "values": [
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "BonusCritDamageScalar",
-          "values": [
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645
           ],
           "~class": "SpellDataValue"
         },
@@ -1461,47 +1369,6 @@
       "mLineWidth": 100.0,
       "mMissileEffectKey": "Jade_MissFortune_R_mis",
       "mSpellCalculations": {
-        "CritMultiplier": {
-          "mFormulaParts": [
-            {
-              "mDataValue": "BaseCritDamageMultiplier",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mPart1": {
-                "mDataValue": "BonusCritDamageScalar",
-                "~class": "NamedDataValueCalculationPart"
-              },
-              "mPart2": {
-                "mCoefficient": 1.0,
-                "mStat": 9,
-                "mStatFormula": 2,
-                "~class": "StatByCoefficientCalculationPart"
-              },
-              "~class": "ProductOfSubPartsCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 6,
-          "~class": "GameCalculation"
-        },
-        "PhysicalCritPerWave": {
-          "mModifiedGameCalculation": "CritMultiplier",
-          "mMultiplier": {
-            "mSubparts": [
-              {
-                "mDataValue": "tADRatio",
-                "mStat": 2,
-                "~class": "StatByNamedDataValueCalculationPart"
-              },
-              {
-                "mDataValue": "APRatio",
-                "~class": "StatByNamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "SumOfSubPartsCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
         "PhysicalDamagePerWave": {
           "mFormulaParts": [
             {
@@ -1519,7 +1386,6 @@
               "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
-          "mSimpleTooltipCalculationDisplay": 6,
           "~class": "GameCalculation"
         },
         "TotalChannelDuration": {
@@ -1539,49 +1405,6 @@
             "~class": "NumberCalculationPart"
           },
           "tooltipOnly": true,
-          "~class": "GameCalculationModified"
-        },
-        "TotalPhysicalCritDamage": {
-          "mModifiedGameCalculation": "TotalWaves",
-          "mMultiplier": {
-            "mPart1": {
-              "mSubparts": [
-                {
-                  "mDataValue": "tADRatio",
-                  "mStat": 2,
-                  "~class": "StatByNamedDataValueCalculationPart"
-                },
-                {
-                  "mDataValue": "APRatio",
-                  "~class": "StatByNamedDataValueCalculationPart"
-                }
-              ],
-              "~class": "SumOfSubPartsCalculationPart"
-            },
-            "mPart2": {
-              "mSubparts": [
-                {
-                  "mDataValue": "BaseCritDamageMultiplier",
-                  "~class": "NamedDataValueCalculationPart"
-                },
-                {
-                  "mPart1": {
-                    "mDataValue": "BonusCritDamageScalar",
-                    "~class": "NamedDataValueCalculationPart"
-                  },
-                  "mPart2": {
-                    "mCoefficient": 1.0,
-                    "mStat": 9,
-                    "mStatFormula": 2,
-                    "~class": "StatByCoefficientCalculationPart"
-                  },
-                  "~class": "ProductOfSubPartsCalculationPart"
-                }
-              ],
-              "~class": "SumOfSubPartsCalculationPart"
-            },
-            "~class": "ProductOfSubPartsCalculationPart"
-          },
           "~class": "GameCalculationModified"
         },
         "TotalPhysicalDamage": {
@@ -1777,13 +1600,13 @@
       "0xf26881a0": 0.0,
       "Cooldown": {
         "values": [
-          9.0,
+          10.0,
           9.0,
           8.0,
           7.0,
           6.0,
           5.0,
-          5.0
+          4.0
         ],
         "~class": "SpellAttributeModifiable"
       },
@@ -1854,26 +1677,6 @@
           "~class": "SpellDataValue"
         }
       ],
-      "DataValuesModeOverride": {
-        "cherry": {
-          "SpellDataValues": [
-            {
-              "name": "APRatio",
-              "values": [
-                0.550000011920929,
-                0.550000011920929,
-                0.550000011920929,
-                0.550000011920929,
-                0.550000011920929,
-                0.550000011920929,
-                0.550000011920929
-              ],
-              "~class": "SpellDataValue"
-            }
-          ],
-          "~class": "SpellDataValueVector"
-        }
-      },
       "SpellEventToAudioEventSuffix": {
         "12": "Play_sfx_MissFortune_MissFortuneRicochetShot_OnCast",
         "13": "Play_sfx_MissFortune_MissFortuneRicochetShot_OnHit",
@@ -1981,94 +1784,6 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.3499999940395355,
-      "mCoefficient2": 1.0,
-      "mEffectAmount": [
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.0,
-            20.0,
-            45.0,
-            70.0,
-            95.0,
-            120.0,
-            120.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            20.0,
-            20.0,
-            20.0,
-            20.0,
-            20.0,
-            20.0,
-            20.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            20.0,
-            20.0,
-            20.0,
-            20.0,
-            20.0,
-            20.0,
-            20.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            45.0,
-            45.0,
-            45.0,
-            45.0,
-            45.0,
-            45.0,
-            45.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         0,
         0,
@@ -2520,93 +2235,15 @@
       },
       "DataValues": [
         {
-          "name": "PassiveBaseMS",
-          "values": [
-            25.0,
-            30.0,
-            35.0,
-            40.0,
-            45.0,
-            50.0,
-            55.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "PassiveMaxMS",
-          "values": [
-            50.0,
-            60.0,
-            70.0,
-            80.0,
-            90.0,
-            100.0,
-            110.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "LoveTapBaseRefund",
-          "values": [
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "ActiveAS",
-          "values": [
-            0.25,
-            0.4000000059604645,
-            0.550000011920929,
-            0.699999988079071,
-            0.8500000238418579,
-            1.0,
-            1.149999976158142
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "name": "ActiveDuration",
           "values": [
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "PassiveBaseMSOOC",
-          "values": [
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "PassiveMaxMSExtraOOC",
-          "values": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0
           ],
           "~class": "SpellDataValue"
         },
@@ -2626,13 +2263,13 @@
         {
           "name": "DamageOnHItPerStack",
           "values": [
-            2.0,
             4.0,
             6.0,
             8.0,
             10.0,
             12.0,
-            14.0
+            14.0,
+            16.0
           ],
           "~class": "SpellDataValue"
         },
@@ -2650,41 +2287,15 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "MaximumDamageOnHItPerStack",
-          "values": [
-            10.0,
-            20.0,
-            30.0,
-            40.0,
-            50.0,
-            60.0,
-            70.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "MaximumDamageOnHitPerStackAPRatio",
-          "values": [
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "name": "MaxStacks",
           "values": [
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
           ],
           "~class": "SpellDataValue"
         },
@@ -2766,8 +2377,9 @@
                   "~class": "TooltipInstanceListElement"
                 },
                 {
+                  "multiplier": 4.0,
                   "nameOverride": "Maximum Bonus Damage",
-                  "type": "MaximumDamageOnHItPerStack",
+                  "type": "DamageOnHItPerStack",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -2828,17 +2440,12 @@
           "~class": "GameCalculation"
         },
         "0x9926de8a": {
-          "mFormulaParts": [
-            {
-              "mDataValue": "MaximumDamageOnHItPerStack",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mDataValue": "MaximumDamageOnHitPerStackAPRatio",
-              "~class": "StatByNamedDataValueCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
+          "mModifiedGameCalculation": "TotalDamageOnHIt",
+          "mMultiplier": {
+            "mDataValue": "maxStacks",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "~class": "GameCalculationModified"
         }
       },
       "mTargetingTypeData": {

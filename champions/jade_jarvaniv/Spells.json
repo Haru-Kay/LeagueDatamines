@@ -1095,11 +1095,11 @@
         "0xa3e0478": 55.0,
         "values": [
           55.0,
-          55.0,
-          55.0,
-          55.0,
-          55.0,
-          55.0
+          60.0,
+          65.0,
+          70.0,
+          75.0,
+          80.0
         ],
         "~class": "ResourceCostModifiable"
       },
@@ -1132,54 +1132,15 @@
       },
       "DataValues": [
         {
-          "name": "EDashSpeed",
+          "name": "BaseDamage",
           "values": [
-            1400.0,
-            1400.0,
-            1400.0,
-            1400.0,
-            1400.0,
-            1400.0,
-            1400.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "EBehindJarvanCheck",
-          "values": [
-            400.0,
-            400.0,
-            400.0,
-            400.0,
-            400.0,
-            400.0,
-            400.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "EKnockUpAoE",
-          "values": [
-            0.0,
-            180.0,
-            180.0,
-            180.0,
-            180.0,
-            180.0,
-            180.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "PermanentAttackSpeed",
-          "values": [
-            0.17499999701976776,
-            0.20000000298023224,
-            0.22499999403953552,
-            0.25,
-            0.2750000059604645,
-            0.30000001192092896,
-            0.32499998807907104
+            15.0,
+            60.0,
+            105.0,
+            150.0,
+            195.0,
+            240.0,
+            285.0
           ],
           "~class": "SpellDataValue"
         },
@@ -1221,41 +1182,8 @@
             25.0
           ],
           "~class": "SpellDataValue"
-        },
-        {
-          "name": "BaseDamage",
-          "values": [
-            15.0,
-            60.0,
-            105.0,
-            150.0,
-            195.0,
-            240.0,
-            285.0
-          ],
-          "~class": "SpellDataValue"
         }
       ],
-      "DataValuesModeOverride": {
-        "cherry": {
-          "SpellDataValues": [
-            {
-              "name": "APRatio",
-              "values": [
-                1.0,
-                1.0,
-                1.0,
-                1.0,
-                1.0,
-                1.0,
-                1.0
-              ],
-              "~class": "SpellDataValue"
-            }
-          ],
-          "~class": "SpellDataValueVector"
-        }
-      },
       "SpellEventToAudioEventSuffix": {
         "12": "Play_sfx_JarvanIV_JarvanIVDemacianStandard_OnCast"
       },
@@ -1346,22 +1274,18 @@
                 {
                   "Style": 1,
                   "multiplier": 100.0,
-                  "nameOverride": "Passive Attack Speed",
+                  "nameOverride": "Attack Speed",
                   "type": "PassiveAttackSpeed",
                   "typeIndex": 3,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
-                  "Style": 1,
-                  "multiplier": 100.0,
-                  "nameOverride": "Active Attack Speed",
-                  "type": "PassiveAttackSpeed",
-                  "typeIndex": 3,
-                  "~class": "TooltipInstanceListElement"
-                },
-                {
-                  "nameOverride": "Passive Armor",
+                  "nameOverride": "Armor",
                   "type": "PassiveArmor",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -1379,42 +1303,14 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.800000011920929,
       "mEffectAmount": [
         {
-          "value": [
-            7.0,
-            10.0,
-            13.0,
-            16.0,
-            19.0,
-            22.0,
-            25.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            80.0,
-            60.0,
-            105.0,
-            150.0,
-            195.0,
-            240.0,
-            280.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            0.17499999701976776,
-            0.20000000298023224,
-            0.22499999403953552,
-            0.25,
-            0.2750000059604645,
-            0.30000001192092896,
-            0.32499998807907104
-          ],
           "~class": "SpellEffectAmount"
         },
         {
@@ -1591,26 +1487,6 @@
           "~class": "SpellDataValue"
         }
       ],
-      "DataValuesModeOverride": {
-        "SWIFTPLAY": {
-          "SpellDataValues": [
-            {
-              "name": "BaseDamage",
-              "values": [
-                30.0,
-                70.0,
-                110.0,
-                150.0,
-                190.0,
-                230.0,
-                270.0
-              ],
-              "~class": "SpellDataValue"
-            }
-          ],
-          "~class": "SpellDataValueVector"
-        }
-      },
       "SpellEventToAudioEventSuffix": {
         "12": "Play_sfx_JarvanIV_JarvanIVDragonStrike_OnCast"
       },
@@ -1692,7 +1568,7 @@
                 {
                   "Style": 1,
                   "nameOverride": "Armor Reduction",
-                  "type": "Effect%dAmount",
+                  "type": "ArmorShredPercent",
                   "typeIndex": 2,
                   "~class": "TooltipInstanceListElement"
                 },
@@ -1719,66 +1595,6 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 1.4500000476837158,
-      "mEffectAmount": [
-        {
-          "value": [
-            70.0,
-            80.0,
-            120.0,
-            160.0,
-            200.0,
-            240.0,
-            250.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            6.0,
-            10.0,
-            14.0,
-            18.0,
-            22.0,
-            26.0,
-            30.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         0,
         2,
@@ -1926,13 +1742,13 @@
         {
           "name": "ShieldBonus",
           "values": [
-            10.0,
+            15.0,
             20.0,
+            25.0,
             30.0,
+            35.0,
             40.0,
-            50.0,
-            60.0,
-            70.0
+            45.0
           ],
           "~class": "SpellDataValue"
         },
@@ -2054,93 +1870,6 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.800000011920929,
-      "mEffectAmount": [
-        {
-          "value": [
-            60.0,
-            60.0,
-            80.0,
-            100.0,
-            120.0,
-            140.0,
-            160.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            10.0,
-            15.0,
-            20.0,
-            25.0,
-            30.0,
-            35.0,
-            40.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.0,
-            10.0,
-            20.0,
-            30.0,
-            40.0,
-            50.0,
-            60.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.013000000268220901,
-            0.013000000268220901,
-            0.013000000268220901,
-            0.013000000268220901,
-            0.013000000268220901,
-            0.013000000268220901,
-            0.013000000268220901
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         0,
         0,
@@ -2162,33 +1891,6 @@
       "mImgIconName": [
         "ASSETS/UX/Jade/S3Icons/SameSized/JarvanIV_GoldenAegis.dds"
       ],
-      "mSpellCalculations": {
-        "BaseShield": {
-          "mFormulaParts": [
-            {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
-            },
-            {
-              "mCoefficient": 0.699999988079071,
-              "mStat": 2,
-              "mStatFormula": 2,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "BonusShield": {
-          "mFormulaParts": [
-            {
-              "mCoefficient": 0.013000000268220901,
-              "mStat": 12,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        }
-      },
       "mSpellRevealsChampion": false,
       "mTargetingTypeData": {
         "~class": "SelfAoe"

@@ -1627,13 +1627,14 @@
     "mSpell": {
       "0x11704a2b": 0.25,
       "0x210f9ec0": {
+        "0xa3e0478": 200.0,
         "values": [
-          100.0,
-          150.0,
           200.0,
-          0.0,
-          0.0,
-          0.0
+          275.0,
+          350.0,
+          425.0,
+          500.0,
+          575.0
         ],
         "~class": "ResourceCostModifiable"
       },
@@ -1652,14 +1653,15 @@
       },
       "0xf26881a0": 1.0,
       "Cooldown": {
+        "0xa3e0478": 165.0,
         "values": [
-          150.0,
+          165.0,
           150.0,
           135.0,
           120.0,
-          100.0,
-          100.0,
-          100.0
+          105.0,
+          90.0,
+          75.0
         ],
         "~class": "SpellAttributeModifiable"
       },
@@ -1674,6 +1676,19 @@
             190.0,
             230.0,
             270.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatioPerSecond",
+          "values": [
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355
           ],
           "~class": "SpellDataValue"
         }
@@ -1755,129 +1770,20 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.5,
-      "mCoefficient2": 1.5,
-      "mEffectAmount": [
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.0,
-            300.0,
-            450.0,
-            600.0,
-            0.0,
-            0.0,
-            0.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.0,
-            3.0,
-            3.0,
-            3.0,
-            0.0,
-            0.0,
-            0.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            700.0,
-            700.0,
-            700.0,
-            700.0,
-            700.0,
-            700.0,
-            700.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            875.0,
-            875.0,
-            875.0,
-            875.0,
-            875.0,
-            875.0,
-            875.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            875.0,
-            875.0,
-            875.0,
-            875.0,
-            875.0,
-            875.0,
-            875.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            1200.0,
-            1200.0,
-            1200.0,
-            1200.0,
-            1200.0,
-            1200.0,
-            1200.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mImgIconName": [
         "ASSETS/UX/Jade/S3Icons/SameSized/Janna_ReapTheWhirlwind.dds"
       ],
       "mSpellCalculations": {
         "HealPerSecond": {
-          "mExpandedTooltipCalculationDisplay": 6,
+          "mExpandedTooltipCalculationDisplay": 7,
           "mFormulaParts": [
             {
               "mDataValue": "HealBasePerSecond",
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mSubpart": {
-                "mNumber": 0.3499999940395355,
-                "~class": "NumberCalculationPart"
-              },
-              "~class": "StatBySubPartCalculationPart"
+              "mDataValue": "APRatioPerSecond",
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"

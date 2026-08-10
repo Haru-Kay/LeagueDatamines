@@ -1790,45 +1790,6 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "TTDamage",
-          "values": [
-            270.0,
-            480.0,
-            690.0,
-            900.0,
-            1110.0,
-            1320.0,
-            1530.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "TTAPRatio",
-          "values": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "TTADRatio",
-          "values": [
-            4.5,
-            4.5,
-            4.5,
-            4.5,
-            4.5,
-            4.5,
-            4.5
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "name": "GrievousWoundsDuration",
           "values": [
             3.0,
@@ -1864,6 +1825,19 @@
             2.5,
             2.5,
             2.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaximumHits",
+          "values": [
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1941,8 +1915,9 @@
             "LevelUp": {
               "Elements": [
                 {
+                  "multiplier": 10.0,
                   "nameOverride": "Damage",
-                  "type": "TTDamage",
+                  "type": "DamageInstance",
                   "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
                 },
@@ -1997,25 +1972,13 @@
       },
       "mSpellCalculations": {
         "0x3dd8ef4a": {
-          "mFormulaParts": [
-            {
-              "mDataValue": "TTDamage",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mDataValue": "TTADRatio",
-              "mStat": 2,
-              "mStatFormula": 2,
-              "~class": "StatByNamedDataValueCalculationPart"
-            },
-            {
-              "mDataValue": "TTAPRatio",
-              "mStatFormula": 2,
-              "~class": "StatByNamedDataValueCalculationPart"
-            }
-          ],
+          "mModifiedGameCalculation": "DamageCalc",
+          "mMultiplier": {
+            "mDataValue": "MaximumHits",
+            "~class": "NamedDataValueCalculationPart"
+          },
           "tooltipOnly": true,
-          "~class": "GameCalculation"
+          "~class": "GameCalculationModified"
         },
         "DamageCalc": {
           "mFormulaParts": [

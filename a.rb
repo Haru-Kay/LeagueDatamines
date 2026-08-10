@@ -94,20 +94,43 @@ File.open("lang/stringtable.json", 'rb') { |f|
     $lang = JSON.parse(f.read())
     $lang.each { |k, v|
         pool.post {
-            text = v
-            while text[/@(.*?)@/]
-                var = $~[1].gsub(" ", "_")
-                var = var.split("*")[0] if var.include?("*")
-                if !$manualHash.value?(var)
-                    $manualHash.store(fnv(var.downcase), var)
+            begin
+                text = v
+                while text[/@(.*?)@/]
+                    matchData = $~.dup
+                    var = matchData[1]
+                    if !var.include?(" ")
+                        var = var.split("*")[0] if var.include?("*")
+                    
+                        if !$manualHash.value?(var)
+                            h = fnv(var.downcase)
+                            $manualHash.store(h, var) unless $manualHash.key?(h)
+                        end
+                    end
+                    text = matchData.post_match
                 end
-                text = $~.post_match
+            rescue
+                e = $!
+                btrace = ""
+                if e.backtrace
+                    maxlength = true ? 25 : 10
+                    e.backtrace[0, maxlength].each { |i| btrace += "#{i}\n" }
+                end
+                puts e.message
+                puts btrace
+                puts k.inspect
+                puts text.inspect
+                puts matchData.inspect
+                exit
             end
         }
     }
 }
 
+pool.shutdown
+puts "Waiting for pool..."
+pool.wait_for_termination
 
 File.open("lang/manualhash.txt", 'wb') { |f| 
-    $manualHash.each { |k, v| f.write(k + " " + v + "\n") }
+    $manualHash.sort_by { |k, v| v }.to_h.each { |k, v| f.write(k + " " + v + "\n") }
 }
