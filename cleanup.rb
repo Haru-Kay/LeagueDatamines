@@ -30,7 +30,7 @@ $manualHash.merge!({
     "3ed971bd" => "LinkedQuest",
     "e93de85a" => "LinkedQuestData",
     "b35aa769" => "BaseValue", 
-    "1262a25" => "MRPerLevel", 
+    "1262a25" => "mrPerLevel", 
     "18956a21" => "armorPerLevel",
     "4af40dc3" => "baseDamage",
     "4d37af28" => "hpPerLevel",
