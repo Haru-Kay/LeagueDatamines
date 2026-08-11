@@ -240,6 +240,24 @@ $manualHash.merge!({
     "515f1819" => "Augment_PoroCharge_FedPorosCount_QuestCompleted",
     "866a6106" => "Augment_ARAM_EndlessHunt_Count",
     "e152c035" => "Calc_Ult_Damage_Amp",
+    "af6ecc4c" => "ArenaTeamSize",
+    "4120d321" => "Electrocute_Damage",
+    "a4e17dad" => "TotalShieldInternal",
+    "7c50d74e" => "TrueDamageCalculationInternal",
+    "b22609db" => "NamedDataValueByCharLevelCalculationPart",
+    "91d404a5" => "baseDamage",
+    "b2cd0eb0" => "bonusPerLevel",
+    "85d7d7f0" => "TicksBeforeDeathOver4",
+    "ac16d3ed" => "ShieldCapCalc",
+    "3ea68b4" => "BigOneDamage",
+    "cd5eb5cd" => "ModifiedHPCalc",
+    "d404872c" => "DelayedHitDamage",
+    "7e05f704" => "LevelableAugmentCounter",
+    "d52ab278" => "HealthRestoredAmount",
+    "e0c8aaa6" => "HealthSacrificedCounter",
+    "f8185082" => "RedShardCounter",
+    "bd1c8a39" => "BlueShardCounter",
+    "c8b89cf7" => "GreenShardCounter"
 })
 
 def xxh3(s)
