@@ -105,11 +105,15 @@ $manualHash.merge!({
     "c8b89cf7" => "GreenShardCounter",
     "6e93dac5" => "AugmentGroupEntry",
     "fead7e9b" => "AugmentGroups",
+    "f9e46502" => "ChampionAugmentList",
+    "248cf7db" => "AugmentList",
+    "3572d78a" => "WeightedAugmentList",
+    "f1500c60" => "CharacterWeightedAugmentList",
+    "c940fe53" => "AugmentGroup",
     "6ab26981" => "EmptyAugmentPool1",
     "4974e2dd" => "EmptyAugmentPool2",
     "b890af78" => "EmptyAugmentPool3",
     "e2e949d1" => "JadeAugments",
-    "78adf47d" => "AugmentGroups/JadeAugments",
     "4ec15a0a" => "LinkedAugmentGroups",
     "eb2338a" => "REMOVED_AUGMENT",
 
@@ -159,7 +163,248 @@ $manualHash.merge!({
     "9579774e" => "ItemAugments",
     "a26bf746" => "AbilityAugmentsGeneric",
     "b5056d3d" => "ADCAugments2",
-    "ba0256ad" => "TankAugments"
+    "ba0256ad" => "TankAugments",
+
+    "14409aa2" => "AugmentGroups/MR",
+    "15409c35" => "AugmentGroups/MS",
+    "16fd2e88" => "AugmentGroups/Armor",
+    "191d0093" => "AugmentGroups/GoldGrantingAugments",
+    "1a253eaf" => "AugmentGroups/AutocastAugments",
+    "223fc38" => "AugmentGroups/AH",
+    "233e5daf" => "AugmentGroups/AutocastAugmentsARAM",
+    "25f2135b" => "AugmentGroups/ArmorPen",
+    "2a69fbdc" => "AugmentGroups/Omnivamp",
+    "31169cbb" => "AugmentGroups/SupportAutocastAugments",
+    "3c1d0047" => "AugmentGroups/SizeModifiers",
+    "3e3439f6" => "AugmentGroups/OnHitAugments",
+    "3ec90ced" => "AugmentGroups/EmptyAugmentPool1",
+    "40cddb7a" => "AugmentGroups/GeneralAugments",
+    "4324795d" => "AugmentGroups/CritChance",
+    "4a6ad9db" => "AugmentGroups/GrantsCCAugments",
+    "5287e1f" => "AugmentGroups/CCAugmentGroup2",
+    "55cc5e63" => "AugmentGroups/MagicPen",
+    "5637e17b" => "AugmentGroups/SupportAugmentsTank",
+    "587efdc6" => "AugmentGroups/AutocastAugmentsRange",
+    "58b41414" => "AugmentGroups/RequiresUltimateAugments",
+    "5c43f819" => "AugmentGroups/FighterAugments",
+    "646d34c6" => "AugmentGroups/ShieldAugmentsGeneral",
+    "6555437d" => "AugmentGroups/ScalarAugmentsAP",
+    "65f23f6a" => "AugmentGroups/ScalarAugmentsTank",
+    "6b8974b5" => "AugmentGroups/DashAugments",
+    "705406d3" => "AugmentGroups/SelfHealingAugments",
+    "71555661" => "AugmentGroups/SomeKindOfADAugments",
+    "73c4ca81" => "AugmentGroups/HSPower",
+    "73cbb964" => "AugmentGroups/Burn",
+    "752596bc" => "AugmentGroups/SupportAugmentsHealing",
+    "76b0ea66" => "AugmentGroups/mana",
+    "76b77039" => "AugmentGroups/EmptyAugmentPool2",
+    "76d4b52f" => "AugmentGroups/MovementAugmentsDefensive",
+    "78adf47d" => "AugmentGroups/JadeAugments",
+    "78e3793e" => "AugmentGroups/HealthGrantingAugments",
+    "841e719f" => "AugmentGroups/MageAugmentsAP",
+    "8ad08224" => "AugmentGroups/MageAugmentsGeneric",
+    "8d576bba" => "AugmentGroups/OnTakedownAugments",
+    "901e8483" => "AugmentGroups/MageAugmentsGeneric2",
+    "98205824" => "AugmentGroups/OnDeathAugments",
+    "a2408d0" => "AugmentGroups/AP",
+    "a2c9d49b" => "AugmentGroups/MageAugmentsGeneric3",
+    "a6f488c0" => "AugmentGroups/ADCAugments",
+    "aecc7573" => "AugmentGroups/MageAugmentsGeneric4",
+    "b040a516" => "AugmentGroups/FallbackGoldAugmentsMaybe",
+    "baf4a83c" => "AugmentGroups/HybridAugments",
+    "c2918c72" => "AugmentGroups/MovementAugments",
+    "c69f6f24" => "AugmentGroups/EmptyAugmentPool3",
+    "d240d89" => "AugmentGroups/AS",
+    "d2809836" => "AugmentGroups/LifeSteal",
+    "dabcc810" => "AugmentGroups/MageAugmentsGeneric5",
+    "df350452" => "AugmentGroups/FighterAugments2",
+    "e139ccde" => "AugmentGroups/MageAugmentsGeneric6",
+    "e4414998" => "AugmentGroups/AbilityAugmentsScripts",
+    "e5c7ec2a" => "AugmentGroups/StackingAugments",
+    "e67f4793" => "AugmentGroups/Health",
+    "e91cf039" => "AugmentGroups/HasteAugments",
+    "e9b8675d" => "AugmentGroups/Spellvamp",
+    "ec237687" => "AugmentGroups/SnowBall",
+    "f1838e7f" => "AugmentGroups/SupportAugmentsHealing2",
+    "f4f980ba" => "AugmentGroups/ItemAugments",
+    "f539ec5a" => "AugmentGroups/AbilityAugmentsGeneric",
+    "f6bc67f9" => "AugmentGroups/ADCAugments2",
+    "fdd60739" => "AugmentGroups/TankAugments",
+    "fe23f5ec" => "AugmentGroups/AD",
+
+    "20ae8504" => "ChampionAugmentList/Aatrox",
+    "a0beeca3" => "ChampionAugmentList/Ahri",
+    "78813b69" => "ChampionAugmentList/Akali",
+    "68266b2b" => "ChampionAugmentList/Akshan",
+    "5070c4b1" => "ChampionAugmentList/Alistar",
+    "ac4155a2" => "ChampionAugmentList/Amumu",
+    "8de543d9" => "ChampionAugmentList/Anivia",
+    "66a804c" => "ChampionAugmentList/Annie",
+    "9e181584" => "ChampionAugmentList/Aphelios",
+    "f9b264d0" => "ChampionAugmentList/Ashe",
+    "d035f954" => "ChampionAugmentList/AurelionSol",
+    "554a50db" => "ChampionAugmentList/Aurora",
+    "ea8b8fdf" => "ChampionAugmentList/Azir",
+    "1dc61688" => "ChampionAugmentList/Bard",
+    "975964f7" => "ChampionAugmentList/Belveth",
+    "5f7c02bd" => "ChampionAugmentList/Blitzcrank",
+    "38e98754" => "ChampionAugmentList/Brand",
+    "1205206c" => "ChampionAugmentList/Braum",
+    "981bf3cd" => "ChampionAugmentList/Briar",
+    "723a8629" => "ChampionAugmentList/Caitlyn",
+    "a95d5714" => "ChampionAugmentList/Camille",
+    "2c8ac614" => "ChampionAugmentList/Cassiopeia",
+    "104eee71" => "ChampionAugmentList/Chogath",
+    "a1348321" => "ChampionAugmentList/Corki",
+    "931ccaf5" => "ChampionAugmentList/Darius",
+    "19a82616" => "ChampionAugmentList/Diana",
+    "a58cbb86" => "ChampionAugmentList/DrMundo",
+    "dce1438d" => "ChampionAugmentList/Draven",
+    "3ce682dd" => "ChampionAugmentList/Ekko",
+    "44069e01" => "ChampionAugmentList/Elise",
+    "cc17bd70" => "ChampionAugmentList/Evelynn",
+    "711645f4" => "ChampionAugmentList/Ezreal",
+    "66e71384" => "ChampionAugmentList/FiddleSticks",
+    "636c09aa" => "ChampionAugmentList/Fiora",
+    "f85f2306" => "ChampionAugmentList/Fizz",
+    "cebf1ea5" => "ChampionAugmentList/Galio",
+    "1d802754" => "ChampionAugmentList/Gangplank",
+    "2d66b4f0" => "ChampionAugmentList/Garen",
+    "bd782c5" => "ChampionAugmentList/Gnar",
+    "ea42bc5e" => "ChampionAugmentList/Gragas",
+    "794d62c9" => "ChampionAugmentList/Graves",
+    "238ccd56" => "ChampionAugmentList/Gwen",
+    "151c0be4" => "ChampionAugmentList/Hecarim",
+    "bcff8472" => "ChampionAugmentList/Heimerdinger",
+    "e5a8f04" => "ChampionAugmentList/Hwei",
+    "dab2b15d" => "ChampionAugmentList/Illaoi",
+    "dab5d6e7" => "ChampionAugmentList/Irelia",
+    "88f6dea3" => "ChampionAugmentList/Ivern",
+    "9545de11" => "ChampionAugmentList/Janna",
+    "5319acfa" => "ChampionAugmentList/JarvanIV",
+    "f9008ba2" => "ChampionAugmentList/Jax",
+    "51406505" => "ChampionAugmentList/Jayce",
+    "cd63752a" => "ChampionAugmentList/Jhin",
+    "6b363070" => "ChampionAugmentList/Jinx",
+    "c70b006d" => "ChampionAugmentList/KSante",
+    "7ef947aa" => "ChampionAugmentList/Kaisa",
+    "75147f96" => "ChampionAugmentList/Kalista",
+    "315cdb99" => "ChampionAugmentList/Karma",
+    "1015a207" => "ChampionAugmentList/Karthus",
+    "f2493263" => "ChampionAugmentList/Kassadin",
+    "b79f7104" => "ChampionAugmentList/Katarina",
+    "4b250571" => "ChampionAugmentList/Kayle",
+    "8b84be8" => "ChampionAugmentList/Kayn",
+    "8baa9e70" => "ChampionAugmentList/Kennen",
+    "12375efa" => "ChampionAugmentList/Khazix",
+    "646ed2c8" => "ChampionAugmentList/Kindred",
+    "d37f6c3d" => "ChampionAugmentList/Kled",
+    "46411205" => "ChampionAugmentList/KogMaw",
+    "20e7cd13" => "ChampionAugmentList/LeeSin",
+    "a7ec4f00" => "ChampionAugmentList/Leona",
+    "91309022" => "ChampionAugmentList/Lillia",
+    "9b178b9e" => "ChampionAugmentList/Lissandra",
+    "8e7a5abf" => "ChampionAugmentList/Lucian",
+    "5736d61b" => "ChampionAugmentList/Lulu",
+    "7a86e110" => "ChampionAugmentList/Lux",
+    "8b41c21d" => "ChampionAugmentList/Malphite",
+    "802be32d" => "ChampionAugmentList/Malzahar",
+    "1db7286d" => "ChampionAugmentList/Maokai",
+    "209db6a3" => "ChampionAugmentList/MasterYi",
+    "ee680ef7" => "ChampionAugmentList/Milio",
+    "35410c5c" => "ChampionAugmentList/MissFortune",
+    "7bb43265" => "ChampionAugmentList/MonkeyKing",
+    "b96d0ffb" => "ChampionAugmentList/Mordekaiser",
+    "ad8845b2" => "ChampionAugmentList/Morgana",
+    "2291d9" => "ChampionAugmentList/Naafiri",
+    "ede4c18c" => "ChampionAugmentList/Nami",
+    "a1cbdc93" => "ChampionAugmentList/Nasus",
+    "b92bd9fe" => "ChampionAugmentList/Nautilus",
+    "3dc0b59b" => "ChampionAugmentList/Neeko",
+    "567794b9" => "ChampionAugmentList/Nidalee",
+    "b85add13" => "ChampionAugmentList/Nilah",
+    "41a95b1" => "ChampionAugmentList/Nocturne",
+    "1d3914c7" => "ChampionAugmentList/Nunu",
+    "9605f9d7" => "ChampionAugmentList/Olaf",
+    "5f6cacf7" => "ChampionAugmentList/Orianna",
+    "345184e" => "ChampionAugmentList/Ornn",
+    "c897515c" => "ChampionAugmentList/Pantheon",
+    "fb857751" => "ChampionAugmentList/Poppy",
+    "e321a9dc" => "ChampionAugmentList/Pyke",
+    "7c0aa6ae" => "ChampionAugmentList/Qiyana",
+    "550c80ec" => "ChampionAugmentList/Quinn",
+    "ef472274" => "ChampionAugmentList/Rakan",
+    "8cc6add0" => "ChampionAugmentList/Rammus",
+    "c6da5606" => "ChampionAugmentList/RekSai",
+    "7cb4d392" => "ChampionAugmentList/Rell",
+    "79c43870" => "ChampionAugmentList/Renata",
+    "83a7b05d" => "ChampionAugmentList/Renekton",
+    "a1c5048e" => "ChampionAugmentList/Rengar",
+    "d0fd31fb" => "ChampionAugmentList/Riven",
+    "76940612" => "ChampionAugmentList/Rumble",
+    "6685788b" => "ChampionAugmentList/Ryze",
+    "26c7f240" => "ChampionAugmentList/Samira",
+    "775e00e0" => "ChampionAugmentList/Sejuani",
+    "3738d222" => "ChampionAugmentList/Senna",
+    "5cda50a0" => "ChampionAugmentList/Seraphine",
+    "a3e141df" => "ChampionAugmentList/Sett",
+    "370696a5" => "ChampionAugmentList/Shaco",
+    "e3975fcb" => "ChampionAugmentList/Shen",
+    "83996f47" => "ChampionAugmentList/Shyvana",
+    "18e9c029" => "ChampionAugmentList/Singed",
+    "4dc0df86" => "ChampionAugmentList/Sion",
+    "5f00128" => "ChampionAugmentList/Sivir",
+    "8838758f" => "ChampionAugmentList/Skarner",
+    "b66b566f" => "ChampionAugmentList/Smolder",
+    "dec04c78" => "ChampionAugmentList/Sona",
+    "f1eb4f64" => "ChampionAugmentList/Soraka",
+    "bdcdcb3" => "ChampionAugmentList/Swain",
+    "23469fd" => "ChampionAugmentList/Sylas",
+    "8c5d9a28" => "ChampionAugmentList/Syndra",
+    "9696de40" => "ChampionAugmentList/TahmKench",
+    "7336347" => "ChampionAugmentList/Taliyah",
+    "b8d9a3c9" => "ChampionAugmentList/Talon",
+    "5e0d989e" => "ChampionAugmentList/Taric",
+    "96dc647b" => "ChampionAugmentList/Teemo",
+    "c686f07d" => "ChampionAugmentList/Thresh",
+    "e8d0bc5b" => "ChampionAugmentList/Tristana",
+    "59c2cb95" => "ChampionAugmentList/Trundle",
+    "c1e8ea26" => "ChampionAugmentList/Tryndamere",
+    "e96cee55" => "ChampionAugmentList/TwistedFate",
+    "2a67adc0" => "ChampionAugmentList/Twitch",
+    "cae35ae9" => "ChampionAugmentList/Udyr",
+    "950dc35e" => "ChampionAugmentList/Urgot",
+    "7c776e2c" => "ChampionAugmentList/Varus",
+    "656e1bf0" => "ChampionAugmentList/Vayne",
+    "71ecd2b5" => "ChampionAugmentList/Veigar",
+    "d5058176" => "ChampionAugmentList/Velkoz",
+    "76f0a022" => "ChampionAugmentList/Vex",
+    "88f1f6a2" => "ChampionAugmentList/Vi",
+    "67e450cb" => "ChampionAugmentList/Viego",
+    "a9626c05" => "ChampionAugmentList/Vladimir",
+    "a627afbd" => "ChampionAugmentList/Volibear",
+    "bc413751" => "ChampionAugmentList/Warwick",
+    "1ec774e2" => "ChampionAugmentList/Xayah",
+    "12d15e95" => "ChampionAugmentList/Xerath",
+    "2a10d676" => "ChampionAugmentList/Yasuo",
+    "1a62dd16" => "ChampionAugmentList/Yone",
+    "59f23804" => "ChampionAugmentList/Yorick",
+    "db6e6cae" => "ChampionAugmentList/Yuumi",
+    "42351147" => "ChampionAugmentList/Zac",
+    "1f3dd48a" => "ChampionAugmentList/Zed",
+    "d6e1ff3" => "ChampionAugmentList/Zeri",
+    "9ae30bdd" => "ChampionAugmentList/Ziggs",
+    "1937a2a" => "ChampionAugmentList/Zilean",
+    "1c25caeb" => "ChampionAugmentList/Zoe",
+    "d1f7aa97" => "ChampionAugmentList/Zyra",
+    "e750e819" => "ChampionAugmentList/Ambessa",
+    "3d71bd9c" => "ChampionAugmentList/Viktor",
+    "4302ed3" => "ChampionAugmentList/Mel",
+    "1e265736" => "ChampionAugmentList/Leblanc",
+    "d2e32e84" => "ChampionAugmentList/XinZhao",
+    "a3c6999" => "ChampionAugmentList/Yunara",
+    "9eae62e0" => "ChampionAugmentList/Zaahen",
+    "464a407b" => "ChampionAugmentList/Locke",
 })
 
 def xxh3(s)
@@ -196,7 +441,7 @@ class LangHashWrapper
         key = args[0]
         if key
             while key.start_with?("{") && key.end_with?("}")
-                key = key[1..key.length - 1]
+                key = key[1...key.length - 1]
             end
             if key.start_with?("0x")
                 key = key[2..]
@@ -453,6 +698,8 @@ def augmentSearcher(key, data, version=0)
                 data.fetch("AugmentLargeIconPath", "")            
             ]
         }
+
+        
 
         linkedObjects = data.fetch("0x40c7b66f", [])
 
@@ -1020,11 +1267,15 @@ diff()
             when "0xe8c34b52"
                 type = "AugmentColors"
             when "0xeb5adb26"
-                type = "AugmentList"  
+                type = "AugmentList"
             when "0x1ff0e246"
                 type = "GameEndUI"
             when "GameModeItemList"
                 data["mItems"] = data["mItems"].map { |i| itemNameLangFix(i) }
+            when "0xadaf4f78", "0xf9e46502"
+                type = "ChampionAugmentList"
+                data = applyLangKeys(applyLang(data))
+                key = applyLangKeys(key)
             else
                 type = "MiscData" if type.start_with?("0x")
         end
@@ -1034,6 +1285,7 @@ diff()
     aramOther.each { |key, data|
         loc = key.downcase.include?("vfx") ? "vfxData" : "data"
         data = data.sort_by { |k, v| v["ObjectName"] }.to_h if key == "SpellObject"
+            data = data.sort_by { |k, v| k }.to_h if key == "ChampionAugmentList"
         File.open("aram/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
     }
 
@@ -1056,12 +1308,13 @@ diff()
             case type
                 when "0xc8400f38"
                     type = "HotkeyControls"
-                when "0xadaf4f78"
+                when "0xadaf4f78", "0xf9e46502"
                     type = "AugmentOperators"
                     data = applyLangKeys(applyLang(data))
-                when "0xfead7e9b", "AugmentGroups"
+                when "0xfead7e9b"#, "AugmentGroups"
                     type = "AugmentGroups"
                     data = applyLangKeys(applyLang(data))
+                    key = applyLangKeys(key)
                 else
                     type = "MiscData" if type.start_with?("0x")
             end
@@ -1071,6 +1324,7 @@ diff()
         jsonSort.each { |key, data|
             loc = key.downcase.include?("vfx") ? "vfxData" : "data"
             data = data.sort_by { |k, v| v["ObjectName"] }.to_h if key == "SpellObject"
+            data = data.sort_by { |k, v| k }.to_h if key == "AugmentGroups"
             File.open("aram/#{map}/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
         }
     }
@@ -1136,7 +1390,7 @@ diff()
         end
     }
     File.open("aram/mayhem/augments/augments.json", 'wb') { |f| f.write(JSON.pretty_generate(aramAugments.sort_by { |a| a["id"] })) }
-    File.open("aram/mayhem/augments/sets.json", 'wb') { |f| f.write(JSON.pretty_generate(aramSets)) }
+    #File.open("aram/mayhem/augments/sets.json", 'wb') { |f| f.write(JSON.pretty_generate(aramSets)) }
     aramOther.each { |key, data|
         loc = key.downcase.include?("vfx") ? "vfxData" : "data"
         data = data.sort_by { |k, v| v["ObjectName"] }.to_h if key == "SpellObject"

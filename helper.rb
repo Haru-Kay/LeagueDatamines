@@ -25,14 +25,15 @@ def xxh3(s)
 end
 
 file = {}
-File.open("aram\\augmentgroups\\data\\AugmentGroups.json", 'rb') { |f| file = JSON.parse(f.read) }
+File.open("aram\\data\\ChampionAugmentTagList.json", 'rb') { |f| file = JSON.parse(f.read) }
 
 h = {}
-file.each { |k, v|
-    h[k] = "AugmentGroups/#{v["ID"]}"
+file["0x287a10e0"]["0xbf9074a"].each { |v|
+    champ = v["championName"].split("/")[1]
+    h[v["WeightedCharacterAugmentList"]] = "ChampionAugmentList/#{champ}"
 }
 
-file = file.transform_keys { |k| h[k] }.sort_by { |k, v| k }.to_h
+#file = file.transform_keys { |k| h[k] }.sort_by { |k, v| k }.to_h
 
-
-File.open("aram\\augmentgroups\\data\\AugmentGroups.json", 'wb') { |f| f.write(JSON.pretty_generate(file)) }
+#File.open("aram\\data\\ChampionAugmentTagList.json", 'wb') { |f| f.write(JSON.pretty_generate(file)) }
+ puts JSON.pretty_generate(h)
