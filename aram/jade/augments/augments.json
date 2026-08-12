@@ -513,40 +513,32 @@
     "name": "Infernal Conduit",
     "rarity": "Prismatic",
     "desc": "Your Abilities apply stacking <keywordMajor>Burn</keywordMajor> that deals damage over time.<br><br>Your <keywordMajor>Burn</keywordMajor> effects reduce your basic Ability Cooldowns.",
-    "tooltip": "Your Abilities apply an infinitely stacking <keywordMajor>Burn</keywordMajor>, dealing <magicDamage>@BleedDamageTooltip@ magic damage</magicDamage> per second for @BleedDuration@ seconds.<br><br>All your <keywordMajor>Burn</keywordMajor> effects lower your basic Ability Cooldowns by @FlatCooldownRefundPerTick@ seconds when they damage enemy champions.<br><br>Damage Dealt: @f2@",
+    "tooltip": "Your Abilities apply an infinitely stacking <keywordMajor>Burn</keywordMajor>, dealing <magicDamage>@BleedDamagePerSecond@ magic damage</magicDamage> per second for @BleedDuration@ seconds.<br><br>All your <keywordMajor>Burn</keywordMajor> effects lower your basic Ability Cooldowns by @FlatCooldownRefundPerTick@ seconds when they damage enemy champions.<br><br>Damage Dealt: @f2@",
     "dataValues": {
       "BleedDuration": 3.0,
       "FlatCooldownRefundPerTick": 0.07999999821186066,
       "ProcCooldown": 1.0
     },
     "calculations": {
-      "0xa242b94": {
+      "BleedDamagePerSecond": {
         "mFormulaParts": [
           {
-            "mEndValue": 60.0,
-            "mStartValue": 6.0,
+            "mEndValue": 20.0,
+            "mStartValue": 2.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           },
           {
-            "mCoefficient": 0.05999999865889549,
+            "mCoefficient": 0.012000000104308128,
             "~class": "StatByCoefficientCalculationPart"
           },
           {
-            "mCoefficient": 0.14000000059604645,
+            "mCoefficient": 0.02800000086426735,
             "mStat": 2,
             "mStatFormula": 2,
             "~class": "StatByCoefficientCalculationPart"
           }
         ],
         "~class": "GameCalculation"
-      },
-      "BleedDamageTooltip": {
-        "mModifiedGameCalculation": "0xa242b94",
-        "mMultiplier": {
-          "mNumber": 0.20000000298023224,
-          "~class": "NumberCalculationPart"
-        },
-        "~class": "GameCalculationModified"
       }
     },
     "icons": [
@@ -1038,7 +1030,7 @@
           "~class": "NumberCalculationPart"
         },
         "mSimpleTooltipCalculationDisplay": 5,
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "icons": [
@@ -1372,7 +1364,7 @@
     "desc": "<keywordMajor>Snipe</keywordMajor> an enemy with a non-Ultimate Ability refunds @ReducedCooldownPercent*100@% Cooldown (@PeriodicReductionAmount*100@% for periodic Abilities).",
     "tooltip": "<keywordMajor>Snipe</keywordMajor> an enemy with a non-Ultimate Ability refunds @ReducedCooldownPercent*100@% Cooldown (@PeriodicReductionAmount*100@% for periodic Abilities).<br><br><rules><keywordMajor>Snipe</keywordMajor> - Damage enemies over @SnipeDistance@ distance away</rules><br><br>",
     "dataValues": {
-      "SnipeDistance": 700.0,
+      "SnipeDistance": 600.0,
       "ReducedCooldownPercent": 0.800000011920929,
       "PeriodicReductionAmount": 0.6499999761581421
     },
@@ -1406,7 +1398,7 @@
           "~class": "NumberCalculationPart"
         },
         "mSimpleTooltipCalculationDisplay": 5,
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "icons": [
@@ -1590,7 +1582,7 @@
           "~class": "NumberCalculationPart"
         },
         "mSimpleTooltipCalculationDisplay": 5,
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "icons": [
@@ -1877,7 +1869,7 @@
       "SecondMissileDelay": 0.15000000596046448
     },
     "calculations": {
-      "0x84eb6ffe": {
+      "ModifiedAttackDamageTT": {
         "mFormulaParts": [
           {
             "mDataValue": "AttackReduction",
@@ -2552,7 +2544,7 @@
       ]
     },
     "calculations": {
-      "0x3fb72b56": {
+      "ModifiedMaxHealthTT": {
         "mFormulaParts": [
           {
             "mDataValue": "HPReductionPerc",
@@ -2574,7 +2566,7 @@
           "mNumber": 0.6000000238418579,
           "~class": "NumberCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "icons": [
@@ -2587,12 +2579,13 @@
     "apiName": "Nightstalking",
     "name": "Nightstalking",
     "rarity": "Gold",
-    "desc": "Takedowns against enemy champions within @TakedownWindow@ seconds of damaging them renders you invisible.",
-    "tooltip": "Takedowns against enemy champions within @TakedownWindow@ seconds of damaging them renders you invisible for @StealthDuration@ seconds.",
+    "desc": "Takedowns against enemy champions within @TakedownWindow@ seconds of damaging them grants you <speed>Movement Speed</speed> and renders you invisible.",
+    "tooltip": "Takedowns against enemy champions within @TakedownWindow@ seconds of damaging them grants you <speed>@StealthMoveSpeed*100@% Move Speed</speed> and renders you invisible for @StealthDuration@ seconds.",
     "dataValues": {
       "StealthDuration": 1.5,
       "TakedownWindow": 3.0,
-      "Cooldown": 10.0
+      "Cooldown": 10.0,
+      "StealthMoveSpeed": 0.4000000059604645
     },
     "icons": [
       "ASSETS/UX/Kiwi/Augments/Icons/Nightstalking_small.tex",
@@ -3302,7 +3295,7 @@
       "Damage": {
         "mFormulaParts": [
           {
-            "mEndValue": 85.0,
+            "mEndValue": 65.0,
             "mStartValue": 15.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           }
@@ -3384,17 +3377,42 @@
     "apiName": "SoulEater",
     "name": "Soul Eater",
     "rarity": "Gold",
-    "desc": "<status>Immobilizing</status> an enemy champion grants <scaleHealth>@HealthGainPerStack@ max Health</scaleHealth>.",
-    "tooltip": "<status>Immobilizing</status> an enemy champion grants <scaleHealth>@HealthGainPerStack@ max Health</scaleHealth>.<br><br>Total Health Gained: <scaleHealth>@HealthGained@</scaleHealth>",
+    "desc": "<status>Immobilizing</status> an enemy champion grants <scaleHealth>@HealthGainPerStack@ max Health</scaleHealth>.<br><br>If taken as your second Augment, starts with <scaleHealth>@StartingHPIfSecondAugmentTT@ Health</scaleHealth>.",
+    "tooltip": "<status>Immobilizing</status> an enemy champion grants <scaleHealth>@HealthGainPerStack@ max Health</scaleHealth>.<br><br>Total Health Gained: <scaleHealth>@HealthGained@</scaleHealth><br><rules>If taken as your second Augment, starts with <scaleHealth>@StartingHPIfSecondAugmentTT@ Health</scaleHealth>.</rules>",
     "dataValues": {
       "HealthGainPerStack": 20.0,
       "SpellIDCD": 5.0
     },
     "calculations": {
+      "StartingHPIfSecondAugmentTT": {
+        "mFormulaParts": [
+          {
+            "mNumber": 300.0,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "StartingStacksIfSecondAugment": {
+        "mFormulaParts": [
+          {
+            "mPart1": {
+              "mSpellCalculationKey": "StartingHPIfSecondAugmentTT",
+              "~class": "NamedGameCalculationCalculationPart"
+            },
+            "mPart2": {
+              "mNumber": 0.05000000074505806,
+              "~class": "NumberCalculationPart"
+            },
+            "~class": "ProductOfSubPartsCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
       "HealthGained": {
         "mFormulaParts": [
           {
-            "mBuffName": "0x14cf4ae0",
+            "mBuffName": "Augment_SoulEater_Counter",
             "mDataValue": "HealthGainPerStack",
             "~class": "BuffCounterByNamedDataValueCalculationPart"
           }
@@ -3715,7 +3733,7 @@
     "name": "Twin Fire",
     "rarity": "Silver",
     "desc": "On ability damage, fire 1 plus @AdditionalMis@ missiles that deal <magicDamage>@Damage@ magic damage</magicDamage> each. <br><br>Gain <attention>%i:scaleCrit% @CrtiChance*100@% Critical Strike Chance</attention>.",
-    "tooltip": "{{Kiwi_TwinFire_Summary}}",
+    "tooltip": "On ability damage, fire 1 plus @AdditionalMis@ missiles that deal <magicDamage>@Damage@ magic damage</magicDamage> each. <br><br>Gain <attention>%i:scaleCrit% @CrtiChance*100@% Critical Strike Chance</attention>.",
     "dataValues": {
       "ADRatio": 0.07000000029802322,
       "CrtiChance": 0.25,
@@ -4541,7 +4559,7 @@
       "MaxLevelPerTriggerDamageAmp": 0.10000000149011612
     },
     "calculations": {
-      "0x89615869": {
+      "Calc_Damage_Crit": {
         "mModifiedGameCalculation": "Calc_Damage",
         "mMultiplier": {
           "mCoefficient": 1.0,
@@ -4554,7 +4572,7 @@
         "mFormulaParts": [
           {
             "DataValue": "ManaPercentDamagePercent",
-            "~class": "0x2b25a73a"
+            "~class": "AbilityResourceByNamedDataValueCalculationPart"
           }
         ],
         "~class": "GameCalculation"
@@ -4605,7 +4623,7 @@
       "MSModifier": -350.0
     },
     "calculations": {
-      "0x19ad35ce": {
+      "StupidTibbersCalc1": {
         "mFormulaParts": [
           {
             "mEndValue": 18.0,
@@ -4620,7 +4638,7 @@
         ],
         "~class": "GameCalculation"
       },
-      "0x3e5305d0": {
+      "StupidTibbersCalc2": {
         "mFormulaParts": [
           {
             "mEndValue": 150.0,
@@ -4650,6 +4668,7 @@
         "~class": "GameCalculation"
       },
       "AoEDamage": {
+        "mExpandedTooltipCalculationDisplay": 6,
         "mFormulaParts": [
           {
             "mEndValue": 750.0,
@@ -4671,6 +4690,7 @@
             "~class": "StatByNamedDataValueCalculationPart"
           }
         ],
+        "mSimpleTooltipCalculationDisplay": 6,
         "~class": "GameCalculation"
       },
       "MoveSpeed": {
@@ -4745,8 +4765,8 @@
       "BaseDamageToApply": {
         "mFormulaParts": [
           {
-            "mEndValue": 300.0,
-            "mStartValue": 80.0,
+            "mEndValue": 350.0,
+            "mStartValue": 120.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           }
         ],
@@ -4757,7 +4777,7 @@
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
-            "mNumber": 0.20000000298023224,
+            "mNumber": 0.30000001192092896,
             "~class": "NumberCalculationPart"
           }
         ],
@@ -4844,19 +4864,32 @@
     "apiName": "NatureIsHealing",
     "name": "Nature is Healing",
     "rarity": "Gold",
-    "desc": "Standing in <keyword>Brush</keyword> regenerates <healing>@MaxHealthHealPerSecond@ max Health</healing> per second.",
-    "tooltip": "Regenerate <healing>@MaxHealthHealPerSecond@ max Health</healing> per second while in <keyword>Brush</keyword>.<br><br>Total Healing: @f1.0@",
+    "desc": "Entering <keyword>Brush</keyword> regenerates <healing>a large amount of Health</healing>.",
+    "tooltip": "Entering <keyword>Brush</keyword> restores <healing>@FlatHeal@ + @MissingHealthHeal@ Missing Health</healing>, @BrushCooldown@ second cooldown per brush.<br><br>Total Healing: @f1.0@",
+    "dataValues": {
+      "BrushCooldown": 20.0
+    },
     "calculations": {
-      "MaxHealthHealPerSecond": {
-        "mDisplayAsPercent": true,
+      "FlatHeal": {
         "mFormulaParts": [
           {
-            "mEndValue": 0.020999999716877937,
-            "mStartValue": 0.006000000052154064,
+            "mEndValue": 300.0,
+            "mStartValue": 40.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           }
         ],
-        "mPrecision": 2,
+        "~class": "GameCalculation"
+      },
+      "MissingHealthHeal": {
+        "mDisplayAsPercent": true,
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.15000000596046448,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculation"
       }
     },
@@ -5033,7 +5066,7 @@
     "name": "Quickstep",
     "rarity": "Gold",
     "desc": "When you use {{SpellName}}, dash towards your cursor.",
-    "tooltip": "{{Kiwi_Augment_Vanguard_Desc}}",
+    "tooltip": "When you use {{SpellName}}, dash towards your cursor.",
     "dataValues": {
       "ChargeRange": 350.0
     },
@@ -5108,7 +5141,7 @@
     "name": "Stay Resolute",
     "rarity": "Silver",
     "desc": "When {{Spellname}} damages enemy champions, gain @ARMR_Inc@ <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resistance</scaleMR>.",
-    "tooltip": "Damaging enemy champions with {{SpellName}} grants you @ARMR_Inc@ <scaleArmor>Armor</scaleArmor> or <scaleMR>Magic Resistance</scaleMR> based on their %i:miniAdaptiveForce% Damage Type. <br><br>Bonus <scaleArmor>Armor</scaleArmor>: @f1@<br>Bonus <scaleMR>Magic Resistance</scaleMR>: @f2@<br><br><br><rules> If this is not your first augment, gain @AdditionalARMR@ <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resistance</scaleMR>.<br>@SpellIDCD@ seconds cooldown per target.</rules>",
+    "tooltip": "Damaging enemy champions with {{SpellName}} grants you @ARMR_Inc@ <scaleArmor>Armor</scaleArmor> or <scaleMR>Magic Resistance</scaleMR> based on their %i:miniAdaptiveForce% Damage Type. <br><br>Bonus <scaleArmor>Armor</scaleArmor>: @f1@<br>Bonus <scaleMR>Magic Resistance</scaleMR>: @f2@<br><br><br><rules>If this is not your first augment, gain @AdditionalARMR@ <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resistance</scaleMR>.</rules>",
     "dataValues": {
       "AdditionalARMR": 20.0,
       "SpellIDCD": 5.0
@@ -5144,7 +5177,7 @@
           "Cooldown": 3.0
         },
         "calcs": {
-          "0x2cf8f9f": {
+          "IDKSomeUnusedVersionOfTitansPulse": {
             "mFormulaParts": [
               {
                 "OutputType": 2,
@@ -5180,7 +5213,7 @@
       "BonusHealingPercent_Max": 0.5
     },
     "calculations": {
-      "0xe5d3c722": {
+      "BonusHealingPercent_Dummy": {
         "mDisplayAsPercent": true,
         "mFormulaParts": [
           {
@@ -5240,7 +5273,7 @@
     "id": 2078,
     "apiName": "ChainReaction",
     "name": "Chain Reaction",
-    "rarity": "Prismatic",
+    "rarity": "Gold",
     "desc": "If a target <status>Knocked Back</status> by {{SpellName}} hits another champion, they are <status>Knocked Up</status> and dealt <magicDamage>damage</magicDamage>. When colliding with terrain, the <status>Knock Up</status> duration is extended and they are dealt <magicDamage>bonus damage</magicDamage>.",
     "tooltip": "If a champion you <status>Knock Back</status> with {{SpellName}} hits another champion, they are <status>Knocked Up</status> for @ChampCollideKnockupDuration@ seconds and are dealt <magicDamage>@EnemyHitDamage@ magic damage</magicDamage>. If enemy champions collide with terrain, they are <status>Knocked Up</status> for @MinKnockUpDuration@ seconds and are dealt <magicDamage>@WallCollisionDamage@ magic damage</magicDamage>.<br><br>Enemies Knocked Up: @f1@<br>Walls Hit: @f2@<br><br><rules>Knock Up Duration and Height scale with your spell's cooldown.<br><rules>Damage is increased to @Ult_DamageAmp@ for Ultimate Abilities.</rules></rules>",
     "dataValues": {
@@ -5258,7 +5291,7 @@
       "ChampCollideKnockupDuration": 0.5
     },
     "calculations": {
-      "0x166093f6": {
+      "Ult_DamageAmp": {
         "mDisplayAsPercent": true,
         "mFormulaParts": [
           {
@@ -5271,9 +5304,9 @@
       "EnemyHitDamage": {
         "mFormulaParts": [
           {
-            "0x589a59c": "EnemyHitDamage_Min",
-            "0xb65bc23": "EnemyHitDamage_Max",
-            "~class": "0xee18a47b"
+            "mDataValueStart": "EnemyHitDamage_Min",
+            "mDataValueEnd": "EnemyHitDamage_Max",
+            "~class": "NamedDataValuesByCharLevelInterpolationCalculationPart"
           }
         ],
         "~class": "GameCalculation"
@@ -5281,17 +5314,17 @@
       "WallCollisionDamage": {
         "mFormulaParts": [
           {
-            "0x589a59c": "WallCollisionDamage_Min",
-            "0xb65bc23": "WallCollisionDamage_Max",
-            "~class": "0xee18a47b"
+            "mDataValueStart": "WallCollisionDamage_Min",
+            "mDataValueEnd": "WallCollisionDamage_Max",
+            "~class": "NamedDataValuesByCharLevelInterpolationCalculationPart"
           }
         ],
         "~class": "GameCalculation"
       }
     },
     "icons": [
-      "ASSETS/UX/Kiwi/Augments/Icons/GenericAbilityAugmentIcon_Prismatic.tex",
-      "ASSETS/UX/Kiwi/Augments/Icons/GenericAbilityAugmentIcon_Prismatic.tex"
+      "ASSETS/UX/Kiwi/Augments/Icons/GenericAbilityAugmentIcon_Gold.tex",
+      "ASSETS/UX/Kiwi/Augments/Icons/GenericAbilityAugmentIcon_Gold.tex"
     ]
   },
   {
@@ -5327,7 +5360,7 @@
     "name": "Our Healing",
     "rarity": "Gold",
     "desc": "Whenever someone heals around you, you <healing>heal @AllyHealingRatio*100@%</healing> of their own healing. Doubled from Enemy healing.",
-    "tooltip": "{{Kiwi_Augment_Equilibrium_Summary}}",
+    "tooltip": "Whenever someone heals around you, you <healing>heal @AllyHealingRatio*100@%</healing> of their own healing. Doubled from Enemy healing.",
     "dataValues": {
       "AllyHealingRatio": 0.15000000596046448,
       "EnemyHealingRatio": 0.30000001192092896
@@ -5349,7 +5382,7 @@
       "PerTargetCooldown": 4.0
     },
     "calculations": {
-      "0xddb49807": {
+      "SomeToothFairyCalc": {
         "mDisplayAsPercent": true,
         "mFormulaParts": [
           {
@@ -5357,7 +5390,7 @@
             "~class": "NumberCalculationPart"
           },
           {
-            "mBuffName": "0x76180b74",
+            "mBuffName": "Augment_BurstingTeeth_Counter",
             "mCoefficient": 0.10000000149011612,
             "mIconKey": "%i:KiwiAugmentBurstingTeeth%",
             "~class": "BuffCounterByCoefficientCalculationPart"
@@ -5380,7 +5413,7 @@
       "LethalityPerTooth": {
         "mFormulaParts": [
           {
-            "mBuffName": "0x76180b74",
+            "mBuffName": "Augment_BurstingTeeth_Counter",
             "mCoefficient": 3.0,
             "mIconKey": "%i:KiwiAugmentBurstingTeeth%",
             "~class": "BuffCounterByCoefficientCalculationPart"
@@ -5391,7 +5424,7 @@
       "MPenPerTooth": {
         "mFormulaParts": [
           {
-            "mBuffName": "0x76180b74",
+            "mBuffName": "Augment_BurstingTeeth_Counter",
             "mCoefficient": 3.0,
             "mIconKey": "%i:KiwiAugmentBurstingTeeth%",
             "~class": "BuffCounterByCoefficientCalculationPart"
@@ -5482,12 +5515,12 @@
       "BaseCDRPercent": 0.10000000149011612
     },
     "calculations": {
-      "0x8bda434b": {
-        "0x72c5c2a8": 0,
+      "InnerRadiusDamageTT": {
+        "SomeFlagBroIDK": 0,
         "mFormulaParts": [
           {
             "mSpellCalculationKey": "FullDamage",
-            "~class": "0xf3cbe7b2"
+            "~class": "NamedGameCalculationCalculationPart"
           }
         ],
         "mMultiplier": {
@@ -5545,7 +5578,7 @@
           "~class": "NumberCalculationPart"
         },
         "mSimpleTooltipCalculationDisplay": 5,
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       },
       "RangeIncrease": {
         "mExpandedTooltipCalculationDisplay": 5,
@@ -5560,7 +5593,7 @@
           "~class": "NumberCalculationPart"
         },
         "mSimpleTooltipCalculationDisplay": 5,
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "icons": [
@@ -5648,7 +5681,7 @@
             "~class": "NamedDataValueCalculationPart"
           },
           {
-            "mBuffName": "0x866a6106",
+            "mBuffName": "Augment_ARAM_EndlessHunt_Count",
             "mCoefficient": 1.0,
             "~class": "BuffCounterByCoefficientCalculationPart"
           }
@@ -5776,7 +5809,7 @@
       "Range3": 600.0
     },
     "calculations": {
-      "0xa242b94": {
+      "BleedDamageHealthCalc": {
         "mFormulaParts": [
           {
             "mCoefficient": 0.009999999776482582,
@@ -5787,7 +5820,7 @@
         "~class": "GameCalculation"
       },
       "BleedDamageTooltip": {
-        "mModifiedGameCalculation": "0xa242b94",
+        "mModifiedGameCalculation": "BleedDamageHealthCalc",
         "mMultiplier": {
           "mNumber": 0.5,
           "~class": "NumberCalculationPart"
@@ -5795,7 +5828,7 @@
         "~class": "GameCalculationModified"
       },
       "BleedDamageTooltip2": {
-        "mModifiedGameCalculation": "0xa242b94",
+        "mModifiedGameCalculation": "BleedDamageHealthCalc",
         "mMultiplier": {
           "mNumber": 0.6660000085830688,
           "~class": "NumberCalculationPart"
@@ -5842,15 +5875,15 @@
     "desc": "<font color='#F0C200'>QUEST:</font> <keywordMajor>Snipe</keywordMajor> @QuestRequirement@ enemy champions with abilities<br><br><font color='#F0C200'>REWARD:</font> Send a meteor at <keywordMajor>Sniped</keywordMajor> enemy champions, dealing <magicDamage>Magic damage</magicDamage> in an area around them",
     "tooltip": "{{Augment_BangBang_Tooltip@f3@}}<br><br><flavorText>Bang! Bang! Oh, what a shot!</flavorText>",
     "dataValues": {
-      "SnipeDistance": 700.0,
+      "SnipeDistance": 600.0,
       "AOE": [
-        120.0,
-        180.0,
-        270.0,
-        405.0,
-        607.5,
-        911.25,
-        1366.875
+        150.0,
+        225.0,
+        337.5,
+        506.25,
+        759.375,
+        1139.0625,
+        1708.59375
       ],
       "MaxDistanceForScaling": 3000.0,
       "MaxAOEDistanceScaling": 2.0,
@@ -5882,15 +5915,15 @@
     "quest": {
       "apiName": "BangBangQuest",
       "TooltipOverride": [
-        "<keywordMajor>Snipe</keywordMajor> enemies to unlock a delayed damaging explosion that occurs at enemy champions you Snipe.<br><br><keywordMajor>Snipe</keywordMajor> - Damage enemies over 700 distance away<br><br>Snipe Hits: @f1@ / @f2@<br><br><flavorText>Bang! Bang! Oh, what a shot!</flavorText>"
+        "<keywordMajor>Snipe</keywordMajor> enemies to unlock a delayed damaging explosion that occurs at enemy champions you Snipe.<br><br><keywordMajor>Snipe</keywordMajor> - Damage enemies over 600 distance away<br><br>Snipe Hits: @f1@ / @f2@<br><br><flavorText>Bang! Bang! Oh, what a shot!</flavorText>"
       ],
       "QuestBreakpoints": [
         {
           "QuestRequirement": 15,
-          "QuestDesc": "<font color='#F0C200'>QUEST:</font> <keywordMajor>Snipe</keywordMajor> @QuestRequirement@ enemy champions with abilities.<br><br><keywordMajor>Snipe</keywordMajor> - Damage enemies over 700 distance away.<br><br><font color='#F0C200'>REWARD:</font> A meteor flies at enemy champions you Snipe, dealing @Damage@ damage in an area around them. The damage and size of the area increase the further the target is away from you.<br><br>Quest Progress: @QuestProgress@ / @QuestRequirement@<br><br><flavorText>Bang! Bang! Oh, what a shot!</flavorText>"
+          "QuestDesc": "<font color='#F0C200'>QUEST:</font> <keywordMajor>Snipe</keywordMajor> @QuestRequirement@ enemy champions with abilities.<br><br><keywordMajor>Snipe</keywordMajor> - Damage enemies over 600 distance away.<br><br><font color='#F0C200'>REWARD:</font> A meteor flies at enemy champions you Snipe, dealing @Damage@ damage in an area around them. The damage and size of the area increase the further the target is away from you.<br><br>Quest Progress: @QuestProgress@ / @QuestRequirement@<br><br><flavorText>Bang! Bang! Oh, what a shot!</flavorText>"
         },
         {
-          "QuestDesc": "A meteor flies at enemy champions you <keywordMajor>Snipe</keywordMajor>, dealing @Damage@ damage in an area around them. The damage and size of the area increase the further the target is away from you.<br><br><keywordMajor>Snipe</keywordMajor> - Damage enemies over 700 distance away.<br><br>Quest Complete.<br>Enemies Sniped: @QuestProgress@<br><br><flavorText>Bang! Bang! Oh, what a shot!</flavorText>"
+          "QuestDesc": "A meteor flies at enemy champions you <keywordMajor>Snipe</keywordMajor>, dealing @Damage@ damage in an area around them. The damage and size of the area increase the further the target is away from you.<br><br><keywordMajor>Snipe</keywordMajor> - Damage enemies over 600 distance away.<br><br>Quest Complete.<br>Enemies Sniped: @QuestProgress@<br><br><flavorText>Bang! Bang! Oh, what a shot!</flavorText>"
         }
       ],
       "icon": "ASSETS/UX/Cherry/Augments/Icons/SkilledSniper_large.tex"
@@ -5977,7 +6010,7 @@
       "Stacks_Max": 10.0
     },
     "calculations": {
-      "0x7530a709": {
+      "HellbentIDCDMaybe": {
         "mDisplayAsPercent": true,
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
@@ -6316,7 +6349,7 @@
       "Shield_Interval": 1.0
     },
     "calculations": {
-      "0x78b55a21": {
+      "Calc_Shield_Modified": {
         "mModifiedGameCalculation": "Calc_Shield",
         "mMultiplier": {
           "mNumber": 2.0,
@@ -6545,7 +6578,7 @@
       "Slow_Duration": 2.0
     },
     "calculations": {
-      "0x86966509": {
+      "Calc_Radius_Maybe": {
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
@@ -6717,7 +6750,7 @@
       "CDRConversionRate": 0.004999999888241291
     },
     "calculations": {
-      "0x5ff744cd": {
+      "ARPenConversion": {
         "mDisplayAsPercent": true,
         "mFormulaParts": [
           {
@@ -6756,6 +6789,7 @@
     "apiName": "DoransBiggestFan",
     "name": "Doran's Biggest Fan",
     "rarity": "Prismatic",
+    "disabled": true,
     "desc": "Each purchase of <keywordMajor>Doran's Blade</keywordMajor>, <keywordMajor>Ring</keywordMajor>, and <keywordMajor>Shield</keywordMajor> beyond the first grants a stack to the original item. <br><br>Each stack grants @EffectivenessMod*100@% of the item's stats.",
     "tooltip": "Each purchase of <keywordMajor>Doran's Blade</keywordMajor>, <keywordMajor>Ring</keywordMajor>, and <keywordMajor>Shield</keywordMajor> beyond the first grants a stack to the original item. <br><br>Each stack grants @EffectivenessMod*100@% of the item's stats.<br><br><rules>The passive effects of these items do not increase. Your respective <keywordMajor>Doran's items</keywordMajor> are no longer sellable.</rules><br><br><flavorText>Like 30 Doran's Items</flavorText>",
     "dataValues": {

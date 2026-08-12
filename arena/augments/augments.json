@@ -430,7 +430,7 @@
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
-            "mBuffName": "0xaf6ecc4c",
+            "mBuffName": "ArenaTeamSize",
             "mCoefficient": 1.0,
             "~class": "BuffCounterByCoefficientCalculationPart"
           }
@@ -488,7 +488,7 @@
       "MaxLevel": 1.0
     },
     "calculations": {
-      "0x4120d321": {
+      "Electrocute_Damage": {
         "mFormulaParts": [
           {
             "mEndValue": 300.0,
@@ -574,7 +574,7 @@
       "SizeGrowth": 0.05000000074505806
     },
     "calculations": {
-      "0xa4e17dad": {
+      "TotalShieldInternal": {
         "mFormulaParts": [
           {
             "mEndValue": 300.0,
@@ -644,7 +644,7 @@
     "rarity": "Gold",
     "desc": "Upon dropping below <scaleHealth>@HealthThreshold*100@% Health</scaleHealth>, <healing>heal for @HealCalc@ over @HealDuration@ seconds</healing>.",
     "maxLevelTooltip": "At max level, dropping below <scaleHealth>@HealthThresholdTwo*100@% Health</scaleHealth> will trigger this heal again.",
-    "tooltip": "{{Cherry_DawnbringersResolve_Summary}}",
+    "tooltip": "Upon dropping below <scaleHealth>@HealthThreshold*100@% Health</scaleHealth>, <healing>heal for @HealCalc@ over @HealDuration@ seconds</healing>.",
     "dataValues": {
       "HealthThreshold": 0.6000000238418579,
       "HealAmount": [
@@ -1200,7 +1200,7 @@
       "MaxLevel": 1.0
     },
     "calculations": {
-      "0x7c50d74e": {
+      "TrueDamageCalculationInternal": {
         "mFormulaParts": [
           {
             "mEndValue": 600.0,
@@ -1315,7 +1315,7 @@
       "MaxLevel": 1.0
     },
     "calculations": {
-      "0x6387172": {
+      "RangedIntegerIndicatorTT": {
         "mFormulaParts": [
           {
             "mNumber": 2.0,
@@ -1324,7 +1324,7 @@
         ],
         "~class": "GameCalculation"
       },
-      "0x792cf56b": {
+      "MeleeIntegerIndicatorTT": {
         "mFormulaParts": [
           {
             "mNumber": 1.0,
@@ -1337,8 +1337,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -1520,18 +1520,10 @@
     "name": "Now You See Me",
     "rarity": "Silver",
     "desc": "Gain the <spellName>Now You See Me</spellName> Summoner Spell.<br><br><rules><spellName>Now You See Me</spellName> teleports you back to the starting position of your last Movement Ability.</rules>",
-    "maxLevelTooltip": "At max level increase the number of <keywordMajor>portals</keywordMajor> you can have at a time to @PortalCapCapstoneTooltipOnly@. ",
+    "maxLevelTooltip": "At max level casting this will leave a clone at your previous location.",
     "tooltip": "<passive>Passive:</passive> Leave a mark behind whenever you use a <keywordMajor>Movement Ability</keywordMajor>.<br><br><active>Active:</active> Return to a previous mark you've left. You then gain <speed>@MSBuffAmount*100@% Move Speed for @MSBuffDuration@ seconds</speed>.",
     "dataValues": {
-      "MSBuffAmount": [
-        0.5,
-        0.5,
-        0.75,
-        0.5,
-        0.5,
-        0.5,
-        0.5
-      ],
+      "MSBuffAmount": 0.75,
       "MSBuffDuration": 2.0,
       "MaxLevel": 2.0,
       "PortalCap": [
@@ -1552,7 +1544,8 @@
         0.25,
         0.25,
         0.25
-      ]
+      ],
+      "CloneDuration": 4.0
     },
     "icons": [
       "ASSETS/UX/Cherry/Augments/Icons/NowYouSeeMe_small.tex",
@@ -1623,7 +1616,7 @@
       ]
     },
     "calculations": {
-      "0xa242b94": {
+      "BleedDamageHealthCalc": {
         "mFormulaParts": [
           {
             "mEndValue": 60.0,
@@ -1644,7 +1637,7 @@
         "~class": "GameCalculation"
       },
       "BleedDamageTooltip": {
-        "mModifiedGameCalculation": "0xa242b94",
+        "mModifiedGameCalculation": "BleedDamageHealthCalc",
         "mMultiplier": {
           "mNumber": 0.20000000298023224,
           "~class": "NumberCalculationPart"
@@ -2167,9 +2160,9 @@
       "Damage": {
         "mFormulaParts": [
           {
-            "0x91d404a5": "DamageBaseValue",
-            "0xb2cd0eb0": "BonusPerLevel",
-            "~class": "0xb22609db"
+            "baseDamage": "DamageBaseValue",
+            "bonusPerLevel": "BonusPerLevel",
+            "~class": "NamedDataValueByCharLevelCalculationPart"
           },
           {
             "mDataValue": "BADRatio",
@@ -2387,9 +2380,9 @@
       "BaseDamageTotal": {
         "mFormulaParts": [
           {
-            "0x91d404a5": "baseDamage",
-            "0xb2cd0eb0": "PerLevelDamage",
-            "~class": "0xb22609db"
+            "baseDamage": "baseDamage",
+            "bonusPerLevel": "PerLevelDamage",
+            "~class": "NamedDataValueByCharLevelCalculationPart"
           },
           {
             "mCoefficient": 0.8500000238418579,
@@ -2718,7 +2711,7 @@
       ]
     },
     "calculations": {
-      "0xa242b94": {
+      "BleedDamageHealthCalc": {
         "mFormulaParts": [
           {
             "mDataValue": "Coefficient",
@@ -2729,7 +2722,7 @@
         "~class": "GameCalculation"
       },
       "BleedDamageTooltip": {
-        "mModifiedGameCalculation": "0xa242b94",
+        "mModifiedGameCalculation": "BleedDamageHealthCalc",
         "mMultiplier": {
           "mNumber": 0.20000000298023224,
           "~class": "NumberCalculationPart"
@@ -2787,7 +2780,7 @@
     "name": "Soul Siphon",
     "rarity": "Gold",
     "desc": "<lifeSteal>Heal for @HealPercentage*100@% of damage done</lifeSteal> by <crit>Critical Strikes</crit>. <br><br>Gain <crit>%i:scaleCrit% @CritChance*100@% Crit chance</crit>.",
-    "tooltip": "{{Cherry_SoulSiphon_Summary}}",
+    "tooltip": "<lifeSteal>Heal for @HealPercentage*100@% of damage done</lifeSteal> by <crit>Critical Strikes</crit>. <br><br>Gain <crit>%i:scaleCrit% @CritChance*100@% Crit chance</crit>.",
     "dataValues": {
       "HealPercentage": [
         0.10000000149011612,
@@ -2857,7 +2850,7 @@
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
-            "mBuffName": "0xaf6ecc4c",
+            "mBuffName": "ArenaTeamSize",
             "mCoefficient": 1.0,
             "~class": "BuffCounterByCoefficientCalculationPart"
           }
@@ -2987,7 +2980,7 @@
           "mNumber": 0.800000011920929,
           "~class": "NumberCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "icons": [
@@ -3206,7 +3199,7 @@
         2.0,
         2.0
       ],
-      "SnipeDistance": 700.0,
+      "SnipeDistance": 600.0,
       "MaxLevel": 3.0,
       "MaxLevelMulticast": 2.0,
       "MulticastDelay": 0.5
@@ -3330,7 +3323,7 @@
     "name": "Vengeance",
     "rarity": "Gold",
     "desc": "{{ Cherry_Vengeance@TeamSize@_Summary }}",
-    "tooltip": "{{Cherry_Vengeance_Summary}}",
+    "tooltip": "{{ Cherry_Vengeance@TeamSize@_Summary }}",
     "dataValues": {
       "DamageAmp": [
         0.20000000298023224,
@@ -3375,7 +3368,7 @@
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
-            "mBuffName": "0xaf6ecc4c",
+            "mBuffName": "ArenaTeamSize",
             "mCoefficient": 1.0,
             "~class": "BuffCounterByCoefficientCalculationPart"
           }
@@ -3927,7 +3920,7 @@
     "desc": "Hitting an enemy with a <keywordMajor>non-Ultimate Ability</keywordMajor> at far range drastically reduces its Cooldown. ",
     "tooltip": "Hitting an enemy with a non-Ultimate Ability at over @SnipeDistance@ range reduces its Cooldown to @ReducedCooldown@ seconds, periodic abilities are instead reset to @PeriodicReductionAmount@ seconds.",
     "dataValues": {
-      "SnipeDistance": 700.0,
+      "SnipeDistance": 600.0,
       "ReducedCooldown": 0.5,
       "PeriodicReductionAmount": 3.0,
       "MaxLevel": 1.0
@@ -3979,7 +3972,7 @@
           "~class": "NumberCalculationPart"
         },
         "mSimpleTooltipCalculationDisplay": 5,
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "icons": [
@@ -4044,7 +4037,7 @@
     "name": "Critical Healing",
     "rarity": "Gold",
     "desc": "Your <healing>Heals</healing> and <shield>Shields</shield> can <crit>Critically Strike</crit> for an addtional @CriticalHealCalc@.<br><br>Gain <crit>%i:scaleCrit% @CritChance*100@% Crit Chance</crit>. ",
-    "tooltip": "{{Cherry_CriticalHealing_Summary}}",
+    "tooltip": "Your <healing>Heals</healing> and <shield>Shields</shield> can <crit>Critically Strike</crit> for an addtional @CriticalHealCalc@.<br><br>Gain <crit>%i:scaleCrit% @CritChance*100@% Crit Chance</crit>. ",
     "dataValues": {
       "CritHeal": [
         0.3499999940395355,
@@ -4125,7 +4118,7 @@
       "MaxLevel": 2.0
     },
     "calculations": {
-      "0x85d7d7f0": {
+      "TicksBeforeDeathOver4": {
         "mFormulaParts": [
           {
             "mDataValue": "TicksBeforeDeath",
@@ -4646,7 +4639,7 @@
     "rarity": "Prismatic",
     "disabled": true,
     "desc": "Dealing damage to target will also damage the nearest enemy for <trueDamage>@DamageMod*100@% damage dealt true damage</trueDamage>.",
-    "tooltip": "{{Cherry_ChainLightning_Summary}}",
+    "tooltip": "Dealing damage to target will also damage the nearest enemy for <trueDamage>@DamageMod*100@% damage dealt true damage</trueDamage>.",
     "dataValues": {
       "Range": 800.0,
       "DamageMod": [
@@ -4689,7 +4682,7 @@
     "name": "Dematerialize",
     "rarity": "Silver",
     "desc": "Gain <scaleAF>%i:miniAdaptiveForce% @AdaptiveForce@ Adaptive Force</scaleAF> on takedown, once per champion per round.<br><br><rules>Gaining this augment after round @RoundCounterForBonus@, gain  <scaleAF>%i:miniAdaptiveForce% @BonusForLatePick@ Adaptive Force</scaleAF>.</rules>",
-    "tooltip": "{{Cherry_Dematerialize_Summary}}",
+    "tooltip": "Gain <scaleAF>%i:miniAdaptiveForce% @AdaptiveForce@ Adaptive Force</scaleAF> on takedown, once per champion per round.<br><br><rules>Gaining this augment after round @RoundCounterForBonus@, gain  <scaleAF>%i:miniAdaptiveForce% @BonusForLatePick@ Adaptive Force</scaleAF>.</rules>",
     "dataValues": {
       "AdaptiveForce": [
         10.0,
@@ -4833,7 +4826,7 @@
       ]
     },
     "calculations": {
-      "0xac16d3ed": {
+      "ShieldCapCalc": {
         "mFormulaParts": [
           {
             "mInitialBonusPerLevel": 30.0,
@@ -4847,7 +4840,7 @@
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
-            "mBuffName": "0xaf6ecc4c",
+            "mBuffName": "ArenaTeamSize",
             "mCoefficient": 1.0,
             "~class": "BuffCounterByCoefficientCalculationPart"
           }
@@ -4889,15 +4882,7 @@
       "ReviveMod": 0.699999988079071,
       "ReviveDuration": 1.5,
       "SizeMod": 0.699999988079071,
-      "ReviveArmTime": [
-        2.0,
-        2.0,
-        3.0,
-        3.0,
-        3.0,
-        3.0,
-        3.0
-      ],
+      "ReviveArmTime": 3.0,
       "SelfReviveTimerModMax": 0.5,
       "SelfReviveTimerModMin": 0.4000000059604645,
       "MaxLevel": 3.0,
@@ -5732,7 +5717,7 @@
       "MaxLevel": 3.0
     },
     "calculations": {
-      "0xa242b94": {
+      "BleedDamageHealthCalc": {
         "mFormulaParts": [
           {
             "mCoefficient": 0.02500000037252903,
@@ -5744,7 +5729,7 @@
       },
       "BleedDamageTooltip": {
         "mExpandedTooltipCalculationDisplay": 4,
-        "mModifiedGameCalculation": "0xa242b94",
+        "mModifiedGameCalculation": "BleedDamageHealthCalc",
         "mMultiplier": {
           "mNumber": 0.20000000298023224,
           "~class": "NumberCalculationPart"
@@ -5921,7 +5906,7 @@
     "name": "Fruits of Your Labor",
     "rarity": "Silver",
     "desc": "Power Flowers are @AmpAmount*100@% more effective on you and are shared with your ally.",
-    "tooltip": "{{Cherry_FruitsOfYourLabor_Summary}}",
+    "tooltip": "Power Flowers are @AmpAmount*100@% more effective on you and are shared with your ally.",
     "dataValues": {
       "AmpAmount": [
         0.20000000298023224,
@@ -5972,7 +5957,7 @@
     "name": "Prismatic Egg",
     "rarity": "Prismatic",
     "desc": "Gain @KillStackCredit@ stack on takedown, once per champion per round.<br><br>After @RequiredKillCount@ stacks, this hatches into a <attention>Prismatic Item Anvil</attention>, <attention>%i:Augment% Prismatic Augment</attention>, and a <attention>%i:StatAnvil% Prismatic Stat Anvil</attention>.",
-    "tooltip": "{{Cherry_PrismaticEgg_Summary}}",
+    "tooltip": "Gain @KillStackCredit@ stack on takedown, once per champion per round.<br><br>After @RequiredKillCount@ stacks, this hatches into a <attention>Prismatic Item Anvil</attention>, <attention>%i:Augment% Prismatic Augment</attention>, and a <attention>%i:StatAnvil% Prismatic Stat Anvil</attention>.",
     "dataValues": {
       "RequiredKillCount": 5.0,
       "KillStackCredit": 1.0,
@@ -6025,7 +6010,7 @@
       ]
     },
     "calculations": {
-      "0x84eb6ffe": {
+      "ModifiedAttackDamageTT": {
         "mFormulaParts": [
           {
             "mDataValue": "AttackReduction",
@@ -6154,7 +6139,7 @@
       "BigOneDamageMultiplier": 1.5
     },
     "calculations": {
-      "0x3ea68b4": {
+      "BigOneDamage": {
         "mModifiedGameCalculation": "MissileDamage",
         "mMultiplier": {
           "mDataValue": "BigOneDamageMultiplier",
@@ -6216,9 +6201,9 @@
       "TotalShield": {
         "mFormulaParts": [
           {
-            "0x91d404a5": "ShieldBaseValue",
-            "0xb2cd0eb0": "BonusPerLevel",
-            "~class": "0xb22609db"
+            "baseDamage": "ShieldBaseValue",
+            "bonusPerLevel": "BonusPerLevel",
+            "~class": "NamedDataValueByCharLevelCalculationPart"
           },
           {
             "mCoefficient": 0.20000000298023224,
@@ -6649,7 +6634,7 @@
       "MaxLevel": 2.0
     },
     "calculations": {
-      "0x6387172": {
+      "RangedIntegerIndicatorTT": {
         "mFormulaParts": [
           {
             "mDataValue": "RangedReduction",
@@ -6658,7 +6643,7 @@
         ],
         "~class": "GameCalculation"
       },
-      "0x792cf56b": {
+      "MeleeIntegerIndicatorTT": {
         "mFormulaParts": [
           {
             "mDataValue": "MeleeReduction",
@@ -6671,8 +6656,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "~class": "GameCalculationConditional"
       }
     },
@@ -6992,9 +6977,9 @@
       "TotalDamage": {
         "mFormulaParts": [
           {
-            "0x91d404a5": "baseDamage",
-            "0xb2cd0eb0": "PerLevelDamage",
-            "~class": "0xb22609db"
+            "baseDamage": "baseDamage",
+            "bonusPerLevel": "PerLevelDamage",
+            "~class": "NamedDataValueByCharLevelCalculationPart"
           },
           {
             "mCoefficient": 0.800000011920929,
@@ -7173,7 +7158,7 @@
       "MaxLevel": 2.0
     },
     "calculations": {
-      "0x7c50d74e": {
+      "TrueDamageCalculationInternal": {
         "mFormulaParts": [
           {
             "mEndValue": 600.0,
@@ -7228,7 +7213,7 @@
       "MaxLevel": 2.0
     },
     "calculations": {
-      "0xcd5eb5cd": {
+      "ModifiedHPCalc": {
         "mFormulaParts": [
           {
             "mDataValue": "MaxHPIncrement",
@@ -7400,7 +7385,7 @@
       "Calc_Magic_Damage": {
         "mFormulaParts": [
           {
-            "mCoefficient": 0.75,
+            "mCoefficient": 0.6000000238418579,
             "mStat": 2,
             "~class": "StatByCoefficientCalculationPart"
           }
@@ -7410,7 +7395,7 @@
       "Calc_Physical_Damage": {
         "mFormulaParts": [
           {
-            "mCoefficient": 0.6000000238418579,
+            "mCoefficient": 0.5,
             "~class": "StatByCoefficientCalculationPart"
           }
         ],
@@ -7653,7 +7638,7 @@
     },
     "calculations": {
       "TotalDamage": {
-        "0x72c5c2a8": 0,
+        "SomeFlagBroIDK": 0,
         "mFormulaParts": [
           {
             "mDataValue": "baseDamage",
@@ -7696,7 +7681,7 @@
       "MaxLevel": 1.0
     },
     "calculations": {
-      "0xd404872c": {
+      "DelayedHitDamage": {
         "mFormulaParts": [
           {
             "mEndValue": 240.0,
@@ -8046,12 +8031,12 @@
     },
     "calculations": {
       "BeeDamage": {
-        "0x72c5c2a8": 1,
+        "SomeFlagBroIDK": 1,
         "mFormulaParts": [
           {
-            "0x589a59c": "BaseDamageMin",
-            "0xb65bc23": "BaseDamageMax",
-            "~class": "0xee18a47b"
+            "mDataValueStart": "BaseDamageMin",
+            "mDataValueEnd": "BaseDamageMax",
+            "~class": "NamedDataValuesByCharLevelInterpolationCalculationPart"
           },
           {
             "mCoefficient": 0.20000000298023224,
@@ -8118,7 +8103,7 @@
       "LevelableAugmentCount": {
         "mFormulaParts": [
           {
-            "mBuffName": "0x7e05f704",
+            "mBuffName": "LevelableAugmentCounter",
             "mCoefficient": 1.0,
             "~class": "BuffCounterByCoefficientCalculationPart"
           }
@@ -8553,8 +8538,8 @@
     "apiName": "GoHAbstainFromWealth",
     "name": "Abstain From Wealth",
     "rarity": "Prismatic",
-    "desc": "<healing>Restore @HealthRestorePercent@% of of the health</healing> you've sacrificed to Tahm Kench.<br><br>Gain <gold>+%i:goldCoins% @GoldToGrant@ gold</gold>.",
-    "tooltip": "<healing>Restore @HealthRestorePercent@% of of the health</healing> you've sacrificed to Tahm Kench.<br><br>Gain <gold>+%i:goldCoins% @GoldToGrant@ gold</gold>.",
+    "desc": "<healing>Restore @HealthRestorePercent@% of the health</healing> you've sacrificed to Tahm Kench.<br><br>Gain <gold>+%i:goldCoins% @GoldToGrant@ gold</gold>.",
+    "tooltip": "<healing>Restore @HealthRestorePercent@% of the health</healing> you've sacrificed to Tahm Kench.<br><br>Gain <gold>+%i:goldCoins% @GoldToGrant@ gold</gold>.",
     "dataValues": {
       "HealthCost": [],
       "GoldToGrant": 500.0,
@@ -8570,15 +8555,15 @@
     "apiName": "GoHAbstainFromPower",
     "name": "Abstain From Power",
     "rarity": "Prismatic",
-    "desc": "<healing>Restore @HealthRestorePercent@% of of the health</healing> you've sacrificed to Tahm Kench.<br><br>Gain <keywordMajor>@AnvilsGranted@ Silver Stat Anvil</keywordMajor>.",
-    "tooltip": "<healing>Restore @HealthRestorePercent@% of of the health</healing> you've sacrificed to Tahm Kench.<br><br>Gain <keywordMajor>@AnvilsGranted@ Silver Stat Anvil</keywordMajor>.",
+    "desc": "<healing>Restore @HealthRestorePercent@% of the health</healing> you've sacrificed to Tahm Kench.<br><br>Gain <keywordMajor>@AnvilsGranted@ Silver Stat Anvil</keywordMajor>.",
+    "tooltip": "<healing>Restore @HealthRestorePercent@% of the health</healing> you've sacrificed to Tahm Kench.<br><br>Gain <keywordMajor>@AnvilsGranted@ Silver Stat Anvil</keywordMajor>.",
     "dataValues": {
       "HealthRestorePercent": 10.0,
       "AnvilsGranted": 1.0,
       "AnvilType": 1.0
     },
     "calculations": {
-      "0xd52ab278": {
+      "HealthRestoredAmount": {
         "mFormulaParts": [
           {
             "mSubparts": [
@@ -8587,7 +8572,7 @@
                 "~class": "NamedDataValueCalculationPart"
               },
               {
-                "mBuffName": "0xe0c8aaa6",
+                "mBuffName": "HealthSacrificedCounter",
                 "mCoefficient": 1.0,
                 "~class": "BuffCounterByCoefficientCalculationPart"
               }
@@ -8608,8 +8593,8 @@
     "apiName": "GoHAbstainFromRisk",
     "name": "Abstain From Risk",
     "rarity": "Prismatic",
-    "desc": "<healing>Restore @HealthRestorePercent@% of of the health</healing> you've sacrificed to Tahm Kench.<br><br>Instantly gain a <keywordMajor>%i:Augment% Silver Augment</keywordMajor>.",
-    "tooltip": "<healing>Restore @HealthRestorePercent@% of of the health</healing> you've sacrificed to Tahm Kench.<br><br>Instantly gain a <keywordMajor>%i:Augment% Silver Augment</keywordMajor>.",
+    "desc": "<healing>Restore @HealthRestorePercent@% of the health</healing> you've sacrificed to Tahm Kench.<br><br>Instantly gain a <keywordMajor>%i:Augment% Silver Augment</keywordMajor>.",
+    "tooltip": "<healing>Restore @HealthRestorePercent@% of the health</healing> you've sacrificed to Tahm Kench.<br><br>Instantly gain a <keywordMajor>%i:Augment% Silver Augment</keywordMajor>.",
     "dataValues": {
       "HealthCost": [],
       "AugmentTierGranted": 1.0,
@@ -8641,7 +8626,7 @@
                 "~class": "NamedDataValueCalculationPart"
               },
               {
-                "mBuffName": "0xe0c8aaa6",
+                "mBuffName": "HealthSacrificedCounter",
                 "mCoefficient": 1.0,
                 "~class": "BuffCounterByCoefficientCalculationPart"
               }
@@ -8679,7 +8664,7 @@
                 "~class": "NamedDataValueCalculationPart"
               },
               {
-                "mBuffName": "0xe0c8aaa6",
+                "mBuffName": "HealthSacrificedCounter",
                 "mCoefficient": 1.0,
                 "~class": "BuffCounterByCoefficientCalculationPart"
               }
@@ -8716,7 +8701,7 @@
                 "~class": "NamedDataValueCalculationPart"
               },
               {
-                "mBuffName": "0xe0c8aaa6",
+                "mBuffName": "HealthSacrificedCounter",
                 "mCoefficient": 1.0,
                 "~class": "BuffCounterByCoefficientCalculationPart"
               }
@@ -8753,7 +8738,7 @@
                 "~class": "NamedDataValueCalculationPart"
               },
               {
-                "mBuffName": "0xe0c8aaa6",
+                "mBuffName": "HealthSacrificedCounter",
                 "mCoefficient": 1.0,
                 "~class": "BuffCounterByCoefficientCalculationPart"
               }
@@ -8791,7 +8776,7 @@
                 "~class": "NamedDataValueCalculationPart"
               },
               {
-                "mBuffName": "0xe0c8aaa6",
+                "mBuffName": "HealthSacrificedCounter",
                 "mCoefficient": 1.0,
                 "~class": "BuffCounterByCoefficientCalculationPart"
               }
@@ -8828,7 +8813,7 @@
                 "~class": "NamedDataValueCalculationPart"
               },
               {
-                "mBuffName": "0xe0c8aaa6",
+                "mBuffName": "HealthSacrificedCounter",
                 "mCoefficient": 1.0,
                 "~class": "BuffCounterByCoefficientCalculationPart"
               }
@@ -9268,7 +9253,7 @@
           },
           {
             "mPart1": {
-              "mBuffName": "0xf8185082",
+              "mBuffName": "RedShardCounter",
               "mDataValue": "PerRedDamage",
               "~class": "BuffCounterByNamedDataValueCalculationPart"
             },
@@ -9288,7 +9273,7 @@
                   "~class": "NamedDataValueCalculationPart"
                 },
                 {
-                  "mBuffName": "0xf8185082",
+                  "mBuffName": "RedShardCounter",
                   "mDataValue": "BADRatioPerRed",
                   "~class": "BuffCounterByNamedDataValueCalculationPart"
                 }
@@ -9305,7 +9290,7 @@
                   "~class": "NamedDataValueCalculationPart"
                 },
                 {
-                  "mBuffName": "0xf8185082",
+                  "mBuffName": "RedShardCounter",
                   "mDataValue": "APRatioPerRed",
                   "~class": "BuffCounterByNamedDataValueCalculationPart"
                 }
@@ -9327,7 +9312,7 @@
                 "~class": "NamedDataValueCalculationPart"
               },
               {
-                "mBuffName": "0xc8b89cf7",
+                "mBuffName": "GreenShardCounter",
                 "mDataValue": "MissingHealthRatio",
                 "~class": "BuffCounterByNamedDataValueCalculationPart"
               }
@@ -9347,7 +9332,7 @@
                 "~class": "NamedDataValueCalculationPart"
               },
               {
-                "mBuffName": "0xbd1c8a39",
+                "mBuffName": "BlueShardCounter",
                 "mDataValue": "MoveSpeedModPerBlue",
                 "~class": "BuffCounterByNamedDataValueCalculationPart"
               }
@@ -9416,7 +9401,7 @@
                 "~class": "NamedDataValueCalculationPart"
               },
               {
-                "mBuffName": "0xc8b89cf7",
+                "mBuffName": "GreenShardCounter",
                 "mDataValue": "ArmorAndMRPerGreen",
                 "~class": "BuffCounterByNamedDataValueCalculationPart"
               }
@@ -9434,7 +9419,7 @@
           },
           {
             "mPart1": {
-              "mBuffName": "0xf8185082",
+              "mBuffName": "RedShardCounter",
               "mDataValue": "PerRedDamage",
               "~class": "BuffCounterByNamedDataValueCalculationPart"
             },
@@ -9454,7 +9439,7 @@
                   "~class": "NamedDataValueCalculationPart"
                 },
                 {
-                  "mBuffName": "0xf8185082",
+                  "mBuffName": "RedShardCounter",
                   "mDataValue": "BADRatioPerRed",
                   "~class": "BuffCounterByNamedDataValueCalculationPart"
                 }
@@ -9471,7 +9456,7 @@
                   "~class": "NamedDataValueCalculationPart"
                 },
                 {
-                  "mBuffName": "0xf8185082",
+                  "mBuffName": "RedShardCounter",
                   "mDataValue": "APRatioPerRed",
                   "~class": "BuffCounterByNamedDataValueCalculationPart"
                 }
@@ -9511,7 +9496,7 @@
                 "~class": "NamedDataValueCalculationPart"
               },
               {
-                "mBuffName": "0xbd1c8a39",
+                "mBuffName": "BlueShardCounter",
                 "mDataValue": "MSBoostPerBlue",
                 "~class": "BuffCounterByNamedDataValueCalculationPart"
               }
@@ -9849,7 +9834,7 @@
       ]
     },
     "calculations": {
-      "0x3fb72b56": {
+      "ModifiedMaxHealthTT": {
         "mFormulaParts": [
           {
             "mDataValue": "HPReductionPerc",
@@ -9871,7 +9856,7 @@
           "mNumber": 0.6000000238418579,
           "~class": "NumberCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "icons": [
@@ -10192,7 +10177,7 @@
     "name": "Upgrade Sword of Blossoming Dawn",
     "rarity": "Prismatic",
     "desc": "Gain <speed>@AttackSpeed*100@% Attack Speed</speed>.<br><br>Increase Sword of Blossoming Dawn's healing to <scaleHealth>@PercentInc*100@%</scaleHealth> when you attack enemy champions.",
-    "tooltip": "{{Kiwi_Upgrade_SwordOfBlossom_Summary}}",
+    "tooltip": "Gain <speed>@AttackSpeed*100@% Attack Speed</speed>.<br><br>Increase Sword of Blossoming Dawn's healing to <scaleHealth>@PercentInc*100@%</scaleHealth> when you attack enemy champions.",
     "dataValues": {
       "AttackSpeed": 1.0,
       "AttackDamageNerf": 0.5,
@@ -10751,7 +10736,7 @@
       "MaxLevelPerTriggerDamageAmp": 0.10000000149011612
     },
     "calculations": {
-      "0x89615869": {
+      "Calc_Damage_Crit": {
         "mModifiedGameCalculation": "Calc_Damage",
         "mMultiplier": {
           "mCoefficient": 1.0,
@@ -10764,7 +10749,7 @@
         "mFormulaParts": [
           {
             "DataValue": "ManaPercentDamagePercent",
-            "~class": "0x2b25a73a"
+            "~class": "AbilityResourceByNamedDataValueCalculationPart"
           }
         ],
         "~class": "GameCalculation"

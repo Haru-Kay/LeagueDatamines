@@ -4156,8 +4156,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -4498,8 +4498,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -11206,7 +11206,7 @@
         "mFormulaParts": [
           {
             "mSpellCalculationKey": "DrainCalc",
-            "~class": "0xf3cbe7b2"
+            "~class": "NamedGameCalculationCalculationPart"
           }
         ],
         "mMultiplier": {
@@ -12221,7 +12221,7 @@
           "mDataValue": "RangedAttackSpeedMultiplier",
           "~class": "NamedDataValueCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       },
       "BuffDuration": {
         "mFormulaParts": [
@@ -12234,7 +12234,7 @@
           "mNumber": 0.5,
           "~class": "NumberCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "mItemCalloutSpectator": true,
@@ -13963,7 +13963,7 @@
           "mDataValue": "StackRangedMultiplier",
           "~class": "NamedDataValueCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "mItemCalloutSpectator": true,
@@ -14541,8 +14541,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -15022,7 +15022,7 @@
       },
       {
         "mName": "ADtoAD",
-        "mValue": 0.44999998807907104,
+        "mValue": 0.5,
         "~class": "ItemDataValue"
       },
       {
@@ -15698,7 +15698,7 @@
         "DataValues": [
           {
             "mName": "DamageToHealthPercentage",
-            "mValue": 0.07000000029802322,
+            "mValue": 0.10000000149011612,
             "~class": "ItemDataValue"
           },
           {
@@ -16029,11 +16029,16 @@
         "mName": "ShredPerStack",
         "mValue": 0.05999999865889549,
         "~class": "ItemDataValue"
+      },
+      {
+        "mName": "RangedMod",
+        "mValue": 0.75,
+        "~class": "ItemDataValue"
       }
     ],
     "mDisplayName": "Black Cleaver",
     "mFlatHPPoolMod": 350.0,
-    "mFlatPhysicalDamageMod": 40.0,
+    "mFlatPhysicalDamageMod": 45.0,
     "mItemAdviceAttributes": [
       "0x72256343",
       "0xe625a35a"
@@ -16041,6 +16046,22 @@
     "mItemAttributes": [
       1
     ],
+    "mItemCalculations": {
+      "MSBonusSplit": {
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mDataValue": "MoveSpeedBonus",
+            "~class": "NamedDataValueCalculationPart"
+          }
+        ],
+        "mRangedMultiplier": {
+          "mDataValue": "RangedMod",
+          "~class": "NamedDataValueCalculationPart"
+        },
+        "~class": "RangedModifiableGameCalculation"
+      }
+    },
     "mItemCalloutSpectator": true,
     "mItemDataAvailability": {
       "mInStore": true,
@@ -16051,9 +16072,9 @@
       "InventoryIconSmall": "ASSETS/Items/Icons2D/AutoAtlas/SmallIcons/3071_Fighter_T3_BlackCleaver.png",
       "epicness": 5,
       "inventoryIcon": "ASSETS/Items/Icons2D/3071_Fighter_T3_BlackCleaver.dds",
-      "mDescription": "<section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (Stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MoveSpeedBonus@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section>",
-      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Black Cleaver</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Anti-Armor</subtitleLeft><subtitleRight>Unique: Fatality</subtitleRight><mainText><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste@ExtendedStats@</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (Stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MoveSpeedBonus@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft></postScriptLeft>",
-      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Black Cleaver</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Anti-Armor</subtitleLeft><subtitleRight>Unique: Fatality</subtitleRight><mainText><section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (Stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MoveSpeedBonus@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
+      "mDescription": "<section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MSBonusSplit@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section>",
+      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Black Cleaver</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Anti-Armor</subtitleLeft><subtitleRight>Unique: Fatality</subtitleRight><mainText><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste@ExtendedStats@</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MSBonusSplit@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft></postScriptLeft>",
+      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Black Cleaver</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Anti-Armor</subtitleLeft><subtitleRight>Unique: Fatality</subtitleRight><mainText><section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MSBonusSplit@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
       "mTooltipData": {
         "EnableExtendedTooltip": false,
         "mFormat": "TooltipFormatA",
@@ -16081,7 +16102,7 @@
           "keyColloquialism": ";bc",
           "keyName": "Black Cleaver",
           "keySecondaryBrief": "Unique: Fatality",
-          "keyTooltip": "<passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (Stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MoveSpeedBonus@ Move Speed</speed> for @MoveSpeedDuration@ seconds."
+          "keyTooltip": "<passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MSBonusSplit@ Move Speed</speed> for @MoveSpeedDuration@ seconds."
         },
         "mObjectName": "Arena/Black Cleaver",
         "~class": "TooltipInstanceItem"
@@ -16450,8 +16471,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -17150,8 +17171,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -19897,8 +19918,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -19914,7 +19935,7 @@
           "mNumber": 0.6669999957084656,
           "~class": "NumberCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       },
       "duration": {
         "mFormulaParts": [
@@ -19927,7 +19948,7 @@
           "mNumber": 0.6669999957084656,
           "~class": "NumberCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "mItemCalloutSpectator": true,
@@ -20485,8 +20506,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -20716,8 +20737,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -21064,8 +21085,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -21526,7 +21547,7 @@
           "mNumber": 0.5,
           "~class": "NumberCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       },
       "MaxStackDamage": {
         "mFormulaParts": [
@@ -21546,7 +21567,7 @@
           "mNumber": 0.699999988079071,
           "~class": "NumberCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       },
       "MaxStackDamageVSStructures": {
         "mFormulaParts": [
@@ -21566,7 +21587,7 @@
           "mNumber": 0.699999988079071,
           "~class": "NumberCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       },
       "MeleeItemCalcValue": {
         "mFormulaParts": [
@@ -21580,7 +21601,7 @@
           "mLevel1Value": 20.0,
           "~class": "ByCharLevelBreakpointsCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       },
       "RangedItemCalcValue": {
         "mFormulaParts": [
@@ -21607,7 +21628,7 @@
           "mNumber": 0.5,
           "~class": "NumberCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "mItemCalloutSpectator": true,
@@ -23037,7 +23058,7 @@
           "~class": "NamedDataValueCalculationPart"
         },
         "mSimpleTooltipCalculationDisplay": 6,
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       },
       "CalcValueB": {
         "mFormulaParts": [
@@ -23052,7 +23073,7 @@
           "~class": "NamedDataValueCalculationPart"
         },
         "mSimpleTooltipCalculationDisplay": 6,
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       },
       "CalcValueC": {
         "mFormulaParts": [
@@ -23067,7 +23088,7 @@
           "~class": "NamedDataValueCalculationPart"
         },
         "mSimpleTooltipCalculationDisplay": 6,
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       },
       "CalcValueD": {
         "mFormulaParts": [
@@ -23082,7 +23103,7 @@
           "~class": "NamedDataValueCalculationPart"
         },
         "mSimpleTooltipCalculationDisplay": 6,
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       },
       "ConeDamageCalc": {
         "mFormulaParts": [
@@ -23096,7 +23117,7 @@
           "mNumber": 0.5,
           "~class": "NumberCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       },
       "OnHitDamageCalc": {
         "mFormulaParts": [
@@ -23110,7 +23131,7 @@
           "mNumber": 0.5,
           "~class": "NumberCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "mItemCalloutSpectator": true,
@@ -24065,8 +24086,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -24385,8 +24406,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -24807,8 +24828,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -25084,8 +25105,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -25302,17 +25323,12 @@
         "~class": "ItemDataValue"
       },
       {
-        "mName": "HealAmount",
-        "mValue": 0.20000000298023224,
-        "~class": "ItemDataValue"
-      },
-      {
         "mName": "Cooldown",
         "mValue": 8.0,
         "~class": "ItemDataValue"
       },
       {
-        "mName": "HealRatio",
+        "mName": "HealBaseADRatio",
         "mValue": 1.5,
         "~class": "ItemDataValue"
       },
@@ -25328,69 +25344,26 @@
       }
     ],
     "mDisplayName": "Sundered Sky",
-    "mFlatHPPoolMod": 350.0,
+    "mFlatHPPoolMod": 400.0,
     "mFlatPhysicalDamageMod": 40.0,
     "mItemAttributes": [
       1
     ],
     "mItemCalculations": {
-      "0x6387172": {
+      "0x1099b16": {
         "mFormulaParts": [
           {
-            "mNumber": 2.0,
-            "~class": "NumberCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "0x792cf56b": {
-        "mFormulaParts": [
-          {
-            "mNumber": 1.0,
-            "~class": "NumberCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "ChampRange": {
-        "mConditionalCalculationRequirements": {
-          "~class": "IsRangedCastRequirement"
-        },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
-        "mExpandedTooltipCalculationDisplay": 5,
-        "mSimpleTooltipCalculationDisplay": 5,
-        "~class": "GameCalculationConditional"
-      },
-      "HealProc": {
-        "mFormulaParts": [
-          {
-            "mDataValue": "HealRatio",
+            "mDataValue": "HealBaseADRatio",
             "mStat": 2,
             "mStatFormula": 1,
             "~class": "StatByNamedDataValueCalculationPart"
           }
         ],
-        "~class": "GameCalculation"
-      },
-      "MeleeItemCalcValue": {
-        "mFormulaParts": [
-          {
-            "mDataValue": "HealRatio",
-            "mStat": 2,
-            "mStatFormula": 1,
-            "~class": "StatByNamedDataValueCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "RangedItemCalcValue": {
-        "mModifiedGameCalculation": "MeleeItemCalcValue",
-        "mMultiplier": {
+        "mRangedMultiplier": {
           "mDataValue": "RangedHealMod",
           "~class": "NamedDataValueCalculationPart"
         },
-        "~class": "GameCalculationModified"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "mItemDataAvailability": {
@@ -25402,9 +25375,9 @@
       "InventoryIconSmall": "ASSETS/Items/Icons2D/AutoAtlas/SmallIcons/6610_SunderedSky44.png",
       "epicness": 5,
       "inventoryIcon": "ASSETS/Items/Icons2D/6610_SunderedSky.dds",
-      "mDescription": "<section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Lightshield Strike</passive> %i:cooldown% (@Cooldown@s) per target<br>Your first Attack against a champion <attention>Critically Strikes</attention> and <healing>restores {{ Item_Range_Mod_@ChampRange@_Dynamic }} plus @MissingHealthHeal*100@%</healing> of missing Health.</section><section></section><section><flavorText></flavorText></section>",
-      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Sundered Sky</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Sustained Combat</subtitleLeft><subtitleRight></subtitleRight><mainText><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste@ExtendedStats@</section><section><passive>Lightshield Strike</passive> %i:cooldown% (@Cooldown@s) per target<br>Your first Attack against a champion <attention>Critically Strikes</attention> and <healing>restores {{ Item_Range_Mod_@ChampRange@_Dynamic }} plus @MissingHealthHeal*100@%</healing> of missing Health.</section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft>Healing Done: <attention>@f2@</attention></postScriptLeft>",
-      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Sundered Sky</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Sustained Combat</subtitleLeft><subtitleRight></subtitleRight><mainText><section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Lightshield Strike</passive> %i:cooldown% (@Cooldown@s) per target<br>Your first Attack against a champion <attention>Critically Strikes</attention> and <healing>restores {{ Item_Range_Mod_@ChampRange@_Dynamic }} plus @MissingHealthHeal*100@%</healing> of missing Health.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
+      "mDescription": "<section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Lightshield Strike</passive> %i:cooldown% (@Cooldown@s) per target<br>Your first Attack against a champion <attention>Critically Strikes</attention> for @CritModifier*100@% of your normal Critical Strike damage and <healing>restores @HealADSplit@ plus @MissingHealthHeal*100@%</healing> of missing Health.</section><section></section><section><flavorText></flavorText></section>",
+      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Sundered Sky</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Sustained Combat</subtitleLeft><subtitleRight></subtitleRight><mainText><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste@ExtendedStats@</section><section><passive>Lightshield Strike</passive> %i:cooldown% (@Cooldown@s) per target<br>Your first Attack against a champion <attention>Critically Strikes</attention> for @CritModifier*100@% of your normal Critical Strike damage and <healing>restores @HealADSplit@ plus @MissingHealthHeal*100@%</healing> of missing Health.</section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft>Healing Done: <attention>@f2@</attention></postScriptLeft>",
+      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Sundered Sky</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Sustained Combat</subtitleLeft><subtitleRight></subtitleRight><mainText><section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Lightshield Strike</passive> %i:cooldown% (@Cooldown@s) per target<br>Your first Attack against a champion <attention>Critically Strikes</attention> for @CritModifier*100@% of your normal Critical Strike damage and <healing>restores @HealADSplit@ plus @MissingHealthHeal*100@%</healing> of missing Health.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
       "mTooltipData": {
         "mFormat": "TooltipFormatA",
         "mLists": {
@@ -25430,7 +25403,7 @@
           "keyBrief": "Sustained Combat",
           "keyInventoryOnlyText": "Healing Done: <attention>@f2@</attention>",
           "keyName": "Sundered Sky",
-          "keyTooltip": "<passive>Lightshield Strike</passive> %i:cooldown% (@Cooldown@s) per target<br>Your first Attack against a champion <attention>Critically Strikes</attention> and <healing>restores {{ Item_Range_Mod_@ChampRange@_Dynamic }} plus @MissingHealthHeal*100@%</healing> of missing Health.",
+          "keyTooltip": "<passive>Lightshield Strike</passive> %i:cooldown% (@Cooldown@s) per target<br>Your first Attack against a champion <attention>Critically Strikes</attention> for @CritModifier*100@% of your normal Critical Strike damage and <healing>restores @HealADSplit@ plus @MissingHealthHeal*100@%</healing> of missing Health.",
           "keyTooltipExtendedRules": "<br><br><rules>Excess healing is granted as temporary bonus Health.</rules>",
           "keyTooltipExternal": "<passive>Lightshield Strike</passive><br>Your first Attack against a champion <attention>Critically Strikes</attention> and <healing>restores Health</healing>."
         },
@@ -26285,8 +26258,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -26512,8 +26485,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -28358,7 +28331,7 @@
           "mDataValue": "RangedDamageMultiplier",
           "~class": "NamedDataValueCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       },
       "MaximumDamage": {
         "mModifiedGameCalculation": "DamageAmount",
@@ -28489,7 +28462,7 @@
           "mNumber": 0.800000011920929,
           "~class": "NumberCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "mItemDataAvailability": {
@@ -28872,8 +28845,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -28987,14 +28960,6 @@
   },
   "Arena/Eclipse": {
     "ShowCooldownVfxToAllies": false,
-    "StringCalculations": {
-      "0x4217e5fd": {
-        "DefaultResult": "@MaxHealthPercent@",
-        "MeleeResult": "@MaxHealthPercent@",
-        "RangedResult": "@RangedMaxHealthPercent@",
-        "~class": "0x4750ceb6"
-      }
-    },
     "epicness": 5,
     "itemID": 226692,
     "mAbilityHasteMod": 15.0,
@@ -29011,13 +28976,13 @@
         "~class": "ItemDataValue"
       },
       {
-        "mName": "MeleeItemCalcValueB",
-        "mValue": 6.0,
+        "mName": "MeleePercMaxHP",
+        "mValue": 0.07999999821186066,
         "~class": "ItemDataValue"
       },
       {
-        "mName": "RangedItemCalcValueB",
-        "mValue": 4.0,
+        "mName": "RangedPercMaxHPMult",
+        "mValue": 0.625,
         "~class": "ItemDataValue"
       },
       {
@@ -29036,23 +29001,13 @@
         "~class": "ItemDataValue"
       },
       {
-        "mName": "RangedBaseShield",
-        "mValue": 150.0,
-        "~class": "ItemDataValue"
-      },
-      {
-        "mName": "MeleeShieldADRatio",
+        "mName": "MeleeBonusADShieldRatio",
         "mValue": 0.5,
         "~class": "ItemDataValue"
       },
       {
-        "mName": "RangedShieldADRatio",
-        "mValue": 0.20000000298023224,
-        "~class": "ItemDataValue"
-      },
-      {
-        "mName": "MaxHealthDamage",
-        "mValue": 10.0,
+        "mName": "RangedShieldMult",
+        "mValue": 0.5,
         "~class": "ItemDataValue"
       }
     ],
@@ -29066,76 +29021,38 @@
       1
     ],
     "mItemCalculations": {
-      "0x6387172": {
-        "mFormulaParts": [
-          {
-            "mNumber": 2.0,
-            "~class": "NumberCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "0x792cf56b": {
-        "mFormulaParts": [
-          {
-            "mNumber": 1.0,
-            "~class": "NumberCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "ChampRange": {
-        "mConditionalCalculationRequirements": {
-          "~class": "IsRangedCastRequirement"
-        },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
-        "mExpandedTooltipCalculationDisplay": 5,
-        "mSimpleTooltipCalculationDisplay": 5,
-        "~class": "GameCalculationConditional"
-      },
-      "MaxHealthDamageCalc": {
-        "mFormulaParts": [
-          {
-            "mDataValue": "MaxHealthDamage",
-            "~class": "NamedDataValueCalculationPart"
-          }
-        ],
-        "mRangedMultiplier": {
-          "mNumber": 0.6669999957084656,
-          "~class": "NumberCalculationPart"
-        },
-        "~class": "0xe9a3c91d"
-      },
-      "MeleeItemCalcValue": {
+      "0xd02ea590": {
         "mFormulaParts": [
           {
             "mDataValue": "MeleeBaseShield",
             "~class": "NamedDataValueCalculationPart"
           },
           {
-            "mDataValue": "MeleeShieldADRatio",
+            "mDataValue": "0xe367e801",
             "mStat": 2,
             "mStatFormula": 2,
             "~class": "StatByNamedDataValueCalculationPart"
           }
         ],
-        "~class": "GameCalculation"
+        "mRangedMultiplier": {
+          "mDataValue": "0x51df2a01",
+          "~class": "NamedDataValueCalculationPart"
+        },
+        "~class": "RangedModifiableGameCalculation"
       },
-      "RangedItemCalcValue": {
+      "MaxHealthDamageCalc": {
+        "mDisplayAsPercent": true,
         "mFormulaParts": [
           {
-            "mDataValue": "RangedBaseShield",
+            "mDataValue": "0xb1f09313",
             "~class": "NamedDataValueCalculationPart"
-          },
-          {
-            "mDataValue": "RangedShieldADRatio",
-            "mStat": 2,
-            "mStatFormula": 2,
-            "~class": "StatByNamedDataValueCalculationPart"
           }
         ],
-        "~class": "GameCalculation"
+        "mRangedMultiplier": {
+          "mDataValue": "0x4b5548be",
+          "~class": "NamedDataValueCalculationPart"
+        },
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "mItemCalloutSpectator": true,
@@ -29148,9 +29065,9 @@
       "InventoryIconSmall": "ASSETS/Items/Icons2D/AutoAtlas/SmallIcons/6692_Assassin_T4_Eclipse.png",
       "epicness": 6,
       "inventoryIcon": "ASSETS/Items/Icons2D/6692_Assassin_T4_Eclipse.dds",
-      "mDescription": "<section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@% max health physical damage</physicalDamage> and grants you a <shield>{{ Item_Range_Mod_@ChampRange@_Dynamic }} Shield</shield> for @ShieldDuration@ seconds.</section><section></section><section><flavorText></flavorText></section>",
-      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Eclipse</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Dueling</subtitleLeft><subtitleRight></subtitleRight><mainText><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste@ExtendedStats@</section><section><br><br><passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@% max health physical damage</physicalDamage> and grants you a <shield>{{ Item_Range_Mod_@ChampRange@_Dynamic }} Shield</shield> for @ShieldDuration@ seconds.<br><br><rules>Item performance differs for %i:meleeInactive% melee and %i:rangedInactive% ranged users.</rules></section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft>Damage blocked: <attention>@f3@</attention></postScriptLeft>",
-      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Eclipse</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Dueling</subtitleLeft><subtitleRight></subtitleRight><mainText><section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@% max health physical damage</physicalDamage> and grants you a <shield>{{ Item_Range_Mod_@ChampRange@_Dynamic }} Shield</shield> for @ShieldDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
+      "mDescription": "<section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@ max health physical damage</physicalDamage> and grants you a <shield>@ShieldSplit@ Shield</shield> for @ShieldDuration@ seconds.</section><section></section><section><flavorText></flavorText></section>",
+      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Eclipse</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Dueling</subtitleLeft><subtitleRight></subtitleRight><mainText><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste@ExtendedStats@</section><section><br><br><passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@ max health physical damage</physicalDamage> and grants you a <shield>@ShieldSplit@ Shield</shield> for @ShieldDuration@ seconds.<br><br><rules>Item performance differs for %i:meleeInactive% melee and %i:rangedInactive% ranged users.</rules></section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft>Damage blocked: <attention>@f3@</attention></postScriptLeft>",
+      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Eclipse</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Dueling</subtitleLeft><subtitleRight></subtitleRight><mainText><section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@ max health physical damage</physicalDamage> and grants you a <shield>@ShieldSplit@ Shield</shield> for @ShieldDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
       "mTooltipData": {
         "mFormat": "TooltipFormatA",
         "mLists": {
@@ -29172,9 +29089,9 @@
           "keyBrief": "Dueling",
           "keyInventoryOnlyText": "Damage blocked: <attention>@f3@</attention>",
           "keyName": "Eclipse",
-          "keyTooltip": "<passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@% max health physical damage</physicalDamage> and grants you a <shield>{{ Item_Range_Mod_@ChampRange@_Dynamic }} Shield</shield> for @ShieldDuration@ seconds.",
+          "keyTooltip": "<passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@ max health physical damage</physicalDamage> and grants you a <shield>@ShieldSplit@ Shield</shield> for @ShieldDuration@ seconds.",
           "keyTooltipExternal": "<passive>Ever Rising Moon</passive><br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds grants you a <shield>Shield</shield> for @ShieldDuration@ seconds.",
-          "keyTooltipInventory": "<br><br><passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@% max health physical damage</physicalDamage> and grants you a <shield>{{ Item_Range_Mod_@ChampRange@_Dynamic }} Shield</shield> for @ShieldDuration@ seconds.<br><br><rules>Item performance differs for %i:meleeInactive% melee and %i:rangedInactive% ranged users.</rules>"
+          "keyTooltipInventory": "<br><br><passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@ max health physical damage</physicalDamage> and grants you a <shield>@ShieldSplit@ Shield</shield> for @ShieldDuration@ seconds.<br><br><rules>Item performance differs for %i:meleeInactive% melee and %i:rangedInactive% ranged users.</rules>"
         },
         "mObjectName": "Arena/Eclipse",
         "~class": "TooltipInstanceItem"
@@ -29984,8 +29901,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -30002,7 +29919,7 @@
           "mNumber": 0.5,
           "~class": "NumberCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       },
       "MeleeItemCalcValue": {
         "mFormulaParts": [
@@ -30333,7 +30250,7 @@
           "mDataValue": "RangedLethalityMultiplier",
           "~class": "NamedDataValueCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "mItemCalloutSpectator": true,
@@ -30985,6 +30902,11 @@
         "mName": "ShredPerStack",
         "mValue": 0.05999999865889549,
         "~class": "ItemDataValue"
+      },
+      {
+        "mName": "RangedMod",
+        "mValue": 0.5,
+        "~class": "ItemDataValue"
       }
     ],
     "mDisplayName": "Obsidian Cleaver",
@@ -30997,15 +30919,31 @@
     "mItemAttributes": [
       1
     ],
+    "mItemCalculations": {
+      "MSBonusSplit": {
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mDataValue": "MoveSpeedBonus",
+            "~class": "NamedDataValueCalculationPart"
+          }
+        ],
+        "mRangedMultiplier": {
+          "mDataValue": "RangedMod",
+          "~class": "NamedDataValueCalculationPart"
+        },
+        "~class": "RangedModifiableGameCalculation"
+      }
+    },
     "mItemCalloutSpectator": true,
     "mItemDataClient": {
       "InventoryIconLarge": "ASSETS/Items/Icons2D/AutoAtlas/LargeIcons/3380_The_Forge_Cleaver.png",
       "InventoryIconSmall": "ASSETS/Items/Icons2D/AutoAtlas/SmallIcons/3380_The_Forge_Cleaver.png",
       "epicness": 5,
       "inventoryIcon": "ASSETS/Items/Icons2D/3380_The_Forge_Cleaver.dds",
-      "mDescription": "<section></section><section><ornnBonus>%i:scaleAD% @FlatPhysicalDamageMod@</ornnBonus> Attack Damage<br><ornnBonus>%i:scaleHealth% @FlatHPPoolMod@</ornnBonus> Health<br><ornnBonus>%i:scaleCooldown% @AbilityHasteMod@</ornnBonus> Ability Haste</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MoveSpeedBonus@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section>",
-      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Obsidian Cleaver</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Anti-Armor</subtitleLeft><subtitleRight>Unique: Fatality</subtitleRight><mainText><section><ornnBonus>%i:scaleAD% @FlatPhysicalDamageMod@</ornnBonus> Attack Damage<br><ornnBonus>%i:scaleHealth% @FlatHPPoolMod@</ornnBonus> Health<br><ornnBonus>%i:scaleCooldown% @AbilityHasteMod@</ornnBonus> Ability Haste@ExtendedStats@</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MoveSpeedBonus@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft></postScriptLeft>",
-      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Obsidian Cleaver</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Anti-Armor</subtitleLeft><subtitleRight>Unique: Fatality</subtitleRight><mainText><section></section><section><ornnBonus>%i:scaleAD% @FlatPhysicalDamageMod@</ornnBonus> Attack Damage<br><ornnBonus>%i:scaleHealth% @FlatHPPoolMod@</ornnBonus> Health<br><ornnBonus>%i:scaleCooldown% @AbilityHasteMod@</ornnBonus> Ability Haste</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MoveSpeedBonus@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
+      "mDescription": "<section></section><section><ornnBonus>%i:scaleAD% @FlatPhysicalDamageMod@</ornnBonus> Attack Damage<br><ornnBonus>%i:scaleHealth% @FlatHPPoolMod@</ornnBonus> Health<br><ornnBonus>%i:scaleCooldown% @AbilityHasteMod@</ornnBonus> Ability Haste</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MSBonusSplit@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section>",
+      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Obsidian Cleaver</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Anti-Armor</subtitleLeft><subtitleRight>Unique: Fatality</subtitleRight><mainText><section><ornnBonus>%i:scaleAD% @FlatPhysicalDamageMod@</ornnBonus> Attack Damage<br><ornnBonus>%i:scaleHealth% @FlatHPPoolMod@</ornnBonus> Health<br><ornnBonus>%i:scaleCooldown% @AbilityHasteMod@</ornnBonus> Ability Haste@ExtendedStats@</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MSBonusSplit@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft></postScriptLeft>",
+      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Obsidian Cleaver</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Anti-Armor</subtitleLeft><subtitleRight>Unique: Fatality</subtitleRight><mainText><section></section><section><ornnBonus>%i:scaleAD% @FlatPhysicalDamageMod@</ornnBonus> Attack Damage<br><ornnBonus>%i:scaleHealth% @FlatHPPoolMod@</ornnBonus> Health<br><ornnBonus>%i:scaleCooldown% @AbilityHasteMod@</ornnBonus> Ability Haste</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MSBonusSplit@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
       "mTooltipData": {
         "mFormat": "TooltipFormatA",
         "mLists": {
@@ -31035,7 +30973,7 @@
           "keyColloquialism": ";bc",
           "keyName": "Obsidian Cleaver",
           "keySecondaryBrief": "Unique: Fatality",
-          "keyTooltip": "<passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MoveSpeedBonus@ Move Speed</speed> for @MoveSpeedDuration@ seconds."
+          "keyTooltip": "<passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MSBonusSplit@ Move Speed</speed> for @MoveSpeedDuration@ seconds."
         },
         "mObjectName": "Arena/Obsidian Cleaver",
         "~class": "TooltipInstanceItem"
@@ -31208,8 +31146,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -32288,7 +32226,7 @@
         "mFormulaParts": [
           {
             "mSpellCalculationKey": "DrainCalc",
-            "~class": "0xf3cbe7b2"
+            "~class": "NamedGameCalculationCalculationPart"
           }
         ],
         "mMultiplier": {
@@ -33221,7 +33159,7 @@
           "mDataValue": "AbilityDamageRangeMod",
           "~class": "NamedDataValueCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       },
       "DamageCalc": {
         "mFormulaParts": [
@@ -33239,7 +33177,7 @@
           "mDataValue": "RangeModifier",
           "~class": "NamedDataValueCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "mItemDataAvailability": {
@@ -33622,7 +33560,7 @@
           "mDataValue": "RangedAttackSpeedMultiplier",
           "~class": "NamedDataValueCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       },
       "BuffDuration": {
         "mFormulaParts": [
@@ -33635,7 +33573,7 @@
           "mNumber": 0.5,
           "~class": "NumberCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "mItemCalloutSpectator": true,
@@ -34432,26 +34370,6 @@
         ],
         "~class": "ItemDataValues"
       },
-      "0xafcea79f": {
-        "DataValues": [
-          {
-            "mName": "ManaPerCharge",
-            "mValue": 7.5,
-            "~class": "ItemDataValue"
-          }
-        ],
-        "~class": "ItemDataValues"
-      },
-      "0xb0cea932": {
-        "DataValues": [
-          {
-            "mName": "ManaPerCharge",
-            "mValue": 7.5,
-            "~class": "ItemDataValue"
-          }
-        ],
-        "~class": "ItemDataValues"
-      },
       "0xbffdf499": {
         "DataValues": [
           {
@@ -34487,6 +34405,26 @@
           {
             "mName": "ManaPerCharge",
             "mValue": 4.5,
+            "~class": "ItemDataValue"
+          }
+        ],
+        "~class": "ItemDataValues"
+      },
+      "RUBY_TRIAL_1": {
+        "DataValues": [
+          {
+            "mName": "ManaPerCharge",
+            "mValue": 7.5,
+            "~class": "ItemDataValue"
+          }
+        ],
+        "~class": "ItemDataValues"
+      },
+      "RUBY_TRIAL_2": {
+        "DataValues": [
+          {
+            "mName": "ManaPerCharge",
+            "mValue": 7.5,
             "~class": "ItemDataValue"
           }
         ],
@@ -34644,26 +34582,6 @@
         ],
         "~class": "ItemDataValues"
       },
-      "0xafcea79f": {
-        "DataValues": [
-          {
-            "mName": "ManaPerCharge",
-            "mValue": 4.5,
-            "~class": "ItemDataValue"
-          }
-        ],
-        "~class": "ItemDataValues"
-      },
-      "0xb0cea932": {
-        "DataValues": [
-          {
-            "mName": "ManaPerCharge",
-            "mValue": 4.5,
-            "~class": "ItemDataValue"
-          }
-        ],
-        "~class": "ItemDataValues"
-      },
       "0xbffdf499": {
         "DataValues": [
           {
@@ -34695,6 +34613,26 @@
         "~class": "ItemDataValues"
       },
       "ONEFORALL": {
+        "DataValues": [
+          {
+            "mName": "ManaPerCharge",
+            "mValue": 4.5,
+            "~class": "ItemDataValue"
+          }
+        ],
+        "~class": "ItemDataValues"
+      },
+      "RUBY_TRIAL_1": {
+        "DataValues": [
+          {
+            "mName": "ManaPerCharge",
+            "mValue": 4.5,
+            "~class": "ItemDataValue"
+          }
+        ],
+        "~class": "ItemDataValues"
+      },
+      "RUBY_TRIAL_2": {
         "DataValues": [
           {
             "mName": "ManaPerCharge",
@@ -35009,7 +34947,7 @@
       "Items/ItemGroups/Boots",
       "Items/ItemGroups/BootsWithoutActives"
     ],
-    "mPercentAttackSpeedMod": 0.25,
+    "mPercentAttackSpeedMod": 0.30000001192092896,
     "maxStack": 1,
     "price": 300,
     "recipeItemLinks": [
@@ -36070,7 +36008,7 @@
           "mDataValue": "StackRangedMultiplier",
           "~class": "NamedDataValueCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "mItemCalloutSpectator": true,
@@ -36912,8 +36850,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -37063,7 +37001,7 @@
           "mDataValue": "RangedMod",
           "~class": "NamedDataValueCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "mItemDataAvailability": {
@@ -37616,7 +37554,7 @@
       },
       {
         "mName": "ADtoAD",
-        "mValue": 0.44999998807907104,
+        "mValue": 0.5,
         "~class": "ItemDataValue"
       },
       {
@@ -38220,7 +38158,7 @@
       },
       {
         "mName": "MinionMod",
-        "mValue": 0.6000000238418579,
+        "mValue": 0.5,
         "~class": "ItemDataValue"
       },
       {
@@ -38234,12 +38172,11 @@
       },
       {
         "mName": "StackDuration",
-        "mValue": 1.0,
         "~class": "ItemDataValue"
       },
       {
         "mName": "MonsterMod",
-        "mValue": 1.0,
+        "mValue": 0.800000011920929,
         "~class": "ItemDataValue"
       },
       {
@@ -38259,7 +38196,7 @@
       },
       {
         "mName": "HPRatioPerTickTOOLTIPONLY",
-        "mValue": 1.0,
+        "mValue": 1.5,
         "~class": "ItemDataValue"
       }
     ],
@@ -38296,7 +38233,7 @@
             "~class": "NumberCalculationPart"
           },
           {
-            "mCoefficient": 0.009999999776482582,
+            "mCoefficient": 0.014999999664723873,
             "mStat": 12,
             "mStatFormula": 2,
             "~class": "StatByCoefficientCalculationPart"
@@ -38316,9 +38253,9 @@
       "effectRadius": 325.0,
       "epicness": 6,
       "inventoryIcon": "ASSETS/Items/Icons2D/3068_Tank_T4_SunfireAegis.dds",
-      "mDescription": "<section></section><section><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleArmor% @FlatArmorMod@</attention> Armor<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Immolate</passive><br>After taking or dealing damage, deal <magicDamage>@DPS@ magic damage</magicDamage> per second to nearby enemies for @AuraDuration@ seconds. </section><section></section><section><flavorText></flavorText></section>",
-      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Sunfire Aegis</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Sustained Damage</subtitleLeft><subtitleRight>Unique: Immolate</subtitleRight><mainText><section><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleArmor% @FlatArmorMod@</attention> Armor<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste@ExtendedStats@</section><section><passive>Immolate</passive><br>After taking or dealing damage, deal <magicDamage>@DPS@ magic damage</magicDamage> per second to nearby enemies for @AuraDuration@ seconds. </section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft>Immolate Damage to champions: <attention>@f1@</attention></postScriptLeft>",
-      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Sunfire Aegis</itemName@ItemActiveness@></titleLeft><titleRight>{{ Item_Gold_Value }}</titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Sustained Damage</subtitleLeft><subtitleRight>Unique: Immolate</subtitleRight><mainText><section></section><section><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleArmor% @FlatArmorMod@</attention> Armor<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Immolate</passive><br>After taking or dealing damage, deal <magicDamage>@DPS@ magic damage</magicDamage> per second to nearby enemies for @AuraDuration@ seconds. </section><section></section><section><flavorText></flavorText></section></mainText><br>",
+      "mDescription": "<section></section><section><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleArmor% @FlatArmorMod@</attention> Armor<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Immolate</passive><br>After taking or dealing damage, deal <magicDamage>@DPS@ magic damage</magicDamage> per second to nearby enemies for @AuraDuration@ seconds.</section><section></section><section><flavorText></flavorText></section>",
+      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Sunfire Aegis</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Sustained Damage</subtitleLeft><subtitleRight>Unique: Immolate</subtitleRight><mainText><section><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleArmor% @FlatArmorMod@</attention> Armor<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste@ExtendedStats@</section><section><passive>Immolate</passive><br>After taking or dealing damage, deal <magicDamage>@DPS@ magic damage</magicDamage> per second to nearby enemies for @AuraDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft>Immolate Damage to champions: <attention>@f1@</attention></postScriptLeft>",
+      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Sunfire Aegis</itemName@ItemActiveness@></titleLeft><titleRight>{{ Item_Gold_Value }}</titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Sustained Damage</subtitleLeft><subtitleRight>Unique: Immolate</subtitleRight><mainText><section></section><section><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleArmor% @FlatArmorMod@</attention> Armor<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Immolate</passive><br>After taking or dealing damage, deal <magicDamage>@DPS@ magic damage</magicDamage> per second to nearby enemies for @AuraDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
       "mTooltipData": {
         "mFormat": "TooltipFormatA",
         "mLists": {
@@ -38346,7 +38283,7 @@
           "keyInventoryOnlyText": "Immolate Damage to champions: <attention>@f1@</attention>",
           "keyName": "Sunfire Aegis",
           "keySecondaryBrief": "Unique: Immolate",
-          "keyTooltip": "<passive>Immolate</passive><br>After taking or dealing damage, deal <magicDamage>@DPS@ magic damage</magicDamage> per second to nearby enemies for @AuraDuration@ seconds. ",
+          "keyTooltip": "<passive>Immolate</passive><br>After taking or dealing damage, deal <magicDamage>@DPS@ magic damage</magicDamage> per second to nearby enemies for @AuraDuration@ seconds.",
           "keyTooltipExtendedRules": "<rules><passive>Immolate</passive> deals @MinionMod*100@% increased damage to minions and @MonsterMod*100@% increased damage to monsters.</rules>",
           "keyTooltipExternal": "<passive>Immolate</passive><br>After taking or dealing damage, deal <magicDamage>magic damage</magicDamage> per second to nearby enemies for @AuraDuration@ seconds. "
         },
@@ -38371,7 +38308,7 @@
       "~class": "ResourceResolver"
     },
     "maxStack": 1,
-    "price": 600,
+    "price": 700,
     "recipeItemLinks": [
       "Bami's Cinder",
       "Chain Vest",
@@ -38398,26 +38335,6 @@
         "~class": "ItemDataValues"
       },
       "0xaecea60c": {
-        "DataValues": [
-          {
-            "mName": "ManaPerCharge",
-            "mValue": 4.5,
-            "~class": "ItemDataValue"
-          }
-        ],
-        "~class": "ItemDataValues"
-      },
-      "0xafcea79f": {
-        "DataValues": [
-          {
-            "mName": "ManaPerCharge",
-            "mValue": 4.5,
-            "~class": "ItemDataValue"
-          }
-        ],
-        "~class": "ItemDataValues"
-      },
-      "0xb0cea932": {
         "DataValues": [
           {
             "mName": "ManaPerCharge",
@@ -38458,6 +38375,26 @@
         "~class": "ItemDataValues"
       },
       "ONEFORALL": {
+        "DataValues": [
+          {
+            "mName": "ManaPerCharge",
+            "mValue": 4.5,
+            "~class": "ItemDataValue"
+          }
+        ],
+        "~class": "ItemDataValues"
+      },
+      "RUBY_TRIAL_1": {
+        "DataValues": [
+          {
+            "mName": "ManaPerCharge",
+            "mValue": 4.5,
+            "~class": "ItemDataValue"
+          }
+        ],
+        "~class": "ItemDataValues"
+      },
+      "RUBY_TRIAL_2": {
         "DataValues": [
           {
             "mName": "ManaPerCharge",
@@ -38647,11 +38584,16 @@
         "mName": "ShredPerStack",
         "mValue": 0.05999999865889549,
         "~class": "ItemDataValue"
+      },
+      {
+        "mName": "RangedMod",
+        "mValue": 0.5,
+        "~class": "ItemDataValue"
       }
     ],
     "mDisplayName": "Black Cleaver",
     "mFlatHPPoolMod": 400.0,
-    "mFlatPhysicalDamageMod": 40.0,
+    "mFlatPhysicalDamageMod": 45.0,
     "mItemAdviceAttributes": [
       "0x72256343",
       "0xe625a35a"
@@ -38659,6 +38601,22 @@
     "mItemAttributes": [
       1
     ],
+    "mItemCalculations": {
+      "MSBonusSplit": {
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mDataValue": "MoveSpeedBonus",
+            "~class": "NamedDataValueCalculationPart"
+          }
+        ],
+        "mRangedMultiplier": {
+          "mDataValue": "RangedMod",
+          "~class": "NamedDataValueCalculationPart"
+        },
+        "~class": "RangedModifiableGameCalculation"
+      }
+    },
     "mItemCalloutSpectator": true,
     "mItemDataAvailability": {
       "mInStore": true,
@@ -38669,9 +38627,9 @@
       "InventoryIconSmall": "ASSETS/Items/Icons2D/AutoAtlas/SmallIcons/3071_Fighter_T3_BlackCleaver.png",
       "epicness": 5,
       "inventoryIcon": "ASSETS/Items/Icons2D/3071_Fighter_T3_BlackCleaver.dds",
-      "mDescription": "<section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MoveSpeedBonus@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section>",
-      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Black Cleaver</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Anti-Armor</subtitleLeft><subtitleRight>Unique: Fatality</subtitleRight><mainText><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste@ExtendedStats@</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MoveSpeedBonus@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft></postScriptLeft>",
-      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Black Cleaver</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Anti-Armor</subtitleLeft><subtitleRight>Unique: Fatality</subtitleRight><mainText><section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MoveSpeedBonus@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
+      "mDescription": "<section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MSBonusSplit@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section>",
+      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Black Cleaver</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Anti-Armor</subtitleLeft><subtitleRight>Unique: Fatality</subtitleRight><mainText><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste@ExtendedStats@</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MSBonusSplit@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft></postScriptLeft>",
+      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Black Cleaver</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Anti-Armor</subtitleLeft><subtitleRight>Unique: Fatality</subtitleRight><mainText><section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MSBonusSplit@ Move Speed</speed> for @MoveSpeedDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
       "mTooltipData": {
         "mFormat": "TooltipFormatA",
         "mLists": {
@@ -38698,7 +38656,7 @@
           "keyColloquialism": ";bc",
           "keyName": "Black Cleaver",
           "keySecondaryBrief": "Unique: Fatality",
-          "keyTooltip": "<passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MoveSpeedBonus@ Move Speed</speed> for @MoveSpeedDuration@ seconds."
+          "keyTooltip": "<passive>Carve</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> to champions reduces the target's <scaleArmor>Armor by @ShredPerStack*100@%</scaleArmor> for @DebuffDuration@ seconds. (stacks @MaxStacks@ times).<br><br><passive>Fervor</passive><br>Dealing <physicalDamage>physical damage</physicalDamage> grants <speed>@MSBonusSplit@ Move Speed</speed> for @MoveSpeedDuration@ seconds."
         },
         "mObjectName": "Black Cleaver",
         "~class": "TooltipInstanceItem"
@@ -39089,8 +39047,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -39477,7 +39435,7 @@
     ],
     "mDeathRecapName": "ItemTiamat",
     "mDisplayName": "Tiamat",
-    "mFlatPhysicalDamageMod": 20.0,
+    "mFlatPhysicalDamageMod": 25.0,
     "mItemAttributes": [
       1,
       8,
@@ -39510,8 +39468,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -40310,7 +40268,7 @@
       "0x232dac8a": {
         "mFormulaParts": [
           {
-            "mNumber": 0.550000011920929,
+            "mNumber": 0.6499999761581421,
             "~class": "NumberCalculationPart"
           }
         ],
@@ -40339,7 +40297,7 @@
           {
             "mStat": 2,
             "mSubpart": {
-              "mNumber": 0.550000011920929,
+              "mNumber": 0.6499999761581421,
               "~class": "NumberCalculationPart"
             },
             "~class": "StatBySubPartCalculationPart"
@@ -40351,8 +40309,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -40411,7 +40369,7 @@
       "0x78ac5965"
     ],
     "mPercentAttackSpeedMod": 0.4000000059604645,
-    "mPercentMovementSpeedMod": 0.03999999910593033,
+    "mPercentMovementSpeedMod": 0.05000000074505806,
     "mRequiredPurchaseIdentities": [
       "Ranged"
     ],
@@ -40643,6 +40601,7 @@
           "keyBrief": "Chain On Hits",
           "keyColloquialism": "energized;energised",
           "keyInventoryOnlyText": "Extra Champions Zapped: <attention>@f2@</attention><br>Bonus Damage to Champions: <attention>@f1@</attention>",
+          "keyKeywordDefinitions": "<br>{{ Item_KeywordDefinition_Energized }}",
           "keyName": "Statikk Shiv",
           "keyTooltip": "<passive>Electrospark</passive><br>Your <keyword>Energized Attacks</keyword> fire chain lightning, dealing <magicDamage>@ChainDamage@ magic damage</magicDamage> to up to <attention>@BounceCount@</attention> targets, increased to <magicDamage>@NonChampChainDamage@ magic damage</magicDamage> against Minions and Monsters. Applies %i:OnHit% <OnHit>On-Hit</OnHit> effects to secondary bounce targets. <br><br><passive>Electroshock</passive> <br>Basic Attacks grant @BonusEnergizedStacks@ extra <keyword>Energized</keyword> stacks.",
           "keyTooltipExternal": "<passive>Electrospark</passive><br>Your <keyword>Energized Attacks</keyword> fire chain lightning, applying %i:OnHit% <OnHit>On-Hit</OnHit> effects and dealing <magicDamage>magic damage</magicDamage> to nearby targets.<br><br><passive>Electroshock</passive> <br>Basic Attacks grant extra <keyword>Energized</keyword> stacks."
@@ -42842,26 +42801,6 @@
         ],
         "~class": "ItemDataValues"
       },
-      "0xafcea79f": {
-        "DataValues": [
-          {
-            "mName": "ManaPerCharge",
-            "mValue": 4.5,
-            "~class": "ItemDataValue"
-          }
-        ],
-        "~class": "ItemDataValues"
-      },
-      "0xb0cea932": {
-        "DataValues": [
-          {
-            "mName": "ManaPerCharge",
-            "mValue": 4.5,
-            "~class": "ItemDataValue"
-          }
-        ],
-        "~class": "ItemDataValues"
-      },
       "0xbffdf499": {
         "DataValues": [
           {
@@ -42893,6 +42832,26 @@
         "~class": "ItemDataValues"
       },
       "ONEFORALL": {
+        "DataValues": [
+          {
+            "mName": "ManaPerCharge",
+            "mValue": 4.5,
+            "~class": "ItemDataValue"
+          }
+        ],
+        "~class": "ItemDataValues"
+      },
+      "RUBY_TRIAL_1": {
+        "DataValues": [
+          {
+            "mName": "ManaPerCharge",
+            "mValue": 4.5,
+            "~class": "ItemDataValue"
+          }
+        ],
+        "~class": "ItemDataValues"
+      },
+      "RUBY_TRIAL_2": {
         "DataValues": [
           {
             "mName": "ManaPerCharge",
@@ -44342,8 +44301,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -44359,7 +44318,7 @@
           "mNumber": 0.5,
           "~class": "NumberCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       },
       "duration": {
         "mFormulaParts": [
@@ -44372,7 +44331,7 @@
           "mNumber": 0.6669999957084656,
           "~class": "NumberCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "mItemCalloutSpectator": true,
@@ -45146,36 +45105,6 @@
         ],
         "~class": "ItemDataValues"
       },
-      "0xafcea79f": {
-        "DataValues": [
-          {
-            "mName": "MeleeValue",
-            "mValue": 0.05999999865889549,
-            "~class": "ItemDataValue"
-          },
-          {
-            "mName": "RangedValue",
-            "mValue": 0.03999999910593033,
-            "~class": "ItemDataValue"
-          }
-        ],
-        "~class": "ItemDataValues"
-      },
-      "0xb0cea932": {
-        "DataValues": [
-          {
-            "mName": "MeleeValue",
-            "mValue": 0.05999999865889549,
-            "~class": "ItemDataValue"
-          },
-          {
-            "mName": "RangedValue",
-            "mValue": 0.03999999910593033,
-            "~class": "ItemDataValue"
-          }
-        ],
-        "~class": "ItemDataValues"
-      },
       "0xbffdf499": {
         "DataValues": [
           {
@@ -45201,6 +45130,36 @@
           {
             "mName": "MeleeValue",
             "mValue": 0.11999999731779099,
+            "~class": "ItemDataValue"
+          }
+        ],
+        "~class": "ItemDataValues"
+      },
+      "RUBY_TRIAL_1": {
+        "DataValues": [
+          {
+            "mName": "MeleeValue",
+            "mValue": 0.05999999865889549,
+            "~class": "ItemDataValue"
+          },
+          {
+            "mName": "RangedValue",
+            "mValue": 0.03999999910593033,
+            "~class": "ItemDataValue"
+          }
+        ],
+        "~class": "ItemDataValues"
+      },
+      "RUBY_TRIAL_2": {
+        "DataValues": [
+          {
+            "mName": "MeleeValue",
+            "mValue": 0.05999999865889549,
+            "~class": "ItemDataValue"
+          },
+          {
+            "mName": "RangedValue",
+            "mValue": 0.03999999910593033,
             "~class": "ItemDataValue"
           }
         ],
@@ -45304,7 +45263,7 @@
         ],
         "mMultiplier": {
           "mSpellCalculationKey": "0x79b6144b",
-          "~class": "0xf3cbe7b2"
+          "~class": "NamedGameCalculationCalculationPart"
         },
         "~class": "GameCalculation"
       },
@@ -45374,8 +45333,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -45773,8 +45732,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -46137,8 +46096,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -46573,7 +46532,7 @@
           "mDataValue": "RangedMSMultiplier",
           "~class": "NamedDataValueCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "mItemDataAvailability": {
@@ -46683,7 +46642,7 @@
           "mDataValue": "RangedMSMultiplier",
           "~class": "NamedDataValueCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "mItemDataAvailability": {
@@ -46726,8 +46685,7 @@
           "keyFlavorText": "“The empire values strength. I value style.” - Samira",
           "keyName": "Gunmetal Greaves",
           "keyShopOnlyText": "<rules><font color = '#FF0000'>(Only Mid Lane) Locked until Quest is Completed</font></rules>",
-          "keyTooltip": "",
-          "keyTooltipExternal": "<passive>Noxian Gait</passive><br>Attacks against Champions grant <speed>Move Speed</speed> {{ Item_Keyword_OnHit }} decaying over @Duration@ seconds."
+          "keyTooltip": ""
         },
         "mObjectName": "Gunmetal Greaves",
         "~class": "TooltipInstanceItem"
@@ -46739,7 +46697,7 @@
       "0x9e360ad4",
       "Items/ItemGroups/Boots"
     ],
-    "mPercentAttackSpeedMod": 0.4000000059604645,
+    "mPercentAttackSpeedMod": 0.44999998807907104,
     "mPercentLifeStealMod": 0.05000000074505806,
     "mRequiredBuffCurrencyName": "Feats_NoxianBootPurchaseBuff",
     "maxStack": 1,
@@ -46779,7 +46737,7 @@
     ],
     "mDisplayName": "Chainlaced Crushers",
     "mFlatMovementSpeedMod": 45.0,
-    "mFlatSpellBlockMod": 30.0,
+    "mFlatSpellBlockMod": 25.0,
     "mItemCalculations": {
       "0x5e4a31e2": {
         "mFormulaParts": [
@@ -47009,7 +46967,7 @@
       "MagicPenetration"
     ],
     "mDisplayName": "Spellslinger's Shoes",
-    "mFlatMagicPenetrationMod": 18.0,
+    "mFlatMagicPenetrationMod": 20.0,
     "mFlatMovementSpeedMod": 45.0,
     "mItemCalculations": {
       "0x5e4a31e2": {
@@ -47320,8 +47278,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -47373,7 +47331,7 @@
           "mNumber": 0.6669999957084656,
           "~class": "NumberCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "mItemCalloutSpectator": true,
@@ -47534,7 +47492,7 @@
           "mNumber": 0.5,
           "~class": "NumberCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       },
       "MaxStackDamage": {
         "mFormulaParts": [
@@ -47554,7 +47512,7 @@
           "mNumber": 0.699999988079071,
           "~class": "NumberCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       },
       "MaxStackDamageVSStructures": {
         "mFormulaParts": [
@@ -47574,7 +47532,7 @@
           "mNumber": 0.699999988079071,
           "~class": "NumberCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "mItemCalloutSpectator": true,
@@ -48959,26 +48917,6 @@
         ],
         "~class": "ItemDataValues"
       },
-      "0xafcea79f": {
-        "DataValues": [
-          {
-            "mName": "ManaPerCharge",
-            "mValue": 7.5,
-            "~class": "ItemDataValue"
-          }
-        ],
-        "~class": "ItemDataValues"
-      },
-      "0xb0cea932": {
-        "DataValues": [
-          {
-            "mName": "ManaPerCharge",
-            "mValue": 7.5,
-            "~class": "ItemDataValue"
-          }
-        ],
-        "~class": "ItemDataValues"
-      },
       "0xbffdf499": {
         "DataValues": [
           {
@@ -49014,6 +48952,26 @@
           {
             "mName": "ManaPerCharge",
             "mValue": 4.5,
+            "~class": "ItemDataValue"
+          }
+        ],
+        "~class": "ItemDataValues"
+      },
+      "RUBY_TRIAL_1": {
+        "DataValues": [
+          {
+            "mName": "ManaPerCharge",
+            "mValue": 7.5,
+            "~class": "ItemDataValue"
+          }
+        ],
+        "~class": "ItemDataValues"
+      },
+      "RUBY_TRIAL_2": {
+        "DataValues": [
+          {
+            "mName": "ManaPerCharge",
+            "mValue": 7.5,
             "~class": "ItemDataValue"
           }
         ],
@@ -49172,26 +49130,6 @@
         ],
         "~class": "ItemDataValues"
       },
-      "0xafcea79f": {
-        "DataValues": [
-          {
-            "mName": "ManaPerCharge",
-            "mValue": 4.5,
-            "~class": "ItemDataValue"
-          }
-        ],
-        "~class": "ItemDataValues"
-      },
-      "0xb0cea932": {
-        "DataValues": [
-          {
-            "mName": "ManaPerCharge",
-            "mValue": 4.5,
-            "~class": "ItemDataValue"
-          }
-        ],
-        "~class": "ItemDataValues"
-      },
       "0xbffdf499": {
         "DataValues": [
           {
@@ -49223,6 +49161,26 @@
         "~class": "ItemDataValues"
       },
       "ONEFORALL": {
+        "DataValues": [
+          {
+            "mName": "ManaPerCharge",
+            "mValue": 4.5,
+            "~class": "ItemDataValue"
+          }
+        ],
+        "~class": "ItemDataValues"
+      },
+      "RUBY_TRIAL_1": {
+        "DataValues": [
+          {
+            "mName": "ManaPerCharge",
+            "mValue": 4.5,
+            "~class": "ItemDataValue"
+          }
+        ],
+        "~class": "ItemDataValues"
+      },
+      "RUBY_TRIAL_2": {
         "DataValues": [
           {
             "mName": "ManaPerCharge",
@@ -49623,8 +49581,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -49905,26 +49863,6 @@
         ],
         "~class": "ItemDataValues"
       },
-      "0xafcea79f": {
-        "DataValues": [
-          {
-            "mName": "ManaPerCharge",
-            "mValue": 4.5,
-            "~class": "ItemDataValue"
-          }
-        ],
-        "~class": "ItemDataValues"
-      },
-      "0xb0cea932": {
-        "DataValues": [
-          {
-            "mName": "ManaPerCharge",
-            "mValue": 4.5,
-            "~class": "ItemDataValue"
-          }
-        ],
-        "~class": "ItemDataValues"
-      },
       "0xbffdf499": {
         "DataValues": [
           {
@@ -49956,6 +49894,26 @@
         "~class": "ItemDataValues"
       },
       "ONEFORALL": {
+        "DataValues": [
+          {
+            "mName": "ManaPerCharge",
+            "mValue": 4.5,
+            "~class": "ItemDataValue"
+          }
+        ],
+        "~class": "ItemDataValues"
+      },
+      "RUBY_TRIAL_1": {
+        "DataValues": [
+          {
+            "mName": "ManaPerCharge",
+            "mValue": 4.5,
+            "~class": "ItemDataValue"
+          }
+        ],
+        "~class": "ItemDataValues"
+      },
+      "RUBY_TRIAL_2": {
         "DataValues": [
           {
             "mName": "ManaPerCharge",
@@ -50728,26 +50686,6 @@
         ],
         "~class": "ItemDataValues"
       },
-      "0xafcea79f": {
-        "DataValues": [
-          {
-            "mName": "ManaPerCharge",
-            "mValue": 4.5,
-            "~class": "ItemDataValue"
-          }
-        ],
-        "~class": "ItemDataValues"
-      },
-      "0xb0cea932": {
-        "DataValues": [
-          {
-            "mName": "ManaPerCharge",
-            "mValue": 4.5,
-            "~class": "ItemDataValue"
-          }
-        ],
-        "~class": "ItemDataValues"
-      },
       "0xbffdf499": {
         "DataValues": [
           {
@@ -50779,6 +50717,26 @@
         "~class": "ItemDataValues"
       },
       "ONEFORALL": {
+        "DataValues": [
+          {
+            "mName": "ManaPerCharge",
+            "mValue": 4.5,
+            "~class": "ItemDataValue"
+          }
+        ],
+        "~class": "ItemDataValues"
+      },
+      "RUBY_TRIAL_1": {
+        "DataValues": [
+          {
+            "mName": "ManaPerCharge",
+            "mValue": 4.5,
+            "~class": "ItemDataValue"
+          }
+        ],
+        "~class": "ItemDataValues"
+      },
+      "RUBY_TRIAL_2": {
         "DataValues": [
           {
             "mName": "ManaPerCharge",
@@ -52195,26 +52153,6 @@
         ],
         "~class": "ItemDataValues"
       },
-      "0xafcea79f": {
-        "DataValues": [
-          {
-            "mName": "SecondsPerStack",
-            "mValue": 40.0,
-            "~class": "ItemDataValue"
-          }
-        ],
-        "~class": "ItemDataValues"
-      },
-      "0xb0cea932": {
-        "DataValues": [
-          {
-            "mName": "SecondsPerStack",
-            "mValue": 40.0,
-            "~class": "ItemDataValue"
-          }
-        ],
-        "~class": "ItemDataValues"
-      },
       "0xbffdf499": {
         "DataValues": [
           {
@@ -52240,6 +52178,26 @@
           {
             "mName": "SecondsPerStack",
             "mValue": 30.0,
+            "~class": "ItemDataValue"
+          }
+        ],
+        "~class": "ItemDataValues"
+      },
+      "RUBY_TRIAL_1": {
+        "DataValues": [
+          {
+            "mName": "SecondsPerStack",
+            "mValue": 40.0,
+            "~class": "ItemDataValue"
+          }
+        ],
+        "~class": "ItemDataValues"
+      },
+      "RUBY_TRIAL_2": {
+        "DataValues": [
+          {
+            "mName": "SecondsPerStack",
+            "mValue": 40.0,
             "~class": "ItemDataValue"
           }
         ],
@@ -52584,7 +52542,7 @@
         "mFormulaParts": [
           {
             "mSpellCalculationKey": "OnHitDamage",
-            "~class": "0xf3cbe7b2"
+            "~class": "NamedGameCalculationCalculationPart"
           }
         ],
         "~class": "GameCalculation"
@@ -54314,7 +54272,7 @@
           "~class": "NamedDataValueCalculationPart"
         },
         "mSimpleTooltipCalculationDisplay": 6,
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       },
       "CalcValueB": {
         "mFormulaParts": [
@@ -54329,7 +54287,7 @@
           "~class": "NamedDataValueCalculationPart"
         },
         "mSimpleTooltipCalculationDisplay": 6,
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       },
       "CalcValueC": {
         "mFormulaParts": [
@@ -54344,7 +54302,7 @@
           "~class": "NamedDataValueCalculationPart"
         },
         "mSimpleTooltipCalculationDisplay": 6,
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       },
       "CalcValueD": {
         "mFormulaParts": [
@@ -54359,7 +54317,7 @@
           "~class": "NamedDataValueCalculationPart"
         },
         "mSimpleTooltipCalculationDisplay": 6,
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       },
       "ConeDamageCalc": {
         "mFormulaParts": [
@@ -54373,7 +54331,7 @@
           "mNumber": 0.5,
           "~class": "NumberCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       },
       "OnHitDamageCalc": {
         "mFormulaParts": [
@@ -54387,7 +54345,7 @@
           "mNumber": 0.5,
           "~class": "NumberCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "mItemCalloutSpectator": true,
@@ -55174,8 +55132,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -55478,8 +55436,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -56057,17 +56015,17 @@
       },
       {
         "mName": "GoldOnHit",
-        "mValue": 20.0,
+        "mValue": 18.0,
         "~class": "ItemDataValue"
       },
       {
         "mName": "GoldOnHitMelee",
-        "mValue": 22.0,
+        "mValue": 18.0,
         "~class": "ItemDataValue"
       },
       {
         "mName": "ExecuteMinionGold",
-        "mValue": 15.0,
+        "mValue": 18.0,
         "~class": "ItemDataValue"
       },
       {
@@ -56181,8 +56139,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -56210,7 +56168,7 @@
             "mStat": 12,
             "mSubpart": {
               "mSpellCalculationKey": "ExecutePercent",
-              "~class": "0xf3cbe7b2"
+              "~class": "NamedGameCalculationCalculationPart"
             },
             "~class": "StatBySubPartCalculationPart"
           },
@@ -56389,17 +56347,17 @@
       },
       {
         "mName": "GoldOnHit",
-        "mValue": 22.0,
+        "mValue": 21.0,
         "~class": "ItemDataValue"
       },
       {
         "mName": "GoldOnHitMelee",
-        "mValue": 24.0,
+        "mValue": 21.0,
         "~class": "ItemDataValue"
       },
       {
         "mName": "ExecuteMinionGold",
-        "mValue": 20.0,
+        "mValue": 21.0,
         "~class": "ItemDataValue"
       },
       {
@@ -56507,8 +56465,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -56536,7 +56494,7 @@
             "mStat": 12,
             "mSubpart": {
               "mSpellCalculationKey": "ExecutePercent",
-              "~class": "0xf3cbe7b2"
+              "~class": "NamedGameCalculationCalculationPart"
             },
             "~class": "StatBySubPartCalculationPart"
           },
@@ -57588,8 +57546,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -58740,8 +58698,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -59697,8 +59655,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -61591,8 +61549,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -62375,8 +62333,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -63199,8 +63157,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -64456,7 +64414,7 @@
           "mDataValue": "0xb47b239e",
           "~class": "NamedDataValueCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       },
       "SpellStacks": {
         "mFormulaParts": [
@@ -64469,7 +64427,7 @@
           "mDataValue": "0x2b6b0ae8",
           "~class": "NamedDataValueCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "mItemCalloutSpectator": true,
@@ -67452,8 +67410,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -67868,8 +67826,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -68687,8 +68645,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -69831,8 +69789,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -70027,7 +69985,7 @@
       "URF": {
         "DataValues": [
           {
-            "mName": "HealRatio",
+            "mName": "HealBaseADRatio",
             "mValue": 1.100000023841858,
             "~class": "ItemDataValue"
           },
@@ -70059,23 +70017,18 @@
         "~class": "ItemDataValue"
       },
       {
-        "mName": "HealAmount",
-        "mValue": 0.20000000298023224,
-        "~class": "ItemDataValue"
-      },
-      {
         "mName": "Cooldown",
         "mValue": 10.0,
         "~class": "ItemDataValue"
       },
       {
-        "mName": "HealRatio",
-        "mValue": 1.0,
+        "mName": "HealBaseADRatio",
+        "mValue": 0.8999999761581421,
         "~class": "ItemDataValue"
       },
       {
         "mName": "MissingHealthHeal",
-        "mValue": 0.05999999865889549,
+        "mValue": 0.03999999910593033,
         "~class": "ItemDataValue"
       },
       {
@@ -70085,69 +70038,26 @@
       }
     ],
     "mDisplayName": "Sundered Sky",
-    "mFlatHPPoolMod": 400.0,
+    "mFlatHPPoolMod": 450.0,
     "mFlatPhysicalDamageMod": 45.0,
     "mItemAttributes": [
       1
     ],
     "mItemCalculations": {
-      "0x6387172": {
+      "0x1099b16": {
         "mFormulaParts": [
           {
-            "mNumber": 2.0,
-            "~class": "NumberCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "0x792cf56b": {
-        "mFormulaParts": [
-          {
-            "mNumber": 1.0,
-            "~class": "NumberCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "ChampRange": {
-        "mConditionalCalculationRequirements": {
-          "~class": "IsRangedCastRequirement"
-        },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
-        "mExpandedTooltipCalculationDisplay": 5,
-        "mSimpleTooltipCalculationDisplay": 5,
-        "~class": "GameCalculationConditional"
-      },
-      "HealProc": {
-        "mFormulaParts": [
-          {
-            "mDataValue": "HealRatio",
+            "mDataValue": "HealBaseADRatio",
             "mStat": 2,
             "mStatFormula": 1,
             "~class": "StatByNamedDataValueCalculationPart"
           }
         ],
-        "~class": "GameCalculation"
-      },
-      "MeleeItemCalcValue": {
-        "mFormulaParts": [
-          {
-            "mDataValue": "HealRatio",
-            "mStat": 2,
-            "mStatFormula": 1,
-            "~class": "StatByNamedDataValueCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "RangedItemCalcValue": {
-        "mModifiedGameCalculation": "MeleeItemCalcValue",
-        "mMultiplier": {
+        "mRangedMultiplier": {
           "mDataValue": "RangedHealMod",
           "~class": "NamedDataValueCalculationPart"
         },
-        "~class": "GameCalculationModified"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "mItemDataAvailability": {
@@ -70159,9 +70069,9 @@
       "InventoryIconSmall": "ASSETS/Items/Icons2D/AutoAtlas/SmallIcons/6610_SunderedSky44.png",
       "epicness": 5,
       "inventoryIcon": "ASSETS/Items/Icons2D/6610_SunderedSky.dds",
-      "mDescription": "<section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Lightshield Strike</passive> %i:cooldown% (@Cooldown@s) per target<br>Your first Attack against a champion <attention>Critically Strikes</attention> for @CritModifier*100@% of your normal Critical Strike damage and <healing>restores {{ Item_Range_Mod_@ChampRange@_Dynamic }} plus @MissingHealthHeal*100@%</healing> of missing Health.</section><section></section><section><flavorText></flavorText></section>",
-      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Sundered Sky</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Sustained Combat</subtitleLeft><subtitleRight></subtitleRight><mainText><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste@ExtendedStats@</section><section><passive>Lightshield Strike</passive> %i:cooldown% (@Cooldown@s) per target<br>Your first Attack against a champion <attention>Critically Strikes</attention> for @CritModifier*100@% of your normal Critical Strike damage and <healing>restores {{ Item_Range_Mod_@ChampRange@_Dynamic }} plus @MissingHealthHeal*100@%</healing> of missing Health.</section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft>Healing Done: <attention>@f2@</attention></postScriptLeft>",
-      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Sundered Sky</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Sustained Combat</subtitleLeft><subtitleRight></subtitleRight><mainText><section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Lightshield Strike</passive> %i:cooldown% (@Cooldown@s) per target<br>Your first Attack against a champion <attention>Critically Strikes</attention> for @CritModifier*100@% of your normal Critical Strike damage and <healing>restores {{ Item_Range_Mod_@ChampRange@_Dynamic }} plus @MissingHealthHeal*100@%</healing> of missing Health.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
+      "mDescription": "<section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Lightshield Strike</passive> %i:cooldown% (@Cooldown@s) per target<br>Your first Attack against a champion <attention>Critically Strikes</attention> for @CritModifier*100@% of your normal Critical Strike damage and <healing>restores @HealADSplit@ plus @MissingHealthHeal*100@%</healing> of missing Health.</section><section></section><section><flavorText></flavorText></section>",
+      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Sundered Sky</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Sustained Combat</subtitleLeft><subtitleRight></subtitleRight><mainText><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste@ExtendedStats@</section><section><passive>Lightshield Strike</passive> %i:cooldown% (@Cooldown@s) per target<br>Your first Attack against a champion <attention>Critically Strikes</attention> for @CritModifier*100@% of your normal Critical Strike damage and <healing>restores @HealADSplit@ plus @MissingHealthHeal*100@%</healing> of missing Health.</section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft>Healing Done: <attention>@f2@</attention></postScriptLeft>",
+      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Sundered Sky</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Sustained Combat</subtitleLeft><subtitleRight></subtitleRight><mainText><section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Lightshield Strike</passive> %i:cooldown% (@Cooldown@s) per target<br>Your first Attack against a champion <attention>Critically Strikes</attention> for @CritModifier*100@% of your normal Critical Strike damage and <healing>restores @HealADSplit@ plus @MissingHealthHeal*100@%</healing> of missing Health.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
       "mTooltipData": {
         "mFormat": "TooltipFormatA",
         "mLists": {
@@ -70187,7 +70097,7 @@
           "keyBrief": "Sustained Combat",
           "keyInventoryOnlyText": "Healing Done: <attention>@f2@</attention>",
           "keyName": "Sundered Sky",
-          "keyTooltip": "<passive>Lightshield Strike</passive> %i:cooldown% (@Cooldown@s) per target<br>Your first Attack against a champion <attention>Critically Strikes</attention> for @CritModifier*100@% of your normal Critical Strike damage and <healing>restores {{ Item_Range_Mod_@ChampRange@_Dynamic }} plus @MissingHealthHeal*100@%</healing> of missing Health.",
+          "keyTooltip": "<passive>Lightshield Strike</passive> %i:cooldown% (@Cooldown@s) per target<br>Your first Attack against a champion <attention>Critically Strikes</attention> for @CritModifier*100@% of your normal Critical Strike damage and <healing>restores @HealADSplit@ plus @MissingHealthHeal*100@%</healing> of missing Health.",
           "keyTooltipExtendedRules": "<br><br><rules>Excess healing is granted as temporary bonus Health.</rules>",
           "keyTooltipExternal": "<passive>Lightshield Strike</passive><br>Your first Attack against a champion <attention>Critically Strikes</attention> and <healing>restores Health</healing>."
         },
@@ -70208,11 +70118,10 @@
       "~class": "ResourceResolver"
     },
     "maxStack": 1,
-    "price": 500,
+    "price": 900,
     "recipeItemLinks": [
       "Tunneler",
-      "Caulfield's Warhammer",
-      "Ruby Crystal"
+      "Caulfield's Warhammer"
     ],
     "~class": "ItemData"
   },
@@ -71625,8 +71534,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -72218,8 +72127,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -72802,31 +72711,31 @@
         ],
         "~class": "ItemDataValues"
       },
-      "0xafcea79f": {
-        "DataValues": [
-          {
-            "mName": "BurnPercentHealthDamage",
-            "mValue": 0.014999999664723873,
-            "~class": "ItemDataValue"
-          }
-        ],
-        "~class": "ItemDataValues"
-      },
-      "0xb0cea932": {
-        "DataValues": [
-          {
-            "mName": "BurnPercentHealthDamage",
-            "mValue": 0.014999999664723873,
-            "~class": "ItemDataValue"
-          }
-        ],
-        "~class": "ItemDataValues"
-      },
       "ARAM": {
         "DataValues": [
           {
             "mName": "BurnPercentHealthDamage",
             "mValue": 0.017999999225139618,
+            "~class": "ItemDataValue"
+          }
+        ],
+        "~class": "ItemDataValues"
+      },
+      "RUBY_TRIAL_1": {
+        "DataValues": [
+          {
+            "mName": "BurnPercentHealthDamage",
+            "mValue": 0.014999999664723873,
+            "~class": "ItemDataValue"
+          }
+        ],
+        "~class": "ItemDataValues"
+      },
+      "RUBY_TRIAL_2": {
+        "DataValues": [
+          {
+            "mName": "BurnPercentHealthDamage",
+            "mValue": 0.014999999664723873,
             "~class": "ItemDataValue"
           }
         ],
@@ -73279,26 +73188,6 @@
         ],
         "~class": "ItemDataValues"
       },
-      "0xafcea79f": {
-        "DataValues": [
-          {
-            "mName": "SecondsPerStack",
-            "mValue": 40.0,
-            "~class": "ItemDataValue"
-          }
-        ],
-        "~class": "ItemDataValues"
-      },
-      "0xb0cea932": {
-        "DataValues": [
-          {
-            "mName": "SecondsPerStack",
-            "mValue": 40.0,
-            "~class": "ItemDataValue"
-          }
-        ],
-        "~class": "ItemDataValues"
-      },
       "0xbffdf499": {
         "DataValues": [
           {
@@ -73324,6 +73213,26 @@
           {
             "mName": "SecondsPerStack",
             "mValue": 30.0,
+            "~class": "ItemDataValue"
+          }
+        ],
+        "~class": "ItemDataValues"
+      },
+      "RUBY_TRIAL_1": {
+        "DataValues": [
+          {
+            "mName": "SecondsPerStack",
+            "mValue": 40.0,
+            "~class": "ItemDataValue"
+          }
+        ],
+        "~class": "ItemDataValues"
+      },
+      "RUBY_TRIAL_2": {
+        "DataValues": [
+          {
+            "mName": "SecondsPerStack",
+            "mValue": 40.0,
             "~class": "ItemDataValue"
           }
         ],
@@ -75082,7 +74991,7 @@
           "mDataValue": "RangedDamageMultiplier",
           "~class": "NamedDataValueCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       },
       "MaximumDamage": {
         "mModifiedGameCalculation": "DamageAmount",
@@ -75244,7 +75153,7 @@
           "mNumber": 0.800000011920929,
           "~class": "NumberCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "mItemDataAvailability": {
@@ -75922,8 +75831,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -76047,11 +75956,6 @@
             "mName": "MeleeShieldADRatio",
             "mValue": 0.5,
             "~class": "ItemDataValue"
-          },
-          {
-            "mName": "RangedShieldADRatio",
-            "mValue": 0.25,
-            "~class": "ItemDataValue"
           }
         ],
         "~class": "ItemDataValues"
@@ -76062,25 +75966,12 @@
             "mName": "MeleeShieldADRatio",
             "mValue": 0.5,
             "~class": "ItemDataValue"
-          },
-          {
-            "mName": "RangedShieldADRatio",
-            "mValue": 0.25,
-            "~class": "ItemDataValue"
           }
         ],
         "~class": "ItemDataValues"
       }
     },
     "ShowCooldownVfxToAllies": false,
-    "StringCalculations": {
-      "0x4217e5fd": {
-        "DefaultResult": "@MaxHealthPercent@",
-        "MeleeResult": "@MaxHealthPercent@",
-        "RangedResult": "@RangedMaxHealthPercent@",
-        "~class": "0x4750ceb6"
-      }
-    },
     "epicness": 5,
     "itemID": 6692,
     "mAbilityHasteMod": 15.0,
@@ -76097,13 +75988,13 @@
         "~class": "ItemDataValue"
       },
       {
-        "mName": "MeleeItemCalcValueB",
-        "mValue": 6.0,
+        "mName": "MeleePercMaxHP",
+        "mValue": 0.07999999821186066,
         "~class": "ItemDataValue"
       },
       {
-        "mName": "RangedItemCalcValueB",
-        "mValue": 4.0,
+        "mName": "RangedPercMaxHPMult",
+        "mValue": 0.625,
         "~class": "ItemDataValue"
       },
       {
@@ -76118,22 +76009,17 @@
       },
       {
         "mName": "MeleeBaseShield",
-        "mValue": 160.0,
+        "mValue": 150.0,
         "~class": "ItemDataValue"
       },
       {
-        "mName": "RangedBaseShield",
-        "mValue": 80.0,
-        "~class": "ItemDataValue"
-      },
-      {
-        "mName": "MeleeShieldADRatio",
+        "mName": "MeleeBonusADShieldRatio",
         "mValue": 0.4000000059604645,
         "~class": "ItemDataValue"
       },
       {
-        "mName": "RangedShieldADRatio",
-        "mValue": 0.20000000298023224,
+        "mName": "RangedShieldMult",
+        "mValue": 0.5,
         "~class": "ItemDataValue"
       }
     ],
@@ -76147,76 +76033,38 @@
       1
     ],
     "mItemCalculations": {
-      "0x6387172": {
-        "mFormulaParts": [
-          {
-            "mNumber": 2.0,
-            "~class": "NumberCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "0x792cf56b": {
-        "mFormulaParts": [
-          {
-            "mNumber": 1.0,
-            "~class": "NumberCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "ChampRange": {
-        "mConditionalCalculationRequirements": {
-          "~class": "IsRangedCastRequirement"
-        },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
-        "mExpandedTooltipCalculationDisplay": 5,
-        "mSimpleTooltipCalculationDisplay": 5,
-        "~class": "GameCalculationConditional"
-      },
-      "MaxHealthDamageCalc": {
-        "mFormulaParts": [
-          {
-            "mNumber": 6.0,
-            "~class": "NumberCalculationPart"
-          }
-        ],
-        "mRangedMultiplier": {
-          "mNumber": 0.6669999957084656,
-          "~class": "NumberCalculationPart"
-        },
-        "~class": "0xe9a3c91d"
-      },
-      "MeleeItemCalcValue": {
+      "0xd02ea590": {
         "mFormulaParts": [
           {
             "mDataValue": "MeleeBaseShield",
             "~class": "NamedDataValueCalculationPart"
           },
           {
-            "mDataValue": "MeleeShieldADRatio",
+            "mDataValue": "0xe367e801",
             "mStat": 2,
             "mStatFormula": 2,
             "~class": "StatByNamedDataValueCalculationPart"
           }
         ],
-        "~class": "GameCalculation"
+        "mRangedMultiplier": {
+          "mDataValue": "0x51df2a01",
+          "~class": "NamedDataValueCalculationPart"
+        },
+        "~class": "RangedModifiableGameCalculation"
       },
-      "RangedItemCalcValue": {
+      "MaxHealthDamageCalc": {
+        "mDisplayAsPercent": true,
         "mFormulaParts": [
           {
-            "mDataValue": "RangedBaseShield",
+            "mDataValue": "0xb1f09313",
             "~class": "NamedDataValueCalculationPart"
-          },
-          {
-            "mDataValue": "RangedShieldADRatio",
-            "mStat": 2,
-            "mStatFormula": 2,
-            "~class": "StatByNamedDataValueCalculationPart"
           }
         ],
-        "~class": "GameCalculation"
+        "mRangedMultiplier": {
+          "mDataValue": "0x4b5548be",
+          "~class": "NamedDataValueCalculationPart"
+        },
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "mItemCalloutSpectator": true,
@@ -76229,9 +76077,9 @@
       "InventoryIconSmall": "ASSETS/Items/Icons2D/AutoAtlas/SmallIcons/6692_Assassin_T4_Eclipse.png",
       "epicness": 6,
       "inventoryIcon": "ASSETS/Items/Icons2D/6692_Assassin_T4_Eclipse.dds",
-      "mDescription": "<section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@% max health physical damage</physicalDamage> and grants you a <shield>{{ Item_Range_Mod_@ChampRange@_Dynamic }} Shield</shield> for @ShieldDuration@ seconds.</section><section></section><section><flavorText></flavorText></section>",
-      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Eclipse</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Dueling</subtitleLeft><subtitleRight></subtitleRight><mainText><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste@ExtendedStats@</section><section><br><br><passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@% max health physical damage</physicalDamage> and grants you a <shield>{{ Item_Range_Mod_@ChampRange@_Dynamic }} Shield</shield> for @ShieldDuration@ seconds.<br><br><rules>Item performance differs for %i:meleeInactive% melee and %i:rangedInactive% ranged users.</rules></section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft>Damage blocked: <attention>@f3@</attention></postScriptLeft>",
-      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Eclipse</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Dueling</subtitleLeft><subtitleRight></subtitleRight><mainText><section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@% max health physical damage</physicalDamage> and grants you a <shield>{{ Item_Range_Mod_@ChampRange@_Dynamic }} Shield</shield> for @ShieldDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
+      "mDescription": "<section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@ max health physical damage</physicalDamage> and grants you a <shield>@ShieldSplit@ Shield</shield> for @ShieldDuration@ seconds.</section><section></section><section><flavorText></flavorText></section>",
+      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Eclipse</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Dueling</subtitleLeft><subtitleRight></subtitleRight><mainText><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste@ExtendedStats@</section><section><br><br><passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@ max health physical damage</physicalDamage> and grants you a <shield>@ShieldSplit@ Shield</shield> for @ShieldDuration@ seconds.<br><br><rules>Item performance differs for %i:meleeInactive% melee and %i:rangedInactive% ranged users.</rules></section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft>Damage blocked: <attention>@f3@</attention></postScriptLeft>",
+      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Eclipse</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Dueling</subtitleLeft><subtitleRight></subtitleRight><mainText><section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage<br><attention>%i:scaleCooldown% @AbilityHasteMod@</attention> Ability Haste</section><section><passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@ max health physical damage</physicalDamage> and grants you a <shield>@ShieldSplit@ Shield</shield> for @ShieldDuration@ seconds.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
       "mTooltipData": {
         "mFormat": "TooltipFormatA",
         "mLists": {
@@ -76253,9 +76101,9 @@
           "keyBrief": "Dueling",
           "keyInventoryOnlyText": "Damage blocked: <attention>@f3@</attention>",
           "keyName": "Eclipse",
-          "keyTooltip": "<passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@% max health physical damage</physicalDamage> and grants you a <shield>{{ Item_Range_Mod_@ChampRange@_Dynamic }} Shield</shield> for @ShieldDuration@ seconds.",
+          "keyTooltip": "<passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@ max health physical damage</physicalDamage> and grants you a <shield>@ShieldSplit@ Shield</shield> for @ShieldDuration@ seconds.",
           "keyTooltipExternal": "<passive>Ever Rising Moon</passive><br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds grants you a <shield>Shield</shield> for @ShieldDuration@ seconds.",
-          "keyTooltipInventory": "<br><br><passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@% max health physical damage</physicalDamage> and grants you a <shield>{{ Item_Range_Mod_@ChampRange@_Dynamic }} Shield</shield> for @ShieldDuration@ seconds.<br><br><rules>Item performance differs for %i:meleeInactive% melee and %i:rangedInactive% ranged users.</rules>"
+          "keyTooltipInventory": "<br><br><passive>Ever Rising Moon</passive> %i:cooldown% (@Cooldown@s)<br>Hitting a champion with 2 separate Attacks or Abilities within @WindowDuration@ seconds deals <physicalDamage>@MaxHealthDamageCalc@ max health physical damage</physicalDamage> and grants you a <shield>@ShieldSplit@ Shield</shield> for @ShieldDuration@ seconds.<br><br><rules>Item performance differs for %i:meleeInactive% melee and %i:rangedInactive% ranged users.</rules>"
         },
         "mObjectName": "Eclipse",
         "~class": "TooltipInstanceItem"
@@ -76386,8 +76234,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -77171,8 +77019,8 @@
         "mConditionalCalculationRequirements": {
           "~class": "IsRangedCastRequirement"
         },
-        "mConditionalGameCalculation": "0x6387172",
-        "mDefaultGameCalculation": "0x792cf56b",
+        "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+        "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
         "mExpandedTooltipCalculationDisplay": 5,
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationConditional"
@@ -77189,7 +77037,7 @@
           "mNumber": 0.5,
           "~class": "NumberCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       },
       "MeleeItemCalcValue": {
         "mFormulaParts": [
@@ -77632,7 +77480,7 @@
           "mDataValue": "RangedLethalityMultiplier",
           "~class": "NamedDataValueCalculationPart"
         },
-        "~class": "0xe9a3c91d"
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "mItemCalloutSpectator": true,
@@ -78280,7 +78128,7 @@
       "~class": "ItemDataAvailability"
     },
     "mItemDataClient": {
-      "inventoryIcon": "ASSETS/Items/Icons2D/1031_Base_T2_ChainVest.dds",
+      "inventoryIcon": "ASSETS/Items/Icons2D/Jade/1031_Chain_Vest.dds",
       "mDescription": "<section></section><section><attention>%i:scaleArmor% @FlatArmorMod@</attention> Armor</section><section></section><section></section><section><flavorText></flavorText></section>",
       "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Chain Vest</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}</subtitleLeft><subtitleRight></subtitleRight><mainText><section><attention>%i:scaleArmor% @FlatArmorMod@</attention> Armor@ExtendedStats@</section><section></section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft></postScriptLeft>",
       "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Chain Vest</itemName@ItemActiveness@></titleLeft><titleRight>{{ Item_Gold_Value }}</titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}</subtitleLeft><subtitleRight></subtitleRight><mainText><section></section><section><attention>%i:scaleArmor% @FlatArmorMod@</attention> Armor</section><section></section><section></section><section><flavorText></flavorText></section></mainText><br>",
@@ -82161,9 +82009,9 @@
     "mItemDataClient": {
       "epicness": 5,
       "inventoryIcon": "ASSETS/Items/Icons2D/773035_Last_Whisper.tex",
-      "mDescription": "<section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage</section><section><jadeUnique>Piercing Volley:</jadeUnique> You ignore <armorPen>@ArmPen*100@%</armorPen> of your opponent's armor.</section><section></section><section><flavorText></flavorText></section>",
-      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Last Whisper</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Anti-Armor</subtitleLeft><subtitleRight></subtitleRight><mainText><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage@ExtendedStats@</section><section><jadeUnique>Piercing Volley:</jadeUnique> You ignore <armorPen>@ArmPen*100@%</armorPen> of your opponent's armor.</section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft></postScriptLeft>",
-      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Last Whisper</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Anti-Armor</subtitleLeft><subtitleRight></subtitleRight><mainText><section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage</section><section><jadeUnique>Piercing Volley:</jadeUnique> You ignore <armorPen>@ArmPen*100@%</armorPen> of your opponent's armor.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
+      "mDescription": "<section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage</section><section><jadeUnique>Piercing Volley:</jadeUnique> You ignore <armorPen>@ArmPen*100@%</armorPen> of your opponent's <scaleArmor>Armor</scaleArmor>.</section><section></section><section><flavorText></flavorText></section>",
+      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Last Whisper</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Anti-Armor</subtitleLeft><subtitleRight></subtitleRight><mainText><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage@ExtendedStats@</section><section><jadeUnique>Piercing Volley:</jadeUnique> You ignore <armorPen>@ArmPen*100@%</armorPen> of your opponent's <scaleArmor>Armor</scaleArmor>.</section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft></postScriptLeft>",
+      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Last Whisper</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Anti-Armor</subtitleLeft><subtitleRight></subtitleRight><mainText><section></section><section><attention>%i:scaleAD% @FlatPhysicalDamageMod@</attention> Attack Damage</section><section><jadeUnique>Piercing Volley:</jadeUnique> You ignore <armorPen>@ArmPen*100@%</armorPen> of your opponent's <scaleArmor>Armor</scaleArmor>.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
       "mTooltipData": {
         "EnableExtendedTooltip": false,
         "mFormat": "TooltipFormatA",
@@ -82182,7 +82030,7 @@
           "keyBrief": "Anti-Armor",
           "keyColloquialism": ";lw;anti-armor;anti armor;armor pen;penetration",
           "keyName": "Last Whisper",
-          "keyTooltip": "<jadeUnique>Piercing Volley:</jadeUnique> You ignore <armorPen>@ArmPen*100@%</armorPen> of your opponent's armor."
+          "keyTooltip": "<jadeUnique>Piercing Volley:</jadeUnique> You ignore <armorPen>@ArmPen*100@%</armorPen> of your opponent's <scaleArmor>Armor</scaleArmor>."
         },
         "mObjectName": "77/Last Whisper",
         "~class": "TooltipInstanceItem"
@@ -83482,7 +83330,7 @@
       "HealthPerSecond": {
         "mFormulaParts": [
           {
-            "mDataValue": "0xe25f1fb9",
+            "mDataValue": "MaxHealthRegenPercent",
             "mStat": 12,
             "~class": "StatByNamedDataValueCalculationPart"
           }
@@ -84880,7 +84728,7 @@
         "mFormulaParts": [
           {
             "mPart1": {
-              "mDataValue": "0x92767423",
+              "mDataValue": "RegenPerStack",
               "~class": "NamedDataValueCalculationPart"
             },
             "mPart2": {
@@ -85083,22 +84931,8 @@
     ],
     "mDataValues": [
       {
-        "mName": "BoltMinPercent",
-        "mValue": 50.0,
-        "~class": "ItemDataValue"
-      },
-      {
-        "mName": "BoltMaxPercent",
-        "mValue": 50.0,
-        "~class": "ItemDataValue"
-      },
-      {
         "mName": "ExtraRangeonBoltCheck",
         "mValue": 65.0,
-        "~class": "ItemDataValue"
-      },
-      {
-        "mName": "OnHitDamage",
         "~class": "ItemDataValue"
       },
       {
@@ -85110,16 +84944,21 @@
         "mName": "BoltPercent",
         "mValue": 0.5,
         "~class": "ItemDataValue"
+      },
+      {
+        "mName": "BonusTargets",
+        "mValue": 2.0,
+        "~class": "ItemDataValue"
       }
     ],
     "mDisplayName": "Runaan's Hurricane",
     "mEffectAmount": [
       0.0,
-      40.0,
-      2.0,
       0.0,
-      40.0,
-      1.0
+      0.0,
+      0.0,
+      0.0,
+      0.0
     ],
     "mItemAdviceAttributes": [
       "0x3868804c"
@@ -85149,21 +84988,13 @@
       "BoltDamage": {
         "mFormulaParts": [
           {
-            "mSubparts": [
-              {
-                "mStat": 2,
-                "mSubpart": {
-                  "mDataValue": "0x199b589f",
-                  "~class": "NamedDataValueCalculationPart"
-                },
-                "~class": "StatBySubPartCalculationPart"
-              },
-              {
-                "mDataValue": "ExtraBoltDamage",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "SumOfSubPartsCalculationPart"
+            "mDataValue": "ExtraBoltDamage",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          {
+            "mDataValue": "0x199b589f",
+            "mStat": 2,
+            "~class": "StatByNamedDataValueCalculationPart"
           }
         ],
         "~class": "GameCalculation"
@@ -85184,9 +85015,9 @@
     "mItemDataClient": {
       "epicness": 5,
       "inventoryIcon": "ASSETS/Items/Icons2D/3085_Runaans_Hurricane.tex",
-      "mDescription": "<section></section><section><attention>%i:scaleAS% @PercentAttackSpeedMod*100@%</attention> Attack Speed</section><section><jadeUnique>Hurricane Volley:</jadeUnique> When Attacking, bolts are fired at up to @Effect3Amount@ enemies near the target, each dealing each dealing @ExtraBoltDamage@ (<physicalDamage>@BoltPercent*100@% of Attack Damage</physicalDamage>) physical damage. These bolts apply on-hit effects.</section><section></section><section><flavorText></flavorText></section>",
-      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Runaan's Hurricane</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Multishot</subtitleLeft><subtitleRight></subtitleRight><mainText><section><attention>%i:scaleAS% @PercentAttackSpeedMod*100@%</attention> Attack Speed@ExtendedStats@</section><section><jadeUnique>Hurricane Volley:</jadeUnique> When Attacking, bolts are fired at up to @Effect3Amount@ enemies near the target, each dealing each dealing @ExtraBoltDamage@ (<physicalDamage>@BoltPercent*100@% of Attack Damage</physicalDamage>) physical damage. These bolts apply on-hit effects.</section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft></postScriptLeft>",
-      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Runaan's Hurricane</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Multishot</subtitleLeft><subtitleRight></subtitleRight><mainText><section></section><section><attention>%i:scaleAS% @PercentAttackSpeedMod*100@%</attention> Attack Speed</section><section><jadeUnique>Hurricane Volley:</jadeUnique> When Attacking, bolts are fired at up to @Effect3Amount@ enemies near the target, each dealing each dealing @ExtraBoltDamage@ (<physicalDamage>@BoltPercent*100@% of Attack Damage</physicalDamage>) physical damage. These bolts apply on-hit effects.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
+      "mDescription": "<section></section><section><attention>%i:scaleAS% @PercentAttackSpeedMod*100@%</attention> Attack Speed</section><section><jadeUnique>Hurricane Volley:</jadeUnique> When Attacking, bolts are fired at up to @BonusTargets@ enemies near the target, each dealing each dealing <physicalDamage>@BoltDamage@ physical damage</physicalDamage>. These bolts apply on-hit effects.</section><section></section><section><flavorText></flavorText></section>",
+      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Runaan's Hurricane</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Multishot</subtitleLeft><subtitleRight></subtitleRight><mainText><section><attention>%i:scaleAS% @PercentAttackSpeedMod*100@%</attention> Attack Speed@ExtendedStats@</section><section><jadeUnique>Hurricane Volley:</jadeUnique> When Attacking, bolts are fired at up to @BonusTargets@ enemies near the target, each dealing each dealing <physicalDamage>@BoltDamage@ physical damage</physicalDamage>. These bolts apply on-hit effects.</section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft></postScriptLeft>",
+      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Runaan's Hurricane</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Multishot</subtitleLeft><subtitleRight></subtitleRight><mainText><section></section><section><attention>%i:scaleAS% @PercentAttackSpeedMod*100@%</attention> Attack Speed</section><section><jadeUnique>Hurricane Volley:</jadeUnique> When Attacking, bolts are fired at up to @BonusTargets@ enemies near the target, each dealing each dealing <physicalDamage>@BoltDamage@ physical damage</physicalDamage>. These bolts apply on-hit effects.</section><section></section><section><flavorText></flavorText></section></mainText><br>",
       "mTooltipData": {
         "EnableExtendedTooltip": false,
         "mFormat": "TooltipFormatA",
@@ -85205,7 +85036,7 @@
           "keyBrief": "Multishot",
           "keyColloquialism": ";rav hydra;waveclear;wave clear;push;farm",
           "keyName": "Runaan's Hurricane",
-          "keyTooltip": "<jadeUnique>Hurricane Volley:</jadeUnique> When Attacking, bolts are fired at up to @Effect3Amount@ enemies near the target, each dealing each dealing @ExtraBoltDamage@ (<physicalDamage>@BoltPercent*100@% of Attack Damage</physicalDamage>) physical damage. These bolts apply on-hit effects."
+          "keyTooltip": "<jadeUnique>Hurricane Volley:</jadeUnique> When Attacking, bolts are fired at up to @BonusTargets@ enemies near the target, each dealing each dealing <physicalDamage>@BoltDamage@ physical damage</physicalDamage>. These bolts apply on-hit effects."
         },
         "mObjectName": "77/Runaan's Hurricane",
         "~class": "TooltipInstanceItem"
@@ -86202,6 +86033,7 @@
     "mCanBeSold": true,
     "mCategories": [
       "SpellBlock",
+      "HealthRegen",
       "SpellDamage"
     ],
     "mDataValues": [
@@ -86409,8 +86241,8 @@
     "mCanBeSold": true,
     "mCategories": [
       "Armor",
-      "Damage",
-      "OnHit"
+      "OnHit",
+      "Jungle"
     ],
     "mDataValues": [
       {
@@ -87074,9 +86906,9 @@
       "InventoryIconSmall": "ASSETS/Items/Icons2D/AutoAtlas/SmallIcons/3115_Nashors_Tooth.png",
       "epicness": 5,
       "inventoryIcon": "ASSETS/Items/Icons2D/3115_Nashors_Tooth.tex",
-      "mDescription": "<section></section><section><attention>%i:scaleAP% @FlatMagicDamageMod@</attention> Ability Power<br><attention>%i:scaleAS% @PercentAttackSpeedMod*100@%</attention> Attack Speed</section><section>%i:scaleCooldown% @CDR@% Cooldown Reduction</section><section></section><section><flavorText></flavorText></section>",
-      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Nashor's Tooth</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Attack Speed</subtitleLeft><subtitleRight></subtitleRight><mainText><section><attention>%i:scaleAP% @FlatMagicDamageMod@</attention> Ability Power<br><attention>%i:scaleAS% @PercentAttackSpeedMod*100@%</attention> Attack Speed@ExtendedStats@</section><section>%i:scaleCooldown% @CDR@% Cooldown Reduction</section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft></postScriptLeft>",
-      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Nashor's Tooth</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Attack Speed</subtitleLeft><subtitleRight></subtitleRight><mainText><section></section><section><attention>%i:scaleAP% @FlatMagicDamageMod@</attention> Ability Power<br><attention>%i:scaleAS% @PercentAttackSpeedMod*100@%</attention> Attack Speed</section><section>%i:scaleCooldown% @CDR@% Cooldown Reduction</section><section></section><section><flavorText></flavorText></section></mainText><br>",
+      "mDescription": "<section></section><section><attention>%i:scaleAP% @FlatMagicDamageMod@</attention> Ability Power<br><attention>%i:scaleAS% @PercentAttackSpeedMod*100@%</attention> Attack Speed<br><attention>%i:scaleCooldown% @PercentCooldownMod*-100@%</attention> Cooldown Reduction</section><section></section><section></section><section><flavorText></flavorText></section>",
+      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Nashor's Tooth</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Attack Speed</subtitleLeft><subtitleRight></subtitleRight><mainText><section><attention>%i:scaleAP% @FlatMagicDamageMod@</attention> Ability Power<br><attention>%i:scaleAS% @PercentAttackSpeedMod*100@%</attention> Attack Speed<br><attention>%i:scaleCooldown% @PercentCooldownMod*-100@%</attention> Cooldown Reduction@ExtendedStats@</section><section></section><section></section><section><flavorText></flavorText></section></mainText><postScriptLeft></postScriptLeft>",
+      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Nashor's Tooth</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Attack Speed</subtitleLeft><subtitleRight></subtitleRight><mainText><section></section><section><attention>%i:scaleAP% @FlatMagicDamageMod@</attention> Ability Power<br><attention>%i:scaleAS% @PercentAttackSpeedMod*100@%</attention> Attack Speed<br><attention>%i:scaleCooldown% @PercentCooldownMod*-100@%</attention> Cooldown Reduction</section><section></section><section></section><section><flavorText></flavorText></section></mainText><br>",
       "mTooltipData": {
         "EnableExtendedTooltip": false,
         "mFormat": "TooltipFormatA",
@@ -87090,6 +86922,10 @@
               {
                 "type": "AttackSpeed",
                 "~class": "TooltipInstanceListElement"
+              },
+              {
+                "type": "CooldownReduction",
+                "~class": "TooltipInstanceListElement"
               }
             ],
             "~class": "TooltipInstanceList"
@@ -87098,8 +86934,7 @@
         "mLocKeys": {
           "keyBrief": "Attack Speed",
           "keyColloquialism": ";nashors",
-          "keyName": "Nashor's Tooth",
-          "keyTooltip": "%i:scaleCooldown% @CDR@% Cooldown Reduction"
+          "keyName": "Nashor's Tooth"
         },
         "mObjectName": "77/Nashor's Tooth",
         "~class": "TooltipInstanceItem"
@@ -87516,9 +87351,9 @@
     "mItemDataClient": {
       "epicness": 5,
       "inventoryIcon": "ASSETS/Items/Icons2D/AutoAtlas/LargeIcons/3128_Deathfire_Grasp.tex",
-      "mDescription": "<section></section><section><attention>%i:scaleAP% @FlatMagicDamageMod@</attention> Ability Power</section><section>%i:scaleCooldown% @PercentCooldownMod*-100@% Cooldown Reduction</section><section>%i:activeEffect% <jadeUnique>Active</jadeUnique> %i:cooldown% @Cooldown@s<br>Deals @MaxHealthDamage*100@% of target champion's maximum Health in <magicDamage>magic damage</magicDamage> and increases all subsequent <magicDamage>magic damage</magicDamage> taken by the target by @DamageAmp*100@% for @Duration@ seconds.</section><section><flavorText></flavorText></section>",
-      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Deathfire Grasp</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Magic Amp</subtitleLeft><subtitleRight></subtitleRight><mainText><section><attention>%i:scaleAP% @FlatMagicDamageMod@</attention> Ability Power@ExtendedStats@</section><section>%i:scaleCooldown% @PercentCooldownMod*-100@% Cooldown Reduction</section><section>%i:activeEffect% <jadeUnique>Active</jadeUnique> %i:cooldown% @Cooldown@s<br>Deals @MaxHealthDamage*100@% of target champion's maximum Health in <magicDamage>magic damage</magicDamage> and increases all subsequent <magicDamage>magic damage</magicDamage> taken by the target by @DamageAmp*100@% for @Duration@ seconds.</section><section><flavorText></flavorText></section></mainText><postScriptLeft></postScriptLeft>",
-      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Deathfire Grasp</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Magic Amp</subtitleLeft><subtitleRight></subtitleRight><mainText><section></section><section><attention>%i:scaleAP% @FlatMagicDamageMod@</attention> Ability Power</section><section>%i:scaleCooldown% @PercentCooldownMod*-100@% Cooldown Reduction</section><section>%i:activeEffect% <jadeUnique>Active</jadeUnique> %i:cooldown% @Cooldown@s<br>Deals @MaxHealthDamage*100@% of target champion's maximum Health in <magicDamage>magic damage</magicDamage> and increases all subsequent <magicDamage>magic damage</magicDamage> taken by the target by @DamageAmp*100@% for @Duration@ seconds.</section><section><flavorText></flavorText></section></mainText><br>",
+      "mDescription": "<section></section><section><attention>%i:scaleAP% @FlatMagicDamageMod@</attention> Ability Power<br><attention>%i:scaleCooldown% @PercentCooldownMod*-100@%</attention> Cooldown Reduction</section><section></section><section>%i:activeEffect% <jadeUnique>Active</jadeUnique> %i:cooldown% @Cooldown@s<br>Deals @MaxHealthDamage*100@% of target champion's maximum Health in <magicDamage>magic damage</magicDamage> and increases all subsequent <magicDamage>magic damage</magicDamage> taken by the target by @DamageAmp*100@% for @Duration@ seconds.</section><section><flavorText></flavorText></section>",
+      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Deathfire Grasp</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Magic Amp</subtitleLeft><subtitleRight></subtitleRight><mainText><section><attention>%i:scaleAP% @FlatMagicDamageMod@</attention> Ability Power<br><attention>%i:scaleCooldown% @PercentCooldownMod*-100@%</attention> Cooldown Reduction@ExtendedStats@</section><section></section><section>%i:activeEffect% <jadeUnique>Active</jadeUnique> %i:cooldown% @Cooldown@s<br>Deals @MaxHealthDamage*100@% of target champion's maximum Health in <magicDamage>magic damage</magicDamage> and increases all subsequent <magicDamage>magic damage</magicDamage> taken by the target by @DamageAmp*100@% for @Duration@ seconds.</section><section><flavorText></flavorText></section></mainText><postScriptLeft></postScriptLeft>",
+      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Deathfire Grasp</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Magic Amp</subtitleLeft><subtitleRight></subtitleRight><mainText><section></section><section><attention>%i:scaleAP% @FlatMagicDamageMod@</attention> Ability Power<br><attention>%i:scaleCooldown% @PercentCooldownMod*-100@%</attention> Cooldown Reduction</section><section></section><section>%i:activeEffect% <jadeUnique>Active</jadeUnique> %i:cooldown% @Cooldown@s<br>Deals @MaxHealthDamage*100@% of target champion's maximum Health in <magicDamage>magic damage</magicDamage> and increases all subsequent <magicDamage>magic damage</magicDamage> taken by the target by @DamageAmp*100@% for @Duration@ seconds.</section><section><flavorText></flavorText></section></mainText><br>",
       "mTooltipData": {
         "EnableExtendedTooltip": false,
         "mFormat": "TooltipFormatA",
@@ -87527,6 +87362,10 @@
             "Elements": [
               {
                 "type": "AbilityPower",
+                "~class": "TooltipInstanceListElement"
+              },
+              {
+                "type": "CooldownReduction",
                 "~class": "TooltipInstanceListElement"
               }
             ],
@@ -87537,8 +87376,7 @@
           "keyActive": "%i:activeEffect% <jadeUnique>Active</jadeUnique> %i:cooldown% @Cooldown@s<br>Deals @MaxHealthDamage*100@% of target champion's maximum Health in <magicDamage>magic damage</magicDamage> and increases all subsequent <magicDamage>magic damage</magicDamage> taken by the target by @DamageAmp*100@% for @Duration@ seconds.",
           "keyBrief": "Magic Amp",
           "keyColloquialism": ";dfg",
-          "keyName": "Deathfire Grasp",
-          "keyTooltip": "%i:scaleCooldown% @PercentCooldownMod*-100@% Cooldown Reduction"
+          "keyName": "Deathfire Grasp"
         },
         "mObjectName": "77/Deathfire Grasp",
         "~class": "TooltipInstanceItem"
@@ -89224,6 +89062,15 @@
     "epicness": 5,
     "itemID": 773154,
     "mCanBeSold": true,
+    "mCategories": [
+      "Armor",
+      "Damage",
+      "LifeSteal",
+      "Vision",
+      "Active",
+      "OnHit",
+      "Jungle"
+    ],
     "mDataValues": [
       {
         "mName": "Duration",
@@ -89980,7 +89827,7 @@
       },
       {
         "mName": "SummonerCD",
-        "mValue": -0.25,
+        "mValue": -0.30000001192092896,
         "~class": "ItemDataValue"
       }
     ],
@@ -90100,7 +89947,7 @@
         "mFormulaParts": [
           {
             "DataValue": "0xfe46a1ae",
-            "~class": "0x2b25a73a"
+            "~class": "AbilityResourceByNamedDataValueCalculationPart"
           }
         ],
         "~class": "GameCalculation"
@@ -90878,9 +90725,9 @@
     },
     "mItemDataClient": {
       "inventoryIcon": "ASSETS/Items/Icons2D/3222_Mikaels_Crucible.tex",
-      "mDescription": "<section></section><section><attention>%i:scaleMR% @FlatSpellBlockMod@</attention> Magic Resist<br><attention>%i:scaleHPRegen% @FlatHPRegenMod*5@</attention> Health Regen per 5 seconds<br><attention>%i:scaleManaRegen% @FlatMPRegenMod*5@</attention> Mana Regen per 5 seconds</section><section><jadeUnique>Mana Font:</jadeUnique> Increases <scaleMana>Mana Regen</scaleMana> by 1% for every 1% of missing Mana.</section><section>%i:activeEffect% <jadeUnique>Active</jadeUnique> %i:cooldown% @Cooldown@s<br>Removes all <status>Stuns, Slows, Taunts, Fears, Silences, Blinds,</status> and <status>Immobilizes</status> on an allied champion and <healing>Heals</healing> that champion for <healing>@BaseHeal@</healing> (<scaleHealth>+@PercentHeal*100@ of maximum Health</scaleHealth>).</section><section><flavorText></flavorText></section>",
-      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Mikael's Crucible</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Remove Disables</subtitleLeft><subtitleRight></subtitleRight><mainText><section><attention>%i:scaleMR% @FlatSpellBlockMod@</attention> Magic Resist<br><attention>%i:scaleHPRegen% @FlatHPRegenMod*5@</attention> Health Regen per 5 seconds<br><attention>%i:scaleManaRegen% @FlatMPRegenMod*5@</attention> Mana Regen per 5 seconds@ExtendedStats@</section><section><jadeUnique>Mana Font:</jadeUnique> Increases <scaleMana>Mana Regen</scaleMana> by 1% for every 1% of missing Mana.</section><section>%i:activeEffect% <jadeUnique>Active</jadeUnique> %i:cooldown% @Cooldown@s<br>Removes all <status>Stuns, Slows, Taunts, Fears, Silences, Blinds,</status> and <status>Immobilizes</status> on an allied champion and <healing>Heals</healing> that champion for <healing>@BaseHeal@</healing> (<scaleHealth>+@PercentHeal*100@ of maximum Health</scaleHealth>).</section><section><flavorText></flavorText></section></mainText><postScriptLeft></postScriptLeft>",
-      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Mikael's Crucible</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Remove Disables</subtitleLeft><subtitleRight></subtitleRight><mainText><section></section><section><attention>%i:scaleMR% @FlatSpellBlockMod@</attention> Magic Resist<br><attention>%i:scaleHPRegen% @FlatHPRegenMod*5@</attention> Health Regen per 5 seconds<br><attention>%i:scaleManaRegen% @FlatMPRegenMod*5@</attention> Mana Regen per 5 seconds</section><section><jadeUnique>Mana Font:</jadeUnique> Increases <scaleMana>Mana Regen</scaleMana> by 1% for every 1% of missing Mana.</section><section>%i:activeEffect% <jadeUnique>Active</jadeUnique> %i:cooldown% @Cooldown@s<br>Removes all <status>Stuns, Slows, Taunts, Fears, Silences, Blinds,</status> and <status>Immobilizes</status> on an allied champion and <healing>Heals</healing> that champion for <healing>@BaseHeal@</healing> (<scaleHealth>+@PercentHeal*100@ of maximum Health</scaleHealth>).</section><section><flavorText></flavorText></section></mainText><br>",
+      "mDescription": "<section></section><section><attention>%i:scaleMR% @FlatSpellBlockMod@</attention> Magic Resist<br><attention>%i:scaleHPRegen% @FlatHPRegenMod*5@</attention> Health Regen per 5 seconds<br><attention>%i:scaleManaRegen% @FlatMPRegenMod*5@</attention> Mana Regen per 5 seconds</section><section><jadeUnique>Mana Font:</jadeUnique> Increases <scaleMana>Mana Regen</scaleMana> by 1% for every 1% of missing Mana.</section><section>%i:activeEffect% <jadeUnique>Active</jadeUnique> %i:cooldown% @Cooldown@s<br>Removes all <status>Stuns, Slows, Taunts, Fears, Silences, Blinds,</status> and <status>Immobilizes</status> on an allied champion and <healing>Heals</healing> that champion for <healing>@BaseHeal@</healing> (<scaleHealth>+@PercentHeal*100@% of maximum Health</scaleHealth>).</section><section><flavorText></flavorText></section>",
+      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>Mikael's Crucible</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Remove Disables</subtitleLeft><subtitleRight></subtitleRight><mainText><section><attention>%i:scaleMR% @FlatSpellBlockMod@</attention> Magic Resist<br><attention>%i:scaleHPRegen% @FlatHPRegenMod*5@</attention> Health Regen per 5 seconds<br><attention>%i:scaleManaRegen% @FlatMPRegenMod*5@</attention> Mana Regen per 5 seconds@ExtendedStats@</section><section><jadeUnique>Mana Font:</jadeUnique> Increases <scaleMana>Mana Regen</scaleMana> by 1% for every 1% of missing Mana.</section><section>%i:activeEffect% <jadeUnique>Active</jadeUnique> %i:cooldown% @Cooldown@s<br>Removes all <status>Stuns, Slows, Taunts, Fears, Silences, Blinds,</status> and <status>Immobilizes</status> on an allied champion and <healing>Heals</healing> that champion for <healing>@BaseHeal@</healing> (<scaleHealth>+@PercentHeal*100@% of maximum Health</scaleHealth>).</section><section><flavorText></flavorText></section></mainText><postScriptLeft></postScriptLeft>",
+      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>Mikael's Crucible</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Remove Disables</subtitleLeft><subtitleRight></subtitleRight><mainText><section></section><section><attention>%i:scaleMR% @FlatSpellBlockMod@</attention> Magic Resist<br><attention>%i:scaleHPRegen% @FlatHPRegenMod*5@</attention> Health Regen per 5 seconds<br><attention>%i:scaleManaRegen% @FlatMPRegenMod*5@</attention> Mana Regen per 5 seconds</section><section><jadeUnique>Mana Font:</jadeUnique> Increases <scaleMana>Mana Regen</scaleMana> by 1% for every 1% of missing Mana.</section><section>%i:activeEffect% <jadeUnique>Active</jadeUnique> %i:cooldown% @Cooldown@s<br>Removes all <status>Stuns, Slows, Taunts, Fears, Silences, Blinds,</status> and <status>Immobilizes</status> on an allied champion and <healing>Heals</healing> that champion for <healing>@BaseHeal@</healing> (<scaleHealth>+@PercentHeal*100@% of maximum Health</scaleHealth>).</section><section><flavorText></flavorText></section></mainText><br>",
       "mTooltipData": {
         "EnableExtendedTooltip": false,
         "mFormat": "TooltipFormatA",
@@ -90904,7 +90751,7 @@
           }
         },
         "mLocKeys": {
-          "keyActive": "%i:activeEffect% <jadeUnique>Active</jadeUnique> %i:cooldown% @Cooldown@s<br>Removes all <status>Stuns, Slows, Taunts, Fears, Silences, Blinds,</status> and <status>Immobilizes</status> on an allied champion and <healing>Heals</healing> that champion for <healing>@BaseHeal@</healing> (<scaleHealth>+@PercentHeal*100@ of maximum Health</scaleHealth>).",
+          "keyActive": "%i:activeEffect% <jadeUnique>Active</jadeUnique> %i:cooldown% @Cooldown@s<br>Removes all <status>Stuns, Slows, Taunts, Fears, Silences, Blinds,</status> and <status>Immobilizes</status> on an allied champion and <healing>Heals</healing> that champion for <healing>@BaseHeal@</healing> (<scaleHealth>+@PercentHeal*100@% of maximum Health</scaleHealth>).",
           "keyBrief": "Remove Disables",
           "keyColloquialism": ";cleanse;anti-cc;anticc;cc",
           "keyName": "Mikael's Crucible",
