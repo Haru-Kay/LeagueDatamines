@@ -511,7 +511,6 @@ def badString?(key, value)
 end
 
 def diff
-    return
     print "Loading previous patch stringtable..."
     oldLang = {}
     File.open("lol.stringtable.json", 'rb') { |f| oldLang = JSON.parse(f.read()) }

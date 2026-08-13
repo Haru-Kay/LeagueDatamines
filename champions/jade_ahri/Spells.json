@@ -318,7 +318,7 @@
         "mFormat": "0xb34f999a",
         "mLocKeys": {
           "keyName": "Essence Theft",
-          "keyTooltip": "<mainText>Ahri's next spell has 35% Spell Vamp.</mainText>"
+          "keyTooltip": "Ahri's next spell will heal her for every target hit."
         },
         "mObjectName": "Jade_AhriPassive",
         "~class": "TooltipInstanceBuff"
@@ -1648,7 +1648,15 @@
   "0xe64c8c2": {
     "ObjectName": "Jade_AhriPassive_Counter",
     "mBuff": {
-      "mDescription": "<titleLeft>Essence Theft</titleLeft><mainText>After Ahri hits with 9 spells, her next spell has 35% Spell Vamp.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Essence Theft",
+          "keyTooltip": "Gains a charge of Essence Theft whenever a spell hits an enemy. Upon reaching maximum charges, the next spell restores Ahri's Health."
+        },
+        "mObjectName": "Jade_AhriPassive_Counter",
+        "~class": "TooltipInstanceBuff"
+      },
       "~class": "BuffData"
     },
     "mScriptName": "Jade_AhriPassive_Counter",
@@ -2618,6 +2626,19 @@
             0.30000001192092896
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "RecastDuration",
+          "values": [
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -2717,7 +2738,7 @@
           "mLocKeys": {
             "keyName": "Spirit Rush",
             "keySummary": "Ahri dashes forward and fires essence bolts, damaging 3 nearby enemies (prioritizes Champions). Spirit Rush can be cast up to three times before going on cooldown.",
-            "keyTooltip": "Ahri nimbly dashes, firing 3 essence bolts at nearby enemies, prioritizing champions. These bolts deal <magicDamage>@TotalDamage@ magic damage</magicDamage> each. <spellName>Spirit Rush</spellName> can be <recast>Recast</recast> up to 2 more times within 10 seconds."
+            "keyTooltip": "Ahri nimbly dashes, firing 3 essence bolts at nearby enemies, prioritizing champions. These bolts deal <magicDamage>@TotalDamage@ magic damage</magicDamage> each. <spellName>Spirit Rush</spellName> can be <recast>Recast</recast> up to 2 more times within @RecastDuration@ seconds."
           },
           "mObjectName": "Jade_AhriR",
           "~class": "TooltipInstanceSpell"
