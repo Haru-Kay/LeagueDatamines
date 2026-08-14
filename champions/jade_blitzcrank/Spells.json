@@ -63,26 +63,13 @@
         {
           "name": "HealthThreshold",
           "values": [
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "ManaPercent",
-          "values": [
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224
           ],
           "~class": "SpellDataValue"
         },
@@ -115,13 +102,13 @@
         {
           "name": "ManaRatio",
           "values": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
           ],
           "~class": "SpellDataValue"
         }
@@ -153,76 +140,26 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Mana Barrier",
-            "keySummary": "When Blitzcrank life is brought below 20% health they activate Mana Barrier. This creates a mana shield equal to 50% of their mana for 10 seconds. Mana Barrier can only occur once every 90 seconds.",
-            "keyTooltip": "Blitzcrank's <spellName>Mana Barrier</spellName> can activate once every 90 seconds when they fall below 20% Health. They are then <shield>Shielded</shield> for 50% of their current Mana for 10 seconds."
+            "keySummary": "When taking damage at low Health, Blitzcrank is first Shielded for a percent of their current Mana. This effect has a cooldown.",
+            "keyTooltip": "When taking damage while below @HealthThreshold*100@% Health, Blitzcrank is first <shield>Shielded</shield> for @ManaRatio*100@% of their current Mana for @ShieldDuration@ seconds. <spellName>Mana Barrier</spellName> can activate once every @Cooldown@ seconds."
           },
           "mObjectName": "Jade_BlitzcrankManaBarrierIcon",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mEffectAmount": [
-        {
-          "value": [
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mImgIconName": [
         "ASSETS/UX/Jade/S3Icons/SameSized/Blitzcrank_ManaBarrier.dds"
       ],
       "mSpellCalculations": {
-        "ShieldAmount": {
+        "MaxHealthThreshold": {
           "mFormulaParts": [
             {
-              "mCoefficient": 0.5,
-              "~class": "AbilityResourceByCoefficientCalculationPart"
+              "mDataValue": "HealthThreshold",
+              "mStat": 12,
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
-          "mSimpleTooltipCalculationDisplay": 6,
           "~class": "GameCalculation"
         }
       },
@@ -1522,6 +1459,19 @@
           "~class": "SpellDataValue"
         },
         {
+          "name": "PassiveHitRate",
+          "values": [
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
           "name": "ActiveRange",
           "values": [
             600.0,
@@ -1652,9 +1602,8 @@
           },
           "mLocKeys": {
             "keyName": "Static Field",
-            "keySummary": "Passively causes lightning bolts to damage a nearby enemy. Additionally, Blitzcrank can activate this ability to damage nearby enemies and silence them for 0.5 seconds, but doing so removes the passive lightning until Static Field becomes available again.",
-            "keyTooltip": "<spellPassive>Passive: </spellPassive>Lightning arcs off of Blitzcrank to hit a random nearby enemy for <magicDamage>@PassiveDamage@ magic damage</magicDamage> every 2.5 seconds.<br><br><spellActive>Active: </spellActive>Deals <magicDamage>@ActiveDamage@ magic damage</magicDamage> and <status>Silences</status> surrounding enemy units for 0.5 seconds.",
-            "keyTooltipExtended": "<spellPassive>Passive: </spellPassive>Lightning arcs off of Blitzcrank to hit a random nearby enemy for <magicDamage>@PassiveDamage@ magic damage</magicDamage> every 2.5 seconds.<br><br><spellActive>Active: </spellActive>Deals <magicDamage>@ActiveDamage@ magic damage</magicDamage> and <status>Silences</status> surrounding enemy units for 0.5 seconds. The passive is not in effect during the cooldown."
+            "keySummary": "Passively causes lightning bolts to damage a nearby enemy. Additionally, Blitzcrank can activate this ability to damage nearby enemies and briefly silence them.",
+            "keyTooltip": "<spellPassive>Passive: </spellPassive>Lightning arcs off of Blitzcrank to hit a random nearby enemy for <magicDamage>@PassiveDamage@ magic damage</magicDamage> every @PassiveHitRate@ seconds.<br><br><spellActive>Active: </spellActive>Deals <magicDamage>@ActiveDamage@ magic damage</magicDamage> and <status>Silences</status> surrounding enemy units for @SilenceDuration@ seconds. The passive is disabled while Static Field is on cooldown."
           },
           "mObjectName": "Jade_BlitzcrankStaticField",
           "~class": "TooltipInstanceSpell"
