@@ -155,12 +155,12 @@ $manualHash.merge!({
     "13ce30b4" => "MageAugmentsGeneric5",
     "2fc101c6" => "FighterAugments2",
     "b66c16c2" => "MageAugmentsGeneric6",
-    "563cdf9c" => "AbilityAugmentsScripts",
+    "563cdf9c" => "AbilityAugments1",
     "99d70c96" => "StackingAugments",
     "ba7415bd" => "HasteAugments",
     "ddc42af3" => "SupportAugmentsHealing2",
     "9579774e" => "ItemAugments",
-    "a26bf746" => "AbilityAugmentsGeneric",
+    "a26bf746" => "AbilityAugments2",
     "b5056d3d" => "ADCAugments2",
     "ba0256ad" => "TankAugments",
 
@@ -179,8 +179,8 @@ $manualHash.merge!({
     "3ec90ced" => "AugmentGroups/EmptyAugmentPool1",
     "40cddb7a" => "AugmentGroups/GeneralAugments",
     "4324795d" => "AugmentGroups/CritChance",
-    "4a6ad9db" => "AugmentGroups/GrantsCCAugments",
-    "5287e1f" => "AugmentGroups/CCAugmentsRequired",
+    "4a6ad9db" => "AugmentGroups/CCSourceAugments",
+    "5287e1f" => "AugmentGroups/CCAugments",
     "55cc5e63" => "AugmentGroups/MagicPen",
     "5637e17b" => "AugmentGroups/Peel",
     "587efdc6" => "AugmentGroups/AutocastAugmentsRange",
@@ -218,7 +218,7 @@ $manualHash.merge!({
     "dabcc810" => "AugmentGroups/MageAugmentsGeneric5",
     "df350452" => "AugmentGroups/FighterAugments2",
     "e139ccde" => "AugmentGroups/MageAugmentsGeneric6",
-    "e4414998" => "AugmentGroups/AbilityAugmentsScripts",
+    "e4414998" => "AugmentGroups/AbilityAugments1",
     "e5c7ec2a" => "AugmentGroups/StackingAugments",
     "e67f4793" => "AugmentGroups/Health",
     "e91cf039" => "AugmentGroups/HasteAugments",
@@ -226,7 +226,7 @@ $manualHash.merge!({
     "ec237687" => "AugmentGroups/SnowBall",
     "f1838e7f" => "AugmentGroups/SupportAugmentsHealing2",
     "f4f980ba" => "AugmentGroups/ItemAugments",
-    "f539ec5a" => "AugmentGroups/AbilityAugmentsGeneric",
+    "f539ec5a" => "AugmentGroups/AbilityAugments2",
     "f6bc67f9" => "AugmentGroups/ADCAugments2",
     "fdd60739" => "AugmentGroups/TankAugments",
     "fe23f5ec" => "AugmentGroups/AD",
@@ -1274,6 +1274,15 @@ diff()
                 type = "ChampionAugmentList"
                 data = applyLangKeys(applyLang(data))
                 key = applyLangKeys(key)
+
+                key = key.split("/")[-1]
+                newdata = {}
+                data["AugmentList"].each { |group|
+                    weight = group.fetch("WEIGHT", 100)
+                    group = group["AugmentGroup"].split("/")[-1]
+                    newdata.store(group, weight)
+                }
+                data = newdata.sort_by { |k, v| k.downcase }.to_h
             else
                 type = "MiscData" if type.start_with?("0x")
         end
@@ -1283,7 +1292,7 @@ diff()
     aramOther.each { |key, data|
         loc = key.downcase.include?("vfx") ? "vfxData" : "data"
         data = data.sort_by { |k, v| v["ObjectName"] }.to_h if key == "SpellObject"
-            data = data.sort_by { |k, v| k }.to_h if key == "ChampionAugmentList"
+        data = data.sort_by { |k, v| k }.to_h if key == "ChampionAugmentList"
         File.open("aram/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
     }
 
@@ -1313,17 +1322,19 @@ diff()
                     type = "AugmentGroups"
                     data = applyLangKeys(applyLang(data))
                     key = applyLangKeys(key)
+                    key = data["ID"]
+                    data = data["augments"]&.map { |h| h["Augment"].split("/")[-1] } || []
                 else
                     type = "MiscData" if type.start_with?("0x")
             end
             jsonSort[type] ||= {}
             jsonSort[type].store(key, data)
         }
-        jsonSort.each { |key, data|
-            loc = key.downcase.include?("vfx") ? "vfxData" : "data"
-            data = data.sort_by { |k, v| v["ObjectName"] }.to_h if key == "SpellObject"
-            data = data.sort_by { |k, v| k }.to_h if key == "AugmentGroups"
-            File.open("aram/#{map}/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
+        jsonSort.each { |type, data|
+            loc = type.downcase.include?("vfx") ? "vfxData" : "data"
+            data = data.sort_by { |k, v| v["ObjectName"] }.to_h if type == "SpellObject"
+            data = data.sort_by { |k, v| k.downcase }.to_h if type == "AugmentGroups"
+            File.open("aram/#{map}/#{loc}/#{type}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
         }
     }
 
