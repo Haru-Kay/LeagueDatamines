@@ -1,16 +1,4 @@
 {
-  "0x10964040": {
-    "ObjectName": "Jade_SionAttackSequencer",
-    "mScriptName": "Jade_SionAttackSequencer",
-    "objectPath": "0x10964040",
-    "~class": "SpellObject"
-  },
-  "0x23167e19": {
-    "ObjectName": "Jade_SionRunCycleManager",
-    "mScriptName": "Jade_SionRunCycleManager",
-    "objectPath": "0x23167e19",
-    "~class": "SpellObject"
-  },
   "0x3977b07c": {
     "ObjectName": "Jade_SionWDetonate",
     "mBuff": {
@@ -384,7 +372,7 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Feel No Pain",
-            "keySummary": "Sion has a 40% chance to ignore up to 30/40/50 damage each time he is attacked.",
+            "keySummary": "Sion has a chance to ignore some damage each time he is attacked.",
             "keyTooltip": "Sion has a @PassiveBlockChance@% chance to reduce incoming <physicalDamage>Attack Damage</physicalDamage> by @PassiveBlockAmount@."
           },
           "mObjectName": "Jade_SionPassive",
@@ -421,6 +409,12 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "0x641597ec",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Sion/Spells/Jade_SionAttackSequencer": {
+    "ObjectName": "Jade_SionAttackSequencer",
+    "mScriptName": "Jade_SionAttackSequencer",
+    "objectPath": "Characters/Jade_Sion/Spells/Jade_SionAttackSequencer",
     "~class": "SpellObject"
   },
   "Characters/Jade_Sion/Spells/Jade_SionBasicAttack": {
@@ -1197,6 +1191,19 @@
             345.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "StunDuration",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -1271,91 +1278,13 @@
           "mLocKeys": {
             "keyName": "Cryptic Gaze",
             "keySummary": "Sion's stare terrifies a single enemy, dealing damage and stunning them.",
-            "keyTooltip": "<mainText>Blasts a single enemy, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Stunning</status> for 1.5 seconds.</mainText>"
+            "keyTooltip": "Sion blasts a single enemy, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Stunning</status> for @StunDuration@ seconds."
           },
           "mObjectName": "Jade_SionQ",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 1.0,
-      "mEffectAmount": [
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            7.5,
-            7.5,
-            7.5,
-            7.5,
-            7.5,
-            7.5,
-            7.5
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            60.0,
-            60.0,
-            60.0,
-            60.0,
-            60.0,
-            60.0,
-            60.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            150.0,
-            150.0,
-            150.0,
-            150.0,
-            150.0,
-            150.0,
-            150.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            -0.800000011920929,
-            -0.800000011920929,
-            -0.800000011920929,
-            -0.800000011920929,
-            -0.800000011920929,
-            -0.800000011920929,
-            -0.800000011920929
-          ],
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mImgIconName": [
         "ASSETS/UX/Jade/S3Icons/SameSized/Sion_CrypticGaze.dds"
       ],
@@ -1490,6 +1419,19 @@
             0.5
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "BuffDuration",
+          "values": [
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -1570,15 +1512,13 @@
           "mLocKeys": {
             "keyName": "Cannibalism",
             "keySummary": "Sion consumes some of his enemies' life force on each attack, leeching health to himself and nearby allies. The smell of flesh also renews Sion's fervor, increasing his Attack Speed.",
-            "keyTooltip": "<mainText>Grants Sion <lifeSteal>@LifestealPercent*100@% Lifesteal</lifeSteal> and <attackSpeed>@AttackSpeedMod*100@% Attack Speed</attackSpeed> for 20 seconds. Additionally, Sion's basic attacks <healing>heal</healing> surrounding allies for @HealPercent*100@% of the damage dealt.</mainText>"
+            "keyTooltip": "Sion gains <lifeSteal>@LifestealPercent*100@% Lifesteal</lifeSteal> and <attackSpeed>@AttackSpeedMod*100@% Attack Speed</attackSpeed> for @BuffDuration@ seconds. Additionally, Sion's basic attacks <healing>heal</healing> surrounding allies for @HealPercent*100@% of the damage dealt."
           },
           "mObjectName": "Jade_SionR",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.4000000059604645,
-      "mCoefficient2": 0.800000011920929,
       "mDimensionBehavior": 1,
       "mDisableCastBar": true,
       "mDoNotNeedToFaceTarget": true,
@@ -1643,6 +1583,12 @@
     "objectPath": "Characters/Jade_Sion/Spells/Jade_SionRAbility/Jade_SionR",
     "~class": "SpellObject"
   },
+  "Characters/Jade_Sion/Spells/Jade_SionRunCycleManager": {
+    "ObjectName": "Jade_SionRunCycleManager",
+    "mScriptName": "Jade_SionRunCycleManager",
+    "objectPath": "Characters/Jade_Sion/Spells/Jade_SionRunCycleManager",
+    "~class": "SpellObject"
+  },
   "Characters/Jade_Sion/Spells/Jade_SionWAbility/Jade_SionW": {
     "ObjectName": "Jade_SionW",
     "mBuff": {
@@ -1688,6 +1634,32 @@
             250.0,
             300.0,
             350.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ShieldDuration",
+          "values": [
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "RecastDelay",
+          "values": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1754,129 +1726,15 @@
           },
           "mLocKeys": {
             "keyName": "Death's Caress",
-            "keySummary": "Sion surrounds himself with a damage-absorbing shield.  If the shield is not destroyed in 10 seconds then it will explode, dealing damage to surrounding enemies. Cast again after 4 seconds to manually detonate.",
-            "keyTooltip": "<mainText>Sion surrounds himself with a shield which absorbs <shield>@TotalShield@ damage</shield>. If the shield is not destroyed in 10 seconds, it will explode, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> to surrounding enemies.<br><br><recast>Recast</recast> after 4 seconds to manually detonate.</mainText>"
+            "keySummary": "Sion surrounds himself with a damage-absorbing shield.  If the shield is not destroyed it will explode, damaging surrounding enemies. Sion can reactivate the ability to detonate the shield early.",
+            "keyTooltip": "Sion surrounds himself with a shield which absorbs <shield>@TotalShield@ damage</shield>. If the shield is not destroyed in @ShieldDuration@ seconds, it will explode, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> to surrounding enemies.<br><br><recast>Recast</recast> after @RecastDelay@ seconds to manually detonate."
           },
           "mObjectName": "Jade_SionW",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.4000000059604645,
       "mDoesntBreakChannels": true,
-      "mEffectAmount": [
-        {
-          "value": [
-            60.0,
-            60.0,
-            75.0,
-            90.0,
-            105.0,
-            120.0,
-            120.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            15.0,
-            40.0,
-            65.0,
-            90.0,
-            115.0,
-            140.0,
-            165.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            8.0,
-            8.0,
-            10.0,
-            12.0,
-            14.0,
-            16.0,
-            16.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            14.0,
-            14.0,
-            14.0,
-            14.0,
-            14.0,
-            14.0,
-            14.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            15.0,
-            15.0,
-            15.0,
-            15.0,
-            15.0,
-            15.0,
-            15.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            15.0,
-            15.0,
-            15.0,
-            15.0,
-            15.0,
-            15.0,
-            15.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         0,
         0,

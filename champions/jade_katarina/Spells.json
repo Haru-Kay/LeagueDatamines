@@ -1,28 +1,4 @@
 {
-  "0x39035686": {
-    "ObjectName": "Jade_KatarinaRSound",
-    "mBuff": {
-      "mTooltipData": {
-        "mFormat": "0xb34f999a",
-        "mLocKeys": {
-          "keyName": "Death Lotus",
-          "keyTooltip": "Katarina is channeling her ultimate. Enemy champions stay in range at their peril!"
-        },
-        "mObjectName": "Jade_KatarinaRSound",
-        "~class": "TooltipInstanceBuff"
-      },
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_KatarinaRSound",
-    "mSpell": {
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Katarina_DeathLotus.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x39035686",
-    "~class": "SpellObject"
-  },
   "0x51d695": {
     "ObjectName": "Jade_KatarinaQMis",
     "mScriptName": "Jade_KatarinaQMis",
@@ -289,12 +265,6 @@
     "objectPath": "0x9716a6ce",
     "~class": "SpellObject"
   },
-  "0x99eadd0e": {
-    "ObjectName": "Jade_KatarinaSkin29WeaponManager",
-    "mScriptName": "Jade_KatarinaSkin29WeaponManager",
-    "objectPath": "0x99eadd0e",
-    "~class": "SpellObject"
-  },
   "0xa2efd9e6": {
     "ObjectName": "Jade_KatarinaPassive",
     "mBuff": {
@@ -323,7 +293,7 @@
     "mSpell": {
       "DataValues": [
         {
-          "name": "BonusGold",
+          "name": "CooldownRefund",
           "values": [
             15.0,
             15.0,
@@ -363,8 +333,8 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Voracity",
-            "keySummary": "Champion kills or assists reduce Katarina's cooldowns by 15 seconds.",
-            "keyTooltip": "Champion takedowns and assists reduce Katarina's cooldowns by 15 seconds."
+            "keySummary": "Champion takedowns reduce Katarina's cooldowns.",
+            "keyTooltip": "Champion takedowns reduce Katarina's cooldowns by @CooldownRefund@ seconds."
           },
           "mObjectName": "Jade_KatarinaPassive",
           "~class": "TooltipInstanceSpell"
@@ -377,12 +347,6 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "0xa2efd9e6",
-    "~class": "SpellObject"
-  },
-  "0xcf04987d": {
-    "ObjectName": "Jade_KatarinaRunCycleManager",
-    "mScriptName": "Jade_KatarinaRunCycleManager",
-    "objectPath": "0xcf04987d",
     "~class": "SpellObject"
   },
   "0xe69e77e9": {
@@ -1482,6 +1446,19 @@
             0.15000000596046448
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "DamageFalloff",
+          "values": [
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -1572,54 +1549,13 @@
             "keyCost": "No Cost",
             "keyName": "Bouncing Blade",
             "keySummary": "Katarina throws a dagger that bounces from enemy to enemy, dealing magic damage.",
-            "keyTooltip": "Throws a dagger dealing <magicDamage>@TotalDamage@</magicDamage> magic damage. The dagger bounces to the @MaxBounces@ closest enemies dealing 10% less damage with each bounce.<br><br>Enemies hit are marked for @MarkDuration@ seconds. Katarina's basic attacks or spells will consume the mark dealing <magicDamage>@TotalDamageMark@</magicDamage> additional magic damage."
+            "keyTooltip": "Throws a dagger dealing <magicDamage>@TotalDamage@</magicDamage> magic damage. The dagger bounces to the @MaxBounces@ closest enemies dealing @DamageFalloff*100@% less damage with each bounce.<br><br>Enemies hit are marked for @MarkDuration@ seconds. Katarina's basic attacks or spells will consume the mark dealing <magicDamage>@TotalDamageMark@</magicDamage> additional magic damage."
           },
           "mObjectName": "Jade_KatarinaQ",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mEffectAmount": [
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         0,
         0,
@@ -1825,6 +1761,19 @@
             10.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxTargets",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -1931,8 +1880,8 @@
           "mLocKeys": {
             "keyCost": "No Cost",
             "keyName": "Death Lotus",
-            "keySummary": "Katarina becomes a flurry of blades, throwing daggers with unrivaled speed at up to three nearby Champions.",
-            "keyTooltip": "Becomes a flurry of blades, throwing daggers at the closest 3 enemy Champions dealing <magicDamage>@DamageCalcTooltipOnly@ magic damage</magicDamage> over 2.5 seconds.",
+            "keySummary": "Katarina becomes a flurry of blades, throwing daggers with unrivaled speed at nearby enemy Champions, dealing significant damage and applying Wounds.",
+            "keyTooltip": "Becomes a flurry of blades, throwing daggers at the closest @MaxTargets@ enemy Champions dealing <magicDamage>@DamageCalcTooltipOnly@ magic damage</magicDamage> over @ChannelDuration@ seconds. Enemies struck are <status>Wounded</status> by @GrievousWoundsAmount*100@% for @GrievousWoundsDuration@ seconds.",
             "keyTooltipExtendedBelowLine": "<keyword>Grievous Wounds</keyword>: Reduces the effectiveness of Healing and Regeneration effects."
           },
           "mObjectName": "Jade_KatarinaR",
@@ -2014,6 +1963,42 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jade_Katarina/Spells/Jade_KatarinaRAbility/Jade_KatarinaR",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Katarina/Spells/Jade_KatarinaRSound": {
+    "ObjectName": "Jade_KatarinaRSound",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Death Lotus",
+          "keyTooltip": "Katarina is channeling her ultimate. Enemy champions stay in range at their peril!"
+        },
+        "mObjectName": "Jade_KatarinaRSound",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_KatarinaRSound",
+    "mSpell": {
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/Katarina_DeathLotus.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Katarina/Spells/Jade_KatarinaRSound",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Katarina/Spells/Jade_KatarinaRunCycleManager": {
+    "ObjectName": "Jade_KatarinaRunCycleManager",
+    "mScriptName": "Jade_KatarinaRunCycleManager",
+    "objectPath": "Characters/Jade_Katarina/Spells/Jade_KatarinaRunCycleManager",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Katarina/Spells/Jade_KatarinaSkin29WeaponManager": {
+    "ObjectName": "Jade_KatarinaSkin29WeaponManager",
+    "mScriptName": "Jade_KatarinaSkin29WeaponManager",
+    "objectPath": "Characters/Jade_Katarina/Spells/Jade_KatarinaSkin29WeaponManager",
     "~class": "SpellObject"
   },
   "Characters/Jade_Katarina/Spells/Jade_KatarinaWAbility/Jade_KatarinaW": {

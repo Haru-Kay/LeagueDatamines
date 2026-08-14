@@ -1,42 +1,8 @@
 {
-  "0x2062618": {
-    "ObjectName": "Jade_GangplankBilgewaterToken",
-    "mBuff": {
-      "mDescription": "game_buff_tooltip_Jade_GangplankBilgewaterToken",
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_GangplankBilgewaterToken",
-    "objectPath": "0x2062618",
-    "~class": "SpellObject"
-  },
   "0x3d9b8289": {
     "ObjectName": "Jade_GangplankPassive_Debuff",
     "mScriptName": "Jade_GangplankPassive_Debuff",
     "objectPath": "0x3d9b8289",
-    "~class": "SpellObject"
-  },
-  "0x4b70c950": {
-    "ObjectName": "Jade_Gangplank_IsBank",
-    "mBuff": {
-      "mTooltipData": {
-        "mFormat": "0xb34f999a",
-        "mLocKeys": {
-          "keyName": "Bankplank",
-          "keyTooltip": "<gold>+1 Gold</gold><br>Yo-ho-ho, look at all this booty!"
-        },
-        "mObjectName": "Jade_Gangplank_IsBank",
-        "~class": "TooltipInstanceBuff"
-      },
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_Gangplank_IsBank",
-    "mSpell": {
-      "mImgIconName": [
-        "ASSETS/Characters/Gangplank/HUD/Icons2D/Gangplank_Coin.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x4b70c950",
     "~class": "SpellObject"
   },
   "0x67531f9e": {
@@ -73,72 +39,20 @@
     "mSpell": {
       "DataValues": [
         {
-          "name": "Cooldown",
+          "name": "MovementSpeedDebuff",
           "values": [
-            15.0,
-            15.0,
-            15.0,
-            15.0,
-            15.0,
-            15.0,
-            15.0
+            0.07000000029802322,
+            0.07000000029802322,
+            0.07000000029802322,
+            0.07000000029802322,
+            0.07000000029802322,
+            0.07000000029802322,
+            0.07000000029802322
           ],
           "~class": "SpellDataValue"
         },
         {
-          "name": "OldMoveSpeed",
-          "values": [
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "MoveSpeedDuration",
-          "values": [
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "DoTDuration",
-          "values": [
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "TurretDamageMult",
-          "values": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "BaseDamage",
+          "name": "DebuffDuration",
           "values": [
             3.0,
             3.0,
@@ -151,15 +65,15 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "MovementSpeedDebuff",
+          "name": "MaxStacksTooltip",
           "values": [
-            0.07000000029802322,
-            0.07000000029802322,
-            0.07000000029802322,
-            0.07000000029802322,
-            0.07000000029802322,
-            0.07000000029802322,
-            0.07000000029802322
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
           ],
           "~class": "SpellDataValue"
         }
@@ -192,7 +106,7 @@
           "mLocKeys": {
             "keyName": "Grog-Soaked Blade",
             "keySummary": "Gangplank's attacks apply a poison that deals magic damage per second, increasing with level.",
-            "keyTooltip": "Gangplank's basic attacks apply a poison, <status>Slowing</status> Movement Speed by @MovementSpeedDebuff*100@% and dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> each second for 3 seconds (effect stacks up to 3 times)."
+            "keyTooltip": "Gangplank's basic attacks apply a poison, <status>Slowing</status> Movement Speed by @MovementSpeedDebuff*100@% and dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> each second for @DebuffDuration@ seconds (effect stacks up to @MaxStacksTooltip@ times)."
           },
           "mObjectName": "Jade_GangplankPassive",
           "~class": "TooltipInstanceSpell"
@@ -203,17 +117,6 @@
         "ASSETS/UX/Jade/S3Icons/SameSized/Gangplank_GrogSoakedBlade.dds"
       ],
       "mSpellCalculations": {
-        "MoveSpeed": {
-          "mDisplayAsPercent": true,
-          "mFormulaParts": [
-            {
-              "mEndValue": 0.30000001192092896,
-              "mStartValue": 0.15000000596046448,
-              "~class": "ByCharLevelInterpolationCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
         "TotalDamage": {
           "mFormulaParts": [
             {
@@ -272,30 +175,6 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "0xa591bc",
-    "~class": "SpellObject"
-  },
-  "0xb97caa03": {
-    "ObjectName": "Jade_Gangplank_IsPirate",
-    "mBuff": {
-      "mTooltipData": {
-        "mFormat": "0xb34f999a",
-        "mLocKeys": {
-          "keyName": "Pirate",
-          "keyTooltip": "Yarr! I'm a mighty Pirate!"
-        },
-        "mObjectName": "Jade_Gangplank_IsPirate",
-        "~class": "TooltipInstanceBuff"
-      },
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_Gangplank_IsPirate",
-    "mSpell": {
-      "mImgIconName": [
-        "ASSETS/Characters/MissFortune/HUD/Icons2D/IsPirate.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xb97caa03",
     "~class": "SpellObject"
   },
   "0xd37c3fd0": {
@@ -390,6 +269,16 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jade_Gangplank/Spells/Jade_GangplankBasicAttack",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Gangplank/Spells/Jade_GangplankBilgewaterToken": {
+    "ObjectName": "Jade_GangplankBilgewaterToken",
+    "mBuff": {
+      "mDescription": "game_buff_tooltip_Jade_GangplankBilgewaterToken",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_GangplankBilgewaterToken",
+    "objectPath": "Characters/Jade_Gangplank/Spells/Jade_GangplankBilgewaterToken",
     "~class": "SpellObject"
   },
   "Characters/Jade_Gangplank/Spells/Jade_GangplankCritAttack": {
@@ -1329,7 +1218,7 @@
           },
           "mLocKeys": {
             "keyName": "Cannon Barrage",
-            "keySummary": "Gangplank signals his ship to fire upon an area for 7 seconds, slowing enemies and dealing damage in random locations within the area.",
+            "keySummary": "Gangplank signals his ship to fire upon an area anywhere on the map, slowing enemies and dealing damage over time.",
             "keyTooltip": "Signals Gangplank's ship to fire upon an area for @Duration@ seconds, <status>Slowing</status> enemies in the area by @Slow*100@% for the duration. Cannonballs rain upon the area, each causing <magicDamage>@TotalDamage@ magic damage</magicDamage>."
           },
           "mObjectName": "Jade_GangplankR",
@@ -1337,84 +1226,6 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.10000000149011612,
-      "mEffectAmount": [
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.0,
-            1.5,
-            0.5,
-            0.5,
-            0.0,
-            0.0,
-            0.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            300.0,
-            300.0,
-            300.0,
-            300.0,
-            300.0,
-            300.0,
-            300.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            75.0,
-            75.0,
-            75.0,
-            75.0,
-            75.0,
-            75.0,
-            75.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            40.0,
-            40.0,
-            40.0,
-            40.0,
-            40.0,
-            40.0,
-            40.0
-          ],
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         0,
         0,
@@ -1736,6 +1547,54 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jade_Gangplank/Spells/Jade_GangplankWAbility/Jade_GangplankW",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Gangplank/Spells/Jade_Gangplank_IsBank": {
+    "ObjectName": "Jade_Gangplank_IsBank",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Bankplank",
+          "keyTooltip": "<gold>+1 Gold</gold><br>Yo-ho-ho, look at all this booty!"
+        },
+        "mObjectName": "Jade_Gangplank_IsBank",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_Gangplank_IsBank",
+    "mSpell": {
+      "mImgIconName": [
+        "ASSETS/Characters/Gangplank/HUD/Icons2D/Gangplank_Coin.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Gangplank/Spells/Jade_Gangplank_IsBank",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Gangplank/Spells/Jade_Gangplank_IsPirate": {
+    "ObjectName": "Jade_Gangplank_IsPirate",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Pirate",
+          "keyTooltip": "Yarr! I'm a mighty Pirate!"
+        },
+        "mObjectName": "Jade_Gangplank_IsPirate",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_Gangplank_IsPirate",
+    "mSpell": {
+      "mImgIconName": [
+        "ASSETS/Characters/MissFortune/HUD/Icons2D/IsPirate.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Gangplank/Spells/Jade_Gangplank_IsPirate",
     "~class": "SpellObject"
   }
 }

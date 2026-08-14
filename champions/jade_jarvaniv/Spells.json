@@ -272,7 +272,7 @@
           "mLocKeys": {
             "keyName": "Martial Cadence",
             "keySummary": "Jarvan's first basic attack on an enemy deals bonus physical damage based on their current Health. This effect cannot occur again on the same enemy for a few seconds.",
-            "keyTooltip": "The first basic attack on an enemy deals @CurrentHealthDamageTTOnly@% of their current Health as bonus <physicalDamage>physical damage </physicalDamage>(max: 400 damage). This effect cannot occur again on the same enemy for @Cooldown@ seconds."
+            "keyTooltip": "The first basic attack on an enemy deals @CurrentHealthDamageTTOnly@% of their current Health as bonus <physicalDamage>physical damage</physicalDamage> (max: @MaximumCadenceDamage@ damage). This effect cannot occur again on the same enemy for @Cooldown@ seconds."
           },
           "mObjectName": "Jade_JarvanIVMartialCadence",
           "~class": "TooltipInstanceSpell"
@@ -401,79 +401,6 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "0x932c7aee",
-    "~class": "SpellObject"
-  },
-  "0xbb517819": {
-    "ObjectName": "Jade_JarvanIV_IsHelping",
-    "mBuff": {
-      "mTooltipData": {
-        "mFormat": "0xb34f999a",
-        "mLocKeys": {
-          "keyName": "I'm Jarvan IV and I'm Helping",
-          "keyTooltip": "<gold>+5 Gold</gold>"
-        },
-        "mObjectName": "Jade_JarvanIV_IsHelping",
-        "~class": "TooltipInstanceBuff"
-      },
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_JarvanIV_IsHelping",
-    "mSpell": {
-      "ImgIconPath": "ASSETS/UX/Jade/S3Icons/SameSized/JarvanIV_DemacianStandard.dds",
-      "castRange": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "castRangeValues": {
-        "0xa3e0478": 0.0,
-        "values": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "mClientData": {
-        "mTooltipData": {
-          "mFormat": "0x476ec0b8",
-          "mObjectName": "Jade_JarvanIV_IsHelping",
-          "~class": "TooltipInstanceSpell"
-        },
-        "~class": "SpellDataResourceClient"
-      },
-      "mFloatVarsDecimals": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/JarvanIV_DemacianStandard.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xbb517819",
     "~class": "SpellObject"
   },
   "Characters/Jade_JarvanIV/Spells/Jade_JarvanIVBasicAttack": {
@@ -875,7 +802,7 @@
               "mValueType": 2,
               "~class": "FloatPerSpellLevel"
             },
-            "textureRadiusOverrideName": "ASSETS/Spells/Textures/AOE_brand.tex",
+            "textureRadiusOverrideName": "assets/spells/textures/aoe_brand.tex",
             "~class": "TargeterDefinitionAoe"
           }
         ],
@@ -906,7 +833,7 @@
           "mLocKeys": {
             "keyName": "Cataclysm",
             "keySummary": "Jarvan IV heroically leaps into battle at a target with such force that he terraforms the surrounding area to create an arena around them.",
-            "keyTooltip": "Heroically leaps to an enemy Champion dealing <physicalDamage>@DamageCalc@ physical damage</physicalDamage> and creating an arena of impassable terrain around them for 3.5 seconds.<br><br><recast>Recast</recast> again to collapse the terrain."
+            "keyTooltip": "Heroically leaps to an enemy Champion dealing <physicalDamage>@DamageCalc@ physical damage</physicalDamage> and creating an arena of impassable terrain around them for @WallDuration@ seconds.<br><br><recast>Recast</recast> again to collapse the terrain."
           },
           "mObjectName": "Jade_JarvanIVCataclysm",
           "~class": "TooltipInstanceSpell"
@@ -1242,7 +1169,7 @@
               "~class": "FloatPerSpellLevel"
             },
             "isConstrainedToRange": true,
-            "textureRadiusOverrideName": "ASSETS/Spells/Textures/AOE.tex",
+            "textureRadiusOverrideName": "assets/spells/textures/aoe.tex",
             "~class": "TargeterDefinitionAoe"
           }
         ],
@@ -1574,7 +1501,7 @@
           "mLocKeys": {
             "keyName": "Dragon Strike",
             "keySummary": "Jarvan IV extends his lance, dealing physical damage and lowering the Armor of all enemies in its path. Additionally, this will pull Jarvan to his Demacian Standard, knocking up enemies in his path.",
-            "keyTooltip": "Extends Jarvan IV's lance dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and lowering the Armor of all enemies hit by @ArmorShredPercent@% for 3 seconds.<br><br>If the lance contacts <spellName>Demacian Standard</spellName> it will pull Jarvan IV to its location, <status>Knocking Up</status> enemies in his path."
+            "keyTooltip": "Extends Jarvan IV's lance dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and lowering the Armor of all enemies hit by @ArmorShredPercent@% for @ArmorShredDuration@ seconds.<br><br>If the lance contacts <spellName>Demacian Standard</spellName> it will pull Jarvan IV to its location, <status>Knocking Up</status> enemies in his path."
           },
           "mObjectName": "Jade_JarvanIVDragonStrike",
           "~class": "TooltipInstanceSpell"
@@ -1850,7 +1777,7 @@
           "mLocKeys": {
             "keyName": "Golden Aegis",
             "keySummary": "Jarvan IV calls upon the ancient kings of Demacia to shield him from harm and slow surrounding enemies.",
-            "keyTooltip": "Temporarily gains a <shield>shield</shield> that absorbs up to @ShieldAmount@ (+@ShieldBonus@ damage for each nearby enemy champion) damage for 5 seconds, and <status>Slows</status> surrounding enemies by @SlowAmount@% for 2 seconds."
+            "keyTooltip": "Temporarily gains a <shield>shield</shield> that absorbs up to @ShieldAmount@ (+@ShieldBonus@ damage for each nearby enemy champion) damage for @ShieldDuration@ seconds, and <status>Slows</status> surrounding enemies by @SlowAmount@% for @SlowDuration@ seconds."
           },
           "mObjectName": "Jade_JarvanIVGoldenAegis",
           "~class": "TooltipInstanceSpell"
@@ -1909,6 +1836,79 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jade_JarvanIV/Spells/Jade_JarvanIVGoldenAegisAbility/Jade_JarvanIVGoldenAegis",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_JarvanIV/Spells/Jade_JarvanIV_IsHelping": {
+    "ObjectName": "Jade_JarvanIV_IsHelping",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "I'm Jarvan IV and I'm Helping",
+          "keyTooltip": "<gold>+5 Gold</gold>"
+        },
+        "mObjectName": "Jade_JarvanIV_IsHelping",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_JarvanIV_IsHelping",
+    "mSpell": {
+      "ImgIconPath": "ASSETS/UX/Jade/S3Icons/SameSized/JarvanIV_DemacianStandard.dds",
+      "castRange": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "castRangeValues": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0x476ec0b8",
+          "mObjectName": "Jade_JarvanIV_IsHelping",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/JarvanIV_DemacianStandard.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_JarvanIV/Spells/Jade_JarvanIV_IsHelping",
     "~class": "SpellObject"
   }
 }

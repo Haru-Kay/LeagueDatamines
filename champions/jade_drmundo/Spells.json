@@ -20,6 +20,21 @@
         ],
         "~class": "SpellAttributeModifiable"
       },
+      "DataValues": [
+        {
+          "name": "MaxHealthRatio",
+          "values": [
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "castRange": [
         0.0,
         0.0,
@@ -58,7 +73,7 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Adrenaline Rush",
-            "keySummary": "Dr. Mundo regenerates 0.3% of his maximum Health each second.",
+            "keySummary": "Dr. Mundo regenerates a portion of his maximum Health each second.",
             "keyTooltip": "Dr. Mundo regenerates <healing>@MaximumHealthRegen@ Health</healing> each second."
           },
           "mObjectName": "Jade_DrMundoPassive",
@@ -74,11 +89,15 @@
         "0xee04500": {
           "mFormulaParts": [
             {
-              "mCoefficient": 0.003000000026077032,
+              "mDataValue": "MaxHealthRatio",
               "mStat": 12,
-              "~class": "StatByCoefficientCalculationPart"
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
+          "mMultiplier": {
+            "mNumber": 0.009999999776482582,
+            "~class": "NumberCalculationPart"
+          },
           "~class": "GameCalculation"
         }
       },
@@ -450,93 +469,6 @@
     "objectPath": "0x3486c2c3",
     "~class": "SpellObject"
   },
-  "0x5871a0f7": {
-    "ObjectName": "Jade_DrMundoShoseShop",
-    "mBuff": {
-      "mTooltipData": {
-        "mFormat": "0xb34f999a",
-        "mLocKeys": {
-          "keyName": "Dr Mundo's Shose Shop",
-          "keyTooltip": "+@f1@ Movement Speed<br><flavorText>\"Welcome to my shose shop.\"</flavorText>"
-        },
-        "mObjectName": "Jade_DrMundoShoseShop",
-        "~class": "TooltipInstanceBuff"
-      },
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_DrMundoShoseShop",
-    "mSpell": {
-      "Cooldown": {
-        "0xa3e0478": 0.0,
-        "values": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "ImgIconPath": "ASSETS/Items/Icons2D/Jade/DrMundo_Shose_Shop.tex",
-      "castRange": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "castRangeValues": {
-        "0xa3e0478": 0.0,
-        "values": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "cooldownTime": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "flags": 4,
-      "mAffectsTypeFlags": 6154,
-      "mIsDisabledWhileDead": false,
-      "mSpellCalculations": {
-        "0xee04500": {
-          "mFormulaParts": [
-            {
-              "mCoefficient": 0.003000000026077032,
-              "mStat": 12,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        }
-      },
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x5871a0f7",
-    "~class": "SpellObject"
-  },
-  "0xc8b13159": {
-    "ObjectName": "Jade_DrMundoSkin09_WeaponRotationManager",
-    "mScriptName": "Jade_DrMundoSkin09_WeaponRotationManager",
-    "objectPath": "0xc8b13159",
-    "~class": "SpellObject"
-  },
   "Characters/Jade_DrMundo/Spells/Jade_DrMundoBasicAttack": {
     "ObjectName": "Jade_DrMundoBasicAttack",
     "mScriptName": "Jade_DrMundoBasicAttack",
@@ -594,7 +526,7 @@
               "basePosition": 3,
               "~class": "DrawablePositionLocator"
             },
-            "textureRadiusOverrideName": "ASSETS/Spells/Textures/AOE.tex",
+            "textureRadiusOverrideName": "assets/spells/textures/aoe.tex",
             "~class": "TargeterDefinitionAoe"
           }
         ],
@@ -671,7 +603,7 @@
               "basePosition": 3,
               "~class": "DrawablePositionLocator"
             },
-            "textureRadiusOverrideName": "ASSETS/Spells/Textures/AOE.tex",
+            "textureRadiusOverrideName": "assets/spells/textures/aoe.tex",
             "~class": "TargeterDefinitionAoe"
           }
         ],
@@ -749,7 +681,7 @@
               "basePosition": 3,
               "~class": "DrawablePositionLocator"
             },
-            "textureRadiusOverrideName": "ASSETS/Spells/Textures/AOE.tex",
+            "textureRadiusOverrideName": "assets/spells/textures/aoe.tex",
             "~class": "TargeterDefinitionAoe"
           }
         ],
@@ -903,6 +835,19 @@
             115.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "Duration",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -977,8 +922,8 @@
           "mLocKeys": {
             "keyCost": "<font color='#CC3300'>@HealthCost@ Health</font>",
             "keyName": "Masochism",
-            "keySummary": "Masochism increases Dr. Mundo's Attack Damage by a flat amount for 5 second. In addition, Dr. Mundo also gains an additional amount of Attack Damage for each percentage of Health he is missing.",
-            "keyTooltip": "Dr. Mundo gains <physicalDamage>@BaseIncrease@ Attack Damage</physicalDamage> for 5 seconds. Dr. Mundo gains an additional <physicalDamage>+@DamageMod@ Attack Damage</physicalDamage> for each percentage of Health he is missing."
+            "keySummary": "Dr. Mundo's gains Attack Damage for a few seconds based on his missing health.",
+            "keyTooltip": "Dr. Mundo gains <physicalDamage>@BaseIncrease@ Attack Damage</physicalDamage> for @Duration@ seconds. Dr. Mundo gains an additional <physicalDamage>+@DamageMod@ Attack Damage</physicalDamage> for each percentage of Health he is missing."
           },
           "mObjectName": "Jade_DrMundoE",
           "~class": "TooltipInstanceSpell"
@@ -1100,6 +1045,19 @@
             50.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowDuration",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -1208,6 +1166,11 @@
                   "nameOverride": "Health Cost",
                   "type": "HealthCost",
                   "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Maximum Damage",
+                  "type": "MaxDamage",
+                  "~class": "TooltipInstanceListElement"
                 }
               ],
               "levelCount": 5,
@@ -1218,7 +1181,8 @@
             "keyCost": "<font color='#CC3300'>@HealthCost@ Health</font>",
             "keyName": "Infected Cleaver",
             "keySummary": "Dr. Mundo hurls his cleaver, dealing damage based on his victims maximum health.",
-            "keyTooltip": "<mainText>Dr. Mundo hurls his cleaver, dealing <magicDamage>magic damage</magicDamage> equal to @DamageMod*100@% of the target's current health (@MinDamage@ damage minimum) and <status>Slowing</status> them by 40% for 2 seconds.<br><br>Half of the health cost is refunded if the cleaver hits a target.</mainText>"
+            "keyTooltip": "Dr. Mundo hurls his cleaver, dealing <magicDamage>magic damage</magicDamage> equal to @DamageMod*100@% of the target's current health (@MinDamage@ damage minimum) and <status>Slowing</status> them by @MoveMod*-100@% for @SlowDuration@ seconds.<br><br><healing>@HealthReturn@ Health</healing> is refunded if the cleaver hits a target.",
+            "keyTooltipExtendedBelowLine": "<rules>Deals a maximum of <magicDamage>@MaxDamage@ magic damage</magicDamage>.</rules>"
           },
           "mObjectName": "Jade_DrMundoQ",
           "~class": "TooltipInstanceSpell"
@@ -1431,7 +1395,7 @@
             "keyCost": "<font color='#CC3300'>@HealthCost@% of Current Health</font>",
             "keyName": "Sadism",
             "keySummary": "Dr. Mundo sacrifices a portion of his Health for increased Movement Speed and drastically increased Health Regeneration.",
-            "keyTooltip": "<mainText>Dr. Mundo regenerates <healing>@MaximumHealthRegen@ Health</healing> over 12 seconds. Additionally, he gains <speed>@SpeedMod*100@% Movement Speed</speed>.</mainText>"
+            "keyTooltip": "Dr. Mundo regenerates <healing>@MaximumHealthRegen@ Health</healing> and gains <speed>@SpeedMod*100@% Movement Speed</speed> over @Duration@ seconds."
           },
           "mObjectName": "Jade_DrMundoR",
           "~class": "TooltipInstanceSpell"
@@ -1489,6 +1453,93 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jade_DrMundo/Spells/Jade_DrMundoRAbility/Jade_DrMundoR",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_DrMundo/Spells/Jade_DrMundoShoseShop": {
+    "ObjectName": "Jade_DrMundoShoseShop",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Dr Mundo's Shose Shop",
+          "keyTooltip": "+@f1@ Movement Speed<br><flavorText>\"Welcome to my shose shop.\"</flavorText>"
+        },
+        "mObjectName": "Jade_DrMundoShoseShop",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_DrMundoShoseShop",
+    "mSpell": {
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "ImgIconPath": "ASSETS/Items/Icons2D/Jade/DrMundo_Shose_Shop.tex",
+      "castRange": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "castRangeValues": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 6154,
+      "mIsDisabledWhileDead": false,
+      "mSpellCalculations": {
+        "0xee04500": {
+          "mFormulaParts": [
+            {
+              "mCoefficient": 0.003000000026077032,
+              "mStat": 12,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_DrMundo/Spells/Jade_DrMundoShoseShop",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_DrMundo/Spells/Jade_DrMundoSkin09_WeaponRotationManager": {
+    "ObjectName": "Jade_DrMundoSkin09_WeaponRotationManager",
+    "mScriptName": "Jade_DrMundoSkin09_WeaponRotationManager",
+    "objectPath": "Characters/Jade_DrMundo/Spells/Jade_DrMundoSkin09_WeaponRotationManager",
     "~class": "SpellObject"
   },
   "Characters/Jade_DrMundo/Spells/Jade_DrMundoWAbility/Jade_DrMundoW": {

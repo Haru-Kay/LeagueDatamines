@@ -33,7 +33,7 @@
         "mFormat": "0xb34f999a",
         "mLocKeys": {
           "keyName": "Impure Shots",
-          "keyTooltip": "<font color='#FF9900'>Passive:</font> Miss Fortune deals <magicDamage>@TotalDamageOnHIt@ magic damage</magicDamage> to her target with each attack, cumulatively stacking up to @MaxStacks@ times on the same target.<br><magicDamage>Maximum bonus damage: @MaximumTotalDamageOnHit@</magicDamage><br><br><font color='#FF9900'>Active:</font> Miss Fortune's <attackSpeed>Attack Speed</attackSpeed> is increased by <attackSpeed>@ASMod@%</attackSpeed> for 6 seconds and causes her attacks to apply <keyword>50% Grievous Wounds</keyword> for 3 seconds."
+          "keyTooltip": "<font color='#FF9900'>Passive:</font> Miss Fortune deals <magicDamage>@TotalDamageOnHIt@ magic damage</magicDamage> to her target with each attack, cumulatively stacking up to @MaxStacks@ times on the same target.<br><magicDamage>Maximum bonus damage: @MaximumTotalDamageOnHit@</magicDamage><br><br><font color='#FF9900'>Active:</font> Miss Fortune's <attackSpeed>Attack Speed</attackSpeed> is increased by <attackSpeed>@ASMod@%</attackSpeed> for @ActiveDuration@ seconds and causes her attacks to apply <keyword>50% Grievous Wounds</keyword> for 3 seconds."
         },
         "mObjectName": "Jade_MissFortunePassiveW",
         "~class": "TooltipInstanceBuff"
@@ -273,22 +273,6 @@
     "objectPath": "0x8ae744b3",
     "~class": "SpellObject"
   },
-  "0x8ddff82a": {
-    "ObjectName": "Jade_MissFortuneIsPirateHunter",
-    "mBuff": {
-      "mDescription": "<titleLeft>Pirate Hunter</titleLeft><mainText>Yarr! I'm a mighty Pirate... hunter!</mainText>",
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_MissFortuneIsPirateHunter",
-    "mSpell": {
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/IsPirate.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x8ddff82a",
-    "~class": "SpellObject"
-  },
   "0xa8a066f8": {
     "ObjectName": "Jade_MissFortuneBullets",
     "mScriptName": "Jade_MissFortuneBullets",
@@ -462,7 +446,7 @@
         "mFormat": "0xb34f999a",
         "mLocKeys": {
           "keyName": "Strut",
-          "keyTooltip": "Miss Fortune has increased <speed>Movement Speed</speed> until she is hit in combat."
+          "keyTooltip": "After @DurationMin@ seconds of not being attacked, Miss Fortune gains an additional <speed>@MinimumSpeed@ Movement Speed</speed>. This bonus increases each second up to a maximum bonus of @MaximumSpeed@."
         },
         "mObjectName": "Jade_MissFortunePassive",
         "~class": "TooltipInstanceBuff"
@@ -484,6 +468,47 @@
         ],
         "~class": "SpellAttributeModifiable"
       },
+      "DataValues": [
+        {
+          "name": "MinimumSpeed",
+          "values": [
+            25.0,
+            25.0,
+            25.0,
+            25.0,
+            25.0,
+            25.0,
+            25.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaximumSpeed",
+          "values": [
+            70.0,
+            70.0,
+            70.0,
+            70.0,
+            70.0,
+            70.0,
+            70.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DurationMin",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "SpellEventToAudioEventSuffix": {
         "20": "Play_sfx_MissFortune_MissFortuneStrutStacks_OnBuffCast"
       },
@@ -523,8 +548,8 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Strut",
-            "keySummary": "After 5 seconds of not being attacked, Miss Fortune gains an additional <speed>25 Movement Speed</speed>. This bonus increases by 9 each second up to a maximum bonus of 70.",
-            "keyTooltip": "Miss Fortune has increased <speed>Movement Speed</speed> until she is hit in combat."
+            "keySummary": "Miss Fortune has increased Movement Speed until she is hit in combat.",
+            "keyTooltip": "After @DurationMin@ seconds of not being attacked, Miss Fortune gains an additional <speed>@MinimumSpeed@ Movement Speed</speed>. This bonus increases each second up to a maximum bonus of @MaximumSpeed@."
           },
           "mObjectName": "Jade_MissFortunePassive",
           "~class": "TooltipInstanceSpell"
@@ -745,7 +770,7 @@
               "basePosition": 2,
               "~class": "DrawablePositionLocator"
             },
-            "textureConeOverrideName": "ASSETS/Characters/Jade_MissFortune/HUD/Textures/ConicRangeIndicator.tex",
+            "textureConeOverrideName": "assets/characters/jade_missfortune/hud/textures/conicrangeindicator.tex",
             "~class": "TargeterDefinitionCone"
           }
         ],
@@ -1295,7 +1320,7 @@
               "basePosition": 3,
               "~class": "DrawablePositionLocator"
             },
-            "textureConeOverrideName": "ASSETS/Characters/Jade_MissFortune/HUD/Textures/MF_ConicRangeIndicator.tex",
+            "textureConeOverrideName": "assets/characters/jade_missfortune/hud/textures/mf_conicrangeindicator.tex",
             "~class": "TargeterDefinitionCone"
           }
         ],
@@ -1568,6 +1593,22 @@
     "objectPath": "Characters/Jade_MissFortune/Spells/Jade_MissFortuneCritAttack",
     "~class": "SpellObject"
   },
+  "Characters/Jade_MissFortune/Spells/Jade_MissFortuneIsPirateHunter": {
+    "ObjectName": "Jade_MissFortuneIsPirateHunter",
+    "mBuff": {
+      "mDescription": "<titleLeft>Pirate Hunter</titleLeft><mainText>Yarr! I'm a mighty Pirate... hunter!</mainText>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_MissFortuneIsPirateHunter",
+    "mSpell": {
+      "mImgIconName": [
+        "ASSETS/UX/Jade/S3Icons/SameSized/IsPirate.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_MissFortune/Spells/Jade_MissFortuneIsPirateHunter",
+    "~class": "SpellObject"
+  },
   "Characters/Jade_MissFortune/Spells/Jade_MissFortuneRicochetShotAbility/Jade_MissFortuneRicochetShot": {
     "ObjectName": "Jade_MissFortuneRicochetShot",
     "mScriptName": "Jade_MissFortuneRicochetShot",
@@ -1733,7 +1774,7 @@
               "basePosition": 2,
               "~class": "DrawablePositionLocator"
             },
-            "textureConeOverrideName": "ASSETS/Characters/Jade_MissFortune/HUD/Textures/ConicRangeIndicator.tex",
+            "textureConeOverrideName": "assets/characters/jade_missfortune/hud/textures/conicrangeindicator.tex",
             "~class": "TargeterDefinitionCone"
           }
         ],
@@ -2382,7 +2423,7 @@
           "mLocKeys": {
             "keyName": "Impure Shots",
             "keySummary": "Miss Fortune passively increases damage dealt to a target with each strike.  This ability can be activated to increase Miss Fortune's Attack Speed and cause her attacks to lower healing received by the target.",
-            "keyTooltip": "<font color='#FF9900'>Passive:</font> Miss Fortune deals <magicDamage>@TotalDamageOnHIt@ magic damage</magicDamage> to her target with each attack, cumulatively stacking up to @MaxStacks@ times on the same target.<br><magicDamage>Maximum bonus damage: @MaximumTotalDamageOnHit@</magicDamage><br><br><font color='#FF9900'>Active:</font> Miss Fortune's <attackSpeed>Attack Speed</attackSpeed> is increased by <attackSpeed>@ASMod@%</attackSpeed> for 6 seconds and causes her attacks to apply <keyword>50% Grievous Wounds</keyword> for 3 seconds.",
+            "keyTooltip": "<font color='#FF9900'>Passive:</font> Miss Fortune deals <magicDamage>@TotalDamageOnHIt@ magic damage</magicDamage> to her target with each attack, cumulatively stacking up to @MaxStacks@ times on the same target.<br><magicDamage>Maximum bonus damage: @MaximumTotalDamageOnHit@</magicDamage><br><br><font color='#FF9900'>Active:</font> Miss Fortune's <attackSpeed>Attack Speed</attackSpeed> is increased by <attackSpeed>@ASMod@%</attackSpeed> for @ActiveDuration@ seconds and causes her attacks to apply <keyword>50% Grievous Wounds</keyword> for 3 seconds.",
             "keyTooltipExtendedBelowLine": "<keyword>Grievous Wounds</keyword>: Reduces the effectiveness of Healing and Regeneration effects."
           },
           "mObjectName": "Jade_MissFortuneViciousStrikes",

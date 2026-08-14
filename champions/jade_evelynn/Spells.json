@@ -23,12 +23,6 @@
     "objectPath": "0x200116e5",
     "~class": "SpellObject"
   },
-  "0x2dd7fabf": {
-    "ObjectName": "Jade_EvelynnPassiveStealthRing",
-    "mScriptName": "Jade_EvelynnPassiveStealthRing",
-    "objectPath": "0x2dd7fabf",
-    "~class": "SpellObject"
-  },
   "0x33e7d4cf": {
     "ObjectName": "Jade_EvelynnWPassive",
     "mBuff": {
@@ -51,12 +45,6 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "0x33e7d4cf",
-    "~class": "SpellObject"
-  },
-  "0x4593d9b4": {
-    "ObjectName": "Jade_EvelynnVisualManager",
-    "mScriptName": "Jade_EvelynnVisualManager",
-    "objectPath": "0x4593d9b4",
     "~class": "SpellObject"
   },
   "0x465968ca": {
@@ -336,18 +324,6 @@
     "objectPath": "0x6c0996b1",
     "~class": "SpellObject"
   },
-  "0x8862c452": {
-    "ObjectName": "Jade_EvelynnAttackSequencer",
-    "mScriptName": "Jade_EvelynnAttackSequencer",
-    "objectPath": "0x8862c452",
-    "~class": "SpellObject"
-  },
-  "0x8a20ee9d": {
-    "ObjectName": "Jade_EvelynnFunctionModule",
-    "mScriptName": "Jade_EvelynnFunctionModule",
-    "objectPath": "0x8a20ee9d",
-    "~class": "SpellObject"
-  },
   "0xca4ee24a": {
     "ObjectName": "Jade_EvelynnPassive",
     "mBuff": {
@@ -376,32 +352,28 @@
     "mSpell": {
       "DataValues": [
         {
-          "name": "TOOLTIP_ONLY_VARS",
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "DemonShadeTimer",
+          "name": "StealthLockoutTimer",
           "values": [
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0
           ],
           "~class": "SpellDataValue"
         },
         {
-          "name": "StealthDropTimer",
+          "name": "ManaRegenRatio",
           "values": [
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
           ],
           "~class": "SpellDataValue"
         }
@@ -412,7 +384,7 @@
           "mLocKeys": {
             "keyName": "Shadow Walk",
             "keySummary": "When out of combat, Evelynn enters Camoflauge only being able to be seen by nearby enemy champions or true sight. While stealthed, she rapidly regenerates Mana.",
-            "keyTooltip": "Evelynn stealths into the shadows, gaining <keywordStealth>Camouflage</keywordStealth> and regenerates <scaleMana>1% max Mana</scaleMana> every second.<br><br>Casting spells, taking damage or dealing damage removes <keywordStealth>Camouflage</keywordStealth> for 6 seconds.",
+            "keyTooltip": "Evelynn stealths into the shadows, gaining <keywordStealth>Camouflage</keywordStealth> and regenerates <scaleMana>@ManaRegenPerSecond@ Mana</scaleMana> every second.<br><br>Casting spells, taking damage, or dealing damage removes <keywordStealth>Camouflage</keywordStealth> for @StealthLockoutTimer@ seconds.",
             "keyTooltipExtended": "{{Spell_EvelynnPassive_Jade_Tooltip}}<br><br><rules>{{Reminder_Camouflage}}</rules>"
           },
           "mObjectName": "Jade_EvelynnPassive",
@@ -442,30 +414,17 @@
         "ASSETS/UX/Jade/S3Icons/SameSized/Evelynn_ShadowWalk.dds"
       ],
       "mSpellCalculations": {
-        "HealPerSecondTOOLTIP": {
+        "0x1200d33e": {
           "mFormulaParts": [
             {
-              "mEndValue": 150.0,
-              "mStartValue": 15.0,
-              "~class": "ByCharLevelInterpolationCalculationPart"
+              "DataValue": "ManaRegenRatio",
+              "~class": "AbilityResourceByNamedDataValueCalculationPart"
             }
           ],
-          "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculation"
-        },
-        "HealingThresholdTOOLTIP": {
-          "mFormulaParts": [
-            {
-              "mInitialBonusPerLevel": 20.0,
-              "mLevel1Value": 250.0,
-              "~class": "ByCharLevelBreakpointsCalculationPart"
-            },
-            {
-              "mCoefficient": 2.5,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 6,
+          "mMultiplier": {
+            "mNumber": 0.009999999776482582,
+            "~class": "NumberCalculationPart"
+          },
           "~class": "GameCalculation"
         }
       },
@@ -498,31 +457,10 @@
     "objectPath": "0xd9a64d02",
     "~class": "SpellObject"
   },
-  "0xe0c83af5": {
-    "ObjectName": "Jade_EvelynnNonDemonFX",
-    "mBuff": {
-      "PersistentEffectConditions": [
-        {
-          "PersistentVfxs": [
-            {
-              "boneName": "C_Buffbone_Glb_Head_Loc",
-              "effectKey": "Jade_Evelynn_Passive_Hair",
-              "~class": "PersistentVfxData"
-            }
-          ],
-          "~class": "PersistentEffectConditionData"
-        }
-      ],
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_EvelynnNonDemonFX",
-    "objectPath": "0xe0c83af5",
-    "~class": "SpellObject"
-  },
-  "0xf31f7551": {
-    "ObjectName": "Jade_EvelynnSkin24Manager",
-    "mScriptName": "Jade_EvelynnSkin24Manager",
-    "objectPath": "0xf31f7551",
+  "Characters/Jade_Evelynn/Spells/Jade_EvelynnAttackSequencer": {
+    "ObjectName": "Jade_EvelynnAttackSequencer",
+    "mScriptName": "Jade_EvelynnAttackSequencer",
+    "objectPath": "Characters/Jade_Evelynn/Spells/Jade_EvelynnAttackSequencer",
     "~class": "SpellObject"
   },
   "Characters/Jade_Evelynn/Spells/Jade_EvelynnBasicAttack": {
@@ -1312,6 +1250,39 @@
     "objectPath": "Characters/Jade_Evelynn/Spells/Jade_EvelynnEAbility/Jade_EvelynnE",
     "~class": "SpellObject"
   },
+  "Characters/Jade_Evelynn/Spells/Jade_EvelynnFunctionModule": {
+    "ObjectName": "Jade_EvelynnFunctionModule",
+    "mScriptName": "Jade_EvelynnFunctionModule",
+    "objectPath": "Characters/Jade_Evelynn/Spells/Jade_EvelynnFunctionModule",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Evelynn/Spells/Jade_EvelynnNonDemonFX": {
+    "ObjectName": "Jade_EvelynnNonDemonFX",
+    "mBuff": {
+      "PersistentEffectConditions": [
+        {
+          "PersistentVfxs": [
+            {
+              "boneName": "C_Buffbone_Glb_Head_Loc",
+              "effectKey": "Jade_Evelynn_Passive_Hair",
+              "~class": "PersistentVfxData"
+            }
+          ],
+          "~class": "PersistentEffectConditionData"
+        }
+      ],
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_EvelynnNonDemonFX",
+    "objectPath": "Characters/Jade_Evelynn/Spells/Jade_EvelynnNonDemonFX",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Evelynn/Spells/Jade_EvelynnPassiveStealthRing": {
+    "ObjectName": "Jade_EvelynnPassiveStealthRing",
+    "mScriptName": "Jade_EvelynnPassiveStealthRing",
+    "objectPath": "Characters/Jade_Evelynn/Spells/Jade_EvelynnPassiveStealthRing",
+    "~class": "SpellObject"
+  },
   "Characters/Jade_Evelynn/Spells/Jade_EvelynnQAbility/Jade_EvelynnQ": {
     "ObjectName": "Jade_EvelynnQ",
     "mScriptName": "Jade_EvelynnQ",
@@ -1880,78 +1851,32 @@
           "mLocKeys": {
             "keyName": "Agony's Embrace",
             "keySummary": "Evelynn summons spikes from the ground to deal damage and slow enemies in the area. She then gains a shield based on how many enemy champions were hit.",
-            "keyTooltip": "Evelynn impales all enemies in the targeted area, dealing <magicDamage>@TotalDamage@% current Health magic damage</magicDamage> and <status>Slowing</status> them by @Slow*100@% for @SlowDuration@ seconds.<br><br>Evelynn siphons their pain, gaining a <shield>@ShieldAmount@ Health Shield</shield> for each enemy champion hit which lasts up to 6 seconds."
+            "keyTooltip": "Evelynn impales all enemies in the targeted area, dealing <magicDamage>@TotalDamage@% current Health magic damage</magicDamage> and <status>Slowing</status> them by @Slow*100@% for @SlowDuration@ seconds.<br><br>Evelynn siphons their pain, gaining a <shield>@ShieldAmount@ Health Shield</shield> for each enemy champion hit which lasts up to @ShieldDuration@ seconds."
           },
           "mObjectName": "Jade_EvelynnR",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient2": 0.029999999329447746,
       "mEffectAmount": [
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
         {
           "value": [
             0.0,
-            125.0,
-            250.0,
-            375.0,
-            500.0,
-            650.0,
-            775.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            1.399999976158142,
-            1.399999976158142,
-            1.399999976158142,
-            1.399999976158142,
-            1.399999976158142,
-            1.399999976158142,
-            1.399999976158142
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            150.0,
-            150.0,
-            225.0,
-            300.0,
-            300.0,
-            300.0,
-            300.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            5.0,
             5.0,
             4.0,
             3.0,
@@ -1962,39 +1887,12 @@
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896
-          ],
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            700.0,
-            700.0,
-            700.0,
-            700.0,
-            700.0,
-            700.0,
-            700.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            30.0,
-            30.0,
-            45.0,
-            60.0,
-            60.0,
-            60.0,
-            60.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
@@ -2075,6 +1973,18 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jade_Evelynn/Spells/Jade_EvelynnRAbility/Jade_EvelynnR",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Evelynn/Spells/Jade_EvelynnSkin24Manager": {
+    "ObjectName": "Jade_EvelynnSkin24Manager",
+    "mScriptName": "Jade_EvelynnSkin24Manager",
+    "objectPath": "Characters/Jade_Evelynn/Spells/Jade_EvelynnSkin24Manager",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Evelynn/Spells/Jade_EvelynnVisualManager": {
+    "ObjectName": "Jade_EvelynnVisualManager",
+    "mScriptName": "Jade_EvelynnVisualManager",
+    "objectPath": "Characters/Jade_Evelynn/Spells/Jade_EvelynnVisualManager",
     "~class": "SpellObject"
   },
   "Characters/Jade_Evelynn/Spells/Jade_EvelynnWAbility/Jade_EvelynnW": {

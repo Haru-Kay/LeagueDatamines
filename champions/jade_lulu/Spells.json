@@ -143,12 +143,6 @@
     "objectPath": "0x3db8b26b",
     "~class": "SpellObject"
   },
-  "0x59aa2133": {
-    "ObjectName": "Jade_LuluRunCycleManager",
-    "mScriptName": "Jade_LuluRunCycleManager",
-    "objectPath": "0x59aa2133",
-    "~class": "SpellObject"
-  },
   "0x6dfab280": {
     "ObjectName": "Jade_LuluQSlow",
     "mBuff": {
@@ -1752,41 +1746,41 @@
     "mSpell": {
       "DataValues": [
         {
-          "name": "BaseDamage",
+          "name": "AllyFollowDuration",
           "values": [
-            30.0,
-            80.0,
-            130.0,
-            180.0,
-            230.0,
-            280.0,
-            280.0
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0
           ],
           "~class": "SpellDataValue"
         },
         {
-          "name": "DamageAPRatio",
+          "name": "ShieldDuration",
           "values": [
-            0.6000000238418579,
-            0.6000000238418579,
-            0.6000000238418579,
-            0.6000000238418579,
-            0.6000000238418579,
-            0.6000000238418579,
-            0.6000000238418579
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0
           ],
           "~class": "SpellDataValue"
         },
         {
           "name": "BaseShield",
           "values": [
-            30.0,
+            15.0,
             60.0,
             105.0,
             150.0,
             195.0,
             240.0,
-            240.0
+            285.0
           ],
           "~class": "SpellDataValue"
         },
@@ -1804,7 +1798,33 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "ShieldDuration",
+          "name": "BaseDamage",
+          "values": [
+            30.0,
+            80.0,
+            130.0,
+            180.0,
+            230.0,
+            280.0,
+            330.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DamageAPRatio",
+          "values": [
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "EnemyFollowDuration",
           "values": [
             6.0,
             6.0,
@@ -1897,90 +1917,13 @@
           "mLocKeys": {
             "keyName": "Help, Pix!",
             "keySummary": "If cast on an ally, commands Pix to jump to an ally and shield them. He then follows them and aids their attacks. If cast on an enemy, commands Pix to jump to an enemy and damage them. He then follows them and grants you vision of that enemy.",
-            "keyTooltip": "<mainText>On Ally Cast: Commands Pix to jump to an ally and then follow and aid their attacks instead of Lulu's for 6 seconds. Upon arrival, Pix <shield>shields for @TotalShield@ damage</shield> for 6 seconds.<br><br>On Enemy Cast: Pix deals <magicDamage>@TotalDamage@ magic damage</magicDamage> to target enemy unit. Pix then follows and grants vision of them for 6 seconds.</mainText>"
+            "keyTooltip": "On Ally Cast: Commands Pix to jump to an ally and then follow and aid their attacks instead of Lulu's for @AllyFollowDuration@ seconds. Upon arrival, Pix <shield>shields for @TotalShield@ damage</shield> for @ShieldDuration@ seconds.<br><br>On Enemy Cast: Pix deals <magicDamage>@TotalDamage@ magic damage</magicDamage> to target enemy unit. Pix then follows and grants vision of them for @EnemyFollowDuration@ seconds."
           },
           "mObjectName": "Jade_LuluE",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mEffectAmount": [
-        {
-          "value": [
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            50.0,
-            50.0,
-            50.0,
-            50.0,
-            50.0,
-            50.0,
-            50.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            25.0,
-            25.0,
-            25.0,
-            25.0,
-            25.0,
-            25.0,
-            25.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mImgIconName": [
         "ASSETS/Characters/Jade_Lulu/HUD/Icons2D/Jade_Lulu_CommandPix.dds"
       ],
@@ -2210,8 +2153,8 @@
               "basePosition": 1,
               "~class": "DrawablePositionLocator"
             },
-            "textureBaseOverrideName": "ASSETS/Spells/Textures/Lulu_Q_Skillshot_Base.tex",
-            "textureTargetOverrideName": "ASSETS/Spells/Textures/Lulu_Q_Skillshot_Tip.tex",
+            "textureBaseOverrideName": "assets/spells/textures/lulu_q_skillshot_base.tex",
+            "textureTargetOverrideName": "assets/spells/textures/lulu_q_skillshot_tip.tex",
             "~class": "TargeterDefinitionLine"
           },
           {
@@ -2237,8 +2180,8 @@
               "mValueType": 2,
               "~class": "FloatPerSpellLevel"
             },
-            "textureBaseOverrideName": "ASSETS/Spells/Textures/Lulu_Q_Skillshot_Base.tex",
-            "textureTargetOverrideName": "ASSETS/Spells/Textures/Lulu_Q_Skillshot_Tip.tex",
+            "textureBaseOverrideName": "assets/spells/textures/lulu_q_skillshot_base.tex",
+            "textureTargetOverrideName": "assets/spells/textures/lulu_q_skillshot_tip.tex",
             "~class": "TargeterDefinitionLine"
           },
           {
@@ -2571,7 +2514,7 @@
               "mValueType": 2,
               "~class": "FloatPerSpellLevel"
             },
-            "textureRadiusOverrideName": "ASSETS/Spells/Textures/AOE_brand.tex",
+            "textureRadiusOverrideName": "assets/spells/textures/aoe_brand.tex",
             "~class": "TargeterDefinitionAoe"
           }
         ],
@@ -2603,7 +2546,7 @@
           "mLocKeys": {
             "keyName": "Wild Growth",
             "keySummary": "Lulu enlarges an ally, knocking nearby enemies into the air and granting the ally a large amount of bonus health. For the next few seconds, that ally gains an aura that slows nearby enemies.",
-            "keyTooltip": "<mainText>Lulu enlarges her ally, <status>Knocking Up</status> nearby enemies into the air. For @BuffDuration@ seconds, her ally gains <scaleHealth>@TotalBonusHealth@ bonus health</scaleHealth> and nearby enemies are <status>Slowed</status> by @SlowPercent@% for 1 second.</mainText>"
+            "keyTooltip": "Lulu enlarges her ally, <status>Knocking Up</status> nearby enemies into the air. For @BuffDuration@ seconds, her ally gains <scaleHealth>@TotalBonusHealth@ bonus health</scaleHealth> and nearby enemies are <status>Slowed</status> by @SlowPercent@%."
           },
           "mObjectName": "Jade_LuluR",
           "~class": "TooltipInstanceSpell"
@@ -2667,6 +2610,12 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jade_Lulu/Spells/Jade_LuluRAbility/Jade_LuluR",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Lulu/Spells/Jade_LuluRunCycleManager": {
+    "ObjectName": "Jade_LuluRunCycleManager",
+    "mScriptName": "Jade_LuluRunCycleManager",
+    "objectPath": "Characters/Jade_Lulu/Spells/Jade_LuluRunCycleManager",
     "~class": "SpellObject"
   },
   "Characters/Jade_Lulu/Spells/Jade_LuluWAbility/Jade_LuluW": {

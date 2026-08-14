@@ -212,12 +212,6 @@
     "objectPath": "0x3365992",
     "~class": "SpellObject"
   },
-  "0x7e28ca8a": {
-    "ObjectName": "Jade_GarenAttackSequencer",
-    "mScriptName": "Jade_GarenAttackSequencer",
-    "objectPath": "0x7e28ca8a",
-    "~class": "SpellObject"
-  },
   "0x9fc45fb2": {
     "ObjectName": "Jade_GarenPassive",
     "mBuff": {
@@ -303,7 +297,7 @@
           "mLocKeys": {
             "keyName": "Perseverance",
             "keySummary": "If Garen has not recently been struck by damage or enemy abilities, he regenerates a percentage of his total health each second.",
-            "keyTooltip": "If Garen has not been struck by damage or enemy abilities for the last @DamageTimer@ seconds, Garen <healing>Regenerates @RegenPerSecond@</healing> each second. Minion damage does not stop <spellName>Perserverance</spellName>. <br><br><healing>Bonus Health Regen per 5 seconds: @RegenPerFive@</healing>"
+            "keyTooltip": "If Garen has not been struck by damage or enemy abilities for the last @DamageTimer@ seconds, Garen <healing>Regenerates @RegenPerSecond@</healing> each second. Minion damage does not stop <spellName>Perserverance</spellName>. "
           },
           "mObjectName": "Jade_GarenPassive",
           "~class": "TooltipInstanceSpell"
@@ -314,14 +308,6 @@
         "ASSETS/UX/Jade/S3Icons/SameSized/Garen_Perseverance.dds"
       ],
       "mSpellCalculations": {
-        "0xe6c493e1": {
-          "mModifiedGameCalculation": "RegenPerSecond",
-          "mMultiplier": {
-            "mNumber": 5.0,
-            "~class": "NumberCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
         "0xee20c691": {
           "mFormulaParts": [
             {
@@ -340,12 +326,6 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "0x9fc45fb2",
-    "~class": "SpellObject"
-  },
-  "0xaa7d3fa7": {
-    "ObjectName": "Jade_GarenRunCycleManager",
-    "mScriptName": "Jade_GarenRunCycleManager",
-    "objectPath": "0xaa7d3fa7",
     "~class": "SpellObject"
   },
   "0xb026a074": {
@@ -373,93 +353,6 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "0xb026a074",
-    "~class": "SpellObject"
-  },
-  "0xbe541c46": {
-    "ObjectName": "Jade_GarenBasicAttack3",
-    "mScriptName": "Jade_GarenBasicAttack3",
-    "mSpell": {
-      "Cooldown": {
-        "0xa3e0478": 0.0,
-        "values": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "SpellEventToAudioEventSuffix": {
-        "12": "Play_sfx_Garen_GarenBasicAttack_OnCast",
-        "13": "Play_sfx_Garen_GarenBasicAttack_OnHit"
-      },
-      "bHaveHitBone": true,
-      "bHaveHitEffect": true,
-      "castConeDistance": 100.0,
-      "castFrame": 10.0,
-      "castRadius": [
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0
-      ],
-      "castRange": [
-        200.0,
-        200.0,
-        200.0,
-        200.0,
-        200.0,
-        200.0,
-        200.0
-      ],
-      "castRangeValues": {
-        "0xa3e0478": 200.0,
-        "values": [
-          200.0,
-          200.0,
-          200.0,
-          200.0,
-          200.0,
-          200.0,
-          200.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "cooldownTime": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mAffectsTypeFlags": 5327,
-      "mAlternateName": "Jade_GarenBasicAttack3",
-      "mAnimationName": "Attack3",
-      "mApplyMaterialOnHitSound": true,
-      "mClientData": {
-        "mTargeterDefinitions": [
-          {
-            "useCasterBoundingBox": false,
-            "~class": "TargeterDefinitionRange"
-          }
-        ],
-        "~class": "SpellDataResourceClient"
-      },
-      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
-      "mHitEffectKey": "Jade_Garen_AA_Tar",
-      "missileSpeed": 347.79998779296875,
-      "spellCastTime": 0.31610000133514404,
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xbe541c46",
     "~class": "SpellObject"
   },
   "0xf828937c": {
@@ -566,6 +459,12 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "0xf828937c",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Garen/Spells/Jade_GarenAttackSequencer": {
+    "ObjectName": "Jade_GarenAttackSequencer",
+    "mScriptName": "Jade_GarenAttackSequencer",
+    "objectPath": "Characters/Jade_Garen/Spells/Jade_GarenAttackSequencer",
     "~class": "SpellObject"
   },
   "Characters/Jade_Garen/Spells/Jade_GarenBasicAttack": {
@@ -743,6 +642,93 @@
     "objectPath": "Characters/Jade_Garen/Spells/Jade_GarenBasicAttack2",
     "~class": "SpellObject"
   },
+  "Characters/Jade_Garen/Spells/Jade_GarenBasicAttack3": {
+    "ObjectName": "Jade_GarenBasicAttack3",
+    "mScriptName": "Jade_GarenBasicAttack3",
+    "mSpell": {
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Garen_GarenBasicAttack_OnCast",
+        "13": "Play_sfx_Garen_GarenBasicAttack_OnHit"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 10.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        200.0,
+        200.0,
+        200.0,
+        200.0,
+        200.0,
+        200.0,
+        200.0
+      ],
+      "castRangeValues": {
+        "0xa3e0478": 200.0,
+        "values": [
+          200.0,
+          200.0,
+          200.0,
+          200.0,
+          200.0,
+          200.0,
+          200.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 5327,
+      "mAlternateName": "Jade_GarenBasicAttack3",
+      "mAnimationName": "Attack3",
+      "mApplyMaterialOnHitSound": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Jade_Garen_AA_Tar",
+      "missileSpeed": 347.79998779296875,
+      "spellCastTime": 0.31610000133514404,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Garen/Spells/Jade_GarenBasicAttack3",
+    "~class": "SpellObject"
+  },
   "Characters/Jade_Garen/Spells/Jade_GarenCritAttack": {
     "ObjectName": "Jade_GarenCritAttack",
     "mScriptName": "Jade_GarenCritAttack",
@@ -859,6 +845,32 @@
       },
       "DataValues": [
         {
+          "name": "Duration",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "TickRate",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
           "name": "MaxNumTicks",
           "values": [
             6.0,
@@ -898,50 +910,42 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "Duration",
+          "name": "MoveSpeedPenalty",
           "values": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0
           ],
           "~class": "SpellDataValue"
         },
         {
-          "name": "CritBaseMult",
+          "name": "CritDamageBonus",
           "values": [
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
           ],
           "~class": "SpellDataValue"
         },
         {
-          "name": "MonsterMod",
+          "name": "MinionMonsterDamageMod",
           "values": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75
           ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "MonsterBonus",
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "RefundRate",
           "~class": "SpellDataValue"
         }
       ],
@@ -1042,8 +1046,8 @@
             "keyCost": "No Cost",
             "keyName": "Judgment",
             "keySummary": "Garen rapidly spins his sword around his body, dealing physical damage to nearby enemies.",
-            "keyTooltip": "Garen rapidly spins his sword around his body for @Duration@ seconds, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> to nearby enemies every second. Garen can move through units while spinning but moves 20% slower when travelling directly through units.",
-            "keyTooltipExtended": "Garen rapidly spins his sword around his body for @Duration@ seconds, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> to nearby enemies every second. Garen can move through units while spinning but moves 20% slower when travelling directly through units.<br><br><spellName>Judgment</spellName> can critically strike dealing bonus damage.<br><spellName>Judgment</spellName> deals 25% less damage to minions and monsters."
+            "keyTooltip": "Garen rapidly spins his sword around his body for @Duration@ seconds, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> to nearby enemies every second. (Maximum damage: <physicalDamage>@MaximumDamageTooltip@</physicalDamage>)",
+            "keyTooltipExtendedBelowLine": "<rules>Garen can move through units while spinning but moves @MoveSpeedPenalty@% slower when doing so.<br><spellName>Judgment</spellName> can critically strike for @BonusDamageOnCrit@ bonus damage per second.<br><spellName>Judgment</spellName> deals @MinionMonsterDamageMod*100@% damage to minions and monsters.</rules>"
           },
           "mObjectName": "Jade_GarenE",
           "~class": "TooltipInstanceSpell"
@@ -1074,13 +1078,37 @@
       ],
       "mLineWidth": 160.0,
       "mSpellCalculations": {
-        "NumberOfStrikes": {
+        "0x442d07f7": {
+          "mModifiedGameCalculation": "TotalDamage",
+          "mMultiplier": {
+            "mDataValue": "duration",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "~class": "GameCalculationModified"
+        },
+        "0xc6c2d6f4": {
           "mFormulaParts": [
             {
-              "mDataValue": "MaxNumTicks",
-              "~class": "NamedDataValueCalculationPart"
+              "mDataValue": "BaseADRatioPerSecond",
+              "mStat": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
+          "mMultiplier": {
+            "mSubparts": [
+              {
+                "mCoefficient": 1.0,
+                "mStat": 9,
+                "mStatFormula": 2,
+                "~class": "StatByCoefficientCalculationPart"
+              },
+              {
+                "mDataValue": "CritDamageBonus",
+                "~class": "NamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "SumOfSubPartsCalculationPart"
+          },
           "~class": "GameCalculation"
         },
         "TotalDamage": {
@@ -1096,15 +1124,6 @@
             }
           ],
           "~class": "GameCalculation"
-        },
-        "TotalDamageCrit": {
-          "mModifiedGameCalculation": "TotalDamage",
-          "mMultiplier": {
-            "mDataValue": "CritBaseMult",
-            "mStat": 9,
-            "~class": "StatByNamedDataValueCalculationPart"
-          },
-          "~class": "GameCalculationModified"
         }
       },
       "mTargetingTypeData": {
@@ -1535,6 +1554,12 @@
     "objectPath": "Characters/Jade_Garen/Spells/Jade_GarenRAbility/Jade_GarenR",
     "~class": "SpellObject"
   },
+  "Characters/Jade_Garen/Spells/Jade_GarenRunCycleManager": {
+    "ObjectName": "Jade_GarenRunCycleManager",
+    "mScriptName": "Jade_GarenRunCycleManager",
+    "objectPath": "Characters/Jade_Garen/Spells/Jade_GarenRunCycleManager",
+    "~class": "SpellObject"
+  },
   "Characters/Jade_Garen/Spells/Jade_GarenWAbility/Jade_GarenW": {
     "ObjectName": "Jade_GarenW",
     "mBuff": {
@@ -1692,7 +1717,7 @@
             "keyCost": "No Cost",
             "keyName": "Courage",
             "keySummary": "Garen performs a dance of death with his sword, dealing damage around him for the duration.",
-            "keyTooltip": "<spellPassive>Passive:</spellPassive> Garen's gains an additional 20% value from bonus <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR>.<br><br><spellActive>Active: </spellActive>Garen gains a defensive shield for @BuffDuration@ seconds, reducing incoming damage by @DamageReduction*100@% and granting 30% Crowd Control Reduction."
+            "keyTooltip": "<spellPassive>Passive:</spellPassive> Garen's gains an additional @ResistanceScaling*100@% value from bonus <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR>.<br><br><spellActive>Active: </spellActive>Garen gains a defensive shield for @BuffDuration@ seconds, reducing incoming damage by @DamageReduction*100@% and granting @TenacityBonus*100@% Crowd Control Reduction."
           },
           "mObjectName": "Jade_GarenW",
           "~class": "TooltipInstanceSpell"

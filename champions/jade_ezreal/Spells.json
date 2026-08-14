@@ -5,21 +5,6 @@
     "objectPath": "0x2f0a858e",
     "~class": "SpellObject"
   },
-  "0x4c23516a": {
-    "ObjectName": "Jade_EzrealSkin25Manager",
-    "mScriptName": "Jade_EzrealSkin25Manager",
-    "objectPath": "0x4c23516a",
-    "~class": "SpellObject"
-  },
-  "0x8f9bc543": {
-    "ObjectName": "Jade_EzrealPFEManager",
-    "mScriptName": "Jade_EzrealPFEManager",
-    "mSpell": {
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x8f9bc543",
-    "~class": "SpellObject"
-  },
   "0xb6f5d442": {
     "ObjectName": "Jade_EzrealEMissile",
     "mScriptName": "Jade_EzrealEMissile",
@@ -276,8 +261,8 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Rising Spell Force",
-            "keySummary": "Ezreal gains increasing Attack Speed each time he successfully hits a spell, stacking up to 5 times.",
-            "keyTooltip": "Hitting a target with any of Ezreal's abilities increases his <attackSpeed>Attack Speed</attackSpeed> by 10% for 5 seconds (effect stacks up to 5 times)."
+            "keySummary": "Ezreal gains increasing Attack Speed each time he successfully hits a spell.",
+            "keyTooltip": "Hitting a target with any of Ezreal's abilities increases his <attackSpeed>Attack Speed</attackSpeed> by @AttackSpeedPerStack*100@% for @StackDuration@ seconds, stacking up to @MaxStacks@ times."
           },
           "mObjectName": "Jade_EzrealPassive",
           "~class": "TooltipInstanceSpell"
@@ -338,15 +323,6 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "0xd085d927",
-    "~class": "SpellObject"
-  },
-  "0xe9942ea2": {
-    "ObjectName": "Jade_EzrealRecallOverride",
-    "mScriptName": "Jade_EzrealRecallOverride",
-    "mSpell": {
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xe9942ea2",
     "~class": "SpellObject"
   },
   "Characters/Jade_Ezreal/Spells/Jade_EzrealBasicAttack": {
@@ -930,6 +906,15 @@
     "objectPath": "Characters/Jade_Ezreal/Spells/Jade_EzrealEAbility/Jade_EzrealE",
     "~class": "SpellObject"
   },
+  "Characters/Jade_Ezreal/Spells/Jade_EzrealPFEManager": {
+    "ObjectName": "Jade_EzrealPFEManager",
+    "mScriptName": "Jade_EzrealPFEManager",
+    "mSpell": {
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Ezreal/Spells/Jade_EzrealPFEManager",
+    "~class": "SpellObject"
+  },
   "Characters/Jade_Ezreal/Spells/Jade_EzrealQAbility/Jade_EzrealQ": {
     "ObjectName": "Jade_EzrealQ",
     "mScriptName": "Jade_EzrealQ",
@@ -1399,8 +1384,8 @@
           },
           "mLocKeys": {
             "keyName": "Trueshot Barrage",
-            "keySummary": "Ezreal channels for 1 second to fire a powerful barrage of energy missiles which do massive damage to each unit they pass through (deals 10% less damage to each unit it passes through).",
-            "keyTooltip": "Ezreal channels for 1 second to fire a barrage of missiles dealing <magicDamage>@Damage@ magic damage</magicDamage> to each unit it passes through. However, it deals @DamageReductionPerHit*100@% less damage for each unit it hits (minimum @MinimumDamagePercent*100@%)"
+            "keySummary": "Ezreal fires a powerful barrage of energy missiles which do massive damage to each unit it passes through.",
+            "keyTooltip": "Ezreal fires a barrage of missiles dealing <magicDamage>@Damage@ magic damage</magicDamage> to each unit it passes through. However, it deals @DamageReductionPerHit*100@% less damage for each unit it hits (minimum @MinimumDamagePercent*100@%)"
           },
           "mObjectName": "Jade_EzrealR",
           "~class": "TooltipInstanceSpell"
@@ -1520,6 +1505,21 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jade_Ezreal/Spells/Jade_EzrealRAbility/Jade_EzrealR",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Ezreal/Spells/Jade_EzrealRecallOverride": {
+    "ObjectName": "Jade_EzrealRecallOverride",
+    "mScriptName": "Jade_EzrealRecallOverride",
+    "mSpell": {
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Ezreal/Spells/Jade_EzrealRecallOverride",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Ezreal/Spells/Jade_EzrealSkin25Manager": {
+    "ObjectName": "Jade_EzrealSkin25Manager",
+    "mScriptName": "Jade_EzrealSkin25Manager",
+    "objectPath": "Characters/Jade_Ezreal/Spells/Jade_EzrealSkin25Manager",
     "~class": "SpellObject"
   },
   "Characters/Jade_Ezreal/Spells/Jade_EzrealWAbility/Jade_EzrealW": {
@@ -1714,7 +1714,7 @@
           "mLocKeys": {
             "keyName": "Essence Flux",
             "keySummary": "Ezreal fires a fluctuating wave of energy, decreasing the Attack Speed and dealing magic damage to enemy champions, while healing and increasing the Attack Speed of allied champions.",
-            "keyTooltip": "Ezreal fires a wave of energy that damages all enemy champions it passes through for <magicDamage>@Damage@ magic damage</magicDamage> and reducing their <attackSpeed>Attack Speed</attackSpeed> by @AttackSpeed@% for 5 seconds. <br><br>Allied champions hit by the wave restore <healing>@TotalHeal@ Health</healing> and have their <attackSpeed>Attack Speed</attackSpeed> increased by @AttackSpeed@% for 5 seconds.",
+            "keyTooltip": "Ezreal fires a wave of energy that damages all enemy champions it passes through for <magicDamage>@Damage@ magic damage</magicDamage> and reduces their <attackSpeed>Attack Speed</attackSpeed> by @AttackSpeed@% for @Duration@ seconds. <br><br>Allied champions hit by the wave restore <healing>@TotalHeal@ Health</healing> and have their <attackSpeed>Attack Speed</attackSpeed> increased by @AttackSpeed@% for @Duration@ seconds.",
             "keyTooltipExtendedBelowLine": "<rules>Essence Flux can hit Ezreal in addition to his allies</rules>"
           },
           "mObjectName": "Jade_EzrealW",
@@ -1745,7 +1745,7 @@
         "ASSETS/UX/Jade/S3Icons/SameSized/Ezreal_EssenceFlux.dds"
       ],
       "mLineWidth": 100.0,
-      "mMissileEffectKey": "0x61a7bad5",
+      "mMissileEffectKey": "Jade_Ezreal_W_mis",
       "mMissileSpec": {
         "behaviors": [
           {

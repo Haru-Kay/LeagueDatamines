@@ -41,18 +41,24 @@ end
 
 file = {}
 groups = {}
+augarr = []
+sourcedata = {}
 File.open("aram\\data\\ChampionAugmentList.json", 'rb') { |f| file = JSON.parse(f.read) }
 File.open("aram\\augmentgroups\\data\\AugmentGroups.json", 'rb') { |f| groups = JSON.parse(f.read) }
+File.open("aram/mayhem/augments/augments.json", 'rb') { |f| augarr = JSON.parse(f.read) }
+augarr.each { |aug|
+    sourcedata.store(aug["apiName"], aug["name"])
+}
 
-filtered = file.select { |c, g| g.include?("ADCAugments") || g.include?("ADCAugments2") }
 
 adc1 = []
 adc2 = []
-
-filtered.each { |c, g|
-    adc1.push(c) if g.include?("ADCAugments")
-    adc2.push(c) if g.include?("ADCAugments2")
+file.each { |c, g| 
+    adc1 << c if g.include?("ADCAugments") 
+    adc2 << c if g.include?("ADCAugments2") 
 }
+
+
 
 group1 = adc1 - adc2
 group1Augs = groups["ADCAugments"] - groups["ADCAugments2"]
@@ -96,15 +102,40 @@ group2.each { |c|
     weightedList.store(c, augments)
 }
 
-group1.each { |champ|
-    list = weightedList[champ].keys
-    puts champ + ": "
-    puts (group2Augs - list).inspect
-    puts "========================"
+# group1.each { |champ|
+#     list = weightedList[champ].keys
+#     puts champ + ": "
+#     puts (group2Augs - list).inspect
+#     puts "========================"
+# }
+# group2.each { |champ|
+#     list = weightedList[champ].keys
+#     puts champ + ": "
+#     puts (group1Augs - list).inspect
+#     puts "========================"
+# }
+
+# puts adc1.intersection(adc2).join(", ")
+
+
+list = file["Neeko"]
+augments = {}
+
+list.each { |group, weight|
+    groups[group].each { |aug|
+        if augments[aug]
+            augments[aug] += weight
+        else
+            augments.store(aug, weight)
+        end
+    }
 }
-group2.each { |champ|
-    list = weightedList[champ].keys
-    puts champ + ": "
-    puts (group1Augs - list).inspect
-    puts "========================"
+
+puts "Neeko:"
+puts "Weight => Augments"
+augmentsByWeight = {}
+augments.each { |k, v|
+    augmentsByWeight[v] ||= []
+    augmentsByWeight[v].push(k)
 }
+augmentsByWeight.sort_by { |k, v| k }.each { |k, v| puts "#{k} => #{v.map { |a| sourcedata.fetch(a, a)}.inspect.gsub("\"", "")}"}
