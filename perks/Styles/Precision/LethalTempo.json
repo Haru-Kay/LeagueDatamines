@@ -1,0 +1,109 @@
+{
+  "mBuffs": [
+    {
+      "mBuffScriptName": "ASSETS/Perks/Styles/Precision/LethalTempo/LethalTempo.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>Lethal Tempo</titleLeft><br><maintext>This unit gains ramping Attack Speed each time they attack an enemy champion, up to a max.<br><br>At the maximum, they also deal bonus damage On-Attack.</maintext><br><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    }
+  ],
+  "mDisplayNameLocalizationKey": "Lethal Tempo",
+  "mDisplayStatLocalizationKey": "@f1@",
+  "mEndOfGameStatDescriptions": [
+    "Max Attack Speed Uptime: {{perk_eog_stat_FormattedTime}}<br>Damage Dealt: @eogvar2@"
+  ],
+  "mIconTextureName": "assets/perks/styles/precision/lethaltempo/lethaltempotemp.tex",
+  "mLongDescLocalizationKey": "Attacking an enemy champion grants you [@TTASPerStackMelee*100@% Melee || @TTASPerStackRanged*100@% Ranged] Attack Speed for @Duration@ seconds, up to @MaxStacks@. At max stacks, deal [@TTMinNoteDamageMelee@ - @TTMaxNoteDamageMelee@ Melee || @TTMinNoteDamageRanged@ - @TTMaxNoteDamageRanged@ Ranged] <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_AdaptiveDmg'>bonus adaptive damage On-Attack, increased by 1% per 1% Bonus Attack Speed</lol-uikit-tooltipped-keyword>.",
+  "mPerkId": 8008,
+  "mPerkName": "LethalTempo",
+  "mPingTextLocalizationKey": "@SrcNameWithColon@Lethal Tempo: Perfectly Timed Attacks: @f3@% (@f4@ of @f5@)",
+  "mScript": {
+    "mSpellScriptData": {
+      "mCalculations": {
+        "ASPerStack": {
+          "mDisplayAsPercent": true,
+          "mFormulaParts": [
+            {
+              "mNumber": 0.05999999865889549,
+              "~class": "NumberCalculationPart"
+            }
+          ],
+          "mPrecision": 1,
+          "mRangedMultiplier": {
+            "mNumber": 0.800000011920929,
+            "~class": "NumberCalculationPart"
+          },
+          "~class": "RangedModifiableGameCalculation"
+        },
+        "NoteDamage": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 30.0,
+              "mStartValue": 9.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            }
+          ],
+          "mMultiplier": {
+            "mSubparts": [
+              {
+                "mNumber": 1.0,
+                "~class": "NumberCalculationPart"
+              },
+              {
+                "mCoefficient": 1.0,
+                "mStat": 4,
+                "mStatFormula": 2,
+                "~class": "StatByCoefficientCalculationPart"
+              }
+            ],
+            "~class": "SumOfSubPartsCalculationPart"
+          },
+          "mPrecision": 1,
+          "mRangedMultiplier": {
+            "mNumber": 0.6669999957084656,
+            "~class": "NumberCalculationPart"
+          },
+          "~class": "RangedModifiableGameCalculation"
+        }
+      },
+      "mEffectAmount": {
+        "PerfectlyTimedForgivance": 0.25,
+        "TTASPerStackMelee": 0.05999999865889549,
+        "TTASPerStackRanged": 0.03999999910593033,
+        "TTMaxNoteDamageMelee": 30.0,
+        "TTMaxNoteDamageRanged": 24.0,
+        "TTMinNoteDamageMelee": 9.0,
+        "TTMinNoteDamageRanged": 6.0,
+        "duration": 6.0,
+        "maxStacks": 6.0
+      },
+      "~class": "PerkScriptData"
+    },
+    "mSpellScriptName": "ASSETS/Perks/Styles/Precision/LethalTempo/LethalTempo.lua",
+    "~class": "PerkScript"
+  },
+  "mShortDescLocalizationKey": "Attacking an enemy champion grants you Attack Speed, up to @MaxStacks@ stacks. At max stacks, deal <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_AdaptiveDmg'><font color='#48C4B7'>bonus adaptive damage</font></lol-uikit-tooltipped-keyword> On-Attack.",
+  "mTooltipNameLocalizationKey": "Attacking an enemy champion grants you %i:scaleAS%@ASPerStack@ Attack Speed for @Duration@ seconds, up to @MaxStacks@. At max stacks, deal @NoteDamage@ (%i:scaleAS%) <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_AdaptiveDmg'><font color='#48C4B7'>bonus adaptive damage</font></lol-uikit-tooltipped-keyword> %i:OnHit% <OnHit>On-Attack</OnHit>.<br><br>Max Stack Uptime: @f1@s<br>Damage Dealt: @f2@<br><br>This rune also tracks the percent of your basic attacks against champions that are launched within @PerfectlyTimedForgivance.2@ seconds of when your attack is ready after previously attacking a champion: @f3@% (@f4@ of @f5@)",
+  "mVFXResourceResolver": {
+    "resourceMap": {
+      "0x15da3293": "Perks/Styles/Precision/LethalTempo/Particles/Perks_LethalTempo_Stack_1",
+      "0x16da3426": "Perks/Styles/Precision/LethalTempo/Particles/Perks_LethalTempo_Stack_2",
+      "0x17da35b9": "Perks/Styles/Precision/LethalTempo/Particles/Perks_LethalTempo_Stack_3",
+      "0x18da374c": "Perks/Styles/Precision/LethalTempo/Particles/Perks_LethalTempo_Stack_4",
+      "0x19da38df": "Perks/Styles/Precision/LethalTempo/Particles/Perks_LethalTempo_Stack_5",
+      "0x1ada3a72": "Perks/Styles/Precision/LethalTempo/Particles/Perks_LethalTempo_Stack_6",
+      "0x6778e480": "Perks/Styles/Precision/LethalTempo/Particles/Perks_LethalTempo_Mis",
+      "0x95500436": "Perks/Styles/Precision/LethalTempo/Particles/Perks_LethalTempo_Mis2",
+      "0x98d5ca69": "Perks/Styles/Precision/LethalTempo/Particles/Perks_LethalTempo_PerfectMis",
+      "0xa70add4c": "Perks/Styles/Precision/LethalTempo/Particles/Perks_LethalTempo_Tar",
+      "0xf38d8d41": "Perks/Styles/Precision/LethalTempo/Particles/Perks_LethalTempo_PerfectMis2"
+    },
+    "~class": "ResourceResolver"
+  },
+  "~class": "Perk"
+}

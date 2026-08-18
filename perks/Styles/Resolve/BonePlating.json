@@ -1,0 +1,92 @@
+{
+  "mBuffs": [
+    {
+      "mBuffScriptName": "ASSETS/Perks/Styles/Resolve/BonePlating/BonePlating.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_BonePlating}}</titleLeft><br><mainText>This unit takes reduced damage from incoming attacks or spells.</mainText><br><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    },
+    {
+      "mBuffScriptName": "ASSETS/Perks/Styles/Resolve/BonePlating/BonePlatingCD.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_BonePlating}}</titleLeft><br><mainText>{{perk_displayname_BonePlating}} is on cooldown.</mainText><br><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    },
+    {
+      "mBuffScriptName": "ASSETS/Perks/Styles/Resolve/BonePlating/BonePlatingReady.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_BonePlating}}</titleLeft><br><mainText>This unit takes reduced damage from incoming attacks or spells.</mainText><br><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    }
+  ],
+  "mDisplayNameLocalizationKey": "Bone Plating",
+  "mDisplayStatLocalizationKey": "@f1@",
+  "mEndOfGameStatDescriptions": [
+    "Total Damage Blocked: @eogvar1@"
+  ],
+  "mIconTextureName": "assets/perks/styles/resolve/boneplating/boneplating.tex",
+  "mLongDescLocalizationKey": "After taking damage from an enemy champion, the next @BlockCount@ spells or attacks you receive from them deal @BlockBase@-@BlockMax@ (based on level) less damage.<br><br>Duration: @BlockDuration@s<br>Cooldown: @Cooldown@s",
+  "mMajorChangePatchVersion": "9.9",
+  "mPerkId": 8473,
+  "mPerkName": "BonePlating",
+  "mScript": {
+    "mSpellScriptData": {
+      "mCalculations": {
+        "BlockCalc": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 60.0,
+              "mStartValue": 30.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 4,
+          "~class": "GameCalculation"
+        }
+      },
+      "mEffectAmount": {
+        "BlockBase": 30.0,
+        "BlockCount": 3.0,
+        "BlockDuration": 1.5,
+        "BlockMax": 60.0,
+        "Cooldown": 55.0
+      },
+      "mEffectAmountGameMode": {
+        "ARAM": {
+          "mEffectAmountPerMode": {
+            "Cooldown": 40.0
+          },
+          "~class": "PerkEffectAmountPerMode"
+        }
+      },
+      "~class": "PerkScriptData"
+    },
+    "mSpellScriptName": "ASSETS/Perks/Styles/Resolve/BonePlating/BonePlating.lua",
+    "~class": "PerkScript"
+  },
+  "mShortDescLocalizationKey": "{{perk_long_desc_BonePlating}}",
+  "mTooltipNameLocalizationKey": "After taking damage from an enemy champion, the next @BlockCount@ spells or attacks you receive from them deal @BlockCalc@ less damage.<br>Duration: @BlockDuration.1@s<br>Cooldown: @Cooldown@s<br><br>Total Damage Reduced: <scaleLevel>@f1@</scaleLevel>",
+  "mVFXResourceResolver": {
+    "resourceMap": {
+      "BonePlating_Buckler2": "Perks/Styles/Resolve/BonePlating/Particles/BonePlating_Buckler2",
+      "Perks_BonePlating_Break": "Perks/Styles/Resolve/BonePlating/Particles/Perks_BonePlating_Break"
+    },
+    "~class": "ResourceResolver"
+  },
+  "~class": "Perk"
+}

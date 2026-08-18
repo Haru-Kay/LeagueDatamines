@@ -123,7 +123,7 @@ $manualHash.merge!({
     "b945e5f7" => "GoldGrantingAugments",
     "8aa4910b" => "AutocastAugments",
     "794c79e3" => "AutocastAugmentsARAM",
-    "a1d5fd67" => "AutocastAugmentsSupport",
+    "a1d5fd67" => "AutocastAugmentsPeel",
     "5d5c7e03" => "SizeModifiers",
     "b75763f2" => "OnHitAugments",
     "cb218786" => "GeneralAugments",
@@ -141,10 +141,10 @@ $manualHash.merge!({
     "d1747a88" => "SupportAugmentsHealing",
     "4f40633b" => "MovementAugmentsDefensive",
     "b5972caa" => "HealthGrantingAugments",
-    "5c690cf3" => "MageAugmentsAP",
-    "995ac030" => "MageAugmentsGeneric",
+    "5c690cf3" => "MageAugmentsGeneric",
+    "995ac030" => "CasterAugmentsGeneric",
     "8c232386" => "OnTakedownAugments",
-    "70692c6f" => "MageAugmentsGeneric2",
+    "70692c6f" => "ADCaster",
     "2b5a8648" => "OnDeathAugments",
     "7b6873c7" => "MageAugmentsGeneric3",
     "2fe0f044" => "ADCAugments",
@@ -154,7 +154,7 @@ $manualHash.merge!({
     "8ae6ed2e" => "MovementAugments",
     "13ce30b4" => "MageAugmentsGeneric5",
     "2fc101c6" => "FighterAugments2",
-    "b66c16c2" => "MageAugmentsGeneric6",
+    "b66c16c2" => "MageAugmentsBattlemage",
     "563cdf9c" => "AbilityAugments1",
     "99d70c96" => "StackingAugments",
     "ba7415bd" => "HasteAugments",
@@ -163,6 +163,7 @@ $manualHash.merge!({
     "a26bf746" => "AbilityAugments2",
     "b5056d3d" => "ADCAugments2",
     "ba0256ad" => "TankAugments",
+    "86d9be15" => "HSPower",
 
     "14409aa2" => "AugmentGroups/MR",
     "15409c35" => "AugmentGroups/MS",
@@ -173,7 +174,7 @@ $manualHash.merge!({
     "233e5daf" => "AugmentGroups/AutocastAugmentsARAM",
     "25f2135b" => "AugmentGroups/ArmorPen",
     "2a69fbdc" => "AugmentGroups/Omnivamp",
-    "31169cbb" => "AugmentGroups/AutocastAugmentsSupport",
+    "31169cbb" => "AugmentGroups/AutocastAugmentsPeel",
     "3c1d0047" => "AugmentGroups/SizeModifiers",
     "3e3439f6" => "AugmentGroups/OnHitAugments",
     "3ec90ced" => "AugmentGroups/EmptyAugmentPool1",
@@ -200,10 +201,10 @@ $manualHash.merge!({
     "76d4b52f" => "AugmentGroups/MovementAugmentsDefensive",
     "78adf47d" => "AugmentGroups/JadeAugments",
     "78e3793e" => "AugmentGroups/HealthGrantingAugments",
-    "841e719f" => "AugmentGroups/MageAugmentsAP",
-    "8ad08224" => "AugmentGroups/MageAugmentsGeneric",
+    "841e719f" => "AugmentGroups/MageAugmentsGeneric",
+    "8ad08224" => "AugmentGroups/CasterAugmentsGeneric",
     "8d576bba" => "AugmentGroups/OnTakedownAugments",
-    "901e8483" => "AugmentGroups/MageAugmentsGeneric2",
+    "901e8483" => "AugmentGroups/ADCaster",
     "98205824" => "AugmentGroups/OnDeathAugments",
     "a2408d0" => "AugmentGroups/AP",
     "a2c9d49b" => "AugmentGroups/MageAugmentsGeneric3",
@@ -217,7 +218,7 @@ $manualHash.merge!({
     "d2809836" => "AugmentGroups/LifeSteal",
     "dabcc810" => "AugmentGroups/MageAugmentsGeneric5",
     "df350452" => "AugmentGroups/FighterAugments2",
-    "e139ccde" => "AugmentGroups/MageAugmentsGeneric6",
+    "e139ccde" => "AugmentGroups/MageAugmentsBattlemage",
     "e4414998" => "AugmentGroups/AbilityAugments1",
     "e5c7ec2a" => "AugmentGroups/StackingAugments",
     "e67f4793" => "AugmentGroups/Health",
@@ -1826,12 +1827,12 @@ print "done.\n"
 
 
 print "Loading and formatting runes..."
-FileUtils.rm_rf(Dir.glob("runes/*"))
-Dir.mkdir("runes") unless Dir.exist?("runes")
+FileUtils.rm_rf(Dir.glob("perks/*"))
+Dir.mkdir("perks") unless Dir.exist?("perks")
 runes = nil
 File.open("temp/perks.ltk.json", 'rb') { |f| runes = JSON.parse(f.read()) }
 runes = runes.fetch("entries", runes)
-runes.delete_if { |k, v| !v["~class"].include?("Perk") || v["~class"] == "PerkConfig" }
+runes.delete_if { |k, v| !v["~class"].include?("Perk") || v["~class"] == "PerkConfig" || v["~class"].downcase.include?("vfx") }
 runes.transform_keys! { |k, v| 
     next k if !k.start_with?("0x")
     name = runes[k].dig("mIconTextureName")
@@ -1843,9 +1844,9 @@ runes = applyLang(runes)
 
 runes.each { |key, value|
     next if key == "Perks/Template"
-    path = key.gsub("Perks", "runes")
+    next if key.include?("Particles")
 
-    spl = path.split("/")
+    spl = key.split("/")
     filename = spl[-1]
     if value["~class"] == "PerkStyle"
         path = spl.join("/")

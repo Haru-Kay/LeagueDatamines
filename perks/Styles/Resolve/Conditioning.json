@@ -1,0 +1,101 @@
+{
+  "mDisplayNameLocalizationKey": "Conditioning",
+  "mDisplayStatLocalizationKey": "@f1@ | @f2@",
+  "mEndOfGameStatDescriptions": [
+    "Percent of game active: @eogvar1@%",
+    "Total Bonus Armor: @eogvar2@",
+    "Total Bonus Magic Resist: @eogvar3@"
+  ],
+  "mIconTextureName": "assets/perks/styles/resolve/conditioning/conditioning.tex",
+  "mLongDescLocalizationKey": "{{ perk_short_desc_Conditioning }}",
+  "mMajorChangePatchVersion": "9.9",
+  "mPerkId": 8429,
+  "mPerkName": "Conditioning",
+  "mScript": {
+    "mSpellScriptData": {
+      "mCalculations": {
+        "ArmorCalcTooltip": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "ArmorBase",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "ExtraResist",
+              "mStat": 1,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 4,
+          "~class": "GameCalculation"
+        },
+        "MagicResistCalcTooltip": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "MRBase",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "ExtraResist",
+              "mStat": 6,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 4,
+          "~class": "GameCalculation"
+        }
+      },
+      "mEffectAmount": {
+        "ArmorBase": 8.0,
+        "ExtraResist": 0.029999999329447746,
+        "MRBase": 8.0,
+        "MinutesRequired": 12.0,
+        "Range": 800.0
+      },
+      "mEffectAmountGameMode": {
+        "ARAM": {
+          "mEffectAmountPerMode": {
+            "MinutesRequired": 8.0
+          },
+          "~class": "PerkEffectAmountPerMode"
+        },
+        "KINGPORO": {
+          "mEffectAmountPerMode": {
+            "MinutesRequired": 8.0
+          },
+          "~class": "PerkEffectAmountPerMode"
+        },
+        "NEXUSBLITZ": {
+          "mEffectAmountPerMode": {
+            "MinutesRequired": 6.0
+          },
+          "~class": "PerkEffectAmountPerMode"
+        },
+        "SWIFTPLAY": {
+          "mEffectAmountPerMode": {
+            "MinutesRequired": 8.0
+          },
+          "~class": "PerkEffectAmountPerMode"
+        },
+        "URF": {
+          "mEffectAmountPerMode": {
+            "MinutesRequired": 6.0
+          },
+          "~class": "PerkEffectAmountPerMode"
+        }
+      },
+      "~class": "PerkScriptData"
+    },
+    "mSpellScriptName": "ASSETS/Perks/Styles/Resolve/Conditioning/Conditioning.lua",
+    "~class": "PerkScript"
+  },
+  "mShortDescLocalizationKey": "After @MinutesRequired@ min gain +@ArmorBase@ Armor and +@MRBase@ Magic Resist and increase your Armor and Magic Resist by @ExtraResist*100@%.",
+  "mTooltipNameLocalizationKey": "After @MinutesRequired@ minutes gain <scaleArmor>@ArmorCalcTooltip@ Armor</scaleArmor> and <scaleMR>@MagicResistCalcTooltip@ Magic Resist</scaleMR>.",
+  "mVFXResourceResolver": {
+    "resourceMap": {
+      "Perks_Conditioning_Active": "Perks/Styles/Resolve/Conditioning/Particles/Perks_Conditioning_Active"
+    },
+    "~class": "ResourceResolver"
+  },
+  "~class": "Perk"
+}

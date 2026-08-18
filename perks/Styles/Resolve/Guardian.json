@@ -1,0 +1,172 @@
+{
+  "mBuffs": [
+    {
+      "mBuffScriptName": "ASSETS/Perks/Styles/Resolve/Guardian/GuardianCooldown.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_Guardian}}</titleLeft><br><mainText>{{perk_displayname_Guardian}} is on cooldown.</mainText><br><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    },
+    {
+      "mBuffScriptName": "ASSETS/Perks/Styles/Resolve/Guardian/GuardianShield.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "PersistentEffectConditions": [
+            {
+              "PersistentVfxs": [
+                {
+                  "boneName": "C_BUFFBONE_GLB_CENTER_LOC",
+                  "effectKey": "Perk_Guardian_Shield",
+                  "~class": "PersistentVfxData"
+                }
+              ],
+              "~class": "PersistentEffectConditionData"
+            }
+          ],
+          "mDescription": "<titleLeft>{{perk_displayname_Guardian}}</titleLeft><br><mainText>This unit is shielded.</mainText><br><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    },
+    {
+      "mBuffScriptName": "ASSETS/Perks/Styles/Resolve/Guardian/Guardian.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "PersistentEffectConditions": [
+            {
+              "PersistentVfxs": [
+                {
+                  "FaceTarget": true,
+                  "effectKey": "Perk_Guardian_Orb",
+                  "~class": "PersistentVfxData"
+                }
+              ],
+              "~class": "PersistentEffectConditionData"
+            }
+          ],
+          "mDescription": "<titleLeft>{{perk_displayname_Guardian}}</titleLeft><mainText>Guard allies you cast spells on and those that are very nearby. If you or a guarded ally would take damage, you're both granted a shield. </mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    },
+    {
+      "mBuffScriptName": "ASSETS/Perks/Styles/Resolve/Guardian/GuardianWillProtect.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_Guardian}}</titleLeft><br><mainText>This unit is guarded.</mainText><br><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    }
+  ],
+  "mDisplayNameLocalizationKey": "Guardian",
+  "mDisplayStatLocalizationKey": "@f1@",
+  "mEndOfGameStatDescriptions": [
+    "Total Shield Strength: @eogvar1@"
+  ],
+  "mIconTextureName": "assets/perks/styles/resolve/guardian/guardian.tex",
+  "mLongDescLocalizationKey": "<i>Guard</i> allies within @SnuggleRange@ units of you, and allies you target with spells for @GuardDuration@s. While <i>Guarding</i>, if you or the ally take more than a small amount of damage over the duration of the <i>Guard</i>, both of you gain a shield for @ShieldDuration@s.<br><br>Cooldown: <scaleLevel>@Cooldown@ - @CooldownMaxLevel@</scaleLevel> seconds<br>Shield: <scaleLevel>@ShieldBase@ - @ShieldMax@</scaleLevel> + <scaleAP>@APRatio*100@%</scaleAP> of your ability power + <scalehealth>@HPRatio.0*100@%</scalehealth> of your bonus health<br>Proc Threshold: <scaleLevel>@ThresholdMin@ - @ThresholdMax@</scaleLevel> postmitigation damage",
+  "mPerkId": 8465,
+  "mPerkName": "Guardian",
+  "mScript": {
+    "mSpellScriptData": {
+      "mCalculations": {
+        "CooldownCalc": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 40.0,
+              "mStartValue": 75.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 4,
+          "~class": "GameCalculation"
+        },
+        "ShieldCalc": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 150.0,
+              "mStartValue": 40.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "HPRatio",
+              "mStat": 12,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 4,
+          "~class": "GameCalculation"
+        },
+        "ThresholdCalc": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 150.0,
+              "mStartValue": 40.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 4,
+          "~class": "GameCalculation"
+        }
+      },
+      "mEffectAmount": {
+        "APRatio": 0.20000000298023224,
+        "Cooldown": 75.0,
+        "CooldownMaxLevel": 40.0,
+        "GuardDuration": 2.5,
+        "HPRatio": 0.05999999865889549,
+        "ShieldBase": 40.0,
+        "ShieldDuration": 1.5,
+        "ShieldMax": 150.0,
+        "SnuggleRange": 350.0,
+        "ThresholdMax": 165.0,
+        "ThresholdMin": 50.0
+      },
+      "mEffectAmountGameMode": {
+        "ARAM": {
+          "mEffectAmountPerMode": {
+            "Cooldown": 60.0,
+            "CooldownMaxLevel": 30.0
+          },
+          "~class": "PerkEffectAmountPerMode"
+        }
+      },
+      "~class": "PerkScriptData"
+    },
+    "mSpellScriptName": "ASSETS/Perks/Styles/Resolve/Guardian/Guardian.lua",
+    "~class": "PerkScript"
+  },
+  "mShortDescLocalizationKey": "Guard allies you cast spells on and those that are very nearby. If you or a guarded ally would take damage based on level, you're both granted a shield.",
+  "mTooltipNameLocalizationKey": "<i>Guard</i> allies within @SnuggleRange@ units of you, and allies you target with spells for @GuardDuration@s. While <i>Guarding</i>, if you or the ally take more than a small amount of damage over the duration of the <i>Guard</i>, both of you gain a shield for @ShieldDuration@s.<br><br>Strength: <shield>@ShieldCalc@ Shield</shield>.<br>Damage Threshold: <scaleAD>@ThresholdCalc@</scaleAD> postmitigation damage.<br>Cooldown: @CooldownCalc@ seconds.<br>Total damage blocked: <healing>@f1@</healing>.",
+  "mVFXResourceResolver": {
+    "resourceMap": {
+      "Perk_Guardian_Break": "Perks/Styles/Resolve/Guardian/Particles/Perk_Guardian_Break",
+      "Perk_Guardian_GroundIndicator": "Perks/Styles/Resolve/Guardian/Particles/Perk_Guardian_GroundIndicator",
+      "Perk_Guardian_Mis": "Perks/Styles/Resolve/Guardian/Particles/Perk_Guardian_Mis",
+      "Perk_Guardian_Orb": "Perks/Styles/Resolve/Guardian/Particles/Perk_Guardian_Orb",
+      "Perk_Guardian_Shield": "Perks/Styles/Resolve/Guardian/Particles/Perk_Guardian_Shield",
+      "Perks_Guardian_Active": "Perks/Styles/Resolve/Guardian/Particles/Perks_Guardian_Active",
+      "Perks_Guardian_Shield_AOE_Ally": "Perks/Styles/Resolve/Guardian/Particles/Perks_Guardian_Shield_AOE_Ally",
+      "Perks_Guardian_Timer": "Perks/Styles/Resolve/Guardian/Particles/Perks_Guardian_Timer"
+    },
+    "~class": "ResourceResolver"
+  },
+  "~class": "Perk"
+}

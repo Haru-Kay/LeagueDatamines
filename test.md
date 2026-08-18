@@ -1,5 +1,60 @@
 **Just a reminder that PBE changes are not final and subject to change. Some changes, such as bugfixes, may not be able to be viewed.**
 
+## League Classic
+
+### Champions
+
+**Blitzcrank**
+
+* Q Cast Range tweaked to be more accurate to display.
+* Q Mana Cost: 120 -> 140
+* E Knock Up Duration: 1 second -> 0.9 seconds
+* E Tooltip updated to show AD scaling properly.
+* R Base Damage: 200/300/400 -> 150/275/400
+* R Cooldown: 30 seconds -> 40 seconds
+
+**Leona**
+
+* E Missile Width tweaked to be more accurate to display.
+
+**Lux**
+
+* Attack Speed Ratio: 0.625 -> 0.658
+  * Base Attack Speed unchanged
+* Attack Speed Growth: 1.36 -> 3.0
+
+**Miss Fortune**
+
+* Move Speed: 325 -> 335
+* Q Base Damage: 25/60/95/130/165 -> 35/70/105/140/175
+  * Increased Damage: 30/72/114/156/198 -> 42/84/126/168/210
+* E Base Damage per Second: 45/72.5/100/127.5/155 -> 47.5/77.5/107.5/137.5/167.5
+* E Mana Cost: 80 -> 70/75/80/85/90
+* R AD Ratio: 40% bonus AD -> 45% bonus AD
+* R AP Ratio: 20% AP -> 30% AP
+
+**Twitch**
+
+* Attack Speed + Ratio: 0.679 -> 0.658
+* Base Health: 470 -> 455
+
+### Items
+
+**Innervating Locket**
+
+* HP: 430 -> 500
+* Cooldown: 3 seconds -> 2 seconds
+* Combine Cost: 750 -> 350
+  * Total Gold: 2650 -> 2250
+
+**Wriggle's Lantern/Feral Flare**
+
+* AD: 25 -> 0
+* Attack Speed: 0% -> 30%
+* Build Path: Vampiric Scepter -> Recurve Bow
+* Combine Cost: 500 -> 400
+  * Total Cost unchanged
+
 ### ARAM: Mayhem
 
 ## Augments

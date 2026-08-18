@@ -1,0 +1,108 @@
+{
+  "mBuffs": [
+    {
+      "mBuffScriptName": "ASSETS/Perks/Styles/Precision/FleetFootwork/FleetFootworkHaste.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_FleetFootwork}}</titleLeft><mainText>You have increased Move Speed.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    }
+  ],
+  "mDisplayNameLocalizationKey": "Fleet Footwork",
+  "mDisplayStatLocalizationKey": "@f1@",
+  "mEndOfGameStatDescriptions": [
+    "Total Healing: @eogvar1@"
+  ],
+  "mIconTextureName": "assets/perks/styles/precision/fleetfootwork/fleetfootwork.tex",
+  "mLongDescLocalizationKey": "Attacking and moving builds Energy stacks. At 100 stacks, your next attack is Energized<br><br>Energized attacks heal you for @HealBase@ - @HealMax@ (+@HealBonusADRatio.-1@ Bonus AD, +@HealAPRatio.-1@ AP) and grant <speed>@MSBuff*100@% Move Speed</speed> for @MSDuration.0@s.<br><br>For Ranged Champions, Healing is @RangedHealMod*100@% effective and Move Speed is @RangedMSMod*100@% effective. All healing is @MinionHealMod*100@% effective against Minions.",
+  "mPerkId": 8021,
+  "mPerkName": "FleetFootwork",
+  "mScript": {
+    "mSpellScriptData": {
+      "mCalculations": {
+        "0xad820ad4": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 100.0,
+              "mScaleByStatProgressionMultiplier": true,
+              "mStartValue": 5.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "HealAmount": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 160.0,
+              "mScaleByStatProgressionMultiplier": true,
+              "mStartValue": 15.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            },
+            {
+              "mDataValue": "HealBonusADRatio",
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "HealAPRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "mRangedMultiplier": {
+            "mDataValue": "RangedHealMod",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "mSimpleTooltipCalculationDisplay": 4,
+          "~class": "RangedModifiableGameCalculation"
+        },
+        "MoveSpeedCalc": {
+          "mDisplayAsPercent": true,
+          "mFormulaParts": [
+            {
+              "mDataValue": "MSBuff",
+              "~class": "NamedDataValueCalculationPart"
+            }
+          ],
+          "mRangedMultiplier": {
+            "mDataValue": "RangedMSMod",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "~class": "RangedModifiableGameCalculation"
+        }
+      },
+      "mEffectAmount": {
+        "HealAPRatio": 0.05000000074505806,
+        "HealBase": 10.0,
+        "HealBonusADRatio": 0.10000000149011612,
+        "HealMax": 130.0,
+        "MSBuff": 0.20000000298023224,
+        "MSDuration": 1.0,
+        "MinionHealMod": 0.15000000596046448,
+        "RangedHealMod": 0.6000000238418579,
+        "RangedMSMod": 0.75
+      },
+      "~class": "PerkScriptData"
+    },
+    "mSpellScriptName": "ASSETS/Perks/Styles/Precision/FleetFootwork/FleetFootwork.lua",
+    "~class": "PerkScript"
+  },
+  "mShortDescLocalizationKey": "Attacking and moving builds Energy stacks. At 100 stacks, your next attack heals you and grants increased <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_MS'>MS</lol-uikit-tooltipped-keyword>.",
+  "mTooltipNameLocalizationKey": "Attacking and moving builds Energy stacks. At 100 stacks, your next attack is Energized.<br><br>Energized attacks heal you for <healing>@HealAmount@ Health</healing> and grant <speed>@MoveSpeedCalc@ Move Speed</speed> for @MSDuration@s.<br><rules><br>Healing from minions is @MinionHealMod*100@% effective<br></rules><hr><br>Total Healing: @f1@",
+  "mVFXResourceResolver": {
+    "resourceMap": {
+      "Perks_FleetFootwork_Buff": "Perks/Styles/Precision/FleetFootwork/Particles/Perks_FleetFootwork_Buff",
+      "Perks_FleetFootwork_Cas": "Perks/Styles/Precision/FleetFootwork/Particles/Perks_FleetFootwork_Cas",
+      "Perks_FleetFootwork_Haste": "Perks/Styles/Precision/FleetFootwork/Particles/Perks_FleetFootwork_Haste",
+      "Perks_FleetFootwork_Heal": "Perks/Styles/Precision/FleetFootwork/Particles/Perks_FleetFootwork_Heal",
+      "Perks_FleetFootwork_Heal_Mis": "Perks/Styles/Precision/FleetFootwork/Particles/Perks_FleetFootwork_Heal_Mis"
+    },
+    "~class": "ResourceResolver"
+  },
+  "~class": "Perk"
+}

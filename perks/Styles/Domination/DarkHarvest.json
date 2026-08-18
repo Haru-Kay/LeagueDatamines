@@ -1,0 +1,114 @@
+{
+  "mBuffs": [
+    {
+      "mBuffScriptName": "ASSETS/Perks/Styles/Domination/DarkHarvest/DarkHarvest.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_DarkHarvest}}</titleLeft><mainText>Souls harvested from the weak.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    },
+    {
+      "mBuffScriptName": "ASSETS/Perks/Styles/Domination/DarkHarvest/DarkHarvestCooldown.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_DarkHarvest}}</titleLeft><mainText>{{perk_displayname_DarkHarvest}} is on cooldown.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    }
+  ],
+  "mDisplayNameLocalizationKey": "Dark Harvest",
+  "mDisplayStatLocalizationKey": "@f9@",
+  "mEndOfGameStatDescriptions": [
+    "Total Damage Dealt: @eogvar1@",
+    "Total Souls Harvested: @eogvar2@"
+  ],
+  "mIconTextureName": "assets/perks/styles/domination/darkharvest/darkharvest.tex",
+  "mLongDescLocalizationKey": "Damaging a Champion below @HarvestThreshold*100@% health deals <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_AdaptiveDmg'>adaptive damage</lol-uikit-tooltipped-keyword> and harvests their soul, permanently increasing {{perk_displayname_DarkHarvest}}'s damage by @DamagePerSoulEssence@.<br><br>{{perk_displayname_DarkHarvest}} damage: @BaseDamage@ (+@DamagePerSoulEssence@ damage per soul) (+@ADRatio.-1@ bonus AD) (+@APRatio.-1@ AP)<br>Cooldown: @Cooldown@s (resets to @CooldownResetValue.01@s on takedown)",
+  "mMajorChangePatchVersion": "8.23",
+  "mPerkId": 8128,
+  "mPerkName": "DarkHarvest",
+  "mScript": {
+    "mSpellScriptData": {
+      "mCalculations": {
+        "TotalDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "ADRatio",
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 4,
+          "~class": "GameCalculation"
+        }
+      },
+      "mEffectAmount": {
+        "ADRatio": 0.10000000149011612,
+        "APRatio": 0.05000000074505806,
+        "Cooldown": 35.0,
+        "CooldownResetValue": 1.0,
+        "DamagePerSoulEssence": 11.0,
+        "HarvestThreshold": 0.5,
+        "baseDamage": 30.0
+      },
+      "mEffectAmountGameMode": {
+        "ARAM": {
+          "mEffectAmountPerMode": {
+            "DamagePerSoulEssence": 5.0
+          },
+          "~class": "PerkEffectAmountPerMode"
+        },
+        "NEXUSBLITZ": {
+          "mEffectAmountPerMode": {
+            "DamagePerSoulEssence": 2.0,
+            "baseDamage": 15.0
+          },
+          "~class": "PerkEffectAmountPerMode"
+        },
+        "URF": {
+          "mEffectAmountPerMode": {
+            "ADRatio": 0.20000000298023224,
+            "APRatio": 0.10000000149011612,
+            "Cooldown": 12.0,
+            "DamagePerSoulEssence": 2.0,
+            "baseDamage": 10.0
+          },
+          "~class": "PerkEffectAmountPerMode"
+        }
+      },
+      "~class": "PerkScriptData"
+    },
+    "mSpellScriptName": "ASSETS/Perks/Styles/Domination/DarkHarvest/DarkHarvest.lua",
+    "~class": "PerkScript"
+  },
+  "mShortDescLocalizationKey": "Damaging a low health champion inflicts <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_AdaptiveDmg'>adaptive damage</lol-uikit-tooltipped-keyword> and harvests a soul from the victim.",
+  "mTooltipNameLocalizationKey": "Damaging a champion below @HarvestThreshold*100@% health deals {{perk_substring_DarkHarvestadaptive_@f2@}} and harvests their soul, permanently increasing {{perk_displayname_DarkHarvest}}'s damage by <font color='#fc314e'>@DamagePerSoulEssence@</font>. Cooldown: @Cooldown@s (resets to @CooldownResetValue.01@s on takedown)<br><br>Souls harvested: <font color='#fc314e'>@f5@</font><br>Current damage: @TotalDamage@ <font color='#fc314e'>(+@f6@)</font><br>Total damage dealt: @f9@",
+  "mVFXResourceResolver": {
+    "resourceMap": {
+      "Perks_SoulReaper_Buff": "Perks/Styles/Domination/DarkHarvest/Particles/Perks_SoulReaper_Buff",
+      "Perks_SoulReaper_Burst": "Perks/Styles/Domination/DarkHarvest/Particles/Perks_SoulReaper_Burst",
+      "Perks_SoulReaper_Minion_Soul": "Perks/Styles/Domination/DarkHarvest/Particles/Perks_SoulReaper_Minion_Soul",
+      "Perks_SoulReaper_Mis": "Perks/Styles/Domination/DarkHarvest/Particles/Perks_SoulReaper_Mis",
+      "Perks_SoulReaper_Soul_Idle": "Perks/Styles/Domination/DarkHarvest/Particles/Perks_SoulReaper_Soul_Idle",
+      "Perks_SoulReaper_Tar": "Perks/Styles/Domination/DarkHarvest/Particles/Perks_SoulReaper_Tar"
+    },
+    "~class": "ResourceResolver"
+  },
+  "~class": "Perk"
+}

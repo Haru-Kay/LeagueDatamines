@@ -1,0 +1,118 @@
+{
+  "mBuffs": [
+    {
+      "mBuffScriptName": "ASSETS/Perks/Styles/Domination/Electrocute/PerkElectrocuteLockout.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_Electrocute}}</titleLeft><mainText>{{perk_displayname_Electrocute}} is cooling down.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    },
+    {
+      "mBuffScriptName": "ASSETS/Perks/Styles/Domination/Electrocute/Electrocute.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_Electrocute}}</titleLeft><mainText>Deal bonus damage when you hit an enemy champion with 3 attacks or spells in rapid succession.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    }
+  ],
+  "mDefault": true,
+  "mDisplayNameLocalizationKey": "Electrocute",
+  "mDisplayStatLocalizationKey": "@f1@",
+  "mEndOfGameStatDescriptions": [
+    "Total Damage Dealt: @eogvar1@"
+  ],
+  "mIconTextureName": "assets/perks/styles/domination/electrocute/electrocute.tex",
+  "mLongDescLocalizationKey": "Hitting a champion with 3 <b>separate</b> attacks or abilities within @WindowDuration@s deals bonus <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_AdaptiveDmg'><font color='#48C4B7'>adaptive damage</font></lol-uikit-tooltipped-keyword>.<br><br>Damage: @DamageBase@ - @DamageMax@ (+@BonusADRatio.-1@ bonus AD, +@APRatio.-1@ AP) damage.<br>Cooldown: @Cooldown@s<br><br><i>'We called them the Thunderlords, for to speak of their lightning was to invite disaster.'</i>",
+  "mPerkId": 8112,
+  "mPerkName": "Electrocute",
+  "mScript": {
+    "mSpellScriptData": {
+      "mCalculations": {
+        "TotalDamage": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 240.0,
+              "mStartValue": 70.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "BonusADRatio",
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 4,
+          "~class": "GameCalculation"
+        }
+      },
+      "mEffectAmount": {
+        "APRatio": 0.05000000074505806,
+        "BonusADRatio": 0.10000000149011612,
+        "Cooldown": 20.0,
+        "CooldownMin": 20.0,
+        "DamageBase": 70.0,
+        "DamageMax": 240.0,
+        "WindowDuration": 3.0
+      },
+      "mEffectAmountGameMode": {
+        "ARAM": {
+          "mEffectAmountPerMode": {
+            "APRatio": 0.10000000149011612,
+            "BonusADRatio": 0.15000000596046448,
+            "Cooldown": 15.0,
+            "CooldownMin": 10.0,
+            "DamageBase": 65.0,
+            "DamageMax": 250.0
+          },
+          "~class": "PerkEffectAmountPerMode"
+        },
+        "KINGPORO": {
+          "mEffectAmountPerMode": {
+            "Cooldown": 15.0,
+            "CooldownMin": 10.0
+          },
+          "~class": "PerkEffectAmountPerMode"
+        },
+        "NEXUSBLITZ": {
+          "mEffectAmountPerMode": {
+            "Cooldown": 20.0,
+            "CooldownMin": 15.0
+          },
+          "~class": "PerkEffectAmountPerMode"
+        },
+        "URF": {
+          "mEffectAmountPerMode": {
+            "Cooldown": 10.0,
+            "CooldownMin": 10.0
+          },
+          "~class": "PerkEffectAmountPerMode"
+        }
+      },
+      "~class": "PerkScriptData"
+    },
+    "mSpellScriptName": "ASSETS/Perks/Styles/Domination/Electrocute/Electrocute.lua",
+    "~class": "PerkScript"
+  },
+  "mShortDescLocalizationKey": "Hitting a champion with 3 <b>separate</b> attacks or abilities in @WindowDuration@s deals bonus <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_AdaptiveDmg'>adaptive damage</lol-uikit-tooltipped-keyword>.",
+  "mTooltipNameLocalizationKey": "Hitting a champion with 3 <b>separate</b> attacks or abilities within @WindowDuration@s deals <font color='#48C4B7'>@TotalDamage@</font> bonus <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_AdaptiveDmg'><font color='#48C4B7'>adaptive damage</font></lol-uikit-tooltipped-keyword>.<br>Cooldown: @Cooldown@s<br><hr><br>Total Damage Dealt: <scaleAD>@f1@</scaleAD>",
+  "mVFXResourceResolver": {
+    "resourceMap": {
+      "Perks_Electrocute_AOE": "Perks/Styles/Domination/Electrocute/Particles/Perks_Electrocute_AOE"
+    },
+    "~class": "ResourceResolver"
+  },
+  "~class": "Perk"
+}

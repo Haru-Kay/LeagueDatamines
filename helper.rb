@@ -49,93 +49,49 @@ File.open("aram/mayhem/augments/augments.json", 'rb') { |f| augarr = JSON.parse(
 augarr.each { |aug|
     sourcedata.store(aug["apiName"], aug["name"])
 }
+champs = file.keys
 
-
-adc1 = []
-adc2 = []
-file.each { |c, g| 
-    adc1 << c if g.include?("ADCAugments") 
-    adc2 << c if g.include?("ADCAugments2") 
-}
-
-
-
-group1 = adc1 - adc2
-group1Augs = groups["ADCAugments"] - groups["ADCAugments2"]
-group2 = adc2 - adc1
-group2Augs = groups["ADCAugments2"] - groups["ADCAugments"]
-
-weightedList = {}
-
-group1.each { |c|
-    list = file[c]
-    augments = {}
-
-    list.each { |group, weight|
-        groups[group].each { |aug|
-            if augments[aug]
-                augments[aug] += weight
-            else
-                augments.store(aug, weight)
-            end
-        }
+groupListings = groups.keys.map { |k| [k, []] }.to_h
+groups.keys.each { |key|
+    file.each { |c, augs| 
+        groupListings[key].push(c) if augs.keys.include?(key)
     }
-
-    weightedList.store(c, augments)
 }
 
-
-group2.each { |c|
-    list = file[c]
-    augments = {}
-
-    list.each { |group, weight|
-        groups[group].each { |aug|
-            if augments[aug]
-                augments[aug] += weight
-            else
-                augments.store(aug, weight)
-            end
-        }
-    }
-
-    weightedList.store(c, augments)
-}
-
-# group1.each { |champ|
-#     list = weightedList[champ].keys
-#     puts champ + ": "
-#     puts (group2Augs - list).inspect
-#     puts "========================"
-# }
-# group2.each { |champ|
-#     list = weightedList[champ].keys
-#     puts champ + ": "
-#     puts (group1Augs - list).inspect
-#     puts "========================"
+# groupListings.sort_by { |k, v| v.length }.to_h.each { |g, a|
+#     puts "#{g} => #{a.length}"
 # }
 
-# puts adc1.intersection(adc2).join(", ")
+p groupListings["Peel"]
+
+# mages = groups.filter { |group, augs| group == "MageAugmentsGeneric" || group == "MageAugmentsGeneric4"}
+# puts groups["AH"] - groups["HasteAugments"]
+# puts "--------------------------------"
+# puts groups["HasteAugments"] - groups["AH"]
+
+# mages = groups.filter { |group, augs| group.include?("Mage") }
+# matching = mages.values[0].intersection(*mages.values[1..])
+# mages.each { |group, augs| puts group + " => #{augs - matching}\n================\n" }
 
 
-list = file["Neeko"]
-augments = {}
+# list = file["Neeko"]
+# augments = {}
 
-list.each { |group, weight|
-    groups[group].each { |aug|
-        if augments[aug]
-            augments[aug] += weight
-        else
-            augments.store(aug, weight)
-        end
-    }
-}
+# list.each { |group, weight|
+#     groups[group].each { |aug|
+#         if augments[aug]
+#             augments[aug] += weight
+#         else
+#             augments.store(aug, weight)
+#         end
+#     }
+# }
 
-puts "Neeko:"
-puts "Weight => Augments"
-augmentsByWeight = {}
-augments.each { |k, v|
-    augmentsByWeight[v] ||= []
-    augmentsByWeight[v].push(k)
-}
-augmentsByWeight.sort_by { |k, v| k }.each { |k, v| puts "#{k} => #{v.map { |a| sourcedata.fetch(a, a)}.inspect.gsub("\"", "")}"}
+# puts "Neeko:"
+# puts "Weight => Augments"
+# augmentsByWeight = {}
+# augments.each { |k, v|
+#     augmentsByWeight[v] ||= []
+#     augmentsByWeight[v].push(k)
+# }
+# augmentsByWeight.sort_by { |k, v| k }.each { |k, v| puts "#{k} => #{v.map { |a| sourcedata.fetch(a, a)}.inspect.gsub("\"", "")}"}

@@ -1,0 +1,126 @@
+{
+  "mBuffs": [
+    {
+      "mBuffScriptName": "ASSETS/Perks/Styles/Inspiration/GlacialAugment/GlacialAugmentCooldown.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{ perk_displayname_GlacialAugment }}</titleLeft> <maintext>{{ Buff_GlacialAugmentCooldown_Tooltip }}</maintext>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    },
+    {
+      "mBuffScriptName": "ASSETS/Perks/Styles/Inspiration/GlacialAugment/GlacialAugmentSlow.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>Glacial Augment</titleLeft><br><maintext>This unit has reduced Move Speed and deals reduced damage to enemy champions other than the one that slowed them.</maintext><br><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    },
+    {
+      "mBuffScriptName": "ASSETS/Perks/Styles/Inspiration/GlacialAugment/GlacialAugment.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>Glacial Augment</titleLeft><br><maintext>Your next immobilizing spell on a champion will create slowing zones around them.</maintext><br><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    }
+  ],
+  "mDefault": true,
+  "mDisplayNameLocalizationKey": "Glacial Augment",
+  "mDisplayStatLocalizationKey": "@f1@",
+  "mEndOfGameStatDescriptions": [
+    "Duration Enemy Champs Slowed: @eogvar1@s",
+    "Damage Reduced: @eogvar2@"
+  ],
+  "mIconTextureName": "assets/perks/styles/inspiration/glacialaugment/glacialaugment.tex",
+  "mLongDescLocalizationKey": "Immobilizing an enemy champion will cause @RayCount@ glacial rays to emanate from them towards you and other nearby champions, creating frozen zones for @SlowZoneDuration@ (+ the immobilizing effect's duration) seconds that slow enemies for @SlowZoneSlowBase@% (+@SlowZoneSlowHealShieldRatio@% per 100% Heal and Shield Power) (+@SlowZoneSlowAPRatio*100@% per 100 Ability Power) (+@SlowZoneSlowbADRatio*100@% per 100 bonus Attack Damage) and reduce their damage by @DmgReduction*100@% against your allies (not including yourself). <br><br>Cooldown: @Cooldown@s",
+  "mPerkId": 8351,
+  "mPerkName": "GlacialAugment",
+  "mScript": {
+    "mSpellScriptData": {
+      "mCalculations": {
+        "SlowZoneCalc": {
+          "mDisplayAsPercent": true,
+          "mFormulaParts": [
+            {
+              "mDataValue": "SlowZoneSlowBase",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "SlowZoneSlowAPRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "SlowZoneSlowbADRatio",
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "SlowZoneSlowHealShieldRatio",
+              "mStat": 34,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "mMultiplier": {
+            "mNumber": 0.009999999776482582,
+            "~class": "NumberCalculationPart"
+          },
+          "mPrecision": 1,
+          "mSimpleTooltipCalculationDisplay": 4,
+          "~class": "GameCalculation"
+        }
+      },
+      "mEffectAmount": {
+        "BeamPosIndent": 100.0,
+        "CCCarryOverRatio": 100.0,
+        "Cooldown": 25.0,
+        "DmgReduction": 0.15000000596046448,
+        "RayCount": 3.0,
+        "SlowZoneDuration": 3.0,
+        "SlowZoneLength": 700.0,
+        "SlowZoneSlowAPRatio": 0.05999999865889549,
+        "SlowZoneSlowBase": 20.0,
+        "SlowZoneSlowHealShieldRatio": 90.0,
+        "SlowZoneSlowbADRatio": 0.07000000029802322,
+        "SlowZoneWidth": 80.0
+      },
+      "mEffectAmountGameMode": {
+        "URF": {
+          "mEffectAmountPerMode": {
+            "Cooldown": 15.0
+          },
+          "~class": "PerkEffectAmountPerMode"
+        }
+      },
+      "~class": "PerkScriptData"
+    },
+    "mSpellScriptName": "ASSETS/Perks/Styles/Inspiration/GlacialAugment/GlacialAugment.lua",
+    "~class": "PerkScript"
+  },
+  "mShortDescLocalizationKey": "Immobilizing an enemy champion will cause @RayCount@ glacial rays that slow nearby enemies and reduce their damage to your allies.",
+  "mTooltipNameLocalizationKey": "Immobilizing an enemy champion will cause @RayCount@ glacial rays to emanate from them towards you and other nearby champions, creating frozen zones for @SlowZoneDuration@ (+ the immobilizing effect's duration) seconds<br><br>Frozen zones <status>Slow</status> enemies by <status>@SlowZoneCalc@</status> and reduce their damage by @DmgReduction*100@% against your allies (not including yourself).<br>Cooldown: @Cooldown@s<br><br>Duration Enemy Champs Slowed: @f1@s<br>Damage Reduced: @f2@",
+  "mVFXResourceResolver": {
+    "resourceMap": {
+      "0x2b41341f": "Perks/Styles/Inspiration/GlacialAugment/Particles/Perks_GlacialAugment_Zone_Enemy",
+      "0x79c3fb04": "Perks/Styles/Inspiration/GlacialAugment/Particles/Perks_GlacialAugment_Zone",
+      "Perks_GlacialAugment_Beam": "Perks/Styles/Inspiration/GlacialAugment/Particles/Perks_GlacialAugment_Beam",
+      "Perks_GlacialAugment_Beam_Enemy": "Perks/Styles/Inspiration/GlacialAugment/Particles/Perks_GlacialAugment_Beam_Enemy",
+      "Perks_GlacialAugment_Melee": "Perks/Styles/Inspiration/GlacialAugment/Particles/Perks_GlacialAugment_Melee",
+      "Perks_GlacialAugment_Mis": "Perks/Styles/Inspiration/GlacialAugment/Particles/Perks_GlacialAugment_Mis",
+      "Perks_GlacialAugment_Slow": "Perks/Styles/Inspiration/GlacialAugment/Particles/Perks_GlacialAugment_Slow",
+      "Perks_GlacialAugment_Slow_Off": "Perks/Styles/Inspiration/GlacialAugment/Particles/Perks_GlacialAugment_Slow_Off"
+    },
+    "~class": "ResourceResolver"
+  },
+  "~class": "Perk"
+}

@@ -1,0 +1,148 @@
+{
+  "mBuffs": [
+    {
+      "mBuffScriptName": "ASSETS/Perks/Styles/Resolve/VeteranAftershock/VeteranAftershockDelay.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_VeteranAftershock}}</titleLeft><mainText>This unit has increased resists and will deal damage to nearby units.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    },
+    {
+      "mBuffScriptName": "ASSETS/Perks/Styles/Resolve/VeteranAftershock/VeteranAftershockCooldownBuff.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_VeteranAftershock}}</titleLeft><mainText>{{perk_displayname_VeteranAftershock}} is cooling down.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    },
+    {
+      "mBuffScriptName": "ASSETS/Perks/Styles/Resolve/VeteranAftershock/VeteranAftershockSlowDebuff.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_VeteranAftershock}}</titleLeft><mainText>This units attack and Move Speed are slowed.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    }
+  ],
+  "mDisplayNameLocalizationKey": "Aftershock",
+  "mDisplayStatLocalizationKey": "@f1@",
+  "mEndOfGameStatDescriptions": [
+    "Total Damage Dealt: @eogvar1@",
+    "Total Damage Mitigated: @eogvar2@"
+  ],
+  "mIconTextureName": "assets/perks/styles/resolve/veteranaftershock/veteranaftershock.tex",
+  "mLongDescLocalizationKey": "After immobilizing an enemy champion, increase your Armor and Magic Resist by @FlatResists@ + @PercentBonusResist*100@% of your Bonus Resists for @DelayBeforeBurst.1@s. Then explode, dealing magic damage to nearby enemies.<br><br>Damage: @StartingBaseDamage@ - @MaxBaseDamage@ (+@HealthRatio*100@% of your bonus health)<br>Cooldown: @Cooldown@s<br><br>Resistance bonus from Aftershock capped at: @BonusResistMin@-@BonusResistMax@ (based on level)<br>",
+  "mMajorChangePatchVersion": "9.9",
+  "mPerkId": 8439,
+  "mPerkName": "Aftershock",
+  "mScript": {
+    "mSpellScriptData": {
+      "mCalculations": {
+        "ArmorBuff": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "FlatResists",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "PercentBonusResist",
+              "mStat": 1,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 2,
+          "~class": "GameCalculation"
+        },
+        "DamageCalc": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 120.0,
+              "mStartValue": 25.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            },
+            {
+              "mDataValue": "HealthRatio",
+              "mStat": 12,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 4,
+          "~class": "GameCalculation"
+        },
+        "MagicResistBuff": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "FlatResists",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "PercentBonusResist",
+              "mStat": 6,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 2,
+          "~class": "GameCalculation"
+        },
+        "MaxResistCalc": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 150.0,
+              "mStartValue": 80.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 4,
+          "~class": "GameCalculation"
+        }
+      },
+      "mEffectAmount": {
+        "BonusResistMax": 150.0,
+        "BonusResistMin": 80.0,
+        "Cooldown": 20.0,
+        "DamageRadius": 350.0,
+        "DelayBeforeBurst": 2.5,
+        "FlatResists": 45.0,
+        "HealthRatio": 0.07999999821186066,
+        "MaxBaseDamage": 120.0,
+        "PercentBonusResist": 0.75,
+        "StartingBaseDamage": 25.0
+      },
+      "mEffectAmountGameMode": {
+        "URF": {
+          "mEffectAmountPerMode": {
+            "Cooldown": 15.0
+          },
+          "~class": "PerkEffectAmountPerMode"
+        }
+      },
+      "~class": "PerkScriptData"
+    },
+    "mSpellScriptName": "ASSETS/Perks/Styles/Resolve/VeteranAftershock/VeteranAftershock.lua",
+    "~class": "PerkScript"
+  },
+  "mShortDescLocalizationKey": "After <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_Immobilize'>immobilizing</lol-uikit-tooltipped-keyword> an enemy champion gain defenses and later deal a burst of magic damage around you.",
+  "mTooltipNameLocalizationKey": "After immobilizing an enemy champion, gain <scaleArmor>@ArmorBuff@ Armor</scaleArmor> and <scaleMR>@MagicResistBuff@ Magic Resist</scaleMR> for @DelayBeforeBurst.1@s. Then explode, dealing <magicDamage>@DamageCalc@ magic damage</magicDamage> to nearby enemies.<br>Cooldown: @Cooldown@s<br><rules><i>Resist gains are capped at @MaxResistCalc@</i></rules><br><br>Total damage dealt: <magicDamage>@f1@</magicDamage><br>Total damage mitigated: <scaleHealth>@f9@</scaleHealth>",
+  "mVFXResourceResolver": {
+    "resourceMap": {
+      "Perks_Aftershock_AOE": "Perks/Styles/Resolve/Aftershock/Particles/Perks_Aftershock_AOE",
+      "Perks_Aftershock_Buff": "Perks/Styles/Resolve/Aftershock/Particles/Perks_Aftershock_Buff",
+      "Perks_Aftershock_Tar": "Perks/Styles/Resolve/Aftershock/Particles/Perks_Aftershock_Tar"
+    },
+    "~class": "ResourceResolver"
+  },
+  "~class": "Perk"
+}
