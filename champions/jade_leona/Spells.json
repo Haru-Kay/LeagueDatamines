@@ -196,13 +196,13 @@
         {
           "name": "MarkDuration",
           "values": [
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5
+            3.5,
+            3.5,
+            3.5,
+            3.5,
+            3.5,
+            3.5,
+            3.5
           ],
           "~class": "SpellDataValue"
         }
@@ -234,8 +234,8 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Sunlight",
-            "keySummary": "Damaging spells afflict enemies with Sunlight for 3.5 seconds. When allied Champions deal damage to those targets, they consume the Sunlight debuff to deal additional magic damage.",
-            "keyTooltip": "Spells afflict enemies with <spellName>Sunlight</spellName> for 3.5 seconds. When allied Champions deal damage to those enemies, they deal an additional <magicDamage>@TotalDamage@ magic damage</magicDamage>, consuming <spellName>Sunlight</spellName>."
+            "keySummary": "Damaging spells afflict enemies with Sunlight. When allied Champions deal damage to those targets, they consume the Sunlight debuff to deal additional damage.",
+            "keyTooltip": "Spells afflict enemies with <spellName>Sunlight</spellName> for @MarkDuration@ seconds. When allied Champions deal damage to those enemies, they deal an additional <magicDamage>@TotalDamage@ magic damage</magicDamage>, consuming <spellName>Sunlight</spellName>."
           },
           "mObjectName": "Jade_LeonaSunlightPassive",
           "~class": "TooltipInstanceSpell"
@@ -492,7 +492,7 @@
           "mLocKeys": {
             "keyName": "Eclipse",
             "keySummary": "Leona raises her shield to gain Armor and Magic Resistance.  When the duration first ends, if there are nearby enemies she will deal magic damage to them and prolong the duration of the effect.",
-            "keyTooltip": "Gains @BonusARMR@ bonus <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> for 3 seconds. When the effect ends, nearby enemies struck take <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage> and Leona retains her bonus <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> for 3 seconds."
+            "keyTooltip": "Leona gains <scaleArmor>@BonusARMR@ Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> for @BuffDuration@ seconds. When the effect ends, nearby enemies struck take <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage> and Leona retains her bonus <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> for another @BuffDuration@ seconds."
           },
           "mObjectName": "Jade_LeonaSolarBarrier2",
           "~class": "TooltipInstanceSpell"
@@ -724,12 +724,12 @@
             "lineStopsAtEndPosition": false,
             "lineWidth": {
               "mPerLevelValues": [
-                70.0,
-                70.0,
-                70.0,
-                70.0,
-                70.0,
-                70.0
+                90.0,
+                90.0,
+                90.0,
+                90.0,
+                90.0,
+                90.0
               ],
               "mValueType": 2,
               "~class": "FloatPerSpellLevel"
@@ -794,7 +794,7 @@
       "mImgIconName": [
         "assets/ux/jade/s3icons/samesized/leonazenithblade.dds"
       ],
-      "mLineWidth": 70.0,
+      "mLineWidth": 90.0,
       "mMissileEffectKey": "Jade_Leona_E_mis_weapon",
       "mMissileSpec": {
         "behaviors": [
@@ -808,7 +808,7 @@
         "heightSolver": {
           "~class": "BlendedLinearHeightSolver"
         },
-        "mMissileWidth": 70.0,
+        "mMissileWidth": 90.0,
         "movementComponent": {
           "0x3046674": true,
           "mProjectTargetToCastRange": true,
@@ -1312,15 +1312,15 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "SlowPercent",
+          "name": "StunDuration",
           "values": [
-            -0.15000000596046448,
-            -0.20000000298023224,
-            -0.25,
-            -0.30000001192092896,
-            -0.3499999940395355,
-            -0.4000000059604645,
-            -0.44999998807907104
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1392,11 +1392,11 @@
                   "~class": "TooltipInstanceListElement"
                 },
                 {
-                  "type": "Cost",
+                  "type": "Cooldown",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
-                  "type": "Cooldown",
+                  "type": "Cost",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -1407,30 +1407,20 @@
           "mLocKeys": {
             "keyName": "Shield of Daybreak",
             "keySummary": "Leona uses her shield to perform her next basic attack, dealing bonus magic damage and stunning the target.",
-            "keyTooltip": "The next basic attack deals an additional <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage> and <status>Stuns</status> an enemy for 1.25 seconds."
+            "keyTooltip": "The next basic attack deals an additional <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage> and <status>Stuns</status> an enemy for @StunDuration@ seconds."
           },
           "mObjectName": "Jade_LeonaShieldOfDaybreak",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.30000001192092896,
       "mEffectAmount": [
         {
-          "value": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
           "value": [
-            10.0,
+            0.0,
             10.0,
             35.0,
             60.0,
@@ -1597,32 +1587,6 @@
       },
       "DataValues": [
         {
-          "name": "FlatDamageReduction",
-          "values": [
-            4.0,
-            8.0,
-            12.0,
-            16.0,
-            20.0,
-            24.0,
-            28.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "FlatDamageReductionMax",
-          "values": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "name": "APRatio",
           "values": [
             0.4000000059604645,
@@ -1658,6 +1622,19 @@
             210.0,
             260.0,
             310.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BuffDuration",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1752,19 +1729,17 @@
           "mLocKeys": {
             "keyName": "Eclipse",
             "keySummary": "Leona raises her shield to gain Armor and Magic Resistance.  When the duration first ends, if there are nearby enemies she will deal magic damage to them and prolong the duration of the effect.",
-            "keyTooltip": "Gains @BonusARMR@ bonus <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> for 3 seconds. When the effect ends, nearby enemies struck take <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage> and Leona retains her bonus <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> for 3 seconds."
+            "keyTooltip": "Leona gains <scaleArmor>@BonusARMR@ Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> for @BuffDuration@ seconds. When the effect ends, nearby enemies struck take <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage> and Leona retains her bonus <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> for another @BuffDuration@ seconds."
           },
           "mObjectName": "Jade_LeonaSolarBarrier",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.4000000059604645,
-      "mCoefficient2": 0.20000000298023224,
       "mEffectAmount": [
         {
           "value": [
-            60.0,
+            0.0,
             60.0,
             110.0,
             160.0,
@@ -1776,7 +1751,7 @@
         },
         {
           "value": [
-            30.0,
+            0.0,
             30.0,
             40.0,
             50.0,
@@ -1787,20 +1762,11 @@
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
           "value": [
-            30.0,
+            0.0,
             30.0,
             40.0,
             50.0,

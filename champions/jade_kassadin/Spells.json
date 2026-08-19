@@ -537,6 +537,45 @@
             -0.699999988079071
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "RequiredChargesTooltip",
+          "values": [
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowDuration",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ChargeRange",
+          "values": [
+            1800.0,
+            1800.0,
+            1800.0,
+            1800.0,
+            1800.0,
+            1800.0,
+            1800.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -610,63 +649,14 @@
           "mLocKeys": {
             "keyName": "Force Pulse",
             "keySummary": "Kassadin draws energy from spells cast in his vicinity. Upon charging up, Kassadin can use Force Pulse to damage and slow enemies in a cone in front of him.",
-            "keyTooltip": "Kassadin draws energy from spells cast in his vicinity (1800 range), gaining a charge whenever a spell is cast near him. Upon reaching 6 charges, Kassadin can use <spellName>Force Pulse</spellName> to deal <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Slow</status> enemies by @MoveSpeedMod*-100@% for 3 seconds in a cone in front of him."
+            "keyTooltip": "Kassadin draws energy from spells cast in his vicinity, gaining a charge whenever a spell is cast near him.<br><br>Upon reaching @RequiredChargesTooltip@ charges, Kassadin can use <spellName>Force Pulse</spellName> to deal <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Slow</status> enemies by @MoveSpeedMod*-100@% for @SlowDuration@ seconds in a cone in front of him.",
+            "keyTooltipExtendedBelowLine": "<rules>Abiliites used within @ChargeRange@ units will charge Force Pulse.</rules>"
           },
           "mObjectName": "Jade_KassadinE",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mEffectAmount": [
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            40.0,
-            50.0,
-            60.0,
-            70.0,
-            80.0,
-            90.0,
-            100.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
       "mImgIconName": [
         "assets/ux/jade/s3icons/samesized/kassadin_forcepulse.dds"
@@ -836,7 +826,7 @@
           "mLocKeys": {
             "keyName": "Force Pulse",
             "keySummary": "Kassadin draws energy from spells cast in his vicinity. Upon charging up, Kassadin can use Force Pulse to damage and slow enemies in a cone in front of him.",
-            "keyTooltip": "Kassadin draws energy from spells cast in his vicinity (1800 range), gaining a charge whenever a spell is cast near him. Upon reaching 6 charges, Kassadin can use <spellName>Force Pulse</spellName> to deal <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Slow</status> enemies by @MoveSpeedMod*-100@% for 3 seconds in a cone in front of him."
+            "keyTooltip": "Kassadin draws energy from spells cast in his vicinity, gaining a charge whenever a spell is cast near him.<br><br>Upon reaching @RequiredChargesTooltip@ charges, Kassadin can use <spellName>Force Pulse</spellName> to deal <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Slow</status> enemies by @MoveSpeedMod*-100@% for @SlowDuration@ seconds in a cone in front of him."
           },
           "mObjectName": "Jade_KassadinE_CanCast",
           "~class": "TooltipInstanceSpell"
@@ -1063,7 +1053,7 @@
           "mLocKeys": {
             "keyName": "Force Pulse",
             "keySummary": "Kassadin draws energy from spells cast in his vicinity. Upon charging up, Kassadin can use Force Pulse to damage and slow enemies in a cone in front of him.",
-            "keyTooltip": "Kassadin draws energy from spells cast in his vicinity (1800 range), gaining a charge whenever a spell is cast near him. Upon reaching 6 charges, Kassadin can use <spellName>Force Pulse</spellName> to deal <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Slow</status> enemies by @MoveSpeedMod*-100@% for 3 seconds in a cone in front of him."
+            "keyTooltip": "Kassadin draws energy from spells cast in his vicinity, gaining a charge whenever a spell is cast near him.<br><br>Upon reaching @RequiredChargesTooltip@ charges, Kassadin can use <spellName>Force Pulse</spellName> to deal <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Slow</status> enemies by @MoveSpeedMod*-100@% for @SlowDuration@ seconds in a cone in front of him."
           },
           "mObjectName": "Jade_KassadinE_Counter",
           "~class": "TooltipInstanceSpell"
@@ -1180,6 +1170,47 @@
     },
     "mScriptName": "Jade_KassadinPassive",
     "mSpell": {
+      "DataValues": [
+        {
+          "name": "MagicDamageReduction",
+          "values": [
+            15.0,
+            15.0,
+            15.0,
+            15.0,
+            15.0,
+            15.0,
+            15.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "AttackSpeedConversion",
+          "values": [
+            15.0,
+            15.0,
+            15.0,
+            15.0,
+            15.0,
+            15.0,
+            15.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "AttackSpeedBuffDuration",
+          "values": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "castRange": [
         0.0,
         0.0,
@@ -1207,8 +1238,8 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Void Stone",
-            "keySummary": "\"Kassadin takes 15% reduced <magicDamage>magic damage</magicDamage> and transforms this damage into bonus <attackSpeed>Attack Speed</attackSpeed>.\"",
-            "keyTooltip": "Kassadin gains bonus <attackSpeed>Attack Speed</attackSpeed>  equal to 15% of <magicDamage>magic damage</magicDamage> taken."
+            "keySummary": "Kassadin takes reduced <magicDamage>magic damage</magicDamage> and transforms incoming magic damage into bonus <attackSpeed>Attack Speed</attackSpeed>.",
+            "keyTooltip": "Kassadin takes @MagicDamageReduction@% reduced <magicDamage>magic damage</magicDamage> and converts @AttackSpeedConversion@% of incoming magic damage into <speed>Attack Speed</speed> for @AttackSpeedBuffDuration@ seconds."
           },
           "mObjectName": "Jade_KassadinPassive",
           "~class": "TooltipInstanceSpell"
@@ -1258,8 +1289,8 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Void Stone",
-            "keySummary": "\"Kassadin takes 15% reduced <magicDamage>magic damage</magicDamage> and transforms this damage into bonus <attackSpeed>Attack Speed</attackSpeed>.\"",
-            "keyTooltip": "Kassadin gains bonus <attackSpeed>Attack Speed</attackSpeed>  equal to 15% of <magicDamage>magic damage</magicDamage> taken."
+            "keySummary": "Kassadin takes reduced <magicDamage>magic damage</magicDamage> and transforms incoming magic damage into bonus <attackSpeed>Attack Speed</attackSpeed>.",
+            "keyTooltip": "Kassadin takes @MagicDamageReduction@% reduced <magicDamage>magic damage</magicDamage> and converts @AttackSpeedConversion@% of incoming magic damage into <speed>Attack Speed</speed> for @AttackSpeedBuffDuration@ seconds."
           },
           "mObjectName": "Jade_KassadinPassive_AttackSpeedBoost",
           "~class": "TooltipInstanceSpell"
@@ -1617,6 +1648,45 @@
             0.699999988079071
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "BuffDuration",
+          "values": [
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxStacks",
+          "values": [
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "AdditionalManaPerCast",
+          "values": [
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -1716,7 +1786,8 @@
           "mLocKeys": {
             "keyName": "Riftwalk",
             "keySummary": "Kassadin teleports to a nearby location dealing damage to nearby enemy units. Additionally, multiple Riftwalks in a short period of time cause them to cost additional Mana and deal additional damage.",
-            "keyTooltip": "Kassadin teleports to a nearby location dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> to surrounding enemy units. Additionally, each subsequent <spellName>Riftwalk</spellName> within the next 8 seconds costs <scaleMana>100 additional Mana</scaleMana> and deals <magicDamage>@Damage@ additional damage</magicDamage>, stacks up to 10 times."
+            "keyTooltip": "Kassadin teleports to a nearby location dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> to surrounding enemy units. Additionally, each subsequent <spellName>Riftwalk</spellName> within the next @BuffDuration@ seconds costs <scaleMana>@AdditionalManaPerCast@ additional Mana</scaleMana> and deals <magicDamage>@Damage@ additional damage</magicDamage>.",
+            "keyTooltipExtendedBelowLine": "<rules>Riftwalk stacks up to @MaxStacks@ times.</rules>"
           },
           "mObjectName": "Jade_KassadinR",
           "~class": "TooltipInstanceSpell"
@@ -1835,20 +1906,6 @@
     },
     "mScriptName": "Jade_KassadinW",
     "mSpell": {
-      "0xf9c2333e": {
-        "cherry": {
-          "value": [
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0
-          ],
-          "~class": "SpellEffectAmount"
-        }
-      },
       "Cooldown": {
         "0xa3e0478": 12.0,
         "values": [
@@ -1877,6 +1934,19 @@
           "~class": "SpellDataValue"
         },
         {
+          "name": "ChampionManaMod",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
           "name": "BaseDamage",
           "values": [
             15.0,
@@ -1886,6 +1956,19 @@
             75.0,
             90.0,
             105.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BuffDuration",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1945,15 +2028,15 @@
             "LevelUp": {
               "Elements": [
                 {
-                  "nameOverride": "Base Damage",
-                  "type": "BaseDamage",
-                  "typeIndex": 3,
-                  "~class": "TooltipInstanceListElement"
-                },
-                {
                   "nameOverride": "Base Mana Restore",
                   "type": "ManaGainAmount",
                   "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Base Damage",
+                  "type": "BaseDamage",
+                  "typeIndex": 3,
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -1963,84 +2046,14 @@
           },
           "mLocKeys": {
             "keyName": "Nether Blade",
-            "keySummary": "Passive: Kassadin's basic attacks restore Mana. The Mana restored is tripled against enemy champions. Active: Kassadin's basic attacks deal additional magic damage.",
-            "keyTooltip": "<spellPassive>Passive: </spellPassive>Kassadin's basic attacks draw energy from the void, restoring <scaleMana>@ManaGainAmount@ Mana</scaleMana> each hit. If the target is an enemy champion, the <scaleMana>Mana</scaleMana> restored is tripled to @ManaGainAmount*3@.<br><br><spellActive>Active: </spellActive>Kassadin charges his nether blade for 5 seconds causing his basic attacks to deal an additional <magicDamage>@TotalDamage@ magic damage</magicDamage>."
+            "keySummary": "Passive: Kassadin's basic attacks restore Mana. Active: Kassadin's basic attacks deal additional magic damage.",
+            "keyTooltip": "<spellPassive>Passive: </spellPassive>Kassadin's basic attacks draw energy from the void, restoring <scaleMana>@ManaGainAmount@ Mana</scaleMana> each hit, increased to <scaleMana>@ChampionManaRestore@ Mana</scaleMana> against Champions.<br><br><spellActive>Active: </spellActive>Kassadin charges his nether blade for @BuffDuration@ seconds causing his basic attacks to deal an additional <magicDamage>@TotalDamage@ magic damage</magicDamage>."
           },
           "mObjectName": "Jade_KassadinW",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.10000000149011612,
-      "mCoefficient2": 0.800000011920929,
-      "mEffectAmount": [
-        {
-          "value": [
-            4.0,
-            4.0,
-            4.5,
-            5.0,
-            5.5,
-            6.0,
-            6.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            20.0,
-            20.0,
-            20.0,
-            20.0,
-            20.0,
-            20.0,
-            20.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            25.0,
-            50.0,
-            75.0,
-            100.0,
-            125.0,
-            150.0,
-            175.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            20.0,
-            20.0,
-            22.5,
-            25.0,
-            27.5,
-            30.0,
-            30.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         0,
         0,
@@ -2069,6 +2082,20 @@
         "~class": "ObjectTags"
       },
       "mSpellCalculations": {
+        "0xd2436d75": {
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mFormulaParts": [
+            {
+              "mDataValue": "ManaGainAmount",
+              "~class": "NamedDataValueCalculationPart"
+            }
+          ],
+          "mMultiplier": {
+            "mDataValue": "ChampionManaMod",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "~class": "GameCalculation"
+        },
         "TotalDamage": {
           "mFormulaParts": [
             {
@@ -2253,8 +2280,8 @@
           },
           "mLocKeys": {
             "keyName": "Nether Blade",
-            "keySummary": "Passive: Kassadin's basic attacks restore Mana. The Mana restored is tripled against enemy champions. Active: Kassadin's basic attacks deal additional magic damage.",
-            "keyTooltip": "<spellPassive>Passive: </spellPassive>Kassadin's basic attacks draw energy from the void, restoring <scaleMana>@ManaGainAmount@ Mana</scaleMana> each hit. If the target is an enemy champion, the <scaleMana>Mana</scaleMana> restored is tripled to @ManaGainAmount*3@.<br><br><spellActive>Active: </spellActive>Kassadin charges his nether blade for 5 seconds causing his basic attacks to deal an additional <magicDamage>@TotalDamage@ magic damage</magicDamage>."
+            "keySummary": "Passive: Kassadin's basic attacks restore Mana. Active: Kassadin's basic attacks deal additional magic damage.",
+            "keyTooltip": "<spellPassive>Passive: </spellPassive>Kassadin's basic attacks draw energy from the void, restoring <scaleMana>@ManaGainAmount@ Mana</scaleMana> each hit, increased to <scaleMana>@ChampionManaRestore@ Mana</scaleMana> against Champions.<br><br><spellActive>Active: </spellActive>Kassadin charges his nether blade for @BuffDuration@ seconds causing his basic attacks to deal an additional <magicDamage>@TotalDamage@ magic damage</magicDamage>."
           },
           "mObjectName": "Jade_KassadinW_Buff",
           "~class": "TooltipInstanceSpell"

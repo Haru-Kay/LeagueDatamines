@@ -936,32 +936,19 @@
     "mScriptName": "Jade_GragasPassive",
     "mSpell": {
       "Cooldown": {
-        "0xa3e0478": 12.0,
+        "0xa3e0478": 0.0,
         "values": [
-          12.0,
-          12.0,
-          12.0,
-          12.0,
-          12.0,
-          12.0,
-          12.0
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
         ],
         "~class": "SpellAttributeModifiable"
       },
       "DataValues": [
-        {
-          "name": "ArenaCooldownMod",
-          "values": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
-          ],
-          "~class": "SpellDataValue"
-        },
         {
           "name": "HealRatio",
           "values": [
@@ -972,6 +959,19 @@
             0.019999999552965164,
             0.019999999552965164,
             0.019999999552965164
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "HealDuration",
+          "values": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1013,7 +1013,7 @@
           "mLocKeys": {
             "keyName": "Happy Hour",
             "keySummary": "On ability use, Gragas takes a drink, restoring some of his Health.",
-            "keyTooltip": "Whenever Gragas casts a spell, he regains <healing>@HealAmount@ Health</healing> over 4 seconds."
+            "keyTooltip": "Whenever Gragas casts a spell, he regains <healing>@HealAmount@ Health</healing> over @HealDuration@ seconds."
           },
           "mObjectName": "Jade_GragasPassive",
           "~class": "TooltipInstanceSpell"
@@ -1024,38 +1024,20 @@
         "assets/ux/jade/s3icons/samesized/gragaspassiveheal.dds"
       ],
       "mSpellCalculations": {
+        "0xf5ba9851": {
+          "mModifiedGameCalculation": "HealAmount",
+          "mMultiplier": {
+            "mNumber": 0.25,
+            "~class": "NumberCalculationPart"
+          },
+          "~class": "GameCalculationModified"
+        },
         "HealAmount": {
           "mFormulaParts": [
             {
               "mDataValue": "HealRatio",
               "mStat": 12,
               "~class": "StatByNamedDataValueCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "HealCooldown": {
-          "mFormulaParts": [
-            {
-              "mBreakpoints": [
-                {
-                  "mAdditionalBonusAtThisLevel": -2.0,
-                  "mLevel": 6,
-                  "~class": "Breakpoint"
-                },
-                {
-                  "mAdditionalBonusAtThisLevel": -2.0,
-                  "mLevel": 11,
-                  "~class": "Breakpoint"
-                },
-                {
-                  "mAdditionalBonusAtThisLevel": -2.0,
-                  "mLevel": 16,
-                  "~class": "Breakpoint"
-                }
-              ],
-              "mLevel1Value": 12.0,
-              "~class": "ByCharLevelBreakpointsCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -1172,7 +1154,7 @@
           "mLocKeys": {
             "keyName": "Happy Hour",
             "keySummary": "On ability use, Gragas takes a drink, restoring some of his Health.",
-            "keyTooltip": "Whenever Gragas casts a spell, he regains <healing>@HealAmount@ Health</healing> over 4 seconds."
+            "keyTooltip": "Whenever Gragas casts a spell, he regains <healing>@HealAmount@ Health</healing> over @HealDuration@ seconds."
           },
           "mObjectName": "Jade_GragasPassive_Heal",
           "~class": "TooltipInstanceSpell"

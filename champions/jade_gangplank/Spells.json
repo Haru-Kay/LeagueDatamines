@@ -475,72 +475,20 @@
     "mSpell": {
       "DataValues": [
         {
-          "name": "Cooldown",
+          "name": "MovementSpeedDebuff",
           "values": [
-            15.0,
-            15.0,
-            15.0,
-            15.0,
-            15.0,
-            15.0,
-            15.0
+            0.07000000029802322,
+            0.07000000029802322,
+            0.07000000029802322,
+            0.07000000029802322,
+            0.07000000029802322,
+            0.07000000029802322,
+            0.07000000029802322
           ],
           "~class": "SpellDataValue"
         },
         {
-          "name": "OldMoveSpeed",
-          "values": [
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "MoveSpeedDuration",
-          "values": [
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "DoTDuration",
-          "values": [
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "TurretDamageMult",
-          "values": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "BaseDamage",
+          "name": "DebuffDuration",
           "values": [
             3.0,
             3.0,
@@ -553,15 +501,15 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "MovementSpeedDebuff",
+          "name": "MaxStacksTooltip",
           "values": [
-            0.07000000029802322,
-            0.07000000029802322,
-            0.07000000029802322,
-            0.07000000029802322,
-            0.07000000029802322,
-            0.07000000029802322,
-            0.07000000029802322
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
           ],
           "~class": "SpellDataValue"
         }
@@ -594,7 +542,7 @@
           "mLocKeys": {
             "keyName": "Grog-Soaked Blade",
             "keySummary": "Gangplank's attacks apply a poison that deals magic damage per second, increasing with level.",
-            "keyTooltip": "Gangplank's basic attacks apply a poison, <status>Slowing</status> Movement Speed by @MovementSpeedDebuff*100@% and dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> each second for 3 seconds (effect stacks up to 3 times)."
+            "keyTooltip": "Gangplank's basic attacks apply a poison, <status>Slowing</status> Movement Speed by @MovementSpeedDebuff*100@% and dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> each second for @DebuffDuration@ seconds (effect stacks up to @MaxStacksTooltip@ times)."
           },
           "mObjectName": "Jade_GangplankPassive",
           "~class": "TooltipInstanceSpell"
@@ -605,17 +553,6 @@
         "assets/ux/jade/s3icons/samesized/gangplank_grogsoakedblade.dds"
       ],
       "mSpellCalculations": {
-        "MoveSpeed": {
-          "mDisplayAsPercent": true,
-          "mFormulaParts": [
-            {
-              "mEndValue": 0.30000001192092896,
-              "mStartValue": 0.15000000596046448,
-              "~class": "ByCharLevelInterpolationCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
         "TotalDamage": {
           "mFormulaParts": [
             {
@@ -1189,7 +1126,7 @@
           },
           "mLocKeys": {
             "keyName": "Cannon Barrage",
-            "keySummary": "Gangplank signals his ship to fire upon an area for 7 seconds, slowing enemies and dealing damage in random locations within the area.",
+            "keySummary": "Gangplank signals his ship to fire upon an area anywhere on the map, slowing enemies and dealing damage over time.",
             "keyTooltip": "Signals Gangplank's ship to fire upon an area for @Duration@ seconds, <status>Slowing</status> enemies in the area by @Slow*100@% for the duration. Cannonballs rain upon the area, each causing <magicDamage>@TotalDamage@ magic damage</magicDamage>."
           },
           "mObjectName": "Jade_GangplankR",
@@ -1197,84 +1134,6 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.10000000149011612,
-      "mEffectAmount": [
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.0,
-            1.5,
-            0.5,
-            0.5,
-            0.0,
-            0.0,
-            0.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            300.0,
-            300.0,
-            300.0,
-            300.0,
-            300.0,
-            300.0,
-            300.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            75.0,
-            75.0,
-            75.0,
-            75.0,
-            75.0,
-            75.0,
-            75.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            40.0,
-            40.0,
-            40.0,
-            40.0,
-            40.0,
-            40.0,
-            40.0
-          ],
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         0,
         0,

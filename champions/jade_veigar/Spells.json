@@ -1245,13 +1245,26 @@
         {
           "name": "BaseDamage",
           "values": [
-            30.0,
+            70.0,
             120.0,
             170.0,
             220.0,
             270.0,
             320.0,
-            360.0
+            370.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ImpactDelay",
+          "values": [
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158
           ],
           "~class": "SpellDataValue"
         }
@@ -1333,63 +1346,13 @@
           "mLocKeys": {
             "keyName": "Dark Matter",
             "keySummary": "Veigar calls a great mass of dark matter to fall from the sky to the target location, dealing magic damage when it lands.",
-            "keyTooltip": "<mainText>After 1.2 seconds, dark matter falls from the sky to the target location, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>.</mainText>"
+            "keyTooltip": "After @ImpactDelay@ seconds, dark matter falls from the sky to the target location, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>."
           },
           "mObjectName": "Jade_VeigarDarkMatter",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mEffectAmount": [
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            8.0,
-            8.0,
-            8.0,
-            8.0,
-            8.0,
-            8.0,
-            8.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         -1,
         2,
@@ -1713,6 +1676,19 @@
             2.75
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "CageDuration",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -1795,7 +1771,7 @@
               "Elements": [
                 {
                   "nameOverride": "Stun Duration:",
-                  "type": "Effect%dAmount",
+                  "type": "StunDuration",
                   "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
                 },
@@ -1815,64 +1791,14 @@
           "mLocKeys": {
             "keyName": "Event Horizon",
             "keySummary": "Veigar twists the edges of space around the target location for 3 seconds, stunning enemies who pass through the perimeter for a short duration.",
-            "keyTooltip": "<mainText>Veigar twists the edges of space around the target location for 3 seconds, <status>Stunning</status> enemies who pass through the perimeter for @StunDuration@ seconds.</mainText>"
+            "keyTooltip": "Veigar twists the edges of space around the target location for @CageDuration@ seconds, <status>Stunning</status> enemies who pass through the perimeter for @StunDuration@ seconds.",
+            "keyTooltipExtendedBelowLine": "<rules>Enemies can only be stunned once per cast of Event Horizon.</rules>"
           },
           "mObjectName": "Jade_VeigarEventHorizon",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.20000000298023224,
-      "mEffectAmount": [
-        {
-          "value": [
-            1.25,
-            1.5,
-            1.75,
-            2.0,
-            2.25,
-            2.5,
-            2.75
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         0,
         0,
@@ -1966,6 +1892,21 @@
     },
     "mScriptName": "Jade_VeigarPassive",
     "mSpell": {
+      "DataValues": [
+        {
+          "name": "MaximumRegenPercent",
+          "values": [
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "castRange": [
         0.0,
         0.0,
@@ -1993,8 +1934,8 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Equilibrium",
-            "keySummary": "Veigar's mana regeneration increases by 1% for each 1% of mana missing.",
-            "keyTooltip": "Veigar's <scaleMana>mana regeneration</scaleMana> increases by 1% for each 1% of mana missing."
+            "keySummary": "Veigar's mana regeneration increases based on his missing mana.",
+            "keyTooltip": "Veigar gains up to <scaleMana>@MaximumRegenPercent@% bonus mana regeneration</scaleMana> based on his missing mana."
           },
           "mObjectName": "Jade_VeigarPassive",
           "~class": "TooltipInstanceSpell"
@@ -2089,26 +2030,26 @@
         {
           "name": "BaseDamage",
           "values": [
-            100.0,
+            125.0,
             250.0,
             375.0,
             500.0,
-            400.0,
-            475.0,
-            550.0
+            625.0,
+            750.0,
+            875.0
           ],
           "~class": "SpellDataValue"
         },
         {
-          "name": "MaxExecuteMult",
+          "name": "EnemyAPRatio",
           "values": [
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929
           ],
           "~class": "SpellDataValue"
         }
@@ -2191,7 +2132,7 @@
           "mLocKeys": {
             "keyName": "Primordial Burst",
             "keySummary": "Blasts target enemy champion, dealing a large base amount of magic damage plus 80% of his target's AP.",
-            "keyTooltip": "<mainText>Blasts an enemy champion, dealing <magicDamage>@MinDamage@ plus 80% of his target's Ability Power in magic damage</magicDamage>.</mainText>"
+            "keyTooltip": "Veigar blasts an enemy champion, dealing <magicDamage>@MinDamage@ plus @EnemyAPRatio*100@% of his target's Ability Power in magic damage</magicDamage>."
           },
           "mObjectName": "Jade_VeigarR",
           "~class": "TooltipInstanceSpell"
@@ -2249,14 +2190,6 @@
         "~class": "ObjectTags"
       },
       "mSpellCalculations": {
-        "MaxDamage": {
-          "mModifiedGameCalculation": "MinDamage",
-          "mMultiplier": {
-            "mNumber": 2.0,
-            "~class": "NumberCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
         "MinDamage": {
           "mFormulaParts": [
             {

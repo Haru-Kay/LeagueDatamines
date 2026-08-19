@@ -416,6 +416,32 @@
             4.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxBouncesTooltip",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MonsterDamageMod",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -516,8 +542,8 @@
           "mLocKeys": {
             "keyName": "Dark Wind",
             "keySummary": "A wisp of wind strikes an enemy unit and then bounces to nearby enemy units, dealing damage and silencing the victims.",
-            "keyTooltip": "A wisp of wind strikes an enemy target and then bounces up to 5 times to nearby enemy units. Deals <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Silences</status> for @SilenceDuration@ seconds for each strike.",
-            "keyTooltipExtended": "{{Spell_FiddleSticksE_Jade_Tooltip}}<br><br><rules>Damage to minions and neutral monsters is increased by 50%.</rules>"
+            "keyTooltip": "A wisp of wind strikes an enemy target and then bounces up to @MaxBouncesTooltip@ times to nearby enemy units. Deals <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Silences</status> for @SilenceDuration@ seconds for each strike.",
+            "keyTooltipExtended": "{{Spell_FiddleSticksE_Jade_Tooltip}}<br><br><rules>Deals @MonsterDamageMod*100@% damage to minions and neutral monsters.</rules>"
           },
           "mObjectName": "Jade_FiddlesticksE",
           "~class": "TooltipInstanceSpell"
@@ -654,7 +680,7 @@
         ],
         "~class": "SpellAttributeModifiable"
       },
-      "flags": 4194304,
+      "flags": 4194308,
       "mAffectsTypeFlags": 6154,
       "mCastType": 1,
       "mHitBoneName": "C_Buffbone_Glb_Chest_Loc",

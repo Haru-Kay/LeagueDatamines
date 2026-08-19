@@ -198,15 +198,15 @@
         1200.0
       ],
       "castRangeValues": {
-        "0xa3e0478": 1200.0,
+        "0xa3e0478": 1300.0,
         "values": [
-          1200.0,
-          1200.0,
-          1200.0,
-          1200.0,
-          1200.0,
-          1200.0,
-          1200.0
+          1300.0,
+          1300.0,
+          1300.0,
+          1300.0,
+          1300.0,
+          1300.0,
+          1300.0
         ],
         "~class": "SpellAttributeModifiable"
       },
@@ -670,13 +670,39 @@
         {
           "name": "RBaseDamage",
           "values": [
-            0.0,
+            75.0,
             250.0,
             425.0,
             600.0,
-            800.0,
-            1000.0,
-            1200.0
+            775.0,
+            950.0,
+            1125.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatio",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "StunDurationPerDistance",
+          "values": [
+            0.0012499999720603228,
+            0.0012499999720603228,
+            0.0012499999720603228,
+            0.0012499999720603228,
+            0.0012499999720603228,
+            0.0012499999720603228,
+            0.0012499999720603228
           ],
           "~class": "SpellDataValue"
         },
@@ -720,33 +746,20 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "AoE",
+          "name": "AreaDamageMod",
           "values": [
-            1.0,
             0.5,
             0.5,
             0.5,
             0.5,
             0.5,
-            1.0
+            0.5,
+            0.5
           ],
           "~class": "SpellDataValue"
         },
         {
-          "name": "APRatio",
-          "values": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "QMovespeedModifier",
+          "name": "MovementSpeedMod",
           "values": [
             -0.5,
             -0.5,
@@ -755,6 +768,19 @@
             -0.5,
             -0.5,
             -0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowDuration",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
           ],
           "~class": "SpellDataValue"
         }
@@ -868,7 +894,7 @@
           "mLocKeys": {
             "keyName": "Enchanted Crystal Arrow",
             "keySummary": "Ashe fires a missile of ice in a straight line.  If the arrow collides with an enemy Champion, it deals damage and stuns the Champion for up to 3.5 seconds, based on how far the arrow has traveled.  In addition, surrounding enemy units take damage and are slowed.",
-            "keyTooltip": "<mainText>Ashe launches a crystal arrow of ice in a line that <status>Stuns</status> an enemy Champion dealing <magicDamage>@RMainDamage@ magic damage</magicDamage>. <status>Stun</status> duration increases with distance travelled, up to @MaxStunDuration@ seconds. Surrounding enemies are <status>Slowed</status> by 50% for 3 seconds and take <magicDamage>@RMainDamageSplashTooltip@ damage.</magicDamage></mainText>",
+            "keyTooltip": "Ashe launches a crystal arrow of ice in a line that <status>Stuns</status> an enemy Champion dealing <magicDamage>@RMainDamage@ magic damage</magicDamage>. <status>Stun</status> duration increases with distance travelled, up to @MaxStunDuration@ seconds. Surrounding enemies are <status>Slowed</status> by @MovementSpeedMod*-100@% for @SlowDuration@ seconds and take <magicDamage>@RAoEDamage@ magic damage</magicDamage>.",
             "keyTooltipExtendedBelowLine": "<rules>Minimum <status>Stun</status> duration is @MinStunDuration@ second.</rules>"
           },
           "mObjectName": "Jade_AsheEnchantedCrystalArrow",
@@ -926,14 +952,6 @@
         "~class": "ObjectTags"
       },
       "mSpellCalculations": {
-        "0x42e917e9": {
-          "mModifiedGameCalculation": "RMainDamage",
-          "mMultiplier": {
-            "mNumber": 0.5,
-            "~class": "NumberCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
         "0x6b932875": {
           "mFormulaParts": [
             {
@@ -946,7 +964,7 @@
             }
           ],
           "mMultiplier": {
-            "mDataValue": "AoE",
+            "mDataValue": "AreaDamageMod",
             "~class": "NamedDataValueCalculationPart"
           },
           "~class": "GameCalculation"
@@ -1283,6 +1301,7 @@
             "LevelUp": {
               "Elements": [
                 {
+                  "Style": 1,
                   "multiplier": -100.0,
                   "nameOverride": "Slow",
                   "type": "SlowPercent",
@@ -1303,8 +1322,6 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.25,
-      "mCoefficient2": 1.25,
       "mCooldownNotAffectedByCDR": true,
       "mEffectAmount": [
         {
@@ -1344,75 +1361,21 @@
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            20.0,
-            20.0,
-            30.0,
-            40.0,
-            50.0,
-            60.0,
-            60.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            0.2199999988079071,
-            0.2199999988079071,
-            0.23499999940395355,
-            0.25,
-            0.26499998569488525,
-            0.2800000011920929,
-            0.2800000011920929
-          ],
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            1.100000023841858,
-            1.100000023841858,
-            1.1749999523162842,
-            1.25,
-            1.3250000476837158,
-            1.399999976158142,
-            1.399999976158142
-          ],
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
@@ -1535,6 +1498,19 @@
             6.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "RevealDuration",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -1613,13 +1589,13 @@
             "LevelUp": {
               "Elements": [
                 {
-                  "nameOverride": "Range",
-                  "type": "CastRange",
+                  "nameOverride": "Bonus Gold",
+                  "type": "AdditionalGold",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
-                  "nameOverride": "Bonus Gold",
-                  "type": "AdditionalGold",
+                  "nameOverride": "Range",
+                  "type": "CastRange",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -1630,83 +1606,14 @@
           "mLocKeys": {
             "keyName": "Hawkshot",
             "keySummary": "Each time Ashe kills a unit, she gains some extra gold. Ashe can activate to send her Hawk Spirit on a scouting mission.",
-            "keyTooltip": "<mainText><spellPassive>Passive:</spellPassive> Ashe gains <gold>@AdditionalGold@ extra gold</gold> whenever she kills an enemy.<br><br><spellActive>Active:</spellActive> Ashe sends forth a hawk to grant vision in an area for 5 seconds. It also reveals the area as it flies through.</mainText>",
-            "keyTooltipExtended": "<mainText><spellPassive>Passive:</spellPassive> Ashe gains @AdditionalGold@ extra gold whenever she kills an enemy.<br>Total Gold Retrieved: @f1@ gold.<br><br><spellActive>Active:</spellActive> Ashe sends forth a hawk to grant vision in an area for 5 seconds. It also reveals the area as it flies through.</mainText>"
+            "keyTooltip": "<spellPassive>Passive:</spellPassive> Ashe gains <gold>@AdditionalGold@ extra gold</gold> whenever she kills an enemy.<br><br><spellActive>Active:</spellActive> Ashe sends forth a hawk to grant vision in an area for @RevealDuration@ seconds. It also reveals the area as it flies through.",
+            "keyTooltipExtendedBelowLine": "<rules>Total Retrieved: <gold>@f1@ gold</gold>.</rules>"
           },
           "mObjectName": "Jade_AsheSpiritOfTheHawk",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.75,
-      "mEffectAmount": [
-        {
-          "value": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            10.0,
-            50.0,
-            90.0,
-            130.0,
-            170.0,
-            210.0,
-            250.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            25000.0,
-            25000.0,
-            25000.0,
-            25000.0,
-            25000.0,
-            25000.0,
-            25000.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         0,
         0,
@@ -1857,13 +1764,13 @@
         {
           "name": "BaseDamage",
           "values": [
-            30.0,
+            25.0,
             40.0,
-            50.0,
-            60.0,
+            55.0,
             70.0,
-            80.0,
-            90.0
+            85.0,
+            100.0,
+            115.0
           ],
           "~class": "SpellDataValue"
         },
@@ -1906,13 +1813,13 @@
         600.0
       ],
       "castRangeDisplayOverride": [
-        1200.0,
-        1200.0,
-        1200.0,
-        1200.0,
-        1200.0,
-        1200.0,
-        1200.0
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0
       ],
       "castRangeValues": {
         "0xa3e0478": 600.0,
@@ -1964,12 +1871,12 @@
             },
             "overrideBaseRange": {
               "mPerLevelValues": [
-                1150.0,
-                1150.0,
-                1150.0,
-                1150.0,
-                1150.0,
-                1150.0
+                1250.0,
+                1250.0,
+                1250.0,
+                1250.0,
+                1250.0,
+                1250.0
               ],
               "mValueType": 2,
               "~class": "FloatPerSpellLevel"
@@ -2003,12 +1910,12 @@
             },
             "overrideBaseRange": {
               "mPerLevelValues": [
-                1150.0,
-                1150.0,
-                1150.0,
-                1150.0,
-                1150.0,
-                1150.0
+                1250.0,
+                1250.0,
+                1250.0,
+                1250.0,
+                1250.0,
+                1250.0
               ],
               "mValueType": 2,
               "~class": "FloatPerSpellLevel"
@@ -2043,12 +1950,12 @@
             },
             "overrideBaseRange": {
               "mPerLevelValues": [
-                1150.0,
-                1150.0,
-                1150.0,
-                1150.0,
-                1150.0,
-                1150.0
+                1250.0,
+                1250.0,
+                1250.0,
+                1250.0,
+                1250.0,
+                1250.0
               ],
               "mValueType": 2,
               "~class": "FloatPerSpellLevel"
@@ -2083,12 +1990,12 @@
             },
             "overrideBaseRange": {
               "mPerLevelValues": [
-                1150.0,
-                1150.0,
-                1150.0,
-                1150.0,
-                1150.0,
-                1150.0
+                1250.0,
+                1250.0,
+                1250.0,
+                1250.0,
+                1250.0,
+                1250.0
               ],
               "mValueType": 2,
               "~class": "FloatPerSpellLevel"
@@ -2123,12 +2030,12 @@
             },
             "overrideBaseRange": {
               "mPerLevelValues": [
-                1150.0,
-                1150.0,
-                1150.0,
-                1150.0,
-                1150.0,
-                1150.0
+                1250.0,
+                1250.0,
+                1250.0,
+                1250.0,
+                1250.0,
+                1250.0
               ],
               "mValueType": 2,
               "~class": "FloatPerSpellLevel"
@@ -2163,12 +2070,12 @@
             },
             "overrideBaseRange": {
               "mPerLevelValues": [
-                1150.0,
-                1150.0,
-                1150.0,
-                1150.0,
-                1150.0,
-                1150.0
+                1250.0,
+                1250.0,
+                1250.0,
+                1250.0,
+                1250.0,
+                1250.0
               ],
               "mValueType": 2,
               "~class": "FloatPerSpellLevel"
@@ -2203,12 +2110,12 @@
             },
             "overrideBaseRange": {
               "mPerLevelValues": [
-                1150.0,
-                1150.0,
-                1150.0,
-                1150.0,
-                1150.0,
-                1150.0
+                1250.0,
+                1250.0,
+                1250.0,
+                1250.0,
+                1250.0,
+                1250.0
               ],
               "mValueType": 2,
               "~class": "FloatPerSpellLevel"
@@ -2225,12 +2132,12 @@
             "hideWithLineIndicator": true,
             "overrideBaseRange": {
               "mPerLevelValues": [
-                1150.0,
-                1150.0,
-                1150.0,
-                1150.0,
-                1150.0,
-                1150.0
+                1250.0,
+                1250.0,
+                1250.0,
+                1250.0,
+                1250.0,
+                1250.0
               ],
               "mValueType": 2,
               "~class": "FloatPerSpellLevel"

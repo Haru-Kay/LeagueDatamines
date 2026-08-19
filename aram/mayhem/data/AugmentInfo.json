@@ -2206,8 +2206,8 @@
     "AugmentNameId": "ARAM_Upgrade_IE",
     "AugmentPlatformId": 1336,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/upgradeie_small.tex",
-    "AugmentTooltipTra": "Gain @CritChance*100@% %i:scaleCrit% Critical Strike Chance and <gold>500 Gold</gold>.<br>Having Infinity Edge allows your Critical Strikes to deal random <keyword>bonus Critical Strike Damage</keyword>, scaling up to @CritChanceToDamage*100@% of your Critical Strike Chance.<br><br>Crit Damage Dealt: <attention>@f1@</attention><br><br><br>",
-    "DescriptionTra": "Gain @CritChance*100@% %i:scaleCrit% Critical Strike Chance and <gold>500 Gold</gold>.<br>Having <attention>Infinity Edge</attention> allows your %i:scaleCrit% Critical Strike Chance to grant random %i:scaleCritMult% Critical Strike Damage each Attack.",
+    "AugmentTooltipTra": "Gain <gold>500 Gold</gold>.<br>Having Infinity Edge allows your Critical Strikes to deal random <keyword>bonus Critical Strike Damage</keyword>, scaling up to @CritChanceToDamage*100@% of your Critical Strike Chance.<br><br>Crit Damage Dealt: <attention>@f1@</attention><br><br><br>",
+    "DescriptionTra": "Gain <gold>500 Gold</gold>.<br>Having <attention>Infinity Edge</attention> allows your %i:scaleCrit% Critical Strike Chance to grant random %i:scaleCritMult% Critical Strike Damage each Attack.",
     "NameTra": "Upgrade Infinity Edge",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/ARAM_Upgrade_IE/Loadable/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/ARAM_Upgrade_IE/Augment_ARAM_Upgrade_IE",
@@ -2394,7 +2394,7 @@
   },
   "Maps/ModeSpecificData/Augments/CriticalMissile": {
     "0x3696d198": {
-      "0xc4182067": "When you <crit>Critically Strike</crit>, fire missiles dealing <magicDamage>magic damage</magicDamage>.<br><br>Gain <crit>%i:scaleCrit% @CrtiChance*100@% Crit chance</crit>.",
+      "0xc4182067": "When you <crit>Crit</crit>, fire 1 plus @AdditionalMis@ missiles that deal <magicDamage>@Damage@ magic damage</magicDamage> each. <br><br>Gain <crit>%i:scaleCrit% @CrtiChance*100@% Crit chance</crit>.",
       "~class": "0x5b441d9b"
     },
     "AdditionalSpells": [
@@ -2954,16 +2954,16 @@
     "AugmentDisplayTags": [
       1
     ],
-    "AugmentLargeIconPath": "assets/ux/kiwi/augments/icons/doubletap_large.tex",
+    "AugmentLargeIconPath": "assets/ux/cherry/augments/icons/dualwield_large.tex",
     "AugmentNameId": "ARAM_DoubleTap",
     "AugmentPlatformId": 2010,
-    "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/doubletap_small.tex",
+    "AugmentSmallIconPath": "assets/ux/cherry/augments/icons/dualwield_small.tex",
     "AugmentTooltipTra": "Your Critical Strikes apply <OnHit>%i:OnHit% On-Hit</OnHit> effects an additional time.<br><br>Gain <attention>%i:scaleCrit% @Calc_Crit_Chance@ Crit chance</attention>.",
     "DescriptionTra": "Your <crit>Critical Strikes</crit> apply <OnHit>%i:OnHit% On-Hit</OnHit> effects an additional time.<br><br>Gain <crit>%i:scaleCrit% @Calc_Crit_Chance@ Crit chance</crit>.",
     "NameTra": "Double Tap",
     "RootSpell": "Maps/ModeSpecificData/Augments/ARAM_DoubleTap/Augment_ARAM_DoubleTap",
     "mBuildTags": 512,
-    "rarity": 1,
+    "rarity": 2,
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/ARAM_Juiced": {
@@ -4152,10 +4152,31 @@
     "AugmentPlatformId": 2140,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/upgradesheen_small.tex",
     "AugmentTooltipTra": "{{Upgrade_Ravenous_Description}}",
-    "DescriptionTra": "Your spell hits trigger Cleave against enemy champions. Gain @LifeStealTT@ Life Steal on Ravenous.<br><br>Gain <font color=\"#ffd138\"><gold>@Gold@ Gold</gold></font>.",
+    "DescriptionTra": "Your spell hits trigger Cleave against enemies. Increase Ravenous Hydra's Life Steal to @LifeStealTT@<br><br>Gain <font color=\"#ffd138\"><gold>@Gold@ Gold</gold></font>.",
     "NameTra": "Upgrade Ravenous Hydra",
     "RootSpell": "Maps/ModeSpecificData/Augments/Upgrade_Ravenous/Augment_Upgrade_Ravenous",
     "rarity": 1,
+    "~class": "AugmentData"
+  },
+  "Maps/ModeSpecificData/Augments/Quest_UltraHydra": {
+    "0x3ed971bd": {
+      "QUEST": "Maps/ModeSpecificData/ModesQuests/UltraHydraQuest",
+      "~class": "LinkedQuestData"
+    },
+    "AugmentDisplayTags": [
+      8,
+      1
+    ],
+    "AugmentLargeIconPath": "assets/ux/kiwi/augments/icons/ultrahydra_large.tex",
+    "AugmentNameId": "Quest_UltraHydra",
+    "AugmentPlatformId": 2141,
+    "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/ultrahydra_small.tex",
+    "AugmentTooltipTra": "{{Quest_UltraHydra_Description}}",
+    "DescriptionTra": "Gain a <attention>Tiamat</attention> when completing a Hydra Item.<br><br><font color='#F0C200'>QUEST:</font>: Gain Ravenous Hydra, Profane Hydra and Titanic Hydra.<br><br><font color='#F0C200'>REWARD:</font>: Gain Ultra Hydra",
+    "NameTra": "Ultra Hydra",
+    "ResourceResolver": "Maps/ModeSpecificData/Augments/Quest_UltraHydra/Resources",
+    "RootSpell": "Maps/ModeSpecificData/Augments/Quest_UltraHydra/Augment_Quest_UltraHydra",
+    "rarity": 2,
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/Upgrade_SunderedSky": {
@@ -4205,6 +4226,24 @@
     "DescriptionTra": "{{SpellName}} applies {{ Item_Keyword_OnHit }} effects an additional time.",
     "NameTra": "Double Strike",
     "RootSpell": "Maps/ModeSpecificData/Augments/DoubleStrike/Augment_DoubleStrike",
+    "~class": "AugmentData"
+  },
+  "Maps/ModeSpecificData/Augments/Upgrade_DeathDance": {
+    "AdditionalSpells": [
+      "Maps/ModeSpecificData/Augments/Upgrade_DeathDance/Augment_Upgrade_DeathDance_DR"
+    ],
+    "AugmentDisplayTags": [
+      5
+    ],
+    "AugmentLargeIconPath": "assets/ux/kiwi/augments/icons/upgradedeathdance_large.tex",
+    "AugmentNameId": "Upgrade_DeathDance",
+    "AugmentPlatformId": 2157,
+    "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/upgradedeathdance_small.tex",
+    "AugmentTooltipTra": "Gain <gold>%i:goldCoins% @Gold@</gold>.<br><br>@RangeMeleeSplitTT@ of damage taken is dealt to you over 3 seconds. <br>Heal for <healing>@HealTotal_UpgradeDD_TT@</healing> instantly when scoring a takedown.",
+    "DescriptionTra": "Gain <gold>%i:goldCoins% @Gold@</gold>.<br><br>@RangeMeleeSplitTT@ of damage taken is dealt to you overtime.<br><healing>Heal for more</healing> instantly when scoring a takedown.",
+    "NameTra": "Upgrade Death's Dance",
+    "ResourceResolver": "Maps/ModeSpecificData/Augments/Upgrade_DeathDance/Resources",
+    "RootSpell": "Maps/ModeSpecificData/Augments/Upgrade_DeathDance/Augment_Upgrade_DeathDance",
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/ARAM_PandorasBox": {

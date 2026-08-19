@@ -33,7 +33,7 @@
         "mFormat": "0xb34f999a",
         "mLocKeys": {
           "keyName": "Impure Shots",
-          "keyTooltip": "<font color='#FF9900'>Passive:</font> Miss Fortune deals <magicDamage>@TotalDamageOnHIt@ magic damage</magicDamage> to her target with each attack, cumulatively stacking up to @MaxStacks@ times on the same target.<br><magicDamage>Maximum bonus damage: @MaximumTotalDamageOnHit@</magicDamage><br><br><font color='#FF9900'>Active:</font> Miss Fortune's <attackSpeed>Attack Speed</attackSpeed> is increased by <attackSpeed>@ASMod@%</attackSpeed> for 6 seconds and causes her attacks to apply <keyword>50% Grievous Wounds</keyword> for 3 seconds."
+          "keyTooltip": "<font color='#FF9900'>Passive:</font> Miss Fortune deals <magicDamage>@TotalDamageOnHIt@ magic damage</magicDamage> to her target with each attack, cumulatively stacking up to @MaxStacks@ times on the same target.<br><magicDamage>Maximum bonus damage: @MaximumTotalDamageOnHit@</magicDamage><br><br><font color='#FF9900'>Active:</font> Miss Fortune's <attackSpeed>Attack Speed</attackSpeed> is increased by <attackSpeed>@ASMod@%</attackSpeed> for @ActiveDuration@ seconds and causes her attacks to apply <keyword>50% Grievous Wounds</keyword> for 3 seconds."
         },
         "mObjectName": "Jade_MissFortunePassiveW",
         "~class": "TooltipInstanceBuff"
@@ -1066,58 +1066,6 @@
       },
       "DataValues": [
         {
-          "name": "BaseWaves",
-          "values": [
-            12.0,
-            14.0,
-            16.0,
-            18.0,
-            20.0,
-            22.0,
-            24.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "BaseChannelDuration",
-          "values": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "tADRatio",
-          "values": [
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "APRatio",
-          "values": [
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "name": "BaseDamagePerWave",
           "values": [
             35.0,
@@ -1127,6 +1075,58 @@
             155.0,
             185.0,
             215.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ADRatio",
+          "values": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatio",
+          "values": [
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ChannelDuration",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "TotalWaves",
+          "values": [
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1219,7 +1219,7 @@
           "mLocKeys": {
             "keyName": "Bullet Time",
             "keySummary": "Miss Fortune channels a flurry of bullets into a cone in front of her, dealing large amounts of damage to enemies.",
-            "keyTooltip": "Miss Fortune channels a barrage of bullets into a cone in front of her for 2 seconds, dealing <physicalDamage>@PhysicalDamagePerWave@ physical damage</physicalDamage> per bullet (<physicalDamage>Total Damage: @TotalDamage@</physicalDamage>)."
+            "keyTooltip": "Miss Fortune channels a barrage of bullets into a cone in front of her for @ChannelDuration@ seconds, dealing <physicalDamage>@PhysicalDamagePerWave@ physical damage</physicalDamage> per bullet (<physicalDamage>Total Damage: @TotalDamage@</physicalDamage>)."
           },
           "mObjectName": "Jade_MissFortuneBulletTime",
           "~class": "TooltipInstanceSpell"
@@ -1259,7 +1259,7 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mDataValue": "tADRatio",
+              "mDataValue": "ADRatio",
               "mStat": 2,
               "mStatFormula": 2,
               "~class": "StatByNamedDataValueCalculationPart"
@@ -1271,51 +1271,14 @@
           ],
           "~class": "GameCalculation"
         },
-        "TotalChannelDuration": {
-          "mFormulaParts": [
-            {
-              "mDataValue": "BaseChannelDuration",
-              "~class": "NamedDataValueCalculationPart"
-            }
-          ],
-          "mPrecision": 1,
-          "~class": "GameCalculation"
-        },
         "TotalDamage": {
           "mModifiedGameCalculation": "PhysicalDamagePerWave",
           "mMultiplier": {
-            "mNumber": 8.0,
-            "~class": "NumberCalculationPart"
+            "mDataValue": "TotalWaves",
+            "~class": "NamedDataValueCalculationPart"
           },
           "tooltipOnly": true,
           "~class": "GameCalculationModified"
-        },
-        "TotalPhysicalDamage": {
-          "mModifiedGameCalculation": "TotalWaves",
-          "mMultiplier": {
-            "mSubparts": [
-              {
-                "mDataValue": "tADRatio",
-                "mStat": 2,
-                "~class": "StatByNamedDataValueCalculationPart"
-              },
-              {
-                "mDataValue": "APRatio",
-                "~class": "StatByNamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "SumOfSubPartsCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
-        "TotalWaves": {
-          "mFormulaParts": [
-            {
-              "mDataValue": "BaseWaves",
-              "~class": "NamedDataValueCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
         }
       },
       "mSpellTags": [
@@ -1488,7 +1451,7 @@
         "mFormat": "0xb34f999a",
         "mLocKeys": {
           "keyName": "Strut",
-          "keyTooltip": "Miss Fortune has increased <speed>Movement Speed</speed> until she is hit in combat."
+          "keyTooltip": "Miss Fortune has increased Movement Speed until she is hit in combat."
         },
         "mObjectName": "Jade_MissFortunePassive",
         "~class": "TooltipInstanceBuff"
@@ -1510,6 +1473,47 @@
         ],
         "~class": "SpellAttributeModifiable"
       },
+      "DataValues": [
+        {
+          "name": "MinimumSpeed",
+          "values": [
+            25.0,
+            25.0,
+            25.0,
+            25.0,
+            25.0,
+            25.0,
+            25.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaximumSpeed",
+          "values": [
+            70.0,
+            70.0,
+            70.0,
+            70.0,
+            70.0,
+            70.0,
+            70.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DurationMin",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "SpellEventToAudioEventSuffix": {
         "20": "Play_sfx_MissFortune_MissFortuneStrutStacks_OnBuffCast"
       },
@@ -1549,8 +1553,8 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Strut",
-            "keySummary": "After 5 seconds of not being attacked, Miss Fortune gains an additional <speed>25 Movement Speed</speed>. This bonus increases by 9 each second up to a maximum bonus of 70.",
-            "keyTooltip": "Miss Fortune has increased <speed>Movement Speed</speed> until she is hit in combat."
+            "keySummary": "Miss Fortune has increased Movement Speed until she is hit in combat.",
+            "keyTooltip": "After @DurationMin@ seconds of not being attacked, Miss Fortune gains an additional <speed>@MinimumSpeed@ Movement Speed</speed>. This bonus increases each second up to a maximum bonus of @MaximumSpeed@."
           },
           "mObjectName": "Jade_MissFortunePassive",
           "~class": "TooltipInstanceSpell"
@@ -1601,13 +1605,13 @@
         {
           "name": "BaseDamage",
           "values": [
-            -10.0,
-            25.0,
-            60.0,
-            95.0,
-            130.0,
-            165.0,
-            200.0
+            0.0,
+            35.0,
+            70.0,
+            105.0,
+            140.0,
+            175.0,
+            210.0
           ],
           "~class": "SpellDataValue"
         },
@@ -1857,13 +1861,14 @@
         40.0
       ],
       "manaValues": {
+        "0xa3e0478": 70.0,
         "values": [
           70.0,
           75.0,
           80.0,
           85.0,
           90.0,
-          40.0
+          95.0
         ],
         "~class": "ResourceCostModifiable"
       },
@@ -1896,46 +1901,20 @@
       },
       "DataValues": [
         {
-          "name": "BaseDamagePerSecond",
+          "name": "BaseDamage",
           "values": [
-            0.0,
-            90.0,
-            145.0,
-            200.0,
-            255.0,
-            310.0,
-            330.0
+            35.0,
+            95.0,
+            155.0,
+            215.0,
+            275.0,
+            335.0,
+            395.0
           ],
           "~class": "SpellDataValue"
         },
         {
-          "name": "BaseDuration",
-          "values": [
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "BaseSlowAmount",
-          "values": [
-            0.11999999731779099,
-            0.20000000298023224,
-            0.2800000011920929,
-            0.36000001430511475,
-            0.4399999976158142,
-            0.5199999809265137,
-            0.6000000238418579
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "APRatioPerSecond",
+          "name": "APRatio",
           "values": [
             0.800000011920929,
             0.800000011920929,
@@ -1944,6 +1923,45 @@
             0.800000011920929,
             0.800000011920929,
             0.800000011920929
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MoveSpeedMod",
+          "values": [
+            -0.11999999731779099,
+            -0.20000000298023224,
+            -0.2800000011920929,
+            -0.36000001430511475,
+            -0.4399999976158142,
+            -0.5199999809265137,
+            -0.6000000238418579
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowDuration",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Duration",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
           ],
           "~class": "SpellDataValue"
         },
@@ -1957,32 +1975,6 @@
             4.0,
             4.0,
             4.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "CastDelay",
-          "values": [
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "SlowPer100AP",
-          "values": [
-            0.0006000000284984708,
-            0.0006000000284984708,
-            0.0006000000284984708,
-            0.0006000000284984708,
-            0.0006000000284984708,
-            0.0006000000284984708,
-            0.0006000000284984708
           ],
           "~class": "SpellDataValue"
         }
@@ -2071,15 +2063,19 @@
               "Elements": [
                 {
                   "nameOverride": "Damage Per Second",
-                  "type": "BaseDamagePerSecond",
+                  "type": "BaseDamage",
                   "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "Style": 1,
-                  "multiplier": 100.0,
+                  "multiplier": -100.0,
                   "nameOverride": "Slow",
-                  "type": "BaseSlowAmount",
+                  "type": "MoveSpeedMod",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -2090,7 +2086,7 @@
           "mLocKeys": {
             "keyName": "Make It Rain",
             "keySummary": "Miss Fortune unleashes a flurry of bullets at a location, dealing waves of damage to opponents and slowing them.",
-            "keyTooltip": "Miss Fortune fires hundreds of bullets into the air that rain down at a location after 0.5 seconds, dealing <magicDamage>@TotalDamagePerSecond@ magic damage</magicDamage> over 2 seconds and <status>Slowing</status> enemies hit by @TotalSlowAmount@ for 1 second."
+            "keyTooltip": "Miss Fortune fires hundreds of bullets into the air that rain down, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> over @Duration@ seconds and <status>Slowing</status> enemies by @MoveSpeedMod*-100@%."
           },
           "mObjectName": "Jade_MissFortuneScattershot",
           "~class": "TooltipInstanceSpell"
@@ -2121,35 +2117,17 @@
       "mProjectTargetToCastRange": true,
       "mSpellCalculations": {
         "TotalDamage": {
-          "mModifiedGameCalculation": "TotalDamagePerSecond",
-          "mMultiplier": {
-            "mDataValue": "BaseDuration",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
-        "TotalDamagePerSecond": {
           "mFormulaParts": [
             {
-              "mDataValue": "BaseDamagePerSecond",
+              "mDataValue": "baseDamage",
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mDataValue": "APRatioPerSecond",
+              "mDataValue": "APRatio",
               "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "mSimpleTooltipCalculationDisplay": 6,
-          "~class": "GameCalculation"
-        },
-        "TotalSlowAmount": {
-          "mDisplayAsPercent": true,
-          "mFormulaParts": [
-            {
-              "mDataValue": "BaseSlowAmount",
-              "~class": "NamedDataValueCalculationPart"
-            }
-          ],
           "~class": "GameCalculation"
         }
       },
@@ -2166,14 +2144,14 @@
         80.0
       ],
       "manaValues": {
-        "0xa3e0478": 80.0,
+        "0xa3e0478": 70.0,
         "values": [
+          70.0,
+          75.0,
           80.0,
-          80.0,
-          80.0,
-          80.0,
-          80.0,
-          80.0
+          85.0,
+          90.0,
+          95.0
         ],
         "~class": "ResourceCostModifiable"
       },
@@ -2382,7 +2360,7 @@
           "mLocKeys": {
             "keyName": "Impure Shots",
             "keySummary": "Miss Fortune passively increases damage dealt to a target with each strike.  This ability can be activated to increase Miss Fortune's Attack Speed and cause her attacks to lower healing received by the target.",
-            "keyTooltip": "<font color='#FF9900'>Passive:</font> Miss Fortune deals <magicDamage>@TotalDamageOnHIt@ magic damage</magicDamage> to her target with each attack, cumulatively stacking up to @MaxStacks@ times on the same target.<br><magicDamage>Maximum bonus damage: @MaximumTotalDamageOnHit@</magicDamage><br><br><font color='#FF9900'>Active:</font> Miss Fortune's <attackSpeed>Attack Speed</attackSpeed> is increased by <attackSpeed>@ASMod@%</attackSpeed> for 6 seconds and causes her attacks to apply <keyword>50% Grievous Wounds</keyword> for 3 seconds.",
+            "keyTooltip": "<font color='#FF9900'>Passive:</font> Miss Fortune deals <magicDamage>@TotalDamageOnHIt@ magic damage</magicDamage> to her target with each attack, cumulatively stacking up to @MaxStacks@ times on the same target.<br><magicDamage>Maximum bonus damage: @MaximumTotalDamageOnHit@</magicDamage><br><br><font color='#FF9900'>Active:</font> Miss Fortune's <attackSpeed>Attack Speed</attackSpeed> is increased by <attackSpeed>@ASMod@%</attackSpeed> for @ActiveDuration@ seconds and causes her attacks to apply <keyword>50% Grievous Wounds</keyword> for 3 seconds.",
             "keyTooltipExtendedBelowLine": "<keyword>Grievous Wounds</keyword>: Reduces the effectiveness of Healing and Regeneration effects."
           },
           "mObjectName": "Jade_MissFortuneViciousStrikes",

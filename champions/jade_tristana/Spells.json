@@ -354,20 +354,20 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "ActiveDot",
+          "name": "PassiveAPRatio",
           "values": [
-            14.0,
-            22.0,
-            30.0,
-            38.0,
-            46.0,
-            54.0,
-            62.0
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25
           ],
           "~class": "SpellDataValue"
         },
         {
-          "name": "ActiveDotTotal",
+          "name": "ActiveDot",
           "values": [
             70.0,
             110.0,
@@ -376,6 +376,19 @@
             230.0,
             270.0,
             310.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ActiveAPRatio",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
           ],
           "~class": "SpellDataValue"
         },
@@ -480,7 +493,7 @@
                 },
                 {
                   "nameOverride": "Damage Over Time",
-                  "type": "ActiveDotTotal",
+                  "type": "ActiveDot",
                   "typeIndex": 4,
                   "~class": "TooltipInstanceListElement"
                 },
@@ -496,7 +509,7 @@
           "mLocKeys": {
             "keyName": "Explosive Shot",
             "keySummary": "When Tristana kills a unit, her cannonballs burst into shrapnel, dealing damage to surrounding enemies.  Can be activated to deal damage to target unit over time, and reduce healing received.",
-            "keyTooltip": "<spellPassive>Passive: </spellPassive>Enemies explode when slain by Tristana's basic attacks, dealing <magicDamage>@PassiveDamage@ magic damage</magicDamage> to nearby enemies.<br><br><spellActive>Active: </spellActive>Rends target enemy, applying <keyword>50% Grievous Wounds</keyword> and dealing <magicDamage>@ActiveDamageTTOnly@ magic damage</magicDamage> over 5 seconds.",
+            "keyTooltip": "<spellPassive>Passive: </spellPassive>Enemies explode when slain by Tristana's basic attacks, dealing <magicDamage>@PassiveDamage@ magic damage</magicDamage> to nearby enemies.<br><br><spellActive>Active: </spellActive>Rends target enemy, applying <keyword>50% Grievous Wounds</keyword> and dealing <magicDamage>@ActiveDamageTTOnly@ magic damage</magicDamage> over @GrievousDuration@ seconds.",
             "keyTooltipExtendedBelowLine": "<keyword>Grievous Wounds</keyword>: Reduces the effectiveness of Healing and Regeneration effects."
           },
           "mObjectName": "Jade_TristanaE",
@@ -550,29 +563,23 @@
         "~class": "MissileSpecification"
       },
       "mSpellCalculations": {
-        "0xbac8cb48": {
-          "mFormulaParts": [
-            {
-              "mDataValue": "ActiveDotTotal",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mCoefficient": 1.0,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "tooltipOnly": true,
-          "~class": "GameCalculation"
+        "0x5948c87d": {
+          "mModifiedGameCalculation": "0x8b3077db",
+          "mMultiplier": {
+            "mNumber": 0.20000000298023224,
+            "~class": "NumberCalculationPart"
+          },
+          "~class": "GameCalculationModified"
         },
-        "0xfd502790": {
+        "0x8b3077db": {
           "mFormulaParts": [
             {
               "mDataValue": "ActiveDot",
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.20000000298023224,
-              "~class": "StatByCoefficientCalculationPart"
+              "mDataValue": "ActiveAPRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -584,8 +591,8 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.25,
-              "~class": "StatByCoefficientCalculationPart"
+              "mDataValue": "PassiveAPRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -836,6 +843,10 @@
                   "type": "AttackSpeedMod",
                   "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
                 }
               ],
               "levelCount": 5,
@@ -845,7 +856,7 @@
           "mLocKeys": {
             "keyName": "Rapid Fire",
             "keySummary": "Tristana fires her weapon rapidly, increasing her attack speed for a short time.",
-            "keyTooltip": "<mainText>Increases Tristana's <attackSpeed>Attack Speed by @AttackSpeedMod*100@%</attackSpeed> for 7 seconds.</mainText>"
+            "keyTooltip": "Tristana gains <attackSpeed>@AttackSpeedMod*100@% Attack Speed</attackSpeed> for @BuffDuration@ seconds."
           },
           "mObjectName": "Jade_TristanaQ",
           "~class": "TooltipInstanceSpell"
@@ -879,11 +890,11 @@
         "0xa3e0478": 50.0,
         "values": [
           50.0,
-          50.0,
-          50.0,
-          50.0,
-          50.0,
-          50.0
+          60.0,
+          70.0,
+          80.0,
+          90.0,
+          100.0
         ],
         "~class": "ResourceCostModifiable"
       },
@@ -1230,6 +1241,32 @@
             0.800000011920929
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "Slow",
+          "values": [
+            60.0,
+            60.0,
+            60.0,
+            60.0,
+            60.0,
+            60.0,
+            60.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowDuration",
+          "values": [
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -1327,8 +1364,8 @@
           },
           "mLocKeys": {
             "keyName": "Rocket Jump",
-            "keySummary": "Tristana fires at the ground to propel herself to a distant location, dealing damage and slowing surrounding units for 3 seconds where she lands.",
-            "keyTooltip": "<mainText>Tristana fires at the ground to propel herself to target location, dealing <magicDamage>@LandingDamage@ magic damage</magicDamage> and <status>Slows</status> by 60% for 2.5 seconds when she lands.<br>On a champion kill or assist, the Cooldown is refreshed.</mainText>"
+            "keySummary": "Tristana fires at the ground to propel herself to a distant location, damaging and slowing enemies where she lands.",
+            "keyTooltip": "Tristana fires at the ground to propel herself to target location, dealing <magicDamage>@LandingDamage@ magic damage</magicDamage> and <status>Slows</status> by @Slow@% for @SlowDuration@ seconds when she lands. On a champion kill or assist, Rocket Jump's Cooldown is refreshed."
           },
           "mObjectName": "Jade_TristanaW",
           "~class": "TooltipInstanceSpell"
@@ -1393,7 +1430,7 @@
   "Characters/Jade_Tristana/Spells/Jade_TristanaWAbility/Jade_TristanaW_Slow": {
     "ObjectName": "Jade_TristanaW_Slow",
     "mBuff": {
-      "mDescription": "<titleLeft>Rocket Jump</titleLeft><mainText>This unit has been impacted by Tristana's rocket jump and is slowed by 60%.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "mDescription": "<titleLeft>Rocket Jump</titleLeft><mainText>This unit has been impacted by Tristana's rocket jump and is slowed.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
       "~class": "BuffData"
     },
     "mScriptName": "Jade_TristanaW_Slow",

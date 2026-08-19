@@ -248,32 +248,15 @@
     "mSpell": {
       "DataValues": [
         {
-          "name": "MSPercentAlly",
+          "name": "MSPercent",
           "values": [
-            0.05999999865889549,
-            0.05999999865889549,
-            0.05999999865889549,
-            0.05999999865889549,
-            0.05999999865889549,
-            0.05999999865889549,
-            0.05999999865889549
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "MSPercentSelf",
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "MSBonusMagicDamage",
-          "values": [
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896
+            0.029999999329447746,
+            0.029999999329447746,
+            0.029999999329447746,
+            0.029999999329447746,
+            0.029999999329447746,
+            0.029999999329447746,
+            0.029999999329447746
           ],
           "~class": "SpellDataValue"
         }
@@ -305,8 +288,8 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Tailwind",
-            "keySummary": "Janna and her allied champions gain 3% increased Movement Speed.",
-            "keyTooltip": "Janna and her allied champions gain 3% increased <speed>Movement Speed</speed>."
+            "keySummary": "Janna and her allied champions gain increased Movement Speed.",
+            "keyTooltip": "Janna and her allied champions gain @MSPercent*100@% increased <speed>Movement Speed</speed>."
           },
           "mObjectName": "Jade_JannaTailwindSelf",
           "~class": "TooltipInstanceSpell"
@@ -334,29 +317,6 @@
       "mImgIconName": [
         "assets/ux/jade/s3icons/samesized/janna_tailwind.dds"
       ],
-      "mSpellCalculations": {
-        "BonusDamage": {
-          "mFormulaParts": [
-            {
-              "mDataValue": "MSBonusMagicDamage",
-              "mStat": 7,
-              "mStatFormula": 2,
-              "~class": "StatByNamedDataValueCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "MSToOnHitConversionRate": {
-          "mDisplayAsPercent": true,
-          "mFormulaParts": [
-            {
-              "mDataValue": "MSBonusMagicDamage",
-              "~class": "NamedDataValueCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        }
-      },
       "~class": "SpellDataResource"
     },
     "objectPath": "0xc4962ae3",
@@ -1525,7 +1485,7 @@
           "mLocKeys": {
             "keyName": "Howling Gale",
             "keySummary": "By creating a localized change in pressure and temperature, Janna is able to create a small storm that grows in size with time. She can active the spell again to release the storm. On release this storm will fly towards the direction it was cast in, dealing damage and knocking away any enemies in its path.",
-            "keyTooltip": "Summons a whirlwind, which deals <magicDamage>@MinimumDamage@ magic damage</magicDamage> to all enemies in its path and <status>Knocks</status> them into the air. The whirlwind travels further, deals <magicDamage>@ChargeDamage@ bonus damage</magicDamage>, and <status>Knocks</status> enemies higher, for each second it charges (up to a maximum of 3 seconds).<br><br><recast>Recast</recast> to release the whirlwind early."
+            "keyTooltip": "Summons a whirlwind, which deals <magicDamage>@MinimumDamage@ magic damage</magicDamage> to all enemies in its path and <status>Knocks</status> them into the air. The whirlwind travels further, deals <magicDamage>@ChargeDamage@ bonus damage</magicDamage>, and <status>Knocks</status> enemies higher, for each second it charges (up to a maximum of @MaxDuration@ seconds).<br><br><recast>Recast</recast> to release the whirlwind early."
           },
           "mObjectName": "Jade_JannaHowlingGale",
           "~class": "TooltipInstanceSpell"
@@ -1664,6 +1624,19 @@
             0.3499999940395355
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxChannelDuration",
+          "values": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -1749,7 +1722,7 @@
           "mLocKeys": {
             "keyName": "Monsoon",
             "keySummary": "Janna surrounds herself in a magical storm, throwing enemies back. After the storm has settled, soothing winds heal nearby allies while the ability is active.",
-            "keyTooltip": "Summons forth the might of the wind to <recast>Knockback</recast> surrounding enemies and restores <healing>@TotalHeal@ Health</healing> to nearby allies over 4 seconds."
+            "keyTooltip": "Summons forth the might of the wind to <recast>Knockback</recast> surrounding enemies and restores <healing>@TotalHeal@ Health</healing> to nearby allies over @MaxChannelDuration@ seconds. (Maximum heal: <healing>@TotalHeal@</healing>)"
           },
           "mObjectName": "Jade_JannaReapTheWhirlwind",
           "~class": "TooltipInstanceSpell"
@@ -1761,7 +1734,6 @@
       ],
       "mSpellCalculations": {
         "HealPerSecond": {
-          "mExpandedTooltipCalculationDisplay": 7,
           "mFormulaParts": [
             {
               "mDataValue": "HealBasePerSecond",
@@ -1777,8 +1749,8 @@
         "TotalHeal": {
           "mModifiedGameCalculation": "HealPerSecond",
           "mMultiplier": {
-            "mNumber": 4.0,
-            "~class": "NumberCalculationPart"
+            "mDataValue": "MaxChannelDuration",
+            "~class": "NamedDataValueCalculationPart"
           },
           "tooltipOnly": true,
           "~class": "GameCalculationModified"

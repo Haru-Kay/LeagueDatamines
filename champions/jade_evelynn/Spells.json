@@ -847,32 +847,28 @@
     "mSpell": {
       "DataValues": [
         {
-          "name": "TOOLTIP_ONLY_VARS",
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "DemonShadeTimer",
+          "name": "StealthLockoutTimer",
           "values": [
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0
           ],
           "~class": "SpellDataValue"
         },
         {
-          "name": "StealthDropTimer",
+          "name": "ManaRegenRatio",
           "values": [
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929
           ],
           "~class": "SpellDataValue"
         }
@@ -883,7 +879,7 @@
           "mLocKeys": {
             "keyName": "Shadow Walk",
             "keySummary": "When out of combat, Evelynn enters Camoflauge only being able to be seen by nearby enemy champions or true sight. While stealthed, she rapidly regenerates Mana.",
-            "keyTooltip": "Evelynn stealths into the shadows, gaining <keywordStealth>Camouflage</keywordStealth> and regenerates <scaleMana>1% max Mana</scaleMana> every second.<br><br>Casting spells, taking damage or dealing damage removes <keywordStealth>Camouflage</keywordStealth> for 6 seconds.",
+            "keyTooltip": "Evelynn stealths into the shadows, gaining <keywordStealth>Camouflage</keywordStealth> and regenerates <scaleMana>@ManaRegenPerSecond@ Mana</scaleMana> every second.<br><br>Casting spells, taking damage, or dealing damage removes <keywordStealth>Camouflage</keywordStealth> for @StealthLockoutTimer@ seconds.",
             "keyTooltipExtended": "{{Spell_EvelynnPassive_Jade_Tooltip}}<br><br><rules>{{Reminder_Camouflage}}</rules>"
           },
           "mObjectName": "Jade_EvelynnPassive",
@@ -913,30 +909,17 @@
         "assets/ux/jade/s3icons/samesized/evelynn_shadowwalk.dds"
       ],
       "mSpellCalculations": {
-        "HealPerSecondTOOLTIP": {
+        "0x1200d33e": {
           "mFormulaParts": [
             {
-              "mEndValue": 150.0,
-              "mStartValue": 15.0,
-              "~class": "ByCharLevelInterpolationCalculationPart"
+              "DataValue": "ManaRegenRatio",
+              "~class": "AbilityResourceByNamedDataValueCalculationPart"
             }
           ],
-          "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculation"
-        },
-        "HealingThresholdTOOLTIP": {
-          "mFormulaParts": [
-            {
-              "mInitialBonusPerLevel": 20.0,
-              "mLevel1Value": 250.0,
-              "~class": "ByCharLevelBreakpointsCalculationPart"
-            },
-            {
-              "mCoefficient": 2.5,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 6,
+          "mMultiplier": {
+            "mNumber": 0.009999999776482582,
+            "~class": "NumberCalculationPart"
+          },
           "~class": "GameCalculation"
         }
       },
@@ -996,26 +979,13 @@
         {
           "name": "BaseDamage",
           "values": [
-            20.0,
+            25.0,
             40.0,
-            60.0,
-            80.0,
+            55.0,
+            70.0,
+            85.0,
             100.0,
-            120.0,
-            140.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "APRatio",
-          "values": [
-            0.44999998807907104,
-            0.44999998807907104,
-            0.44999998807907104,
-            0.44999998807907104,
-            0.44999998807907104,
-            0.44999998807907104,
-            0.44999998807907104
+            115.0
           ],
           "~class": "SpellDataValue"
         },
@@ -1029,6 +999,19 @@
             0.5,
             0.5,
             0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatio",
+          "values": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
           ],
           "~class": "SpellDataValue"
         }
@@ -1117,121 +1100,6 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.25,
-      "mCoefficient2": 0.25,
-      "mEffectAmount": [
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            30.0,
-            30.0,
-            30.0,
-            30.0,
-            30.0,
-            30.0,
-            30.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            60.0,
-            60.0,
-            60.0,
-            60.0,
-            60.0,
-            60.0,
-            60.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.0,
-            15.0,
-            25.0,
-            35.0,
-            45.0,
-            55.0,
-            65.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            20.0,
-            25.0,
-            30.0,
-            35.0,
-            40.0,
-            45.0,
-            50.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            30.0,
-            30.0,
-            30.0,
-            30.0,
-            30.0,
-            30.0,
-            30.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            50.0,
-            50.0,
-            50.0,
-            50.0,
-            50.0,
-            50.0,
-            50.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            -0.25,
-            -0.25,
-            -0.25,
-            -0.25,
-            -0.25,
-            -0.25,
-            -0.25
-          ],
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         1,
         1,
@@ -1293,13 +1161,13 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mDataValue": "APRatio",
-              "~class": "StatByNamedDataValueCalculationPart"
-            },
-            {
               "mDataValue": "BonusADRatio",
               "mStat": 2,
               "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
               "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
@@ -1487,8 +1355,8 @@
         "mMissileWidth": 90.0,
         "movementComponent": {
           "mAcceleration": -4200.0,
-          "mInitialSpeed": 3000.0,
-          "mMaxSpeed": 3000.0,
+          "mInitialSpeed": 2000.0,
+          "mMaxSpeed": 2000.0,
           "mMinSpeed": 800.0,
           "mProjectTargetToCastRange": true,
           "mStartBoneName": "C_Buffbone_Glb_Layout_Loc",
@@ -1505,7 +1373,7 @@
       "mTargetingTypeData": {
         "~class": "TargetOrLocation"
       },
-      "missileSpeed": 3000.0,
+      "missileSpeed": 2000.0,
       "spellCastTime": 0.25,
       "spellTotalTime": 1.0,
       "~class": "SpellDataResource"
@@ -1713,127 +1581,13 @@
           "mLocKeys": {
             "keyName": "Agony's Embrace",
             "keySummary": "Evelynn summons spikes from the ground to deal damage and slow enemies in the area. She then gains a shield based on how many enemy champions were hit.",
-            "keyTooltip": "Evelynn impales all enemies in the targeted area, dealing <magicDamage>@TotalDamage@% current Health magic damage</magicDamage> and <status>Slowing</status> them by @Slow*100@% for @SlowDuration@ seconds.<br><br>Evelynn siphons their pain, gaining a <shield>@ShieldAmount@ Health Shield</shield> for each enemy champion hit which lasts up to 6 seconds."
+            "keyTooltip": "Evelynn impales all enemies in the targeted area, dealing <magicDamage>@TotalDamage@% current Health magic damage</magicDamage> and <status>Slowing</status> them by @Slow*100@% for @SlowDuration@ seconds.<br><br>Evelynn siphons their pain, gaining a <shield>@ShieldAmount@ Health Shield</shield> for each enemy champion hit which lasts up to @ShieldDuration@ seconds."
           },
           "mObjectName": "Jade_EvelynnR",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient2": 0.029999999329447746,
-      "mEffectAmount": [
-        {
-          "value": [
-            0.0,
-            125.0,
-            250.0,
-            375.0,
-            500.0,
-            650.0,
-            775.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            1.399999976158142,
-            1.399999976158142,
-            1.399999976158142,
-            1.399999976158142,
-            1.399999976158142,
-            1.399999976158142,
-            1.399999976158142
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            150.0,
-            150.0,
-            225.0,
-            300.0,
-            300.0,
-            300.0,
-            300.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            5.0,
-            5.0,
-            4.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            700.0,
-            700.0,
-            700.0,
-            700.0,
-            700.0,
-            700.0,
-            700.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            30.0,
-            30.0,
-            45.0,
-            60.0,
-            60.0,
-            60.0,
-            60.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         0,
         0,
@@ -2070,15 +1824,15 @@
     "mScriptName": "Jade_EvelynnW",
     "mSpell": {
       "Cooldown": {
-        "0xa3e0478": 15.0,
+        "0xa3e0478": 20.0,
         "values": [
-          15.0,
-          15.0,
-          15.0,
-          15.0,
-          15.0,
-          15.0,
-          15.0
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0
         ],
         "~class": "SpellAttributeModifiable"
       },
@@ -2222,7 +1976,6 @@
             }
           },
           "mLocKeys": {
-            "keyCost": "No Cost",
             "keyName": "Dark Frenzy",
             "keySummary": "Evelynn passively increases her Movement Speed when hitting enemy champions with her spells. Upon activation, Evelynn breaks free from slows affecting her and gains a massive Movement Speed boost for a short duration.",
             "keyTooltip": "<spellPassive>Passive:</spellPassive> Evelynn's spell hits on enemy champions grant her <speed>@PassiveMS@ Movement Speed</speed> for @PassiveDuration@ seconds (effect stacks up to @MaxPassiveStacks@ times).<br><br><spellActive>Active:</spellActive> Evelynn removes all slows affecting her and gains <speed>@ActiveMS*100@% Movement Speed</speed> for @ActiveDuration@ seconds.<br><br>Champion takedowns refresh <spellName>Dark Frenzy's</spellName> cooldown."
@@ -2232,130 +1985,6 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.6000000238418579,
-      "mCoefficient2": 0.6000000238418579,
-      "mEffectAmount": [
-        {
-          "value": [
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.75,
-            1.25,
-            1.5,
-            1.75,
-            2.0,
-            2.25,
-            2.5
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            -0.44999998807907104,
-            -0.44999998807907104,
-            -0.44999998807907104,
-            -0.44999998807907104,
-            -0.44999998807907104,
-            -0.44999998807907104,
-            -0.44999998807907104
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            16.0,
-            15.0,
-            14.0,
-            13.0,
-            12.0,
-            11.0,
-            10.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            200.0,
-            250.0,
-            300.0,
-            350.0,
-            400.0,
-            450.0,
-            500.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.32499998807907104,
-            0.3499999940395355,
-            0.375,
-            0.4000000059604645,
-            0.42500001192092896,
-            0.44999998807907104,
-            0.4749999940395355
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0
-          ],
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         1,
         1,
@@ -2395,6 +2024,18 @@
       ],
       "mTargetingTypeData": {
         "~class": "Self"
+      },
+      "manaValues": {
+        "0xa3e0478": 40.0,
+        "values": [
+          40.0,
+          40.0,
+          40.0,
+          40.0,
+          40.0,
+          40.0
+        ],
+        "~class": "ResourceCostModifiable"
       },
       "missileSpeed": 2400.0,
       "selectionPriority": 1,

@@ -383,6 +383,32 @@
       },
       "DataValues": [
         {
+          "name": "Duration",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "TickRate",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
           "name": "MaxNumTicks",
           "values": [
             6.0,
@@ -422,50 +448,42 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "Duration",
+          "name": "MoveSpeedPenalty",
           "values": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0
           ],
           "~class": "SpellDataValue"
         },
         {
-          "name": "CritBaseMult",
+          "name": "CritDamageBonus",
           "values": [
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
           ],
           "~class": "SpellDataValue"
         },
         {
-          "name": "MonsterMod",
+          "name": "MinionMonsterDamageMod",
           "values": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75
           ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "MonsterBonus",
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "RefundRate",
           "~class": "SpellDataValue"
         }
       ],
@@ -566,8 +584,8 @@
             "keyCost": "No Cost",
             "keyName": "Judgment",
             "keySummary": "Garen rapidly spins his sword around his body, dealing physical damage to nearby enemies.",
-            "keyTooltip": "Garen rapidly spins his sword around his body for @Duration@ seconds, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> to nearby enemies every second. Garen can move through units while spinning but moves 20% slower when travelling directly through units.",
-            "keyTooltipExtended": "Garen rapidly spins his sword around his body for @Duration@ seconds, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> to nearby enemies every second. Garen can move through units while spinning but moves 20% slower when travelling directly through units.<br><br><spellName>Judgment</spellName> can critically strike dealing bonus damage.<br><spellName>Judgment</spellName> deals 25% less damage to minions and monsters."
+            "keyTooltip": "Garen rapidly spins his sword around his body for @Duration@ seconds, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> to nearby enemies every second. (Maximum damage: <physicalDamage>@MaximumDamageTooltip@</physicalDamage>)",
+            "keyTooltipExtendedBelowLine": "<rules>Garen can move through units while spinning but moves @MoveSpeedPenalty@% slower when doing so.<br><spellName>Judgment</spellName> can critically strike for @BonusDamageOnCrit@ bonus damage per second.<br><spellName>Judgment</spellName> deals @MinionMonsterDamageMod*100@% damage to minions and monsters.</rules>"
           },
           "mObjectName": "Jade_GarenE",
           "~class": "TooltipInstanceSpell"
@@ -598,13 +616,37 @@
       ],
       "mLineWidth": 160.0,
       "mSpellCalculations": {
-        "NumberOfStrikes": {
+        "0x442d07f7": {
+          "mModifiedGameCalculation": "TotalDamage",
+          "mMultiplier": {
+            "mDataValue": "duration",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "~class": "GameCalculationModified"
+        },
+        "0xc6c2d6f4": {
           "mFormulaParts": [
             {
-              "mDataValue": "MaxNumTicks",
-              "~class": "NamedDataValueCalculationPart"
+              "mDataValue": "BaseADRatioPerSecond",
+              "mStat": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
+          "mMultiplier": {
+            "mSubparts": [
+              {
+                "mCoefficient": 1.0,
+                "mStat": 9,
+                "mStatFormula": 2,
+                "~class": "StatByCoefficientCalculationPart"
+              },
+              {
+                "mDataValue": "CritDamageBonus",
+                "~class": "NamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "SumOfSubPartsCalculationPart"
+          },
           "~class": "GameCalculation"
         },
         "TotalDamage": {
@@ -620,15 +662,6 @@
             }
           ],
           "~class": "GameCalculation"
-        },
-        "TotalDamageCrit": {
-          "mModifiedGameCalculation": "TotalDamage",
-          "mMultiplier": {
-            "mDataValue": "CritBaseMult",
-            "mStat": 9,
-            "~class": "StatByNamedDataValueCalculationPart"
-          },
-          "~class": "GameCalculationModified"
         }
       },
       "mTargetingTypeData": {
@@ -831,7 +864,7 @@
           "mLocKeys": {
             "keyName": "Perseverance",
             "keySummary": "If Garen has not recently been struck by damage or enemy abilities, he regenerates a percentage of his total health each second.",
-            "keyTooltip": "If Garen has not been struck by damage or enemy abilities for the last @DamageTimer@ seconds, Garen <healing>Regenerates @RegenPerSecond@</healing> each second. Minion damage does not stop <spellName>Perserverance</spellName>. <br><br><healing>Bonus Health Regen per 5 seconds: @RegenPerFive@</healing>"
+            "keyTooltip": "If Garen has not been struck by damage or enemy abilities for the last @DamageTimer@ seconds, Garen <healing>Regenerates @RegenPerSecond@</healing> each second. Minion damage does not stop <spellName>Perserverance</spellName>. "
           },
           "mObjectName": "Jade_GarenPassive",
           "~class": "TooltipInstanceSpell"
@@ -842,14 +875,6 @@
         "assets/ux/jade/s3icons/samesized/garen_perseverance.dds"
       ],
       "mSpellCalculations": {
-        "0xe6c493e1": {
-          "mModifiedGameCalculation": "RegenPerSecond",
-          "mMultiplier": {
-            "mNumber": 5.0,
-            "~class": "NumberCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
         "0xee20c691": {
           "mFormulaParts": [
             {
@@ -1692,7 +1717,7 @@
             "keyCost": "No Cost",
             "keyName": "Courage",
             "keySummary": "Garen performs a dance of death with his sword, dealing damage around him for the duration.",
-            "keyTooltip": "<spellPassive>Passive:</spellPassive> Garen's gains an additional 20% value from bonus <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR>.<br><br><spellActive>Active: </spellActive>Garen gains a defensive shield for @BuffDuration@ seconds, reducing incoming damage by @DamageReduction*100@% and granting 30% Crowd Control Reduction."
+            "keyTooltip": "<spellPassive>Passive:</spellPassive> Garen's gains an additional @ResistanceScaling*100@% value from bonus <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR>.<br><br><spellActive>Active: </spellActive>Garen gains a defensive shield for @BuffDuration@ seconds, reducing incoming damage by @DamageReduction*100@% and granting @TenacityBonus*100@% Crowd Control Reduction."
           },
           "mObjectName": "Jade_GarenW",
           "~class": "TooltipInstanceSpell"

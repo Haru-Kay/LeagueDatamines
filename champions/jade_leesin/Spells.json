@@ -1409,7 +1409,6 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 1.0,
       "mFloatVarsDecimals": [
         0,
         0,
@@ -1502,7 +1501,20 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "FirstHitEnergyMult",
+          "name": "EnergyPerHit",
+          "values": [
+            15.0,
+            15.0,
+            15.0,
+            15.0,
+            15.0,
+            15.0,
+            15.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "TotalHits",
           "values": [
             2.0,
             2.0,
@@ -1542,8 +1554,8 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Flurry",
-            "keySummary": "After Lee Sin uses an ability, his next 2 basic attacks gain 40% Attack Speed and return 15 Energy each.",
-            "keyTooltip": "After Lee Sin uses an ability, his next 2 basic attacks gain <attackSpeed>40% Attack Speed</attackSpeed> and return 15 Energy each."
+            "keySummary": "After Lee Sin uses an ability, his next basic attacks gain Attack Speed and return Energy.",
+            "keyTooltip": "After Lee Sin uses an ability, his next @TotalHits@ basic attacks gain <attackSpeed>@PassiveAS@% Attack Speed</attackSpeed> and return @EnergyPerHit@ Energy each."
           },
           "mObjectName": "Jade_LeeSinPassive",
           "~class": "TooltipInstanceSpell"
@@ -1553,39 +1565,6 @@
       "mImgIconName": [
         "assets/ux/jade/s3icons/samesized/leesinpassive.dds"
       ],
-      "mSpellCalculations": {
-        "EnergyReturn": {
-          "mFormulaParts": [
-            {
-              "mBreakpoints": [
-                {
-                  "mAdditionalBonusAtThisLevel": 5.0,
-                  "mLevel": 7,
-                  "~class": "Breakpoint"
-                },
-                {
-                  "mAdditionalBonusAtThisLevel": 5.0,
-                  "mLevel": 13,
-                  "~class": "Breakpoint"
-                }
-              ],
-              "mLevel1Value": 10.0,
-              "~class": "ByCharLevelBreakpointsCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 6,
-          "~class": "GameCalculation"
-        },
-        "TTFirstHitEnergy": {
-          "mModifiedGameCalculation": "EnergyReturn",
-          "mMultiplier": {
-            "mDataValue": "FirstHitEnergyMult",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          "mSimpleTooltipCalculationDisplay": 6,
-          "~class": "GameCalculationModified"
-        }
-      },
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jade_LeeSin/Spells/Jade_LeeSinPassiveAbility/Jade_LeeSinPassive",
@@ -1611,7 +1590,7 @@
           "~class": "PersistentEffectConditionData"
         }
       ],
-      "mDescription": "<titleLeft>Flurry</titleLeft><mainText>Lee Sin has increased Attack Speed and his attacks restore 15 energy.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "mDescription": "<titleLeft>Flurry</titleLeft><mainText>Lee Sin has increased Attack Speed and his attacks restore energy.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
       "~class": "BuffData"
     },
     "mScriptName": "Jade_LeeSinPassive_Cosmetic",
@@ -1643,35 +1622,22 @@
     },
     "mScriptName": "Jade_LeeSinQOne",
     "mSpell": {
-      "0xf9c2333e": {
-        "cherry": {
-          "value": [
-            9.5,
-            8.5,
-            7.5,
-            6.5,
-            5.5,
-            4.5,
-            3.5
-          ],
-          "~class": "SpellEffectAmount"
-        }
-      },
       "Cooldown": {
+        "0xa3e0478": 12.0,
         "values": [
-          11.0,
+          12.0,
           11.0,
           10.0,
           9.0,
           8.0,
           7.0,
-          7.0
+          6.0
         ],
         "~class": "SpellAttributeModifiable"
       },
       "DataValues": [
         {
-          "name": "Q1BaseDamage",
+          "name": "BaseDamage",
           "values": [
             20.0,
             50.0,
@@ -1684,20 +1650,7 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "Q2BaseDamage",
-          "values": [
-            20.0,
-            50.0,
-            80.0,
-            110.0,
-            140.0,
-            170.0,
-            200.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "Q2ADRatio",
+          "name": "ADRatio",
           "values": [
             0.8999999761581421,
             0.8999999761581421,
@@ -1706,19 +1659,6 @@
             0.8999999761581421,
             0.8999999761581421,
             0.8999999761581421
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "Q2MaxMissingHealthMod",
-          "values": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
           ],
           "~class": "SpellDataValue"
         },
@@ -1736,19 +1676,6 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "CherryBonusHaste",
-          "values": [
-            30.0,
-            30.0,
-            30.0,
-            30.0,
-            30.0,
-            30.0,
-            30.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "name": "DashSpeed",
           "values": [
             1350.0,
@@ -1758,6 +1685,32 @@
             1350.0,
             1350.0,
             1350.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MissingHealthDamage",
+          "values": [
+            0.07999999821186066,
+            0.07999999821186066,
+            0.07999999821186066,
+            0.07999999821186066,
+            0.07999999821186066,
+            0.07999999821186066,
+            0.07999999821186066
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxMonsterHealthDamage",
+          "values": [
+            400.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1861,15 +1814,9 @@
             "LevelUp": {
               "Elements": [
                 {
-                  "nameOverride": "Sonic Wave Damage",
-                  "type": "Q1BaseDamage",
+                  "nameOverride": "Damage",
+                  "type": "BaseDamage",
                   "typeIndex": 1,
-                  "~class": "TooltipInstanceListElement"
-                },
-                {
-                  "nameOverride": "Resonating Strike Minimum Base Damage",
-                  "type": "Q2BaseDamage",
-                  "typeIndex": 2,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -1883,15 +1830,15 @@
           },
           "mLocKeys": {
             "keyName": "Sonic Wave / Resonating Strike",
-            "keySummary": "Sonic Wave: Lee Sin projects a discordant wave of sound to locate his enemies, dealing physical damage to the first enemy it encounters. If Sonic Wave hits, Lee Sin can cast Resonating Strike for the next 3 seconds.<br>Resonating Strike: Lee Sin dashes to the enemy hit by Sonic Wave, dealing physical damage plus 8% of their missing health.",
-            "keyTooltip": "<spellName>Sonic Wave: </spellName>Lee Sin projects a discordant wave of sound to locate his enemies, dealing <physicalDamage>@InitialDamage@ physical damage</physicalDamage> to the first enemy it encounters. If <spellName>Sonic Wave</spellName> hits, Lee Sin can cast <spellName>Resonating Strike</spellName> for the next 3 seconds.<br><br><spellName>Resonating Strike: </spellName>Lee Sin dashes to the enemy hit by Sonic Wave, dealing <physicalDamage>@RecastDamage@ physical damage</physicalDamage> plus 8% of their missing Health."
+            "keySummary": "Sonic Wave: Lee Sin projects a discordant wave of sound to locate his enemies, damaging the first enemy it encounters. If Sonic Wave hits, Lee Sin can cast Resonating Strike.<br><br>Resonating Strike: Lee Sin dashes to the enemy hit by Sonic Wave, dealing more damage plus a portion of their missing health.",
+            "keyTooltip": "<spellName>Sonic Wave: </spellName>Lee Sin projects a discordant wave of sound to locate his enemies, dealing <physicalDamage>@InitialDamage@ physical damage</physicalDamage> to the first enemy it encounters. If <spellName>Sonic Wave</spellName> hits, Lee Sin can cast <spellName>Resonating Strike</spellName> for the next 3 seconds.<br><br><spellName>Resonating Strike: </spellName>Lee Sin dashes to the enemy hit by Sonic Wave, dealing <physicalDamage>@RecastDamage@ physical damage</physicalDamage> plus @MissingHealthDamage*100@% of their missing Health.",
+            "keyTooltipExtendedBelowLine": "<rules>Missing health damage to monsters is capped at @MaxMonsterHealthDamage@.</rules>"
           },
           "mObjectName": "Jade_LeeSinQOne",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient2": 2.0,
       "mFloatVarsDecimals": [
         0,
         2,
@@ -1944,46 +1891,34 @@
         "~class": "MissileSpecification"
       },
       "mSpellCalculations": {
-        "EmpoweredDamage": {
-          "mModifiedGameCalculation": "RecastDamage",
-          "mMultiplier": {
-            "mNumber": 2.0,
-            "~class": "NumberCalculationPart"
-          },
-          "mSimpleTooltipCalculationDisplay": 6,
-          "tooltipOnly": true,
-          "~class": "GameCalculationModified"
-        },
         "InitialDamage": {
           "mFormulaParts": [
             {
-              "mDataValue": "Q1BaseDamage",
+              "mDataValue": "baseDamage",
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.8999999761581421,
-              "mStat": 2,
-              "mStatFormula": 2,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 6,
-          "~class": "GameCalculation"
-        },
-        "RecastDamage": {
-          "mFormulaParts": [
-            {
-              "mDataValue": "Q2BaseDamage",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mDataValue": "Q2ADRatio",
+              "mDataValue": "ADRatio",
               "mStat": 2,
               "mStatFormula": 2,
               "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
-          "mSimpleTooltipCalculationDisplay": 6,
+          "~class": "GameCalculation"
+        },
+        "RecastDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "ADRatio",
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
           "~class": "GameCalculation"
         }
       },
@@ -2321,15 +2256,15 @@
       },
       "DataValues": [
         {
-          "name": "LifestealAndSpellVamp",
+          "name": "DashSpeed",
           "values": [
-            1.0,
-            5.0,
-            9.0,
-            13.0,
-            17.0,
-            21.0,
-            25.0
+            1350.0,
+            1350.0,
+            1350.0,
+            1350.0,
+            1350.0,
+            1350.0,
+            1350.0
           ],
           "~class": "SpellDataValue"
         },
@@ -2349,26 +2284,13 @@
         {
           "name": "ShieldDuration",
           "values": [
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "DashSpeed",
-          "values": [
-            1350.0,
-            1350.0,
-            1350.0,
-            1350.0,
-            1350.0,
-            1350.0,
-            1350.0
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
           ],
           "~class": "SpellDataValue"
         },
@@ -2386,15 +2308,15 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "W1CooldownRecovered",
+          "name": "LifestealAndSpellVamp",
           "values": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
+            1.0,
+            5.0,
+            9.0,
+            13.0,
+            17.0,
+            21.0,
+            25.0
           ],
           "~class": "SpellDataValue"
         },
@@ -2514,15 +2436,14 @@
           },
           "mLocKeys": {
             "keyName": "Safeguard / Iron Will",
-            "keySummary": "Safeguard: Lee Sin rushes towards a target ally, shielding them both from damage. After using Safeguard, Lee Sin can cast Iron Will for the next 3 seconds.<br>Iron Will: Lee Sin's intense training allows him to thrive in battle. For 4 seconds, Lee Sin gains Life Steal, Spell Vamp, and Armor.",
-            "keyTooltip": "<spellName>Safeguard: </spellName>Lee Sin rushes towards a target ally, <shield>shielding</shield> them both for @ShieldAmount@ damage over the next 5 seconds. After using <spellName>Safeguard</spellName>, Lee Sin can cast <spellName>Iron Will</spellName> for the next 3 seconds.<br><br><spellName>Iron Will: </spellName>Lee Sin's intense training allows him to thrive in battle. For 5 seconds, Lee Sin gains @LifestealAndSpellVamp@% Life Steal, Spell Vamp, and <scaleArmor>@ArmorBonus@ Armor</scaleArmor>."
+            "keySummary": "Safeguard: Lee Sin rushes towards a target ally, shielding them both from damage. After using Safeguard, Lee Sin can cast Iron Will.<br><br>Iron Will: Lee Sin's intense training allows him to thrive in battle, gaining Life Steal, Spell Vamp, and Armor.",
+            "keyTooltip": "<spellName>Safeguard: </spellName>Lee Sin rushes towards a target ally, <shield>shielding</shield> them both for @ShieldAmount@ damage over the next @ShieldDuration@ seconds. After using <spellName>Safeguard</spellName>, Lee Sin can cast <spellName>Iron Will</spellName> for the next @W1ReactivateTime@ seconds.<br><br><spellName>Iron Will: </spellName>Lee Sin's intense training allows him to thrive in battle. For @LifestealAndSpellVampTime@ seconds, Lee Sin gains @LifestealAndSpellVamp@% Life Steal, Spell Vamp, and <scaleArmor>@ArmorBonus@ Armor</scaleArmor>."
           },
           "mObjectName": "Jade_LeeSinWOne",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.800000011920929,
       "mExcludedUnitTags": {
         "mObjectTagList": [
           "structure",
