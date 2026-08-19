@@ -1,926 +1,4 @@
 {
-  "0x30c4f72d": {
-    "ObjectName": "TeemoWPassive",
-    "mScriptName": "TeemoWPassive",
-    "objectPath": "0x30c4f72d",
-    "~class": "SpellObject"
-  },
-  "0x38aed395": {
-    "ObjectName": "TeemoEShared",
-    "mScriptName": "TeemoEShared",
-    "objectPath": "0x38aed395",
-    "~class": "SpellObject"
-  },
-  "0x51a365a3": {
-    "ObjectName": "TeemoRDot",
-    "mBuff": {
-      "PersistentEffectConditions": [
-        {
-          "PersistentVfxs": [
-            {
-              "boneName": "C_BUFFBONE_GLB_HEAD_LOC",
-              "effectKey": "0x6ecc5fac",
-              "~class": "PersistentVfxData"
-            }
-          ],
-          "SourceCondition": {
-            "~class": "IsLocalPlayerBoolDriver"
-          },
-          "~class": "PersistentEffectConditionData"
-        },
-        {
-          "PersistentVfxs": [
-            {
-              "boneName": "C_BUFFBONE_GLB_HEAD_LOC",
-              "effectKey": "0x5507ff8c",
-              "~class": "PersistentVfxData"
-            }
-          ],
-          "SourceCondition": {
-            "mDriver": {
-              "~class": "IsLocalPlayerBoolDriver"
-            },
-            "~class": "NotMaterialDriver"
-          },
-          "~class": "PersistentEffectConditionData"
-        },
-        {
-          "PersistentVfxs": [
-            {
-              "boneName": "C_BUFFBONE_GLB_HEAD_LOC",
-              "effectKey": "Teemo_R_Debuff",
-              "~class": "PersistentVfxData"
-            }
-          ],
-          "~class": "PersistentEffectConditionData"
-        }
-      ],
-      "mDescription": "<titleLeft>Noxious Trap</titleLeft><mainText>This unit was poisoned by a mushroom and is taking damage.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
-      "~class": "BuffData"
-    },
-    "mScriptName": "TeemoRDot",
-    "mSpell": {
-      "DataValues": [
-        {
-          "name": "VisionRadius",
-          "values": [
-            175.0,
-            175.0,
-            175.0,
-            175.0,
-            175.0,
-            175.0,
-            175.0
-          ],
-          "~class": "SpellDataValue"
-        }
-      ],
-      "SpellEventToAudioEventSuffix": {
-        "18": "Play_sfx_Teemo_TeemoRDot_OnBuffActivate"
-      },
-      "mResourceResolvers": [
-        "Characters/Teemo/Skins/Skin0/Resources"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x51a365a3",
-    "~class": "SpellObject"
-  },
-  "0x5a629d30": {
-    "ObjectName": "TeemoPassive",
-    "mBuff": {
-      "mDescription": "<titleLeft>Guerrilla Warfare</titleLeft><mainText>If Teemo stands still for 1.5 seconds without being damaged, he becomes <font color='#91d7ee'>Invisible</font>. While in a brush he can trigger and maintain <font color='#91d7ee'>Invisibility</font> while moving.<br><br>Upon breaking Guerrilla Warfare by attacking or moving (out of brush), Teemo gains <font color='#ffffff'>@f1@%</font> Attack Speed for 3 seconds.<br><br><u><font color='#91d7ee' size='16'>Stealth - Invisible</font></u><font color='#b3b3b3' size='16'>: Teemo can only be revealed by nearby enemy Turrets or <font color='#ee91d7' size='16'>True Sight</font></font>.</mainText>",
-      "~class": "BuffData"
-    },
-    "mScriptName": "TeemoPassive",
-    "mSpell": {
-      "DataValues": [
-        {
-          "name": "AttackSpeedDuration",
-          "values": [
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "StealthCooldownDuration",
-          "values": [
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5
-          ],
-          "~class": "SpellDataValue"
-        }
-      ],
-      "castRange": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "castRangeValues": {
-        "0xa3e0478": 0.0,
-        "values": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "mClientData": {
-        "mTooltipData": {
-          "mFormat": "0x476ec0b8",
-          "mLocKeys": {
-            "keyName": "Guerrilla Warfare",
-            "keySummary": "If Teemo stands still and takes no actions for a short duration, he becomes Invisible indefinitely. If he's in brush, Teemo can enter and maintain his Invisibility while moving. After leaving Invisibility, Teemo gains the Element of Surprise, increasing his Attack Speed for a few seconds.",
-            "keyTooltip": "If Teemo stands still for @StealthCooldownDuration@ seconds without being damaged, he becomes <keywordStealth>Invisible</keywordStealth> until he moves. While in a brush, he can maintain <keywordStealth>Invisibility</keywordStealth> while moving.<br><br>Upon exiting this <keywordStealth>Invisibility</keywordStealth>, Teemo gains <attackSpeed>@BonusAttackSpeed@ Attack Speed</attackSpeed> for @AttackSpeedDuration@ seconds.",
-            "keyTooltipExtended": "{{Buff_TeemoPassive_Tooltip}}<br><br><rules>{{Reminder_Invisibility}}</rules>"
-          },
-          "mObjectName": "TeemoPassive",
-          "~class": "TooltipInstanceSpell"
-        },
-        "~class": "SpellDataResourceClient"
-      },
-      "mImgIconName": [
-        "ASSETS/Characters/Teemo/HUD/Icons2D/TeemoPassive.dds"
-      ],
-      "mSpellCalculations": {
-        "BonusAttackSpeed": {
-          "mDisplayAsPercent": true,
-          "mFormulaParts": [
-            {
-              "mBreakpoints": [
-                {
-                  "mAdditionalBonusAtThisLevel": 0.20000000298023224,
-                  "mLevel": 5,
-                  "~class": "Breakpoint"
-                },
-                {
-                  "mAdditionalBonusAtThisLevel": 0.20000000298023224,
-                  "mLevel": 10,
-                  "~class": "Breakpoint"
-                },
-                {
-                  "mAdditionalBonusAtThisLevel": 0.20000000298023224,
-                  "mLevel": 15,
-                  "~class": "Breakpoint"
-                }
-              ],
-              "mLevel1Value": 0.20000000298023224,
-              "~class": "ByCharLevelBreakpointsCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        }
-      },
-      "mSpellTags": [
-        "Trait_Invisibility"
-      ],
-      "mTargetingTypeData": {
-        "~class": "Self"
-      },
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x5a629d30",
-    "~class": "SpellObject"
-  },
-  "0x7daaa1b4": {
-    "ObjectName": "TeemoEAttack",
-    "mBuff": {
-      "mDescription": "<titleLeft>Toxic Attack</titleLeft><mainText>Teemo's attacks poison the target, causing them to take damage over time.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
-      "~class": "BuffData"
-    },
-    "mScriptName": "TeemoEAttack",
-    "mSpell": {
-      "Cooldown": {
-        "0xa3e0478": 0.0,
-        "values": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "SpellEventToAudioEventSuffix": {
-        "12": "Play_sfx_Teemo_TeemoEAttack_OnCast",
-        "13": "Play_sfx_Teemo_TeemoEAttack_OnHit",
-        "16": "Play_sfx_Teemo_TeemoEAttack_OnMissileLaunch"
-      },
-      "bHaveHitBone": true,
-      "bHaveHitEffect": true,
-      "canCastWhileDisabled": true,
-      "castConeDistance": 100.0,
-      "castFrame": 10.0,
-      "castRadius": [
-        20.0,
-        20.0,
-        20.0,
-        20.0,
-        20.0,
-        20.0,
-        20.0
-      ],
-      "castRange": [
-        600.0,
-        600.0,
-        600.0,
-        600.0,
-        600.0,
-        600.0,
-        600.0
-      ],
-      "castRangeValues": {
-        "0xa3e0478": 600.0,
-        "values": [
-          600.0,
-          600.0,
-          600.0,
-          600.0,
-          600.0,
-          600.0,
-          600.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "cooldownTime": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "flags": 2,
-      "mAffectsTypeFlags": 6314,
-      "mAlternateName": "ToxicShotAttack",
-      "mAnimationName": "Attack_SEL",
-      "mApplyAttackDamage": true,
-      "mCastType": 1,
-      "mClientData": {
-        "mTargeterDefinitions": [
-          {
-            "centerLocator": {
-              "orientationType": 1,
-              "~class": "DrawablePositionLocator"
-            },
-            "useCasterBoundingBox": false,
-            "~class": "TargeterDefinitionRange"
-          }
-        ],
-        "~class": "SpellDataResourceClient"
-      },
-      "mHitBoneName": "C_BUFFBONE_GLB_center_LOC",
-      "mHitEffectKey": "Teemo_E_Tar",
-      "mHitEffectOrientType": 2,
-      "mImgIconName": [
-        "ASSETS/Spells/Icons2D/1041_Long_Staff.dds"
-      ],
-      "mMissileEffectKey": "Teemo_E_mis",
-      "mMissileSpec": {
-        "behaviors": [
-          {
-            "~class": "CastOnMovementComplete"
-          },
-          {
-            "~class": "DestroyOnMovementComplete"
-          }
-        ],
-        "movementComponent": {
-          "mOffsetInitialTargetHeight": 100.0,
-          "mSpeed": 1300.0,
-          "mStartBoneName": "Blowgun1",
-          "mStartBoneSkinOverrides": {
-            "47": "Buffbone_Glb_Weapon_1",
-            "48": "Buffbone_Glb_Weapon_1",
-            "49": "Buffbone_Glb_Weapon_1",
-            "50": "Buffbone_Glb_Weapon_1",
-            "51": "Buffbone_Glb_Weapon_1",
-            "52": "Buffbone_Glb_Weapon_1",
-            "53": "Buffbone_Glb_Weapon_1"
-          },
-          "mTargetHeightAugment": 100.0,
-          "~class": "FixedSpeedMovement"
-        },
-        "verticalFacing": {
-          "~class": "VeritcalFacingMatchVelocity"
-        },
-        "~class": "MissileSpecification"
-      },
-      "missileSpeed": 1300.0,
-      "selectionPriority": 1,
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x7daaa1b4",
-    "~class": "SpellObject"
-  },
-  "0x818b50bd": {
-    "ObjectName": "TeemoPStealthBuff",
-    "mBuff": {
-      "PersistentEffectConditions": [
-        {
-          "PersistentVfxs": [
-            {
-              "effectKey": "Teemo_P_cas",
-              "~class": "PersistentVfxData"
-            },
-            {
-              "boneName": "Goggles",
-              "effectKey": "Teemo_P_Buf",
-              "~class": "PersistentVfxData"
-            }
-          ],
-          "~class": "PersistentEffectConditionData"
-        }
-      ],
-      "mDescription": "<titleLeft>Guerrilla Warfare</titleLeft><mainText>Teemo is <font color='#91d7ee'>Invisible</font> and can only be revealed by nearby enemy Turrets.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
-      "~class": "BuffData"
-    },
-    "mScriptName": "TeemoPStealthBuff",
-    "objectPath": "0x818b50bd",
-    "~class": "SpellObject"
-  },
-  "0x8c6c59f1": {
-    "ObjectName": "TeemoPAttackSpeedBuff",
-    "mBuff": {
-      "mDescription": "<titleLeft>Element of Surprise</titleLeft><mainText>Teemo has the element of surprise, increasing his Attack Speed temporarily.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
-      "~class": "BuffData"
-    },
-    "mScriptName": "TeemoPAttackSpeedBuff",
-    "mSpell": {
-      "mImgIconName": [
-        "ASSETS/Characters/Teemo/HUD/Icons2D/TeemoPassive_Buff.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x8c6c59f1",
-    "~class": "SpellObject"
-  },
-  "0xa4dd13df": {
-    "ObjectName": "TeemoEDot",
-    "mBuff": {
-      "PersistentEffectConditions": [
-        {
-          "PersistentVfxs": [
-            {
-              "boneName": "C_BUFFBONE_GLB_HEAD_LOC",
-              "effectKey": "0x6ecc5fac",
-              "~class": "PersistentVfxData"
-            }
-          ],
-          "SourceCondition": {
-            "~class": "IsLocalPlayerBoolDriver"
-          },
-          "~class": "PersistentEffectConditionData"
-        },
-        {
-          "PersistentVfxs": [
-            {
-              "boneName": "C_BUFFBONE_GLB_HEAD_LOC",
-              "effectKey": "0x5507ff8c",
-              "~class": "PersistentVfxData"
-            }
-          ],
-          "SourceCondition": {
-            "mDriver": {
-              "~class": "IsLocalPlayerBoolDriver"
-            },
-            "~class": "NotMaterialDriver"
-          },
-          "~class": "PersistentEffectConditionData"
-        }
-      ],
-      "mDescription": "<titleLeft>Toxic Shot</titleLeft><mainText>This unit is poisoned, receiving damage each second.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
-      "~class": "BuffData"
-    },
-    "mScriptName": "TeemoEDot",
-    "mSpell": {
-      "Cooldown": {
-        "0xa3e0478": 8.0,
-        "values": [
-          8.0,
-          8.0,
-          8.0,
-          8.0,
-          8.0,
-          8.0,
-          8.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "bHaveHitEffect": true,
-      "bIsToggleSpell": true,
-      "castConeDistance": 100.0,
-      "castFrame": 10.0,
-      "castRadius": [
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0
-      ],
-      "castRange": [
-        680.0,
-        680.0,
-        680.0,
-        680.0,
-        680.0,
-        680.0,
-        680.0
-      ],
-      "castRangeValues": {
-        "0xa3e0478": 680.0,
-        "values": [
-          680.0,
-          680.0,
-          680.0,
-          680.0,
-          680.0,
-          680.0,
-          680.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "cooldownTime": [
-        8.0,
-        8.0,
-        8.0,
-        8.0,
-        8.0,
-        8.0,
-        8.0
-      ],
-      "mAffectsTypeFlags": 6154,
-      "mAlternateName": "ToxicShot",
-      "mAnimationName": "Spell4",
-      "mCantCancelWhileChanneling": true,
-      "mCantCancelWhileWindingUp": true,
-      "mCastType": 1,
-      "mClientData": {
-        "mTargeterDefinitions": [
-          {
-            "centerLocator": {
-              "orientationType": 1,
-              "~class": "DrawablePositionLocator"
-            },
-            "useCasterBoundingBox": false,
-            "~class": "TargeterDefinitionRange"
-          }
-        ],
-        "~class": "SpellDataResourceClient"
-      },
-      "mCoefficient": 0.14000000059604645,
-      "mCoefficient2": 0.30000001192092896,
-      "mHitEffectKey": "chill_glb_BV2",
-      "mHitEffectOrientType": 2,
-      "mImgIconName": [
-        ""
-      ],
-      "mMissileSpec": {
-        "behaviors": [
-          {
-            "~class": "CastOnMovementComplete"
-          },
-          {
-            "~class": "DestroyOnMovementComplete"
-          }
-        ],
-        "movementComponent": {
-          "mOffsetInitialTargetHeight": 100.0,
-          "mSpeed": 1500.0,
-          "mStartBoneName": "R_hand",
-          "mTargetHeightAugment": 100.0,
-          "~class": "FixedSpeedMovement"
-        },
-        "verticalFacing": {
-          "~class": "VeritcalFacingMatchVelocity"
-        },
-        "~class": "MissileSpecification"
-      },
-      "mana": [
-        30.0,
-        35.0,
-        40.0,
-        45.0,
-        50.0,
-        55.0
-      ],
-      "manaValues": {
-        "0xa3e0478": 30.0,
-        "values": [
-          30.0,
-          35.0,
-          40.0,
-          45.0,
-          50.0,
-          55.0
-        ],
-        "~class": "ResourceCostModifiable"
-      },
-      "missileSpeed": 1500.0,
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xa4dd13df",
-    "~class": "SpellObject"
-  },
-  "0xa6e2eb54": {
-    "ObjectName": "TeemoWPassiveBuff",
-    "mBuff": {
-      "PersistentEffectConditions": [
-        {
-          "PersistentVfxs": [
-            {
-              "effectKey": "Teemo_W_buf",
-              "~class": "PersistentVfxData"
-            }
-          ],
-          "~class": "PersistentEffectConditionData"
-        }
-      ],
-      "mDescription": "<titleLeft>Move Quick</titleLeft><mainText>Teemo moves very quickly until he takes damage from a turret or champion.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
-      "~class": "BuffData"
-    },
-    "mScriptName": "TeemoWPassiveBuff",
-    "objectPath": "0xa6e2eb54",
-    "~class": "SpellObject"
-  },
-  "0xc82ad54c": {
-    "ObjectName": "TeemoECrit",
-    "mScriptName": "TeemoECrit",
-    "mSpell": {
-      "Cooldown": {
-        "0xa3e0478": 0.0,
-        "values": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "SpellEventToAudioEventSuffix": {
-        "12": "Play_sfx_Teemo_TeemoECrit_OnCast",
-        "13": "Play_sfx_Teemo_TeemoECrit_OnHit",
-        "16": "Play_sfx_Teemo_TeemoECrit_OnMissileLaunch"
-      },
-      "bHaveHitBone": true,
-      "bHaveHitEffect": true,
-      "castConeDistance": 100.0,
-      "castFrame": 10.829999923706055,
-      "castRadius": [
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0
-      ],
-      "castRange": [
-        200.0,
-        200.0,
-        200.0,
-        200.0,
-        200.0,
-        200.0,
-        200.0
-      ],
-      "castRangeValues": {
-        "0xa3e0478": 200.0,
-        "values": [
-          200.0,
-          200.0,
-          200.0,
-          200.0,
-          200.0,
-          200.0,
-          200.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "cooldownTime": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mAffectsTypeFlags": 4234,
-      "mAlternateName": "TeemoCritAttack",
-      "mAnimationName": "Crit",
-      "mCastType": 1,
-      "mClientData": {
-        "mTargeterDefinitions": [
-          {
-            "centerLocator": {
-              "orientationType": 1,
-              "~class": "DrawablePositionLocator"
-            },
-            "useCasterBoundingBox": false,
-            "~class": "TargeterDefinitionRange"
-          }
-        ],
-        "~class": "SpellDataResourceClient"
-      },
-      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
-      "mHitEffectKey": "Teemo_E_Tar",
-      "mHitEffectOrientType": 2,
-      "mMissileEffectKey": "Teemo_E_mis",
-      "mMissileSpec": {
-        "behaviors": [
-          {
-            "~class": "CastOnMovementComplete"
-          },
-          {
-            "~class": "DestroyOnMovementComplete"
-          }
-        ],
-        "movementComponent": {
-          "mOffsetInitialTargetHeight": 100.0,
-          "mSpeed": 1500.0,
-          "mStartBoneName": "Blowgun1",
-          "mStartBoneSkinOverrides": {
-            "47": "Buffbone_Glb_Weapon_1",
-            "48": "Buffbone_Glb_Weapon_1",
-            "49": "Buffbone_Glb_Weapon_1",
-            "50": "Buffbone_Glb_Weapon_1",
-            "51": "Buffbone_Glb_Weapon_1",
-            "52": "Buffbone_Glb_Weapon_1",
-            "53": "Buffbone_Glb_Weapon_1"
-          },
-          "mTargetHeightAugment": 100.0,
-          "~class": "FixedSpeedMovement"
-        },
-        "verticalFacing": {
-          "~class": "VeritcalFacingMatchVelocity"
-        },
-        "~class": "MissileSpecification"
-      },
-      "missileSpeed": 1300.0,
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xc82ad54c",
-    "~class": "SpellObject"
-  },
-  "0xcde85647": {
-    "ObjectName": "TeemoRTrap",
-    "mBuff": {
-      "PersistentEffectConditions": [
-        {
-          "ForceRenderVfx": true,
-          "PersistentVfxs": [
-            {
-              "TargetPosIsOwner": true,
-              "effectKey": "TeemoMushroom_R_CollisionBox_Ring",
-              "~class": "PersistentVfxData"
-            }
-          ],
-          "SourceCondition": {
-            "~class": "IsLocalPlayerBoolDriver"
-          },
-          "~class": "PersistentEffectConditionData"
-        },
-        {
-          "ForceRenderVfx": true,
-          "OwnerCondition": {
-            "~class": "IsEnemyDynamicMaterialBoolDriver"
-          },
-          "PersistentVfxs": [
-            {
-              "TargetPosIsOwner": true,
-              "effectKey": "TeemoMushroom_R_CollisionBox_RingEnemy",
-              "~class": "PersistentVfxData"
-            }
-          ],
-          "~class": "PersistentEffectConditionData"
-        }
-      ],
-      "mDescription": "<titleLeft>Noxious Trap</titleLeft><mainText>This trap will detonate if an enemy steps on it, poisoning nearby enemies.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
-      "~class": "BuffData"
-    },
-    "mScriptName": "TeemoRTrap",
-    "mSpell": {
-      "Cooldown": {
-        "values": [
-          0.25,
-          0.25,
-          0.25,
-          0.25,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "SpellEventToAudioEventSuffix": {
-        "18": "Play_sfx_Teemo_TeemoRTrap_OnBuffActivate"
-      },
-      "castConeDistance": 100.0,
-      "castFrame": 19.5,
-      "castRadius": [
-        135.0,
-        135.0,
-        135.0,
-        135.0,
-        135.0,
-        135.0,
-        135.0
-      ],
-      "castRange": [
-        2000.0,
-        2000.0,
-        2000.0,
-        2000.0,
-        2000.0,
-        2000.0,
-        2000.0
-      ],
-      "castRangeValues": {
-        "0xa3e0478": 2000.0,
-        "values": [
-          2000.0,
-          2000.0,
-          2000.0,
-          2000.0,
-          2000.0,
-          2000.0,
-          2000.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "cooldownTime": [
-        0.25,
-        0.25,
-        0.25,
-        0.25,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "flags": 4194308,
-      "mAffectsTypeFlags": 6154,
-      "mAmmoRechargeTime": [
-        40.0,
-        34.0,
-        28.0,
-        22.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mAnimationName": "Spell4",
-      "mCantCancelWhileChanneling": true,
-      "mCantCancelWhileWindingUp": true,
-      "mCastType": 3,
-      "mClientData": {
-        "mTargeterDefinitions": [
-          {
-            "hideWithLineIndicator": true,
-            "~class": "TargeterDefinitionRange"
-          },
-          {
-            "endLocator": {
-              "basePosition": 3,
-              "~class": "DrawablePositionLocator"
-            },
-            "lineStopsAtEndPosition": true,
-            "lineWidth": {
-              "mPerLevelValues": [
-                120.0,
-                120.0,
-                120.0,
-                120.0,
-                120.0,
-                120.0
-              ],
-              "mValueType": 2,
-              "~class": "FloatPerSpellLevel"
-            },
-            "~class": "TargeterDefinitionLine"
-          }
-        ],
-        "~class": "SpellDataResourceClient"
-      },
-      "mCoefficient": 0.5,
-      "mFloatVarsDecimals": [
-        1,
-        1,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2
-      ],
-      "mImgIconName": [
-        "ASSETS/Characters/Teemo/HUD/Icons2D/Teemo_R.dds"
-      ],
-      "mLineWidth": 120.0,
-      "mMaxAmmo": [
-        3,
-        3,
-        3,
-        3,
-        3,
-        3,
-        3
-      ],
-      "mMissileEffectKey": "Teemo_R_Mis",
-      "mMissileSpec": {
-        "0xc195fba6": true,
-        "behaviors": [
-          {
-            "~class": "CastOnHit"
-          },
-          {
-            "~class": "DestroyOnMovementComplete"
-          }
-        ],
-        "heightSolver": {
-          "mGravity": 3500.0,
-          "~class": "GravityHeightSolver"
-        },
-        "mMissileWidth": 120.0,
-        "movementComponent": {
-          "mSpeed": 1000.0,
-          "mStartBoneName": "head",
-          "mTracksTarget": false,
-          "~class": "FixedSpeedMovement"
-        },
-        "verticalFacing": {
-          "~class": "VerticalFacingFaceTarget"
-        },
-        "~class": "MissileSpecification"
-      },
-      "mProjectTargetToCastRange": true,
-      "mResourceResolvers": [
-        "Characters/TeemoMushroom/Skins/Skin0/Resources"
-      ],
-      "mTargetingTypeData": {
-        "~class": "Location"
-      },
-      "missileSpeed": 1000.0,
-      "selectionPriority": 1,
-      "spellCastTime": 0.25,
-      "spellTotalTime": 1.0,
-      "useAnimatorFramerate": true,
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xcde85647",
-    "~class": "SpellObject"
-  },
-  "0xd137b140": {
-    "ObjectName": "TeemoWPassiveCooldown",
-    "mBuff": {
-      "mDescription": "<titleLeft>Move Quick Cooldown</titleLeft><mainText>Teemo has taken damage and is not moving quickly.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
-      "~class": "BuffData"
-    },
-    "mScriptName": "TeemoWPassiveCooldown",
-    "mSpell": {
-      "mImgIconName": [
-        "ASSETS/Characters/Teemo/HUD/Icons2D/TeemoW_Grey.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xd137b140",
-    "~class": "SpellObject"
-  },
   "Characters/Teemo/Spells/TeemoBasicAttack": {
     "ObjectName": "TeemoBasicAttack",
     "mScriptName": "TeemoBasicAttack",
@@ -1400,7 +478,7 @@
       "mHitEffectKey": "chill_glb_BV2",
       "mHitEffectOrientType": 2,
       "mImgIconName": [
-        "ASSETS/Characters/Teemo/HUD/Icons2D/TeemoE.dds"
+        "assets/characters/teemo/hud/icons2d/teemoe.dds"
       ],
       "mMissileSpec": {
         "behaviors": [
@@ -1505,6 +583,595 @@
     "objectPath": "Characters/Teemo/Spells/TeemoEAbility/TeemoE",
     "~class": "SpellObject"
   },
+  "Characters/Teemo/Spells/TeemoEAbility/TeemoEAttack": {
+    "ObjectName": "TeemoEAttack",
+    "mBuff": {
+      "mDescription": "<titleLeft>Toxic Attack</titleLeft><mainText>Teemo's attacks poison the target, causing them to take damage over time.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "TeemoEAttack",
+    "mSpell": {
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Teemo_TeemoEAttack_OnCast",
+        "13": "Play_sfx_Teemo_TeemoEAttack_OnHit",
+        "16": "Play_sfx_Teemo_TeemoEAttack_OnMissileLaunch"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "canCastWhileDisabled": true,
+      "castConeDistance": 100.0,
+      "castFrame": 10.0,
+      "castRadius": [
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0
+      ],
+      "castRange": [
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0
+      ],
+      "castRangeValues": {
+        "0xa3e0478": 600.0,
+        "values": [
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "flags": 2,
+      "mAffectsTypeFlags": 6314,
+      "mAlternateName": "ToxicShotAttack",
+      "mAnimationName": "Attack_SEL",
+      "mApplyAttackDamage": true,
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "centerLocator": {
+              "orientationType": 1,
+              "~class": "DrawablePositionLocator"
+            },
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_center_LOC",
+      "mHitEffectKey": "Teemo_E_Tar",
+      "mHitEffectOrientType": 2,
+      "mImgIconName": [
+        "assets/spells/icons2d/1041_long_staff.dds"
+      ],
+      "mMissileEffectKey": "Teemo_E_mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 1300.0,
+          "mStartBoneName": "Blowgun1",
+          "mStartBoneSkinOverrides": {
+            "47": "Buffbone_Glb_Weapon_1",
+            "48": "Buffbone_Glb_Weapon_1",
+            "49": "Buffbone_Glb_Weapon_1",
+            "50": "Buffbone_Glb_Weapon_1",
+            "51": "Buffbone_Glb_Weapon_1",
+            "52": "Buffbone_Glb_Weapon_1",
+            "53": "Buffbone_Glb_Weapon_1"
+          },
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 1300.0,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Teemo/Spells/TeemoEAbility/TeemoEAttack",
+    "~class": "SpellObject"
+  },
+  "Characters/Teemo/Spells/TeemoEAbility/TeemoECrit": {
+    "ObjectName": "TeemoECrit",
+    "mScriptName": "TeemoECrit",
+    "mSpell": {
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Teemo_TeemoECrit_OnCast",
+        "13": "Play_sfx_Teemo_TeemoECrit_OnHit",
+        "16": "Play_sfx_Teemo_TeemoECrit_OnMissileLaunch"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 10.829999923706055,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        200.0,
+        200.0,
+        200.0,
+        200.0,
+        200.0,
+        200.0,
+        200.0
+      ],
+      "castRangeValues": {
+        "0xa3e0478": 200.0,
+        "values": [
+          200.0,
+          200.0,
+          200.0,
+          200.0,
+          200.0,
+          200.0,
+          200.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 4234,
+      "mAlternateName": "TeemoCritAttack",
+      "mAnimationName": "Crit",
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "centerLocator": {
+              "orientationType": 1,
+              "~class": "DrawablePositionLocator"
+            },
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Teemo_E_Tar",
+      "mHitEffectOrientType": 2,
+      "mMissileEffectKey": "Teemo_E_mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 1500.0,
+          "mStartBoneName": "Blowgun1",
+          "mStartBoneSkinOverrides": {
+            "47": "Buffbone_Glb_Weapon_1",
+            "48": "Buffbone_Glb_Weapon_1",
+            "49": "Buffbone_Glb_Weapon_1",
+            "50": "Buffbone_Glb_Weapon_1",
+            "51": "Buffbone_Glb_Weapon_1",
+            "52": "Buffbone_Glb_Weapon_1",
+            "53": "Buffbone_Glb_Weapon_1"
+          },
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 1300.0,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Teemo/Spells/TeemoEAbility/TeemoECrit",
+    "~class": "SpellObject"
+  },
+  "Characters/Teemo/Spells/TeemoEAbility/TeemoEDot": {
+    "ObjectName": "TeemoEDot",
+    "mBuff": {
+      "PersistentEffectConditions": [
+        {
+          "PersistentVfxs": [
+            {
+              "boneName": "C_BUFFBONE_GLB_HEAD_LOC",
+              "effectKey": "0x6ecc5fac",
+              "~class": "PersistentVfxData"
+            }
+          ],
+          "SourceCondition": {
+            "~class": "IsLocalPlayerBoolDriver"
+          },
+          "~class": "PersistentEffectConditionData"
+        },
+        {
+          "PersistentVfxs": [
+            {
+              "boneName": "C_BUFFBONE_GLB_HEAD_LOC",
+              "effectKey": "0x5507ff8c",
+              "~class": "PersistentVfxData"
+            }
+          ],
+          "SourceCondition": {
+            "mDriver": {
+              "~class": "IsLocalPlayerBoolDriver"
+            },
+            "~class": "NotMaterialDriver"
+          },
+          "~class": "PersistentEffectConditionData"
+        }
+      ],
+      "mDescription": "<titleLeft>Toxic Shot</titleLeft><mainText>This unit is poisoned, receiving damage each second.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "TeemoEDot",
+    "mSpell": {
+      "Cooldown": {
+        "0xa3e0478": 8.0,
+        "values": [
+          8.0,
+          8.0,
+          8.0,
+          8.0,
+          8.0,
+          8.0,
+          8.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "bHaveHitEffect": true,
+      "bIsToggleSpell": true,
+      "castConeDistance": 100.0,
+      "castFrame": 10.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        680.0,
+        680.0,
+        680.0,
+        680.0,
+        680.0,
+        680.0,
+        680.0
+      ],
+      "castRangeValues": {
+        "0xa3e0478": 680.0,
+        "values": [
+          680.0,
+          680.0,
+          680.0,
+          680.0,
+          680.0,
+          680.0,
+          680.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0
+      ],
+      "mAffectsTypeFlags": 6154,
+      "mAlternateName": "ToxicShot",
+      "mAnimationName": "Spell4",
+      "mCantCancelWhileChanneling": true,
+      "mCantCancelWhileWindingUp": true,
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "centerLocator": {
+              "orientationType": 1,
+              "~class": "DrawablePositionLocator"
+            },
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.14000000059604645,
+      "mCoefficient2": 0.30000001192092896,
+      "mHitEffectKey": "chill_glb_BV2",
+      "mHitEffectOrientType": 2,
+      "mImgIconName": [
+        ""
+      ],
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 1500.0,
+          "mStartBoneName": "R_hand",
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mana": [
+        30.0,
+        35.0,
+        40.0,
+        45.0,
+        50.0,
+        55.0
+      ],
+      "manaValues": {
+        "0xa3e0478": 30.0,
+        "values": [
+          30.0,
+          35.0,
+          40.0,
+          45.0,
+          50.0,
+          55.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "missileSpeed": 1500.0,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Teemo/Spells/TeemoEAbility/TeemoEDot",
+    "~class": "SpellObject"
+  },
+  "Characters/Teemo/Spells/TeemoEAbility/TeemoEShared": {
+    "ObjectName": "TeemoEShared",
+    "mScriptName": "TeemoEShared",
+    "objectPath": "Characters/Teemo/Spells/TeemoEAbility/TeemoEShared",
+    "~class": "SpellObject"
+  },
+  "Characters/Teemo/Spells/TeemoPassiveAbility/TeemoPAttackSpeedBuff": {
+    "ObjectName": "TeemoPAttackSpeedBuff",
+    "mBuff": {
+      "mDescription": "<titleLeft>Element of Surprise</titleLeft><mainText>Teemo has the element of surprise, increasing his Attack Speed temporarily.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "TeemoPAttackSpeedBuff",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/characters/teemo/hud/icons2d/teemopassive_buff.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Teemo/Spells/TeemoPassiveAbility/TeemoPAttackSpeedBuff",
+    "~class": "SpellObject"
+  },
+  "Characters/Teemo/Spells/TeemoPassiveAbility/TeemoPStealthBuff": {
+    "ObjectName": "TeemoPStealthBuff",
+    "mBuff": {
+      "PersistentEffectConditions": [
+        {
+          "PersistentVfxs": [
+            {
+              "effectKey": "Teemo_P_cas",
+              "~class": "PersistentVfxData"
+            },
+            {
+              "boneName": "Goggles",
+              "effectKey": "Teemo_P_Buf",
+              "~class": "PersistentVfxData"
+            }
+          ],
+          "~class": "PersistentEffectConditionData"
+        }
+      ],
+      "mDescription": "<titleLeft>Guerrilla Warfare</titleLeft><mainText>Teemo is <font color='#91d7ee'>Invisible</font> and can only be revealed by nearby enemy Turrets.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "TeemoPStealthBuff",
+    "objectPath": "Characters/Teemo/Spells/TeemoPassiveAbility/TeemoPStealthBuff",
+    "~class": "SpellObject"
+  },
+  "Characters/Teemo/Spells/TeemoPassiveAbility/TeemoPassive": {
+    "ObjectName": "TeemoPassive",
+    "mBuff": {
+      "mDescription": "<titleLeft>Guerrilla Warfare</titleLeft><mainText>If Teemo stands still for 1.5 seconds without being damaged, he becomes <font color='#91d7ee'>Invisible</font>. While in a brush he can trigger and maintain <font color='#91d7ee'>Invisibility</font> while moving.<br><br>Upon breaking Guerrilla Warfare by attacking or moving (out of brush), Teemo gains <font color='#ffffff'>@f1@%</font> Attack Speed for 3 seconds.<br><br><u><font color='#91d7ee' size='16'>Stealth - Invisible</font></u><font color='#b3b3b3' size='16'>: Teemo can only be revealed by nearby enemy Turrets or <font color='#ee91d7' size='16'>True Sight</font></font>.</mainText>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "TeemoPassive",
+    "mSpell": {
+      "DataValues": [
+        {
+          "name": "AttackSpeedDuration",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "StealthCooldownDuration",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "castRange": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "castRangeValues": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyName": "Guerrilla Warfare",
+            "keySummary": "If Teemo stands still and takes no actions for a short duration, he becomes Invisible indefinitely. If he's in brush, Teemo can enter and maintain his Invisibility while moving. After leaving Invisibility, Teemo gains the Element of Surprise, increasing his Attack Speed for a few seconds.",
+            "keyTooltip": "If Teemo stands still for @StealthCooldownDuration@ seconds without being damaged, he becomes <keywordStealth>Invisible</keywordStealth> until he moves. While in a brush, he can maintain <keywordStealth>Invisibility</keywordStealth> while moving.<br><br>Upon exiting this <keywordStealth>Invisibility</keywordStealth>, Teemo gains <attackSpeed>@BonusAttackSpeed@ Attack Speed</attackSpeed> for @AttackSpeedDuration@ seconds.",
+            "keyTooltipExtended": "{{Buff_TeemoPassive_Tooltip}}<br><br><rules>{{Reminder_Invisibility}}</rules>"
+          },
+          "mObjectName": "TeemoPassive",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "assets/characters/teemo/hud/icons2d/teemopassive.dds"
+      ],
+      "mSpellCalculations": {
+        "BonusAttackSpeed": {
+          "mDisplayAsPercent": true,
+          "mFormulaParts": [
+            {
+              "mBreakpoints": [
+                {
+                  "mAdditionalBonusAtThisLevel": 0.20000000298023224,
+                  "mLevel": 5,
+                  "~class": "Breakpoint"
+                },
+                {
+                  "mAdditionalBonusAtThisLevel": 0.20000000298023224,
+                  "mLevel": 10,
+                  "~class": "Breakpoint"
+                },
+                {
+                  "mAdditionalBonusAtThisLevel": 0.20000000298023224,
+                  "mLevel": 15,
+                  "~class": "Breakpoint"
+                }
+              ],
+              "mLevel1Value": 0.20000000298023224,
+              "~class": "ByCharLevelBreakpointsCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "Trait_Invisibility"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Self"
+      },
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Teemo/Spells/TeemoPassiveAbility/TeemoPassive",
+    "~class": "SpellObject"
+  },
   "Characters/Teemo/Spells/TeemoQAbility/TeemoQ": {
     "ObjectName": "TeemoQ",
     "mScriptName": "TeemoQ",
@@ -1592,6 +1259,19 @@
       "DataValuesModeOverride": {
         "cherry": {
           "SpellDataValues": [
+            {
+              "name": "BaseDamage",
+              "values": [
+                30.0,
+                70.0,
+                110.0,
+                150.0,
+                190.0,
+                230.0,
+                270.0
+              ],
+              "~class": "SpellDataValue"
+            },
             {
               "name": "APRatio",
               "values": [
@@ -1724,7 +1404,7 @@
       "mHitEffectKey": "Teemo_Q_tar",
       "mHitEffectOrientType": 2,
       "mImgIconName": [
-        "ASSETS/Characters/Teemo/HUD/Icons2D/TeemoQ.dds"
+        "assets/characters/teemo/hud/icons2d/teemoq.dds"
       ],
       "mMissileEffectKey": "Teemo_Q_mis",
       "mMissileSpec": {
@@ -2369,7 +2049,7 @@
         2
       ],
       "mImgIconName": [
-        "ASSETS/Characters/Teemo/HUD/Icons2D/TeemoR.dds"
+        "assets/characters/teemo/hud/icons2d/teemor.dds"
       ],
       "mLineWidth": 120.0,
       "mMaxAmmo": [
@@ -2437,6 +2117,296 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Teemo/Spells/TeemoRAbility/TeemoR",
+    "~class": "SpellObject"
+  },
+  "Characters/Teemo/Spells/TeemoRAbility/TeemoRDot": {
+    "ObjectName": "TeemoRDot",
+    "mBuff": {
+      "PersistentEffectConditions": [
+        {
+          "PersistentVfxs": [
+            {
+              "boneName": "C_BUFFBONE_GLB_HEAD_LOC",
+              "effectKey": "0x6ecc5fac",
+              "~class": "PersistentVfxData"
+            }
+          ],
+          "SourceCondition": {
+            "~class": "IsLocalPlayerBoolDriver"
+          },
+          "~class": "PersistentEffectConditionData"
+        },
+        {
+          "PersistentVfxs": [
+            {
+              "boneName": "C_BUFFBONE_GLB_HEAD_LOC",
+              "effectKey": "0x5507ff8c",
+              "~class": "PersistentVfxData"
+            }
+          ],
+          "SourceCondition": {
+            "mDriver": {
+              "~class": "IsLocalPlayerBoolDriver"
+            },
+            "~class": "NotMaterialDriver"
+          },
+          "~class": "PersistentEffectConditionData"
+        },
+        {
+          "PersistentVfxs": [
+            {
+              "boneName": "C_BUFFBONE_GLB_HEAD_LOC",
+              "effectKey": "Teemo_R_Debuff",
+              "~class": "PersistentVfxData"
+            }
+          ],
+          "~class": "PersistentEffectConditionData"
+        }
+      ],
+      "mDescription": "<titleLeft>Noxious Trap</titleLeft><mainText>This unit was poisoned by a mushroom and is taking damage.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "TeemoRDot",
+    "mSpell": {
+      "DataValues": [
+        {
+          "name": "VisionRadius",
+          "values": [
+            175.0,
+            175.0,
+            175.0,
+            175.0,
+            175.0,
+            175.0,
+            175.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "18": "Play_sfx_Teemo_TeemoRDot_OnBuffActivate"
+      },
+      "mResourceResolvers": [
+        "Characters/Teemo/Skins/Skin0/Resources"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Teemo/Spells/TeemoRAbility/TeemoRDot",
+    "~class": "SpellObject"
+  },
+  "Characters/Teemo/Spells/TeemoRAbility/TeemoRTrap": {
+    "ObjectName": "TeemoRTrap",
+    "mBuff": {
+      "PersistentEffectConditions": [
+        {
+          "ForceRenderVfx": true,
+          "PersistentVfxs": [
+            {
+              "TargetPosIsOwner": true,
+              "effectKey": "TeemoMushroom_R_CollisionBox_Ring",
+              "~class": "PersistentVfxData"
+            }
+          ],
+          "SourceCondition": {
+            "~class": "IsLocalPlayerBoolDriver"
+          },
+          "~class": "PersistentEffectConditionData"
+        },
+        {
+          "ForceRenderVfx": true,
+          "OwnerCondition": {
+            "~class": "IsEnemyDynamicMaterialBoolDriver"
+          },
+          "PersistentVfxs": [
+            {
+              "TargetPosIsOwner": true,
+              "effectKey": "TeemoMushroom_R_CollisionBox_RingEnemy",
+              "~class": "PersistentVfxData"
+            }
+          ],
+          "~class": "PersistentEffectConditionData"
+        }
+      ],
+      "mDescription": "<titleLeft>Noxious Trap</titleLeft><mainText>This trap will detonate if an enemy steps on it, poisoning nearby enemies.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "TeemoRTrap",
+    "mSpell": {
+      "Cooldown": {
+        "values": [
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "18": "Play_sfx_Teemo_TeemoRTrap_OnBuffActivate"
+      },
+      "castConeDistance": 100.0,
+      "castFrame": 19.5,
+      "castRadius": [
+        135.0,
+        135.0,
+        135.0,
+        135.0,
+        135.0,
+        135.0,
+        135.0
+      ],
+      "castRange": [
+        2000.0,
+        2000.0,
+        2000.0,
+        2000.0,
+        2000.0,
+        2000.0,
+        2000.0
+      ],
+      "castRangeValues": {
+        "0xa3e0478": 2000.0,
+        "values": [
+          2000.0,
+          2000.0,
+          2000.0,
+          2000.0,
+          2000.0,
+          2000.0,
+          2000.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.25,
+        0.25,
+        0.25,
+        0.25,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "flags": 4194308,
+      "mAffectsTypeFlags": 6154,
+      "mAmmoRechargeTime": [
+        40.0,
+        34.0,
+        28.0,
+        22.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAnimationName": "Spell4",
+      "mCantCancelWhileChanneling": true,
+      "mCantCancelWhileWindingUp": true,
+      "mCastType": 3,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "hideWithLineIndicator": true,
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "endLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "lineStopsAtEndPosition": true,
+            "lineWidth": {
+              "mPerLevelValues": [
+                120.0,
+                120.0,
+                120.0,
+                120.0,
+                120.0,
+                120.0
+              ],
+              "mValueType": 2,
+              "~class": "FloatPerSpellLevel"
+            },
+            "~class": "TargeterDefinitionLine"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.5,
+      "mFloatVarsDecimals": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mImgIconName": [
+        "assets/characters/teemo/hud/icons2d/teemo_r.dds"
+      ],
+      "mLineWidth": 120.0,
+      "mMaxAmmo": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "mMissileEffectKey": "Teemo_R_Mis",
+      "mMissileSpec": {
+        "0xc195fba6": true,
+        "behaviors": [
+          {
+            "~class": "CastOnHit"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "mGravity": 3500.0,
+          "~class": "GravityHeightSolver"
+        },
+        "mMissileWidth": 120.0,
+        "movementComponent": {
+          "mSpeed": 1000.0,
+          "mStartBoneName": "head",
+          "mTracksTarget": false,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VerticalFacingFaceTarget"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mProjectTargetToCastRange": true,
+      "mResourceResolvers": [
+        "Characters/TeemoMushroom/Skins/Skin0/Resources"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Location"
+      },
+      "missileSpeed": 1000.0,
+      "selectionPriority": 1,
+      "spellCastTime": 0.25,
+      "spellTotalTime": 1.0,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Teemo/Spells/TeemoRAbility/TeemoRTrap",
     "~class": "SpellObject"
   },
   "Characters/Teemo/Spells/TeemoSkin47Manager": {
@@ -2620,7 +2590,7 @@
         "~class": "SpellDataResourceClient"
       },
       "mImgIconName": [
-        "ASSETS/Characters/Teemo/HUD/Icons2D/TeemoW.dds"
+        "assets/characters/teemo/hud/icons2d/teemow.dds"
       ],
       "mRequiredUnitTags": {
         "mObjectTagList": [
@@ -2658,6 +2628,49 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Teemo/Spells/TeemoWAbility/TeemoW",
+    "~class": "SpellObject"
+  },
+  "Characters/Teemo/Spells/TeemoWAbility/TeemoWPassive": {
+    "ObjectName": "TeemoWPassive",
+    "mScriptName": "TeemoWPassive",
+    "objectPath": "Characters/Teemo/Spells/TeemoWAbility/TeemoWPassive",
+    "~class": "SpellObject"
+  },
+  "Characters/Teemo/Spells/TeemoWAbility/TeemoWPassiveBuff": {
+    "ObjectName": "TeemoWPassiveBuff",
+    "mBuff": {
+      "PersistentEffectConditions": [
+        {
+          "PersistentVfxs": [
+            {
+              "effectKey": "Teemo_W_buf",
+              "~class": "PersistentVfxData"
+            }
+          ],
+          "~class": "PersistentEffectConditionData"
+        }
+      ],
+      "mDescription": "<titleLeft>Move Quick</titleLeft><mainText>Teemo moves very quickly until he takes damage from a turret or champion.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "TeemoWPassiveBuff",
+    "objectPath": "Characters/Teemo/Spells/TeemoWAbility/TeemoWPassiveBuff",
+    "~class": "SpellObject"
+  },
+  "Characters/Teemo/Spells/TeemoWAbility/TeemoWPassiveCooldown": {
+    "ObjectName": "TeemoWPassiveCooldown",
+    "mBuff": {
+      "mDescription": "<titleLeft>Move Quick Cooldown</titleLeft><mainText>Teemo has taken damage and is not moving quickly.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "TeemoWPassiveCooldown",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/characters/teemo/hud/icons2d/teemow_grey.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Teemo/Spells/TeemoWAbility/TeemoWPassiveCooldown",
     "~class": "SpellObject"
   }
 }

@@ -114,7 +114,7 @@
         "18": "Play_sfx_Anivia_Rebirth_OnBuffActivate"
       },
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Anivia_Rebirth.dds"
+        "assets/ux/jade/s3icons/samesized/anivia_rebirth.dds"
       ],
       "~class": "SpellDataResource"
     },
@@ -139,7 +139,7 @@
     "mScriptName": "Jade_Anivia_RebirthCooldown",
     "mSpell": {
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Anivia_Rebirth_Charging.dds"
+        "assets/ux/jade/s3icons/samesized/anivia_rebirth_charging.dds"
       ],
       "~class": "SpellDataResource"
     },
@@ -352,7 +352,7 @@
         "mFormat": "0xb34f999a",
         "mLocKeys": {
           "keyName": "Rebirth",
-          "keyTooltip": "Upon taking fatal damage, Anivia will revert to an egg, receiving @f1@ Armor and Magic Resist, waiting to be reborn."
+          "keyTooltip": "Upon taking fatal damage, Anivia will revert to an egg, receiving @f1@ Armor and Magic Resist for 6 seconds."
         },
         "mObjectName": "Jade_AniviaRebirthMarker",
         "~class": "TooltipInstanceBuff"
@@ -387,21 +387,28 @@
             240.0
           ],
           "~class": "SpellDataValue"
-        },
-        {
-          "name": "EggDuration",
-          "values": [
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0
-          ],
-          "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "URF": {
+          "SpellDataValues": [
+            {
+              "name": "Cooldown",
+              "values": [
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "castRange": [
         0.0,
         0.0,
@@ -439,8 +446,8 @@
           "mLocKeys": {
             "keyCooldown": "@Cooldown@s %i:cooldown%",
             "keyName": "Rebirth",
-            "keySummary": "Upon dying, Anivia will revert into an egg. If the egg can survive, she is gloriously reborn.",
-            "keyTooltip": "Upon taking fatal damage, Anivia reverts to an egg, <healing>healing</healing> to full Health and receiving <scaleArmor>@BonusResists@ Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR>. If she survives for @EggDuration@ seconds, she is reborn."
+            "keySummary": "Upon dying, Anivia will revert into an egg. If the egg can survive for six seconds, she is gloriously reborn.",
+            "keyTooltip": "Upon taking fatal damage, Anivia reverts to an egg, <healing>healing</healing> to full Health and receiving <scaleArmor>@BonusResists@ Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR>. If she survives for 6 seconds, she is reborn."
           },
           "mObjectName": "Jade_AniviaRebirthMarker",
           "~class": "TooltipInstanceSpell"
@@ -448,7 +455,7 @@
         "~class": "SpellDataResourceClient"
       },
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Anivia_Rebirth.dds"
+        "assets/ux/jade/s3icons/samesized/anivia_rebirth.dds"
       ],
       "mSpellCalculations": {
         "BonusResists": {
@@ -511,7 +518,7 @@
         "mFormat": "0xb34f999a",
         "mLocKeys": {
           "keyName": "Rebirth",
-          "keyTooltip": "Upon taking fatal damage, Anivia will revert to an egg, receiving @f1@ Armor and Magic Resist, waiting to be reborn."
+          "keyTooltip": "Upon taking fatal damage, Anivia will revert to an egg, receiving @f1@ Armor and Magic Resist for 6 seconds."
         },
         "mObjectName": "Jade_Anivia_RebirthReady",
         "~class": "TooltipInstanceBuff"
@@ -521,7 +528,7 @@
     "mScriptName": "Jade_Anivia_RebirthReady",
     "mSpell": {
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Anivia_Rebirth.dds"
+        "assets/ux/jade/s3icons/samesized/anivia_rebirth.dds"
       ],
       "mSpellCalculations": {
         "BonusResists": {
@@ -1048,7 +1055,7 @@
         }
       ],
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Anivia_Crystallize.dds"
+        "assets/ux/jade/s3icons/samesized/anivia_crystallize.dds"
       ],
       "mTargetingTypeData": {
         "~class": "Location"
@@ -1148,19 +1155,6 @@
             3.0,
             3.0,
             3.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "MovementSpeedMod",
-          "values": [
-            -0.20000000298023224,
-            -0.20000000298023224,
-            -0.20000000298023224,
-            -0.20000000298023224,
-            -0.20000000298023224,
-            -0.20000000298023224,
-            -0.20000000298023224
           ],
           "~class": "SpellDataValue"
         }
@@ -1294,7 +1288,7 @@
           "mLocKeys": {
             "keyName": "Flash Frost",
             "keySummary": "Anivia brings her wings together and summons a sphere of ice that flies towards her opponents, chilling and damaging anyone in its path. When the sphere explodes it does moderate damage in a radius, stunning anyone in the area.",
-            "keyTooltip": "A massive chunk of ice flies toward target location, dealing <magicDamage>@TotalPassthroughDamage@ magic damage</magicDamage> and chilling targets, <status>Slowing</status> their Movement Speed by @MovementSpeedMod*-100@% for @SlowDuration@ seconds.<br><br>At the end of its range or if Anivia <recast>recasts</recast> the spell, the missile detonates, doing <magicDamage>@TotalExplosionDamage@ magic damage</magicDamage> in a small area and <status>Stunning</status> units for @StunDuration@ second."
+            "keyTooltip": "A massive chunk of ice flies toward target location, dealing <magicDamage>@TotalPassthroughDamage@ magic damage</magicDamage> and chilling targets, <status>Slowing</status> their Movement Speed by 20%. <br><br>At the end of its range or if Anivia <recast>recasts</recast> the spell, the missile detonates, doing <magicDamage>@TotalExplosionDamage@ magic damage</magicDamage> in a small area and <status>Stunning</status> units for @StunDuration@ second."
           },
           "mObjectName": "Jade_AniviaFlashFrost",
           "~class": "TooltipInstanceSpell"
@@ -1321,7 +1315,7 @@
       ],
       "mHitBoneName": "pelvis",
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Anivia_FrigidOrb.dds"
+        "assets/ux/jade/s3icons/samesized/anivia_frigidorb.dds"
       ],
       "mLineWidth": 110.0,
       "mSpellCalculations": {
@@ -1523,7 +1517,7 @@
       "mCoefficient": 0.5,
       "mHitEffectKey": "Jade_Anivia_E_Tar",
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Anivia_DeepFreeze.dds"
+        "assets/ux/jade/s3icons/samesized/anivia_deepfreeze.dds"
       ],
       "mMissileEffectKey": "Jade_Anivia_E_Mis",
       "mMissileSpec": {
@@ -1896,7 +1890,7 @@
         0
       ],
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Anivia_GlacialStorm.dds"
+        "assets/ux/jade/s3icons/samesized/anivia_glacialstorm.dds"
       ],
       "mLineWidth": 150.0,
       "mSpellCalculations": {

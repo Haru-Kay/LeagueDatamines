@@ -1,247 +1,4 @@
 {
-  "0x25bd2aee": {
-    "ObjectName": "Jade_FiddlesticksPassive",
-    "mBuff": {
-      "mDescription": "Enemy units near Fiddlesticks have their Magic Resist reduced by 10.",
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_FiddlesticksPassive",
-    "mSpell": {
-      "DataValues": [
-        {
-          "name": "PassiveRange",
-          "values": [
-            800.0,
-            800.0,
-            800.0,
-            800.0,
-            800.0,
-            800.0,
-            800.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "PassiveMagicResistShred",
-          "values": [
-            -10.0,
-            -10.0,
-            -10.0,
-            -10.0,
-            -10.0,
-            -10.0,
-            -10.0
-          ],
-          "~class": "SpellDataValue"
-        }
-      ],
-      "castRange": [
-        800.0,
-        800.0,
-        800.0,
-        800.0,
-        800.0,
-        800.0,
-        800.0
-      ],
-      "castRangeValues": {
-        "0xa3e0478": 800.0,
-        "values": [
-          800.0,
-          800.0,
-          800.0,
-          800.0,
-          800.0,
-          800.0,
-          800.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "mClientData": {
-        "mTooltipData": {
-          "EnableExtendedTooltip": false,
-          "mFormat": "0x476ec0b8",
-          "mLocKeys": {
-            "keyName": "Dread",
-            "keySummary": "Nearby enemies have reduced Magic Resist.",
-            "keyTooltip": "Enemy units near Fiddlesticks have reduced <scaleMR>@PassiveMagicResistShred*-1@ Magic Resist</scaleMR>"
-          },
-          "mObjectName": "Jade_FiddlesticksPassive",
-          "~class": "TooltipInstanceSpell"
-        },
-        "~class": "SpellDataResourceClient"
-      },
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Fiddlesticks_Paranoia.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x25bd2aee",
-    "~class": "SpellObject"
-  },
-  "0x6e6d8e46": {
-    "ObjectName": "Jade_FiddlesticksEMissile",
-    "mScriptName": "Jade_FiddlesticksEMissile",
-    "mSpell": {
-      "SpellEventToAudioEventSuffix": {
-        "13": "Play_sfx_Fiddlesticks_FiddlesticksE_hit_regular"
-      },
-      "bHaveHitBone": true,
-      "bHaveHitEffect": true,
-      "castRadius": [
-        500.0,
-        500.0,
-        500.0,
-        500.0,
-        500.0,
-        500.0,
-        500.0
-      ],
-      "castRange": [
-        25000.0,
-        25000.0,
-        25000.0,
-        25000.0,
-        25000.0,
-        25000.0,
-        25000.0
-      ],
-      "castRangeValues": {
-        "0xa3e0478": 25000.0,
-        "values": [
-          25000.0,
-          25000.0,
-          25000.0,
-          25000.0,
-          25000.0,
-          25000.0,
-          25000.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "flags": 4194308,
-      "mAffectsTypeFlags": 6154,
-      "mCastType": 1,
-      "mHitBoneName": "C_Buffbone_Glb_Chest_Loc",
-      "mHitEffectKey": "Jade_Fiddlesticks_Q_1_tar",
-      "mMissileEffectKey": "0x6aa69363",
-      "mMissileSpec": {
-        "behaviors": [
-          {
-            "~class": "CastOnMovementComplete"
-          },
-          {
-            "~class": "DestroyOnMovementComplete"
-          }
-        ],
-        "movementComponent": {
-          "mOffsetInitialTargetHeight": 75.0,
-          "mSpeed": 1200.0,
-          "mStartBoneName": "C_Buffbone_Glb_Chest_Loc",
-          "mTargetBoneName": "C_Buffbone_Glb_Chest_Loc",
-          "mTargetHeightAugment": 75.0,
-          "mUseHeightOffsetAtEnd": true,
-          "~class": "FixedSpeedMovement"
-        },
-        "visibilityComponent": {
-          "~class": "EnterFOWVisibility"
-        },
-        "~class": "MissileSpecification"
-      },
-      "missileSpeed": 1800.0,
-      "useAnimatorFramerate": true,
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x6e6d8e46",
-    "~class": "SpellObject"
-  },
-  "0x832b4961": {
-    "ObjectName": "Jade_FiddlesticksPassive_Debuff",
-    "mBuff": {
-      "mTooltipData": {
-        "mFormat": "0xb34f999a",
-        "mLocKeys": {
-          "keyName": "Dread",
-          "keyTooltip": "This unit has reduced Magic Resist."
-        },
-        "mObjectName": "Jade_FiddlesticksPassive_Debuff",
-        "~class": "TooltipInstanceBuff"
-      },
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_FiddlesticksPassive_Debuff",
-    "mSpell": {
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Fiddlesticks_Paranoia.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x832b4961",
-    "~class": "SpellObject"
-  },
-  "0xa22884d": {
-    "ObjectName": "Jade_FiddlesticksESilence",
-    "mBuff": {
-      "mTooltipData": {
-        "mFormat": "0xb34f999a",
-        "mLocKeys": {
-          "keyName": "Dark Wind",
-          "keyTooltip": "This unit cannot use Abilities."
-        },
-        "mObjectName": "Jade_FiddlesticksESilence",
-        "~class": "TooltipInstanceBuff"
-      },
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_FiddlesticksESilence",
-    "mSpell": {
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Fiddlesticks_DarkWind.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xa22884d",
-    "~class": "SpellObject"
-  },
-  "0xacb182ec": {
-    "ObjectName": "Jade_FiddlesticksWDrainCheck",
-    "mScriptName": "Jade_FiddlesticksWDrainCheck",
-    "mSpell": {
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Fiddlesticks_ConjureScarecrow.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xacb182ec",
-    "~class": "SpellObject"
-  },
-  "0xace9222": {
-    "ObjectName": "Jade_FiddlesticksWSelfMarker",
-    "mBuff": {
-      "mTooltipData": {
-        "mFormat": "0xb34f999a",
-        "mLocKeys": {
-          "keyName": "Drain",
-          "keyTooltip": "Fiddlesticks is draining Health from his target.<br>"
-        },
-        "mObjectName": "Jade_FiddlesticksWSelfMarker",
-        "~class": "TooltipInstanceBuff"
-      },
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_FiddlesticksWSelfMarker",
-    "mSpell": {
-      "SpellEventToAudioEventSuffix": {
-        "18": "Play_sfx_Fiddlesticks_FiddlesticksWdrain_OnBuffActivate"
-      },
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Fiddlesticks_ConjureScarecrow.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xace9222",
-    "~class": "SpellObject"
-  },
   "Characters/Jade_Fiddlesticks/Spells/Jade_FiddlesticksBasicAttack": {
     "ObjectName": "Jade_FiddlesticksBasicAttack",
     "mScriptName": "Jade_FiddlesticksBasicAttack",
@@ -659,32 +416,6 @@
             4.0
           ],
           "~class": "SpellDataValue"
-        },
-        {
-          "name": "MaxBouncesTooltip",
-          "values": [
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "MonsterDamageMod",
-          "values": [
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5
-          ],
-          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -785,8 +516,8 @@
           "mLocKeys": {
             "keyName": "Dark Wind",
             "keySummary": "A wisp of wind strikes an enemy unit and then bounces to nearby enemy units, dealing damage and silencing the victims.",
-            "keyTooltip": "A wisp of wind strikes an enemy target and then bounces up to @MaxBouncesTooltip@ times to nearby enemy units. Deals <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Silences</status> for @SilenceDuration@ seconds for each strike.",
-            "keyTooltipExtended": "{{Spell_FiddleSticksE_Jade_Tooltip}}<br><br><rules>Deals @MonsterDamageMod*100@% damage to minions and neutral monsters.</rules>"
+            "keyTooltip": "A wisp of wind strikes an enemy target and then bounces up to 5 times to nearby enemy units. Deals <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Silences</status> for @SilenceDuration@ seconds for each strike.",
+            "keyTooltipExtended": "{{Spell_FiddleSticksE_Jade_Tooltip}}<br><br><rules>Damage to minions and neutral monsters is increased by 50%.</rules>"
           },
           "mObjectName": "Jade_FiddlesticksE",
           "~class": "TooltipInstanceSpell"
@@ -796,7 +527,7 @@
       "mHitBoneName": "C_Buffbone_Glb_Chest_Loc",
       "mHitEffectKey": "Jade_Fiddlesticks_Q_1_tar",
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Fiddlesticks_DarkWind.dds"
+        "assets/ux/jade/s3icons/samesized/fiddlesticks_darkwind.dds"
       ],
       "mMaxAmmo": [
         -1,
@@ -881,6 +612,210 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jade_Fiddlesticks/Spells/Jade_FiddlesticksEAbility/Jade_FiddlesticksE",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Fiddlesticks/Spells/Jade_FiddlesticksEAbility/Jade_FiddlesticksEMissile": {
+    "ObjectName": "Jade_FiddlesticksEMissile",
+    "mScriptName": "Jade_FiddlesticksEMissile",
+    "mSpell": {
+      "SpellEventToAudioEventSuffix": {
+        "13": "Play_sfx_Fiddlesticks_FiddlesticksE_hit_regular"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castRadius": [
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0
+      ],
+      "castRange": [
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0
+      ],
+      "castRangeValues": {
+        "0xa3e0478": 25000.0,
+        "values": [
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "flags": 4194304,
+      "mAffectsTypeFlags": 6154,
+      "mCastType": 1,
+      "mHitBoneName": "C_Buffbone_Glb_Chest_Loc",
+      "mHitEffectKey": "Jade_Fiddlesticks_Q_1_tar",
+      "mMissileEffectKey": "0x6aa69363",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 75.0,
+          "mSpeed": 1200.0,
+          "mStartBoneName": "C_Buffbone_Glb_Chest_Loc",
+          "mTargetBoneName": "C_Buffbone_Glb_Chest_Loc",
+          "mTargetHeightAugment": 75.0,
+          "mUseHeightOffsetAtEnd": true,
+          "~class": "FixedSpeedMovement"
+        },
+        "visibilityComponent": {
+          "~class": "EnterFOWVisibility"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 1800.0,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Fiddlesticks/Spells/Jade_FiddlesticksEAbility/Jade_FiddlesticksEMissile",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Fiddlesticks/Spells/Jade_FiddlesticksEAbility/Jade_FiddlesticksESilence": {
+    "ObjectName": "Jade_FiddlesticksESilence",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Dark Wind",
+          "keyTooltip": "This unit cannot use Abilities."
+        },
+        "mObjectName": "Jade_FiddlesticksESilence",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_FiddlesticksESilence",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/fiddlesticks_darkwind.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Fiddlesticks/Spells/Jade_FiddlesticksEAbility/Jade_FiddlesticksESilence",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Fiddlesticks/Spells/Jade_FiddlesticksPassiveAbility/Jade_FiddlesticksPassive": {
+    "ObjectName": "Jade_FiddlesticksPassive",
+    "mBuff": {
+      "mDescription": "Enemy units near Fiddlesticks have their Magic Resist reduced by 10.",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_FiddlesticksPassive",
+    "mSpell": {
+      "DataValues": [
+        {
+          "name": "PassiveRange",
+          "values": [
+            800.0,
+            800.0,
+            800.0,
+            800.0,
+            800.0,
+            800.0,
+            800.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "PassiveMagicResistShred",
+          "values": [
+            -10.0,
+            -10.0,
+            -10.0,
+            -10.0,
+            -10.0,
+            -10.0,
+            -10.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "castRange": [
+        800.0,
+        800.0,
+        800.0,
+        800.0,
+        800.0,
+        800.0,
+        800.0
+      ],
+      "castRangeValues": {
+        "0xa3e0478": 800.0,
+        "values": [
+          800.0,
+          800.0,
+          800.0,
+          800.0,
+          800.0,
+          800.0,
+          800.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "mClientData": {
+        "mTooltipData": {
+          "EnableExtendedTooltip": false,
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyName": "Dread",
+            "keySummary": "Nearby enemies have reduced Magic Resist.",
+            "keyTooltip": "Enemy units near Fiddlesticks have reduced <scaleMR>@PassiveMagicResistShred*-1@ Magic Resist</scaleMR>"
+          },
+          "mObjectName": "Jade_FiddlesticksPassive",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/fiddlesticks_paranoia.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Fiddlesticks/Spells/Jade_FiddlesticksPassiveAbility/Jade_FiddlesticksPassive",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Fiddlesticks/Spells/Jade_FiddlesticksPassiveAbility/Jade_FiddlesticksPassive_Debuff": {
+    "ObjectName": "Jade_FiddlesticksPassive_Debuff",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Dread",
+          "keyTooltip": "This unit has reduced Magic Resist."
+        },
+        "mObjectName": "Jade_FiddlesticksPassive_Debuff",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_FiddlesticksPassive_Debuff",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/fiddlesticks_paranoia.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Fiddlesticks/Spells/Jade_FiddlesticksPassiveAbility/Jade_FiddlesticksPassive_Debuff",
     "~class": "SpellObject"
   },
   "Characters/Jade_Fiddlesticks/Spells/Jade_FiddlesticksQAbility/Jade_FiddlesticksQ": {
@@ -1019,7 +954,7 @@
       "mCoefficient": 1.0,
       "mHitBoneName": "head",
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Fiddlesticks_Terrify.dds"
+        "assets/ux/jade/s3icons/samesized/fiddlesticks_terrify.dds"
       ],
       "mSpellCooldownOrSealedQueueThreshold": 0.0,
       "mSpellTags": [
@@ -1353,7 +1288,7 @@
         0
       ],
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Fiddlesticks_Crowstorm.dds"
+        "assets/ux/jade/s3icons/samesized/fiddlesticks_crowstorm.dds"
       ],
       "mRequiredUnitTags": {
         "mObjectTagList": [
@@ -1678,7 +1613,7 @@
         0
       ],
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Fiddlesticks_ConjureScarecrow.dds"
+        "assets/ux/jade/s3icons/samesized/fiddlesticks_conjurescarecrow.dds"
       ],
       "mNoWinddownIfCancelled": true,
       "mPingableWhileDisabled": true,
@@ -1738,6 +1673,45 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jade_Fiddlesticks/Spells/Jade_FiddlesticksWAbility/Jade_FiddlesticksW",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Fiddlesticks/Spells/Jade_FiddlesticksWAbility/Jade_FiddlesticksWDrainCheck": {
+    "ObjectName": "Jade_FiddlesticksWDrainCheck",
+    "mScriptName": "Jade_FiddlesticksWDrainCheck",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/fiddlesticks_conjurescarecrow.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Fiddlesticks/Spells/Jade_FiddlesticksWAbility/Jade_FiddlesticksWDrainCheck",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Fiddlesticks/Spells/Jade_FiddlesticksWAbility/Jade_FiddlesticksWSelfMarker": {
+    "ObjectName": "Jade_FiddlesticksWSelfMarker",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Drain",
+          "keyTooltip": "Fiddlesticks is draining Health from his target.<br>"
+        },
+        "mObjectName": "Jade_FiddlesticksWSelfMarker",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_FiddlesticksWSelfMarker",
+    "mSpell": {
+      "SpellEventToAudioEventSuffix": {
+        "18": "Play_sfx_Fiddlesticks_FiddlesticksWdrain_OnBuffActivate"
+      },
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/fiddlesticks_conjurescarecrow.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Fiddlesticks/Spells/Jade_FiddlesticksWAbility/Jade_FiddlesticksWSelfMarker",
     "~class": "SpellObject"
   }
 }
