@@ -47,10 +47,10 @@ pool.post {
 maps = {
     11 => ["classic", "ruby", "swiftplay", "ultbook", "urf"],
     12 => ["aram", "augments", "firstblood", "ultbook", "kiwi"],
-    21 => ["nexusblitz"],
+    #21 => ["nexusblitz"],
     30 => ["cherry"],
-    33 => ["strawberry"],
-    35 => ["brawl"],
+    #33 => ["strawberry"],
+    #35 => ["brawl"],
     453 => ["jade"]
 }
 
