@@ -1,100 +1,4 @@
 {
-  "0x5a840f56": {
-    "ObjectName": "Jade_SorakaPassive_Buff",
-    "mBuff": {
-      "mDescription": "<titleLeft>Consecration</titleLeft><mainText>This unit has 16 increased Magic Resist.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_SorakaPassive_Buff",
-    "mSpell": {
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Soraka_Consecration.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x5a840f56",
-    "~class": "SpellObject"
-  },
-  "0x985fedb6": {
-    "ObjectName": "Jade_SorakaPassive",
-    "mScriptName": "Jade_SorakaPassive",
-    "mSpell": {
-      "DataValues": [
-        {
-          "name": "MovementSpeed",
-          "values": [
-            0.8999999761581421,
-            0.8999999761581421,
-            0.8999999761581421,
-            0.8999999761581421,
-            0.8999999761581421,
-            0.8999999761581421,
-            0.8999999761581421
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "HealthThreshold",
-          "values": [
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645
-          ],
-          "~class": "SpellDataValue"
-        }
-      ],
-      "castRange": [
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0
-      ],
-      "castRangeValues": {
-        "0xa3e0478": 1000.0,
-        "values": [
-          1000.0,
-          1000.0,
-          1000.0,
-          1000.0,
-          1000.0,
-          1000.0,
-          1000.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "mClientData": {
-        "mTargeterDefinitions": [
-          {
-            "~class": "TargeterDefinitionRange"
-          }
-        ],
-        "mTooltipData": {
-          "mFormat": "0x476ec0b8",
-          "mLocKeys": {
-            "keyName": "Consecration",
-            "keySummary": "Increases surrounding allies' Magic Resist by 16.",
-            "keyTooltip": "<mainText>Soraka increases the <scaleMR>Magic Resist</scaleMR> of herself and nearby allied champions by 16.</mainText>"
-          },
-          "mObjectName": "Jade_SorakaPassive",
-          "~class": "TooltipInstanceSpell"
-        },
-        "~class": "SpellDataResourceClient"
-      },
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Soraka_Consecration.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x985fedb6",
-    "~class": "SpellObject"
-  },
   "Characters/Jade_Soraka/Spells/Jade_SorakaBasicAttack": {
     "ObjectName": "Jade_SorakaBasicAttack",
     "mScriptName": "Jade_SorakaBasicAttack",
@@ -582,7 +486,7 @@
         2
       ],
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Soraka_Wish.dds"
+        "assets/ux/jade/s3icons/samesized/soraka_wish.dds"
       ],
       "mSpellCalculations": {
         "TotalDamage": {
@@ -609,6 +513,89 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jade_Soraka/Spells/Jade_SorakaEAbility/Jade_SorakaE",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Soraka/Spells/Jade_SorakaPassiveAbility/Jade_SorakaPassive": {
+    "ObjectName": "Jade_SorakaPassive",
+    "mScriptName": "Jade_SorakaPassive",
+    "mSpell": {
+      "DataValues": [
+        {
+          "name": "MagicResist",
+          "values": [
+            16.0,
+            16.0,
+            16.0,
+            16.0,
+            16.0,
+            16.0,
+            16.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "castRange": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0
+      ],
+      "castRangeValues": {
+        "0xa3e0478": 1000.0,
+        "values": [
+          1000.0,
+          1000.0,
+          1000.0,
+          1000.0,
+          1000.0,
+          1000.0,
+          1000.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyName": "Consecration",
+            "keySummary": "Increases surrounding allies' Magic Resist.",
+            "keyTooltip": "Soraka grants herself and nearby allied Champions <scaleMR>@MagicResist@ Magic Resist</scaleMR>."
+          },
+          "mObjectName": "Jade_SorakaPassive",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/soraka_consecration.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Soraka/Spells/Jade_SorakaPassiveAbility/Jade_SorakaPassive",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Soraka/Spells/Jade_SorakaPassiveAbility/Jade_SorakaPassive_Buff": {
+    "ObjectName": "Jade_SorakaPassive_Buff",
+    "mBuff": {
+      "mDescription": "<titleLeft>Consecration</titleLeft><mainText>This unit has increased Magic Resist.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_SorakaPassive_Buff",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/soraka_consecration.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Soraka/Spells/Jade_SorakaPassiveAbility/Jade_SorakaPassive_Buff",
     "~class": "SpellObject"
   },
   "Characters/Jade_Soraka/Spells/Jade_SorakaQAbility/Jade_SorakaQ": {
@@ -821,7 +808,7 @@
         "~class": "SpellDataResourceClient"
       },
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Soraka_Starcall.dds"
+        "assets/ux/jade/s3icons/samesized/soraka_starcall.dds"
       ],
       "mProjectTargetToCastRange": true,
       "mSpellCalculations": {
@@ -1012,7 +999,7 @@
         "~class": "SpellDataResourceClient"
       },
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Soraka_Purify.dds"
+        "assets/ux/jade/s3icons/samesized/soraka_purify.dds"
       ],
       "mRequiredUnitTags": {
         "mObjectTagList": [
@@ -1246,7 +1233,7 @@
           "mLocKeys": {
             "keyName": "Astral Blessing",
             "keySummary": "Soraka blesses a friendly unit, restoring health and increasing Armor for a short time.",
-            "keyTooltip": "<mainText>Restores <healing>@TotalHeal@ Health</healing>, and temporarily grants <scaleArmor>@Armour@ Armor</scaleArmor> to an ally for 3 seconds.</mainText>"
+            "keyTooltip": "Soraka restores <healing>@TotalHeal@ Health</healing> to an ally and grants them <scaleArmor>@Armour@ Armor</scaleArmor> for @BuffDuration@ seconds."
           },
           "mObjectName": "Jade_SorakaW",
           "~class": "TooltipInstanceSpell"
@@ -1272,7 +1259,7 @@
         -1
       ],
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Soraka_Bless.dds"
+        "assets/ux/jade/s3icons/samesized/soraka_bless.dds"
       ],
       "mRequiredUnitTags": {
         "mObjectTagList": [

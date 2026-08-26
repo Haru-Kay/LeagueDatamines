@@ -1,0 +1,137 @@
+{
+  "mBuffs": [
+    {
+      "mBuffScriptName": "assets/perks/styles/sorcery/summonaery/8214ally.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "PersistentEffectConditions": [
+            {
+              "PersistentVfxs": [
+                {
+                  "boneName": "C_BUFFBONE_GLB_CENTER_LOC",
+                  "effectKey": "SummonAery_Shield",
+                  "~class": "PersistentVfxData"
+                }
+              ],
+              "~class": "PersistentEffectConditionData"
+            }
+          ],
+          "mDescription": "<titleLeft>{{perk_displayname_SummonAery}}</titleLeft><mainText>This unit is shielded by Aery and will block some incoming damage.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    },
+    {
+      "mBuffScriptName": "assets/perks/styles/sorcery/summonaery/summonaery.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_SummonAery}}</titleLeft><mainText>Damage an enemy or target an ally with a spell to deploy Aery!</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    }
+  ],
+  "mCharacters": [
+    "Characters/PerksPerxie"
+  ],
+  "mDisplayNameLocalizationKey": "Summon Aery",
+  "mDisplayStatLocalizationKey": "@f1@ | @f2@",
+  "mEndOfGameStatDescriptions": [
+    "Damage Dealt: @eogvar1@",
+    "Damage Shielded: @eogvar2@"
+  ],
+  "mIconTextureName": "assets/perks/styles/sorcery/summonaery/summonaery.tex",
+  "mLongDescLocalizationKey": "Damaging enemy champions with basic attacks or abilities sends Aery to them, dealing @DamageBase@ - @DamageMax@ based on level (+<scaleAP>@DamageAPRatio.-1@ AP</scaleAP>) (+<scaleAD>@DamageADRatio.-1@ bonus AD</scaleAD>).<br><br>Empowering or protecting allies with abilities sends Aery to them, shielding them for @ShieldBase@ - @ShieldMax@ based on level (+<scaleAP>@ShieldRatio.-1@ AP</scaleAP>) (+<scaleAD>@ShieldRatioAD.-1@ bonus AD</scaleAD>).<br><br>Aery cannot be sent out again until she returns to you.",
+  "mPerkId": 8214,
+  "mPerkName": "SummonAery",
+  "mScript": {
+    "mSpellScriptData": {
+      "mCalculations": {
+        "DamageCalc": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 50.0,
+              "mStartValue": 10.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            },
+            {
+              "mDataValue": "DamageAPRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "DamageADRatio",
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 4,
+          "~class": "GameCalculation"
+        },
+        "ShieldCalc": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 100.0,
+              "mStartValue": 20.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            },
+            {
+              "mDataValue": "ShieldRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "ShieldRatioAD",
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 4,
+          "~class": "GameCalculation"
+        }
+      },
+      "mEffectAmount": {
+        "DamageADRatio": 0.10000000149011612,
+        "DamageAPRatio": 0.05000000074505806,
+        "DamageBase": 10.0,
+        "DamageMax": 50.0,
+        "ShieldBase": 20.0,
+        "ShieldDuration": 2.5,
+        "ShieldMax": 100.0,
+        "ShieldRatio": 0.05000000074505806,
+        "ShieldRatioAD": 0.10000000149011612
+      },
+      "~class": "PerkScriptData"
+    },
+    "mSpellScriptName": "assets/perks/styles/sorcery/summonaery/summonaery.lua",
+    "~class": "PerkScript"
+  },
+  "mShortDescLocalizationKey": "Your attacks and abilities send Aery to a target, damaging enemies or shielding allies.",
+  "mTooltipNameLocalizationKey": "Damaging enemy champions with basic attacks or abilities sends Aery to them, dealing <font color='#48C4B7'>@DamageCalc@</font> bonus <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_AdaptiveDmg'><font color='#48C4B7'>adaptive damage</font></lol-uikit-tooltipped-keyword>.<br><br>Empowering or protecting allies with abilities sends Aery to them, granting them <shield>@ShieldCalc@ Shield</shield>.<br><br>Aery cannot be sent out again until she returns to you.<br><br>Aery has attacked enemies <font color='#FFFFFF'>@f1@</font> times for a total of <font color='#FFFFFF'>@f3@</font> damage.<br>Aery has helped allies <font color='#FFFFFF'>@f2@</font> times, shielding a total of <font color='#FFFFFF'>@f4@</font> damage.",
+  "mVFXResourceResolver": {
+    "resourceMap": {
+      "0xa56792d0": "Perks/Styles/Sorcery/SummonAery/Particles/SummonAery_Despawn_Hide",
+      "0xb4ab561b": "Perks/Styles/Sorcery/SummonAery/Particles/SummonAery_Footstep_Sound",
+      "0xe68448f5": "Perks/Styles/Sorcery/SummonAery/Particles/Perks_Aery_Attack_Mis",
+      "0xe783fee6": "Perks/Styles/Sorcery/SummonAery/Particles/SummonAery_Child_PersistEnemy_Death",
+      "SummonAery_Ally_Mis": "Perks/Styles/Sorcery/SummonAery/Particles/SummonAery_Ally_Mis",
+      "SummonAery_Child_Mis_Self": "Perks/Styles/Sorcery/SummonAery/Particles/SummonAery_Child_Mis_Self",
+      "SummonAery_Child_PersistEnemy": "Perks/Styles/Sorcery/SummonAery/Particles/SummonAery_Child_PersistEnemy",
+      "SummonAery_Child_PersistEnemy_Death": "Perks/Styles/Sorcery/SummonAery/Particles/SummonAery_Child_PersistEnemy_Death",
+      "SummonAery_Child_ShieldDeath": "Perks/Styles/Sorcery/SummonAery/Particles/SummonAery_Child_ShieldDeath",
+      "SummonAery_Mis_Self": "Perks/Styles/Sorcery/SummonAery/Particles/SummonAery_Mis_Self",
+      "SummonAery_OnHit_Tar": "Perks/Styles/Sorcery/SummonAery/Particles/SummonAery_OnHit_Tar",
+      "SummonAery_Persist_Enemy": "Perks/Styles/Sorcery/SummonAery/Particles/SummonAery_Persist_Enemy",
+      "SummonAery_Recall_TailBlur": "Perks/Styles/Sorcery/SummonAery/Particles/SummonAery_Recall_TailBlur",
+      "SummonAery_Return_Spawn": "Perks/Styles/Sorcery/SummonAery/Particles/SummonAery_Return_Spawn",
+      "SummonAery_Shield": "Perks/Styles/Sorcery/SummonAery/Particles/SummonAery_Shield",
+      "SummonAery_Target_Despawn": "Perks/Styles/Sorcery/SummonAery/Particles/SummonAery_Target_Despawn"
+    },
+    "~class": "ResourceResolver"
+  },
+  "~class": "Perk"
+}

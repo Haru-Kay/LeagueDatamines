@@ -20,35 +20,11 @@
         "18": "Play_sfx_Blitzcrank_ManaBarrier_OnBuffActivate"
       },
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Blitzcrank_ManaBarrier.dds"
+        "assets/ux/jade/s3icons/samesized/blitzcrank_manabarrier.dds"
       ],
       "~class": "SpellDataResource"
     },
     "objectPath": "0x3464132a",
-    "~class": "SpellObject"
-  },
-  "0x36da259d": {
-    "ObjectName": "Jade_Blitzcrank_GodOfGrab_Buff",
-    "mBuff": {
-      "mTooltipData": {
-        "mFormat": "0xb34f999a",
-        "mLocKeys": {
-          "keyName": "God of Grab",
-          "keyTooltip": "Godlike Grabs: @f1@<br><br><flavorText>\"Mad-men\"</flavorText>"
-        },
-        "mObjectName": "Jade_Blitzcrank_GodOfGrab_Buff",
-        "~class": "TooltipInstanceBuff"
-      },
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_Blitzcrank_GodOfGrab_Buff",
-    "mSpell": {
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/ViW2.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x36da259d",
     "~class": "SpellObject"
   },
   "0x3e3cc3c7": {
@@ -63,26 +39,13 @@
         {
           "name": "HealthThreshold",
           "values": [
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "ManaPercent",
-          "values": [
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224
           ],
           "~class": "SpellDataValue"
         },
@@ -115,13 +78,13 @@
         {
           "name": "ManaRatio",
           "values": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
           ],
           "~class": "SpellDataValue"
         }
@@ -153,76 +116,26 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Mana Barrier",
-            "keySummary": "When Blitzcrank life is brought below 20% health they activate Mana Barrier. This creates a mana shield equal to 50% of their mana for 10 seconds. Mana Barrier can only occur once every 90 seconds.",
-            "keyTooltip": "Blitzcrank's <spellName>Mana Barrier</spellName> can activate once every 90 seconds when they fall below 20% Health. They are then <shield>Shielded</shield> for 50% of their current Mana for 10 seconds."
+            "keySummary": "When taking damage at low Health, Blitzcrank is first Shielded for a percent of their current Mana. This effect has a cooldown.",
+            "keyTooltip": "When taking damage while below @HealthThreshold*100@% Health, Blitzcrank is first <shield>Shielded</shield> for @ManaRatio*100@% of their current Mana for @ShieldDuration@ seconds. <spellName>Mana Barrier</spellName> can activate once every @Cooldown@ seconds."
           },
           "mObjectName": "Jade_BlitzcrankManaBarrierIcon",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mEffectAmount": [
-        {
-          "value": [
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Blitzcrank_ManaBarrier.dds"
+        "assets/ux/jade/s3icons/samesized/blitzcrank_manabarrier.dds"
       ],
       "mSpellCalculations": {
-        "ShieldAmount": {
+        "MaxHealthThreshold": {
           "mFormulaParts": [
             {
-              "mCoefficient": 0.5,
-              "~class": "AbilityResourceByCoefficientCalculationPart"
+              "mDataValue": "HealthThreshold",
+              "mStat": 12,
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
-          "mSimpleTooltipCalculationDisplay": 6,
           "~class": "GameCalculation"
         }
       },
@@ -327,18 +240,6 @@
     "objectPath": "0x4308f67",
     "~class": "SpellObject"
   },
-  "0x44e322e3": {
-    "ObjectName": "Jade_Blitzcrank_GodOfGrab",
-    "mBuff": {
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_Blitzcrank_GodOfGrab",
-    "mSpell": {
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x44e322e3",
-    "~class": "SpellObject"
-  },
   "0x6459c6bb": {
     "ObjectName": "Jade_BlitzcrankManaBarrierCooldown",
     "mBuff": {
@@ -357,7 +258,7 @@
     "mScriptName": "Jade_BlitzcrankManaBarrierCooldown",
     "mSpell": {
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Blitzcrank_ManaBarrierCD.dds"
+        "assets/ux/jade/s3icons/samesized/blitzcrank_manabarriercd.dds"
       ],
       "~class": "SpellDataResource"
     },
@@ -382,7 +283,7 @@
     "mScriptName": "Jade_BlitzcrankPowerFistSlow",
     "mSpell": {
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Blitzcrank_PowerFist.dds"
+        "assets/ux/jade/s3icons/samesized/blitzcrank_powerfist.dds"
       ],
       "~class": "SpellDataResource"
     },
@@ -440,15 +341,15 @@
         1050.0
       ],
       "castRangeValues": {
-        "0xa3e0478": 1080.0,
+        "0xa3e0478": 1050.0,
         "values": [
-          1080.0,
-          1080.0,
-          1080.0,
-          1080.0,
-          1080.0,
-          1080.0,
-          1080.0
+          1050.0,
+          1050.0,
+          1050.0,
+          1050.0,
+          1050.0,
+          1050.0,
+          1050.0
         ],
         "~class": "SpellAttributeModifiable"
       },
@@ -499,7 +400,7 @@
       },
       "mHitBoneName": "root",
       "mImgIconName": [
-        "ASSETS/Characters/Jade_Blitzcrank/HUD/Icons2D/Jade_Blitzcrank_RocketGrab.dds"
+        "assets/characters/jade_blitzcrank/hud/icons2d/jade_blitzcrank_rocketgrab.dds"
       ],
       "mLineWidth": 70.0,
       "mMissileEffectKey": "Jade_Blitzcrank_Q_mis",
@@ -622,7 +523,7 @@
               "basePosition": 3,
               "~class": "DrawablePositionLocator"
             },
-            "textureRadiusOverrideName": "ASSETS/Spells/Textures/AOE.tex",
+            "textureRadiusOverrideName": "assets/spells/textures/aoe.tex",
             "~class": "TargeterDefinitionAoe"
           }
         ],
@@ -720,7 +621,7 @@
               "basePosition": 3,
               "~class": "DrawablePositionLocator"
             },
-            "textureRadiusOverrideName": "ASSETS/Spells/Textures/AOE.tex",
+            "textureRadiusOverrideName": "assets/spells/textures/aoe.tex",
             "~class": "TargeterDefinitionAoe"
           }
         ],
@@ -996,7 +897,7 @@
       },
       "mHitBoneName": "C_BUFFBONE_GLB_HEAD_LOC",
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Blitzcrank_Overdrive.dds"
+        "assets/ux/jade/s3icons/samesized/blitzcrank_overdrive.dds"
       ],
       "mRequiredUnitTags": {
         "mObjectTagList": [
@@ -1046,13 +947,13 @@
     "mSpell": {
       "Cooldown": {
         "values": [
-          9.0,
+          10.0,
           9.0,
           8.0,
           7.0,
           6.0,
           5.0,
-          5.0
+          4.0
         ],
         "~class": "SpellAttributeModifiable"
       },
@@ -1060,13 +961,13 @@
         {
           "name": "CCDuration",
           "values": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421
           ],
           "~class": "SpellDataValue"
         }
@@ -1138,8 +1039,8 @@
           },
           "mLocKeys": {
             "keyName": "Power Fist",
-            "keySummary": "Blitzcrank charges up their fist to make their next attack deal double damage and pop their target up in the air.",
-            "keyTooltip": "Blitzcrank charges up their fist to make their next attack deal <physicalDamage>@TotalDamage@ Physical Damage</physicalDamage> and their target is <status>Knocked Up</status> for @CCDuration@ second."
+            "keySummary": "Blitzcrank charges up their fist to make their next attack deal bonus damage and pop their target up in the air.",
+            "keyTooltip": "Blitzcrank charges up their fist to make their next attack deal <physicalDamage>@TotalDamage@ Physical Damage</physicalDamage> and <status>Knock Up</status> their target."
           },
           "mObjectName": "Jade_BlitzcrankPowerFist",
           "~class": "TooltipInstanceSpell"
@@ -1149,7 +1050,7 @@
       "mCoefficient": 0.800000011920929,
       "mHitBoneName": "root",
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Blitzcrank_PowerFist.dds"
+        "assets/ux/jade/s3icons/samesized/blitzcrank_powerfist.dds"
       ],
       "mRequiredUnitTags": {
         "mObjectTagList": [
@@ -1158,16 +1059,6 @@
         "~class": "ObjectTags"
       },
       "mSpellCalculations": {
-        "0xa9d6b924": {
-          "mFormulaParts": [
-            {
-              "mCoefficient": 1.75,
-              "mStat": 2,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
         "TotalDamage": {
           "mFormulaParts": [
             {
@@ -1176,7 +1067,6 @@
               "~class": "StatByCoefficientCalculationPart"
             }
           ],
-          "mSimpleTooltipCalculationDisplay": 6,
           "~class": "GameCalculation"
         }
       },
@@ -1261,19 +1151,6 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "LolipopLength",
-          "values": [
-            70.0,
-            70.0,
-            70.0,
-            70.0,
-            70.0,
-            70.0,
-            70.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "name": "APRatio",
           "values": [
             1.0,
@@ -1311,13 +1188,13 @@
         10000.0
       ],
       "castRangeDisplayOverride": [
-        1079.0,
-        1079.0,
-        1079.0,
-        1079.0,
-        1079.0,
-        1079.0,
-        1079.0
+        1025.0,
+        1025.0,
+        1025.0,
+        1025.0,
+        1025.0,
+        1025.0,
+        1025.0
       ],
       "castRangeValues": {
         "0xa3e0478": 10000.0,
@@ -1404,7 +1281,7 @@
       },
       "mHitBoneName": "root",
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Blitzcrank_RocketGrab.dds"
+        "assets/ux/jade/s3icons/samesized/blitzcrank_rocketgrab.dds"
       ],
       "mLineWidth": 70.0,
       "mRequiredUnitTags": {
@@ -1444,14 +1321,14 @@
         120.0
       ],
       "manaValues": {
-        "0xa3e0478": 120.0,
+        "0xa3e0478": 140.0,
         "values": [
-          120.0,
-          120.0,
-          120.0,
-          120.0,
-          120.0,
-          120.0
+          140.0,
+          140.0,
+          140.0,
+          140.0,
+          140.0,
+          140.0
         ],
         "~class": "ResourceCostModifiable"
       },
@@ -1482,15 +1359,15 @@
     "mScriptName": "Jade_BlitzcrankStaticField",
     "mSpell": {
       "Cooldown": {
-        "0xa3e0478": 30.0,
+        "0xa3e0478": 40.0,
         "values": [
-          30.0,
-          30.0,
-          30.0,
-          30.0,
-          30.0,
-          30.0,
-          30.0
+          40.0,
+          40.0,
+          40.0,
+          40.0,
+          40.0,
+          40.0,
+          40.0
         ],
         "~class": "SpellAttributeModifiable"
       },
@@ -1522,6 +1399,19 @@
           "~class": "SpellDataValue"
         },
         {
+          "name": "PassiveHitRate",
+          "values": [
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
           "name": "ActiveRange",
           "values": [
             600.0,
@@ -1537,13 +1427,13 @@
         {
           "name": "ActiveBaseDamage",
           "values": [
-            100.0,
-            200.0,
-            300.0,
+            25.0,
+            150.0,
+            275.0,
             400.0,
-            500.0,
-            600.0,
-            700.0
+            525.0,
+            650.0,
+            775.0
           ],
           "~class": "SpellDataValue"
         },
@@ -1652,9 +1542,8 @@
           },
           "mLocKeys": {
             "keyName": "Static Field",
-            "keySummary": "Passively causes lightning bolts to damage a nearby enemy. Additionally, Blitzcrank can activate this ability to damage nearby enemies and silence them for 0.5 seconds, but doing so removes the passive lightning until Static Field becomes available again.",
-            "keyTooltip": "<spellPassive>Passive: </spellPassive>Lightning arcs off of Blitzcrank to hit a random nearby enemy for <magicDamage>@PassiveDamage@ magic damage</magicDamage> every 2.5 seconds.<br><br><spellActive>Active: </spellActive>Deals <magicDamage>@ActiveDamage@ magic damage</magicDamage> and <status>Silences</status> surrounding enemy units for 0.5 seconds.",
-            "keyTooltipExtended": "<spellPassive>Passive: </spellPassive>Lightning arcs off of Blitzcrank to hit a random nearby enemy for <magicDamage>@PassiveDamage@ magic damage</magicDamage> every 2.5 seconds.<br><br><spellActive>Active: </spellActive>Deals <magicDamage>@ActiveDamage@ magic damage</magicDamage> and <status>Silences</status> surrounding enemy units for 0.5 seconds. The passive is not in effect during the cooldown."
+            "keySummary": "Passively causes lightning bolts to damage a nearby enemy. Additionally, Blitzcrank can activate this ability to damage nearby enemies and briefly silence them.",
+            "keyTooltip": "<spellPassive>Passive: </spellPassive>Lightning arcs off of Blitzcrank to hit a random nearby enemy for <magicDamage>@PassiveDamage@ magic damage</magicDamage> every @PassiveHitRate@ seconds.<br><br><spellActive>Active: </spellActive>Deals <magicDamage>@ActiveDamage@ magic damage</magicDamage> and <status>Silences</status> surrounding enemy units for @SilenceDuration@ seconds. The passive is disabled while Static Field is on cooldown."
           },
           "mObjectName": "Jade_BlitzcrankStaticField",
           "~class": "TooltipInstanceSpell"
@@ -1662,7 +1551,7 @@
         "~class": "SpellDataResourceClient"
       },
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Blitzcrank_StaticField.dds"
+        "assets/ux/jade/s3icons/samesized/blitzcrank_staticfield.dds"
       ],
       "mSpellCalculations": {
         "ActiveDamage": {
@@ -1725,6 +1614,42 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jade_Blitzcrank/Spells/Jade_BlitzcrankStaticFieldAbility/Jade_BlitzcrankStaticField",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Blitzcrank/Spells/Jade_Blitzcrank_GodOfGrab": {
+    "ObjectName": "Jade_Blitzcrank_GodOfGrab",
+    "mBuff": {
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_Blitzcrank_GodOfGrab",
+    "mSpell": {
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Blitzcrank/Spells/Jade_Blitzcrank_GodOfGrab",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Blitzcrank/Spells/Jade_Blitzcrank_GodOfGrab_Buff": {
+    "ObjectName": "Jade_Blitzcrank_GodOfGrab_Buff",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "God of Grab",
+          "keyTooltip": "Godlike Grabs: @f1@<br><br><flavorText>\"Mad-men\"</flavorText>"
+        },
+        "mObjectName": "Jade_Blitzcrank_GodOfGrab_Buff",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_Blitzcrank_GodOfGrab_Buff",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/viw2.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Blitzcrank/Spells/Jade_Blitzcrank_GodOfGrab_Buff",
     "~class": "SpellObject"
   }
 }

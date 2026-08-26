@@ -1,796 +1,4 @@
 {
-  "0x3ca616fa": {
-    "ObjectName": "Jade_KogMawPassiveBuff",
-    "mBuff": {
-      "mTooltipData": {
-        "mFormat": "0xb34f999a",
-        "mLocKeys": {
-          "keyName": "Icathian Surprise",
-          "keyTooltip": "Kog'Maw is about to explode, dealing damage to nearby enemies."
-        },
-        "mObjectName": "Jade_KogMawPassiveBuff",
-        "~class": "TooltipInstanceBuff"
-      },
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_KogMawPassiveBuff",
-    "mSpell": {
-      "Cooldown": {
-        "0xa3e0478": 8.0,
-        "values": [
-          8.0,
-          8.0,
-          8.0,
-          8.0,
-          8.0,
-          8.0,
-          8.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "DataValues": [
-        {
-          "name": "TooltipPassiveMS",
-          "values": [
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "TooltipPassiveDuration",
-          "values": [
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0
-          ],
-          "~class": "SpellDataValue"
-        }
-      ],
-      "bHaveHitEffect": true,
-      "castConeDistance": 100.0,
-      "castFrame": 10.050000190734863,
-      "castRadius": [
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0
-      ],
-      "castRange": [
-        600.0,
-        600.0,
-        600.0,
-        600.0,
-        600.0,
-        600.0,
-        600.0
-      ],
-      "castRangeValues": {
-        "0xa3e0478": 600.0,
-        "values": [
-          600.0,
-          600.0,
-          600.0,
-          600.0,
-          600.0,
-          600.0,
-          600.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "cooldownTime": [
-        8.0,
-        8.0,
-        8.0,
-        8.0,
-        8.0,
-        8.0,
-        8.0
-      ],
-      "mAffectsTypeFlags": 6154,
-      "mAlternateName": "Jade_KogMawIcathianSurprise",
-      "mAnimationName": "Spell1",
-      "mCantCancelWhileWindingUp": true,
-      "mCastType": 1,
-      "mClientData": {
-        "mTargeterDefinitions": [
-          {
-            "~class": "TargeterDefinitionRange"
-          }
-        ],
-        "mTooltipData": {
-          "EnableExtendedTooltip": false,
-          "mFormat": "0x476ec0b8",
-          "mLocKeys": {
-            "keyName": "Icathian Surprise",
-            "keySummary": "4 seconds after dying, Kogmaw explodes, dealing true damage to surrounding enemies.",
-            "keyTooltip": "For @TooltipPassiveDuration@ seconds after dying, Kog'Maw can continue to move, can move through units, and gains <speed>10% Move Speed</speed>, increasing to <speed>@TooltipPassiveMS*100@% Move Speed</speed> over the duration. At the end of the duration, he explodes and deals <trueDamage>@PassiveDamage@ true damage</trueDamage> to nearby enemies."
-          },
-          "mObjectName": "Jade_KogMawPassiveBuff",
-          "~class": "TooltipInstanceSpell"
-        },
-        "~class": "SpellDataResourceClient"
-      },
-      "mCoefficient": 0.699999988079071,
-      "mDimensionBehavior": 1,
-      "mEffectAmount": [
-        {
-          "value": [
-            10.0,
-            60.0,
-            110.0,
-            160.0,
-            210.0,
-            260.0,
-            310.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            10.0,
-            12.0,
-            14.0,
-            16.0,
-            18.0,
-            20.0,
-            22.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
-      "mHitEffectKey": "Jade_KogMaw_Q_tar",
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/KogMaw_IcathianSurprise.dds"
-      ],
-      "mMissileEffectKey": "Jade_KogMaw_Q_mis",
-      "mMissileSpec": {
-        "behaviors": [
-          {
-            "~class": "CastOnMovementComplete"
-          },
-          {
-            "~class": "DestroyOnMovementComplete"
-          }
-        ],
-        "movementComponent": {
-          "mOffsetInitialTargetHeight": 100.0,
-          "mSpeed": 1500.0,
-          "mStartBoneName": "C_Mouth_d",
-          "mTargetHeightAugment": 100.0,
-          "~class": "FixedSpeedMovement"
-        },
-        "verticalFacing": {
-          "~class": "VeritcalFacingMatchVelocity"
-        },
-        "~class": "MissileSpecification"
-      },
-      "mSpellCalculations": {
-        "PassiveDamage": {
-          "mFormulaParts": [
-            {
-              "mEndValue": 550.0,
-              "mStartValue": 125.0,
-              "~class": "ByCharLevelInterpolationCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        }
-      },
-      "mana": [
-        70.0,
-        70.0,
-        70.0,
-        70.0,
-        70.0,
-        70.0
-      ],
-      "manaValues": {
-        "0xa3e0478": 70.0,
-        "values": [
-          70.0,
-          70.0,
-          70.0,
-          70.0,
-          70.0,
-          70.0
-        ],
-        "~class": "ResourceCostModifiable"
-      },
-      "missileSpeed": 1500.0,
-      "spellCastTime": 0.25,
-      "spellTotalTime": 1.0,
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x3ca616fa",
-    "~class": "SpellObject"
-  },
-  "0x5277a218": {
-    "ObjectName": "Jade_KogMawQPassive",
-    "mScriptName": "Jade_KogMawQPassive",
-    "mSpell": {
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/KogMaw_CausticSpittle.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x5277a218",
-    "~class": "SpellObject"
-  },
-  "0x8037e0ae": {
-    "ObjectName": "Jade_KogMawRCost",
-    "mBuff": {
-      "mTooltipData": {
-        "mFormat": "0xb34f999a",
-        "mLocKeys": {
-          "keyName": "Living Artillery",
-          "keyTooltip": "Kog'Maw's next Living Artillery will cost additional Mana."
-        },
-        "mObjectName": "Jade_KogMawRCost",
-        "~class": "TooltipInstanceBuff"
-      },
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_KogMawRCost",
-    "mSpell": {
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/KogMaw_LivingArtillery.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x8037e0ae",
-    "~class": "SpellObject"
-  },
-  "0xa57f53ad": {
-    "ObjectName": "Jade_KogMawQDebuff",
-    "mBuff": {
-      "mTooltipData": {
-        "mFormat": "0xb34f999a",
-        "mLocKeys": {
-          "keyName": "Caustic Spittle",
-          "keyTooltip": "This target has reduced Armor and Magic Resist.<br>"
-        },
-        "mObjectName": "Jade_KogMawQDebuff",
-        "~class": "TooltipInstanceBuff"
-      },
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_KogMawQDebuff",
-    "mSpell": {
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/KogMaw_CausticSpittle.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xa57f53ad",
-    "~class": "SpellObject"
-  },
-  "0xa91f617c": {
-    "ObjectName": "Jade_KogMawRSight",
-    "mBuff": {
-      "mTooltipData": {
-        "mFormat": "0xb34f999a",
-        "mLocKeys": {
-          "keyName": "Living Artillery",
-          "keyTooltip": "Kog'Maw's team can see you."
-        },
-        "mObjectName": "Jade_KogMawRSight",
-        "~class": "TooltipInstanceBuff"
-      },
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_KogMawRSight",
-    "mSpell": {
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/KogMaw_LivingArtillery.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xa91f617c",
-    "~class": "SpellObject"
-  },
-  "0xaacb7ca9": {
-    "ObjectName": "Jade_KogMawEMissile",
-    "mScriptName": "Jade_KogMawEMissile",
-    "mSpell": {
-      "Cooldown": {
-        "0xa3e0478": 0.0,
-        "values": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "SpellEventToAudioEventSuffix": {
-        "16": "Play_sfx_KogMaw_KogMawVoidOozeMissile_OnMissileLaunch"
-      },
-      "bHaveHitBone": true,
-      "castConeDistance": 100.0,
-      "castFrame": 7.5,
-      "castRadius": [
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0
-      ],
-      "castRange": [
-        1280.0,
-        1280.0,
-        1280.0,
-        1280.0,
-        1280.0,
-        1280.0,
-        1280.0
-      ],
-      "castRangeValues": {
-        "0xa3e0478": 1280.0,
-        "values": [
-          1280.0,
-          1280.0,
-          1280.0,
-          1280.0,
-          1280.0,
-          1280.0,
-          1280.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "cooldownTime": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "luaOnMissileUpdateDistanceInterval": 125.0,
-      "mAffectsTypeFlags": 7183,
-      "mAlternateName": "Jade_KogMawVoidOozeMissile",
-      "mAnimationName": "Spell3",
-      "mCantCancelWhileWindingUp": true,
-      "mCastType": 3,
-      "mClientData": {
-        "mTargeterDefinitions": [
-          {
-            "hideWithLineIndicator": true,
-            "~class": "TargeterDefinitionRange"
-          },
-          {
-            "endLocator": {
-              "basePosition": 3,
-              "~class": "DrawablePositionLocator"
-            },
-            "lineStopsAtEndPosition": false,
-            "lineWidth": {
-              "mPerLevelValues": [
-                120.0,
-                120.0,
-                120.0,
-                120.0,
-                120.0,
-                120.0
-              ],
-              "mValueType": 2,
-              "~class": "FloatPerSpellLevel"
-            },
-            "~class": "TargeterDefinitionLine"
-          }
-        ],
-        "mUseTooltipFromAnotherSpell": "Characters/Jade_KogMaw/Spells/Jade_KogMawEAbility/Jade_KogMawE",
-        "~class": "SpellDataResourceClient"
-      },
-      "mCoefficient": 1.0,
-      "mEffectAmount": [
-        {
-          "value": [
-            75.0,
-            250.0,
-            425.0,
-            600.0,
-            0.0,
-            0.0,
-            175.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
-      "mHitBoneName": "root",
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/KogMaw_VoidOoze.dds"
-      ],
-      "mLineWidth": 120.0,
-      "mMissileEffectKey": "Jade_KogMaw_E_mis",
-      "mMissileSpec": {
-        "behaviors": [
-          {
-            "~class": "CastOnHit"
-          },
-          {
-            "~class": "DestroyOnMovementComplete"
-          }
-        ],
-        "heightSolver": {
-          "~class": "BlendedLinearHeightSolver"
-        },
-        "mMissileWidth": 120.0,
-        "movementComponent": {
-          "mOffsetInitialTargetHeight": 100.0,
-          "mProjectTargetToCastRange": true,
-          "mSpeed": 1400.0,
-          "mStartBoneName": "C_Mouth",
-          "mTracksTarget": false,
-          "mUseHeightOffsetAtEnd": true,
-          "~class": "FixedSpeedMovement"
-        },
-        "verticalFacing": {
-          "~class": "VerticalFacingFaceTarget"
-        },
-        "~class": "MissileSpecification"
-      },
-      "mSpellRevealsChampion": false,
-      "mTargetingTypeData": {
-        "~class": "Location"
-      },
-      "missileSpeed": 1400.0,
-      "selectionPriority": 1,
-      "spellCastTime": 0.25,
-      "spellTotalTime": 1.0,
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xaacb7ca9",
-    "~class": "SpellObject"
-  },
-  "0xc126eecf": {
-    "ObjectName": "Jade_KogMawWAttack",
-    "mScriptName": "Jade_KogMawWAttack",
-    "mSpell": {
-      "Cooldown": {
-        "0xa3e0478": 0.0,
-        "values": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "SpellEventToAudioEventSuffix": {
-        "12": "Play_sfx_KogMaw_KogMawBioArcaneBarrageAttack_OnCast",
-        "13": "Play_sfx_KogMaw_KogMawBioArcaneBarrageAttack_OnHit",
-        "16": "Play_sfx_KogMaw_KogMawBioArcaneBarrageAttack_OnMissileLaunch"
-      },
-      "bHaveHitBone": true,
-      "bHaveHitEffect": true,
-      "canCastWhileDisabled": true,
-      "castConeDistance": 100.0,
-      "castFrame": 7.5,
-      "castRadius": [
-        210.0,
-        210.0,
-        210.0,
-        210.0,
-        210.0,
-        210.0,
-        210.0
-      ],
-      "castRange": [
-        2000.0,
-        2000.0,
-        2000.0,
-        2000.0,
-        2000.0,
-        2000.0,
-        2000.0
-      ],
-      "castRangeValues": {
-        "0xa3e0478": 2000.0,
-        "values": [
-          2000.0,
-          2000.0,
-          2000.0,
-          2000.0,
-          2000.0,
-          2000.0,
-          2000.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "cooldownTime": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mAffectsTypeFlags": 6794,
-      "mAlternateName": "Jade_KogMawBioArcaneBarrageAttack",
-      "mAnimationName": "Spell2_Attack1",
-      "mApplyAttackDamage": true,
-      "mCastType": 1,
-      "mClientData": {
-        "mTargeterDefinitions": [
-          {
-            "useCasterBoundingBox": false,
-            "~class": "TargeterDefinitionRange"
-          }
-        ],
-        "~class": "SpellDataResourceClient"
-      },
-      "mHitBoneName": "C_BUFFBONE_GLB_LAYOUT_LOC",
-      "mHitEffectKey": "Jade_KogMaw_W_tar",
-      "mHitEffectOrientType": 2,
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/KogMaw_BioArcaneBarrage.dds"
-      ],
-      "mLineWidth": 100.0,
-      "mMissileEffectKey": "Jade_KogMaw_W_mis",
-      "mMissileSpec": {
-        "behaviors": [
-          {
-            "~class": "CastOnMovementComplete"
-          },
-          {
-            "~class": "DestroyOnMovementComplete"
-          }
-        ],
-        "heightSolver": {
-          "mGravity": 5000.0,
-          "~class": "GravityHeightSolver"
-        },
-        "mMissileWidth": 100.0,
-        "movementComponent": {
-          "mOffsetInitialTargetHeight": 100.0,
-          "mSpeed": 1800.0,
-          "mStartBoneName": "BUFFBONE_GLB_WEAPON_LOC",
-          "mTargetHeightAugment": 100.0,
-          "~class": "FixedSpeedMovement"
-        },
-        "verticalFacing": {
-          "~class": "VeritcalFacingMatchVelocity"
-        },
-        "~class": "MissileSpecification"
-      },
-      "missileSpeed": 1800.0,
-      "spellCastTime": 0.3888999819755554,
-      "spellTotalTime": 1.333400011062622,
-      "useAnimatorFramerate": true,
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xc126eecf",
-    "~class": "SpellObject"
-  },
-  "0xccc304b5": {
-    "ObjectName": "Jade_KogMawEMarker",
-    "mScriptName": "Jade_KogMawEMarker",
-    "mSpell": {
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/KogMaw_VoidOoze.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xccc304b5",
-    "~class": "SpellObject"
-  },
-  "0xd156c4e": {
-    "ObjectName": "Jade_KogmawPassiveSound",
-    "mBuff": {
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_KogmawPassiveSound",
-    "mSpell": {
-      "SpellEventToAudioEventSuffix": {
-        "18": "Play_sfx_KogMaw_KogMawIcathianSurprise_OnBuffActivate"
-      },
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/KogMaw_IcathianSurprise.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xd156c4e",
-    "~class": "SpellObject"
-  },
-  "0xe7b05df7": {
-    "ObjectName": "Jade_KogMawPassive",
-    "mScriptName": "Jade_KogMawPassive",
-    "mSpell": {
-      "DataValues": [
-        {
-          "name": "scalingMS",
-          "values": [
-            0.02500000037252903,
-            0.02500000037252903,
-            0.02500000037252903,
-            0.02500000037252903,
-            0.02500000037252903,
-            0.02500000037252903,
-            0.02500000037252903
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "passiveDuration",
-          "values": [
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "TooltipMS",
-          "values": [
-            0.375,
-            0.375,
-            0.375,
-            0.375,
-            0.375,
-            0.375,
-            0.375
-          ],
-          "~class": "SpellDataValue"
-        }
-      ],
-      "castRange": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "castRangeValues": {
-        "0xa3e0478": 0.0,
-        "values": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "mClientData": {
-        "mTooltipData": {
-          "mFormat": "0x476ec0b8",
-          "mLocKeys": {
-            "keyName": "Icathian Surprise",
-            "keySummary": "Upon dying, Kog'Maw starts a chain reaction in his body which causes him to detonate after 4 seconds; dealing magic damage to surrounding enemies.",
-            "keyTooltip": "For @passiveDuration@ seconds after dying, Kog'Maw can continue to move, is Ghosted, and increases his <speed>Move Speed</speed> by @TooltipMS*100@% over the duration. At the end of the duration, he explodes and deals <trueDamage>@PassiveDamage@ true damage</trueDamage> to nearby enemies.",
-            "keyTooltipExtended": "{{Spell_KogMawPassive_Jade_Tooltip}}<br><br><rules>{{Reminder_Ghosted}}</rules>"
-          },
-          "mObjectName": "Jade_KogMawPassive",
-          "~class": "TooltipInstanceSpell"
-        },
-        "~class": "SpellDataResourceClient"
-      },
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/KogMaw_IcathianSurprise.dds"
-      ],
-      "mSpellCalculations": {
-        "PassiveDamage": {
-          "mFormulaParts": [
-            {
-              "mInitialBonusPerLevel": 25.0,
-              "mLevel1Value": 125.0,
-              "~class": "ByCharLevelBreakpointsCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        }
-      },
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xe7b05df7",
-    "~class": "SpellObject"
-  },
-  "0xfbe7d28d": {
-    "ObjectName": "Jade_KogMawEDebuff",
-    "mBuff": {
-      "mTooltipData": {
-        "mFormat": "0xb34f999a",
-        "mLocKeys": {
-          "keyName": "Void Ooze",
-          "keyTooltip": "This unit has reduced movement speed."
-        },
-        "mObjectName": "Jade_KogMawEDebuff",
-        "~class": "TooltipInstanceBuff"
-      },
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_KogMawEDebuff",
-    "mSpell": {
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/KogMaw_VoidOoze.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xfbe7d28d",
-    "~class": "SpellObject"
-  },
   "Characters/Jade_KogMaw/Spells/Jade_KogMawBasicAttack": {
     "ObjectName": "Jade_KogMawBasicAttack",
     "mScriptName": "Jade_KogMawBasicAttack",
@@ -1253,7 +461,7 @@
         "~class": "SpellDataResourceClient"
       },
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/KogMaw_VoidOoze.dds"
+        "assets/ux/jade/s3icons/samesized/kogmaw_voidooze.dds"
       ],
       "mLineWidth": 120.0,
       "mRequiredUnitTags": {
@@ -1309,6 +517,590 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jade_KogMaw/Spells/Jade_KogMawEAbility/Jade_KogMawE",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_KogMaw/Spells/Jade_KogMawEAbility/Jade_KogMawEDebuff": {
+    "ObjectName": "Jade_KogMawEDebuff",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Void Ooze",
+          "keyTooltip": "This unit has reduced movement speed."
+        },
+        "mObjectName": "Jade_KogMawEDebuff",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_KogMawEDebuff",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/kogmaw_voidooze.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_KogMaw/Spells/Jade_KogMawEAbility/Jade_KogMawEDebuff",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_KogMaw/Spells/Jade_KogMawEAbility/Jade_KogMawEMarker": {
+    "ObjectName": "Jade_KogMawEMarker",
+    "mScriptName": "Jade_KogMawEMarker",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/kogmaw_voidooze.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_KogMaw/Spells/Jade_KogMawEAbility/Jade_KogMawEMarker",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_KogMaw/Spells/Jade_KogMawEAbility/Jade_KogMawEMissile": {
+    "ObjectName": "Jade_KogMawEMissile",
+    "mScriptName": "Jade_KogMawEMissile",
+    "mSpell": {
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "16": "Play_sfx_KogMaw_KogMawVoidOozeMissile_OnMissileLaunch"
+      },
+      "bHaveHitBone": true,
+      "castConeDistance": 100.0,
+      "castFrame": 7.5,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        1280.0,
+        1280.0,
+        1280.0,
+        1280.0,
+        1280.0,
+        1280.0,
+        1280.0
+      ],
+      "castRangeValues": {
+        "0xa3e0478": 1280.0,
+        "values": [
+          1280.0,
+          1280.0,
+          1280.0,
+          1280.0,
+          1280.0,
+          1280.0,
+          1280.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "luaOnMissileUpdateDistanceInterval": 125.0,
+      "mAffectsTypeFlags": 7183,
+      "mAlternateName": "Jade_KogMawVoidOozeMissile",
+      "mAnimationName": "Spell3",
+      "mCantCancelWhileWindingUp": true,
+      "mCastType": 3,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "hideWithLineIndicator": true,
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "endLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "lineStopsAtEndPosition": false,
+            "lineWidth": {
+              "mPerLevelValues": [
+                120.0,
+                120.0,
+                120.0,
+                120.0,
+                120.0,
+                120.0
+              ],
+              "mValueType": 2,
+              "~class": "FloatPerSpellLevel"
+            },
+            "~class": "TargeterDefinitionLine"
+          }
+        ],
+        "mUseTooltipFromAnotherSpell": "Characters/Jade_KogMaw/Spells/Jade_KogMawEAbility/Jade_KogMawE",
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 1.0,
+      "mEffectAmount": [
+        {
+          "value": [
+            75.0,
+            250.0,
+            425.0,
+            600.0,
+            0.0,
+            0.0,
+            175.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mHitBoneName": "root",
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/kogmaw_voidooze.dds"
+      ],
+      "mLineWidth": 120.0,
+      "mMissileEffectKey": "Jade_KogMaw_E_mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnHit"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "~class": "BlendedLinearHeightSolver"
+        },
+        "mMissileWidth": 120.0,
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mProjectTargetToCastRange": true,
+          "mSpeed": 1400.0,
+          "mStartBoneName": "C_Mouth",
+          "mTracksTarget": false,
+          "mUseHeightOffsetAtEnd": true,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VerticalFacingFaceTarget"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mSpellRevealsChampion": false,
+      "mTargetingTypeData": {
+        "~class": "Location"
+      },
+      "missileSpeed": 1400.0,
+      "selectionPriority": 1,
+      "spellCastTime": 0.25,
+      "spellTotalTime": 1.0,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_KogMaw/Spells/Jade_KogMawEAbility/Jade_KogMawEMissile",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_KogMaw/Spells/Jade_KogMawPassiveAbility/Jade_KogMawPassive": {
+    "ObjectName": "Jade_KogMawPassive",
+    "mScriptName": "Jade_KogMawPassive",
+    "mSpell": {
+      "DataValues": [
+        {
+          "name": "scalingMS",
+          "values": [
+            0.02500000037252903,
+            0.02500000037252903,
+            0.02500000037252903,
+            0.02500000037252903,
+            0.02500000037252903,
+            0.02500000037252903,
+            0.02500000037252903
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "passiveDuration",
+          "values": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "TooltipMS",
+          "values": [
+            0.375,
+            0.375,
+            0.375,
+            0.375,
+            0.375,
+            0.375,
+            0.375
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "castRange": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "castRangeValues": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyName": "Icathian Surprise",
+            "keySummary": "Upon dying, Kog'Maw starts a chain reaction in his body which causes him to detonate after a few seconds, damaging surrounding enemies.",
+            "keyTooltip": "For @passiveDuration@ seconds after dying, Kog'Maw can continue to move, is Ghosted, and increases his <speed>Move Speed</speed> by @TooltipMS*100@% over the duration. At the end of the duration, he explodes and deals <trueDamage>@PassiveDamage@ true damage</trueDamage> to nearby enemies.",
+            "keyTooltipExtended": "{{Spell_KogMawPassive_Jade_Tooltip}}<br><br><rules>{{Reminder_Ghosted}}</rules>"
+          },
+          "mObjectName": "Jade_KogMawPassive",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/kogmaw_icathiansurprise.dds"
+      ],
+      "mSpellCalculations": {
+        "PassiveDamage": {
+          "mFormulaParts": [
+            {
+              "mInitialBonusPerLevel": 25.0,
+              "mLevel1Value": 125.0,
+              "~class": "ByCharLevelBreakpointsCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_KogMaw/Spells/Jade_KogMawPassiveAbility/Jade_KogMawPassive",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_KogMaw/Spells/Jade_KogMawPassiveAbility/Jade_KogMawPassiveBuff": {
+    "ObjectName": "Jade_KogMawPassiveBuff",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Icathian Surprise",
+          "keyTooltip": "Kog'Maw is about to explode, dealing damage to nearby enemies."
+        },
+        "mObjectName": "Jade_KogMawPassiveBuff",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_KogMawPassiveBuff",
+    "mSpell": {
+      "Cooldown": {
+        "0xa3e0478": 8.0,
+        "values": [
+          8.0,
+          8.0,
+          8.0,
+          8.0,
+          8.0,
+          8.0,
+          8.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "TooltipPassiveMS",
+          "values": [
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "TooltipPassiveDuration",
+          "values": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 10.050000190734863,
+      "castRadius": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0
+      ],
+      "castRange": [
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0
+      ],
+      "castRangeValues": {
+        "0xa3e0478": 600.0,
+        "values": [
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0
+      ],
+      "mAffectsTypeFlags": 6154,
+      "mAlternateName": "Jade_KogMawIcathianSurprise",
+      "mAnimationName": "Spell1",
+      "mCantCancelWhileWindingUp": true,
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "EnableExtendedTooltip": false,
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyName": "Icathian Surprise",
+            "keySummary": "4 seconds after dying, Kogmaw explodes, dealing true damage to surrounding enemies.",
+            "keyTooltip": "For @TooltipPassiveDuration@ seconds after dying, Kog'Maw can continue to move, can move through units, and gains <speed>10% Move Speed</speed>, increasing to <speed>@TooltipPassiveMS*100@% Move Speed</speed> over the duration. At the end of the duration, he explodes and deals <trueDamage>@PassiveDamage@ true damage</trueDamage> to nearby enemies."
+          },
+          "mObjectName": "Jade_KogMawPassiveBuff",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.699999988079071,
+      "mDimensionBehavior": 1,
+      "mEffectAmount": [
+        {
+          "value": [
+            10.0,
+            60.0,
+            110.0,
+            160.0,
+            210.0,
+            260.0,
+            310.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            10.0,
+            12.0,
+            14.0,
+            16.0,
+            18.0,
+            20.0,
+            22.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mHitEffectKey": "Jade_KogMaw_Q_tar",
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/kogmaw_icathiansurprise.dds"
+      ],
+      "mMissileEffectKey": "Jade_KogMaw_Q_mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 1500.0,
+          "mStartBoneName": "C_Mouth_d",
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mSpellCalculations": {
+        "PassiveDamage": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 550.0,
+              "mStartValue": 125.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mana": [
+        70.0,
+        70.0,
+        70.0,
+        70.0,
+        70.0,
+        70.0
+      ],
+      "manaValues": {
+        "0xa3e0478": 70.0,
+        "values": [
+          70.0,
+          70.0,
+          70.0,
+          70.0,
+          70.0,
+          70.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "missileSpeed": 1500.0,
+      "spellCastTime": 0.25,
+      "spellTotalTime": 1.0,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_KogMaw/Spells/Jade_KogMawPassiveAbility/Jade_KogMawPassiveBuff",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_KogMaw/Spells/Jade_KogMawPassiveAbility/Jade_KogmawPassiveSound": {
+    "ObjectName": "Jade_KogmawPassiveSound",
+    "mBuff": {
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_KogmawPassiveSound",
+    "mSpell": {
+      "SpellEventToAudioEventSuffix": {
+        "18": "Play_sfx_KogMaw_KogMawIcathianSurprise_OnBuffActivate"
+      },
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/kogmaw_icathiansurprise.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_KogMaw/Spells/Jade_KogMawPassiveAbility/Jade_KogmawPassiveSound",
     "~class": "SpellObject"
   },
   "Characters/Jade_KogMaw/Spells/Jade_KogMawQAbility/Jade_KogMawQ": {
@@ -1501,7 +1293,7 @@
           },
           "mLocKeys": {
             "keyName": "Caustic Spittle",
-            "keySummary": "Passive: Increases Kog'Maw's Attack Speed. <br><br>Active: Kog'Maw launches a corrosive projectile which deals magic damage and corrodes the target's Armor and Magic Resist for 4 seconds.",
+            "keySummary": "Kog'Maw launches a corrosive projectile that damages his target and corrodes their Armor and Magic Resist.",
             "keyTooltip": "<spellPassive>Passive:</spellPassive> Kog'Maw gains <attackSpeed>@PassiveAttackSpeed*100@% Attack Speed</attackSpeed>.<br><br><spellActive>Active:</spellActive> Kog'Maw vomits a corrosive projectile that deals <magicDamage>@TotalDamage@ magic damage</magicDamage> to the first enemy hit and shreds <scaleArmor>@ArmorShred@ Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> for @DebuffDuration@ seconds."
           },
           "mObjectName": "Jade_KogMawQ",
@@ -1509,75 +1301,6 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.699999988079071,
-      "mEffectAmount": [
-        {
-          "value": [
-            10.0,
-            60.0,
-            110.0,
-            160.0,
-            210.0,
-            260.0,
-            310.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            5.0,
-            10.0,
-            15.0,
-            20.0,
-            25.0,
-            30.0,
-            35.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.0,
-            5.0,
-            10.0,
-            15.0,
-            20.0,
-            25.0,
-            30.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         0,
         0,
@@ -1599,7 +1322,7 @@
       "mHitBoneName": "C_BUFFBONE_GLB_LAYOUT_LOC",
       "mHitEffectKey": "Jade_KogMaw_Q_tar",
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/KogMaw_CausticSpittle.dds"
+        "assets/ux/jade/s3icons/samesized/kogmaw_causticspittle.dds"
       ],
       "mMissileEffectKey": "Jade_KogMaw_Q_mis",
       "mMissileSpec": {
@@ -1668,6 +1391,42 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jade_KogMaw/Spells/Jade_KogMawQAbility/Jade_KogMawQ",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_KogMaw/Spells/Jade_KogMawQAbility/Jade_KogMawQDebuff": {
+    "ObjectName": "Jade_KogMawQDebuff",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Caustic Spittle",
+          "keyTooltip": "This target has reduced Armor and Magic Resist.<br>"
+        },
+        "mObjectName": "Jade_KogMawQDebuff",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_KogMawQDebuff",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/kogmaw_causticspittle.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_KogMaw/Spells/Jade_KogMawQAbility/Jade_KogMawQDebuff",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_KogMaw/Spells/Jade_KogMawQAbility/Jade_KogMawQPassive": {
+    "ObjectName": "Jade_KogMawQPassive",
+    "mScriptName": "Jade_KogMawQPassive",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/kogmaw_causticspittle.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_KogMaw/Spells/Jade_KogMawQAbility/Jade_KogMawQPassive",
     "~class": "SpellObject"
   },
   "Characters/Jade_KogMaw/Spells/Jade_KogMawRAbility/Jade_KogMawR": {
@@ -1970,7 +1729,7 @@
       "mHitEffectKey": "Jade_KogMaw_R_tar",
       "mHitEffectOrientType": 2,
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/KogMaw_LivingArtillery.dds"
+        "assets/ux/jade/s3icons/samesized/kogmaw_livingartillery.dds"
       ],
       "mSpellCalculations": {
         "0x3196f833": {
@@ -2061,6 +1820,54 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jade_KogMaw/Spells/Jade_KogMawRAbility/Jade_KogMawR",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_KogMaw/Spells/Jade_KogMawRAbility/Jade_KogMawRCost": {
+    "ObjectName": "Jade_KogMawRCost",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Living Artillery",
+          "keyTooltip": "Kog'Maw's next Living Artillery will cost additional Mana."
+        },
+        "mObjectName": "Jade_KogMawRCost",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_KogMawRCost",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/kogmaw_livingartillery.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_KogMaw/Spells/Jade_KogMawRAbility/Jade_KogMawRCost",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_KogMaw/Spells/Jade_KogMawRAbility/Jade_KogMawRSight": {
+    "ObjectName": "Jade_KogMawRSight",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Living Artillery",
+          "keyTooltip": "Kog'Maw's team can see you."
+        },
+        "mObjectName": "Jade_KogMawRSight",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_KogMawRSight",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/kogmaw_livingartillery.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_KogMaw/Spells/Jade_KogMawRAbility/Jade_KogMawRSight",
     "~class": "SpellObject"
   },
   "Characters/Jade_KogMaw/Spells/Jade_KogMawWAbility/Jade_KogMawW": {
@@ -2257,7 +2064,7 @@
       ],
       "mHitBoneName": "C_BuffBone_Glb_Center_Loc",
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/KogMaw_BioArcaneBarrage.dds"
+        "assets/ux/jade/s3icons/samesized/kogmaw_bioarcanebarrage.dds"
       ],
       "mRequiredUnitTags": {
         "mObjectTagList": [
@@ -2319,6 +2126,130 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jade_KogMaw/Spells/Jade_KogMawWAbility/Jade_KogMawW",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_KogMaw/Spells/Jade_KogMawWAbility/Jade_KogMawWAttack": {
+    "ObjectName": "Jade_KogMawWAttack",
+    "mScriptName": "Jade_KogMawWAttack",
+    "mSpell": {
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_KogMaw_KogMawBioArcaneBarrageAttack_OnCast",
+        "13": "Play_sfx_KogMaw_KogMawBioArcaneBarrageAttack_OnHit",
+        "16": "Play_sfx_KogMaw_KogMawBioArcaneBarrageAttack_OnMissileLaunch"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "canCastWhileDisabled": true,
+      "castConeDistance": 100.0,
+      "castFrame": 7.5,
+      "castRadius": [
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0
+      ],
+      "castRange": [
+        2000.0,
+        2000.0,
+        2000.0,
+        2000.0,
+        2000.0,
+        2000.0,
+        2000.0
+      ],
+      "castRangeValues": {
+        "0xa3e0478": 2000.0,
+        "values": [
+          2000.0,
+          2000.0,
+          2000.0,
+          2000.0,
+          2000.0,
+          2000.0,
+          2000.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 6794,
+      "mAlternateName": "Jade_KogMawBioArcaneBarrageAttack",
+      "mAnimationName": "Spell2_Attack1",
+      "mApplyAttackDamage": true,
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_LAYOUT_LOC",
+      "mHitEffectKey": "Jade_KogMaw_W_tar",
+      "mHitEffectOrientType": 2,
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/kogmaw_bioarcanebarrage.dds"
+      ],
+      "mLineWidth": 100.0,
+      "mMissileEffectKey": "Jade_KogMaw_W_mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "mGravity": 5000.0,
+          "~class": "GravityHeightSolver"
+        },
+        "mMissileWidth": 100.0,
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 1800.0,
+          "mStartBoneName": "BUFFBONE_GLB_WEAPON_LOC",
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 1800.0,
+      "spellCastTime": 0.3888999819755554,
+      "spellTotalTime": 1.333400011062622,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_KogMaw/Spells/Jade_KogMawWAbility/Jade_KogMawWAttack",
     "~class": "SpellObject"
   }
 }

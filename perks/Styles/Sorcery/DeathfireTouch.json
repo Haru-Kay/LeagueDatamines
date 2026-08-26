@@ -1,0 +1,90 @@
+{
+  "mBuffs": [
+    {
+      "mBuffScriptName": "assets/perks/styles/sorcery/deathfiretouch/deathfiretouchmanager.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "{{perk_displayname_DeathfireTouch}}",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    },
+    {
+      "mBuffScriptName": "assets/perks/styles/sorcery/deathfiretouch/deathfiretouchburn.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "{{perk_displayname_DeathfireTouch}}",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    }
+  ],
+  "mDisplayNameLocalizationKey": "Deathfire Touch",
+  "mDisplayStatLocalizationKey": "@f1@",
+  "mEndOfGameStatDescriptions": [
+    "Burn Damage Dealt: @eogvar1@"
+  ],
+  "mIconTextureName": "assets/perks/styles/sorcery/deathfiretouch/deathfire_touch_keystone.tex",
+  "mLongDescLocalizationKey": "Damaging a champion with an ability burns them for @Level1DamageTOOLTIP@ - @Level18DamageTOOLTIP@ based on level (+<scaleAP>@APRatioTT.1@% AP</scaleAP>) (+<scaleAD>@ADRatioTT@% bonus AD</scaleAD>)  magic damage per second. After burning for @TimeToAmp@ seconds, the damage of the burn increases by @DamageMultiplier*100@% while they remain on fire.<br><rules><br>Duration:<br>Single Target: @Duration@s<br>Area of Effect: @AoEDuration@s<br>Damage over Time: @DotDuration@s<br></rules>",
+  "mMajorChangePatchVersion": "16.9",
+  "mPerkId": 8992,
+  "mPerkName": "DeathfireTouch",
+  "mScript": {
+    "mSpellScriptData": {
+      "mCalculations": {
+        "DamageCalc": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 12.0,
+              "mStartValue": 3.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "ADRatio",
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 4,
+          "~class": "GameCalculation"
+        }
+      },
+      "mEffectAmount": {
+        "0x2156e250": 12.0,
+        "ADRatio": 0.07000000029802322,
+        "ADRatioTT": 7.0,
+        "APRatio": 0.02500000037252903,
+        "APRatioTT": 2.5,
+        "AoEDuration": 2.0,
+        "DamageMultiplier": 0.75,
+        "DotDuration": 1.0,
+        "Level1DamageTOOLTIP": 3.0,
+        "TicksPerSecond": 2.0,
+        "TimeToAmp": 3.0,
+        "duration": 4.0
+      },
+      "~class": "PerkScriptData"
+    },
+    "mSpellScriptName": "assets/perks/styles/sorcery/deathfiretouch/deathfiretouchmanager.lua",
+    "~class": "PerkScript"
+  },
+  "mShortDescLocalizationKey": "Damaging a champion with an ability burns them over time.",
+  "mTooltipNameLocalizationKey": "Damaging a champion with an ability burns them for <magicDamage>@DamageCalc@ magic damage</magicDamage> per second. After burning for @TimeToAmp@ seconds, the damage of the burn increases by @DamageMultiplier*100@% while they remain on fire.<br><rules><br>Duration:<br>Single Target: @Duration@s<br>Area of Effect: @AoEDuration@s<br>Damage over Time: @DotDuration@s<br></rules><br>You have dealt @f1@ damage to champions with Deathfire Touch burn.",
+  "mVFXResourceResolver": {
+    "resourceMap": {
+      "0x1eaac5b4": "Perks/Styles/Sorcery/DeathfireTouch/Particles/TargetBurn",
+      "0x3196bce7": "Perks/Styles/Sorcery/DeathfireTouch/Particles/TargetBurnEnhanced"
+    },
+    "~class": "ResourceResolver"
+  },
+  "~class": "Perk"
+}

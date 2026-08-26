@@ -73,7 +73,7 @@
               "basePosition": 3,
               "~class": "DrawablePositionLocator"
             },
-            "textureRadiusOverrideName": "ASSETS/Spells/Textures/AOE.tex",
+            "textureRadiusOverrideName": "assets/spells/textures/aoe.tex",
             "~class": "TargeterDefinitionAoe"
           }
         ],
@@ -167,7 +167,7 @@
               "basePosition": 3,
               "~class": "DrawablePositionLocator"
             },
-            "textureRadiusOverrideName": "ASSETS/Spells/Textures/AOE.tex",
+            "textureRadiusOverrideName": "assets/spells/textures/aoe.tex",
             "~class": "TargeterDefinitionAoe"
           }
         ],
@@ -568,8 +568,8 @@
               "orientationType": 3,
               "~class": "DrawablePositionLocator"
             },
-            "textureBaseOverrideName": "ASSETS/Spells/Textures/LocalLineMissileBase_Dark.tex",
-            "textureTargetOverrideName": "ASSETS/Spells/Textures/LocalLineMissileTarget_Dark.tex",
+            "textureBaseOverrideName": "assets/spells/textures/locallinemissilebase_dark.tex",
+            "textureTargetOverrideName": "assets/spells/textures/locallinemissiletarget_dark.tex",
             "~class": "TargeterDefinitionLine"
           },
           {
@@ -637,7 +637,7 @@
         2
       ],
       "mImgIconName": [
-        "ASSETS/Characters/Gragas/HUD/Icons2D/GragasBodySlam.dds"
+        "assets/characters/gragas/hud/icons2d/gragasbodyslam.dds"
       ],
       "mLineWidth": 50.0,
       "mSpellCalculations": {
@@ -725,19 +725,6 @@
       },
       "DataValues": [
         {
-          "name": "ArenaCooldownMod",
-          "values": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "name": "HealRatio",
           "values": [
             0.054999999701976776,
@@ -749,8 +736,71 @@
             0.054999999701976776
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "Level1Value",
+          "values": [
+            12.0,
+            12.0,
+            12.0,
+            12.0,
+            12.0,
+            12.0,
+            12.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "AdditionalBonusAtThisLevel",
+          "values": [
+            -2.0,
+            -2.0,
+            -2.0,
+            -2.0,
+            -2.0,
+            -2.0,
+            -2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BonusPerLevelAtAndAfter",
+          "~class": "SpellDataValue"
         }
       ],
+      "DataValuesModeOverride": {
+        "cherry": {
+          "SpellDataValues": [
+            {
+              "name": "Level1Value",
+              "values": [
+                8.0,
+                8.0,
+                8.0,
+                8.0,
+                8.0,
+                8.0,
+                8.0
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "AdditionalBonusAtThisLevel",
+              "values": [
+                -1.5,
+                -1.5,
+                -1.5,
+                -1.5,
+                -1.5,
+                -1.5,
+                -1.5
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        }
+      },
       "castRange": [
         0.0,
         0.0,
@@ -797,7 +847,7 @@
         "~class": "SpellDataResourceClient"
       },
       "mImgIconName": [
-        "ASSETS/Characters/Gragas/HUD/Icons2D/GragasPassiveHeal.dds"
+        "assets/characters/gragas/hud/icons2d/gragaspassiveheal.dds"
       ],
       "mSpellCalculations": {
         "HealAmount": {
@@ -813,25 +863,29 @@
         "HealCooldown": {
           "mFormulaParts": [
             {
-              "mBreakpoints": [
+              "0x91d404a5": "Level1Value",
+              "0x9823b29a": [
                 {
-                  "mAdditionalBonusAtThisLevel": -2.0,
-                  "mLevel": 6,
-                  "~class": "Breakpoint"
+                  "0xae9b464d": "AdditionalBonusAtThisLevel",
+                  "0xb0d8b2ac": "BonusPerLevelAtAndAfter",
+                  "level": 6,
+                  "~class": "0x333530c"
                 },
                 {
-                  "mAdditionalBonusAtThisLevel": -2.0,
-                  "mLevel": 11,
-                  "~class": "Breakpoint"
+                  "0xae9b464d": "AdditionalBonusAtThisLevel",
+                  "0xb0d8b2ac": "BonusPerLevelAtAndAfter",
+                  "level": 11,
+                  "~class": "0x333530c"
                 },
                 {
-                  "mAdditionalBonusAtThisLevel": -2.0,
-                  "mLevel": 16,
-                  "~class": "Breakpoint"
+                  "0xae9b464d": "AdditionalBonusAtThisLevel",
+                  "0xb0d8b2ac": "BonusPerLevelAtAndAfter",
+                  "level": 16,
+                  "~class": "0x333530c"
                 }
               ],
-              "mLevel1Value": 12.0,
-              "~class": "ByCharLevelBreakpointsCalculationPart"
+              "0xbbd778a2": "BonusPerLevelAtAndAfter",
+              "~class": "0x4ce08984"
             }
           ],
           "~class": "GameCalculation"
@@ -1178,7 +1232,7 @@
       ],
       "mHitBoneName": "pelvis",
       "mImgIconName": [
-        "ASSETS/Characters/Gragas/HUD/Icons2D/GragasBarrelRoll.dds"
+        "assets/characters/gragas/hud/icons2d/gragasbarrelroll.dds"
       ],
       "mLineWidth": 110.0,
       "mProjectTargetToCastRange": true,
@@ -1350,7 +1404,7 @@
       },
       "mHitBoneName": "pelvis",
       "mImgIconName": [
-        "ASSETS/Characters/Gragas/HUD/Icons2D/GragasBarrelRoll.dds"
+        "assets/characters/gragas/hud/icons2d/gragasbarrelroll.dds"
       ],
       "mLineWidth": 110.0,
       "mMissileEffectKey": "Gragas_Q_Mis",
@@ -1608,7 +1662,7 @@
       ],
       "mHitBoneName": "pelvis",
       "mImgIconName": [
-        "ASSETS/Characters/Gragas/HUD/Icons2D/GragasBarrelRoll.dds"
+        "assets/characters/gragas/hud/icons2d/gragasbarrelroll.dds"
       ],
       "mLineWidth": 110.0,
       "mProjectTargetToCastRange": true,
@@ -1745,8 +1799,8 @@
       },
       "mHitBoneName": "pelvis",
       "mImgIconName": [
-        "ASSETS/Characters/Gragas/HUD/Icons2D/GragasBarrelRoll.dds",
-        "ASSETS/Characters/Gragas/HUD/Icons2D/GragasQCrit.dds"
+        "assets/characters/gragas/hud/icons2d/gragasbarrelroll.dds",
+        "assets/characters/gragas/hud/icons2d/gragasqcrit.dds"
       ],
       "mLineWidth": 110.0,
       "mSpellCalculations": {
@@ -1905,7 +1959,7 @@
               "basePosition": 3,
               "~class": "DrawablePositionLocator"
             },
-            "textureRadiusOverrideName": "ASSETS/Spells/Textures/AOE.tex",
+            "textureRadiusOverrideName": "assets/spells/textures/aoe.tex",
             "~class": "TargeterDefinitionAoe"
           }
         ],
@@ -1943,7 +1997,7 @@
       "mCoefficient": 0.800000011920929,
       "mHitBoneName": "pelvis",
       "mImgIconName": [
-        "ASSETS/Characters/Gragas/HUD/Icons2D/GragasExplosiveCask.dds"
+        "assets/characters/gragas/hud/icons2d/gragasexplosivecask.dds"
       ],
       "mLineWidth": 120.0,
       "mSpellCalculations": {
@@ -2149,7 +2203,7 @@
       ],
       "mHitBoneName": "pelvis",
       "mImgIconName": [
-        "ASSETS/Characters/Gragas/HUD/Icons2D/GragasExplosiveCask.dds"
+        "assets/characters/gragas/hud/icons2d/gragasexplosivecask.dds"
       ],
       "mLineWidth": 120.0,
       "mMissileEffectKey": "Gragas_R_Mis",
@@ -2470,7 +2524,7 @@
         0
       ],
       "mImgIconName": [
-        "ASSETS/Characters/Gragas/HUD/Icons2D/GragasDrunkenRage.dds"
+        "assets/characters/gragas/hud/icons2d/gragasdrunkenrage.dds"
       ],
       "mSpellCalculations": {
         "DamageReduction": {
@@ -2656,7 +2710,7 @@
         }
       ],
       "mImgIconName": [
-        "ASSETS/Spells/Icons2D/Wolfman_SeverArmor.dds"
+        "assets/spells/icons2d/wolfman_severarmor.dds"
       ],
       "missileSpeed": 20.0,
       "selectionPriority": 1,

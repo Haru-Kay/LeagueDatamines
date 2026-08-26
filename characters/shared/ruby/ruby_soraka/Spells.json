@@ -1,199 +1,40 @@
 {
-  "0x1b681ee6": {
-    "ObjectName": "Ruby_SorakaWCastTime",
-    "mScriptName": "Ruby_SorakaWCastTime",
-    "mSpell": {
-      "Cooldown": {
-        "0xa3e0478": 0.5,
-        "values": [
-          0.5,
-          0.5,
-          0.5,
-          0.5,
-          0.5,
-          0.5,
-          0.5
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "castConeDistance": 100.0,
-      "castFrame": 1.0,
-      "castRadius": [
-        210.0,
-        210.0,
-        210.0,
-        210.0,
-        210.0,
-        210.0,
-        210.0
-      ],
-      "castRange": [
-        750.0,
-        750.0,
-        750.0,
-        750.0,
-        750.0,
-        750.0,
-        750.0
-      ],
-      "castRangeValues": {
-        "0xa3e0478": 750.0,
-        "values": [
-          750.0,
-          750.0,
-          750.0,
-          750.0,
-          750.0,
-          750.0,
-          750.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "cooldownTime": [
-        0.5,
-        0.5,
-        0.5,
-        0.5,
-        0.5,
-        0.5,
-        0.5
-      ],
-      "mAffectsTypeFlags": 1029,
-      "mAnimationName": "Spell3",
-      "mCantCancelWhileChanneling": true,
-      "mCantCancelWhileWindingUp": true,
-      "mCastTime": 0.25,
-      "mCastType": 1,
-      "mClientData": {
-        "mTargeterDefinitions": [
-          {
-            "~class": "TargeterDefinitionRange"
-          }
-        ],
-        "~class": "SpellDataResourceClient"
-      },
-      "mCoefficient": 0.3499999940395355,
-      "mCoefficient2": 0.15000000596046448,
-      "mEffectAmount": [
-        {
-          "value": [
-            5.0,
-            20.0,
-            35.0,
-            50.0,
-            65.0,
-            80.0,
-            95.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            5.0,
-            10.0,
-            15.0,
-            20.0,
-            25.0,
-            30.0,
-            35.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
-      "mImgIconName": [
-        "ASSETS/Characters/Ruby_Soraka/HUD/Icons2D/Ruby_Soraka_W.dds"
-      ],
-      "mMissileEffectName": "doesnotexist.troy",
-      "mMissileSpec": {
-        "behaviors": [
-          {
-            "~class": "CastOnMovementComplete"
-          },
-          {
-            "~class": "DestroyOnMovementComplete"
-          }
-        ],
-        "movementComponent": {
-          "mOffsetInitialTargetHeight": 100.0,
-          "mSpeed": 2400.0,
-          "mStartBoneName": "L_hand",
-          "mTargetHeightAugment": 100.0,
-          "~class": "FixedSpeedMovement"
-        },
-        "verticalFacing": {
-          "~class": "VeritcalFacingMatchVelocity"
-        },
-        "~class": "MissileSpecification"
-      },
-      "missileSpeed": 2400.0,
-      "useAnimatorFramerate": true,
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x1b681ee6",
-    "~class": "SpellObject"
-  },
-  "0x253a0c70": {
-    "ObjectName": "Ruby_SorakaPassive",
+  "0xf9217bcd": {
+    "ObjectName": "Ruby_Soraka_Consecration_Self",
     "mBuff": {
-      "mDescription": "<titleLeft>Salvation</titleLeft><mainText>Soraka has increased Move Speed.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "mDescription": "Soraka gains <speed>@MovementSpeed*100@% Move Speed</speed> while moving towards allied champions who are below @HealthThreshold*100@% Health. ",
       "~class": "BuffData"
     },
-    "mScriptName": "Ruby_SorakaPassive",
-    "objectPath": "0x253a0c70",
-    "~class": "SpellObject"
-  },
-  "0x319bc78a": {
-    "ObjectName": "Ruby_SorakaQReturnMissile",
-    "mScriptName": "Ruby_SorakaQReturnMissile",
+    "mScriptName": "Ruby_Soraka_Consecration_Self",
     "mSpell": {
-      "Cooldown": {
-        "0xa3e0478": 0.0,
-        "values": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "castConeDistance": 100.0,
-      "castFrame": 1.0,
+      "DataValues": [
+        {
+          "name": "MovementSpeed",
+          "values": [
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.8999999761581421
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "HealthThreshold",
+          "values": [
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "castRange": [
         2500.0,
         2500.0,
@@ -216,77 +57,29 @@
         ],
         "~class": "SpellAttributeModifiable"
       },
-      "cooldownTime": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "flags": 4,
-      "mAffectsTypeFlags": 7375,
-      "mCastType": 1,
       "mClientData": {
-        "mTargeterDefinitions": [
-          {
-            "useCasterBoundingBox": false,
-            "~class": "TargeterDefinitionRange"
-          }
-        ],
+        "mTooltipData": {
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyName": "Salvation",
+            "keySummary": "Soraka runs faster towards nearby low health allies.",
+            "keyTooltip": "Soraka gains <speed>@MovementSpeed*100@% Move Speed</speed> while moving towards allied champions who are below @HealthThreshold*100@% Health. ",
+            "keyTooltipExtended": "{{Spell_Consecration_Self_Tooltip}}<br><br><rules>Allies must be within @CastRange@ range of Soraka.</rules>"
+          },
+          "mObjectName": "Ruby_Soraka_Consecration_Self",
+          "~class": "TooltipInstanceSpell"
+        },
         "~class": "SpellDataResourceClient"
       },
-      "mMissileEffectKey": "Ruby_Soraka_q_Lifesteal_Mis",
-      "mMissileSpec": {
-        "behaviors": [
-          {
-            "~class": "CastOnMovementComplete"
-          },
-          {
-            "~class": "DestroyOnMovementComplete"
-          }
-        ],
-        "movementComponent": {
-          "mOffsetInitialTargetHeight": 100.0,
-          "mSpeed": 1400.0,
-          "mTargetHeightAugment": 100.0,
-          "~class": "FixedSpeedMovement"
-        },
-        "verticalFacing": {
-          "~class": "VeritcalFacingMatchVelocity"
-        },
-        "~class": "MissileSpecification"
-      },
-      "missileSpeed": 1400.0,
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x319bc78a",
-    "~class": "SpellObject"
-  },
-  "0x4acf51ce": {
-    "ObjectName": "Ruby_Soraka_Additional_Silence_Zone_Buff",
-    "mScriptName": "Ruby_Soraka_Additional_Silence_Zone_Buff",
-    "objectPath": "0x4acf51ce",
-    "~class": "SpellObject"
-  },
-  "0x4b96ead1": {
-    "ObjectName": "Ruby_SorakaQRegen",
-    "mBuff": {
-      "mDescription": "<titleLeft>Rejuvenation</titleLeft><mainText>This unit is recovering health and has increased Move Speed.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
-      "~class": "BuffData"
-    },
-    "mScriptName": "Ruby_SorakaQRegen",
-    "mSpell": {
       "mImgIconName": [
-        "ASSETS/Characters/Ruby_Soraka/HUD/Icons2D/Ruby_Soraka_Q.dds"
+        "assets/characters/ruby_soraka/hud/icons2d/ruby_soraka_passive.dds"
       ],
       "~class": "SpellDataResource"
     },
-    "objectPath": "0x4b96ead1",
+    "objectPath": "0xf9217bcd",
     "~class": "SpellObject"
   },
-  "0x5d560aaf": {
+  "Characters/Ruby_Soraka/Spells/Ruby_SorakaBasicAttack": {
     "ObjectName": "Ruby_SorakaBasicAttack",
     "mScriptName": "Ruby_SorakaBasicAttack",
     "mSpell": {
@@ -385,545 +178,7 @@
       "spellCastTime": 0.4437499940395355,
       "~class": "SpellDataResource"
     },
-    "objectPath": "0x5d560aaf",
-    "~class": "SpellObject"
-  },
-  "0x639b92d0": {
-    "ObjectName": "Ruby_SorakaQMissile",
-    "mScriptName": "Ruby_SorakaQMissile",
-    "mSpell": {
-      "Cooldown": {
-        "0xa3e0478": 0.0,
-        "values": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "canCastWhileDisabled": true,
-      "castConeDistance": 100.0,
-      "castFrame": 7.974999904632568,
-      "castRadius": [
-        210.0,
-        210.0,
-        210.0,
-        210.0,
-        210.0,
-        210.0,
-        210.0
-      ],
-      "castRange": [
-        1500.0,
-        1500.0,
-        1500.0,
-        1500.0,
-        1500.0,
-        1500.0,
-        1500.0
-      ],
-      "castRangeValues": {
-        "0xa3e0478": 1500.0,
-        "values": [
-          1500.0,
-          1500.0,
-          1500.0,
-          1500.0,
-          1500.0,
-          1500.0,
-          1500.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "cooldownTime": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "flags": 4194304,
-      "luaOnMissileUpdateDistanceInterval": 400.0,
-      "mAffectsTypeFlags": 23567,
-      "mAnimationName": "Spell3",
-      "mCastType": 1,
-      "mClientData": {
-        "mTargeterDefinitions": [
-          {
-            "useCasterBoundingBox": false,
-            "~class": "TargeterDefinitionRange"
-          }
-        ],
-        "~class": "SpellDataResourceClient"
-      },
-      "mCoefficient": 0.4000000059604645,
-      "mEffectAmount": [
-        {
-          "value": [
-            50.0,
-            80.0,
-            110.0,
-            140.0,
-            170.0,
-            200.0,
-            230.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            13.0,
-            12.0,
-            11.0,
-            10.0,
-            9.0,
-            8.0,
-            7.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
-      "mLineWidth": 1.0,
-      "mMissileEffectKey": "Ruby_Soraka_Q_Mis",
-      "mMissileSpec": {
-        "0xc195fba6": true,
-        "behaviors": [
-          {
-            "~class": "CastOnMovementComplete"
-          },
-          {
-            "~class": "DestroyOnMovementComplete"
-          }
-        ],
-        "mMissileWidth": 1.0,
-        "movementComponent": {
-          "mSpeed": 1100.0,
-          "mStartBoneName": "spine",
-          "~class": "FixedSpeedMovement"
-        },
-        "verticalFacing": {
-          "~class": "VeritcalFacingMatchVelocity"
-        },
-        "~class": "MissileSpecification"
-      },
-      "mProjectTargetToCastRange": true,
-      "missileSpeed": 1100.0,
-      "spellCastTime": 0.25,
-      "spellTotalTime": 1.0,
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x639b92d0",
-    "~class": "SpellObject"
-  },
-  "0x6d9dfc83": {
-    "ObjectName": "Ruby_SorakaQAdditionalMissile",
-    "mScriptName": "Ruby_SorakaQAdditionalMissile",
-    "mSpell": {
-      "Cooldown": {
-        "0xa3e0478": 0.0,
-        "values": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "canCastWhileDisabled": true,
-      "castConeDistance": 100.0,
-      "castFrame": 7.974999904632568,
-      "castRadius": [
-        210.0,
-        210.0,
-        210.0,
-        210.0,
-        210.0,
-        210.0,
-        210.0
-      ],
-      "castRange": [
-        25000.0,
-        25000.0,
-        25000.0,
-        25000.0,
-        25000.0,
-        25000.0,
-        25000.0
-      ],
-      "castRangeValues": {
-        "0xa3e0478": 25000.0,
-        "values": [
-          25000.0,
-          25000.0,
-          25000.0,
-          25000.0,
-          25000.0,
-          25000.0,
-          25000.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "cooldownTime": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "flags": 4194304,
-      "luaOnMissileUpdateDistanceInterval": 400.0,
-      "mAffectsTypeFlags": 23567,
-      "mAnimationName": "Spell3",
-      "mCastType": 1,
-      "mClientData": {
-        "mTargeterDefinitions": [
-          {
-            "useCasterBoundingBox": false,
-            "~class": "TargeterDefinitionRange"
-          }
-        ],
-        "~class": "SpellDataResourceClient"
-      },
-      "mCoefficient": 0.4000000059604645,
-      "mEffectAmount": [
-        {
-          "value": [
-            50.0,
-            80.0,
-            110.0,
-            140.0,
-            170.0,
-            200.0,
-            230.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            13.0,
-            12.0,
-            11.0,
-            10.0,
-            9.0,
-            8.0,
-            7.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
-      "mLineWidth": 1.0,
-      "mMissileEffectKey": "Ruby_Soraka_Q_Mis",
-      "mMissileSpec": {
-        "0xc195fba6": true,
-        "behaviors": [
-          {
-            "~class": "CastOnMovementComplete"
-          },
-          {
-            "~class": "DestroyOnMovementComplete"
-          }
-        ],
-        "mMissileWidth": 1.0,
-        "movementComponent": {
-          "mStartBoneName": "spine",
-          "mTravelTime": 0.6000000238418579,
-          "~class": "FixedTimeMovement"
-        },
-        "verticalFacing": {
-          "~class": "VeritcalFacingMatchVelocity"
-        },
-        "~class": "MissileSpecification"
-      },
-      "mProjectTargetToCastRange": true,
-      "missileSpeed": 700.0,
-      "spellCastTime": 0.25,
-      "spellTotalTime": 1.0,
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x6d9dfc83",
-    "~class": "SpellObject"
-  },
-  "0xa74b901d": {
-    "ObjectName": "Ruby_SorakaESnare",
-    "mBuff": {
-      "mDescription": "<titleLeft>Equinox</titleLeft><mainText>This unit is rooted and cannot move.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
-      "~class": "BuffData"
-    },
-    "mScriptName": "Ruby_SorakaESnare",
-    "mSpell": {
-      "mImgIconName": [
-        "ASSETS/Characters/Ruby_Soraka/HUD/Icons2D/Ruby_Soraka_E.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xa74b901d",
-    "~class": "SpellObject"
-  },
-  "0xbd28733a": {
-    "ObjectName": "Ruby_SorakaEPacify",
-    "mBuff": {
-      "mDescription": "<titleLeft>Equinox</titleLeft><mainText>This unit is silenced.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
-      "~class": "BuffData"
-    },
-    "mScriptName": "Ruby_SorakaEPacify",
-    "mSpell": {
-      "mImgIconName": [
-        "ASSETS/Characters/Ruby_Soraka/HUD/Icons2D/Ruby_Soraka_E.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xbd28733a",
-    "~class": "SpellObject"
-  },
-  "0xd14c9d5a": {
-    "ObjectName": "Ruby_Soraka_Consecration",
-    "mBuff": {
-      "mDescription": "Soraka gains <speed>@MovementSpeed*100@% Move Speed</speed> while moving towards allied champions who are below @HealthThreshold*100@% Health. ",
-      "~class": "BuffData"
-    },
-    "mScriptName": "Ruby_Soraka_Consecration",
-    "objectPath": "0xd14c9d5a",
-    "~class": "SpellObject"
-  },
-  "0xf9217bcd": {
-    "ObjectName": "Ruby_Soraka_Consecration_Self",
-    "mBuff": {
-      "mDescription": "Soraka gains <speed>@MovementSpeed*100@% Move Speed</speed> while moving towards allied champions who are below @HealthThreshold*100@% Health. ",
-      "~class": "BuffData"
-    },
-    "mScriptName": "Ruby_Soraka_Consecration_Self",
-    "mSpell": {
-      "DataValues": [
-        {
-          "name": "MovementSpeed",
-          "values": [
-            0.8999999761581421,
-            0.8999999761581421,
-            0.8999999761581421,
-            0.8999999761581421,
-            0.8999999761581421,
-            0.8999999761581421,
-            0.8999999761581421
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "HealthThreshold",
-          "values": [
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645
-          ],
-          "~class": "SpellDataValue"
-        }
-      ],
-      "castRange": [
-        2500.0,
-        2500.0,
-        2500.0,
-        2500.0,
-        2500.0,
-        2500.0,
-        2500.0
-      ],
-      "castRangeValues": {
-        "0xa3e0478": 2500.0,
-        "values": [
-          2500.0,
-          2500.0,
-          2500.0,
-          2500.0,
-          2500.0,
-          2500.0,
-          2500.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "mClientData": {
-        "mTooltipData": {
-          "mFormat": "0x476ec0b8",
-          "mLocKeys": {
-            "keyName": "Salvation",
-            "keySummary": "Soraka runs faster towards nearby low health allies.",
-            "keyTooltip": "Soraka gains <speed>@MovementSpeed*100@% Move Speed</speed> while moving towards allied champions who are below @HealthThreshold*100@% Health. ",
-            "keyTooltipExtended": "{{Spell_Consecration_Self_Tooltip}}<br><br><rules>Allies must be within @CastRange@ range of Soraka.</rules>"
-          },
-          "mObjectName": "Ruby_Soraka_Consecration_Self",
-          "~class": "TooltipInstanceSpell"
-        },
-        "~class": "SpellDataResourceClient"
-      },
-      "mImgIconName": [
-        "ASSETS/Characters/Ruby_Soraka/HUD/Icons2D/Ruby_Soraka_Passive.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xf9217bcd",
-    "~class": "SpellObject"
-  },
-  "0xfca98f2": {
-    "ObjectName": "Ruby_Soraka_BasicAttack",
-    "mScriptName": "Ruby_Soraka_BasicAttack",
-    "mSpell": {
-      "Cooldown": {
-        "0xa3e0478": 0.0,
-        "values": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "bHaveHitBone": true,
-      "castConeDistance": 100.0,
-      "castFrame": 6.5,
-      "castRadius": [
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0
-      ],
-      "castRange": [
-        622.7000122070313,
-        622.7000122070313,
-        622.7000122070313,
-        622.7000122070313,
-        622.7000122070313,
-        622.7000122070313,
-        622.7000122070313
-      ],
-      "castRangeValues": {
-        "0xa3e0478": 622.7000122070313,
-        "values": [
-          622.7000122070313,
-          622.7000122070313,
-          622.7000122070313,
-          622.7000122070313,
-          622.7000122070313,
-          622.7000122070313,
-          622.7000122070313
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "cooldownTime": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mAffectsTypeFlags": 512,
-      "mAlternateName": "Ruby_SorakaBasicAttack",
-      "mCastType": 1,
-      "mClientData": {
-        "mTargeterDefinitions": [
-          {
-            "useCasterBoundingBox": false,
-            "~class": "TargeterDefinitionRange"
-          }
-        ],
-        "~class": "SpellDataResourceClient"
-      },
-      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
-      "mMissileEffectKey": "Ruby_Soraka_BA_mis",
-      "mMissileSpec": {
-        "behaviors": [
-          {
-            "~class": "CastOnMovementComplete"
-          },
-          {
-            "~class": "DestroyOnMovementComplete"
-          }
-        ],
-        "movementComponent": {
-          "mOffsetInitialTargetHeight": 100.0,
-          "mSpeed": 1000.0,
-          "mStartBoneName": "R_forarm",
-          "mTargetHeightAugment": 100.0,
-          "~class": "FixedSpeedMovement"
-        },
-        "verticalFacing": {
-          "~class": "VeritcalFacingMatchVelocity"
-        },
-        "~class": "MissileSpecification"
-      },
-      "missileSpeed": 1000.0,
-      "spellCastTime": 0.4437499940395355,
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xfca98f2",
+    "objectPath": "Characters/Ruby_Soraka/Spells/Ruby_SorakaBasicAttack",
     "~class": "SpellObject"
   },
   "Characters/Ruby_Soraka/Spells/Ruby_SorakaBasicAttack2": {
@@ -1258,7 +513,7 @@
               "basePosition": 3,
               "~class": "DrawablePositionLocator"
             },
-            "textureRadiusOverrideName": "ASSETS/Spells/Textures/AOE.tex",
+            "textureRadiusOverrideName": "assets/spells/textures/aoe.tex",
             "~class": "TargeterDefinitionAoe"
           }
         ],
@@ -1321,7 +576,7 @@
         2
       ],
       "mImgIconName": [
-        "ASSETS/Characters/Ruby_Soraka/HUD/Icons2D/Ruby_Soraka_E.dds"
+        "assets/characters/ruby_soraka/hud/icons2d/ruby_soraka_e.dds"
       ],
       "mSpellCalculations": {
         "TotalDamage": {
@@ -1370,6 +625,54 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Ruby_Soraka/Spells/Ruby_SorakaEAbility/Ruby_SorakaE",
+    "~class": "SpellObject"
+  },
+  "Characters/Ruby_Soraka/Spells/Ruby_SorakaEAbility/Ruby_SorakaEPacify": {
+    "ObjectName": "Ruby_SorakaEPacify",
+    "mBuff": {
+      "mDescription": "<titleLeft>Equinox</titleLeft><mainText>This unit is silenced.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Ruby_SorakaEPacify",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/characters/ruby_soraka/hud/icons2d/ruby_soraka_e.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Ruby_Soraka/Spells/Ruby_SorakaEAbility/Ruby_SorakaEPacify",
+    "~class": "SpellObject"
+  },
+  "Characters/Ruby_Soraka/Spells/Ruby_SorakaEAbility/Ruby_SorakaESnare": {
+    "ObjectName": "Ruby_SorakaESnare",
+    "mBuff": {
+      "mDescription": "<titleLeft>Equinox</titleLeft><mainText>This unit is rooted and cannot move.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Ruby_SorakaESnare",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/characters/ruby_soraka/hud/icons2d/ruby_soraka_e.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Ruby_Soraka/Spells/Ruby_SorakaEAbility/Ruby_SorakaESnare",
+    "~class": "SpellObject"
+  },
+  "Characters/Ruby_Soraka/Spells/Ruby_SorakaEAbility/Ruby_Soraka_Additional_Silence_Zone_Buff": {
+    "ObjectName": "Ruby_Soraka_Additional_Silence_Zone_Buff",
+    "mScriptName": "Ruby_Soraka_Additional_Silence_Zone_Buff",
+    "objectPath": "Characters/Ruby_Soraka/Spells/Ruby_SorakaEAbility/Ruby_Soraka_Additional_Silence_Zone_Buff",
+    "~class": "SpellObject"
+  },
+  "Characters/Ruby_Soraka/Spells/Ruby_SorakaPassive": {
+    "ObjectName": "Ruby_SorakaPassive",
+    "mBuff": {
+      "mDescription": "<titleLeft>Salvation</titleLeft><mainText>Soraka has increased Move Speed.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Ruby_SorakaPassive",
+    "objectPath": "Characters/Ruby_Soraka/Spells/Ruby_SorakaPassive",
     "~class": "SpellObject"
   },
   "Characters/Ruby_Soraka/Spells/Ruby_SorakaQAbility/Ruby_SorakaQ": {
@@ -1674,7 +977,7 @@
               "basePosition": 3,
               "~class": "DrawablePositionLocator"
             },
-            "textureRadiusOverrideName": "ASSETS/Spells/Textures/AOE.tex",
+            "textureRadiusOverrideName": "assets/spells/textures/aoe.tex",
             "~class": "TargeterDefinitionAoe"
           }
         ],
@@ -1744,7 +1047,7 @@
         -1
       ],
       "mImgIconName": [
-        "ASSETS/Characters/Ruby_Soraka/HUD/Icons2D/Ruby_Soraka_Q.dds"
+        "assets/characters/ruby_soraka/hud/icons2d/ruby_soraka_q.dds"
       ],
       "mProjectTargetToCastRange": true,
       "mSpellCalculations": {
@@ -1809,6 +1112,425 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Ruby_Soraka/Spells/Ruby_SorakaQAbility/Ruby_SorakaQ",
+    "~class": "SpellObject"
+  },
+  "Characters/Ruby_Soraka/Spells/Ruby_SorakaQAbility/Ruby_SorakaQAdditionalMissile": {
+    "ObjectName": "Ruby_SorakaQAdditionalMissile",
+    "mScriptName": "Ruby_SorakaQAdditionalMissile",
+    "mSpell": {
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "canCastWhileDisabled": true,
+      "castConeDistance": 100.0,
+      "castFrame": 7.974999904632568,
+      "castRadius": [
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0
+      ],
+      "castRange": [
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0
+      ],
+      "castRangeValues": {
+        "0xa3e0478": 25000.0,
+        "values": [
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "flags": 4194304,
+      "luaOnMissileUpdateDistanceInterval": 400.0,
+      "mAffectsTypeFlags": 23567,
+      "mAnimationName": "Spell3",
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.4000000059604645,
+      "mEffectAmount": [
+        {
+          "value": [
+            50.0,
+            80.0,
+            110.0,
+            140.0,
+            170.0,
+            200.0,
+            230.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            13.0,
+            12.0,
+            11.0,
+            10.0,
+            9.0,
+            8.0,
+            7.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mLineWidth": 1.0,
+      "mMissileEffectKey": "Ruby_Soraka_Q_Mis",
+      "mMissileSpec": {
+        "0xc195fba6": true,
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "mMissileWidth": 1.0,
+        "movementComponent": {
+          "mStartBoneName": "spine",
+          "mTravelTime": 0.6000000238418579,
+          "~class": "FixedTimeMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mProjectTargetToCastRange": true,
+      "missileSpeed": 700.0,
+      "spellCastTime": 0.25,
+      "spellTotalTime": 1.0,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Ruby_Soraka/Spells/Ruby_SorakaQAbility/Ruby_SorakaQAdditionalMissile",
+    "~class": "SpellObject"
+  },
+  "Characters/Ruby_Soraka/Spells/Ruby_SorakaQAbility/Ruby_SorakaQMissile": {
+    "ObjectName": "Ruby_SorakaQMissile",
+    "mScriptName": "Ruby_SorakaQMissile",
+    "mSpell": {
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "canCastWhileDisabled": true,
+      "castConeDistance": 100.0,
+      "castFrame": 7.974999904632568,
+      "castRadius": [
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0
+      ],
+      "castRange": [
+        1500.0,
+        1500.0,
+        1500.0,
+        1500.0,
+        1500.0,
+        1500.0,
+        1500.0
+      ],
+      "castRangeValues": {
+        "0xa3e0478": 1500.0,
+        "values": [
+          1500.0,
+          1500.0,
+          1500.0,
+          1500.0,
+          1500.0,
+          1500.0,
+          1500.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "flags": 4194304,
+      "luaOnMissileUpdateDistanceInterval": 400.0,
+      "mAffectsTypeFlags": 23567,
+      "mAnimationName": "Spell3",
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.4000000059604645,
+      "mEffectAmount": [
+        {
+          "value": [
+            50.0,
+            80.0,
+            110.0,
+            140.0,
+            170.0,
+            200.0,
+            230.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            13.0,
+            12.0,
+            11.0,
+            10.0,
+            9.0,
+            8.0,
+            7.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mLineWidth": 1.0,
+      "mMissileEffectKey": "Ruby_Soraka_Q_Mis",
+      "mMissileSpec": {
+        "0xc195fba6": true,
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "mMissileWidth": 1.0,
+        "movementComponent": {
+          "mSpeed": 1100.0,
+          "mStartBoneName": "spine",
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mProjectTargetToCastRange": true,
+      "missileSpeed": 1100.0,
+      "spellCastTime": 0.25,
+      "spellTotalTime": 1.0,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Ruby_Soraka/Spells/Ruby_SorakaQAbility/Ruby_SorakaQMissile",
+    "~class": "SpellObject"
+  },
+  "Characters/Ruby_Soraka/Spells/Ruby_SorakaQAbility/Ruby_SorakaQRegen": {
+    "ObjectName": "Ruby_SorakaQRegen",
+    "mBuff": {
+      "mDescription": "<titleLeft>Rejuvenation</titleLeft><mainText>This unit is recovering health and has increased Move Speed.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Ruby_SorakaQRegen",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/characters/ruby_soraka/hud/icons2d/ruby_soraka_q.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Ruby_Soraka/Spells/Ruby_SorakaQAbility/Ruby_SorakaQRegen",
+    "~class": "SpellObject"
+  },
+  "Characters/Ruby_Soraka/Spells/Ruby_SorakaQAbility/Ruby_SorakaQReturnMissile": {
+    "ObjectName": "Ruby_SorakaQReturnMissile",
+    "mScriptName": "Ruby_SorakaQReturnMissile",
+    "mSpell": {
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "castConeDistance": 100.0,
+      "castFrame": 1.0,
+      "castRange": [
+        2500.0,
+        2500.0,
+        2500.0,
+        2500.0,
+        2500.0,
+        2500.0,
+        2500.0
+      ],
+      "castRangeValues": {
+        "0xa3e0478": 2500.0,
+        "values": [
+          2500.0,
+          2500.0,
+          2500.0,
+          2500.0,
+          2500.0,
+          2500.0,
+          2500.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 7375,
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mMissileEffectKey": "Ruby_Soraka_q_Lifesteal_Mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 1400.0,
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 1400.0,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Ruby_Soraka/Spells/Ruby_SorakaQAbility/Ruby_SorakaQReturnMissile",
     "~class": "SpellObject"
   },
   "Characters/Ruby_Soraka/Spells/Ruby_SorakaRAbility/Ruby_SorakaR": {
@@ -1955,7 +1677,7 @@
       },
       "mCoefficient": 0.550000011920929,
       "mImgIconName": [
-        "ASSETS/Characters/Ruby_Soraka/HUD/Icons2D/Ruby_Soraka_R.dds"
+        "assets/characters/ruby_soraka/hud/icons2d/ruby_soraka_r.dds"
       ],
       "mRequiredUnitTags": {
         "mObjectTagList": [
@@ -2170,7 +1892,7 @@
         }
       ],
       "mImgIconName": [
-        "ASSETS/Characters/Ruby_Soraka/HUD/Icons2D/Ruby_Soraka_W.dds"
+        "assets/characters/ruby_soraka/hud/icons2d/ruby_soraka_w.dds"
       ],
       "mTargetingTypeData": {
         "~class": "Area"
@@ -2404,7 +2126,7 @@
         -1
       ],
       "mImgIconName": [
-        "ASSETS/Characters/Ruby_Soraka/HUD/Icons2D/Ruby_Soraka_W.dds"
+        "assets/characters/ruby_soraka/hud/icons2d/ruby_soraka_w.dds"
       ],
       "mRequiredUnitTags": {
         "mObjectTagList": [
@@ -2466,6 +2188,172 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Ruby_Soraka/Spells/Ruby_SorakaWAbility/Ruby_SorakaW",
+    "~class": "SpellObject"
+  },
+  "Characters/Ruby_Soraka/Spells/Ruby_SorakaWCastTime": {
+    "ObjectName": "Ruby_SorakaWCastTime",
+    "mScriptName": "Ruby_SorakaWCastTime",
+    "mSpell": {
+      "Cooldown": {
+        "0xa3e0478": 0.5,
+        "values": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "castConeDistance": 100.0,
+      "castFrame": 1.0,
+      "castRadius": [
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0
+      ],
+      "castRange": [
+        750.0,
+        750.0,
+        750.0,
+        750.0,
+        750.0,
+        750.0,
+        750.0
+      ],
+      "castRangeValues": {
+        "0xa3e0478": 750.0,
+        "values": [
+          750.0,
+          750.0,
+          750.0,
+          750.0,
+          750.0,
+          750.0,
+          750.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "mAffectsTypeFlags": 1029,
+      "mAnimationName": "Spell3",
+      "mCantCancelWhileChanneling": true,
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.25,
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.3499999940395355,
+      "mCoefficient2": 0.15000000596046448,
+      "mEffectAmount": [
+        {
+          "value": [
+            5.0,
+            20.0,
+            35.0,
+            50.0,
+            65.0,
+            80.0,
+            95.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            5.0,
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0,
+            35.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mImgIconName": [
+        "assets/characters/ruby_soraka/hud/icons2d/ruby_soraka_w.dds"
+      ],
+      "mMissileEffectName": "doesnotexist.troy",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 2400.0,
+          "mStartBoneName": "L_hand",
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 2400.0,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Ruby_Soraka/Spells/Ruby_SorakaWCastTime",
     "~class": "SpellObject"
   },
   "Characters/Ruby_Soraka/Spells/Ruby_SorakaWParticleMissile": {
@@ -2560,6 +2448,118 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Ruby_Soraka/Spells/Ruby_SorakaWParticleMissile",
+    "~class": "SpellObject"
+  },
+  "Characters/Ruby_Soraka/Spells/Ruby_Soraka_BasicAttack": {
+    "ObjectName": "Ruby_Soraka_BasicAttack",
+    "mScriptName": "Ruby_Soraka_BasicAttack",
+    "mSpell": {
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "bHaveHitBone": true,
+      "castConeDistance": 100.0,
+      "castFrame": 6.5,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        622.7000122070313,
+        622.7000122070313,
+        622.7000122070313,
+        622.7000122070313,
+        622.7000122070313,
+        622.7000122070313,
+        622.7000122070313
+      ],
+      "castRangeValues": {
+        "0xa3e0478": 622.7000122070313,
+        "values": [
+          622.7000122070313,
+          622.7000122070313,
+          622.7000122070313,
+          622.7000122070313,
+          622.7000122070313,
+          622.7000122070313,
+          622.7000122070313
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 512,
+      "mAlternateName": "Ruby_SorakaBasicAttack",
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mMissileEffectKey": "Ruby_Soraka_BA_mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 1000.0,
+          "mStartBoneName": "R_forarm",
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 1000.0,
+      "spellCastTime": 0.4437499940395355,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Ruby_Soraka/Spells/Ruby_Soraka_BasicAttack",
+    "~class": "SpellObject"
+  },
+  "Characters/Ruby_Soraka/Spells/Ruby_Soraka_Consecration": {
+    "ObjectName": "Ruby_Soraka_Consecration",
+    "mBuff": {
+      "mDescription": "Soraka gains <speed>@MovementSpeed*100@% Move Speed</speed> while moving towards allied champions who are below @HealthThreshold*100@% Health. ",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Ruby_Soraka_Consecration",
+    "objectPath": "Characters/Ruby_Soraka/Spells/Ruby_Soraka_Consecration",
     "~class": "SpellObject"
   }
 }

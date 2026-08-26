@@ -1,0 +1,182 @@
+{
+  "mBuffs": [
+    {
+      "mBuffScriptName": "assets/perks/styles/domination/hailofblades/hailofbladescd.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_HailOfBlades}}</titleLeft><mainText>{{perk_displayname_HailOfBlades}} is unable to reset as you are in combat.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    },
+    {
+      "mBuffScriptName": "assets/perks/styles/domination/hailofblades/hailofbladesready.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_HailOfBlades}}</titleLeft><mainText>{{perk_displayname_HailOfBlades}} is ready.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    },
+    {
+      "mBuffScriptName": "assets/perks/styles/domination/hailofblades/hailofbladesbuff.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_HailOfBlades}}</titleLeft><mainText>{{perk_displayname_HailOfBlades}} is granting Attack Speed.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    },
+    {
+      "mBuffScriptName": "assets/perks/styles/domination/hailofblades/hailofbladescd.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_HailOfBlades}}</titleLeft><mainText>{{perk_displayname_HailOfBlades}} is unable to reset as you are in combat.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    },
+    {
+      "mBuffScriptName": "assets/perks/styles/domination/hailofblades/hailofbladesbuff.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_HailOfBlades}}</titleLeft><mainText>{{perk_displayname_HailOfBlades}} is unable to reset as you are in combat.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    }
+  ],
+  "mDisplayNameLocalizationKey": "Hail of Blades",
+  "mDisplayStatLocalizationKey": "@f1@",
+  "mEndOfGameStatDescriptions": [
+    "Attacks made with extra Attack Speed: @eogvar1@",
+    "Damage Dealt: @eogvar2@"
+  ],
+  "mIconTextureName": "assets/perks/styles/domination/hailofblades/hailofblades.tex",
+  "mLongDescLocalizationKey": "Gain @ASBoost*100@% (@ASBoostRanged*100@% for ranged champions) Attack Speed and <trueDamage>bonus true damage</trueDamage> when you attack an enemy champion for up to @NumHits@ attacks.<br><br>No more than @Duration@s can elapse between attacks or this effect will end.<br><br>Cooldown: @Cooldown@s.<br>On-Hit Damage: @BonusDamageMin@ - @BonusDamageMax@ (+@BonusADRatio.-1@ bonus AD, +@APRatio.-1@ AP) damage.<br><br><rules>Attack resets increase the attack limit by 1.<br>Allows you to temporarily exceed the Attack Speed limit.</rules>",
+  "mMajorChangePatchVersion": "16.9",
+  "mPerkId": 9923,
+  "mPerkName": "HailOfBlades",
+  "mScript": {
+    "mSpellScriptData": {
+      "mCalculations": {
+        "0x6387172": {
+          "mFormulaParts": [
+            {
+              "mNumber": 2.0,
+              "~class": "NumberCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "0x792cf56b": {
+          "mFormulaParts": [
+            {
+              "mNumber": 1.0,
+              "~class": "NumberCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "BonusDamage": {
+          "mFormulaParts": [
+            {
+              "0x589a59c": "BonusDamageMin",
+              "0xb65bc23": "BonusDamageMax",
+              "~class": "NamedDataValuesByCharLevelInterpolationCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "BonusADRatio",
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "ChampRange": {
+          "mConditionalCalculationRequirements": {
+            "~class": "IsRangedCastRequirement"
+          },
+          "mConditionalGameCalculation": "RangedIntegerIndicatorTT",
+          "mDefaultGameCalculation": "MeleeIntegerIndicatorTT",
+          "~class": "GameCalculationConditional"
+        },
+        "MeleeItemCalcValue": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "ASBoost",
+              "~class": "NamedDataValueCalculationPart"
+            }
+          ],
+          "mMultiplier": {
+            "mNumber": 100.0,
+            "~class": "NumberCalculationPart"
+          },
+          "~class": "GameCalculation"
+        },
+        "RangedItemCalcValue": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "ASBoostRanged",
+              "~class": "NamedDataValueCalculationPart"
+            }
+          ],
+          "mMultiplier": {
+            "mNumber": 100.0,
+            "~class": "NumberCalculationPart"
+          },
+          "~class": "GameCalculation"
+        }
+      },
+      "mEffectAmount": {
+        "APRatio": 0.10000000149011612,
+        "ASBoost": 0.8999999761581421,
+        "ASBoostRanged": 0.6000000238418579,
+        "BonusADRatio": 0.11999999731779099,
+        "BonusDamageMax": 20.0,
+        "BonusDamageMin": 2.0,
+        "Cooldown": 10.0,
+        "MaxBonusHits": 2.0,
+        "NumHits": 3.0,
+        "duration": 3.0
+      },
+      "mEffectAmountGameMode": {
+        "ARAM": {
+          "mEffectAmountPerMode": {
+            "ASBoost": 1.2000000476837158,
+            "ASBoostRanged": 0.800000011920929
+          },
+          "~class": "PerkEffectAmountPerMode"
+        }
+      },
+      "~class": "PerkScriptData"
+    },
+    "mSpellScriptName": "assets/perks/styles/domination/hailofblades/hailofblades.lua",
+    "~class": "PerkScript"
+  },
+  "mShortDescLocalizationKey": "Gain a large amount of Attack Speed and <trueDamage>bonus true damage</trueDamage> for the first @NumHits@ attacks made against enemy champions.",
+  "mTooltipNameLocalizationKey": "When you attack an enemy champion, for up to @NumHits@ attacks, gain {{ Item_Range_Mod_@ChampRange@ }}% Attack Speed and deal <font color='#48C4B7'>@BonusDamage@</font> <trueDamage>bonus true damage</trueDamage>. <br><br>Cooldown: @Cooldown@s.<br><hr><br>Hail of Blades attacks: @f1@<br>Damage Dealt: @f2@<br>Percentage of Hail attacks landed: @f3@%<br><br><rules>Basic Attack resets increase the attack limit by +1, up to +@MaxBonusHits@.<br>Allows you to temporarily exceed the Attack Speed limit.</rules>",
+  "mVFXResourceResolver": {
+    "resourceMap": {
+      "Perks_HailOfBlades_Buff": "Perks/Styles/Domination/HailOfBlades/Particles/Perks_HailOfBlades_Buff",
+      "Perks_HailOfBlades_Buff_Warning": "Perks/Styles/Domination/HailOfBlades/Particles/Perks_HailOfBlades_Buff_Warning"
+    },
+    "~class": "ResourceResolver"
+  },
+  "~class": "Perk"
+}

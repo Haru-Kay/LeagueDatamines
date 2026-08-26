@@ -1,0 +1,112 @@
+{
+  "mBuffs": [
+    {
+      "mBuffScriptName": "assets/perks/styles/sorcery/phaserush/phaserush.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_PhaseRush}}</titleLeft><mainText>Hit an enemy champion with 3 spells or attacks in rapid succession to gain a powerful haste. </mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    },
+    {
+      "mBuffScriptName": "assets/perks/styles/sorcery/phaserush/phaserushbuff.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_PhaseRush}}</titleLeft><mainText>This unit has increased Move Speed.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    },
+    {
+      "mBuffScriptName": "assets/perks/styles/sorcery/phaserush/phaserushlockout.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_PhaseRush}}</titleLeft><mainText>{{perk_displayname_PhaseRush}} is cooling down. </mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    }
+  ],
+  "mDisplayNameLocalizationKey": "Stormraider's Surge",
+  "mDisplayStatLocalizationKey": "@f1@",
+  "mEndOfGameStatDescriptions": [
+    "Total activations: @eogvar1@"
+  ],
+  "mIconTextureName": "assets/perks/styles/sorcery/phaserush/stormraiderssurgeruneicon2.tex",
+  "mLongDescLocalizationKey": "Dealing @DamageThreshold*100@% of a champion's maximum health within @Window@s grants <speed>@HasteMax*100@% Move Speed</speed> and <status>@SlowResist*100@% Slow Resistance</status> for @Duration@s. Move Speed is @RangedEffectiveness*100@% effective for ranged champions.<br>Cooldown: @MaxCooldown@s - @MinCooldown@s",
+  "mMajorChangePatchVersion": "16.9",
+  "mPerkId": 8230,
+  "mPerkName": "PhaseRush",
+  "mScript": {
+    "mSpellScriptData": {
+      "mCalculations": {
+        "CooldownCalc": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 10.0,
+              "mStartValue": 20.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 4,
+          "~class": "GameCalculation"
+        },
+        "MoveSpeedCalc": {
+          "mDisplayAsPercent": true,
+          "mFormulaParts": [
+            {
+              "mEndValue": 0.47999998927116394,
+              "mStartValue": 0.47999998927116394,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            }
+          ],
+          "mRangedMultiplier": {
+            "mDataValue": "RangedEffectiveness",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "mSimpleTooltipCalculationDisplay": 4,
+          "~class": "RangedModifiableGameCalculation"
+        }
+      },
+      "mEffectAmount": {
+        "DamageThreshold": 0.25,
+        "HasteMax": 0.47999998927116394,
+        "MaxCooldown": 20.0,
+        "MinCooldown": 10.0,
+        "RangedEffectiveness": 0.75,
+        "SlowResist": 0.5,
+        "Window": 3.0,
+        "duration": 4.0
+      },
+      "mEffectAmountGameMode": {
+        "URF": {
+          "mEffectAmountPerMode": {
+            "MaxCooldown": 10.0,
+            "MinCooldown": 10.0
+          },
+          "~class": "PerkEffectAmountPerMode"
+        }
+      },
+      "~class": "PerkScriptData"
+    },
+    "mSpellScriptName": "assets/perks/styles/sorcery/phaserush/stormraiderssurge.lua",
+    "~class": "PerkScript"
+  },
+  "mShortDescLocalizationKey": "Dealing @DamageThreshold*100@% of a champion's maximum health grants a burst of <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_MS'>MS</lol-uikit-tooltipped-keyword> and Slow Resist. ",
+  "mTooltipNameLocalizationKey": "Dealing @DamageThreshold*100@% of a champion's maximum health within @Window@s grants <speed>@MoveSpeedCalc@ Move Speed</speed> and <status>@SlowResist*100@% Slow Resistance</status> for @Duration@s.<br><br>Cooldown: <attention>@CooldownCalc@s</attention><br><br>Total Activations: <attention>@f1@</attention>",
+  "mVFXResourceResolver": {
+    "resourceMap": {
+      "Perks_Spellslingers_Active": "Perks/Styles/Sorcery/PhaseRush/Particles/Perks_Spellslingers_Active",
+      "Perks_Spellslingers_Haste": "Perks/Styles/Sorcery/PhaseRush/Particles/Perks_Spellslingers_Haste"
+    },
+    "~class": "ResourceResolver"
+  },
+  "~class": "Perk"
+}

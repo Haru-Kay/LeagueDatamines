@@ -1,310 +1,4 @@
 {
-  "0x6145da51": {
-    "ObjectName": "Jade_AlistarPassive",
-    "mBuff": {
-      "mDescription": "<titleLeft>Trample</titleLeft><mainText>Alistar is Ghosted and is damaging nearby enemy units and buildings.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_AlistarPassive",
-    "mSpell": {
-      "Cooldown": {
-        "0xa3e0478": 3.0,
-        "values": [
-          3.0,
-          3.0,
-          3.0,
-          3.0,
-          3.0,
-          3.0,
-          3.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "DataValues": [
-        {
-          "name": "APRatio",
-          "values": [
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612,
-            0.10000000149011612
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "Duration",
-          "values": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "MinionMonsterDamageMod",
-          "values": [
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0
-          ],
-          "~class": "SpellDataValue"
-        }
-      ],
-      "castRange": [
-        365.0,
-        365.0,
-        365.0,
-        365.0,
-        365.0,
-        365.0,
-        365.0
-      ],
-      "castRangeDisplayOverride": [
-        365.0,
-        365.0,
-        365.0,
-        365.0,
-        365.0,
-        365.0,
-        365.0
-      ],
-      "castRangeValues": {
-        "0xa3e0478": 365.0,
-        "values": [
-          365.0,
-          365.0,
-          365.0,
-          365.0,
-          365.0,
-          365.0,
-          365.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "cooldownTime": [
-        3.0,
-        3.0,
-        3.0,
-        3.0,
-        3.0,
-        3.0,
-        3.0
-      ],
-      "mClientData": {
-        "mTooltipData": {
-          "mFormat": "0x476ec0b8",
-          "mLocKeys": {
-            "keyName": "Trample",
-            "keySummary": "Each time Alistar casts a spell, he Tramples nearby units and turrets for a few seconds, dealing damage to units he walks over.",
-            "keyTooltip": "After casting an ability, Alistar becomes <status>Ghosted</status> and deals <magicDamage>@TotalDamageOverDuration@ magic damage</magicDamage> to nearby enemy units and buildings over @Duration@ seconds.",
-            "keyTooltipExtended": "{{Spell_AlistarPassive_Jade_Tooltip}}<br><br><rules>Ghosted units ignore collision with other units.</rules><br><rules>Deals @MinionMonsterDamageMod*100@% damage to minions and monsters.</rules>"
-          },
-          "mObjectName": "Jade_AlistarPassive",
-          "~class": "TooltipInstanceSpell"
-        },
-        "~class": "SpellDataResourceClient"
-      },
-      "mFloatVarsDecimals": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Alistar_ColossalStrength.dds"
-      ],
-      "mSpellCalculations": {
-        "0x9ce452fe": {
-          "mModifiedGameCalculation": "TotalDamage",
-          "mMultiplier": {
-            "mDataValue": "duration",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          "tooltipOnly": true,
-          "~class": "GameCalculationModified"
-        },
-        "TotalDamage": {
-          "mFormulaParts": [
-            {
-              "mEndValue": 24.0,
-              "mStartValue": 7.0,
-              "~class": "ByCharLevelInterpolationCalculationPart"
-            },
-            {
-              "mDataValue": "APRatio",
-              "~class": "StatByNamedDataValueCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        }
-      },
-      "mSpellTags": [
-        "PositiveEffect_Boon"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x6145da51",
-    "~class": "SpellObject"
-  },
-  "0xa5545298": {
-    "ObjectName": "Jade_AlistarW_Marker",
-    "mScriptName": "Jade_AlistarW_Marker",
-    "mSpell": {
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Alistar_Headbutt.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xa5545298",
-    "~class": "SpellObject"
-  },
-  "0xc8b8d391": {
-    "ObjectName": "Jade_AlistarPassive_Tooltip",
-    "mBuff": {
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_AlistarPassive_Tooltip",
-    "mSpell": {
-      "Cooldown": {
-        "0xa3e0478": 3.0,
-        "values": [
-          3.0,
-          3.0,
-          3.0,
-          3.0,
-          3.0,
-          3.0,
-          3.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "DataValues": [
-        {
-          "name": "A",
-          "values": [
-            15.0,
-            15.0,
-            15.0,
-            15.0,
-            15.0,
-            15.0,
-            15.0
-          ],
-          "~class": "SpellDataValue"
-        }
-      ],
-      "castRange": [
-        950.0,
-        950.0,
-        950.0,
-        950.0,
-        950.0,
-        950.0,
-        950.0
-      ],
-      "castRangeValues": {
-        "0xa3e0478": 950.0,
-        "values": [
-          950.0,
-          950.0,
-          950.0,
-          950.0,
-          950.0,
-          950.0,
-          950.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "cooldownTime": [
-        3.0,
-        3.0,
-        3.0,
-        3.0,
-        3.0,
-        3.0,
-        3.0
-      ],
-      "mClientData": {
-        "mTooltipData": {
-          "mFormat": "0x476ec0b8",
-          "mLocKeys": {
-            "keyName": "Trample",
-            "keySummary": "Each time Alistar casts a spell, he Tramples nearby units and turrets for a few seconds, dealing damage to units he walks over.",
-            "keyTooltip": "After casting an ability, Alistar becomes <status>Ghosted</status> and deals <magicDamage>@TotalDamageOverDuration@ magic damage</magicDamage> to nearby enemy units and buildings over @Duration@ seconds."
-          },
-          "mObjectName": "Jade_AlistarPassive_Tooltip",
-          "~class": "TooltipInstanceSpell"
-        },
-        "~class": "SpellDataResourceClient"
-      },
-      "mFloatVarsDecimals": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Alistar_ColossalStrength.dds"
-      ],
-      "mSpellTags": [
-        "PositiveEffect_Boon"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xc8b8d391",
-    "~class": "SpellObject"
-  },
-  "0xf7d59123": {
-    "ObjectName": "Jade_AlistarW_Target",
-    "mBuff": {
-      "mDescription": "<titleLeft>Headbutt</titleLeft><mainText>This unit is airborne, it can take no actions.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_AlistarW_Target",
-    "mSpell": {
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Alistar_Headbutt.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xf7d59123",
-    "~class": "SpellObject"
-  },
   "Characters/Jade_Alistar/Spells/Jade_AlistarBasicAttack": {
     "ObjectName": "Jade_AlistarBasicAttack",
     "mScriptName": "Jade_AlistarBasicAttack",
@@ -383,7 +77,7 @@
               "basePosition": 3,
               "~class": "DrawablePositionLocator"
             },
-            "textureRadiusOverrideName": "ASSETS/Spells/Textures/AOE.tex",
+            "textureRadiusOverrideName": "assets/spells/textures/aoe.tex",
             "~class": "TargeterDefinitionAoe"
           }
         ],
@@ -481,7 +175,7 @@
               "basePosition": 3,
               "~class": "DrawablePositionLocator"
             },
-            "textureRadiusOverrideName": "ASSETS/Spells/Textures/AOE.tex",
+            "textureRadiusOverrideName": "assets/spells/textures/aoe.tex",
             "~class": "TargeterDefinitionAoe"
           }
         ],
@@ -772,7 +466,7 @@
         0
       ],
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Alistar_TriumphantRoar.dds"
+        "assets/ux/jade/s3icons/samesized/alistar_triumphantroar.dds"
       ],
       "mSpellCalculations": {
         "AllyHeal": {
@@ -827,6 +521,284 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jade_Alistar/Spells/Jade_AlistarEAbility/Jade_AlistarE",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Alistar/Spells/Jade_AlistarPassiveAbility/Jade_AlistarPassive": {
+    "ObjectName": "Jade_AlistarPassive",
+    "mBuff": {
+      "mDescription": "<titleLeft>Trample</titleLeft><mainText>Alistar is Ghosted and is damaging nearby enemy units and buildings.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_AlistarPassive",
+    "mSpell": {
+      "Cooldown": {
+        "0xa3e0478": 3.0,
+        "values": [
+          3.0,
+          3.0,
+          3.0,
+          3.0,
+          3.0,
+          3.0,
+          3.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "APRatio",
+          "values": [
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Duration",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MinionMonsterDamageMod",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "castRange": [
+        365.0,
+        365.0,
+        365.0,
+        365.0,
+        365.0,
+        365.0,
+        365.0
+      ],
+      "castRangeDisplayOverride": [
+        365.0,
+        365.0,
+        365.0,
+        365.0,
+        365.0,
+        365.0,
+        365.0
+      ],
+      "castRangeValues": {
+        "0xa3e0478": 365.0,
+        "values": [
+          365.0,
+          365.0,
+          365.0,
+          365.0,
+          365.0,
+          365.0,
+          365.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0
+      ],
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyName": "Trample",
+            "keySummary": "Each time Alistar casts a spell, he Tramples nearby units and turrets for a few seconds, dealing damage to units he walks over.",
+            "keyTooltip": "After casting an ability, Alistar becomes <status>Ghosted</status> and deals <magicDamage>@TotalDamageOverDuration@ magic damage</magicDamage> to nearby enemy units and buildings over @Duration@ seconds.",
+            "keyTooltipExtended": "{{Spell_AlistarPassive_Jade_Tooltip}}<br><br><rules>Ghosted units ignore collision with other units.</rules><br><rules>Deals @MinionMonsterDamageMod*100@% damage to minions and monsters.</rules>"
+          },
+          "mObjectName": "Jade_AlistarPassive",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/alistar_colossalstrength.dds"
+      ],
+      "mSpellCalculations": {
+        "0x9ce452fe": {
+          "mModifiedGameCalculation": "TotalDamage",
+          "mMultiplier": {
+            "mDataValue": "duration",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "tooltipOnly": true,
+          "~class": "GameCalculationModified"
+        },
+        "TotalDamage": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 24.0,
+              "mStartValue": 7.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "PositiveEffect_Boon"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Alistar/Spells/Jade_AlistarPassiveAbility/Jade_AlistarPassive",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Alistar/Spells/Jade_AlistarPassiveAbility/Jade_AlistarPassive_Tooltip": {
+    "ObjectName": "Jade_AlistarPassive_Tooltip",
+    "mBuff": {
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_AlistarPassive_Tooltip",
+    "mSpell": {
+      "Cooldown": {
+        "0xa3e0478": 3.0,
+        "values": [
+          3.0,
+          3.0,
+          3.0,
+          3.0,
+          3.0,
+          3.0,
+          3.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "A",
+          "values": [
+            15.0,
+            15.0,
+            15.0,
+            15.0,
+            15.0,
+            15.0,
+            15.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "castRange": [
+        950.0,
+        950.0,
+        950.0,
+        950.0,
+        950.0,
+        950.0,
+        950.0
+      ],
+      "castRangeValues": {
+        "0xa3e0478": 950.0,
+        "values": [
+          950.0,
+          950.0,
+          950.0,
+          950.0,
+          950.0,
+          950.0,
+          950.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0
+      ],
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyName": "Trample",
+            "keySummary": "Each time Alistar casts a spell, he Tramples nearby units and turrets for a few seconds, dealing damage to units he walks over.",
+            "keyTooltip": "After casting an ability, Alistar becomes <status>Ghosted</status> and deals <magicDamage>@TotalDamageOverDuration@ magic damage</magicDamage> to nearby enemy units and buildings over @Duration@ seconds."
+          },
+          "mObjectName": "Jade_AlistarPassive_Tooltip",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/alistar_colossalstrength.dds"
+      ],
+      "mSpellTags": [
+        "PositiveEffect_Boon"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Alistar/Spells/Jade_AlistarPassiveAbility/Jade_AlistarPassive_Tooltip",
     "~class": "SpellObject"
   },
   "Characters/Jade_Alistar/Spells/Jade_AlistarQAbility/Jade_AlistarQ": {
@@ -1019,7 +991,7 @@
         "~class": "SpellDataResourceClient"
       },
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Alistar_Pulverize.dds"
+        "assets/ux/jade/s3icons/samesized/alistar_pulverize.dds"
       ],
       "mSpellCalculations": {
         "TotalDamage": {
@@ -1266,7 +1238,7 @@
         "~class": "SpellDataResourceClient"
       },
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Alistar_FerociousHowl.dds"
+        "assets/ux/jade/s3icons/samesized/alistar_ferocioushowl.dds"
       ],
       "mSpellTags": [
         "Trait_Ultimate",
@@ -1599,7 +1571,7 @@
       ],
       "mHitBoneName": "C_BuffBone_Glb_Center_Loc",
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Alistar_Headbutt.dds"
+        "assets/ux/jade/s3icons/samesized/alistar_headbutt.dds"
       ],
       "mSpellCalculations": {
         "TotalDamage": {
@@ -1648,6 +1620,34 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jade_Alistar/Spells/Jade_AlistarWAbility/Jade_AlistarW",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Alistar/Spells/Jade_AlistarWAbility/Jade_AlistarW_Marker": {
+    "ObjectName": "Jade_AlistarW_Marker",
+    "mScriptName": "Jade_AlistarW_Marker",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/alistar_headbutt.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Alistar/Spells/Jade_AlistarWAbility/Jade_AlistarW_Marker",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Alistar/Spells/Jade_AlistarWAbility/Jade_AlistarW_Target": {
+    "ObjectName": "Jade_AlistarW_Target",
+    "mBuff": {
+      "mDescription": "<titleLeft>Headbutt</titleLeft><mainText>This unit is airborne, it can take no actions.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_AlistarW_Target",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/alistar_headbutt.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Alistar/Spells/Jade_AlistarWAbility/Jade_AlistarW_Target",
     "~class": "SpellObject"
   }
 }

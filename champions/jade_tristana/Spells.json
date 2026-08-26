@@ -1,165 +1,4 @@
 {
-  "0x990d44ac": {
-    "ObjectName": "Jade_TristanaE_Debuff",
-    "mBuff": {
-      "mDescription": "<titleLeft>Explosive Shot</titleLeft><mainText>This unit is being damaged over time.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_TristanaE_Debuff",
-    "mSpell": {
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Tristana_DetonatingShot.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x990d44ac",
-    "~class": "SpellObject"
-  },
-  "0xb69d7b6f": {
-    "ObjectName": "Jade_TristanaSkin80Manager",
-    "mScriptName": "Jade_TristanaSkin80Manager",
-    "mSpell": {
-      "DataValues": [
-        {
-          "name": "GoldToNextForm",
-          "values": [
-            2000.0,
-            6000.0,
-            6000.0,
-            6000.0,
-            6000.0,
-            6000.0,
-            6000.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "SecondsOutOfCombatTillTransform",
-          "values": [
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "SecondsOutOfCombatTillEmote",
-          "values": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
-          ],
-          "~class": "SpellDataValue"
-        }
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xb69d7b6f",
-    "~class": "SpellObject"
-  },
-  "0xfbb089bb": {
-    "ObjectName": "Jade_TristanaW_Slow",
-    "mBuff": {
-      "mDescription": "<titleLeft>Rocket Jump</titleLeft><mainText>This unit has been impacted by Tristana's rocket jump and is slowed by 60%.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_TristanaW_Slow",
-    "objectPath": "0xfbb089bb",
-    "~class": "SpellObject"
-  },
-  "0xfd6d02a1": {
-    "ObjectName": "Jade_TristanaPassive",
-    "mBuff": {
-      "mDescription": "<titleLeft>Draw a Bead</titleLeft><mainText>Tristana's Attack Range and the cast range of Explosive Charge and Buster Shot are increased by <font color='#FFFFFF'>@f1@</font>.</mainText>",
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_TristanaPassive",
-    "mSpell": {
-      "Cooldown": {
-        "0xa3e0478": 0.0,
-        "values": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "castRange": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "castRangeUseBoundingBoxes": true,
-      "castRangeValues": {
-        "0xa3e0478": 0.0,
-        "values": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "cooldownTime": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mClientData": {
-        "mTooltipData": {
-          "mFormat": "0x476ec0b8",
-          "mLocKeys": {
-            "keyName": "Draw a Bead",
-            "keySummary": "Increases Tristana's attack range as she levels.",
-            "keyTooltip": "<mainText>Permamently increases Tristana's Attack Range and <spellName>Explosive Shot's</spellName> cast range by @BonusPassiveRange@.</mainText>"
-          },
-          "mObjectName": "Jade_TristanaPassive",
-          "~class": "TooltipInstanceSpell"
-        },
-        "~class": "SpellDataResourceClient"
-      },
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Tristana_DrawAbead.dds"
-      ],
-      "mSpellCalculations": {
-        "BonusPassiveRange": {
-          "mFormulaParts": [
-            {
-              "mEndValue": 153.0,
-              "~class": "ByCharLevelInterpolationCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        }
-      },
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xfd6d02a1",
-    "~class": "SpellObject"
-  },
   "Characters/Jade_Tristana/Spells/Jade_TristanaBasicAttack": {
     "ObjectName": "Jade_TristanaBasicAttack",
     "mScriptName": "Jade_TristanaBasicAttack",
@@ -515,20 +354,20 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "ActiveDot",
+          "name": "PassiveAPRatio",
           "values": [
-            14.0,
-            22.0,
-            30.0,
-            38.0,
-            46.0,
-            54.0,
-            62.0
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25
           ],
           "~class": "SpellDataValue"
         },
         {
-          "name": "ActiveDotTotal",
+          "name": "ActiveDot",
           "values": [
             70.0,
             110.0,
@@ -537,6 +376,19 @@
             230.0,
             270.0,
             310.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ActiveAPRatio",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
           ],
           "~class": "SpellDataValue"
         },
@@ -641,7 +493,7 @@
                 },
                 {
                   "nameOverride": "Damage Over Time",
-                  "type": "ActiveDotTotal",
+                  "type": "ActiveDot",
                   "typeIndex": 4,
                   "~class": "TooltipInstanceListElement"
                 },
@@ -657,7 +509,7 @@
           "mLocKeys": {
             "keyName": "Explosive Shot",
             "keySummary": "When Tristana kills a unit, her cannonballs burst into shrapnel, dealing damage to surrounding enemies.  Can be activated to deal damage to target unit over time, and reduce healing received.",
-            "keyTooltip": "<spellPassive>Passive: </spellPassive>Enemies explode when slain by Tristana's basic attacks, dealing <magicDamage>@PassiveDamage@ magic damage</magicDamage> to nearby enemies.<br><br><spellActive>Active: </spellActive>Rends target enemy, applying <keyword>50% Grievous Wounds</keyword> and dealing <magicDamage>@ActiveDamageTTOnly@ magic damage</magicDamage> over 5 seconds.",
+            "keyTooltip": "<spellPassive>Passive: </spellPassive>Enemies explode when slain by Tristana's basic attacks, dealing <magicDamage>@PassiveDamage@ magic damage</magicDamage> to nearby enemies.<br><br><spellActive>Active: </spellActive>Rends target enemy, applying <keyword>50% Grievous Wounds</keyword> and dealing <magicDamage>@ActiveDamageTTOnly@ magic damage</magicDamage> over @GrievousDuration@ seconds.",
             "keyTooltipExtendedBelowLine": "<keyword>Grievous Wounds</keyword>: Reduces the effectiveness of Healing and Regeneration effects."
           },
           "mObjectName": "Jade_TristanaE",
@@ -686,7 +538,7 @@
       "mHitBoneName": "C_Buffbone_Glb_Center_Loc",
       "mHitEffectKey": "Jade_Tristana_E_tar",
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Tristana_ExplosiveShot.dds"
+        "assets/ux/jade/s3icons/samesized/tristana_explosiveshot.dds"
       ],
       "mMissileEffectKey": "Jade_Tristana_E_mis",
       "mMissileSpec": {
@@ -711,29 +563,23 @@
         "~class": "MissileSpecification"
       },
       "mSpellCalculations": {
-        "0xbac8cb48": {
-          "mFormulaParts": [
-            {
-              "mDataValue": "ActiveDotTotal",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mCoefficient": 1.0,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "tooltipOnly": true,
-          "~class": "GameCalculation"
+        "0x5948c87d": {
+          "mModifiedGameCalculation": "0x8b3077db",
+          "mMultiplier": {
+            "mNumber": 0.20000000298023224,
+            "~class": "NumberCalculationPart"
+          },
+          "~class": "GameCalculationModified"
         },
-        "0xfd502790": {
+        "0x8b3077db": {
           "mFormulaParts": [
             {
               "mDataValue": "ActiveDot",
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.20000000298023224,
-              "~class": "StatByCoefficientCalculationPart"
+              "mDataValue": "ActiveAPRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -745,8 +591,8 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.25,
-              "~class": "StatByCoefficientCalculationPart"
+              "mDataValue": "PassiveAPRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -781,6 +627,107 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jade_Tristana/Spells/Jade_TristanaEAbility/Jade_TristanaE",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Tristana/Spells/Jade_TristanaEAbility/Jade_TristanaE_Debuff": {
+    "ObjectName": "Jade_TristanaE_Debuff",
+    "mBuff": {
+      "mDescription": "<titleLeft>Explosive Shot</titleLeft><mainText>This unit is being damaged over time.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_TristanaE_Debuff",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/tristana_detonatingshot.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Tristana/Spells/Jade_TristanaEAbility/Jade_TristanaE_Debuff",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Tristana/Spells/Jade_TristanaPassiveAbility/Jade_TristanaPassive": {
+    "ObjectName": "Jade_TristanaPassive",
+    "mBuff": {
+      "mDescription": "<titleLeft>Draw a Bead</titleLeft><mainText>Tristana's Attack Range and the cast range of Explosive Charge and Buster Shot are increased by <font color='#FFFFFF'>@f1@</font>.</mainText>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_TristanaPassive",
+    "mSpell": {
+      "Cooldown": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "castRange": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "castRangeUseBoundingBoxes": true,
+      "castRangeValues": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyName": "Draw a Bead",
+            "keySummary": "Increases Tristana's attack range as she levels.",
+            "keyTooltip": "<mainText>Permamently increases Tristana's Attack Range and <spellName>Explosive Shot's</spellName> cast range by @BonusPassiveRange@.</mainText>"
+          },
+          "mObjectName": "Jade_TristanaPassive",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/tristana_drawabead.dds"
+      ],
+      "mSpellCalculations": {
+        "BonusPassiveRange": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 153.0,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Tristana/Spells/Jade_TristanaPassiveAbility/Jade_TristanaPassive",
     "~class": "SpellObject"
   },
   "Characters/Jade_Tristana/Spells/Jade_TristanaQAbility/Jade_TristanaQ": {
@@ -896,6 +843,10 @@
                   "type": "AttackSpeedMod",
                   "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
                 }
               ],
               "levelCount": 5,
@@ -905,7 +856,7 @@
           "mLocKeys": {
             "keyName": "Rapid Fire",
             "keySummary": "Tristana fires her weapon rapidly, increasing her attack speed for a short time.",
-            "keyTooltip": "<mainText>Increases Tristana's <attackSpeed>Attack Speed by @AttackSpeedMod*100@%</attackSpeed> for 7 seconds.</mainText>"
+            "keyTooltip": "Tristana gains <attackSpeed>@AttackSpeedMod*100@% Attack Speed</attackSpeed> for @BuffDuration@ seconds."
           },
           "mObjectName": "Jade_TristanaQ",
           "~class": "TooltipInstanceSpell"
@@ -913,7 +864,7 @@
         "~class": "SpellDataResourceClient"
       },
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Tristana_HeadShot.dds"
+        "assets/ux/jade/s3icons/samesized/tristana_headshot.dds"
       ],
       "mRequiredUnitTags": {
         "mObjectTagList": [
@@ -939,11 +890,11 @@
         "0xa3e0478": 50.0,
         "values": [
           50.0,
-          50.0,
-          50.0,
-          50.0,
-          50.0,
-          50.0
+          60.0,
+          70.0,
+          80.0,
+          90.0,
+          100.0
         ],
         "~class": "ResourceCostModifiable"
       },
@@ -1089,7 +1040,7 @@
               "mValueType": 2,
               "~class": "FloatPerSpellLevel"
             },
-            "textureRadiusOverrideName": "ASSETS/Spells/Textures/AOE_brand.tex",
+            "textureRadiusOverrideName": "assets/spells/textures/aoe_brand.tex",
             "~class": "TargeterDefinitionAoe"
           }
         ],
@@ -1126,7 +1077,7 @@
         "~class": "SpellDataResourceClient"
       },
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Tristana_BusterShot.dds"
+        "assets/ux/jade/s3icons/samesized/tristana_bustershot.dds"
       ],
       "mMissileEffectKey": "Jade_Tristana_R_mis",
       "mMissileSpec": {
@@ -1198,6 +1149,56 @@
     "objectPath": "Characters/Jade_Tristana/Spells/Jade_TristanaRAbility/Jade_TristanaR",
     "~class": "SpellObject"
   },
+  "Characters/Jade_Tristana/Spells/Jade_TristanaSkin80Manager": {
+    "ObjectName": "Jade_TristanaSkin80Manager",
+    "mScriptName": "Jade_TristanaSkin80Manager",
+    "mSpell": {
+      "DataValues": [
+        {
+          "name": "GoldToNextForm",
+          "values": [
+            2000.0,
+            6000.0,
+            6000.0,
+            6000.0,
+            6000.0,
+            6000.0,
+            6000.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SecondsOutOfCombatTillTransform",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SecondsOutOfCombatTillEmote",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Tristana/Spells/Jade_TristanaSkin80Manager",
+    "~class": "SpellObject"
+  },
   "Characters/Jade_Tristana/Spells/Jade_TristanaWAbility/Jade_TristanaW": {
     "ObjectName": "Jade_TristanaW",
     "mScriptName": "Jade_TristanaW",
@@ -1238,6 +1239,32 @@
             0.800000011920929,
             0.800000011920929,
             0.800000011920929
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Slow",
+          "values": [
+            60.0,
+            60.0,
+            60.0,
+            60.0,
+            60.0,
+            60.0,
+            60.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowDuration",
+          "values": [
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5
           ],
           "~class": "SpellDataValue"
         }
@@ -1337,8 +1364,8 @@
           },
           "mLocKeys": {
             "keyName": "Rocket Jump",
-            "keySummary": "Tristana fires at the ground to propel herself to a distant location, dealing damage and slowing surrounding units for 3 seconds where she lands.",
-            "keyTooltip": "<mainText>Tristana fires at the ground to propel herself to target location, dealing <magicDamage>@LandingDamage@ magic damage</magicDamage> and <status>Slows</status> by 60% for 2.5 seconds when she lands.<br>On a champion kill or assist, the Cooldown is refreshed.</mainText>"
+            "keySummary": "Tristana fires at the ground to propel herself to a distant location, damaging and slowing enemies where she lands.",
+            "keyTooltip": "Tristana fires at the ground to propel herself to target location, dealing <magicDamage>@LandingDamage@ magic damage</magicDamage> and <status>Slows</status> by @Slow@% for @SlowDuration@ seconds when she lands. On a champion kill or assist, Rocket Jump's Cooldown is refreshed."
           },
           "mObjectName": "Jade_TristanaW",
           "~class": "TooltipInstanceSpell"
@@ -1346,7 +1373,7 @@
         "~class": "SpellDataResourceClient"
       },
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Tristana_RendingShot.dds"
+        "assets/ux/jade/s3icons/samesized/tristana_rendingshot.dds"
       ],
       "mSpellCalculations": {
         "LandingDamage": {
@@ -1398,6 +1425,16 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jade_Tristana/Spells/Jade_TristanaWAbility/Jade_TristanaW",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Tristana/Spells/Jade_TristanaWAbility/Jade_TristanaW_Slow": {
+    "ObjectName": "Jade_TristanaW_Slow",
+    "mBuff": {
+      "mDescription": "<titleLeft>Rocket Jump</titleLeft><mainText>This unit has been impacted by Tristana's rocket jump and is slowed.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_TristanaW_Slow",
+    "objectPath": "Characters/Jade_Tristana/Spells/Jade_TristanaWAbility/Jade_TristanaW_Slow",
     "~class": "SpellObject"
   }
 }

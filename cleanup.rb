@@ -123,13 +123,12 @@ $manualHash.merge!({
     "b945e5f7" => "GoldGrantingAugments",
     "8aa4910b" => "AutocastAugments",
     "794c79e3" => "AutocastAugmentsARAM",
-    "a1d5fd67" => "SupportAutocastAugments",
+    "a1d5fd67" => "AutocastAugmentsPeel",
     "5d5c7e03" => "SizeModifiers",
     "b75763f2" => "OnHitAugments",
     "cb218786" => "GeneralAugments",
-    "56299123" => "CCAugmentGroup2",
-    "257a6f57" => "GrantsCCAugments",
-    "b21505d7" => "SupportAugmentsTank",
+    "56299123" => "CCAugments",
+    "257a6f57" => "CCSourceAugments",
     "9f7a920a" => "AutocastAugmentsRange",
     "73f04b68" => "RequiresUltimateAugments",
     "47e861e5" => "FighterAugments",
@@ -142,10 +141,10 @@ $manualHash.merge!({
     "d1747a88" => "SupportAugmentsHealing",
     "4f40633b" => "MovementAugmentsDefensive",
     "b5972caa" => "HealthGrantingAugments",
-    "5c690cf3" => "MageAugmentsAP",
-    "995ac030" => "MageAugmentsGeneric",
+    "5c690cf3" => "MageAugmentsGeneric",
+    "995ac030" => "CasterAugmentsGeneric",
     "8c232386" => "OnTakedownAugments",
-    "70692c6f" => "MageAugmentsGeneric2",
+    "70692c6f" => "ADCaster",
     "2b5a8648" => "OnDeathAugments",
     "7b6873c7" => "MageAugmentsGeneric3",
     "2fe0f044" => "ADCAugments",
@@ -155,15 +154,16 @@ $manualHash.merge!({
     "8ae6ed2e" => "MovementAugments",
     "13ce30b4" => "MageAugmentsGeneric5",
     "2fc101c6" => "FighterAugments2",
-    "b66c16c2" => "MageAugmentsGeneric6",
-    "563cdf9c" => "AbilityAugmentsScripts",
+    "b66c16c2" => "MageAugmentsBattlemage",
+    "563cdf9c" => "AbilityAugments1",
     "99d70c96" => "StackingAugments",
     "ba7415bd" => "HasteAugments",
     "ddc42af3" => "SupportAugmentsHealing2",
     "9579774e" => "ItemAugments",
-    "a26bf746" => "AbilityAugmentsGeneric",
+    "a26bf746" => "AbilityAugments2",
     "b5056d3d" => "ADCAugments2",
     "ba0256ad" => "TankAugments",
+    "86d9be15" => "HSPower",
 
     "14409aa2" => "AugmentGroups/MR",
     "15409c35" => "AugmentGroups/MS",
@@ -174,16 +174,16 @@ $manualHash.merge!({
     "233e5daf" => "AugmentGroups/AutocastAugmentsARAM",
     "25f2135b" => "AugmentGroups/ArmorPen",
     "2a69fbdc" => "AugmentGroups/Omnivamp",
-    "31169cbb" => "AugmentGroups/SupportAutocastAugments",
+    "31169cbb" => "AugmentGroups/AutocastAugmentsPeel",
     "3c1d0047" => "AugmentGroups/SizeModifiers",
     "3e3439f6" => "AugmentGroups/OnHitAugments",
     "3ec90ced" => "AugmentGroups/EmptyAugmentPool1",
     "40cddb7a" => "AugmentGroups/GeneralAugments",
     "4324795d" => "AugmentGroups/CritChance",
-    "4a6ad9db" => "AugmentGroups/GrantsCCAugments",
-    "5287e1f" => "AugmentGroups/CCAugmentGroup2",
+    "4a6ad9db" => "AugmentGroups/CCSourceAugments",
+    "5287e1f" => "AugmentGroups/CCAugments",
     "55cc5e63" => "AugmentGroups/MagicPen",
-    "5637e17b" => "AugmentGroups/SupportAugmentsTank",
+    "5637e17b" => "AugmentGroups/Peel",
     "587efdc6" => "AugmentGroups/AutocastAugmentsRange",
     "58b41414" => "AugmentGroups/RequiresUltimateAugments",
     "5c43f819" => "AugmentGroups/FighterAugments",
@@ -201,10 +201,10 @@ $manualHash.merge!({
     "76d4b52f" => "AugmentGroups/MovementAugmentsDefensive",
     "78adf47d" => "AugmentGroups/JadeAugments",
     "78e3793e" => "AugmentGroups/HealthGrantingAugments",
-    "841e719f" => "AugmentGroups/MageAugmentsAP",
-    "8ad08224" => "AugmentGroups/MageAugmentsGeneric",
+    "841e719f" => "AugmentGroups/MageAugmentsGeneric",
+    "8ad08224" => "AugmentGroups/CasterAugmentsGeneric",
     "8d576bba" => "AugmentGroups/OnTakedownAugments",
-    "901e8483" => "AugmentGroups/MageAugmentsGeneric2",
+    "901e8483" => "AugmentGroups/ADCaster",
     "98205824" => "AugmentGroups/OnDeathAugments",
     "a2408d0" => "AugmentGroups/AP",
     "a2c9d49b" => "AugmentGroups/MageAugmentsGeneric3",
@@ -218,8 +218,8 @@ $manualHash.merge!({
     "d2809836" => "AugmentGroups/LifeSteal",
     "dabcc810" => "AugmentGroups/MageAugmentsGeneric5",
     "df350452" => "AugmentGroups/FighterAugments2",
-    "e139ccde" => "AugmentGroups/MageAugmentsGeneric6",
-    "e4414998" => "AugmentGroups/AbilityAugmentsScripts",
+    "e139ccde" => "AugmentGroups/MageAugmentsBattlemage",
+    "e4414998" => "AugmentGroups/AbilityAugments1",
     "e5c7ec2a" => "AugmentGroups/StackingAugments",
     "e67f4793" => "AugmentGroups/Health",
     "e91cf039" => "AugmentGroups/HasteAugments",
@@ -227,7 +227,7 @@ $manualHash.merge!({
     "ec237687" => "AugmentGroups/SnowBall",
     "f1838e7f" => "AugmentGroups/SupportAugmentsHealing2",
     "f4f980ba" => "AugmentGroups/ItemAugments",
-    "f539ec5a" => "AugmentGroups/AbilityAugmentsGeneric",
+    "f539ec5a" => "AugmentGroups/AbilityAugments2",
     "f6bc67f9" => "AugmentGroups/ADCAugments2",
     "fdd60739" => "AugmentGroups/TankAugments",
     "fe23f5ec" => "AugmentGroups/AD",
@@ -511,7 +511,6 @@ def badString?(key, value)
 end
 
 def diff
-    return
     print "Loading previous patch stringtable..."
     oldLang = {}
     File.open("lol.stringtable.json", 'rb') { |f| oldLang = JSON.parse(f.read()) }
@@ -701,7 +700,7 @@ def augmentSearcher(key, data, version=0)
 
         
 
-        linkedObjects = data.fetch("0x40c7b66f", [])
+        linkedObjects = data.fetch("AdditionalSpells", [])
 
         spellName = data.dig("RootSpell")
         if spellName
@@ -776,7 +775,7 @@ def augmentSearcher(key, data, version=0)
         (aug.delete("maxLevelTooltip"); aug.delete("maxLevelSummary")) if version == 1
         aug.delete("quest") if aug["quest"] == ""
         (aug.delete("quest")) if version == 0
-        return aug
+        return assetNameFix(aug)
     end
     return nil
 end
@@ -808,91 +807,91 @@ def buildAugmentQuest(augment, questData)
         "QuestDesc" => questData["QuestTooltipTra"]
     })
     
-    return questHash.delete_if { |k, v| v.empty? }
+    return assetNameFix(questHash.delete_if { |k, v| v.empty? })
 end
 
-def augmentSetBuilder(key, data, version=0)
-    if data["~class"]&.eql?("0x27bc6378")
-        set = {
-            "apiName" => data.fetch("SetName", ""),
-            "name" => data.fetch("0x746ade9", ""),
-            "desc" => data.fetch("0x97e82990", ""),
-            "descEx" => "",
-            "icons" => data.fetch("0x4217d741", ""),
-        }
-        if data["TierData"]
-            set["breakpoints"] = []
-            i = 1
-            data["TierData"].each { |tier|
-                i += 1
-                next if tier["Enabled"] == false
-                set["breakpoints"].push(i)
-            }
-        else
-            set["breakpoints"] = [2, 3, 4]
-        end
+# def augmentSetBuilder(key, data, version=0)
+#     if data["~class"]&.eql?("0x27bc6378")
+#         set = {
+#             "apiName" => data.fetch("SetName", ""),
+#             "name" => data.fetch("0x746ade9", ""),
+#             "desc" => data.fetch("0x97e82990", ""),
+#             "descEx" => "",
+#             "icons" => data.fetch("0x4217d741", ""),
+#         }
+#         if data["TierData"]
+#             set["breakpoints"] = []
+#             i = 1
+#             data["TierData"].each { |tier|
+#                 i += 1
+#                 next if tier["Enabled"] == false
+#                 set["breakpoints"].push(i)
+#             }
+#         else
+#             set["breakpoints"] = [2, 3, 4]
+#         end
 
-        setData = $aramMayhem[data.fetch("0x96b4b430")]
-        puts set["name"] if !setData
+#         setData = $aramMayhem[data.fetch("0x96b4b430")]
+#         puts set["name"] if !setData
         
-        set["data"] = {
-            "dataValues" => {},
-            "calculations" => {}
-        }
+#         set["data"] = {
+#             "dataValues" => {},
+#             "calculations" => {}
+#         }
 
-        mSpell = setData.fetch("mSpell", {})
-        dataValues = mSpell.fetch("DataValues", [])
+#         mSpell = setData.fetch("mSpell", {})
+#         dataValues = mSpell.fetch("DataValues", [])
 
-        dataValues.each { |component|
-            name = component["name"]
-            name = $lang.fetch(name, name)
-            values = component["values"] || []
-            puts "#{spellName} ::: #{name}" if !values
-            out = []
-            for i in set["breakpoints"]
-                out.push(values[i - 1])
-            end
-            values = out
-            values = values[0] if values.uniq.length == 1
-            set["data"]["dataValues"].store(name, values)
-        }
+#         dataValues.each { |component|
+#             name = component["name"]
+#             name = $lang.fetch(name, name)
+#             values = component["values"] || []
+#             puts "#{spellName} ::: #{name}" if !values
+#             out = []
+#             for i in set["breakpoints"]
+#                 out.push(values[i - 1])
+#             end
+#             values = out
+#             values = values[0] if values.uniq.length == 1
+#             set["data"]["dataValues"].store(name, values)
+#         }
         
-        clientData = mSpell.fetch("mClientData", {})
-        if clientData
-            descEx = clientData.dig("mTooltipData")&.dig("mLocKeys")&.dig("keyTooltip")
-            set["descEx"] = descEx ? $lang.fetch(descEx.downcase, "") : ""
-            if set["descEx"].start_with?("{{")
-                str = set["descEx"].downcase
-                out = {}
-                for i in set["breakpoints"]
-                    strSub = str[2...-2].gsub("@level@", (i - 1).to_s)
-                    out.store(i, $lang.fetch(strSub, strSub))
-                end
-                set["descEx"] = out
-            end
-        end
-        set.delete("descEx") if set["descEx"].empty?
+#         clientData = mSpell.fetch("mClientData", {})
+#         if clientData
+#             descEx = clientData.dig("mTooltipData")&.dig("mLocKeys")&.dig("keyTooltip")
+#             set["descEx"] = descEx ? $lang.fetch(descEx.downcase, "") : ""
+#             if set["descEx"].start_with?("{{")
+#                 str = set["descEx"].downcase
+#                 out = {}
+#                 for i in set["breakpoints"]
+#                     strSub = str[2...-2].gsub("@level@", (i - 1).to_s)
+#                     out.store(i, $lang.fetch(strSub, strSub))
+#                 end
+#                 set["descEx"] = out
+#             end
+#         end
+#         set.delete("descEx") if set["descEx"].empty?
 
-        calcs = mSpell.fetch("mSpellCalculations", {})
-        set["data"]["calculations"] = applyLangKeys(applyLang(calcs))
+#         calcs = mSpell.fetch("mSpellCalculations", {})
+#         set["data"]["calculations"] = applyLangKeys(applyLang(calcs))
 
-        set["augments"] = []
-        data["augments"].each { |aug|
-            augdata = $aramMayhem[aug]
-            if !augdata
-                set["augments"].push(aug)
-                next
-            end
-            name = augdata["NameTra"] ? $lang.fetch(augdata["NameTra"].downcase, aug) : aug
-            set["augments"].push(name)
-        }
+#         set["augments"] = []
+#         data["augments"].each { |aug|
+#             augdata = $aramMayhem[aug]
+#             if !augdata
+#                 set["augments"].push(aug)
+#                 next
+#             end
+#             name = augdata["NameTra"] ? $lang.fetch(augdata["NameTra"].downcase, aug) : aug
+#             set["augments"].push(name)
+#         }
         
-        set["name"] = $lang.fetch(set["name"].downcase, set["name"])
-        set["desc"] = $lang.fetch(set["desc"].downcase, set["desc"])
-        return set
-    end
-    return nil
-end
+#         set["name"] = $lang.fetch(set["name"].downcase, set["name"])
+#         set["desc"] = $lang.fetch(set["desc"].downcase, set["desc"])
+#         return set
+#     end
+#     return nil
+# end
 
 def applyLang(obj)
     case obj
@@ -916,6 +915,19 @@ def applyLangKeys(obj)
             obj.map { |v| applyLangKeys(v) }
         when String
             return $lang.fetch(obj.downcase, obj)
+        else
+            return obj
+    end
+end
+
+def assetNameFix(obj)
+    case obj
+        when Hash
+            obj.transform_values { |v| assetNameFix(v) }
+        when Array
+            obj.map { |v| assetNameFix(v) }
+        when String
+            return ["assets/", "uibase/", "ux/"].any? { |s| obj.downcase.include?(s) } ? obj.downcase : obj
         else
             return obj
     end
@@ -1023,7 +1035,7 @@ diff()
                 type = "MiscData" if type.start_with?("0x")
         end
         sharedSort[type] ||= {}
-        sharedSort[type].store(key, data)
+        sharedSort[type].store(key, assetNameFix(data))
     }
     sharedSort.each { |key, data|
         next if key == "skip"
@@ -1089,7 +1101,7 @@ diff()
                 type = "MiscData" if type.start_with?("0x")
         end
         jsonSort[type] ||= {}
-        jsonSort[type].store(key, data)
+        jsonSort[type].store(key, assetNameFix(data))
     }
     jsonSort.each { |key, data|
         next if key == "skip"
@@ -1120,7 +1132,7 @@ diff()
                     type = "MiscData" if type.start_with?("0x")
             end
             jsonSort[type] ||= {}
-            jsonSort[type].store(key, data)
+            jsonSort[type].store(key, assetNameFix(data))
         }
         jsonSort.each { |key, data|
             loc = key.downcase.include?("vfx") ? "vfxData" : "data"
@@ -1186,7 +1198,7 @@ diff()
                 type = "MiscData" if type.start_with?("0x")
         end
         jsonSort[type] ||= {}
-        jsonSort[type].store(key, data)
+        jsonSort[type].store(key, assetNameFix(data))
     }
     jsonSort.each { |key, data|
         next if key == "skip"
@@ -1217,7 +1229,7 @@ diff()
                     type = "MiscData" if type.start_with?("0x")
             end
             jsonSort[type] ||= {}
-            jsonSort[type].store(key, data)
+            jsonSort[type].store(key, assetNameFix(data))
         }
         jsonSort.each { |key, data|
             loc = key.downcase.include?("vfx") ? "vfxData" : "data"
@@ -1276,16 +1288,25 @@ diff()
                 type = "ChampionAugmentList"
                 data = applyLangKeys(applyLang(data))
                 key = applyLangKeys(key)
+
+                key = key.split("/")[-1]
+                newdata = {}
+                data["AugmentList"].each { |group|
+                    weight = group.fetch("WEIGHT", 100)
+                    group = group["AugmentGroup"].split("/")[-1]
+                    newdata.store(group, weight)
+                }
+                data = newdata.sort_by { |k, v| k.downcase }.to_h
             else
                 type = "MiscData" if type.start_with?("0x")
         end
         aramOther[type] ||= {}
-        aramOther[type].store(key, data)
+        aramOther[type].store(key, assetNameFix(data))
     }
     aramOther.each { |key, data|
         loc = key.downcase.include?("vfx") ? "vfxData" : "data"
         data = data.sort_by { |k, v| v["ObjectName"] }.to_h if key == "SpellObject"
-            data = data.sort_by { |k, v| k }.to_h if key == "ChampionAugmentList"
+        data = data.sort_by { |k, v| k }.to_h if key == "ChampionAugmentList"
         File.open("aram/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
     }
 
@@ -1315,17 +1336,19 @@ diff()
                     type = "AugmentGroups"
                     data = applyLangKeys(applyLang(data))
                     key = applyLangKeys(key)
+                    key = data["ID"]
+                    data = data["augments"]&.map { |h| h["Augment"].split("/")[-1] } || []
                 else
                     type = "MiscData" if type.start_with?("0x")
             end
             jsonSort[type] ||= {}
-            jsonSort[type].store(key, data)
+            jsonSort[type].store(key, assetNameFix(data))
         }
-        jsonSort.each { |key, data|
-            loc = key.downcase.include?("vfx") ? "vfxData" : "data"
-            data = data.sort_by { |k, v| v["ObjectName"] }.to_h if key == "SpellObject"
-            data = data.sort_by { |k, v| k }.to_h if key == "AugmentGroups"
-            File.open("aram/#{map}/#{loc}/#{key}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
+        jsonSort.each { |type, data|
+            loc = type.downcase.include?("vfx") ? "vfxData" : "data"
+            data = data.sort_by { |k, v| v["ObjectName"] }.to_h if type == "SpellObject"
+            data = data.sort_by { |k, v| k.downcase }.to_h if type == "AugmentGroups"
+            File.open("aram/#{map}/#{loc}/#{type}.json", 'wb') { |f| f.write(JSON.pretty_generate(data)) }
         }
     }
 
@@ -1351,7 +1374,7 @@ diff()
 
         if v
             aramAugments.push(v)
-            aramOther["AugmentInfo"].store(key, applyLang(data))
+            aramOther["AugmentInfo"].store(key, assetNameFix(applyLang(data)))
             next
         end
 
@@ -1376,7 +1399,7 @@ diff()
 
         next if !type
         aramOther[type] ||= {}
-        aramOther[type].store(key, data)
+        aramOther[type].store(key, assetNameFix(data))
     }
     aramAugments.each { |augment|
         id = "Maps/ModeSpecificData/Augments/" + augment["apiName"]
@@ -1411,7 +1434,7 @@ diff()
 
         if v
             aramAugments.push(v)
-            aramOther["AugmentInfo"].store(key, applyLang(data))
+            aramOther["AugmentInfo"].store(key, assetNameFix(applyLang(data)))
             next
         end
 
@@ -1436,7 +1459,7 @@ diff()
 
         next if !type
         aramOther[type] ||= {}
-        aramOther[type].store(key, data)
+        aramOther[type].store(key, assetNameFix(data))
     }
     aramAugments.each { |augment|
         id = "Maps/ModeSpecificData/Augments/" + augment["apiName"]
@@ -1480,7 +1503,7 @@ diff()
         v = augmentSearcher(key, data)
         if v
             augments.push(v) 
-            arenaOther["AugmentInfo"].store(key, applyLang(data))
+            arenaOther["AugmentInfo"].store(key, assetNameFix(applyLang(data)))
             next
         end
 
@@ -1520,7 +1543,7 @@ diff()
                 type = "MiscData" if type.start_with?("0x")
         end
         arenaOther[type] ||= {}
-        arenaOther[type].store(key, data)
+        arenaOther[type].store(key, assetNameFix(data))
     }
 
 
@@ -1541,7 +1564,7 @@ diff()
             v = augmentSearcher(key, data, json)
             if v
                 augments.push(v) 
-                jsonSort["AugmentInfo"].store(key, applyLang(data))
+                jsonSort["AugmentInfo"].store(key, assetNameFix(applyLang(data)))
                 next
             end
 
@@ -1562,7 +1585,7 @@ diff()
                     type = "MiscData" if type.start_with?("0x")
             end
             jsonSort[type] ||= {}
-            jsonSort[type].store(key, data)
+            jsonSort[type].store(key, assetNameFix(data))
         }
         jsonSort.each { |key, data|
             loc = key.downcase.include?("vfx") ? "vfxData" : "data"
@@ -1638,7 +1661,7 @@ Dir.mkdir("characters/shared")
                         d = applyLangKeys(d)
                         d = d.sort_by { |k, v| k }.to_h
                         d.keys.each { |k|
-                            if d[k].is_a?(Hash) && d[k]["~class"] == "0xce9b917b"
+                            if d[k].is_a?(Hash) && d[k]["~class"] == "ModifiableFloat"
                                 d[k] = applyLangKeys(d[k])
                             end
                         }
@@ -1671,7 +1694,7 @@ Dir.mkdir("characters/shared")
                 end
 
                 out[clazz] ||= {}
-                out[clazz].store(obj, d)
+                out[clazz].store(obj, assetNameFix(d))
             }
             next if out.empty?
 
@@ -1704,7 +1727,7 @@ itemsMisc = {}
 File.open("temp/data/items.ltk.json", 'rb') { |f| itemBin = JSON.parse(f.read()) }
 itemBin = itemBin.fetch("entries", itemBin)
 itemBin.each { |item, itemObj|
-    transObj = applyLang(itemObj)
+    transObj = assetNameFix(applyLang(itemObj))
     transItem = itemNameLangFix(item)
     if transItem.include?("TFT")
         itemsTFT.store(transItem, transObj)
@@ -1732,12 +1755,6 @@ File.open("items/itemsMisc.json", 'wb') { |f| f.write(JSON.pretty_generate(items
 File.open("items/itemsVFX.json", 'wb') { |f| f.write(JSON.pretty_generate(itemsVFX)) }
 File.open("items/itemsSpells.json", 'wb') { |f| f.write(JSON.pretty_generate(itemsSpells)) }
 print "done.\n"
-
-print "Loading and formatting tft.stringtable..."
-tft = {}
-File.open("lang/tft.stringtable.json", 'rb') { |f| tft = JSON.parse(f.read()) }
-tft = tft["entries"] || tft
-File.open("lang/tft.stringtable.json", 'wb') { |f| f.write(JSON.pretty_generate(tft)) }
 
 print "done.\n"
 
@@ -1789,7 +1806,7 @@ loadtipSets.each { |key, value|
         next if text == "unused"
         prefix = tipData.dig("mHeaderLocalizationKey")
         d.store("type", $lang.fetch(prefix&.downcase, prefix))
-        d.store("text", $lang.fetch(text.downcase, tft.fetch(text.downcase, text)))
+        d.store("text", $lang.fetch(text.downcase, text))
         d.store("minimumLevel", tipData["mMinimumSummonerLevel"])
         d.store("maximumLevel", tipData["mMaximumSummonerLevel"])
         d.delete_if { |k, v| v.nil? }
@@ -1817,12 +1834,12 @@ print "done.\n"
 
 
 print "Loading and formatting runes..."
-FileUtils.rm_rf(Dir.glob("runes/*"))
-Dir.mkdir("runes") unless Dir.exist?("runes")
+FileUtils.rm_rf(Dir.glob("perks/*"))
+Dir.mkdir("perks") unless Dir.exist?("perks")
 runes = nil
 File.open("temp/perks.ltk.json", 'rb') { |f| runes = JSON.parse(f.read()) }
 runes = runes.fetch("entries", runes)
-runes.delete_if { |k, v| !v["~class"].include?("Perk") || v["~class"] == "PerkConfig" }
+runes.delete_if { |k, v| !v["~class"].include?("Perk") || v["~class"] == "PerkConfig" || v["~class"].downcase.include?("vfx") }
 runes.transform_keys! { |k, v| 
     next k if !k.start_with?("0x")
     name = runes[k].dig("mIconTextureName")
@@ -1834,9 +1851,9 @@ runes = applyLang(runes)
 
 runes.each { |key, value|
     next if key == "Perks/Template"
-    path = key.gsub("Perks", "runes")
+    next if key.include?("Particles")
 
-    spl = path.split("/")
+    spl = key.split("/")
     filename = spl[-1]
     if value["~class"] == "PerkStyle"
         path = spl.join("/")
@@ -1851,7 +1868,7 @@ runes.each { |key, value|
         Dir.mkdir(temp) unless Dir.exist?(temp)
         
     } unless Dir.exist?(path)
-    File.open(path + "/#{filename}.json", 'wb') { |f| f.write(JSON.pretty_generate(value))}
+    File.open(path + "/#{filename}.json", 'wb') { |f| f.write(JSON.pretty_generate(assetNameFix(value)))}
 }
 
 print "done.\n"

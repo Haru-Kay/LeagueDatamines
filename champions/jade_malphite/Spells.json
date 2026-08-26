@@ -8,7 +8,7 @@
     "mScriptName": "Jade_MalphiteLandslideDebuff",
     "mSpell": {
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Malphite_GroundSlam.dds"
+        "assets/ux/jade/s3icons/samesized/malphite_groundslam.dds"
       ],
       "~class": "SpellDataResource"
     },
@@ -153,7 +153,7 @@
       ],
       "mHitBoneName": "root",
       "mImgIconName": [
-        "ASSETS/Characters/Jade_Malphite/HUD/Icons2D/Jade_Malphite_R.dds"
+        "assets/characters/jade_malphite/hud/icons2d/jade_malphite_r.dds"
       ],
       "mLineWidth": 160.0,
       "mana": [
@@ -181,53 +181,6 @@
     "objectPath": "0x120ba305",
     "~class": "SpellObject"
   },
-  "0x366022fd": {
-    "ObjectName": "Jade_MalphiteDoesNothing",
-    "mBuff": {
-      "mTooltipData": {
-        "mFormat": "0xb34f999a",
-        "mLocKeys": {
-          "keyName": "Malphite Doesn't Do Anything",
-          "keyTooltip": "<flavorText>He literally doesn't do anything.</flavorText>"
-        },
-        "mObjectName": "Jade_MalphiteDoesNothing",
-        "~class": "TooltipInstanceBuff"
-      },
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_MalphiteDoesNothing",
-    "mSpell": {
-      "ImgIconPath": "ASSETS/UX/Jade/S3Icons/SameSized/Malphite_GraniteShield_Grey.dds",
-      "castRange": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "castRangeValues": {
-        "0xa3e0478": 0.0,
-        "values": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Malphite_GraniteShield_Grey.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x366022fd",
-    "~class": "SpellObject"
-  },
   "0x4409a561": {
     "ObjectName": "Jade_MalphiteShield",
     "mBuff": {
@@ -236,6 +189,21 @@
     },
     "mScriptName": "Jade_MalphiteShield",
     "mSpell": {
+      "DataValues": [
+        {
+          "name": "PassiveCooldown",
+          "values": [
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "castRange": [
         0.0,
         0.0,
@@ -263,8 +231,8 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Granite Shield",
-            "keySummary": "Malphite is shielded by a layer of rock which absorbs damage up to 10% of his maximum Health. If Malphite has not been hit for 10 seconds, this effect recharges.",
-            "keyTooltip": "Each time Malphite doesn't take damage for 10 seconds, he summons a shield of rock that absorbs <shield>@TotalShield@ damage</shield>."
+            "keySummary": "Malphite is shielded by a layer of rock which absorbs damage. If Malphite has not been hit recently, this effect recharges.",
+            "keyTooltip": "Each time Malphite doesn't take damage for @PassiveCooldown@ seconds, he summons a shield of rock that absorbs <shield>@TotalShield@ damage</shield>."
           },
           "mObjectName": "Jade_MalphiteShield",
           "~class": "TooltipInstanceSpell"
@@ -272,31 +240,9 @@
         "~class": "SpellDataResourceClient"
       },
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Malphite_GraniteShield.dds"
+        "assets/ux/jade/s3icons/samesized/malphite_graniteshield.dds"
       ],
       "mSpellCalculations": {
-        "PassiveCooldown": {
-          "mFormulaParts": [
-            {
-              "mBreakpoints": [
-                {
-                  "mAdditionalBonusAtThisLevel": -1.0,
-                  "mLevel": 7,
-                  "~class": "Breakpoint"
-                },
-                {
-                  "mAdditionalBonusAtThisLevel": -1.0,
-                  "mLevel": 13,
-                  "~class": "Breakpoint"
-                }
-              ],
-              "mLevel1Value": 8.0,
-              "~class": "ByCharLevelBreakpointsCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 6,
-          "~class": "GameCalculation"
-        },
         "TotalShield": {
           "mFormulaParts": [
             {
@@ -305,7 +251,6 @@
               "~class": "StatByCoefficientCalculationPart"
             }
           ],
-          "mSimpleTooltipCalculationDisplay": 6,
           "~class": "GameCalculation"
         }
       },
@@ -326,7 +271,7 @@
         "18": "Play_sfx_Malphite_MalphiteCleave_OnBuffActivate"
       },
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Malphite_BrutalStrikes.dds"
+        "assets/ux/jade/s3icons/samesized/malphite_brutalstrikes.dds"
       ],
       "~class": "SpellDataResource"
     },
@@ -428,7 +373,7 @@
     "mScriptName": "Jade_MalphiteShieldRemoval",
     "mSpell": {
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Malphite_GraniteShield.dds"
+        "assets/ux/jade/s3icons/samesized/malphite_graniteshield.dds"
       ],
       "~class": "SpellDataResource"
     },
@@ -439,16 +384,6 @@
     "ObjectName": "Jade_MalphiteShieldEffect",
     "mScriptName": "Jade_MalphiteShieldEffect",
     "objectPath": "0x804b3818",
-    "~class": "SpellObject"
-  },
-  "0xceddf8d1": {
-    "ObjectName": "Jade_MalphiteDamageBuff",
-    "mBuff": {
-      "mDescription": "game_buff_tooltip_Jade_MalphiteDamageBuff",
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_MalphiteDamageBuff",
-    "objectPath": "0xceddf8d1",
     "~class": "SpellObject"
   },
   "0xd62ee286": {
@@ -463,7 +398,7 @@
     "mScriptName": "Jade_MalphiteCleave",
     "mSpell": {
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Malphite_BrutalStrikes.dds"
+        "assets/ux/jade/s3icons/samesized/malphite_brutalstrikes.dds"
       ],
       "~class": "SpellDataResource"
     },
@@ -479,7 +414,7 @@
     "mScriptName": "Jade_MalphiteObduracyEffect",
     "mSpell": {
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Malphite_GraniteShield.dds"
+        "assets/ux/jade/s3icons/samesized/malphite_graniteshield.dds"
       ],
       "~class": "SpellDataResource"
     },
@@ -495,7 +430,7 @@
     "mScriptName": "Jade_MalphiteSeismicShardBuff",
     "mSpell": {
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Malphite_SeismicShard.dds"
+        "assets/ux/jade/s3icons/samesized/malphite_seismicshard.dds"
       ],
       "~class": "SpellDataResource"
     },
@@ -755,6 +690,63 @@
     "objectPath": "Characters/Jade_Malphite/Spells/Jade_MalphiteCritAttack",
     "~class": "SpellObject"
   },
+  "Characters/Jade_Malphite/Spells/Jade_MalphiteDamageBuff": {
+    "ObjectName": "Jade_MalphiteDamageBuff",
+    "mBuff": {
+      "mDescription": "game_buff_tooltip_Jade_MalphiteDamageBuff",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_MalphiteDamageBuff",
+    "objectPath": "Characters/Jade_Malphite/Spells/Jade_MalphiteDamageBuff",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Malphite/Spells/Jade_MalphiteDoesNothing": {
+    "ObjectName": "Jade_MalphiteDoesNothing",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Malphite Doesn't Do Anything",
+          "keyTooltip": "<flavorText>He literally doesn't do anything.</flavorText>"
+        },
+        "mObjectName": "Jade_MalphiteDoesNothing",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_MalphiteDoesNothing",
+    "mSpell": {
+      "ImgIconPath": "assets/ux/jade/s3icons/samesized/malphite_graniteshield_grey.dds",
+      "castRange": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "castRangeValues": {
+        "0xa3e0478": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/malphite_graniteshield_grey.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Malphite/Spells/Jade_MalphiteDoesNothing",
+    "~class": "SpellObject"
+  },
   "Characters/Jade_Malphite/Spells/Jade_MalphiteLandslideAbility/Jade_MalphiteLandslide": {
     "ObjectName": "Jade_MalphiteLandslide",
     "mScriptName": "Jade_MalphiteLandslide",
@@ -938,7 +930,7 @@
       "mHitEffectKey": "Jade_Malphite_E_tar_01",
       "mHitEffectOrientType": 2,
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Malphite_GroundSlam.dds"
+        "assets/ux/jade/s3icons/samesized/malphite_groundslam.dds"
       ],
       "mSpellCalculations": {
         "EDamageCalc": {
@@ -1047,6 +1039,19 @@
             0.44999998807907104
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "BuffDuration",
+          "values": [
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -1118,7 +1123,7 @@
           "mLocKeys": {
             "keyName": "Brutal Strikes",
             "keySummary": "Malphite starts to hit with such force that his attacks deal damage to all units in front of him. Activating Brutal Strikes greatly increases his Armor and Attack Damage for a short amount of time.",
-            "keyTooltip": "<spellPassive>Passive: </spellPassive>Malphite's basic attacks hit units near his target for @Jade_MalphiteObduracyPercentDamage*100@% of his <physicalDamage>Attack Damage</physicalDamage>.<br><br><spellActive>Active: </spellActive>Malphite's <scaleArmor>Armor</scaleArmor> and <physicalDamage>Attack Damage</physicalDamage> increase by @ArmorBonus*100@% for 6 seconds."
+            "keyTooltip": "<spellPassive>Passive: </spellPassive>Malphite's basic attacks hit units near his target for @Jade_MalphiteObduracyPercentDamage*100@% of his <physicalDamage>Attack Damage</physicalDamage>.<br><br><spellActive>Active: </spellActive>Malphite's <scaleArmor>Armor</scaleArmor> and <physicalDamage>Attack Damage</physicalDamage> increase by @ArmorBonus*100@% for @BuffDuration@ seconds."
           },
           "mObjectName": "Jade_MalphiteObduracy",
           "~class": "TooltipInstanceSpell"
@@ -1145,7 +1150,7 @@
       ],
       "mHitBoneName": "root",
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Malphite_BrutalStrikes.dds"
+        "assets/ux/jade/s3icons/samesized/malphite_brutalstrikes.dds"
       ],
       "mTargetingTypeData": {
         "~class": "Self"
@@ -1327,7 +1332,7 @@
           },
           "mLocKeys": {
             "keyName": "Seismic Shard",
-            "keySummary": "Using his primal elemental magic, Malphite sends a shard of the earth through the ground at his foe, dealing damage upon impact and stealing movement speed for 4 seconds.",
+            "keySummary": "Using his primal elemental magic, Malphite sends a shard of the earth through the ground at his foe, dealing damage upon impact and stealing their movement speed.",
             "keyTooltip": "Deals <magicDamage>@QDamageCalc@ magic damage</magicDamage> and steals <speed>@SpeedSteal@% Movement Speed</speed> from the target for @SlowDuration@ seconds."
           },
           "mObjectName": "Jade_MalphiteSeismicShard",
@@ -1335,69 +1340,9 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.6000000238418579,
-      "mEffectAmount": [
-        {
-          "value": [
-            20.0,
-            70.0,
-            120.0,
-            170.0,
-            220.0,
-            270.0,
-            320.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            20.0,
-            20.0,
-            25.0,
-            30.0,
-            35.0,
-            40.0,
-            45.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mHitBoneName": "BUFFBONE_GLB_GROUND_LOC",
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Malphite_SeismicShard.dds"
+        "assets/ux/jade/s3icons/samesized/malphite_seismicshard.dds"
       ],
       "mMissileEffectKey": "Jade_Malphite_Q_mis",
       "mMissileSpec": {
@@ -1669,7 +1614,7 @@
       ],
       "mHitBoneName": "root",
       "mImgIconName": [
-        "ASSETS/UX/Jade/S3Icons/SameSized/Malphite_UnstoppableForce.dds"
+        "assets/ux/jade/s3icons/samesized/malphite_unstoppableforce.dds"
       ],
       "mLineWidth": 160.0,
       "mSpellCalculations": {

@@ -1,0 +1,139 @@
+{
+  "mBuffs": [
+    {
+      "mBuffScriptName": "assets/perks/styles/resolve/graspoftheundying/graspoftheundying.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_GraspOfTheUndying}}</titleLeft><mainText>You are building up a life-draining attack.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    },
+    {
+      "mBuffScriptName": "assets/perks/styles/resolve/graspoftheundying/graspoftheundyingonh.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "<titleLeft>{{perk_displayname_GraspOfTheUndying}}</titleLeft><mainText>Your next attack on a champion will steal health.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    },
+    {
+      "mBuffScriptName": "assets/perks/styles/resolve/graspoftheundying/graspoftheundyingself.lua",
+      "mBuffSpellObject": {
+        "mBuff": {
+          "mDescription": "This guy has stats",
+          "~class": "BuffData"
+        },
+        "~class": "SpellObject"
+      },
+      "~class": "PerkBuff"
+    }
+  ],
+  "mDefault": true,
+  "mDisplayNameLocalizationKey": "Grasp of the Undying",
+  "mDisplayStatLocalizationKey": "@f1@",
+  "mEndOfGameStatDescriptions": [
+    "Total damage: @eogvar1@",
+    "Total Healing: @eogvar2@"
+  ],
+  "mIconTextureName": "assets/perks/styles/resolve/graspoftheundying/graspoftheundying.tex",
+  "mLongDescLocalizationKey": "Every @TriggerTime@s in combat, your next basic attack on a champion will:<li>Deal bonus magic damage equal to @PercentHealthDamage.1*100@% of your max health<li>Heal you for @PercentHealthHeal.1*100@% of your max health<li>Permanently increase your health by @MaxHealthPerProc@<br><rules><i>Ranged Champions:</i> Damage, healing, and permanent health gained are @RangedPenaltyMod*100@% effective.</rules>",
+  "mPerkId": 8437,
+  "mPerkName": "GraspOfTheUndying",
+  "mScript": {
+    "mSpellScriptData": {
+      "mCalculations": {
+        "DamageCalc": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "PercentHealthDamage",
+              "mStat": 12,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "mRangedMultiplier": {
+            "mDataValue": "RangedPenaltyMod",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "mSimpleTooltipCalculationDisplay": 4,
+          "~class": "RangedModifiableGameCalculation"
+        },
+        "HealCalc": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "PercentHealthHeal",
+              "mStat": 12,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "mRangedMultiplier": {
+            "mDataValue": "RangedPenaltyMod",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "mSimpleTooltipCalculationDisplay": 4,
+          "~class": "RangedModifiableGameCalculation"
+        }
+      },
+      "mEffectAmount": {
+        "MaxHealthPerProc": 5.0,
+        "MeleeFlatHeal": 0.0,
+        "PercentHealthDamage": 0.03500000014901161,
+        "PercentHealthHeal": 0.013000000268220901,
+        "RangedHealthPerProc": 2.0,
+        "RangedPenaltyMod": 0.4000000059604645,
+        "TriggerTime": 4.0,
+        "Window": 5.0
+      },
+      "mEffectAmountGameMode": {
+        "ARAM": {
+          "mEffectAmountPerMode": {
+            "MaxHealthPerProc": 10.0,
+            "RangedHealthPerProc": 4.0
+          },
+          "~class": "PerkEffectAmountPerMode"
+        },
+        "KINGPORO": {
+          "mEffectAmountPerMode": {
+            "MaxHealthPerProc": 10.0,
+            "RangedHealthPerProc": 4.0
+          },
+          "~class": "PerkEffectAmountPerMode"
+        },
+        "NEXUSBLITZ": {
+          "mEffectAmountPerMode": {
+            "MaxHealthPerProc": 15.0,
+            "RangedHealthPerProc": 6.0
+          },
+          "~class": "PerkEffectAmountPerMode"
+        },
+        "URF": {
+          "mEffectAmountPerMode": {
+            "MaxHealthPerProc": 15.0,
+            "RangedHealthPerProc": 6.0
+          },
+          "~class": "PerkEffectAmountPerMode"
+        }
+      },
+      "~class": "PerkScriptData"
+    },
+    "mSpellScriptName": "assets/perks/styles/resolve/graspoftheundying/graspoftheundying.lua",
+    "~class": "PerkScript"
+  },
+  "mShortDescLocalizationKey": "Every @TriggerTime@s your next attack on a champion deals bonus magic damage, heals you, and permanently increases your health.",
+  "mTooltipNameLocalizationKey": "Every @TriggerTime@s in combat, your next basic attack on a champion will:<li>Deal <magicDamage>@DamageCalc@ bonus magic damage</magicDamage>.<li>Heal you for <healing>@HealCalc@ Health</healing>.<li>Permanently increase your health by <healing>@MaxHealthPerProc@</healing> for melee Attacks and <healing>@RangedHealthPerProc@</healing> for ranged ones.<br><br>Max Health gained: <scaleHealth>@f4@</scaleHealth><br>Damage to Champions: <scaleHealth>@f1@</scaleHealth><br>Total Healing: <scaleHealth>@f2@</scaleHealth><br>Times Used: @f3@",
+  "mVFXResourceResolver": {
+    "resourceMap": {
+      "Perks_RuinedKing_Buff": "Perks/Styles/Resolve/GraspOfTheUndying/Particles/Perks_RuinedKing_Buff",
+      "Perks_RuinedKing_Heal": "Perks/Styles/Resolve/GraspOfTheUndying/Particles/Perks_RuinedKing_Heal",
+      "Perks_RuinedKing_Heal_Mis": "Perks/Styles/Resolve/GraspOfTheUndying/Particles/Perks_RuinedKing_Heal_Mis",
+      "Perks_RuinedKing_Tar": "Perks/Styles/Resolve/GraspOfTheUndying/Particles/Perks_RuinedKing_Tar"
+    },
+    "~class": "ResourceResolver"
+  },
+  "~class": "Perk"
+}
