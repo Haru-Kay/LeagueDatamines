@@ -24,6 +24,89 @@
           },
           {
             "~class": "0x0"
+          },
+          {
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "b5c47a5d-b889-4bcf-b121-d2308f035741",
+            "Condition": {
+              "Value1": {
+                "Var": "0x50f0bcb0",
+                "~class": "ScriptTableGet"
+              },
+              "Value2": {
+                "value": true,
+                "~class": "BoolGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
+            "Sequence": {
+              "blocks": [
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "212df63e-e68b-4ef3-87c0-f32c4eb6a830",
+                  "Dest": {
+                    "Var": "FreeUpgrades",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Formula": "floor(max(0,(ptp.CurrentTime-60)/90))",
+                  "~class": "0x15ebaa9c"
+                },
+                {
+                  "0xd851ffa3": "b74250e5-3299-4362-aceb-1b02d6d7017c",
+                  "Dest": {
+                    "Var": "FreeExp",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Formula": "2*ptp.FreeUpgrades",
+                  "~class": "0x15ebaa9c"
+                },
+                {
+                  "0xd851ffa3": "3804851a-3cd3-4a32-8b8f-f121441facdd",
+                  "Dest": {
+                    "Var": "FreeGold",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Formula": "0.5*ptp.FreeUpgrades",
+                  "~class": "0x15ebaa9c"
+                },
+                {
+                  "0xd851ffa3": "a4e5e1cd-aa65-4fdb-ae77-18fedb74c674",
+                  "Dest": {
+                    "Var": "FreeHealth",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Formula": "60*ptp.FreeUpgrades",
+                  "~class": "0x15ebaa9c"
+                },
+                {
+                  "0xd851ffa3": "921d1331-1764-43ee-98e5-98d9cd08181a",
+                  "Dest": {
+                    "Var": "FreeDamage",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Formula": "5*ptp.FreeUpgrades",
+                  "~class": "0x15ebaa9c"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "~class": "0x0"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
           }
         ],
         "~class": "RootScriptSequence"

@@ -6,124 +6,87 @@
       "0x6a7835b9": {
         "blocks": [
           {
-            "0xd851ffa3": "e9fb2cab-0693-4496-bc4f-9eb2fabcb6c7",
-            "IsDisabled": true,
-            "ToSay": {
-              "value": "Jade Order Melee",
-              "~class": "StringGet"
-            },
-            "~class": "DebugPrintToChatBlock"
+            "~class": "0x0"
           },
           {
-            "0xd851ffa3": "1ee9d3ad-4355-4800-b04f-917b2f62b3ef",
-            "IsDisabled": true,
+            "0xd851ffa3": "9c91aa8a-ebcb-44d0-9c68-178617d364ad",
+            "Condition": {
+              "Value1": {
+                "Var": "0x50f0bcb0",
+                "~class": "ScriptTableGet"
+              },
+              "Value2": {
+                "value": true,
+                "~class": "BoolGet"
+              },
+              "~class": "ComparisonScriptCondition"
+            },
             "Sequence": {
               "blocks": [
                 {
-                  "0xd851ffa3": "3694105b-e794-43f9-856c-33a5b4099b43",
-                  "~class": "ScriptCommentBlock"
+                  "~class": "0x0"
                 },
                 {
-                  "0xd851ffa3": "9758a21b-941d-4a42-9937-2a8f5f9d1575",
+                  "0xd851ffa3": "e5558697-bfb9-41d8-ace4-8902ae25835c",
                   "Dest": {
-                    "Var": "InhibsDestroyed",
+                    "Var": "FreeUpgrades",
                     "~class": "ScriptTableSet"
                   },
-                  "Src": {
-                    "~class": "IntGet"
-                  },
-                  "~class": "SetVarInTableBlock"
+                  "Formula": "floor(max(0,(ptp.CurrentTime-60)/90))",
+                  "~class": "0x15ebaa9c"
                 },
                 {
-                  "0xd851ffa3": "99d32bf0-4c24-4fbe-84ac-041cc03de2ef",
+                  "0xd851ffa3": "f147c2b1-7450-4633-a1c0-5333ecf7949f",
                   "Dest": {
-                    "Table": {
-                      "~class": "InstanceVars"
-                    },
-                    "Var": "HpInhibitor",
+                    "Var": "FreeExp",
                     "~class": "ScriptTableSet"
                   },
-                  "Src": {
-                    "value": 100,
-                    "~class": "IntGet"
-                  },
-                  "~class": "SetVarInTableBlock"
+                  "Formula": "1.2*ptp.FreeUpgrades",
+                  "~class": "0x15ebaa9c"
                 },
                 {
-                  "0xd851ffa3": "71477d71-7a1d-42e3-a7ac-c8421f2eae38",
+                  "0xd851ffa3": "a40a6586-12e6-4539-8f9f-c7a6d8b67102",
                   "Dest": {
-                    "Table": {
-                      "~class": "InstanceVars"
-                    },
-                    "Var": "DamageInhibitor",
+                    "Var": "FreeGold",
                     "~class": "ScriptTableSet"
                   },
-                  "Src": {
-                    "value": 10,
-                    "~class": "IntGet"
+                  "Formula": "0.2*ptp.FreeUpgrades",
+                  "~class": "0x15ebaa9c"
+                },
+                {
+                  "0xd851ffa3": "aa40c30c-f5de-4dd8-9d6b-e135f1f93f77",
+                  "Dest": {
+                    "Var": "FreeHealth",
+                    "~class": "ScriptTableSet"
                   },
-                  "~class": "SetVarInTableBlock"
+                  "Formula": "15*ptp.FreeUpgrades",
+                  "~class": "0x15ebaa9c"
+                },
+                {
+                  "0xd851ffa3": "9c45373e-d49b-4e78-b384-0cc64f42130b",
+                  "Dest": {
+                    "Var": "FreeDamage",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Formula": "0.5*ptp.FreeUpgrades",
+                  "~class": "0x15ebaa9c"
                 },
                 {
                   "~class": "0x0"
                 },
                 {
-                  "0xd851ffa3": "5ba790a7-d4f6-4054-8697-2c56611b5b20",
-                  "Condition": {
-                    "Value1": {
-                      "Var": "0x358b1671",
-                      "~class": "ScriptTableGet"
-                    },
-                    "Value2": {
-                      "~class": "IntGet"
-                    },
-                    "~class": "ComparisonScriptCondition"
-                  },
-                  "~class": "0xe524b2fc"
+                  "~class": "0x0"
                 },
                 {
-                  "0xd851ffa3": "c082dbe1-8adc-4e5d-a89c-875cd90b2d2a",
-                  "Sequence": {
-                    "blocks": [
-                      {
-                        "0xd851ffa3": "16011be5-6700-4cf4-a648-47951a215e07",
-                        "Dest": {
-                          "Table": {
-                            "~class": "InstanceVars"
-                          },
-                          "Var": "DamageInhibitor",
-                          "~class": "ScriptTableSet"
-                        },
-                        "Formula": "iv.DamageInhibitor * ptp.InhibsDestroyed",
-                        "~class": "0x15ebaa9c"
-                      },
-                      {
-                        "0xd851ffa3": "c9fa25e7-0016-4b1a-95f9-0ce04dbf7188",
-                        "Dest": {
-                          "Table": {
-                            "~class": "InstanceVars"
-                          },
-                          "Var": "HpInhibitor",
-                          "~class": "ScriptTableSet"
-                        },
-                        "Formula": "iv.HpInhibitor * ptp.InhibsDestroyed",
-                        "~class": "0x15ebaa9c"
-                      },
-                      {
-                        "~class": "0x0"
-                      },
-                      {
-                        "~class": "0x0"
-                      }
-                    ],
-                    "~class": "ScriptSequence"
-                  },
-                  "~class": "0xe524b2fc"
+                  "~class": "0x0"
+                },
+                {
+                  "~class": "0x0"
                 }
               ],
               "~class": "ScriptSequence"
             },
-            "~class": "ScriptCommentBlock"
+            "~class": "0xe524b2fc"
           }
         ],
         "~class": "RootScriptSequence"

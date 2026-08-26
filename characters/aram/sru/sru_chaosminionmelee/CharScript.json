@@ -6,13 +6,87 @@
       "0x6a7835b9": {
         "blocks": [
           {
-            "0xd851ffa3": "a96ef11a-45db-40b0-a15a-db8f307691c8",
-            "IsDisabled": true,
-            "ToSay": {
-              "value": "Jade Chaos Melee",
-              "~class": "StringGet"
+            "~class": "0x0"
+          },
+          {
+            "0xd851ffa3": "89112fe9-18fa-4d02-a035-70a5fec53cf6",
+            "Condition": {
+              "Value1": {
+                "Var": "0x50f0bcb0",
+                "~class": "ScriptTableGet"
+              },
+              "Value2": {
+                "value": true,
+                "~class": "BoolGet"
+              },
+              "~class": "ComparisonScriptCondition"
             },
-            "~class": "DebugPrintToChatBlock"
+            "Sequence": {
+              "blocks": [
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "0xd851ffa3": "f86861ac-4e49-4c9b-99eb-3c2252088b0c",
+                  "Dest": {
+                    "Var": "FreeUpgrades",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Formula": "floor(max(0,(ptp.CurrentTime-60)/90))",
+                  "~class": "0x15ebaa9c"
+                },
+                {
+                  "0xd851ffa3": "bf9150e8-9f3b-46e0-bfb7-5475a7f936d3",
+                  "Dest": {
+                    "Var": "FreeExp",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Formula": "1.2*ptp.FreeUpgrades",
+                  "~class": "0x15ebaa9c"
+                },
+                {
+                  "0xd851ffa3": "51ce91b2-c33a-442c-b482-1f2d0e3b5f7b",
+                  "Dest": {
+                    "Var": "FreeGold",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Formula": "0.2*ptp.FreeUpgrades",
+                  "~class": "0x15ebaa9c"
+                },
+                {
+                  "0xd851ffa3": "5e8256ba-2889-4ef9-8cc8-f7ec70a85a99",
+                  "Dest": {
+                    "Var": "FreeHealth",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Formula": "15*ptp.FreeUpgrades",
+                  "~class": "0x15ebaa9c"
+                },
+                {
+                  "0xd851ffa3": "a8d82e6a-60d8-41c0-ad36-efe9f0f6f9da",
+                  "Dest": {
+                    "Var": "FreeDamage",
+                    "~class": "ScriptTableSet"
+                  },
+                  "Formula": "0.5*ptp.FreeUpgrades",
+                  "~class": "0x15ebaa9c"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "~class": "0x0"
+                },
+                {
+                  "~class": "0x0"
+                }
+              ],
+              "~class": "ScriptSequence"
+            },
+            "~class": "0xe524b2fc"
           },
           {
             "0xd851ffa3": "cd4ae20a-1660-46a6-9a59-e3802ed3b53a",

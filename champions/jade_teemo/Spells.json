@@ -1208,45 +1208,6 @@
       },
       "DataValues": [
         {
-          "name": "MaxAmmo",
-          "values": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "ArmTime",
-          "values": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "MushroomDuration",
-          "values": [
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "name": "BaseDamage",
           "values": [
             75.0,
@@ -1256,6 +1217,19 @@
             575.0,
             700.0,
             825.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatio",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
           ],
           "~class": "SpellDataValue"
         },
@@ -1286,28 +1260,28 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "APRatioPerTick",
+          "name": "MaxAmmo",
           "values": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
           ],
           "~class": "SpellDataValue"
         },
         {
-          "name": "MaxTraps",
+          "name": "MushroomDuration",
           "values": [
-            25000.0,
-            25000.0,
-            25000.0,
-            25000.0,
-            25000.0,
-            25000.0,
-            25000.0
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1421,8 +1395,7 @@
           "mLocKeys": {
             "keyName": "Noxious Trap",
             "keySummary": "Teemo places an explosive poisonous trap using one of the mushrooms stored in his pack.  If an enemy steps on the trap it will release a poisonous cloud, slowing enemies and damaging them over time.",
-            "keyTooltip": "Uses a stored mushroom to place a trap that detonates if an enemy steps on it, spreading poison to nearby enemies that <status>Slows</status> by @SlowAmount@%  and deals <magicDamage>@TotalDamage@ magic damage</magicDamage> over 4 seconds.<br><br>This Ability has 3 charges (@AmmoRechargeTime@ second refresh).<br>",
-            "keyTooltipExtended": "Uses a stored mushroom to place a trap that detonates if an enemy steps on it, spreading poison to nearby enemies that <status> Slows</status> by <status>@SlowAmount@%</status>  and deals <magicDamage>@TotalDamage@ magic damage</magicDamage> over 4 seconds. Traps last 10 minutes.<br><br>This Ability has 3 charges (@AmmoRechargeTime@ second refresh).<br>"
+            "keyTooltip": "Teemo plants a mushroom trap that detonates when stepped on. The traps <status>Slow</status> by @SlowAmount@% and deal <magicDamage>@TotalDamage@ magic damage</magicDamage> over @DebuffDuration@ seconds. Enemies are revealed for the same duration.<br><br>Traps last @MushroomDuration@ minutes and are stealthed. This Ability has @MaxAmmo@ charges (@AmmoRechargeTime@ second refresh)."
           },
           "mObjectName": "Jade_TeemoR",
           "~class": "TooltipInstanceSpell"
@@ -1470,7 +1443,7 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mDataValue": "APRatioPerTick",
+              "mDataValue": "APRatio",
               "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
