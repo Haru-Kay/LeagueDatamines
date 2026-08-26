@@ -1756,12 +1756,6 @@ File.open("items/itemsVFX.json", 'wb') { |f| f.write(JSON.pretty_generate(itemsV
 File.open("items/itemsSpells.json", 'wb') { |f| f.write(JSON.pretty_generate(itemsSpells)) }
 print "done.\n"
 
-print "Loading and formatting tft.stringtable..."
-tft = {}
-File.open("lang/tft.stringtable.json", 'rb') { |f| tft = JSON.parse(f.read()) }
-tft = tft["entries"] || tft
-File.open("lang/tft.stringtable.json", 'wb') { |f| f.write(JSON.pretty_generate(tft)) }
-
 print "done.\n"
 
 print "Loading and formatting loadtips..."
@@ -1812,7 +1806,7 @@ loadtipSets.each { |key, value|
         next if text == "unused"
         prefix = tipData.dig("mHeaderLocalizationKey")
         d.store("type", $lang.fetch(prefix&.downcase, prefix))
-        d.store("text", $lang.fetch(text.downcase, tft.fetch(text.downcase, text)))
+        d.store("text", $lang.fetch(text.downcase, text))
         d.store("minimumLevel", tipData["mMinimumSummonerLevel"])
         d.store("maximumLevel", tipData["mMaximumSummonerLevel"])
         d.delete_if { |k, v| v.nil? }
