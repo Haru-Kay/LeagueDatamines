@@ -29,6 +29,21 @@
     },
     "mScriptName": "Jade_SingedP",
     "mSpell": {
+      "DataValues": [
+        {
+          "name": "PassiveHealthPerMana",
+          "values": [
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "bIsToggleSpell": true,
       "castConeDistance": 100.0,
       "castFrame": 20.209999084472656,
@@ -73,12 +88,11 @@
           }
         ],
         "mTooltipData": {
-          "EnableExtendedTooltip": false,
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Empowered Bulwark",
-            "keySummary": "Increases Singed's <scaleHealth>Health</scaleHealth> by 25 for every 100 Mana he has.",
-            "keyTooltip": "Singed gains an additional <healing>0.25 Health</healing> per <scaleMana>1 Mana</scaleMana>.<br><br><healing>Bonus Health: @f1@</healing>"
+            "keySummary": "Increases Singed's Health based on his maximum Mana.",
+            "keyTooltip": "Singed gains <healing>@BonusHealth@ bonus Health</healing>."
           },
           "mObjectName": "Jade_SingedP",
           "~class": "TooltipInstanceSpell"
@@ -93,6 +107,18 @@
           "champion"
         ],
         "~class": "ObjectTags"
+      },
+      "mSpellCalculations": {
+        "BonusHealth": {
+          "mFormulaParts": [
+            {
+              "DataValue": "PassiveHealthPerMana",
+              "~class": "AbilityResourceByNamedDataValueCalculationPart"
+            }
+          ],
+          "tooltipOnly": true,
+          "~class": "GameCalculation"
+        }
       },
       "mTargetingTypeData": {
         "~class": "Self"
@@ -424,6 +450,19 @@
             305.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatio",
+          "values": [
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -544,84 +583,6 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.550000011920929,
-      "mEffectAmount": [
-        {
-          "value": [
-            50.0,
-            80.0,
-            125.0,
-            170.0,
-            215.0,
-            260.0,
-            100.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.75,
-            1.0,
-            1.25,
-            1.5,
-            1.75,
-            2.0,
-            2.25
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            6.0,
-            6.0,
-            6.5,
-            7.0,
-            7.5,
-            8.0,
-            8.5
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            420.0,
-            420.0,
-            420.0,
-            420.0,
-            420.0,
-            420.0,
-            420.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            300.0,
-            300.0,
-            300.0,
-            300.0,
-            300.0,
-            300.0,
-            300.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mHitBoneName": "C_BuffBone_Glb_Center_Loc",
       "mHitEffectKey": "Jade_Singed_E_tar_Fling_01",
       "mImgIconName": [
@@ -635,8 +596,8 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.75,
-              "~class": "StatByCoefficientCalculationPart"
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -849,7 +810,6 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 1.0,
       "mImgIconName": [
         "assets/ux/jade/s3icons/samesized/singed_chemicalrage.dds"
       ],
@@ -967,6 +927,19 @@
             0.375
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowDuration",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -1057,7 +1030,7 @@
           "mLocKeys": {
             "keyName": "Mega Adhesive",
             "keySummary": "Throws a vial of mega adhesive on the ground, slowing enemies who walk on it.",
-            "keyTooltip": "Leaves a sticky area on the ground for 5 seconds, <status>Slowing</status> enemies in the area by @SlowPercent@% (lasts 1 second after leaving)."
+            "keyTooltip": "Leaves a sticky area on the ground for @WDuration@ seconds, <status>Slowing</status> enemies in the area by @SlowPercent@% (lasts @SlowDuration@ seconds after leaving)."
           },
           "mObjectName": "Jade_SingedMegaAdhesive",
           "~class": "TooltipInstanceSpell"
@@ -1340,7 +1313,6 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.10000000149011612,
       "mCooldownNotAffectedByCDR": true,
       "mImgIconName": [
         "assets/ux/jade/s3icons/samesized/singed_acidspray.dds",

@@ -311,6 +311,32 @@
             -0.699999988079071
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "AttackSpeedMod",
+          "values": [
+            -0.25,
+            -0.25,
+            -0.25,
+            -0.25,
+            -0.25,
+            -0.25,
+            -0.25
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowDuration",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -403,7 +429,7 @@
           "mLocKeys": {
             "keyName": "Ice Blast",
             "keySummary": "Nunu launches a ball of ice at an enemy unit, dealing damage and temporarily slowing their Movement and Attack Speeds.",
-            "keyTooltip": "<mainText>Nunu launches a ball of ice at an enemy unit, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Slowing</status> their Movement Speed by @SlowAmount*-100@% and Attack Speed by 25% for 3 seconds.</mainText>"
+            "keyTooltip": "<mainText>Nunu launches a ball of ice at an enemy unit, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Slowing</status> their Movement Speed by @SlowAmount*-100@% and Attack Speed by @AttackSpeedMod*-100@% for @SlowDuration@ seconds.</mainText>"
           },
           "mObjectName": "Jade_NunuE",
           "~class": "TooltipInstanceSpell"
@@ -623,6 +649,19 @@
             0.10000000149011612
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "AttacksRequired",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "castConeDistance": 100.0,
@@ -676,8 +715,8 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Visionary",
-            "keySummary": "Nunu can cast a spell for free after 5 attacks.",
-            "keyTooltip": "<mainText>After 5 basic attacks, Nunu's next spell will cost no Mana.</mainText>"
+            "keySummary": "Nunu can cast a spell for free after several attacks.",
+            "keyTooltip": "<mainText>After @AttacksRequired@ basic attacks, Nunu's next spell will cost no Mana.</mainText>"
           },
           "mObjectName": "Jade_NunuPassive",
           "~class": "TooltipInstanceSpell"
@@ -839,6 +878,58 @@
             270.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "GolemSizeBonus",
+          "values": [
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "GolemHealthBonus",
+          "values": [
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "WraithMoveSpeed",
+          "values": [
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "WraithMoveSpeedDuration",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -923,7 +1014,7 @@
           "mLocKeys": {
             "keyName": "Consume",
             "keySummary": "Nunu commands the yeti to take a bite out of a target minion or monster, dealing heavy damage to it and healing himself.",
-            "keyTooltip": "<mainText>Commands the yeti to bite out of a minion or monster, dealing <trueDamage>@BaseDamage@ true damage</trueDamage> to the target and <healing>healing</healing> himself for @TotalHealing@.<br><br>Nunu gains bonuses for @ConsumeDuration@ seconds based on what he consumed.<br><br><attention>Wolves</attention> or <attention>Reptiles: </attention>Your attacks and spells deal an additional <magicDamage>1% of your maximum health as magic damage</magicDamage>.<br><attention>Golems:</attention> 10% increased Size and <scaleHealth>Maximum Health</scaleHealth>.<br><attention>Wraiths:</attention> Killing a unit grants <speed>15% Movement Speed</speed> for 3 seconds.</mainText>"
+            "keyTooltip": "<mainText>Commands the yeti to bite out of a minion or monster, dealing <trueDamage>@BaseDamage@ true damage</trueDamage> to the target and <healing>healing</healing> himself for @TotalHealing@.<br><br>Nunu gains bonuses for @ConsumeDuration@ seconds based on what he consumed.<br><br><attention>Wolves</attention> or <attention>Reptiles: </attention>Your attacks and spells deal an additional <magicDamage>@ReptileDamage@ magic damage</magicDamage>.<br><attention>Golems:</attention> @GolemSizeBonus*100@% increased Size and <scaleHealth>@GolemHealthBonus*100@% Maximum Health</scaleHealth>.<br><attention>Wraiths:</attention> Killing a unit grants <speed>@WraithMoveSpeed*100@% Movement Speed</speed> for @WraithMoveSpeedDuration@ seconds.</mainText>"
           },
           "mObjectName": "Jade_NunuQ",
           "~class": "TooltipInstanceSpell"
@@ -1210,7 +1301,7 @@
           "mLocKeys": {
             "keyName": "Absolute Zero",
             "keySummary": "Nunu begins to sap the area of heat, slowing all nearby enemies. When the spell ends, he deals massive damage to all enemies caught in the area.",
-            "keyTooltip": "<mainText>Nunu saps the area of heat, channeling up to 3 seconds, enemies within the zone are <status>Slowed</status> by 50% and their <attackSpeed>Attack Speed</attackSpeed> reduced by 25%.<br><br>Enemies caught in the area when the channel ends receive up to <magicDamage>@TotalDamage@ magic damage</magicDamage>, depending on how long the spell was channeled.</mainText>"
+            "keyTooltip": "<mainText>Nunu saps the area of heat, channeling while enemies within the zone are <status>Slowed</status> by @MovementSpeedMod*-100@% and their <attackSpeed>Attack Speed</attackSpeed> is reduced by @AttackSpeedMod*-100@%.<br><br>Enemies caught in the area when the channel ends receive up to <magicDamage>@TotalDamage@ magic damage</magicDamage>, depending on how long the spell was channeled.</mainText>"
           },
           "mObjectName": "Jade_NunuR",
           "~class": "TooltipInstanceSpell"
@@ -1354,6 +1445,19 @@
             0.12999999523162842
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "BuffDuration",
+          "values": [
+            12.0,
+            12.0,
+            12.0,
+            12.0,
+            12.0,
+            12.0,
+            12.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -1475,7 +1579,7 @@
           "mLocKeys": {
             "keyName": "Blood Boil",
             "keySummary": "Nunu invigorates himself and an allied unit by heating their blood, increasing their Movement and Attack Speeds.",
-            "keyTooltip": "<mainText>The heat of Nunu and a target ally's blood rises, increasing <speed>Movement Speed by @MoveSpeed*100@%</speed> and <attackSpeed>Attack Speed by @AttackSpeed*100@%</attackSpeed> for 12 seconds. Nunu may target themself.</mainText>"
+            "keyTooltip": "<mainText>The heat of Nunu and a target ally's blood rises, increasing <speed>Movement Speed by @MoveSpeed*100@%</speed> and <attackSpeed>Attack Speed by @AttackSpeed*100@%</attackSpeed> for @BuffDuration@ seconds. Nunu may target themself.</mainText>"
           },
           "mObjectName": "Jade_NunuW",
           "~class": "TooltipInstanceSpell"

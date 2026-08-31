@@ -970,19 +970,6 @@
       },
       "DataValues": [
         {
-          "name": "BaseDamage",
-          "values": [
-            15.0,
-            25.0,
-            35.0,
-            45.0,
-            55.0,
-            65.0,
-            75.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "name": "StealthDuration",
           "values": [
             3.5,
@@ -1005,58 +992,6 @@
             6.0,
             6.0,
             6.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "CDRefund",
-          "values": [
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5,
-            2.5
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "ExtraAATime",
-          "values": [
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "PseudoCastTime",
-          "values": [
-            0.125,
-            0.125,
-            0.125,
-            0.125,
-            0.125,
-            0.125,
-            0.125
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "BonusADRatio",
-          "values": [
-            0.6000000238418579,
-            0.6000000238418579,
-            0.6000000238418579,
-            0.6000000238418579,
-            0.6000000238418579,
-            0.6000000238418579,
-            0.6000000238418579
           ],
           "~class": "SpellDataValue"
         },
@@ -1176,7 +1111,7 @@
           "mLocKeys": {
             "keyName": "Deceive",
             "keySummary": "Shaco becomes invisible and teleports to target location. His next attack is guaranteed to critically strike.",
-            "keyTooltip": "Shaco teleports nearby and becomes <keywordStealth>Invisible</keywordStealth> for 3.5 seconds.<br><br>His next basic attack within the next @EnhancedAttackDuration@ seconds will critically strike for @ModifiedQCritDamageTooltip@ damage.<br>",
+            "keyTooltip": "Shaco teleports nearby and becomes <keywordStealth>Invisible</keywordStealth> for @StealthDuration@ seconds.<br><br>His next basic attack within the next @EnhancedAttackDuration@ seconds will critically strike for @ModifiedQCritDamageTooltip@ damage.<br>",
             "keyTooltipExtendedBelowLine": "<rules>{{Reminder_Invisibility}}</rules><br>"
           },
           "mObjectName": "Jade_ShacoDeceive",
@@ -1231,35 +1166,6 @@
             }
           ],
           "tooltipOnly": true,
-          "~class": "GameCalculation"
-        },
-        "TotalDamage": {
-          "mFormulaParts": [
-            {
-              "mDataValue": "baseDamage",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mDataValue": "BonusADRatio",
-              "mStat": 2,
-              "mStatFormula": 2,
-              "~class": "StatByNamedDataValueCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "TotalDamageTooltip": {
-          "mFormulaParts": [
-            {
-              "mCoefficient": 1.0,
-              "mStat": 2,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "mMultiplier": {
-            "mSpellCalculationKey": "ModifiedQCritDamageTooltip",
-            "~class": "NamedGameCalculationCalculationPart"
-          },
           "~class": "GameCalculation"
         }
       },
@@ -1331,32 +1237,6 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "STBaseDamage",
-          "values": [
-            0.0,
-            25.0,
-            50.0,
-            75.0,
-            100.0,
-            125.0,
-            150.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "AoEBaseDamage",
-          "values": [
-            0.0,
-            10.0,
-            20.0,
-            30.0,
-            40.0,
-            50.0,
-            60.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "name": "CloneAADamagePercent",
           "values": [
             0.75,
@@ -1383,19 +1263,6 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "BoxFearDuration",
-          "values": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "name": "ExplosionBaseDamage",
           "values": [
             150.0,
@@ -1418,19 +1285,6 @@
             18.0,
             18.0,
             18.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "Jade_ShacoDamageTakenTooltip",
-          "values": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
           ],
           "~class": "SpellDataValue"
         },
@@ -1518,7 +1372,7 @@
           "mLocKeys": {
             "keyName": "Hallucinate",
             "keySummary": "Shaco creates an illusion of himself near him, which can attack nearby enemies. Upon death, it explodes, dealing damage to nearby enemies.",
-            "keyTooltip": "Shaco vanishes briefly and reappears with a clone that lasts up to @CloneLifetime@ seconds. The clone deals @CloneAADamagePercent*100@% of Shaco's damage and receives @Jade_ShacoDamageTakenTooltip*100@% increased damage.<br><br>On death, the clone detonates, dealing <magicDamage>@ExplosionTotalDamage@ magic damage</magicDamage> to nearby enemies.",
+            "keyTooltip": "Shaco vanishes briefly and reappears with a clone that lasts up to @CloneLifetime@ seconds. The clone deals @CloneAADamagePercent*100@% of Shaco's damage and receives @CloneBonusDamageTakenTooltip@ increased damage.<br><br>On death, the clone detonates, dealing <magicDamage>@ExplosionTotalDamage@ magic damage</magicDamage> to nearby enemies.",
             "keyTooltipExtendedBelowLine": "<rules>The clone can be controlled using the Alt key and right click, or by <recast>Recasting</recast> this Ability.</rules>"
           },
           "mObjectName": "Jade_ShacoHallucinateFull",
@@ -1527,52 +1381,26 @@
         "~class": "SpellDataResourceClient"
       },
       "mDoNotNeedToFaceTarget": true,
-      "mEffectAmount": [
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mHitBoneName": "R_hand",
       "mImgIconName": [
         "assets/ux/jade/s3icons/samesized/shaco_hallucinogenbomb.dds"
       ],
       "mSpellCalculations": {
+        "0x76c2c8d6": {
+          "mDisplayAsPercent": true,
+          "mFormulaParts": [
+            {
+              "mDataValue": "CloneIncomingDamagePercent",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mNumber": -1.0,
+              "~class": "NumberCalculationPart"
+            }
+          ],
+          "tooltipOnly": true,
+          "~class": "GameCalculation"
+        },
         "ExplosionTotalDamage": {
           "mFormulaParts": [
             {
@@ -1827,85 +1655,6 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.20000000298023224,
-      "mCoefficient2": 0.10000000149011612,
-      "mEffectAmount": [
-        {
-          "value": [
-            20.0,
-            35.0,
-            50.0,
-            65.0,
-            80.0,
-            95.0,
-            110.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            100.0,
-            200.0,
-            300.0,
-            400.0,
-            500.0,
-            600.0,
-            700.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.25,
-            0.5,
-            0.75,
-            1.0,
-            1.25,
-            1.5,
-            1.75
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            40.0,
-            40.0,
-            40.0,
-            40.0,
-            40.0,
-            40.0,
-            40.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mImgIconName": [
         "assets/ux/jade/s3icons/samesized/shaco_deathward.dds"
       ],
@@ -1993,106 +1742,15 @@
       },
       "DataValues": [
         {
-          "name": "PerUnitCD",
+          "name": "BonusDamagePercent",
           "values": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "MonsterCritMod",
-          "values": [
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "APRatio",
-          "values": [
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "CloneMult",
-          "values": [
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "ShivSlowAmount",
-          "values": [
-            -0.4000000059604645,
-            -0.4000000059604645,
-            -0.4000000059604645,
-            -0.4000000059604645,
-            -0.4000000059604645,
-            -0.4000000059604645,
-            -0.4000000059604645
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "ShredDuration",
-          "values": [
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "ShivExecuteDamagePercent",
-          "values": [
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "AttackBonusADRatio",
-          "values": [
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224
           ],
           "~class": "SpellDataValue"
         }
@@ -2189,8 +1847,8 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Backstab",
-            "keySummary": "Shaco deals 20% bonus damage when striking a unit from behind.",
-            "keyTooltip": "Shaco deals 20% bonus damage when attacking from behind."
+            "keySummary": "Shaco's Attacks and abilities deal bonus damage from behind.",
+            "keyTooltip": "Shaco's Attacks and abilities deal @BonusDamagePercent*100@% bonus damage from behind."
           },
           "mObjectName": "Jade_ShacoPassive",
           "~class": "TooltipInstanceSpell"
@@ -2218,85 +1876,6 @@
       "mImgIconName": [
         "assets/ux/jade/s3icons/samesized/shaco_carefulstrikes.dds"
       ],
-      "mSpellCalculations": {
-        "0x3445d362": {
-          "mFormulaParts": [
-            {
-              "mCoefficient": 1.0,
-              "mStat": 9,
-              "mStatFormula": 1,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "BasicAttackDamage": {
-          "mFormulaParts": [
-            {
-              "mEndValue": 35.0,
-              "mStartValue": 20.0,
-              "~class": "ByCharLevelInterpolationCalculationPart"
-            },
-            {
-              "mDataValue": "AttackBonusADRatio",
-              "mStat": 2,
-              "mStatFormula": 2,
-              "~class": "StatByNamedDataValueCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "MonsterDamageTooltip": {
-          "mFormulaParts": [
-            {
-              "mStat": 2,
-              "mSubpart": {
-                "mSubparts": [
-                  {
-                    "mDataValue": "MonsterCritMod",
-                    "~class": "NamedDataValueCalculationPart"
-                  },
-                  {
-                    "mCoefficient": 1.0,
-                    "mStat": 9,
-                    "mStatFormula": 2,
-                    "~class": "StatByCoefficientCalculationPart"
-                  }
-                ],
-                "~class": "SumOfSubPartsCalculationPart"
-              },
-              "~class": "StatBySubPartCalculationPart"
-            },
-            {
-              "mDataValue": "APRatio",
-              "~class": "StatByNamedDataValueCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "ShivDamage": {
-          "mFormulaParts": [
-            {
-              "mEndValue": 50.0,
-              "mStartValue": 15.0,
-              "~class": "ByCharLevelInterpolationCalculationPart"
-            },
-            {
-              "mCoefficient": 0.10000000149011612,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "ShivDamageExecute": {
-          "mModifiedGameCalculation": "ShivDamage",
-          "mMultiplier": {
-            "mDataValue": "ShivExecuteDamagePercent",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        }
-      },
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jade_Shaco/Spells/Jade_ShacoPassiveAbility/Jade_ShacoPassive",

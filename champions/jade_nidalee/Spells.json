@@ -18,11 +18,39 @@
   "0x5e5ecf6f": {
     "ObjectName": "Jade_NidaleeProwl",
     "mBuff": {
-      "mDescription": "<titleLeft>Prowl</titleLeft><mainText>Moving through brush increases Nidalee's Movement Speed by 15% for 2 seconds.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "mDescription": "<titleLeft>Prowl</titleLeft><mainText>Moving through brush increases Nidalee's Movement Speed.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
       "~class": "BuffData"
     },
     "mScriptName": "Jade_NidaleeProwl",
     "mSpell": {
+      "DataValues": [
+        {
+          "name": "BrushMoveSpeed",
+          "values": [
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448,
+            0.15000000596046448
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MoveSpeedDuration",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
       "castRange": [
         1400.0,
         1400.0,
@@ -51,8 +79,8 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Prowl",
-            "keySummary": "Moving through brush increases Nidalee's Movement Speed by 15% for 2 seconds.",
-            "keyTooltip": "<mainText>Moving through brush increases Nidalee's <speed> Movement Speed by 15%</speed>  for 2 seconds.</mainText>"
+            "keySummary": "Moving through brush increases Nidalee's Movement Speed.",
+            "keyTooltip": "Moving through brush increases Nidalee's <speed> Movement Speed by @BrushMoveSpeed*100@%</speed> for @MoveSpeedDuration@ seconds."
           },
           "mObjectName": "Jade_NidaleeProwl",
           "~class": "TooltipInstanceSpell"
@@ -87,19 +115,6 @@
       },
       "DataValues": [
         {
-          "name": "PassivePercentMS",
-          "values": [
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "name": "TakedownBaseDamage",
           "values": [
             -20.0,
@@ -122,32 +137,6 @@
             1.0,
             1.0,
             1.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "TakedownDamageAmp",
-          "values": [
-            0.75,
-            1.0,
-            1.25,
-            1.5,
-            1.75,
-            2.0,
-            2.25
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "PounceCooldown",
-          "values": [
-            3.5,
-            3.0,
-            2.5,
-            2.0,
-            1.5,
-            1.5,
-            1.5
           ],
           "~class": "SpellDataValue"
         },
@@ -213,6 +202,32 @@
             0.6000000238418579,
             0.6000000238418579,
             0.6000000238418579
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "CougarMoveSpeed",
+          "values": [
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "TakedownMaxDamageMultiplier",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
           ],
           "~class": "SpellDataValue"
         }
@@ -297,7 +312,7 @@
           "mLocKeys": {
             "keyName": "Aspect Of The Cougar",
             "keySummary": "Nidalee transforms into a cougar, gaining new abilities and increased Movement Speed.",
-            "keyTooltip": "<keywordMajor>Human: </keywordMajor>Nidalee transforms into a vicious cougar, gaining <speed>20 Movement Speed</speed>, and her basic abilities become <spellName>Takedown</spellName>, <spellName>Pounce</spellName>, and <spellName>Swipe</spellName>.<br><br><keywordMajor>Cougar: </keywordMajor>Nidalee transforms back into human form."
+            "keyTooltip": "<keywordMajor>Human: </keywordMajor>Nidalee transforms into a vicious cougar, gaining <speed>@CougarMoveSpeed@ Movement Speed</speed>, and her basic abilities become <spellName>Takedown</spellName>, <spellName>Pounce</spellName>, and <spellName>Swipe</spellName>.<br><br><keywordMajor>Cougar: </keywordMajor>Nidalee transforms back into human form."
           },
           "mObjectName": "Jade_NidaleeAspectOfTheCougar",
           "~class": "TooltipInstanceSpell"
@@ -306,47 +321,6 @@
       },
       "mCoefficient": 0.75,
       "mCoefficient2": 0.4000000059604645,
-      "mEffectAmount": [
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         0,
         2,
@@ -376,6 +350,14 @@
         "~class": "ObjectTags"
       },
       "mSpellCalculations": {
+        "0xee8e64b1": {
+          "mModifiedGameCalculation": "TotalTakedownDamage",
+          "mMultiplier": {
+            "mDataValue": "TakedownMaxDamageMultiplier",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "~class": "GameCalculationModified"
+        },
         "TotalPounceDamage": {
           "mFormulaParts": [
             {
@@ -680,10 +662,6 @@
       },
       "DataValues": [
         {
-          "name": "ModesBonusMaxTraps",
-          "~class": "SpellDataValue"
-        },
-        {
           "name": "DamagePerSecondData",
           "values": [
             35.0,
@@ -711,6 +689,32 @@
         },
         {
           "name": "TrapDurationMins",
+          "values": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ShredDuration",
+          "values": [
+            12.0,
+            12.0,
+            12.0,
+            12.0,
+            12.0,
+            12.0,
+            12.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DamageDuration",
           "values": [
             4.0,
             4.0,
@@ -828,94 +832,14 @@
           },
           "mLocKeys": {
             "keyName": "Bushwhack / Pounce",
-            "keySummary": "In human form, Nidalee lays a damaging trap for unwary opponents that, when sprung, reveals the target and reduces their Armor and Magic Resist for 12 seconds. As a cougar, she pounces forward, dealing a small amount of damage when she lands.",
-            "keyTooltip": "<keywordMajor>Human: </keywordMajor>Nidalee lays a trap that deals <magicDamage>@DamagePerSecond@ magic damage</magicDamage> over 2 seconds, reveals the target, and <status>shreds</status> their <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> by @ResistDecreases*100@% for 12 seconds. Traps last for 4 minutes. <br><br><keywordMajor>Cougar: </keywordMajor>Nidalee lunges forward, dealing <magicDamage>@spell.Jade_NidaleeAspectOfTheCougar:TotalPounceDamage@ magic damage</magicDamage> to surrounding enemies.",
-            "keyTooltipExtended": "<keywordMajor>Human: </keywordMajor>Nidalee lays a trap that deals <magicDamage>@DamagePerSecond@ magic damage</magicDamage> over 2 seconds, reveals the target, and reduces their <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist by @ResistDecreases*100@%</scaleMR> for 12 seconds. Traps last for 4 minutes.<br><br><keywordMajor>Cougar: </keywordMajor>Nidalee lunges forward, dealing <magicDamage>@spell.Jade_NidaleeAspectOfTheCougar:TotalPounceDamage@ magic damage</magicDamage> to surrounding enemies."
+            "keySummary": "In human form, Nidalee lays a damaging trap for unwary opponents that, when sprung, damages, reveals, reduces the target's Armor and Magic Resist. As a cougar, she pounces forward, dealing a small amount of damage when she lands.",
+            "keyTooltip": "<keywordMajor>Human: </keywordMajor>Nidalee lays a trap that deals <magicDamage>@DamagePerSecond@ magic damage</magicDamage> over @DamageDuration@ seconds, reveals the target, and <status>shreds</status> their <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> by @ResistDecreases*100@% for @ShredDuration@ seconds. Traps last for @TrapDurationMins@ minutes. <br><br><keywordMajor>Cougar: </keywordMajor>Nidalee lunges forward, dealing <magicDamage>@spell.Jade_NidaleeAspectOfTheCougar:TotalPounceDamage@ magic damage</magicDamage> to surrounding enemies."
           },
           "mObjectName": "Jade_NidaleeBushwhack",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.05000000074505806,
-      "mCoefficient2": 0.20000000298023224,
-      "mEffectAmount": [
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            14.0,
-            13.0,
-            12.0,
-            11.0,
-            10.0,
-            9.0,
-            9.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.0,
-            50.0,
-            100.0,
-            150.0,
-            200.0,
-            250.0,
-            300.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            120.0,
-            120.0,
-            120.0,
-            120.0,
-            120.0,
-            120.0,
-            120.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.0,
-            40.0,
-            80.0,
-            120.0,
-            160.0,
-            200.0,
-            240.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         0,
         2,
@@ -974,37 +898,6 @@
             "~class": "NumberCalculationPart"
           },
           "~class": "GameCalculationModified"
-        },
-        "MaxTraps": {
-          "mFormulaParts": [
-            {
-              "mBreakpoints": [
-                {
-                  "mAdditionalBonusAtThisLevel": 2.0,
-                  "mLevel": 6,
-                  "~class": "Breakpoint"
-                },
-                {
-                  "mAdditionalBonusAtThisLevel": 2.0,
-                  "mLevel": 11,
-                  "~class": "Breakpoint"
-                },
-                {
-                  "mAdditionalBonusAtThisLevel": 2.0,
-                  "mLevel": 16,
-                  "~class": "Breakpoint"
-                }
-              ],
-              "mLevel1Value": 4.0,
-              "~class": "ByCharLevelBreakpointsCalculationPart"
-            },
-            {
-              "mDataValue": "ModesBonusMaxTraps",
-              "~class": "NamedDataValueCalculationPart"
-            }
-          ],
-          "tooltipOnly": true,
-          "~class": "GameCalculation"
         }
       },
       "mSpellRevealsChampion": false,
@@ -1425,6 +1318,19 @@
             0.6499999761581421
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxDamageMultiplier",
+          "values": [
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -1543,7 +1449,7 @@
           "mLocKeys": {
             "keyName": "Javelin Toss / Takedown",
             "keySummary": "In human form, Nidalee throws a spiked javelin at her target that gains damage as it flies.  As a cougar, her next attack will attempt to fatally wound her target, dealing more damage the less life they have.",
-            "keyTooltip": "<keywordMajor>Human:</keywordMajor> Nidalee tosses her javelin, dealing between <magicDamage>@StartingDamage@</magicDamage> and <magicDamage>@MaxDamage@ magic damage</magicDamage> on impact based on how far Nidalee is away from the target. <br><br><keywordMajor>Cougar:</keywordMajor> Nidalee's next attack deals <physicalDamage>@spell.Jade_NidaleeAspectOfTheCougar:TotalTakedownDamage@ physical damage</physicalDamage>, and the damage is increased against wounded targets (up to 300% total damage)."
+            "keyTooltip": "<keywordMajor>Human:</keywordMajor> Nidalee tosses her javelin, dealing between <magicDamage>@StartingDamage@</magicDamage> and <magicDamage>@MaxDamage@ magic damage</magicDamage> on impact based on how far Nidalee is away from the target. <br><br><keywordMajor>Cougar:</keywordMajor> Nidalee's next attack deals between <physicalDamage>@spell.Jade_NidaleeAspectOfTheCougar:TotalTakedownDamage@</physicalDamage> and <physicalDamage>@spell.Jade_NidaleeAspectOfTheCougar:TotalTakedownMaximumDamage@ physical damage</physicalDamage> based on the target's missing Health."
           },
           "mObjectName": "Jade_NidaleeJavelinToss",
           "~class": "TooltipInstanceSpell"
@@ -1619,8 +1525,8 @@
         "MaxDamage": {
           "mModifiedGameCalculation": "StartingDamage",
           "mMultiplier": {
-            "mNumber": 2.5,
-            "~class": "NumberCalculationPart"
+            "mDataValue": "MaxDamageMultiplier",
+            "~class": "NamedDataValueCalculationPart"
           },
           "~class": "GameCalculationModified"
         }
@@ -1769,9 +1675,8 @@
           "mLocKeys": {
             "keyCost": "No Cost",
             "keyName": "Bushwhack / Pounce",
-            "keySummary": "In human form, Nidalee lays a damaging trap for unwary opponents that, when sprung, reveals the target and reduces their Armor and Magic Resist for 12 seconds. As a cougar, she pounces forward, dealing a small amount of damage when she lands.",
-            "keyTooltip": "<keywordMajor>Cougar: </keywordMajor>Nidalee lunges forward, dealing <magicDamage>@spell.Jade_NidaleeAspectOfTheCougar:TotalPounceDamage@ magic damage</magicDamage> to surrounding enemies.<br><br><keywordMajor>Human: </keywordMajor>Nidalee lays a trap that deals <magicDamage>@spell.Jade_NidaleeBushwhack:DamagePerSecond@ magic damage</magicDamage> over 2 seconds, reveals the target, and <status>shreds</status> their <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist by @spell.Jade_NidaleeBushwhack:ResistDecreases*100@%</scaleMR> for 12 seconds.",
-            "keyTooltipExtended": "<keywordMajor>Cougar: </keywordMajor>Nidalee lunges forward, dealing <magicDamage>@spell.Jade_NidaleeAspectOfTheCougar:TotalPounceDamage@ magic damage</magicDamage> to surrounding enemies.<br><br><keywordMajor>Human: </keywordMajor>Nidalee lays a trap that deals <magicDamage>@spell.Jade_NidaleeBushwhack:DamagePerSecond@ magic damage</magicDamage> over 2 seconds, reveals the target, and <status>shreds</status> their <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist by @spell.Jade_NidaleeBushwhack:ResistDecreases*100@%</scaleMR> for 12 seconds. Traps last for 4 minutes."
+            "keySummary": "In human form, Nidalee lays a damaging trap for unwary opponents that, when sprung, damages, reveals, reduces the target's Armor and Magic Resist. As a cougar, she pounces forward, dealing a small amount of damage when she lands.",
+            "keyTooltip": "<keywordMajor>Cougar: </keywordMajor>Nidalee lunges forward, dealing <magicDamage>@spell.Jade_NidaleeAspectOfTheCougar:TotalPounceDamage@ magic damage</magicDamage> to surrounding enemies.<br><br><keywordMajor>Human: </keywordMajor>Nidalee lays a trap that deals <magicDamage>@spell.Jade_NidaleeBushwhack:DamagePerSecond@ magic damage</magicDamage> over @spell.Jade_NidaleeBushwhack:DamageDuration@ seconds, reveals the target, and <status>shreds</status> their <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist by @spell.Jade_NidaleeBushwhack:ResistDecreases*100@%</scaleMR> for @spell.Jade_NidaleeBushwhack:ShredDuration@ seconds."
           },
           "mObjectName": "Jade_NidaleePounce",
           "~class": "TooltipInstanceSpell"
@@ -1838,32 +1743,6 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "MaxHealMult",
-          "values": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "MaxHealThreshold",
-          "values": [
-            0.05000000074505806,
-            0.05000000074505806,
-            0.05000000074505806,
-            0.05000000074505806,
-            0.05000000074505806,
-            0.05000000074505806,
-            0.05000000074505806
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "name": "BonusAS",
           "values": [
             0.10000000149011612,
@@ -1915,16 +1794,25 @@
         900.0,
         900.0
       ],
+      "castRangeDisplayOverride": [
+        575.0,
+        575.0,
+        575.0,
+        575.0,
+        575.0,
+        575.0,
+        575.0
+      ],
       "castRangeValues": {
-        "0xa3e0478": 900.0,
+        "0xa3e0478": 600.0,
         "values": [
-          900.0,
-          900.0,
-          900.0,
-          900.0,
-          900.0,
-          900.0,
-          900.0
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0
         ],
         "~class": "SpellAttributeModifiable"
       },
@@ -1969,7 +1857,7 @@
           "mLocKeys": {
             "keyName": "Primal Surge / Swipe",
             "keySummary": "In human form, Nidalee channels the spirit of the cougar to heal her allies and imbue them with attack speed for a short duration.  As a cougar, she rapidly claws enemies in front of her.",
-            "keyTooltip": "<keywordMajor>Human: </keywordMajor>Nidalee heals an allied champion for <healing>@TotalHealing@</healing> and grants them <attackSpeed>@BonusAS*100@% Attack Speed</attackSpeed> for 7 seconds.<br><br><keywordMajor>Cougar: </keywordMajor>Nidalee claws at enemies in front of her, dealing <magicDamage>@spell.Jade_NidaleeAspectOfTheCougar:TotalSwipeDamage@ magic damage</magicDamage>."
+            "keyTooltip": "<keywordMajor>Human: </keywordMajor>Nidalee heals an allied champion for <healing>@TotalHealing@</healing> and grants them <attackSpeed>@BonusAS*100@% Attack Speed</attackSpeed> for @ASDuration@ seconds.<br><br><keywordMajor>Cougar: </keywordMajor>Nidalee claws at enemies in front of her, dealing <magicDamage>@spell.Jade_NidaleeAspectOfTheCougar:TotalSwipeDamage@ magic damage</magicDamage>."
           },
           "mObjectName": "Jade_NidaleePrimalSurge",
           "~class": "TooltipInstanceSpell"
@@ -2004,23 +1892,6 @@
         "~class": "ObjectTags"
       },
       "mSpellCalculations": {
-        "MaxHealing": {
-          "mModifiedGameCalculation": "TotalHealing",
-          "mMultiplier": {
-            "mSubparts": [
-              {
-                "mNumber": 1.0,
-                "~class": "NumberCalculationPart"
-              },
-              {
-                "mDataValue": "MaxHealMult",
-                "~class": "NamedDataValueCalculationPart"
-              }
-            ],
-            "~class": "SumOfSubPartsCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
         "TotalHealing": {
           "mFormulaParts": [
             {
@@ -2090,7 +1961,7 @@
         "18": "Play_sfx_NidaleeCougar_Swipe_OnBuffActivate"
       },
       "castConeAngle": 90.0,
-      "castConeDistance": 310.0,
+      "castConeDistance": 350.0,
       "castFrame": 22.0,
       "castRange": [
         350.0,
@@ -2154,8 +2025,8 @@
           "mLocKeys": {
             "keyName": "Primal Surge / Swipe",
             "keySummary": "In human form, Nidalee channels the spirit of the cougar to heal her allies and imbue them with attack speed for a short duration.  As a cougar, she rapidly claws enemies in front of her.",
-            "keyTooltip": "<keywordMajor>Cougar: </keywordMajor>Nidalee claws at enemies in front of her, dealing <magicDamage>@spell.Jade_NidaleeAspectOfTheCougar:TotalSwipeDamage@ magic damage</magicDamage>.<br><br><keywordMajor>Human: </keywordMajor>Nidalee heals an allied champion for <healing>@spell.Jade_NidaleePrimalSurge:TotalHealing@</healing> and grants them <attackSpeed>@spell.Jade_NidaleePrimalSurge:BonusAS*100@% Attack Speed</attackSpeed> for 7 seconds.",
-            "keyTooltipExtended": "<keywordMajor>Cougar: </keywordMajor>Nidalee claws at enemies in front of her, dealing <magicDamage>@spell.Jade_NidaleeAspectOfTheCougar:TotalSwipeDamage@ magic damage</magicDamage>.<br><br><keywordMajor>Human: </keywordMajor>Nidalee heals an allied champion for <healing>@spell.Jade_NidaleePrimalSurge:TotalHealing@</healing> and grants them <attackSpeed>@spell.Jade_NidaleePrimalSurge:BonusAS*100@% Attack Speed</attackSpeed> for 7 seconds."
+            "keyTooltip": "<keywordMajor>Cougar: </keywordMajor>Nidalee claws at enemies in front of her, dealing <magicDamage>@spell.Jade_NidaleeAspectOfTheCougar:TotalSwipeDamage@ magic damage</magicDamage>.<br><br><keywordMajor>Human: </keywordMajor>Nidalee heals an allied champion for <healing>@spell.Jade_NidaleePrimalSurge:TotalHealing@</healing> and grants them <attackSpeed>@spell.Jade_NidaleePrimalSurge:BonusAS*100@% Attack Speed</attackSpeed> for @spell.Jade_NidaleePrimalSurge:ASDuration@ seconds.",
+            "keyTooltipExtended": "<keywordMajor>Cougar: </keywordMajor>Nidalee claws at enemies in front of her, dealing <magicDamage>@spell.Jade_NidaleeAspectOfTheCougar:TotalSwipeDamage@ magic damage</magicDamage>.<br><br><keywordMajor>Human: </keywordMajor>Nidalee heals an allied champion for <healing>@spell.Jade_NidaleePrimalSurge:TotalHealing@</healing> and grants them <attackSpeed>@spell.Jade_NidaleePrimalSurge:BonusAS*100@% Attack Speed</attackSpeed> for @spell.Jade_NidaleePrimalSurge:ASDuration@ seconds."
           },
           "mObjectName": "Jade_NidaleeSwipe",
           "~class": "TooltipInstanceSpell"
@@ -2164,56 +2035,6 @@
       },
       "mCoefficient": 0.5,
       "mCoefficient2": 0.44999998807907104,
-      "mEffectAmount": [
-        {
-          "value": [
-            80.0,
-            80.0,
-            140.0,
-            200.0,
-            260.0,
-            260.0,
-            260.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         0,
         0,
@@ -2270,21 +2091,6 @@
         ],
         "~class": "SpellAttributeModifiable"
       },
-      "DataValues": [
-        {
-          "name": "TotalADRatio",
-          "values": [
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75
-          ],
-          "~class": "SpellDataValue"
-        }
-      ],
       "SpellEventToAudioEventSuffix": {
         "12": "Play_sfx_NidaleeCougar_Takedown_OnCast"
       },
@@ -2342,8 +2148,8 @@
           "mLocKeys": {
             "keyName": "Javelin Toss / Takedown",
             "keySummary": "In human form, Nidalee throws a spiked javelin at her target that gains damage as it flies.  As a cougar, her next attack will attempt to fatally wound her target, dealing more damage the less life they have.",
-            "keyTooltip": "<keywordMajor>Cougar: </keywordMajor> Nidalee's next attack deals <physicalDamage>@spell.Jade_NidaleeAspectOfTheCougar:TotalTakedownDamage@ physical damage</physicalDamage>, and the damage is increased against wounded targets (up to 300% total damage).<br><br><keywordMajor>Human:</keywordMajor> Nidalee tosses her javelin, dealing between <magicDamage>@spell.Jade_NidaleeJavelinToss:StartingDamage@</magicDamage> and <magicDamage>@spell.Jade_NidaleeJavelinToss:MaxDamage@ magic damage</magicDamage> on impact based on how far Nidalee is away from the target. ",
-            "keyTooltipExtended": "<keywordMajor>Cougar: </keywordMajor> Nidalee's next attack deals <physicalDamage>@spell.Jade_NidaleeAspectOfTheCougar:TotalTakedownDamage@ physical damage</physicalDamage>, and the damage is increased against wounded targets (up to 300% total damage).<br><br><keywordMajor>Human:</keywordMajor> Nidalee tosses her javelin, dealing between <magicDamage>@spell.Jade_NidaleeJavelinToss:StartingDamage@</magicDamage> and <magicDamage>@spell.Jade_NidaleeJavelinToss:MaxDamage@ magic damage</magicDamage> on impact based on how far Nidalee is away from the target. "
+            "keyTooltip": "<keywordMajor>Cougar: </keywordMajor> Nidalee's next attack deals between <physicalDamage>@spell.Jade_NidaleeAspectOfTheCougar:TotalTakedownDamage@</physicalDamage> and <physicalDamage>@spell.Jade_NidaleeAspectOfTheCougar:TotalTakedownMaximumDamage@ physical damage</physicalDamage> based on the target's missing Health.<br><br><keywordMajor>Human:</keywordMajor> Nidalee tosses her javelin, dealing between <magicDamage>@spell.Jade_NidaleeJavelinToss:StartingDamage@</magicDamage> and <magicDamage>@spell.Jade_NidaleeJavelinToss:MaxDamage@ magic damage</magicDamage> on impact based on how far Nidalee is away from the target. ",
+            "keyTooltipExtended": "<keywordMajor>Cougar: </keywordMajor> Nidalee's next attack deals between <physicalDamage>@spell.Jade_NidaleeAspectOfTheCougar:TotalTakedownDamage@</physicalDamage> and <physicalDamage>@spell.Jade_NidaleeAspectOfTheCougar:TotalTakedownMaximumDamage@ physical damage</physicalDamage> based on the target's missing Health.<br><br><keywordMajor>Human:</keywordMajor> Nidalee tosses her javelin, dealing between <magicDamage>@spell.Jade_NidaleeJavelinToss:StartingDamage@</magicDamage> and <magicDamage>@spell.Jade_NidaleeJavelinToss:MaxDamage@ magic damage</magicDamage> on impact based on how far Nidalee is away from the target. "
           },
           "mObjectName": "Jade_NidaleeTakedown",
           "~class": "TooltipInstanceSpell"
@@ -2352,101 +2158,6 @@
       },
       "mCoefficient": 0.75,
       "mCoefficient2": 0.4000000059604645,
-      "mEffectAmount": [
-        {
-          "value": [
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            75.0,
-            75.0,
-            75.0,
-            75.0,
-            75.0,
-            75.0,
-            75.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            5.0,
-            5.0,
-            30.0,
-            55.0,
-            80.0,
-            80.0,
-            80.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            10.0,
-            10.0,
-            67.5,
-            137.5,
-            220.0,
-            220.0,
-            220.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896,
-            0.30000001192092896
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.8999999761581421,
-            0.8999999761581421,
-            0.8999999761581421,
-            0.8999999761581421,
-            0.8999999761581421,
-            0.8999999761581421,
-            0.8999999761581421
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            1.0,
-            1.0,
-            1.25,
-            1.5,
-            1.75,
-            1.75,
-            1.75
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         0,
         0,
