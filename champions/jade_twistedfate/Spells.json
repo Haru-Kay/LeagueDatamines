@@ -257,8 +257,8 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Loaded Dice",
-            "keySummary": "Twisted Fate and his allies receive an additional 2 gold per kill.",
-            "keyTooltip": "Twisted Fate and his allies receive an additional <gold>2 gold</gold> per kill."
+            "keySummary": "Twisted Fate and his allies receive an additional gold per kill.",
+            "keyTooltip": "Twisted Fate and his allies receive an additional <gold>@GoldToGain@ gold</gold> per kill."
           },
           "mObjectName": "Jade_TwistedFateSecondSight",
           "~class": "TooltipInstanceSpell"
@@ -1475,57 +1475,6 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 1.0,
-      "mEffectAmount": [
-        {
-          "value": [
-            0.0,
-            6.0,
-            8.0,
-            10.0,
-            0.0,
-            0.0,
-            0.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.0,
-            5500.0,
-            5500.0,
-            5500.0,
-            0.0,
-            0.0,
-            0.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mImgIconName": [
         "assets/ux/jade/s3icons/samesized/destiny_temp.dds"
       ],
@@ -1708,75 +1657,6 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 1.0,
-      "mEffectAmount": [
-        {
-          "value": [
-            4.0,
-            6.0,
-            8.0,
-            10.0,
-            50.0,
-            40.0,
-            42.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            150.0,
-            130.0,
-            110.0,
-            90.0,
-            45.0,
-            30.0,
-            10.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            75.0,
-            100.0,
-            125.0,
-            150.0,
-            0.0,
-            0.0,
-            25.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            5500.0,
-            5500.0,
-            5500.0,
-            5500.0,
-            0.0,
-            0.0,
-            0.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mImgIconName": [
         "assets/ux/jade/s3icons/samesized/twistedfate_premonition.dds"
       ],
@@ -2186,6 +2066,19 @@
             55.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowDuration",
+          "values": [
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -2294,101 +2187,13 @@
           "mLocKeys": {
             "keyName": "Pick A Card",
             "keySummary": "Twisted Fate chooses a magic card from his deck, and uses that for his next attack, causing bonus effects.",
-            "keyTooltip": "Twisted Fate begins shuffling his deck, allowing him to <recast>Recast</recast> to lock in one of three cards and enhance his next Attack.<br><br><font color='#0000FF'>Blue Card</font> deals <magicDamage>@BlueDamage@ magic damage</magicDamage> and restores <scaleMana>@ManaRestore@ Mana</scaleMana>.<br><br><font color='#FF0000'>Red Card</font> deals <magicDamage>@RedDamage@ magic damage</magicDamage> to units around the target and <status>Slows</status> by @Slow@% for 2.5 seconds.<br><br><font color='#FFD700'>Gold Card</font> deals <magicDamage>@GoldDamage@ magic damage</magicDamage> and <status>Stuns</status> for @Stun@ seconds."
+            "keyTooltip": "Twisted Fate begins shuffling his deck, allowing him to <recast>Recast</recast> to lock in one of three cards and enhance his next Attack.<br><br><font color='#0000FF'>Blue Card</font> deals <magicDamage>@BlueDamage@ magic damage</magicDamage> and restores <scaleMana>@ManaRestore@ Mana</scaleMana>.<br><br><font color='#FF0000'>Red Card</font> deals <magicDamage>@RedDamage@ magic damage</magicDamage> to units around the target and <status>Slows</status> by @Slow@% for @SlowDuration@ seconds.<br><br><font color='#FFD700'>Gold Card</font> deals <magicDamage>@GoldDamage@ magic damage</magicDamage> and <status>Stuns</status> for @Stun@ seconds."
           },
           "mObjectName": "Jade_TwistedFatePickACard",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.5,
-      "mCoefficient2": 1.0,
-      "mEffectAmount": [
-        {
-          "value": [
-            20.0,
-            40.0,
-            60.0,
-            80.0,
-            100.0,
-            120.0,
-            140.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            25.0,
-            30.0,
-            35.0,
-            40.0,
-            45.0,
-            50.0,
-            55.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.75,
-            1.0,
-            1.25,
-            1.5,
-            1.75,
-            2.0,
-            2.25
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            15.0,
-            30.0,
-            45.0,
-            60.0,
-            75.0,
-            90.0,
-            105.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            7.5,
-            15.0,
-            22.5,
-            30.0,
-            37.5,
-            45.0,
-            52.5
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            70.0,
-            70.0,
-            90.0,
-            110.0,
-            130.0,
-            150.0,
-            165.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mImgIconName": [
         "assets/ux/jade/s3icons/samesized/twistedfate_fatesgambit.dds"
       ],

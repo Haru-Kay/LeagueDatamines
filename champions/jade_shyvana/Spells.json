@@ -856,6 +856,10 @@
         ],
         "~class": "SpellAttributeModifiable"
       },
+      "SpellEventToAudioEventSuffix": {
+        "18": "Play_sfx_Shyvana_Jade_ShyvanaFireballMissile_OnBuffActivate",
+        "19": "Play_sfx_Shyvana_Jade_ShyvanaFireballMissile_OnBuffDeactivate"
+      },
       "bHaveHitEffect": true,
       "castRange": [
         800.0,
@@ -1626,10 +1630,10 @@
         "heightSolver": {
           "~class": "BlendedLinearHeightSolver"
         },
-        "mMissileWidth": 60.0,
+        "mMissileWidth": 20.0,
         "movementComponent": {
           "mProjectTargetToCastRange": true,
-          "mSpeed": 1700.0,
+          "mSpeed": 2000.0,
           "mStartBoneName": "root",
           "mTracksTarget": false,
           "mUseGroundHeightAtTarget": false,
@@ -1880,13 +1884,13 @@
         {
           "name": "MissileRange",
           "values": [
-            950.0,
-            950.0,
-            950.0,
-            950.0,
-            950.0,
-            950.0,
-            950.0
+            925.0,
+            925.0,
+            925.0,
+            925.0,
+            925.0,
+            925.0,
+            925.0
           ],
           "~class": "SpellDataValue"
         },
@@ -1935,15 +1939,15 @@
       ],
       "castRangeUseBoundingBoxes": true,
       "castRangeValues": {
-        "0xa3e0478": 950.0,
+        "0xa3e0478": 925.0,
         "values": [
-          950.0,
-          950.0,
-          950.0,
-          950.0,
-          950.0,
-          950.0,
-          950.0
+          925.0,
+          925.0,
+          925.0,
+          925.0,
+          925.0,
+          925.0,
+          925.0
         ],
         "~class": "SpellAttributeModifiable"
       },
@@ -1988,12 +1992,12 @@
             },
             "overrideBaseRange": {
               "mPerLevelValues": [
-                950.0,
-                950.0,
-                950.0,
-                950.0,
-                950.0,
-                950.0
+                900.0,
+                900.0,
+                900.0,
+                900.0,
+                900.0,
+                900.0
               ],
               "mValueType": 1,
               "~class": "FloatPerSpellLevel"
@@ -2055,7 +2059,7 @@
         "mMissileWidth": 60.0,
         "movementComponent": {
           "mProjectTargetToCastRange": true,
-          "mSpeed": 1700.0,
+          "mSpeed": 1200.0,
           "mStartBoneName": "root",
           "mTracksTarget": false,
           "mUseGroundHeightAtTarget": false,
@@ -2173,13 +2177,13 @@
         {
           "name": "BonusDamage_Ratio",
           "values": [
+            0.75,
+            0.800000011920929,
+            0.8500000238418579,
+            0.8999999761581421,
+            0.949999988079071,
             1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
+            1.0499999523162842
           ],
           "~class": "SpellDataValue"
         },
@@ -2246,6 +2250,13 @@
               "Elements": [
                 {
                   "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Total AD Ratio",
+                  "type": "BonusDamage_Ratio",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -2322,13 +2333,13 @@
         {
           "name": "MinCastRange",
           "values": [
-            500.0,
-            500.0,
-            500.0,
-            500.0,
-            500.0,
-            500.0,
-            500.0
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0
           ],
           "~class": "SpellDataValue"
         },
@@ -2426,13 +2437,13 @@
         {
           "name": "Fury_Generation",
           "values": [
-            0.6600000262260437,
-            0.6600000262260437,
-            0.6600000262260437,
-            0.6600000262260437,
-            2.0,
-            2.0,
-            2.0
+            0.6666600108146667,
+            0.6666600108146667,
+            0.6666600108146667,
+            0.6666600108146667,
+            0.6666600108146667,
+            0.6666600108146667,
+            0.6666600108146667
           ],
           "~class": "SpellDataValue"
         },
@@ -2489,70 +2500,6 @@
           "~class": "SpellDataValue"
         }
       ],
-      "DataValuesModeOverride": {
-        "0xbffdf499": {
-          "SpellDataValues": [
-            {
-              "name": "Fury_Generation",
-              "values": [
-                2.5,
-                2.5,
-                2.5,
-                2.5,
-                2.5,
-                2.5,
-                2.5
-              ],
-              "~class": "SpellDataValue"
-            }
-          ],
-          "~class": "SpellDataValueVector"
-        },
-        "cherry": {
-          "SpellDataValues": [
-            {
-              "name": "Fury_Generation",
-              "values": [
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0
-              ],
-              "~class": "SpellDataValue"
-            },
-            {
-              "name": "FuryDragonFormMult",
-              "values": [
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0
-              ],
-              "~class": "SpellDataValue"
-            },
-            {
-              "name": "FuryGain",
-              "values": [
-                5.0,
-                5.0,
-                5.0,
-                5.0,
-                5.0,
-                5.0,
-                5.0
-              ],
-              "~class": "SpellDataValue"
-            }
-          ],
-          "~class": "SpellDataValueVector"
-        }
-      },
       "SpellEventToAudioEventSuffix": {
         "19": "Play_sfx_ShyvanaSkin301_ShyvanaDragonR_obd"
       },
@@ -2635,7 +2582,7 @@
               "mValueType": 1,
               "~class": "FloatPerSpellLevel"
             },
-            "minimumDisplayedRange": 500.0,
+            "minimumDisplayedRange": 100.0,
             "startLocator": {
               "orientationType": 3,
               "~class": "DrawablePositionLocator"
@@ -2909,13 +2856,13 @@
         {
           "name": "MaxDurationIncrease",
           "values": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
           ],
           "~class": "SpellDataValue"
         },

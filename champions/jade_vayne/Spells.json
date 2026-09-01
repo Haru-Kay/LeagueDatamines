@@ -601,6 +601,19 @@
             220.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "StunDuration",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -721,7 +734,7 @@
           "mLocKeys": {
             "keyName": "Condemn",
             "keySummary": "Vayne draws a heavy crossbow from her back, and fires a huge bolt at her target, dealing damage and knocking them back.  If they collide with terrain, they are impaled, dealing bonus damage and stunning them.",
-            "keyTooltip": "Fires a bolt that deals <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and knocks the enemy back. Enemies that collide with terrain take <physicalDamage>@TotalDamagewithSpell@ additional physical damage</physicalDamage> and are <status>Stunned</status> for 1.5 seconds."
+            "keyTooltip": "Fires a bolt that deals <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and knocks the enemy back. Enemies that collide with terrain take <physicalDamage>@TotalDamagewithSpell@ additional physical damage</physicalDamage> and are <status>Stunned</status> for @StunDuration@ seconds."
           },
           "mObjectName": "Jade_VayneE",
           "~class": "TooltipInstanceSpell"
@@ -1049,8 +1062,8 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Night Hunter",
-            "keySummary": "Vayne ruthlessly hunts evil-doers. She gains 30 Movement Speed when moving toward nearby enemy champions.",
-            "keyTooltip": "Vayne ruthlessly hunts evil-doers. She gains <speed>30 Movement Speed</speed> when moving toward nearby enemy champions."
+            "keySummary": "Vayne ruthlessly hunts evil-doers. She gains bonus Movement Speed when moving toward nearby enemy champions.",
+            "keyTooltip": "Vayne ruthlessly hunts evil-doers. She gains <speed>@MovementSpeed@ Movement Speed</speed> when moving toward nearby enemy champions."
           },
           "mObjectName": "Jade_VaynePassive",
           "~class": "TooltipInstanceSpell"
@@ -1825,8 +1838,8 @@
           },
           "mLocKeys": {
             "keyName": "Final Hour",
-            "keySummary": "Readying herself for an epic confrontation, Vayne gains increased Attack Damage, invisibility during Tumble, and triple the bonus Movement Speed from Night Hunter.",
-            "keyTooltip": "Gains <physicalDamage>@ADMod@ Bonus Attack Damage</physicalDamage> for @Duration@ seconds. While active, Tumble grants <keywordStealth>Invisibility</keywordStealth> for 1 second, and <spellName>Night Hunter's</spellName> bonus <speed>Movement Speed</speed> is increased to 90."
+            "keySummary": "Readying herself for an epic confrontation, Vayne gains increased Attack Damage, invisibility during Tumble, and greatly increased bonus Movement Speed from Night Hunter.",
+            "keyTooltip": "Readying herself for an epic confrontation, Vayne gains <physicalDamage>@ADMod@ Bonus Attack Damage</physicalDamage> for @Duration@ seconds. While active, Tumble grants <keywordStealth>Invisibility</keywordStealth> for @InvisibilityDuration@ seconds, and <spellName>Night Hunter's</spellName> bonus <speed>Movement Speed</speed> is increased to @UltimateMovementSpeed@."
           },
           "mObjectName": "Jade_VayneQ_Fade",
           "~class": "TooltipInstanceSpell"
@@ -2033,6 +2046,32 @@
             18.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "InvisibilityDuration",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "UltimateMovementSpeed",
+          "values": [
+            90.0,
+            90.0,
+            90.0,
+            90.0,
+            90.0,
+            90.0,
+            90.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -2115,9 +2154,9 @@
           },
           "mLocKeys": {
             "keyName": "Final Hour",
-            "keySummary": "Readying herself for an epic confrontation, Vayne gains increased Attack Damage, invisibility during Tumble, and triple the bonus Movement Speed from Night Hunter.",
-            "keyTooltip": "Gains <physicalDamage>@ADMod@ Bonus Attack Damage</physicalDamage> for @Duration@ seconds. While active, Tumble grants <keywordStealth>Invisibility</keywordStealth> for 1 second, and <spellName>Night Hunter's</spellName> bonus <speed>Movement Speed</speed> is increased to 90.",
-            "keyTooltipExtended": "Gains <physicalDamage>@ADMod@ Bonus Attack Damage</physicalDamage> for @Duration@ seconds. While active, Tumble grants <keywordStealth>Invisibility</keywordStealth> for 1 second, and <spellName>Night Hunter's</spellName> bonus <speed>Movement Speed</speed> is increased to 90.<br><br><rules>{{Reminder_Invisibility}}</rules>"
+            "keySummary": "Readying herself for an epic confrontation, Vayne gains increased Attack Damage, invisibility during Tumble, and greatly increased bonus Movement Speed from Night Hunter.",
+            "keyTooltip": "Readying herself for an epic confrontation, Vayne gains <physicalDamage>@ADMod@ Bonus Attack Damage</physicalDamage> for @Duration@ seconds. While active, Tumble grants <keywordStealth>Invisibility</keywordStealth> for @InvisibilityDuration@ seconds, and <spellName>Night Hunter's</spellName> bonus <speed>Movement Speed</speed> is increased to @UltimateMovementSpeed@.",
+            "keyTooltipExtendedBelowLine": "<rules>{{Reminder_Invisibility}}</rules>"
           },
           "mObjectName": "Jade_VayneR",
           "~class": "TooltipInstanceSpell"
@@ -2428,8 +2467,8 @@
             "keyCooldown": "",
             "keyCost": "<spellPassive>Passive</spellPassive>",
             "keyName": "Silver Bolts",
-            "keySummary": "Vayne tips her bolts with a rare metal, toxic to evil things.  The third consecutive attack or ability against the same target deals a percentage of the target's maximum Health as bonus true damage. (Max: 200 damage vs. Monsters)",
-            "keyTooltip": "Every third consecutive attack or ability against an enemy deals an additional @BaseDamage@ plus @MaxHealthRatio*100@% of the enemy's maximum Health <trueDamage>true damage</trueDamage>. (Max: 200 damage vs. Monsters)"
+            "keySummary": "Vayne tips her bolts with a rare metal, toxic to evil things.  The third consecutive attack or ability against the same target deals a percentage of the target's maximum Health as bonus true damage.",
+            "keyTooltip": "Every third consecutive attack or ability against an enemy deals an additional @BaseDamage@ plus @MaxHealthRatio*100@% of the enemy's maximum Health <trueDamage>true damage</trueDamage>. (Max: @MonsterDamageCap@ damage vs. Monsters)"
           },
           "mObjectName": "Jade_VayneW",
           "~class": "TooltipInstanceSpell"

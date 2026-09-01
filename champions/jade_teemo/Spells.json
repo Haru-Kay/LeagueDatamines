@@ -443,8 +443,8 @@
           },
           "mLocKeys": {
             "keyName": "Toxic Shot",
-            "keySummary": "Each of Teemo's attacks will poison the target, dealing damage on impact and each second after for 4 seconds.",
-            "keyTooltip": "<mainText>Teemo's basic attacks poison their target, dealing <magicDamage>@ImpactCalculatedDamage@ magic damage</magicDamage> upon impact and <magicDamage>@TickCalculatedDamage@ magic damage</magicDamage> each second for 4 seconds.</mainText>"
+            "keySummary": "Each of Teemo's attacks poisons the target, dealing damage on impact and over time.",
+            "keyTooltip": "Teemo's basic attacks poison their target, dealing <magicDamage>@ImpactCalculatedDamage@ magic damage</magicDamage> upon impact and <magicDamage>@TickCalculatedDamage@ magic damage</magicDamage> each second for @PoisonDuration@ seconds."
           },
           "mObjectName": "Jade_TeemoE",
           "~class": "TooltipInstanceSpell"
@@ -479,22 +479,6 @@
       },
       "mPingableWhileDisabled": true,
       "mSpellCalculations": {
-        "0x8b70cfd6": {
-          "mModifiedGameCalculation": "ImpactCalculatedDamage",
-          "mMultiplier": {
-            "mDataValue": "monstermod",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
-        "0x938cba49": {
-          "mModifiedGameCalculation": "TickCalculatedDamage",
-          "mMultiplier": {
-            "mDataValue": "monstermod",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
         "ImpactCalculatedDamage": {
           "mFormulaParts": [
             {
@@ -725,6 +709,19 @@
             2.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "AttackSpeedBonus",
+          "values": [
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "castRange": [
@@ -771,8 +768,8 @@
           "mDisplayAsPercent": true,
           "mFormulaParts": [
             {
-              "mNumber": 0.4000000059604645,
-              "~class": "NumberCalculationPart"
+              "mDataValue": "AttackSpeedBonus",
+              "~class": "NamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -996,19 +993,6 @@
             2.25,
             2.5,
             2.75
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "MissChance",
-          "values": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1684,7 +1668,7 @@
           "mLocKeys": {
             "keyName": "Move Quick",
             "keySummary": "Teemo scampers around, passively increasing his movement speed until he is struck by an enemy champion or turret.  Teemo can sprint to gain bonus movement speed that isn't stopped by being struck for a short time.",
-            "keyTooltip": "<mainText><spellPassive>Passive: </spellPassive>Teemo's <speed>Movement Speed</speed> is increased by @PassiveMoveSpeedBonus*100@% unless he has been damaged by an enemy champion or turret in the last 5 seconds.<br><br><spellActive>Active: </spellActive>Teemo sprints, gaining <speed>@ActiveMoveSpeedBonus*100@% Movement Speed</speed> for 3 seconds. This bonus is not lost when struck.</mainText>"
+            "keyTooltip": "<mainText><spellPassive>Passive: </spellPassive>Teemo's <speed>Movement Speed</speed> is increased by @PassiveMoveSpeedBonus*100@% unless he has been damaged by an enemy champion or turret in the last @PassiveCooldownOnDamageTaken@ seconds.<br><br><spellActive>Active: </spellActive>Teemo sprints, gaining <speed>@ActiveMoveSpeedBonus*100@% Movement Speed</speed> for @ActiveMoveSpeedBuffDuration@ seconds. This bonus is not lost when struck.</mainText>"
           },
           "mObjectName": "Jade_TeemoW",
           "~class": "TooltipInstanceSpell"
