@@ -2427,11 +2427,32 @@
     "apiName": "ARAM_SpinToWin",
     "name": "Spin To Win",
     "rarity": "Silver",
-    "desc": "Your spin Abilities gain @SpinHaste@ Ability Haste and deal @SpinDamageAmp*100@% more damage.",
-    "tooltip": "Your spin Abilities gain @SpinHaste@ Ability Haste and deal @SpinDamageAmp*100@% more damage.<br><br>Damage Dealt: @f2@",
+    "desc": "Your spin Abilities gain %i:scaleAH%@SpinHaste@ Ability Haste and deal @SpinDamageAmp@ more damage, increase to @SpinDamageAmp_Ult@ for Ultimates<br><br>",
+    "tooltip": "Your spin Abilities gain %i:scaleAH%@SpinHaste@ Ability Haste and deal @SpinDamageAmp@ more damage, increase to @SpinDamageAmp_Ult@ for Ultimates<br><br><br><br>Damage Dealt: @f2@",
     "dataValues": {
-      "SpinDamageAmp": 0.30000001192092896,
       "SpinHaste": 30.0
+    },
+    "calculations": {
+      "0x90a024ae": {
+        "mDisplayAsPercent": true,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.5,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "SpinDamageAmp": {
+        "mDisplayAsPercent": true,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.30000001192092896,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
     },
     "icons": [
       "assets/ux/cherry/augments/icons/spintowin_small.tex",
@@ -2708,6 +2729,239 @@
     "icons": [
       "assets/ux/cherry/augments/icons/firfox_small.tex",
       "assets/ux/cherry/augments/icons/firfox_large.tex"
+    ]
+  },
+  {
+    "id": 1310,
+    "apiName": "ARAM_ClownCollege",
+    "name": "Clown College",
+    "rarity": "Prismatic",
+    "desc": "Gain <spellName>Deceive</spellName> Summoner Spell.<br>Gain <spellName>Backstab</spellName> Passive.<br><br>When you die, spawn an exploding box that deals a large amount of <trueDamage>true damage</trueDamage> and <status>Fear</status> nearby enemies.",
+    "tooltip": "<spellName>Backstab</spellName>: You deal @BasicAttackDamage@ <physicalDamage>bonus physical damage</physicalDamage> when striking from behind.<br><br><spellName>Deceive</spellName>: You teleport and become <keywordStealth>Invisible</keywordStealth> for @StealthDuration@ seconds. Your next Attack while <keywordStealth>Invisible</keywordStealth> deals an additional <physicalDamage>@TotalDamage@ physical damage</physicalDamage>. If striking from behind, this Attack critically strikes for @QCritDamageMod@ damage.<br><br><spellName>Hallucinate: Death</spellName>: On death, deal <magicDamage>@FearDamage*100@% maximum Health magic damage</magicDamage> and fear for @FearDuration@s around you.",
+    "dataValues": {
+      "StealthDuration": 3.0,
+      "PseudoCastTime": 0.125,
+      "ExtraAATime": 1.0,
+      "CastRange": 400.0,
+      "FearDuration": 1.0,
+      "FearRadius": 350.0,
+      "FearDamage": 0.25,
+      "EDITDECEIVEFORREALVALUES": [],
+      "BaseDamage": 100.0
+    },
+    "calculations": {
+      "BasicAttackDamage": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 35.0,
+            "mStartValue": 20.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          },
+          {
+            "mCoefficient": 0.3499999940395355,
+            "~class": "StatByCoefficientCalculationPart"
+          },
+          {
+            "mCoefficient": 0.5,
+            "mStat": 2,
+            "mStatFormula": 2,
+            "~class": "StatByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "QCritDamageMod": {
+        "mDisplayAsPercent": true,
+        "mFormulaParts": [
+          {
+            "mSubparts": [
+              {
+                "mNumber": 1.5499999523162842,
+                "~class": "NumberCalculationPart"
+              },
+              {
+                "mCoefficient": 1.0,
+                "mStat": 9,
+                "mStatFormula": 2,
+                "~class": "StatByCoefficientCalculationPart"
+              }
+            ],
+            "~class": "SumOfSubPartsCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "TotalDamage": {
+        "mFormulaParts": [
+          {
+            "mDataValue": "baseDamage",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          {
+            "mCoefficient": 1.5,
+            "mStat": 2,
+            "mStatFormula": 2,
+            "~class": "StatByCoefficientCalculationPart"
+          },
+          {
+            "mCoefficient": 0.550000011920929,
+            "~class": "StatByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "add": {
+      "Augment_ARAM_ClownCollege_Backstab": {
+        "dataValues": {
+          "PerUnitCD": 3.0,
+          "MonsterCritMod": 2.0,
+          "APRatio": 0.4000000059604645,
+          "CloneMult": 0.75,
+          "ShivSlowAmount": -0.4000000059604645,
+          "ShredDuration": 4.0,
+          "ShivExecuteDamagePercent": 1.5,
+          "AttackBonusADRatio": 0.5
+        },
+        "calcs": {
+          "0x3445d362": {
+            "mFormulaParts": [
+              {
+                "mCoefficient": 1.0,
+                "mStat": 9,
+                "mStatFormula": 1,
+                "~class": "StatByCoefficientCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "BasicAttackDamage": {
+            "mFormulaParts": [
+              {
+                "mEndValue": 35.0,
+                "mStartValue": 20.0,
+                "~class": "ByCharLevelInterpolationCalculationPart"
+              },
+              {
+                "mDataValue": "AttackBonusADRatio",
+                "mStat": 2,
+                "mStatFormula": 2,
+                "~class": "StatByNamedDataValueCalculationPart"
+              },
+              {
+                "mCoefficient": 0.3499999940395355,
+                "~class": "StatByCoefficientCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "MonsterDamageTooltip": {
+            "mFormulaParts": [
+              {
+                "mStat": 2,
+                "mSubpart": {
+                  "mSubparts": [
+                    {
+                      "mDataValue": "MonsterCritMod",
+                      "~class": "NamedDataValueCalculationPart"
+                    },
+                    {
+                      "mCoefficient": 1.0,
+                      "mStat": 9,
+                      "mStatFormula": 2,
+                      "~class": "StatByCoefficientCalculationPart"
+                    }
+                  ],
+                  "~class": "SumOfSubPartsCalculationPart"
+                },
+                "~class": "StatBySubPartCalculationPart"
+              },
+              {
+                "mDataValue": "APRatio",
+                "~class": "StatByNamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "ShivDamage": {
+            "mFormulaParts": [
+              {
+                "mEndValue": 50.0,
+                "mStartValue": 15.0,
+                "~class": "ByCharLevelInterpolationCalculationPart"
+              },
+              {
+                "mCoefficient": 0.10000000149011612,
+                "~class": "StatByCoefficientCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "ShivDamageExecute": {
+            "mModifiedGameCalculation": "ShivDamage",
+            "mMultiplier": {
+              "mDataValue": "ShivExecuteDamagePercent",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            "~class": "GameCalculationModified"
+          }
+        }
+      },
+      "Augment_ARAM_ClownCollege_Deceive": {
+        "dataValues": {
+          "BaseDamage": 100.0,
+          "StealthDuration": 3.0,
+          "CDRefund": 2.5,
+          "ExtraAATime": 0.25,
+          "PseudoCastTime": 0.125
+        },
+        "calcs": {
+          "QCritDamageMod": {
+            "mDisplayAsPercent": true,
+            "mFormulaParts": [
+              {
+                "mSubparts": [
+                  {
+                    "mNumber": 1.5499999523162842,
+                    "~class": "NumberCalculationPart"
+                  },
+                  {
+                    "mCoefficient": 1.0,
+                    "mStat": 9,
+                    "mStatFormula": 2,
+                    "~class": "StatByCoefficientCalculationPart"
+                  }
+                ],
+                "~class": "SumOfSubPartsCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "TotalDamage": {
+            "mFormulaParts": [
+              {
+                "mDataValue": "baseDamage",
+                "~class": "NamedDataValueCalculationPart"
+              },
+              {
+                "mCoefficient": 1.5,
+                "mStat": 2,
+                "mStatFormula": 2,
+                "~class": "StatByCoefficientCalculationPart"
+              },
+              {
+                "mCoefficient": 0.550000011920929,
+                "~class": "StatByCoefficientCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          }
+        }
+      }
+    },
+    "icons": [
+      "assets/ux/cherry/augments/icons/clowncollege_small.tex",
+      "assets/ux/cherry/augments/icons/clowncollege_large.tex"
     ]
   },
   {
@@ -6051,7 +6305,8 @@
       "AnvilLife": 5000.0,
       "SilverThreshold": 65.0,
       "GoldThreshold": 90.0,
-      "AnvilTrackerRate": 1.5
+      "AnvilTrackerRate": 1.0,
+      "AnvilTrackerRate_SummonUnit": 0.5
     },
     "icons": [
       "assets/ux/kiwi/augments/icons/highroller_small.tex",
@@ -7459,8 +7714,8 @@
     "apiName": "Quest_UltraHydra",
     "name": "Ultra Hydra",
     "rarity": "Prismatic",
-    "desc": "Gain a <attention>Tiamat</attention> when completing a Hydra Item.<br><br><font color='#F0C200'>QUEST:</font>: Gain Ravenous Hydra, Profane Hydra and Titanic Hydra.<br><br><font color='#F0C200'>REWARD:</font>: Gain Ultra Hydra",
-    "tooltip": "Gain a <attention>Tiamat</attention> when completing a Hydra Item.<br><br><font color='#F0C200'>QUEST:</font>: Gain Ravenous Hydra, Profane Hydra and Titanic Hydra.<br><br><font color='#F0C200'>REWARD:</font>: Gain Ultra Hydra",
+    "desc": "Gain a <attention>Tiamat</attention> when completing a Hydra Item.<br><br><font color='#F0C200'>QUEST:</font> Gain Ravenous Hydra, Profane Hydra and Titanic Hydra.<br><br><font color='#F0C200'>REWARD:</font> Gain Ultra Hydra.",
+    "tooltip": "Gain a <attention>Tiamat</attention> when completing a Hydra Item.<br><br><font color='#F0C200'>QUEST:</font> Gain Ravenous Hydra, Profane Hydra and Titanic Hydra.<br><br><font color='#F0C200'>REWARD:</font> Gain Ultra Hydra.",
     "calculations": {
       "0xdd06bf3e": {
         "mFormulaParts": [
