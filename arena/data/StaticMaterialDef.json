@@ -3,6 +3,98 @@
     "name": "Maps/Shipping/Map30/Materials/MAT_UI_MatchupIntro_SplashArt_Masked",
     "paramValues": [
       {
+        "name": "Refraction_Texture_Use_Panning",
+        "value": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
+        "name": "Refraction_Texture_Wipe",
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
+        "name": "Refraction_Texture_Rotation_Angle",
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
+        "name": "Refraction_Texture_Rotation_Center",
+        "value": [
+          0.5,
+          0.5,
+          0.0,
+          0.0
+        ],
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
+        "name": "Refraction_Chromatic_Aberration_B_Intensity",
+        "value": [
+          0.9800000190734863,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
+        "name": "Refraction_Chromatic_Aberration_G_Intensity",
+        "value": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
+        "name": "Refraction_Chromatic_Aberration_R_Intensity",
+        "value": [
+          1.0199999809265137,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
+        "name": "Refraction_Intensity",
+        "value": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
+        "name": "Refraction_Texture_Panner",
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
+        "name": "Refraction_Texture_Tile",
+        "value": [
+          1.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
+        "name": "Sheen_Scale",
+        "value": [
+          0.05000000074505806,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
         "name": "Fade_Rotation_Center",
         "value": [
           0.5,
@@ -40,16 +132,6 @@
         "name": "Sheen_Speed",
         "value": [
           0.5,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "~class": "StaticMaterialShaderParamDef"
-      },
-      {
-        "name": "Sheen_Scale",
-        "value": [
-          0.05000000074505806,
           0.0,
           0.0,
           0.0
@@ -121,6 +203,11 @@
     ],
     "samplerValues": [
       {
+        "TextureName": "Refraction_Texture",
+        "texturePath": "assets/shared/fx/textures/noisedissolve/shared_nd_voidhaird.tex",
+        "~class": "StaticMaterialShaderSamplerDef"
+      },
+      {
         "TextureName": "MaskTexture",
         "addressU": 1,
         "addressV": 1,
@@ -130,6 +217,11 @@
       }
     ],
     "switches": [
+      {
+        "name": "ENABLE_REFRACTION",
+        "on": false,
+        "~class": "StaticMaterialSwitchDef"
+      },
       {
         "name": "ENABLE_SHEEN",
         "on": false,
@@ -165,6 +257,98 @@
     "name": "Maps/Shipping/Map30/Materials/MAT_UI_MatchupIntro_SplashArt_Masked_Flipped",
     "paramValues": [
       {
+        "name": "Refraction_Texture_Use_Panning",
+        "value": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
+        "name": "Refraction_Texture_Wipe",
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
+        "name": "Refraction_Texture_Rotation_Angle",
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
+        "name": "Refraction_Texture_Rotation_Center",
+        "value": [
+          0.5,
+          0.5,
+          0.0,
+          0.0
+        ],
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
+        "name": "Refraction_Chromatic_Aberration_B_Intensity",
+        "value": [
+          0.9800000190734863,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
+        "name": "Refraction_Chromatic_Aberration_G_Intensity",
+        "value": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
+        "name": "Refraction_Chromatic_Aberration_R_Intensity",
+        "value": [
+          1.0199999809265137,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
+        "name": "Refraction_Intensity",
+        "value": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
+        "name": "Refraction_Texture_Panner",
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
+        "name": "Refraction_Texture_Tile",
+        "value": [
+          1.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
+        "name": "Sheen_Scale",
+        "value": [
+          0.05000000074505806,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "StaticMaterialShaderParamDef"
+      },
+      {
         "name": "Fade_Rotation_Center",
         "value": [
           0.5,
@@ -202,16 +386,6 @@
         "name": "Sheen_Speed",
         "value": [
           0.5,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "~class": "StaticMaterialShaderParamDef"
-      },
-      {
-        "name": "Sheen_Scale",
-        "value": [
-          0.05000000074505806,
           0.0,
           0.0,
           0.0
@@ -283,6 +457,11 @@
     ],
     "samplerValues": [
       {
+        "TextureName": "Refraction_Texture",
+        "texturePath": "assets/shared/fx/textures/noisedissolve/shared_nd_voidhaird.tex",
+        "~class": "StaticMaterialShaderSamplerDef"
+      },
+      {
         "TextureName": "MaskTexture",
         "addressU": 1,
         "addressV": 1,
@@ -292,6 +471,11 @@
       }
     ],
     "switches": [
+      {
+        "name": "ENABLE_REFRACTION",
+        "on": false,
+        "~class": "StaticMaterialSwitchDef"
+      },
       {
         "name": "ENABLE_SHEEN",
         "on": false,

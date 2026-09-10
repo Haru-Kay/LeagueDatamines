@@ -82,7 +82,8 @@
     "tooltip": "Gain up to <speed>@Calc_Move_Speed_Max@ Move Speed</speed> toward nearby allies based on their <scaleHealth>missing Health</scaleHealth>. Your <healing>healing</healing> and <shield>shielding</shield> are also increased up to @Calc_HS_Amp_Max@ based on the <scaleHealth>target's missing Health</scaleHealth>.<br><br><rules>Bonus Healing: @f1.0@<br>Bonus Shielding: @f2.0@</rules>",
     "dataValues": {
       "VFX_Health_Threshold": 0.5,
-      "MS_Linger_Duration": 2.0
+      "MS_Linger_Duration": 2.0,
+      "MaxLevel": 1.0
     },
     "calculations": {
       "Calc_HS_Amp_Max": {
@@ -3787,7 +3788,8 @@
     "desc": "Every @Cooldown@ seconds, <keywordMajor>automatically cast</keywordMajor> the <spellName>Aria of Perseverence</spellName> and <spellName>Song of Celerity</spellName> in an alternating melody.<br><br><rules><spellName>Aria of Perseverence</spellName> <healing>heals</healing> nearby allies and grants a temporary <shield>shielding aura</shield>.</rules><br><br><rules><spellName>Song of Celerity</spellName> grants a temporary aura that provides <speed>bonus Movement Speed.</speed></rules>",
     "tooltip": "Every @Cooldown@ seconds, <keywordMajor>automatically cast</keywordMajor> the <spellName>Aria of Perseverence</spellName> and <spellName>Song of Celerity</spellName> in an alternating melody.<br><br><rules><spellName>Aria of Perseverence</spellName> <healing>heals</healing> nearby allies and grants a temporary <shield>shielding aura</shield>.</rules><br><br><rules><spellName>Song of Celerity</spellName> grants a temporary aura that provides <speed>bonus Movement Speed.</speed></rules>",
     "dataValues": {
-      "Cooldown": 10.0
+      "Cooldown": 10.0,
+      "MaxLevel": 1.0
     },
     "add": {
       "Augment_Sonata_SonaE": {
@@ -4759,7 +4761,9 @@
       "AOESize": 400.0,
       "Duration": 3.5,
       "MoveSpeed": 400.0,
-      "Slow": 0.4000000059604645
+      "Slow": 0.4000000059604645,
+      "MaxLevel": 2.0,
+      "MissingHealthPercent": 0.30000001192092896
     },
     "calculations": {
       "BaseDamageToApply": {
@@ -4777,8 +4781,8 @@
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
-            "mNumber": 0.30000001192092896,
-            "~class": "NumberCalculationPart"
+            "mDataValue": "MissingHealthPercent",
+            "~class": "NamedDataValueCalculationPart"
           }
         ],
         "mSimpleTooltipCalculationDisplay": 5,
@@ -4867,7 +4871,8 @@
     "desc": "Entering <keyword>Brush</keyword> regenerates <healing>a large amount of Health</healing>.",
     "tooltip": "Entering <keyword>Brush</keyword> restores <healing>@FlatHeal@ + @MissingHealthHeal@ Missing Health</healing>, @BrushCooldown@ second cooldown per brush.<br><br>Total Healing: @f1.0@",
     "dataValues": {
-      "BrushCooldown": 20.0
+      "BrushCooldown": 20.0,
+      "MaxLevel": 1.0
     },
     "calculations": {
       "FlatHeal": {
@@ -5446,7 +5451,8 @@
     "desc": "Casting a spell refunds another random spell's cost by @RefundPercent*100@% of the original spell's Cooldown.",
     "tooltip": "Casting a spell refunds another random spell's cost by @RefundPercent*100@% of the original spell's Cooldown.",
     "dataValues": {
-      "RefundPercent": 0.30000001192092896
+      "RefundPercent": 0.30000001192092896,
+      "MaxLevel": 1.0
     },
     "icons": [
       "assets/ux/cherry/augments/icons/eureka_small.tex",
@@ -5717,7 +5723,8 @@
       "Radius": 375.0,
       "Move_Speed_Duration": 2.0,
       "Soul_Attack_Range": 400.0,
-      "Kill_Track_Duration": 3.0
+      "Kill_Track_Duration": 3.0,
+      "MaxLevel": 1.0
     },
     "calculations": {
       "Calc_Damage": {
@@ -6007,7 +6014,8 @@
       "Cooldown": 90.0,
       "Buff_Duration": 15.0,
       "Stacks_Duration": 6.0,
-      "Stacks_Max": 10.0
+      "Stacks_Max": 10.0,
+      "MaxLevel": 1.0
     },
     "calculations": {
       "HellbentIDCDMaybe": {
@@ -6396,6 +6404,9 @@
     "rarity": "Gold",
     "desc": "Gain <lifeSteal>@Calc_Vamp@ Omnivamp</lifeSteal>.",
     "tooltip": "Gain <lifeSteal>@Calc_Vamp@ Omnivamp</lifeSteal>.",
+    "dataValues": {
+      "MaxLevel": 1.0
+    },
     "calculations": {
       "Calc_Vamp": {
         "mDisplayAsPercent": true,

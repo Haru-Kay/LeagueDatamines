@@ -9603,6 +9603,135 @@
     ]
   },
   {
+    "id": 396,
+    "apiName": "DeathDealer",
+    "name": "Death Dealer",
+    "rarity": "Prismatic",
+    "desc": "Replace <spellName>Flee</spellName> with <spellName>Death Dealer</spellName>.<br><br>Activate: You and target champion enter the <keywordMajor>Dealth Realm</keywordMajor> for @DeathRealmDuration@ seconds. <br><br>Entering the <keywordMajor>Death Realm</keywordMajor> causes you to become <keywordStealth>invisible</keywordStealth> for up to @InvisDuration@ seconds.",
+    "maxLevelTooltip": "At Max Level, slaying your target in the <keywordMajor>Death Realm</keywordMajor> grants you @MaxLevelRevivesGained@ revive, and delay your victims revive by @TotalReviveDelay@ seconds.",
+    "tooltip": "Replace <spellName>Flee</spellName> with <spellName>Death Dealer</spellName>.<br><br>Activate: You and target champion enter the <keywordMajor>Dealth Realm</keywordMajor> for @DeathRealmDuration@ seconds. <br><br>Entering the <keywordMajor>Death Realm</keywordMajor> causes you to become <keywordStealth>invisible</keywordStealth> for up to @InvisDuration@ seconds.",
+    "dataValues": {
+      "DeathRealmDuration": [
+        4.0,
+        4.0,
+        8.0,
+        12.0,
+        16.0,
+        8.0,
+        8.0
+      ],
+      "InvisDuration": 2.0,
+      "MaxLevel": 3.0,
+      "MaxLevelRevivesGained": 1.0,
+      "BaseReviveDelay": 1.0,
+      "ARPenRatio": 0.029999999329447746,
+      "MPenRatio": 0.05000000074505806
+    },
+    "calculations": {
+      "0xfdb464f7": {
+        "mFormulaParts": [
+          {
+            "mDataValue": "0x36fffc3c",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          {
+            "mDataValue": "0xf22ac46c",
+            "mStat": 29,
+            "~class": "StatByNamedDataValueCalculationPart"
+          },
+          {
+            "mDataValue": "0xae14225e",
+            "mStat": 22,
+            "~class": "StatByNamedDataValueCalculationPart"
+          }
+        ],
+        "mPrecision": 2,
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "0xf53c74757a59b833",
+      "0xce151634020b8bf7"
+    ]
+  },
+  {
+    "id": 397,
+    "apiName": "GotThatDogInEm",
+    "name": "Got That Dog In Em",
+    "rarity": "Prismatic",
+    "desc": "Every @SpawnInterval@ seconds spawn a nearby hot dog, this can be picked up by anyone, causing them to breath fire.<br><br>If you die while breathing fire, you explode dealing <magicDamage>@ExplosionDamagePerStack@ magic damage</magicDamage> per stack. ",
+    "tooltip": "Every @SpawnInterval@ seconds spawn a nearby hot dog, this can be picked up by anyone, causing them to breath fire for @StackDuration@ seconds, dealing <magicDamage>@FireBreathDamageTooltip@ magic damage</magicDamage> per second.<br><br>If you die while breathing fire, you explode dealing <magicDamage>@ExplosionDamagePerStack@ magic damage</magicDamage> per stack. <br><br><rules>If any enemy champion picks up a hot dog their fire deals @EnemyDamageDown*100@% damage and <attention>damages their allies.</attention></rules>",
+    "dataValues": {
+      "SpawnInterval": 3.0,
+      "ExplosionRadius": 400.0,
+      "HotDogDuration": 30.0,
+      "PickUpRadius": 120.0,
+      "StackDuration": 6.0,
+      "FireBreathInterval": 0.5,
+      "ConeLength": 600.0,
+      "ConeAngle": 45.0,
+      "FireBreathAPRatio": 0.15000000596046448,
+      "SpawnRadius": 1500.0,
+      "MaxStacks": 10.0,
+      "ExplosionAPRatio": 0.20000000298023224,
+      "DogToDogDistance": 300.0,
+      "MinRadius": 300.0,
+      "EnemyDamageDown": 0.5,
+      "FireBreathAPRatioTooltip": 0.30000001192092896
+    },
+    "calculations": {
+      "0x3e8f35e1": {
+        "SomeFlagBroIDK": 1,
+        "mFormulaParts": [
+          {
+            "mEndValue": 300.0,
+            "mStartValue": 20.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          },
+          {
+            "mDataValue": "0x49956d84",
+            "~class": "StatByNamedDataValueCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0x71178268": {
+        "SomeFlagBroIDK": 1,
+        "mFormulaParts": [
+          {
+            "mEndValue": 100.0,
+            "mStartValue": 50.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          },
+          {
+            "mDataValue": "ExplosionAPRatio",
+            "~class": "StatByNamedDataValueCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xeeb8689a": {
+        "SomeFlagBroIDK": 1,
+        "mFormulaParts": [
+          {
+            "mEndValue": 150.0,
+            "mStartValue": 10.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          },
+          {
+            "mDataValue": "0x8d75aee9",
+            "~class": "StatByNamedDataValueCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "0xc56d05be8d86c9b4",
+      "0x305a9beca4280d91"
+    ]
+  },
+  {
     "id": 404,
     "apiName": "Augment404",
     "name": "404 Augment Not Found",
@@ -9632,6 +9761,49 @@
     "icons": [
       "assets/ux/cherry/augments/icons/augment405_small.tex",
       "assets/ux/cherry/augments/icons/augment405_large.tex"
+    ]
+  },
+  {
+    "id": 1005,
+    "apiName": "ARAM_WeeWooWeeWoo",
+    "name": "Wee Woo Wee Woo",
+    "rarity": "Gold",
+    "desc": "When moving towards allies with <scaleHealing>low Health</scaleHealing>, gain <speed>Movement Speed</speed>. Your <healing>Healing</healing> and <shield>Shielding</shield> are greater based on how low your target's Health is.",
+    "tooltip": "Gain up to <speed>@Calc_Move_Speed_Max@ Move Speed</speed> toward nearby allies based on their <scaleHealth>missing Health</scaleHealth>. Your <healing>healing</healing> and <shield>shielding</shield> are also increased up to @Calc_HS_Amp_Max@ based on the <scaleHealth>target's missing Health</scaleHealth>.<br><br><rules>Bonus Healing: @f1.0@<br>Bonus Shielding: @f2.0@</rules>",
+    "dataValues": {
+      "VFX_Health_Threshold": 0.5,
+      "MS_Linger_Duration": 2.0,
+      "MaxLevel": 1.0
+    },
+    "calculations": {
+      "Calc_HS_Amp_Max": {
+        "mDisplayAsPercent": true,
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.5,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "mSimpleTooltipCalculationDisplay": 5,
+        "~class": "GameCalculation"
+      },
+      "Calc_Move_Speed_Max": {
+        "mDisplayAsPercent": true,
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.5,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "mSimpleTooltipCalculationDisplay": 5,
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "assets/ux/kiwi/augments/icons/weewooweewoo_small.tex",
+      "assets/ux/kiwi/augments/icons/weewooweewoo_large.tex"
     ]
   },
   {
@@ -10422,6 +10594,162 @@
     ]
   },
   {
+    "id": 1420,
+    "apiName": "Sonata",
+    "name": "Sonata",
+    "rarity": "Gold",
+    "desc": "Every @Cooldown@ seconds, <keywordMajor>automatically cast</keywordMajor> the <spellName>Aria of Perseverence</spellName> and <spellName>Song of Celerity</spellName> in an alternating melody.<br><br><rules><spellName>Aria of Perseverence</spellName> <healing>heals</healing> nearby allies and grants a temporary <shield>shielding aura</shield>.</rules><br><br><rules><spellName>Song of Celerity</spellName> grants a temporary aura that provides <speed>bonus Movement Speed.</speed></rules>",
+    "tooltip": "Every @Cooldown@ seconds, <keywordMajor>automatically cast</keywordMajor> the <spellName>Aria of Perseverence</spellName> and <spellName>Song of Celerity</spellName> in an alternating melody.<br><br><rules><spellName>Aria of Perseverence</spellName> <healing>heals</healing> nearby allies and grants a temporary <shield>shielding aura</shield>.</rules><br><br><rules><spellName>Song of Celerity</spellName> grants a temporary aura that provides <speed>bonus Movement Speed.</speed></rules>",
+    "dataValues": {
+      "Cooldown": 7.5,
+      "MaxLevel": 1.0
+    },
+    "add": {
+      "Augment_Sonata_SonaE": {
+        "dataValues": {
+          "SelfBaseMovementSpeed": 0.30000001192092896,
+          "AllyBaseMovementSpeed": [
+            0.20000000298023224,
+            0.2199999988079071,
+            0.23999999463558197,
+            0.25999999046325684,
+            0.2800000011920929,
+            0.30000001192092896,
+            0.3199999928474426
+          ],
+          "SelfMovementSpeedDurationMin": 3.0,
+          "SelfMovementSpeedDurationMax": 7.0,
+          "AllyMovementSpeedDuration": 3.0,
+          "AuraRange": 400.0,
+          "AuraDuration": 3.0,
+          "BaseGlobalCD": 0.5,
+          "TempoDuration": 2.0
+        },
+        "calcs": {
+          "TotalAllyMovementSpeed": {
+            "mDisplayAsPercent": true,
+            "mFormulaParts": [
+              {
+                "mDataValue": "AllyBaseMovementSpeed",
+                "~class": "NamedDataValueCalculationPart"
+              },
+              {
+                "mCoefficient": 0.00019999999494757503,
+                "~class": "StatByCoefficientCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "TotalSelfMovementSpeed": {
+            "mDisplayAsPercent": true,
+            "mFormulaParts": [
+              {
+                "mDataValue": "SelfBaseMovementSpeed",
+                "~class": "NamedDataValueCalculationPart"
+              },
+              {
+                "mCoefficient": 0.00019999999494757503,
+                "~class": "StatByCoefficientCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "TotalTempoMoveSpeedSlow": {
+            "mDisplayAsPercent": true,
+            "mFormulaParts": [
+              {
+                "mNumber": 0.5,
+                "~class": "NumberCalculationPart"
+              },
+              {
+                "mCoefficient": 0.00039999998989515007,
+                "~class": "StatByCoefficientCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          }
+        }
+      },
+      "Augment_Sonata_SonaW": {
+        "dataValues": {
+          "BaseHeal": [
+            60.0,
+            75.0,
+            90.0,
+            105.0,
+            120.0,
+            135.0,
+            150.0
+          ],
+          "AuraDuration": 3.0,
+          "AuraRange": 400.0,
+          "BaseGlobalCD": 0.5,
+          "DiminuendoDuration": 3.0,
+          "HealRange": 1000.0,
+          "ShieldDuration": 1.5,
+          "AccelerandoShieldBreakpoint": [
+            5.0,
+            25.0,
+            45.0,
+            65.0,
+            85.0,
+            105.0,
+            125.0
+          ],
+          "HealRatio": 0.6000000238418579,
+          "ShieldRatio": 0.4000000059604645,
+          "BaseShield": 80.0
+        },
+        "calcs": {
+          "TotalDiminuendoWeakenPercent": {
+            "mDisplayAsPercent": true,
+            "mFormulaParts": [
+              {
+                "mNumber": 0.25,
+                "~class": "NumberCalculationPart"
+              },
+              {
+                "mCoefficient": 0.00039999998989515007,
+                "~class": "StatByCoefficientCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "TotalHeal": {
+            "mFormulaParts": [
+              {
+                "mDataValue": "BaseHeal",
+                "~class": "NamedDataValueCalculationPart"
+              },
+              {
+                "mDataValue": "HealRatio",
+                "~class": "StatByNamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          },
+          "TotalShield": {
+            "mFormulaParts": [
+              {
+                "mDataValue": "BaseShield",
+                "~class": "NamedDataValueCalculationPart"
+              },
+              {
+                "mDataValue": "ShieldRatio",
+                "~class": "StatByNamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "GameCalculation"
+          }
+        }
+      }
+    },
+    "icons": [
+      "assets/ux/kiwi/augments/icons/sonata_small.tex",
+      "assets/ux/kiwi/augments/icons/sonata_large.tex"
+    ]
+  },
+  {
     "id": 2007,
     "apiName": "ARAM_LittleDevil",
     "name": "Devil on Your Shoulder",
@@ -10800,6 +11128,46 @@
     ]
   },
   {
+    "id": 2024,
+    "apiName": "CritNCast",
+    "name": "Crit 'n Cast",
+    "rarity": "Silver",
+    "desc": "Gain Ability Haste equal to @CritToHasteConversion*100@% of your <crit>%i:scaleCrit% Critical Strike Chance</crit>.<br>",
+    "tooltip": "Gain @f1@ Ability Haste (@CritToHasteConversion*100@%%i:scaleCrit%).",
+    "dataValues": {
+      "CritToHasteConversion": [
+        0.4000000059604645,
+        0.4000000059604645,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "MaxLevel": 2.0
+    },
+    "calculations": {
+      "CritToHasteConversionTT": {
+        "mFormulaParts": [
+          {
+            "mDataValue": "CritToHasteConversion",
+            "mStat": 8,
+            "~class": "StatByNamedDataValueCalculationPart"
+          }
+        ],
+        "mMultiplier": {
+          "mNumber": 100.0,
+          "~class": "NumberCalculationPart"
+        },
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "assets/ux/kiwi/augments/icons/critncast_small.tex",
+      "assets/ux/kiwi/augments/icons/critncast_large.tex"
+    ]
+  },
+  {
     "id": 2026,
     "apiName": "KillSecured",
     "name": "Kill Secured",
@@ -10814,6 +11182,334 @@
     "icons": [
       "assets/ux/kiwi/augments/icons/killsecure_small.tex",
       "assets/ux/kiwi/augments/icons/killsecure_large.tex"
+    ]
+  },
+  {
+    "id": 2032,
+    "apiName": "FishBait",
+    "name": "Shark Bait",
+    "rarity": "Gold",
+    "desc": "A few seconds after death, a shark chomps all nearby enemies. You can move after death to aim the shark attack.",
+    "maxLevelTooltip": "At Max Level, your allies also gain this effect on death.",
+    "tooltip": "On death, become <keyword>Shark Bait</keyword>. You can take no actions other than moving, which <status>slows nearby enemies by @Slow*100@%</status>. After a few seconds, a <keyword>Shark</keyword> emerges, <status>knocking up</status> all nearby Enemies and biting them for <magicDamage>@BaseDamageToApply@ + @MissingHealthPercentDamage@ Missing Health Magic Damage</magicDamage>.<br><br>Times the Shark consumed an Enemy Champion: <attention>@f2.0@</attention>",
+    "dataValues": {
+      "AOESize": 400.0,
+      "Duration": 3.5,
+      "MoveSpeed": 400.0,
+      "Slow": 0.4000000059604645,
+      "MaxLevel": 2.0,
+      "MissingHealthPercent": [
+        0.10000000149011612,
+        0.10000000149011612,
+        0.25,
+        0.3499999940395355,
+        0.3499999940395355,
+        0.3499999940395355,
+        0.3499999940395355
+      ]
+    },
+    "calculations": {
+      "BaseDamageToApply": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 350.0,
+            "mStartValue": 120.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "MissingHealthPercentDamage": {
+        "mDisplayAsPercent": true,
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mDataValue": "MissingHealthPercent",
+            "~class": "NamedDataValueCalculationPart"
+          }
+        ],
+        "mSimpleTooltipCalculationDisplay": 5,
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "assets/ux/kiwi/augments/icons/fishbait_small.tex",
+      "assets/ux/kiwi/augments/icons/fishbait_large.tex"
+    ]
+  },
+  {
+    "id": 2043,
+    "apiName": "NatureIsHealing",
+    "name": "Nature is Healing",
+    "rarity": "Gold",
+    "desc": "Entering <keyword>Brush</keyword> regenerates <healing>a large amount of Health</healing>.",
+    "tooltip": "Entering <keyword>Brush</keyword> restores <healing>@FlatHeal@ + @MissingHealthHeal@ Missing Health</healing>, @BrushCooldown@ second cooldown per brush.<br><br>Total Healing: @f1.0@",
+    "dataValues": {
+      "BrushCooldown": 10.0,
+      "MaxLevel": 1.0
+    },
+    "calculations": {
+      "FlatHeal": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 300.0,
+            "mStartValue": 40.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "MissingHealthHeal": {
+        "mDisplayAsPercent": true,
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.15000000596046448,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "mSimpleTooltipCalculationDisplay": 5,
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "assets/ux/kiwi/augments/icons/natureishealing_small.tex",
+      "assets/ux/kiwi/augments/icons/natureishealing_large.tex"
+    ]
+  },
+  {
+    "id": 2087,
+    "apiName": "ARAM_Archmage",
+    "name": "Archmage",
+    "rarity": "Prismatic",
+    "desc": "Casting a spell refunds another random spell's cost by @RefundPercent*100@% of the original spell's Cooldown.",
+    "tooltip": "Casting a spell refunds another random spell's cost by @RefundPercent*100@% of the original spell's Cooldown.",
+    "dataValues": {
+      "RefundPercent": 0.30000001192092896,
+      "MaxLevel": 1.0
+    },
+    "icons": [
+      "assets/ux/cherry/augments/icons/eureka_small.tex",
+      "assets/ux/cherry/augments/icons/eureka_large.tex"
+    ]
+  },
+  {
+    "id": 2099,
+    "apiName": "ARAM_DivineDomain",
+    "name": "Rite of Ascension",
+    "rarity": "Prismatic",
+    "desc": "On takedown, enemy champions leave behind their Essence. Attacking the Essence grants <speed>movement speed</speed> and resets basic ability cooldowns.",
+    "tooltip": "Champion takedowns within @Kill_Track_Duration@ seconds of damaging them causes them to leave behind their <keywordMajor>Essence</keywordMajor> for @Soul_Duration@ seconds. Attacking an <keywordMajor>Essence</keywordMajor> consumes it.<br><br>Consuming an <keywordMajor>Essence</keywordMajor> blinks you to its location, makes you <attention>Untargetable</attention> and <attention>Unstoppable</attention>, grants <speed>@Calc_Move_Speed@ Move Speed</speed> decaying over @Move_Speed_Duration@ seconds, <healing>heals you @Calc_Heal_Min@ to @Calc_Heal_Max@ based on your Missing Health</healing>, and resets your basic Ability cooldowns. <br><br><rules>Healing: @f1.0@<br>Cooldown Time Refunded: @f3.0@</rules><br><br><flavorText>Today, you will see the power of Ascension! — Azir, the Emperor of the Sands</flavorText>",
+    "dataValues": {
+      "Soul_Duration": 8.0,
+      "Windup_Duration": 1.25,
+      "Radius": 375.0,
+      "Move_Speed_Duration": 2.0,
+      "Soul_Attack_Range": 400.0,
+      "Kill_Track_Duration": 3.0,
+      "MaxLevel": 1.0
+    },
+    "calculations": {
+      "Calc_Damage": {
+        "mDisplayAsPercent": true,
+        "mFormulaParts": [
+          {
+            "mEndValue": 0.20000000298023224,
+            "mStartValue": 0.10000000149011612,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          },
+          {
+            "mCoefficient": 0.07000000029802322,
+            "mStat": 4,
+            "mStatFormula": 2,
+            "~class": "StatByCoefficientCalculationPart"
+          },
+          {
+            "mCoefficient": 0.001500000013038516,
+            "mStat": 29,
+            "~class": "StatByCoefficientCalculationPart"
+          },
+          {
+            "mCoefficient": 0.003000000026077032,
+            "mStat": 22,
+            "~class": "StatByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "Calc_Heal_Max": {
+        "mModifiedGameCalculation": "Calc_Heal_Min",
+        "mMultiplier": {
+          "mNumber": 2.0,
+          "~class": "NumberCalculationPart"
+        },
+        "~class": "GameCalculationModified"
+      },
+      "Calc_Heal_Min": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 300.0,
+            "mStartValue": 75.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          },
+          {
+            "OutputType": 2,
+            "mCoefficient": 0.5,
+            "mStat": 2,
+            "mStatFormula": 2,
+            "~class": "StatByCoefficientCalculationPart"
+          },
+          {
+            "mCoefficient": 0.25,
+            "~class": "StatByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "Calc_Move_Speed": {
+        "mDisplayAsPercent": true,
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mNumber": 1.0,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "mSimpleTooltipCalculationDisplay": 5,
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "assets/ux/kiwi/augments/icons/glasscannon_small.tex",
+      "assets/ux/kiwi/augments/icons/glasscannon_large.tex"
+    ]
+  },
+  {
+    "id": 2107,
+    "apiName": "ARAM_Hellbent",
+    "name": "Hellbent",
+    "rarity": "Prismatic",
+    "desc": "Damaging enemy champions with Attacks or Abilities grants stacks. At max stacks, you <attention>revive empowered</attention> upon death. ",
+    "tooltip": "Striking enemy champions with Attacks or Abilities grants you a stack of <attention>Revivemaxxing</attention> for @Stacks_Duration@ seconds (max: @Stacks_Max@). At max stacks become <danger>Hellbent</danger>.<br><br><danger>Hellbent</danger>: Upon dying, <attention>revive</attention> over the course of @Revive_Duration@ seconds at <scaleHealth>@Calc_Revive_Max_Health@ max Health</scaleHealth>. Afterwards, you gain <attention>@Calc_AdaptiveForce@ Adaptive Force</attention>, <speed>@Calc_MoveSpeed@ Move Speed towards enemy champions</speed>, and <lifeSteal>@Calc_Omnivamp@ Omnivamp</lifeSteal> for @Buff_Duration@ seconds.<br><br>This has a @Cooldown@ second cooldown.",
+    "dataValues": {
+      "Revive_Duration": 4.0,
+      "Cooldown": 90.0,
+      "Buff_Duration": 15.0,
+      "Stacks_Duration": 6.0,
+      "Stacks_Max": 10.0,
+      "MaxLevel": 1.0
+    },
+    "calculations": {
+      "HellbentIDCDMaybe": {
+        "mDisplayAsPercent": true,
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.5,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "mSimpleTooltipCalculationDisplay": 5,
+        "~class": "GameCalculation"
+      },
+      "Calc_AdaptiveForce": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 200.0,
+            "mStartValue": 25.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "Calc_MoveSpeed": {
+        "mDisplayAsPercent": true,
+        "mFormulaParts": [
+          {
+            "mEndValue": 0.4000000059604645,
+            "mStartValue": 0.20000000298023224,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "Calc_Omnivamp": {
+        "mDisplayAsPercent": true,
+        "mFormulaParts": [
+          {
+            "mEndValue": 0.30000001192092896,
+            "mStartValue": 0.15000000596046448,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "Calc_Revive_Max_Health": {
+        "mDisplayAsPercent": true,
+        "mFormulaParts": [
+          {
+            "mEndValue": 0.75,
+            "mStartValue": 0.3499999940395355,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "assets/ux/kiwi/augments/icons/hellbent_small.tex",
+      "assets/ux/kiwi/augments/icons/hellbent_large.tex"
+    ]
+  },
+  {
+    "id": 2132,
+    "apiName": "WarlockJuicebox",
+    "name": "Warlock Juicebox",
+    "rarity": "Gold",
+    "desc": "Gain <lifeSteal>@Calc_Vamp@ Omnivamp</lifeSteal>.",
+    "tooltip": "Gain <lifeSteal>@Calc_Vamp@ Omnivamp</lifeSteal>.",
+    "dataValues": {
+      "MaxLevel": 1.0
+    },
+    "calculations": {
+      "Calc_Vamp": {
+        "mDisplayAsPercent": true,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.10000000149011612,
+            "~class": "NumberCalculationPart"
+          },
+          {
+            "mCoefficient": 0.0003499999875202775,
+            "~class": "StatByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "assets/ux/kiwi/augments/icons/warlockjuicebox_small.tex",
+      "assets/ux/kiwi/augments/icons/warlockjuicebox_large.tex"
+    ]
+  },
+  {
+    "id": 2134,
+    "apiName": "SurgeField",
+    "name": "Surge Field",
+    "rarity": "Prismatic",
+    "desc": "On Ultimate cast, spawn a <keywordMajor>Zone</keywordMajor> that grants <scaleAbilityHaste>Ability Haste</scaleAbilityHaste> and <speed>Movement Speed</speed>. While inside, it fires missiles that deal <magicDamage>@MissileDamagePercent*100@% of your damage</magicDamage>.",
+    "tooltip": "On ultimate cast, spawn a <keywordMajor>Zone</keywordMajor> around you. While in it, gain <scaleAbilityHaste>@ZoneAbilityHaste@ Ability Haste</scaleAbilityHaste>, <speed>@ZoneMovementSpeed*100@% Movement Speed</speed>, and fire missiles that deal <magicDamage>@MissileDamagePercent*100@% of damage dealt</magicDamage> to enemies.<br><br>The <keywordMajor>Zone</keywordMajor> follows you the first time you leave it and expires after a short duration the second time you do so.<br><br>Missile Damage: @f1@",
+    "dataValues": {
+      "Buff_Duration": 6.0,
+      "Radius": 300.0,
+      "MissileDamagePercent": 0.20000000298023224,
+      "ZoneMovementSpeed": 0.4000000059604645,
+      "ZoneAbilityHaste": 50.0,
+      "MaxLevel": 1.0
+    },
+    "icons": [
+      "assets/ux/kiwi/augments/icons/surgefield_small.tex",
+      "assets/ux/kiwi/augments/icons/surgefield_large.tex"
     ]
   }
 ]
