@@ -1858,7 +1858,7 @@
           "mLocKeys": {
             "keyName": "Playful / Trickster",
             "keySummary": "Fizz hops into the air, landing gracefully upon his spear becoming untargetable. From this position, Fizz can either slam the ground or choose to jump again before smashing back down.",
-            "keyTooltip": "Fizz hops toward your cursor onto his spear, becoming untargetable, and then slams the ground dealing <magicDamage>@EDamage@ magic damage</magicDamage> to nearby enemies and <status>Slowing</status> them by @SlowAmount*100@% for 2 seconds.<br><br>Reactivating this ability while Fizz is on top of his spear causes Fizz to jump again towards your cursor and deal <magicDamage>@EDamage@ magic damage</magicDamage> in a smaller area to enemies nearby, instead of slamming the ground."
+            "keyTooltip": "Fizz hops toward your cursor onto his spear, becoming untargetable, and then slams the ground dealing <magicDamage>@EDamage@ magic damage</magicDamage> to nearby enemies and <status>Slowing</status> them by @SlowAmount*100@% for @SlowDuration@ seconds.<br><br>Reactivating this ability while Fizz is on top of his spear causes Fizz to jump again towards your cursor and deal <magicDamage>@EDamage@ magic damage</magicDamage> in a smaller area to enemies nearby, instead of slamming the ground."
           },
           "mObjectName": "Jade_FizzE",
           "~class": "TooltipInstanceSpell"
@@ -1965,6 +1965,19 @@
             100.0,
             130.0,
             160.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DashDistance",
+          "values": [
+            600.0,
+            600.0,
+            600.0,
+            600.0,
+            600.0,
+            600.0,
+            600.0
           ],
           "~class": "SpellDataValue"
         }
@@ -2131,15 +2144,6 @@
           "~class": "SpellEffectAmount"
         },
         {
-          "value": [
-            600.0,
-            600.0,
-            600.0,
-            600.0,
-            600.0,
-            600.0,
-            600.0
-          ],
           "~class": "SpellEffectAmount"
         },
         {
@@ -2827,15 +2831,15 @@
                   "~class": "TooltipInstanceListElement"
                 },
                 {
-                  "nameOverride": "Active Damage",
-                  "type": "ActiveBaseDamage",
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Missing Health Damage",
+                  "type": "MaxHealthScaling",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
-                  "Style": 1,
-                  "multiplier": 100.0,
-                  "nameOverride": "Missing Health Percent",
-                  "type": "MaxHealthScaling",
+                  "nameOverride": "Active Damage",
+                  "type": "ActiveBaseDamage",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -2846,7 +2850,7 @@
           "mLocKeys": {
             "keyName": "Seastone Trident",
             "keySummary": "Fizz's Trident causes rending wounds in his opponents, dealing magic damage to the target based on their missing health.",
-            "keyTooltip": "<spellPassive>Passive:</spellPassive> Fizz's attacks rend his enemies, dealing <magicDamage>@DoTDamage@ plus @MaxHealthScaling*100@%</magicDamage> of the target's missing health as <magicDamage>magic damage</magicDamage> over @PassiveDoTDuration@ seconds. (Max @MaxMonsterDamage@ vs. minions).<br><br><spellActive>Active:</spellActive> For @ActiveDuration@ seconds, Fizz's attacks deal an additional <magicDamage>@ActiveDamage@ magic damage</magicDamage> on hit and apply <status>Grievous Wounds</status> to his target, reducing incoming healing by 50%.",
+            "keyTooltip": "<spellPassive>Passive:</spellPassive> Fizz's attacks rend his enemies, dealing <magicDamage>@DoTDamage@ plus @MaxHealthScaling*100@%</magicDamage> of the target's missing health as <magicDamage>magic damage</magicDamage> over @PassiveDoTDuration@ seconds. (Max @MaxMonsterDamage@ vs. minions).<br><br><spellActive>Active:</spellActive> For @ActiveDuration@ seconds, Fizz's attacks deal an additional <magicDamage>@ActiveDamage@ magic damage</magicDamage> on hit and apply <status>Grievous Wounds</status> to his target, reducing incoming healing by @GrievousWounds*100@%.",
             "keyTooltipExtendedBelowLine": "<keyword>Grievous Wounds</keyword>: Reduces the effectiveness of Healing and Regeneration effects."
           },
           "mObjectName": "Jade_FizzW",

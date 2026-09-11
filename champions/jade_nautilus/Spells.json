@@ -240,7 +240,7 @@
           "mLocKeys": {
             "keyName": "Staggering Blow",
             "keySummary": "Nautilus' basic attacks deal bonus physical damage and immoblize his targets. This effect cannot happen more than once every few seconds on the same target.",
-            "keyTooltip": "Nautilus' first Attack against a target deals <physicalDamage>@BonusDamage@ bonus physical damage</physicalDamage> and <status>Roots</status> them for @RootDuration@ seconds.<br><br>This effect has a 12 second cooldown."
+            "keyTooltip": "Nautilus' first Attack against a target deals <physicalDamage>@BonusDamage@ bonus physical damage</physicalDamage> and <status>Roots</status> them for @RootDuration@ seconds.<br><br>This effect has a @PerTargetCD@ second cooldown."
           },
           "mObjectName": "Jade_NautilusPassive",
           "~class": "TooltipInstanceSpell"
@@ -1349,15 +1349,13 @@
           "mLocKeys": {
             "keyName": "Riptide",
             "keySummary": "Nautilus slams the ground, causing the earth to explode around him in a set of three explosions. Each explosion damages and slows enemies.",
-            "keyTooltip": "Nautilus slams the ground, creating three explosions that each deal <magicDamage>@DamageCalc@ magic damage</magicDamage> and <status>Slow</status> enemies by @SlowPercent*100@% decaying over @SlowDuration@ seconds.",
-            "keyTooltipExtendedBelowLine": "A unit can be hit by more than one explosion, but they take @DamageHalvedTooltip@ magic damage from additional explosions."
+            "keyTooltip": "Nautilus slams the ground, creating three explosions that each deal <magicDamage>@DamageCalc@ magic damage</magicDamage> and <status>Slow</status> enemies by @SlowPercent*100@% decaying over @SlowDuration@ seconds. A unit can be hit by more than one explosion, but they take <magicDamage>@DamageHalvedTooltip@ damage</magicDamage> from additional explosions."
           },
           "mObjectName": "Jade_NautilusE",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.5,
       "mFloatVarsDecimals": [
         0,
         0,
@@ -1614,7 +1612,7 @@
           },
           "mLocKeys": {
             "keyName": "Dredge Line",
-            "keySummary": "Nautilus hurls his anchor forward. If it hits a champion, he drags both himself and the opponent close together. If it hits terrain, Nautilus instead pulls himself to the anchor and the cooldown of Dredge Line is reduced by half.",
+            "keySummary": "Nautilus hurls his anchor forward. If it hits a champion, he drags both himself and the opponent close together. If it hits terrain, Nautilus instead pulls himself to the anchor and the cooldown of Dredge Line is reduced.",
             "keyTooltip": "Nautilus hurls his anchor forward. If it hits an enemy, Nautilus drags himself and the target together, dealing <magicDamage>@QDamageCalc@ magic damage</magicDamage> and <status>Stunning</status> them briefly.<br><br>Hitting terrain instead <status>Pulls</status> Nautilus forward and reduces this ability's cooldown by @TerrainCDR*100@%."
           },
           "mObjectName": "Jade_NautilusQ",
@@ -1894,11 +1892,6 @@
             "LevelUp": {
               "Elements": [
                 {
-                  "nameOverride": "Pass Through Damage",
-                  "type": "SecondaryDamage",
-                  "~class": "TooltipInstanceListElement"
-                },
-                {
                   "nameOverride": "Explosion Damage",
                   "type": "PrimaryDamage",
                   "~class": "TooltipInstanceListElement"
@@ -1906,6 +1899,11 @@
                 {
                   "nameOverride": "Stun Duration:",
                   "type": "StunDuration",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Pass Through Damage",
+                  "type": "SecondaryDamage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -1927,8 +1925,6 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.4000000059604645,
-      "mCoefficient2": 0.800000011920929,
       "mImgIconName": [
         "assets/ux/jade/s3icons/samesized/nautilus_grandline.dds"
       ],
@@ -2158,13 +2154,13 @@
         {
           "name": "DotDamageBase",
           "values": [
-            20.0,
+            25.0,
             40.0,
             55.0,
             70.0,
             85.0,
             100.0,
-            110.0
+            115.0
           ],
           "~class": "SpellDataValue"
         },
@@ -2204,6 +2200,19 @@
             -0.30000001192092896,
             -0.3499999940395355,
             -0.4000000059604645
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DotDuration",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
           ],
           "~class": "SpellDataValue"
         }
@@ -2298,14 +2307,13 @@
           "mLocKeys": {
             "keyName": "Titan's Wrath",
             "keySummary": "Nautilus gains a temporary Shield.  While it persists, his Attacks deal damage over time to his target and surrounding enemies.",
-            "keyTooltip": "Nautilus surrounds himself with dark energies, granting him <shield>@ShieldCalc@ Shield</shield> for @ShieldDuration@ seconds.<br><br>While the <shield>Shield</shield> persists, Nautilus' Attacks deal <magicDamage>@DotDamageCalc@ magic damage</magicDamage> over 2 seconds to the target and surrounding enemies."
+            "keyTooltip": "Nautilus surrounds himself with dark energies, granting him <shield>@ShieldCalc@ Shield</shield> for @ShieldDuration@ seconds.<br><br>While the <shield>Shield</shield> persists, Nautilus' Attacks deal <magicDamage>@DotDamageCalc@ magic damage</magicDamage> over @DotDuration@ seconds to the target and surrounding enemies."
           },
           "mObjectName": "Jade_NautilusW",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.4000000059604645,
       "mFloatVarsDecimals": [
         0,
         2,

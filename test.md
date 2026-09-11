@@ -2,6 +2,12 @@
 
 ## League Classic
 
+### Champions
+
+**Like last time, I will only be reporting changes to new Champions following their addition on PBE.**
+
+* Added: Fizz, Graves, Nami, Nautilus
+
 ### Items
 
 **Moonflair Spellblade**

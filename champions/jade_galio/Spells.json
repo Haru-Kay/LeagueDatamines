@@ -306,7 +306,7 @@
           "mLocKeys": {
             "keyName": "Righteous Gust",
             "keySummary": "Galio claps his wings, unleashing a gust of concussive wind that damages enemies and leaves a directional draft in its wake that increases ally movement speed.",
-            "keyTooltip": "Galio unleashes a gust of concussive wind that deals <magicDamage>@TotalDamage@ magic damage</magicDamage>  to all enemies in its path. A directional draft remains for 5 seconds, allies gain <speed>@MoveSpeedMod*100@% Movement Speed</speed> while moving in line with the draft."
+            "keyTooltip": "Galio unleashes a gust of concussive wind that deals <magicDamage>@TotalDamage@ magic damage</magicDamage>  to all enemies in its path. A directional draft remains for @DraftDuration@ seconds, allies gain <speed>@MoveSpeedMod*100@% Movement Speed</speed> while moving in line with the draft."
           },
           "mObjectName": "Jade_GalioE_Haste",
           "~class": "TooltipInstanceSpell"
@@ -728,6 +728,19 @@
             285.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "DraftDuration",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -828,7 +841,7 @@
           "mLocKeys": {
             "keyName": "Righteous Gust",
             "keySummary": "Galio claps his wings, unleashing a gust of concussive wind that damages enemies and leaves a directional draft in its wake that increases ally movement speed.",
-            "keyTooltip": "Galio unleashes a gust of concussive wind that deals <magicDamage>@TotalDamage@ magic damage</magicDamage>  to all enemies in its path. A directional draft remains for 5 seconds, allies gain <speed>@MoveSpeedMod*100@% Movement Speed</speed> while moving in line with the draft."
+            "keyTooltip": "Galio unleashes a gust of concussive wind that deals <magicDamage>@TotalDamage@ magic damage</magicDamage>  to all enemies in its path. A directional draft remains for @DraftDuration@ seconds, allies gain <speed>@MoveSpeedMod*100@% Movement Speed</speed> while moving in line with the draft."
           },
           "mObjectName": "Jade_GalioE",
           "~class": "TooltipInstanceSpell"
@@ -1267,19 +1280,6 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "TooltipMaxDamage",
-          "values": [
-            40.0,
-            40.0,
-            40.0,
-            40.0,
-            40.0,
-            40.0,
-            40.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "name": "ReducedDamage",
           "values": [
             0.5,
@@ -1289,6 +1289,19 @@
             0.5,
             0.5,
             0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ChannelDuration",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1389,8 +1402,8 @@
           "mLocKeys": {
             "keyName": "Idol of Durand",
             "keySummary": "Galio assumes the form of a statue, taunting nearby enemies and storing concussive energy as they attack him.  Galio then bursts from his statue shell, releasing the stored energy to damage surrounding foes.",
-            "keyTooltip": "Galio channels for 2 seconds, taunting nearby foes and taking @ReducedDamage*100@% of reduced damage.<br><br>After channeling, Galio deals <magicDamage>@TotalDamage@ magic damage</magicDamage> to surrounding enemies, plus an additional 5% damage for each attack he suffered while channeling.",
-            "keyTooltipExtendedBelowLine": "<rules> Max @TooltipMaxDamage@% additional damage.</rules>"
+            "keyTooltip": "Galio channels for @ChannelDuration@ seconds, taunting nearby foes and taking @ReducedDamage*100@% of reduced damage.<br><br>After channeling, Galio deals <magicDamage>@TotalDamage@ magic damage</magicDamage> to surrounding enemies, plus an additional @PercentPerHitIncrease*100@% damage for each attack he suffered while channeling.",
+            "keyTooltipExtendedBelowLine": "<rules>Maximum damage: <magicDamage>@MaximumDamageTooltip@</magicDamage>.</rules>"
           },
           "mObjectName": "Jade_GalioR",
           "~class": "TooltipInstanceSpell"
@@ -1428,6 +1441,14 @@
         "~class": "ObjectTags"
       },
       "mSpellCalculations": {
+        "0x442d07f7": {
+          "mModifiedGameCalculation": "TotalDamage",
+          "mMultiplier": {
+            "mNumber": 1.399999976158142,
+            "~class": "NumberCalculationPart"
+          },
+          "~class": "GameCalculationModified"
+        },
         "TotalDamage": {
           "mFormulaParts": [
             {
@@ -1528,6 +1549,32 @@
             100.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "BuffDuration",
+          "values": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ConsecutiveHealReduction",
+          "values": [
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -1623,130 +1670,15 @@
           "mLocKeys": {
             "keyName": "Bulwark",
             "keySummary": "Galio shields an ally Champion, increasing their Armor and Magic Resistance, and restoring Galio's health each time that Champion suffers damage.",
-            "keyTooltip": "Galio shields a friendly champion or himself, shielded targets gain <scaleArmor>@BonusDefense@ Armor</scaleArmor> and <scaleMR>@BonusDefense@ Magic Resistance</scaleMR> for 4 seconds. Galio is healed for <healing>@TotalHeal@</healing> each time the unit suffers damage.",
-            "keyTooltipExtendedBelowLine": "<rules>The heal is diminished by 20% healing for each consecutive hit</rules>"
+            "keyTooltip": "Galio empowers a friendly champion or himself, giving them <scaleArmor>@BonusDefense@ Armor</scaleArmor> and <scaleMR>@BonusDefense@ Magic Resistance</scaleMR> for @BuffDuration@ seconds. Galio is healed for <healing>@TotalHeal@</healing> each time they suffer damage.",
+            "keyTooltipExtendedBelowLine": "<rules>The heal is diminished by @ConsecutiveHealReduction*100@% for each consecutive hit.</rules>"
           },
           "mObjectName": "Jade_GalioW",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.07999999821186066,
-      "mCoefficient2": 0.5,
       "mDoNotNeedToFaceTarget": true,
-      "mEffectAmount": [
-        {
-          "value": [
-            25.0,
-            25.0,
-            30.0,
-            35.0,
-            40.0,
-            45.0,
-            45.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            15.0,
-            15.0,
-            15.0,
-            15.0,
-            15.0,
-            15.0,
-            15.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            1.25,
-            1.25,
-            1.25,
-            1.25,
-            1.25,
-            1.25,
-            1.25
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0
-          ],
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         0,
         0,

@@ -153,12 +153,12 @@
   "0x934f74b6": {
     "ObjectName": "Jade_FioraQ_CD",
     "mBuff": {
-      "mDescription": "Fiora can Lunge a second time.",
+      "mDescription": "Fiora can Lunge again.",
       "mTooltipData": {
         "mFormat": "0xb34f999a",
         "mLocKeys": {
           "keyName": "Lunge",
-          "keyTooltip": "Fiora can Lunge a second time."
+          "keyTooltip": "Fiora can Lunge again."
         },
         "mObjectName": "Jade_FioraQ_CD",
         "~class": "TooltipInstanceBuff"
@@ -694,6 +694,32 @@
             1.350000023841858
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "BuffDuration",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxStacks",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -780,7 +806,7 @@
           "mLocKeys": {
             "keyName": "Burst of Speed",
             "keySummary": "Fiora temporarily gains additional Attack Speed. Each attack or Lunge she lands during this time increases her Move Speed. Killing a champion refreshes the Cooldown on this Ability.",
-            "keyTooltip": "Fiora gains <attackSpeed>@ASBonus*100@% Attack Speed</attackSpeed> for 3 seconds. Each Attack or <spellName>Lunge</spellName> she lands during this time grants Fiora <speed>@MSBonus*100@% Move Speed</speed> for 3 seconds, stacking up to 3 times.<br><br>Killing a champion refreshes this Ability's Cooldown. (Assists reduce the Cooldown by @HalfCooldown@ seconds)"
+            "keyTooltip": "Fiora gains <attackSpeed>@ASBonus*100@% Attack Speed</attackSpeed> for @BuffDuration@ seconds. Each Attack or <spellName>Lunge</spellName> she lands during this time grants Fiora <speed>@MSBonus*100@% Move Speed</speed> for @BuffDuration@ seconds, stacking up to @MaxStacks@ times.<br><br>Killing a champion refreshes this Ability's Cooldown. (Assists reduce the Cooldown by @HalfCooldown@ seconds)"
           },
           "mObjectName": "Jade_FioraE",
           "~class": "TooltipInstanceSpell"
@@ -854,7 +880,7 @@
   "Characters/Jade_Fiora/Spells/Jade_FioraQAbility/Jade_FioraQ": {
     "ObjectName": "Jade_FioraQ",
     "mBuff": {
-      "mDescription": "Fiora can Lunge a second time.",
+      "mDescription": "Fiora can Lunge again.",
       "~class": "BuffData"
     },
     "mScriptName": "Jade_FioraQ",
@@ -908,6 +934,19 @@
             1200.0,
             1200.0,
             1200.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "RecastWindow",
+          "values": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
           ],
           "~class": "SpellDataValue"
         }
@@ -983,7 +1022,7 @@
           "mLocKeys": {
             "keyName": "Lunge",
             "keySummary": "Fiora dashes forward to strike her target, dealing physical damage. Fiora can perform the dash a second time within a couple of seconds at no mana cost",
-            "keyTooltip": "Fiora dashes forward to strike her target, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage>.<br><br>Fiora can <recast>Recast</recast> this Ability to dash a second time within 4 seconds at no <scaleMana>Mana</scaleMana> cost."
+            "keyTooltip": "Fiora dashes forward to strike her target, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage>.<br><br>Fiora can <recast>Recast</recast> this Ability to dash within @RecastWindow@ seconds at no <scaleMana>Mana</scaleMana> cost."
           },
           "mObjectName": "Jade_FioraQ",
           "~class": "TooltipInstanceSpell"
@@ -1331,6 +1370,19 @@
             40.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "ParryDuration",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -1432,7 +1484,7 @@
           "mLocKeys": {
             "keyName": "Riposte",
             "keySummary": "Fiora's Attack Damage is increased. When activated, Fiora parries the next basic attack and reflects magic damage back to the attacker. Works against champions, monsters, and large minions.",
-            "keyTooltip": "<spellPassive>Passive: </spellPassive>Fiora's <physicalDamage>Attack Damage</physicalDamage> is increased by <physicalDamage>@BonusAD@</physicalDamage>.<br><br><spellActive>Active: </spellActive>Fiora parries the next Attack within 1.5 seconds and reflects <magicDamage>@ReflectionDamage@ magic damage</magicDamage> back to the attacker. Works against champions, monsters, and large minions."
+            "keyTooltip": "<spellPassive>Passive: </spellPassive>Fiora's <physicalDamage>Attack Damage</physicalDamage> is increased by <physicalDamage>@BonusAD@</physicalDamage>.<br><br><spellActive>Active: </spellActive>Fiora parries the next Attack within @ParryDuration@ seconds and reflects <magicDamage>@ReflectionDamage@ magic damage</magicDamage> back to the attacker. Works against champions, monsters, and large minions."
           },
           "mObjectName": "Jade_FioraW",
           "~class": "TooltipInstanceSpell"
