@@ -1339,7 +1339,8 @@
           "mLocKeys": {
             "keyName": "Devastating Blow",
             "keySummary": "Poppy's next attack crushes her opponent, dealing bonus damage based on her target's max health.",
-            "keyTooltip": "Poppy's next attack deals <magicDamage>@FlatDamageCalc@ + @HealthRatio*100@% maximum Health magic damage</magicDamage>. The percent health bonus damage cannot exceed @HealthDamageCap@."
+            "keyTooltip": "Poppy's next attack deals <magicDamage>@FlatDamageCalc@ + @HealthRatio*100@% maximum Health magic damage</magicDamage>.",
+            "keyTooltipExtendedBelowLine": "<rules>Devastating Blow's damage is capped at <magicDamage>@MaxDamageCalcTooltip@</magicDamage>.<br>Damage from <keywordMajor>Spellblade</keywordMajor> is converted to <magicDamage>magic damage</magicDamage>.<br>Can critically strike for <magicDamage>@FlatDamageCalcOnCrit@ damage</magicDamage> (capped at <magicDamage>@MaxCritDamageCalcTooltip@</magicDamage>).</rules>"
           },
           "mObjectName": "Jade_PoppyQ",
           "~class": "TooltipInstanceSpell"
@@ -1354,6 +1355,87 @@
       "mLineWidth": 100.0,
       "mMinimapIconDisplayFlag": 3,
       "mSpellCalculations": {
+        "0x4703f6f4": {
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "HealthDamageCap",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mPart1": {
+                "mDataValue": "TotalADRatio",
+                "mStat": 2,
+                "~class": "StatByNamedDataValueCalculationPart"
+              },
+              "mPart2": {
+                "mCoefficient": 1.0,
+                "mStat": 9,
+                "~class": "StatByCoefficientCalculationPart"
+              },
+              "~class": "ProductOfSubPartsCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "0xc8693ea4": {
+          "mExpandedTooltipCalculationDisplay": 6,
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "HealthDamageCap",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "TotalADRatio",
+              "mStat": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "0xdfd66c3f": {
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mPart1": {
+                "mCoefficient": 1.0,
+                "mStat": 9,
+                "~class": "StatByCoefficientCalculationPart"
+              },
+              "mPart2": {
+                "mDataValue": "TotalADRatio",
+                "mStat": 2,
+                "~class": "StatByNamedDataValueCalculationPart"
+              },
+              "~class": "ProductOfSubPartsCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
         "FlatDamageCalc": {
           "mFormulaParts": [
             {

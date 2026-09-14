@@ -554,13 +554,13 @@
         }
       ],
       "mHitBoneName": "C_BuffBone_Glb_Center_Loc",
-      "mHitEffectKey": "0xd06a1801",
+      "mHitEffectKey": "Jade_Graves_R_hit",
       "mImgIconName": [
         "assets/ux/jade/s3icons/samesized/graveshighnoon.dds"
       ],
       "mIsDisabledWhileDead": false,
       "mLineWidth": 100.0,
-      "mMissileEffectKey": "0x8b771c77",
+      "mMissileEffectKey": "Jade_Graves_R_mis",
       "mMissileSpec": {
         "behaviors": [
           {
@@ -867,7 +867,7 @@
       ],
       "mIsDisabledWhileDead": false,
       "mLineWidth": 20.0,
-      "mMissileEffectKey": "0xd06a1801",
+      "mMissileEffectKey": "Jade_Graves_R_hit",
       "mMissileSpec": {
         "behaviors": [
           {
@@ -917,7 +917,15 @@
   "0x7bae926a": {
     "ObjectName": "Jade_GravesW_BoomSlow",
     "mBuff": {
-      "mDescription": "This unit has reduced Movement Speed.",
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Smoke Screen",
+          "keyTooltip": "This unit has reduced Movement Speed."
+        },
+        "mObjectName": "Jade_GravesW_BoomSlow",
+        "~class": "TooltipInstanceBuff"
+      },
       "~class": "BuffData"
     },
     "mScriptName": "Jade_GravesW_BoomSlow",
@@ -1015,12 +1023,12 @@
             "lineStopsAtEndPosition": false,
             "lineWidth": {
               "mPerLevelValues": [
-                60.0,
-                60.0,
-                60.0,
-                60.0,
-                60.0,
-                60.0
+                50.0,
+                50.0,
+                50.0,
+                50.0,
+                50.0,
+                50.0
               ],
               "mValueType": 2,
               "~class": "FloatPerSpellLevel"
@@ -1051,8 +1059,8 @@
       "mImgIconName": [
         "assets/ux/jade/s3icons/samesized/gravesbuckshot.dds"
       ],
-      "mLineWidth": 60.0,
-      "mMissileEffectKey": "0x2791eaae",
+      "mLineWidth": 50.0,
+      "mMissileEffectKey": "Jade_Graves_Q_Mis",
       "mMissileSpec": {
         "behaviors": [
           {
@@ -1065,7 +1073,7 @@
         "heightSolver": {
           "~class": "BlendedLinearHeightSolver"
         },
-        "mMissileWidth": 40.0,
+        "mMissileWidth": 50.0,
         "movementComponent": {
           "mProjectTargetToCastRange": true,
           "mSpeed": 2000.0,
@@ -1271,7 +1279,7 @@
         "assets/ux/jade/s3icons/samesized/gravessmokegrenade.dds"
       ],
       "mLineWidth": 120.0,
-      "mMissileEffectKey": "0xc37de58c",
+      "mMissileEffectKey": "Jade_Graves_W_mis",
       "mMissileSpec": {
         "behaviors": [
           {
@@ -1379,7 +1387,7 @@
           "mLocKeys": {
             "keyName": "True Grit",
             "keySummary": "Graves gains increasing armor and magic resistance the longer he remains in combat.",
-            "keyTooltip": "Graves gains @TotalArmor@ bonus Armor and Magic Resist every second he remains in combat (stacks up to @PassiveMaxStacks@ times).<br><br>Graves is treated as in combat if he has dealt or taken damage in the last @BuffDuration@ seconds."
+            "keyTooltip": "Graves gains @TotalArmor@ bonus <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> every second he remains in combat (stacks up to @PassiveMaxStacks@ times).<br><br>Graves is treated as in combat if he has dealt or taken damage in the last @BuffDuration@ seconds."
           },
           "mObjectName": "Jade_GravesPassive",
           "~class": "TooltipInstanceSpell"
@@ -1866,7 +1874,7 @@
       "bHaveHitBone": true,
       "bHaveHitEffect": true,
       "castConeDistance": 100.0,
-      "castFrame": 7.0,
+      "castFrame": 2.0,
       "castRadius": [
         100.0,
         100.0,
@@ -1912,12 +1920,11 @@
       "mAnimationName": "Attack2",
       "mApplyAttackDamage": true,
       "mApplyMaterialOnHitSound": true,
-      "mCantCancelWhileWindingUp": true,
       "mCastType": 1,
       "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
-      "mHitEffectKey": "0x40125a6a",
+      "mHitEffectKey": "Jade_Graves_BA_tar",
       "mLookAtPolicy": 1,
-      "mMissileEffectKey": "0x6585623e",
+      "mMissileEffectKey": "Jade_Graves_BA_mis",
       "mMissileSpec": {
         "behaviors": [
           {
@@ -1929,7 +1936,7 @@
         ],
         "movementComponent": {
           "mSpeed": 3000.0,
-          "mStartBoneName": "BUFFBONE_CSTM_WEAPONA",
+          "mStartBoneName": "BUFFBONE_CSTM_WEAPONB",
           "mTargetHeightAugment": 100.0,
           "~class": "FixedSpeedMovement"
         },
@@ -1939,8 +1946,6 @@
         "~class": "MissileSpecification"
       },
       "missileSpeed": 3000.0,
-      "spellCastTime": 0.382099986076355,
-      "useAnimatorFramerate": true,
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jade_Graves/Spells/Jade_GravesBasicAttack",
@@ -1971,7 +1976,7 @@
       "bHaveHitBone": true,
       "bHaveHitEffect": true,
       "castConeDistance": 100.0,
-      "castFrame": 7.0,
+      "castFrame": 2.0,
       "castRadius": [
         100.0,
         100.0,
@@ -2017,12 +2022,11 @@
       "mAnimationName": "Attack2",
       "mApplyAttackDamage": true,
       "mApplyMaterialOnHitSound": true,
-      "mCantCancelWhileWindingUp": true,
       "mCastType": 1,
       "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
-      "mHitEffectKey": "0x40125a6a",
+      "mHitEffectKey": "Jade_Graves_BA_tar",
       "mLookAtPolicy": 1,
-      "mMissileEffectKey": "0x6585623e",
+      "mMissileEffectKey": "Jade_Graves_BA_mis",
       "mMissileSpec": {
         "behaviors": [
           {
@@ -2044,8 +2048,6 @@
         "~class": "MissileSpecification"
       },
       "missileSpeed": 3000.0,
-      "spellCastTime": 0.382099986076355,
-      "useAnimatorFramerate": true,
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jade_Graves/Spells/Jade_GravesBasicAttack2",
@@ -2295,13 +2297,12 @@
         0.0
       ],
       "mAffectsTypeFlags": 21711,
-      "mAnimationName": "Attack2",
       "mApplyAttackDamage": true,
       "mApplyMaterialOnHitSound": true,
       "mCastType": 1,
       "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
-      "mHitEffectKey": "0x7a9183ff",
-      "mMissileEffectKey": "0x6585623e",
+      "mHitEffectKey": "Jade_Graves_BA_tar_crit",
+      "mMissileEffectKey": "Jade_Graves_BA_mis",
       "mMissileSpec": {
         "behaviors": [
           {
@@ -2314,7 +2315,7 @@
         "movementComponent": {
           "mOffsetInitialTargetHeight": 100.0,
           "mSpeed": 3400.0,
-          "mStartBoneName": "R_hand",
+          "mStartBoneName": "BUFFBONE_CSTM_WEAPONA",
           "mTargetHeightAugment": 100.0,
           "~class": "FixedSpeedMovement"
         },
@@ -2324,8 +2325,6 @@
         "~class": "MissileSpecification"
       },
       "missileSpeed": 3400.0,
-      "spellCastTime": 0.382099986076355,
-      "useAnimatorFramerate": true,
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jade_Graves/Spells/Jade_GravesCritAttack",
@@ -2836,7 +2835,8 @@
           "mLocKeys": {
             "keyName": "Buckshot",
             "keySummary": "Graves fires three bullets in a cone, damaging all enemies in their paths.",
-            "keyTooltip": "Shoots three bullets in a cone, each dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> to all enemies in their path. Enemies hit with multiple bullets take <physicalDamage>@ReducedDamage@ damage</physicalDamage> from each additional bullet.<br><br><flavorText>\"Tang! Tang! Tang! BANG!\"</flavorText>"
+            "keyTooltip": "Shoots three bullets in a cone, each dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> to all enemies in their path. Enemies hit with multiple bullets take <physicalDamage>@ReducedDamage@ damage</physicalDamage> from each additional bullet.",
+            "keyTooltipExtendedBelowLine": "<flavorText>\"Tang! Tang! Tang! BANG!\"</flavorText>"
           },
           "mObjectName": "Jade_GravesQ",
           "~class": "TooltipInstanceSpell"
@@ -2866,7 +2866,6 @@
       ],
       "mSpellCalculations": {
         "ReducedDamage": {
-          "mExpandedTooltipCalculationDisplay": 2,
           "mModifiedGameCalculation": "TotalDamage",
           "mMultiplier": {
             "mDataValue": "MultiHitPenalty",

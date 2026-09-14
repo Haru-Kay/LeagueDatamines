@@ -1,138 +1,130 @@
 **Just a reminder that PBE changes are not final and subject to change. Some changes, such as bugfixes, may not be able to be viewed. I'm also human. I make mistakes from time to time.**
 
+## Arena
+
+### Augments
+
+**Chroma Flux**
+
+* Tier: Prismatic -> Gold
+
+**Giant Slayer**
+
+* Bonus Damage based on Size:
+  * Small: 10/15/20% -> 5/10/15%
+  * Medium: 15/20/25% -> 10/15/20%
+  * Large: 25/30/35% -> 20/25/30%
+  * Extra Large: 30/35/40% -> 25/30/35%
+
+**Protein Shake**
+
+* Flat Bonus Heal & Shield Power: 15% -> 25%
+
+**Quest: Angel of Retribution**
+
+* Heal & Shield Power Ratio: 350% -> 450%
+  * Note: Tooltip still says 350%
+
+**Scavenger**
+
+* Gold Received in the event of no valid Augment: 500 -> 1000
+
+**Spellcraft**
+
+* Base Damage: 100 -> 150
+
+### Champions
+
+**Disclaimer: This PBE deploy introduced a new data value to the Champion's base stats, and as such my interpretation may be incorrect.**
+
+**Aphelios**
+
+* AD Growth: 2.3 -> 3.3
+* HP Growth: 102 -> 114
+* Base MS: 325 -> 330
+
+**Bard**
+
+* P Chimes per Upgrade: 4 -> 3
+
+**Bel'Veth**
+
+* E AD Ratio: 12% AD -> 8% AD
+  * Note: May be bugged, data value was updated but the spell calculation is hard-coded to 12% AD.
+* R On-Hit AD Ratio: 3% bonus AD -> 1% bonus AD
+  * Note: May be bugged. Another case of a hard-coded AD ratio...but the entire spell calculation was replaced instead of just overriding the AD ratio.
+
+**Dr. Mundo**
+
+* E Passive HP:AD Ratio: 2/2.3/2.6/2.9/3.2% Health -> 1.5/1.8/2.1/2.4/2.7% Health
+* E Active HP Ratio: 5% -> 4% bonus Health
+
+**Elise**
+
+* Human W Cooldown: 12 seconds -> 10 seconds
+* Human E Cooldown: 12/11.5/11/10.5/10 seconds -> 8/7.5/7/6.5/6 seconds
+
+**Ezreal**
+
+* Q Refund: 1.5 seconds -> 2.5 seconds
+
+**Lee Sin**
+
+* W Shield AP Ratio: 80% -> 120%
+  * Note: Another full calc override rather than data value.
+
+**Lillia**
+
+* P Base DOT Damage per second: 1.33% max Health -> 1% max Health
+  * 4% over 3 seconds -> 3% over 3 seconds
+
+**Locke**
+
+* P Min Base Damage: 7.5-60 -> 10-80
+* P Max Base Damage: 15-120 -> 20-160
+* R Execute Scaling: 0.5% per Stack -> 1% per Stack
+
+**Neeko**
+
+* Q Bonus Explosion AP Ratio: 25% AP -> 50% AP
+
+**Ornn**
+
+* Stat Anvil Discount: 100 Gold -> 75 Gold
+* Legendary Anvil Discount: 200 Gold -> 150 Gold
+
+**Rammus**
+
+* Q Cooldown Reverted: 11/9.5/8/6.5/5 seconds -> 12/10.5/9/7.5/6 seconds
+
+**Rell**
+
+* P Armor/MR Steal: 3% -> 2%
+
+**Veigar**
+
+* E Cooldown: 23/21.5/20/18.5/17 seconds -> 24/23/22/21/20 seconds
+
+**Zed**
+
+* Q AD Ratio Reverted: 110% bonus AD -> 100% bonus AD
+* W Cooldown Reverted: 18/17.25/16.5/15.75/15 seconds -> 20/19/18/17/16 seconds
+
+**Zeri**
+
+* Q AD Ratio: 102/104/106/108/110% AD -> 107/109/111/113/115% AD
+* E CD Refund: 0.75 seconds -> 1 second
+
 ## League Classic
 
 ### Champions
 
-**Like last time, I will only be reporting changes to new Champions following their addition on PBE.**
+**Malphite**
 
-* Added: Fizz, Graves, Nami, Nautilus
+* Can no longer cast R while rooted.
 
-### Items
+**Twisted Fate**
 
-**Moonflair Spellblade**
-
-* 50 AP
-* 50 Armor
-* 50 MR
-* 35% Tenacity
-* Build Path: Seeker's Armguard + Negatron Cloak + 720 Gold
-
-**Cloak and Dagger**
-
-* 20% AS
-* 20% Crit Chance
-* 35% Tenacity
-* Build Path: Cloak of Agility + Dagger + 200 Gold
-
-**ZZ'Rot Portal**
-
-* Item already existed, but had its data and spell values un-hardcoded.
-* 50 Armor
-* 50 MR
-* 100% Bonus Health Regeneration
-* Build Path: Negatron Cloak + Chain Vest + Rejuvenation Bead + 1080 Gold
-
-## Arena
-
-### Guests of Honor
-
-**Ivern - Feed the Forest**
-
-* Short Description: Grow brush at the location of dead players.
-* Full Description: When a team loses the round, grow brush at their locations.
-  * I assume the short one is more accurate, unless this is saying each physical *arena* spawns a new bush everywhere a player of losing team dies.
-
-**Senna - Realm Walker**
-
-* Open 3 portals to the Death Realm.
-* Players can step into these portals to cross between the realm of the living and the Death Realm.
-
-**Thresh (Dark Passenger)**
-
-* Downed players will periodically throw a lantern to their allies, granting them a shield.
-* Lanterns can be clicked, by any living player, to pull themselves to the downed player's location.
-  * Lantern Duration: 8 seconds
-  * Lantern Shielding: 100-500, for 3 seconds
-
-### Augments
-
-**Archmage (Prismatic)**
-
-* Max Level: 1
-* Casting a spell refunds another random spell's cost by 30% of the original spell's Cooldown.
-
-**Crit 'n Cast (Silver)**
-
-* Max Level: 2
-* Gain Ability Haste equal to 40/100% of your Critical Strike Chance.
-
-**Death Dealer (Prismatic)**
-
-* Max Level: 3
-* Replace Flee with Death Dealer.
-* Activate: You and target champion enter the Dealth Realm for 4/8/12 seconds. 
-  * Entering the Death Realm causes you to become invisible for up to 2 seconds.
-* At Max Level, slaying your target in the Death Realm grants you 1 revive, and delay your victims revive by 1 (+3% Lethality) (+5% Magic Pen) seconds.
-
-**Got That Dog In 'Em (Prismatic)**
-
-* Max Level: 1
-* Every 3 seconds spawn a nearby hot dog, this can be picked up by anyone, causing them to breath fire for 6 seconds, dealing 20-300 (+30% AP) magic damage per second.
-* If you die while breathing fire, you explode dealing 50-100 (+20% AP) magic damage per stack. 
-* If any enemy champion picks up a hot dog their fire deals 50% damage and damages their allies.
-
-**Hellbent (Prismatic)**
-
-* Max Level: 1
-* Striking enemy champions with Attacks or Abilities grants you a stack of Revivemaxxing for 6 seconds (max: 10). At max stacks become Hellbent.
-* Hellbent: Upon dying, revive over the course of 4 seconds at 35-75% max Health. Afterwards, you gain 25-200 Adaptive Force, 20-40% Move Speed towards enemy champions, and 15-30% Omnivamp for 15 seconds.
-* This has a 90 second cooldown.
-
-**Nature is Healing (Gold)**
-
-* Max Level: 1
-* Entering Brush restores 40-300 + 15% Missing Health, 10 second cooldown per brush.
-
-**Rite of Ascension (Prismatic)**
-
-* Max Level: 1
-* Champion takedowns within 3 seconds of damaging them causes them to leave behind their Essence for 8 seconds. Attacking an Essence consumes it.
-* Consuming an Essence blinks you to its location, makes you Untargetable and Unstoppable, grants 100% Move Speed decaying over 2 seconds, heals you for 75-300 (+50% bonus AD) (+25% AP), scaling up to 200% based on your Missing Health, and resets your basic Ability cooldowns.
-
-**Shark Bait (Gold)**
-
-* Max Level: 2
-* On death, become Shark Bait. You can take no actions other than moving, which slows nearby enemies by 40%. After a few seconds, a Shark emerges, knocking up all nearby Enemies and biting them for 120-350 + 10/25% Missing Health Magic Damage.
-* At Max Level, your allies also gain this effect on death.
-
-**Sonata (Gold)**
-
-* Max Level: 1
-* Every 7.5 seconds, automatically cast the Aria of Perseverence and Song of Celerity in an alternating melody.
-  * Aria of Perseverence heals nearby allies and grants a temporary shielding aura.
-  * Song of Celerity grants a temporary aura that provides bonus Movement Speed.
-
-**Surge Field (Prismatic)**
-
-* Max Level: 1
-* On ultimate cast, spawn a Zone around you. While in it, gain 50 Ability Haste, 40% Movement Speed, and fire missiles that deal 20% of damage dealt to enemies.
-* The Zone follows you the first time you leave it and expires after a short duration the second time you do so.
-
-**Warlock Juicebox (Gold)**
-
-* Max Level: 1
-* Gain 10 (+3.5% per 100 AP) Omnivamp.
-
-**Wee Woo Wee Woo (Gold)**
-
-* Max Level: 1
-* Gain up to 40% Move Speed toward nearby allies based on their missing Health. Your healing and shielding are also increased up to 50% based on the target's missing Health.
-
-**Note: Data exists indicating more Mayhem augments were planned to be ported as well, but they only exist unused in the files at the moment.
-
-## ARAM: Mayhem
-
-### Augment Pools
-
-**I guess my last post brought the fact that those details were being shipped with the game to some higher-ups at Riot because the related files are gone now, whoops. I have a prototype viewer app built on my Github, but I will not be looking to further its progress now that the data I used is no longer accessible.**
+* E Cooldown: 120/105/90/75/60 seconds -> 135/120/105/90/75 seconds
+* R Cooldown: 130/110/90 seconds -> 180/150/120 seconds
+* R Mana Cost: 150 -> 150/125/100

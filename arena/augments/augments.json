@@ -5036,7 +5036,7 @@
     "dataValues": {
       "RequirementAmount": 2500.0,
       "AttackSpeed": 1.0,
-      "HealPowerToDamageConversion": 3.5,
+      "HealPowerToDamageConversion": 4.5,
       "HealPowerToDamageTooltip": 350.0,
       "Test": 100.0,
       "MaxLevel": 1.0
@@ -5167,6 +5167,15 @@
         0.3499999940395355
       ],
       "SmallBonusDamage": [
+        0.0,
+        0.05000000074505806,
+        0.10000000149011612,
+        0.15000000596046448,
+        0.20000000298023224,
+        0.25,
+        0.30000001192092896
+      ],
+      "MedBonusDamage": [
         0.05000000074505806,
         0.10000000149011612,
         0.15000000596046448,
@@ -5175,16 +5184,16 @@
         0.30000001192092896,
         0.3499999940395355
       ],
-      "MedBonusDamage": [
-        0.10000000149011612,
+      "LargeBonusDamage": [
         0.15000000596046448,
         0.20000000298023224,
         0.25,
         0.30000001192092896,
         0.3499999940395355,
-        0.4000000059604645
+        0.4000000059604645,
+        0.44999998807907104
       ],
-      "LargeBonusDamage": [
+      "XLargeBonusDamage": [
         0.20000000298023224,
         0.25,
         0.30000001192092896,
@@ -5192,15 +5201,6 @@
         0.4000000059604645,
         0.44999998807907104,
         0.5
-      ],
-      "XLargeBonusDamage": [
-        0.25,
-        0.30000001192092896,
-        0.3499999940395355,
-        0.4000000059604645,
-        0.44999998807907104,
-        0.5,
-        0.550000011920929
       ],
       "MaxLevel": 3.0
     },
@@ -7638,7 +7638,7 @@
     },
     "calculations": {
       "TotalDamage": {
-        "SomeFlagBroIDK": 0,
+        "DamageType": 0,
         "mFormulaParts": [
           {
             "mDataValue": "baseDamage",
@@ -8031,7 +8031,7 @@
     },
     "calculations": {
       "BeeDamage": {
-        "SomeFlagBroIDK": 1,
+        "DamageType": 1,
         "mFormulaParts": [
           {
             "mDataValueStart": "BaseDamageMin",
@@ -9121,7 +9121,7 @@
     "tooltip": "{{Cherry_Scavenger_Summary}}<br><br><rules>If none of their augments are valid you'll gain <gold>@GoldAmount@ gold</gold> instead.</rules>",
     "dataValues": {
       "MaxLevel": 1.0,
-      "GoldAmount": 500.0
+      "GoldAmount": 1000.0
     },
     "icons": [
       "assets/ux/cherry/augments/icons/scavenger_small.tex",
@@ -9207,7 +9207,7 @@
     "desc": "<spellActive>Active:</spellActive> Wind up and release a burst of energy, dealing <magicDamage>magic damage</magicDamage> in a cone.<br><br>This spell grows more powerful as you select additional augments.<br>%i:SpellcraftRedShard%: +<magicDamage>Damage</magicDamage><br>%i:SpellcraftBlueShard%: +<status>Crowd Control</status><br>%i:SpellcraftGreenShard%: +<healing>Healing</healing>",
     "tooltip": "<spellActive>Active:</spellActive> Wind up and release a burst of energy, dealing <magicDamage>@DamageTotal@ magic damage</magicDamage> in a cone.<br><br>This deals <magicDamage>@OuterRingDamageMult*100@% damage</magicDamage> to enemies hit with the outer edge, <status>Slowing them by @SlowAmountTotal@</status> for @SlowDuration@ seconds. Hitting at least one enemy champion with the outer edge restores <healing>@HealingTotal@ of your missing health</healing>.<br><br>@f1@ %i:SpellcraftRedShard%: Deal <magicDamage>@DamagePerRedTooltip@ additional damage</magicDamage> per %i:SpellcraftRedShard%.<br>@f2@ %i:SpellcraftBlueShard%: Increase the <status>Slow's</status> effectivness by @MoveSpeedModPerBlue*100@% per %i:SpellcraftBlueShard%.<br>@f3@ %i:SpellcraftGreenShard%: Gain <healing>@MissingHealthRatio*100@% increased healing</healing> per %i:SpellcraftGreenShard%.",
     "dataValues": {
-      "BaseDamage": 100.0,
+      "BaseDamage": 150.0,
       "PerRedDamage": 75.0,
       "BADRatio": 0.10000000149011612,
       "APRatio": 0.15000000596046448,
@@ -9367,7 +9367,7 @@
     "id": 388,
     "apiName": "ChromaFlux",
     "name": "Chroma Flux",
-    "rarity": "Prismatic",
+    "rarity": "Gold",
     "desc": "Every @baseCooldown@ seconds <keywordMajor>Autocast</keywordMajor> fire an orb that sticks to the first champion hit. Hitting an enemy with the orb, detonates it and deals <magicDamage>magic damage</magicDamage>.<br><br>This spell grows more powerful as you select additional augments.<br>%i:SpellcraftRedShard%: +<magicDamage>Damage</magicDamage><br>%i:SpellcraftBlueShard%: +<speed>Movement speed</speed><br>%i:SpellcraftGreenShard%: +<scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR>",
     "tooltip": "Every @baseCooldown@ seconds <keywordMajor>Autocast</keywordMajor> fires a magical orb that sticks to the first champion, structure, or epic jungle monster hit for @DetonationTimeout@ seconds. <br><br>Hitting that target with an Attack or Ability, it detonates it, dealing <magicDamage>@Damage@ magic damage</magicDamage>, grants you <speed>@MSGainTotal@ Movement Speed</speed>, and @ArmorAndMRTotal@ <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> for @MarkDuration@ seconds.<br><br>@f1@ %i:SpellcraftRedShard%: Deal <magicDamage>@DamagePerRedTooltip@ additional damage</magicDamage> per %i:SpellcraftRedShard%.<br>@f2@ %i:SpellcraftBlueShard%: Gain <speed>@MSBoostPerBlue@ Movement Speed</speed> per %i:SpellcraftBlueShard%.<br>@f3@ %i:SpellcraftGreenShard%: Gain @ArmorAndMRPerGreen@ <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> per %i:SpellcraftGreenShard% for @MarkDuration@ seconds.",
     "dataValues": {
@@ -9621,7 +9621,7 @@
         8.0
       ],
       "InvisDuration": 2.0,
-      "MaxLevel": 3.0,
+      "MaxLevel": 2.0,
       "MaxLevelRevivesGained": 1.0,
       "BaseReviveDelay": 1.0,
       "ARPenRatio": 0.029999999329447746,
@@ -9681,7 +9681,7 @@
     },
     "calculations": {
       "0x3e8f35e1": {
-        "SomeFlagBroIDK": 1,
+        "DamageType": 1,
         "mFormulaParts": [
           {
             "mEndValue": 300.0,
@@ -9696,7 +9696,7 @@
         "~class": "GameCalculation"
       },
       "0x71178268": {
-        "SomeFlagBroIDK": 1,
+        "DamageType": 1,
         "mFormulaParts": [
           {
             "mEndValue": 100.0,
@@ -9711,7 +9711,7 @@
         "~class": "GameCalculation"
       },
       "0xeeb8689a": {
-        "SomeFlagBroIDK": 1,
+        "DamageType": 1,
         "mFormulaParts": [
           {
             "mEndValue": 150.0,
@@ -9945,7 +9945,7 @@
     "tooltip": "Gain <healing>%i:scaleHealShield%@BonusHSPower@% Heal and Shield Power</healing> based on bonus <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR>.",
     "dataValues": {
       "ConversionRate": 0.25,
-      "InitialHS": 15.0,
+      "InitialHS": 25.0,
       "MaxLevel": 1.0
     },
     "calculations": {
