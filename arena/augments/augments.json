@@ -9764,6 +9764,90 @@
     ]
   },
   {
+    "id": 1001,
+    "apiName": "ARAM_ImTheJuggernaut",
+    "name": "Titan's Resolve",
+    "rarity": "Prismatic",
+    "desc": "Gain stacks when taking or dealing damage. For every @Stacks_Max@ stacks, gain <scaleAF>Adaptive Force</scaleAF>, <scaleArmor>Armor</scaleArmor>, <scaleMR>Magic Resist</scaleMR>, <attention>Size</attention>, and <status>Tenacity</status>.",
+    "tooltip": "Dealing and receiving champion damage grants you @StacksPerHit@ stack of <keyword>Juggernauting</keyword> for @Stack_Duration@ seconds. For every @Stacks_Max@ stacks of <keyword>Juggernauting</keyword> you gain <attention>@Calc_AF@ Adaptive Force</attention>, <scaleArmor>@Calc_Defenses@ Armor</scaleArmor>, <scaleMR>@Calc_Defenses@ Magic Resist</scaleMR>, <attention>@Calc_Size@ Size</attention>, and <status>@Calc_Tenacity@ Tenacity</status>.<br><br><rules>Stacks fall off faster the more you have.<br>Maximum Juggernauting Level: @f1.0@</rules>",
+    "dataValues": {
+      "Stacks_Max": 10.0,
+      "Stack_Duration": 6.0,
+      "StacksPerHit": [
+        1.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0
+      ],
+      "MaxLevel": 2.0
+    },
+    "calculations": {
+      "Calc_AF": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 75.0,
+            "mStartValue": 25.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "Calc_Defenses": {
+        "mFormulaParts": [
+          {
+            "mEndValue": 10.0,
+            "mStartValue": 5.0,
+            "~class": "ByCharLevelInterpolationCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "Calc_MS": {
+        "mDisplayAsPercent": true,
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.07999999821186066,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "mSimpleTooltipCalculationDisplay": 5,
+        "~class": "GameCalculation"
+      },
+      "Calc_Size": {
+        "mDisplayAsPercent": true,
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.10000000149011612,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "mSimpleTooltipCalculationDisplay": 5,
+        "~class": "GameCalculation"
+      },
+      "Calc_Tenacity": {
+        "mDisplayAsPercent": true,
+        "mExpandedTooltipCalculationDisplay": 5,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.07999999821186066,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "mSimpleTooltipCalculationDisplay": 5,
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "assets/ux/kiwi/augments/icons/iamthejuggernaut_small.tex",
+      "assets/ux/kiwi/augments/icons/iamthejuggernaut_large.tex"
+    ]
+  },
+  {
     "id": 1005,
     "apiName": "ARAM_WeeWooWeeWoo",
     "name": "Wee Woo Wee Woo",

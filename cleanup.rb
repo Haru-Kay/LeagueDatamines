@@ -22,7 +22,7 @@ $manualHash.merge!({
     "b09016f6" => "BotCalculation",
     "ee39916f" => "VFXEmissionOffset",
     "32559c50" => "TooltipFormatA",
-    "6b06978" => "QuestIconPath",
+    "6b06978" => "QuestIcon",
     "7a1cab0d" => "TexturePath",
     "898bb7cb" => "MilestoneData",
     "c88f1a9b" => "QuestTooltipTra",
@@ -692,7 +692,7 @@ def augmentSearcher(key, data, version=0)
             "dataValues" => {},
             "calculations" => {},
             "add" => {},
-            "quest" => data.fetch("0x3ed971bd", ""),
+            "quest" => data.fetch("LinkedQuest", data.fetch("0x3ed971bd", "")),
             "icons" => [
                 data.fetch("AugmentSmallIconPath", ""),
                 data.fetch("AugmentLargeIconPath", "")            
@@ -786,7 +786,7 @@ def buildAugmentQuest(augment, questData)
         "apiName" => questData["QuestName"],
         "TooltipOverride" => [],
         "QuestBreakpoints" => [],
-        "icon" => questData["QuestIconPath"]["texturePath"]
+        "icon" => questData["QuestIcon"]["texturePath"]
     }
     questData["Milestones"].each_with_index { |milestone, i|
         questHash["QuestBreakpoints"].push({
@@ -1388,8 +1388,8 @@ diff()
                 type = "AugmentList"
                 data = applyLangKeys(applyLang(data))
                 augmentList = data["AugmentList"]
-            when "0x8d31b69b"
-                type = "AugmentQuestData"
+            when "0x8d31b69b", "ModesQuests"
+                type = "ModesQuests"
                 data = applyLangKeys(applyLang(data))
             when "0xa0ffdf09"
                 type = "AugmentQuestList"
@@ -1410,7 +1410,7 @@ diff()
         end
 
         if augment["quest"]
-            augment["quest"] = buildAugmentQuest(augment, aramOther["AugmentQuestData"][augment["quest"]["QUEST"]])
+            augment["quest"] = buildAugmentQuest(augment, aramOther["ModesQuests"][augment["quest"]["Quest"]])
         end
     }
     File.open("aram/mayhem/augments/augments.json", 'wb') { |f| f.write(JSON.pretty_generate(aramAugments.sort_by { |a| a["id"] })) }
@@ -1448,8 +1448,8 @@ diff()
                 type = "AugmentList"
                 data = applyLangKeys(applyLang(data))
                 augmentList = data["AugmentList"]
-            when "0x8d31b69b"
-                type = "AugmentQuestData"
+            when "0x8d31b69b", "ModesQuests"
+                type = "ModesQuests"
                 data = applyLangKeys(applyLang(data))
             when "0xa0ffdf09"
                 type = "AugmentQuestList"
@@ -1470,7 +1470,7 @@ diff()
         end
 
         if augment["quest"]
-            augment["quest"] = buildAugmentQuest(augment, aramOther["AugmentQuestData"][augment["quest"]["QUEST"]])
+            augment["quest"] = buildAugmentQuest(augment, aramOther["ModesQuests"][augment["quest"]["Quest"]])
         end
     }
     File.open("aram/jade/augments/augments.json", 'wb') { |f| f.write(JSON.pretty_generate(aramAugments.sort_by { |a| a["id"] })) }
