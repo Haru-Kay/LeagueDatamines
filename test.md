@@ -1,130 +1,72 @@
 **Just a reminder that PBE changes are not final and subject to change. Some changes, such as bugfixes, may not be able to be viewed. I'm also human. I make mistakes from time to time.**
 
-## Arena
-
-### Augments
-
-**Chroma Flux**
-
-* Tier: Prismatic -> Gold
-
-**Giant Slayer**
-
-* Bonus Damage based on Size:
-  * Small: 10/15/20% -> 5/10/15%
-  * Medium: 15/20/25% -> 10/15/20%
-  * Large: 25/30/35% -> 20/25/30%
-  * Extra Large: 30/35/40% -> 25/30/35%
-
-**Protein Shake**
-
-* Flat Bonus Heal & Shield Power: 15% -> 25%
-
-**Quest: Angel of Retribution**
-
-* Heal & Shield Power Ratio: 350% -> 450%
-  * Note: Tooltip still says 350%
-
-**Scavenger**
-
-* Gold Received in the event of no valid Augment: 500 -> 1000
-
-**Spellcraft**
-
-* Base Damage: 100 -> 150
-
-### Champions
-
-**Disclaimer: This PBE deploy introduced a new data value to the Champion's base stats, and as such my interpretation may be incorrect.**
-
-**Aphelios**
-
-* AD Growth: 2.3 -> 3.3
-* HP Growth: 102 -> 114
-* Base MS: 325 -> 330
-
-**Bard**
-
-* P Chimes per Upgrade: 4 -> 3
-
-**Bel'Veth**
-
-* E AD Ratio: 12% AD -> 8% AD
-  * Note: May be bugged, data value was updated but the spell calculation is hard-coded to 12% AD.
-* R On-Hit AD Ratio: 3% bonus AD -> 1% bonus AD
-  * Note: May be bugged. Another case of a hard-coded AD ratio...but the entire spell calculation was replaced instead of just overriding the AD ratio.
-
-**Dr. Mundo**
-
-* E Passive HP:AD Ratio: 2/2.3/2.6/2.9/3.2% Health -> 1.5/1.8/2.1/2.4/2.7% Health
-* E Active HP Ratio: 5% -> 4% bonus Health
-
-**Elise**
-
-* Human W Cooldown: 12 seconds -> 10 seconds
-* Human E Cooldown: 12/11.5/11/10.5/10 seconds -> 8/7.5/7/6.5/6 seconds
-
-**Ezreal**
-
-* Q Refund: 1.5 seconds -> 2.5 seconds
-
-**Lee Sin**
-
-* W Shield AP Ratio: 80% -> 120%
-  * Note: Another full calc override rather than data value.
-
-**Lillia**
-
-* P Base DOT Damage per second: 1.33% max Health -> 1% max Health
-  * 4% over 3 seconds -> 3% over 3 seconds
-
-**Locke**
-
-* P Min Base Damage: 7.5-60 -> 10-80
-* P Max Base Damage: 15-120 -> 20-160
-* R Execute Scaling: 0.5% per Stack -> 1% per Stack
-
-**Neeko**
-
-* Q Bonus Explosion AP Ratio: 25% AP -> 50% AP
-
-**Ornn**
-
-* Stat Anvil Discount: 100 Gold -> 75 Gold
-* Legendary Anvil Discount: 200 Gold -> 150 Gold
-
-**Rammus**
-
-* Q Cooldown Reverted: 11/9.5/8/6.5/5 seconds -> 12/10.5/9/7.5/6 seconds
-
-**Rell**
-
-* P Armor/MR Steal: 3% -> 2%
-
-**Veigar**
-
-* E Cooldown: 23/21.5/20/18.5/17 seconds -> 24/23/22/21/20 seconds
-
-**Zed**
-
-* Q AD Ratio Reverted: 110% bonus AD -> 100% bonus AD
-* W Cooldown Reverted: 18/17.25/16.5/15.75/15 seconds -> 20/19/18/17/16 seconds
-
-**Zeri**
-
-* Q AD Ratio: 102/104/106/108/110% AD -> 107/109/111/113/115% AD
-* E CD Refund: 0.75 seconds -> 1 second
-
 ## League Classic
 
 ### Champions
 
+**Akali**
+
+* E AP Ratio: 30% -> 40%
+* E Cooldown: 7/6/5/4/3 seconds -> 6/5/4/3/2 seconds
+* E Energy Cost: 60 -> 60/55/50/45/40
+
+**Galio**
+
+* E Cast Range: 1100 -> 1175
+  * Display: 1100 -> 1125
+* E Display Hitbox: 200 -> 160
+* E Missile Width: 60 -> 160
+* E Missile Speed: 1200 -> 1300
+* E Cast Time: 0.4 seconds -> 0.25 seconds
+
+**Graves**
+
+* Pathfinding Radius: 10 -> 35
+* Auto Attack Active Frame: 2 -> 3.25
+* Crit Attack Active Frame: 7 -> 5
+
+**Kassadin**
+
+* Q AP Ratio: 60% -> 70%
+* E Damage: 60/120/180/240/300 (+80% AP) -> 80/130/180/230/280 (+70% AP)
+* E Slow: 20/30/40/50/60% -> 30/35/40/45/50%
+
 **Malphite**
 
 * Can no longer cast R while rooted.
+* Malphite R no longer disables Flash
+
+**Morgana**
+
+* W Cooldown: 10 seconds -> 12 seconds
+* W Mana Cost: 70/85/100/115/130 -> 80/100/120/140/160
+* E Base Shield: 90/160/255/290/355 -> 100/150/200/250/300
+* R Cooldown: 120/110/100 seconds -> 120 seconds
 
 **Twisted Fate**
 
 * E Cooldown: 120/105/90/75/60 seconds -> 135/120/105/90/75 seconds
 * R Cooldown: 130/110/90 seconds -> 180/150/120 seconds
 * R Mana Cost: 150 -> 150/125/100
+
+## ARAM: Mayhem
+
+### Augments
+
+**High Roller**
+
+* Anvil spawn rate halved(?).
+  * Values listed (1 for normal, 0.5 for SummonUnits) were halved (0.5 for normal, 0.25 for SummonUnits)
+  * Still no confirmation is these are raw drop rates, so take with grain of salt.
+
+**Quest: Ultra Hydra**
+
+* Now has its own icon
+
+## Arena
+
+### Champions
+
+**Ornn**
+
+* Gold prices for Stat + Legendary Anvils have properly been adjusted now to match new values.
