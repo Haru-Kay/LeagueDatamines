@@ -4720,7 +4720,7 @@
       },
       {
         "mName": "Cooldown",
-        "mValue": 420.0,
+        "mValue": 390.0,
         "~class": "ItemDataValue"
       },
       {
@@ -4810,9 +4810,31 @@
         "mName": "LevelCap",
         "mValue": 2.0,
         "~class": "ItemDataValue"
+      },
+      {
+        "mName": "ShieldDuration",
+        "mValue": 10.0,
+        "~class": "ItemDataValue"
+      },
+      {
+        "mName": "CDReduction",
+        "mValue": 30.0,
+        "~class": "ItemDataValue"
       }
     ],
     "mDisplayName": "Top Lane Quest Reward",
+    "mItemCalculations": {
+      "0x15c79d00": {
+        "mFormulaParts": [
+          {
+            "mCoefficient": 0.3499999940395355,
+            "mStat": 12,
+            "~class": "StatByCoefficientCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
     "mItemDataAvailability": {
       "mForceLoad": true,
       "~class": "ItemDataAvailability"
@@ -56149,7 +56171,6 @@
     "mEffectAmount": [
       3.0
     ],
-    "mFlatHPPoolMod": 30.0,
     "mItemAttributes": [
       32,
       8
@@ -56308,18 +56329,14 @@
       "InventoryIconSmall": "assets/items/icons2d/autoatlas/smallicons/3865_worldatlas44.png",
       "epicness": 1,
       "inventoryIcon": "assets/items/icons2d/3865_worldatlas.dds",
-      "mDescription": "<section></section><section><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleHPRegen% @PercentBaseHPRegenMod*100@%</attention> Base Health Regen<br><attention>%i:scaleManaRegen% @PercentBaseMPRegenMod*100@%</attention> Base Mana Regen<br><attention>%i:goldCoins% @Effect1Amount@</attention> Gold Per 10 Seconds</section><section><passive>Support Quest</passive><br>Earn <gold>@QuestGoldRequirement@ gold</gold> from this item to transform it into <rarityGeneric>Runic Compass</rarityGeneric>. <br><br><passive>Shared Riches</passive> %i:cooldown% (@ChargeCooldown@s, max @MaxCharges@ charges)<br>While near an ally champion, damage enemy champions or kill minions to gain <gold>gold</gold>.</section><section></section><section><flavorText>'Seek, and you shall find.'</flavorText></section>",
-      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>World Atlas</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Support Gold</subtitleLeft><subtitleRight>Unique: Starter</subtitleRight><mainText><section><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleHPRegen% @PercentBaseHPRegenMod*100@%</attention> Base Health Regen<br><attention>%i:scaleManaRegen% @PercentBaseMPRegenMod*100@%</attention> Base Mana Regen<br><attention>%i:goldCoins% @Effect1Amount@</attention> Gold Per 10 Seconds@ExtendedStats@</section><section><passive>Support Quest</passive><br>Earn <gold>@QuestGoldRequirement@ gold</gold> from this item to transform it into <rarityGeneric>Runic Compass</rarityGeneric>. <br><br><passive>Shared Riches</passive> %i:cooldown% (@ChargeCooldown@s, max @MaxCharges@ charges)<br>While near an ally champion, damage enemy champions or kill minions to gain <gold>gold</gold>.</section><section></section><section><flavorText>'Seek, and you shall find.'</flavorText></section></mainText><postScriptLeft>Quest gold: <attention>@f4@</attention>/@QuestGoldRequirement@</postScriptLeft>",
-      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>World Atlas</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Support Gold</subtitleLeft><subtitleRight>Unique: Starter</subtitleRight><mainText><section></section><section><attention>%i:scaleHealth% @FlatHPPoolMod@</attention> Health<br><attention>%i:scaleHPRegen% @PercentBaseHPRegenMod*100@%</attention> Base Health Regen<br><attention>%i:scaleManaRegen% @PercentBaseMPRegenMod*100@%</attention> Base Mana Regen<br><attention>%i:goldCoins% @Effect1Amount@</attention> Gold Per 10 Seconds</section><section><passive>Support Quest</passive><br>Earn <gold>@QuestGoldRequirement@ gold</gold> from this item to transform it into <rarityGeneric>Runic Compass</rarityGeneric>. <br><br><passive>Shared Riches</passive> %i:cooldown% (@ChargeCooldown@s, max @MaxCharges@ charges)<br>While near an ally champion, damage enemy champions or kill minions to gain <gold>gold</gold>.</section><section></section><section><flavorText>'Seek, and you shall find.'</flavorText></section></mainText><br>",
+      "mDescription": "<section></section><section><attention>%i:scaleHPRegen% @PercentBaseHPRegenMod*100@%</attention> Base Health Regen<br><attention>%i:scaleManaRegen% @PercentBaseMPRegenMod*100@%</attention> Base Mana Regen<br><attention>%i:goldCoins% @Effect1Amount@</attention> Gold Per 10 Seconds</section><section><passive>Support Quest</passive><br>Earn <gold>@QuestGoldRequirement@ gold</gold> from this item to transform it into <rarityGeneric>Runic Compass</rarityGeneric>. <br><br><passive>Shared Riches</passive> %i:cooldown% (@ChargeCooldown@s, max @MaxCharges@ charges)<br>While near an ally champion, damage enemy champions or kill minions to gain <gold>gold</gold>.</section><section></section><section><flavorText>'Seek, and you shall find.'</flavorText></section>",
+      "mDynamicTooltip": "<titleLeft><itemName@ItemActiveness@>World Atlas</itemName@ItemActiveness@></titleLeft><titleRight>Sells for: %i:goldCoins% <gold>@Value@</gold> <rules>(@SellBackModifier*100@%)</rules></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Support Gold</subtitleLeft><subtitleRight>Unique: Starter</subtitleRight><mainText><section><attention>%i:scaleHPRegen% @PercentBaseHPRegenMod*100@%</attention> Base Health Regen<br><attention>%i:scaleManaRegen% @PercentBaseMPRegenMod*100@%</attention> Base Mana Regen<br><attention>%i:goldCoins% @Effect1Amount@</attention> Gold Per 10 Seconds@ExtendedStats@</section><section><passive>Support Quest</passive><br>Earn <gold>@QuestGoldRequirement@ gold</gold> from this item to transform it into <rarityGeneric>Runic Compass</rarityGeneric>. <br><br><passive>Shared Riches</passive> %i:cooldown% (@ChargeCooldown@s, max @MaxCharges@ charges)<br>While near an ally champion, damage enemy champions or kill minions to gain <gold>gold</gold>.</section><section></section><section><flavorText>'Seek, and you shall find.'</flavorText></section></mainText><postScriptLeft>Quest gold: <attention>@f4@</attention>/@QuestGoldRequirement@</postScriptLeft>",
+      "mShopTooltip": "<titleLeft><itemName@ItemActiveness@>World Atlas</itemName@ItemActiveness@></titleLeft><titleRight>%i:goldCoins% <gold>@Value@</gold></titleRight><subtitleLeft>{{ Item_BriefIcon_@ItemActiveness@ }}Support Gold</subtitleLeft><subtitleRight>Unique: Starter</subtitleRight><mainText><section></section><section><attention>%i:scaleHPRegen% @PercentBaseHPRegenMod*100@%</attention> Base Health Regen<br><attention>%i:scaleManaRegen% @PercentBaseMPRegenMod*100@%</attention> Base Mana Regen<br><attention>%i:goldCoins% @Effect1Amount@</attention> Gold Per 10 Seconds</section><section><passive>Support Quest</passive><br>Earn <gold>@QuestGoldRequirement@ gold</gold> from this item to transform it into <rarityGeneric>Runic Compass</rarityGeneric>. <br><br><passive>Shared Riches</passive> %i:cooldown% (@ChargeCooldown@s, max @MaxCharges@ charges)<br>While near an ally champion, damage enemy champions or kill minions to gain <gold>gold</gold>.</section><section></section><section><flavorText>'Seek, and you shall find.'</flavorText></section></mainText><br>",
       "mTooltipData": {
         "mFormat": "TooltipFormatA",
         "mLists": {
           "Stats": {
             "Elements": [
-              {
-                "type": "Health",
-                "~class": "TooltipInstanceListElement"
-              },
               {
                 "type": "BaseHealthRegen",
                 "~class": "TooltipInstanceListElement"
@@ -56358,7 +56375,7 @@
       "Items/ItemGroups/DoransItems",
       "0x2b093179"
     ],
-    "mPercentBaseHPRegenMod": 0.25,
+    "mPercentBaseHPRegenMod": 0.5,
     "mRequiredBuffCurrencyName": "SupportItemPurchaseBuff",
     "maxStack": 1,
     "percentBaseMPRegenMod": 0.25,
@@ -56476,7 +56493,7 @@
     "mEffectAmount": [
       5.0
     ],
-    "mFlatHPPoolMod": 100.0,
+    "mFlatHPPoolMod": 60.0,
     "mItemAttributes": [
       32
     ],
@@ -56682,7 +56699,7 @@
       "Items/ItemGroups/DoransItems",
       "0x4dbc5e26"
     ],
-    "mPercentBaseHPRegenMod": 0.5,
+    "mPercentBaseHPRegenMod": 0.75,
     "mVFXResourceResolver": {
       "resourceMap": {
         "0x98ed453a": "Runic Compass",
