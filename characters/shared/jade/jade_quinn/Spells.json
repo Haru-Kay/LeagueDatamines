@@ -1,0 +1,2742 @@
+{
+  "0x16d9c14a": {
+    "ObjectName": "Jade_QuinnPassive",
+    "mScriptName": "Jade_QuinnPassive",
+    "mSpell": {
+      "DataValues": [
+        {
+          "name": "MarkDuration",
+          "values": [
+            4.5,
+            4.5,
+            4.5,
+            4.5,
+            4.5,
+            4.5,
+            4.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ADRatio",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MarkCooldownPassive",
+          "values": [
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MarkCooldownRandomAdd",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "canCastWhileDisabled": true,
+      "cannotBeSuppressed": true,
+      "castConeDistance": 100.0,
+      "castFrame": 13.0,
+      "castRadius": [
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0
+      ],
+      "flags": 20,
+      "mAffectsTypeFlags": 9221,
+      "mAnimationName": "",
+      "mCantCancelWhileWindingUp": true,
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyName": "Harrier",
+            "keySummary": "Valor periodically marks enemies as Vulnerable, whom Quinn can attack to deal bonus damage.",
+            "keyTooltip": "Valor periodically marks a nearby enemy as <keywordMajor>Vulnerable</keywordMajor> for @MarkDuration@ seconds. Quinn's Attacks against <keywordMajor>Vulnerable</keywordMajor> enemies deal <physicalDamage>@BonusDamage@ bonus physical damage</physicalDamage>.",
+            "keyTooltipExtendedBelowLine": "<rules>Cooldown is @MarkCooldownPassive@ seconds, reduced to @MarkCooldownConsumed@ if Quinn consumes the mark.</rules>"
+          },
+          "mObjectName": "Jade_QuinnPassive",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mFloatVarsDecimals": [
+        2,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mImgIconName": [
+        "assets/characters/quinn/hud/icons2d/quinn_passive.dds"
+      ],
+      "mSpellCalculations": {
+        "0x66b382eb": {
+          "mFormulaParts": [
+            {
+              "mEndValue": 4.5,
+              "mStartValue": 7.5,
+              "~class": "ByCharLevelInterpolationCalculationPart"
+            }
+          ],
+          "mPrecision": 1,
+          "~class": "GameCalculation"
+        },
+        "BonusDamage": {
+          "mFormulaParts": [
+            {
+              "mBreakpoints": [
+                {
+                  "mBonusPerLevelAtAndAfter": 15.0,
+                  "mLevel": 15,
+                  "~class": "Breakpoint"
+                }
+              ],
+              "mInitialBonusPerLevel": 10.0,
+              "mLevel1Value": 25.0,
+              "~class": "ByCharLevelBreakpointsCalculationPart"
+            },
+            {
+              "mDataValue": "ADRatio",
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mTargetingTypeData": {
+        "~class": "Self"
+      },
+      "spellCastTime": 0.25,
+      "spellTotalTime": 1.0,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x16d9c14a",
+    "~class": "SpellObject"
+  },
+  "0x26b1ce52": {
+    "ObjectName": "Jade_QuinnQMelee",
+    "mScriptName": "Jade_QuinnQMelee",
+    "mSpell": {
+      "Cooldown": {
+        "Default": 12.0,
+        "values": [
+          12.0,
+          11.0,
+          10.0,
+          9.0,
+          8.0,
+          7.0,
+          6.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            30.0,
+            70.0,
+            110.0,
+            150.0,
+            190.0,
+            230.0,
+            270.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ADRatio",
+          "values": [
+            0.6499999761581421,
+            0.6499999761581421,
+            0.6499999761581421,
+            0.6499999761581421,
+            0.6499999761581421,
+            0.6499999761581421,
+            0.6499999761581421
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatio",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BlindDuration",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Quinn_QuinnQ_buffactivate"
+      },
+      "castConeDistance": 100.0,
+      "castFrame": 7.5,
+      "castRadius": [
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0
+      ],
+      "castRange": [
+        1050.0,
+        1050.0,
+        1050.0,
+        1050.0,
+        1050.0,
+        1050.0,
+        1050.0
+      ],
+      "castRangeValues": {
+        "Default": 275.0,
+        "values": [
+          275.0,
+          275.0,
+          275.0,
+          275.0,
+          275.0,
+          275.0,
+          275.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        11.5,
+        11.0,
+        10.5,
+        10.0,
+        9.5,
+        9.0,
+        9.0
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 6154,
+      "mAnimationName": "Spell1",
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.25,
+      "mCastType": 3,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "BaseDamage",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Blinding Assault",
+            "keySummary": "Valor flies out and strikes the first enemy in his path, damaging and blinding all enemies near that point.",
+            "keyTooltip": "<keywordMajor>As Quinn</keywordMajor>: Valor flies out and strikes the first enemy in his path. He then attacks all nearby enemies, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and <status>Blinding</status> them for @BlindDuration@ seconds.<br><br><keywordMajor>As Valor</keywordMajor>: Attack all nearby enemies, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and <status>Blinding</status> them for @BlindDuration@ seconds."
+          },
+          "mObjectName": "Jade_QuinnQMelee",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mFloatVarsDecimals": [
+        2,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mImgIconName": [
+        "assets/characters/quinn/hud/icons2d/quinn_q.dds"
+      ],
+      "mLineWidth": 80.0,
+      "mMissileEffectKey": "Jade_Quinn_Q_Mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnHit"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "~class": "BlendedLinearHeightSolver"
+        },
+        "mMissileWidth": 80.0,
+        "movementComponent": {
+          "0x3046674": true,
+          "mProjectTargetToCastRange": true,
+          "mSpeed": 1550.0,
+          "mStartBoneName": "C_Buffbone_Glb_Chest_Loc",
+          "mTracksTarget": false,
+          "mUseHeightOffsetAtEnd": true,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VerticalFacingFaceTarget"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mSpellCalculations": {
+        "TotalDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "ADRatio",
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "Trait_DamageAbility",
+        "Trait_Ranged_StopsFirstHit",
+        "Trait_AoE"
+      ],
+      "mTargetingTypeData": {
+        "~class": "SelfAoe"
+      },
+      "mana": [
+        50.0,
+        55.0,
+        60.0,
+        65.0,
+        70.0,
+        75.0
+      ],
+      "manaValues": {
+        "Default": 50.0,
+        "values": [
+          50.0,
+          55.0,
+          60.0,
+          65.0,
+          70.0,
+          75.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "missileSpeed": 1550.0,
+      "selectionPriority": 2,
+      "spellCastTime": 0.25,
+      "spellTotalTime": 1.0,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x26b1ce52",
+    "~class": "SpellObject"
+  },
+  "0x36c0cb56": {
+    "ObjectName": "Jade_QuinnERoot",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Vault",
+          "keyTooltip": "This unit has been slowed."
+        },
+        "mObjectName": "Jade_QuinnERoot",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_QuinnERoot",
+    "objectPath": "0x36c0cb56",
+    "~class": "SpellObject"
+  },
+  "0x3ba6d58e": {
+    "ObjectName": "Jade_QuinnESecond",
+    "mScriptName": "Jade_QuinnESecond",
+    "mSpell": {
+      "Cooldown": {
+        "values": [
+          30.0,
+          25.0,
+          20.0,
+          15.0,
+          6.0,
+          6.0,
+          6.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "18": "Play_sfx_Quinn_QuinnESecond_OnBuffActivate",
+        "19": "Play_sfx_Quinn_QuinnESecond_OnBuffDeactivate"
+      },
+      "cantCastWhileRooted": true,
+      "castConeDistance": 100.0,
+      "castFrame": 7.5,
+      "castRadius": [
+        250.0,
+        250.0,
+        250.0,
+        250.0,
+        250.0,
+        250.0,
+        250.0
+      ],
+      "castRange": [
+        900.0,
+        900.0,
+        900.0,
+        900.0,
+        900.0,
+        900.0,
+        900.0
+      ],
+      "castRangeValues": {
+        "Default": 900.0,
+        "values": [
+          900.0,
+          900.0,
+          900.0,
+          900.0,
+          900.0,
+          900.0,
+          900.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        30.0,
+        25.0,
+        20.0,
+        15.0,
+        6.0,
+        6.0,
+        6.0
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 6154,
+      "mAlternateName": "Jade_QuinnESecond",
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.25,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.6000000238418579,
+      "mImgIconName": [
+        "assets/characters/quinn/hud/icons2d/quinn_e.dds"
+      ],
+      "mMinimapIconDisplayFlag": 0,
+      "mana": [
+        50.0,
+        65.0,
+        80.0,
+        0.0,
+        0.0,
+        15.0
+      ],
+      "manaValues": {
+        "values": [
+          50.0,
+          65.0,
+          80.0,
+          0.0,
+          0.0,
+          15.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "missileSpeed": 20.0,
+      "selectionPriority": 2,
+      "spellCastTime": 0.25,
+      "spellTotalTime": 1.0,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x3ba6d58e",
+    "~class": "SpellObject"
+  },
+  "0x4b150b1a": {
+    "ObjectName": "Jade_QuinnWVision",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Heightened Senses"
+        },
+        "mObjectName": "Jade_QuinnWVision",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_QuinnWVision",
+    "objectPath": "0x4b150b1a",
+    "~class": "SpellObject"
+  },
+  "0x4bb5218f": {
+    "ObjectName": "Jade_QuinnRChannel",
+    "mBuff": {
+      "mDescription": "game_buff_tooltip_Jade_QuinnRChannel",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_QuinnRChannel",
+    "mSpell": {
+      "Cooldown": {
+        "Default": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "castConeDistance": 100.0,
+      "castRadius": [
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0
+      ],
+      "castRange": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "castRangeValues": {
+        "Default": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 15567,
+      "mAlternateName": "Jade_QuinnR",
+      "mImgIconName": [
+        "assets/characters/quinn/hud/icons2d/quinn_r1.dds"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Self"
+      },
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x4bb5218f",
+    "~class": "SpellObject"
+  },
+  "0x65e0c4bc": {
+    "ObjectName": "Jade_QuinnPassiveAmmo",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Heightened Senses",
+          "keyTooltip": "Quinn has increased movement and attack speed."
+        },
+        "mObjectName": "Jade_QuinnPassiveAmmo",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_QuinnPassiveAmmo",
+    "objectPath": "0x65e0c4bc",
+    "~class": "SpellObject"
+  },
+  "0x8393a593": {
+    "ObjectName": "Jade_QuinnRFinale",
+    "mScriptName": "Jade_QuinnRFinale",
+    "mSpell": {
+      "Cooldown": {
+        "Default": 1.0,
+        "values": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 15.0,
+      "castRadius": [
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0
+      ],
+      "castRange": [
+        700.0,
+        400.0,
+        400.0,
+        400.0,
+        400.0,
+        400.0,
+        400.0
+      ],
+      "castRangeDisplayOverride": [
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0
+      ],
+      "castRangeValues": {
+        "values": [
+          700.0,
+          400.0,
+          400.0,
+          400.0,
+          400.0,
+          400.0,
+          400.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 15567,
+      "mAnimationName": "Spell3",
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.25,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mUseTooltipFromAnotherSpell": "Characters/Jade_Quinn/Spells/Jade_QuinnRAbility/Jade_QuinnR",
+        "~class": "SpellDataResourceClient"
+      },
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mHitEffectKey": "Jade_Quinn_R_tar_01",
+      "mImgIconName": [
+        "assets/characters/quinn/hud/icons2d/quinn_r2.dds"
+      ],
+      "mSpellTags": [
+        "Trait_Ultimate",
+        "Trait_UltimateReactivation",
+        "Trait_FreeRecast"
+      ],
+      "mTargetingTypeData": {
+        "~class": "SelfAoe"
+      },
+      "missileSpeed": 0.0,
+      "spellCastTime": 0.25,
+      "spellTotalTime": 1.0,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x8393a593",
+    "~class": "SpellObject"
+  },
+  "0x9aab6044": {
+    "ObjectName": "Jade_QuinnWTimingMissile",
+    "mScriptName": "Jade_QuinnWTimingMissile",
+    "mSpell": {
+      "Cooldown": {
+        "Default": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "bHaveHitBone": true,
+      "canCastWhileDisabled": true,
+      "castConeDistance": 100.0,
+      "castFrame": 16.15999984741211,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        150.0,
+        150.0,
+        150.0,
+        150.0,
+        150.0,
+        150.0,
+        150.0
+      ],
+      "castRangeValues": {
+        "Default": 150.0,
+        "values": [
+          150.0,
+          150.0,
+          150.0,
+          150.0,
+          150.0,
+          150.0,
+          150.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "flags": 4,
+      "mAlternateName": "Jade_QuinnW",
+      "mAnimationName": "Spell2",
+      "mCantCancelWhileWindingUp": true,
+      "mCastType": 3,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "hideWithLineIndicator": true,
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "endLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "lineStopsAtEndPosition": false,
+            "lineWidth": {
+              "mPerLevelValues": [
+                120.0,
+                120.0,
+                120.0,
+                120.0,
+                120.0,
+                120.0
+              ],
+              "mValueType": 2,
+              "~class": "FloatPerSpellLevel"
+            },
+            "~class": "TargeterDefinitionLine"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 1.0,
+      "mHitBoneName": "root",
+      "mLineWidth": 120.0,
+      "mMissileEffectName": "DATA/Particles/Empty.troy",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnHit"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "~class": "BlendedLinearHeightSolver"
+        },
+        "mMissileWidth": 120.0,
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mProjectTargetToCastRange": true,
+          "mSpeed": 1350.0,
+          "mStartBoneName": "L_hand",
+          "mTracksTarget": false,
+          "mUseHeightOffsetAtEnd": true,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VerticalFacingFaceTarget"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mTargetingTypeData": {
+        "~class": "Location"
+      },
+      "missileSpeed": 1350.0,
+      "selectionPriority": 1,
+      "spellCastTime": 0.25,
+      "spellTotalTime": 1.0,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x9aab6044",
+    "~class": "SpellObject"
+  },
+  "0xa54b0a63": {
+    "ObjectName": "Jade_QuinnWInFlight",
+    "mScriptName": "Jade_QuinnWInFlight",
+    "mSpell": {
+      "Cooldown": {
+        "Default": 8.0,
+        "values": [
+          8.0,
+          8.0,
+          8.0,
+          8.0,
+          8.0,
+          8.0,
+          8.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "castConeDistance": 100.0,
+      "castFrame": 3.4800000190734863,
+      "castRadius": [
+        150.0,
+        150.0,
+        150.0,
+        150.0,
+        150.0,
+        150.0,
+        150.0
+      ],
+      "castRange": [
+        900.0,
+        900.0,
+        900.0,
+        900.0,
+        900.0,
+        900.0,
+        900.0
+      ],
+      "castRangeDisplayOverride": [
+        925.0,
+        925.0,
+        925.0,
+        925.0,
+        925.0,
+        925.0,
+        925.0
+      ],
+      "castRangeValues": {
+        "Default": 900.0,
+        "values": [
+          900.0,
+          900.0,
+          900.0,
+          900.0,
+          900.0,
+          900.0,
+          900.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 6154,
+      "mAnimationName": "Spell3",
+      "mCantCancelWhileWindingUp": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.8999999761581421,
+      "mFloatVarsDecimals": [
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mana": [
+        50.0,
+        50.0,
+        50.0,
+        50.0,
+        50.0,
+        50.0
+      ],
+      "manaValues": {
+        "Default": 50.0,
+        "values": [
+          50.0,
+          50.0,
+          50.0,
+          50.0,
+          50.0,
+          50.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "missileSpeed": 20.0,
+      "selectionPriority": 2,
+      "spellCastTime": 0.25,
+      "spellTotalTime": 1.0,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0xa54b0a63",
+    "~class": "SpellObject"
+  },
+  "0xcbb3221b": {
+    "ObjectName": "Jade_QuinnRReturnToJade_Quinn",
+    "mBuff": {
+      "mDescription": "game_buff_tooltip_Jade_QuinnRReturnToJade_Quinn",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_QuinnRReturnToJade_Quinn",
+    "mSpell": {
+      "Cooldown": {
+        "Default": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "castConeDistance": 100.0,
+      "castFrame": 15.0,
+      "castRadius": [
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0
+      ],
+      "castRange": [
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0
+      ],
+      "castRangeDisplayOverride": [
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0
+      ],
+      "castRangeValues": {
+        "Default": 650.0,
+        "values": [
+          650.0,
+          650.0,
+          650.0,
+          650.0,
+          650.0,
+          650.0,
+          650.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 15567,
+      "mAnimationName": "Channel",
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.25,
+      "mClientData": {
+        "mUseTooltipFromAnotherSpell": "Characters/Jade_Quinn/Spells/Jade_QuinnRAbility/Jade_QuinnR",
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 1.0,
+      "mCoefficient2": 1.0,
+      "mEffectAmount": [
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            0.699999988079071,
+            0.699999988079071,
+            1.0,
+            1.2999999523162842,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            100.0,
+            100.0,
+            50.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mImgIconName": [
+        "assets/characters/quinn/hud/spell_quinn_square.dds"
+      ],
+      "mLineWidth": 200.0,
+      "mSpellTags": [
+        "Trait_Ultimate",
+        "Trait_FreeRecast"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Self"
+      },
+      "mUseMinimapTargeting": true,
+      "missileSpeed": 2200.0,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0xcbb3221b",
+    "~class": "SpellObject"
+  },
+  "0xcd145d58": {
+    "ObjectName": "Jade_QuinnWEnhanced",
+    "mScriptName": "Jade_QuinnWEnhanced",
+    "mSpell": {
+      "Cooldown": {
+        "Default": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Quinn_QuinnWEnhanced_OnCast",
+        "13": "Play_sfx_Quinn_QuinnWEnhanced_OnHit",
+        "16": "Play_sfx_Quinn_QuinnWEnhanced_OnMissileLaunch"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "canCastWhileDisabled": true,
+      "castConeDistance": 100.0,
+      "castFrame": 5.199999809265137,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        525.0,
+        525.0,
+        525.0,
+        525.0,
+        525.0,
+        525.0,
+        525.0
+      ],
+      "castRangeUseBoundingBoxes": true,
+      "castRangeValues": {
+        "Default": 525.0,
+        "values": [
+          525.0,
+          525.0,
+          525.0,
+          525.0,
+          525.0,
+          525.0,
+          525.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 5327,
+      "mAlternateName": "Jade_QuinnWEnhanced",
+      "mAnimationName": "Attack1_P",
+      "mApplyMaterialOnHitSound": true,
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": true,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectName": "doesnotexist.troy",
+      "mImgIconName": [
+        "assets/characters/quinn/hud/icons2d/quinn_passive.dds"
+      ],
+      "mMissileEffectKey": "Jade_Quinn_W_Mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 2000.0,
+          "mStartBoneName": "L_hand",
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 2000.0,
+      "spellCastTime": 0.4596500098705292,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0xcd145d58",
+    "~class": "SpellObject"
+  },
+  "0xd6c47fc0": {
+    "ObjectName": "Jade_QuinnQSightReduction",
+    "mBuff": {
+      "mDescription": "game_buff_tooltip_Jade_QuinnQSightReduction",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_QuinnQSightReduction",
+    "objectPath": "0xd6c47fc0",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Quinn/Spells/Jade_QuinnBasicAttack": {
+    "ObjectName": "Jade_QuinnBasicAttack",
+    "mScriptName": "Jade_QuinnBasicAttack",
+    "mSpell": {
+      "Cooldown": {
+        "Default": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Quinn_QuinnBasicAttack_OnCast",
+        "13": "Play_sfx_Quinn_QuinnBasicAttack_OnHit",
+        "16": "Play_sfx_Quinn_QuinnBasicAttack_OnMissileLaunch"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 5.199999809265137,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0
+      ],
+      "castRangeValues": {
+        "Default": 600.0,
+        "values": [
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 5327,
+      "mAlternateName": "Jade_QuinnBasicAttack",
+      "mApplyMaterialOnHitSound": true,
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Jade_Quinn_BA_Hit",
+      "mMissileEffectKey": "Jade_Quinn_BA_Mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 2000.0,
+          "mStartBoneName": "L_hand",
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 2000.0,
+      "spellCastTime": 0.4596500098705292,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Quinn/Spells/Jade_QuinnBasicAttack",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Quinn/Spells/Jade_QuinnCritAttack": {
+    "ObjectName": "Jade_QuinnCritAttack",
+    "mScriptName": "Jade_QuinnCritAttack",
+    "mSpell": {
+      "Cooldown": {
+        "Default": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Quinn_QuinnCritAttack_OnCast",
+        "13": "Play_sfx_Quinn_QuinnCritAttack_OnHit",
+        "16": "Play_sfx_Quinn_QuinnCritAttack_OnMissileLaunch"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 5.199999809265137,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0
+      ],
+      "castRangeValues": {
+        "Default": 600.0,
+        "values": [
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 5327,
+      "mAnimationName": "Crit",
+      "mApplyMaterialOnHitSound": true,
+      "mCastType": 1,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Jade_Quinn_BA_crit_tar",
+      "mMissileEffectKey": "Jade_Quinn_BA_Mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 2000.0,
+          "mStartBoneName": "L_hand",
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 2000.0,
+      "spellCastTime": 0.45964911580085754,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Quinn/Spells/Jade_QuinnCritAttack",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Quinn/Spells/Jade_QuinnEAbility/Jade_QuinnE": {
+    "ObjectName": "Jade_QuinnE",
+    "mScriptName": "Jade_QuinnE",
+    "mSpell": {
+      "Cooldown": {
+        "Default": 13.0,
+        "values": [
+          13.0,
+          12.0,
+          11.0,
+          10.0,
+          9.0,
+          8.0,
+          7.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "SlowAmount",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseDamage",
+          "values": [
+            10.0,
+            40.0,
+            70.0,
+            100.0,
+            130.0,
+            160.0,
+            190.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowDecayTime",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ADRatio",
+          "values": [
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Quinn_QuinnE_OnCast",
+        "13": "Play_sfx_Quinn_QuinnE_OnHit",
+        "18": "Play_sfx_Quinn_QuinnE_OnBuffActivate"
+      },
+      "cantCastWhileRooted": true,
+      "castConeDistance": 100.0,
+      "castFrame": 7.5,
+      "castRadius": [
+        250.0,
+        250.0,
+        250.0,
+        250.0,
+        250.0,
+        250.0,
+        250.0
+      ],
+      "castRange": [
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0
+      ],
+      "castRangeDisplayOverride": [
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0
+      ],
+      "castRangeValues": {
+        "Default": 725.0,
+        "values": [
+          725.0,
+          725.0,
+          725.0,
+          725.0,
+          725.0,
+          725.0,
+          725.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        13.0,
+        12.0,
+        11.0,
+        10.0,
+        9.0,
+        8.0,
+        8.0
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 6154,
+      "mAlternateName": "Jade_QuinnE",
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.25,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "lineWidth": {
+              "mPerLevelValues": [
+                55.0,
+                55.0,
+                55.0,
+                55.0,
+                55.0,
+                55.0
+              ],
+              "mValueType": 2,
+              "~class": "FloatPerSpellLevel"
+            },
+            "startLocator": {
+              "basePosition": 2,
+              "~class": "DrawablePositionLocator"
+            },
+            "textureBaseOverrideName": "assets/characters/quinn/hud/reticle_quinn_base_e.tex",
+            "textureTargetOverrideName": "assets/characters/quinn/hud/icons2d/linetip_blank.tex",
+            "~class": "TargeterDefinitionLine"
+          },
+          {
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "BaseDamage",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Vault",
+            "keySummary": "Quinn dashes.<br><br>As Valor she also dashes.",
+            "keyTooltip": "<keywordMajor>As Quinn or Valor</keywordMajor>: Dash to an enemy, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage>, <status>Knocking back</status> and <status>Slowing</status> the target's Movement Speed by @SlowAmount*100@%, diminishing over @SlowDecayTime@ seconds.<br><br><keywordMajor>As Quinn</keywordMajor>: Additionally leap off her target and Valor will mark them as <keywordMajor>Vulnerable</keywordMajor>.",
+            "keyTooltipExtendedBelowLine": "<rules>Quinn dashes farther away if she was initially close to her target.</rules>"
+          },
+          "mObjectName": "Jade_QuinnE",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "assets/characters/quinn/hud/icons2d/quinn_e.dds"
+      ],
+      "mMinimapIconDisplayFlag": 0,
+      "mSpellCalculations": {
+        "TotalDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "ADRatio",
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "PositiveEffect_MoveBlock",
+        "Trait_ImmobilizingCCSpell",
+        "Trait_AttackReset",
+        "Trait_DamageAbility",
+        "Trait_KnockBack",
+        "Trait_SignatureSpell"
+      ],
+      "mana": [
+        50.0,
+        50.0,
+        50.0,
+        50.0,
+        50.0,
+        50.0
+      ],
+      "manaValues": {
+        "Default": 50.0,
+        "values": [
+          50.0,
+          50.0,
+          50.0,
+          50.0,
+          50.0,
+          50.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "missileSpeed": 20.0,
+      "selectionPriority": 2,
+      "spellCastTime": 0.25,
+      "spellTotalTime": 1.0,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Quinn/Spells/Jade_QuinnEAbility/Jade_QuinnE",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Quinn/Spells/Jade_QuinnQAbility/Jade_QuinnQ": {
+    "ObjectName": "Jade_QuinnQ",
+    "mScriptName": "Jade_QuinnQ",
+    "mSpell": {
+      "Cooldown": {
+        "Default": 12.0,
+        "values": [
+          12.0,
+          11.0,
+          10.0,
+          9.0,
+          8.0,
+          7.0,
+          6.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            30.0,
+            70.0,
+            110.0,
+            150.0,
+            190.0,
+            230.0,
+            270.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ADRatio",
+          "values": [
+            0.6499999761581421,
+            0.6499999761581421,
+            0.6499999761581421,
+            0.6499999761581421,
+            0.6499999761581421,
+            0.6499999761581421,
+            0.6499999761581421
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatio",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BlindDuration",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Quinn_QuinnQ_OnCast",
+        "16": "Play_sfx_Quinn_QuinnQ_OnMissileLaunch"
+      },
+      "castConeDistance": 100.0,
+      "castFrame": 7.5,
+      "castRange": [
+        1050.0,
+        1050.0,
+        1050.0,
+        1050.0,
+        1050.0,
+        1050.0,
+        1050.0
+      ],
+      "castRangeDisplayOverride": [
+        1025.0,
+        1025.0,
+        1025.0,
+        1025.0,
+        1025.0,
+        1025.0,
+        1025.0
+      ],
+      "castRangeValues": {
+        "Default": 1050.0,
+        "values": [
+          1050.0,
+          1050.0,
+          1050.0,
+          1050.0,
+          1050.0,
+          1050.0,
+          1050.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        11.5,
+        11.0,
+        10.5,
+        10.0,
+        9.5,
+        9.0,
+        9.0
+      ],
+      "mAffectsTypeFlags": 6154,
+      "mAnimationName": "Spell1",
+      "mCantCancelWhileWindingUp": true,
+      "mCastRequirementsCaster": [
+        {
+          "0xd6b6109c": "Characters/Jade_Quinn/Spells/Jade_QuinnEAbility/Jade_QuinnE",
+          "mInvertResult": true,
+          "~class": "HasBuffCastRequirement"
+        },
+        {
+          "0xd6b6109c": "0x3ba6d58e",
+          "mInvertResult": true,
+          "~class": "HasBuffCastRequirement"
+        }
+      ],
+      "mCastTime": 0.25,
+      "mCastType": 3,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "hideWithLineIndicator": true,
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "endLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "lineStopsAtEndPosition": false,
+            "lineWidth": {
+              "mPerLevelValues": [
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0
+              ],
+              "mValueType": 2,
+              "~class": "FloatPerSpellLevel"
+            },
+            "~class": "TargeterDefinitionLine"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "BaseDamage",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Blinding Assault",
+            "keySummary": "Valor flies out and strikes the first enemy in his path, damaging and blinding all enemies near that point.",
+            "keyTooltip": "<keywordMajor>As Quinn</keywordMajor>: Valor flies out and strikes the first enemy in his path. He then attacks all nearby enemies, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and <status>Blinding</status> them for @BlindDuration@ seconds.<br><br><keywordMajor>As Valor</keywordMajor>: Attack all nearby enemies, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and <status>Blinding</status> them for @BlindDuration@ seconds."
+          },
+          "mObjectName": "Jade_QuinnQ",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mFloatVarsDecimals": [
+        2,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mImgIconName": [
+        "assets/characters/quinn/hud/icons2d/quinn_q.dds"
+      ],
+      "mLineWidth": 80.0,
+      "mMissileEffectKey": "Jade_Quinn_Q_Mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnHit"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "~class": "BlendedLinearHeightSolver"
+        },
+        "mMissileWidth": 80.0,
+        "movementComponent": {
+          "0x3046674": true,
+          "mProjectTargetToCastRange": true,
+          "mSpeed": 1550.0,
+          "mStartBoneName": "C_Buffbone_Glb_Chest_Loc",
+          "mTracksTarget": false,
+          "mUseHeightOffsetAtEnd": true,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VerticalFacingFaceTarget"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mSpellCalculations": {
+        "TotalDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "ADRatio",
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "Trait_DamageAbility",
+        "Trait_Ranged_StopsFirstHit",
+        "Trait_AoE"
+      ],
+      "mTargetingTypeData": {
+        "~class": "direction"
+      },
+      "mana": [
+        50.0,
+        55.0,
+        60.0,
+        65.0,
+        70.0,
+        75.0
+      ],
+      "manaValues": {
+        "Default": 50.0,
+        "values": [
+          50.0,
+          55.0,
+          60.0,
+          65.0,
+          70.0,
+          75.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "missileSpeed": 1550.0,
+      "selectionPriority": 2,
+      "spellCastTime": 0.25,
+      "spellTotalTime": 1.0,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Quinn/Spells/Jade_QuinnQAbility/Jade_QuinnQ",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Quinn/Spells/Jade_QuinnRAbility/Jade_QuinnR": {
+    "ObjectName": "Jade_QuinnR",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Tag Team",
+          "keyTooltip": "Valor is currently fighting. He has increased movement and attack speed and is melee. Skystrike may be cast, dealing a burst of damage and returning Quinn to the battlefield."
+        },
+        "mObjectName": "Jade_QuinnR",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_QuinnR",
+    "mSpell": {
+      "Cooldown": {
+        "Default": 170.0,
+        "values": [
+          170.0,
+          140.0,
+          110.0,
+          80.0,
+          50.0,
+          20.0,
+          -10.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            50.0,
+            100.0,
+            150.0,
+            200.0,
+            250.0,
+            300.0,
+            350.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ADRatio",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaximumDamageMod",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "OoCMoveSpeed",
+          "values": [
+            0.699999988079071,
+            0.800000011920929,
+            0.8999999761581421,
+            1.0,
+            1.100000023841858,
+            1.2000000476837158,
+            1.2999999523162842
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "CombatMoveSpeed",
+          "values": [
+            0.10000000149011612,
+            0.20000000298023224,
+            0.30000001192092896,
+            0.4000000059604645,
+            0.5,
+            0.6000000238418579,
+            0.699999988079071
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "TransformDuration",
+          "values": [
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0,
+            20.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BonusAttackRange",
+          "values": [
+            -400.0,
+            -400.0,
+            -400.0,
+            -400.0,
+            -400.0,
+            -400.0,
+            -400.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "OoCTimer",
+          "values": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MSLossPerSecond",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "TargetHPforMaxDamage",
+          "values": [
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Quinn_QuinnR_OnCast",
+        "18": "Play_sfx_Quinn_QuinnR_OnBuffActivate",
+        "19": "Play_sfx_Quinn_QuinnRFinale_OnCast"
+      },
+      "cantCastWhileRooted": true,
+      "castConeDistance": 100.0,
+      "castFrame": 15.0,
+      "castRadius": [
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0
+      ],
+      "castRange": [
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0
+      ],
+      "castRangeDisplayOverride": [
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0
+      ],
+      "castRangeValues": {
+        "Default": 650.0,
+        "values": [
+          650.0,
+          650.0,
+          650.0,
+          650.0,
+          650.0,
+          650.0,
+          650.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 15567,
+      "mAlternateName": "Jade_QuinnR",
+      "mAnimationName": "",
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.25,
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Move Speed",
+                  "type": "OoCMoveSpeed",
+                  "typeIndex": 3,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Minimum Move Speed",
+                  "type": "CombatMoveSpeed",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Minimum Damage",
+                  "type": "BaseDamage",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 3,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Tag Team",
+            "keySummary": "Valor replaces Quinn on the battlefield as a mobile melee attacker, gaining movement speed and replacing her abilities. Cast again to perform Skystrike, damaging all nearby enemies.",
+            "keyTooltip": "<keywordMajor>First cast</keywordMajor>: Valor replaces Quinn on the battlefield as a mobile melee attacker for @TransformDuration@ seconds. Valor is Ghosted and gains @OoCMoveSpeed*100@% Move Speed, decreased gradually to @CombatMoveSpeed*100@% when in combat. Valor can then cast <keywordMajor>Skystrike</keywordMajor>.<br><br><keywordMajor>Skystrike</keywordMajor>: Quinn returns, dealing <physicalDamage>@TotalDamage@ - @TotalDamageMaximum@ physical damage</physicalDamage> to all enemies in a large area, based on how much health they are missing.",
+            "keyTooltipExtendedBelowLine": "<rules>If Skystrike has not been cast before this ability ends, it will be cast automatically.<br>Maximum damage is dealt at @TargetHPforMaxDamage*100@% current Health.</rules>"
+          },
+          "mObjectName": "Jade_QuinnR",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mImgIconName": [
+        "assets/characters/quinn/hud/icons2d/quinn_r1.dds"
+      ],
+      "mLineWidth": 200.0,
+      "mSpellCalculations": {
+        "0xea331176": {
+          "mModifiedGameCalculation": "TotalDamage",
+          "mMultiplier": {
+            "mDataValue": "MaximumDamageMod",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "~class": "GameCalculationModified"
+        },
+        "TotalDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "ADRatio",
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "Trait_Ultimate",
+        "Trait_Transformation",
+        "Trait_DamageAbility",
+        "Trait_AoE",
+        "Trait_RecastOrReplaceSpell"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Self"
+      },
+      "mUseMinimapTargeting": true,
+      "mana": [
+        50.0,
+        25.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "manaValues": {
+        "Default": 100.0,
+        "values": [
+          100.0,
+          100.0,
+          100.0,
+          100.0,
+          100.0,
+          100.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "missileSpeed": 2200.0,
+      "selectionPriority": 1,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Quinn/Spells/Jade_QuinnRAbility/Jade_QuinnR",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Quinn/Spells/Jade_QuinnWAbility/Jade_QuinnW": {
+    "ObjectName": "Jade_QuinnW",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Harrier",
+          "keyTooltip": "Valor has marked this unit. Quinn may attack them to deal bonus damage."
+        },
+        "mObjectName": "Jade_QuinnW",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_QuinnW",
+    "mSpell": {
+      "Cooldown": {
+        "Default": 55.0,
+        "values": [
+          55.0,
+          50.0,
+          45.0,
+          40.0,
+          35.0,
+          30.0,
+          25.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "AttackSpeedBonus",
+          "values": [
+            0.15000000596046448,
+            0.20000000298023224,
+            0.25,
+            0.30000001192092896,
+            0.3499999940395355,
+            0.4000000059604645,
+            0.45000001788139343
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MovespeedAmount",
+          "values": [
+            10.0,
+            20.0,
+            30.0,
+            40.0,
+            50.0,
+            60.0,
+            70.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BuffDuration",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "VisionRadius",
+          "values": [
+            1950.0,
+            1950.0,
+            1950.0,
+            1950.0,
+            1950.0,
+            1950.0,
+            1950.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "VisionDuration",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ValorAttackSpeed",
+          "values": [
+            0.30000001192092896,
+            0.4000000059604645,
+            0.5,
+            0.6000000238418579,
+            0.699999988079071,
+            0.800000011920929,
+            0.8999999761581421
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Quinn_QuinnW_OnCast"
+      },
+      "castConeDistance": 100.0,
+      "castFrame": 3.4800000190734863,
+      "castRadius": [
+        1200.0,
+        1200.0,
+        1200.0,
+        1200.0,
+        1200.0,
+        1200.0,
+        1200.0
+      ],
+      "castRange": [
+        2500.0,
+        2500.0,
+        2500.0,
+        2500.0,
+        2500.0,
+        2500.0,
+        2500.0
+      ],
+      "castRangeDisplayOverride": [
+        2100.0,
+        2100.0,
+        2100.0,
+        2100.0,
+        2100.0,
+        2100.0,
+        2100.0
+      ],
+      "castRangeValues": {
+        "Default": 2500.0,
+        "values": [
+          2500.0,
+          2500.0,
+          2500.0,
+          2500.0,
+          2500.0,
+          2500.0,
+          2500.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        55.0,
+        50.0,
+        45.0,
+        40.0,
+        35.0,
+        30.0,
+        30.0
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 15567,
+      "mAlternateName": "Jade_QuinnW",
+      "mAnimationName": "Spell3",
+      "mCantCancelWhileWindingUp": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "~class": "TargeterDefinitionMinimap"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Attack Speed",
+                  "type": "AttackSpeedBonus",
+                  "typeIndex": 2,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Move Speed",
+                  "type": "MovespeedAmount",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Attack Speed",
+                  "type": "ValorAttackSpeed",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyCost": "No Cost",
+            "keyName": "Heightened Senses",
+            "keySummary": "Passive: Gain stats when triggering vulnerable<br><br>Passive as Valor: Gain stats<br><br>Active: Reveal an area",
+            "keyTooltip": "<keywordMajor>Passive as Quinn</keywordMajor>: Attacking a <keywordMajor>Vulnerable</keywordMajor> target gives Quinn <speed>@AttackSpeedBonus*100@% Attack Speed</speed> and <speed>@MovespeedAmount@ Movement Speed</speed> for @BuffDuration@ seconds.<br><br><keywordMajor>Passive as Valor</keywordMajor>: Gain @ValorAttackSpeed*100@% Attack Speed.<br><br><keywordMajor>Active</keywordMajor>: Valor reveals a large area nearby for @VisionDuration@ seconds."
+          },
+          "mObjectName": "Jade_QuinnW",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mFloatVarsDecimals": [
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mImgIconName": [
+        "assets/characters/quinn/hud/icons2d/quinn_w.dds"
+      ],
+      "mSpellRevealsChampion": false,
+      "mSpellTags": [
+        "Trait_AoE"
+      ],
+      "mTargetingTypeData": {
+        "~class": "SelfAoe"
+      },
+      "mUseMinimapTargeting": true,
+      "missileSpeed": 20.0,
+      "selectionPriority": 2,
+      "spellCastTime": 0.25,
+      "spellTotalTime": 1.0,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Quinn/Spells/Jade_QuinnWAbility/Jade_QuinnW",
+    "~class": "SpellObject"
+  }
+}

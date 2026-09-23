@@ -1,0 +1,2246 @@
+{
+  "0x2039a8ed": {
+    "ObjectName": "Jade_CaitlynPassive",
+    "mScriptName": "Jade_CaitlynPassive",
+    "mSpell": {
+      "DataValues": [
+        {
+          "name": "CritChanceMultiplier",
+          "values": [
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "TowerCap",
+          "values": [
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BrushStackBonus",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "HeadshotChampNoCritTimes",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "HeadshotNonChampNoCritTimes",
+          "values": [
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "HeadshotChampCritTimes",
+          "values": [
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "HeadshotNonChampCritTimes",
+          "values": [
+            1.75,
+            1.75,
+            1.75,
+            1.75,
+            1.75,
+            1.75,
+            1.75
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "mAnimationName": "",
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyName": "Headshot",
+            "keySummary": "Every few basic attacks, Caitlyn will fire a headshot dealing extra damage.",
+            "keyTooltip": "Every @HeadshotRequirement@ attacks (attacks while in brush count as 2), Caitlyn will fire a <keywordMajor>Headshot</keywordMajor>, dealing either <physicalDamage>@HeadShotTotalDamageTT@ physical damage</physicalDamage> to a champion or <physicalDamage>@HeadShotMinionTotalDamageTT@ physical damage</physicalDamage> to a minion."
+          },
+          "mObjectName": "Jade_CaitlynPassive",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/caitlyn_headshot.dds",
+        "assets/ux/jade/s3icons/samesized/caitlyn_headshot.dds"
+      ],
+      "mSpellCalculations": {
+        "0x3598dd78": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "HeadshotNonChampNoCritTimes",
+              "mStat": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "tooltipOnly": true,
+          "~class": "GameCalculation"
+        },
+        "0x369702ce": {
+          "mFormulaParts": [
+            {
+              "mBreakpoints": [
+                {
+                  "mAdditionalBonusAtThisLevel": -1.0,
+                  "mLevel": 7,
+                  "~class": "Breakpoint"
+                },
+                {
+                  "mAdditionalBonusAtThisLevel": -1.0,
+                  "mLevel": 13,
+                  "~class": "Breakpoint"
+                }
+              ],
+              "mLevel1Value": 8.0,
+              "~class": "ByCharLevelBreakpointsCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "0xbf146a92": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "HeadshotChampNoCritTimes",
+              "mStat": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "tooltipOnly": true,
+          "~class": "GameCalculation"
+        },
+        "BrushAttackTotal": {
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mFormulaParts": [
+            {
+              "mSubparts": [
+                {
+                  "mNumber": 1.0,
+                  "~class": "NumberCalculationPart"
+                },
+                {
+                  "mDataValue": "BrushStackBonus",
+                  "~class": "NamedDataValueCalculationPart"
+                }
+              ],
+              "~class": "SumOfSubPartsCalculationPart"
+            }
+          ],
+          "mSimpleTooltipCalculationDisplay": 5,
+          "~class": "GameCalculation"
+        }
+      },
+      "mTargetingTypeData": {
+        "~class": "Self"
+      },
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x2039a8ed",
+    "~class": "SpellObject"
+  },
+  "0x27f6d5b5": {
+    "ObjectName": "Jade_CaitlynRMissile",
+    "mScriptName": "Jade_CaitlynRMissile",
+    "mSpell": {
+      "Cooldown": {
+        "Default": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "15": "Play_sfx_Caitlyn_CaitlynRMissile_OnMissileCast",
+        "16": "Play_sfx_Caitlyn_CaitlynRMissile_OnMissileLaunch"
+      },
+      "castConeDistance": 100.0,
+      "castFrame": 58.0,
+      "castRadius": [
+        710.0,
+        710.0,
+        710.0,
+        710.0,
+        710.0,
+        710.0,
+        710.0
+      ],
+      "castRange": [
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0
+      ],
+      "castRangeValues": {
+        "Default": 25000.0,
+        "values": [
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 4106,
+      "mAlternateName": "Jade_CaitlynRMissile",
+      "mAnimationName": "Spell1",
+      "mCantCancelWhileWindingUp": true,
+      "mCastType": 3,
+      "mCoefficient": 0.6000000238418579,
+      "mEffectAmount": [
+        {
+          "value": [
+            50.0,
+            90.0,
+            130.0,
+            170.0,
+            215.0,
+            260.0,
+            300.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/caitlyn_aceinthehole.dds",
+        ""
+      ],
+      "mLineWidth": 40.0,
+      "mMissileEffectKey": "Jade_Caitlyn_R_mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnHit"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "~class": "BlendedLinearHeightSolver"
+        },
+        "mMissileWidth": 40.0,
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mProjectTargetToCastRange": true,
+          "mSpeed": 3200.0,
+          "mStartBoneName": "Rifle_TopBarrel2",
+          "mUseHeightOffsetAtEnd": true,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VerticalFacingFaceTarget"
+        },
+        "visibilityComponent": {
+          "mPerceptionBubbleRadius": 1500.0,
+          "~class": "EnterFOWVisibility"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mRequiredUnitTags": {
+        "mObjectTagList": [
+          "champion"
+        ],
+        "~class": "ObjectTags"
+      },
+      "missileSpeed": 3200.0,
+      "selectionPriority": 1,
+      "spellCastTime": 0.25,
+      "spellTotalTime": 1.0,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x27f6d5b5",
+    "~class": "SpellObject"
+  },
+  "0x2aff79c3": {
+    "ObjectName": "Jade_CaitlynEMissile",
+    "mScriptName": "Jade_CaitlynEMissile",
+    "mSpell": {
+      "Cooldown": {
+        "Default": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "15": "Play_sfx_Caitlyn_CaitlynEMissile_OnMissileCast",
+        "16": "Play_sfx_Caitlyn_CaitlynEMissile_OnMissileLaunch"
+      },
+      "bHaveHitBone": true,
+      "canCastWhileDisabled": true,
+      "castConeDistance": 100.0,
+      "castFrame": 5.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0
+      ],
+      "castRangeDisplayOverride": [
+        950.0,
+        950.0,
+        950.0,
+        950.0,
+        950.0,
+        950.0,
+        950.0
+      ],
+      "castRangeValues": {
+        "Default": 1000.0,
+        "values": [
+          1000.0,
+          1000.0,
+          1000.0,
+          1000.0,
+          1000.0,
+          1000.0,
+          1000.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 6154,
+      "mAlternateName": "Jade_CaitlynE",
+      "mAnimationName": "Spell3",
+      "mCantCancelWhileChanneling": true,
+      "mCantCancelWhileWindingUp": true,
+      "mCastType": 3,
+      "mCoefficient": 0.800000011920929,
+      "mEffectAmount": [
+        {
+          "value": [
+            0.0,
+            60.0,
+            120.0,
+            180.0,
+            240.0,
+            300.0,
+            360.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            1.0,
+            1.2000000476837158,
+            1.399999976158142,
+            1.600000023841858,
+            1.7999999523162842,
+            2.0,
+            2.200000047683716
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mHitBoneName": "C_BuffBone_Glb_Center_Loc",
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/caitlyn_90calibernet.dds",
+        ""
+      ],
+      "mLineWidth": 80.0,
+      "mMissileEffectKey": "Jade_Caitlyn_E_mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnHit"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "~class": "BlendedLinearHeightSolver"
+        },
+        "mMissileWidth": 80.0,
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mProjectTargetToCastRange": true,
+          "mSpeed": 2000.0,
+          "mStartBoneName": "",
+          "mTracksTarget": false,
+          "mUseHeightOffsetAtEnd": true,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VerticalFacingFaceTarget"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mTargetingTypeData": {
+        "~class": "direction"
+      },
+      "missileSpeed": 1600.0,
+      "selectionPriority": 1,
+      "spellCastTime": 0.25,
+      "spellTotalTime": 0.8999999761581421,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x2aff79c3",
+    "~class": "SpellObject"
+  },
+  "0x3ec93b2e": {
+    "ObjectName": "Jade_CaitlynHeadshotMissile",
+    "mScriptName": "Jade_CaitlynHeadshotMissile",
+    "mSpell": {
+      "Cooldown": {
+        "Default": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "13": "Play_sfx_Caitlyn_CaitlynPassiveMissile_OnHit",
+        "15": "Play_sfx_Caitlyn_CaitlynPassiveMissile_OnMissileCast",
+        "16": "Play_sfx_Caitlyn_CaitlynPassiveMissile_OnMissileLaunch"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "canCastWhileDisabled": true,
+      "castConeDistance": 100.0,
+      "castFrame": 9.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0,
+        25000.0
+      ],
+      "castRangeValues": {
+        "Default": 25000.0,
+        "values": [
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 6826,
+      "mAnimationName": "Passive",
+      "mCastTime": 1.0,
+      "mCastType": 1,
+      "mClientData": {
+        "mUseTooltipFromAnotherSpell": "0x2039a8ed",
+        "~class": "SpellDataResourceClient"
+      },
+      "mEffectAmount": [
+        {
+          "value": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25,
+            1.25
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mHitBoneName": "C_Buffbone_Glb_Head_Loc",
+      "mHitEffectKey": "Jade_Caitlyn_BA_tar",
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/caitlyn_headshot.dds"
+      ],
+      "mMissileEffectKey": "Jade_Caitlyn_P_mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 3000.0,
+          "mStartBoneName": "Rifle_TopBarrel2",
+          "mStartBoneSkinOverrides": {
+            "11": "Gun_Barrel_End",
+            "22": "BUFFBONE_GLB_WEAPON_1",
+            "301": "BUFFBONE_CSTM_WEAPON_5",
+            "302": "BUFFBONE_CSTM_WEAPON_5",
+            "303": "BUFFBONE_CSTM_WEAPON_5"
+          },
+          "mTargetBoneName": "C_Buffbone_Glb_Head_Loc",
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mRollForCriticalHit": true,
+      "mUseAutoattackCastTimeData": {
+        "~class": "UseAutoattackCastTimeData"
+      },
+      "missileSpeed": 3000.0,
+      "spellCastTime": 0.4236000180244446,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x3ec93b2e",
+    "~class": "SpellObject"
+  },
+  "0x41e89e72": {
+    "ObjectName": "Jade_CaitlynHeadshot",
+    "mBuff": {
+      "mDescription": "<titleLeft>Headshot: Ready</titleLeft><mainText>Caitlyn's next basic attack will deal either 150% damage to a champion or 250% damage to a minion.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_CaitlynHeadshot",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/caitlyn_headshot2.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x41e89e72",
+    "~class": "SpellObject"
+  },
+  "0x9c4da417": {
+    "ObjectName": "Jade_CaitlynSkin22Manager",
+    "mScriptName": "Jade_CaitlynSkin22Manager",
+    "objectPath": "0x9c4da417",
+    "~class": "SpellObject"
+  },
+  "0x9d7e7cef": {
+    "ObjectName": "Jade_CaitlynYorldeTrapSight",
+    "mBuff": {
+      "mDescription": "<titleLeft>Yordle Trap: Sight</titleLeft><mainText>Caitlyn can see this unit.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_CaitlynYorldeTrapSight",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/caitlyn_yordlesnaptrap.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x9d7e7cef",
+    "~class": "SpellObject"
+  },
+  "0xcd514804": {
+    "ObjectName": "Jade_CaitlynYordleTrapDebuff",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Yordle Snap Trap",
+          "keyTooltip": "This unit cannot move."
+        },
+        "mObjectName": "Jade_CaitlynYordleTrapDebuff",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_CaitlynYordleTrapDebuff",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/caitlyn_yordlesnaptrap.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0xcd514804",
+    "~class": "SpellObject"
+  },
+  "0xe46d4cf9": {
+    "ObjectName": "Jade_CaitlynHeadshotCount",
+    "mBuff": {
+      "mDescription": "<titleLeft>Headshot: Count</titleLeft><mainText> Caitlyn is charging up for a headshot.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_CaitlynHeadshotCount",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/caitlyn_headshot.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0xe46d4cf9",
+    "~class": "SpellObject"
+  },
+  "0xf150cf89": {
+    "ObjectName": "Jade_CaitlynSkin11Manager",
+    "mScriptName": "Jade_CaitlynSkin11Manager",
+    "objectPath": "0xf150cf89",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Caitlyn/Spells/Jade_CaitlynBasicAttack": {
+    "ObjectName": "Jade_CaitlynBasicAttack",
+    "mScriptName": "Jade_CaitlynBasicAttack",
+    "mSpell": {
+      "Cooldown": {
+        "Default": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "13": "Play_sfx_Caitlyn_CaitlynBasicAttack_OnHit",
+        "15": "Play_sfx_Caitlyn_CaitlynBasicAttack_OnMissileCast",
+        "16": "Play_sfx_Caitlyn_CaitlynBasicAttack_OnMissileLaunch"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 8.5,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0
+      ],
+      "castRangeValues": {
+        "Default": 600.0,
+        "values": [
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 5327,
+      "mAlternateName": "Jade_CaitlynBasicAttack_Jade",
+      "mAnimationName": "AttackSelector",
+      "mCastType": 1,
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Jade_Caitlyn_BA_tar",
+      "mHitEffectOrientType": 2,
+      "mMissileEffectKey": "Jade_Caitlyn_BA_mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 2500.0,
+          "mStartBoneName": "Rifle_TopBarrel2",
+          "mStartBoneSkinOverrides": {
+            "11": "Gun_Barrel_End",
+            "22": "BUFFBONE_GLB_WEAPON_1",
+            "301": "BUFFBONE_CSTM_WEAPON_5",
+            "302": "BUFFBONE_CSTM_WEAPON_5",
+            "303": "BUFFBONE_CSTM_WEAPON_5"
+          },
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 2500.0,
+      "spellCastTime": 0.48500001430511475,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Caitlyn/Spells/Jade_CaitlynBasicAttack",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Caitlyn/Spells/Jade_CaitlynCritAttack": {
+    "ObjectName": "Jade_CaitlynCritAttack",
+    "mScriptName": "Jade_CaitlynCritAttack",
+    "mSpell": {
+      "Cooldown": {
+        "Default": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "13": "Play_sfx_Caitlyn_CaitlynCritAttack_OnHit",
+        "15": "Play_sfx_Caitlyn_CaitlynCritAttack_OnMissileCast",
+        "16": "Play_sfx_Caitlyn_CaitlynCritAttack_OnMissileLaunch"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 8.5,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0
+      ],
+      "castRangeValues": {
+        "Default": 600.0,
+        "values": [
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0,
+          600.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 5327,
+      "mAlternateName": "Jade_CaitlynCritAttack_Jade",
+      "mAnimationName": "Crit",
+      "mCastType": 1,
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Jade_Caitlyn_BA_Crit_tar",
+      "mHitEffectOrientType": 2,
+      "mMissileEffectKey": "Jade_Caitlyn_Crit_Mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 2500.0,
+          "mStartBoneName": "Rifle_TopBarrel2",
+          "mStartBoneSkinOverrides": {
+            "11": "Gun_Barrel_End",
+            "22": "BUFFBONE_GLB_WEAPON_1",
+            "301": "BUFFBONE_CSTM_WEAPON_5",
+            "302": "BUFFBONE_CSTM_WEAPON_5",
+            "303": "BUFFBONE_CSTM_WEAPON_5"
+          },
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
+      },
+      "missileSpeed": 2500.0,
+      "spellCastTime": 0.48500001430511475,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Caitlyn/Spells/Jade_CaitlynCritAttack",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Caitlyn/Spells/Jade_CaitlynEAbility/Jade_CaitlynE": {
+    "ObjectName": "Jade_CaitlynE",
+    "mScriptName": "Jade_CaitlynE",
+    "mSpell": {
+      "Cooldown": {
+        "values": [
+          18.0,
+          18.0,
+          16.0,
+          14.0,
+          12.0,
+          10.0,
+          10.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "Damage",
+          "values": [
+            30.0,
+            80.0,
+            130.0,
+            180.0,
+            230.0,
+            280.0,
+            330.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowDuration",
+          "values": [
+            0.75,
+            1.0,
+            1.25,
+            1.5,
+            1.75,
+            2.0,
+            2.25
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowAmount",
+          "values": [
+            -0.5,
+            -0.5,
+            -0.5,
+            -0.5,
+            -0.5,
+            -0.5,
+            -0.5
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Caitlyn_CaitlynE_OnCast"
+      },
+      "bHaveHitBone": true,
+      "cantCastWhileRooted": true,
+      "castConeDistance": 100.0,
+      "castFrame": 7.0,
+      "castRadius": [
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0
+      ],
+      "castRange": [
+        10000.0,
+        10000.0,
+        10000.0,
+        10000.0,
+        10000.0,
+        10000.0,
+        10000.0
+      ],
+      "castRangeDisplayOverride": [
+        950.0,
+        950.0,
+        950.0,
+        950.0,
+        950.0,
+        950.0,
+        950.0
+      ],
+      "castRangeValues": {
+        "Default": 10000.0,
+        "values": [
+          10000.0,
+          10000.0,
+          10000.0,
+          10000.0,
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        18.0,
+        18.0,
+        16.0,
+        14.0,
+        12.0,
+        10.0,
+        10.0
+      ],
+      "mAffectsTypeFlags": 15375,
+      "mAlternateName": "Jade_CaitlynE",
+      "mAnimationName": "Spell3",
+      "mCantCancelWhileChanneling": true,
+      "mCantCancelWhileWindingUp": true,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "Damage",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Slow Duration",
+                  "type": "SlowDuration",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "90 Caliber Net",
+            "keySummary": "Caitlyn fires a heavy net to slow her target. The recoil knocks Caitlyn back.",
+            "keyTooltip": "Caitlyn fires a net dealing <magicDamage>@NetDamage@ magic damage</magicDamage> and <status>Slows</status> the target by @SlowAmount*-100@% for @SlowDuration@ second(s). Knocks Caitlyn back."
+          },
+          "mObjectName": "Jade_CaitlynE",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.800000011920929,
+      "mEffectAmount": [
+        {
+          "value": [
+            40.0,
+            80.0,
+            130.0,
+            180.0,
+            230.0,
+            280.0,
+            310.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mHitBoneName": "C_BuffBone_Glb_Center_Loc",
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/caitlyn_90calibernet.dds"
+      ],
+      "mLineWidth": 70.0,
+      "mSpellCalculations": {
+        "NetDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "Damage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.800000011920929,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "PositiveEffect_MoveBlock"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Location"
+      },
+      "mana": [
+        75.0,
+        75.0,
+        75.0,
+        75.0,
+        75.0,
+        75.0
+      ],
+      "manaValues": {
+        "Default": 75.0,
+        "values": [
+          75.0,
+          75.0,
+          75.0,
+          75.0,
+          75.0,
+          75.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "missileSpeed": 1600.0,
+      "selectionPriority": 1,
+      "spellCastTime": 0.15000000596046448,
+      "spellTotalTime": 0.6000000238418579,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Caitlyn/Spells/Jade_CaitlynEAbility/Jade_CaitlynE",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Caitlyn/Spells/Jade_CaitlynQAbility/Jade_CaitlynQ": {
+    "ObjectName": "Jade_CaitlynQ",
+    "mScriptName": "Jade_CaitlynQ",
+    "mSpell": {
+      "Cooldown": {
+        "values": [
+          11.0,
+          10.0,
+          9.0,
+          8.0,
+          7.0,
+          6.0,
+          6.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            10.0,
+            20.0,
+            60.0,
+            100.0,
+            140.0,
+            180.0,
+            250.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SecondaryMult",
+          "values": [
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579,
+            0.6000000238418579
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ADRatio",
+          "values": [
+            1.2999999523162842,
+            1.2999999523162842,
+            1.2999999523162842,
+            1.2999999523162842,
+            1.2999999523162842,
+            1.2999999523162842,
+            1.2999999523162842
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "CastTime",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ExtraHitPercentReduction",
+          "values": [
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MinimumDamagePercent",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Caitlyn_CaitlynQ_OnCast",
+        "13": "Play_sfx_Caitlyn_CaitlynQ_OnHit",
+        "15": "Play_sfx_Caitlyn_CaitlynQ_OnMissileCast",
+        "16": "Play_sfx_Caitlyn_CaitlynQ_OnMissileLaunch"
+      },
+      "alwaysSnapFacing": true,
+      "castConeDistance": 100.0,
+      "castFrame": 30.0,
+      "castRadius": [
+        90.0,
+        90.0,
+        90.0,
+        90.0,
+        90.0,
+        90.0,
+        90.0
+      ],
+      "castRange": [
+        1300.0,
+        1300.0,
+        1300.0,
+        1300.0,
+        1300.0,
+        1300.0,
+        1300.0
+      ],
+      "castRangeDisplayOverride": [
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0
+      ],
+      "castRangeValues": {
+        "Default": 1300.0,
+        "values": [
+          1300.0,
+          1300.0,
+          1300.0,
+          1300.0,
+          1300.0,
+          1300.0,
+          1300.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        11.0,
+        10.0,
+        9.0,
+        8.0,
+        7.0,
+        6.0,
+        6.0
+      ],
+      "flags": 4194304,
+      "luaOnMissileUpdateDistanceInterval": 51.0,
+      "mAffectsTypeFlags": 6154,
+      "mAnimationName": "Spell1",
+      "mCantCancelWhileWindingUp": true,
+      "mCastType": 3,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "BaseDamage",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Piltover Peacemaker",
+            "keySummary": "Caitlyn revs up her rifle for to unleash a penetrating shot that deals physical damage (deals less damage to subsequent targets).",
+            "keyTooltip": "Caitlyn revs her rifle for @CastTime@ second to fire a piercing shot dealing <physicalDamage>@InitialDamage@ physical damage</physicalDamage>. Deals @ExtraHitPercentReduction*100@% less damage to each subsequent target down to a minimum of @MinimumDamagePercent*100@%."
+          },
+          "mObjectName": "Jade_CaitlynQ",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mEffectAmount": [
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0,
+            50.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            1.2999999523162842,
+            1.2999999523162842,
+            1.4500000476837158,
+            1.600000023841858,
+            1.75,
+            1.899999976158142,
+            2.049999952316284
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mFloatVarsDecimals": [
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/caitlyn_piltoverpeacemaker.dds",
+        ""
+      ],
+      "mLineWidth": 90.0,
+      "mMissileEffectKey": "Jade_Caitlyn_Q_mis2",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnHit"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "heightSolver": {
+          "~class": "BlendedLinearHeightSolver"
+        },
+        "mMissileWidth": 90.0,
+        "movementComponent": {
+          "mProjectTargetToCastRange": true,
+          "mSpeed": 2200.0,
+          "mStartBoneName": "",
+          "mTracksTarget": false,
+          "mUseHeightOffsetAtEnd": true,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VerticalFacingFaceTarget"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mSpellCalculations": {
+        "InitialDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "ADRatio",
+              "mStat": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellRevealsChampion": false,
+      "mTargetingTypeData": {
+        "~class": "direction"
+      },
+      "mana": [
+        50.0,
+        60.0,
+        70.0,
+        80.0,
+        90.0,
+        80.0
+      ],
+      "manaValues": {
+        "values": [
+          50.0,
+          60.0,
+          70.0,
+          80.0,
+          90.0,
+          80.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "missileSpeed": 2200.0,
+      "selectionPriority": 1,
+      "spellCastTime": 0.625,
+      "spellTotalTime": 1.0,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Caitlyn/Spells/Jade_CaitlynQAbility/Jade_CaitlynQ",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Caitlyn/Spells/Jade_CaitlynRAbility/Jade_CaitlynR": {
+    "ObjectName": "Jade_CaitlynR",
+    "mBuff": {
+      "mDescription": "<titleLeft>Ace in the Hole: Targeted</titleLeft><mainText>You are about to be shot by Caitlyn.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_CaitlynR",
+    "mSpell": {
+      "Cooldown": {
+        "Default": 105.0,
+        "values": [
+          105.0,
+          90.0,
+          75.0,
+          60.0,
+          45.0,
+          30.0,
+          15.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "RBaseDamage",
+          "values": [
+            125.0,
+            250.0,
+            475.0,
+            700.0,
+            825.0,
+            1000.0,
+            1175.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "RADRatio",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "CritChanceAmp",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Caitlyn_CaitlynR_OnCast",
+        "13": "Play_sfx_Caitlyn_CaitlynR_OnHit",
+        "18": "Play_sfx_Caitlyn_CaitlynR_OnBuffActivate"
+      },
+      "alwaysSnapFacing": true,
+      "castConeDistance": 100.0,
+      "castFrame": 16.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        2000.0,
+        2000.0,
+        2500.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3500.0
+      ],
+      "castRangeValues": {
+        "values": [
+          2000.0,
+          2000.0,
+          2500.0,
+          3000.0,
+          3000.0,
+          3000.0,
+          3500.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        90.0,
+        90.0,
+        90.0,
+        90.0,
+        90.0,
+        90.0,
+        90.0
+      ],
+      "mAffectsTypeFlags": 4106,
+      "mAlternateName": "Jade_CaitlynR",
+      "mAnimationName": "Spell4",
+      "mCantCancelWhileChanneling": true,
+      "mCantCancelWhileWindingUp": true,
+      "mCantCancelWhileWindingUpTargetingChampion": true,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "RBaseDamage",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "CastRange",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 3,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Ace in the Hole",
+            "keySummary": "Caitlyn takes time to line up the perfect shot, dealing massive damage to a single target at a huge range. Enemy champions can intercept the bullet for their ally.",
+            "keyTooltip": "Caitlyn takes a second to line up the perfect shot, firing a bullet at an enemy Champion dealing <physicalDamage>@RTotalDamage@ physical damage</physicalDamage> at @CastRange@ range. Other enemy Champions can intercept the bullet."
+          },
+          "mObjectName": "Jade_CaitlynR",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mDimensionBehavior": 1,
+      "mFloatVarsDecimals": [
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/caitlyn_aceinthehole.dds"
+      ],
+      "mRequiredUnitTags": {
+        "mObjectTagList": [
+          "champion"
+        ],
+        "~class": "ObjectTags"
+      },
+      "mSpellCalculations": {
+        "RTotalDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "RBaseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "RADRatio",
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "Trait_Ultimate",
+        "Trait_ChannelSpell"
+      ],
+      "mUseMinimapTargeting": true,
+      "mana": [
+        100.0,
+        100.0,
+        100.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "manaValues": {
+        "values": [
+          100.0,
+          100.0,
+          100.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "missileSpeed": 1500.0,
+      "spellCastTime": 0.375,
+      "spellTotalTime": 1.0,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Caitlyn/Spells/Jade_CaitlynRAbility/Jade_CaitlynR",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Caitlyn/Spells/Jade_CaitlynWAbility/Jade_CaitlynW": {
+    "ObjectName": "Jade_CaitlynW",
+    "mBuff": {
+      "mDescription": "game_buff_tooltip_Jade_CaitlynYordleTrap",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_CaitlynW",
+    "mSpell": {
+      "Cooldown": {
+        "values": [
+          20.0,
+          20.0,
+          17.0,
+          14.0,
+          11.0,
+          8.0,
+          8.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            0.0,
+            80.0,
+            130.0,
+            180.0,
+            230.0,
+            280.0,
+            0.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Duration",
+          "values": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxTraps",
+          "values": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "RootDuration",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "VisibilityDuration",
+          "values": [
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DOTTime",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Caitlyn_CaitlynW_OnCast",
+        "19": "Play_sfx_Caitlyn_CaitlynWSnare_OnBuffActivate"
+      },
+      "castConeDistance": 100.0,
+      "castFrame": 7.5,
+      "castRadius": [
+        75.0,
+        75.0,
+        75.0,
+        75.0,
+        75.0,
+        75.0,
+        75.0
+      ],
+      "castRange": [
+        800.0,
+        800.0,
+        800.0,
+        800.0,
+        800.0,
+        800.0,
+        800.0
+      ],
+      "castRangeValues": {
+        "Default": 800.0,
+        "values": [
+          800.0,
+          800.0,
+          800.0,
+          800.0,
+          800.0,
+          800.0,
+          800.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        20.0,
+        20.0,
+        17.0,
+        14.0,
+        11.0,
+        8.0,
+        8.0
+      ],
+      "mAffectsTypeFlags": 1029,
+      "mAnimationName": "Spell2",
+      "mCantCancelWhileWindingUp": true,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "centerLocator": {
+              "basePosition": 7,
+              "~class": "DrawablePositionLocator"
+            },
+            "~class": "TargeterDefinitionAoe"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "BaseDamage",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Yordle Snap Trap",
+            "keySummary": "Caitlyn sets a trap to find sneaky yordles. When sprung, the trap immobilizes the champion, reveals them and deals magic damage over a short duration.",
+            "keyTooltip": "Caitlyn sets a trap that an enemy Champion can spring <status>Rooting</status> them for a short duration and revealing them for @VisibilityDuration@ seconds. The trap deals <magicDamage>@TotalDamage@ magic damage</magicDamage> over @DOTTime@ seconds, and lasts for @Duration@ minutes. Only @MaxTraps@ traps may be active at once."
+          },
+          "mObjectName": "Jade_CaitlynW",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mCoefficient": 0.6000000238418579,
+      "mEffectAmount": [
+        {
+          "value": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            35.0,
+            35.0,
+            80.0,
+            125.0,
+            170.0,
+            215.0,
+            215.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            30.0,
+            30.0,
+            35.0,
+            40.0,
+            45.0,
+            50.0,
+            55.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            2.0,
+            3.0,
+            3.0,
+            4.0,
+            4.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            2.0,
+            3.0,
+            3.0,
+            4.0,
+            4.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
+      ],
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/caitlyn_yordlesnaptrap.dds"
+      ],
+      "mMaxAmmo": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mProjectTargetToCastRange": true,
+      "mRequiredUnitTags": {
+        "mObjectTagList": [
+          "champion"
+        ],
+        "~class": "ObjectTags"
+      },
+      "mSpellCalculations": {
+        "TotalDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.6000000238418579,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellRevealsChampion": false,
+      "mSpellTags": [
+        "Trait_ImmobilizingCCSpell"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Area"
+      },
+      "mana": [
+        50.0,
+        50.0,
+        50.0,
+        50.0,
+        50.0,
+        50.0
+      ],
+      "manaValues": {
+        "Default": 50.0,
+        "values": [
+          50.0,
+          50.0,
+          50.0,
+          50.0,
+          50.0,
+          50.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "missileSpeed": 1450.0,
+      "selectionPriority": 1,
+      "spellCastTime": 0.25,
+      "spellTotalTime": 1.0,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Caitlyn/Spells/Jade_CaitlynWAbility/Jade_CaitlynW",
+    "~class": "SpellObject"
+  }
+}
