@@ -94,26 +94,26 @@
         {
           "name": "ActiveAD",
           "values": [
-            5.0,
-            12.0,
-            19.0,
-            26.0,
-            33.0,
-            40.0,
-            47.0
+            6.0,
+            14.0,
+            22.0,
+            30.0,
+            38.0,
+            46.0,
+            54.0
           ],
           "~class": "SpellDataValue"
         },
         {
           "name": "ActiveMS",
           "values": [
-            0.05000000074505806,
-            0.07999999821186066,
-            0.10999999940395355,
+            0.05999999865889549,
+            0.10000000149011612,
             0.14000000059604645,
-            0.17000000178813934,
-            0.20000000298023224,
-            0.23000000417232513
+            0.18000000715255737,
+            0.2199999988079071,
+            0.25999999046325684,
+            0.30000001192092896
           ],
           "~class": "SpellDataValue"
         },
@@ -131,28 +131,28 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "AllyActiveAD",
+          "name": "AllyShareRatio",
           "values": [
-            2.5,
-            6.0,
-            9.5,
-            13.0,
-            16.5,
-            20.0,
-            23.5
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
           ],
           "~class": "SpellDataValue"
         },
         {
           "name": "AllyActiveMS",
           "values": [
-            0.02500000037252903,
-            0.03999999910593033,
-            0.054999999701976776,
+            0.029999999329447746,
+            0.05000000074505806,
             0.07000000029802322,
-            0.08500000089406967,
-            0.10000000149011612,
-            0.11500000208616257
+            0.09000000357627869,
+            0.10999999940395355,
+            0.12999999523162842,
+            0.15000000596046448
           ],
           "~class": "SpellDataValue"
         }
@@ -218,6 +218,18 @@
             "LevelUp": {
               "Elements": [
                 {
+                  "nameOverride": "Passive Attack Damage",
+                  "type": "PassiveAD",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Passive Movement Speed",
+                  "type": "PassiveMS",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
                   "nameOverride": "Active Attack Damage",
                   "type": "ActiveAD",
                   "typeIndex": 3,
@@ -229,18 +241,6 @@
                   "nameOverride": "Active Movement Speed",
                   "type": "ActiveMS",
                   "typeIndex": 1,
-                  "~class": "TooltipInstanceListElement"
-                },
-                {
-                  "nameOverride": "Passive Attack Damage",
-                  "type": "PassiveAD",
-                  "~class": "TooltipInstanceListElement"
-                },
-                {
-                  "Style": 1,
-                  "multiplier": 100.0,
-                  "nameOverride": "Passive Movement Speed",
-                  "type": "PassiveMS",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -407,6 +407,35 @@
       "mImgIconName": [
         "assets/ux/jade/s3icons/samesized/gangplank_raisemorale.dds"
       ],
+      "mSpellCalculations": {
+        "0x2afc05a4": {
+          "mExpandedTooltipCalculationDisplay": 5,
+          "mFormulaParts": [
+            {
+              "mDataValue": "ActiveAD",
+              "~class": "NamedDataValueCalculationPart"
+            }
+          ],
+          "mMultiplier": {
+            "mDataValue": "AllyShareRatio",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "~class": "GameCalculation"
+        },
+        "0xa2a00bc1": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "ActiveMS",
+              "~class": "NamedDataValueCalculationPart"
+            }
+          ],
+          "mMultiplier": {
+            "mDataValue": "AllyShareRatio",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "~class": "GameCalculation"
+        }
+      },
       "mSpellRevealsChampion": false,
       "mTargetingTypeData": {
         "~class": "SelfAoe"
@@ -618,32 +647,6 @@
       },
       "DataValues": [
         {
-          "name": "CherryRatio",
-          "values": [
-            0.07000000029802322,
-            0.07000000029802322,
-            0.07000000029802322,
-            0.07000000029802322,
-            0.07000000029802322,
-            0.07000000029802322,
-            0.07000000029802322
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "GameModeInteger",
-          "values": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "name": "SpellDamage",
           "values": [
             -5.0,
@@ -672,37 +675,17 @@
         {
           "name": "GoldGain",
           "values": [
-            3.0,
+            2.0,
             4.0,
-            5.0,
             6.0,
-            7.0,
             8.0,
-            9.0
+            10.0,
+            12.0,
+            14.0
           ],
           "~class": "SpellDataValue"
         }
       ],
-      "DataValuesModeOverride": {
-        "cherry": {
-          "SpellDataValues": [
-            {
-              "name": "GameModeInteger",
-              "values": [
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0
-              ],
-              "~class": "SpellDataValue"
-            }
-          ],
-          "~class": "SpellDataValueVector"
-        }
-      },
       "SpellEventToAudioEventSuffix": {
         "13": "Play_sfx_Gangplank_GangplankQProceed_OnHit",
         "16": "Play_sfx_Gangplank_GangplankQProceed_OnMissileLaunch"

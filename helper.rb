@@ -39,59 +39,48 @@ end
 #  puts JSON.pretty_generate(h)
 
 
-file = {}
-groups = {}
-augarr = []
-sourcedata = {}
-File.open("aram\\data\\ChampionAugmentList.json", 'rb') { |f| file = JSON.parse(f.read) }
-File.open("aram\\augmentgroups\\data\\AugmentGroups.json", 'rb') { |f| groups = JSON.parse(f.read) }
-File.open("aram/mayhem/augments/augments.json", 'rb') { |f| augarr = JSON.parse(f.read) }
-augarr.each { |aug|
-    sourcedata.store(aug["apiName"], aug["name"])
-}
-champs = file.keys
+# file = {}
+# groups = {}
+# augarr = []
+# sourcedata = {}
+# File.open("aram\\data\\ChampionAugmentList.json", 'rb') { |f| file = JSON.parse(f.read) }
+# File.open("aram\\augmentgroups\\data\\AugmentGroups.json", 'rb') { |f| groups = JSON.parse(f.read) }
+# File.open("aram/mayhem/augments/augments.json", 'rb') { |f| augarr = JSON.parse(f.read) }
 
-groupListings = groups.keys.map { |k| [k, []] }.to_h
-groups.keys.each { |key|
-    file.each { |c, augs| 
-        groupListings[key].push(c) if augs.keys.include?(key)
+spelltags = []
+outlist = {}
+path = "champions"
+Dir.each_child("champions") { |d|
+    next if d.include?("jade_")
+    subpath = path + "/" + d + "/"
+    root = {}
+    spells = {}
+    File.open(subpath + "BaseStats.json") { |f| root = JSON.parse(f.read()) }
+    File.open(subpath + "Spells.json") { |f| spells = JSON.parse(f.read()) }
+    rootkey = root.keys.find { |k| k.end_with?("Root") } || root.keys[0]
+    name = root[rootkey]["name"]
+    charname = root[rootkey]["mCharacterName"].downcase
+    outlist[name] = {
+        tags: [],
+        arTypes: [],
+        icon: "assets/characters/#{charname}/hud/#{charname}_square.png"
     }
+    ["primaryAbilityResource", "secondaryAbilityResource"].each { |ar|
+        resource = root[rootkey].dig(ar)
+        next if !resource
+        type = resource["arType"]
+        next if !type
+        outlist[name][:arTypes].push(type)
+    }
+    spells.each { |spell, data|
+        next if !data["mSpell"]
+        tags = data["mSpell"].fetch("mSpellTags", []) - [""]
+        spelltags += tags
+        outlist[name][:tags] += tags
+    }
+    spelltags.uniq!
+    outlist[name][:tags].uniq!
 }
 
-# groupListings.sort_by { |k, v| v.length }.to_h.each { |g, a|
-#     puts "#{g} => #{a.length}"
-# }
-
-p groupListings["Peel"]
-
-# mages = groups.filter { |group, augs| group == "MageAugmentsGeneric" || group == "MageAugmentsGeneric4"}
-# puts groups["AH"] - groups["HasteAugments"]
-# puts "--------------------------------"
-# puts groups["HasteAugments"] - groups["AH"]
-
-# mages = groups.filter { |group, augs| group.include?("Mage") }
-# matching = mages.values[0].intersection(*mages.values[1..])
-# mages.each { |group, augs| puts group + " => #{augs - matching}\n================\n" }
-
-
-# list = file["Neeko"]
-# augments = {}
-
-# list.each { |group, weight|
-#     groups[group].each { |aug|
-#         if augments[aug]
-#             augments[aug] += weight
-#         else
-#             augments.store(aug, weight)
-#         end
-#     }
-# }
-
-# puts "Neeko:"
-# puts "Weight => Augments"
-# augmentsByWeight = {}
-# augments.each { |k, v|
-#     augmentsByWeight[v] ||= []
-#     augmentsByWeight[v].push(k)
-# }
-# augmentsByWeight.sort_by { |k, v| k }.each { |k, v| puts "#{k} => #{v.map { |a| sourcedata.fetch(a, a)}.inspect.gsub("\"", "")}"}
+#File.open("D:/league/Tooltips/Data/tags.json", 'wb') { |f| f.write(JSON.pretty_generate(spelltags)) }
+File.open("D:/league/Tooltips/Data/champions.json", 'wb') { |f| f.write(JSON.pretty_generate(outlist)) }

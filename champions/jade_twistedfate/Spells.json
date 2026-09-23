@@ -257,8 +257,8 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Loaded Dice",
-            "keySummary": "Twisted Fate and his allies receive an additional 2 gold per kill.",
-            "keyTooltip": "Twisted Fate and his allies receive an additional <gold>2 gold</gold> per kill."
+            "keySummary": "Twisted Fate and his allies receive an additional gold per kill.",
+            "keyTooltip": "Twisted Fate and his allies receive an additional <gold>@GoldToGain@ gold</gold> per kill."
           },
           "mObjectName": "Jade_TwistedFateSecondSight",
           "~class": "TooltipInstanceSpell"
@@ -495,6 +495,12 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "0x80cc68d3",
+    "~class": "SpellObject"
+  },
+  "0xadb0957e": {
+    "ObjectName": "Jade_TwistedFatePassiveGoldModifier",
+    "mScriptName": "Jade_TwistedFatePassiveGoldModifier",
+    "objectPath": "0xadb0957e",
     "~class": "SpellObject"
   },
   "0xb881b0f6": {
@@ -1326,14 +1332,15 @@
     "mScriptName": "Jade_TwistedFateDestiny",
     "mSpell": {
       "Cooldown": {
+        "0xa3e0478": 210.0,
         "values": [
-          130.0,
-          130.0,
-          110.0,
+          210.0,
+          180.0,
+          150.0,
+          120.0,
           90.0,
-          90.0,
-          90.0,
-          90.0
+          60.0,
+          30.0
         ],
         "~class": "SpellAttributeModifiable"
       },
@@ -1475,57 +1482,6 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 1.0,
-      "mEffectAmount": [
-        {
-          "value": [
-            0.0,
-            6.0,
-            8.0,
-            10.0,
-            0.0,
-            0.0,
-            0.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.0,
-            5500.0,
-            5500.0,
-            5500.0,
-            0.0,
-            0.0,
-            0.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mImgIconName": [
         "assets/ux/jade/s3icons/samesized/destiny_temp.dds"
       ],
@@ -1555,11 +1511,11 @@
         "0xa3e0478": 150.0,
         "values": [
           150.0,
-          150.0,
-          150.0,
-          150.0,
-          150.0,
-          150.0
+          125.0,
+          100.0,
+          75.0,
+          50.0,
+          25.0
         ],
         "~class": "ResourceCostModifiable"
       },
@@ -1589,13 +1545,14 @@
     "mScriptName": "Jade_TwistedFateE",
     "mSpell": {
       "Cooldown": {
+        "0xa3e0478": 150.0,
         "values": [
-          120.0,
+          150.0,
+          135.0,
           120.0,
           105.0,
           90.0,
           75.0,
-          60.0,
           60.0
         ],
         "~class": "SpellAttributeModifiable"
@@ -1708,75 +1665,6 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 1.0,
-      "mEffectAmount": [
-        {
-          "value": [
-            4.0,
-            6.0,
-            8.0,
-            10.0,
-            50.0,
-            40.0,
-            42.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            150.0,
-            130.0,
-            110.0,
-            90.0,
-            45.0,
-            30.0,
-            10.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            75.0,
-            100.0,
-            125.0,
-            150.0,
-            0.0,
-            0.0,
-            25.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            5500.0,
-            5500.0,
-            5500.0,
-            5500.0,
-            0.0,
-            0.0,
-            0.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mImgIconName": [
         "assets/ux/jade/s3icons/samesized/twistedfate_premonition.dds"
       ],
@@ -2058,97 +1946,6 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "BlueCritMultiplier",
-          "values": [
-            0.574999988079071,
-            0.574999988079071,
-            0.574999988079071,
-            0.574999988079071,
-            0.574999988079071,
-            0.574999988079071,
-            0.574999988079071
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "RedCritMultiplier",
-          "values": [
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "GoldCritMultiplier",
-          "values": [
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "ttBlueAP",
-          "values": [
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "ttRedAP",
-          "values": [
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "ttGoldAP",
-          "values": [
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "ttAD",
-          "values": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "name": "ManaRestore",
           "values": [
             25.0,
@@ -2162,19 +1959,6 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "Stun",
-          "values": [
-            0.75,
-            1.0,
-            1.25,
-            1.5,
-            1.75,
-            2.0,
-            2.25
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "name": "Slow",
           "values": [
             25.0,
@@ -2184,6 +1968,32 @@
             45.0,
             50.0,
             55.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "SlowDuration",
+          "values": [
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Stun",
+          "values": [
+            0.75,
+            1.0,
+            1.25,
+            1.5,
+            1.75,
+            2.0,
+            2.25
           ],
           "~class": "SpellDataValue"
         }
@@ -2294,101 +2104,13 @@
           "mLocKeys": {
             "keyName": "Pick A Card",
             "keySummary": "Twisted Fate chooses a magic card from his deck, and uses that for his next attack, causing bonus effects.",
-            "keyTooltip": "Twisted Fate begins shuffling his deck, allowing him to <recast>Recast</recast> to lock in one of three cards and enhance his next Attack.<br><br><font color='#0000FF'>Blue Card</font> deals <magicDamage>@BlueDamage@ magic damage</magicDamage> and restores <scaleMana>@ManaRestore@ Mana</scaleMana>.<br><br><font color='#FF0000'>Red Card</font> deals <magicDamage>@RedDamage@ magic damage</magicDamage> to units around the target and <status>Slows</status> by @Slow@% for 2.5 seconds.<br><br><font color='#FFD700'>Gold Card</font> deals <magicDamage>@GoldDamage@ magic damage</magicDamage> and <status>Stuns</status> for @Stun@ seconds."
+            "keyTooltip": "Twisted Fate begins shuffling his deck, allowing him to <recast>Recast</recast> to lock in one of three cards and enhance his next Attack.<br><br><font color='#0000FF'>Blue Card</font> deals <magicDamage>@BlueDamage@ magic damage</magicDamage> and restores <scaleMana>@ManaRestore@ Mana</scaleMana>.<br><br><font color='#FF0000'>Red Card</font> deals <magicDamage>@RedDamage@ magic damage</magicDamage> to units around the target and <status>Slows</status> by @Slow@% for @SlowDuration@ seconds.<br><br><font color='#FFD700'>Gold Card</font> deals <magicDamage>@GoldDamage@ magic damage</magicDamage> and <status>Stuns</status> for @Stun@ seconds."
           },
           "mObjectName": "Jade_TwistedFatePickACard",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.5,
-      "mCoefficient2": 1.0,
-      "mEffectAmount": [
-        {
-          "value": [
-            20.0,
-            40.0,
-            60.0,
-            80.0,
-            100.0,
-            120.0,
-            140.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            25.0,
-            30.0,
-            35.0,
-            40.0,
-            45.0,
-            50.0,
-            55.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.75,
-            1.0,
-            1.25,
-            1.5,
-            1.75,
-            2.0,
-            2.25
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            15.0,
-            30.0,
-            45.0,
-            60.0,
-            75.0,
-            90.0,
-            105.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            7.5,
-            15.0,
-            22.5,
-            30.0,
-            37.5,
-            45.0,
-            52.5
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            70.0,
-            70.0,
-            90.0,
-            110.0,
-            130.0,
-            150.0,
-            165.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mImgIconName": [
         "assets/ux/jade/s3icons/samesized/twistedfate_fatesgambit.dds"
       ],
@@ -2452,36 +2174,6 @@
             }
           ],
           "~class": "GameCalculation"
-        },
-        "ttBlueDamage": {
-          "mExpandedTooltipCalculationDisplay": 5,
-          "mModifiedGameCalculation": "BlueDamage",
-          "mMultiplier": {
-            "mNumber": 1.0,
-            "~class": "NumberCalculationPart"
-          },
-          "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculationModified"
-        },
-        "ttGoldDamage": {
-          "mExpandedTooltipCalculationDisplay": 5,
-          "mModifiedGameCalculation": "GoldDamage",
-          "mMultiplier": {
-            "mNumber": 1.0,
-            "~class": "NumberCalculationPart"
-          },
-          "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculationModified"
-        },
-        "ttRedDamage": {
-          "mExpandedTooltipCalculationDisplay": 5,
-          "mModifiedGameCalculation": "RedDamage",
-          "mMultiplier": {
-            "mNumber": 1.0,
-            "~class": "NumberCalculationPart"
-          },
-          "mSimpleTooltipCalculationDisplay": 5,
-          "~class": "GameCalculationModified"
         }
       },
       "mSpellTags": [

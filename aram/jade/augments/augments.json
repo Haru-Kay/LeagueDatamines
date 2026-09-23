@@ -5,10 +5,12 @@
     "name": "Titan's Resolve",
     "rarity": "Prismatic",
     "desc": "Gain stacks when taking or dealing damage. For every @Stacks_Max@ stacks, gain <scaleAF>Adaptive Force</scaleAF>, <scaleArmor>Armor</scaleArmor>, <scaleMR>Magic Resist</scaleMR>, <attention>Size</attention>, and <status>Tenacity</status>.",
-    "tooltip": "Dealing and receiving champion damage grants you a stack of <keyword>Juggernauting</keyword> for @Stack_Duration@ seconds. For every @Stacks_Max@ stacks of <keyword>Juggernauting</keyword> you gain <attention>@Calc_AF@ Adaptive Force</attention>, <scaleArmor>@Calc_Defenses@ Armor</scaleArmor>, <scaleMR>@Calc_Defenses@ Magic Resist</scaleMR>, <attention>@Calc_Size@ Size</attention>, and <status>@Calc_Tenacity@ Tenacity</status>.<br><br><rules>Stacks fall off faster the more you have.<br>Maximum Juggernauting Level: @f1.0@</rules>",
+    "tooltip": "Dealing and receiving champion damage grants you @StacksPerHit@ stack of <keyword>Juggernauting</keyword> for @Stack_Duration@ seconds. For every @Stacks_Max@ stacks of <keyword>Juggernauting</keyword> you gain <attention>@Calc_AF@ Adaptive Force</attention>, <scaleArmor>@Calc_Defenses@ Armor</scaleArmor>, <scaleMR>@Calc_Defenses@ Magic Resist</scaleMR>, <attention>@Calc_Size@ Size</attention>, and <status>@Calc_Tenacity@ Tenacity</status>.<br><br><rules>Stacks fall off faster the more you have.<br>Maximum Juggernauting Level: @f1.0@</rules>",
     "dataValues": {
       "Stacks_Max": 10.0,
-      "Stack_Duration": 6.0
+      "Stack_Duration": 6.0,
+      "StacksPerHit": 1.0,
+      "MaxLevel": 2.0
     },
     "calculations": {
       "Calc_AF": {
@@ -82,7 +84,8 @@
     "tooltip": "Gain up to <speed>@Calc_Move_Speed_Max@ Move Speed</speed> toward nearby allies based on their <scaleHealth>missing Health</scaleHealth>. Your <healing>healing</healing> and <shield>shielding</shield> are also increased up to @Calc_HS_Amp_Max@ based on the <scaleHealth>target's missing Health</scaleHealth>.<br><br><rules>Bonus Healing: @f1.0@<br>Bonus Shielding: @f2.0@</rules>",
     "dataValues": {
       "VFX_Health_Threshold": 0.5,
-      "MS_Linger_Duration": 2.0
+      "MS_Linger_Duration": 2.0,
+      "MaxLevel": 1.0
     },
     "calculations": {
       "Calc_HS_Amp_Max": {
@@ -2095,8 +2098,8 @@
     "apiName": "ARAM_ClownCollege",
     "name": "Clown College",
     "rarity": "Prismatic",
-    "desc": "Gain <spellName>Deceive</spellName> Summoner Spell.<br>Gain <spellName>Backstab</spellName> Passive.<br><br>When you die, spawn an exploding box that deals a large amount of <trueDamage>true damage</trueDamage> and <status>Fear</status> nearby enemies.",
-    "tooltip": "<spellName>Backstab</spellName>: You deal @BasicAttackDamage@ <physicalDamage>bonus physical damage</physicalDamage> when striking from behind.<br><br><spellName>Deceive</spellName>: You teleport and become <keywordStealth>Invisible</keywordStealth> for @StealthDuration@ seconds. Your next Attack while <keywordStealth>Invisible</keywordStealth> deals an additional <physicalDamage>@TotalDamage@ physical damage</physicalDamage>. If striking from behind, this Attack critically strikes for @QCritDamageMod@ damage.<br><br><spellName>Hallucinate: Death</spellName>: On death, deal <magicDamage>@FearDamage*100@% maximum Health magic damage</magicDamage> and fear for @FearDuration@s around you.",
+    "desc": "Gain <spellName>Deceive</spellName> Summoner Spell.<br>Gain <spellName>Backstab</spellName> Passive.<br><br>When you die, deal a large amount of <trueDamage>true damage</trueDamage> and <status>Fear</status> nearby enemies.",
+    "tooltip": "<spellName>Backstab</spellName>: You deal @BasicAttackDamage@ <physicalDamage>bonus physical damage</physicalDamage> when striking from behind.<br><br><spellName>Deceive</spellName>: You teleport and become <keywordStealth>Invisible</keywordStealth> for @StealthDuration@ seconds. Your next Attack while <keywordStealth>Invisible</keywordStealth> deals an additional <physicalDamage>@TotalDamage@ physical damage</physicalDamage>. If striking from behind, this Attack critically strikes for @QCritDamageMod@ damage.<br><br><spellName>Hallucinate: Death</spellName>: On death, deal <trueDamage>@FearDamage*100@% maximum Health true damage</trueDamage> and fear for @FearDuration@s around you.",
     "dataValues": {
       "StealthDuration": 3.0,
       "PseudoCastTime": 0.125,
@@ -3787,7 +3790,8 @@
     "desc": "Every @Cooldown@ seconds, <keywordMajor>automatically cast</keywordMajor> the <spellName>Aria of Perseverence</spellName> and <spellName>Song of Celerity</spellName> in an alternating melody.<br><br><rules><spellName>Aria of Perseverence</spellName> <healing>heals</healing> nearby allies and grants a temporary <shield>shielding aura</shield>.</rules><br><br><rules><spellName>Song of Celerity</spellName> grants a temporary aura that provides <speed>bonus Movement Speed.</speed></rules>",
     "tooltip": "Every @Cooldown@ seconds, <keywordMajor>automatically cast</keywordMajor> the <spellName>Aria of Perseverence</spellName> and <spellName>Song of Celerity</spellName> in an alternating melody.<br><br><rules><spellName>Aria of Perseverence</spellName> <healing>heals</healing> nearby allies and grants a temporary <shield>shielding aura</shield>.</rules><br><br><rules><spellName>Song of Celerity</spellName> grants a temporary aura that provides <speed>bonus Movement Speed.</speed></rules>",
     "dataValues": {
-      "Cooldown": 10.0
+      "Cooldown": 10.0,
+      "MaxLevel": 1.0
     },
     "add": {
       "Augment_Sonata_SonaE": {
@@ -4759,7 +4763,9 @@
       "AOESize": 400.0,
       "Duration": 3.5,
       "MoveSpeed": 400.0,
-      "Slow": 0.4000000059604645
+      "Slow": 0.4000000059604645,
+      "MaxLevel": 2.0,
+      "MissingHealthPercent": 0.30000001192092896
     },
     "calculations": {
       "BaseDamageToApply": {
@@ -4777,8 +4783,8 @@
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
-            "mNumber": 0.30000001192092896,
-            "~class": "NumberCalculationPart"
+            "mDataValue": "MissingHealthPercent",
+            "~class": "NamedDataValueCalculationPart"
           }
         ],
         "mSimpleTooltipCalculationDisplay": 5,
@@ -4867,7 +4873,8 @@
     "desc": "Entering <keyword>Brush</keyword> regenerates <healing>a large amount of Health</healing>.",
     "tooltip": "Entering <keyword>Brush</keyword> restores <healing>@FlatHeal@ + @MissingHealthHeal@ Missing Health</healing>, @BrushCooldown@ second cooldown per brush.<br><br>Total Healing: @f1.0@",
     "dataValues": {
-      "BrushCooldown": 20.0
+      "BrushCooldown": 20.0,
+      "MaxLevel": 1.0
     },
     "calculations": {
       "FlatHeal": {
@@ -5446,7 +5453,8 @@
     "desc": "Casting a spell refunds another random spell's cost by @RefundPercent*100@% of the original spell's Cooldown.",
     "tooltip": "Casting a spell refunds another random spell's cost by @RefundPercent*100@% of the original spell's Cooldown.",
     "dataValues": {
-      "RefundPercent": 0.30000001192092896
+      "RefundPercent": 0.30000001192092896,
+      "MaxLevel": 1.0
     },
     "icons": [
       "assets/ux/cherry/augments/icons/eureka_small.tex",
@@ -5516,7 +5524,7 @@
     },
     "calculations": {
       "InnerRadiusDamageTT": {
-        "SomeFlagBroIDK": 0,
+        "DamageType": 0,
         "mFormulaParts": [
           {
             "mSpellCalculationKey": "FullDamage",
@@ -5717,7 +5725,8 @@
       "Radius": 375.0,
       "Move_Speed_Duration": 2.0,
       "Soul_Attack_Range": 400.0,
-      "Kill_Track_Duration": 3.0
+      "Kill_Track_Duration": 3.0,
+      "MaxLevel": 1.0
     },
     "calculations": {
       "Calc_Damage": {
@@ -6007,7 +6016,8 @@
       "Cooldown": 90.0,
       "Buff_Duration": 15.0,
       "Stacks_Duration": 6.0,
-      "Stacks_Max": 10.0
+      "Stacks_Max": 10.0,
+      "MaxLevel": 1.0
     },
     "calculations": {
       "HellbentIDCDMaybe": {
@@ -6396,6 +6406,9 @@
     "rarity": "Gold",
     "desc": "Gain <lifeSteal>@Calc_Vamp@ Omnivamp</lifeSteal>.",
     "tooltip": "Gain <lifeSteal>@Calc_Vamp@ Omnivamp</lifeSteal>.",
+    "dataValues": {
+      "MaxLevel": 1.0
+    },
     "calculations": {
       "Calc_Vamp": {
         "mDisplayAsPercent": true,

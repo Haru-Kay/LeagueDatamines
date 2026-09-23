@@ -1,5 +1,12 @@
 {
   "Maps/ModeSpecificData/Augments/ARAM_ImTheJuggernaut": {
+    "0x3696d198": {
+      "0xc4182067": "Dealing and receiving champion damage grants you @StacksPerHit@ stack of <keyword>Juggernauting</keyword> for @Stack_Duration@ seconds. For every @Stacks_Max@ stacks of <keyword>Juggernauting</keyword> you gain <attention>@Calc_AF@ Adaptive Force</attention>, <scaleArmor>@Calc_Defenses@ Armor</scaleArmor>, <scaleMR>@Calc_Defenses@ Magic Resist</scaleMR>, <attention>@Calc_Size@ Size</attention>, and <status>@Calc_Tenacity@ Tenacity</status>.<br><br><rules>Stacks fall off faster the more you have.<br>Maximum Juggernauting Level: @f1.0@</rules>",
+      "~class": "0x5b441d9b"
+    },
+    "0x791eb92e": {
+      "~class": "0x21dad86e"
+    },
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/ARAM_ImTheJuggernaut/Augment_ARAM_ImTheJuggernautStacks"
     ],
@@ -11,7 +18,7 @@
     "AugmentNameId": "ARAM_ImTheJuggernaut",
     "AugmentPlatformId": 1001,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/iamthejuggernaut_small.tex",
-    "AugmentTooltipTra": "Dealing and receiving champion damage grants you a stack of <keyword>Juggernauting</keyword> for @Stack_Duration@ seconds. For every @Stacks_Max@ stacks of <keyword>Juggernauting</keyword> you gain <attention>@Calc_AF@ Adaptive Force</attention>, <scaleArmor>@Calc_Defenses@ Armor</scaleArmor>, <scaleMR>@Calc_Defenses@ Magic Resist</scaleMR>, <attention>@Calc_Size@ Size</attention>, and <status>@Calc_Tenacity@ Tenacity</status>.<br><br><rules>Stacks fall off faster the more you have.<br>Maximum Juggernauting Level: @f1.0@</rules>",
+    "AugmentTooltipTra": "Dealing and receiving champion damage grants you @StacksPerHit@ stack of <keyword>Juggernauting</keyword> for @Stack_Duration@ seconds. For every @Stacks_Max@ stacks of <keyword>Juggernauting</keyword> you gain <attention>@Calc_AF@ Adaptive Force</attention>, <scaleArmor>@Calc_Defenses@ Armor</scaleArmor>, <scaleMR>@Calc_Defenses@ Magic Resist</scaleMR>, <attention>@Calc_Size@ Size</attention>, and <status>@Calc_Tenacity@ Tenacity</status>.<br><br><rules>Stacks fall off faster the more you have.<br>Maximum Juggernauting Level: @f1.0@</rules>",
     "DescriptionTra": "Gain stacks when taking or dealing damage. For every @Stacks_Max@ stacks, gain <scaleAF>Adaptive Force</scaleAF>, <scaleArmor>Armor</scaleArmor>, <scaleMR>Magic Resist</scaleMR>, <attention>Size</attention>, and <status>Tenacity</status>.",
     "NameTra": "Titan's Resolve",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/ARAM_ImTheJuggernaut/Resources",
@@ -32,6 +39,7 @@
     "NameTra": "Wee Woo Wee Woo",
     "ResourceResolver": "Maps/ModeSpecificData/AugmentSets/AugmentSet_Ambulance/Augment_Set_Ambulance/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/ARAM_WeeWooWeeWoo/Augment_ARAM_WeeWooWeeWoo",
+    "mAugmentTags": 4096,
     "rarity": 1,
     "~class": "AugmentData"
   },
@@ -1387,8 +1395,8 @@
     "AugmentNameId": "ARAM_ClownCollege",
     "AugmentPlatformId": 1310,
     "AugmentSmallIconPath": "assets/ux/cherry/augments/icons/clowncollege_small.tex",
-    "AugmentTooltipTra": "<spellName>Backstab</spellName>: You deal @BasicAttackDamage@ <physicalDamage>bonus physical damage</physicalDamage> when striking from behind.<br><br><spellName>Deceive</spellName>: You teleport and become <keywordStealth>Invisible</keywordStealth> for @StealthDuration@ seconds. Your next Attack while <keywordStealth>Invisible</keywordStealth> deals an additional <physicalDamage>@TotalDamage@ physical damage</physicalDamage>. If striking from behind, this Attack critically strikes for @QCritDamageMod@ damage.<br><br><spellName>Hallucinate: Death</spellName>: On death, deal <magicDamage>@FearDamage*100@% maximum Health magic damage</magicDamage> and fear for @FearDuration@s around you.",
-    "DescriptionTra": "Gain <spellName>Deceive</spellName> Summoner Spell.<br>Gain <spellName>Backstab</spellName> Passive.<br><br>When you die, spawn an exploding box that deals a large amount of <trueDamage>true damage</trueDamage> and <status>Fear</status> nearby enemies.",
+    "AugmentTooltipTra": "<spellName>Backstab</spellName>: You deal @BasicAttackDamage@ <physicalDamage>bonus physical damage</physicalDamage> when striking from behind.<br><br><spellName>Deceive</spellName>: You teleport and become <keywordStealth>Invisible</keywordStealth> for @StealthDuration@ seconds. Your next Attack while <keywordStealth>Invisible</keywordStealth> deals an additional <physicalDamage>@TotalDamage@ physical damage</physicalDamage>. If striking from behind, this Attack critically strikes for @QCritDamageMod@ damage.<br><br><spellName>Hallucinate: Death</spellName>: On death, deal <trueDamage>@FearDamage*100@% maximum Health true damage</trueDamage> and fear for @FearDuration@s around you.",
+    "DescriptionTra": "Gain <spellName>Deceive</spellName> Summoner Spell.<br>Gain <spellName>Backstab</spellName> Passive.<br><br>When you die, deal a large amount of <trueDamage>true damage</trueDamage> and <status>Fear</status> nearby enemies.",
     "NameTra": "Clown College",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/ARAM_ClownCollege/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/ARAM_ClownCollege/Augment_ARAM_ClownCollege",
@@ -2447,6 +2455,18 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/FishBait": {
+    "0x3696d198": {
+      "0xc4182067": "On death, become <keyword>Shark Bait</keyword>. You can take no actions other than moving, which <status>slows nearby enemies by @Slow*100@%</status>. After a few seconds, a <keyword>Shark</keyword> emerges, <status>knocking up</status> all nearby Enemies and biting them for <magicDamage>@BaseDamageToApply@ + @MissingHealthPercentDamage@ Missing Health Magic Damage</magicDamage>.<br><br>Times the Shark consumed an Enemy Champion: <attention>@f2.0@</attention>",
+      "~class": "0x5b441d9b"
+    },
+    "0x791eb92e": {
+      "0x5753a320": {
+        "0x5835d27": "At Max Level, your allies also gain this effect on death.",
+        "0xc98a82ca": "At Max Level, your allies also gain this effect on death.",
+        "~class": "0xade7ce63"
+      },
+      "~class": "0x21dad86e"
+    },
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/FishBait/Augment_FishBait_CurrentlyBait"
     ],
@@ -2544,7 +2564,7 @@
   },
   "Maps/ModeSpecificData/Augments/ARAM_Multishot": {
     "0x3ed971bd": {
-      "QUEST": "Maps/ModeSpecificData/ModesQuests/MultishotQuest",
+      "Quest": "Maps/ModeSpecificData/ModesQuests/MultishotQuest",
       "~class": "LinkedQuestData"
     },
     "0xe3a02eac": true,
@@ -2955,12 +2975,13 @@
     "NameTra": "Rite of Ascension",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/ARAM_DivineDomain/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/ARAM_DivineDomain/Augment_ARAM_DivineDomain",
+    "mBuildTags": 2,
     "rarity": 2,
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/PressureCooker": {
     "0x3ed971bd": {
-      "QUEST": "Maps/ModeSpecificData/ModesQuests/PressureCookerQuest",
+      "Quest": "Maps/ModeSpecificData/ModesQuests/PressureCookerQuest",
       "~class": "LinkedQuestData"
     },
     "AdditionalSpells": [
@@ -2986,7 +3007,7 @@
   },
   "Maps/ModeSpecificData/Augments/ARAM_BangBang": {
     "0x3ed971bd": {
-      "QUEST": "Maps/ModeSpecificData/ModesQuests/BangBangQuest",
+      "Quest": "Maps/ModeSpecificData/ModesQuests/BangBangQuest",
       "~class": "LinkedQuestData"
     },
     "AdditionalSpells": [
@@ -3051,6 +3072,7 @@
     "NameTra": "Hellbent",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/ARAM_Hellbent/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/ARAM_Hellbent/Augment_ARAM_Hellbent",
+    "mAugmentTags": 512,
     "rarity": 2,
     "~class": "AugmentData"
   },
@@ -3111,7 +3133,7 @@
   },
   "Maps/ModeSpecificData/Augments/SpecializedEmpowerment": {
     "0x3ed971bd": {
-      "QUEST": "Maps/ModeSpecificData/ModesQuests/SpecializedEmpowermentQuest",
+      "Quest": "Maps/ModeSpecificData/ModesQuests/SpecializedEmpowermentQuest",
       "~class": "LinkedQuestData"
     },
     "0xe3a02eac": true,

@@ -1,140 +1,156 @@
 **Just a reminder that PBE changes are not final and subject to change. Some changes, such as bugfixes, may not be able to be viewed. I'm also human. I make mistakes from time to time.**
 
-## **As usual, here's [Phroxzon's Post](https://xcancel.com/RiotPhroxzon/status/2089935726465167365) for balance changes. Unless noted, values match what is shown here.**
-
 ## Summoner's Rift
 
-### Champions
+**[Phroxzon's Patch Preview](https://fixupx.com/RiotPhroxzon/status/2100090657494987053). If I don't mention a change, it matches this.**
 
-**Hecarim**
+  * Note: It is entirely possible that due to the US holiday last week, PBE patch deployments have been delayed by a day, explaining the larger than usual differences between patch preview and mined changes.
 
-* Q CD reverted.
+**Aphelios**
 
-**Irelia**
+* Severum Healing now scales past level 18.
+  * Unless the flag preventing this was just never used, then lol.
 
-* Additional Changes:
-* W Damage Reduction AP Ratio: 7% per 100 AP -> 8% per 100 AP
-  * Magic Damage Reduction: 3.5%% AP -> 4%% AP
-* R AP Ratio: 70% -> 100%
+**Aurora**
 
-**Qiyana**
+* R Area Duration: 2.5/3.25/4 seconds -> 2.25/2.75/3.25 seconds
+  * Note: This time includes the 0.75 second duration the Area takes to fully expand. Unsure if this is intended to nerf it or they forgot the offset while buffing it.
+* R Buff Duration: 3.5/4.25/5 seconds -> 3.25/3.75/4.25 seconds
 
-* Q Damage against Monsters: 175% -> 160%
+**Kha'Zix**
 
-**Thresh**
+* P change not present.
 
-* E AP Ratio is currently still 70%
+**Elise**
 
-**Trundle**
+* All changes not present.
 
-* W Attack Speed: 30-90% -> 30-*110*%
+**Lucian**
 
-**Xerath**
-
-* Base HP: 596 -> 575
-* Armor changes are not currently present.
+* AD Growth: 2.5 -> 2.9
 
 ### Items
 
-**Stormrazor**
+**Bounty of Worlds (Base Completed Support Item)**
 
-* Note: This change may be accidental. Stormrazor was duplicated internally, and the one being actively used was removed.
-* Combine Cost: 700 Gold -> 500 Gold
-  * Total Cost: 3200 Gold -> 3000 Gold
-
-**Swiftmarch**
-
-* Slow Resistance: 40% -> 25%
-
-### Runes
-
-**Fleet Footwork**
-
-* Tooltip updated to show correct healing values.
+* HP change not present.
 
 ## League Classic
 
 ### Champions
 
-**Yesterdays post was edited later on in the day to provide additional information I had missed. Some of those are copied here.**
+**Akali**
 
-**General**
+* E AP Ratio: 30% -> 40%
+* E Cooldown: 7/6/5/4/3 seconds -> 6/5/4/3/2 seconds
+* E Energy Cost: 60 -> 60/55/50/45/40
 
-* Most DoT champions (Corki, Garen, etc) had their DoT damage timers tweaked.
-  * This presumably puts them back in line with what we have on Summoner's Rift. For the nerds, check out [Phreak's video from last year regarding DoTs](https://www.youtube.com/watch?v=X2YbfHSKvG0)
-* Most champions had their tooltips and damage calculations brought up to modern standards as well.
-  * It is very likely that I am grossly oversimplifying things. There's been massive amounts of data cleanup in the files from the Classic team, as well as some other bin value changes. Please keep an eye out for [Phreak's YouTube](https://www.youtube.com/@Phreak/videos) for when he posts his full rundown and hopefully clarifies anything I've missed.
+**Galio**
 
-**Ahri**
+* E Cast Range: 1100 -> 1175
+  * Display: 1100 -> 1125
+* E Display Hitbox: 200 -> 160
+* E Missile Width: 60 -> 160
+* E Missile Speed: 1200 -> 1300
+* E Cast Time: 0.4 seconds -> 0.25 seconds
 
-* Base HP: 460 -> 440
-* HP5: 1.22 -> 0.9
-* HP5 Growth: 0.12 -> 0.9
-* R Cooldown: 110/95/80 seconds -> 120/100/80 seconds
+**Graves**
 
-**Annie**
+* Pathfinding Radius: 10 -> 35
+* Auto Attack Active Frame: 7 -> 3.25
+* Auto Attack no longer uncancellable
+* Crit Attack Active Frame: 7 -> 5
+* Q Missile Width: 40 (60 display) -> 50
 
-* P Stun Duration: 1.5 seconds -> 1.75 seconds
-* Q Damage: 85/125/165/205/245 (+70% AP) -> 90/130/170/210/250 (+75% AP)
-* W Damage: 80/130/180/230/280 (+75% AP) -> 85/135/185/235/285 (+80% AP)
+**Fiora**
 
-**Dr. Mundo**
+* W Missile Logic fixed
+  * Spell missile spec was still using that of current-day Fiora's W.
+  * Note: There's still a missile speed value set to the wrong value, but I imagine it's just a deprecated value.
+* R Damage: 160/360/500 (+115% bonus AD) -> 125/255/385 (+85% bonus AD)
+* R Hits against Same Target: 25% -> 40%
+* R Cooldown: 130/120/110 seconds -> 150/130/110 seconds
 
-* Base Attack Speed: 0.625 -> 0.658
-* Base HP: 522 -> 560
-* HP Growth: 89 -> 90
+**Janna**
 
-**Fiddlesticks**
+* A new loading screen portrait has been added, with art made by jjolee.
 
-* E is now an instant cast.
+**Kassadin**
 
-**Garen**
+* Q AP Ratio: 60% -> 70%
+* E Damage: 60/120/180/240/300 (+80% AP) -> 80/130/180/230/280 (+70% AP)
+* E Slow: 20/30/40/50/60% -> 30/35/40/45/50%
 
-* Base AD: 55.5 -> 60
-* Armor Growth: 2.7 -> 3.0
-* W Passive Bonus Resists: 20% -> 30%
-* E AD Ratio: 70/80/90/100/110% AD -> 80/90/100/110/120% AD
-* E: All formulas here were brought up to modern standards. Resulting damage (aside from DoT mention) appears to match current values, but again, see disclaimer at top of section.
-  * Gets a separate mention here since the damage formulas appear to be completely rewritten.
+**Malphite**
 
-**Gragas**
+* Can no longer cast R while rooted.
+* Malphite R no longer disables Flash
 
-* Q Base Damage: 85/135/185/235/285 -> 75/125/175/225/275
-* Q Cooldown: 11.5/10.5/9.5/8.5/7.5 seconds -> 12.5/11.5/10.5/9.5/8.5 seconds
-* R Cooldown: 100/90/80 seconds -> 130/115/100 seconds
-* W Cooldown: 25 seconds -> 30 seconds
+**Morgana**
 
-**Heimerdinger**
-
-* W missiles tweaked to better match display.
-
-**Kayle**
-
-* E Cooldown: 22/21/20/19/18 seconds -> 20/19/18/17/16 seconds
-
-**Lux**
-
-* W Shield now occurs at cast time instead of after cast time.
-* E Explosion Radius: 310 -> 350
-* Can now E + Flash/R
+* W Cooldown: 10 seconds -> 12 seconds
+* W Mana Cost: 70/85/100/115/130 -> 80/100/120/140/160
+* E Base Shield: 90/160/255/290/355 -> 100/150/200/250/300
+* R Cooldown: 120/110/100 seconds -> 120 seconds
 
 **Nidalee**
 
-* Human Basic Attack Windup: 25% -> 20%
-  * Note: Basically means she can cancel her attack animation slightly earlier.
+* Human W Damage Duration: 4 seconds -> 2.5 seconds
+
+**Shyvana**
+
+* W Max Duration Increase: 4 seconds -> 6 seconds
+* R Bonus Resists: 10/15/20 -> 15/20/25
+
+**Singed**
+
+* A new loading screen portrait has been added, with art made by ARTeapot.
+
+**Twisted Fate**
+
+* E Cooldown: 120/105/90/75/60 seconds -> 135/120/105/90/75 seconds
+* R Cooldown: 130/110/90 seconds -> 180/150/120 seconds
+* R Mana Cost: 150 -> 150/125/100
+
+**Warwick**
+
+* A new loading screen portrait has been added, with art made by ChunLo.
+
+**Wukong**
+
+* A new loading screen portrait has been added, with art made by Sapo Lendário.
+
+**Zilean**
+
+* Q should no longer be stealthed when attached to an ally entering stealth.
+* Q should now properly reveal Zilean when cast.
+* Q no longer counts as a CC ability.
 
 ## ARAM: Mayhem
 
 ### Augments
 
-**Upgrade Infinity Edge**
+**High Roller**
 
-* Free 25% Crit Chance is indeed being removed.
+* Anvil spawn rate halved(?).
+  * Values listed (1 for normal, 0.5 for SummonUnits) were halved (0.5 for normal, 0.25 for SummonUnits)
+  * Still no confirmation is these are raw drop rates, so take with grain of salt.
+
+**Quest: Ultra Hydra**
+
+* Now has its own icon
 
 ## Arena
 
+### Augments
+
+**Titan's Resolve (Prismatic)**
+
+* Max Level: 2
+* Dealing and receiving champion damage grants you 1/2 stack of Juggernauting for 6 seconds. For every 10 stacks of Juggernauting you gain 25-75 Adaptive Force, 5-10 Armor, 5-10 Magic Resist, 10% Size, and 8% Tenacity.
+
 ### Champions
 
-**Zaahen**
+**Ornn**
 
-* Q AD Ratio reverted to 10/20/30/40/50%
+* Gold prices for Stat + Legendary Anvils have properly been adjusted now to match new values.

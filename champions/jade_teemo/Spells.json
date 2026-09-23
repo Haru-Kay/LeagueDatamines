@@ -251,13 +251,13 @@
     "mSpell": {
       "0xfe87f21e": [
         {
-          "0x1987941": [
+          "0x6166b756": "ImpactCalculatedDamage",
+          "Requirements": [
             {
               "level": 1,
               "~class": "SpellSlotEqualOrGreaterThanLevelRequirement"
             }
           ],
-          "0x6166b756": "ImpactCalculatedDamage",
           "~class": "0xfe87f21e"
         }
       ],
@@ -443,8 +443,8 @@
           },
           "mLocKeys": {
             "keyName": "Toxic Shot",
-            "keySummary": "Each of Teemo's attacks will poison the target, dealing damage on impact and each second after for 4 seconds.",
-            "keyTooltip": "<mainText>Teemo's basic attacks poison their target, dealing <magicDamage>@ImpactCalculatedDamage@ magic damage</magicDamage> upon impact and <magicDamage>@TickCalculatedDamage@ magic damage</magicDamage> each second for 4 seconds.</mainText>"
+            "keySummary": "Each of Teemo's attacks poisons the target, dealing damage on impact and over time.",
+            "keyTooltip": "Teemo's basic attacks poison their target, dealing <magicDamage>@ImpactCalculatedDamage@ magic damage</magicDamage> upon impact and <magicDamage>@TickCalculatedDamage@ magic damage</magicDamage> each second for @PoisonDuration@ seconds."
           },
           "mObjectName": "Jade_TeemoE",
           "~class": "TooltipInstanceSpell"
@@ -479,22 +479,6 @@
       },
       "mPingableWhileDisabled": true,
       "mSpellCalculations": {
-        "0x8b70cfd6": {
-          "mModifiedGameCalculation": "ImpactCalculatedDamage",
-          "mMultiplier": {
-            "mDataValue": "monstermod",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
-        "0x938cba49": {
-          "mModifiedGameCalculation": "TickCalculatedDamage",
-          "mMultiplier": {
-            "mDataValue": "monstermod",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
         "ImpactCalculatedDamage": {
           "mFormulaParts": [
             {
@@ -725,6 +709,19 @@
             2.0
           ],
           "~class": "SpellDataValue"
+        },
+        {
+          "name": "AttackSpeedBonus",
+          "values": [
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645
+          ],
+          "~class": "SpellDataValue"
         }
       ],
       "castRange": [
@@ -771,8 +768,8 @@
           "mDisplayAsPercent": true,
           "mFormulaParts": [
             {
-              "mNumber": 0.4000000059604645,
-              "~class": "NumberCalculationPart"
+              "mDataValue": "AttackSpeedBonus",
+              "~class": "NamedDataValueCalculationPart"
             }
           ],
           "~class": "GameCalculation"
@@ -998,19 +995,6 @@
             2.75
           ],
           "~class": "SpellDataValue"
-        },
-        {
-          "name": "MissChance",
-          "values": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
-          "~class": "SpellDataValue"
         }
       ],
       "SpellEventToAudioEventSuffix": {
@@ -1208,45 +1192,6 @@
       },
       "DataValues": [
         {
-          "name": "MaxAmmo",
-          "values": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "ArmTime",
-          "values": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "MushroomDuration",
-          "values": [
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0,
-            5.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
           "name": "BaseDamage",
           "values": [
             75.0,
@@ -1256,6 +1201,19 @@
             575.0,
             700.0,
             825.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatio",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
           ],
           "~class": "SpellDataValue"
         },
@@ -1286,28 +1244,28 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "APRatioPerTick",
+          "name": "MaxAmmo",
           "values": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
           ],
           "~class": "SpellDataValue"
         },
         {
-          "name": "MaxTraps",
+          "name": "MushroomDuration",
           "values": [
-            25000.0,
-            25000.0,
-            25000.0,
-            25000.0,
-            25000.0,
-            25000.0,
-            25000.0
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1421,8 +1379,7 @@
           "mLocKeys": {
             "keyName": "Noxious Trap",
             "keySummary": "Teemo places an explosive poisonous trap using one of the mushrooms stored in his pack.  If an enemy steps on the trap it will release a poisonous cloud, slowing enemies and damaging them over time.",
-            "keyTooltip": "Uses a stored mushroom to place a trap that detonates if an enemy steps on it, spreading poison to nearby enemies that <status>Slows</status> by @SlowAmount@%  and deals <magicDamage>@TotalDamage@ magic damage</magicDamage> over 4 seconds.<br><br>This Ability has 3 charges (@AmmoRechargeTime@ second refresh).<br>",
-            "keyTooltipExtended": "Uses a stored mushroom to place a trap that detonates if an enemy steps on it, spreading poison to nearby enemies that <status> Slows</status> by <status>@SlowAmount@%</status>  and deals <magicDamage>@TotalDamage@ magic damage</magicDamage> over 4 seconds. Traps last 10 minutes.<br><br>This Ability has 3 charges (@AmmoRechargeTime@ second refresh).<br>"
+            "keyTooltip": "Teemo plants a mushroom trap that detonates when stepped on. The traps <status>Slow</status> by @SlowAmount@% and deal <magicDamage>@TotalDamage@ magic damage</magicDamage> over @DebuffDuration@ seconds. Enemies are revealed for the same duration.<br><br>Traps last @MushroomDuration@ minutes and are stealthed. This Ability has @MaxAmmo@ charges (@AmmoRechargeTime@ second refresh)."
           },
           "mObjectName": "Jade_TeemoR",
           "~class": "TooltipInstanceSpell"
@@ -1470,7 +1427,7 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mDataValue": "APRatioPerTick",
+              "mDataValue": "APRatio",
               "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
@@ -1711,7 +1668,7 @@
           "mLocKeys": {
             "keyName": "Move Quick",
             "keySummary": "Teemo scampers around, passively increasing his movement speed until he is struck by an enemy champion or turret.  Teemo can sprint to gain bonus movement speed that isn't stopped by being struck for a short time.",
-            "keyTooltip": "<mainText><spellPassive>Passive: </spellPassive>Teemo's <speed>Movement Speed</speed> is increased by @PassiveMoveSpeedBonus*100@% unless he has been damaged by an enemy champion or turret in the last 5 seconds.<br><br><spellActive>Active: </spellActive>Teemo sprints, gaining <speed>@ActiveMoveSpeedBonus*100@% Movement Speed</speed> for 3 seconds. This bonus is not lost when struck.</mainText>"
+            "keyTooltip": "<mainText><spellPassive>Passive: </spellPassive>Teemo's <speed>Movement Speed</speed> is increased by @PassiveMoveSpeedBonus*100@% unless he has been damaged by an enemy champion or turret in the last @PassiveCooldownOnDamageTaken@ seconds.<br><br><spellActive>Active: </spellActive>Teemo sprints, gaining <speed>@ActiveMoveSpeedBonus*100@% Movement Speed</speed> for @ActiveMoveSpeedBuffDuration@ seconds. This bonus is not lost when struck.</mainText>"
           },
           "mObjectName": "Jade_TeemoW",
           "~class": "TooltipInstanceSpell"
