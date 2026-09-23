@@ -1657,6 +1657,7 @@ Dir.mkdir("characters/shared")
                 case clazz
                     when "StatStoneSet", "StatStoneData"
                         clazz = "Eternals"
+                        d.delete("EventsToTrack")
                     when "CharacterRecord"
                         clazz = "BaseStats"
                         d = applyLangKeys(d)
@@ -1690,6 +1691,7 @@ Dir.mkdir("characters/shared")
                     when "SpellObject"
                         clazz = "Spells"
                         d.delete_if { |key, values| values["~class"] == "BotsSpellData" }
+                        d = applyLangKeys(applyLang(d))
                     else
                         #do nothing
                 end
