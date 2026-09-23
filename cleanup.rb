@@ -669,6 +669,7 @@ def diff
         output2 += "\n"
     }
 
+    Dir.mkdir("filediffs") if !Dir.exist?("filediffs")
     File.open("filediffs/lang.txt", 'wb') { |f| f.write(output) }
     File.open("filediffs/champs.txt", 'wb') { |f| f.write(output2) }
     print "done.\n"
