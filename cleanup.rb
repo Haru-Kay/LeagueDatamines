@@ -1682,7 +1682,7 @@ Dir.mkdir("characters/shared")
                                 d["secondaryAbilityResource"][k] = applyLangKeys(d["secondaryAbilityResource"][k])
                             }
                         end
-                        if d["platformEnabled"]
+                        if d["platformEnabled"] && !file.start_with?("jade_")
                             outdir = "champions"
                             Dir.mkdir("#{outdir}/#{path}") if !Dir.exist?("#{outdir}/#{path}")
                         end
