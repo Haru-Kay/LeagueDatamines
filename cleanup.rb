@@ -117,7 +117,7 @@ $manualHash.merge!({
     "4ec15a0a" => "LinkedAugmentGroups",
     "eb2338a" => "REMOVED_AUGMENT",
 
-    
+    "bffdf499" => "KIWI",
     "51f91098" => "Burn", # exacts
     "56299123" => "CC",
     "5637ce35" => "MeleeAttackerAD",
