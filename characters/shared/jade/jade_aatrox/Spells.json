@@ -351,7 +351,7 @@
             "keyCost": "No Cost",
             "keyName": "Blood Thirst / Blood Price",
             "keySummary": "While toggled on Aatrox deals bonus damage every third subsequent attack at the expense of his own Health. While toggled off Aatrox restores Health every third subsequent attack.",
-            "keyTooltip": "<toggle>Toggle:</toggle> Aatrox switches between <keywordMajor>Blood Thirst</keywordMajor> and <keywordMajor>Blood Price</keywordMajor>, gaining bonus effects on every <attention>third</attention> attack.<br><br><keywordMajor>Blood Thirst: </keywordMajor>Aatrox restores <healing>@WHeal@ Health</healing>, increased by <healing>@WLowHealthHealBonus@% (@TTLowHealthHeal@)</healing> when below <scaleHealth>@LowHealthPercent@% Health</scaleHealth>.<br><br><keywordMajor>Blood Price: </keywordMajor>Aatrox deals <physicalDamage>@WDamage@ bonus physical damage</physicalDamage> and <font color='#FF3300'>loses @SelfDamage@ Health</font>."
+            "keyTooltip": "<toggle>Toggle:</toggle> Aatrox switches between <keywordMajor>Blood Thirst</keywordMajor> and <keywordMajor>Blood Price</keywordMajor>, gaining bonus effects on every <attention>third</attention> attack.<br><br><keywordMajor>Blood Thirst: </keywordMajor>Aatrox restores <healing>@WHeal@ Health</healing>, increased to <healing>@TTLowHealthHeal@</healing> when below <scaleHealth>@LowHealthPercent@% Health</scaleHealth>.<br><br><keywordMajor>Blood Price: </keywordMajor>Aatrox deals <physicalDamage>@WDamage@ bonus physical damage</physicalDamage> and <font color='#FF3300'>loses @SelfDamage@ Health</font>."
           },
           "mObjectName": "Jade_AatroxW2",
           "~class": "TooltipInstanceSpell"
@@ -404,17 +404,15 @@
         "0x4e552c11": {
           "mFormulaParts": [
             {
-              "mSubparts": [
-                {
-                  "mDataValue": "WLowHealthHealBonus",
-                  "~class": "NamedDataValueCalculationPart"
-                },
-                {
-                  "mNumber": 0.009999999776482582,
-                  "~class": "NumberCalculationPart"
-                }
-              ],
-              "~class": "SumOfSubPartsCalculationPart"
+              "mPart1": {
+                "mDataValue": "WLowHealthHealBonus",
+                "~class": "NamedDataValueCalculationPart"
+              },
+              "mPart2": {
+                "mNumber": 0.009999999776482582,
+                "~class": "NumberCalculationPart"
+              },
+              "~class": "ProductOfSubPartsCalculationPart"
             }
           ],
           "mMultiplier": {
@@ -2746,7 +2744,7 @@
             "keyCost": "No Cost",
             "keyName": "Blood Thirst / Blood Price",
             "keySummary": "While toggled on Aatrox deals bonus damage every third subsequent attack at the expense of his own Health. While toggled off Aatrox restores Health every third subsequent attack.",
-            "keyTooltip": "<toggle>Toggle:</toggle> Aatrox switches between <keywordMajor>Blood Thirst</keywordMajor> and <keywordMajor>Blood Price</keywordMajor>, gaining bonus effects on every <attention>third</attention> attack.<br><br><keywordMajor>Blood Thirst: </keywordMajor>Aatrox restores <healing>@WHeal@ Health</healing>, increased by <healing>@WLowHealthHealBonus@% (@TTLowHealthHeal@)</healing> when below <scaleHealth>@LowHealthPercent@% Health</scaleHealth>.<br><br><keywordMajor>Blood Price: </keywordMajor>Aatrox deals <physicalDamage>@WDamage@ bonus physical damage</physicalDamage> and <font color='#FF3300'>loses @SelfDamage@ Health</font>."
+            "keyTooltip": "<toggle>Toggle:</toggle> Aatrox switches between <keywordMajor>Blood Thirst</keywordMajor> and <keywordMajor>Blood Price</keywordMajor>, gaining bonus effects on every <attention>third</attention> attack.<br><br><keywordMajor>Blood Thirst: </keywordMajor>Aatrox restores <healing>@WHeal@ Health</healing>, increased to <healing>@TTLowHealthHeal@</healing> when below <scaleHealth>@LowHealthPercent@% Health</scaleHealth>.<br><br><keywordMajor>Blood Price: </keywordMajor>Aatrox deals <physicalDamage>@WDamage@ bonus physical damage</physicalDamage> and <font color='#FF3300'>loses @SelfDamage@ Health</font>."
           },
           "mObjectName": "Jade_AatroxW",
           "~class": "TooltipInstanceSpell"
