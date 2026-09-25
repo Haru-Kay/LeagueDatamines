@@ -264,7 +264,7 @@
         "mMissileWidth": 160.0,
         "movementComponent": {
           "mProjectTargetToCastRange": true,
-          "mSpeed": 2000.0,
+          "mSpeed": 1600.0,
           "mTracksTarget": false,
           "mUseHeightOffsetAtEnd": true,
           "~class": "FixedSpeedMovement"
@@ -332,7 +332,7 @@
         ],
         "~class": "ResourceCostModifiable"
       },
-      "missileSpeed": 2000.0,
+      "missileSpeed": 1600.0,
       "selectionPriority": 1,
       "spellCastTime": 0.4000000059604645,
       "spellTotalTime": 1.0,
@@ -401,11 +401,6 @@
           "~class": "SpellDataValue"
         }
       ],
-      "DataValuesModeOverride": {
-        "cherry": {
-          "~class": "SpellDataValueVector"
-        }
-      },
       "canCastWhileDisabled": true,
       "cannotBeSuppressed": true,
       "castConeAngle": 0.0,
@@ -461,8 +456,8 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Ionian Fervor",
-            "keySummary": "Reduces the duration of Stuns, Slows, Taunts, Fears, Snares, and Roots for each nearby enemy champion.",
-            "keyTooltip": "Reduces the duration of <status>Stuns, Slows, Taunts, Fears, Snares,</status> and <status>Roots</status> for each nearby enemy champion.<br><br>1 Champion: <attention>10%</attention><br>2 Champions: <attention>25%</attention><br>3 Champions: <attention>40%</attention>"
+            "keySummary": "Irelia gains Tenacity for each nearby enemy champion.",
+            "keyTooltip": "Irelia gains <status>Tenacity</status> for each nearby enemy Champion.<br><br>1 Champion: <attention>10%</attention><br>2 Champions: <attention>25%</attention><br>3 Champions: <attention>40%</attention>"
           },
           "mObjectName": "Jade_IreliaPassive",
           "~class": "TooltipInstanceSpell"
@@ -657,8 +652,8 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Ionian Fervor",
-            "keySummary": "Reduces the duration of Stuns, Slows, Taunts, Fears, Snares, and Roots for each nearby enemy champion.",
-            "keyTooltip": "Reduces the duration of <status>Stuns, Slows, Taunts, Fears, Snares,</status> and <status>Roots</status> for each nearby enemy champion.<br><br>1 Champion: <attention>10%</attention><br>2 Champions: <attention>25%</attention><br>3 Champions: <attention>40%</attention>"
+            "keySummary": "Irelia gains Tenacity for each nearby enemy champion.",
+            "keyTooltip": "Irelia gains <status>Tenacity</status> for each nearby enemy Champion.<br><br>1 Champion: <attention>10%</attention><br>2 Champions: <attention>25%</attention><br>3 Champions: <attention>40%</attention>"
           },
           "mObjectName": "Jade_IreliaPassive_TT",
           "~class": "TooltipInstanceSpell"
@@ -857,8 +852,8 @@
           },
           "mLocKeys": {
             "keyName": "Hiten Style",
-            "keySummary": "Irelia is skilled in the art of Hiten, passively giving her physical attacks health restoration.  Activating Hiten Style gives her basic attacks true damage for a short period.",
-            "keyTooltip": "<spellPassive>Passive:</spellPassive> Basic attacks <healing>restore @Health@ health</healing>.<br><br><spellActive>Active:</spellActive> Irelia's basic attacks deal <trueDamage>@Damage@ true damage</trueDamage> and doubles <healing>health restored</healing> for @HealthRestoreDuration@ seconds."
+            "keySummary": "Passive: Irelia is skilled in the art of Hiten causing her attacks to restore Health.<br><br>Active: Basic attacks deal bonus true damage and their healing is increased for a few seconds.",
+            "keyTooltip": "<spellPassive>Passive:</spellPassive> Basic attacks <healing>restore @Health@ health</healing>.<br><br><spellActive>Active:</spellActive> Irelia's basic attacks deal <trueDamage>@Damage@ true damage</trueDamage> and now <healing>restore @HealthRestoreActive@ health</healing> for @ActiveDuration@ seconds."
           },
           "mObjectName": "Jade_IreliaW_Buff",
           "~class": "TooltipInstanceSpell"
@@ -1235,8 +1230,8 @@
           },
           "mLocKeys": {
             "keyName": "Equilibrium Strike",
-            "keySummary": "Irelia's attack balances the scales, dealing damage and slowing the target.  However, if the target has a higher Health % than Irelia, then the blow stuns the target instead.",
-            "keyTooltip": "Irelia pierces her target, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Slowing</status> the target by @SlowAmount@% for @StunDuration@ second(s).<br><br>If the target has a higher <scaleHealth>Health %</scaleHealth> than Irelia, she <status>Stuns</status> the target for the duration instead."
+            "keySummary": "Irelia's attack balances the scales, dealing damage and slowing her target. If they have a higher Health % than her, the blow stuns them instead.",
+            "keyTooltip": "Irelia pierces her target, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Slowing</status> them by @SlowAmount@% for @StunDuration@ second(s).<br><br>If the target has a higher <scaleHealth>Health %</scaleHealth> than Irelia, she <status>Stuns</status> them for the duration instead."
           },
           "mObjectName": "Jade_IreliaE",
           "~class": "TooltipInstanceSpell"
@@ -1438,8 +1433,8 @@
           },
           "mLocKeys": {
             "keyName": "Bladesurge",
-            "keySummary": "Irelia dashes forward to strike her target. If it kills the target, Bladesurge's cooldown refreshes and refunds 35 Mana.",
-            "keyTooltip": "Irelia dashes forward to strike her target, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage>.<br><br>If it kills the target, <spellName>Bladesurge's</spellName> cooldown refreshes and refunds <scaleMana>@ManaReturn@ Mana</scaleMana>."
+            "keySummary": "Irelia dashes to strike her target. If it kills, Bladesurge's cooldown refreshes and refunds some of its Mana cost.",
+            "keyTooltip": "Irelia dashes to strike her target, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage>.<br><br>If it kills her target, <spellName>Bladesurge's</spellName> cooldown refreshes and refunds <scaleMana>@ManaReturn@ Mana</scaleMana>."
           },
           "mObjectName": "Jade_IreliaQ",
           "~class": "TooltipInstanceSpell"
@@ -1662,7 +1657,7 @@
           },
           "mLocKeys": {
             "keyName": "Transcendent Blades",
-            "keySummary": "Irelia summons 4 spirit blades that she can fling to deal physical damage and siphon life from enemies they pass through.",
+            "keySummary": "Irelia summons 4 spirit blades that she can fling to damage and siphon life from enemies they pass through.",
             "keyTooltip": "Irelia summons 4 spirit blades that she can fling to deal <physicalDamage>@TotalDamage@ physical damage</physicalDamage> to enemies they pass through. She <healing>heals</healing> for @ChampionHealPercent@% of the damage dealt against champions and @MinionHealPercent@% against other enemies."
           },
           "mObjectName": "Jade_IreliaR",
@@ -1728,13 +1723,13 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.5,
-              "~class": "StatByCoefficientCalculationPart"
-            },
-            {
               "mCoefficient": 0.6000000238418579,
               "mStat": 2,
               "mStatFormula": 2,
+              "~class": "StatByCoefficientCalculationPart"
+            },
+            {
+              "mCoefficient": 0.5,
               "~class": "StatByCoefficientCalculationPart"
             }
           ],
@@ -1785,20 +1780,6 @@
       "0x8958fee2": {
         "~class": "0x8958fee2"
       },
-      "0xf9c2333e": {
-        "cherry": {
-          "value": [
-            0.0,
-            16.0,
-            15.0,
-            14.0,
-            13.0,
-            12.0,
-            0.0
-          ],
-          "~class": "SpellEffectAmount"
-        }
-      },
       "Cooldown": {
         "Default": 15.0,
         "values": [
@@ -1840,7 +1821,20 @@
           "~class": "SpellDataValue"
         },
         {
-          "name": "HealthRestoreDuration",
+          "name": "HealthRestoreActive",
+          "values": [
+            6.0,
+            10.0,
+            14.0,
+            18.0,
+            22.0,
+            26.0,
+            30.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ActiveDuration",
           "values": [
             6.0,
             6.0,
@@ -1922,13 +1916,18 @@
             "LevelUp": {
               "Elements": [
                 {
-                  "nameOverride": "Base Damage",
+                  "nameOverride": "Healing",
+                  "type": "Health",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Active Damage",
                   "type": "Damage",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
-                  "nameOverride": "Healing",
-                  "type": "Health",
+                  "nameOverride": "Empowered Healing",
+                  "type": "HealthRestoreActive",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -1938,8 +1937,8 @@
           },
           "mLocKeys": {
             "keyName": "Hiten Style",
-            "keySummary": "Irelia is skilled in the art of Hiten, passively giving her physical attacks health restoration.  Activating Hiten Style gives her basic attacks true damage for a short period.",
-            "keyTooltip": "<spellPassive>Passive:</spellPassive> Basic attacks <healing>restore @Health@ health</healing>.<br><br><spellActive>Active:</spellActive> Irelia's basic attacks deal <trueDamage>@Damage@ true damage</trueDamage> and doubles <healing>health restored</healing> for @HealthRestoreDuration@ seconds."
+            "keySummary": "Passive: Irelia is skilled in the art of Hiten causing her attacks to restore Health.<br><br>Active: Basic attacks deal bonus true damage and their healing is increased for a few seconds.",
+            "keyTooltip": "<spellPassive>Passive:</spellPassive> Basic attacks <healing>restore @Health@ health</healing>.<br><br><spellActive>Active:</spellActive> Irelia's basic attacks deal <trueDamage>@Damage@ true damage</trueDamage> and now <healing>restore @HealthRestoreActive@ health</healing> for @ActiveDuration@ seconds."
           },
           "mObjectName": "Jade_IreliaW",
           "~class": "TooltipInstanceSpell"
