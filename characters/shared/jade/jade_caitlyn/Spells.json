@@ -103,7 +103,7 @@
           "mLocKeys": {
             "keyName": "Headshot",
             "keySummary": "Every few basic attacks, Caitlyn will fire a headshot dealing extra damage.",
-            "keyTooltip": "Every @HeadshotRequirement@ attacks (attacks while in brush count as 2), Caitlyn will fire a <keywordMajor>Headshot</keywordMajor>, dealing either <physicalDamage>@HeadShotTotalDamageTT@ physical damage</physicalDamage> to a champion or <physicalDamage>@HeadShotMinionTotalDamageTT@ physical damage</physicalDamage> to a minion."
+            "keyTooltip": "Every @HeadshotRequirement@ attacks (attacks from brush count as 2), Caitlyn fires a <keywordMajor>Headshot</keywordMajor> that deals <physicalDamage>@HeadShotTotalDamageTT@ physical damage</physicalDamage> to champions or <physicalDamage>@HeadShotMinionTotalDamageTT@ physical damage</physicalDamage> to other enemies."
           },
           "mObjectName": "Jade_CaitlynPassive",
           "~class": "TooltipInstanceSpell"
@@ -1021,14 +1021,15 @@
     "mScriptName": "Jade_CaitlynE",
     "mSpell": {
       "Cooldown": {
+        "Default": 20.0,
         "values": [
-          18.0,
+          20.0,
           18.0,
           16.0,
           14.0,
           12.0,
           10.0,
-          10.0
+          8.0
         ],
         "~class": "SpellAttributeModifiable"
       },
@@ -1164,73 +1165,13 @@
           "mLocKeys": {
             "keyName": "90 Caliber Net",
             "keySummary": "Caitlyn fires a heavy net to slow her target. The recoil knocks Caitlyn back.",
-            "keyTooltip": "Caitlyn fires a net dealing <magicDamage>@NetDamage@ magic damage</magicDamage> and <status>Slows</status> the target by @SlowAmount*-100@% for @SlowDuration@ second(s). Knocks Caitlyn back."
+            "keyTooltip": "Caitlyn flies backward as she fires a net that deals <magicDamage>@NetDamage@ magic damage</magicDamage> and <status>Slows</status> the first enemy hit by @SlowAmount*-100@% for @SlowDuration@ second(s)."
           },
           "mObjectName": "Jade_CaitlynE",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.800000011920929,
-      "mEffectAmount": [
-        {
-          "value": [
-            40.0,
-            80.0,
-            130.0,
-            180.0,
-            230.0,
-            280.0,
-            310.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            50.0,
-            50.0,
-            50.0,
-            50.0,
-            50.0,
-            50.0,
-            50.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mHitBoneName": "C_BuffBone_Glb_Center_Loc",
       "mImgIconName": [
         "assets/ux/jade/s3icons/samesized/caitlyn_90calibernet.dds"
@@ -1291,6 +1232,7 @@
     "mScriptName": "Jade_CaitlynQ",
     "mSpell": {
       "Cooldown": {
+        "Default": 11.0,
         "values": [
           11.0,
           10.0,
@@ -1298,7 +1240,7 @@
           8.0,
           7.0,
           6.0,
-          6.0
+          5.0
         ],
         "~class": "SpellAttributeModifiable"
       },
@@ -1474,73 +1416,14 @@
           },
           "mLocKeys": {
             "keyName": "Piltover Peacemaker",
-            "keySummary": "Caitlyn revs up her rifle for to unleash a penetrating shot that deals physical damage (deals less damage to subsequent targets).",
-            "keyTooltip": "Caitlyn revs her rifle for @CastTime@ second to fire a piercing shot dealing <physicalDamage>@InitialDamage@ physical damage</physicalDamage>. Deals @ExtraHitPercentReduction*100@% less damage to each subsequent target down to a minimum of @MinimumDamagePercent*100@%."
+            "keySummary": "Caitlyn unleashes a penetrating shot that damages all enemies in a line.",
+            "keyTooltip": "Caitlyn fires a piercing shot that deals <physicalDamage>@InitialDamage@ physical damage</physicalDamage>, reduced by @ExtraHitPercentReduction*100@% for each subsequent enemy to a minimum of <physicalDamage>@MinimumDamageCalc@</physicalDamage>."
           },
           "mObjectName": "Jade_CaitlynQ",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mEffectAmount": [
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            50.0,
-            50.0,
-            50.0,
-            50.0,
-            50.0,
-            50.0,
-            50.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            1.2999999523162842,
-            1.2999999523162842,
-            1.4500000476837158,
-            1.600000023841858,
-            1.75,
-            1.899999976158142,
-            2.049999952316284
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         0,
         2,
@@ -1592,6 +1475,15 @@
         "~class": "MissileSpecification"
       },
       "mSpellCalculations": {
+        "MinimumDamageCalc": {
+          "mModifiedGameCalculation": "InitialDamage",
+          "mMultiplier": {
+            "mDataValue": "MinimumDamagePercent",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "tooltipOnly": true,
+          "~class": "GameCalculationModified"
+        },
         "InitialDamage": {
           "mFormulaParts": [
             {
@@ -1620,13 +1512,14 @@
         80.0
       ],
       "manaValues": {
+        "Default": 50.0,
         "values": [
           50.0,
           60.0,
           70.0,
           80.0,
           90.0,
-          80.0
+          100.0
         ],
         "~class": "ResourceCostModifiable"
       },
@@ -1664,13 +1557,13 @@
         {
           "name": "RBaseDamage",
           "values": [
-            125.0,
+            25.0,
             250.0,
             475.0,
             700.0,
-            825.0,
-            1000.0,
-            1175.0
+            925.0,
+            1150.0,
+            1375.0
           ],
           "~class": "SpellDataValue"
         },
@@ -1684,19 +1577,6 @@
             2.0,
             2.0,
             2.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "CritChanceAmp",
-          "values": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
           ],
           "~class": "SpellDataValue"
         }
@@ -1782,8 +1662,8 @@
           },
           "mLocKeys": {
             "keyName": "Ace in the Hole",
-            "keySummary": "Caitlyn takes time to line up the perfect shot, dealing massive damage to a single target at a huge range. Enemy champions can intercept the bullet for their ally.",
-            "keyTooltip": "Caitlyn takes a second to line up the perfect shot, firing a bullet at an enemy Champion dealing <physicalDamage>@RTotalDamage@ physical damage</physicalDamage> at @CastRange@ range. Other enemy Champions can intercept the bullet."
+            "keySummary": "Caitlyn takes time to line up the perfect shot, dealing massive damage to an enemy champion at a huge range. Other enemy champions can intercept the bullet for their ally.",
+            "keyTooltip": "Caitlyn takes a second to line up the perfect shot at an enemy Champion, dealing <physicalDamage>@RTotalDamage@ physical damage</physicalDamage> at @CastRange@ range. Other enemy Champions can intercept the bullet."
           },
           "mObjectName": "Jade_CaitlynR",
           "~class": "TooltipInstanceSpell"
@@ -1849,13 +1729,14 @@
         0.0
       ],
       "manaValues": {
+        "Default": 100.0,
         "values": [
           100.0,
           100.0,
           100.0,
-          0.0,
-          0.0,
-          0.0
+          100.0,
+          100.0,
+          100.0
         ],
         "~class": "ResourceCostModifiable"
       },
@@ -1876,14 +1757,15 @@
     "mScriptName": "Jade_CaitlynW",
     "mSpell": {
       "Cooldown": {
+        "Default": 23.0,
         "values": [
-          20.0,
+          23.0,
           20.0,
           17.0,
           14.0,
           11.0,
           8.0,
-          8.0
+          5.0
         ],
         "~class": "SpellAttributeModifiable"
       },
@@ -1891,13 +1773,13 @@
         {
           "name": "BaseDamage",
           "values": [
-            0.0,
+            30.0,
             80.0,
             130.0,
             180.0,
             230.0,
             280.0,
-            0.0
+            330.0
           ],
           "~class": "SpellDataValue"
         },
@@ -2051,110 +1933,14 @@
           },
           "mLocKeys": {
             "keyName": "Yordle Snap Trap",
-            "keySummary": "Caitlyn sets a trap to find sneaky yordles. When sprung, the trap immobilizes the champion, reveals them and deals magic damage over a short duration.",
-            "keyTooltip": "Caitlyn sets a trap that an enemy Champion can spring <status>Rooting</status> them for a short duration and revealing them for @VisibilityDuration@ seconds. The trap deals <magicDamage>@TotalDamage@ magic damage</magicDamage> over @DOTTime@ seconds, and lasts for @Duration@ minutes. Only @MaxTraps@ traps may be active at once."
+            "keySummary": "Caitlyn sets a trap to find sneaky yordles. When sprung by a champion, the trap immobilizes, reveals, and damages them over a short duration.",
+            "keyTooltip": "Caitlyn sets a trap for @Duration@ minutes that springs on enemy Champions, <status>Rooting</status> them and dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> over @RootDuration@ seconds, revealing them for @VisibilityDuration@ seconds.<br><br>Only @MaxTraps@ traps may be active at once."
           },
           "mObjectName": "Jade_CaitlynW",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.6000000238418579,
-      "mEffectAmount": [
-        {
-          "value": [
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0,
-            2.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            35.0,
-            35.0,
-            80.0,
-            125.0,
-            170.0,
-            215.0,
-            215.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            30.0,
-            30.0,
-            35.0,
-            40.0,
-            45.0,
-            50.0,
-            55.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            2.0,
-            3.0,
-            3.0,
-            4.0,
-            4.0,
-            5.0,
-            5.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            2.0,
-            3.0,
-            3.0,
-            4.0,
-            4.0,
-            5.0,
-            5.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            30.0,
-            30.0,
-            30.0,
-            30.0,
-            30.0,
-            30.0,
-            30.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         0,
         0,

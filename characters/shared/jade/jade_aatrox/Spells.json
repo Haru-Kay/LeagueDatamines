@@ -347,7 +347,7 @@
             "keyCost": "No Cost",
             "keyName": "Blood Thirst / Blood Price",
             "keySummary": "While toggled on Aatrox deals bonus damage every third subsequent attack at the expense of his own Health. While toggled off Aatrox restores Health every third subsequent attack.",
-            "keyTooltip": "<toggle>Toggle:</toggle> Aatrox switches between <keywordMajor>Blood Thirst</keywordMajor> and <keywordMajor>Blood Price</keywordMajor>, gaining bonus effects on every <attention>third</attention> attack.<br><br><keywordMajor>Blood Thirst: </keywordMajor>Aatrox restores <healing>@WHeal@ Health</healing>, increased to <healing>@TTLowHealthHeal@</healing> when below <scaleHealth>@LowHealthPercent@% Health</scaleHealth>.<br><br><keywordMajor>Blood Price: </keywordMajor>Aatrox deals <physicalDamage>@WDamage@ bonus physical damage</physicalDamage> and <font color='#FF3300'>loses @SelfDamage@ Health</font>."
+            "keyTooltip": "<toggle>Toggle:</toggle> Aatrox switches between <keywordMajor>Blood Thirst</keywordMajor> and <keywordMajor>Blood Price</keywordMajor>, gaining bonus effects on every <attention>third</attention> attack.<br><br><keywordMajor>Blood Thirst: </keywordMajor>Aatrox restores <healing>@WHeal@ Health</healing>, increased to <healing>@LowHealthHeal@</healing> when below <scaleHealth>@LowHealthPercent@% Health</scaleHealth>.<br><br><keywordMajor>Blood Price: </keywordMajor>Aatrox deals <physicalDamage>@WDamage@ bonus physical damage</physicalDamage> and <font color='#FF3300'>loses @SelfDamage@ Health</font>."
           },
           "mObjectName": "Jade_AatroxW2",
           "~class": "TooltipInstanceSpell"
@@ -1082,7 +1082,8 @@
           "mLocKeys": {
             "keyName": "Blood Well",
             "keySummary": "When using an ability that costs Health, Aatrox stores the self-inflicted damage into the Blood Well. Upon taking fatal damage Aatrox extracts the blood from the well and recovers it as health over a brief duration. Additionally, Aatrox gains 1% Attack Speed for every 2% blood that is in the well.",
-            "keyTooltip": "Upon taking fatal damage, Aatrox extracts the current blood in the well plus @TotalPoolPercentage@% of the well's total pool and recovers it as <healing>Health over @HealthGainDuration@ seconds</healing> (Min: <healing>@TTMinHeal@</healing>, Max: <healing>@TTMaxHeal@</healing>).<br><br>When using an ability that costs <scaleHealth>Health</scaleHealth>, Aatrox stores 100% of the self-inflicted damage into the <keywordMajor>Blood Well</keywordMajor> and gains <attackSpeed>@AttackSpeedGain@% Attack Speed</attackSpeed> for every @SpeedPerBloodWell@% in the <keywordMajor>Blood Well</keywordMajor>.<br><br>@PassiveCooldown@ second Cooldown and decays by @DecayRate@% a second while out of combat."
+            "keyTooltip": "Aatrox stores self-inflicted damage from his abilities into the <keywordMajor>Blood Well</keywordMajor>, gaining <attackSpeed>@AttackSpeedGain@% Attack Speed</attackSpeed> for every @SpeedPerBloodWell@% stored.<br><br>Upon taking fatal damage, Aatrox empties the <keywordMajor>Blood Well</keywordMajor> to stave off death, restoring <healing>@TTMinHeal@ - @TTMaxHeal@ Health</healing> over @HealthGainDuration@ seconds. @PassiveCooldown@ second Cooldown.",
+            "keyTooltipExtendedBelowLine": "<rules>Aatrox's <keywordMajor>Blood Well</keywordMajor> decays by @DecayCalc@ per second while out of combat.</rules>"
           },
           "mObjectName": "Jade_AatroxPassive",
           "~class": "TooltipInstanceSpell"
@@ -1098,15 +1099,24 @@
           "mFormulaParts": [
             {
               "mAbilityResource": 10,
-              "mCoefficient": 0.3499999940395355,
-              "~class": "AbilityResourceByCoefficientCalculationPart"
-            },
-            {
-              "mAbilityResource": 10,
-              "mCoefficient": 1.0,
+              "mCoefficient": 1.350000023841858,
               "~class": "AbilityResourceByCoefficientCalculationPart"
             }
           ],
+          "~class": "GameCalculation"
+        },
+        "0xa95da23c": {
+          "mFormulaParts": [
+            {
+              "AbilityResource": 10,
+              "DataValue": "DecayRate",
+              "~class": "AbilityResourceByNamedDataValueCalculationPart"
+            }
+          ],
+          "mMultiplier": {
+            "mNumber": 0.009999999776482582,
+            "~class": "NumberCalculationPart"
+          },
           "~class": "GameCalculation"
         },
         "0xe8933305": {
@@ -1844,10 +1854,6 @@
             "LevelUp": {
               "Elements": [
                 {
-                  "type": "Cooldown",
-                  "~class": "TooltipInstanceListElement"
-                },
-                {
                   "nameOverride": "Damage",
                   "type": "EBaseDamage",
                   "~class": "TooltipInstanceListElement"
@@ -1855,6 +1861,10 @@
                 {
                   "nameOverride": "Duration",
                   "type": "ESlowDuration",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -2158,13 +2168,13 @@
             "LevelUp": {
               "Elements": [
                 {
-                  "type": "Cooldown",
-                  "~class": "TooltipInstanceListElement"
-                },
-                {
                   "nameOverride": "Damage",
                   "type": "QBaseDamage",
                   "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -2450,7 +2460,6 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 1.0,
       "mImgIconName": [
         "assets/ux/jade/s3icons/samesized/aatrox_r.dds"
       ],
@@ -2651,13 +2660,13 @@
         {
           "name": "WLowHealthHealBonus",
           "values": [
-            200.0,
-            200.0,
-            200.0,
-            200.0,
-            200.0,
-            200.0,
-            200.0
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
           ],
           "~class": "SpellDataValue"
         },
@@ -2740,7 +2749,7 @@
             "keyCost": "No Cost",
             "keyName": "Blood Thirst / Blood Price",
             "keySummary": "While toggled on Aatrox deals bonus damage every third subsequent attack at the expense of his own Health. While toggled off Aatrox restores Health every third subsequent attack.",
-            "keyTooltip": "<toggle>Toggle:</toggle> Aatrox switches between <keywordMajor>Blood Thirst</keywordMajor> and <keywordMajor>Blood Price</keywordMajor>, gaining bonus effects on every <attention>third</attention> attack.<br><br><keywordMajor>Blood Thirst: </keywordMajor>Aatrox restores <healing>@WHeal@ Health</healing>, increased to <healing>@TTLowHealthHeal@</healing> when below <scaleHealth>@LowHealthPercent@% Health</scaleHealth>.<br><br><keywordMajor>Blood Price: </keywordMajor>Aatrox deals <physicalDamage>@WDamage@ bonus physical damage</physicalDamage> and <font color='#FF3300'>loses @SelfDamage@ Health</font>."
+            "keyTooltip": "<toggle>Toggle:</toggle> Aatrox switches between <keywordMajor>Blood Thirst</keywordMajor> and <keywordMajor>Blood Price</keywordMajor>, gaining bonus effects on every <attention>third</attention> attack.<br><br><keywordMajor>Blood Thirst: </keywordMajor>Aatrox restores <healing>@WHeal@ Health</healing>, increased to <healing>@LowHealthHeal@</healing> when below <scaleHealth>@LowHealthPercent@% Health</scaleHealth>.<br><br><keywordMajor>Blood Price: </keywordMajor>Aatrox deals <physicalDamage>@WDamage@ bonus physical damage</physicalDamage> and <font color='#FF3300'>loses @SelfDamage@ Health</font>."
           },
           "mObjectName": "Jade_AatroxW",
           "~class": "TooltipInstanceSpell"
@@ -2790,26 +2799,13 @@
           },
           "~class": "GameCalculation"
         },
-        "0x4e552c11": {
-          "mFormulaParts": [
-            {
-              "mPart1": {
-                "mDataValue": "WLowHealthHealBonus",
-                "~class": "NamedDataValueCalculationPart"
-              },
-              "mPart2": {
-                "mNumber": 0.009999999776482582,
-                "~class": "NumberCalculationPart"
-              },
-              "~class": "ProductOfSubPartsCalculationPart"
-            }
-          ],
+        "0x49d8bc1": {
+          "mModifiedGameCalculation": "0xfc3ca7f8",
           "mMultiplier": {
-            "mSpellCalculationKey": "0xfc3ca7f8",
-            "~class": "NamedGameCalculationCalculationPart"
+            "mDataValue": "WLowHealthHealBonus",
+            "~class": "NamedDataValueCalculationPart"
           },
-          "tooltipOnly": true,
-          "~class": "GameCalculation"
+          "~class": "GameCalculationModified"
         },
         "0xfc3ca7f8": {
           "mFormulaParts": [
