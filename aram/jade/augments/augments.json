@@ -1959,7 +1959,7 @@
     "tooltip": "Gain <speed>@MovementSpeed@ Movement Speed</speed> and <speed>@SlowResist*100@% Slow Resist</speed>.",
     "dataValues": {
       "MovementSpeed": 50.0,
-      "SlowResist": 0.4000000059604645
+      "SlowResist": 0.5
     },
     "icons": [
       "assets/ux/cherry/augments/icons/legday_small.tex",
@@ -4207,7 +4207,7 @@
     "tooltip": "Damaging enemy champions with Attacks or Abilities different from the previous one grants <keywordMajor>Style</keywordMajor> (from F to S).<br><br>Gain <speed>@Calc_Style_MS_Per_Stack@ Movement Speed</speed> per <keywordMajor>Style</keywordMajor> rank.<br><br>At S <keywordMajor>Style</keywordMajor> consume your <keywordMajor>Style</keywordMajor> to unleash a torrent of gunshots at all nearby enemies 10 times over 2 seconds. Each shot deals <physicalDamage>@Calc_Damage_Per_Shot@ physical damage</physicalDamage>. Enemies below <scaleHealth>@Calc_Crit_Threshold@ Health</scaleHealth> are struck Critically for <physicalDamage>@Calc_Crit_Damage_Per_Shot@ physical damage</physicalDamage>.This has a @Cooldown@ second Cooldown.<br><br><rules>Shots apply Lifesteal and deal @MinionDamageMod*100@% damage to minions.<br><br>Damage Dealt: @f1.0@<br>Infernos Triggered: @f2.0@</rules>",
     "dataValues": {
       "Style_Duration": 6.0,
-      "Cooldown": 15.0,
+      "Cooldown": 5.0,
       "Duration": 2.25,
       "MinionDamageMod": 0.25
     },
@@ -4553,12 +4553,11 @@
     "apiName": "ARAM_Juiced",
     "name": "Juiced",
     "rarity": "Silver",
-    "desc": "<OnHit>%i:OnHit% On-Hit</OnHit> consume <scaleMana>@Calc_Mana_Cost@ Mana</scaleMana> to deal <magicDamage>@Calc_Damage@ magic damage</magicDamage>, this damage can <crit>Critically Strike</crit>.",
-    "tooltip": "<OnHit> %i:OnHit% On-Hit</OnHit> consume <scaleMana>@Calc_Mana_Cost@ Mana</scaleMana> to deal <magicDamage>@Calc_Damage@ magic damage</magicDamage>, this damage can <crit>Critically Strike</crit>.<br><br><rules>Damage Dealt: @f1.0@<br>Mana Consumed: @f2.0@</rules>",
+    "desc": "<OnHit>%i:OnHit% On-Hit</OnHit> deal <magicDamage>@Calc_Damage@ magic damage</magicDamage>, this damage can <crit>Critically Strike</crit>.",
+    "tooltip": "<OnHit> %i:OnHit% On-Hit</OnHit> deal <magicDamage>@Calc_Damage@ magic damage</magicDamage>, this damage can <crit>Critically Strike</crit>.<br><br><rules>Damage Dealt: @f1.0@</rules>",
     "dataValues": {
-      "ManaPercentReduction": 0.02500000037252903,
-      "ManaPercentDamagePercent": 0.04500000178813934,
-      "MaxLevel": 2.0,
+      "ManaPercentDamagePercent": 0.07000000029802322,
+      "MaxLevel": 1.0,
       "MaxLevelManaSpendThreshold": 300.0,
       "MaxLevelPerTriggerDamageAmp": 0.10000000149011612
     },
@@ -4579,16 +4578,11 @@
             "~class": "AbilityResourceByNamedDataValueCalculationPart"
           }
         ],
-        "~class": "GameCalculation"
-      },
-      "Calc_Mana_Cost": {
-        "mFormulaParts": [
-          {
-            "mCoefficient": 0.02500000037252903,
-            "~class": "AbilityResourceByCoefficientCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
+        "mRangedMultiplier": {
+          "mNumber": 0.800000011920929,
+          "~class": "NumberCalculationPart"
+        },
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "icons": [
@@ -4806,28 +4800,28 @@
     "dataValues": {
       "Range": 300.0,
       "AttachedAOESize": 425.0,
-      "SlowDuration": 1.0,
+      "SlowDuration": 1.5,
       "AttachedSlowDuration": 3.0,
-      "SlowStrengthTT": 0.30000001192092896,
-      "SlowStrength": -0.30000001192092896,
+      "SlowStrengthTT": 0.3499999940395355,
+      "SlowStrength": -0.3499999940395355,
       "AttachDuration": 3.0
     },
     "calculations": {
       "AttachedDamagePerSecond": {
         "mFormulaParts": [
           {
-            "mEndValue": 75.0,
-            "mStartValue": 25.0,
+            "mEndValue": 90.0,
+            "mStartValue": 30.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           },
           {
-            "mCoefficient": 0.20000000298023224,
+            "mCoefficient": 0.25,
             "mStat": 2,
             "mStatFormula": 2,
             "~class": "StatByCoefficientCalculationPart"
           },
           {
-            "mCoefficient": 0.11999999731779099,
+            "mCoefficient": 0.15000000596046448,
             "~class": "StatByCoefficientCalculationPart"
           }
         ],
@@ -4836,8 +4830,8 @@
       "BaseDamageTotal": {
         "mFormulaParts": [
           {
-            "mEndValue": 100.0,
-            "mStartValue": 50.0,
+            "mEndValue": 200.0,
+            "mStartValue": 100.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           }
         ],
@@ -6168,7 +6162,7 @@
     "desc": "Occasionally send out squishy, slappy hands towards all nearby enemy champions, tethering them. Your next attack will pull in all tethered enemies.",
     "tooltip": "Occasionally send out Squishy Slappy Hands that latch on to all nearby enemy champions for @Buff_Duration@ seconds. While you're latched onto enemies, your next attack will <status>pull</status> them to you, deal <magicDamage>@Calc_Damage@ magic damage</magicDamage>, and <status>stun them for @Stun_Duration@ seconds</status>. You gain <shield>@Calc_Shield@ shield</shield> for @Shield_Duration@ seconds per <status>pulled</status> enemy.<br><br>This has a @Cooldown@ second cooldown.<br><br><rules>Enemies Yoinked: @f1.0@<br>Damage Dealt: @f2.0@<br>Shield Gained: @f3.0@</rules>",
     "dataValues": {
-      "Cooldown": 35.0,
+      "Cooldown": 30.0,
       "Buff_Duration": 4.0,
       "Cast_Radius": 450.0,
       "Radius": 800.0,
@@ -6183,12 +6177,12 @@
       "Calc_Damage": {
         "mFormulaParts": [
           {
-            "mEndValue": 100.0,
-            "mStartValue": 30.0,
+            "mEndValue": 150.0,
+            "mStartValue": 50.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           },
           {
-            "mCoefficient": 0.10000000149011612,
+            "mCoefficient": 0.15000000596046448,
             "mStat": 12,
             "mStatFormula": 2,
             "~class": "StatByCoefficientCalculationPart"
@@ -6199,8 +6193,8 @@
       "Calc_Shield": {
         "mFormulaParts": [
           {
-            "mEndValue": 150.0,
-            "mStartValue": 35.0,
+            "mEndValue": 200.0,
+            "mStartValue": 50.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           },
           {

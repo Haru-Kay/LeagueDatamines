@@ -11129,21 +11129,11 @@
     "apiName": "ARAM_Juiced",
     "name": "Juiced",
     "rarity": "Silver",
-    "desc": "<OnHit>%i:OnHit% On-Hit</OnHit> consume <scaleMana>@Calc_Mana_Cost@ Mana</scaleMana> to deal <magicDamage>@Calc_Damage@ magic damage</magicDamage>, this damage can <crit>Critically Strike</crit>.",
-    "maxLevelTooltip": "At max level, everytime you spend <scaleMana>@MaxLevelManaSpendThreshold@ Mana</scaleMana> increase the damge this deals by @MaxLevelPerTriggerDamageAmp*100@% for the rest of the round.",
-    "tooltip": "<OnHit> %i:OnHit% On-Hit</OnHit> consume <scaleMana>@Calc_Mana_Cost@ Mana</scaleMana> to deal <magicDamage>@Calc_Damage@ magic damage</magicDamage>, this damage can <crit>Critically Strike</crit>.<br><br><rules>Damage Dealt: @f1.0@<br>Mana Consumed: @f2.0@</rules>",
+    "desc": "<OnHit>%i:OnHit% On-Hit</OnHit> deal <magicDamage>@Calc_Damage@ magic damage</magicDamage>, this damage can <crit>Critically Strike</crit>.",
+    "tooltip": "<OnHit> %i:OnHit% On-Hit</OnHit> deal <magicDamage>@Calc_Damage@ magic damage</magicDamage>, this damage can <crit>Critically Strike</crit>.<br><br><rules>Damage Dealt: @f1.0@</rules>",
     "dataValues": {
-      "ManaPercentReduction": 0.02500000037252903,
-      "ManaPercentDamagePercent": [
-        0.04500000178813934,
-        0.04500000178813934,
-        0.09000000357627869,
-        0.13500000536441803,
-        0.13500000536441803,
-        0.13500000536441803,
-        0.13500000536441803
-      ],
-      "MaxLevel": 2.0,
+      "ManaPercentDamagePercent": 0.09000000357627869,
+      "MaxLevel": 1.0,
       "MaxLevelManaSpendThreshold": 300.0,
       "MaxLevelPerTriggerDamageAmp": 0.10000000149011612
     },
@@ -11164,16 +11154,11 @@
             "~class": "AbilityResourceByNamedDataValueCalculationPart"
           }
         ],
-        "~class": "GameCalculation"
-      },
-      "Calc_Mana_Cost": {
-        "mFormulaParts": [
-          {
-            "mCoefficient": 0.02500000037252903,
-            "~class": "AbilityResourceByCoefficientCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
+        "mRangedMultiplier": {
+          "mNumber": 0.800000011920929,
+          "~class": "NumberCalculationPart"
+        },
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "icons": [

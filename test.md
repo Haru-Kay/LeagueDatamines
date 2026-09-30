@@ -2,102 +2,120 @@
 
 ## Summoner's Rift
 
-### Items
+### Champions
 
-**Bami's Cinder, Sunfire Aegis, Hollow Radiance**
+**Gentle reminder. These are datamines. If a change isn't present, it's because Riot did not include it when they shipped the PBE patch. I do not work for Riot and do not have access to any data they don't publish themselves.**
 
-* Immolate passive has been reworked to avoid cases where its aura range would not scale with champion size + general detection cleanup.
-  * Note: Includes Void Immolation too.
+**Ambessa**
 
-**New Item Flag**
+* P On-Hit Damage: 5-30 (+25% bonus AD) -> 5-25 (+20% bonus AD)
 
-* No idea what this could be for, to be honest. But it's here and has the following items:
-  * Overlord's Bloodmail, Fiendhunter Bolts, Guinsoo's Rageblade, Haunting Guise, Spear of Shojin, Hullbreaker, Terminus, Dead Man's Plate, Force of Nature, Riftmaker, Death's Dance, Echoes of Helia, Liandry's Torment, Jak'Sho, The Protean, Kraken Slayer
+**Cassiopeia**
+
+* W Cooldown: 24/22/20/18/16 seconds -> 26/24/22/20/18 seconds
+
+**Diana**
+
+* W Health Ratio: 11% bonus Health -> 14% bonus Health
+
+**Kennen**
+
+* E Attack Speed: 40/50/60/70/80% -> 50/60/70/80/90%
+
+**K'Sante**
+
+* W Mana Cost: 40/45/50/55/60 -> 50/55/60/65/70
+
+**Mordekaiser**
+
+* Q Damage Per Level Bonus: 5 -> 6
+  * Total Bonus Damage at level 20: 55 -> 66
+* R Cooldown: 140/120/100 seconds -> 130/110/90 seconds
+
+**Sylas**
+
+* P Monster Damage Multiplier: 115% -> 105%
+* W Heal Health Ratio: 5% bonus Health -> 6% bonus Health
 
 ## League Classic
 
 ### Champions
 
-**Aatrox**
-
-* W Bonus Healing: 200% -> 300%
-
-**Irelia**
-
-* R Missile Speed: 2000 -> 1600
-
 **Karma**
 
-* W Targeting: All enemy and ally champions -> All ally and enemy champions, minions, and all jungle monsters.
-* E Mana Cost: 50/55/60/65/70 -> 70/80/90/100/110
-* E Range: 800 -> 650 actual (625 display)
-* E Targeting: Ally champions -> Ally champions and minions
-* R rescripted to properly handle cooldown + ammo mechanic.
-* R Recharge: 30/25/20 seconds (based on R rank) -> 30/25/20 seconds (at levels 1/7/13)
+* E Targeting: All ally and enemy summonables -> Only ally summonables, excluding pets
+  * I'm not actually sure what falls under this category. Especially for a gamemode I don't play.
 
-### Items
+## ARAM
 
-**Banshee's Veil**
+### Champions
 
-* Item category corrected from SpellDamage to Health
+**Swain**
 
-**Force of Nature**
+* P Healing: 6-6% max Health -> 3-6% max Health
+  * Technically coded as level scaling on Live, so writing this way.
 
-* HP Regen: 4 per second -> 8 per second
-  * HP5: 20 -> 40
+## ARAM: Mayhem
 
-**Tiamat, Ravenous Hydra, Titanic Hydra**
+### Augments
 
-* No longer restricted to melee Champions.
+**Inferno Triggered**
 
-**Spirit Visage**
+* Cooldown: 15 seconds -> 5 seconds
 
-* HP Regen: 0.8 per second -> 4 per second
-  * HP5: 4 -> 20
+**Juiced**
 
-**Warmog's Armor**
+* Mana Ratio: 4.5 Mana -> 7% (5.6% Ranged) Mana
+* Mana Consumtion: 2.5% -> 0%
 
-* HP Regen: 2 per second -> 6 per second
-  * HP5: 10 -> 30
+**Leg Day**
+
+* Slow Resistance: 40% -> 50%
+
+**Shark Tempest**
+
+* Mark Damage: 50-100 -> 100-200
+* Shark Damage per Second: 25-75 (+20% bonus AD) (+12% AP) -> 30-90 (+25% bonus AD) (+15% AP)
+* Slow: 30% for 1 second -> 35% for 1.5 seconds
+
+**Squishy Slappy Grab**
+
+* Damage: 30-100 (+10% bonus Health) -> 50-150 (+15% bonus Health)
+* Base Shield: 35-150 -> 50-200
+* Cooldown: 35 seconds -> 30 seconds
+
+### Champions
+
+**Bard**
+
+* Meep Attack Damage: 30 (+6 per 3 Chimes) (+50% AP) -> 30 (+10 per 3 Chimes) (+67% AP)
+* Meep Spawn Cooldown: 8 seconds -> 5 seconds
+
+**Garen**
+
+* W Resists per kill: 0.4 -> 0.75
+  * Still caps at 30.
+
+**K'Sante**
+
+* W Damage Reduction: 30% -> 45%
+* R Bonus Resist Loss reverted to 80%.
+
+**Swain**
+
+* P Healing: 6-6% max Health -> 3-6% max Health
+  * Technically coded as level scaling on Live, so writing this way.
+
+**Thresh**
+
+* Q Refund reverted to 2 seconds.
 
 ## Arena
 
 ### Augments
 
-**Death Dealer**
+**Juiced**
 
-* Spell Targeting:
-  * All enemy champions, minions, and other enemy units + all Allied champions -> All enemy and allied champions and summons, excluding self.
-
-## ARAM: Mayhem
-
-### Champions
-
-**Garen**
-
-* P Regen: 1.5-10.1% HP5 -> 2.0-12.0% HP5
-  * Levels 1-6: 0.2% HP5/level -> 0.233% HP5/level
-  * Levels 7-13: 0.8% HP5/level -> 0.930% HP5/level
-  * Levels 14+: 0.4% HP5/level -> 0.465% HP5/level
-* W Shield Health Ratio: 18% -> 20%
-* W Cooldown: 22.0/19.5/17.0/14.5/12.0 seconds -> 18.0/16.5/15.0/13.5/12.0 seconds
-
-**K'Sante**
-
-* W Cooldown: 14/13/12/11/10 seconds -> 10 seconds
-* E Shield Health Ratio: 13.5% -> 15%
-* R Bonus Resists Lost: 85% -> 65%
-
-**Lee Sin**
-
-* P Bonus Attack Speed: 40% -> 50%
-* P Energy Refund (Hit 1): 20/30/40 -> 30/40/50 (Levels 1/7/13)
-* P Energy Refund (Hit 2): 10/15/20 -> 15/20/25 (Levels 1/7/13)
-* Q2 Base Damage: 60/90/120/150/180 -> 80
-
-**Thresh**
-
-* P Souls per Pickup: 2 -> 3
-  * Note: Does not apply to ARAM, only Mayhem.
-* Q Refund: 2 seconds -> 3 seconds
-* W Cooldown: 21/20/19/18/17 seconds -> 19/18/17/16/15 seconds
+* Max Level: 2 -> 1
+* Mana Ratio: 4.5/9% Mana -> 9% (7.2% Ranged) Mana
+* Mana Consumtion: 2.5% -> 0%
