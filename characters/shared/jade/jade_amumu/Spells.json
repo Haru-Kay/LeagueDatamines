@@ -325,15 +325,15 @@
             "LevelUp": {
               "Elements": [
                 {
+                  "nameOverride": "Base Damage",
+                  "type": "BaseDamage",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
                   "Style": 1,
                   "nameOverride": "% Health Damage",
                   "type": "HealthDamage",
                   "typeIndex": 1,
-                  "~class": "TooltipInstanceListElement"
-                },
-                {
-                  "nameOverride": "Base Damage",
-                  "type": "BaseDamage",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -905,19 +905,19 @@
             "LevelUp": {
               "Elements": [
                 {
-                  "nameOverride": "Damage Dealt",
+                  "nameOverride": "Damage",
                   "type": "RDamage",
                   "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
-                  "nameOverride": "Mana Cost",
-                  "type": "Cost",
+                  "nameOverride": "Cooldown",
+                  "type": "Cooldown",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
-                  "nameOverride": "Cooldown",
-                  "type": "Cooldown",
+                  "nameOverride": "Mana Cost",
+                  "type": "Cost",
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -1148,14 +1148,15 @@
     "mScriptName": "Jade_AmumuTantrum",
     "mSpell": {
       "Cooldown": {
+        "Default": 11.0,
         "values": [
-          10.0,
+          11.0,
           10.0,
           9.0,
           8.0,
           7.0,
           6.0,
-          6.0
+          5.0
         ],
         "~class": "SpellAttributeModifiable"
       },
@@ -1263,19 +1264,19 @@
               "Elements": [
                 {
                   "nameOverride": "Damage Reduced",
-                  "type": "Effect%dAmount",
+                  "type": "PassiveDamageReduction",
                   "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Damage",
+                  "type": "BaseDamage",
+                  "typeIndex": 2,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "nameOverride": "Cooldown",
                   "type": "Cooldown",
-                  "~class": "TooltipInstanceListElement"
-                },
-                {
-                  "nameOverride": "Damage",
-                  "type": "Effect%dAmount",
-                  "typeIndex": 2,
                   "~class": "TooltipInstanceListElement"
                 }
               ],
@@ -1293,101 +1294,10 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.5,
-      "mEffectAmount": [
-        {
-          "value": [
-            0.0,
-            2.0,
-            4.0,
-            6.0,
-            8.0,
-            10.0,
-            15.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            65.0,
-            65.0,
-            95.0,
-            125.0,
-            155.0,
-            185.0,
-            185.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75,
-            0.75
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.029999999329447746,
-            0.029999999329447746,
-            0.029999999329447746,
-            0.029999999329447746,
-            0.029999999329447746,
-            0.029999999329447746,
-            0.029999999329447746
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mImgIconName": [
         "assets/ux/jade/s3icons/dds/sadmummy_tantrum.dds"
       ],
       "mSpellCalculations": {
-        "DamageReduction": {
-          "mFormulaParts": [
-            {
-              "mEffectIndex": 1,
-              "~class": "EffectValueCalculationPart"
-            },
-            {
-              "mCoefficient": 0.029999999329447746,
-              "mStat": 1,
-              "mStatFormula": 2,
-              "~class": "StatByCoefficientCalculationPart"
-            },
-            {
-              "mCoefficient": 0.029999999329447746,
-              "mStat": 6,
-              "mStatFormula": 2,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "mSimpleTooltipCalculationDisplay": 6,
-          "~class": "GameCalculation"
-        },
         "TantrumDamage": {
           "mFormulaParts": [
             {
