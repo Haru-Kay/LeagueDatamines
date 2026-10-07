@@ -832,6 +832,41 @@
     },
     "mScriptName": "GarenPassive",
     "mSpell": {
+      "0x66185ec4": {
+        "Kiwi": {
+          "Calculations": {
+            "RegenCalc": {
+              "mDisplayAsPercent": true,
+              "mFormulaParts": [
+                {
+                  "mBreakpoints": [
+                    {
+                      "mBonusPerLevelAtAndAfter": 0.930232584476471,
+                      "mLevel": 7,
+                      "~class": "Breakpoint"
+                    },
+                    {
+                      "mBonusPerLevelAtAndAfter": 0.4651162922382355,
+                      "mLevel": 14,
+                      "~class": "Breakpoint"
+                    }
+                  ],
+                  "mInitialBonusPerLevel": 0.23255814611911774,
+                  "mLevel1Value": 2.0,
+                  "~class": "ByCharLevelBreakpointsCalculationPart"
+                }
+              ],
+              "mMultiplier": {
+                "mNumber": 0.009999999776482582,
+                "~class": "NumberCalculationPart"
+              },
+              "mPrecision": 1,
+              "~class": "GameCalculation"
+            }
+          },
+          "~class": "0x4acf67d2"
+        }
+      },
       "DataValues": [
         {
           "name": "DamageTimer",
@@ -896,7 +931,7 @@
             "keyName": "Perseverance",
             "keySummary": "If Garen has not recently been struck by damage or enemy abilities, he regenerates a percentage of his total health each second.",
             "keyTooltip": "Garen regenerates <healing>@RegenCalc@ max Health</healing> every 5 seconds if he has not been damaged or hit with enemy Abilities in the last @DamageTimer@ seconds.",
-            "keyTooltipExtended": "{{Spell_GarenPassive_Tooltip}}<br><br><rules>Minion and non-epic jungle monster damage does not stop the regeneration.</rules>"
+            "keyTooltipExtended": "Garen regenerates <healing>@RegenCalc@ max Health</healing> every 5 seconds if he has not been damaged or hit with enemy Abilities in the last @DamageTimer@ seconds.<br><br><rules>Minion and non-epic jungle monster damage does not stop the regeneration.</rules>"
           },
           "mObjectName": "GarenPassive",
           "~class": "TooltipInstanceSpell"
@@ -1160,7 +1195,7 @@
             "keyName": "Decisive Strike",
             "keySummary": "Garen gains a burst of Move Speed, breaking free of all slows affecting him. His next attack strikes a vital area of his foe, dealing bonus damage and silencing them.",
             "keyTooltip": "Garen removes all <status>Slowing</status> effects on him and gains <speed>@MovementSpeedAmount*100@% Move Speed</speed> for @MovementSpeedDuration@ second(s).<br><br>His next Attack <status>Silences</status> for @SilenceDuration@ seconds and does <physicalDamage>@TotalDamage@ physical damage</physicalDamage>.",
-            "keyTooltipExtendedBelowLine": "<rules>The empowered Attack expires after @AttackWindow@ seconds.<br>{{ buff_desc_SpellEffects }}</rules>"
+            "keyTooltipExtendedBelowLine": "<rules>The empowered Attack expires after @AttackWindow@ seconds.<br>This Ability triggers spell effects upon dealing damage.</rules>"
           },
           "mObjectName": "GarenQ",
           "~class": "TooltipInstanceSpell"
@@ -1627,6 +1662,20 @@
     },
     "mScriptName": "GarenW",
     "mSpell": {
+      "0xf9c2333e": {
+        "Kiwi": {
+          "value": [
+            18.0,
+            18.0,
+            16.5,
+            15.0,
+            13.5,
+            12.0,
+            10.5
+          ],
+          "~class": "SpellEffectAmount"
+        }
+      },
       "Cooldown": {
         "values": [
           22.0,
@@ -1802,7 +1851,7 @@
         }
       ],
       "DataValuesModeOverride": {
-        "KIWI": {
+        "ARAM": {
           "SpellDataValues": [
             {
               "name": "ResistGainOnKillTooltip",
@@ -1820,18 +1869,31 @@
           ],
           "~class": "SpellDataValueVector"
         },
-        "ARAM": {
+        "Kiwi": {
           "SpellDataValues": [
             {
               "name": "ResistGainOnKillTooltip",
               "values": [
-                0.4000000059604645,
-                0.4000000059604645,
-                0.4000000059604645,
-                0.4000000059604645,
-                0.4000000059604645,
-                0.4000000059604645,
-                0.4000000059604645
+                0.75,
+                0.75,
+                0.75,
+                0.75,
+                0.75,
+                0.75,
+                0.75
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "ShieldHealthRatio",
+              "values": [
+                0.20000000298023224,
+                0.20000000298023224,
+                0.20000000298023224,
+                0.20000000298023224,
+                0.20000000298023224,
+                0.20000000298023224,
+                0.20000000298023224
               ],
               "~class": "SpellDataValue"
             }

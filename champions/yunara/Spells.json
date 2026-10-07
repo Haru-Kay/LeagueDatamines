@@ -1623,8 +1623,8 @@
             "keyCost": "@f2.0@ Mana",
             "keyName": "Kanmei's Steps | Untouchable Shadow",
             "keySummary": "Yunara gains Move Speed and becomes Ghosted. While in her Transcendent State she instead dashes in a direction.",
-            "keyTooltip": "Yunara gains <speed>@Calc_Move_Speed@ Move Speed</speed>, increased to <speed>@Calc_Move_Speed_Enhanced@ Move Speed</speed> when moving toward an enemy champion, for @Buff_Duration@ seconds.<br><br><keywordMajor>Transcendent State - {{Spell_YunaraE2_Name}}</keywordMajor>: Yunara dashes in a direction.",
-            "keyTooltipExtendedBelowLine": "<rules>{{Spell_YunaraE1_Name}} causes Yunara to become <keyword>Ghosted</keyword>. {{Spell_YunaraE2_Name}} gains the benefits of an Ultimate Ability.</rules>"
+            "keyTooltip": "Yunara gains <speed>@Calc_Move_Speed@ Move Speed</speed>, increased to <speed>@Calc_Move_Speed_Enhanced@ Move Speed</speed> when moving toward an enemy champion, for @Buff_Duration@ seconds.<br><br><keywordMajor>Transcendent State - Untouchable Shadow</keywordMajor>: Yunara dashes in a direction.",
+            "keyTooltipExtendedBelowLine": "<rules>Kanmei's Steps causes Yunara to become <keyword>Ghosted</keyword>. Untouchable Shadow gains the benefits of an Ultimate Ability.</rules>"
           },
           "mObjectName": "YunaraE",
           "~class": "TooltipInstanceSpell"
@@ -1937,7 +1937,7 @@
             "keyName": "Vow of the First Lands",
             "keySummary": "Yunara's Critical Strikes deal bonus magic damage.",
             "keyTooltip": "Yunara's Critical Strikes deal an additional <magicDamage>@Calc_Damage_Amp@ magic damage</magicDamage>.",
-            "keyTooltipExtended": "{{Spell_YunaraP_Tooltip}}<br><br><rules></rules>"
+            "keyTooltipExtended": "Yunara's Critical Strikes deal an additional <magicDamage>@Calc_Damage_Amp@ magic damage</magicDamage>.<br><br><rules></rules>"
           },
           "mObjectName": "YunaraPassive",
           "~class": "TooltipInstanceSpell"
@@ -2155,12 +2155,12 @@
           "name": "Damage",
           "values": [
             0.0,
-            5.0,
-            10.0,
-            15.0,
-            20.0,
-            25.0,
-            30.0
+            3.0,
+            8.0,
+            13.0,
+            18.0,
+            23.0,
+            28.0
           ],
           "~class": "SpellDataValue"
         },
@@ -2168,12 +2168,12 @@
           "name": "Damage_Passive",
           "values": [
             0.0,
-            5.0,
-            10.0,
-            15.0,
-            20.0,
-            25.0,
-            30.0
+            3.0,
+            8.0,
+            13.0,
+            18.0,
+            23.0,
+            28.0
           ],
           "~class": "SpellDataValue"
         }
@@ -2233,7 +2233,7 @@
         },
         {
           "0x7b66f15d": false,
-          "0xd6b6109c": "Characters/Yunara/Spells/YunaraQAbility/YunaraQ",
+          "BuffLink": "Characters/Yunara/Spells/YunaraQAbility/YunaraQ",
           "mInvertResult": true,
           "~class": "HasBuffCastRequirement"
         }
@@ -2872,7 +2872,7 @@
       "mCastRequirementsCaster": [
         {
           "0x7b66f15d": false,
-          "0xd6b6109c": "Characters/Yunara/Spells/YunaraRAbility/YunaraR",
+          "BuffLink": "Characters/Yunara/Spells/YunaraRAbility/YunaraR",
           "mInvertResult": true,
           "~class": "HasBuffCastRequirement"
         }
@@ -2888,12 +2888,12 @@
                   "~class": "TooltipInstanceListElement"
                 },
                 {
-                  "nameOverride": "{{Spell_YunaraW2_Name}} | Damage",
+                  "nameOverride": "Arc of Ruin | Damage",
                   "type": "RW_Damage_Base",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
-                  "nameOverride": "{{Spell_YunaraE2_Name}} | Dash Speed",
+                  "nameOverride": "Untouchable Shadow | Dash Speed",
                   "type": "RE_Dash_Speed",
                   "~class": "TooltipInstanceListElement"
                 }
@@ -2906,7 +2906,7 @@
             "keyName": "Transcend One's Self",
             "keySummary": "Yunara enters a Transcendent State that upgrades her basic Abilities.",
             "keyTooltip": "Yunara enters a <keywordMajor>Transcendent State</keywordMajor> for @Buff_Duration@ seconds upgrading her basic Abilities for the duration.",
-            "keyTooltipExtended": "Yunara enters a <keywordMajor>Transcendent State</keywordMajor> for @Buff_Duration@ seconds; <spellName>{{Spell_YunaraQ_Name}}</spellName> is instantly activated for the duration, <spellName>{{Spell_YunaraW1_Name}}</spellName> is upgraded to <keywordMajor>{{Spell_YunaraW2_Name}}</keywordMajor> and has its Cooldown reduced by @Calc_RW_Cooldown_Reduction@, and <spellName>{{Spell_YunaraE1_Name}}</spellName> is upgraded to <keywordMajor>{{Spell_YunaraE2_Name}}</keywordMajor> and has its Cooldown refreshed.",
+            "keyTooltipExtended": "Yunara enters a <keywordMajor>Transcendent State</keywordMajor> for @Buff_Duration@ seconds; <spellName>Cultivation of Spirit</spellName> is instantly activated for the duration, <spellName>Arc of Judgment</spellName> is upgraded to <keywordMajor>Arc of Ruin</keywordMajor> and has its Cooldown reduced by @Calc_RW_Cooldown_Reduction@, and <spellName>Kanmei's Steps</spellName> is upgraded to <keywordMajor>Untouchable Shadow</keywordMajor> and has its Cooldown refreshed.",
             "keyTooltipExtendedBelowLine": ""
           },
           "mObjectName": "YunaraR",
@@ -3339,9 +3339,9 @@
             "keyCost": "@f2.0@ Mana",
             "keyName": "Arc of Judgment | Arc of Ruin",
             "keySummary": "Yunara fires a spinning prayer bead that deals damage and slows enemies. While in her Transcendent State she instead fires off a laser that deals damage and slows enemies.",
-            "keyTooltip": "Yunara lets rip a prayer bead that deals <magicDamage>@Calc_Damage_Initial@ magic damage</magicDamage> and <status>Slows by @Calc_Slow@ decaying over @Slow_Duration@ seconds</status>. It deals an additional <magicDamage>@Calc_Damage_Per_Second@ magic damage</magicDamage> per second.<br><br><keywordMajor>Transcendent State - {{Spell_YunaraW2_Name}}</keywordMajor>: Yunara fires a laser that deals <magicDamage>@Spell.YunaraR:Calc_RW_Damage@ magic damage</magicDamage> and <status>Slows by @Spell.YunaraR:Calc_RW_Slow_Amount@ decaying over @Spell.YunaraR:RW_Slow_Duration@ second</status>.",
-            "keyTooltipExtended": "Yunara lets rip a spinning prayer bead that slows down when near enemies. It lingers and expands when it reaches its end point. Its initial hit deals <magicDamage>@Calc_Damage_Initial@ magic damage</magicDamage> and <status>Slows by @Calc_Slow@ decaying over @Slow_Duration@ seconds</status>. It deals an additional <magicDamage>@Calc_Damage_Per_Second@ magic damage</magicDamage> per second.<br><br><keywordMajor>Transcendent State - {{Spell_YunaraW2_Name}}</keywordMajor>: Yunara fires a laser that deals <magicDamage>@Spell.YunaraR:Calc_RW_Damage@ magic damage</magicDamage> and <status>Slows by @Spell.YunaraR:Calc_RW_Slow_Amount@ decaying over @Spell.YunaraR:RW_Slow_Duration@ second</status>.",
-            "keyTooltipExtendedBelowLine": "<rules>Cast time scales with permanent <attackSpeed>Attack Speed</attackSpeed> (@f3.0@% / @Cast_Time_Attack_Speed_Cap_Empowered@%). {{Spell_YunaraW1_Name}} deals @Calc_Minion_Damage_Mod@ damage to minions and its tick damage executes low health minions. {{Spell_YunaraW2_Name}} gains the benefits of an Ultimate Ability.</rules>"
+            "keyTooltip": "Yunara lets rip a prayer bead that deals <magicDamage>@Calc_Damage_Initial@ magic damage</magicDamage> and <status>Slows by @Calc_Slow@ decaying over @Slow_Duration@ seconds</status>. It deals an additional <magicDamage>@Calc_Damage_Per_Second@ magic damage</magicDamage> per second.<br><br><keywordMajor>Transcendent State - Arc of Ruin</keywordMajor>: Yunara fires a laser that deals <magicDamage>@Spell.YunaraR:Calc_RW_Damage@ magic damage</magicDamage> and <status>Slows by @Spell.YunaraR:Calc_RW_Slow_Amount@ decaying over @Spell.YunaraR:RW_Slow_Duration@ second</status>.",
+            "keyTooltipExtended": "Yunara lets rip a spinning prayer bead that slows down when near enemies. It lingers and expands when it reaches its end point. Its initial hit deals <magicDamage>@Calc_Damage_Initial@ magic damage</magicDamage> and <status>Slows by @Calc_Slow@ decaying over @Slow_Duration@ seconds</status>. It deals an additional <magicDamage>@Calc_Damage_Per_Second@ magic damage</magicDamage> per second.<br><br><keywordMajor>Transcendent State - Arc of Ruin</keywordMajor>: Yunara fires a laser that deals <magicDamage>@Spell.YunaraR:Calc_RW_Damage@ magic damage</magicDamage> and <status>Slows by @Spell.YunaraR:Calc_RW_Slow_Amount@ decaying over @Spell.YunaraR:RW_Slow_Duration@ second</status>.",
+            "keyTooltipExtendedBelowLine": "<rules>Cast time scales with permanent <attackSpeed>Attack Speed</attackSpeed> (@f3.0@% / @Cast_Time_Attack_Speed_Cap_Empowered@%). Arc of Judgment deals @Calc_Minion_Damage_Mod@ damage to minions and its tick damage executes low health minions. Arc of Ruin gains the benefits of an Ultimate Ability.</rules>"
           },
           "mObjectName": "YunaraW",
           "~class": "TooltipInstanceSpell"

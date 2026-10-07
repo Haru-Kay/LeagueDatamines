@@ -946,29 +946,6 @@
     "mScriptName": "LockePassive",
     "mSpell": {
       "0xf4ca428f": 2,
-      "0xfe87f21e": [
-        {
-          "0x6166b756": "MinOnHitDamage",
-          "Requirements": [
-            {
-              "mCurrentPercentHealth": 0.30000001192092896,
-              "~class": "AboveHealthPercentCastRequirement"
-            }
-          ],
-          "~class": "0xfe87f21e"
-        },
-        {
-          "0x6166b756": "MaxOnHitDamage",
-          "Requirements": [
-            {
-              "mCurrentPercentHealth": 0.30000001192092896,
-              "mInvertResult": true,
-              "~class": "AboveHealthPercentCastRequirement"
-            }
-          ],
-          "~class": "0xfe87f21e"
-        }
-      ],
       "Cooldown": {
         "Default": 0.0,
         "values": [
@@ -1095,6 +1072,29 @@
           "~class": "SpellDataValueVector"
         }
       },
+      "LastHitData": [
+        {
+          "0x6166b756": "MinOnHitDamage",
+          "Requirements": [
+            {
+              "mCurrentPercentHealth": 0.30000001192092896,
+              "~class": "AboveHealthPercentCastRequirement"
+            }
+          ],
+          "~class": "LastHitData"
+        },
+        {
+          "0x6166b756": "MaxOnHitDamage",
+          "Requirements": [
+            {
+              "mCurrentPercentHealth": 0.30000001192092896,
+              "mInvertResult": true,
+              "~class": "AboveHealthPercentCastRequirement"
+            }
+          ],
+          "~class": "LastHitData"
+        }
+      ],
       "PassiveSpellAffectedByCooldown": true,
       "castRange": [
         0.0,
@@ -3085,7 +3085,7 @@
             "keyName": "Soul Ignition",
             "keySummary": "Locke ignites his soul, gaining Attack Speed and Move Speed, and dealing damage to himself. At the end of the duration, Locke will heal back a portion of the damage he takes during the effect.",
             "keyTooltip": "Locke ignites his own soul, gaining <attackSpeed>@AttackSpeed@ Attack Speed</attackSpeed> and <speed>@MoveSpeed@ Move Speed</speed> that decays over @DecayTimeHelper@ seconds.<br><br>For @BaseDuration@ seconds, he suffers <trueDamage>@HealthCost*100@% current Health true damage</trueDamage> per second but <healing>Heals</healing> back the last <healing>@DamageRestoreAmount@</healing> damage taken, and an additional <healing>@AdditionalHeal@ Health</healing> based on missing Health and time passed, up to a maximum of <healing>@MaxHealingThreshold@ Health remaining</healing>.<br><br>Can be <recast>Recast</recast> to end early.",
-            "keyTooltipExtendedBelowLine": "<rules>This Ability can be used while <status>Disabled</status>.</rules><br><rules>Locke is <keyword>Ghosted</keyword> for the duration. {{Reminder_Ghosted}}</rules>"
+            "keyTooltipExtendedBelowLine": "<rules>This Ability can be used while <status>Disabled</status>.</rules><br><rules>Locke is <keyword>Ghosted</keyword> for the duration. Ghosted units can pass through other units.</rules>"
           },
           "mObjectName": "LockeW",
           "~class": "TooltipInstanceSpell"

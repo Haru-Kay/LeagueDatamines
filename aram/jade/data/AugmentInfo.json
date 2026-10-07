@@ -1,12 +1,5 @@
 {
   "Maps/ModeSpecificData/Augments/ARAM_ImTheJuggernaut": {
-    "0x3696d198": {
-      "0xc4182067": "Dealing and receiving champion damage grants you @StacksPerHit@ stack of <keyword>Juggernauting</keyword> for @Stack_Duration@ seconds. For every @Stacks_Max@ stacks of <keyword>Juggernauting</keyword> you gain <attention>@Calc_AF@ Adaptive Force</attention>, <scaleArmor>@Calc_Defenses@ Armor</scaleArmor>, <scaleMR>@Calc_Defenses@ Magic Resist</scaleMR>, <attention>@Calc_Size@ Size</attention>, and <status>@Calc_Tenacity@ Tenacity</status>.<br><br><rules>Stacks fall off faster the more you have.<br>Maximum Juggernauting Level: @f1.0@</rules>",
-      "~class": "0x5b441d9b"
-    },
-    "0x791eb92e": {
-      "~class": "0x21dad86e"
-    },
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/ARAM_ImTheJuggernaut/Augment_ARAM_ImTheJuggernautStacks"
     ],
@@ -15,6 +8,9 @@
       1
     ],
     "AugmentLargeIconPath": "assets/ux/kiwi/augments/icons/iamthejuggernaut_large.tex",
+    "AugmentLevelData": {
+      "~class": "0x21dad86e"
+    },
     "AugmentNameId": "ARAM_ImTheJuggernaut",
     "AugmentPlatformId": 1001,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/iamthejuggernaut_small.tex",
@@ -23,6 +19,10 @@
     "NameTra": "Titan's Resolve",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/ARAM_ImTheJuggernaut/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/ARAM_ImTheJuggernaut/Augment_ARAM_ImTheJuggernaut",
+    "TooltipData": {
+      "0xc4182067": "Dealing and receiving champion damage grants you @StacksPerHit@ stack of <keyword>Juggernauting</keyword> for @Stack_Duration@ seconds. For every @Stacks_Max@ stacks of <keyword>Juggernauting</keyword> you gain <attention>@Calc_AF@ Adaptive Force</attention>, <scaleArmor>@Calc_Defenses@ Armor</scaleArmor>, <scaleMR>@Calc_Defenses@ Magic Resist</scaleMR>, <attention>@Calc_Size@ Size</attention>, and <status>@Calc_Tenacity@ Tenacity</status>.<br><br><rules>Stacks fall off faster the more you have.<br>Maximum Juggernauting Level: @f1.0@</rules>",
+      "~class": "0x5b441d9b"
+    },
     "rarity": 2,
     "~class": "AugmentData"
   },
@@ -269,13 +269,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/VeilOfWarding": {
-    "0x3696d198": {
-      "0xc4182067": "Gain a <attention>Spell Shield</attention> every @Cooldown@ seconds that blocks the next enemy Ability.",
-      "~class": "0x5b441d9b"
-    },
-    "0x791eb92e": {
-      "~class": "0x21dad86e"
-    },
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/VeilOfWarding/Augment_VeilOfWarding_Cooldown"
     ],
@@ -283,6 +276,9 @@
       5
     ],
     "AugmentLargeIconPath": "assets/ux/kiwi/augments/icons/poltergeist_large.tex",
+    "AugmentLevelData": {
+      "~class": "0x21dad86e"
+    },
     "AugmentNameId": "VeilOfWarding",
     "AugmentPlatformId": 1034,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/poltergeist_small.tex",
@@ -291,6 +287,10 @@
     "NameTra": "Veil of Warding",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/VeilOfWarding/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/VeilOfWarding/Augment_VeilOfWarding",
+    "TooltipData": {
+      "0xc4182067": "Gain a <attention>Spell Shield</attention> every @Cooldown@ seconds that blocks the next enemy Ability.",
+      "~class": "0x5b441d9b"
+    },
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/ARAM_Firebrand": {
@@ -305,7 +305,7 @@
     "AugmentPlatformId": 1036,
     "AugmentSmallIconPath": "assets/ux/cherry/augments/icons/firebrand_small.tex",
     "AugmentTooltipTra": "Your Attacks also <keywordMajor>Burn</keywordMajor> enemies, dealing <magicDamage>@PercentMaxHPDamagePer5Seconds*20@% max Health magic damage</magicDamage> damage per second over @BleedDuration@ seconds. This <keywordMajor>Burn</keywordMajor> stacks infinitely.<br><br>Damage Dealt: @f2@",
-    "DescriptionTra": "Your Attacks apply an infinitely stacking <keywordMajor>Burn</keywordMajor> {{ Item_Keyword_OnHit }}, dealing damage over time.",
+    "DescriptionTra": "Your Attacks apply an infinitely stacking <keywordMajor>Burn</keywordMajor> %i:OnHit% <OnHit>On-Hit</OnHit>, dealing damage over time.",
     "NameTra": "Firebrand",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/ARAM_Firebrand/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/ARAM_Firebrand/Augment_ARAM_Firebrand",
@@ -476,8 +476,8 @@
     "AugmentNameId": "ARAM_MysticPunch",
     "AugmentPlatformId": 1058,
     "AugmentSmallIconPath": "assets/ux/cherry/augments/icons/mysticpunch_small.tex",
-    "AugmentTooltipTra": "{{ Item_Keyword_OnHit }} reduce the cooldown of your abilities by @CooldownRefund@ seconds %i:scaleCooldown%.",
-    "DescriptionTra": "{{ Item_Keyword_OnHit }} reduce the cooldown of your abilities by @CooldownRefund@ seconds %i:scaleCooldown%.",
+    "AugmentTooltipTra": "%i:OnHit% <OnHit>On-Hit</OnHit> reduce the cooldown of your abilities by @CooldownRefund@ seconds %i:scaleCooldown%.",
+    "DescriptionTra": "%i:OnHit% <OnHit>On-Hit</OnHit> reduce the cooldown of your abilities by @CooldownRefund@ seconds %i:scaleCooldown%.",
     "NameTra": "Mystic Punch",
     "RootSpell": "Maps/ModeSpecificData/Augments/ARAM_MysticPunch/Augment_ARAM_MysticPunch",
     "mBuildTags": 80,
@@ -568,7 +568,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/ARAM_RabbleRousing": {
-    "0xe3a02eac": true,
     "AugmentDisplayTags": [
       3
     ],
@@ -576,8 +575,9 @@
     "AugmentNameId": "ARAM_RabbleRousing",
     "AugmentPlatformId": 1067,
     "AugmentSmallIconPath": "assets/ux/cherry/augments/icons/rabblerousing_small.tex",
-    "AugmentTooltipTra": "Using {{SpellName}} restores <healing>@f1@ Health</healing><br><br>Total Healing Done: @f2@<br><rules>Heal amount equal to @HealAmount@, scale up to @BonusPercentMax*100@% more for longer cooldown abilities.</rules>",
-    "DescriptionTra": "Using {{SpellName}} restores <healing>Health</healing>.",
+    "AugmentTooltipTra": "Using <font color='#F0C200'>@SpellName@</font> restores <healing>@f1@ Health</healing><br><br>Total Healing Done: @f2@<br><rules>Heal amount equal to @HealAmount@, scale up to @BonusPercentMax*100@% more for longer cooldown abilities.</rules>",
+    "DescriptionTra": "Using <font color='#F0C200'>@SpellName@</font> restores <healing>Health</healing>.",
+    "IsAbilityAugment": true,
     "NameTra": "Rejuvenation",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/ARAM_RabbleRousing/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/ARAM_RabbleRousing/Augment_ARAM_RabbleRousing",
@@ -758,7 +758,7 @@
     "AugmentPlatformId": 1087,
     "AugmentSmallIconPath": "assets/ux/cherry/augments/icons/typhoon_small.tex",
     "AugmentTooltipTra": "Your Attacks shoot a missile at an additional target, dealing @ADRatio*100@% damage and applying %i:OnHit% <OnHit>On-Hit</OnHit> effects.",
-    "DescriptionTra": "Your Attacks shoot a missile at an additional target, dealing reduced damage and applying {{ Item_Keyword_OnHit }} effects.",
+    "DescriptionTra": "Your Attacks shoot a missile at an additional target, dealing reduced damage and applying %i:OnHit% <OnHit>On-Hit</OnHit> effects.",
     "NameTra": "Typhoon",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/ARAM_Typhoon/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/ARAM_Typhoon/Augment_ARAM_Typhoon",
@@ -1459,18 +1459,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/ARAM_GetExcited": {
-    "0x3696d198": {
-      "0xc4182067": "Gain <speed>@MSBuff*100@% Movement Speed</speed> and <attackSpeed>@ASBuff*100@% Attack Speed</attackSpeed> for @BuffDuration@ seconds on takedown.",
-      "~class": "0x5b441d9b"
-    },
-    "0x791eb92e": {
-      "0x5753a320": {
-        "0x5835d27": "At max level <attackSpeed>Attack Speed</attackSpeed> becomes uncapped.",
-        "0xc98a82ca": "At max level <attackSpeed>Attack Speed</attackSpeed> becomes uncapped.",
-        "~class": "0xade7ce63"
-      },
-      "~class": "0x21dad86e"
-    },
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/ARAM_GetExcited/Augment_ARAM_GetExcited_Buff"
     ],
@@ -1478,6 +1466,14 @@
       1
     ],
     "AugmentLargeIconPath": "assets/ux/kiwi/augments/icons/getexcited_large.tex",
+    "AugmentLevelData": {
+      "CapstoneData": {
+        "0x5835d27": "At max level <attackSpeed>Attack Speed</attackSpeed> becomes uncapped.",
+        "0xc98a82ca": "At max level <attackSpeed>Attack Speed</attackSpeed> becomes uncapped.",
+        "~class": "0xade7ce63"
+      },
+      "~class": "0x21dad86e"
+    },
     "AugmentNameId": "ARAM_GetExcited",
     "AugmentPlatformId": 1322,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/getexcited_small.tex",
@@ -1486,6 +1482,10 @@
     "NameTra": "Get Excited!",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/ARAM_GetExcited/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/ARAM_GetExcited/Augment_ARAM_GetExcited",
+    "TooltipData": {
+      "0xc4182067": "Gain <speed>@MSBuff*100@% Movement Speed</speed> and <attackSpeed>@ASBuff*100@% Attack Speed</attackSpeed> for @BuffDuration@ seconds on takedown.",
+      "~class": "0x5b441d9b"
+    },
     "mBuildTags": 82,
     "rarity": 1,
     "~class": "AugmentData"
@@ -1527,24 +1527,24 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/GlassCannon": {
-    "0x3696d198": {
-      "0xc4182067": "{{Kiwi_GlassCannon_Summary}}<br><br>Damage Dealt: @f1@",
-      "~class": "0x5b441d9b"
-    },
-    "0x791eb92e": {
-      "~class": "0x21dad86e"
-    },
     "AugmentDisplayTags": [
       1
     ],
     "AugmentLargeIconPath": "assets/ux/kiwi/augments/icons/glasscannon_large.tex",
+    "AugmentLevelData": {
+      "~class": "0x21dad86e"
+    },
     "AugmentNameId": "GlassCannon",
     "AugmentPlatformId": 1325,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/glasscannon_small.tex",
-    "AugmentTooltipTra": "{{Kiwi_GlassCannon_Summary}}<br><br>Damage Dealt: @f1@",
+    "AugmentTooltipTra": "Reduce <scaleHealth>max Health by @HPReductionPerc*100@%</scaleHealth>. Deal an extra @TrueDamagePercSplit@ damage as <trueDamage>true damage</trueDamage>. <br><br>Damage Dealt: @f1@",
     "DescriptionTra": "Reduce <scaleHealth>max Health by @HPReductionPerc*100@%</scaleHealth>. Deal an extra @TrueDamagePercSplit@ damage as <trueDamage>true damage</trueDamage>. ",
     "NameTra": "Glass Cannon",
     "RootSpell": "Maps/ModeSpecificData/Augments/GlassCannon/Augment_GlassCannon",
+    "TooltipData": {
+      "0xc4182067": "Reduce <scaleHealth>max Health by @HPReductionPerc*100@%</scaleHealth>. Deal an extra @TrueDamagePercSplit@ damage as <trueDamage>true damage</trueDamage>. <br><br>Damage Dealt: @f1@",
+      "~class": "0x5b441d9b"
+    },
     "mBuildTags": 626,
     "rarity": 2,
     "~class": "AugmentData"
@@ -1570,13 +1570,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/Adamant": {
-    "0x3696d198": {
-      "0xc4182067": "Each time you <status>Immobilize</status> or <status>Ground</status> an enemy, gain @ResistsPerLevel@ <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> for @AugDuration@ seconds (up to @MaxStacks@ stacks).",
-      "~class": "0x5b441d9b"
-    },
-    "0x791eb92e": {
-      "~class": "0x21dad86e"
-    },
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/Adamant/Augment_Adamant/Augment_AdamantBuff"
     ],
@@ -1584,6 +1577,9 @@
       3
     ],
     "AugmentLargeIconPath": "assets/ux/kiwi/augments/icons/adamant_large.tex",
+    "AugmentLevelData": {
+      "~class": "0x21dad86e"
+    },
     "AugmentNameId": "Adamant",
     "AugmentPlatformId": 1327,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/adamant_small.tex",
@@ -1593,23 +1589,15 @@
     "NameTra": "Adamant",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/Adamant/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/Adamant/Augment_Adamant",
+    "TooltipData": {
+      "0xc4182067": "Each time you <status>Immobilize</status> or <status>Ground</status> an enemy, gain @ResistsPerLevel@ <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> for @AugDuration@ seconds (up to @MaxStacks@ stacks).",
+      "~class": "0x5b441d9b"
+    },
     "mAugmentTags": 16,
     "mBuildTags": 296,
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/CriticalRhythm": {
-    "0x3696d198": {
-      "0xc4182067": "Your basic Attack stacks <attackSpeed>@ASPerStack*100@% Attack Speed</attackSpeed> on <crit>Critical Strikes</crit> up to @MaxStack@ stacks.<br><br>Gain <crit>%i:scaleCrit% @CritChance*100@% Crit chance</crit>.",
-      "~class": "0x5b441d9b"
-    },
-    "0x791eb92e": {
-      "0x5753a320": {
-        "0x5835d27": "At max level <attackSpeed>Attack Speed</attackSpeed> becomes uncapped.",
-        "0xc98a82ca": "At max level <attackSpeed>Attack Speed</attackSpeed> becomes uncapped.",
-        "~class": "0xade7ce63"
-      },
-      "~class": "0x21dad86e"
-    },
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/CriticalRhythm/Augment_CriticalRhythmBuff"
     ],
@@ -1617,6 +1605,14 @@
       1
     ],
     "AugmentLargeIconPath": "assets/ux/kiwi/augments/icons/criticalrhythm_large.tex",
+    "AugmentLevelData": {
+      "CapstoneData": {
+        "0x5835d27": "At max level <attackSpeed>Attack Speed</attackSpeed> becomes uncapped.",
+        "0xc98a82ca": "At max level <attackSpeed>Attack Speed</attackSpeed> becomes uncapped.",
+        "~class": "0xade7ce63"
+      },
+      "~class": "0x21dad86e"
+    },
     "AugmentNameId": "CriticalRhythm",
     "AugmentPlatformId": 1328,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/criticalrhythm_small.tex",
@@ -1624,6 +1620,10 @@
     "DescriptionTra": "Your basic Attack stacks <attackSpeed>Attack Speed</attackSpeed> on <crit>Critical Strikes</crit>.<br><br>Gain <attention>%i:scaleCrit% @CritChance*100@% Crit chance</attention>.",
     "NameTra": "Critical Rhythm",
     "RootSpell": "Maps/ModeSpecificData/Augments/CriticalRhythm/Augment_CriticalRhythm",
+    "TooltipData": {
+      "0xc4182067": "Your basic Attack stacks <attackSpeed>@ASPerStack*100@% Attack Speed</attackSpeed> on <crit>Critical Strikes</crit> up to @MaxStack@ stacks.<br><br>Gain <crit>%i:scaleCrit% @CritChance*100@% Crit chance</crit>.",
+      "~class": "0x5b441d9b"
+    },
     "mAugmentTags": 260,
     "mBuildTags": 576,
     "rarity": 1,
@@ -1673,17 +1673,13 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/OminousPact": {
-    "0x3696d198": {
-      "0xc4182067": "Gain <scaleAP>Ability Power</scaleAP>, <speed>Movement Speed</speed>, and <omnivamp>Omnivamp</omnivamp> based on <scaleHealth>missing Health</scaleHealth>, taking damage each time you cast.<br>",
-      "~class": "0x5b441d9b"
-    },
-    "0x791eb92e": {
-      "~class": "0x21dad86e"
-    },
     "AugmentDisplayTags": [
       2
     ],
     "AugmentLargeIconPath": "assets/ux/cherry/augments/icons/wisdomofages_large.tex",
+    "AugmentLevelData": {
+      "~class": "0x21dad86e"
+    },
     "AugmentNameId": "OminousPact",
     "AugmentPlatformId": 1332,
     "AugmentSmallIconPath": "assets/ux/cherry/augments/icons/wisdomofages_small.tex",
@@ -1692,6 +1688,10 @@
     "NameTra": "Ominous Pact",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/OminousPact/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/OminousPact/Augment_OminousPact",
+    "TooltipData": {
+      "0xc4182067": "Gain <scaleAP>Ability Power</scaleAP>, <speed>Movement Speed</speed>, and <omnivamp>Omnivamp</omnivamp> based on <scaleHealth>missing Health</scaleHealth>, taking damage each time you cast.<br>",
+      "~class": "0x5b441d9b"
+    },
     "mAugmentTags": 2,
     "mBuildTags": 40,
     "rarity": 2,
@@ -1798,13 +1798,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/FinalForm": {
-    "0x3696d198": {
-      "0xc4182067": "After casting your <attention>Ultimate</attention>, gain a <shield>@MaxHealthShield*100@% max Health Shield</shield>, <lifeSteal>@OmniVamp*100@% Omnivamp</lifeSteal> and <speed>@MSBonus*100@% bonus Movement Speed</speed> for @AugDuration@ seconds. (@Cooldown@ seconds Cooldown).",
-      "~class": "0x5b441d9b"
-    },
-    "0x791eb92e": {
-      "~class": "0x21dad86e"
-    },
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/FinalForm/Augment_FinalForm_Buff"
     ],
@@ -1813,6 +1806,9 @@
       1
     ],
     "AugmentLargeIconPath": "assets/ux/kiwi/augments/icons/finalform_large.tex",
+    "AugmentLevelData": {
+      "~class": "0x21dad86e"
+    },
     "AugmentNameId": "FinalForm",
     "AugmentPlatformId": 1344,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/finalform_small.tex",
@@ -1821,6 +1817,10 @@
     "NameTra": "Final Form",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/FinalForm/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/FinalForm/Augment_FinalForm",
+    "TooltipData": {
+      "0xc4182067": "After casting your <attention>Ultimate</attention>, gain a <shield>@MaxHealthShield*100@% max Health Shield</shield>, <lifeSteal>@OmniVamp*100@% Omnivamp</lifeSteal> and <speed>@MSBonus*100@% bonus Movement Speed</speed> for @AugDuration@ seconds. (@Cooldown@ seconds Cooldown).",
+      "~class": "0x5b441d9b"
+    },
     "mAugmentTags": 512,
     "mBuildTags": 290,
     "rarity": 2,
@@ -1917,10 +1917,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/CriticalMissile": {
-    "0x3696d198": {
-      "0xc4182067": "When you <crit>Crit</crit>, fire 1 plus @AdditionalMis@ missiles that deal <magicDamage>@Damage@ magic damage</magicDamage> each. <br><br>Gain <crit>%i:scaleCrit% @CrtiChance*100@% Crit chance</crit>.",
-      "~class": "0x5b441d9b"
-    },
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/CriticalMissile/Augment_CriticalMissile_Mis",
       "Maps/ModeSpecificData/Augments/CriticalMissile/Augment_CriticalMissile_Mis_2"
@@ -1937,6 +1933,10 @@
     "NameTra": "Critical Missile",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/CriticalMissile/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/CriticalMissile/Augment_CriticalMissile",
+    "TooltipData": {
+      "0xc4182067": "When you <crit>Crit</crit>, fire 1 plus @AdditionalMis@ missiles that deal <magicDamage>@Damage@ magic damage</magicDamage> each. <br><br>Gain <crit>%i:scaleCrit% @CrtiChance*100@% Crit chance</crit>.",
+      "~class": "0x5b441d9b"
+    },
     "mAugmentTags": 256,
     "mBuildTags": 576,
     "rarity": 1,
@@ -2078,13 +2078,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/GrowthSpurt": {
-    "0x3696d198": {
-      "0xc4182067": "Gain <active>Growth Spurt</active> as a Summoner Spell.<br><br>Growth Spurt suddenly increases your size, <status>Knocking Up</status> nearby enemies for @KnockbackDuration@ second and granting <scaleHealth>@TotalBonusHealth@ max Health</scaleHealth> for @BuffDuration@ seconds.",
-      "~class": "0x5b441d9b"
-    },
-    "0x791eb92e": {
-      "~class": "0x21dad86e"
-    },
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/GrowthSpurt/Augment_GrowthSpurt_Buff"
     ],
@@ -2092,6 +2085,9 @@
       5
     ],
     "AugmentLargeIconPath": "assets/ux/kiwi/augments/icons/growthspurt_large.tex",
+    "AugmentLevelData": {
+      "~class": "0x21dad86e"
+    },
     "AugmentNameId": "GrowthSpurt",
     "AugmentPlatformId": 1401,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/growthspurt_small.tex",
@@ -2100,6 +2096,10 @@
     "NameTra": "Growth Spurt",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/GrowthSpurt/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/GrowthSpurt/Augment_GrowthSpurt",
+    "TooltipData": {
+      "0xc4182067": "Gain <active>Growth Spurt</active> as a Summoner Spell.<br><br>Growth Spurt suddenly increases your size, <status>Knocking Up</status> nearby enemies for @KnockbackDuration@ second and granting <scaleHealth>@TotalBonusHealth@ max Health</scaleHealth> for @BuffDuration@ seconds.",
+      "~class": "0x5b441d9b"
+    },
     "mAugmentTags": 64,
     "rarity": 1,
     "~class": "AugmentData"
@@ -2130,7 +2130,7 @@
   },
   "Maps/ModeSpecificData/Augments/ARAM_Poro_Blast": {
     "AdditionalSpells": [
-      "0x4a1d16d4"
+      "Maps/ModeSpecificData/Augments/ARAM_Poro_Blast/Augment_Poro_Blast/Augment_ARAM_Poro_Blast_Spell"
     ],
     "AugmentDisplayTags": [
       1
@@ -2166,13 +2166,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/Twinfire": {
-    "0x3696d198": {
-      "0xc4182067": "{{Kiwi_TwinFire_Summary}}",
-      "~class": "0x5b441d9b"
-    },
-    "0x791eb92e": {
-      "~class": "0x21dad86e"
-    },
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/Twinfire/Augment_TwinFire_Mis",
       "Maps/ModeSpecificData/Augments/Twinfire/Augment_TwinFire_Mis_2"
@@ -2181,14 +2174,21 @@
       1
     ],
     "AugmentLargeIconPath": "assets/ux/kiwi/augments/icons/twinfire_large.tex",
+    "AugmentLevelData": {
+      "~class": "0x21dad86e"
+    },
     "AugmentNameId": "Twinfire",
     "AugmentPlatformId": 1415,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/twinfire_small.tex",
-    "AugmentTooltipTra": "{{Kiwi_TwinFire_Summary}}",
+    "AugmentTooltipTra": "On ability damage, fire 1 plus @AdditionalMis@ missiles that deal <magicDamage>@Damage@ magic damage</magicDamage> each. <br><br>Gain <attention>%i:scaleCrit% @CrtiChance*100@% Critical Strike Chance</attention>.",
     "DescriptionTra": "On ability damage, fire 1 plus @AdditionalMis@ missiles that deal <magicDamage>@Damage@ magic damage</magicDamage> each. <br><br>Gain <attention>%i:scaleCrit% @CrtiChance*100@% Critical Strike Chance</attention>.",
     "NameTra": "Twin Fire",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/Twinfire/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/Twinfire/Augment_Twinfire",
+    "TooltipData": {
+      "0xc4182067": "On ability damage, fire 1 plus @AdditionalMis@ missiles that deal <magicDamage>@Damage@ magic damage</magicDamage> each. <br><br>Gain <attention>%i:scaleCrit% @CrtiChance*100@% Critical Strike Chance</attention>.",
+      "~class": "0x5b441d9b"
+    },
     "mAugmentTags": 2,
     "mBuildTags": 512,
     "~class": "AugmentData"
@@ -2245,8 +2245,8 @@
   },
   "Maps/ModeSpecificData/Augments/ARAM_MissingPingAugment": {
     "AdditionalSpells": [
-      "0x55f8b775",
-      "0x9d8884c5"
+      "Maps/ModeSpecificData/Augments/ARAM_MissingPingAugment/Augment_MissingPingAugment/Augment_ARAM_MissingPingAugment_Mis",
+      "Maps/ModeSpecificData/Augments/ARAM_MissingPingAugment/Augment_MissingPingAugment/Augment_ARAM_MissingPingAugment_Mis2"
     ],
     "AugmentDisplayTags": [
       1
@@ -2264,10 +2264,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/ARAM_PoroKing": {
-    "0x3696d198": {
-      "0xc4182067": "Gain <spellName>Bounce of the Poro King</spellName>!<br><br><spellName>Bounce of the Poro King</spellName>: For @Buff_Duration@ seconds, transform into the Poro King! You are now Unstoppable and Ghosted. Gain @Calc_Damage_Reduction@ damage reduction and <speed>@Calc_MoveSpeed@ Movement Speed</speed>, but become Silenced and unable to Attack.<br><br>Additionally, bounce every 1 second, dealing <physicalDamage>@Calc_Damage@ physical damage</physicalDamage> and <status>Knock Back</status> nearby enemy champions on landing.<br><br><rules>The Poro King cannot <status>Knock Back</status> the same enemy more than once per cast.<br><br>Damage Prevented: @f1.0@<br>Damage Dealt: @f2.0@<br>Enemies Bounced: @f3.0@</rules>",
-      "~class": "0x5b441d9b"
-    },
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/ARAM_PoroKing/Augment_ARAM_PoroKing_Transform"
     ],
@@ -2283,6 +2279,10 @@
     "NameTra": "Bounce of the Poro King",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/ARAM_PoroKing/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/ARAM_PoroKing/Augment_ARAM_PoroKing",
+    "TooltipData": {
+      "0xc4182067": "Gain <spellName>Bounce of the Poro King</spellName>!<br><br><spellName>Bounce of the Poro King</spellName>: For @Buff_Duration@ seconds, transform into the Poro King! You are now Unstoppable and Ghosted. Gain @Calc_Damage_Reduction@ damage reduction and <speed>@Calc_MoveSpeed@ Movement Speed</speed>, but become Silenced and unable to Attack.<br><br>Additionally, bounce every 1 second, dealing <physicalDamage>@Calc_Damage@ physical damage</physicalDamage> and <status>Knock Back</status> nearby enemy champions on landing.<br><br><rules>The Poro King cannot <status>Knock Back</status> the same enemy more than once per cast.<br><br>Damage Prevented: @f1.0@<br>Damage Dealt: @f2.0@<br>Enemies Bounced: @f3.0@</rules>",
+      "~class": "0x5b441d9b"
+    },
     "mAugmentTags": 64,
     "rarity": 2,
     "~class": "AugmentData"
@@ -2328,13 +2328,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/ARAM_LittleDevil": {
-    "0x3696d198": {
-      "0xc4182067": "You've forged a pact with the Little Devil himself. He <omnivamp>drains @Calc_Drain_Per_Second_Non_Combat@ of your current Health per second, increased to @Calc_Drain_Per_Second@ if there are nearby enemies</omnivamp>.<br><br>In return, he amplifies your Attacks and Abilities to deal an additional <trueDamage>@Calc_Damage_Amp@ true damage</trueDamage>, which cause a <omnivamp>Life Remnant</omnivamp> to appear nearby for @Remnant_Duration@ seconds.<br><br>Absorbing a <omnivamp>Life Remnant</omnivamp> <healing>heals you for @Calc_Remnant_Healing@</healing> and grants you <speed>@Calc_Move_Speed@ Movement Speed</speed> for @Move_Speed_Duration@ second.<br><br><rules>Health Drained: @f1.0@<br>Damage Dealt: @f2.0@<br>Remnants Acquired: @f4.0@<br>Health Restored: @f5.0@<br>Periodic damage has a @DotDamageCooldown@ second cooldown</rules>",
-      "~class": "0x5b441d9b"
-    },
-    "0x791eb92e": {
-      "~class": "0x21dad86e"
-    },
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/ARAM_LittleDevil/Augment_ARAM_LittleDevil_Remnant_Missile"
     ],
@@ -2342,6 +2335,9 @@
       2
     ],
     "AugmentLargeIconPath": "assets/ux/kiwi/augments/icons/littledevil_large.tex",
+    "AugmentLevelData": {
+      "~class": "0x21dad86e"
+    },
     "AugmentNameId": "ARAM_LittleDevil",
     "AugmentPlatformId": 2007,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/littledevil_small.tex",
@@ -2351,6 +2347,10 @@
     "NameTra": "Devil on Your Shoulder",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/ARAM_LittleDevil/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/ARAM_LittleDevil/Augment_ARAM_LittleDevil",
+    "TooltipData": {
+      "0xc4182067": "You've forged a pact with the Little Devil himself. He <omnivamp>drains @Calc_Drain_Per_Second_Non_Combat@ of your current Health per second, increased to @Calc_Drain_Per_Second@ if there are nearby enemies</omnivamp>.<br><br>In return, he amplifies your Attacks and Abilities to deal an additional <trueDamage>@Calc_Damage_Amp@ true damage</trueDamage>, which cause a <omnivamp>Life Remnant</omnivamp> to appear nearby for @Remnant_Duration@ seconds.<br><br>Absorbing a <omnivamp>Life Remnant</omnivamp> <healing>heals you for @Calc_Remnant_Healing@</healing> and grants you <speed>@Calc_Move_Speed@ Movement Speed</speed> for @Move_Speed_Duration@ second.<br><br><rules>Health Drained: @f1.0@<br>Damage Dealt: @f2.0@<br>Remnants Acquired: @f4.0@<br>Health Restored: @f5.0@<br>Periodic damage has a @DotDamageCooldown@ second cooldown</rules>",
+      "~class": "0x5b441d9b"
+    },
     "rarity": 2,
     "~class": "AugmentData"
   },
@@ -2371,17 +2371,13 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/ARAM_DoubleTap": {
-    "0x3696d198": {
-      "0xc4182067": "Your Critical Strikes apply <OnHit>%i:OnHit% On-Hit</OnHit> effects an additional time.<br><br>Gain <attention>%i:scaleCrit% @Calc_Crit_Chance@ Crit chance</attention>.",
-      "~class": "0x5b441d9b"
-    },
-    "0x791eb92e": {
-      "~class": "0x21dad86e"
-    },
     "AugmentDisplayTags": [
       1
     ],
     "AugmentLargeIconPath": "assets/ux/cherry/augments/icons/dualwield_large.tex",
+    "AugmentLevelData": {
+      "~class": "0x21dad86e"
+    },
     "AugmentNameId": "ARAM_DoubleTap",
     "AugmentPlatformId": 2010,
     "AugmentSmallIconPath": "assets/ux/cherry/augments/icons/dualwield_small.tex",
@@ -2389,23 +2385,15 @@
     "DescriptionTra": "Your <crit>Critical Strikes</crit> apply <OnHit>%i:OnHit% On-Hit</OnHit> effects an additional time.<br><br>Gain <crit>%i:scaleCrit% @Calc_Crit_Chance@ Crit chance</crit>.",
     "NameTra": "Double Tap",
     "RootSpell": "Maps/ModeSpecificData/Augments/ARAM_DoubleTap/Augment_ARAM_DoubleTap",
+    "TooltipData": {
+      "0xc4182067": "Your Critical Strikes apply <OnHit>%i:OnHit% On-Hit</OnHit> effects an additional time.<br><br>Gain <attention>%i:scaleCrit% @Calc_Crit_Chance@ Crit chance</attention>.",
+      "~class": "0x5b441d9b"
+    },
     "mBuildTags": 512,
     "rarity": 2,
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/ARAM_Juiced": {
-    "0x3696d198": {
-      "0xc4182067": "<OnHit> %i:OnHit% On-Hit</OnHit> consume <scaleMana>@Calc_Mana_Cost@ Mana</scaleMana> to deal <magicDamage>@Calc_Damage@ magic damage</magicDamage>, this damage can <crit>Critically Strike</crit>.<br><br><rules>Damage Dealt: @f1.0@<br>Mana Consumed: @f2.0@</rules>",
-      "~class": "0x5b441d9b"
-    },
-    "0x791eb92e": {
-      "0x5753a320": {
-        "0x5835d27": "At max level, everytime you spend <scaleMana>@MaxLevelManaSpendThreshold@ Mana</scaleMana> increase the damge this deals by @MaxLevelPerTriggerDamageAmp*100@% for the rest of the round.",
-        "0xc98a82ca": "At max level, everytime you spend <scaleMana>@MaxLevelManaSpendThreshold@ Mana</scaleMana> increase the damge this deals by @MaxLevelPerTriggerDamageAmp*100@% for the rest of the round.",
-        "~class": "0xade7ce63"
-      },
-      "~class": "0x21dad86e"
-    },
     "AugmentDisplayTags": [
       2
     ],
@@ -2413,8 +2401,8 @@
     "AugmentNameId": "ARAM_Juiced",
     "AugmentPlatformId": 2016,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/juiced_small.tex",
-    "AugmentTooltipTra": "<OnHit> %i:OnHit% On-Hit</OnHit> consume <scaleMana>@Calc_Mana_Cost@ Mana</scaleMana> to deal <magicDamage>@Calc_Damage@ magic damage</magicDamage>, this damage can <crit>Critically Strike</crit>.<br><br><rules>Damage Dealt: @f1.0@<br>Mana Consumed: @f2.0@</rules>",
-    "DescriptionTra": "<OnHit>%i:OnHit% On-Hit</OnHit> consume <scaleMana>@Calc_Mana_Cost@ Mana</scaleMana> to deal <magicDamage>@Calc_Damage@ magic damage</magicDamage>, this damage can <crit>Critically Strike</crit>.",
+    "AugmentTooltipTra": "<OnHit> %i:OnHit% On-Hit</OnHit> deal <magicDamage>@Calc_Damage@ magic damage</magicDamage>, this damage can <crit>Critically Strike</crit>.<br><br><rules>Damage Dealt: @f1.0@</rules>",
+    "DescriptionTra": "<OnHit>%i:OnHit% On-Hit</OnHit> deal <magicDamage>@Calc_Damage@ magic damage</magicDamage>, this damage can <crit>Critically Strike</crit>.",
     "NameTra": "Juiced",
     "RootSpell": "Maps/ModeSpecificData/Augments/ARAM_Juiced/Augment_ARAM_Juiced",
     "mAugmentTags": 8,
@@ -2455,18 +2443,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/FishBait": {
-    "0x3696d198": {
-      "0xc4182067": "On death, become <keyword>Shark Bait</keyword>. You can take no actions other than moving, which <status>slows nearby enemies by @Slow*100@%</status>. After a few seconds, a <keyword>Shark</keyword> emerges, <status>knocking up</status> all nearby Enemies and biting them for <magicDamage>@BaseDamageToApply@ + @MissingHealthPercentDamage@ Missing Health Magic Damage</magicDamage>.<br><br>Times the Shark consumed an Enemy Champion: <attention>@f2.0@</attention>",
-      "~class": "0x5b441d9b"
-    },
-    "0x791eb92e": {
-      "0x5753a320": {
-        "0x5835d27": "At Max Level, your allies also gain this effect on death.",
-        "0xc98a82ca": "At Max Level, your allies also gain this effect on death.",
-        "~class": "0xade7ce63"
-      },
-      "~class": "0x21dad86e"
-    },
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/FishBait/Augment_FishBait_CurrentlyBait"
     ],
@@ -2474,6 +2450,14 @@
       1
     ],
     "AugmentLargeIconPath": "assets/ux/kiwi/augments/icons/fishbait_large.tex",
+    "AugmentLevelData": {
+      "CapstoneData": {
+        "0x5835d27": "At Max Level, your allies also gain this effect on death.",
+        "0xc98a82ca": "At Max Level, your allies also gain this effect on death.",
+        "~class": "0xade7ce63"
+      },
+      "~class": "0x21dad86e"
+    },
     "AugmentNameId": "FishBait",
     "AugmentPlatformId": 2032,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/fishbait_small.tex",
@@ -2482,6 +2466,10 @@
     "NameTra": "Shark Bait",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/FishBait/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/FishBait/Augment_FishBait",
+    "TooltipData": {
+      "0xc4182067": "On death, become <keyword>Shark Bait</keyword>. You can take no actions other than moving, which <status>slows nearby enemies by @Slow*100@%</status>. After a few seconds, a <keyword>Shark</keyword> emerges, <status>knocking up</status> all nearby Enemies and biting them for <magicDamage>@BaseDamageToApply@ + @MissingHealthPercentDamage@ Missing Health Magic Damage</magicDamage>.<br><br>Times the Shark consumed an Enemy Champion: <attention>@f2.0@</attention>",
+      "~class": "0x5b441d9b"
+    },
     "rarity": 1,
     "~class": "AugmentData"
   },
@@ -2544,7 +2532,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/SpellVolley": {
-    "0xe3a02eac": true,
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/SpellVolley/Augment_SpellVolley_Cooldown"
     ],
@@ -2555,19 +2542,15 @@
     "AugmentNameId": "SpellVolley",
     "AugmentPlatformId": 2054,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/genericabilityaugmenticon_prismatic.tex",
-    "AugmentTooltipTra": "{{Kiwi_SpellVolley_Summary}}<br><br>Additional Targets Hit: @f1@<br><rules>Units take less damage from the same spell.</rules>",
-    "DescriptionTra": "Your {{SpellName}} targets 2 additional enemies in front of you.",
+    "AugmentTooltipTra": "Your <font color='#F0C200'>@SpellName@</font> targets 2 additional enemies in front of you.<br><br>Additional Targets Hit: @f1@<br><rules>Units take less damage from the same spell.</rules>",
+    "DescriptionTra": "Your <font color='#F0C200'>@SpellName@</font> targets 2 additional enemies in front of you.",
+    "IsAbilityAugment": true,
     "NameTra": "Tripleshot",
     "RootSpell": "Maps/ModeSpecificData/Augments/SpellVolley/Augment_SpellVolley",
     "rarity": 2,
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/ARAM_Multishot": {
-    "0x3ed971bd": {
-      "Quest": "Maps/ModeSpecificData/ModesQuests/MultishotQuest",
-      "~class": "LinkedQuestData"
-    },
-    "0xe3a02eac": true,
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/ARAM_Multishot/Augment_ARAM_Multishot_Velkoz"
     ],
@@ -2579,15 +2562,19 @@
     "AugmentNameId": "ARAM_Multishot",
     "AugmentPlatformId": 2055,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/genericabilityaugmenticon_prismatic.tex",
-    "AugmentTooltipTra": "<font color='#F0C200'>QUEST:</font> Hit enemy Champions with {{SpellName}} @QuestRequirement@ times.<br><br><font color='#F0C200'>REWARD:</font> Fire additional missiles per Quest Level.",
-    "DescriptionTra": "<font color='#F0C200'>QUEST:</font> Hit enemy Champions with {{SpellName}} @QuestRequirement@ times.<br><br><font color='#F0C200'>REWARD:</font> Fire additional missiles per Quest Level.",
+    "AugmentTooltipTra": "<font color='#F0C200'>QUEST:</font> Hit enemy Champions with <font color='#F0C200'>@SpellName@</font> @QuestRequirement@ times.<br><br><font color='#F0C200'>REWARD:</font> Fire additional missiles per Quest Level.",
+    "DescriptionTra": "<font color='#F0C200'>QUEST:</font> Hit enemy Champions with <font color='#F0C200'>@SpellName@</font> @QuestRequirement@ times.<br><br><font color='#F0C200'>REWARD:</font> Fire additional missiles per Quest Level.",
+    "IsAbilityAugment": true,
     "NameTra": "Multishot",
+    "QuestData": {
+      "Quest": "Maps/ModeSpecificData/ModesQuests/MultishotQuest",
+      "~class": "AugmentQuestData"
+    },
     "RootSpell": "Maps/ModeSpecificData/Augments/ARAM_Multishot/Augment_ARAM_Multishot",
     "rarity": 2,
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/Ability_SelfAOE_DoubleCast": {
-    "0xe3a02eac": true,
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/Ability_SelfAOE_DoubleCast/Augment_Ability_SelfAOE_DoubelCast_CloneMissile"
     ],
@@ -2598,8 +2585,9 @@
     "AugmentNameId": "Ability_SelfAOE_DoubleCast",
     "AugmentPlatformId": 2062,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/genericabilityaugmenticon_prismatic.tex",
-    "AugmentTooltipTra": "Casting your {{SpellName}} sends a clone of the ability toward your mouse position and recasts it after @DelayTime@ seconds.",
-    "DescriptionTra": "Casting your {{SpellName}} sends a clone toward your mouse position and recasts it.",
+    "AugmentTooltipTra": "Casting your <font color='#F0C200'>@SpellName@</font> sends a clone of the ability toward your mouse position and recasts it after @DelayTime@ seconds.",
+    "DescriptionTra": "Casting your <font color='#F0C200'>@SpellName@</font> sends a clone toward your mouse position and recasts it.",
+    "IsAbilityAugment": true,
     "NameTra": "Echo Cast",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/Ability_SelfAOE_DoubleCast/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/Ability_SelfAOE_DoubleCast/Augment_Ability_SelfAOE_DoubelCast",
@@ -2628,7 +2616,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/ARAM_Quickstep": {
-    "0xe3a02eac": true,
     "AugmentDisplayTags": [
       2
     ],
@@ -2636,8 +2623,9 @@
     "AugmentNameId": "ARAM_Quickstep",
     "AugmentPlatformId": 2064,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/genericabilityaugmenticon_gold.tex",
-    "AugmentTooltipTra": "{{Kiwi_Augment_Vanguard_Desc}}",
-    "DescriptionTra": "When you use {{SpellName}}, dash towards your cursor.",
+    "AugmentTooltipTra": "When you use <font color='#F0C200'>@SpellName@</font>, dash towards your cursor.",
+    "DescriptionTra": "When you use <font color='#F0C200'>@SpellName@</font>, dash towards your cursor.",
+    "IsAbilityAugment": true,
     "NameTra": "Quickstep",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/ARAM_Quickstep/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/ARAM_Quickstep/Augment_ARAM_Quickstep",
@@ -2647,7 +2635,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/ARAM_Terror": {
-    "0xe3a02eac": true,
     "AdditionalSpells": [
       "0x4fea305b"
     ],
@@ -2658,8 +2645,9 @@
     "AugmentNameId": "ARAM_Terror",
     "AugmentPlatformId": 2065,
     "AugmentSmallIconPath": "assets/ux/cherry/augments/icons/desecrator_large.tex",
-    "AugmentTooltipTra": "Whenever you cast {{SpellName}}, <status>Fear</status> enemies around you for @MaximumFearDuration@ seconds.",
-    "DescriptionTra": "Whenever you cast {{SpellName}}, <status>Fear</status> enemies around you.",
+    "AugmentTooltipTra": "Whenever you cast <font color='#F0C200'>@SpellName@</font>, <status>Fear</status> enemies around you for @MaximumFearDuration@ seconds.",
+    "DescriptionTra": "Whenever you cast <font color='#F0C200'>@SpellName@</font>, <status>Fear</status> enemies around you.",
+    "IsAbilityAugment": true,
     "NameTra": "Terror",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/ARAM_Terror/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/ARAM_Terror/Augment_ARAM_Terror",
@@ -2668,7 +2656,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/Missile_Split": {
-    "0xe3a02eac": true,
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/Missile_Split/Augment_Missile_Split_Recast",
       "Maps/ModeSpecificData/Augments/Missile_Split/Augment_Missile_Split_HitExclusion"
@@ -2680,8 +2667,9 @@
     "AugmentNameId": "Missile_Split",
     "AugmentPlatformId": 2072,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/genericabilityaugmenticon_prismatic.tex",
-    "AugmentTooltipTra": "{{Kiwi_Missile_Split_Summary}} <br><br>Additional target hit: @f1@<br><rules>Enemies take less damage if hit by the same spell.</rules>",
-    "DescriptionTra": "Your {{SpellName}} missile splits into two on hit, at max Range, or when <recast>Recast</recast>. ",
+    "AugmentTooltipTra": "Your <font color='#F0C200'>@SpellName@</font> missile splits into two on hit, at max Range, or when <recast>Recast</recast>.  <br><br>Additional target hit: @f1@<br><rules>Enemies take less damage if hit by the same spell.</rules>",
+    "DescriptionTra": "Your <font color='#F0C200'>@SpellName@</font> missile splits into two on hit, at max Range, or when <recast>Recast</recast>. ",
+    "IsAbilityAugment": true,
     "NameTra": "Spell Split",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/Missile_Split/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/Missile_Split/Augment_Missile_Split",
@@ -2689,7 +2677,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/ARAM_SustainingStrike": {
-    "0xe3a02eac": true,
     "AugmentDisplayTags": [
       3
     ],
@@ -2697,8 +2684,9 @@
     "AugmentNameId": "ARAM_SustainingStrike",
     "AugmentPlatformId": 2073,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/genericabilityaugmenticon_silver.tex",
-    "AugmentTooltipTra": "<healing>Heal</healing> for @Lifesteal*100@% of the damage dealt to enemy champions by {{SpellName}}.",
-    "DescriptionTra": "Damaging enemy champions with {{SpellName}} <healing>heals</healing> you.",
+    "AugmentTooltipTra": "<healing>Heal</healing> for @Lifesteal*100@% of the damage dealt to enemy champions by <font color='#F0C200'>@SpellName@</font>.",
+    "DescriptionTra": "Damaging enemy champions with <font color='#F0C200'>@SpellName@</font> <healing>heals</healing> you.",
+    "IsAbilityAugment": true,
     "NameTra": "Siphon",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/ARAM_SustainingStrike/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/ARAM_SustainingStrike/Augment_ARAM_SustainingStrike",
@@ -2706,7 +2694,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/TitansPulse": {
-    "0xe3a02eac": true,
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/TitansPulse/Augment_TitansPulse_Counter"
     ],
@@ -2717,22 +2704,15 @@
     "AugmentNameId": "TitansPulse",
     "AugmentPlatformId": 2076,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/genericabilityaugmenticon_silver.tex",
-    "AugmentTooltipTra": "Damaging enemy champions with {{SpellName}} grants you @ARMR_Inc@ <scaleArmor>Armor</scaleArmor> or <scaleMR>Magic Resistance</scaleMR> based on their %i:miniAdaptiveForce% Damage Type. <br><br>Bonus <scaleArmor>Armor</scaleArmor>: @f1@<br>Bonus <scaleMR>Magic Resistance</scaleMR>: @f2@<br><br><br><rules>If this is not your first augment, gain @AdditionalARMR@ <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resistance</scaleMR>.</rules>",
-    "DescriptionTra": "When {{Spellname}} damages enemy champions, gain @ARMR_Inc@ <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resistance</scaleMR>.",
+    "AugmentTooltipTra": "Damaging enemy champions with <font color='#F0C200'>@SpellName@</font> grants you @ARMR_Inc@ <scaleArmor>Armor</scaleArmor> or <scaleMR>Magic Resistance</scaleMR> based on their %i:miniAdaptiveForce% Damage Type. <br><br>Bonus <scaleArmor>Armor</scaleArmor>: @f1@<br>Bonus <scaleMR>Magic Resistance</scaleMR>: @f2@<br><br><br><rules>If this is not your first augment, gain @AdditionalARMR@ <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resistance</scaleMR>.</rules>",
+    "DescriptionTra": "When <font color='#F0C200'>@SpellName@</font> damages enemy champions, gain @ARMR_Inc@ <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resistance</scaleMR>.",
+    "IsAbilityAugment": true,
     "NameTra": "Stay Resolute",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/TitansPulse/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/TitansPulse/Augment_TitansPulse",
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/DarkWind": {
-    "0x3696d198": {
-      "0xc4182067": "<status>Immobilizing</status> or <status>Grounding</status> enemy champions with {{SpellName}} deals an additional <magicDamage>@Damage@ magic damage</magicDamage> and heals <healing>@f3@ Health.</healing><br><br>Total Damage: <magicDamage>@f2@</magicDamage><br>Minimum healing: <healing>@Heal@</healing><br>Total Healing: <healing>@f1@</healing><br><br><rules>Healing increases up to @BonusHealingPercent_Max*100@% based on spell cooldown.</rules>",
-      "~class": "0x5b441d9b"
-    },
-    "0x791eb92e": {
-      "~class": "0x21dad86e"
-    },
-    "0xe3a02eac": true,
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/DarkWind/Augment_DarkWind_Missile_Return"
     ],
@@ -2740,21 +2720,28 @@
       5
     ],
     "AugmentLargeIconPath": "assets/ux/kiwi/augments/icons/upgradehubris_large.tex",
+    "AugmentLevelData": {
+      "~class": "0x21dad86e"
+    },
     "AugmentNameId": "DarkWind",
     "AugmentPlatformId": 2077,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/upgradehubris_small.tex",
-    "AugmentTooltipTra": "<status>Immobilizing</status> or <status>Grounding</status> enemy champions with {{SpellName}} deals an additional <magicDamage>@Damage@ magic damage</magicDamage> and heals <healing>@f3@ Health.</healing><br><br>Total Damage: <magicDamage>@f2@</magicDamage><br>Minimum healing: <healing>@Heal@</healing><br>Total Healing: <healing>@f1@</healing><br><br><rules>Healing increases up to @BonusHealingPercent_Max*100@% based on spell cooldown.</rules>",
-    "DescriptionTra": "<status>Immobilizing</status> or <status>Grounding</status> enemy champions with {{SpellName}} deals extra <magicDamage>damage</magicDamage> and <healing>heals you</healing>.",
+    "AugmentTooltipTra": "<status>Immobilizing</status> or <status>Grounding</status> enemy champions with <font color='#F0C200'>@SpellName@</font> deals an additional <magicDamage>@Damage@ magic damage</magicDamage> and heals <healing>@f3@ Health.</healing><br><br>Total Damage: <magicDamage>@f2@</magicDamage><br>Minimum healing: <healing>@Heal@</healing><br>Total Healing: <healing>@f1@</healing><br><br><rules>Healing increases up to @BonusHealingPercent_Max*100@% based on spell cooldown.</rules>",
+    "DescriptionTra": "<status>Immobilizing</status> or <status>Grounding</status> enemy champions with <font color='#F0C200'>@SpellName@</font> deals extra <magicDamage>damage</magicDamage> and <healing>heals you</healing>.",
+    "IsAbilityAugment": true,
     "NameTra": "Ravenous Bind",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/DarkWind/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/DarkWind/Augment_DarkWind",
+    "TooltipData": {
+      "0xc4182067": "<status>Immobilizing</status> or <status>Grounding</status> enemy champions with <font color='#F0C200'>@SpellName@</font> deals an additional <magicDamage>@Damage@ magic damage</magicDamage> and heals <healing>@f3@ Health.</healing><br><br>Total Damage: <magicDamage>@f2@</magicDamage><br>Minimum healing: <healing>@Heal@</healing><br>Total Healing: <healing>@f1@</healing><br><br><rules>Healing increases up to @BonusHealingPercent_Max*100@% based on spell cooldown.</rules>",
+      "~class": "0x5b441d9b"
+    },
     "mAugmentTags": 18,
     "mBuildTags": 296,
     "rarity": 1,
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/ChainReaction": {
-    "0xe3a02eac": true,
     "AugmentDisplayTags": [
       1
     ],
@@ -2762,8 +2749,9 @@
     "AugmentNameId": "ChainReaction",
     "AugmentPlatformId": 2078,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/genericabilityaugmenticon_gold.tex",
-    "AugmentTooltipTra": "If a champion you <status>Knock Back</status> with {{SpellName}} hits another champion, they are <status>Knocked Up</status> for @ChampCollideKnockupDuration@ seconds and are dealt <magicDamage>@EnemyHitDamage@ magic damage</magicDamage>. If enemy champions collide with terrain, they are <status>Knocked Up</status> for @MinKnockUpDuration@ seconds and are dealt <magicDamage>@WallCollisionDamage@ magic damage</magicDamage>.<br><br>Enemies Knocked Up: @f1@<br>Walls Hit: @f2@<br><br><rules>Knock Up Duration and Height scale with your spell's cooldown.<br><rules>Damage is increased to @Ult_DamageAmp@ for Ultimate Abilities.</rules></rules>",
-    "DescriptionTra": "If a target <status>Knocked Back</status> by {{SpellName}} hits another champion, they are <status>Knocked Up</status> and dealt <magicDamage>damage</magicDamage>. When colliding with terrain, the <status>Knock Up</status> duration is extended and they are dealt <magicDamage>bonus damage</magicDamage>.",
+    "AugmentTooltipTra": "If a champion you <status>Knock Back</status> with <font color='#F0C200'>@SpellName@</font> hits another champion, they are <status>Knocked Up</status> for @ChampCollideKnockupDuration@ seconds and are dealt <magicDamage>@EnemyHitDamage@ magic damage</magicDamage>. If enemy champions collide with terrain, they are <status>Knocked Up</status> for @MinKnockUpDuration@ seconds and are dealt <magicDamage>@WallCollisionDamage@ magic damage</magicDamage>.<br><br>Enemies Knocked Up: @f1@<br>Walls Hit: @f2@<br><br><rules>Knock Up Duration and Height scale with your spell's cooldown.<br><rules>Damage is increased to @Ult_DamageAmp@ for Ultimate Abilities.</rules></rules>",
+    "DescriptionTra": "If a target <status>Knocked Back</status> by <font color='#F0C200'>@SpellName@</font> hits another champion, they are <status>Knocked Up</status> and dealt <magicDamage>damage</magicDamage>. When colliding with terrain, the <status>Knock Up</status> duration is extended and they are dealt <magicDamage>bonus damage</magicDamage>.",
+    "IsAbilityAugment": true,
     "NameTra": "Chain Reaction",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/ChainReaction/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/ChainReaction/Augment_ChainReaction",
@@ -2792,17 +2780,17 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/Equilibrium": {
-    "0x791eb92e": {
-      "~class": "0x21dad86e"
-    },
     "AugmentDisplayTags": [
       3
     ],
     "AugmentLargeIconPath": "assets/ux/kiwi/augments/icons/equillibrium_large.tex",
+    "AugmentLevelData": {
+      "~class": "0x21dad86e"
+    },
     "AugmentNameId": "Equilibrium",
     "AugmentPlatformId": 2082,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/equillibrium_small.tex",
-    "AugmentTooltipTra": "{{Kiwi_Augment_Equilibrium_Summary}}",
+    "AugmentTooltipTra": "Whenever someone heals around you, you <healing>heal @AllyHealingRatio*100@%</healing> of their own healing. Doubled from Enemy healing.",
     "DescriptionTra": "Whenever someone heals around you, you <healing>heal @AllyHealingRatio*100@%</healing> of their own healing. Doubled from Enemy healing.",
     "NameTra": "Our Healing",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/Equilibrium/Resources",
@@ -2811,10 +2799,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/BurstingTeeth": {
-    "0x3696d198": {
-      "0xc4182067": "When you deal more than <attention>@BurstRequirement@</attention> of an enemy champion's Health in less than <attention>@BurstDurationCheck@</attention> seconds, they drop a <keyword>Tooth</keyword>.<br><br>Your <attention>@f1@</attention> <keyword>Teeth</keyword> collection currently gives you <scaleLethality>@LethalityPerTooth@ Lethality</scaleLethality> and <magicPen>@MPenPerTooth@ Magic Penetration</magicPen>.<br><br><rules> @PerTargetCooldown@ seconds cooldown per target</rules>",
-      "~class": "0x5b441d9b"
-    },
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/BurstingTeeth/Augment_BurstingTeeth_Counter"
     ],
@@ -2830,6 +2814,10 @@
     "NameTra": "Tooth Fairy",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/BurstingTeeth/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/BurstingTeeth/Augment_BurstingTeeth",
+    "TooltipData": {
+      "0xc4182067": "When you deal more than <attention>@BurstRequirement@</attention> of an enemy champion's Health in less than <attention>@BurstDurationCheck@</attention> seconds, they drop a <keyword>Tooth</keyword>.<br><br>Your <attention>@f1@</attention> <keyword>Teeth</keyword> collection currently gives you <scaleLethality>@LethalityPerTooth@ Lethality</scaleLethality> and <magicPen>@MPenPerTooth@ Magic Penetration</magicPen>.<br><br><rules> @PerTargetCooldown@ seconds cooldown per target</rules>",
+      "~class": "0x5b441d9b"
+    },
     "rarity": 1,
     "~class": "AugmentData"
   },
@@ -2897,7 +2885,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/LittleExtraHelp": {
-    "0xe3a02eac": true,
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/LittleExtraHelp/Augment_LittleExtraHelp_AttackRange"
     ],
@@ -2908,8 +2895,9 @@
     "AugmentNameId": "LittleExtraHelp",
     "AugmentPlatformId": 2096,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/genericabilityaugmenticon_gold.tex",
-    "AugmentTooltipTra": "Gain @RangeIncrease@ Attack Range and @ExtraAttackSpeed@ <attackSpeed>Attack Speed</attackSpeed> during your {{SpellName}} duration.",
-    "DescriptionTra": "Gain @RangeIncrease@ Attack Range and @ExtraAttackSpeed@ <attackSpeed>Attack Speed</attackSpeed> during your {{SpellName}} duration.",
+    "AugmentTooltipTra": "Gain @RangeIncrease@ Attack Range and @ExtraAttackSpeed@ <attackSpeed>Attack Speed</attackSpeed> during your <font color='#F0C200'>@SpellName@</font> duration.",
+    "DescriptionTra": "Gain @RangeIncrease@ Attack Range and @ExtraAttackSpeed@ <attackSpeed>Attack Speed</attackSpeed> during your <font color='#F0C200'>@SpellName@</font> duration.",
+    "IsAbilityAugment": true,
     "NameTra": "Lil' Extra Help",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/LittleExtraHelp/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/LittleExtraHelp/Augment_LittleExtraHelp",
@@ -2917,7 +2905,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/VoidDash": {
-    "0xe3a02eac": true,
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/VoidDash/Augment_VoidDash_Cooldown"
     ],
@@ -2928,9 +2915,10 @@
     "AugmentNameId": "VoidDash",
     "AugmentPlatformId": 2097,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/genericabilityaugmenticon_gold.tex",
-    "AugmentTooltipTra": "{{SpellName}} spawns a Void Zone at the targeted destination. It <status>Slows</status> enemy champions for @SlowAmount*100@% for @SlowDuration@ seconds, and deals <magicDamage>@TotalDamage@ magic damage</magicDamage>. <br><br>Champions Slowed: @f1@",
-    "DescriptionTra": "Dashing with {{Spellname}} spawns a Void Zone that <status>Slows</status> enemy champions and deals magic damage.",
+    "AugmentTooltipTra": "<font color='#F0C200'>@SpellName@</font> spawns a Void Zone at the targeted destination. It <status>Slows</status> enemy champions for @SlowAmount*100@% for @SlowDuration@ seconds, and deals <magicDamage>@TotalDamage@ magic damage</magicDamage>. <br><br>Champions Slowed: @f1@",
+    "DescriptionTra": "Dashing with <font color='#F0C200'>@SpellName@</font> spawns a Void Zone that <status>Slows</status> enemy champions and deals magic damage.",
     "Enabled": false,
+    "IsAbilityAugment": true,
     "NameTra": "Void Dash",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/VoidDash/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/VoidDash/Augment_VoidDash",
@@ -2980,10 +2968,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/PressureCooker": {
-    "0x3ed971bd": {
-      "Quest": "Maps/ModeSpecificData/ModesQuests/PressureCookerQuest",
-      "~class": "LinkedQuestData"
-    },
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/PressureCooker/Augment_PressureCooker_Bleed"
     ],
@@ -2998,6 +2982,10 @@
     "AugmentTooltipTra": "{{Kiwi_PressureCooker_Tooltip@f4@}}",
     "DescriptionTra": "Every second, apply a stacking <keywordMajor>Burn</keywordMajor> to nearby enemy champions, scaling with your <scaleHealth>max Health</scaleHealth>.<br><br><font color='#F0C200'>QUEST:</font> Deal <keywordMajor>Burn</keywordMajor> damage to enemy Champions.<br><br><font color='#F0C200'>REWARD</font>: Size and damage increase per Quest Level.",
     "NameTra": "Pressure Cooker",
+    "QuestData": {
+      "Quest": "Maps/ModeSpecificData/ModesQuests/PressureCookerQuest",
+      "~class": "AugmentQuestData"
+    },
     "ResourceResolver": "Maps/ModeSpecificData/Augments/PressureCooker/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/PressureCooker/Augment_PressureCooker",
     "mAugmentTags": 4,
@@ -3006,12 +2994,8 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/ARAM_BangBang": {
-    "0x3ed971bd": {
-      "Quest": "Maps/ModeSpecificData/ModesQuests/BangBangQuest",
-      "~class": "LinkedQuestData"
-    },
     "AdditionalSpells": [
-      "0x28b7c8a7"
+      "Maps/ModeSpecificData/Augments/ARAM_BangBang/BangBangMissile"
     ],
     "AugmentDisplayTags": [
       1,
@@ -3024,6 +3008,10 @@
     "AugmentTooltipTra": "{{Augment_BangBang_Tooltip@f3@}}<br><br><flavorText>Bang! Bang! Oh, what a shot!</flavorText>",
     "DescriptionTra": "<font color='#F0C200'>QUEST:</font> <keywordMajor>Snipe</keywordMajor> @QuestRequirement@ enemy champions with abilities<br><br><font color='#F0C200'>REWARD:</font> Send a meteor at <keywordMajor>Sniped</keywordMajor> enemy champions, dealing <magicDamage>Magic damage</magicDamage> in an area around them",
     "NameTra": "From Downtown",
+    "QuestData": {
+      "Quest": "Maps/ModeSpecificData/ModesQuests/BangBangQuest",
+      "~class": "AugmentQuestData"
+    },
     "ResourceResolver": "Maps/ModeSpecificData/Augments/ARAM_BangBang/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/ARAM_BangBang/Augment_ARAM_BangBang",
     "mAugmentTags": 384,
@@ -3077,7 +3065,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/SnapBack": {
-    "0xe3a02eac": true,
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/SnapBack/Augment_SnapBack_Recast"
     ],
@@ -3089,8 +3076,9 @@
     "AugmentNameId": "SnapBack",
     "AugmentPlatformId": 2109,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/genericabilityaugmenticon_gold.tex",
-    "AugmentTooltipTra": "Recast {{SpellName}} to explode for @SnapDamage@ magic damage and return to your original position.",
-    "DescriptionTra": "Recast {{SpellName}} to explode and return to your original position.",
+    "AugmentTooltipTra": "Recast <font color='#F0C200'>@SpellName@</font> to explode for @SnapDamage@ magic damage and return to your original position.",
+    "DescriptionTra": "Recast <font color='#F0C200'>@SpellName@</font> to explode and return to your original position.",
+    "IsAbilityAugment": true,
     "NameTra": "Snap Back",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/SnapBack/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/SnapBack/Augment_SnapBack",
@@ -3098,7 +3086,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/Bonk": {
-    "0xe3a02eac": true,
     "AugmentDisplayTags": [
       1
     ],
@@ -3106,8 +3093,9 @@
     "AugmentNameId": "Bonk",
     "AugmentPlatformId": 2111,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/bonk_large.tex",
-    "AugmentTooltipTra": "Attacks and Abilities empowered by {{SpellName}} deal an additional @DamageMultiplier*100@% damage to the target and nearby enemies.<br><br>Additional Champions Bonked: @f1@",
-    "DescriptionTra": "Attacks and Abilities empowered by {{SpellName}} deal additional damage to the target and nearby enemies.",
+    "AugmentTooltipTra": "Attacks and Abilities empowered by <font color='#F0C200'>@SpellName@</font> deal an additional @DamageMultiplier*100@% damage to the target and nearby enemies.<br><br>Additional Champions Bonked: @f1@",
+    "DescriptionTra": "Attacks and Abilities empowered by <font color='#F0C200'>@SpellName@</font> deal additional damage to the target and nearby enemies.",
+    "IsAbilityAugment": true,
     "NameTra": "BONK!",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/Bonk/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/Bonk/Augment_Bonk",
@@ -3132,11 +3120,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/SpecializedEmpowerment": {
-    "0x3ed971bd": {
-      "Quest": "Maps/ModeSpecificData/ModesQuests/SpecializedEmpowermentQuest",
-      "~class": "LinkedQuestData"
-    },
-    "0xe3a02eac": true,
     "AugmentDisplayTags": [
       1,
       8
@@ -3146,8 +3129,13 @@
     "AugmentPlatformId": 2116,
     "AugmentSmallIconPath": "assets/ux/cherry/augments/icons/marksmage_small.tex",
     "AugmentTooltipTra": "{{Augment_SpecializedEmpowerment_Tooltip@f6@}}",
-    "DescriptionTra": "<font color='#F0C200'>QUEST:</font> Hit enemy champions with {{SpellName}} @QuestRequirement@ times.<br><br><font color='#F0C200'>REWARD:</font> Permanently increase {{SpellName}} damage.",
+    "DescriptionTra": "<font color='#F0C200'>QUEST:</font> Hit enemy champions with <font color='#F0C200'>@SpellName@</font> @QuestRequirement@ times.<br><br><font color='#F0C200'>REWARD:</font> Permanently increase <font color='#F0C200'>@SpellName@</font> damage.",
+    "IsAbilityAugment": true,
     "NameTra": "Pursuit of Power",
+    "QuestData": {
+      "Quest": "Maps/ModeSpecificData/ModesQuests/SpecializedEmpowermentQuest",
+      "~class": "AugmentQuestData"
+    },
     "ResourceResolver": "Maps/ModeSpecificData/Augments/SpecializedEmpowerment/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/SpecializedEmpowerment/Augment_SpecializedEmpowerment",
     "mAugmentTags": 2048,
@@ -3156,7 +3144,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/Overloaded": {
-    "0xe3a02eac": true,
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/Overloaded/Augment_Overloaded"
     ],
@@ -3167,8 +3154,9 @@
     "AugmentNameId": "Overloaded",
     "AugmentPlatformId": 2123,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/genericabilityaugmenticon_prismatic.tex",
-    "AugmentTooltipTra": "{{Augment_Overloaded_Summary}}<br><br><rules>Resets: @f1.0@<br>Useful Resets: @f2.0@<br>Reset Efficacy: @f3.0@%<br><br><flavorText>\"They come for the scroll... Stick to the plan... EQEQEQ...\" — The Blue One</flavorText></rules>",
-    "DescriptionTra": "Using another Ability resets the cooldown of {{SpellName}}.",
+    "AugmentTooltipTra": "Using another Ability resets the cooldown of <font color='#F0C200'>@SpellName@</font>.<br><br><rules>Resets: @f1.0@<br>Useful Resets: @f2.0@<br>Reset Efficacy: @f3.0@%<br><br><flavorText>\"They come for the scroll... Stick to the plan... EQEQEQ...\" — The Blue One</flavorText></rules>",
+    "DescriptionTra": "Using another Ability resets the cooldown of <font color='#F0C200'>@SpellName@</font>.",
+    "IsAbilityAugment": true,
     "NameTra": "Overloaded",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/Overloaded/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/Overloaded/Augment_Overloaded",
@@ -3176,7 +3164,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/ItsGoTime": {
-    "0xe3a02eac": true,
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/ItsGoTime/Augment_ItsGoTime"
     ],
@@ -3187,15 +3174,15 @@
     "AugmentNameId": "ItsGoTime",
     "AugmentPlatformId": 2125,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/genericabilityaugmenticon_silver.tex",
-    "AugmentTooltipTra": "Activating {{SpellName}} grants you <speed>@Calc_Move_Speed@ Movement Speed</speed> for its duration.",
-    "DescriptionTra": "Activating {{SpellName}} grants you <speed>Movement Speed</speed> for its duration.",
+    "AugmentTooltipTra": "Activating <font color='#F0C200'>@SpellName@</font> grants you <speed>@Calc_Move_Speed@ Movement Speed</speed> for its duration.",
+    "DescriptionTra": "Activating <font color='#F0C200'>@SpellName@</font> grants you <speed>Movement Speed</speed> for its duration.",
+    "IsAbilityAugment": true,
     "NameTra": "It's Go Time",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/ItsGoTime/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/ItsGoTime/Augment_ItsGoTime",
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/KeepGoing": {
-    "0xe3a02eac": true,
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/KeepGoing/Augment_KeepGoing"
     ],
@@ -3206,8 +3193,9 @@
     "AugmentNameId": "KeepGoing",
     "AugmentPlatformId": 2126,
     "AugmentSmallIconPath": "assets/ux/cherry/augments/icons/lightningstrikes_small.tex",
-    "AugmentTooltipTra": "Basic Attacks %i:OnHit% <OnHit>On-Hit</OnHit> during {{SpellName}} reduce its cooldown by @f2@ seconds.<br><br>Seconds Saved: @f1@",
-    "DescriptionTra": "Basic Attacks {{ Item_Keyword_OnHit }} during {{SpellName}} reduce its cooldown.",
+    "AugmentTooltipTra": "Basic Attacks %i:OnHit% <OnHit>On-Hit</OnHit> during <font color='#F0C200'>@SpellName@</font> reduce its cooldown by @f2@ seconds.<br><br>Seconds Saved: @f1@",
+    "DescriptionTra": "Basic Attacks %i:OnHit% <OnHit>On-Hit</OnHit> during <font color='#F0C200'>@SpellName@</font> reduce its cooldown.",
+    "IsAbilityAugment": true,
     "NameTra": "Reload",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/KeepGoing/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/KeepGoing/Augment_KeepGoing",
@@ -3261,7 +3249,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/Overkill": {
-    "0xe3a02eac": true,
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/Overkill/Augment_Overkill",
       "Maps/ModeSpecificData/Augments/Overkill/Augment_Overkill_Mis",
@@ -3275,8 +3262,9 @@
     "AugmentNameId": "Overkill",
     "AugmentPlatformId": 2135,
     "AugmentSmallIconPath": "assets/ux/cherry/augments/icons/symphonyofwar_small.tex",
-    "AugmentTooltipTra": "Attacks during {{SpellName}} gouge your target with <keywordMajor>Nails</keywordMajor>.<br><br>Nails explode once {{SpellName}} expires, dealing <physicalDamage>@DamagePerStack@ Physical Damage</physicalDamage> and granting <speed>@MSPerStack@ Move Speed</speed> per stack for 3 seconds. Nails will explode early and execute if the accumulated damage would kill the enemy champion.<br><br>Most Nails Detonated: @f1@",
-    "DescriptionTra": "Attacks during {{SpellName}} gouge your target with <keywordMajor>Nails</keywordMajor>. Nails accumulate damage, execute, and grant <MS>Movement Speed</MS> upon expiration.",
+    "AugmentTooltipTra": "Attacks during <font color='#F0C200'>@SpellName@</font> gouge your target with <keywordMajor>Nails</keywordMajor>.<br><br>Nails explode once <font color='#F0C200'>@SpellName@</font> expires, dealing <physicalDamage>@DamagePerStack@ Physical Damage</physicalDamage> and granting <speed>@MSPerStack@ Move Speed</speed> per stack for 3 seconds. Nails will explode early and execute if the accumulated damage would kill the enemy champion.<br><br>Most Nails Detonated: @f1@",
+    "DescriptionTra": "Attacks during <font color='#F0C200'>@SpellName@</font> gouge your target with <keywordMajor>Nails</keywordMajor>. Nails accumulate damage, execute, and grant <MS>Movement Speed</MS> upon expiration.",
+    "IsAbilityAugment": true,
     "NameTra": "Pin Cushion",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/Overkill/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/Overkill/Augment_Overkill",
@@ -3284,7 +3272,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/TrustyWeapon": {
-    "0xe3a02eac": true,
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/TrustyWeapon/Augment_TrustyWeapon_Stacks"
     ],
@@ -3295,8 +3282,9 @@
     "AugmentNameId": "TrustyWeapon",
     "AugmentPlatformId": 2136,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/genericabilityaugmenticon_silver.tex",
-    "AugmentTooltipTra": "When you strike an enemy champion with {{SpellName}}, forge a bond of <keyword>Friendship</keyword> that grants it <attention>@Calc_Damage_Amp@</attention> increased damage for @Buff_Duration@ seconds. This effect can stack.<br><br><rules>Bonus Damage: @f1.0@<br><font color=\"#ce69d1\">Maximum Friendship Level: @f2.0@</font></rules><br><br><flavorText>\"It's—it's not like I like you or anything!!\" — {{SpellNameOnly}}</flavorText>",
-    "DescriptionTra": "Striking enemy champions with {{SpellName}} forges a bond of <keyword>Friendship</keyword>.<br><br>{{SpellName}} gains temporarily increased damage based on your level of <keyword>Friendship</keyword>.",
+    "AugmentTooltipTra": "When you strike an enemy champion with <font color='#F0C200'>@SpellName@</font>, forge a bond of <keyword>Friendship</keyword> that grants it <attention>@Calc_Damage_Amp@</attention> increased damage for @Buff_Duration@ seconds. This effect can stack.<br><br><rules>Bonus Damage: @f1.0@<br><font color=\"#ce69d1\">Maximum Friendship Level: @f2.0@</font></rules><br><br><flavorText>\"It's—it's not like I like you or anything!!\" — <font color='#F0C200'>@SpellName@</font></flavorText>",
+    "DescriptionTra": "Striking enemy champions with <font color='#F0C200'>@SpellName@</font> forges a bond of <keyword>Friendship</keyword>.<br><br><font color='#F0C200'>@SpellName@</font> gains temporarily increased damage based on your level of <keyword>Friendship</keyword>.",
+    "IsAbilityAugment": true,
     "NameTra": "Trusty Weapon",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/TrustyWeapon/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/TrustyWeapon/Augment_TrustyWeapon",
@@ -3320,7 +3308,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/WardingWeapon": {
-    "0xe3a02eac": true,
     "AdditionalSpells": [
       "Maps/ModeSpecificData/Augments/WardingWeapon/Augment_WardingWeapon_Stacks"
     ],
@@ -3331,8 +3318,9 @@
     "AugmentNameId": "WardingWeapon",
     "AugmentPlatformId": 2138,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/genericabilityaugmenticon_silver.tex",
-    "AugmentTooltipTra": "<br>Striking an enemy champion with {{SpellName}} grants you <attention>@Calc_Resists@</attention> <scaleArmor>Armor</scaleArmor> or <scaleMR>Magic Resist</scaleMR> based on their damage type for @Buff_Duration@ seconds. This effect can stack.<br><br>Maximum Ward Level: @f2.0@",
-    "DescriptionTra": "Striking an enemy champion with {{SpellName}} grants you <attention>@Calc_Resists@</attention> <scaleArmor>Armor</scaleArmor> or <scaleMR>Magic Resist</scaleMR> based on their damage type for @Buff_Duration@ seconds. This effect can stack.",
+    "AugmentTooltipTra": "<br>Striking an enemy champion with <font color='#F0C200'>@SpellName@</font> grants you <attention>@Calc_Resists@</attention> <scaleArmor>Armor</scaleArmor> or <scaleMR>Magic Resist</scaleMR> based on their damage type for @Buff_Duration@ seconds. This effect can stack.<br><br>Maximum Ward Level: @f2.0@",
+    "DescriptionTra": "Striking an enemy champion with <font color='#F0C200'>@SpellName@</font> grants you <attention>@Calc_Resists@</attention> <scaleArmor>Armor</scaleArmor> or <scaleMR>Magic Resist</scaleMR> based on their damage type for @Buff_Duration@ seconds. This effect can stack.",
+    "IsAbilityAugment": true,
     "NameTra": "Adaptive Ward",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/WardingWeapon/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/WardingWeapon/Augment_WardingWeapon",
@@ -3359,7 +3347,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/DoubleDefense": {
-    "0xe3a02eac": true,
     "AugmentDisplayTags": [
       3
     ],
@@ -3367,8 +3354,9 @@
     "AugmentNameId": "DoubleDefense",
     "AugmentPlatformId": 2144,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/genericabilityaugmenticon_silver.tex",
-    "AugmentTooltipTra": "Shields granted from {{SpellName}} are up to @BonusRatioMax*100@% stronger, scaling with target's missing Health.<br><br>Bonus Shield: @f1@<br><rules>Most effective at @MinHealthThreshold*100@% max health</rules>.",
-    "DescriptionTra": "Shields granted from {{SpellName}} are stronger and scaling with target's missing Health.",
+    "AugmentTooltipTra": "Shields granted from <font color='#F0C200'>@SpellName@</font> are up to @BonusRatioMax*100@% stronger, scaling with target's missing Health.<br><br>Bonus Shield: @f1@<br><rules>Most effective at @MinHealthThreshold*100@% max health</rules>.",
+    "DescriptionTra": "Shields granted from <font color='#F0C200'>@SpellName@</font> are stronger and scaling with target's missing Health.",
+    "IsAbilityAugment": true,
     "NameTra": "Bolstered",
     "ResourceResolver": "Maps/ModeSpecificData/Augments/DoubleDefense/Resources",
     "RootSpell": "Maps/ModeSpecificData/Augments/DoubleDefense/Augment_DoubleDefense",
@@ -3377,7 +3365,6 @@
     "~class": "AugmentData"
   },
   "Maps/ModeSpecificData/Augments/DoubleStrike": {
-    "0xe3a02eac": true,
     "AugmentDisplayTags": [
       1
     ],
@@ -3385,8 +3372,9 @@
     "AugmentNameId": "DoubleStrike",
     "AugmentPlatformId": 2148,
     "AugmentSmallIconPath": "assets/ux/kiwi/augments/icons/adamant_small.tex",
-    "AugmentTooltipTra": "{{SpellName}} applies {{ Item_Keyword_OnHit }} effects an additional time.",
-    "DescriptionTra": "{{SpellName}} applies {{ Item_Keyword_OnHit }} effects an additional time.",
+    "AugmentTooltipTra": "<font color='#F0C200'>@SpellName@</font> applies %i:OnHit% <OnHit>On-Hit</OnHit> effects an additional time.",
+    "DescriptionTra": "<font color='#F0C200'>@SpellName@</font> applies %i:OnHit% <OnHit>On-Hit</OnHit> effects an additional time.",
+    "IsAbilityAugment": true,
     "NameTra": "Double Strike",
     "RootSpell": "Maps/ModeSpecificData/Augments/DoubleStrike/Augment_DoubleStrike",
     "~class": "AugmentData"

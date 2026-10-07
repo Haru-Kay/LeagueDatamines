@@ -89,7 +89,7 @@
         }
       ],
       "DataValuesModeOverride": {
-        "KIWI": {
+        "ARAM": {
           "SpellDataValues": [
             {
               "name": "APRatio",
@@ -120,7 +120,7 @@
           ],
           "~class": "SpellDataValueVector"
         },
-        "ARAM": {
+        "Kiwi": {
           "SpellDataValues": [
             {
               "name": "APRatio",
@@ -257,7 +257,7 @@
           "mLocKeys": {
             "keyName": "Force Pulse",
             "keySummary": "Kassadin draws energy from spells cast in his vicinity. Upon charging up, Kassadin can use Force Pulse to damage and slow enemies in a cone in front of him.",
-            "keyTooltip": "<spellPassive>Passive:</spellPassive> <spellName>{{Spell_ForcePulse_Name}}'s</spellName> Cooldown is reduced by @ReductionPerSpellCast@ second whenever any Ability is used near Kassadin.<br><br><spellActive>Active:</spellActive> Kassadin unleashes a void pulse, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Slowing</status> by @SlowAmount@% for @SlowDuration@ second."
+            "keyTooltip": "<spellPassive>Passive:</spellPassive> <spellName>Force Pulse's</spellName> Cooldown is reduced by @ReductionPerSpellCast@ second whenever any Ability is used near Kassadin.<br><br><spellActive>Active:</spellActive> Kassadin unleashes a void pulse, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Slowing</status> by @SlowAmount@% for @SlowDuration@ second."
           },
           "mObjectName": "ForcePulse",
           "~class": "TooltipInstanceSpell"
@@ -817,18 +817,6 @@
           "~class": "SpellEffectAmount"
         }
       },
-      "0xfe87f21e": [
-        {
-          "0x6166b756": "OnHitDamage",
-          "Requirements": [
-            {
-              "level": 1,
-              "~class": "SpellSlotEqualOrGreaterThanLevelRequirement"
-            }
-          ],
-          "~class": "0xfe87f21e"
-        }
-      ],
       "Cooldown": {
         "Default": 7.0,
         "values": [
@@ -916,6 +904,18 @@
           "~class": "SpellDataValueVector"
         }
       },
+      "LastHitData": [
+        {
+          "0x6166b756": "OnHitDamage",
+          "Requirements": [
+            {
+              "level": 1,
+              "~class": "SpellSlotEqualOrGreaterThanLevelRequirement"
+            }
+          ],
+          "~class": "LastHitData"
+        }
+      ],
       "castConeDistance": 100.0,
       "castFrame": 5.300000190734863,
       "castRadius": [
@@ -2050,7 +2050,7 @@
             "keyName": "Void Stone",
             "keySummary": "Kassadin takes reduced magic damage and ignores unit collision.",
             "keyTooltip": "Kassadin takes @DamageReductionPercent*100@% reduced magic damage and is Ghosted.",
-            "keyTooltipExtended": "{{ Spell_VoidStone_Tooltip }}<br><rules>{{Reminder_Ghosted}}</rules>"
+            "keyTooltipExtended": "Kassadin takes @DamageReductionPercent*100@% reduced magic damage and is Ghosted.<br><rules>Ghosted units can pass through other units.</rules>"
           },
           "mObjectName": "VoidStone",
           "~class": "TooltipInstanceSpell"

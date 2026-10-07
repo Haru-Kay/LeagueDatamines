@@ -2222,7 +2222,7 @@
           ],
           "~class": "SpellDataValueVector"
         },
-        "KIWI": {
+        "ARAM": {
           "SpellDataValues": [
             {
               "name": "ChimesPerUpgrade",
@@ -2266,12 +2266,12 @@
           ],
           "~class": "SpellDataValueVector"
         },
-        "ARAM": {
+        "Kiwi": {
           "SpellDataValues": [
             {
               "name": "ChimesPerUpgrade",
               "values": [
-                0.0,
+                3.0,
                 3.0,
                 3.0,
                 3.0,
@@ -2284,7 +2284,7 @@
             {
               "name": "TooltipChimeDamageCheckpoint",
               "values": [
-                0.0,
+                3.0,
                 3.0,
                 3.0,
                 3.0,
@@ -2297,13 +2297,39 @@
             {
               "name": "MeepAPRatio",
               "values": [
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.5
+                0.6700000166893005,
+                0.6700000166893005,
+                0.6700000166893005,
+                0.6700000166893005,
+                0.6700000166893005,
+                0.6700000166893005,
+                0.6700000166893005
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "BaseMeepSpawnCD",
+              "values": [
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "DamagePerCheckpoint",
+              "values": [
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0
               ],
               "~class": "SpellDataValue"
             }
@@ -2380,7 +2406,7 @@
             "keyName": "Traveler's Call",
             "keySummary": "<font color='#FF9900'>Meeps:</font> Bard attracts lesser spirits that assist with his basic attacks to deal extra magic damage. When Bard has collected enough  <font color='#cccc00'>Chimes</font>, his meeps will also deal damage in an area and slow enemies hit.<br><br><font color='#FF9900'>Chimes:</font> Ancient <font color='#cccc00'>chimes</font> randomly appear for Bard to collect. These grant experience, restore mana, and provide out of combat Move Speed.",
             "keyTooltip": "Bard attracts <font color='#cccc00'>Chimes</font> randomly around the map. When Bard moves near a <font color='#cccc00'>Chime</font> he collects it, gaining <speed>@TooltipMSPerStack@% Move Speed</speed> (stacking up to @MaxSpeedStacks@ times) while out of combat for @SpeedStackDuration@ seconds, @f1@ Experience, and restoring <scaleMana>@TooltipManaRestore@% max Mana</scaleMana>.<br><br>Bard attracts a <font color='#FF9900'>Meep</font> every @f5@ seconds (max: @f4@). Bard's Attacks consume a <font color='#FF9900'>Meep</font> to deal an additional <magicDamage>@MeepDamageNoChime@ plus @DamagePerCheckpoint@ per @TooltipChimeDamageCheckpoint@ <font color='#cccc00'>Chimes</font> magic damage</magicDamage>, plus additional effects based on <font color='#cccc00'>Chimes</font> collected.",
-            "keyTooltipExtended": "{{Spell_BardPTooltip_D_nS_Tooltip}}<br><br><rules><keywordMajor>Meep</keywordMajor> spawn time and max both improve with number of <keywordMajor>Chimes</keywordMajor>.<br>At @ChimesForSlowUpgrade@ <keywordMajor>Chimes</keywordMajor>, <keywordMajor>Meeps</keywordMajor> also <status>Slow</status> by @f2@% for @SlowDuration@s.<br>At @ChimesForSplashDamageUpgrade@ <keywordMajor>Chimes</keywordMajor>, <keywordMajor>Meeps</keywordMajor> also hit in an area around and behind the enemy.<br>At @ChimesForSplashAreaUpgrade@ <keywordMajor>Chimes</keywordMajor>, the area is larger.<br>The <speed>Move Speed</speed> can stack up to @TooltipMSMax@%.<br>The Experience increases by 1 per minute after 5 minutes.</rules>"
+            "keyTooltipExtended": "Bard attracts <font color='#cccc00'>Chimes</font> randomly around the map. When Bard moves near a <font color='#cccc00'>Chime</font> he collects it, gaining <speed>@TooltipMSPerStack@% Move Speed</speed> (stacking up to @MaxSpeedStacks@ times) while out of combat for @SpeedStackDuration@ seconds, @f1@ Experience, and restoring <scaleMana>@TooltipManaRestore@% max Mana</scaleMana>.<br><br>Bard attracts a <font color='#FF9900'>Meep</font> every @f5@ seconds (max: @f4@). Bard's Attacks consume a <font color='#FF9900'>Meep</font> to deal an additional <magicDamage>@MeepDamageNoChime@ plus @DamagePerCheckpoint@ per @TooltipChimeDamageCheckpoint@ <font color='#cccc00'>Chimes</font> magic damage</magicDamage>, plus additional effects based on <font color='#cccc00'>Chimes</font> collected.<br><br><rules><keywordMajor>Meep</keywordMajor> spawn time and max both improve with number of <keywordMajor>Chimes</keywordMajor>.<br>At @ChimesForSlowUpgrade@ <keywordMajor>Chimes</keywordMajor>, <keywordMajor>Meeps</keywordMajor> also <status>Slow</status> by @f2@% for @SlowDuration@s.<br>At @ChimesForSplashDamageUpgrade@ <keywordMajor>Chimes</keywordMajor>, <keywordMajor>Meeps</keywordMajor> also hit in an area around and behind the enemy.<br>At @ChimesForSplashAreaUpgrade@ <keywordMajor>Chimes</keywordMajor>, the area is larger.<br>The <speed>Move Speed</speed> can stack up to @TooltipMSMax@%.<br>The Experience increases by 1 per minute after 5 minutes.</rules>"
           },
           "mObjectName": "BardPTooltip_D_nS",
           "~class": "TooltipInstanceSpell"
@@ -2602,7 +2628,7 @@
         }
       ],
       "DataValuesModeOverride": {
-        "KIWI": {
+        "ARAM": {
           "SpellDataValues": [
             {
               "name": "SlowDuration",
@@ -2633,7 +2659,7 @@
           ],
           "~class": "SpellDataValueVector"
         },
-        "ARAM": {
+        "Kiwi": {
           "SpellDataValues": [
             {
               "name": "SlowDuration",
@@ -3295,7 +3321,7 @@
             "keyName": "Tempered Fate",
             "keySummary": "Bard sends spirit energy arcing to a location, putting all champions, minions, monsters, and turrets hit into stasis for a brief time.",
             "keyTooltip": "Bard hurls magical protective energy to an area, placing all units and structures hit into Stasis for @RStasisDuration@ seconds.",
-            "keyTooltipExtendedBelowLine": "<rules>{{Reminder_Stasis}}</rules>"
+            "keyTooltipExtendedBelowLine": "<rules>Units in Stasis cannot move or act, and are invulnerable and Untargetable.</rules>"
           },
           "mObjectName": "BardR",
           "~class": "TooltipInstanceSpell"
@@ -3797,7 +3823,7 @@
     "mScriptName": "BardW",
     "mSpell": {
       "0xb08bc498": {
-        "KIWI": {
+        "ARAM": {
           "value": [
             10.0,
             10.0,
@@ -3809,7 +3835,7 @@
           ],
           "~class": "SpellEffectAmount"
         },
-        "ARAM": {
+        "Kiwi": {
           "value": [
             10.0,
             10.0,
@@ -4006,7 +4032,51 @@
         }
       ],
       "DataValuesModeOverride": {
-        "KIWI": {
+        "ARAM": {
+          "SpellDataValues": [
+            {
+              "name": "Ammo_Cooldown",
+              "values": [
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "APRatio_Min",
+              "values": [
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "APRatio_Max",
+              "values": [
+                0.8999999761581421,
+                0.8999999761581421,
+                0.8999999761581421,
+                0.8999999761581421,
+                0.8999999761581421,
+                0.8999999761581421,
+                0.8999999761581421
+              ],
+              "~class": "SpellDataValue"
+            }
+          ],
+          "~class": "SpellDataValueVector"
+        },
+        "Kiwi": {
           "SpellDataValues": [
             {
               "name": "Ammo_Cooldown",
@@ -4044,50 +4114,6 @@
                 0.000750000006519258,
                 0.000750000006519258,
                 0.000750000006519258
-              ],
-              "~class": "SpellDataValue"
-            },
-            {
-              "name": "APRatio_Min",
-              "values": [
-                0.6000000238418579,
-                0.6000000238418579,
-                0.6000000238418579,
-                0.6000000238418579,
-                0.6000000238418579,
-                0.6000000238418579,
-                0.6000000238418579
-              ],
-              "~class": "SpellDataValue"
-            },
-            {
-              "name": "APRatio_Max",
-              "values": [
-                0.8999999761581421,
-                0.8999999761581421,
-                0.8999999761581421,
-                0.8999999761581421,
-                0.8999999761581421,
-                0.8999999761581421,
-                0.8999999761581421
-              ],
-              "~class": "SpellDataValue"
-            }
-          ],
-          "~class": "SpellDataValueVector"
-        },
-        "ARAM": {
-          "SpellDataValues": [
-            {
-              "name": "Ammo_Cooldown",
-              "values": [
-                10.0,
-                10.0,
-                10.0,
-                10.0,
-                10.0,
-                10.0,
-                10.0
               ],
               "~class": "SpellDataValue"
             },

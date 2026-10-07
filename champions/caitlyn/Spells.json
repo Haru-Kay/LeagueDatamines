@@ -734,29 +734,6 @@
     "ObjectName": "CaitlynPassive",
     "mScriptName": "CaitlynPassive",
     "mSpell": {
-      "0xfe87f21e": [
-        {
-          "0x6166b756": "0x42962485",
-          "Requirements": [
-            {
-              "mSubRequirements": [
-                {
-                  "0x7b66f15d": false,
-                  "0xd6b6109c": "Characters/Caitlyn/Spells/CaitlynPassiveAbility/CaitlynPassiveDriver",
-                  "~class": "HasBuffCastRequirement"
-                },
-                {
-                  "0xd6b6109c": "Characters/Caitlyn/Spells/CaitlynPassiveAbility/CaitlynPassiveRangeMarker",
-                  "~class": "HasBuffCastRequirement"
-                }
-              ],
-              "mSuccessesRequired": 1,
-              "~class": "HasAtleastNSubRequirementsCastRequirement"
-            }
-          ],
-          "~class": "0xfe87f21e"
-        }
-      ],
       "DataValues": [
         {
           "name": "CriticalStrikeScaling",
@@ -811,6 +788,29 @@
           "~class": "SpellDataValue"
         }
       ],
+      "LastHitData": [
+        {
+          "0x6166b756": "0x42962485",
+          "Requirements": [
+            {
+              "mSubRequirements": [
+                {
+                  "0x7b66f15d": false,
+                  "BuffLink": "Characters/Caitlyn/Spells/CaitlynPassiveAbility/CaitlynPassiveDriver",
+                  "~class": "HasBuffCastRequirement"
+                },
+                {
+                  "BuffLink": "Characters/Caitlyn/Spells/CaitlynPassiveAbility/CaitlynPassiveRangeMarker",
+                  "~class": "HasBuffCastRequirement"
+                }
+              ],
+              "mSuccessesRequired": 1,
+              "~class": "HasAtleastNSubRequirementsCastRequirement"
+            }
+          ],
+          "~class": "LastHitData"
+        }
+      ],
       "mAnimationName": "",
       "mClientData": {
         "mTooltipData": {
@@ -818,8 +818,8 @@
           "mLocKeys": {
             "keyName": "Headshot",
             "keySummary": "Every few basic attacks, or against a target she has trapped or netted, Caitlyn will fire a headshot dealing bonus damage that scales with her critical strike chance. On trapped or netted targets, Caitlyn's Headshot attack range is doubled.",
-            "keyTooltip": "Every @AttacksPerHeadshot@ Attacks, Caitlyn fires a <keywordMajor>Headshot</keywordMajor>. Attacks while in brush count as @BrushAttackTotal@ for building towards a <keywordMajor>Headshot</keywordMajor>.<br><br><keywordMajor>Headshots</keywordMajor> deal an additional <physicalDamage>@HeadShotBonusDamage@ physical damage</physicalDamage>. They have double range against enemies affected by <spellName>{{Spell_CaitlynEntrapment_Name}}</spellName> and <spellName>{{Spell_CaitlynYordleTrap_Name}}</spellName>. <keywordMajor>Headshots</keywordMajor> against enemies hit by <spellName>{{Spell_CaitlynYordleTrap_Name}}</spellName> deal a further <physicalDamage>@spell.CaitlynW:HeadshotBonusDamage@ physical damage</physicalDamage>.",
-            "keyTooltipExtended": "{{Spell_CaitlynP_Tooltip}}<br><br><rules><keywordMajor>Headshot</keywordMajor> damage scales with level, Critical Strike Chance, and Critical Strike Damage.<br><keywordMajor>Headshots</keywordMajor> deal an additional <physicalDamage>@HeadShotMinionBonusDamage@ physical damage</physicalDamage> to non-champions.<br>Extra damage on trapped targets scales with {{Spell_CaitlynYordleTrap_Name}} rank.</rules>"
+            "keyTooltip": "Every @AttacksPerHeadshot@ Attacks, Caitlyn fires a <keywordMajor>Headshot</keywordMajor>. Attacks while in brush count as @BrushAttackTotal@ for building towards a <keywordMajor>Headshot</keywordMajor>.<br><br><keywordMajor>Headshots</keywordMajor> deal an additional <physicalDamage>@HeadShotBonusDamage@ physical damage</physicalDamage>. They have double range against enemies affected by <spellName>90 Caliber Net</spellName> and <spellName>Yordle Snap Trap</spellName>. <keywordMajor>Headshots</keywordMajor> against enemies hit by <spellName>Yordle Snap Trap</spellName> deal a further <physicalDamage>@spell.CaitlynW:HeadshotBonusDamage@ physical damage</physicalDamage>.",
+            "keyTooltipExtended": "Every @AttacksPerHeadshot@ Attacks, Caitlyn fires a <keywordMajor>Headshot</keywordMajor>. Attacks while in brush count as @BrushAttackTotal@ for building towards a <keywordMajor>Headshot</keywordMajor>.<br><br><keywordMajor>Headshots</keywordMajor> deal an additional <physicalDamage>@HeadShotBonusDamage@ physical damage</physicalDamage>. They have double range against enemies affected by <spellName>90 Caliber Net</spellName> and <spellName>Yordle Snap Trap</spellName>. <keywordMajor>Headshots</keywordMajor> against enemies hit by <spellName>Yordle Snap Trap</spellName> deal a further <physicalDamage>@spell.CaitlynW:HeadshotBonusDamage@ physical damage</physicalDamage>.<br><br><rules><keywordMajor>Headshot</keywordMajor> damage scales with level, Critical Strike Chance, and Critical Strike Damage.<br><keywordMajor>Headshots</keywordMajor> deal an additional <physicalDamage>@HeadShotMinionBonusDamage@ physical damage</physicalDamage> to non-champions.<br>Extra damage on trapped targets scales with Yordle Snap Trap rank.</rules>"
           },
           "mObjectName": "CaitlynPassive",
           "~class": "TooltipInstanceSpell"
@@ -1255,7 +1255,7 @@
         }
       ],
       "DataValuesModeOverride": {
-        "KIWI": {
+        "ARAM": {
           "SpellDataValues": [
             {
               "name": "tADRatio",
@@ -1273,7 +1273,7 @@
           ],
           "~class": "SpellDataValueVector"
         },
-        "ARAM": {
+        "Kiwi": {
           "SpellDataValues": [
             {
               "name": "tADRatio",
@@ -1387,7 +1387,7 @@
           "mLocKeys": {
             "keyName": "Piltover Peacemaker",
             "keySummary": "Caitlyn revs up her rifle for 1 second to unleash a penetrating shot that deals physical damage (deals less damage to subsequent targets).",
-            "keyTooltip": "Caitlyn revs her rifle to fire a piercing shot dealing <physicalDamage>@InitialDamage@ physical damage</physicalDamage>. After the bolt strikes the first target, it opens into a wider shot that deals <physicalDamage>@SecondaryDamage@ physical damage</physicalDamage>.<br><br>Enemies revealed by <spellName>{{Spell_CaitlynYordleTrap_Name}}</spellName> always take full damage."
+            "keyTooltip": "Caitlyn revs her rifle to fire a piercing shot dealing <physicalDamage>@InitialDamage@ physical damage</physicalDamage>. After the bolt strikes the first target, it opens into a wider shot that deals <physicalDamage>@SecondaryDamage@ physical damage</physicalDamage>.<br><br>Enemies revealed by <spellName>Yordle Snap Trap</spellName> always take full damage."
           },
           "mObjectName": "CaitlynQ",
           "~class": "TooltipInstanceSpell"

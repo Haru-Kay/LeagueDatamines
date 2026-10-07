@@ -1,14 +1,4 @@
 {
-  "0x78c5e75c": {
-    "ObjectName": "KledE2Target",
-    "mBuff": {
-      "mDescription": "<titleLeft>Jousting</titleLeft><mainText>This unit is marked for another round of Jousting.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
-      "~class": "BuffData"
-    },
-    "mScriptName": "KledE2Target",
-    "objectPath": "0x78c5e75c",
-    "~class": "SpellObject"
-  },
   "0xdcb5f24b": {
     "ObjectName": "KledRFormswapper",
     "mScriptName": "KledRFormswapper",
@@ -220,6 +210,16 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Kled/Spells/KledBasicAttack4",
+    "~class": "SpellObject"
+  },
+  "Characters/Kled/Spells/KledBasicAttack4/KledE2Target": {
+    "ObjectName": "KledE2Target",
+    "mBuff": {
+      "mDescription": "<titleLeft>Jousting</titleLeft><mainText>This unit is marked for another round of Jousting.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "KledE2Target",
+    "objectPath": "Characters/Kled/Spells/KledBasicAttack4/KledE2Target",
     "~class": "SpellObject"
   },
   "Characters/Kled/Spells/KledCritAttack": {
@@ -1042,8 +1042,8 @@
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
             "keyName": "Skaarl, the Cowardly Lizard",
-            "keyTooltip": "<keywordMajor>Mounted:</keywordMajor> Kled's mount Skaarl takes damage instead of Kled. When his Health depletes, Kled dismounts.<br><br><keywordMajor>Dismounted:</keywordMajor> Kled replaces <spellName>{{spell_KledQ_Name}}</spellName>, gains <speed>@DismountedMS@ Move Speed</speed> toward enemy champions, and he gains @DismountedResistBonus@ bonus <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR>, increased by @ResistBonusPerEnemy*100@% for each nearby enemy Champion, up to @DismountedResistBonusMax@. While dismounted, Kled's attacks deal @DismountedAttackPenalty@ reduced damage to Champions. <br><br>Kled gains <keywordMajor>@CourageVsChamps@ Courage</keywordMajor> by Attacking champions, <keywordMajor>@CourageVsOther@ Courage</keywordMajor> by Attacking epic monsters and structures, and <keywordMajor>@CourageLastHit@ Courage</keywordMajor> by killing minions. At max <keywordMajor>Courage</keywordMajor> Kled remounts with @SkaarlRemountHealth@ of Skaarl's Health, once every @MountCooldown@ seconds.",
-            "keyTooltipExtended": "{{Spell_KledPassive_Tooltip}}<br><br><rules>Skaarl has <healing>@SkaarlHealth@ Health plus 100% of Kled's bonus Health</healing>.<br>When Kled dismounts, he cleanses all crowd control and becomes briefly untargetable.</rules>"
+            "keyTooltip": "<keywordMajor>Mounted:</keywordMajor> Kled's mount Skaarl takes damage instead of Kled. When his Health depletes, Kled dismounts.<br><br><keywordMajor>Dismounted:</keywordMajor> Kled replaces <spellName>Bear Trap on a Rope</spellName>, gains <speed>@DismountedMS@ Move Speed</speed> toward enemy champions, and he gains @DismountedResistBonus@ bonus <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR>, increased by @ResistBonusPerEnemy*100@% for each nearby enemy Champion, up to @DismountedResistBonusMax@. While dismounted, Kled's attacks deal @DismountedAttackPenalty@ reduced damage to Champions. <br><br>Kled gains <keywordMajor>@CourageVsChamps@ Courage</keywordMajor> by Attacking champions, <keywordMajor>@CourageVsOther@ Courage</keywordMajor> by Attacking epic monsters and structures, and <keywordMajor>@CourageLastHit@ Courage</keywordMajor> by killing minions. At max <keywordMajor>Courage</keywordMajor> Kled remounts with @SkaarlRemountHealth@ of Skaarl's Health, once every @MountCooldown@ seconds.",
+            "keyTooltipExtended": "<keywordMajor>Mounted:</keywordMajor> Kled's mount Skaarl takes damage instead of Kled. When his Health depletes, Kled dismounts.<br><br><keywordMajor>Dismounted:</keywordMajor> Kled replaces <spellName>Bear Trap on a Rope</spellName>, gains <speed>@DismountedMS@ Move Speed</speed> toward enemy champions, and he gains @DismountedResistBonus@ bonus <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR>, increased by @ResistBonusPerEnemy*100@% for each nearby enemy Champion, up to @DismountedResistBonusMax@. While dismounted, Kled's attacks deal @DismountedAttackPenalty@ reduced damage to Champions. <br><br>Kled gains <keywordMajor>@CourageVsChamps@ Courage</keywordMajor> by Attacking champions, <keywordMajor>@CourageVsOther@ Courage</keywordMajor> by Attacking epic monsters and structures, and <keywordMajor>@CourageLastHit@ Courage</keywordMajor> by killing minions. At max <keywordMajor>Courage</keywordMajor> Kled remounts with @SkaarlRemountHealth@ of Skaarl's Health, once every @MountCooldown@ seconds.<br><br><rules>Skaarl has <healing>@SkaarlHealth@ Health plus 100% of Kled's bonus Health</healing>.<br>When Kled dismounts, he cleanses all crowd control and becomes briefly untargetable.</rules>"
           },
           "mObjectName": "KledPassive",
           "~class": "TooltipInstanceSpell"
@@ -1515,7 +1515,7 @@
             "keyName": "Bear Trap on a Rope",
             "keySummary": "Kled throws a bear trap that damages and hooks an enemy champion. If shackled for a short duration, the target takes additional physical damage and is yanked toward Kled.<br><br>When dismounted, this ability is replaced by Pocket Pistol, a ranged gun blast that knocks back Kled and restores courage.",
             "keyTooltip": "<keywordMajor>Mounted:</keywordMajor> Kled throws a bear trap that deals <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and hooks onto the first enemy champion or large jungle monster hit.<br><br>If Kled stays near a hooked enemy for @TetherPopTime@ seconds, he yanks out the trap, dealing <physicalDamage>@TotalYankDamage@ physical damage</physicalDamage>, <status>Pulling</status> them, and <status>Slowing</status> by @SlowAmount*-100@% for @SlowDuration@ seconds.",
-            "keyTooltipExtended": "{{spell_KledQ_Tooltip}}<br><br><keywordMajor>Dismounted:</keywordMajor> Kled fires a shotgun, dealing <physicalDamage>@DismountedQDamage@ physical damage</physicalDamage> and blasting Kled backward. Pellets beyond the first deal reduced damage.<br><br>Each pellet that hits an enemy champion or epic monster restores <keywordMajor>Courage</keywordMajor>.",
+            "keyTooltipExtended": "<keywordMajor>Mounted:</keywordMajor> Kled throws a bear trap that deals <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and hooks onto the first enemy champion or large jungle monster hit.<br><br>If Kled stays near a hooked enemy for @TetherPopTime@ seconds, he yanks out the trap, dealing <physicalDamage>@TotalYankDamage@ physical damage</physicalDamage>, <status>Pulling</status> them, and <status>Slowing</status> by @SlowAmount*-100@% for @SlowDuration@ seconds.<br><br><keywordMajor>Dismounted:</keywordMajor> Kled fires a shotgun, dealing <physicalDamage>@DismountedQDamage@ physical damage</physicalDamage> and blasting Kled backward. Pellets beyond the first deal reduced damage.<br><br>Each pellet that hits an enemy champion or epic monster restores <keywordMajor>Courage</keywordMajor>.",
             "keyTooltipExtendedBelowLine": "<rules>While hooked, Kled has <keywordStealth>True Sight</keywordStealth> to the enemy.<br>Deals @MinionDamageMultiplier*100@% damage to minions.</rules>"
           },
           "mObjectName": "KledQ",
@@ -2846,7 +2846,7 @@
             "keyName": "Pocket Pistol",
             "keySummary": "Kled fires a gun blast, hurling him backward. Hitting enemy champions restores <font color='#eae57e'>courage</font>.",
             "keyTooltip": "<keywordMajor>Dismounted:</keywordMajor> Kled fires a shotgun, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and blasting Kled backward. Pellets beyond the first deal reduced damage.<br><br>Each pellet that hits an enemy champion or epic monster restores <keywordMajor>Courage</keywordMajor>.",
-            "keyTooltipExtended": "{{spell_KledRiderQ_Tooltip}}<br><br><keywordMajor>Mounted:</keywordMajor> Kled throws a bear trap that deals <physicalDamage>@MountedQCalc@ physical damage</physicalDamage> and hooks onto the first enemy champion or large jungle monster hit.<br><br>If Kled stays near a hooked enemy for @spell.KledQ:TetherPopTime@ seconds, he yanks out the trap, dealing <physicalDamage>@spell.KledQ:TotalYankDamage@ physical damage</physicalDamage>, <status>Pulling</status> them and <status>Slowing</status> by @spell.KledQ:SlowAmount*-100@% for @spell.KledQ:SlowDuration@ seconds.",
+            "keyTooltipExtended": "<keywordMajor>Dismounted:</keywordMajor> Kled fires a shotgun, dealing <physicalDamage>@TotalDamage@ physical damage</physicalDamage> and blasting Kled backward. Pellets beyond the first deal reduced damage.<br><br>Each pellet that hits an enemy champion or epic monster restores <keywordMajor>Courage</keywordMajor>.<br><br><keywordMajor>Mounted:</keywordMajor> Kled throws a bear trap that deals <physicalDamage>@MountedQCalc@ physical damage</physicalDamage> and hooks onto the first enemy champion or large jungle monster hit.<br><br>If Kled stays near a hooked enemy for @spell.KledQ:TetherPopTime@ seconds, he yanks out the trap, dealing <physicalDamage>@spell.KledQ:TotalYankDamage@ physical damage</physicalDamage>, <status>Pulling</status> them and <status>Slowing</status> by @spell.KledQ:SlowAmount*-100@% for @spell.KledQ:SlowDuration@ seconds.",
             "keyTooltipExtendedBelowLine": "<rules>Restore @CouragePerPellet@ <keywordMajor>Courage</keywordMajor> per hit against champions, and @CouragePerPellet*0.5@ against epic monsters.<br>Deals @FalloffPerMissile*100@% damage per hit beyond the first.</rules>"
           },
           "mObjectName": "KledRiderQ",

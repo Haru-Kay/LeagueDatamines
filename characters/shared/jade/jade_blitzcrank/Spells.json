@@ -1,450 +1,4 @@
 {
-  "0x3464132a": {
-    "ObjectName": "Jade_BlitzcrankManaBarrier",
-    "mBuff": {
-      "mDescription": "<titleLeft>Mana Barrier Active</titleLeft><mainText>Blitzcrank's Mana Barrier is active, absorbing all damage taken until the shield is broken.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
-      "mTooltipData": {
-        "mFormat": "0xb34f999a",
-        "mLocKeys": {
-          "keyName": "Mana Barrier",
-          "keyTooltip": "Blitzcrank's Mana Barrier is active, absorbing all damage taken until the shield is broken."
-        },
-        "mObjectName": "Jade_BlitzcrankManaBarrier",
-        "~class": "TooltipInstanceBuff"
-      },
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_BlitzcrankManaBarrier",
-    "mSpell": {
-      "SpellEventToAudioEventSuffix": {
-        "18": "Play_sfx_Blitzcrank_ManaBarrier_OnBuffActivate"
-      },
-      "mImgIconName": [
-        "assets/ux/jade/s3icons/samesized/blitzcrank_manabarrier.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x3464132a",
-    "~class": "SpellObject"
-  },
-  "0x3e3cc3c7": {
-    "ObjectName": "Jade_BlitzcrankManaBarrierIcon",
-    "mBuff": {
-      "mDescription": "<titleLeft>Mana Barrier</titleLeft><mainText>Blitzcrank's Mana Barrier can activate once every 90 seconds when he falls below 20% Health. This creates a Mana Shield equal to 30% of his maximum Mana that lasts up to 10 seconds.</mainText>",
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_BlitzcrankManaBarrierIcon",
-    "mSpell": {
-      "DataValues": [
-        {
-          "name": "HealthThreshold",
-          "values": [
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224,
-            0.20000000298023224
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "ShieldDuration",
-          "values": [
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "Cooldown",
-          "values": [
-            90.0,
-            90.0,
-            90.0,
-            90.0,
-            90.0,
-            90.0,
-            90.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "ManaRatio",
-          "values": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
-          ],
-          "~class": "SpellDataValue"
-        }
-      ],
-      "castRange": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "castRangeValues": {
-        "Default": 0.0,
-        "values": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "mClientData": {
-        "mTooltipData": {
-          "mFormat": "0x476ec0b8",
-          "mLocKeys": {
-            "keyName": "Mana Barrier",
-            "keySummary": "When taking damage at low Health, Blitzcrank is first Shielded for a percent of their current Mana. This effect has a cooldown.",
-            "keyTooltip": "When taking damage while below @HealthThreshold*100@% Health, Blitzcrank is first <shield>Shielded</shield> for @ManaRatio*100@% of their current Mana for @ShieldDuration@ seconds. <spellName>Mana Barrier</spellName> can activate once every @Cooldown@ seconds."
-          },
-          "mObjectName": "Jade_BlitzcrankManaBarrierIcon",
-          "~class": "TooltipInstanceSpell"
-        },
-        "~class": "SpellDataResourceClient"
-      },
-      "mImgIconName": [
-        "assets/ux/jade/s3icons/samesized/blitzcrank_manabarrier.dds"
-      ],
-      "mSpellCalculations": {
-        "MaxHealthThreshold": {
-          "mFormulaParts": [
-            {
-              "mDataValue": "HealthThreshold",
-              "mStat": 12,
-              "~class": "StatByNamedDataValueCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        }
-      },
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x3e3cc3c7",
-    "~class": "SpellObject"
-  },
-  "0x4308f67": {
-    "ObjectName": "Jade_BlitzcrankPowerFistAttack",
-    "mScriptName": "Jade_BlitzcrankPowerFistAttack",
-    "mSpell": {
-      "Cooldown": {
-        "Default": 0.0,
-        "values": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "SpellEventToAudioEventSuffix": {
-        "12": "Play_sfx_Blitzcrank_PowerFistAttack_OnCast"
-      },
-      "bHaveHitEffect": true,
-      "castConeDistance": 100.0,
-      "castFrame": 12.960000038146973,
-      "castRadius": [
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0
-      ],
-      "castRange": [
-        49.400001525878906,
-        49.400001525878906,
-        49.400001525878906,
-        49.400001525878906,
-        49.400001525878906,
-        49.400001525878906,
-        49.400001525878906
-      ],
-      "castRangeValues": {
-        "Default": 49.400001525878906,
-        "values": [
-          49.400001525878906,
-          49.400001525878906,
-          49.400001525878906,
-          49.400001525878906,
-          49.400001525878906,
-          49.400001525878906,
-          49.400001525878906
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "cooldownTime": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mAffectsTypeFlags": 8143,
-      "mAfterEffectKey": "Jade_Blitzcrank_E_tar_blood",
-      "mAlternateName": "Jade_Blitzcrank_PowerFist",
-      "mAnimationName": "Spell3",
-      "mCantCancelWhileWindingUp": true,
-      "mClientData": {
-        "mTargeterDefinitions": [
-          {
-            "~class": "TargeterDefinitionRange"
-          },
-          {
-            "centerLocator": {
-              "basePosition": 3,
-              "~class": "DrawablePositionLocator"
-            },
-            "~class": "TargeterDefinitionAoe"
-          }
-        ],
-        "~class": "SpellDataResourceClient"
-      },
-      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
-      "mHitEffectKey": "Jade_Blitzcrank_E_tar_1",
-      "mTargetingTypeData": {
-        "~class": "Area"
-      },
-      "missileSpeed": 0.0,
-      "selectionPriority": 1,
-      "spellCastTime": 0.34389999508857727,
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x4308f67",
-    "~class": "SpellObject"
-  },
-  "0x6459c6bb": {
-    "ObjectName": "Jade_BlitzcrankManaBarrierCooldown",
-    "mBuff": {
-      "mDescription": "game_buff_tooltip_Jade_BlitzcrankManaBarrierCD",
-      "mTooltipData": {
-        "mFormat": "0xb34f999a",
-        "mLocKeys": {
-          "keyName": "Mana Barrier Recharging",
-          "keyTooltip": "Blitzcrank's Mana Barrier is recharging."
-        },
-        "mObjectName": "Jade_BlitzcrankManaBarrierCooldown",
-        "~class": "TooltipInstanceBuff"
-      },
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_BlitzcrankManaBarrierCooldown",
-    "mSpell": {
-      "mImgIconName": [
-        "assets/ux/jade/s3icons/samesized/blitzcrank_manabarriercd.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x6459c6bb",
-    "~class": "SpellObject"
-  },
-  "0x78031576": {
-    "ObjectName": "Jade_BlitzcrankPowerFistSlow",
-    "mBuff": {
-      "mDescription": "<titleLeft>Power Fist</titleLeft><mainText>This unit is airborne.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
-      "mTooltipData": {
-        "mFormat": "0xb34f999a",
-        "mLocKeys": {
-          "keyName": "Power Fist",
-          "keyTooltip": "This unit is airborne."
-        },
-        "mObjectName": "Jade_BlitzcrankPowerFistSlow",
-        "~class": "TooltipInstanceBuff"
-      },
-      "~class": "BuffData"
-    },
-    "mScriptName": "Jade_BlitzcrankPowerFistSlow",
-    "mSpell": {
-      "mImgIconName": [
-        "assets/ux/jade/s3icons/samesized/blitzcrank_powerfist.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0x78031576",
-    "~class": "SpellObject"
-  },
-  "0xbdc45b51": {
-    "ObjectName": "Jade_BlitzcrankRocketGrabMissile",
-    "mScriptName": "Jade_BlitzcrankRocketGrabMissile",
-    "mSpell": {
-      "Cooldown": {
-        "values": [
-          23.0,
-          22.0,
-          21.0,
-          20.0,
-          19.0,
-          18.0,
-          18.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "SpellEventToAudioEventSuffix": {
-        "13": "Play_sfx_Blitzcrank_RocketGrabMissile_OnHit",
-        "16": "Play_sfx_Blitzcrank_RocketGrabMissile_OnMissileLaunch"
-      },
-      "bHaveHitBone": true,
-      "castConeDistance": 100.0,
-      "castFrame": 7.5,
-      "castRadius": [
-        210.0,
-        210.0,
-        210.0,
-        210.0,
-        210.0,
-        210.0,
-        210.0
-      ],
-      "castRange": [
-        1080.0,
-        1080.0,
-        1080.0,
-        1080.0,
-        1080.0,
-        1080.0,
-        1080.0
-      ],
-      "castRangeDisplayOverride": [
-        1050.0,
-        1050.0,
-        1050.0,
-        1050.0,
-        1050.0,
-        1050.0,
-        1050.0
-      ],
-      "castRangeValues": {
-        "Default": 1050.0,
-        "values": [
-          1050.0,
-          1050.0,
-          1050.0,
-          1050.0,
-          1050.0,
-          1050.0,
-          1050.0
-        ],
-        "~class": "SpellAttributeModifiable"
-      },
-      "cooldownTime": [
-        23.0,
-        22.0,
-        21.0,
-        20.0,
-        19.0,
-        18.0,
-        18.0
-      ],
-      "flags": 4,
-      "mAffectsTypeFlags": 6154,
-      "mAlternateName": "Jade_Blitzcrank_RocketGrabMissile",
-      "mAnimationName": "Spell1",
-      "mCantCancelWhileWindingUp": true,
-      "mCastType": 3,
-      "mClientData": {
-        "mTargeterDefinitions": [
-          {
-            "hideWithLineIndicator": true,
-            "useCasterBoundingBox": false,
-            "~class": "TargeterDefinitionRange"
-          },
-          {
-            "endLocator": {
-              "basePosition": 3,
-              "~class": "DrawablePositionLocator"
-            },
-            "lineStopsAtEndPosition": false,
-            "lineWidth": {
-              "mPerLevelValues": [
-                70.0,
-                70.0,
-                70.0,
-                70.0,
-                70.0,
-                70.0
-              ],
-              "mValueType": 2,
-              "~class": "FloatPerSpellLevel"
-            },
-            "~class": "TargeterDefinitionLine"
-          }
-        ],
-        "~class": "SpellDataResourceClient"
-      },
-      "mHitBoneName": "root",
-      "mImgIconName": [
-        "assets/characters/jade_blitzcrank/hud/icons2d/jade_blitzcrank_rocketgrab.dds"
-      ],
-      "mLineWidth": 70.0,
-      "mMissileEffectKey": "Jade_Blitzcrank_Q_mis",
-      "mMissileSpec": {
-        "behaviors": [
-          {
-            "~class": "CastOnHit"
-          },
-          {
-            "~class": "DestroyOnMovementComplete"
-          },
-          {
-            "~class": "DestroyOnHit"
-          }
-        ],
-        "heightSolver": {
-          "~class": "BlendedLinearHeightSolver"
-        },
-        "mMissileWidth": 70.0,
-        "movementComponent": {
-          "mOffsetInitialTargetHeight": 100.0,
-          "mProjectTargetToCastRange": true,
-          "mSpeed": 1800.0,
-          "mStartBoneName": "R_hand",
-          "mTracksTarget": false,
-          "mUseHeightOffsetAtEnd": true,
-          "~class": "FixedSpeedMovement"
-        },
-        "verticalFacing": {
-          "~class": "VerticalFacingFaceTarget"
-        },
-        "~class": "MissileSpecification"
-      },
-      "mTargetingTypeData": {
-        "~class": "Location"
-      },
-      "missileSpeed": 1800.0,
-      "spellCastTime": 0.25,
-      "spellTotalTime": 1.0,
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xbdc45b51",
-    "~class": "SpellObject"
-  },
   "Characters/Jade_Blitzcrank/Spells/Jade_BlitzcrankBasicAttack": {
     "ObjectName": "Jade_BlitzcrankBasicAttack",
     "mScriptName": "Jade_BlitzcrankBasicAttack",
@@ -733,6 +287,176 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jade_Blitzcrank/Spells/Jade_BlitzcrankCritAttack",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Blitzcrank/Spells/Jade_BlitzcrankManaBarrierIconAbility/Jade_BlitzcrankManaBarrier": {
+    "ObjectName": "Jade_BlitzcrankManaBarrier",
+    "mBuff": {
+      "mDescription": "<titleLeft>Mana Barrier Active</titleLeft><mainText>Blitzcrank's Mana Barrier is active, absorbing all damage taken until the shield is broken.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Mana Barrier",
+          "keyTooltip": "Blitzcrank's Mana Barrier is active, absorbing all damage taken until the shield is broken."
+        },
+        "mObjectName": "Jade_BlitzcrankManaBarrier",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_BlitzcrankManaBarrier",
+    "mSpell": {
+      "SpellEventToAudioEventSuffix": {
+        "18": "Play_sfx_Blitzcrank_ManaBarrier_OnBuffActivate"
+      },
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/blitzcrank_manabarrier.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Blitzcrank/Spells/Jade_BlitzcrankManaBarrierIconAbility/Jade_BlitzcrankManaBarrier",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Blitzcrank/Spells/Jade_BlitzcrankManaBarrierIconAbility/Jade_BlitzcrankManaBarrierCooldown": {
+    "ObjectName": "Jade_BlitzcrankManaBarrierCooldown",
+    "mBuff": {
+      "mDescription": "game_buff_tooltip_Jade_BlitzcrankManaBarrierCD",
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Mana Barrier Recharging",
+          "keyTooltip": "Blitzcrank's Mana Barrier is recharging."
+        },
+        "mObjectName": "Jade_BlitzcrankManaBarrierCooldown",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_BlitzcrankManaBarrierCooldown",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/blitzcrank_manabarriercd.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Blitzcrank/Spells/Jade_BlitzcrankManaBarrierIconAbility/Jade_BlitzcrankManaBarrierCooldown",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Blitzcrank/Spells/Jade_BlitzcrankManaBarrierIconAbility/Jade_BlitzcrankManaBarrierIcon": {
+    "ObjectName": "Jade_BlitzcrankManaBarrierIcon",
+    "mBuff": {
+      "mDescription": "<titleLeft>Mana Barrier</titleLeft><mainText>Blitzcrank's Mana Barrier can activate once every 90 seconds when he falls below 20% Health. This creates a Mana Shield equal to 30% of his maximum Mana that lasts up to 10 seconds.</mainText>",
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_BlitzcrankManaBarrierIcon",
+    "mSpell": {
+      "DataValues": [
+        {
+          "name": "HealthThreshold",
+          "values": [
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ShieldDuration",
+          "values": [
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "Cooldown",
+          "values": [
+            90.0,
+            90.0,
+            90.0,
+            90.0,
+            90.0,
+            90.0,
+            90.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ManaRatio",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "castRange": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "castRangeValues": {
+        "Default": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyName": "Mana Barrier",
+            "keySummary": "When taking damage at low Health, Blitzcrank is first Shielded for a percent of their current Mana. This effect has a cooldown.",
+            "keyTooltip": "When taking damage while below @HealthThreshold*100@% Health, Blitzcrank is first <shield>Shielded</shield> for @ManaRatio*100@% of their current Mana for @ShieldDuration@ seconds. <spellName>Mana Barrier</spellName> can activate once every @Cooldown@ seconds."
+          },
+          "mObjectName": "Jade_BlitzcrankManaBarrierIcon",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/blitzcrank_manabarrier.dds"
+      ],
+      "mSpellCalculations": {
+        "MaxHealthThreshold": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "HealthThreshold",
+              "mStat": 12,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Blitzcrank/Spells/Jade_BlitzcrankManaBarrierIconAbility/Jade_BlitzcrankManaBarrierIcon",
     "~class": "SpellObject"
   },
   "Characters/Jade_Blitzcrank/Spells/Jade_BlitzcrankOverdriveAbility/Jade_BlitzcrankOverdrive": {
@@ -1106,6 +830,127 @@
     "objectPath": "Characters/Jade_Blitzcrank/Spells/Jade_BlitzcrankPowerFistAbility/Jade_BlitzcrankPowerFist",
     "~class": "SpellObject"
   },
+  "Characters/Jade_Blitzcrank/Spells/Jade_BlitzcrankPowerFistAbility/Jade_BlitzcrankPowerFistAttack": {
+    "ObjectName": "Jade_BlitzcrankPowerFistAttack",
+    "mScriptName": "Jade_BlitzcrankPowerFistAttack",
+    "mSpell": {
+      "Cooldown": {
+        "Default": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Blitzcrank_PowerFistAttack_OnCast"
+      },
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 12.960000038146973,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906,
+        49.400001525878906
+      ],
+      "castRangeValues": {
+        "Default": 49.400001525878906,
+        "values": [
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906,
+          49.400001525878906
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 8143,
+      "mAfterEffectKey": "Jade_Blitzcrank_E_tar_blood",
+      "mAlternateName": "Jade_Blitzcrank_PowerFist",
+      "mAnimationName": "Spell3",
+      "mCantCancelWhileWindingUp": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "centerLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "~class": "TargeterDefinitionAoe"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "Jade_Blitzcrank_E_tar_1",
+      "mTargetingTypeData": {
+        "~class": "Area"
+      },
+      "missileSpeed": 0.0,
+      "selectionPriority": 1,
+      "spellCastTime": 0.34389999508857727,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Blitzcrank/Spells/Jade_BlitzcrankPowerFistAbility/Jade_BlitzcrankPowerFistAttack",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Blitzcrank/Spells/Jade_BlitzcrankPowerFistAbility/Jade_BlitzcrankPowerFistSlow": {
+    "ObjectName": "Jade_BlitzcrankPowerFistSlow",
+    "mBuff": {
+      "mDescription": "<titleLeft>Power Fist</titleLeft><mainText>This unit is airborne.</mainText><postScriptLeft>Source: @SourceName@</postScriptLeft>",
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Power Fist",
+          "keyTooltip": "This unit is airborne."
+        },
+        "mObjectName": "Jade_BlitzcrankPowerFistSlow",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_BlitzcrankPowerFistSlow",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/blitzcrank_powerfist.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Blitzcrank/Spells/Jade_BlitzcrankPowerFistAbility/Jade_BlitzcrankPowerFistSlow",
+    "~class": "SpellObject"
+  },
   "Characters/Jade_Blitzcrank/Spells/Jade_BlitzcrankRocketGrabAbility/Jade_BlitzcrankRocketGrab": {
     "ObjectName": "Jade_BlitzcrankRocketGrab",
     "mBuff": {
@@ -1339,6 +1184,161 @@
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jade_Blitzcrank/Spells/Jade_BlitzcrankRocketGrabAbility/Jade_BlitzcrankRocketGrab",
+    "~class": "SpellObject"
+  },
+  "Characters/Jade_Blitzcrank/Spells/Jade_BlitzcrankRocketGrabAbility/Jade_BlitzcrankRocketGrabMissile": {
+    "ObjectName": "Jade_BlitzcrankRocketGrabMissile",
+    "mScriptName": "Jade_BlitzcrankRocketGrabMissile",
+    "mSpell": {
+      "Cooldown": {
+        "values": [
+          23.0,
+          22.0,
+          21.0,
+          20.0,
+          19.0,
+          18.0,
+          18.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "13": "Play_sfx_Blitzcrank_RocketGrabMissile_OnHit",
+        "16": "Play_sfx_Blitzcrank_RocketGrabMissile_OnMissileLaunch"
+      },
+      "bHaveHitBone": true,
+      "castConeDistance": 100.0,
+      "castFrame": 7.5,
+      "castRadius": [
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0,
+        210.0
+      ],
+      "castRange": [
+        1080.0,
+        1080.0,
+        1080.0,
+        1080.0,
+        1080.0,
+        1080.0,
+        1080.0
+      ],
+      "castRangeDisplayOverride": [
+        1050.0,
+        1050.0,
+        1050.0,
+        1050.0,
+        1050.0,
+        1050.0,
+        1050.0
+      ],
+      "castRangeValues": {
+        "Default": 1050.0,
+        "values": [
+          1050.0,
+          1050.0,
+          1050.0,
+          1050.0,
+          1050.0,
+          1050.0,
+          1050.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        23.0,
+        22.0,
+        21.0,
+        20.0,
+        19.0,
+        18.0,
+        18.0
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 6154,
+      "mAlternateName": "Jade_Blitzcrank_RocketGrabMissile",
+      "mAnimationName": "Spell1",
+      "mCantCancelWhileWindingUp": true,
+      "mCastType": 3,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "hideWithLineIndicator": true,
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "endLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "lineStopsAtEndPosition": false,
+            "lineWidth": {
+              "mPerLevelValues": [
+                70.0,
+                70.0,
+                70.0,
+                70.0,
+                70.0,
+                70.0
+              ],
+              "mValueType": 2,
+              "~class": "FloatPerSpellLevel"
+            },
+            "~class": "TargeterDefinitionLine"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "root",
+      "mImgIconName": [
+        "assets/characters/jade_blitzcrank/hud/icons2d/jade_blitzcrank_rocketgrab.dds"
+      ],
+      "mLineWidth": 70.0,
+      "mMissileEffectKey": "Jade_Blitzcrank_Q_mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnHit"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnHit"
+          }
+        ],
+        "heightSolver": {
+          "~class": "BlendedLinearHeightSolver"
+        },
+        "mMissileWidth": 70.0,
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mProjectTargetToCastRange": true,
+          "mSpeed": 1800.0,
+          "mStartBoneName": "R_hand",
+          "mTracksTarget": false,
+          "mUseHeightOffsetAtEnd": true,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VerticalFacingFaceTarget"
+        },
+        "~class": "MissileSpecification"
+      },
+      "mTargetingTypeData": {
+        "~class": "Location"
+      },
+      "missileSpeed": 1800.0,
+      "spellCastTime": 0.25,
+      "spellTotalTime": 1.0,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "Characters/Jade_Blitzcrank/Spells/Jade_BlitzcrankRocketGrabAbility/Jade_BlitzcrankRocketGrabMissile",
     "~class": "SpellObject"
   },
   "Characters/Jade_Blitzcrank/Spells/Jade_BlitzcrankStaticFieldAbility/Jade_BlitzcrankStaticField": {

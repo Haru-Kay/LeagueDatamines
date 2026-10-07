@@ -807,8 +807,8 @@
         "mTooltipData": {
           "mFormat": "0x3b504ce3",
           "mLocKeys": {
-            "keyName": "{{Spell_KennenE_Jade_Name}} Cancel",
-            "keyTooltip": "Cancel <spellName>{{Spell_KennenE_Jade_Name}}</spellName>"
+            "keyName": "Lightning Rush Cancel",
+            "keyTooltip": "Cancel <spellName>Lightning Rush</spellName>"
           },
           "mObjectName": "Jade_KennenECancel",
           "~class": "TooltipInstanceSpell"
@@ -1771,13 +1771,13 @@
         {
           "name": "PassiveOnHitADRatio",
           "values": [
-            0.30000001192092896,
-            0.4000000059604645,
-            0.5,
-            0.6000000238418579,
-            0.699999988079071,
-            0.800000011920929,
-            0.8999999761581421
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
           ],
           "~class": "SpellDataValue"
         },
@@ -1791,6 +1791,19 @@
             5.0,
             5.0,
             5.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseDamagePassive",
+          "values": [
+            10.0,
+            25.0,
+            40.0,
+            55.0,
+            70.0,
+            85.0,
+            100.0
           ],
           "~class": "SpellDataValue"
         }
@@ -1858,17 +1871,15 @@
             "LevelUp": {
               "Elements": [
                 {
-                  "nameOverride": "Damage",
-                  "type": "BaseDamageActive",
-                  "typeIndex": 1,
+                  "nameOverride": "Passive Damage",
+                  "type": "BaseDamagePassive",
+                  "typeIndex": 3,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
-                  "Style": 1,
-                  "multiplier": 100.0,
-                  "nameOverride": "Passive Total AD Scaling",
-                  "type": "PassiveOnHitADRatio",
-                  "typeIndex": 3,
+                  "nameOverride": "Damage",
+                  "type": "BaseDamageActive",
+                  "typeIndex": 1,
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -1929,32 +1940,17 @@
         "TotalDamagePassive": {
           "mFormulaParts": [
             {
+              "mDataValue": "BaseDamagePassive",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
               "mDataValue": "PassiveOnHitADRatio",
               "mStat": 2,
+              "mStatFormula": 2,
               "~class": "StatByNamedDataValueCalculationPart"
             }
           ],
-          "mSimpleTooltipCalculationDisplay": 6,
           "~class": "GameCalculation"
-        },
-        "TotalDamagePassiveCrit": {
-          "mModifiedGameCalculation": "TotalDamagePassive",
-          "mMultiplier": {
-            "mSubparts": [
-              {
-                "mNumber": 1.399999976158142,
-                "~class": "NumberCalculationPart"
-              },
-              {
-                "mCoefficient": 0.4000000059604645,
-                "mStat": 9,
-                "mStatFormula": 2,
-                "~class": "StatByCoefficientCalculationPart"
-              }
-            ],
-            "~class": "SumOfSubPartsCalculationPart"
-          },
-          "~class": "GameCalculationModified"
         }
       },
       "mSpellTags": [

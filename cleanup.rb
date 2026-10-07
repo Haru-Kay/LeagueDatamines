@@ -26,9 +26,6 @@ $manualHash.merge!({
     "7a1cab0d" => "TexturePath",
     "898bb7cb" => "MilestoneData",
     "c88f1a9b" => "QuestTooltipTra",
-    "8d31b69b" => "QuestData",
-    "3ed971bd" => "LinkedQuest",
-    "e93de85a" => "LinkedQuestData",
     "b35aa769" => "BaseValue", 
     "1262a25" => "mrPerLevel", 
     "18956a21" => "armorPerLevel",
@@ -133,7 +130,19 @@ $manualHash.merge!({
     "5c690cf3" => "RangedCasterAP",
     "995ac030" => "RangedCasterBurst",
     "99d70c96" => "SharpLateGameScaling",
+    "581cd96c" => "APConversion",
+    "931f8dbe" => "APConversionRate",
+    "30079922" => "ADConversionRate",
+    "9d8c75c8" => "MaxRangeHealPercent",
+    "7e382db3" => "MaxDistanceProximity",
+    "b076eb71" => "IncreasedDamageTooltip",
+    "c9393610" => "ASPerEnemy",
+    "f3477415" => "PercentHealthBase",
+    "8ad21bd6" => "PercentHealthPerAP",
 
+
+    "3445d362" => "QCritDamageMod",
+    "dd06bf3e" => "TiamatGold",
     "b945e5f7" => "GoldGrantingAugments",
     "8aa4910b" => "AutocastAugments",
     "794c79e3" => "AutocastAugmentsARAM",
@@ -693,7 +702,7 @@ def augmentSearcher(key, data, version=0)
             "dataValues" => {},
             "calculations" => {},
             "add" => {},
-            "quest" => data.fetch("LinkedQuest", data.fetch("0x3ed971bd", "")),
+            "quest" => data.fetch("QuestData", ""),
             "icons" => [
                 data.fetch("AugmentSmallIconPath", ""),
                 data.fetch("AugmentLargeIconPath", "")            
@@ -760,7 +769,7 @@ def augmentSearcher(key, data, version=0)
             end
         }
 
-        maxAugmentData = data.dig("0x791eb92e")&.dig("0x5753a320")
+        maxAugmentData = data.dig("AugmentLevelData")&.dig("CapstoneData")
         if maxAugmentData
             aug["maxLevelTooltip"] = maxAugmentData.fetch("0x5835d27", {})
             aug["maxLevelSummary"] = maxAugmentData.fetch("0xc98a82ca", {})
@@ -902,7 +911,7 @@ def applyLang(obj)
         when Array
             obj.map { |v| applyLang(v) }
         when String
-            return itemNameLangFix($lang.fetch(obj.downcase, obj))
+            return nestedStringFix(itemNameLangFix($lang.fetch(obj.downcase, obj)))
         else
             return obj
     end
@@ -935,6 +944,19 @@ def assetNameFix(obj)
     end
 end
 
+def nestedStringFix(string)
+    ret = string
+    tries = 0
+    while ret.include?("{{") && tries < 2
+        ret.gsub!(/\{\{.*?\}\}/) { |match|
+            expr = match[2..-3].strip.downcase
+            next $lang.fetch(expr, match)
+        }
+        tries += 1
+    end
+    return ret
+end
+
 def itemNameLangFix(value)
     return value if !value.is_a?(String)
     return value if !value.match?("^Items/[0-9]+$") && !value.match(/\d+/)
@@ -956,12 +978,7 @@ def itemNameLangFix(value)
         end
     end
 
-    if ret.include?("{{")
-        ret.gsub!(/\{\{ .*? \}\}/) { |match|
-            expr = match[2..-3].strip.downcase
-            next $lang.fetch(expr, match)
-        }
-    end
+    ret = nestedStringFix(ret)
     
     if id&.length == 4
         ret = "Swarm/#{ret}" if id.start_with?("9")
@@ -1334,6 +1351,9 @@ diff()
                 when "0xadaf4f78", "0xf9e46502"
                     type = "AugmentOperators"
                     data = applyLangKeys(applyLang(data))
+                when "0x5c8aed6"
+                    type = "GuestOfHonorData"
+                    data = applyLangKeys(applyLang(data))
                 when "0xfead7e9b"#, "AugmentGroups"
                     type = "AugmentGroups"
                     data = applyLangKeys(applyLang(data))
@@ -1389,11 +1409,15 @@ diff()
                 type = "AugmentList"
                 data = applyLangKeys(applyLang(data))
                 augmentList = data["AugmentList"]
-            when "0x8d31b69b", "ModesQuests"
-                type = "ModesQuests"
+            when "ModesQuestData"
                 data = applyLangKeys(applyLang(data))
             when "0xa0ffdf09"
                 type = "AugmentQuestList"
+                data = applyLangKeys(applyLang(data))
+            when "0x5c8aed6"
+                type = "GuestOfHonorData"
+                data = applyLangKeys(applyLang(data))
+            when "NarrativeBarksList"
                 data = applyLangKeys(applyLang(data))
             else
                 #do nothing
@@ -1411,7 +1435,7 @@ diff()
         end
 
         if augment["quest"]
-            augment["quest"] = buildAugmentQuest(augment, aramOther["ModesQuests"][augment["quest"]["Quest"]])
+            augment["quest"] = buildAugmentQuest(augment, aramOther["ModesQuestData"][augment["quest"]["Quest"]])
         end
     }
     File.open("aram/mayhem/augments/augments.json", 'wb') { |f| f.write(JSON.pretty_generate(aramAugments.sort_by { |a| a["id"] })) }
@@ -1449,8 +1473,7 @@ diff()
                 type = "AugmentList"
                 data = applyLangKeys(applyLang(data))
                 augmentList = data["AugmentList"]
-            when "0x8d31b69b", "ModesQuests"
-                type = "ModesQuests"
+            when "ModesQuestData"
                 data = applyLangKeys(applyLang(data))
             when "0xa0ffdf09"
                 type = "AugmentQuestList"
@@ -1471,7 +1494,7 @@ diff()
         end
 
         if augment["quest"]
-            augment["quest"] = buildAugmentQuest(augment, aramOther["ModesQuests"][augment["quest"]["Quest"]])
+            augment["quest"] = buildAugmentQuest(augment, aramOther["ModesQuestData"][augment["quest"]["Quest"]])
         end
     }
     File.open("aram/jade/augments/augments.json", 'wb') { |f| f.write(JSON.pretty_generate(aramAugments.sort_by { |a| a["id"] })) }
