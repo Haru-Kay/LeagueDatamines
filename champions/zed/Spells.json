@@ -811,12 +811,6 @@
     },
     "mScriptName": "ZedPassive",
     "mSpell": {
-      "0xfe87f21e": [
-        {
-          "0x6166b756": "FinalDamage",
-          "~class": "0xfe87f21e"
-        }
-      ],
       "DataValues": [
         {
           "name": "CurrentHealthThreshold",
@@ -917,6 +911,12 @@
           "~class": "SpellDataValueVector"
         }
       },
+      "LastHitData": [
+        {
+          "0x6166b756": "FinalDamage",
+          "~class": "LastHitData"
+        }
+      ],
       "castRange": [
         0.0,
         0.0,
@@ -946,7 +946,7 @@
             "keyName": "Contempt for the Weak",
             "keySummary": "Zed's basic attacks against low health targets deals bonus Magic Damage. This effect can only occur once every few seconds against the same enemy champion.",
             "keyTooltip": "Whenever Zed Attacks an enemy below @CurrentHealthThreshold*100@% Health, he deals an additional <magicDamage>@MaxHPDamage@ max Health magic damage</magicDamage>. Enemy champions can only be hit once every @PerUnitCD@ seconds.",
-            "keyTooltipExtended": "{{Spell_ZedPassive_Tooltip}}<br><br><rules>This Ability deals @MonsterDamageMod*100@% damage to jungle monsters, capped at @MonsterDamageCap@ damage to epic monsters.</rules>"
+            "keyTooltipExtended": "Whenever Zed Attacks an enemy below @CurrentHealthThreshold*100@% Health, he deals an additional <magicDamage>@MaxHPDamage@ max Health magic damage</magicDamage>. Enemy champions can only be hit once every @PerUnitCD@ seconds.<br><br><rules>This Ability deals @MonsterDamageMod*100@% damage to jungle monsters, capped at @MonsterDamageCap@ damage to epic monsters.</rules>"
           },
           "mObjectName": "ZedPassive",
           "~class": "TooltipInstanceSpell"
@@ -1690,7 +1690,7 @@
             "keyName": "Death Mark",
             "keySummary": "Zed becomes untargetable and dashes to an enemy champion, marking them. After 3 seconds the mark triggers, repeating a portion of all the damage Zed dealt to the target while they were marked.",
             "keyTooltip": "Zed becomes Untargetable and dashes to an enemy champion, marking them. After @RDeathMarkDuration@ seconds, the mark triggers, dealing <physicalDamage>@RCalculatedDamage@ physical damage</physicalDamage> and repeating @RDamageAmp*100@% of all damage dealt to the target by Zed while the mark was active.<br><br>The dash leaves a <keywordMajor>Shadow</keywordMajor> behind for @RShadowDurationDisplayed@ seconds. Zed can <recast>Recast</recast> this Ability to switch positions with this <keywordMajor>Shadow</keywordMajor>.",
-            "keyTooltipExtendedBelowLine": "<rules>{{Reminder_Untargetable}}</rules><br><rules>The <keywordMajor>Shadow</keywordMajor> remains for an extra 1.5 seconds after the recast window ends.</rules>"
+            "keyTooltipExtendedBelowLine": "<rules>Untargetable units won't be affected by enemy Attacks or Abilities unless they've already been hit by them.</rules><br><rules>The <keywordMajor>Shadow</keywordMajor> remains for an extra 1.5 seconds after the recast window ends.</rules>"
           },
           "mObjectName": "ZedR",
           "~class": "TooltipInstanceSpell"

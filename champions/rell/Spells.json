@@ -326,7 +326,7 @@
           "mLocKeys": {
             "keyName": "Full Tilt",
             "keySummary": "Passive: Rell gains out of combat Move Speed.<br><br>Active: Rell and an ally gain ramping Move Speed, doubled toward enemies and each other. Her next Attack explodes, dealing magic damage.<br>",
-            "keyTooltip": "Rell and an ally charge, gaining <speed>@MinMS*100@% Move Speed</speed>, increased to <speed>@MaxMS*100@%</speed> when facing enemy champions or each other for @Duration@ seconds. Rell's next Attack or <spellName>{{Spell_RellQ_Name}}</spellName> explodes in an area for <magicDamage>@MaxHealthDamageCalc@ max Health magic damage</magicDamage>.",
+            "keyTooltip": "Rell and an ally charge, gaining <speed>@MinMS*100@% Move Speed</speed>, increased to <speed>@MaxMS*100@%</speed> when facing enemy champions or each other for @Duration@ seconds. Rell's next Attack or <spellName>Shattering Strike</spellName> explodes in an area for <magicDamage>@MaxHealthDamageCalc@ max Health magic damage</magicDamage>.",
             "keyTooltipExtendedBelowLine": "<rules>Damage capped at @PercentHealthDamageCap@ against jungle monsters and structures.</rules>"
           },
           "mObjectName": "RellE",
@@ -1113,12 +1113,6 @@
     "ObjectName": "RellP",
     "mScriptName": "RellP",
     "mSpell": {
-      "0xfe87f21e": [
-        {
-          "0x6166b756": "OnHitDamage",
-          "~class": "0xfe87f21e"
-        }
-      ],
       "DataValues": [
         {
           "name": "RefreshDuration",
@@ -1206,6 +1200,12 @@
           "~class": "SpellDataValueVector"
         }
       },
+      "LastHitData": [
+        {
+          "0x6166b756": "OnHitDamage",
+          "~class": "LastHitData"
+        }
+      ],
       "castRange": [
         1500.0,
         1500.0,
@@ -1235,7 +1235,7 @@
             "keyName": "Break the Mold",
             "keySummary": "Rell's Attacks and Abilities deal additional magic damage and steal Armor and Magic Resist on hit.",
             "keyTooltip": "Rell's Attacks and Abilities steal <scaleArmor>@StealPercent*100@% Armor</scaleArmor> and <scaleMR>@StealPercent*100@% Magic Resist</scaleMR> for @ShredDuration@ seconds. Max: @MaxPercentTooltipOnly@%. Basic attacks deal <magicDamage>@OnHitDamage@ magic damage</magicDamage> on-hit.",
-            "keyTooltipExtended": "{{Spell_RellP_Tooltip}}<br><br><rules>Always steals at least @StealFloor@. Does not steal from minions or Epic jungle monsters.</rules>"
+            "keyTooltipExtended": "Rell's Attacks and Abilities steal <scaleArmor>@StealPercent*100@% Armor</scaleArmor> and <scaleMR>@StealPercent*100@% Magic Resist</scaleMR> for @ShredDuration@ seconds. Max: @MaxPercentTooltipOnly@%. Basic attacks deal <magicDamage>@OnHitDamage@ magic damage</magicDamage> on-hit.<br><br><rules>Always steals at least @StealFloor@. Does not steal from minions or Epic jungle monsters.</rules>"
           },
           "mObjectName": "RellP",
           "~class": "TooltipInstanceSpell"
@@ -2233,8 +2233,8 @@
           "mLocKeys": {
             "keyName": "Ferromancy: Crash Down",
             "keySummary": "Mounted: Rell Dismounts, crashing down in her armor, Knocking enemies up and gaining a large Shield. While dismounted, she gains Armor, Magic Resist, Attack Speed, and Attack Range, but is Slowed.<br><br>Dismounted: Rell forms her Mount, gaining a burst of speed and Knocking Up the next enemy she attacks.<br><br>",
-            "keyTooltip": "<spellPassive>Passive - Mounted Alacrity:</spellPassive> Rell gains <speed>@spell.RellW_Dismount:MountedMoveSpeed@ Move Speed</speed> while mounted.<br><br><spellActive>Active - {{Spell_RellW_Dismount_Name}}:</spellActive> Rell leaps off her mount, <status>Knocking Up</status> enemies and dealing <magicDamage>@spell.RellW_Dismount:DismountDamage@ magic damage</magicDamage>. Rell gains <shield>@spell.RellW_Dismount:Shield@ Shield</shield>, which lasts until she remounts.<br><br>Rell then enters her armored form, gaining <scaleArmor>@spell.RellW_Dismount:ResistanceIncrease*100@% increased Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR>, <attackSpeed>@spell.RellW_Dismount:DismountedASBoost*100@% Attack Speed</attackSpeed> and @spell.RellW_Dismount:DismountedRangeBoost@ Attack Range. In this armored form, she can use <spellName>{{Spell_RellW_MountUp_Name2}}</spellName>.",
-            "keyTooltipExtended": "{{Spell_RellW_Dismount_Tooltip}}<br><br><spellActive>Active - {{Spell_RellW_MountUp_Name2}}:</spellActive> Rell mounts up and briefly gains <speed>@spell.RellW_Dismount:MountUpSpeed*100@% Decaying Move Speed</speed>. Her next Attack within @spell.RellW_Dismount:MountUpSpeedDuration@ seconds <status>Knocks Up</status> and throws enemies behind her, dealing an additional <magicDamage>@spell.RellW_Dismount:FlipDamage@ magic damage</magicDamage>."
+            "keyTooltip": "<spellPassive>Passive - Mounted Alacrity:</spellPassive> Rell gains <speed>@spell.RellW_Dismount:MountedMoveSpeed@ Move Speed</speed> while mounted.<br><br><spellActive>Active - Ferromancy: Crash Down:</spellActive> Rell leaps off her mount, <status>Knocking Up</status> enemies and dealing <magicDamage>@spell.RellW_Dismount:DismountDamage@ magic damage</magicDamage>. Rell gains <shield>@spell.RellW_Dismount:Shield@ Shield</shield>, which lasts until she remounts.<br><br>Rell then enters her armored form, gaining <scaleArmor>@spell.RellW_Dismount:ResistanceIncrease*100@% increased Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR>, <attackSpeed>@spell.RellW_Dismount:DismountedASBoost*100@% Attack Speed</attackSpeed> and @spell.RellW_Dismount:DismountedRangeBoost@ Attack Range. In this armored form, she can use <spellName>Ferromancy: Mount Up</spellName>.",
+            "keyTooltipExtended": "<spellPassive>Passive - Mounted Alacrity:</spellPassive> Rell gains <speed>@spell.RellW_Dismount:MountedMoveSpeed@ Move Speed</speed> while mounted.<br><br><spellActive>Active - Ferromancy: Crash Down:</spellActive> Rell leaps off her mount, <status>Knocking Up</status> enemies and dealing <magicDamage>@spell.RellW_Dismount:DismountDamage@ magic damage</magicDamage>. Rell gains <shield>@spell.RellW_Dismount:Shield@ Shield</shield>, which lasts until she remounts.<br><br>Rell then enters her armored form, gaining <scaleArmor>@spell.RellW_Dismount:ResistanceIncrease*100@% increased Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR>, <attackSpeed>@spell.RellW_Dismount:DismountedASBoost*100@% Attack Speed</attackSpeed> and @spell.RellW_Dismount:DismountedRangeBoost@ Attack Range. In this armored form, she can use <spellName>Ferromancy: Mount Up</spellName>.<br><br><spellActive>Active - Ferromancy: Mount Up:</spellActive> Rell mounts up and briefly gains <speed>@spell.RellW_Dismount:MountUpSpeed*100@% Decaying Move Speed</speed>. Her next Attack within @spell.RellW_Dismount:MountUpSpeedDuration@ seconds <status>Knocks Up</status> and throws enemies behind her, dealing an additional <magicDamage>@spell.RellW_Dismount:FlipDamage@ magic damage</magicDamage>."
           },
           "mObjectName": "RellW_Dismount",
           "~class": "TooltipInstanceSpell"
@@ -2491,8 +2491,8 @@
           "mLocKeys": {
             "keyName": "Ferromancy: Mount Up",
             "keySummary": "Mounted: Rell Dismounts, crashing down in her armor, Knocking enemies up and gaining a large Shield. While dismounted, she gains Armor, Magic Resist, Attack Speed, and Attack Range, but is Slowed.<br><br>Dismounted: Rell forms her Mount, gaining a burst of speed and Knocking Up the next enemy she attacks.<br><br>",
-            "keyTooltip": "<spellPassive>Passive - Dismounted Resilience:</spellPassive> Rell gains <scaleArmor>@spell.RellW_Dismount:ResistanceIncrease*100@% increased Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR>, <attackSpeed>@spell.RellW_Dismount:DismountedASBoost*100@% Attack Speed</attackSpeed> and @spell.RellW_Dismount:DismountedRangeBoost@ Attack Range while dismounted.<br><br><spellActive>Active - {{Spell_RellW_MountUp_Name2}}:</spellActive> Rell mounts up and briefly gains <speed>@spell.RellW_Dismount:MountUpSpeed*100@% Decaying Move Speed</speed>. Her next Attack within @spell.RellW_Dismount:MountUpSpeedDuration@ seconds <status>Knocks Up</status> and throws enemies behind her, dealing an additional <magicDamage>@spell.RellW_Dismount:FlipDamage@ magic damage</magicDamage>.<br><br>Rell then enters her mounted form, gaining <speed>@spell.RellW_Dismount:MountedMoveSpeed@ Move Speed</speed>. While mounted, Rell can use <spellName>{{Spell_RellW_Dismount_Name}}</spellName>.",
-            "keyTooltipExtended": "{{Spell_RellW_MountUp_Tooltip2}}<br><br><spellActive>Active - {{Spell_RellW_Dismount_Name}}:</spellActive> Rell leaps off her mount, <status>Knocking Up</status> enemies and dealing <magicDamage>@spell.RellW_Dismount:DismountDamage@ magic damage</magicDamage>. Rell gains <shield>@spell.RellW_Dismount:Shield@ Shield</shield>, which lasts until she remounts."
+            "keyTooltip": "<spellPassive>Passive - Dismounted Resilience:</spellPassive> Rell gains <scaleArmor>@spell.RellW_Dismount:ResistanceIncrease*100@% increased Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR>, <attackSpeed>@spell.RellW_Dismount:DismountedASBoost*100@% Attack Speed</attackSpeed> and @spell.RellW_Dismount:DismountedRangeBoost@ Attack Range while dismounted.<br><br><spellActive>Active - Ferromancy: Mount Up:</spellActive> Rell mounts up and briefly gains <speed>@spell.RellW_Dismount:MountUpSpeed*100@% Decaying Move Speed</speed>. Her next Attack within @spell.RellW_Dismount:MountUpSpeedDuration@ seconds <status>Knocks Up</status> and throws enemies behind her, dealing an additional <magicDamage>@spell.RellW_Dismount:FlipDamage@ magic damage</magicDamage>.<br><br>Rell then enters her mounted form, gaining <speed>@spell.RellW_Dismount:MountedMoveSpeed@ Move Speed</speed>. While mounted, Rell can use <spellName>Ferromancy: Crash Down</spellName>.",
+            "keyTooltipExtended": "<spellPassive>Passive - Dismounted Resilience:</spellPassive> Rell gains <scaleArmor>@spell.RellW_Dismount:ResistanceIncrease*100@% increased Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR>, <attackSpeed>@spell.RellW_Dismount:DismountedASBoost*100@% Attack Speed</attackSpeed> and @spell.RellW_Dismount:DismountedRangeBoost@ Attack Range while dismounted.<br><br><spellActive>Active - Ferromancy: Mount Up:</spellActive> Rell mounts up and briefly gains <speed>@spell.RellW_Dismount:MountUpSpeed*100@% Decaying Move Speed</speed>. Her next Attack within @spell.RellW_Dismount:MountUpSpeedDuration@ seconds <status>Knocks Up</status> and throws enemies behind her, dealing an additional <magicDamage>@spell.RellW_Dismount:FlipDamage@ magic damage</magicDamage>.<br><br>Rell then enters her mounted form, gaining <speed>@spell.RellW_Dismount:MountedMoveSpeed@ Move Speed</speed>. While mounted, Rell can use <spellName>Ferromancy: Crash Down</spellName>.<br><br><spellActive>Active - Ferromancy: Crash Down:</spellActive> Rell leaps off her mount, <status>Knocking Up</status> enemies and dealing <magicDamage>@spell.RellW_Dismount:DismountDamage@ magic damage</magicDamage>. Rell gains <shield>@spell.RellW_Dismount:Shield@ Shield</shield>, which lasts until she remounts."
           },
           "mObjectName": "RellW_MountUp",
           "~class": "TooltipInstanceSpell"

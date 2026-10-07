@@ -1,152 +1,270 @@
 {
-  "0x11ac70d3": {
-    "ObjectName": "Jade_VeigarBalefulStrikeOnKillBuff",
-    "mScriptName": "Jade_VeigarBalefulStrikeOnKillBuff",
+  "Characters/Jade_Veigar/Spells/Jade_VeigarBalefulStrikeAbility/Jade_VeigarBalefulStrike": {
+    "ObjectName": "Jade_VeigarBalefulStrike",
+    "mScriptName": "Jade_VeigarBalefulStrike",
     "mSpell": {
       "Cooldown": {
-        "Default": 0.0,
+        "Default": 9.0,
         "values": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
+          9.0,
+          8.0,
+          7.0,
+          6.0,
+          5.0,
+          4.0,
+          3.0
         ],
         "~class": "SpellAttributeModifiable"
       },
-      "bHaveHitBone": true,
-      "castConeDistance": 100.0,
-      "castFrame": 13.0,
-      "castRadius": [
-        225.0,
-        225.0,
-        225.0,
-        225.0,
-        225.0,
-        225.0,
-        225.0
+      "DataValues": [
+        {
+          "name": "APRatio",
+          "values": [
+            0.6499999761581421,
+            0.6499999761581421,
+            0.6499999761581421,
+            0.6499999761581421,
+            0.6499999761581421,
+            0.6499999761581421,
+            0.6499999761581421
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseDamage",
+          "values": [
+            35.0,
+            80.0,
+            125.0,
+            170.0,
+            215.0,
+            260.0,
+            305.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "APPerKill",
+          "values": [
+            0.0,
+            1.0,
+            2.0,
+            3.0,
+            4.0,
+            5.0,
+            6.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "APPerStack",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        }
       ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Veigar_VeigarBalefulStrike_OnCast",
+        "13": "Play_sfx_Veigar_VeigarBalefulStrikeMis_OnHit",
+        "16": "Play_sfx_Veigar_VeigarBalefulStrikeMis_OnMissileLaunch"
+      },
+      "castConeDistance": 100.0,
+      "castFrame": 10.0,
       "castRange": [
-        950.0,
-        950.0,
-        950.0,
-        950.0,
-        950.0,
-        950.0,
-        950.0
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0
+      ],
+      "castRangeDisplayOverride": [
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0,
+        650.0
       ],
       "castRangeValues": {
-        "Default": 950.0,
+        "Default": 650.0,
         "values": [
-          950.0,
-          950.0,
-          950.0,
-          950.0,
-          950.0,
-          950.0,
-          950.0
+          650.0,
+          650.0,
+          650.0,
+          650.0,
+          650.0,
+          650.0,
+          650.0
         ],
         "~class": "SpellAttributeModifiable"
       },
       "cooldownTime": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
+        8.0,
+        8.0,
+        7.0,
+        6.0,
+        5.0,
+        4.0,
+        4.0
       ],
-      "mAffectsTypeFlags": 14474,
+      "mAffectsTypeFlags": 22538,
       "mAnimationName": "Spell1",
       "mCantCancelWhileWindingUp": true,
+      "mCastType": 1,
+      "mCastingBreaksStealth": true,
       "mClientData": {
         "mTargeterDefinitions": [
           {
+            "useCasterBoundingBox": false,
             "~class": "TargeterDefinitionRange"
-          },
-          {
-            "centerLocator": {
-              "basePosition": 3,
-              "~class": "DrawablePositionLocator"
-            },
-            "~class": "TargeterDefinitionAoe"
           }
         ],
-        "mUseTooltipFromAnotherSpell": "Characters/Jade_Veigar/Spells/Jade_VeigarBalefulStrikeAbility/Jade_VeigarBalefulStrike",
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "BaseDamage",
+                  "typeIndex": 1,
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Ability Power per Kill",
+                  "type": "APPerKill",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Baleful Strike",
+            "keySummary": "Unleashes dark energy at target enemy, dealing magic damage. If a unit is killed, Veigar gains some Ability Power permanently.",
+            "keyTooltip": "<spellActive>Active: </spellActive>Veigar unleashes dark energy at target enemy, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>. If the target is killed, Veigar gains <magicDamage>@APPerStack@ Ability Power</magicDamage>. This bonus is doubled against Champions, large minions and large monsters.<br><br><spellPassive>Passive: </spellPassive>Veigar gains <magicDamage>@APPerKill@ Ability Power</magicDamage> when he kills a champion from any source of damage.<br><br>Bonus <magicDamage>Ability Power: +@f1@</magicDamage>"
+          },
+          "mObjectName": "Jade_VeigarBalefulStrike",
+          "~class": "TooltipInstanceSpell"
+        },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 1.0,
-      "mEffectAmount": [
-        {
-          "value": [
-            70.0,
-            120.0,
-            170.0,
-            220.0,
-            270.0,
-            320.0,
-            370.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
       ],
       "mImgIconName": [
         "assets/characters/jade_veigar/hud/icons2d/jade_veigarbalefulstrike.dds"
       ],
-      "mSpellRevealsChampion": false,
-      "mTargetingTypeData": {
-        "~class": "Area"
+      "mMissileEffectKey": "Jade_Veigar_Q_mis",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mOffsetInitialTargetHeight": 100.0,
+          "mSpeed": 1500.0,
+          "mStartBoneName": "L_hand",
+          "mTargetHeightAugment": 100.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "verticalFacing": {
+          "~class": "VeritcalFacingMatchVelocity"
+        },
+        "~class": "MissileSpecification"
       },
-      "missileSpeed": 20.0,
-      "selectionPriority": 2,
+      "mRequiredUnitTags": {
+        "mObjectTagList": [
+          "champion",
+          "minion",
+          "Monster"
+        ],
+        "~class": "ObjectTags"
+      },
+      "mSpellCalculations": {
+        "TotalDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mana": [
+        60.0,
+        65.0,
+        70.0,
+        75.0,
+        80.0,
+        80.0
+      ],
+      "manaValues": {
+        "Default": 50.0,
+        "values": [
+          50.0,
+          55.0,
+          60.0,
+          65.0,
+          70.0,
+          75.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "missileSpeed": 1200.0,
+      "selectionPriority": 1,
       "spellCastTime": 0.25,
       "spellTotalTime": 1.0,
       "useAnimatorFramerate": true,
       "~class": "SpellDataResource"
     },
-    "objectPath": "0x11ac70d3",
+    "objectPath": "Characters/Jade_Veigar/Spells/Jade_VeigarBalefulStrikeAbility/Jade_VeigarBalefulStrike",
     "~class": "SpellObject"
   },
-  "0x1bd841ff": {
+  "Characters/Jade_Veigar/Spells/Jade_VeigarBalefulStrikeAbility/Jade_VeigarBalefulStrikeDisplay": {
     "ObjectName": "Jade_VeigarBalefulStrikeDisplay",
     "mBuff": {
       "mDescription": "<titleLeft>Baleful Strike Power</titleLeft><mainText>Veigar has gained @f1@ Ability Power.</mainText>",
@@ -429,272 +547,154 @@
       "useAnimatorFramerate": true,
       "~class": "SpellDataResource"
     },
-    "objectPath": "0x1bd841ff",
+    "objectPath": "Characters/Jade_Veigar/Spells/Jade_VeigarBalefulStrikeAbility/Jade_VeigarBalefulStrikeDisplay",
     "~class": "SpellObject"
   },
-  "Characters/Jade_Veigar/Spells/Jade_VeigarBalefulStrikeAbility/Jade_VeigarBalefulStrike": {
-    "ObjectName": "Jade_VeigarBalefulStrike",
-    "mScriptName": "Jade_VeigarBalefulStrike",
+  "Characters/Jade_Veigar/Spells/Jade_VeigarBalefulStrikeAbility/Jade_VeigarBalefulStrikeOnKillBuff": {
+    "ObjectName": "Jade_VeigarBalefulStrikeOnKillBuff",
+    "mScriptName": "Jade_VeigarBalefulStrikeOnKillBuff",
     "mSpell": {
       "Cooldown": {
-        "Default": 9.0,
+        "Default": 0.0,
         "values": [
-          9.0,
-          8.0,
-          7.0,
-          6.0,
-          5.0,
-          4.0,
-          3.0
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
         ],
         "~class": "SpellAttributeModifiable"
       },
-      "DataValues": [
-        {
-          "name": "APRatio",
-          "values": [
-            0.6499999761581421,
-            0.6499999761581421,
-            0.6499999761581421,
-            0.6499999761581421,
-            0.6499999761581421,
-            0.6499999761581421,
-            0.6499999761581421
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "BaseDamage",
-          "values": [
-            35.0,
-            80.0,
-            125.0,
-            170.0,
-            215.0,
-            260.0,
-            305.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "APPerKill",
-          "values": [
-            0.0,
-            1.0,
-            2.0,
-            3.0,
-            4.0,
-            5.0,
-            6.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "APPerStack",
-          "values": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
-          "~class": "SpellDataValue"
-        }
-      ],
-      "SpellEventToAudioEventSuffix": {
-        "12": "Play_sfx_Veigar_VeigarBalefulStrike_OnCast",
-        "13": "Play_sfx_Veigar_VeigarBalefulStrikeMis_OnHit",
-        "16": "Play_sfx_Veigar_VeigarBalefulStrikeMis_OnMissileLaunch"
-      },
+      "bHaveHitBone": true,
       "castConeDistance": 100.0,
-      "castFrame": 10.0,
-      "castRange": [
-        650.0,
-        650.0,
-        650.0,
-        650.0,
-        650.0,
-        650.0,
-        650.0
+      "castFrame": 13.0,
+      "castRadius": [
+        225.0,
+        225.0,
+        225.0,
+        225.0,
+        225.0,
+        225.0,
+        225.0
       ],
-      "castRangeDisplayOverride": [
-        650.0,
-        650.0,
-        650.0,
-        650.0,
-        650.0,
-        650.0,
-        650.0
+      "castRange": [
+        950.0,
+        950.0,
+        950.0,
+        950.0,
+        950.0,
+        950.0,
+        950.0
       ],
       "castRangeValues": {
-        "Default": 650.0,
+        "Default": 950.0,
         "values": [
-          650.0,
-          650.0,
-          650.0,
-          650.0,
-          650.0,
-          650.0,
-          650.0
+          950.0,
+          950.0,
+          950.0,
+          950.0,
+          950.0,
+          950.0,
+          950.0
         ],
         "~class": "SpellAttributeModifiable"
       },
       "cooldownTime": [
-        8.0,
-        8.0,
-        7.0,
-        6.0,
-        5.0,
-        4.0,
-        4.0
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
       ],
-      "mAffectsTypeFlags": 22538,
+      "mAffectsTypeFlags": 14474,
       "mAnimationName": "Spell1",
       "mCantCancelWhileWindingUp": true,
-      "mCastType": 1,
-      "mCastingBreaksStealth": true,
       "mClientData": {
         "mTargeterDefinitions": [
           {
-            "useCasterBoundingBox": false,
             "~class": "TargeterDefinitionRange"
+          },
+          {
+            "centerLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "~class": "TargeterDefinitionAoe"
           }
         ],
-        "mTooltipData": {
-          "mFormat": "0xd7c27163",
-          "mLists": {
-            "LevelUp": {
-              "Elements": [
-                {
-                  "nameOverride": "Damage",
-                  "type": "BaseDamage",
-                  "typeIndex": 1,
-                  "~class": "TooltipInstanceListElement"
-                },
-                {
-                  "type": "Cooldown",
-                  "~class": "TooltipInstanceListElement"
-                },
-                {
-                  "type": "Cost",
-                  "~class": "TooltipInstanceListElement"
-                },
-                {
-                  "nameOverride": "Ability Power per Kill",
-                  "type": "APPerKill",
-                  "~class": "TooltipInstanceListElement"
-                }
-              ],
-              "levelCount": 5,
-              "~class": "TooltipInstanceList"
-            }
-          },
-          "mLocKeys": {
-            "keyName": "Baleful Strike",
-            "keySummary": "Unleashes dark energy at target enemy, dealing magic damage. If a unit is killed, Veigar gains some Ability Power permanently.",
-            "keyTooltip": "<spellActive>Active: </spellActive>Veigar unleashes dark energy at target enemy, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage>. If the target is killed, Veigar gains <magicDamage>@APPerStack@ Ability Power</magicDamage>. This bonus is doubled against Champions, large minions and large monsters.<br><br><spellPassive>Passive: </spellPassive>Veigar gains <magicDamage>@APPerKill@ Ability Power</magicDamage> when he kills a champion from any source of damage.<br><br>Bonus <magicDamage>Ability Power: +@f1@</magicDamage>"
-          },
-          "mObjectName": "Jade_VeigarBalefulStrike",
-          "~class": "TooltipInstanceSpell"
-        },
+        "mUseTooltipFromAnotherSpell": "Characters/Jade_Veigar/Spells/Jade_VeigarBalefulStrikeAbility/Jade_VeigarBalefulStrike",
         "~class": "SpellDataResourceClient"
       },
-      "mFloatVarsDecimals": [
-        0,
-        0,
-        0,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2
+      "mCoefficient": 1.0,
+      "mEffectAmount": [
+        {
+          "value": [
+            70.0,
+            120.0,
+            170.0,
+            220.0,
+            270.0,
+            320.0,
+            370.0
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "value": [
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158
+          ],
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        },
+        {
+          "~class": "SpellEffectAmount"
+        }
       ],
       "mImgIconName": [
         "assets/characters/jade_veigar/hud/icons2d/jade_veigarbalefulstrike.dds"
       ],
-      "mMissileEffectKey": "Jade_Veigar_Q_mis",
-      "mMissileSpec": {
-        "behaviors": [
-          {
-            "~class": "CastOnMovementComplete"
-          },
-          {
-            "~class": "DestroyOnMovementComplete"
-          }
-        ],
-        "movementComponent": {
-          "mOffsetInitialTargetHeight": 100.0,
-          "mSpeed": 1500.0,
-          "mStartBoneName": "L_hand",
-          "mTargetHeightAugment": 100.0,
-          "~class": "FixedSpeedMovement"
-        },
-        "verticalFacing": {
-          "~class": "VeritcalFacingMatchVelocity"
-        },
-        "~class": "MissileSpecification"
+      "mSpellRevealsChampion": false,
+      "mTargetingTypeData": {
+        "~class": "Area"
       },
-      "mRequiredUnitTags": {
-        "mObjectTagList": [
-          "champion",
-          "minion",
-          "Monster"
-        ],
-        "~class": "ObjectTags"
-      },
-      "mSpellCalculations": {
-        "TotalDamage": {
-          "mFormulaParts": [
-            {
-              "mDataValue": "baseDamage",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mDataValue": "APRatio",
-              "~class": "StatByNamedDataValueCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        }
-      },
-      "mana": [
-        60.0,
-        65.0,
-        70.0,
-        75.0,
-        80.0,
-        80.0
-      ],
-      "manaValues": {
-        "Default": 50.0,
-        "values": [
-          50.0,
-          55.0,
-          60.0,
-          65.0,
-          70.0,
-          75.0
-        ],
-        "~class": "ResourceCostModifiable"
-      },
-      "missileSpeed": 1200.0,
-      "selectionPriority": 1,
+      "missileSpeed": 20.0,
+      "selectionPriority": 2,
       "spellCastTime": 0.25,
       "spellTotalTime": 1.0,
       "useAnimatorFramerate": true,
       "~class": "SpellDataResource"
     },
-    "objectPath": "Characters/Jade_Veigar/Spells/Jade_VeigarBalefulStrikeAbility/Jade_VeigarBalefulStrike",
+    "objectPath": "Characters/Jade_Veigar/Spells/Jade_VeigarBalefulStrikeAbility/Jade_VeigarBalefulStrikeOnKillBuff",
     "~class": "SpellObject"
   },
   "Characters/Jade_Veigar/Spells/Jade_VeigarBalefulStrikeMis": {
@@ -1614,7 +1614,7 @@
           ],
           "~class": "SpellEffectAmount"
         },
-        "KIWI": {
+        "ARAM": {
           "value": [
             23.0,
             23.0,
@@ -1626,7 +1626,7 @@
           ],
           "~class": "SpellEffectAmount"
         },
-        "ARAM": {
+        "Kiwi": {
           "value": [
             23.0,
             23.0,

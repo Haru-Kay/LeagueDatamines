@@ -1,16 +1,4 @@
 {
-  "0x88a75e39": {
-    "ObjectName": "KarmaWBeamMantra",
-    "mScriptName": "KarmaWBeamMantra",
-    "objectPath": "0x88a75e39",
-    "~class": "SpellObject"
-  },
-  "0xcbe079fc": {
-    "ObjectName": "KarmaWBeam",
-    "mScriptName": "KarmaWBeam",
-    "objectPath": "0xcbe079fc",
-    "~class": "SpellObject"
-  },
   "Characters/Karma/Spells/KarmaBasicAttack": {
     "ObjectName": "KarmaBasicAttack",
     "mScriptName": "KarmaBasicAttack",
@@ -630,7 +618,7 @@
             "keyCost": "No Cost",
             "keyName": "Mantra",
             "keySummary": "Karma empowers her next ability to do an additional effect. Mantra is available at level 1 and does not require a skill point.",
-            "keyTooltip": "Karma empowers her next Ability used within 8 seconds.<br><li><spellName>{{Spell_KarmaQ_Name}}</spellName>: Deals an additional <magicDamage>@RQImpactDamage@ magic damage</magicDamage> and leaves behind a circle of flame, <status>Slowing</status> enemies and dealing an additional <magicDamage>@RQFieldDamage@ magic damage</magicDamage>.<li><spellName>{{Spell_KarmaSpiritBind_Name}}</spellName>: Karma will restore <healing>@RWHealAmount@ missing Health</healing> at the beginning and end of the tether, and <status>Root</status> for @RWBonusRoot@s longer.<li><spellName>{{Spell_KarmaSolKimShield_Name}}</spellName>: Karma shields her target for <shield>@REBonusShield@ more Shield</shield>, and also shields allies near her target, granting them <shield>@REBonusShieldArea@ Shield</shield> and <speed>@REMoveSpeed*100@% Move Speed</speed>."
+            "keyTooltip": "Karma empowers her next Ability used within 8 seconds.<br><li><spellName>Inner Flame</spellName>: Deals an additional <magicDamage>@RQImpactDamage@ magic damage</magicDamage> and leaves behind a circle of flame, <status>Slowing</status> enemies and dealing an additional <magicDamage>@RQFieldDamage@ magic damage</magicDamage>.<li><spellName>Focused Resolve</spellName>: Karma will restore <healing>@RWHealAmount@ missing Health</healing> at the beginning and end of the tether, and <status>Root</status> for @RWBonusRoot@s longer.<li><spellName>Inspire</spellName>: Karma shields her target for <shield>@REBonusShield@ more Shield</shield>, and also shields allies near her target, granting them <shield>@REBonusShieldArea@ Shield</shield> and <speed>@REMoveSpeed*100@% Move Speed</speed>."
           },
           "mObjectName": "KarmaMantra",
           "~class": "TooltipInstanceSpell"
@@ -852,7 +840,7 @@
           "mLocKeys": {
             "keyName": "Gathering Fire",
             "keySummary": "Karma's damaging abilities will reduce the cooldown of Mantra.",
-            "keyTooltip": "Karma begins the game with a point in <spellName>{{Spell_KarmaMantra_Name}}</spellName>.<br><br>She reduces the Cooldown of <spellName>{{Spell_KarmaMantra_Name}}</spellName> by @SpellMantraRefund@ seconds when she damages a champion with an Ability."
+            "keyTooltip": "Karma begins the game with a point in <spellName>Mantra</spellName>.<br><br>She reduces the Cooldown of <spellName>Mantra</spellName> by @SpellMantraRefund@ seconds when she damages a champion with an Ability."
           },
           "mObjectName": "KarmaPassive",
           "~class": "TooltipInstanceSpell"
@@ -1115,7 +1103,7 @@
             "keyName": "Inner Flame",
             "keySummary": "Karma sends forth a ball of spirit energy that explodes and deals damage upon hitting an enemy unit.<br><br>Mantra Bonus: In addition to the explosion, Mantra increases the destructive power of her Inner Flame, creating a cataclysm which deals damage after a short delay.",
             "keyTooltip": "{{Spell_KarmaQ_Tooltip_@IsEmpowered@}}",
-            "keyTooltipExtended": "{{Spell_KarmaQ_Tooltip_0}}<br><br>{{Spell_KarmaQ_Tooltip_1}}"
+            "keyTooltipExtended": "Karma fires a blast of energy, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> to the first target hit and surrounding enemies, and <status>Slowing</status> them by @SlowAmount*-100@% for @SlowDuration@ seconds.<br><br><spellName>Mantra:</spellName> Karma unleashes a devastating blast, dealing an additional <magicDamage>@spell.KarmaMantra:RQImpactDamage@ magic damage</magicDamage> to the first target hit and surrounding enemies. The blast leaves a field for @spell.KarmaMantra:RQSlowDuration@s, <status>Slowing</status> by @spell.KarmaMantra:RQSlow*-100@%, after which it explodes, dealing <magicDamage>@spell.KarmaMantra:RQFieldDamage@ magic damage</magicDamage>."
           },
           "mObjectName": "KarmaQ",
           "~class": "TooltipInstanceSpell"
@@ -2219,7 +2207,7 @@
             "keyName": "Inspire",
             "keySummary": "Karma summons a protective shield that absorbs incoming damage and increases the Move Speed of the protected ally.<br><br>Mantra Bonus: Energy radiates out from her target, strengthening the initial shield and applying Inspire to nearby allied champions.",
             "keyTooltip": "{{Spell_KarmaE_Tooltip_@spell.KarmaQ:IsEmpowered@}}",
-            "keyTooltipExtended": "{{Spell_KarmaE_Tooltip_0}}<br><br>{{Spell_KarmaE_Tooltip_1}}"
+            "keyTooltipExtended": "Karma grants an allied champion <shield>@TotalShield@ Shield</shield> for @ShieldDuration@s and <speed>@MoveSpeed*100@% Move Speed</speed> for @MoveSpeedDuration@s.<br><br><spellName>Mantra:</spellName> Karma focuses her power, granting an allied champion an additional <shield>@spell.KarmaMantra:REBonusShield@ Shield</shield>. The shield's power spills over, granting <shield>@spell.KarmaMantra:REBonusShieldArea@ Shield</shield> and <speed>@spell.KarmaMantra:REMoveSpeed*100@% Move Speed</speed> to nearby champions."
           },
           "mObjectName": "KarmaSolKimShield",
           "~class": "TooltipInstanceSpell"
@@ -2752,7 +2740,7 @@
             }
           ],
           "SourceCondition": {
-            "Spell": "0xcbe079fc",
+            "Spell": "Characters/Karma/Spells/KarmaSpiritBindAbility/KarmaWBeam",
             "~class": "HasBuffDynamicMaterialBoolDriver"
           },
           "~class": "PersistentEffectConditionData"
@@ -2768,7 +2756,7 @@
             }
           ],
           "SourceCondition": {
-            "Spell": "0x88a75e39",
+            "Spell": "Characters/Karma/Spells/KarmaSpiritBindAbility/KarmaWBeamMantra",
             "~class": "HasBuffDynamicMaterialBoolDriver"
           },
           "~class": "PersistentEffectConditionData"
@@ -2786,7 +2774,7 @@
           "SourceCondition": {
             "mDrivers": [
               {
-                "Spell": "0xcbe079fc",
+                "Spell": "Characters/Karma/Spells/KarmaSpiritBindAbility/KarmaWBeam",
                 "~class": "HasBuffDynamicMaterialBoolDriver"
               },
               {
@@ -2824,7 +2812,7 @@
           "SourceCondition": {
             "mDrivers": [
               {
-                "Spell": "0x88a75e39",
+                "Spell": "Characters/Karma/Spells/KarmaSpiritBindAbility/KarmaWBeamMantra",
                 "~class": "HasBuffDynamicMaterialBoolDriver"
               },
               {
@@ -2862,7 +2850,7 @@
           "SourceCondition": {
             "mDrivers": [
               {
-                "Spell": "0xcbe079fc",
+                "Spell": "Characters/Karma/Spells/KarmaSpiritBindAbility/KarmaWBeam",
                 "~class": "HasBuffDynamicMaterialBoolDriver"
               },
               {
@@ -2896,7 +2884,7 @@
           "SourceCondition": {
             "mDrivers": [
               {
-                "Spell": "0x88a75e39",
+                "Spell": "Characters/Karma/Spells/KarmaSpiritBindAbility/KarmaWBeamMantra",
                 "~class": "HasBuffDynamicMaterialBoolDriver"
               },
               {
@@ -3090,7 +3078,7 @@
             "keyName": "Focused Resolve",
             "keySummary": "Karma creates a tether between herself and a targeted enemy, dealing damage and revealing them. If the tether is not broken, the enemy will be rooted and damaged again.<br><br>Mantra Bonus: Karma strengthens the link, healing herself and extending the root duration.",
             "keyTooltip": "{{Spell_KarmaW_Tooltip_@spell.KarmaQ:IsEmpowered@}}",
-            "keyTooltipExtended": "{{Spell_KarmaW_Tooltip_0}}<br><br>{{Spell_KarmaW_Tooltip_1}}"
+            "keyTooltipExtended": "Karma tethers herself to a champion or jungle monster, dealing <magicDamage>@InitialDamage@ magic damage</magicDamage> and revealing them for @TetherDuration@s. If the tether remains unbroken, the target takes <magicDamage>@InitialDamage@ magic damage</magicDamage> again and is <status>Rooted</status> for @RootDuration@s.<br><br><spellName>Mantra:</spellName> Karma creates an empowered tether, restoring <healing>@spell.KarmaMantra:RWHealAmount@ missing Health</healing>, dealing <magicDamage>@InitialDamage@ magic damage</magicDamage>, and revealing them for @TetherDuration@s. If the tether remains unbroken, Karma restores <healing>@spell.KarmaMantra:RWHealAmount@ missing Health</healing> again, <status>Roots</status> for an additional @spell.KarmaMantra:RWBonusRoot@s, and deals another <magicDamage>@InitialDamage@ magic damage</magicDamage>."
           },
           "mObjectName": "KarmaSpiritBind",
           "~class": "TooltipInstanceSpell"
@@ -3181,6 +3169,18 @@
     },
     "mScriptName": "KarmaSpiritBindRoot",
     "objectPath": "Characters/Karma/Spells/KarmaSpiritBindAbility/KarmaSpiritBindRoot",
+    "~class": "SpellObject"
+  },
+  "Characters/Karma/Spells/KarmaSpiritBindAbility/KarmaWBeam": {
+    "ObjectName": "KarmaWBeam",
+    "mScriptName": "KarmaWBeam",
+    "objectPath": "Characters/Karma/Spells/KarmaSpiritBindAbility/KarmaWBeam",
+    "~class": "SpellObject"
+  },
+  "Characters/Karma/Spells/KarmaSpiritBindAbility/KarmaWBeamMantra": {
+    "ObjectName": "KarmaWBeamMantra",
+    "mScriptName": "KarmaWBeamMantra",
+    "objectPath": "Characters/Karma/Spells/KarmaSpiritBindAbility/KarmaWBeamMantra",
     "~class": "SpellObject"
   }
 }

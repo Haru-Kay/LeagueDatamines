@@ -90,7 +90,7 @@
     "mScriptName": "ZeriE",
     "mSpell": {
       "0xf9c2333e": {
-        "KIWI": {
+        "ARAM": {
           "value": [
             20.0,
             20.0,
@@ -102,7 +102,7 @@
           ],
           "~class": "SpellEffectAmount"
         },
-        "ARAM": {
+        "Kiwi": {
           "value": [
             20.0,
             20.0,
@@ -508,7 +508,7 @@
           "mLocKeys": {
             "keyName": "Spark Surge",
             "keySummary": "Zeri dashes a short distance and energizes Burst Fire to pierce through enemies. She will vault and grind over any terrain she touches.",
-            "keyTooltip": "Zeri dashes a short distance and vaults over any terrain she touches, greatly extending the dash range. For the next @BuffDuration@ seconds, her shots of <spellName>{{Spell_ZeriQ_Name}}</spellName> pierce dealing @PenDamagePercent*100@% damage to enemies after the first and an additional <magicDamage>@BonusDamageTotal@ magic damage</magicDamage> On-Hit to the first target struck. <br><br>Hitting an enemy with an Attack reduces this Ability's cooldown by @CDReductionPerHit@ seconds. Critical strikes reduce the cooldown by @CritCDReductionPerHit@ seconds instead.",
+            "keyTooltip": "Zeri dashes a short distance and vaults over any terrain she touches, greatly extending the dash range. For the next @BuffDuration@ seconds, her shots of <spellName>Burst Fire</spellName> pierce dealing @PenDamagePercent*100@% damage to enemies after the first and an additional <magicDamage>@BonusDamageTotal@ magic damage</magicDamage> On-Hit to the first target struck. <br><br>Hitting an enemy with an Attack reduces this Ability's cooldown by @CDReductionPerHit@ seconds. Critical strikes reduce the cooldown by @CritCDReductionPerHit@ seconds instead.",
             "keyTooltipExtendedBelowLine": "<rules>On-hit damage is increased by Zeri's Critical Strike Chance and Critical Strike Damage at @CritScalingMod*100@% effectiveness.<br>Pierce damage can critically strike but does not apply On-Hit effects.</rules>"
           },
           "mObjectName": "ZeriE",
@@ -868,8 +868,8 @@
           "mLocKeys": {
             "keyName": "Living Battery",
             "keySummary": "Zeri's Attacks deal magic damage and are treated as Abilities. Moving and casting Burst Fire stores up energy in Zeri's Sparkpack. When fully charged her next Attack deals bonus damage.",
-            "keyTooltip": "Zeri's Attacks are treated as Abilities instead of Attacks and can be charged up by moving and casting <spellName>{{Spell_ZeriQ_Name}}</spellName>. Uncharged Attacks consume a small amount of charge, deal <magicDamage>@Spell.ZeriQ:MinDamage@ magic damage</magicDamage> and <danger>execute</danger> enemies below <attention>@Spell.ZeriQ:PassiveExecuteThreshold@ Health</attention>. A fully charged Attack deals <magicDamage>@Spell.ZeriQ:PassiveMaxDamage@ + @Spell.ZeriQ:PassiveMaxChargePercentHealth@ max Health magic damage</magicDamage> and consumes all charge.",
-            "keyTooltipExtended": "{{Spell_ZeriPassive_Tooltip}}<br><br><rules>Percent Health damage against jungle monsters is capped at 300.</rules>"
+            "keyTooltip": "Zeri's Attacks are treated as Abilities instead of Attacks and can be charged up by moving and casting <spellName>Burst Fire</spellName>. Uncharged Attacks consume a small amount of charge, deal <magicDamage>@Spell.ZeriQ:MinDamage@ magic damage</magicDamage> and <danger>execute</danger> enemies below <attention>@Spell.ZeriQ:PassiveExecuteThreshold@ Health</attention>. A fully charged Attack deals <magicDamage>@Spell.ZeriQ:PassiveMaxDamage@ + @Spell.ZeriQ:PassiveMaxChargePercentHealth@ max Health magic damage</magicDamage> and consumes all charge.",
+            "keyTooltipExtended": "Zeri's Attacks are treated as Abilities instead of Attacks and can be charged up by moving and casting <spellName>Burst Fire</spellName>. Uncharged Attacks consume a small amount of charge, deal <magicDamage>@Spell.ZeriQ:MinDamage@ magic damage</magicDamage> and <danger>execute</danger> enemies below <attention>@Spell.ZeriQ:PassiveExecuteThreshold@ Health</attention>. A fully charged Attack deals <magicDamage>@Spell.ZeriQ:PassiveMaxDamage@ + @Spell.ZeriQ:PassiveMaxChargePercentHealth@ max Health magic damage</magicDamage> and consumes all charge.<br><br><rules>Percent Health damage against jungle monsters is capped at 300.</rules>"
           },
           "mObjectName": "ZeriPassive",
           "~class": "TooltipInstanceSpell"
@@ -984,13 +984,6 @@
     "ObjectName": "ZeriQ",
     "mScriptName": "ZeriQ",
     "mSpell": {
-      "0xfe87f21e": [
-        {
-          "0x6166b756": "PassiveExecuteThreshold",
-          "0x7a9d64ea": true,
-          "~class": "0xfe87f21e"
-        }
-      ],
       "Cooldown": {
         "Default": 0.0,
         "values": [
@@ -1208,6 +1201,13 @@
           "~class": "SpellDataValueVector"
         }
       },
+      "LastHitData": [
+        {
+          "0x6166b756": "PassiveExecuteThreshold",
+          "0x7a9d64ea": true,
+          "~class": "LastHitData"
+        }
+      ],
       "alwaysSnapFacing": true,
       "canCastWhileDisabled": true,
       "castFrame": 15.0,
@@ -3431,7 +3431,7 @@
           "mLocKeys": {
             "keyName": "Lightning Crash",
             "keySummary": "Zeri discharges a nova of electricity and overcharges herself, gaining increased damage and stacking Move Speed that refreshes and gets stronger every time she hits an enemy champion. While overcharged, Burst fire becomes a faster triple shot that chains lightning between enemies.",
-            "keyTooltip": "Zeri discharges a nova of electricity, dealing <magicDamage>@TotalActiveDamage@ magic damage</magicDamage> to nearby enemies. If she hits an enemy champion, Zeri gains <attackSpeed>@BaseASPercent*100@% Attack Speed</attackSpeed> and <speed>@BaseBonusMS*100@% Move Speed</speed> for @RDuration@ seconds. Hitting an enemy champion with an Attack or Ability extends this ability's duration and adds a stack of Overcharge for @MaxHyperchargeDuration@ seconds. Critical strikes add 2 additional stacks. Each stack grants <speed>@MSPercent*100@% Move Speed</speed>.<br><br>During this time, <spellName>{{Spell_ZeriQ_Name}}</spellName> becomes a faster triple shot that chains <physicalDamage>@ChainPhysicalDamage@ physical damage</physicalDamage> to nearby enemies.<br><br>",
+            "keyTooltip": "Zeri discharges a nova of electricity, dealing <magicDamage>@TotalActiveDamage@ magic damage</magicDamage> to nearby enemies. If she hits an enemy champion, Zeri gains <attackSpeed>@BaseASPercent*100@% Attack Speed</attackSpeed> and <speed>@BaseBonusMS*100@% Move Speed</speed> for @RDuration@ seconds. Hitting an enemy champion with an Attack or Ability extends this ability's duration and adds a stack of Overcharge for @MaxHyperchargeDuration@ seconds. Critical strikes add 2 additional stacks. Each stack grants <speed>@MSPercent*100@% Move Speed</speed>.<br><br>During this time, <spellName>Burst Fire</spellName> becomes a faster triple shot that chains <physicalDamage>@ChainPhysicalDamage@ physical damage</physicalDamage> to nearby enemies.<br><br>",
             "keyTooltipExtendedBelowLine": "<rules>The <attackSpeed>Attack Speed</attackSpeed> also increases Zeri's <attackSpeed>max Attack Speed</attackSpeed>. The chain lightning can critically strike but does not apply On-Hit effects. Uncharged Attacks do not stack or refresh this ability.<br>This ability's duration extension cannot exceed its original duration of @RDuration@ seconds.</rules>"
           },
           "mObjectName": "ZeriR",
