@@ -1,0 +1,2075 @@
+{
+  "0x1423639e": {
+    "ObjectName": "Jade_YorickPassive",
+    "mBuff": {
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_YorickPassive",
+    "mSpell": {
+      "DataValues": [
+        {
+          "name": "PassiveDamageAmpPerGhoul",
+          "values": [
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "PassiveDamageReductionPerGhoul",
+          "values": [
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806,
+            0.05000000074505806
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "PassiveGhoulADScaling",
+          "values": [
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "PassiveGhouHPScaling",
+          "values": [
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355,
+            0.3499999940395355
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "GhoulAoEDamageTaken",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MaxHealthLossPerSec",
+          "values": [
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "castRange": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "castRangeValues": {
+        "Default": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0x476ec0b8",
+          "mLocKeys": {
+            "keyName": "Unholy Covenant",
+            "keySummary": "Yorick's takes reduced damage and his basic attacks deal more damage for each summon that is active. Meanwhile, Yorick's ghouls scale off Yorick's Attack Damage and Health.",
+            "keyTooltip": "Yorick's basic abilities summon <keywordMajor>Ghouls</keywordMajor> who have <physicalDamage>@GhoulTotalADTooltip@ Attack Damage</physicalDamage>, <scaleHealth>@GhoulTotalHPTooltip@ Health</scaleHealth>, and <speed>@GhoulMovementSpeed@ bonus move speed</speed>.<br><br>Yorick takes @PassiveDamageReductionPerGhoul*100@% reduced damage and his basic attacks deal @PassiveDamageAmpPerGhoul*100@% more damage for each active <keywordMajor>Ghoul</keywordMajor>.",
+            "keyTooltipExtendedBelowLine": "<rules>Ghouls lose @MaxHealthLossPerSec*100@% max Health per second.<br>Ghouls take @GhoulAoEDamageTaken*100@% damage from area of effect abilities.<br>Ghouls are immune to <status>slows</status>.</rules>"
+          },
+          "mObjectName": "Jade_YorickPassive",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickunholycovenant.dds"
+      ],
+      "mSpellCalculations": {
+        "0x1b1dbaeb": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "PassiveGhouHPScaling",
+              "mStat": 12,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "0x6a50b248": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "PassiveGhoulADScaling",
+              "mStat": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "0x72c6b852": {
+          "mFormulaParts": [
+            {
+              "mBreakpoints": [
+                {
+                  "mAdditionalBonusAtThisLevel": 40.0,
+                  "mLevel": 6,
+                  "~class": "Breakpoint"
+                },
+                {
+                  "mAdditionalBonusAtThisLevel": 50.0,
+                  "mLevel": 9,
+                  "~class": "Breakpoint"
+                },
+                {
+                  "mAdditionalBonusAtThisLevel": 60.0,
+                  "mLevel": 12,
+                  "~class": "Breakpoint"
+                }
+              ],
+              "~class": "ByCharLevelBreakpointsCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x1423639e",
+    "~class": "SpellObject"
+  },
+  "0x229d2867": {
+    "ObjectName": "Jade_YorickEGhoulLogic",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Famine",
+          "keyTooltip": "Damage dealt by this ghoul heals Yorick."
+        },
+        "mObjectName": "Jade_YorickEGhoulLogic",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_YorickEGhoulLogic",
+    "mSpell": {
+      "SpellEventToAudioEventSuffix": {
+        "18": "Play_sfx_Yorick_YorickE_Famine_OnBuffActivate",
+        "19": "Play_sfx_Yorick_YorickE_Famine_OnBuffDeactivate"
+      },
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenoffamine.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x229d2867",
+    "~class": "SpellObject"
+  },
+  "0x247b50e7": {
+    "ObjectName": "Jade_YorickRRemoveClone",
+    "mScriptName": "Jade_YorickRRemoveClone",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofdeath.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x247b50e7",
+    "~class": "SpellObject"
+  },
+  "0x274efe25": {
+    "ObjectName": "Jade_YorickRDelayZyra",
+    "mScriptName": "Jade_YorickRDelayZyra",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofdeath.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x274efe25",
+    "~class": "SpellObject"
+  },
+  "0x2a6465b7": {
+    "ObjectName": "Jade_YorickWGhoulLogic",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Pestilence",
+          "keyTooltip": "A noxious cloud of disease swirls around this ghoul slowing nearby enemies."
+        },
+        "mObjectName": "Jade_YorickWGhoulLogic",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_YorickWGhoulLogic",
+    "mSpell": {
+      "SpellEventToAudioEventSuffix": {
+        "18": "Play_sfx_Yorick_YorickW_Decayed_OnBuffActivate",
+        "19": "Play_sfx_Yorick_YorickW_Decayed_OnBuffDeactivate"
+      },
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofpestilence.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x2a6465b7",
+    "~class": "SpellObject"
+  },
+  "0x37d81d4b": {
+    "ObjectName": "Jade_YorickRDelayKogMaw",
+    "mScriptName": "Jade_YorickRDelayKogMaw",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofdeath.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x37d81d4b",
+    "~class": "SpellObject"
+  },
+  "0x3f39382e": {
+    "ObjectName": "Jade_YorickQ",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Omen of War",
+          "keyTooltip": "Yorick's next attack will deal bonus damage and summon a Spectral Ghoul."
+        },
+        "mObjectName": "Jade_YorickQ",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_YorickQ",
+    "mSpell": {
+      "Cooldown": {
+        "values": [
+          10.0,
+          9.0,
+          8.0,
+          7.0,
+          6.0,
+          5.0,
+          4.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            0.0,
+            30.0,
+            60.0,
+            90.0,
+            120.0,
+            150.0,
+            180.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseSpectralAD",
+          "values": [
+            0.0,
+            8.0,
+            16.0,
+            24.0,
+            32.0,
+            40.0,
+            48.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MovementSpeed",
+          "values": [
+            0.10000000149011612,
+            0.15000000596046448,
+            0.20000000298023224,
+            0.25,
+            0.30000001192092896,
+            0.3499999940395355,
+            0.4000000059604645
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "AttackBuffDuration",
+          "values": [
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MovementSpeedBuffDuration",
+          "values": [
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "GhoulTime",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "GhoulArmorMRPerLevelQ",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ADRatio",
+          "values": [
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158,
+            1.2000000476837158
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ADCritRatio",
+          "values": [
+            2.4000000953674316,
+            2.4000000953674316,
+            2.4000000953674316,
+            2.4000000953674316,
+            2.4000000953674316,
+            2.4000000953674316,
+            2.4000000953674316
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_YorickSkin301_YorickQ_Omen_OnCast"
+      },
+      "castFrame": 18.0,
+      "castRange": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "castRangeValues": {
+        "Default": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        6.0,
+        6.0,
+        5.5,
+        5.0,
+        4.5,
+        4.0,
+        3.5
+      ],
+      "flags": 4,
+      "mAffectsTypeFlags": 6154,
+      "mAmmoCountHiddenInUI": true,
+      "mAnimationName": "",
+      "mCantCancelWhileWindingUp": true,
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "BaseDamage",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Spectral Attack Damage",
+                  "type": "BaseSpectralAD",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Move Speed",
+                  "type": "MovementSpeed",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Omen of War",
+            "keySummary": "Yorick's next attack will deal bonus damage and summon a Spectral Ghoul that deals additional damage and moves faster than Yorick's other ghouls. While the Spectral Ghoul is alive, Yorick moves faster as well.",
+            "keyTooltip": "Yorick's next attack will deal <scaleAD>@TotalDamageTooltip@ physical damage</scaleAD> and summon a <keywordMajor>Spectral Ghoul</keywordMajor> for @GhoulTime@ seconds.<br><br><keywordMajor>Spectral Ghouls</keywordMajor> have <scaleAD>@BaseSpectralAD@ bonus Attack Damage</scaleAD> and <speed>@MovementSpeed*100@% bonus Move Speed</speed>. While the ghoul is active, Yorick also gains <speed>@MovementSpeed*100@% Move Speed</speed>.",
+            "keyTooltipExtendedBelowLine": "<rules><physicalDamage>@TotalDamageCritTooltip@ physical damage</physicalDamage> dealt on a critical strike</rules>"
+          },
+          "mObjectName": "Jade_YorickQ",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofwar.dds"
+      ],
+      "mSpellCalculations": {
+        "0x1108d49a": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "ADRatio",
+              "mStat": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "0xc5cc5337": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "ADCritRatio",
+              "mStat": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "tooltipOnly": true,
+          "~class": "GameCalculation"
+        },
+        "0xcc480f56": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "ADCritRatio",
+              "mStat": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "TotalDamageTooltip": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "ADRatio",
+              "mStat": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "tooltipOnly": true,
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "Trait_AttackReset",
+        "Trait_DamageAbility",
+        "Trait_ActiveHeal",
+        "Trait_Strike",
+        "Trait_SignatureSpell"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Self"
+      },
+      "mana": [
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0
+      ],
+      "manaValues": {
+        "Default": 40.0,
+        "values": [
+          40.0,
+          40.0,
+          40.0,
+          40.0,
+          40.0,
+          40.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x3f39382e",
+    "~class": "SpellObject"
+  },
+  "0x4159d273": {
+    "ObjectName": "Jade_YorickRBuff",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Omen of Death",
+          "keyTooltip": "Yorick has created a Revenant of this unit. If it dies while the Revenant is alive, then it will reanimate for a short duration."
+        },
+        "mObjectName": "Jade_YorickRBuff",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_YorickRBuff",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofdeath.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x4159d273",
+    "~class": "SpellObject"
+  },
+  "0x44402b1b": {
+    "ObjectName": "Jade_YorickQGhoul",
+    "mScriptName": "Jade_YorickQGhoul",
+    "mSpell": {
+      "flags": 4,
+      "mAffectsTypeFlags": 7311,
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofwar.dds"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Location"
+      },
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x44402b1b",
+    "~class": "SpellObject"
+  },
+  "0x45e899ce": {
+    "ObjectName": "Jade_YorickRCloneBuff",
+    "mScriptName": "Jade_YorickRCloneBuff",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofdeath.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x45e899ce",
+    "~class": "SpellObject"
+  },
+  "0x4771259d": {
+    "ObjectName": "Jade_YorickRDelayKarthus",
+    "mScriptName": "Jade_YorickRDelayKarthus",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofdeath.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x4771259d",
+    "~class": "SpellObject"
+  },
+  "0x4d00b838": {
+    "ObjectName": "Jade_YorickWAuraSlow",
+    "mScriptName": "Jade_YorickWAuraSlow",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofpestilence.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x4d00b838",
+    "~class": "SpellObject"
+  },
+  "0x5f8d5d47": {
+    "ObjectName": "Jade_YorickRCreateClone",
+    "mScriptName": "Jade_YorickRCreateClone",
+    "mSpell": {
+      "castRangeValues": {
+        "Default": 25000.0,
+        "values": [
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0,
+          25000.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "flags": 4194316,
+      "mAffectsTypeFlags": 1,
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofdeath.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x5f8d5d47",
+    "~class": "SpellObject"
+  },
+  "0x65ca9cad": {
+    "ObjectName": "Jade_YorickRCloneActive",
+    "mScriptName": "Jade_YorickRCloneActive",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofdeath.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x65ca9cad",
+    "~class": "SpellObject"
+  },
+  "0x6b398ea": {
+    "ObjectName": "Jade_YorickRZombieKogMaw",
+    "mScriptName": "Jade_YorickRZombieKogMaw",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofdeath.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x6b398ea",
+    "~class": "SpellObject"
+  },
+  "0x81851c9f": {
+    "ObjectName": "Jade_YorickQAttackBuff",
+    "mScriptName": "Jade_YorickQAttackBuff",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofwarprehit.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x81851c9f",
+    "~class": "SpellObject"
+  },
+  "0x819e4da3": {
+    "ObjectName": "Jade_YorickBasicAttack",
+    "mScriptName": "Jade_YorickBasicAttack",
+    "mSpell": {
+      "Cooldown": {
+        "Default": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Yorick_YorickBasicAttack_OnCast",
+        "13": "Play_sfx_Yorick_YorickBasicAttack_OnHit"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 10.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0
+      ],
+      "castRangeValues": {
+        "Default": 20.0,
+        "values": [
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 5327,
+      "mAlternateName": "Jade_YorickBasicAttack",
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "0x3154f82d",
+      "mHitEffectOrientType": 2,
+      "missileSpeed": 0.0,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x819e4da3",
+    "~class": "SpellObject"
+  },
+  "0x8250651e": {
+    "ObjectName": "Jade_YorickQGhoulPrimaryTarget",
+    "mScriptName": "Jade_YorickQGhoulPrimaryTarget",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofwar.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x8250651e",
+    "~class": "SpellObject"
+  },
+  "0x87e27306": {
+    "ObjectName": "Jade_YorickW",
+    "mScriptName": "Jade_YorickW",
+    "mSpell": {
+      "Cooldown": {
+        "Default": 12.0,
+        "values": [
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0,
+          12.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "BaseDamage",
+          "values": [
+            25.0,
+            60.0,
+            95.0,
+            130.0,
+            165.0,
+            200.0,
+            235.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ActiveSlow",
+          "values": [
+            0.15000000596046448,
+            0.20000000298023224,
+            0.25,
+            0.30000001192092896,
+            0.3499999940395355,
+            0.4000000059604645,
+            0.44999998807907104
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "APRatio",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DamageRadius",
+          "values": [
+            250.0,
+            250.0,
+            250.0,
+            250.0,
+            250.0,
+            250.0,
+            250.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "PersistentSlow",
+          "values": [
+            0.07500000298023224,
+            0.10000000149011612,
+            0.125,
+            0.15000000596046448,
+            0.17499999701976776,
+            0.20000000298023224,
+            0.22499999403953552
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "PersistentSlowRadius",
+          "values": [
+            275.0,
+            275.0,
+            275.0,
+            275.0,
+            275.0,
+            275.0,
+            275.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "PersistentSlowDuration",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ActiveSlowDuration",
+          "values": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "GhoulTime",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "GhoulArmorMRPerLevelW",
+          "values": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "14": "Play_sfx_YorickSkin301_YorickW_Decayed_OnBuffCast"
+      },
+      "castConeAngle": 0.0,
+      "castConeDistance": 0.0,
+      "castFrame": 7.5,
+      "castRadius": [
+        225.0,
+        225.0,
+        225.0,
+        225.0,
+        225.0,
+        225.0,
+        225.0
+      ],
+      "castRange": [
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0
+      ],
+      "castRangeValues": {
+        "Default": 550.0,
+        "values": [
+          550.0,
+          550.0,
+          550.0,
+          550.0,
+          550.0,
+          550.0,
+          550.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        22.0,
+        20.0,
+        18.0,
+        16.0,
+        14.0,
+        12.0,
+        12.0
+      ],
+      "mAnimationName": "Spell2",
+      "mCantCancelWhileWindingUp": true,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          },
+          {
+            "centerLocator": {
+              "basePosition": 3,
+              "~class": "DrawablePositionLocator"
+            },
+            "~class": "TargeterDefinitionAoe"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "BaseDamage",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Initial Slow",
+                  "type": "ActiveSlow",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Persistent Slow",
+                  "type": "PersistentSlow",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "BaseCost",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Omen of Pestilence",
+            "keySummary": "Yorick summons a Decaying Ghoul that arrives with a violent explosion, damaging and slowing nearby enemies. The Decaying Ghoul slows nearby enemies.",
+            "keyTooltip": "Yorick causes a violent explosion that deals <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Slows</status> enemies in the area by @ActiveSlow*100@% for @ActiveSlowDuration@ seconds, and summons a <keywordMajor>Decaying Ghoul</keywordMajor> for @GhoulTime@ seconds.<br><br><keywordMajor>Decaying Ghouls</keywordMajor> <status>Slow</status> nearby enemies by @PersistentSlow*100@%."
+          },
+          "mObjectName": "Jade_YorickW",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofpestilence.dds"
+      ],
+      "mSpellCalculations": {
+        "TotalDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "APRatio",
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellRevealsChampion": false,
+      "mSpellTags": [
+        "Trait_AoE"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Area"
+      },
+      "mana": [
+        70.0,
+        70.0,
+        70.0,
+        70.0,
+        70.0,
+        70.0
+      ],
+      "manaValues": {
+        "Default": 55.0,
+        "values": [
+          55.0,
+          60.0,
+          65.0,
+          70.0,
+          75.0,
+          80.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "missileSpeed": 0.0,
+      "spellCastTime": 0.25,
+      "spellTotalTime": 1.0,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x87e27306",
+    "~class": "SpellObject"
+  },
+  "0x88102489": {
+    "ObjectName": "Jade_YorickRDelay",
+    "mScriptName": "Jade_YorickRDelay",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofdeath.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x88102489",
+    "~class": "SpellObject"
+  },
+  "0x90b50f2e": {
+    "ObjectName": "Jade_YorickRZombieKarthus",
+    "mScriptName": "Jade_YorickRZombieKarthus",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofdeath.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x90b50f2e",
+    "~class": "SpellObject"
+  },
+  "0x91ead7c6": {
+    "ObjectName": "Jade_YorickR",
+    "mScriptName": "Jade_YorickR",
+    "mSpell": {
+      "Cooldown": {
+        "Default": 135.0,
+        "values": [
+          135.0,
+          120.0,
+          105.0,
+          90.0,
+          75.0,
+          60.0,
+          45.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "ReviveDuration",
+          "values": [
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "DamagePercent",
+          "values": [
+            0.30000001192092896,
+            0.44999998807907104,
+            0.6000000238418579,
+            0.75,
+            0.8999999761581421,
+            1.0499999523162842,
+            1.2000000476837158
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "CloneDuration",
+          "values": [
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "13": "Play_sfx_YorickSkin301_YorickR_OnBuffCast"
+      },
+      "alwaysSnapFacing": true,
+      "bIsToggleSpell": true,
+      "castConeAngle": 0.0,
+      "castConeDistance": 0.0,
+      "castFrame": 15.0,
+      "castRadius": [
+        175.0,
+        175.0,
+        175.0,
+        175.0,
+        175.0,
+        175.0,
+        175.0
+      ],
+      "castRange": [
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0,
+        600.0
+      ],
+      "castRangeValues": {
+        "Default": 850.0,
+        "values": [
+          850.0,
+          850.0,
+          850.0,
+          850.0,
+          850.0,
+          850.0,
+          850.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        160.0,
+        160.0,
+        130.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "mAffectsTypeFlags": 1,
+      "mAnimationName": "Spell4",
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.5,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "Style": 1,
+                  "multiplier": 100.0,
+                  "nameOverride": "Damage Percent",
+                  "type": "DamagePercent",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "nameOverride": "Cooldown",
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 3,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Omen of Death",
+            "keySummary": "Yorick conjures a revenant in the image of one of his allies. If his ally dies while its revenant is alive, the revenant sacrifices itself to reanimate them and give them time to enact vengeance.",
+            "keyTooltip": "Yorick conjures a revenant in the image of an allied champion, which deals <scaleAD>@DamagePercent*100@% of target ally's Attack Damage</scaleAD> and lasts for @CloneDuration@ seconds. If his ally dies while their revenant is alive, the revenant sacrifices itself to reanimate them for @ReviveDuration@ seconds.<br><br>The revenant can be controlled by holding the alt key and using the right mouse button or by reactivating this ability."
+          },
+          "mObjectName": "Jade_YorickR",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofdeath.dds"
+      ],
+      "mSpellRevealsChampion": false,
+      "mSpellTags": [
+        "Trait_Ultimate"
+      ],
+      "mana": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "manaValues": {
+        "Default": 100.0,
+        "values": [
+          100.0,
+          100.0,
+          100.0,
+          100.0,
+          100.0,
+          100.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "missileSpeed": 0.0,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x91ead7c6",
+    "~class": "SpellObject"
+  },
+  "0x92a0714f": {
+    "ObjectName": "Jade_YorickWSlow",
+    "mScriptName": "Jade_YorickWSlow",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofpestilence.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x92a0714f",
+    "~class": "SpellObject"
+  },
+  "0x9d341b43": {
+    "ObjectName": "Jade_YorickBasicAttack2",
+    "mScriptName": "Jade_YorickBasicAttack2",
+    "mSpell": {
+      "Cooldown": {
+        "Default": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Yorick_YorickBasicAttack_OnCast",
+        "13": "Play_sfx_Yorick_YorickBasicAttack_OnHit"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 10.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0
+      ],
+      "castRangeValues": {
+        "Default": 20.0,
+        "values": [
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 5327,
+      "mAlternateName": "Jade_YorickBasicAttack",
+      "mAnimationName": "Attack2",
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "0x3154f82d",
+      "mHitEffectOrientType": 2,
+      "missileSpeed": 0.0,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x9d341b43",
+    "~class": "SpellObject"
+  },
+  "0xa6d533f3": {
+    "ObjectName": "Jade_YorickWGhoul",
+    "mScriptName": "Jade_YorickWGhoul",
+    "mSpell": {
+      "castRangeValues": {
+        "Default": 550.0,
+        "values": [
+          550.0,
+          550.0,
+          550.0,
+          550.0,
+          550.0,
+          550.0,
+          550.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "flags": 4,
+      "mAffectsTypeFlags": 7311,
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofpestilence.dds"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Location"
+      },
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0xa6d533f3",
+    "~class": "SpellObject"
+  },
+  "0xb20042be": {
+    "ObjectName": "Jade_YorickWGhoulBuff",
+    "mScriptName": "Jade_YorickWGhoulBuff",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofpestilence.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0xb20042be",
+    "~class": "SpellObject"
+  },
+  "0xb5c9a546": {
+    "ObjectName": "Jade_YorickEGhoulPrimaryTarget",
+    "mScriptName": "Jade_YorickEGhoulPrimaryTarget",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenoffamine.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0xb5c9a546",
+    "~class": "SpellObject"
+  },
+  "0xb8e321cc": {
+    "ObjectName": "Jade_YorickRZombieStun",
+    "mScriptName": "Jade_YorickRZombieStun",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofdeath.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0xb8e321cc",
+    "~class": "SpellObject"
+  },
+  "0xd1401bcb": {
+    "ObjectName": "Jade_YorickCritAttack",
+    "mScriptName": "Jade_YorickCritAttack",
+    "mSpell": {
+      "Cooldown": {
+        "Default": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_Yorick_YorickBasicAttack_OnCast",
+        "13": "Play_sfx_Yorick_YorickBasicAttack_OnHit"
+      },
+      "bHaveHitBone": true,
+      "bHaveHitEffect": true,
+      "castConeDistance": 100.0,
+      "castFrame": 10.0,
+      "castRadius": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "castRange": [
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0
+      ],
+      "castRangeValues": {
+        "Default": 20.0,
+        "values": [
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mAffectsTypeFlags": 5327,
+      "mAlternateName": "Jade_YorickCritAttack",
+      "mAnimationName": "Crit",
+      "mClientData": {
+        "mTargeterDefinitions": [
+          {
+            "useCasterBoundingBox": false,
+            "~class": "TargeterDefinitionRange"
+          }
+        ],
+        "~class": "SpellDataResourceClient"
+      },
+      "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "0x71d95ba",
+      "mHitEffectOrientType": 2,
+      "missileSpeed": 0.0,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0xd1401bcb",
+    "~class": "SpellObject"
+  },
+  "0xdc3ff583": {
+    "ObjectName": "Jade_YorickEGhoul",
+    "mScriptName": "Jade_YorickEGhoul",
+    "mSpell": {
+      "castRangeValues": {
+        "Default": 900.0,
+        "values": [
+          900.0,
+          900.0,
+          900.0,
+          900.0,
+          900.0,
+          900.0,
+          900.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenoffamine.dds"
+      ],
+      "mTargetingTypeData": {
+        "~class": "Location"
+      },
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0xdc3ff583",
+    "~class": "SpellObject"
+  },
+  "0xe55ef596": {
+    "ObjectName": "Jade_YorickE",
+    "mScriptName": "Jade_YorickE",
+    "mSpell": {
+      "Cooldown": {
+        "Default": 11.0,
+        "values": [
+          11.0,
+          10.0,
+          9.0,
+          8.0,
+          7.0,
+          6.0,
+          5.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "DataValues": [
+        {
+          "name": "HealingPercentage",
+          "values": [
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "BaseDamage",
+          "values": [
+            25.0,
+            55.0,
+            85.0,
+            115.0,
+            145.0,
+            175.0,
+            205.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "ADRatio",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "GhoulTime",
+          "values": [
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "~class": "SpellDataValue"
+        },
+        {
+          "name": "MinionHealEffectiveness",
+          "values": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "~class": "SpellDataValue"
+        }
+      ],
+      "SpellEventToAudioEventSuffix": {
+        "14": "Play_sfx_Yorick_YorickE_Famine_OnBuffCast"
+      },
+      "alwaysSnapFacing": true,
+      "castFrame": 10.0,
+      "castRange": [
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0,
+        700.0
+      ],
+      "castRangeValues": {
+        "Default": 550.0,
+        "values": [
+          550.0,
+          550.0,
+          550.0,
+          550.0,
+          550.0,
+          550.0,
+          550.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "cooldownTime": [
+        13.0,
+        12.0,
+        11.0,
+        10.0,
+        9.0,
+        8.0,
+        8.0
+      ],
+      "mAffectsTypeFlags": 6154,
+      "mAnimationName": "Spell1_cast",
+      "mCantCancelWhileWindingUp": true,
+      "mCastingBreaksStealth": true,
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0xd7c27163",
+          "mLists": {
+            "LevelUp": {
+              "Elements": [
+                {
+                  "nameOverride": "Damage",
+                  "type": "BaseDamage",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cooldown",
+                  "~class": "TooltipInstanceListElement"
+                },
+                {
+                  "type": "Cost",
+                  "~class": "TooltipInstanceListElement"
+                }
+              ],
+              "levelCount": 5,
+              "~class": "TooltipInstanceList"
+            }
+          },
+          "mLocKeys": {
+            "keyName": "Omen of Famine",
+            "keySummary": "Yorick steals life from his target and summons a Ravenous Ghoul that heals Yorick for the damage it deals.",
+            "keyTooltip": "Yorick deals <magicDamage>@TotalDamage@ magic damage</magicDamage> and <healing>Heals</healing> for up to @HealingPercentage*100@% of the damage dealt. A <keywordMajor>Ravenous Ghoul</keywordMajor> is summoned behind his target for up to @GhoulTime@ seconds.<br><br><keywordMajor>Ravenous Ghouls</keywordMajor> heal Yorick for @HealingPercentage*100@% of the damage they deal. Healing is only @MinionHealEffectiveness*100@% effective against minions."
+          },
+          "mObjectName": "Jade_YorickE",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mFloatVarsDecimals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenoffamine.dds"
+      ],
+      "mSpellCalculations": {
+        "TotalDamage": {
+          "mFormulaParts": [
+            {
+              "mDataValue": "baseDamage",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mDataValue": "ADRatio",
+              "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByNamedDataValueCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        }
+      },
+      "mSpellTags": [
+        "Trait_DamageAbility",
+        "Trait_AoE"
+      ],
+      "mana": [
+        50.0,
+        55.0,
+        60.0,
+        65.0,
+        70.0,
+        75.0
+      ],
+      "manaValues": {
+        "Default": 55.0,
+        "values": [
+          55.0,
+          60.0,
+          65.0,
+          70.0,
+          75.0,
+          80.0
+        ],
+        "~class": "ResourceCostModifiable"
+      },
+      "spellCastTime": 0.25,
+      "spellTotalTime": 1.0,
+      "useAnimatorFramerate": true,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0xe55ef596",
+    "~class": "SpellObject"
+  },
+  "0xe7ce740a": {
+    "ObjectName": "Jade_YorickQUnlock",
+    "mScriptName": "Jade_YorickQUnlock",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofwar.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0xe7ce740a",
+    "~class": "SpellObject"
+  },
+  "0xe8704fee": {
+    "ObjectName": "Jade_YorickRGuide",
+    "mScriptName": "Jade_YorickRGuide",
+    "mSpell": {
+      "Cooldown": {
+        "Default": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "castRangeValues": {
+        "Default": 20000.0,
+        "values": [
+          20000.0,
+          20000.0,
+          20000.0,
+          20000.0,
+          20000.0,
+          20000.0,
+          20000.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "flags": 4,
+      "mClientData": {
+        "mTooltipData": {
+          "mFormat": "0x3b504ce3",
+          "mObjectName": "Jade_YorickRGuide",
+          "~class": "TooltipInstanceSpell"
+        },
+        "~class": "SpellDataResourceClient"
+      },
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofdeath_r.dds"
+      ],
+      "mTargetingTypeData": {
+        "~class": "TargetOrLocation"
+      },
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0xe8704fee",
+    "~class": "SpellObject"
+  },
+  "0xea3730db": {
+    "ObjectName": "Jade_YorickQBuff",
+    "mBuff": {
+      "mBuffAttributeFlag": 32,
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Omen of War",
+          "keyTooltip": "Yorick moves faster while the Spectral Ghoul remains alive."
+        },
+        "mObjectName": "Jade_YorickQBuff",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_YorickQBuff",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofwar.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0xea3730db",
+    "~class": "SpellObject"
+  },
+  "0xeb64f1bf": {
+    "ObjectName": "Jade_YorickQGhoulLogic",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "War",
+          "keyTooltip": "This ghoul has increased movement speed and deals bonus damage each attack."
+        },
+        "mObjectName": "Jade_YorickQGhoulLogic",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_YorickQGhoulLogic",
+    "mSpell": {
+      "SpellEventToAudioEventSuffix": {
+        "18": "Play_sfx_Yorick_YorickQ_Omen_OnBuffActivate",
+        "19": "Play_sfx_Yorick_YorickQ_Omen_OnBuffDeactivate",
+        "20": "Play_sfx_YorickSkin301_YorickQ_Omen_OnBuffCast"
+      },
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofwar.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0xeb64f1bf",
+    "~class": "SpellObject"
+  },
+  "0xf1671818": {
+    "ObjectName": "Jade_YorickRZombieZyra",
+    "mScriptName": "Jade_YorickRZombieZyra",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofdeath.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0xf1671818",
+    "~class": "SpellObject"
+  },
+  "0xf5a9b20c": {
+    "ObjectName": "Jade_YorickRZombie",
+    "mBuff": {
+      "mTooltipData": {
+        "mFormat": "0xb34f999a",
+        "mLocKeys": {
+          "keyName": "Omen of Death",
+          "keyTooltip": "This unit has been reanimated by Yorick and is able to seek vengeance for its death."
+        },
+        "mObjectName": "Jade_YorickRZombie",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "Jade_YorickRZombie",
+    "mSpell": {
+      "SpellEventToAudioEventSuffix": {
+        "20": "Play_sfx_YorickSkin301_YorickR_Revive_OnBuffCast"
+      },
+      "mImgIconName": [
+        "assets/ux/jade/s3icons/samesized/yorickomenofdeath.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0xf5a9b20c",
+    "~class": "SpellObject"
+  }
+}
