@@ -3446,54 +3446,41 @@
       },
       "DataValues": [
         {
-          "name": "BaseDamageMax",
+          "name": "BaseDamageMin",
           "values": [
-            10.0,
-            80.0,
-            150.0,
-            220.0,
-            290.0,
-            360.0,
-            430.0
+            5.0,
+            50.0,
+            95.0,
+            140.0,
+            185.0,
+            230.0,
+            275.0
           ],
           "~class": "SpellDataValue"
         },
         {
-          "name": "ChargeMultiplierInverse",
+          "name": "tADRatioMin",
           "values": [
-            0.666670024394989,
-            0.666670024394989,
-            0.666670024394989,
-            0.666670024394989,
-            0.666670024394989,
-            0.666670024394989,
-            0.666670024394989
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929
           ],
           "~class": "SpellDataValue"
         },
         {
-          "name": "tADRatioMax",
+          "name": "MaxChannelAmp",
           "values": [
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158,
-            1.2000000476837158
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "MaxChargeAmp",
-          "values": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071,
+            0.699999988079071
           ],
           "~class": "SpellDataValue"
         },
@@ -3580,15 +3567,15 @@
         "Kiwi": {
           "SpellDataValues": [
             {
-              "name": "tADRatioMax",
+              "name": "tADRatioMin",
               "values": [
-                1.5,
-                1.5,
-                1.5,
-                1.5,
-                1.5,
-                1.5,
-                1.5
+                0.8999999761581421,
+                0.8999999761581421,
+                0.8999999761581421,
+                0.8999999761581421,
+                0.8999999761581421,
+                0.8999999761581421,
+                0.8999999761581421
               ],
               "~class": "SpellDataValue"
             }
@@ -3598,15 +3585,15 @@
         "cherry": {
           "SpellDataValues": [
             {
-              "name": "tADRatioMax",
+              "name": "tADRatioMin",
               "values": [
-                1.5,
-                1.5,
-                1.5,
-                1.5,
-                1.5,
-                1.5,
-                1.5
+                0.8999999761581421,
+                0.8999999761581421,
+                0.8999999761581421,
+                0.8999999761581421,
+                0.8999999761581421,
+                0.8999999761581421,
+                0.8999999761581421
               ],
               "~class": "SpellDataValue"
             }
@@ -3784,8 +3771,8 @@
             "LevelUp": {
               "Elements": [
                 {
-                  "nameOverride": "Maximum Damage",
-                  "type": "BaseDamageMax",
+                  "nameOverride": "Damage",
+                  "type": "BaseDamageMin",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -3806,104 +3793,16 @@
           "mLocKeys": {
             "keyName": "Piercing Arrow",
             "keySummary": "Varus readies and then fires a powerful shot that gains extra range and damage the longer he spends preparing to fire.",
-            "keyTooltip": "<attention>Begin Charging:</attention> Varus draws back his next shot, <status>Slowing</status> himself by @MoveSpeedMod*-100@%. After @MaxChannelDuration@ seconds, if not fired, Varus will cancel the Ability and refund @ManaRefund*100@% of its Mana cost.<br><br><attention>Release:</attention> Varus releases the arrow, dealing <physicalDamage>@TotalDamageMinTooltip@ physical damage</physicalDamage>, reduced by @FalloffPercent*100@% per enemy hit (minimum @MinDamagePercent*100@%). Damage and <keywordMajor>Blight</keywordMajor> detonation effects are increased by up to @MaxChargeAmp*100@% based on charge time (maximum <physicalDamage>@TotalDamageMax@</physicalDamage>) ."
+            "keyTooltip": "<attention>Begin Charging:</attention> Varus draws back his next shot, <status>Slowing</status> himself by @MoveSpeedMod*-100@%. After @MaxChannelDuration@ seconds, if not fired, Varus will cancel the Ability and refund @ManaRefund*100@% of its Mana cost.<br><br><attention>Release:</attention> Varus releases the arrow, dealing <physicalDamage>@TotalDamageMin@ physical damage</physicalDamage>, reduced by @FalloffPercent*100@% per enemy hit (minimum @MinDamagePercent*100@%). Damage and <keywordMajor>Blight</keywordMajor> detonation effects are increased by up to @MaxChannelAmp*100@% based on charge time (up to to <physicalDamage>@TotalDamageMax@ physical damage</physicalDamage>."
           },
           "mObjectName": "VarusQ",
           "~class": "TooltipInstanceSpell"
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 1.0,
-      "mCoefficient2": 1.5,
       "mDimensionBehavior": 1,
       "mDisableCastBar": true,
       "mDoNotNeedToFaceTarget": true,
-      "mEffectAmount": [
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.15000000596046448,
-            0.15000000596046448,
-            0.15000000596046448,
-            0.15000000596046448,
-            0.15000000596046448,
-            0.15000000596046448,
-            0.15000000596046448
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            -0.20000000298023224,
-            -0.20000000298023224,
-            -0.20000000298023224,
-            -0.20000000298023224,
-            -0.20000000298023224,
-            -0.20000000298023224,
-            -0.20000000298023224
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.33000001311302185,
-            0.33000001311302185,
-            0.33000001311302185,
-            0.33000001311302185,
-            0.33000001311302185,
-            0.33000001311302185,
-            0.33000001311302185
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         -1,
         -1,
@@ -3927,22 +3826,14 @@
       ],
       "mLineWidth": 75.0,
       "mSpellCalculations": {
-        "0xb3ef3984": {
-          "mModifiedGameCalculation": "TotalDamageMax",
-          "mMultiplier": {
-            "mDataValue": "ChargeMultiplierInverse",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
-        "TotalDamageMax": {
+        "TotalDamageMin": {
           "mFormulaParts": [
             {
-              "mDataValue": "BaseDamageMax",
+              "mDataValue": "BaseDamageMin",
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mDataValue": "tADRatioMax",
+              "mDataValue": "tADRatioMin",
               "mStat": 2,
               "mStatFormula": 2,
               "~class": "StatByNamedDataValueCalculationPart"
@@ -3950,11 +3841,20 @@
           ],
           "~class": "GameCalculation"
         },
-        "TotalDamageMinTooltip": {
-          "mModifiedGameCalculation": "TotalDamageMax",
+        "TotalDamageMax": {
+          "mModifiedGameCalculation": "TotalDamageMin",
           "mMultiplier": {
-            "mDataValue": "ChargeMultiplierInverse",
-            "~class": "NamedDataValueCalculationPart"
+            "mSubparts": [
+              {
+                "mNumber": 1.0,
+                "~class": "NumberCalculationPart"
+              },
+              {
+                "mDataValue": "MaxChannelAmp",
+                "~class": "NamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "SumOfSubPartsCalculationPart"
           },
           "~class": "GameCalculationModified"
         }
@@ -5756,13 +5656,13 @@
         {
           "name": "BasePercentHPPerStack",
           "values": [
+            0.019999999552965164,
             0.02500000037252903,
-            0.030000001192092896,
+            0.029999999329447746,
             0.03500000014901161,
             0.03999999910593033,
             0.04500000178813934,
-            0.05000000074505806,
-            0.054999999701976776
+            0.05000000074505806
           ],
           "~class": "SpellDataValue"
         },
@@ -5782,13 +5682,13 @@
         {
           "name": "VarusWOnHitDamage",
           "values": [
-            -5.0,
+            -2.0,
             4.0,
-            13.0,
+            10.0,
+            16.0,
             22.0,
-            31.0,
-            40.0,
-            49.0
+            28.0,
+            34.0
           ],
           "~class": "SpellDataValue"
         },
@@ -5808,52 +5708,52 @@
         {
           "name": "VarusWMaxChargeHPDamage",
           "values": [
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158
           ],
           "~class": "SpellDataValue"
         },
         {
           "name": "OnHitRatio",
           "values": [
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896,
+            0.30000001192092896
           ],
           "~class": "SpellDataValue"
         },
         {
           "name": "OnHitADRatio",
           "values": [
-            0.15000000596046448,
-            0.15000000596046448,
-            0.15000000596046448,
-            0.15000000596046448,
-            0.15000000596046448,
-            0.15000000596046448,
-            0.15000000596046448
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224,
+            0.20000000298023224
           ],
           "~class": "SpellDataValue"
         },
         {
           "name": "WQHealthDamage",
           "values": [
-            0.03999999910593033,
+            0.05000000074505806,
             0.05999999865889549,
+            0.07000000029802322,
             0.07999999821186066,
+            0.09000000357627869,
             0.10000000149011612,
-            0.11999999731779099,
-            0.14000000059604645,
-            0.1599999964237213
+            0.10999999940395355
           ],
           "~class": "SpellDataValue"
         },
@@ -5999,74 +5899,6 @@
         "~class": "SpellDataResourceClient"
       },
       "mDoesntBreakChannels": true,
-      "mEffectAmount": [
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.02500000037252903,
-            0.029999999329447746,
-            0.03500000014901161,
-            0.03999999910593033,
-            0.04500000178813934,
-            0.05000000074505806,
-            0.054999999701976776
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            120.0,
-            120.0,
-            120.0,
-            120.0,
-            120.0,
-            120.0,
-            120.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         1,
         0,
@@ -6150,7 +5982,7 @@
                   "~class": "NumberCalculationPart"
                 },
                 "mPart2": {
-                  "mNumber": 0.013000000268220901,
+                  "mNumber": 0.014000000432133675,
                   "~class": "NumberCalculationPart"
                 },
                 "~class": "ProductOfSubPartsCalculationPart"

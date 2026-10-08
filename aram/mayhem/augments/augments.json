@@ -710,7 +710,7 @@
     "name": "Infernal Soul",
     "rarity": "Silver",
     "desc": "You gain the Infernal Dragon Soul, dealing bonus damage when you hit enemies with Abilities or Attacks.",
-    "tooltip": "You gain the Infernal Soul, dealing bonus damage when you hit enemies with Abilities or Attacks.<br><br>Damage Dealt: @f2@",
+    "tooltip": "You gain the Infernal Soul, dealing bonus damage when you hit enemies with Abilities or Attacks.<br><br>Damage Dealt to Champions: @f2@",
     "icons": [
       "assets/ux/cherry/augments/icons/infernalsoul_small.tex",
       "assets/ux/cherry/augments/icons/infernalsoul_large.tex"
@@ -736,12 +736,13 @@
     "apiName": "ARAM_JeweledGauntlet",
     "name": "Jeweled Gauntlet",
     "rarity": "Prismatic",
-    "desc": "Your Abilities can <crit>Critically Strike</crit>. <br><br>Gain <crit>%i:scaleCrit% @CritGranted@% Crit Chance</crit>.",
-    "tooltip": "Your Abilities can <crit>Critically Strike</crit> for @CritDamage*100@% total damage.<br><br>Gain <crit>%i:scaleCrit% @CritGranted@ Crit Chance</crit>.<br><br>Bonus Damage: @f2@",
+    "desc": "Your Abilities can <crit>Critically Strike</crit>. <br><br>Gain <crit>%i:scaleCrit% @CritGranted@ Crit Chance</crit>.",
+    "tooltip": "Your Abilities can <crit>Critically Strike</crit> for @CritDamageTooltip@% increased damage.<br><br>Gain <crit>%i:scaleCrit% @CritGranted@ Crit Chance</crit>.<br><br>Damage Dealt to Champions: @f2@",
     "dataValues": {
       "CritDamage": 1.4500000476837158,
       "CritChance": 0.25,
-      "CritConverRatio": 0.00044999999227002263
+      "CritConverRatio": 0.00044999999227002263,
+      "CritDamageTooltip": 45.0
     },
     "calculations": {
       "CritGranted": {
@@ -2436,7 +2437,7 @@
       "SpinHaste": 30.0
     },
     "calculations": {
-      "0x90a024ae": {
+      "SpinDamageAmp_Ult": {
         "mDisplayAsPercent": true,
         "mFormulaParts": [
           {
@@ -7312,15 +7313,15 @@
       "DistanceForMaxDamage": 2000.0
     },
     "calculations": {
-      "0x59587a93": {
-        "mModifiedGameCalculation": "0x6f6db7ed",
+      "Calc_Damage_Flat_Max": {
+        "mModifiedGameCalculation": "Calc_Damage_Flat_Min",
         "mMultiplier": {
-          "mNumber": 12.0,
+          "mNumber": 8.0,
           "~class": "NumberCalculationPart"
         },
         "~class": "GameCalculationModified"
       },
-      "0x6f6db7ed": {
+      "Calc_Damage_Flat_Min": {
         "mFormulaParts": [
           {
             "mEndValue": 50.0,
@@ -7340,17 +7341,17 @@
         ],
         "~class": "GameCalculation"
       },
-      "0xdc2002f3": {
+      "Calc_Damage_Percent_Max": {
         "mExpandedTooltipCalculationDisplay": 5,
-        "mModifiedGameCalculation": "0xf233ad4d",
+        "mModifiedGameCalculation": "Calc_Damage_Percent_Min",
         "mMultiplier": {
-          "mNumber": 12.0,
+          "mNumber": 8.0,
           "~class": "NumberCalculationPart"
         },
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculationModified"
       },
-      "0xf233ad4d": {
+      "Calc_Damage_Percent_Min": {
         "mDisplayAsPercent": true,
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
@@ -7465,7 +7466,7 @@
       "Mark_Duration": 4.0
     },
     "calculations": {
-      "0x5d32a8f": {
+      "Calc_Damage_Per_Stack": {
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
@@ -7516,7 +7517,7 @@
       "VFX_Breakpoint_Medium": 55.0
     },
     "calculations": {
-      "0x4b3b9be0": {
+      "Calc_Crit_Damage_Per_AS": {
         "mDisplayAsPercent": true,
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
@@ -7529,7 +7530,7 @@
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculation"
       },
-      "0x5615d931": {
+      "Calc_Percent_AS_To_Convert": {
         "mDisplayAsPercent": true,
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
@@ -7541,7 +7542,7 @@
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculation"
       },
-      "0xcdab7380": {
+      "Calc_Bonus_AD": {
         "mDisplayAsPercent": true,
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
@@ -7553,7 +7554,7 @@
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculation"
       },
-      "0xcf517884": {
+      "Calc_AS_To_Crit_Damage": {
         "mDisplayAsPercent": true,
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
@@ -7565,7 +7566,7 @@
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculation"
       },
-      "0xd130a2db": {
+      "Calc_Bonus_Crit_Damage": {
         "mDisplayAsPercent": true,
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
@@ -7595,7 +7596,7 @@
       "PerTargetCooldown": 1.5
     },
     "calculations": {
-      "0x999c5311": {
+      "SpeedPercent": {
         "mDisplayAsPercent": true,
         "mFormulaParts": [
           {
@@ -7619,7 +7620,7 @@
           "PerTargetCooldown": 1.5
         },
         "calcs": {
-          "0x999c5311": {
+          "SpeedPercent": {
             "mDisplayAsPercent": true,
             "mFormulaParts": [
               {
@@ -7698,14 +7699,14 @@
     "apiName": "DoubleTime",
     "name": "Double Time",
     "rarity": "Gold",
-    "desc": "Damaging enemy champions with two different Abilities in quick succession grants you permanent <scaleMana>%i:scaleMana% Mana</scaleMana> and deals additional <magicDamage>magic damage</magicDamage> based on your maximum <scaleMana>%i:scaleMana% Mana</scaleMana>.",
-    "tooltip": "Damaging enemy champions with two different Abilities within @DamageWindowSeconds@ seconds grants you <scaleMana>@ManaGain@ %i:scaleMana% Mana</scaleMana> permanently (@ManaGainCD@s Cooldown) and deals an additional <magicDamage>@PercentOfManaDamage@ magic damage</magicDamage>.<br><br>Total Mana Gained: @f1@",
+    "desc": "Damaging an enemy champion with 2 separate Abilities in quick succession deals  <magicDamage> magic damage</magicDamage> and grants <scaleMana>max Mana</scaleMana>.<br>",
+    "tooltip": "Damaging an enemy champion with 2 separate Abilities within @DamageWindowSeconds@ seconds deals  <magicDamage>@PercentOfManaDamage@ magic damage</magicDamage> and grants <scaleMana>@ManaGain@ %i:scaleMana% max Mana</scaleMana>.<br><br><rules>Mana Gained: @f1@<br><br>@ManaGainCD@ second Cooldown Per Target</rules>",
     "dataValues": {
       "DamageWindowSeconds": 4.0,
       "ManaGainCD": 1.0
     },
     "calculations": {
-      "0xaa7499cd": {
+      "PercentOfManaDamage": {
         "mFormulaParts": [
           {
             "mCoefficient": 0.10000000149011612,
@@ -7750,7 +7751,7 @@
       "AuraCooldown": 90.0
     },
     "calculations": {
-      "0x77ad423e": {
+      "HealthThresholdTooltipPercent": {
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
@@ -7817,8 +7818,8 @@
     "apiName": "BouncingBees",
     "name": "Bouncing Bees",
     "rarity": "Prismatic",
-    "desc": "After using an ability, your next auto attack bounces to the nearest enemy<br><br><font color='#F0C200'>QUEST:</font> Bounce auto attacks onto enemy Champions<br><br><font color='#F0C200'>REWARD:</font> Gain +@ADPerMilestone@AD and an extra bounce per Quest Level",
-    "tooltip": "Your auto attacks bounce to the nearest enemy<br><br>Auto attacks that bounce to an enemy Champion grant +@ADPerHit@ AD permanently.<br><br>Total AD Gained: @f1@",
+    "desc": "After using an ability, your next attack bounces to the nearest enemy.<br><br><font color='#F0C200'>QUEST:</font> Bounce attacks onto enemy Champions<br><br><font color='#F0C200'>REWARD:</font> Gain <physicalDamage>+@ADPerMilestone@AD</physicalDamage> and an extra bounce per Quest Level",
+    "tooltip": "After using an ability, your next attack bounces to the nearest enemy.<br><br><font color='#F0C200'>QUEST:</font> Bounce attacks onto enemy Champions<br><br><font color='#F0C200'>REWARD:</font> Gain <physicalDamage>+@ADPerMilestone@AD</physicalDamage> and an extra bounce per Quest Level<br><br>Total AD Gained: @f1@",
     "dataValues": {
       "BounceDistance": 700.0,
       "BounceAngle": 140.0,
@@ -7828,7 +7829,7 @@
       "BounceAngleIncreasePerBounce": 5.0
     },
     "calculations": {
-      "0x7a4416b1": {
+      "BasicAttackDamagePercent": {
         "mDisplayAsPercent": true,
         "mFormulaParts": [
           {
@@ -7845,11 +7846,11 @@
       "QuestBreakpoints": [
         {
           "QuestRequirement": 10,
-          "QuestDesc": "After using an ability, your next auto attack bounces to the nearest enemy, dealing @BasicAttackDamagePercent@ of the original damage<br><br><font color='#F0C200'>QUEST:</font> Bounce auto attacks onto enemy Champions @QuestRequirement@ times<br><br><font color='#F0C200'>REWARD:</font> Gain +@ADPerMilestone@ Attack Damage an extra bounces per Quest Level<br><br>Quest Progress: @QuestProgress@ / @QuestRequirement@<br>Total AD Gained: @f1@<br>Maximum Bounces: @f2@"
+          "QuestDesc": "After using an ability, your next attack bounces to the nearest enemy, dealing @BasicAttackDamagePercent@ of the original damage.<br><br><font color='#F0C200'>QUEST:</font> Bounce attacks onto enemy Champions @QuestRequirement@ times<br><br><font color='#F0C200'>REWARD:</font> Gain <physicalDamage>+@ADPerMilestone@ Attack Damage</physicalDamage> an extra bounces per Quest Level<br><br>Quest Progress: @QuestProgress@ / @QuestRequirement@<br>Total AD Gained: <physicalDamage>@f1@</physicalDamage><br>Maximum Bounces: @f2@"
         },
         {
           "QuestRequirement": 40,
-          "QuestDesc": "After using an ability, your next auto attack bounces to the nearest enemy, dealing @BasicAttackDamagePercent@ of the original damage<br><br><font color='#F0C200'>QUEST:</font> Bounce auto attacks onto enemy Champions @QuestRequirement@ times<br><br><font color='#F0C200'>REWARD:</font> Gain +@ADPerMilestone@ Attack Damage an extra bounces per Quest Level<br><br>Quest Progress: @QuestProgress@ / @QuestRequirement@<br>Total AD Gained: @f1@<br>Maximum Bounces: @f2@"
+          "QuestDesc": "After using an ability, your next attack bounces to the nearest enemy, dealing @BasicAttackDamagePercent@ of the original damage<br><br><font color='#F0C200'>QUEST:</font> Bounce attacks onto enemy Champions @QuestRequirement@ times<br><br><font color='#F0C200'>REWARD:</font> Gain <physicalDamage>+@ADPerMilestone@ Attack Damage</physicalDamage> an extra bounces per Quest Level<br><br>Quest Progress: @QuestProgress@ / @QuestRequirement@<br>Total AD Gained: <physicalDamage>@f1@</physicalDamage><br>Maximum Bounces: @f2@"
         },
         {
           "QuestRequirement": 163,
@@ -7871,8 +7872,8 @@
     "apiName": "ArmoredImpact",
     "name": "Armored Impact",
     "rarity": "Gold",
-    "desc": "After using an Ability, your next Basic Attack will deal additional <physicalDamage>physical damage</physicalDamage> to enemies in an area around the target, scaling with your <scaleArmor>%i:scaleArmor% Armor</scaleArmor>.",
-    "tooltip": "After using an Ability, your next Basic Attack within @Cooldown@ seconds will deal an additional <physicalDamage>@ArmorDamage@ physical damage</physicalDamage> to nearby enemies around your target. Both the damage and size scale with your <scaleArmor>%i:scaleArmor% Armor</scaleArmor>.<br><br>Armored Impact Damage to Enemy Champions: @f1@",
+    "desc": "After casting an Ability, your next Attack deals @ArmorDamage@ bonus physical damage to nearby enemies.",
+    "tooltip": "After casting an Ability, your next Attack deals @ArmorDamage@ bonus physical damage to nearby enemies.<br><br><rules>Damage to Enemy Champions:</rules> @f1@",
     "dataValues": {
       "ArmorPercent": 2.5,
       "AOEStartSize": 160.0,
@@ -7907,7 +7908,7 @@
       "ShieldDuration": 1.5
     },
     "calculations": {
-      "0xfbcf6ee7": {
+      "ManaToShieldPercent": {
         "mDisplayAsPercent": true,
         "mFormulaParts": [
           {
@@ -7946,7 +7947,7 @@
       "IncreasedDamage": 0.15000000596046448
     },
     "calculations": {
-      "0x935a2142": {
+      "MaxDistanceProximityTooltip": {
         "mDisplayAsPercent": true,
         "mFormulaParts": [
           {
@@ -7994,15 +7995,15 @@
     "apiName": "MoshMonster",
     "name": "Mosh Monster",
     "rarity": "Prismatic",
-    "desc": "When you use <font color='#F0C200'>@SpellName@</font>, gain <scaleHealth>Bonus Health</scaleHealth> and <scaleSize>champion size</scaleSize> and <status>Slow</status> nearby enemies.<br><br>Getting takedowns permanently increases this effect.",
-    "tooltip": "When you use <font color='#F0C200'>@SpellName@</font>, gain <scaleHealth>@InitialHPGain@ Bonus Health</scaleHealth> and <scaleSize>champion size</scaleSize> and create a zone around you that <status>Slows</status> enemies by @SlowAmount@.<br><br>Getting takedowns permanently increases the champion size and Health gained by @HPIncreasePerTakedown@ and increases the overall radius of the slow zone.<br><br><rules>Takedowns earned while using <font color='#F0C200'>@SpellName@</font> are worth <attention>triple</attention>.</rules>",
+    "desc": "Casting <font color='#F0C200'>@SpellName@</font> grants @InitialHPGain@ bonus Health and Slows nearby enemies for the duration of <font color='#F0C200'>@SpellName@</font><br><br>Getting a takedown permanently increases this effect.",
+    "tooltip": "Casting <font color='#F0C200'>@SpellName@</font> gramts <scaleHealth>@InitialHPGain@ bonus Health</scaleHealth> and <status>Slows</status>  nearby enemies by @SlowAmount@ for the duration of <font color='#F0C200'>@SpellName@</font><br><br>Getting takedowns permanently increases the Health gained by @HPIncreasePerTakedown@ and increases the area of the slow zone.<br><br><rules>Takedowns earned while using <font color='#F0C200'>@SpellName@</font> are worth <attention>triple</attention>.</rules>",
     "dataValues": {
       "InitialAOESize": 350.0,
       "HPIncreasePerTakedownPercent": 0.029999999329447746,
       "CountersPerUltKill": 3.0
     },
     "calculations": {
-      "0x1eac1a3b": {
+      "HPIncreasePerTakedown": {
         "mFormulaParts": [
           {
             "mEndValue": 30.0,
@@ -8031,7 +8032,7 @@
         ],
         "~class": "GameCalculation"
       },
-      "0xb6bcdeac": {
+      "InitialHPGain": {
         "mFormulaParts": [
           {
             "mEndValue": 750.0,
@@ -8091,7 +8092,7 @@
       "ADMultiplier": 1.75
     },
     "calculations": {
-      "0x71323e7d": {
+      "Calc_ASPerAD": {
         "mDisplayAsPercent": true,
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
@@ -8104,7 +8105,7 @@
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "GameCalculation"
       },
-      "0x8577d32c": {
+      "Calc_OnHitDamage": {
         "mFormulaParts": [
           {
             "mEndValue": 50.0,
@@ -8114,7 +8115,7 @@
         ],
         "~class": "GameCalculation"
       },
-      "0x9f10151d": {
+      "Calc_ADtoAS": {
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
@@ -8152,7 +8153,7 @@
       "APAmp": 0.15000000596046448
     },
     "calculations": {
-      "0x8e5ab46a": {
+      "Calc_ManaToAP": {
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
@@ -8163,7 +8164,7 @@
         "mSimpleTooltipCalculationDisplay": 6,
         "~class": "GameCalculation"
       },
-      "0xefe39699": {
+      "Calc_BonusAP": {
         "mFormulaParts": [
           {
             "mDataValue": "APAmp",
@@ -8172,7 +8173,7 @@
         ],
         "~class": "GameCalculation"
       },
-      "0xf717dc88": {
+      "Calc_APPerMana": {
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
@@ -8197,7 +8198,7 @@
     "desc": "<scaleHealth>%i:scaleHealth% Bonus Health</scaleHealth> is converted into <scaleLethality>%i:scaleAPen% Lethality</scaleLethality>.<br><br>Gain <scaleLethality>@Calc_BonusLethality@ %i:scaleAPen% Lethality</scaleLethality>.",
     "tooltip": "<scaleHealth>%i:scaleHealth% Bonus Health</scaleHealth> is converted into <scaleLethality>%i:scaleAPen% Lethality</scaleLethality>.<br>(<scaleHealth>@Calc_HPtoLethality@ Health</scaleHealth> to <scaleLethality>@Calc_LethalitytoHP@ Lethality</scaleLethality>)<br><br>Gain <scaleLethality>@Calc_BonusLethality@ %i:scaleAPen% Lethality</scaleLethality>.<br><br><rules>Currently Converting Into: <scaleLethality>@f1.1@ Lethality</scaleLethality></rules>",
     "calculations": {
-      "0x18255baa": {
+      "Calc_BonusLethality": {
         "mFormulaParts": [
           {
             "mEndValue": 25.0,
@@ -8207,7 +8208,7 @@
         ],
         "~class": "GameCalculation"
       },
-      "0x5e8e8820": {
+      "Calc_LethalitytoHP": {
         "mFormulaParts": [
           {
             "mNumber": 5.0,
@@ -8216,7 +8217,7 @@
         ],
         "~class": "GameCalculation"
       },
-      "0x6f2c817a": {
+      "Calc_HPtoLethality": {
         "mFormulaParts": [
           {
             "mNumber": 100.0,
@@ -8250,7 +8251,7 @@
       "MinChargeTimeTT": 0.25
     },
     "calculations": {
-      "0x24319826": {
+      "BrassBlastDamage_Min": {
         "mFormulaParts": [
           {
             "mEndValue": 250.0,
@@ -8270,7 +8271,7 @@
         ],
         "~class": "GameCalculation"
       },
-      "0x3646cf34": {
+      "BrassBlastDamage_Max": {
         "mFormulaParts": [
           {
             "mEndValue": 600.0,
@@ -8305,7 +8306,7 @@
           "MinChargeTimeTT": 0.25
         },
         "calcs": {
-          "0x24319826": {
+          "BrassBlastDamage_Min": {
             "mFormulaParts": [
               {
                 "mEndValue": 250.0,
@@ -8325,7 +8326,7 @@
             ],
             "~class": "GameCalculation"
           },
-          "0x3646cf34": {
+          "BrassBlastDamage_Max": {
             "mFormulaParts": [
               {
                 "mEndValue": 600.0,
@@ -8465,7 +8466,7 @@
       "Kill_Empower_Duration": 10.0
     },
     "calculations": {
-      "0x8a7e6cfb": {
+      "Calc_Cooldown_Refund": {
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
@@ -8576,7 +8577,7 @@
       "AoE_Radius": 425.0
     },
     "calculations": {
-      "0x4b11fb1c": {
+      "Calc_Cooldown": {
         "mFormulaParts": [
           {
             "mEndValue": 10.0,
@@ -8586,7 +8587,7 @@
         ],
         "~class": "GameCalculation"
       },
-      "0xa21a0bfc": {
+      "Calc_OnHit_Efficacy": {
         "mDisplayAsPercent": true,
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
@@ -8647,7 +8648,7 @@
       "Debuff_Duration": 4.0
     },
     "calculations": {
-      "0x8a7e6cfb": {
+      "Calc_Cooldown_Refund": {
         "mDisplayAsPercent": true,
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
@@ -8693,7 +8694,7 @@
     "desc": "Gain <scaleAP>%i:scaleAP% @Calc_AP@ Ability Power</scaleAP>.",
     "tooltip": "Gain <scaleAP>%i:scaleAP% @Calc_AP@ Ability Power</scaleAP>.",
     "calculations": {
-      "0xcdd620": {
+      "Calc_AP": {
         "mFormulaParts": [
           {
             "mNumber": 30.0,
@@ -8730,15 +8731,15 @@
       "Attack_Empower_Duration": 4.0
     },
     "calculations": {
-      "0x25caecdf": {
-        "mModifiedGameCalculation": "0xc75ec8fe",
+      "Calc_Damage_Per_Previous_Stack": {
+        "mModifiedGameCalculation": "Calc_Damage_Hit",
         "mMultiplier": {
           "mNumber": 0.20000000298023224,
           "~class": "NumberCalculationPart"
         },
         "~class": "GameCalculationModified"
       },
-      "0xc0f49f5": {
+      "Calc_Damage_Consume": {
         "mDisplayAsPercent": true,
         "mFormulaParts": [
           {
@@ -8763,7 +8764,7 @@
         },
         "~class": "RangedModifiableGameCalculation"
       },
-      "0xc1fb65e1": {
+      "Calc_Healing": {
         "mDisplayAsPercent": true,
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
@@ -8779,7 +8780,7 @@
         "mSimpleTooltipCalculationDisplay": 5,
         "~class": "RangedModifiableGameCalculation"
       },
-      "0xc75ec8fe": {
+      "Calc_Damage_Hit": {
         "mFormulaParts": [
           {
             "mEndValue": 30.0,
@@ -8842,13 +8843,13 @@
     "apiName": "Fruitify",
     "name": "Fruitify",
     "rarity": "Silver",
-    "desc": "Scoring a Takedown causes the slain champion to explode into <healing>Fruit</healing>.<br><br>Fruit <healing>heals</healing> and restores <scaleMana>Mana</scaleMana>.",
-    "tooltip": "Scoring a Takedown causes the slain champion to explode into @FruitsPerTakedown@ <healing>Fruit</healing>.<br>Fruit <healing>restores @HealingPerFruit@ of your maximum health</healing> and restores <scaleMana>@ManaPerFruit@ of your maximum Mana</scaleMana>.<br><br>Fruits also grant @WeirdResourcePerFruit@ <energy>Energy</energy>, <energy>Fury</energy>, <energy>Rage</energy>, <energy>Dragonfury</energy>, and <energy>Courage</energy>.<br><br><rules>Fruits Generated: @f1@</rules>",
+    "desc": "Takedowns create Fruit at the victim's location.<br><br>Fruit restores <healing>Health</healing> and <scaleMana>Mana</scaleMana>.",
+    "tooltip": "Scoring a Takedown causes the slain champion to explode into @FruitsPerTakedown@ <healing>Fruit</healing>.<br>Fruit <healing>restores @HealingPerFruit@ of your maximum health</healing> and restores <scaleMana>@ManaPerFruit@ of your maximum Mana</scaleMana>.<br><br>Fruits also grant @WeirdResourcePerFruit@ <energy>Energy</energy>, <energy>Fury</energy>, <energy>Rage</energy>, <energy>Dragonfury</energy>, and <energy>Courage</energy>.<br><br><rules>Fruit Generated: @f1@</rules>",
     "dataValues": {
       "FruitDuration": 10.0
     },
     "calculations": {
-      "0x125411f9": {
+      "WeirdResourcePerFruit": {
         "mFormulaParts": [
           {
             "mNumber": 10.0,
@@ -8857,7 +8858,7 @@
         ],
         "~class": "GameCalculation"
       },
-      "0x172c5785": {
+      "ManaPerFruit": {
         "mDisplayAsPercent": true,
         "mFormulaParts": [
           {
@@ -8867,7 +8868,7 @@
         ],
         "~class": "GameCalculation"
       },
-      "0x9e48a69e": {
+      "HealingPerFruit": {
         "mDisplayAsPercent": true,
         "mFormulaParts": [
           {
@@ -8877,7 +8878,7 @@
         ],
         "~class": "GameCalculation"
       },
-      "0xb4540a0e": {
+      "FruitsPerTakedown": {
         "mFormulaParts": [
           {
             "mEndValue": 6.0,
@@ -8899,8 +8900,17 @@
     "name": "Jeweled Bracelet",
     "rarity": "Gold",
     "desc": "<font color='#F0C200'>@SpellName@</font> can <crit>Critically Strike</crit>. <br><br>Gain %i:scaleCrit% <crit>@CritChance@ Critical Strike Chance</crit>.",
-    "tooltip": "<font color='#F0C200'>@SpellName@</font> can <crit>Critically Strike</crit> for @CritDamage@ total damage.<br><br>Gain %i:scaleCrit% <crit>@CritChance@ Critical Strike Chance</crit>.",
+    "tooltip": "<font color='#F0C200'>@SpellName@</font> can <crit>Critically Strike</crit> for @CritDamageTooltip@% increased damage.<br><br>Gain %i:scaleCrit% <crit>@CritChance@ Critical Strike Chance</crit>.<br><br><rules>Damage Dealt to Champions: @f1.0@</rules>",
     "calculations": {
+      "CritDamageTooltip": {
+        "mFormulaParts": [
+          {
+            "mNumber": 45.0,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
       "0xaf5cdd21": {
         "mDisplayAsPercent": true,
         "mFormulaParts": [
@@ -8942,10 +8952,10 @@
     "apiName": "SapMagic",
     "name": "Sap Magic",
     "rarity": "Gold",
-    "desc": "Every <attention>@TimeLockout@ seconds</attention>, your next Attack deals <physicalDamage>bonus physical damage</physicalDamage> and <healing>heals you</healing> %i:OnHit% <OnHit>On-Hit</OnHit>.<br><br>Casting an Ability reduces this effect's cooldown.",
-    "tooltip": "Every @TimeLockout@ seconds, your next Attack deals <physicalDamage>@CalcDamage@ bonus physical damage</physicalDamage> and <healing>restores @CalcHeal@ Health </healing>%i:OnHit% <OnHit>On-Hit</OnHit>.<br><br>Casting an Ability reduces this effect's cooldown by <attention>@TimeRefund@ seconds</attention>.<br><br><br><rules>Damage Dealt to Champions: @f1@<br>Health Restored: @f2@</rules>",
+    "desc": "Every @TimeLockout@ seconds, your next Attack deals <physicalDamage>bonus physical damage</physicalDamage> and restores <healing>Health</healing> %i:OnHit% <OnHit>On-Hit</OnHit>.<br><br>Casting an Ability reduces this effect's cooldown.",
+    "tooltip": "Every @TimeLockout@ seconds, your next Attack deals <physicalDamage>@CalcDamage@ bonus physical damage</physicalDamage> and restores <healing>@CalcHeal@ Health </healing>%i:OnHit% <OnHit>On-Hit</OnHit>.<br><br>Casting an Ability reduces this effect's cooldown by <attention>@TimeRefund@ seconds</attention>.<br><br><rules>Damage Dealt to Champions: @f1@<br>Health Restored: @f2@</rules>",
     "calculations": {
-      "0x21ee825e": {
+      "CalcHeal": {
         "mFormulaParts": [
           {
             "mEndValue": 250.0,
@@ -8960,7 +8970,7 @@
         ],
         "~class": "GameCalculation"
       },
-      "0x3b36cb3d": {
+      "TimeLockout": {
         "mFormulaParts": [
           {
             "mNumber": 20.0,
@@ -8969,7 +8979,7 @@
         ],
         "~class": "GameCalculation"
       },
-      "0x6e2963c5": {
+      "CalcDamage": {
         "DamageType": 0,
         "mFormulaParts": [
           {
@@ -8987,7 +8997,7 @@
         ],
         "~class": "GameCalculation"
       },
-      "0x70f4bc4e": {
+      "TimeRefund": {
         "mFormulaParts": [
           {
             "mNumber": 3.0,
@@ -9060,7 +9070,7 @@
       "ProximityRange": 600.0
     },
     "calculations": {
-      "0x132c7d3b": {
+      "ASPerEnemyTooltip": {
         "mDisplayAsPercent": true,
         "mFormulaParts": [
           {
@@ -9082,14 +9092,14 @@
     "apiName": "GroupHug",
     "name": "Group Hug",
     "rarity": "Prismatic",
-    "desc": "<healing>Healing</healing> or <shield>Shielding</shield> an allied champion with <font color='#F0C200'>@SpellName@</font> also <healing>heals</healing> or <shield>shields</shield> @TargetToPick@ more allied champions.<br>",
-    "tooltip": "<healing>Healing</healing> or <shield>Shielding</shield> allied champion with <font color='#F0C200'>@SpellName@</font> also <healing>heals</healing> or <shield>shields</shield> the @TargetToPick@ nearest allied champions.<br><br><rules>Heals and Shields are @Efficiency_Heal@ effective.<br><flavorText>The power of friendship!</flavorText></rules>",
+    "desc": "<healing>Healing</healing> or <shield>Shielding</shield> an allied champion with <font color='#F0C200'>@SpellName@</font> also <healing>heals</healing> or <shield>shields</shield> @TargetToPick@ other allied champions.<br>",
+    "tooltip": "<healing>Healing</healing> or <shield>Shielding</shield> allied champion with <font color='#F0C200'>@SpellName@</font> also <healing>heals</healing> or <shield>shields</shield> @TargetToPick@ other allied champions.<br><br><rules>Heals and Shields are @Efficiency_Heal@ effective.<br><flavorText>The power of friendship!</flavorText></rules>",
     "dataValues": {
       "TargetToPick": 2.0,
       "MinRange": 500.0
     },
     "calculations": {
-      "0x943c869b": {
+      "Efficiency_Heal": {
         "mDisplayAsPercent": true,
         "mFormulaParts": [
           {
@@ -9170,7 +9180,7 @@
       "OrbitRadius": 150.0
     },
     "calculations": {
-      "0x96606d80": {
+      "MaxButterfly": {
         "mFormulaParts": [
           {
             "mNumber": 7.0,

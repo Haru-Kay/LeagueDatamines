@@ -6,6 +6,7 @@ start /b /wait snip-snip https://raw.communitydragon.org/pbe/game/en_us/data/men
 
 start /b /wait ruby bincompile.rb 1
 start /b /wait ritobin -o info -i bin -r -d "Data/hashes/lol" "bins" "temp"
+start /b /wait ritobin-tools -H "/Data/hashes/lol" convert -i "bins" -o "temp" -t json
 
 start /b /wait ruby stringtable.rb
 start /b /wait ruby cleanup.rb

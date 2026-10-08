@@ -524,7 +524,7 @@ def diff
     print "Loading previous patch stringtable..."
     oldLang = {}
     File.open("lol.stringtable.json", 'rb') { |f| oldLang = JSON.parse(f.read()) }
-    oldLang = oldLang["entries"] || oldLang
+    oldLang = oldLang["objects"] || oldLang
     hash = {}
     oldLang.transform_keys! { |k|
         if k.start_with?("{")
@@ -1009,7 +1009,7 @@ mapBins = {
 print "Loading and formatting stringtable..."
 $cdLang = {}
 File.open("lang/lol.stringtable.json", 'rb') { |f| $cdLang = JSON.parse(f.read()) }
-$cdLang = $cdLang["entries"] || $cdLang
+$cdLang = $cdLang["objects"] || $cdLang
 File.open("lang/lol.stringtable.json", 'wb') { |f| f.write(JSON.pretty_generate($cdLang)) }
 print "done.\n"
 
@@ -1029,7 +1029,7 @@ diff()
     }
     shared = {}
     File.open("temp/data/maps/shipping/common/common.json", 'rb') { |f| shared = JSON.parse(f.read()) }
-    shared = shared.fetch("entries", shared)
+    shared = shared.fetch("objects", shared)
     sharedSort = {}
     shared.each { |key, data|
         type = data["~class"]
@@ -1075,7 +1075,7 @@ diff()
     }
     json = {}
     File.open("temp/data/maps/shipping/map#{mapId}/map#{mapId}.json", 'rb') { |f| json = JSON.parse(f.read()) }
-    json = json.fetch("entries", json)
+    json = json.fetch("objects", json)
     jsonSort = {}
     json.each { |key, data|
         type = data["~class"]
@@ -1137,7 +1137,7 @@ diff()
         }
         json = {}
         File.open("temp/data/maps/modespecificdata/map#{mapId}/#{map}.json", 'rb') { |f| json = JSON.parse(f.read()) }
-        json = json.fetch("entries", json)
+        json = json.fetch("objects", json)
         jsonSort = {}
 
         json.each { |key, data|
@@ -1172,7 +1172,7 @@ diff()
     }
     json = {}
     File.open("temp/data/maps/shipping/map#{mapId}/map#{mapId}.json", 'rb') { |f| json = JSON.parse(f.read()) }
-    json = json.fetch("entries", json)
+    json = json.fetch("objects", json)
     jsonSort = {}
     json.each { |key, data|
         type = data["~class"]
@@ -1234,7 +1234,7 @@ diff()
         }
         json = {}
         File.open("temp/data/maps/modespecificdata/map#{mapId}/#{map}.json", 'rb') { |f| json = JSON.parse(f.read()) }
-        json = json.fetch("entries", json)
+        json = json.fetch("objects", json)
         jsonSort = {}
 
         json.each { |key, data|
@@ -1267,7 +1267,7 @@ diff()
     }
     aram = {}
     File.open("temp/data/maps/shipping/map12/map12.json", 'rb') { |f| aram = JSON.parse(f.read()) }
-    aram = aram.fetch("entries", aram)
+    aram = aram.fetch("objects", aram)
     aramOther = {}
     aram.each { |key, data|
         type = data["~class"]
@@ -1338,7 +1338,7 @@ diff()
         }
         json = {}
         File.open("temp/data/maps/modespecificdata/map12/#{map}.json", 'rb') { |f| json = JSON.parse(f.read()) }
-        json = json.fetch("entries", json)
+        json = json.fetch("objects", json)
         jsonSort = {}
 
         json.each { |key, data|
@@ -1386,7 +1386,7 @@ diff()
     aramSets = []
     $aramMayhem = {}
     File.open("temp/data/maps/modespecificdata/map12/kiwi.json", 'rb') { |f| $aramMayhem = JSON.parse(f.read()) }
-    $aramMayhem = $aramMayhem.fetch("entries", $aramMayhem)
+    $aramMayhem = $aramMayhem.fetch("objects", $aramMayhem)
     aramAugments = []
     aramOther = {}
     aramOther["AugmentInfo"] = {}
@@ -1450,7 +1450,7 @@ diff()
 
     $aramMayhem = {}
     File.open("temp/data/maps/modespecificdata/map12/kiwi_jade.json", 'rb') { |f| $aramMayhem = JSON.parse(f.read()) }
-    $aramMayhem = $aramMayhem.fetch("entries", $aramMayhem)
+    $aramMayhem = $aramMayhem.fetch("objects", $aramMayhem)
     aramAugments = []
     aramOther = {}
     aramOther["AugmentInfo"] = {}
@@ -1519,7 +1519,7 @@ diff()
     ["augments", "data", "vfxData"].each { |dir|
         Dir.mkdir("arena/#{dir}") unless Dir.exist?("arena/#{dir}")
     }
-    $arena = $arena.fetch("entries", $arena)
+    $arena = $arena.fetch("objects", $arena)
     augments = []
     arenaOther = {}
     arenaOther["AugmentInfo"] = {}
@@ -1580,7 +1580,7 @@ diff()
         }
         json = {}
         File.open("temp/data/maps/modespecificdata/map30/#{map}.json", 'rb') { |f| json = JSON.parse(f.read()) }
-        json = json.fetch("entries", json)
+        json = json.fetch("objects", json)
         jsonSort = {}
         jsonSort["AugmentInfo"] = {}
 
@@ -1663,7 +1663,7 @@ Dir.mkdir("characters/shared")
             filepath = basepath + "/" + file
             champ = {}
             File.open(filepath, 'rb') { |f| champ = JSON.parse(f.read()) }
-            champ = champ.fetch("entries", champ)
+            champ = champ.fetch("objects", champ)
 
             if path.include?("_") && !manual.include?(path)
                 outdir = "characters#{r2}/" + path.split("_")[0]
@@ -1752,7 +1752,7 @@ itemsVFX = {}
 itemsTFT = {}
 itemsMisc = {}
 File.open("temp/data/items.ltk.json", 'rb') { |f| itemBin = JSON.parse(f.read()) }
-itemBin = itemBin.fetch("entries", itemBin)
+itemBin = itemBin.fetch("objects", itemBin)
 itemBin.each { |item, itemObj|
     transObj = assetNameFix(applyLang(itemObj))
     transItem = itemNameLangFix(item)
@@ -1796,7 +1796,7 @@ $cdLang.each { |key, string|
 
 globals = {}
 File.open("temp/globals.ltk.json") { |f| globals = JSON.parse(f.read()) }
-globals = globals.fetch("entries", globals)
+globals = globals.fetch("objects", globals)
 loadtipSets = {}
 globals.each { |key, value|
     if value.is_a?(Hash)
@@ -1865,7 +1865,7 @@ FileUtils.rm_rf(Dir.glob("perks/*"))
 Dir.mkdir("perks") unless Dir.exist?("perks")
 runes = nil
 File.open("temp/perks.ltk.json", 'rb') { |f| runes = JSON.parse(f.read()) }
-runes = runes.fetch("entries", runes)
+runes = runes.fetch("objects", runes)
 runes.delete_if { |k, v| !v["~class"].include?("Perk") || v["~class"] == "PerkConfig" || v["~class"].downcase.include?("vfx") }
 runes.transform_keys! { |k, v| 
     next k if !k.start_with?("0x")

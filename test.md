@@ -4,118 +4,57 @@
 
 ### Champions
 
-**Gentle reminder. These are datamines. If a change isn't present, it's because Riot did not include it when they shipped the PBE patch. I do not work for Riot and do not have access to any data they don't publish themselves.**
+**Varus**
 
-**Ambessa**
-
-* P On-Hit Damage: 5-30 (+25% bonus AD) -> 5-25 (+20% bonus AD)
-
-**Cassiopeia**
-
-* W Cooldown: 24/22/20/18/16 seconds -> 26/24/22/20/18 seconds
-
-**Diana**
-
-* W Health Ratio: 11% bonus Health -> 14% bonus Health
-
-**Kennen**
-
-* E Attack Speed: 40/50/60/70/80% -> 50/60/70/80/90%
-
-**K'Sante**
-
-* W Mana Cost: 40/45/50/55/60 -> 50/55/60/65/70
-
-**Mordekaiser**
-
-* Q Damage Per Level Bonus: 5 -> 6
-  * Total Bonus Damage at level 20: 55 -> 66
-* R Cooldown: 140/120/100 seconds -> 130/110/90 seconds
-
-**Sylas**
-
-* P Monster Damage Multiplier: 115% -> 105%
-* W Heal Health Ratio: 5% bonus Health -> 6% bonus Health
-
-## League Classic
-
-### Champions
-
-**Karma**
-
-* E Targeting: All ally and enemy summonables -> Only ally summonables, excluding pets
-  * I'm not actually sure what falls under this category. Especially for a gamemode I don't play.
-
-## ARAM
-
-### Champions
-
-**Swain**
-
-* P Healing: 6-6% max Health -> 3-6% max Health
-  * Technically coded as level scaling on Live, so writing this way.
+* Q Charge Bonus: 50% -> 70%
+  * For the nerds: Q was rescripted to start at min damage with amp rather than inversely calculate min damage from stored max damage.
+* Q Min Damage: 53.33/100.00/146.67/193.33/240.00 (+80% bonus AD) -> 50/95/140/185/230 (+80% bonus AD)
+* Q Max Damage: 80/150/220/290/360 (+120% bonus AD) -> 85.0/161.5/238.0/314.5/391.0 (+136% bonus AD)
+* WQ Min Missing Health Damage: 6/8/10/12/14% -> 6/7/8/9/10%
+* WQ Max Missing Health Damage: 9/12/15/18/21% -> 10.2/11.9/13.6/15.3/17.0%
+* W On-Hit Damage: 4/13/22/31/40 (+15% AD) (+25% AP) -> 4/10/16/22/28 (+20% AD) (+30% AP)
+* W Blight Damage: 3.0/3.5/4.0/4.5/5.0% (+1.3% per 100 AP) max Health -> 2.5/3.0/3.5/4.0/4.5% (+1.4% per 100 AP) max Health
+* W Max Blight Damage: 4.5/5.25/6.0/6.75/7.5% (+1.95% per 100 AP) max Health -> 4.25/5.10/5.95/6.80/7.65% (+2.38% per 100 AP) max Health
 
 ## ARAM: Mayhem
 
-### Augments
+### Bands
 
-**Inferno Triggered**
+**HEARTSTEEL**
 
-* Cooldown: 15 seconds -> 5 seconds
-
-**Juiced**
-
-* Mana Ratio: 4.5 Mana -> 7% (5.6% Ranged) Mana
-* Mana Consumtion: 2.5% -> 0%
-
-**Leg Day**
-
-* Slow Resistance: 40% -> 50%
-
-**Shark Tempest**
-
-* Mark Damage: 50-100 -> 100-200
-* Shark Damage per Second: 25-75 (+20% bonus AD) (+12% AP) -> 30-90 (+25% bonus AD) (+15% AP)
-* Slow: 30% for 1 second -> 35% for 1.5 seconds
-
-**Squishy Slappy Grab**
-
-* Damage: 30-100 (+10% bonus Health) -> 50-150 (+15% bonus Health)
-* Base Shield: 35-150 -> 50-200
-* Cooldown: 35 seconds -> 30 seconds
-
-### Champions
-
-**Bard**
-
-* Meep Attack Damage: 30 (+6 per 3 Chimes) (+50% AP) -> 30 (+10 per 3 Chimes) (+67% AP)
-* Meep Spawn Cooldown: 8 seconds -> 5 seconds
-
-**Garen**
-
-* W Resists per kill: 0.4 -> 0.75
-  * Still caps at 30.
-
-**K'Sante**
-
-* W Damage Reduction: 30% -> 45%
-* R Bonus Resist Loss reverted to 80%.
-
-**Swain**
-
-* P Healing: 6-6% max Health -> 3-6% max Health
-  * Technically coded as level scaling on Live, so writing this way.
-
-**Thresh**
-
-* Q Refund reverted to 2 seconds.
-
-## Arena
+* Augment Bonuses:
+  * Aphelios: +2 Stat Anvils
+  * Ezreal: +4 AD, +4 AP per Level
+  * Kayn: +5% Omnivamp
+  * K'Sante: +1 Level, +1 Level Cap
+  * Sett: +30 Health per Level
+  * Yone: +40% AS, +20 Haste
 
 ### Augments
 
-**Juiced**
+**Armored Impact**
 
-* Max Level: 2 -> 1
-* Mana Ratio: 4.5/9% Mana -> 9% (7.2% Ranged) Mana
-* Mana Consumtion: 2.5% -> 0%
+* I realize I forgot to include the AOE scaling.
+* AOE Scaling: 160 (+0.5% per 100 Armor)
+
+**Bouncing Bees**
+
+* Tooltip fixed.
+  * Only noting as the tooltip was entirely wrong.
+
+**Get Jinxed**
+
+* Maximum Damage: 420-600 (+144% bonus AD) (+96% AP) -> 280-400 (+96% bonus AD) (+64% AP)
+
+**Infernal Soul**
+
+* Damage Tracker: All Damage -> Champion Damage
+
+**Jeweled Bracelet**
+
+* Crit Damage: 145% Crit Damage -> 45% Bonus Crit Damage
+
+**Jeweled Gauntlet**
+
+* Crit Damage: 145% Crit Damage -> 45% Bonus Crit Damage
+
