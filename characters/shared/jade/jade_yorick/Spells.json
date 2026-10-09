@@ -142,10 +142,10 @@
         "mTooltipData": {
           "mFormat": "0x476ec0b8",
           "mLocKeys": {
-            "keyName": "Spell_YorickPassive_Jade_Name",
-            "keySummary": "Spell_YorickPassive_Jade_Summary",
-            "keyTooltip": "Spell_YorickPassive_Jade_Tooltip",
-            "keyTooltipExtendedBelowLine": "Spell_Jade_YorickPassive_TooltipExtendedBelowLine"
+            "keyName": "Unholy Covenant",
+            "keySummary": "Yorick's takes reduced damage and his basic attacks deal more damage for each summon that is active. Meanwhile, Yorick's ghouls scale off Yorick's Attack Damage and Health.",
+            "keyTooltip": "Yorick's basic abilities summon <keywordMajor>Ghouls</keywordMajor> who have <physicalDamage>@GhoulTotalADTooltip@ Attack Damage</physicalDamage>, <scaleHealth>@GhoulTotalHPTooltip@ Health</scaleHealth>, and <speed>@GhoulMovementSpeed@ bonus move speed</speed>.<br><br>Yorick takes @PassiveDamageReductionPerGhoul*100@% reduced damage and his basic attacks deal @PassiveDamageAmpPerGhoul*100@% more damage for each active <keywordMajor>Ghoul</keywordMajor>.",
+            "keyTooltipExtendedBelowLine": "<rules>Ghouls lose @MaxHealthLossPerSec*100@% max Health per second.<br>Ghouls take @GhoulAoEDamageTaken*100@% damage from area of effect abilities.<br>Ghouls are immune to <status>slows</status>.</rules>"
           },
           "mObjectName": "Jade_YorickPassive",
           "~class": "TooltipInstanceSpell"
@@ -231,8 +231,8 @@
       "mTooltipData": {
         "mFormat": "0xb34f999a",
         "mLocKeys": {
-          "keyName": "Buff_Jade_YorickEGhoulName",
-          "keyTooltip": "Buff_Jade_YorickEGhoulBuff"
+          "keyName": "Famine",
+          "keyTooltip": "Damage dealt by this ghoul heals Yorick."
         },
         "mObjectName": "Jade_YorickEGhoulLogic",
         "~class": "TooltipInstanceBuff"
@@ -283,8 +283,8 @@
       "mTooltipData": {
         "mFormat": "0xb34f999a",
         "mLocKeys": {
-          "keyName": "Buff_Jade_YorickWGhoulName",
-          "keyTooltip": "Buff_Jade_YorickWGhoulBuff"
+          "keyName": "Pestilence",
+          "keyTooltip": "A noxious cloud of disease swirls around this ghoul slowing nearby enemies."
         },
         "mObjectName": "Jade_YorickWGhoulLogic",
         "~class": "TooltipInstanceBuff"
@@ -323,8 +323,8 @@
       "mTooltipData": {
         "mFormat": "0xb34f999a",
         "mLocKeys": {
-          "keyName": "Spell_YorickQ_Jade_Name",
-          "keyTooltip": "Buff_Jade_YorickQBuff"
+          "keyName": "Omen of War",
+          "keyTooltip": "Yorick's next attack will deal bonus damage and summon a Spectral Ghoul."
         },
         "mObjectName": "Jade_YorickQ",
         "~class": "TooltipInstanceBuff"
@@ -516,7 +516,7 @@
                   "~class": "TooltipInstanceListElement"
                 },
                 {
-                  "nameOverride": "Spell_ListType_Jade_YorickQ_GhoulDamage",
+                  "nameOverride": "Spectral Attack Damage",
                   "type": "BaseSpectralAD",
                   "~class": "TooltipInstanceListElement"
                 },
@@ -537,10 +537,10 @@
             }
           },
           "mLocKeys": {
-            "keyName": "Spell_YorickQ_Jade_Name",
-            "keySummary": "Spell_YorickQ_Jade_Summary",
-            "keyTooltip": "Spell_YorickQ_Jade_Tooltip",
-            "keyTooltipExtendedBelowLine": "Spell_Jade_YorickQ_TooltipExtendedBelowLine"
+            "keyName": "Omen of War",
+            "keySummary": "Yorick's next attack will deal bonus damage and summon a Spectral Ghoul that deals additional damage and moves faster than Yorick's other ghouls. While the Spectral Ghoul is alive, Yorick moves faster as well.",
+            "keyTooltip": "Yorick's next attack will deal <scaleAD>@TotalDamageTooltip@ physical damage</scaleAD> and summon a <keywordMajor>Spectral Ghoul</keywordMajor> for @GhoulTime@ seconds.<br><br><keywordMajor>Spectral Ghouls</keywordMajor> have <scaleAD>@BaseSpectralAD@ bonus Attack Damage</scaleAD> and <speed>@MovementSpeed*100@% bonus Move Speed</speed>. While the ghoul is active, Yorick also gains <speed>@MovementSpeed*100@% Move Speed</speed>.",
+            "keyTooltipExtendedBelowLine": "<rules><physicalDamage>@TotalDamageCritTooltip@ physical damage</physicalDamage> dealt on a critical strike</rules>"
           },
           "mObjectName": "Jade_YorickQ",
           "~class": "TooltipInstanceSpell"
@@ -661,8 +661,8 @@
       "mTooltipData": {
         "mFormat": "0xb34f999a",
         "mLocKeys": {
-          "keyName": "Buff_Jade_YorickRBuff_Name",
-          "keyTooltip": "Buff_Jade_YorickRBuffTooltip"
+          "keyName": "Omen of Death",
+          "keyTooltip": "Yorick has created a Revenant of this unit. If it dies while the Revenant is alive, then it will reanimate for a short duration."
         },
         "mObjectName": "Jade_YorickRBuff",
         "~class": "TooltipInstanceBuff"
@@ -1104,14 +1104,14 @@
                 {
                   "Style": 1,
                   "multiplier": 100.0,
-                  "nameOverride": "Spell_ListType_Jade_YorickW_InitialSlow",
+                  "nameOverride": "Initial Slow",
                   "type": "ActiveSlow",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
                   "Style": 1,
                   "multiplier": 100.0,
-                  "nameOverride": "Spell_ListType_Jade_YorickW_PersistentSlow",
+                  "nameOverride": "Persistent Slow",
                   "type": "PersistentSlow",
                   "~class": "TooltipInstanceListElement"
                 },
@@ -1125,9 +1125,9 @@
             }
           },
           "mLocKeys": {
-            "keyName": "Spell_YorickW_Jade_Name",
-            "keySummary": "Spell_YorickW_Jade_Summary",
-            "keyTooltip": "Spell_YorickW_Jade_Tooltip"
+            "keyName": "Omen of Pestilence",
+            "keySummary": "Yorick summons a Decaying Ghoul that arrives with a violent explosion, damaging and slowing nearby enemies. The Decaying Ghoul slows nearby enemies.",
+            "keyTooltip": "Yorick causes a violent explosion that deals <magicDamage>@TotalDamage@ magic damage</magicDamage> and <status>Slows</status> enemies in the area by @ActiveSlow*100@% for @ActiveSlowDuration@ seconds, and summons a <keywordMajor>Decaying Ghoul</keywordMajor> for @GhoulTime@ seconds.<br><br><keywordMajor>Decaying Ghouls</keywordMajor> <status>Slow</status> nearby enemies by @PersistentSlow*100@%."
           },
           "mObjectName": "Jade_YorickW",
           "~class": "TooltipInstanceSpell"
@@ -1336,7 +1336,7 @@
                 {
                   "Style": 1,
                   "multiplier": 100.0,
-                  "nameOverride": "Spell_ListType_Jade_YorickR_DamagePercent",
+                  "nameOverride": "Damage Percent",
                   "type": "DamagePercent",
                   "~class": "TooltipInstanceListElement"
                 },
@@ -1351,9 +1351,9 @@
             }
           },
           "mLocKeys": {
-            "keyName": "Spell_YorickR_Jade_Name",
-            "keySummary": "Spell_YorickR_Jade_Summary",
-            "keyTooltip": "Spell_YorickR_Jade_Tooltip"
+            "keyName": "Omen of Death",
+            "keySummary": "Yorick conjures a revenant in the image of one of his allies. If his ally dies while its revenant is alive, the revenant sacrifices itself to reanimate them and give them time to enact vengeance.",
+            "keyTooltip": "Yorick conjures a revenant in the image of an allied champion, which deals <scaleAD>@DamagePercent*100@% of target ally's Attack Damage</scaleAD> and lasts for @CloneDuration@ seconds. If his ally dies while their revenant is alive, the revenant sacrifices itself to reanimate them for @ReviveDuration@ seconds.<br><br>The revenant can be controlled by holding the alt key and using the right mouse button or by reactivating this ability."
           },
           "mObjectName": "Jade_YorickR",
           "~class": "TooltipInstanceSpell"
@@ -1838,9 +1838,9 @@
             }
           },
           "mLocKeys": {
-            "keyName": "Spell_YorickE_Jade_Name",
-            "keySummary": "Spell_YorickE_Jade_Summary",
-            "keyTooltip": "Spell_YorickE_Jade_Tooltip"
+            "keyName": "Omen of Famine",
+            "keySummary": "Yorick steals life from his target and summons a Ravenous Ghoul that heals Yorick for the damage it deals.",
+            "keyTooltip": "Yorick deals <magicDamage>@TotalDamage@ magic damage</magicDamage> and <healing>Heals</healing> for up to @HealingPercentage*100@% of the damage dealt. A <keywordMajor>Ravenous Ghoul</keywordMajor> is summoned behind his target for up to @GhoulTime@ seconds.<br><br><keywordMajor>Ravenous Ghouls</keywordMajor> heal Yorick for @HealingPercentage*100@% of the damage they deal. Healing is only @MinionHealEffectiveness*100@% effective against minions."
           },
           "mObjectName": "Jade_YorickE",
           "~class": "TooltipInstanceSpell"
@@ -1986,8 +1986,8 @@
       "mTooltipData": {
         "mFormat": "0xb34f999a",
         "mLocKeys": {
-          "keyName": "Spell_YorickQ_Jade_Name",
-          "keyTooltip": "Buff_Jade_YorickQSpeedBuff"
+          "keyName": "Omen of War",
+          "keyTooltip": "Yorick moves faster while the Spectral Ghoul remains alive."
         },
         "mObjectName": "Jade_YorickQBuff",
         "~class": "TooltipInstanceBuff"
@@ -2010,8 +2010,8 @@
       "mTooltipData": {
         "mFormat": "0xb34f999a",
         "mLocKeys": {
-          "keyName": "Buff_Jade_YorickQGhoulName",
-          "keyTooltip": "Buff_Jade_YorickQGhoulBuff"
+          "keyName": "War",
+          "keyTooltip": "This ghoul has increased movement speed and deals bonus damage each attack."
         },
         "mObjectName": "Jade_YorickQGhoulLogic",
         "~class": "TooltipInstanceBuff"
@@ -2051,8 +2051,8 @@
       "mTooltipData": {
         "mFormat": "0xb34f999a",
         "mLocKeys": {
-          "keyName": "Buff_Jade_YorickRBuff_Name",
-          "keyTooltip": "BUff_Jade_YorickR_Zombie_Tooltip"
+          "keyName": "Omen of Death",
+          "keyTooltip": "This unit has been reanimated by Yorick and is able to seek vengeance for its death."
         },
         "mObjectName": "Jade_YorickRZombie",
         "~class": "TooltipInstanceBuff"
