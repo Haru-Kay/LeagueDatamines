@@ -89,12 +89,12 @@
           "name": "StunDuration",
           "values": [
             1.5,
-            1.600000023841858,
-            1.7000000476837158,
-            1.7999999523162842,
-            1.899999976158142,
+            1.6,
+            1.7,
+            1.8,
+            1.9,
             2.0,
-            2.0999999046325684
+            2.1
           ],
           "~class": "SpellDataValue"
         },
@@ -246,7 +246,7 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.6000000238418579,
+      "mCoefficient": 0.6,
       "mEffectAmount": [
         {
           "value": [
@@ -275,12 +275,12 @@
         {
           "value": [
             1.5,
-            1.600000023841858,
-            1.7000000476837158,
-            1.7999999523162842,
-            1.899999976158142,
+            1.6,
+            1.7,
+            1.8,
+            1.9,
             2.0,
-            2.0999999046325684
+            2.1
           ],
           "~class": "SpellEffectAmount"
         },
@@ -336,7 +336,7 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.6000000238418579,
+              "mCoefficient": 0.6,
               "mStat": 2,
               "mStatFormula": 2,
               "~class": "StatByCoefficientCalculationPart"
@@ -483,8 +483,8 @@
             {
               "mStat": 12,
               "mSubpart": {
-                "mEndValue": 0.20000000298023224,
-                "mStartValue": 0.10999999940395355,
+                "mEndValue": 0.2,
+                "mStartValue": 0.11,
                 "~class": "ByCharLevelInterpolationCalculationPart"
               },
               "~class": "StatBySubPartCalculationPart"
@@ -602,7 +602,7 @@
     "mScriptName": "PoppyPassiveBounce",
     "mSpell": {
       "bHaveHitBone": true,
-      "castFrame": 7.934999942779541,
+      "castFrame": 7.935,
       "castRange": [
         25000.0,
         25000.0,
@@ -684,7 +684,7 @@
     "ObjectName": "PoppyPassiveKillBounce",
     "mScriptName": "PoppyPassiveKillBounce",
     "mSpell": {
-      "castFrame": 7.934999942779541,
+      "castFrame": 7.935,
       "castRange": [
         25000.0,
         25000.0,
@@ -812,13 +812,13 @@
         {
           "name": "BaseMoveSpeedMod",
           "values": [
-            0.17000000178813934,
-            0.20000000298023224,
-            0.23000000417232513,
-            0.25999999046325684,
-            0.28999999165534973,
-            0.3199999928474426,
-            0.3499999940395355
+            0.17,
+            0.2,
+            0.23,
+            0.26,
+            0.29,
+            0.32,
+            0.35
           ],
           "~class": "SpellDataValue"
         },
@@ -948,23 +948,7 @@
       "mLineWidth": 100.0,
       "mMinimapIconDisplayFlag": 3,
       "mSpellCalculations": {
-        "MoveSpeedMod": {
-          "mDisplayAsPercent": true,
-          "mFormulaParts": [
-            {
-              "mDataValue": "BaseMoveSpeedMod",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            {
-              "mCoefficient": 0.00007999999797903001,
-              "mStat": 12,
-              "mStatFormula": 2,
-              "~class": "StatByCoefficientCalculationPart"
-            }
-          ],
-          "~class": "GameCalculation"
-        },
-        "baseDamage": {
+        "BaseDamage": {
           "mFormulaParts": [
             {
               "mDataValue": "BaseDamageValue",
@@ -973,6 +957,22 @@
             {
               "mCoefficient": 0.75,
               "mStat": 2,
+              "mStatFormula": 2,
+              "~class": "StatByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "MoveSpeedMod": {
+          "mDisplayAsPercent": true,
+          "mFormulaParts": [
+            {
+              "mDataValue": "BaseMoveSpeedMod",
+              "~class": "NamedDataValueCalculationPart"
+            },
+            {
+              "mCoefficient": 0.00008,
+              "mStat": 12,
               "mStatFormula": 2,
               "~class": "StatByCoefficientCalculationPart"
             }
@@ -1010,8 +1010,8 @@
         ],
         "~class": "ResourceCostModifiable"
       },
-      "spellCastTime": 0.33249998092651367,
-      "spellTotalTime": 1.3199999332427979,
+      "spellCastTime": 0.33249998,
+      "spellTotalTime": 1.3199999,
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Poppy/Spells/PoppyQAbility/PoppyQ",
@@ -1094,8 +1094,8 @@
       "mTargetingTypeData": {
         "~class": "LocationClamped"
       },
-      "spellCastTime": 0.33249998092651367,
-      "spellTotalTime": 1.3199999332427979,
+      "spellCastTime": 0.33249998,
+      "spellTotalTime": 1.3199999,
       "useAnimatorFramerate": true,
       "~class": "SpellDataResource"
     },
@@ -1506,11 +1506,11 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.8999999761581421,
+      "mCoefficient": 0.9,
       "mDoNotNeedToFaceTarget": true,
       "mExcludedUnitTags": {
         "mObjectTagList": [
-          "0x3a1b93"
+          "0x003a1b93"
         ],
         "~class": "ObjectTags"
       },
@@ -1523,11 +1523,11 @@
         "Damage": {
           "mFormulaParts": [
             {
-              "mDataValue": "baseDamage",
+              "mDataValue": "BaseDamage",
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.8999999761581421,
+              "mCoefficient": 0.9,
               "mStat": 2,
               "mStatFormula": 2,
               "~class": "StatByCoefficientCalculationPart"
@@ -1554,7 +1554,7 @@
         "Trait_AoE"
       ],
       "mTargetingTypeData": {
-        "~class": "direction"
+        "~class": "Direction"
       },
       "mUseChargeChanneling": true,
       "mana": [
@@ -1670,7 +1670,7 @@
         ],
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.699999988079071,
+      "mCoefficient": 0.7,
       "mEffectAmount": [
         {
           "value": [
@@ -1799,7 +1799,7 @@
       "mAffectsTypeFlags": 6154,
       "mAnimationName": "Spell4_Charged",
       "mCantCancelWhileWindingUp": true,
-      "mCoefficient": 0.699999988079071,
+      "mCoefficient": 0.7,
       "mDimensionBehavior": 1,
       "mEffectAmount": [
         {
@@ -1846,8 +1846,8 @@
       "mTargetingTypeData": {
         "~class": "Location"
       },
-      "spellCastTime": 0.32999998331069946,
-      "spellTotalTime": 0.6000000238418579,
+      "spellCastTime": 0.32999998,
+      "spellTotalTime": 0.6,
       "useAnimatorFramerate": true,
       "~class": "SpellDataResource"
     },
@@ -1905,7 +1905,7 @@
       "mAffectsTypeFlags": 6154,
       "mAnimationName": "Spell4_Instant",
       "mCantCancelWhileWindingUp": true,
-      "mCoefficient": 0.699999988079071,
+      "mCoefficient": 0.7,
       "mDimensionBehavior": 1,
       "mEffectAmount": [
         {
@@ -1952,8 +1952,8 @@
       "mTargetingTypeData": {
         "~class": "Location"
       },
-      "spellCastTime": 0.32999998331069946,
-      "spellTotalTime": 0.6000000238418579,
+      "spellCastTime": 0.32999998,
+      "spellTotalTime": 0.6,
       "useAnimatorFramerate": true,
       "~class": "SpellDataResource"
     },
@@ -2012,26 +2012,26 @@
         {
           "name": "PassiveResistPercent",
           "values": [
-            0.1599999964237213,
-            0.1599999964237213,
-            0.1599999964237213,
-            0.1599999964237213,
-            0.1599999964237213,
-            0.1599999964237213,
-            0.1599999964237213
+            0.16,
+            0.16,
+            0.16,
+            0.16,
+            0.16,
+            0.16,
+            0.16
           ],
           "~class": "SpellDataValue"
         },
         {
           "name": "PassiveEmpoweredHealthPercent",
           "values": [
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645,
-            0.4000000059604645
+            0.4,
+            0.4,
+            0.4,
+            0.4,
+            0.4,
+            0.4,
+            0.4
           ],
           "~class": "SpellDataValue"
         },
@@ -2132,7 +2132,7 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.699999988079071,
+      "mCoefficient": 0.7,
       "mEffectAmount": [
         {
           "value": [
@@ -2234,7 +2234,7 @@
       ],
       "mRequiredUnitTags": {
         "mObjectTagList": [
-          "champion"
+          "0xea595ca6"
         ],
         "~class": "ObjectTags"
       },
@@ -2266,7 +2266,7 @@
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.699999988079071,
+              "mCoefficient": 0.7,
               "~class": "StatByCoefficientCalculationPart"
             }
           ],

@@ -1200,34 +1200,7 @@
         ],
         "~class": "ContextualSituation"
       },
-      "TauntEndedNearby": {
-        "mRules": [
-          {
-            "mAudioAction": {
-              "mAllyEventName": "TauntResponse3DGeneral",
-              "mEnemyEventName": "TauntResponse3DGeneral",
-              "mSelfEventName": "TauntResponse3DGeneral",
-              "~class": "ContextualActionPlayVO"
-            },
-            "mConditions": [
-              {
-                "mCharacterType": 7,
-                "mChildConditions": [
-                  {
-                    "~class": "ContextualConditionIsAlly"
-                  }
-                ],
-                "~class": "ContextualConditionCharacter"
-              }
-            ],
-            "mOverrideCacCooldown": true,
-            "mRuleName": "Taunt Response",
-            "~class": "ContextualRule"
-          }
-        ],
-        "~class": "ContextualSituation"
-      },
-      "taunt": {
+      "Taunt": {
         "mRules": [
           {
             "mAudioAction": {
@@ -1270,6 +1243,33 @@
               "~class": "ContextualActionPlayVO"
             },
             "mRuleName": "Taunt",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "TauntEndedNearby": {
+        "mRules": [
+          {
+            "mAudioAction": {
+              "mAllyEventName": "TauntResponse3DGeneral",
+              "mEnemyEventName": "TauntResponse3DGeneral",
+              "mSelfEventName": "TauntResponse3DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 7,
+                "mChildConditions": [
+                  {
+                    "~class": "ContextualConditionIsAlly"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mOverrideCacCooldown": true,
+            "mRuleName": "Taunt Response",
             "~class": "ContextualRule"
           }
         ],
@@ -2321,6 +2321,26 @@
         ],
         "~class": "ContextualSituation"
       },
+      "Taunt": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Taunt3DGeneral",
+              "mEnemyEventName": "Taunt3DGeneral",
+              "mSelfEventName": "Taunt3DGeneral",
+              "mSpectatorEventName": "Taunt3DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "Taunt",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
       "TauntEndedNearby": {
         "mRules": [
           {
@@ -2336,26 +2356,6 @@
               "~class": "ContextualActionPlayVO"
             },
             "mRuleName": "Taunt Response",
-            "~class": "ContextualRule"
-          }
-        ],
-        "~class": "ContextualSituation"
-      },
-      "taunt": {
-        "mRules": [
-          {
-            "CooldownModifications": {
-              "IgnoreTimer": true,
-              "~class": "ContextualActionCooldownModifications"
-            },
-            "mAudioAction": {
-              "mAllyEventName": "Taunt3DGeneral",
-              "mEnemyEventName": "Taunt3DGeneral",
-              "mSelfEventName": "Taunt3DGeneral",
-              "mSpectatorEventName": "Taunt3DGeneral",
-              "~class": "ContextualActionPlayVO"
-            },
-            "mRuleName": "Taunt",
             "~class": "ContextualRule"
           }
         ],

@@ -1,5 +1,5 @@
 {
-  "0x308b2ca": {
+  "0x0308b2ca": {
     "ObjectName": "JhinQuestGoldenRatioReward",
     "mBuff": {
       "mTooltipData": {
@@ -20,7 +20,34 @@
       ],
       "~class": "SpellDataResource"
     },
-    "objectPath": "0x308b2ca",
+    "objectPath": "0x0308b2ca",
+    "~class": "SpellObject"
+  },
+  "0x0a30352a": {
+    "ObjectName": "JhinQuestGoldenRatioLoss",
+    "mBuff": {
+      "CanTimeoutWhileCasting": false,
+      "mShowAccumulatedDuration": false,
+      "mShowDuration": false,
+      "mTooltipData": {
+        "mFormat": "0x2ca8f134",
+        "mLocKeys": {
+          "keyName": "A Mind Lost",
+          "keyTooltip": "Hwei fell to Jhin's machinations, making Hwei unable to reach his full potential.<br><br><flavorText>“Was I always meant to fall to Jhin? Was there any hope? I… I…”</flavorText>"
+        },
+        "mObjectName": "JhinQuestGoldenRatioLoss",
+        "~class": "TooltipInstanceBuff"
+      },
+      "~class": "BuffData"
+    },
+    "mScriptName": "JhinQuestGoldenRatioLoss",
+    "mSpell": {
+      "mImgIconName": [
+        "assets/characters/jhin/hud/icons2d/jhinquestloser.dds"
+      ],
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x0a30352a",
     "~class": "SpellObject"
   },
   "0x3dc1cecf": {
@@ -48,33 +75,6 @@
     },
     "mScriptName": "JhinQuestGoldenRatioWin",
     "objectPath": "0x4df381e9",
-    "~class": "SpellObject"
-  },
-  "0xa30352a": {
-    "ObjectName": "JhinQuestGoldenRatioLoss",
-    "mBuff": {
-      "CanTimeoutWhileCasting": false,
-      "mShowAccumulatedDuration": false,
-      "mShowDuration": false,
-      "mTooltipData": {
-        "mFormat": "0x2ca8f134",
-        "mLocKeys": {
-          "keyName": "A Mind Lost",
-          "keyTooltip": "Hwei fell to Jhin's machinations, making Hwei unable to reach his full potential.<br><br><flavorText>“Was I always meant to fall to Jhin? Was there any hope? I… I…”</flavorText>"
-        },
-        "mObjectName": "JhinQuestGoldenRatioLoss",
-        "~class": "TooltipInstanceBuff"
-      },
-      "~class": "BuffData"
-    },
-    "mScriptName": "JhinQuestGoldenRatioLoss",
-    "mSpell": {
-      "mImgIconName": [
-        "assets/characters/jhin/hud/icons2d/jhinquestloser.dds"
-      ],
-      "~class": "SpellDataResource"
-    },
-    "objectPath": "0xa30352a",
     "~class": "SpellObject"
   },
   "Characters/Jhin/Spells/JhinBasicAttack": {
@@ -167,7 +167,7 @@
         "~class": "MissileSpecification"
       },
       "missileSpeed": 2600.0,
-      "spellCastTime": 0.48500001430511475,
+      "spellCastTime": 0.485,
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jhin/Spells/JhinBasicAttack",
@@ -264,7 +264,7 @@
         "~class": "MissileSpecification"
       },
       "missileSpeed": 2600.0,
-      "spellCastTime": 0.48500001430511475,
+      "spellCastTime": 0.485,
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jhin/Spells/JhinBasicAttack2",
@@ -361,7 +361,7 @@
         "~class": "MissileSpecification"
       },
       "missileSpeed": 2600.0,
-      "spellCastTime": 0.48500001430511475,
+      "spellCastTime": 0.485,
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jhin/Spells/JhinBasicAttack3",
@@ -457,7 +457,7 @@
         "~class": "MissileSpecification"
       },
       "missileSpeed": 3000.0,
-      "spellCastTime": 0.48500001430511475,
+      "spellCastTime": 0.485,
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jhin/Spells/JhinCritAttack",
@@ -497,26 +497,26 @@
         {
           "name": "TrapSlowAmount",
           "values": [
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355
+            0.35,
+            0.35,
+            0.35,
+            0.35,
+            0.35,
+            0.35,
+            0.35
           ],
           "~class": "SpellDataValue"
         },
         {
           "name": "ReducedDamagePercent",
           "values": [
-            0.6499999761581421,
-            0.6499999761581421,
-            0.6499999761581421,
-            0.6499999761581421,
-            0.6499999761581421,
-            0.6499999761581421,
-            0.6499999761581421
+            0.65,
+            0.65,
+            0.65,
+            0.65,
+            0.65,
+            0.65,
+            0.65
           ],
           "~class": "SpellDataValue"
         },
@@ -742,7 +742,7 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 1.2000000476837158,
+      "mCoefficient": 1.2,
       "mCoefficient2": 1.0,
       "mFloatVarsDecimals": [
         1,
@@ -807,11 +807,11 @@
         "TotalDamage": {
           "mFormulaParts": [
             {
-              "mDataValue": "baseDamage",
+              "mDataValue": "BaseDamage",
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 1.2000000476837158,
+              "mCoefficient": 1.2,
               "mStat": 2,
               "~class": "StatByCoefficientCalculationPart"
             },
@@ -1239,26 +1239,26 @@
         {
           "name": "PercentAttackSpeedPerLevel",
           "values": [
-            0.029999999329447746,
-            0.029999999329447746,
-            0.029999999329447746,
-            0.029999999329447746,
-            0.029999999329447746,
-            0.029999999329447746,
-            0.029999999329447746
+            0.03,
+            0.03,
+            0.03,
+            0.03,
+            0.03,
+            0.03,
+            0.03
           ],
           "~class": "SpellDataValue"
         },
         {
           "name": "CritMoveSpeedPercentASRatio",
           "values": [
-            0.4399999976158142,
-            0.4399999976158142,
-            0.4399999976158142,
-            0.4399999976158142,
-            0.4399999976158142,
-            0.4399999976158142,
-            0.4399999976158142
+            0.44,
+            0.44,
+            0.44,
+            0.44,
+            0.44,
+            0.44,
+            0.44
           ],
           "~class": "SpellDataValue"
         }
@@ -1269,13 +1269,13 @@
             {
               "name": "CritMoveSpeedPercentASRatio",
               "values": [
-                0.6000000238418579,
-                0.6000000238418579,
-                0.6000000238418579,
-                0.6000000238418579,
-                0.6000000238418579,
-                0.6000000238418579,
-                0.6000000238418579
+                0.6,
+                0.6,
+                0.6,
+                0.6,
+                0.6,
+                0.6,
+                0.6
               ],
               "~class": "SpellDataValue"
             }
@@ -1326,7 +1326,7 @@
           "mDisplayAsPercent": true,
           "mFormulaParts": [
             {
-              "mNumber": 0.14000000059604645,
+              "mNumber": 0.14,
               "~class": "NumberCalculationPart"
             },
             {
@@ -1345,17 +1345,17 @@
             {
               "mBreakpoints": [
                 {
-                  "mAdditionalBonusAtThisLevel": 0.05000000074505806,
+                  "mAdditionalBonusAtThisLevel": 0.05,
                   "mLevel": 6,
                   "~class": "Breakpoint"
                 },
                 {
-                  "mAdditionalBonusAtThisLevel": 0.05000000074505806,
+                  "mAdditionalBonusAtThisLevel": 0.05,
                   "mLevel": 11,
                   "~class": "Breakpoint"
                 }
               ],
-              "mLevel1Value": 0.15000000596046448,
+              "mLevel1Value": 0.15,
               "~class": "ByCharLevelBreakpointsCalculationPart"
             }
           ],
@@ -1368,27 +1368,27 @@
             {
               "mBreakpoints": [
                 {
-                  "mBonusPerLevelAtAndAfter": 0.019999999552965164,
+                  "mBonusPerLevelAtAndAfter": 0.02,
                   "mLevel": 10,
                   "~class": "Breakpoint"
                 },
                 {
-                  "mBonusPerLevelAtAndAfter": 0.03999999910593033,
+                  "mBonusPerLevelAtAndAfter": 0.04,
                   "mLevel": 12,
                   "~class": "Breakpoint"
                 }
               ],
-              "mInitialBonusPerLevel": 0.009999999776482582,
-              "mLevel1Value": 0.03999999910593033,
+              "mInitialBonusPerLevel": 0.01,
+              "mLevel1Value": 0.04,
               "~class": "ByCharLevelBreakpointsCalculationPart"
             },
             {
-              "mCoefficient": 0.3499999940395355,
+              "mCoefficient": 0.35,
               "mStat": 8,
               "~class": "StatByCoefficientCalculationPart"
             },
             {
-              "mCoefficient": 0.30000001192092896,
+              "mCoefficient": 0.3,
               "mStat": 4,
               "mStatFormula": 2,
               "~class": "StatByCoefficientCalculationPart"
@@ -1496,7 +1496,7 @@
         "~class": "MissileSpecification"
       },
       "missileSpeed": 3000.0,
-      "spellCastTime": 0.48500001430511475,
+      "spellCastTime": 0.485,
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jhin/Spells/JhinPassiveAbility/JhinPassiveAttack",
@@ -1574,7 +1574,7 @@
       "canCastWhileDisabled": true,
       "castConeAngle": 0.0,
       "castConeDistance": 0.0,
-      "castFrame": 10.289999961853027,
+      "castFrame": 10.29,
       "castRange": [
         20.0,
         20.0,
@@ -1622,7 +1622,7 @@
         2.5,
         2.5
       ],
-      "mCoefficient": 0.30000001192092896,
+      "mCoefficient": 0.3,
       "mEffectAmount": [
         {
           "value": [
@@ -1718,8 +1718,8 @@
         "~class": "Self"
       },
       "missileSpeed": 828.5,
-      "spellCastTime": 0.4393500089645386,
-      "spellTotalTime": 1.149999976158142,
+      "spellCastTime": 0.43935,
+      "spellTotalTime": 1.15,
       "~class": "SpellDataResource"
     },
     "objectPath": "Characters/Jhin/Spells/JhinPassiveAbility/JhinPassiveReload",
@@ -1764,26 +1764,26 @@
         {
           "name": "ADRatio",
           "values": [
-            0.36500000953674316,
-            0.4399999976158142,
-            0.5149999856948853,
-            0.5899999737739563,
-            0.6650000214576721,
-            0.7400000095367432,
-            0.8149999976158142
+            0.365,
+            0.44,
+            0.515,
+            0.59,
+            0.665,
+            0.74,
+            0.815
           ],
           "~class": "SpellDataValue"
         },
         {
           "name": "PercentAmpOnKill",
           "values": [
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355,
-            0.3499999940395355
+            0.35,
+            0.35,
+            0.35,
+            0.35,
+            0.35,
+            0.35,
+            0.35
           ],
           "~class": "SpellDataValue"
         },
@@ -1833,13 +1833,13 @@
             {
               "name": "ADRatio",
               "values": [
-                0.6000000238418579,
-                0.699999988079071,
-                0.800000011920929,
-                0.8999999761581421,
+                0.6,
+                0.7,
+                0.8,
+                0.9,
                 1.0,
-                1.100000023841858,
-                1.2000000476837158
+                1.1,
+                1.2
               ],
               "~class": "SpellDataValue"
             }
@@ -1973,8 +1973,8 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.6000000238418579,
-      "mCoefficient2": 0.4000000059604645,
+      "mCoefficient": 0.6,
+      "mCoefficient2": 0.4,
       "mFloatVarsDecimals": [
         0,
         0,
@@ -2045,7 +2045,7 @@
         "TotalDamage": {
           "mFormulaParts": [
             {
-              "mDataValue": "baseDamage",
+              "mDataValue": "BaseDamage",
               "~class": "NamedDataValueCalculationPart"
             },
             {
@@ -2054,7 +2054,7 @@
               "~class": "StatByNamedDataValueCalculationPart"
             },
             {
-              "mCoefficient": 0.6000000238418579,
+              "mCoefficient": 0.6,
               "~class": "StatByCoefficientCalculationPart"
             }
           ],
@@ -2262,13 +2262,13 @@
         {
           "name": "SlowPercent",
           "values": [
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929
+            0.8,
+            0.8,
+            0.8,
+            0.8,
+            0.8,
+            0.8,
+            0.8
           ],
           "~class": "SpellDataValue"
         },
@@ -2344,13 +2344,13 @@
             {
               "name": "ADRatio",
               "values": [
-                0.4399999976158142,
-                0.4399999976158142,
-                0.4399999976158142,
-                0.4399999976158142,
-                0.4399999976158142,
-                0.4399999976158142,
-                0.4399999976158142
+                0.44,
+                0.44,
+                0.44,
+                0.44,
+                0.44,
+                0.44,
+                0.44
               ],
               "~class": "SpellDataValue"
             }
@@ -2359,7 +2359,7 @@
         }
       },
       "castConeDistance": 100.0,
-      "castFrame": 5.170000076293945,
+      "castFrame": 5.17,
       "castRadius": [
         550.0,
         550.0,
@@ -2551,8 +2551,7 @@
         "Trait_Ultimate",
         "Trait_ChannelSpell",
         "Trait_DamageAbility",
-        "Trait_AoE",
-        "Trait_UltimateReactivation"
+        "Trait_AoE"
       ],
       "mTargetingTypeData": {
         "~class": "Cone"
@@ -2604,7 +2603,7 @@
         "~class": "SpellAttributeModifiable"
       },
       "castConeDistance": 100.0,
-      "castFrame": 1.9800000190734863,
+      "castFrame": 1.98,
       "castRadius": [
         210.0,
         210.0,
@@ -2674,7 +2673,7 @@
       "mLineWidth": 80.0,
       "mRequiredUnitTags": {
         "mObjectTagList": [
-          "champion"
+          "0xea595ca6"
         ],
         "~class": "ObjectTags"
       },
@@ -2714,7 +2713,7 @@
       },
       "bHaveHitBone": true,
       "castConeDistance": 100.0,
-      "castFrame": 7.53000020980835,
+      "castFrame": 7.53,
       "castRadius": [
         100.0,
         100.0,
@@ -2774,7 +2773,7 @@
         "mUseTooltipFromAnotherSpell": "Characters/Jhin/Spells/JhinRAbility/JhinR",
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 1.2000000476837158,
+      "mCoefficient": 1.2,
       "mDoesntBreakChannels": true,
       "mEffectAmount": [
         {
@@ -2890,7 +2889,7 @@
       },
       "bHaveHitBone": true,
       "castConeDistance": 100.0,
-      "castFrame": 7.53000020980835,
+      "castFrame": 7.53,
       "castRadius": [
         100.0,
         100.0,
@@ -2950,7 +2949,7 @@
         "mUseTooltipFromAnotherSpell": "Characters/Jhin/Spells/JhinRAbility/JhinR",
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 1.2000000476837158,
+      "mCoefficient": 1.2,
       "mDoesntBreakChannels": true,
       "mEffectAmount": [
         {
@@ -3370,7 +3369,7 @@
       "mLineWidth": 40.0,
       "mRequiredUnitTags": {
         "mObjectTagList": [
-          "champion"
+          "0xea595ca6"
         ],
         "~class": "ObjectTags"
       },
@@ -3378,7 +3377,7 @@
         "TotalDamage": {
           "mFormulaParts": [
             {
-              "mDataValue": "baseDamage",
+              "mDataValue": "BaseDamage",
               "~class": "NamedDataValueCalculationPart"
             },
             {
@@ -3399,7 +3398,7 @@
         "Trait_Low_Damage"
       ],
       "mTargetingTypeData": {
-        "~class": "direction"
+        "~class": "Direction"
       },
       "mana": [
         50.0,
