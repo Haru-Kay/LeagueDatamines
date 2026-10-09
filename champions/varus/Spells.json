@@ -3446,54 +3446,41 @@
       },
       "DataValues": [
         {
-          "name": "BaseDamageMax",
+          "name": "BaseDamageMin",
           "values": [
-            10.0,
-            80.0,
-            150.0,
-            220.0,
-            290.0,
-            360.0,
-            430.0
+            5.0,
+            50.0,
+            95.0,
+            140.0,
+            185.0,
+            230.0,
+            275.0
           ],
           "~class": "SpellDataValue"
         },
         {
-          "name": "ChargeMultiplierInverse",
+          "name": "tADRatioMin",
           "values": [
-            0.66667,
-            0.66667,
-            0.66667,
-            0.66667,
-            0.66667,
-            0.66667,
-            0.66667
+            0.8,
+            0.8,
+            0.8,
+            0.8,
+            0.8,
+            0.8,
+            0.8
           ],
           "~class": "SpellDataValue"
         },
         {
-          "name": "tADRatioMax",
+          "name": "MaxChannelAmp",
           "values": [
-            1.2,
-            1.2,
-            1.2,
-            1.2,
-            1.2,
-            1.2,
-            1.2
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "MaxChargeAmp",
-          "values": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
+            0.7,
+            0.7,
+            0.7,
+            0.7,
+            0.7,
+            0.7,
+            0.7
           ],
           "~class": "SpellDataValue"
         },
@@ -3580,15 +3567,15 @@
         "Kiwi": {
           "SpellDataValues": [
             {
-              "name": "tADRatioMax",
+              "name": "tADRatioMin",
               "values": [
-                1.5,
-                1.5,
-                1.5,
-                1.5,
-                1.5,
-                1.5,
-                1.5
+                0.9,
+                0.9,
+                0.9,
+                0.9,
+                0.9,
+                0.9,
+                0.9
               ],
               "~class": "SpellDataValue"
             }
@@ -3598,15 +3585,15 @@
         "cherry": {
           "SpellDataValues": [
             {
-              "name": "tADRatioMax",
+              "name": "tADRatioMin",
               "values": [
-                1.5,
-                1.5,
-                1.5,
-                1.5,
-                1.5,
-                1.5,
-                1.5
+                0.9,
+                0.9,
+                0.9,
+                0.9,
+                0.9,
+                0.9,
+                0.9
               ],
               "~class": "SpellDataValue"
             }
@@ -3784,8 +3771,8 @@
             "LevelUp": {
               "Elements": [
                 {
-                  "nameOverride": "Maximum Damage",
-                  "type": "BaseDamageMax",
+                  "nameOverride": "Damage",
+                  "type": "BaseDamageMin",
                   "~class": "TooltipInstanceListElement"
                 },
                 {
@@ -3813,97 +3800,9 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 1.0,
-      "mCoefficient2": 1.5,
       "mDimensionBehavior": 1,
       "mDisableCastBar": true,
       "mDoNotNeedToFaceTarget": true,
-      "mEffectAmount": [
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.15,
-            0.15,
-            0.15,
-            0.15,
-            0.15,
-            0.15,
-            0.15
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0,
-            4.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            -0.2,
-            -0.2,
-            -0.2,
-            -0.2,
-            -0.2,
-            -0.2,
-            -0.2
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.33,
-            0.33,
-            0.33,
-            0.33,
-            0.33,
-            0.33,
-            0.33
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         -1,
         -1,
@@ -3928,21 +3827,13 @@
       "mLineWidth": 75.0,
       "mSpellCalculations": {
         "TotalDamageMin": {
-          "mModifiedGameCalculation": "TotalDamageMax",
-          "mMultiplier": {
-            "mDataValue": "ChargeMultiplierInverse",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          "~class": "GameCalculationModified"
-        },
-        "TotalDamageMax": {
           "mFormulaParts": [
             {
-              "mDataValue": "BaseDamageMax",
+              "mDataValue": "BaseDamageMin",
               "~class": "NamedDataValueCalculationPart"
             },
             {
-              "mDataValue": "tADRatioMax",
+              "mDataValue": "tADRatioMin",
               "mStat": 2,
               "mStatFormula": 2,
               "~class": "StatByNamedDataValueCalculationPart"
@@ -3950,11 +3841,20 @@
           ],
           "~class": "GameCalculation"
         },
-        "TotalDamageMinTooltip": {
-          "mModifiedGameCalculation": "TotalDamageMax",
+        "TotalDamageMax": {
+          "mModifiedGameCalculation": "TotalDamageMin",
           "mMultiplier": {
-            "mDataValue": "ChargeMultiplierInverse",
-            "~class": "NamedDataValueCalculationPart"
+            "mSubparts": [
+              {
+                "mNumber": 1.0,
+                "~class": "NumberCalculationPart"
+              },
+              {
+                "mDataValue": "MaxChannelAmp",
+                "~class": "NamedDataValueCalculationPart"
+              }
+            ],
+            "~class": "SumOfSubPartsCalculationPart"
           },
           "~class": "GameCalculationModified"
         }
@@ -5756,13 +5656,13 @@
         {
           "name": "BasePercentHPPerStack",
           "values": [
+            0.02,
             0.025,
-            0.030000001,
+            0.03,
             0.035,
             0.04,
             0.045,
-            0.05,
-            0.055
+            0.05
           ],
           "~class": "SpellDataValue"
         },
@@ -5782,78 +5682,78 @@
         {
           "name": "VarusWOnHitDamage",
           "values": [
-            -5.0,
+            -2.0,
             4.0,
-            13.0,
+            10.0,
+            16.0,
             22.0,
-            31.0,
-            40.0,
-            49.0
+            28.0,
+            34.0
           ],
           "~class": "SpellDataValue"
         },
         {
           "name": "CDRPerBlightStack",
           "values": [
-            0.13,
-            0.13,
-            0.13,
-            0.13,
-            0.13,
-            0.13,
-            0.13
+            0.11,
+            0.11,
+            0.11,
+            0.11,
+            0.11,
+            0.11,
+            0.11
           ],
           "~class": "SpellDataValue"
         },
         {
           "name": "VarusWMaxChargeHPDamage",
           "values": [
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5,
-            1.5
+            1.7,
+            1.7,
+            1.7,
+            1.7,
+            1.7,
+            1.7,
+            1.7
           ],
           "~class": "SpellDataValue"
         },
         {
           "name": "OnHitRatio",
           "values": [
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25,
-            0.25
+            0.3,
+            0.3,
+            0.3,
+            0.3,
+            0.3,
+            0.3,
+            0.3
           ],
           "~class": "SpellDataValue"
         },
         {
           "name": "OnHitADRatio",
           "values": [
-            0.15,
-            0.15,
-            0.15,
-            0.15,
-            0.15,
-            0.15,
-            0.15
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2
           ],
           "~class": "SpellDataValue"
         },
         {
           "name": "WQHealthDamage",
           "values": [
-            0.04,
+            0.05,
             0.06,
+            0.07,
             0.08,
+            0.09,
             0.1,
-            0.12,
-            0.14,
-            0.16
+            0.11
           ],
           "~class": "SpellDataValue"
         },
@@ -5999,74 +5899,6 @@
         "~class": "SpellDataResourceClient"
       },
       "mDoesntBreakChannels": true,
-      "mEffectAmount": [
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            0.025,
-            0.03,
-            0.035,
-            0.04,
-            0.045,
-            0.05,
-            0.055
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0,
-            6.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "value": [
-            120.0,
-            120.0,
-            120.0,
-            120.0,
-            120.0,
-            120.0,
-            120.0
-          ],
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        },
-        {
-          "~class": "SpellEffectAmount"
-        }
-      ],
       "mFloatVarsDecimals": [
         1,
         0,
@@ -6150,7 +5982,7 @@
                   "~class": "NumberCalculationPart"
                 },
                 "mPart2": {
-                  "mNumber": 0.013,
+                  "mNumber": 0.014,
                   "~class": "NumberCalculationPart"
                 },
                 "~class": "ProductOfSubPartsCalculationPart"
