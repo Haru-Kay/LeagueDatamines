@@ -7288,8 +7288,8 @@
     "apiName": "GetJinxed",
     "name": "Get Jinxed",
     "rarity": "Gold",
-    "desc": "Gain <spellName>Get Jinxed</spellName>!<br><br><spellName>Get Jinxed</spellName>: Ride a rocket that explodes after hitting an enemy, structure, or wall. Enemies within the blast radius take <physicalDamage>significant damage</physicalDamage>.",
-    "tooltip": "Gain the Summoner Spell <spellName>Get Jinxed</spellName>!<br><br><spellName>Get Jinxed</spellName>: Drive a rocket that explodes upon hitting an enemy champion, structure, or terrain. The rocket deals from <physicalDamage>@Calc_Damage_Flat_Min@ + @Calc_Damage_Percent_Min@ missing Health physical damage</physicalDamage> to<physicalDamage> @Calc_Damage_Flat_Max@ + @Calc_Damage_Percent_Max@ missing Health physical damage</physicalDamage> based on how far the rocket traveled to the target and nearby enemies.<br><br><rules>The impact radius of the rocket grows as it travels.<br>You are <status>Invulnerable</status> and <status>Untargetable</status> while riding the rocket.</rules><br><br><rules>Enemies Jinxed to Death: @f1@<br><br><flavorText>\"Aww, c'mon. What's the worst that could happen?\" — Jinx, the Loose Cannon</flavorText></rules>",
+    "desc": "Replace a Summoner Spell with  <spellName>Get Jinxed!</spellName><br><br><spellName>Get Jinxed!</spellName>: Ride a rocket that explodes after hitting an enemy champion, structure, or wall. Enemies within the blast radius take <physicalDamage>physical damage</physicalDamage>.",
+    "tooltip": "Replace a Summoner Spell with <spellName>Get Jinxed!</spellName><br><br><spellName>Get Jinxed!</spellName>: Ride a rocket that explodes upon hitting an enemy champion, structure, or terrain. The rocket deals from <physicalDamage>@Calc_Damage_Flat_Min@ + @Calc_Damage_Percent_Min@ missing Health physical damage to @Calc_Damage_Flat_Max@ + @Calc_Damage_Percent_Max@ missing Health physical damage</physicalDamage> to the target and nearby enemies, based on how far the rocket traveled.<br><br><rules>The impact radius of the rocket grows as it travels.<br>You are <status>Invulnerable</status> and <status>Untargetable</status> while riding the rocket.</rules><br><br><rules>Enemies Jinxed to Death: @f1@<br><br><flavorText>\"Aww, c'mon. What's the worst that could happen?\" — Jinx, the Loose Cannon</flavorText></rules>",
     "dataValues": {
       "AoERadius": 400.0,
       "TerrainRadius": 50.0,
@@ -7500,8 +7500,8 @@
       }
     },
     "icons": [
-      "0x6682ab3589d39d47",
-      "0x7adc28b701aa6c83"
+      "assets/ux/kiwi/augments/icons/silverbeats_small.tex",
+      "assets/ux/kiwi/augments/icons/silverbeats_large.tex"
     ]
   },
   {
@@ -7514,7 +7514,8 @@
     "dataValues": {
       "KillTrackDuration": 3.0,
       "VFX_Breakpoint_High": 85.0,
-      "VFX_Breakpoint_Medium": 55.0
+      "VFX_Breakpoint_Medium": 55.0,
+      "ConversionCritNum": 0.0067
     },
     "calculations": {
       "Calc_Crit_Damage_Per_AS": {
@@ -7522,8 +7523,8 @@
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
-            "mNumber": 0.08,
-            "~class": "NumberCalculationPart"
+            "mDataValue": "0x18ca104b",
+            "~class": "NamedDataValueCalculationPart"
           }
         ],
         "mPrecision": 1,
@@ -7559,7 +7560,7 @@
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
-            "mNumber": 0.12,
+            "mNumber": 0.01,
             "~class": "NumberCalculationPart"
           }
         ],
@@ -7580,7 +7581,7 @@
       }
     },
     "icons": [
-      "0x8653f2331cde606f",
+      "assets/ux/kiwi/augments/icons/bigshot_small.tex",
       "0x2771e88191a9d0ef"
     ]
   },
@@ -7589,8 +7590,8 @@
     "apiName": "Sound_Barrier",
     "name": "Sound Barrier",
     "rarity": "Silver",
-    "desc": "Your <shield>shields</shield> grant decaying <speed>Move Speed</speed> and make the target <status>Ghosted</status> for a duration.",
-    "tooltip": "Your <shield>shields</shield> grant @SpeedPercent@ decaying <speed>Move Speed</speed> and make the target <status>Ghosted</status> for @BurstDecayDuration@ seconds.<br><br><rules>@PerTargetCooldown@ seconds cooldown per target.</rules>",
+    "desc": "<shield>Shielding</shield> an ally grants <speed>Move Speed</speed> and <status>Ghost</status> decaying over @BurstDecayDuration@ seconds.",
+    "tooltip": "<shield>Shielding</shield> an ally grants @SpeedPercent@ <speed>Move Speed</speed> and <status>Ghost</status> decaying over @BurstDecayDuration@ seconds.<br><br><rules>Cooldown per target: @PerTargetCooldown@ seconds.</rules>",
     "dataValues": {
       "BurstDecayDuration": 1.5,
       "PerTargetCooldown": 1.5
@@ -7653,7 +7654,7 @@
     "tooltip": "Damaging an enemy champion with 2 separate Abilities within @DamageWindowSeconds@ seconds deals <magicDamage>@PercentOfManaDamage@ magic damage</magicDamage> and grants <scaleMana>@ManaGain@ %i:scaleMana% max Mana</scaleMana>.<br><br><rules>Mana Gained: @f1@<br><br>@ManaGainCD@ second Cooldown Per Target</rules>",
     "dataValues": {
       "DamageWindowSeconds": 4.0,
-      "ManaGainCD": 1.0
+      "ManaGainCD": 4.0
     },
     "calculations": {
       "PercentOfManaDamage": {
@@ -7685,8 +7686,8 @@
     "apiName": "Salvation",
     "name": "Salvation",
     "rarity": "Gold",
-    "desc": "Taking damage that would reduce your Health below <scaleHealth>@HealthThresholdTooltipPercent@% Health</scaleHealth>, deal <magicDamage>magic damage</magicDamage> and <Status>Knock Back</Status> nearby enemies while <healing>restoring health to all allied champions</healing> in a large area around you.",
-    "tooltip": "Taking damage that would reduce your Health below <scaleHealth>@HealthThresholdTooltipPercent@% Health</scaleHealth> releases a shockwave dealing <magicDamage>@Danage@ magic damage</magicDamage> and <Status>Knocking Back</Status> enemy champions while <healing>restoring @TotalHeal@ health to all allied champions</healing> hit.",
+    "desc": "Taking damage that would reduce your Health below <scaleHealth>@HealthThresholdTooltipPercent@%</scaleHealth> releases a shockwave which damages and <Status>Knocks Back</Status> nearby enemies and <healing>restores health to all allied champions</healing> in a large area around you.",
+    "tooltip": "Taking damage that would reduce your Health below <scaleHealth>@HealthThresholdTooltipPercent@%</scaleHealth> releases a shockwave which deals <magicDamage>@Damage@ magic damage</magicDamage> and <Status>Knocks Back</Status> enemy champions while <healing>restoring @TotalHeal@ health to all allied champions</healing> hit.",
     "dataValues": {
       "Increment": 2.0,
       "BaseDamage": 100.0,
@@ -7759,8 +7760,8 @@
       }
     },
     "icons": [
-      "0x9123561825aa4a9b",
-      "0x41c90b98da263e47"
+      "assets/ux/kiwi/augments/icons/salvation_small.tex",
+      "assets/ux/kiwi/augments/icons/salvation_large.tex"
     ]
   },
   {
@@ -7768,7 +7769,7 @@
     "apiName": "BouncingBees",
     "name": "Bouncing Bees",
     "rarity": "Prismatic",
-    "desc": "After casting an ability, your next Attack bounces to the nearest enemy<br><br><font color='#F0C200'>QUEST:</font> Bounce Attacks onto enemy Champions<br><br><font color='#F0C200'>REWARD:</font> Gain <physicalDamage>+%i:scakeAD%@ADPerMilestone@ Attack Damage</physicalDamage> and an extra bounce per Quest Level",
+    "desc": "After casting an ability, your next Attack bounces to the nearest enemy<br><br><font color='#F0C200'>QUEST:</font> Bounce Attacks onto enemy Champions<br><br><font color='#F0C200'>REWARD:</font> Gain <physicalDamage>+%i:scaleAD%@ADPerMilestone@ Attack Damage</physicalDamage> and an extra bounce per Quest Level",
     "tooltip": "After using an ability, your next attack bounces to the nearest enemy.<br><br><font color='#F0C200'>QUEST:</font> Bounce attacks onto enemy Champions<br><br><font color='#F0C200'>REWARD:</font> Gain <physicalDamage>+@ADPerMilestone@AD</physicalDamage> and an extra bounce per Quest Level<br><br>Total AD Gained: @f1@",
     "dataValues": {
       "BounceDistance": 700.0,
@@ -7823,7 +7824,7 @@
     "name": "Armored Impact",
     "rarity": "Gold",
     "desc": "After casting an Ability, your next Attack deals @ArmorDamage@ bonus physical damage to nearby enemies.",
-    "tooltip": "After casting an Ability, your next Attack deals @ArmorDamage@ bonus physical damage to nearby enemies.<br><br><rules>Damage to Enemy Champions:</rules> @f1@",
+    "tooltip": "After casting an Ability, your next Attack deals @ArmorDamage@ bonus physical damage to nearby enemies.",
     "dataValues": {
       "ArmorPercent": 2.5,
       "AOEStartSize": 160.0,
@@ -7843,7 +7844,7 @@
       }
     },
     "icons": [
-      "0x27b5cd5fabcd93db",
+      "assets/ux/kiwi/augments/icons/armoredimpact_small.tex",
       "0xa5f7fc50c1b61b38"
     ]
   },
@@ -7881,7 +7882,7 @@
       }
     },
     "icons": [
-      "0x7b08cf11bb124b25",
+      "assets/ux/kiwi/augments/icons/bluenote_small.tex",
       "0x3af710d256bc8c50"
     ]
   },
@@ -8013,8 +8014,8 @@
     "apiName": "UltimateRecursion",
     "name": "Ultimate Recursion",
     "rarity": "Silver",
-    "desc": "Gain %i:scaleAbilityHaste% @UltimateHaste@ Ultimate Ability Haste.",
-    "tooltip": "Gain %i:scaleAbilityHaste% @UltimateHaste@ Ultimate Ability Haste.",
+    "desc": "Gain @UltimateHaste@ Ultimate Ability Haste.",
+    "tooltip": "Gain @UltimateHaste@ Ultimate Ability Haste.",
     "calculations": {
       "UltimateHaste": {
         "mFormulaParts": [
@@ -8039,7 +8040,8 @@
     "desc": "<scaleAD>%i:scaleAD% Attack Damage</scaleAD> is converted<br>into <attackSpeed>%i:scaleAS% Attack Speed</attackSpeed>.<br><br>Attacks deal <magicDamage>bonus magic damage</magicDamage> <OnHit>%i:OnHit% On-Hit</OnHit>.",
     "tooltip": "<scaleAD>%i:scaleAD% Attack Damage</scaleAD> is converted into <attackSpeed>%i:scaleAS% Attack Speed</attackSpeed>.<br>(<scaleAD>@Calc_ADtoAS@ Attack Damage</scaleAD> to <attackSpeed>@Calc_ASPerAD@ Attack Speed</attackSpeed>)<br><br>Attacks deal <magicDamage>@Calc_OnHitDamage@ bonus magic damage</magicDamage> <OnHit>%i:OnHit% On-Hit</OnHit>.<br><br><rules>Bonus Attack Speed: @f1.1*100@%</rules>",
     "dataValues": {
-      "ADMultiplier": 1.75
+      "ADMultiplier": 1.75,
+      "CalcASVal": 0.0175
     },
     "calculations": {
       "Calc_ASPerAD": {
@@ -8047,8 +8049,8 @@
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
-            "mNumber": 0.175,
-            "~class": "NumberCalculationPart"
+            "mDataValue": "0x536abdab",
+            "~class": "NamedDataValueCalculationPart"
           }
         ],
         "mPrecision": 1,
@@ -8069,7 +8071,7 @@
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
-            "mNumber": 10.0,
+            "mNumber": 1.0,
             "~class": "NumberCalculationPart"
           }
         ],
@@ -8088,8 +8090,8 @@
       }
     },
     "icons": [
-      "0xaeabf61ae86e3af5",
-      "0xd52e657cb9c396e5"
+      "assets/ux/kiwi/augments/icons/ticklemonster_small.tex",
+      "assets/ux/kiwi/augments/icons/ticklemonster_large.tex"
     ]
   },
   {
@@ -8136,8 +8138,8 @@
       }
     },
     "icons": [
-      "0xba7152438c9fb27d",
-      "0x0f84fb27f6686386"
+      "assets/ux/kiwi/augments/icons/nomananoproblem_small.tex",
+      "assets/ux/kiwi/augments/icons/nomananoproblem_large.tex"
     ]
   },
   {
@@ -8178,8 +8180,8 @@
       }
     },
     "icons": [
-      "0xb3135c76f9ab9789",
-      "0x511310c3b2fd7cc2"
+      "assets/ux/kiwi/augments/icons/giftofthedrowned_small.tex",
+      "assets/ux/kiwi/augments/icons/giftofthedrowned_large.tex"
     ]
   },
   {
@@ -8187,8 +8189,8 @@
     "apiName": "BrassBlast",
     "name": "Brass Blast",
     "rarity": "Gold",
-    "desc": "Gain <spellName>Brass Blaster</spellName>.<br><br><spellName>Brass Blaster</spellName>: Charge up a large trumpet to <status>Knock Back</status> enemies, dealing <magicDamage>magic damage</magicDamage> to those hit.",
-    "tooltip": "Gain <spellName>Brass Blaster</spellName>.<br><br><charge>Begin Charging</charge>: Charge up to @ChargeTimeTT@ seconds, increasing the damage.<br><br><release>Release:</release> <status>Knocking Back</status> all enemies and dealing <magicDamage>@BrassBlastDamage_Min@ to @BrassBlastDamage_Max@ magic damage</magicDamage> based on charge time. <br><br><rules>Minimum charge time: @MinChargeTimeTT@ seconds</rules>",
+    "desc": "Replace a Summoner Spell with <spellName>Brass Blast</spellName>.<br><br><spellName>Brass Blast</spellName>: Charge up a large trumpet, <status>Knocking Back</status> and dealing <magicDamage>magic damage</magicDamage> to enemies.",
+    "tooltip": "Replace a Summoner Spell with <spellName>Brass Blast</spellName>.<br><br><charge>Begin Charging</charge>: Charge up a large trumpet for up to @ChargeTimeTT@ seconds.<br><br><release>Release: Blow the trumpet, </release> <status>Knock Back</status> and deal between <magicDamage>@BrassBlastDamage_Min@ to @BrassBlastDamage_Max@ magic damage</magicDamage> based on charge time. <br><br><rules>Minimum Charge Time: @MinChargeTimeTT@ seconds</rules>",
     "dataValues": {
       "ConeStartRange": 700.0,
       "MaxChargeTime": 2.5,
@@ -8300,8 +8302,8 @@
       }
     },
     "icons": [
-      "0xdb90914543cd3838",
-      "0xdb90914543cd3838"
+      "assets/ux/kiwi/augments/icons/camo_large.tex",
+      "assets/ux/kiwi/augments/icons/camo_large.tex"
     ]
   },
   {
@@ -8341,7 +8343,7 @@
     "name": "The Boom and the Bass",
     "rarity": "Gold",
     "desc": "After casting an Ability, your next Attack is faster, deals <magicDamage>bonus magic damage</magicDamage>, and grants you <speed>decaying Move Speed</speed>.",
-    "tooltip": "After casting an Ability, your next Attack within @Charge_Duration@ seconds is faster, deals <magicDamage>@Calc_Damage@ magic damage</magicDamage>, and grants you <speed>@Calc_Move_Speed@ Move Speed</speed> decaying over @Move_Speed_Duration@ seconds.<br><br><rules>Attacks Empowered: @f1@<br>Damage Dealt: @f2@</rules>",
+    "tooltip": "After casting an Ability, your next Attack within @Charge_Duration@ seconds is faster, deals <magicDamage>@Calc_Damage@ magic damage</magicDamage> <OnHit>%i:OnHit% On-Hit</OnHit>, and grants you <speed>@Calc_Move_Speed@ Move Speed</speed> decaying over @Move_Speed_Duration@ seconds.<br><br><rules>Attacks Empowered: @f1@<br>Damage Dealt: @f2@</rules>",
     "dataValues": {
       "Charge_Duration": 6.0,
       "Move_Speed_Duration": 2.0,
@@ -8397,7 +8399,7 @@
       }
     },
     "icons": [
-      "0x50374f865d59d010",
+      "assets/ux/kiwi/augments/icons/theboomandthebass_small.tex",
       "0xab977e3177569cce"
     ]
   },
@@ -8406,8 +8408,8 @@
     "apiName": "Totentanz",
     "name": "Totentanz",
     "rarity": "Prismatic",
-    "desc": "Gain <spellName>A Dance with Death</spellName>.<br><br><spellName>A Dance with Death</spellName>: Blink forward and become <attention>Unkillable</attention>. Get a takedown within @Buff_Duration@ seconds or else<br><danger>YOU DIE</danger>.",
-    "tooltip": "Gain the Summoner Spell <spellName>A Dance with Death</spellName>.<br><br><spellName>A Dance with Death</spellName>: Become <attention>Unkillable</attention> for @Buff_Duration@ seconds and blink forward.<br><br>If you get a takedown before the end of the duration, restore <healing>@Calc_Heal@ Health</healing>, blink back to your original position, and reduce this Summoner Spell's cooldown by @Calc_Cooldown_Refund@ seconds. If not, <danger>YOU DIE</danger>.<br><br><rules>Deaths Defied: @f1@<br>Health Restored: @f2@<br>Lives Forfeited: @f3@<br><br><flavorText>\"You all die, why not choose how?\" — Karthus, the Deathsinger</flavorText></rules>",
+    "desc": "Replace a Summoner Spell with <spellName>A Dance with Death</spellName>.<br><br><spellName>A Dance with Death</spellName>: Blink forward and become <attention>Unkillable</attention>. Get a takedown within @Buff_Duration@ seconds or else<br><danger>YOU DIE</danger>.",
+    "tooltip": "Replace a Summoner Spell with <spellName>A Dance with Death</spellName>.<br><br><spellName>A Dance with Death</spellName>: Become <attention>Unkillable</attention> for @Buff_Duration@ seconds and blink forward.<br><br>If you get a takedown before the end of the duration, restore <healing>@Calc_Heal@ Health</healing>, blink back to your original position, and reduce this Summoner Spell's cooldown by @Calc_Cooldown_Refund@ seconds. If not, <danger>YOU DIE</danger>.<br><br><rules>Deaths Defied: @f1@<br>Lives Forfeited: @f3@<br><br><flavorText>\"You all die, why not choose how?\" — Karthus, the Deathsinger</flavorText></rules>",
     "dataValues": {
       "Buff_Duration": 5.0,
       "Takedown_Window": 3.0,
@@ -8449,7 +8451,7 @@
       }
     },
     "icons": [
-      "0x9973ee24da4b01e9",
+      "assets/ux/kiwi/augments/icons/totentanz_small.tex",
       "0x8aa75478c52a8dbe"
     ]
   },
@@ -8459,7 +8461,7 @@
     "name": "Weapon of Destiny",
     "rarity": "Gold",
     "desc": "Your first Legendary Item becomes the <prismatic>Weapon of Destiny</prismatic>, gaining increased stats for every earned champion takedown.",
-    "tooltip": "Your first Legendary Item becomes the <prismatic>Weapon of Destiny</prismatic>. When a champion you damaged within the last 3 seconds dies, the <prismatic>Weapon of Destiny</prismatic> gains <gold>@GoldValue@ Gold</gold> worth of stats.<br><br><rules>The <prismatic>Weapon of Destiny</prismatic> cannot be sold.<br>Upgrades: @f1@</rules>",
+    "tooltip": "Your first Legendary Item becomes the <prismatic>Weapon of Destiny</prismatic>. When a champion you damaged within the last 3 seconds dies, increase the <prismatic>Weapon of Destiny's</prismatic> stats.<br><br><rules>The <prismatic>Weapon of Destiny</prismatic> cannot be sold.<br>Upgrades: @f1@</rules>",
     "dataValues": {
       "GoldValue": 200.0,
       "BaselineGoldAmp": 1000.0,
@@ -8483,8 +8485,8 @@
       "UpgradeHealth": 375.0
     },
     "icons": [
-      "0x29446ad9ce861714",
-      "0x22e777fb39a79261"
+      "assets/ux/kiwi/augments/icons/protagonistssignatureweapon_small.tex",
+      "assets/ux/kiwi/augments/icons/protagonistssignatureweapon_large.tex"
     ]
   },
   {
@@ -8493,7 +8495,7 @@
     "name": "Flow of Spirit",
     "rarity": "Silver",
     "desc": "Casting <font color='#F0C200'>@SpellName@</font> grants you <attackSpeed>%i:scaleAS% Attack Speed</attackSpeed> for a duration.",
-    "tooltip": "Casting <font color='#F0C200'>@SpellName@</font> grants you <attackSpeed>@Calc_Attack_Speed@ %i:scaleAS% Attack Speed</attackSpeed> for @Buff_Duration@ seconds.<br><br><rules>Activations: @f1@<br>Attacks Launched: @f2@</rules>",
+    "tooltip": "Casting <font color='#F0C200'>@SpellName@</font> grants you <attackSpeed>@Calc_Attack_Speed@ %i:scaleAS% Attack Speed</attackSpeed> for @Buff_Duration@ seconds.<br><br><rules>Attacks Launched: @f2@</rules>",
     "dataValues": {
       "Buff_Duration": 4.0
     },
@@ -8521,7 +8523,7 @@
     "name": "BEES!!!",
     "rarity": "Gold",
     "desc": "Periodically, your next Ability hit against an enemy champion launches a hive of <keyword>Bees</keyword> that explodes, <status>Slowing</status> and dealing <magicDamage>magic damage</magicDamage> over a short duration.<br><br><keyword>Bees</keyword> apply <OnHit>%i:OnHit% On-Hit</OnHit> effects.",
-    "tooltip": "Every @Calc_Cooldown@ seconds, your next Ability hit against an enemy champion throws a beehive at the target. Upon arriving, the hive explodes and <keyword>Bees</keyword> swarm to all nearby enemy champions, <status>Slowing</status> them by @Calc_Slow@ and dealing <magicDamage>@Calc_Damage@ magic damage</magicDamage> over @Damage_Duration@ seconds.<br><br><rules><keyword>Bees</keyword> apply <OnHit>%i:OnHit% On-Hit</OnHit> effects at @Calc_OnHit_Efficacy@ effectiveness.<br><br>Hives Thrown: @f1@<br>Enemies Bee'd: @f3@<br>Bee Damage Dealt: @f2@<br>On-Hit Damage Dealt: @f4@<br><br><flavorText>According to all known laws of aviation, there is no way a bee should be able to fly...</flavorText></rules>",
+    "tooltip": "Every @Calc_Cooldown@ seconds, your next Ability hit against an enemy champion throws a beehive at the target. Upon arriving, the hive explodes and <keyword>Bees</keyword> swarm to all nearby enemy champions, <status>Slowing</status> them by @Calc_Slow@ and dealing <magicDamage>@Calc_Damage@ magic damage</magicDamage> over @Damage_Duration@ seconds.<br><br><rules><keyword>Bees</keyword> apply <OnHit>%i:OnHit% On-Hit</OnHit> effects at @Calc_OnHit_Efficacy@ effectiveness.<br><br>Enemies Bee'd: @f3@<br><br><flavorText>According to all known laws of aviation, there is no way a bee should be able to fly...</flavorText></rules>",
     "dataValues": {
       "Damage_Duration": 2.0,
       "AoE_Radius": 425.0
@@ -8583,7 +8585,7 @@
       }
     },
     "icons": [
-      "0x65ed630abf6d349d",
+      "assets/ux/kiwi/augments/icons/bees_small.tex",
       "0xa6608343a68ebf86"
     ]
   },
@@ -8593,7 +8595,7 @@
     "name": "CRIMSON COBALT",
     "rarity": "Gold",
     "desc": "Enemy champions damaged by <font color='#F0C200'>@SpellName@</font> are marked. Attacking a marked enemy deals <magicDamage>bonus magic damage</magicDamage> and reduces the cooldown of <font color='#F0C200'>@SpellName@</font>.",
-    "tooltip": "Enemy champions damaged by <font color='#F0C200'>@SpellName@</font> are marked for @Debuff_Duration@ seconds. Attacking a marked enemy consumes the mark to deal <magicDamage>@Calc_Damage@ magic damage</magicDamage> and reduce the cooldown of <font color='#F0C200'>@SpellName@</font> by @Calc_Cooldown_Refund@.<br><br><rules>Damage Dealt: @f1@<br>Marks Applied: @f2@<br>Marks Consumed: @f3@</rules>",
+    "tooltip": "Enemy champions damaged by <font color='#F0C200'>@SpellName@</font> are marked for @Debuff_Duration@ seconds. Attacking a marked enemy consumes the mark to deal <magicDamage>@Calc_Damage@ magic damage</magicDamage> and reduce the cooldown of <font color='#F0C200'>@SpellName@</font> by @Calc_Cooldown_Refund@.<br><br><rules>Damage Dealt: @f1@<br>Marks Consumed: @f3@</rules>",
     "dataValues": {
       "Debuff_Duration": 4.0
     },
@@ -8661,8 +8663,8 @@
       }
     },
     "icons": [
-      "0x6b32d2047ca6252c",
-      "0xfbfeecc57a777b0d"
+      "assets/ux/kiwi/augments/icons/lichbrain_small.tex",
+      "assets/ux/kiwi/augments/icons/lichbrain_large.tex"
     ]
   },
   {
@@ -8670,7 +8672,7 @@
     "apiName": "TakeemDownDownDown",
     "name": "Take'em Down Down Down",
     "rarity": "Gold",
-    "desc": "Attacks and Abilities deal <magicDamage>bonus magic damage</magicDamage> and apply stacks to enemy champions. <br><br>At max stacks, your next Attack or Ability consumes them to deal <magicDamage>missing Health magic damage</magicDamage> and you <healing>restore Health</healing> based on the damage dealt.",
+    "desc": "Attacks and Abilities deal <magicDamage>bonus magic damage</magicDamage> and apply stacks to enemy champions. <br><br>At max stacks, consume them to deal <magicDamage>missing Health magic damage</magicDamage> and you <healing>restore Health</healing> based on the damage dealt.",
     "tooltip": "Attacks and Abilities apply a stack to enemy champions for @Stack_Duration@ seconds and deal <magicDamage>@Calc_Damage_Hit@ magic damage</magicDamage> + <magicDamage>@Calc_Damage_Per_Previous_Stack@ magic damage per stack</magicDamage>.<br><br>Damaging an enemy that has @Stacks_Max@ stacks consumes them to deal <magicDamage>@Calc_Damage_Consume@ missing Health magic damage</magicDamage> and <healing>you restore health equal to @Calc_Healing@ of the damage dealt</healing>.<br><br><rules>Times Triggered: @f1@<br>Damage Dealt: @f2@<br>Healing: @f3@</rules>",
     "dataValues": {
       "Stacks_Max_Minus_One": 4.0,
@@ -8756,7 +8758,7 @@
       }
     },
     "icons": [
-      "0x586dc22aa2950b15",
+      "assets/ux/kiwi/augments/icons/takeemdowndowndown_small.tex",
       "0x02352f66caf65576"
     ]
   },
@@ -8784,8 +8786,8 @@
       }
     },
     "icons": [
-      "0x7b5211005f518565",
-      "0x33e5afaf13a9be8e"
+      "assets/ux/kiwi/augments/icons/arcaneaxiom_small.tex",
+      "assets/ux/kiwi/augments/icons/arcaneaxiom_large.tex"
     ]
   },
   {
@@ -8793,8 +8795,8 @@
     "apiName": "Fruitify",
     "name": "Fruitify",
     "rarity": "Silver",
-    "desc": "Takedowns create Fruit at the victim's location.<br><br>Fruit restores <healing>Health</healing> and <scaleMana>Mana</scaleMana>.",
-    "tooltip": "Scoring a Takedown causes the slain champion to explode into @FruitsPerTakedown@ <healing>Fruit</healing>.<br>Fruit <healing>restores @HealingPerFruit@ of your maximum health</healing> and restores <scaleMana>@ManaPerFruit@ of your maximum Mana</scaleMana>.<br><br>Fruits also grant @WeirdResourcePerFruit@ <energy>Energy</energy>, <energy>Fury</energy>, <energy>Rage</energy>, <energy>Dragonfury</energy>, and <energy>Courage</energy>.<br><br><rules>Fruit Generated: @f1@</rules>",
+    "desc": "Takedowns create explosions of <keyword>Fruit</keyword>.<br><br><keyword>Fruit</keyword> restores <healing>Health</healing> and <scaleMana>Mana</scaleMana>.",
+    "tooltip": "Scoring a Takedown causes the slain champion to explode into @FruitsPerTakedown@ <keyword>Fruit</keyword>.<br><keyword>Fruit</keyword> <healing>restores @HealingPerFruit@ of your maximum health</healing> and restores <scaleMana>@ManaPerFruit@ of your maximum Mana</scaleMana>.<br><br><rules><keyword>Fruit</keyword> also grant @WeirdResourcePerFruit@ <energy>Energy</energy>, <energy>Fury</energy>, <energy>Rage</energy>, <energy>Dragonfury</energy>, and <energy>Courage</energy>.<br><br>Fruit Generated: @f1@</rules>",
     "dataValues": {
       "FruitDuration": 10.0
     },
@@ -8840,8 +8842,8 @@
       }
     },
     "icons": [
-      "0x629ad3bb58bdaf37",
-      "0xb7f05581dc015fe1"
+      "assets/ux/kiwi/augments/icons/fruitseason_small.tex",
+      "assets/ux/kiwi/augments/icons/fruitseason_large.tex"
     ]
   },
   {
@@ -8903,7 +8905,7 @@
     "name": "Sap Magic",
     "rarity": "Gold",
     "desc": "Every @TimeLockout@ seconds, your next Attack deals <physicalDamage>bonus physical damage</physicalDamage> and restores <healing>Health</healing> %i:OnHit% <OnHit>On-Hit</OnHit>.<br><br>Casting an Ability reduces this effect's cooldown.",
-    "tooltip": "Every @TimeLockout@ seconds, your next Attack deals <physicalDamage>@CalcDamage@ bonus physical damage</physicalDamage> and restores <healing>@CalcHeal@ Health </healing>%i:OnHit% <OnHit>On-Hit</OnHit>.<br><br>Casting an Ability reduces this effect's cooldown by <attention>@TimeRefund@ seconds</attention>.<br><br><rules>Damage Dealt to Champions: @f1@<br>Health Restored: @f2@</rules>",
+    "tooltip": "Every @TimeLockout@ seconds, your next Attack deals <physicalDamage>@CalcDamage@ bonus physical damage</physicalDamage> and restores <healing>@CalcHeal@ Health </healing>%i:OnHit% <OnHit>On-Hit</OnHit>.<br><br>Casting an Ability reduces this effect's cooldown by <attention>@TimeRefund@ seconds</attention>.<br><br><rules>Health Restored: @f2@</rules>",
     "calculations": {
       "CalcHeal": {
         "mFormulaParts": [
@@ -8958,8 +8960,8 @@
       }
     },
     "icons": [
-      "0x002f3984dc2c6ad5",
-      "0x95f30f90506d6bda"
+      "assets/ux/kiwi/augments/icons/mercysstrike_small.tex",
+      "assets/ux/kiwi/augments/icons/mercysstrike_large.tex"
     ]
   },
   {
@@ -8967,7 +8969,7 @@
     "apiName": "StillHere",
     "name": "Still Here",
     "rarity": "Gold",
-    "desc": "Gain <attackSpeed> Attack Speed</attackSpeed> and <lifeSteal> Lifesteal</lifeSteal> based on your missing <scaleHealth>%i:scaleHealth% Health</scaleHealth>.",
+    "desc": "Gain <attackSpeed>%i:scaleAS% Attack Speed</attackSpeed> and <lifeSteal>%i:scaleLS% Lifesteal</lifeSteal> based on your missing <scaleHealth>%i:scaleHealth% Health</scaleHealth>.",
     "tooltip": "Gain <attackSpeed>%i:scaleAS% @ASPerMissingPercentHP*100@% Attack Speed</attackSpeed> and <lifeSteal>%i:scaleLS% @OmnivampPerMissingPercentHP*100@% Lifesteal</lifeSteal> for each 1% of missing <scaleHealth>%i:scaleHealth% Health</scaleHealth>.",
     "dataValues": {
       "ASPerMissingPercentHP": 0.02,
@@ -8975,7 +8977,7 @@
       "OmnivampPerMissingPercentHP": 0.0035
     },
     "icons": [
-      "0xa4b135496639e9d0",
+      "assets/ux/kiwi/augments/icons/stillhere_small.tex",
       "0xdd999552367027e8"
     ]
   },
@@ -8984,7 +8986,7 @@
     "apiName": "HeavyIsTheCrown",
     "name": "Heavy Is The Crown",
     "rarity": "Gold",
-    "desc": "Gain <scaleAD>Attack Damage</scaleAD>, <scaleAP>Ability Power</scaleAP>,  and <attackSpeed>Attack Speed</attackSpeed> but<danger>  decreased</danger> <speed>Move Speed</speed>.<br><br>Getting a takedown grants you a stack of Burden that increases this effect. Lose half your stacks on death",
+    "desc": "Gain <scaleAD>%i:scaleAD% Attack Damage</scaleAD>, <scaleAP>%i:scaleAP% Ability Power</scaleAP>,  and <attackSpeed>%i:scaleAS% Attack Speed</attackSpeed> but<danger>  decreased</danger> <speed>Move Speed</speed>.<br><br>Getting a takedown grants you a stack of Burden that increases this effect. Lose half your stacks on death",
     "tooltip": "Gain %i:scaleAD% <scaleAD>@InitialFlatAD@ Attack Damage</scaleAD>, %i:scaleAP% <scaleAP>@InitialFlatAP@ Ability Power</scaleAP>, and increase your <scaleAD>Bonus Attack Damage</scaleAD>, <scaleAP>Bonus Ability Power</scaleAP>, and <attackSpeed>Total Attack Speed</attackSpeed> by @InitialStatIncrease*100@%. <danger>Decrease your total</danger> <speed>Move Speed </speed>by @InitialMSDecrease*-100@% in combat.<br><br>Getting a takedown grants you a stack of Burden, increasing your <scaleAD>Bonus Attack Damage</scaleAD>, <scaleAP>Bonus Ability Power</scaleAP>, and <attackSpeed>Total Attack Speed</attackSpeed> by @StatIncreasePercentPerTakedown*100@%, while further decreasing your <speed>Move Speed</speed> by @MSDecreasePerTakedown*-100@% per stack to a minimum of 50%.<br><br>Lose @PercentStackLostOnDeath*100@% of your stacks on death.<br><br><rules>Percent Stat Increase: @f1@%<br>Movement Speed Decrease: @f2@% </rules><br><br><flavorText>This is what you asked for...</flavorText>",
     "dataValues": {
       "StatIncreasePercentPerTakedown": 0.04,
@@ -9002,7 +9004,7 @@
       "CombatDuration": 7.0
     },
     "icons": [
-      "0xa57969a4c38365a1",
+      "assets/ux/kiwi/augments/icons/heavyisthecrown_small.tex",
       "0xffbc9ba8b14e62d2"
     ]
   },
@@ -9011,7 +9013,7 @@
     "apiName": "LonelyWarrior",
     "name": "Lonely Warrior",
     "rarity": "Silver",
-    "desc": "Gain <attackSpeed>Attack Speed</attackSpeed>, <scaleArmor>Armor</scaleArmor>, and <scaleMR>Magic Resist</scaleMR> for each nearby enemy champion. ",
+    "desc": "Gain <attackSpeed>%i:scaleAS% Attack Speed</attackSpeed>, <scaleArmor>%i:scaleAR% Armor</scaleArmor>, and <scaleMR>%i:scaleMR% Magic Resist</scaleMR> for each nearby enemy champion. ",
     "tooltip": "Gain <attackSpeed>@ASPerEnemyTooltip@ Attack Speed</attackSpeed>, <scaleArmor>@ArmorPerEnemy@ Armor</scaleArmor>, and <scaleMR>@MRPerEnemy@ Magic Resist</scaleMR> for each nearby enemy champion within @ProximityRange@ Range.",
     "dataValues": {
       "ASPerEnemy": 0.15,
@@ -9042,8 +9044,8 @@
     "apiName": "GroupHug",
     "name": "Group Hug",
     "rarity": "Prismatic",
-    "desc": "<healing>Healing</healing> or <shield>Shielding</shield> an allied champion with <font color='#F0C200'>@SpellName@</font> also <healing>heals</healing> or <shield>shields</shield> @TargetToPick@ other allied champions.<br>",
-    "tooltip": "<healing>Healing</healing> or <shield>Shielding</shield> an allied champion with <font color='#F0C200'>@SpellName@</font> also <healing>heals</healing> or <shield>shields</shield> @TargetToPick@ other allied champions.<br><br><rules>Heals and Shields are @Efficiency_Heal@ effective.<br><flavorText>The power of friendship!</flavorText></rules>",
+    "desc": "<healing>Healing</healing> or <shield>Shielding</shield> an allied champion with <font color='#F0C200'>@SpellName@</font> casts that spell again on @TargetToPick@ other nearby allied champions.<br>",
+    "tooltip": "<healing>Healing</healing> or <shield>Shielding</shield> an allied champion with <font color='#F0C200'>@SpellName@</font> casts that spell again on @TargetToPick@ other nearby allied champions.<br><br><rules>Heals and Shields are @Efficiency_Heal@ effective.<br><flavorText>The power of friendship!</flavorText></rules>",
     "dataValues": {
       "TargetToPick": 2.0,
       "MinRange": 500.0
@@ -9080,8 +9082,8 @@
     "apiName": "Upgrade_Stormsurge",
     "name": "Upgrade Stormsurge",
     "rarity": "Gold",
-    "desc": "<passive>Stormsurge's Squall</passive> now detonates in an area, dealing max Health <magicDamage>magic damage</magicDamage>.<br><br>Enemy champions caught in the initial blast are marked by <passive>Squall</passive>.<br><br>Gain<gold> %i:goldCoins% @Gold@ Gold</gold>.<br><br><br>",
-    "tooltip": "<passive>Stormsurge's Squall</passive> now detonates in an area, dealing <magicDamage>@PercentHealthDamage@ maximum Health magic damage</magicDamage> to all nearby enemies.<br><br>Enemy champions caught in the initial blast are marked by <passive>Squall</passive>.<br><br>Gain<gold> %i:goldCoins% @Gold@ Gold</gold>.<br>",
+    "desc": "<passive>Stormsurge's Squall</passive> now always detonates in an area, dealing max Health <magicDamage>magic damage</magicDamage>.<br><br>Enemy champions caught in the initial blast are marked by <passive>Squall</passive>.<br><br>Gain<gold> %i:goldCoins% @Gold@ Gold</gold>.<br><br><br>",
+    "tooltip": "<passive>Stormsurge's Squall</passive> now always detonates in an area, dealing <magicDamage>@PercentHealthDamage@ maximum Health magic damage</magicDamage> to all nearby enemies.<br><br>Enemy champions caught in the initial blast are marked by <passive>Squall</passive>.<br><br>Gain<gold> %i:goldCoins% @Gold@ Gold</gold>.<br>",
     "dataValues": {
       "BlastRadius": 350.0,
       "PercentHealthBase": 0.1,
@@ -9124,8 +9126,8 @@
     "apiName": "EnchantingButterflies",
     "name": "Enchanting Butterflies",
     "rarity": "Gold",
-    "desc": "<healing>Healing</healing> or <shield>Shielding</shield> allied champions builds up <keyword>Butterflies</keyword> around you.<br><br>After collecting @MaxButterfly@ <keyword>Butterflies</keyword>, damaging an enemy champion fires all of them to deal <scaleAF>adaptive damage</scaleAF>.",
-    "tooltip": "<healing>Healing</healing> or <shield>Shielding</shield> allied champions builds up <keyword>Butterflies</keyword> around you. After collecting @MaxButterfly@ <keyword>Butterflies</keyword>, damaging an enemy champion fires all of them, each dealing <scaleAF>@SingleFireDamage@ adaptive damage</scaleAF> with subsequent hits dealing @RepeatDamageMod@ damage.<br><br><rules>Damage Dealt: @f1@</rules>",
+    "desc": "<healing>Healing</healing> or <shield>Shielding</shield> allied champions gathers <keyword>Butterflies</keyword>.<br><br>After collecting @MaxButterfly@ <keyword>Butterflies</keyword>, damaging an enemy champion fires all of them to deal <magicDamage>Magic damage</magicDamage>.",
+    "tooltip": "<healing>Healing</healing> or <shield>Shielding</shield> allied champions gathers <keyword>Butterflies</keyword> around you. <br><br>After collecting @MaxButterfly@ <keyword>Butterflies</keyword>, damaging an enemy champion fires all of them each dealing <magicDamage>@SingleFireDamage@ Magic damage</magicDamage> with subsequent hits dealing @RepeatDamageMod@ damage.<br><br><rules>Damage Dealt: @f1@</rules>",
     "dataValues": {
       "OrbitRadius": 150.0
     },
@@ -9191,7 +9193,7 @@
       }
     },
     "icons": [
-      "0x517c87b15b3316e5",
+      "assets/ux/kiwi/augments/icons/enchantedbuttery_small.tex",
       "0x2e5904549f5f9f49"
     ]
   },

@@ -953,6 +953,51 @@
     "ObjectName": "BriarE",
     "mScriptName": "BriarE",
     "mSpell": {
+      "0x66185ec4": {
+        "cherry": {
+          "Calculations": {
+            "Damage": {
+              "mFormulaParts": [
+                {
+                  "mDataValue": "DRPercent",
+                  "~class": "NamedDataValueCalculationPart"
+                },
+                {
+                  "mCoefficient": 1.0,
+                  "mStat": 2,
+                  "mStatFormula": 2,
+                  "~class": "StatByCoefficientCalculationPart"
+                },
+                {
+                  "mCoefficient": 1.5,
+                  "~class": "StatByCoefficientCalculationPart"
+                }
+              ],
+              "~class": "GameCalculation"
+            },
+            "WallHitDamage": {
+              "mFormulaParts": [
+                {
+                  "mDataValue": "WallHitBaseDamage",
+                  "~class": "NamedDataValueCalculationPart"
+                },
+                {
+                  "mCoefficient": 2.4,
+                  "mStat": 2,
+                  "mStatFormula": 2,
+                  "~class": "StatByCoefficientCalculationPart"
+                },
+                {
+                  "mCoefficient": 3.5,
+                  "~class": "StatByCoefficientCalculationPart"
+                }
+              ],
+              "~class": "GameCalculation"
+            }
+          },
+          "~class": "0x4acf67d2"
+        }
+      },
       "0x8958fee2": {
         "~class": "0x8958fee2"
       },
@@ -2167,6 +2212,19 @@
                 0.14,
                 0.16,
                 0.18
+              ],
+              "~class": "SpellDataValue"
+            },
+            {
+              "name": "StunDuration",
+              "values": [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5
               ],
               "~class": "SpellDataValue"
             }
@@ -3860,6 +3918,14 @@
         "assets/characters/briar/hud/icons2d/briarw2.dds"
       ],
       "mLockedSpellOriginationCastID": true,
+      "mSpellPassives": [
+        {
+          "mBuff": "Characters/DrMundo/Spells/DrMundoEAbility/DrMundoEPassive",
+          "mDisplayFlags": 0,
+          "mRemoveWhenOnCooldown": false,
+          "~class": "SpellPassiveData"
+        }
+      ],
       "mSpellTags": [
         "Trait_AttackReset",
         "PositiveEffect_EmpowerAttack"
