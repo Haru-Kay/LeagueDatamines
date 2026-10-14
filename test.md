@@ -1,243 +1,189 @@
-**Just a reminder that PBE changes are not final and subject to change. Some changes, such as bugfixes, may not be able to be viewed. Also, I'm human. I make mistakes from time to time.**
+**Just a reminder that PBE changes are not final and subject to change. Some changes, such as bugfixes, may not be able to be viewed. Also, I'm human. I make mistakes from time to time. Credit u/Kay-Haru.**
 
 ## Summoner's Rift
 
 ### Champions
 
-**Zoe**
+**Caitlyn**
 
-* Minions can now drop Base Smite and Primal Smite (Scorchclaw)
+* Headshot Bonus Damage: 60/80/100% AD + 0-100% (+0-30% IE) (based on crit chance) AD -> 80% AD
+  * Crit Scalar value was also changed to 80% despite being removed from the calc. Something was likely pushed in an unfinished state.
 
-## ARAM: Mayhem
+**Darius**
 
-### Pass Progression
+* Q Cooldown: 9/8/7/6/5 seconds -> 9.0/7.75/6.5/5.25/4.0 seconds
 
-**Pentakill: Land Skill Shots**
+**Jinx**
 
-* 50/80 -> 45/65
-
-### Augments
-
-**General**
-
-* Multiple trackers removed. Many tracked or displayed incorrect data and were likely leftovers from testing.
-
-**Double Time**
-
-* Mana Gain Cooldown: 1 second -> 4 seconds
-
-**The Boom and the Bass**
-
-* Clarified to be an On-Hit effect
-
-## Arena
-
-### Augments
-
-**Big Brain**
-
-* Out of Combat Refresh: 3 seconds -> 5 seconds
-
-**Castle**
-
-* Cooldown: 12 seconds -> 10 seconds
-
-**Chroma Flux**
-
-* Cooldown: 10 seconds -> 8 seconds
-
-**Courage of the Colossus**
-
-* Cooldown per Spell per Instance: 5 seconds -> 6 seconds
-
-**Dawnbringer's Resolve**
-
-* Heal Amount: 25/30% -> 3500/40%
-  * Meant to be 35% of course, whoops.
-
-**Dual Wield**
-
-* Bolt Damage: 40/50/60% of the Attack -> 40/45/50% of the Attack
-
-**Flashy**
-
-* Flash Count: 2/3 -> 4/6
-
-**Hive Mind**
-
-* Starting Bees: 2/4/6 -> 3/6/9
-
-**Minionmancer**
-
-* Minion Bonus: 40/55% -> 55/70%
-
-**Nesting Doll**
-
-* Bonus Lives: 1/2/3 -> 0/1/2
-  * Yes, that says pick a Prismatic and gain 0 revives.
-
-**Quest: Rite of the Forge God**
-
-* Item Stat Amp: 40% -> 60%
-
-**Spin to Win**
-
-* Damage Amp: 25/35% -> 35/45%
-
-**Trueshot Prodigy**
-
-* Damage: 175-525 (+100% bonus AD) (+70% AP) -> 175-375 (+50% bonus AD) (+70% AP)
-* Cooldown: 10/8/6 seconds -> 12/10/8 seconds
-
-### Champions
-
-**Bel'Veth**
-
-* Q AD Ratio: 105% -> 95%
-* R AD Ratio: 1% bonus AD -> 0.5% bonus AD
-
-**Briar**
-
-* Q Stun Duration: 0.85 seconds -> 0.5 seconds
-* E Unit Damage AP Ratio: 100% -> 150%
-* E Wall Damage AP Ratio: 240% -> 350%
-
-**Elise**
-
-* Spiderlings Stored: 2/3/4/5 -> 4/6/8/10
-* Spider P On-Hit Damage Reverted: 15/25/35/45 -> 14/24/34/44
-* Human E Cooldown: 8.0/7.5/7.0/6.5/6.0 seconds -> 10 seconds
-
-**Ezreal**
-
-* R AD Ratio: 100% bonus AD -> 150% bonus AD
-* R Cooldown: 50/40/30 seconds -> 40/30/20 seconds
-
-**Fiora**
-
-* P AD Ratio: 3% per 100 AD -> 2% per 100 AD
-* Q now scales with 25% AP
-* W AP Ratio: 100% -> 150%
-
-**Galio**
-
-* W Shield HP Ratio: 7.5/9.0/10.5/12.0/13.5% max Health -> 6/7/8/9/10% max Health
-* W Max Taunt Duration: 1.5 seconds -> 1 second
-* R Outer Radius Stun Duration: 1.5 seconds -> 1 second
-
-**Gangplank**
-
-* W AP Ratio: 90% -> 135%
-* R Cooldown: 130/100/90 seconds -> 100/80/60 seconds
-
-**Gnar**
-
-* W Bonus MS: 20/40/60/80% -> 40/80/120/160%
-* W Buff Duration: 4 seconds -> 2 seconds
-* R Damage: 200/300/400 (+100% AP) (+50% bonus AD) -> 0 (+150% AP) (+50% bonus AD)
-
-**Katarina**
-
-* R AP Ratio: 25% -> 35%
-* R On-Hit Multiplier: 25/30/35% -> 25%
-
-**Kayn**
-
-* TransformationVariable: 0.6 -> 1.2
-  * No clue. Need some Kayn nerds to explain this one.
+* Base Health: 630 -> 610
+* AD Growth: 3.25 -> 3.0
 
 **Lee Sin**
 
-* E Damage: 35/60/85/110/135 (+90% AD) -> 0 (+75% AP) (+90% AD)
-
-**Malzahar**
-
-* Voidling Cap: 2 -> 6
-
-**Milio**
-
-* Q AP Ratio: 120% -> 200%
-* Q Cooldown reverted: 8 seconds -> 10 seconds
-* R Cooldown: 160/145/130 seconds -> 180/150/130 seconds
+* W Cooldown: 7 seconds -> 8 seconds
+* R Base Damage: 175/400/625 -> 150/350/550
 
 **Miss Fortune**
 
-* Q AP Ratio: 55% -> 70%
-* R AP Ratio: 35% -> 40%
+* E Base Damage per Second: 35/50/65/80/95 -> 45/60/75/90/105
+* R Crit Damage: 130% (+9% IE) -> 145% (+13.5% IE)
 
-**Morgana**
+**Wukong**
 
-* Q Cooldown: 12 seconds -> 14 seconds
-* E Cooldown: 26.0/23.5/21.0/18.5/16.0 seconds -> 30/27.5/25.0/22.5/20 seconds
+* Base Health Regen: 0.7 -> 1.1
+  * HP5: 3.5 -> 5.5
+* P Armor per Stack: 6-10 -> 4-10
 
 **Nidalee**
 
-* Human W Cooldown: 13/12/11/10/9 seconds -> 8 seconds
-* Cougar W Cooldown: 6 seconds -> 4 seconds
-* Cougar E Cooldown: 6 seconds -> 4 seconds
+* Q Min Base Damage: 70/90/110/130/150 -> 60/80/100/120/140
+  * Max Base Damage: 227.5/292.5/357.5/422.5/487.5 -> 195/260/325/390/455
+* W Base Damage: 55/100/145/190/235 -> 50/90/130/170/210
 
-**Renata Glasc**
+**Nunu & Willump**
 
-* W Cooldown: 28/27/26/25/24 seconds -> 32/31/30/29/28 seconds
-* R Cooldown: 150/130/110 seconds -> 170/150/130 seconds
+* R Base Damage: 625/925/1275 -> 750/1100/1450
 
-**Rengar**
+**Qiyana**
 
-* W AP Ratio: 95% -> 120%
+* Q Base Damage: 80/110/140/170/200 -> 70/100/130/160/190
 
-**Skarner**
+**Rammus**
 
-* Q AD Ratio: 90% bonus AD -> 150% bonus AD
-* W AP Ratio: 80% -> 120%
+* W Bonus Armor: 27/32/37/42/47 (+30.0/37.5/45.0/52.5/60.0% bonus Armor) -> 20/25/30/35/40 (+30/35/40/45/50% bonus Armor)
+* W Bonus MR Ratio: 30.0/37.5/45.0/52.5/60.0% -> 30/35/40/45/50%
 
-**Teemo**
+**Sion**
 
-* E On-Hit AD Ratio: 5% bonus AD -> 10% bonus AD
-* E Poison AD Ratio: 2.5% bonus AD -> 5% bonus AD
+* HP Growth: 87 -> 95
+* R Max Damage: 400/800/1200 (+120% bonus AD) -> 450/900/1350 (+180% bonus AD)
+  * Note: Min damage unchanged.
 
-**Urgot**
+**Taliyah**
 
-* W On-Hit Multiplier: 50% -> 75%
+* Wall Bonus MS: 10/15/25/40% -> 15/20/30/40%
 
-**Varus**
+**Tristana**
 
-* E now scales with 50% AP
-* E Cooldown: 16/14/12/10/8 seconds -> 14/12/10/8/6 seconds
+* Q Attack Speed: 60/75/90/105/120% -> 40/60/80/100/120%
+
+**Vel'Koz**
+
+* Q Cooldown: 7 seconds -> 6 seconds
+
+**Xin Zhao**
+
+* Q AD Ratio: 40% bonus AD -> 45% bonus AD
+* E AS Ratio: 500% -> 400%
+
+**Yasuo**
+
+* Q AD Ratio: 105% -> 100%
 
 **Yone**
 
-* R AD Ratio: 80% bonus AD -> 100% bonus AD
-* R Cooldown: 70/60/50 seconds -> 60/50/40 seconds
+* Q AD Ratio: 110% -> 105%
 
-**Yuumi**
+**Zyra**
 
-* W Bonus HSPower reverted: 10.00/13.75/17.50/21.25/25.00% -> 4/5/6/7/8%
-
-**Zaahen**
-
-* P AD per Stack: 1-2% AD -> 1% AD
-  * Max Bonus AD: 12-24% AD -> 12% AD
+* W Recharge: 18/16/14/12/10 seconds -> 16.0/14.5/13.0/11.5/10.0 seconds
 
 ### Items
 
-**Galeforce**
+**Bastionbreaker**
 
-* Max Dash Distance: 600 units -> 900 units
+* Lethality: 22 -> 18
+* Shaped Charge Base Damage: 50 (25 Ranged) -> 40 (20 Ranged)
+* Sabotage Buff Duration: 90 seconds -> 25000 seconds, effectively until triggered.
+  * Persists through death.
 
-**Mirage Blade**
+**Dawncore**
 
-* Remaining Dash Cooldown Refund On-Hit: 20% -> 15%
+* AP per Mana Regen: 10 -> 15
 
-**Moonflair Spellblade**
+**Gluttonous Greaves**
 
-* AS Duration: Next 2 attacks -> Next 3 attacks
+* Combine Cost: 700 Gold -> 800 Gold
+  * Total Cost: 1000 Gold -> 1100 Gold
 
-**Night Harvester**
+**Hubris**
 
-* Bonus MS: 40% -> 60%
-* MS Duration: 1.5 seconds -> 1 second
-* Cooldown: 10 seconds -> 8 seconds
+* Ranged Champion Bonus AD: 12 (+3 per Stack) -> 9 (+2 per Stack)
 
-**Turbo Chemtank**
+## ARAM/URF
 
-* Health Gain on Pickup: 4% max Health -> 20% max Health
+### Items
+
+**Hubris**
+
+* Melee Champion Bonus AD: 10 (+1 per Stack) -> 15 (+2 per Stack)
+
+## ARAM: Mayhem
+
+### Augments
+
+**Armored Impact**
+
+* Damage: 250% Armor -> 50-125 (+250% bonus Armor)
+
+**BEES!!!**
+
+* On-Hit Multiplier: 20% -> 40%
+* Ticks per Second: 4 -> 2
+
+### Champions
+
+**Lee Sin**
+
+* W Shielding: 80/140/200/260/320 -> 80
+
+### Items
+
+**Hubris**
+
+* Melee Champion Bonus AD: 10 (+1 per Stack) -> 15 (+2 per Stack)
+
+## Arena
+
+### Champions
+
+**Nunu & Willump**
+
+* R Base Damage: 655/980/1305 -> 750/1100/1450
+
+## League Classic
+
+**Sorry to the Classic players. I had some file mishaps and missed out on days of changes and adjustments. I may be missing many changes/adjustments.**
+
+### Champions
+
+**Aatrox**
+
+* P Cooldown: 225 seconds -> 225/200/175/150 seconds (Levels 1/6/11/16)
+* W Heal Bonus: 200% -> 300%
+
+**Irelia**
+
+* Base Health: 546 -> 515
+* HP Growth: 90 -> 85
+* HP5: 8.15 -> 6.5
+
+**Karma**
+
+* Q Base Damage: 70/110/150/190/230 -> 85/125/165/205/245
+* Q Base Heal: 35/55/75/95/115 -> 50/70/90/110/130
+* W Base Damage: 80/125/170/215/260 -> 100/140/180/220/260
+* W Move Speed: 10/12/14/16/18% -> 15/16/17/18/19%
+
+**Kassadin**
+
+* Q Base Damage: 60/105/150/195/240 -> 80/130/180/230/280
+* Q Silence Duration: 1.0/1.25/1.75/2.0 seconds -> 1.0/1.4/1.8/2.2/2.6 seconds
+* R AP Ratio: 70% -> 80%
+
+### Items
+
+**Atma's Impaler**
+
+* Crit Chance: 15% -> 18%
+* HP to AD Ratio: 1.5% -> 2%

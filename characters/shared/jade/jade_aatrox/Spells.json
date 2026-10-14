@@ -100,13 +100,13 @@
         {
           "name": "WLowHealthHealBonus",
           "values": [
-            200.0,
-            200.0,
-            200.0,
-            200.0,
-            200.0,
-            200.0,
-            200.0
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
           ],
           "~class": "SpellDataValue"
         },
@@ -220,6 +220,14 @@
         "assets/ux/jade/s3icons/samesized/aatrox_w1passive.dds"
       ],
       "mSpellCalculations": {
+        "LowHealthHeal": {
+          "mModifiedGameCalculation": "WHeal",
+          "mMultiplier": {
+            "mDataValue": "WLowHealthHealBonus",
+            "~class": "NamedDataValueCalculationPart"
+          },
+          "~class": "GameCalculationModified"
+        },
         "SelfDamage": {
           "mFormulaParts": [
             {
@@ -1045,19 +1053,6 @@
             2.0
           ],
           "~class": "SpellDataValue"
-        },
-        {
-          "name": "PassiveCooldown",
-          "values": [
-            225.0,
-            225.0,
-            225.0,
-            225.0,
-            225.0,
-            225.0,
-            225.0
-          ],
-          "~class": "SpellDataValue"
         }
       ],
       "castRange": [
@@ -1131,6 +1126,32 @@
               "mAbilityResource": 10,
               "mCoefficient": 0.35,
               "~class": "AbilityResourceByCoefficientCalculationPart"
+            }
+          ],
+          "~class": "GameCalculation"
+        },
+        "PassiveCooldown": {
+          "mFormulaParts": [
+            {
+              "mBreakpoints": [
+                {
+                  "mAdditionalBonusAtThisLevel": -25.0,
+                  "mLevel": 6,
+                  "~class": "Breakpoint"
+                },
+                {
+                  "mAdditionalBonusAtThisLevel": -25.0,
+                  "mLevel": 11,
+                  "~class": "Breakpoint"
+                },
+                {
+                  "mAdditionalBonusAtThisLevel": -25.0,
+                  "mLevel": 16,
+                  "~class": "Breakpoint"
+                }
+              ],
+              "mLevel1Value": 225.0,
+              "~class": "ByCharLevelBreakpointsCalculationPart"
             }
           ],
           "~class": "GameCalculation"

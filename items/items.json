@@ -5270,18 +5270,6 @@
   "ARAM/Hubris": {
     "PhysicalLethality": 18.0,
     "StringCalculations": {
-      "BaseADSplit": {
-        "DefaultResult": "@BaseADBonusMelee@",
-        "MeleeResult": "@BaseADBonusMelee@",
-        "RangedResult": "@BaseADBonusRange@",
-        "~class": "0x4750ceb6"
-      },
-      "BonusADPerStatueSplit": {
-        "DefaultResult": "@ADPerStatueMelee@",
-        "MeleeResult": "@ADPerStatueMelee@",
-        "RangedResult": "@ADPerStatueRange@",
-        "~class": "0x4750ceb6"
-      },
       "BuffDurationSplit": {
         "DefaultResult": "@BuffDurationMelee@",
         "MeleeResult": "@BuffDurationMelee@",
@@ -5336,16 +5324,6 @@
         "~class": "ItemDataValue"
       },
       {
-        "mName": "ADPerStatueMelee",
-        "mValue": 2.0,
-        "~class": "ItemDataValue"
-      },
-      {
-        "mName": "ADPerStatueRange",
-        "mValue": 1.0,
-        "~class": "ItemDataValue"
-      },
-      {
         "mName": "BuffDurationMelee",
         "mValue": 90.0,
         "~class": "ItemDataValue"
@@ -5361,8 +5339,18 @@
         "~class": "ItemDataValue"
       },
       {
-        "mName": "BaseADBonusRange",
-        "mValue": 10.0,
+        "mName": "BaseADRangedMult",
+        "mValue": 0.667,
+        "~class": "ItemDataValue"
+      },
+      {
+        "mName": "ADPerStatueMelee",
+        "mValue": 2.0,
+        "~class": "ItemDataValue"
+      },
+      {
+        "mName": "ADPerStatueRangedMult",
+        "mValue": 0.5,
         "~class": "ItemDataValue"
       }
     ],
@@ -5386,6 +5374,32 @@
           }
         ],
         "~class": "GameCalculation"
+      },
+      "0x619bce2f": {
+        "mFormulaParts": [
+          {
+            "mDataValue": "ADPerStatueMelee",
+            "~class": "NamedDataValueCalculationPart"
+          }
+        ],
+        "mRangedMultiplier": {
+          "mDataValue": "0x4325747e",
+          "~class": "NamedDataValueCalculationPart"
+        },
+        "~class": "RangedModifiableGameCalculation"
+      },
+      "BaseADBonus": {
+        "mFormulaParts": [
+          {
+            "mDataValue": "BaseADBonusMelee",
+            "~class": "NamedDataValueCalculationPart"
+          }
+        ],
+        "mRangedMultiplier": {
+          "mDataValue": "0x4270a530",
+          "~class": "NamedDataValueCalculationPart"
+        },
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "mItemCalloutSpectator": true,
@@ -25953,7 +25967,7 @@
     "mDataValues": [
       {
         "mName": "APPerManaRegen",
-        "mValue": 10.0,
+        "mValue": 15.0,
         "~class": "ItemDataValue"
       },
       {
@@ -29972,18 +29986,28 @@
         "~class": "ItemDataValue"
       },
       {
-        "mName": "ADPerStatue",
-        "mValue": 2.0,
-        "~class": "ItemDataValue"
-      },
-      {
         "mName": "BuffDuration",
         "mValue": 90.0,
         "~class": "ItemDataValue"
       },
       {
-        "mName": "BaseADBonus",
+        "mName": "BaseADBonusMelee",
         "mValue": 15.0,
+        "~class": "ItemDataValue"
+      },
+      {
+        "mName": "BaseADRangedMult",
+        "mValue": 1.0,
+        "~class": "ItemDataValue"
+      },
+      {
+        "mName": "ADPerStatueMelee",
+        "mValue": 2.0,
+        "~class": "ItemDataValue"
+      },
+      {
+        "mName": "ADPerStatueRangedMult",
+        "mValue": 1.0,
         "~class": "ItemDataValue"
       }
     ],
@@ -30007,6 +30031,32 @@
           }
         ],
         "~class": "GameCalculation"
+      },
+      "0x619bce2f": {
+        "mFormulaParts": [
+          {
+            "mDataValue": "ADPerStatueMelee",
+            "~class": "NamedDataValueCalculationPart"
+          }
+        ],
+        "mRangedMultiplier": {
+          "mDataValue": "0x4325747e",
+          "~class": "NamedDataValueCalculationPart"
+        },
+        "~class": "RangedModifiableGameCalculation"
+      },
+      "BaseADBonus": {
+        "mFormulaParts": [
+          {
+            "mDataValue": "BaseADBonusMelee",
+            "~class": "NamedDataValueCalculationPart"
+          }
+        ],
+        "mRangedMultiplier": {
+          "mDataValue": "0x4270a530",
+          "~class": "NamedDataValueCalculationPart"
+        },
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "mItemCalloutSpectator": true,
@@ -33390,7 +33440,7 @@
     "~class": "ItemData"
   },
   "Bastionbreaker": {
-    "PhysicalLethality": 22.0,
+    "PhysicalLethality": 18.0,
     "epicness": 5,
     "itemID": 2520,
     "mAbilityHasteMod": 15.0,
@@ -33403,7 +33453,7 @@
     "mDataValues": [
       {
         "mName": "LethalityAmount",
-        "mValue": 22.0,
+        "mValue": 18.0,
         "~class": "ItemDataValue"
       },
       {
@@ -33418,7 +33468,7 @@
       },
       {
         "mName": "BuffDuration",
-        "mValue": 90.0,
+        "mValue": 25000.0,
         "~class": "ItemDataValue"
       },
       {
@@ -33446,7 +33496,7 @@
       "AbilityDamageCalc": {
         "mFormulaParts": [
           {
-            "mNumber": 50.0,
+            "mNumber": 40.0,
             "~class": "NumberCalculationPart"
           },
           {
@@ -35338,7 +35388,7 @@
       "~class": "ResourceResolver"
     },
     "maxStack": 1,
-    "price": 700,
+    "price": 800,
     "recipeItemLinks": [
       "Boots"
     ],
@@ -52244,7 +52294,7 @@
     "mDataValues": [
       {
         "mName": "APPerManaRegen",
-        "mValue": 10.0,
+        "mValue": 15.0,
         "~class": "ItemDataValue"
       },
       {
@@ -70088,7 +70138,7 @@
     "mDataValues": [
       {
         "mName": "APPerManaRegen",
-        "mValue": 10.0,
+        "mValue": 15.0,
         "~class": "ItemDataValue"
       },
       {
@@ -76257,13 +76307,18 @@
       "0xa110bc47": {
         "DataValues": [
           {
-            "mName": "ADPerStatue",
+            "mName": "BuffDuration",
+            "mValue": 45.0,
+            "~class": "ItemDataValue"
+          },
+          {
+            "mName": "ADPerStatueMelee",
             "mValue": 1.0,
             "~class": "ItemDataValue"
           },
           {
-            "mName": "BuffDuration",
-            "mValue": 45.0,
+            "mName": "ADPerStatueRangedMult",
+            "mValue": 1.0,
             "~class": "ItemDataValue"
           }
         ],
@@ -76272,18 +76327,28 @@
       "ARAM": {
         "DataValues": [
           {
-            "mName": "ADPerStatue",
-            "mValue": 1.0,
-            "~class": "ItemDataValue"
-          },
-          {
-            "mName": "BaseADBonus",
-            "mValue": 10.0,
-            "~class": "ItemDataValue"
-          },
-          {
             "mName": "BuffDuration",
             "mValue": 45.0,
+            "~class": "ItemDataValue"
+          },
+          {
+            "mName": "BaseADBonusMelee",
+            "mValue": 15.0,
+            "~class": "ItemDataValue"
+          },
+          {
+            "mName": "BaseADRangedMult",
+            "mValue": 0.667,
+            "~class": "ItemDataValue"
+          },
+          {
+            "mName": "ADPerStatueMelee",
+            "mValue": 2.0,
+            "~class": "ItemDataValue"
+          },
+          {
+            "mName": "ADPerStatueRangedMult",
+            "mValue": 0.5,
             "~class": "ItemDataValue"
           }
         ],
@@ -76292,18 +76357,28 @@
       "URF": {
         "DataValues": [
           {
-            "mName": "ADPerStatue",
+            "mName": "BuffDuration",
+            "mValue": 45.0,
+            "~class": "ItemDataValue"
+          },
+          {
+            "mName": "ADPerStatueMelee",
             "mValue": 1.0,
             "~class": "ItemDataValue"
           },
           {
-            "mName": "BaseADBonus",
-            "mValue": 10.0,
+            "mName": "ADPerStatueRangedMult",
+            "mValue": 1.0,
             "~class": "ItemDataValue"
           },
           {
-            "mName": "BuffDuration",
-            "mValue": 45.0,
+            "mName": "BaseADBonusMelee",
+            "mValue": 15.0,
+            "~class": "ItemDataValue"
+          },
+          {
+            "mName": "BaseADRangedMult",
+            "mValue": 0.667,
             "~class": "ItemDataValue"
           }
         ],
@@ -76358,18 +76433,28 @@
         "~class": "ItemDataValue"
       },
       {
-        "mName": "ADPerStatue",
-        "mValue": 3.0,
-        "~class": "ItemDataValue"
-      },
-      {
         "mName": "BuffDuration",
         "mValue": 90.0,
         "~class": "ItemDataValue"
       },
       {
-        "mName": "BaseADBonus",
+        "mName": "BaseADBonusMelee",
         "mValue": 12.0,
+        "~class": "ItemDataValue"
+      },
+      {
+        "mName": "BaseADRangedMult",
+        "mValue": 0.75,
+        "~class": "ItemDataValue"
+      },
+      {
+        "mName": "ADPerStatueMelee",
+        "mValue": 3.0,
+        "~class": "ItemDataValue"
+      },
+      {
+        "mName": "ADPerStatueRangedMult",
+        "mValue": 0.667,
         "~class": "ItemDataValue"
       }
     ],
@@ -76393,6 +76478,32 @@
           }
         ],
         "~class": "GameCalculation"
+      },
+      "0x619bce2f": {
+        "mFormulaParts": [
+          {
+            "mDataValue": "ADPerStatueMelee",
+            "~class": "NamedDataValueCalculationPart"
+          }
+        ],
+        "mRangedMultiplier": {
+          "mDataValue": "0x4325747e",
+          "~class": "NamedDataValueCalculationPart"
+        },
+        "~class": "RangedModifiableGameCalculation"
+      },
+      "BaseADBonus": {
+        "mFormulaParts": [
+          {
+            "mDataValue": "BaseADBonusMelee",
+            "~class": "NamedDataValueCalculationPart"
+          }
+        ],
+        "mRangedMultiplier": {
+          "mDataValue": "0x4270a530",
+          "~class": "NamedDataValueCalculationPart"
+        },
+        "~class": "RangedModifiableGameCalculation"
       }
     },
     "mItemCalloutSpectator": true,
@@ -80365,13 +80476,13 @@
     "mDataValues": [
       {
         "mName": "HPToADPercentage",
-        "mValue": 0.015,
+        "mValue": 0.02,
         "~class": "ItemDataValue"
       }
     ],
     "mDisplayName": "Atma's Impaler",
     "mFlatArmorMod": 45.0,
-    "mFlatCritChanceMod": 0.15,
+    "mFlatCritChanceMod": 0.18,
     "mItemAdviceAttributes": [
       "0x165d7c1f",
       "0xe625a35a"
