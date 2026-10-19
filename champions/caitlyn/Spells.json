@@ -834,7 +834,7 @@
         "0x36ebd3cf": {
           "mFormulaParts": [
             {
-              "mCoefficient": 1.0,
+              "mCoefficient": 0.8,
               "mStat": 9,
               "~class": "StatByCoefficientCalculationPart"
             }
@@ -885,8 +885,47 @@
             {
               "mStat": 2,
               "mSubpart": {
-                "mNumber": 0.8,
-                "~class": "NumberCalculationPart"
+                "mSubparts": [
+                  {
+                    "mBreakpoints": [
+                      {
+                        "mAdditionalBonusAtThisLevel": 0.1,
+                        "mLevel": 7,
+                        "~class": "Breakpoint"
+                      },
+                      {
+                        "mAdditionalBonusAtThisLevel": 0.1,
+                        "mLevel": 13,
+                        "~class": "Breakpoint"
+                      }
+                    ],
+                    "mLevel1Value": 0.6,
+                    "~class": "ByCharLevelBreakpointsCalculationPart"
+                  },
+                  {
+                    "mPart1": {
+                      "mDataValue": "CriticalStrikeScaling",
+                      "mStat": 8,
+                      "~class": "StatByNamedDataValueCalculationPart"
+                    },
+                    "mPart2": {
+                      "mSubparts": [
+                        {
+                          "mCoefficient": 1.0,
+                          "mStat": 9,
+                          "~class": "StatByCoefficientCalculationPart"
+                        },
+                        {
+                          "mNumber": -1.0,
+                          "~class": "NumberCalculationPart"
+                        }
+                      ],
+                      "~class": "SumOfSubPartsCalculationPart"
+                    },
+                    "~class": "ProductOfSubPartsCalculationPart"
+                  }
+                ],
+                "~class": "SumOfSubPartsCalculationPart"
               },
               "~class": "StatBySubPartCalculationPart"
             }
@@ -911,12 +950,12 @@
                     "mPart2": {
                       "mBreakpoints": [
                         {
-                          "mAdditionalBonusAtThisLevel": 0.2,
+                          "mAdditionalBonusAtThisLevel": 0.1,
                           "mLevel": 7,
                           "~class": "Breakpoint"
                         },
                         {
-                          "mAdditionalBonusAtThisLevel": 0.2,
+                          "mAdditionalBonusAtThisLevel": 0.1,
                           "mLevel": 13,
                           "~class": "Breakpoint"
                         }
@@ -1178,13 +1217,13 @@
         {
           "name": "BaseDamage",
           "values": [
-            10.0,
+            5.0,
             50.0,
-            90.0,
-            130.0,
-            170.0,
-            210.0,
-            250.0
+            95.0,
+            140.0,
+            185.0,
+            230.0,
+            275.0
           ],
           "~class": "SpellDataValue"
         },
