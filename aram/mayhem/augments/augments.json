@@ -7488,7 +7488,7 @@
         "mExpandedTooltipCalculationDisplay": 5,
         "mFormulaParts": [
           {
-            "mNumber": 0.05,
+            "mNumber": 0.06,
             "~class": "NumberCalculationPart"
           }
         ],
@@ -8476,7 +8476,7 @@
       "UpgradeAD": 30.0,
       "UpgradeAP": 50.0,
       "UpgradeCritChance": 0.25,
-      "UpgradeCritDamage": 0.1,
+      "UpgradeCritDamage": 0.06,
       "UpgradeAS": 0.4,
       "UpgradeAH": 20.0,
       "UpgradeHSPower": 0.2,
@@ -8484,8 +8484,8 @@
       "UpgradeMR": 50.0,
       "UpgradeArmorPenFlat": 35.0,
       "UpgradeMagicPenFlat": 25.0,
-      "UpgradeArmorPenPercent": 0.35,
-      "UpgradeMagicPenPercent": 0.25,
+      "UpgradeArmorPenPercent": 0.25,
+      "UpgradeMagicPenPercent": 0.15,
       "UpgradeLifesteal": 0.25,
       "UpgradeOmnivamp": 0.25,
       "UpgradeMSPercent": 0.15,
@@ -8842,9 +8842,25 @@
       "FruitsPerTakedown": {
         "mFormulaParts": [
           {
-            "mEndValue": 6.0,
-            "mStartValue": 3.0,
-            "~class": "ByCharLevelInterpolationCalculationPart"
+            "mBreakpoints": [
+              {
+                "mAdditionalBonusAtThisLevel": 1.0,
+                "mLevel": 7,
+                "~class": "Breakpoint"
+              },
+              {
+                "mAdditionalBonusAtThisLevel": 1.0,
+                "mLevel": 11,
+                "~class": "Breakpoint"
+              },
+              {
+                "mAdditionalBonusAtThisLevel": 1.0,
+                "mLevel": 15,
+                "~class": "Breakpoint"
+              }
+            ],
+            "mLevel1Value": 3.0,
+            "~class": "ByCharLevelBreakpointsCalculationPart"
           }
         ],
         "~class": "GameCalculation"
@@ -8998,13 +9014,13 @@
     "desc": "Gain <scaleAD>%i:scaleAD% Attack Damage</scaleAD>, <scaleAP>%i:scaleAP% Ability Power</scaleAP>,  and <attackSpeed>%i:scaleAS% Attack Speed</attackSpeed> but<danger>  decreased</danger> <speed>Move Speed</speed>.<br><br>Getting a takedown grants you a stack of Burden that increases this effect. Lose half your stacks on death",
     "tooltip": "Gain %i:scaleAD% <scaleAD>@InitialFlatAD@ Attack Damage</scaleAD>, %i:scaleAP% <scaleAP>@InitialFlatAP@ Ability Power</scaleAP>, and increase your <scaleAD>Bonus Attack Damage</scaleAD>, <scaleAP>Bonus Ability Power</scaleAP>, and <attackSpeed>Total Attack Speed</attackSpeed> by @InitialStatIncrease*100@%. <danger>Decrease your total</danger> <speed>Move Speed </speed>by @InitialMSDecrease*-100@% in combat.<br><br>Getting a takedown grants you a stack of Burden, increasing your <scaleAD>Bonus Attack Damage</scaleAD>, <scaleAP>Bonus Ability Power</scaleAP>, and <attackSpeed>Total Attack Speed</attackSpeed> by @StatIncreasePercentPerTakedown*100@%, while further decreasing your <speed>Move Speed</speed> by @MSDecreasePerTakedown*-100@% per stack to a minimum of 50%.<br><br>Lose @PercentStackLostOnDeath*100@% of your stacks on death.<br><br><rules>Percent Stat Increase: @f1@%<br>Movement Speed Decrease: @f2@% </rules><br><br><flavorText>This is what you asked for...</flavorText>",
     "dataValues": {
-      "StatIncreasePercentPerTakedown": 0.04,
+      "StatIncreasePercentPerTakedown": 0.05,
       "MSDecreasePerTakedown": -0.025,
       "CrownSizeGrowthPerTakedown": 0.05,
       "MaxMSDecrease": -0.5,
       "AHPerTakedown": 8.0,
       "InitialStatIncrease": 0.1,
-      "InitialMSDecrease": -0.1,
+      "InitialMSDecrease": -0.05,
       "InitialAHIncrease": 10.0,
       "InitialFlatAD": 10.0,
       "InitialFlatAP": 25.0,
@@ -9153,7 +9169,7 @@
       "0xf461bf9b": {
         "mFormulaParts": [
           {
-            "mEndValue": 300.0,
+            "mEndValue": 200.0,
             "mStartValue": 10.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           }
@@ -9195,6 +9211,10 @@
           {
             "mCoefficient": 300.0,
             "mStat": 34,
+            "~class": "StatByCoefficientCalculationPart"
+          },
+          {
+            "mCoefficient": 0.1,
             "~class": "StatByCoefficientCalculationPart"
           }
         ],
