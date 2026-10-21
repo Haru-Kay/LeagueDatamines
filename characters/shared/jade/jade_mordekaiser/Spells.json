@@ -171,6 +171,7 @@
         "13": "Play_sfx_Mordekaiser_MordekaiserBasicAttack_OnHit"
       },
       "bHaveHitBone": true,
+      "bHaveHitEffect": true,
       "castConeDistance": 100.0,
       "castFrame": 15.0,
       "castRadius": [
@@ -226,6 +227,7 @@
         "~class": "SpellDataResourceClient"
       },
       "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "0x30cfeaeb",
       "missileSpeed": 0.0,
       "spellCastTime": 0.41665,
       "~class": "SpellDataResource"
@@ -254,6 +256,7 @@
         "12": "Play_sfx_Mordekaiser_MordekaiserCritAttack_OnCast",
         "13": "Play_sfx_Mordekaiser_MordekaiserCritAttack_OnHit"
       },
+      "bHaveHitEffect": true,
       "castConeDistance": 100.0,
       "castFrame": 18.0,
       "castRadius": [
@@ -306,6 +309,7 @@
         ],
         "~class": "SpellDataResourceClient"
       },
+      "mHitEffectKey": "0x30cfeaeb",
       "mTurnSpeedScalar": 3.0,
       "missileSpeed": 0.0,
       "spellCastTime": 0.41665,
@@ -513,6 +517,16 @@
           "~class": "GameCalculation"
         }
       },
+      "mSpellPassives": [
+        {
+          "mBuff": "0x46479faf",
+          "mDisplayFlags": 0,
+          "mRemoveWhenOnCooldown": false,
+          "mRemoveWithSpell": false,
+          "mWhenToAddSpell": 0,
+          "~class": "SpellPassiveData"
+        }
+      ],
       "mTargetingTypeData": {
         "~class": "Self"
       },
@@ -836,6 +850,66 @@
     "objectPath": "0x68e149d0",
     "~class": "SpellObject"
   },
+  "0x72cd2100": {
+    "ObjectName": "Jade_MordekaiserWCast",
+    "mScriptName": "Jade_MordekaiserWCast",
+    "mSpell": {
+      "SpellEventToAudioEventSuffix": {
+        "12": "Play_sfx_MordekaiserSkin301_MordekaiserCreepingDeath_OnCast",
+        "13": "Play_sfx_MordekaiserSkin301_MordekaiserCreepingDeathEnemy_OnHit",
+        "16": "Play_sfx_MordekaiserSkin301_MordekaiserCreepingDeath_OnMissileLaunch"
+      },
+      "castFrame": 7.935,
+      "castRange": [
+        750.0,
+        750.0,
+        750.0,
+        750.0,
+        750.0,
+        750.0,
+        750.0
+      ],
+      "castRangeValues": {
+        "Default": 750.0,
+        "values": [
+          750.0,
+          750.0,
+          750.0,
+          750.0,
+          750.0,
+          750.0,
+          750.0
+        ],
+        "~class": "SpellAttributeModifiable"
+      },
+      "mAffectsTypeFlags": 1029,
+      "mAnimationName": "Spell2Self",
+      "mCantCancelWhileWindingUp": true,
+      "mCastTime": 0.25,
+      "mCastType": 1,
+      "mMissileEffectKey": "0x878b10eb",
+      "mMissileSpec": {
+        "behaviors": [
+          {
+            "~class": "CastOnMovementComplete"
+          },
+          {
+            "~class": "DestroyOnMovementComplete"
+          }
+        ],
+        "movementComponent": {
+          "mSpeed": 1500.0,
+          "~class": "FixedSpeedMovement"
+        },
+        "~class": "MissileSpecification"
+      },
+      "spellCastTime": 0.25,
+      "spellTotalTime": 0.25,
+      "~class": "SpellDataResource"
+    },
+    "objectPath": "0x72cd2100",
+    "~class": "SpellObject"
+  },
   "0x73cdfc9f": {
     "ObjectName": "Jade_MordekaiserW",
     "mScriptName": "Jade_MordekaiserW",
@@ -907,10 +981,6 @@
           "~class": "SpellDataValue"
         }
       ],
-      "SpellEventToAudioEventSuffix": {
-        "13": "Play_sfx_MordekaiserSkin301_MordekaiserW_cast_vfx",
-        "16": "Play_sfx_MordekaiserSkin301_MordekaiserWHeal_OnCast"
-      },
       "bIsToggleSpell": true,
       "canCastOrQueueWhileCasting": true,
       "castRadius": [
@@ -962,10 +1032,10 @@
         12.0,
         10.0
       ],
+      "flags": 4,
       "mAffectsTypeFlags": 1029,
       "mAnimationName": "None",
       "mCantCancelWhileWindingUp": true,
-      "mCastType": 1,
       "mClientData": {
         "mTargeterDefinitions": [
           {
@@ -1054,7 +1124,7 @@
         "assets/ux/jade/s3icons/samesized/mordekaisercreepingdeath.dds",
         "assets/ux/jade/s3icons/samesized/mordekaisercreepingdeath.dds"
       ],
-      "mMissileEffectKey": "0x7a0d3b4e",
+      "mMissileEffectKey": "0x878b10eb",
       "mMissileSpec": {
         "behaviors": [
           {
@@ -1389,6 +1459,7 @@
       },
       "castConeAngle": 25.0,
       "castConeDistance": 650.0,
+      "castFrame": 9.625,
       "castRadius": [
         225.0,
         225.0,
@@ -1432,7 +1503,7 @@
       "mAffectsTypeFlags": 6154,
       "mAnimationName": "Spell3",
       "mCantCancelWhileWindingUp": true,
-      "mCastTime": 0.25,
+      "mCastTime": 0.32,
       "mCastingBreaksStealth": true,
       "mClientData": {
         "mTargeterDefinitions": [
@@ -1501,7 +1572,9 @@
       "mTargetingTypeData": {
         "~class": "Cone"
       },
-      "spellTotalTime": 0.0,
+      "spellCastTime": 0.32,
+      "spellTotalTime": 1.0,
+      "useAnimatorFramerate": true,
       "~class": "SpellDataResource"
     },
     "objectPath": "0xa2033887",
@@ -1528,6 +1601,7 @@
         "~class": "SpellAttributeModifiable"
       },
       "SpellEventToAudioEventSuffix": {
+        "18": "Play_sfx_Mordekaiser_MordekaiserCreepingDeathEnemy_OnBuffActivate",
         "19": "Play_sfx_Mordekaiser_MordekaiserPassive_FullStacks_OnBuffDeactivate"
       },
       "bIsToggleSpell": true,
@@ -1798,7 +1872,7 @@
           "~class": "HasBuffCastRequirement"
         }
       ],
-      "mCastTime": 0.5,
+      "mCastTime": 0.25,
       "mCastingBreaksStealth": true,
       "mClientData": {
         "mTargeterDefinitions": [
@@ -1827,7 +1901,7 @@
             }
           },
           "mLocKeys": {
-            "keyCost": "",
+            "keyCost": "No Cost",
             "keyName": "Children of the Grave",
             "keySummary": "Mordekaiser curses an enemy, stealing a percent of their life initially and each second. If the target dies while the spell is active, their soul is enslaved and will follow Mordekaiser as a ghost for 30 seconds.",
             "keyTooltip": "Mordekaiser steals <magicDamage>@TotalDamage@% maximum Health magic damage</magicDamage>.<br><br>If the target dies while cursed, their soul is enslaved and will follow Mordekaiser as a ghost for @GhostDuration@ seconds. Mordekaiser gains 20% of their <magicDamage>Ability Power</magicDamage> and <physicalDamage>Attack Damage</physicalDamage>, and the ghost's stats are enhanced.",
@@ -1838,8 +1912,6 @@
         },
         "~class": "SpellDataResourceClient"
       },
-      "mCoefficient": 0.04,
-      "mCoefficient2": 0.04,
       "mExcludedUnitTags": {
         "mObjectTagList": [
           "0x003a1b93"
@@ -2479,6 +2551,7 @@
         "13": "Play_sfx_Mordekaiser_MordekaiserBasicAttack_OnHit"
       },
       "bHaveHitBone": true,
+      "bHaveHitEffect": true,
       "castConeDistance": 100.0,
       "castFrame": 15.0,
       "castRadius": [
@@ -2533,6 +2606,7 @@
         "~class": "SpellDataResourceClient"
       },
       "mHitBoneName": "C_BUFFBONE_GLB_CHEST_LOC",
+      "mHitEffectKey": "0x30cfeaeb",
       "missileSpeed": 0.0,
       "spellCastTime": 0.41665,
       "~class": "SpellDataResource"
