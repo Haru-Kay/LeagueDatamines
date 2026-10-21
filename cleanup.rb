@@ -142,6 +142,8 @@ $manualHash.merge!({
     "c9393610" => "ASPerEnemy",
     "f3477415" => "PercentHealthBase",
     "8ad21bd6" => "PercentHealthPerAP",
+    "5723d947" => "Characters/Veigar/Spells/VeigarBalefulStrikeAbility/VeigarBalefulStrikeMis",
+    "d6b38b8a" => "Characters/Lux/Spells/LuxRAbility/LuxRMis",
 
 
     "3445d362" => "QCritDamageMod",
@@ -527,7 +529,7 @@ def diff
     print "Loading previous patch stringtable..."
     oldLang = {}
     File.open("lol.stringtable.json", 'rb') { |f| oldLang = JSON.parse(f.read()) }
-    oldLang = oldLang["objects"] || oldLang
+    oldLang = oldLang["objects"] || oldLang["entries"] || [oldLang]
     hash = {}
     oldLang.transform_keys! { |k|
         if k.start_with?("{")
@@ -1678,6 +1680,7 @@ Dir.mkdir("characters/shared")
 
             out = {}
             champ.each { |obj, data|
+                o = applyLang(obj)
                 d = applyLang(data)
                 clazz = d["~class"] || "Misc"
                 
@@ -1713,7 +1716,8 @@ Dir.mkdir("characters/shared")
                             Dir.mkdir("#{outdir}/#{path}") if !Dir.exist?("#{outdir}/#{path}")
                         end
                     when "ItemRecommendationOverrideSet", "RecSpellRankUpInfolist", "ItemRecommendationContextList",
-                        "ChampionRuneRecommendationsContext", "JunglePathRecommendation", "SkinCharacterMetaDataProperties"
+                        "ChampionRuneRecommendationsContext", "JunglePathRecommendation", "SkinCharacterMetaDataProperties",
+                        "RecSpellRankUpInfo", "RecSpellRankUpInfoList"
                         next
                     when "SpellObject"
                         clazz = "Spells"
@@ -1724,7 +1728,7 @@ Dir.mkdir("characters/shared")
                 end
 
                 out[clazz] ||= {}
-                out[clazz].store(obj, assetNameFix(d))
+                out[clazz].store(o, assetNameFix(d))
             }
             next if out.empty?
 
