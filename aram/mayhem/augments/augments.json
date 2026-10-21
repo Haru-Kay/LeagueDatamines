@@ -8151,6 +8151,46 @@
     ]
   },
   {
+    "id": 3060,
+    "apiName": "OneHitWonder",
+    "name": "One Hit Wonder",
+    "rarity": "Gold",
+    "desc": "<font color='#F0C200'>@SpellName@</font>'s damage is increased by @Calc_AbilityDamagetoAH@% per <scaleAbilityHaste>%i:scaleCooldown% @AHMultiplier@ Ability Haste</scaleAbilityHaste>, but no longer benefits from <scaleAbilityHaste>%i:scaleCooldown% Ability Haste</scaleAbilityHaste>.",
+    "tooltip": "<font color='#F0C200'>@SpellName@</font>'s damage is increased by @Calc_AbilityDamagetoAH@% per <scaleAbilityHaste>%i:scaleCooldown% @AHMultiplier@ Ability Haste</scaleAbilityHaste>, but no longer benefits from <scaleAbilityHaste>%i:scaleCooldown% Ability Haste</scaleAbilityHaste>.<br><br><rules>Bonus Damage: @f1.1*100@%</rules>.",
+    "calculations": {
+      "0x0fc39473": {
+        "mFormulaParts": [
+          {
+            "mNumber": 100.0,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0x7d6913d8": {
+        "mFormulaParts": [
+          {
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0x8530cf80": {
+        "mFormulaParts": [
+          {
+            "mNumber": 75.0,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "assets/ux/kiwi/augments/icons/genericabilityaugmenticon_gold.tex",
+      "assets/ux/kiwi/augments/icons/genericabilityaugmenticon_gold.tex"
+    ]
+  },
+  {
     "id": 3063,
     "apiName": "GiftoftheDrowned",
     "name": "Gift of the Drowned",
@@ -9144,6 +9184,66 @@
     "icons": [
       "assets/ux/kiwi/augments/icons/upgradehubris_small.tex",
       "assets/ux/kiwi/augments/icons/upgradehubris_large.tex"
+    ]
+  },
+  {
+    "id": 3159,
+    "apiName": "RISE",
+    "name": "RISE",
+    "rarity": "Prismatic",
+    "desc": "If you use <font color='#F0C200'>@SpellName@</font> to kill an enemy champion, you may <recast>Recast</recast> it.<br>Each <recast>Recast</recast> deals additional<br>subsequent damage.",
+    "tooltip": "If you use <font color='#F0C200'>@SpellName@</font> to kill an enemy champion, you may <recast>Recast</recast> it once within @Calc_RecastWindow@ seconds. Each <recast>Recast</recast> deals additional subsequent damage.<br><br><rules>You may <recast>Recast</recast> up to two additional times, each dealing @Calc_RecastDamageMod@ additional damage than the last. <br><br><flavorText>Make 'em remember you.</flavorText></rules>",
+    "calculations": {
+      "0x20d703ce": {
+        "mFormulaParts": [
+          {
+            "mNumber": 10.0,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "Calc_RecastWindow": {
+        "mFormulaParts": [
+          {
+            "mNumber": 5.0,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0x741e4f80": {
+        "mFormulaParts": [
+          {
+            "mNumber": 3.0,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "Calc_RecastDamageMod": {
+        "mDisplayAsPercent": true,
+        "mFormulaParts": [
+          {
+            "mNumber": 0.25,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      },
+      "0xc3fc475d": {
+        "mFormulaParts": [
+          {
+            "mNumber": 3.0,
+            "~class": "NumberCalculationPart"
+          }
+        ],
+        "~class": "GameCalculation"
+      }
+    },
+    "icons": [
+      "assets/ux/kiwi/augments/icons/zerohour_large.tex",
+      "assets/ux/kiwi/augments/icons/zerohour_large.tex"
     ]
   },
   {
