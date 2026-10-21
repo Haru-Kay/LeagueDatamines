@@ -134,3 +134,26 @@ pool.wait_for_termination
 File.open("lang/manualhash.txt", 'wb') { |f| 
     $manualHash.sort_by { |k, v| v }.to_h.each { |k, v| f.write(k + " " + v + "\n") }
 }
+
+# File.open("bins/data/items.ltk.bin", 'rb') { |f|
+#     prop = f.read(8).unpack("A4V4")
+
+#     depCount = f.read(4).unpack("L<4")[0]
+#     deps = []
+#     depCount.times { |i|
+#         len = f.read(2).unpack("L<2")
+#         deps.push(f.read(len).unpack("A").force_encoding("UTF-8"))
+#     }
+    
+#     objCount = f.read(4).unpack("L<4")[0]
+
+#     objCount.times { |i|
+#         size = f.read(4).unpack("L<4")
+#         p size
+#         path = f.read(4).unpack("L<4")
+#         p size
+#         size = f.read(4).unpack("L<4")
+#         p size
+#         break
+#     }
+# }

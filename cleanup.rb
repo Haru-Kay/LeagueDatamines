@@ -9,25 +9,28 @@ txt = ""
 File.open("lang/manualhash.txt", 'rb') { |f| txt = f.read }
 txt.split("\n").each { |f|
     obf, name = f.split(" ")
+    while obf.length < 8
+        obf = "0#{obf}"
+    end
     $manualHash.store(obf, name)
 }
 $manualHash.merge!({
-    "e1136d1" => "CastRange",
-    "a0eddc9" => "SpellAttributeModifiable",
+    "0e1136d1" => "CastRange",
+    "0a0eddc9" => "SpellAttributeModifiable",
     "210f9ec0" => "primaryResourceCost",
-    "a3e0478" => "Default",
+    "0a3e0478" => "Default",
     "630af303" => "ResourceCostModifiable",
     "787ccb97" => "Perk_Health",
     "150d1b92" => "BotNonsense",
     "b09016f6" => "BotCalculation",
     "ee39916f" => "VFXEmissionOffset",
     "32559c50" => "TooltipFormatA",
-    "6b06978" => "QuestIcon",
+    "06b06978" => "QuestIcon",
     "7a1cab0d" => "TexturePath",
     "898bb7cb" => "MilestoneData",
     "c88f1a9b" => "QuestTooltipTra",
     "b35aa769" => "BaseValue", 
-    "1262a25" => "mrPerLevel", 
+    "01262a25" => "mrPerLevel", 
     "18956a21" => "armorPerLevel",
     "4af40dc3" => "baseDamage",
     "4d37af28" => "hpPerLevel",
@@ -49,7 +52,7 @@ $manualHash.merge!({
     "452033bb" => "arBaseFactorRegen",
     "988fea51" => "AugmentSets",
     "9bfe08c0" => "AugmentList",
-    "6387172" => "RangedIntegerIndicatorTT",
+    "06387172" => "RangedIntegerIndicatorTT",
     "792cf56b" => "MeleeIntegerIndicatorTT",
     "e9a3c91d" => "RangedModifiableGameCalculation",
     "5d09db83" => "HomeguardRangeModified",
@@ -61,17 +64,17 @@ $manualHash.merge!({
     "b75add86" => "CritToHasteConversionTT",
     "19ad35ce" => "StupidTibbersCalc1",
     "3e5305d0" => "StupidTibbersCalc2",
-    "2cf8f9f" => "IDKSomeUnusedVersionOfTitansPulse",
+    "02cf8f9f" => "IDKSomeUnusedVersionOfTitansPulse",
     "e5d3c722" => "BonusHealingPercent_Dummy",
     "ee18a47b" => "NamedDataValuesByCharLevelInterpolationCalculationPart",
-    "589a59c" => "mDataValueStart",
-    "b65bc23" => "mDataValueEnd",
+    "0589a59c" => "mDataValueStart",
+    "0b65bc23" => "mDataValueEnd",
     "ddb49807" => "SomeToothFairyCalc",
     "8bda434b" => "InnerRadiusDamageTT",
     "72c5c2a8" => "SomeFlagBroIDK",
-    "a242b94" => "BleedDamageHealthCalc",
+    "0a242b94" => "BleedDamageHealthCalc",
     "7530a709" => "HellbentIDCDMaybe",
-    "9458241" => "MaxHealthDamageFloat",
+    "09458241" => "MaxHealthDamageFloat",
     "6496b454" => "LifeStealMeleeTTMaybe",
     "86966509" => "Calc_Radius_Maybe",
     "78b55a21" => "Calc_Shield_Modified",
@@ -91,7 +94,7 @@ $manualHash.merge!({
     "b2cd0eb0" => "bonusPerLevel",
     "85d7d7f0" => "TicksBeforeDeathOver4",
     "ac16d3ed" => "ShieldCapCalc",
-    "3ea68b4" => "BigOneDamage",
+    "03ea68b4" => "BigOneDamage",
     "cd5eb5cd" => "ModifiedHPCalc",
     "d404872c" => "DelayedHitDamage",
     "7e05f704" => "LevelableAugmentCounter",
@@ -112,7 +115,7 @@ $manualHash.merge!({
     "b890af78" => "EmptyAugmentPool3",
     "e2e949d1" => "JadeAugments",
     "4ec15a0a" => "LinkedAugmentGroups",
-    "eb2338a" => "REMOVED_AUGMENT",
+    "0eb2338a" => "REMOVED_AUGMENT",
 
     "bffdf499" => "KIWI",
     "51f91098" => "Burn", # exacts
@@ -139,6 +142,8 @@ $manualHash.merge!({
     "c9393610" => "ASPerEnemy",
     "f3477415" => "PercentHealthBase",
     "8ad21bd6" => "PercentHealthPerAP",
+    "5723d947" => "Characters/Veigar/Spells/VeigarBalefulStrikeAbility/VeigarBalefulStrikeMis",
+    "d6b38b8a" => "Characters/Lux/Spells/LuxRAbility/LuxRMis",
 
 
     "3445d362" => "QCritDamageMod",
@@ -173,14 +178,14 @@ $manualHash.merge!({
     "9579774e" => "ItemAugments",
     "ba0256ad" => "TankAugments",
     "86d9be15" => "HSPower",
-    "c7ef8ce" => "RandomAugmentBlacklist",
+    "0c7ef8ce" => "RandomAugmentBlacklist",
 
     "14409aa2" => "AugmentGroups/MR",
     "15409c35" => "AugmentGroups/MS",
     "16fd2e88" => "AugmentGroups/Armor",
     "191d0093" => "AugmentGroups/GoldGrantingAugments",
     "1a253eaf" => "AugmentGroups/AutocastAugments",
-    "223fc38" => "AugmentGroups/AH",
+    "0223fc38" => "AugmentGroups/AH",
     "233e5daf" => "AugmentGroups/AutocastAugmentsARAM",
     "25f2135b" => "AugmentGroups/ArmorPen",
     "2a69fbdc" => "AugmentGroups/Omnivamp",
@@ -191,7 +196,7 @@ $manualHash.merge!({
     "40cddb7a" => "AugmentGroups/GeneralAugments",
     "4324795d" => "AugmentGroups/CritChance",
     "4a6ad9db" => "AugmentGroups/CCSourceAugments",
-    "5287e1f" => "AugmentGroups/CC",
+    "05287e1f" => "AugmentGroups/CC",
     "55cc5e63" => "AugmentGroups/MagicPen",
     "5637e17b" => "AugmentGroups/Peel",
     "587efdc6" => "AugmentGroups/AutocastAugmentsRange",
@@ -216,7 +221,7 @@ $manualHash.merge!({
     "8d576bba" => "AugmentGroups/OnTakedownAugments",
     "901e8483" => "AugmentGroups/RangedCasterAD",
     "98205824" => "AugmentGroups/OnDeathAugments",
-    "a2408d0" => "AugmentGroups/AP",
+    "0a2408d0" => "AugmentGroups/AP",
     "a2c9d49b" => "AugmentGroups/MeleeCasterBurst",
     "a6f488c0" => "AugmentGroups/RangedAttackerAD",
     "aecc7573" => "AugmentGroups/MageAugmentsGeneric4",
@@ -224,7 +229,7 @@ $manualHash.merge!({
     "baf4a83c" => "AugmentGroups/RangedAttackerAP",
     "c2918c72" => "AugmentGroups/MovementAugments",
     "c69f6f24" => "AugmentGroups/EmptyAugmentPool3",
-    "d240d89" => "AugmentGroups/AS",
+    "0d240d89" => "AugmentGroups/AS",
     "d2809836" => "AugmentGroups/LifeSteal",
     "dabcc810" => "AugmentGroups/MageAugmentsGeneric5",
     "df350452" => "AugmentGroups/MeleeAttackerBurst",
@@ -249,7 +254,7 @@ $manualHash.merge!({
     "5070c4b1" => "ChampionAugmentList/Alistar",
     "ac4155a2" => "ChampionAugmentList/Amumu",
     "8de543d9" => "ChampionAugmentList/Anivia",
-    "66a804c" => "ChampionAugmentList/Annie",
+    "066a804c" => "ChampionAugmentList/Annie",
     "9e181584" => "ChampionAugmentList/Aphelios",
     "f9b264d0" => "ChampionAugmentList/Ashe",
     "d035f954" => "ChampionAugmentList/AurelionSol",
@@ -280,13 +285,13 @@ $manualHash.merge!({
     "cebf1ea5" => "ChampionAugmentList/Galio",
     "1d802754" => "ChampionAugmentList/Gangplank",
     "2d66b4f0" => "ChampionAugmentList/Garen",
-    "bd782c5" => "ChampionAugmentList/Gnar",
+    "0bd782c5" => "ChampionAugmentList/Gnar",
     "ea42bc5e" => "ChampionAugmentList/Gragas",
     "794d62c9" => "ChampionAugmentList/Graves",
     "238ccd56" => "ChampionAugmentList/Gwen",
     "151c0be4" => "ChampionAugmentList/Hecarim",
     "bcff8472" => "ChampionAugmentList/Heimerdinger",
-    "e5a8f04" => "ChampionAugmentList/Hwei",
+    "0e5a8f04" => "ChampionAugmentList/Hwei",
     "dab2b15d" => "ChampionAugmentList/Illaoi",
     "dab5d6e7" => "ChampionAugmentList/Irelia",
     "88f6dea3" => "ChampionAugmentList/Ivern",
@@ -304,7 +309,7 @@ $manualHash.merge!({
     "f2493263" => "ChampionAugmentList/Kassadin",
     "b79f7104" => "ChampionAugmentList/Katarina",
     "4b250571" => "ChampionAugmentList/Kayle",
-    "8b84be8" => "ChampionAugmentList/Kayn",
+    "08b84be8" => "ChampionAugmentList/Kayn",
     "8baa9e70" => "ChampionAugmentList/Kennen",
     "12375efa" => "ChampionAugmentList/Khazix",
     "646ed2c8" => "ChampionAugmentList/Kindred",
@@ -326,18 +331,18 @@ $manualHash.merge!({
     "7bb43265" => "ChampionAugmentList/MonkeyKing",
     "b96d0ffb" => "ChampionAugmentList/Mordekaiser",
     "ad8845b2" => "ChampionAugmentList/Morgana",
-    "2291d9" => "ChampionAugmentList/Naafiri",
+    "002291d9" => "ChampionAugmentList/Naafiri",
     "ede4c18c" => "ChampionAugmentList/Nami",
     "a1cbdc93" => "ChampionAugmentList/Nasus",
     "b92bd9fe" => "ChampionAugmentList/Nautilus",
     "3dc0b59b" => "ChampionAugmentList/Neeko",
     "567794b9" => "ChampionAugmentList/Nidalee",
     "b85add13" => "ChampionAugmentList/Nilah",
-    "41a95b1" => "ChampionAugmentList/Nocturne",
+    "041a95b1" => "ChampionAugmentList/Nocturne",
     "1d3914c7" => "ChampionAugmentList/Nunu",
     "9605f9d7" => "ChampionAugmentList/Olaf",
     "5f6cacf7" => "ChampionAugmentList/Orianna",
-    "345184e" => "ChampionAugmentList/Ornn",
+    "0345184e" => "ChampionAugmentList/Ornn",
     "c897515c" => "ChampionAugmentList/Pantheon",
     "fb857751" => "ChampionAugmentList/Poppy",
     "e321a9dc" => "ChampionAugmentList/Pyke",
@@ -363,16 +368,16 @@ $manualHash.merge!({
     "83996f47" => "ChampionAugmentList/Shyvana",
     "18e9c029" => "ChampionAugmentList/Singed",
     "4dc0df86" => "ChampionAugmentList/Sion",
-    "5f00128" => "ChampionAugmentList/Sivir",
+    "05f00128" => "ChampionAugmentList/Sivir",
     "8838758f" => "ChampionAugmentList/Skarner",
     "b66b566f" => "ChampionAugmentList/Smolder",
     "dec04c78" => "ChampionAugmentList/Sona",
     "f1eb4f64" => "ChampionAugmentList/Soraka",
-    "bdcdcb3" => "ChampionAugmentList/Swain",
-    "23469fd" => "ChampionAugmentList/Sylas",
+    "0bdcdcb3" => "ChampionAugmentList/Swain",
+    "023469fd" => "ChampionAugmentList/Sylas",
     "8c5d9a28" => "ChampionAugmentList/Syndra",
     "9696de40" => "ChampionAugmentList/TahmKench",
-    "7336347" => "ChampionAugmentList/Taliyah",
+    "07336347" => "ChampionAugmentList/Taliyah",
     "b8d9a3c9" => "ChampionAugmentList/Talon",
     "5e0d989e" => "ChampionAugmentList/Taric",
     "96dc647b" => "ChampionAugmentList/Teemo",
@@ -402,17 +407,17 @@ $manualHash.merge!({
     "db6e6cae" => "ChampionAugmentList/Yuumi",
     "42351147" => "ChampionAugmentList/Zac",
     "1f3dd48a" => "ChampionAugmentList/Zed",
-    "d6e1ff3" => "ChampionAugmentList/Zeri",
+    "0d6e1ff3" => "ChampionAugmentList/Zeri",
     "9ae30bdd" => "ChampionAugmentList/Ziggs",
-    "1937a2a" => "ChampionAugmentList/Zilean",
+    "01937a2a" => "ChampionAugmentList/Zilean",
     "1c25caeb" => "ChampionAugmentList/Zoe",
     "d1f7aa97" => "ChampionAugmentList/Zyra",
     "e750e819" => "ChampionAugmentList/Ambessa",
     "3d71bd9c" => "ChampionAugmentList/Viktor",
-    "4302ed3" => "ChampionAugmentList/Mel",
+    "04302ed3" => "ChampionAugmentList/Mel",
     "1e265736" => "ChampionAugmentList/Leblanc",
     "d2e32e84" => "ChampionAugmentList/XinZhao",
-    "a3c6999" => "ChampionAugmentList/Yunara",
+    "0a3c6999" => "ChampionAugmentList/Yunara",
     "9eae62e0" => "ChampionAugmentList/Zaahen",
     "464a407b" => "ChampionAugmentList/Locke",
 })
@@ -524,7 +529,7 @@ def diff
     print "Loading previous patch stringtable..."
     oldLang = {}
     File.open("lol.stringtable.json", 'rb') { |f| oldLang = JSON.parse(f.read()) }
-    oldLang = oldLang["entries"] || oldLang
+    oldLang = oldLang["objects"] || oldLang["entries"] || [oldLang]
     hash = {}
     oldLang.transform_keys! { |k|
         if k.start_with?("{")
@@ -771,7 +776,7 @@ def augmentSearcher(key, data, version=0)
 
         maxAugmentData = data.dig("AugmentLevelData")&.dig("CapstoneData")
         if maxAugmentData
-            aug["maxLevelTooltip"] = maxAugmentData.fetch("0x5835d27", {})
+            aug["maxLevelTooltip"] = maxAugmentData.fetch("0x05835d27", {})
             aug["maxLevelSummary"] = maxAugmentData.fetch("0xc98a82ca", {})
         end
 
@@ -825,7 +830,7 @@ end
 #     if data["~class"]&.eql?("0x27bc6378")
 #         set = {
 #             "apiName" => data.fetch("SetName", ""),
-#             "name" => data.fetch("0x746ade9", ""),
+#             "name" => data.fetch("0x0746ade9", ""),
 #             "desc" => data.fetch("0x97e82990", ""),
 #             "descEx" => "",
 #             "icons" => data.fetch("0x4217d741", ""),
@@ -1009,7 +1014,7 @@ mapBins = {
 print "Loading and formatting stringtable..."
 $cdLang = {}
 File.open("lang/lol.stringtable.json", 'rb') { |f| $cdLang = JSON.parse(f.read()) }
-$cdLang = $cdLang["entries"] || $cdLang
+$cdLang = $cdLang["objects"] || $cdLang
 File.open("lang/lol.stringtable.json", 'wb') { |f| f.write(JSON.pretty_generate($cdLang)) }
 print "done.\n"
 
@@ -1029,7 +1034,7 @@ diff()
     }
     shared = {}
     File.open("temp/data/maps/shipping/common/common.json", 'rb') { |f| shared = JSON.parse(f.read()) }
-    shared = shared.fetch("entries", shared)
+    shared = shared.fetch("objects", shared)
     sharedSort = {}
     shared.each { |key, data|
         type = data["~class"]
@@ -1075,7 +1080,7 @@ diff()
     }
     json = {}
     File.open("temp/data/maps/shipping/map#{mapId}/map#{mapId}.json", 'rb') { |f| json = JSON.parse(f.read()) }
-    json = json.fetch("entries", json)
+    json = json.fetch("objects", json)
     jsonSort = {}
     json.each { |key, data|
         type = data["~class"]
@@ -1137,7 +1142,7 @@ diff()
         }
         json = {}
         File.open("temp/data/maps/modespecificdata/map#{mapId}/#{map}.json", 'rb') { |f| json = JSON.parse(f.read()) }
-        json = json.fetch("entries", json)
+        json = json.fetch("objects", json)
         jsonSort = {}
 
         json.each { |key, data|
@@ -1172,7 +1177,7 @@ diff()
     }
     json = {}
     File.open("temp/data/maps/shipping/map#{mapId}/map#{mapId}.json", 'rb') { |f| json = JSON.parse(f.read()) }
-    json = json.fetch("entries", json)
+    json = json.fetch("objects", json)
     jsonSort = {}
     json.each { |key, data|
         type = data["~class"]
@@ -1234,7 +1239,7 @@ diff()
         }
         json = {}
         File.open("temp/data/maps/modespecificdata/map#{mapId}/#{map}.json", 'rb') { |f| json = JSON.parse(f.read()) }
-        json = json.fetch("entries", json)
+        json = json.fetch("objects", json)
         jsonSort = {}
 
         json.each { |key, data|
@@ -1267,7 +1272,7 @@ diff()
     }
     aram = {}
     File.open("temp/data/maps/shipping/map12/map12.json", 'rb') { |f| aram = JSON.parse(f.read()) }
-    aram = aram.fetch("entries", aram)
+    aram = aram.fetch("objects", aram)
     aramOther = {}
     aram.each { |key, data|
         type = data["~class"]
@@ -1338,7 +1343,7 @@ diff()
         }
         json = {}
         File.open("temp/data/maps/modespecificdata/map12/#{map}.json", 'rb') { |f| json = JSON.parse(f.read()) }
-        json = json.fetch("entries", json)
+        json = json.fetch("objects", json)
         jsonSort = {}
 
         json.each { |key, data|
@@ -1351,7 +1356,7 @@ diff()
                 when "0xadaf4f78", "0xf9e46502"
                     type = "AugmentOperators"
                     data = applyLangKeys(applyLang(data))
-                when "0x5c8aed6"
+                when "0x05c8aed6"
                     type = "GuestOfHonorData"
                     data = applyLangKeys(applyLang(data))
                 when "0xfead7e9b"#, "AugmentGroups"
@@ -1386,7 +1391,7 @@ diff()
     aramSets = []
     $aramMayhem = {}
     File.open("temp/data/maps/modespecificdata/map12/kiwi.json", 'rb') { |f| $aramMayhem = JSON.parse(f.read()) }
-    $aramMayhem = $aramMayhem.fetch("entries", $aramMayhem)
+    $aramMayhem = $aramMayhem.fetch("objects", $aramMayhem)
     aramAugments = []
     aramOther = {}
     aramOther["AugmentInfo"] = {}
@@ -1414,7 +1419,7 @@ diff()
             when "0xa0ffdf09"
                 type = "AugmentQuestList"
                 data = applyLangKeys(applyLang(data))
-            when "0x5c8aed6"
+            when "0x05c8aed6"
                 type = "GuestOfHonorData"
                 data = applyLangKeys(applyLang(data))
             when "NarrativeBarksList"
@@ -1450,7 +1455,7 @@ diff()
 
     $aramMayhem = {}
     File.open("temp/data/maps/modespecificdata/map12/kiwi_jade.json", 'rb') { |f| $aramMayhem = JSON.parse(f.read()) }
-    $aramMayhem = $aramMayhem.fetch("entries", $aramMayhem)
+    $aramMayhem = $aramMayhem.fetch("objects", $aramMayhem)
     aramAugments = []
     aramOther = {}
     aramOther["AugmentInfo"] = {}
@@ -1519,7 +1524,7 @@ diff()
     ["augments", "data", "vfxData"].each { |dir|
         Dir.mkdir("arena/#{dir}") unless Dir.exist?("arena/#{dir}")
     }
-    $arena = $arena.fetch("entries", $arena)
+    $arena = $arena.fetch("objects", $arena)
     augments = []
     arenaOther = {}
     arenaOther["AugmentInfo"] = {}
@@ -1545,7 +1550,7 @@ diff()
                 type = "AugmentColors"
             when "0x62ba66ab"
                 type = "GuestsOfHonorList"
-                data["0x886394e"] = data["0x886394e"].map { |m| $arena.dig(m, "name") }
+                data["0x0886394e"] = data["0x0886394e"].map { |m| $arena.dig(m, "name") }
             when "0x409a5657"
                 type = "DefaultAugmentData"
                 augmentPools = data["0x857c9848"]
@@ -1580,7 +1585,7 @@ diff()
         }
         json = {}
         File.open("temp/data/maps/modespecificdata/map30/#{map}.json", 'rb') { |f| json = JSON.parse(f.read()) }
-        json = json.fetch("entries", json)
+        json = json.fetch("objects", json)
         jsonSort = {}
         jsonSort["AugmentInfo"] = {}
 
@@ -1597,7 +1602,7 @@ diff()
             case type
                 when "0xc8400f38", "0x5307f5e1"
                     type = "HotkeyControls"
-                when "0x5c8aed6"
+                when "0x05c8aed6"
                     type = "GuestOfHonorData"
                     data = applyLangKeys(applyLang(data))
                 when "0x276246d8"
@@ -1663,7 +1668,7 @@ Dir.mkdir("characters/shared")
             filepath = basepath + "/" + file
             champ = {}
             File.open(filepath, 'rb') { |f| champ = JSON.parse(f.read()) }
-            champ = champ.fetch("entries", champ)
+            champ = champ.fetch("objects", champ)
 
             if path.include?("_") && !manual.include?(path)
                 outdir = "characters#{r2}/" + path.split("_")[0]
@@ -1675,6 +1680,7 @@ Dir.mkdir("characters/shared")
 
             out = {}
             champ.each { |obj, data|
+                o = applyLang(obj)
                 d = applyLang(data)
                 clazz = d["~class"] || "Misc"
                 
@@ -1710,7 +1716,8 @@ Dir.mkdir("characters/shared")
                             Dir.mkdir("#{outdir}/#{path}") if !Dir.exist?("#{outdir}/#{path}")
                         end
                     when "ItemRecommendationOverrideSet", "RecSpellRankUpInfolist", "ItemRecommendationContextList",
-                        "ChampionRuneRecommendationsContext", "JunglePathRecommendation", "SkinCharacterMetaDataProperties"
+                        "ChampionRuneRecommendationsContext", "JunglePathRecommendation", "SkinCharacterMetaDataProperties",
+                        "RecSpellRankUpInfo", "RecSpellRankUpInfoList"
                         next
                     when "SpellObject"
                         clazz = "Spells"
@@ -1721,7 +1728,7 @@ Dir.mkdir("characters/shared")
                 end
 
                 out[clazz] ||= {}
-                out[clazz].store(obj, assetNameFix(d))
+                out[clazz].store(o, assetNameFix(d))
             }
             next if out.empty?
 
@@ -1752,7 +1759,7 @@ itemsVFX = {}
 itemsTFT = {}
 itemsMisc = {}
 File.open("temp/data/items.ltk.json", 'rb') { |f| itemBin = JSON.parse(f.read()) }
-itemBin = itemBin.fetch("entries", itemBin)
+itemBin = itemBin.fetch("objects", itemBin)
 itemBin.each { |item, itemObj|
     transObj = assetNameFix(applyLang(itemObj))
     transItem = itemNameLangFix(item)
@@ -1796,7 +1803,7 @@ $cdLang.each { |key, string|
 
 globals = {}
 File.open("temp/globals.ltk.json") { |f| globals = JSON.parse(f.read()) }
-globals = globals.fetch("entries", globals)
+globals = globals.fetch("objects", globals)
 loadtipSets = {}
 globals.each { |key, value|
     if value.is_a?(Hash)
@@ -1818,7 +1825,7 @@ loadtipSets.each { |key, value|
             name = "Brawl"
         when "0x28ba866a"
             name = "Worlds"
-        when "0x56b5590"
+        when "0x056b5590"
             name = "Battle of the God-Kings"
         else
             # do nothing
@@ -1865,7 +1872,7 @@ FileUtils.rm_rf(Dir.glob("perks/*"))
 Dir.mkdir("perks") unless Dir.exist?("perks")
 runes = nil
 File.open("temp/perks.ltk.json", 'rb') { |f| runes = JSON.parse(f.read()) }
-runes = runes.fetch("entries", runes)
+runes = runes.fetch("objects", runes)
 runes.delete_if { |k, v| !v["~class"].include?("Perk") || v["~class"] == "PerkConfig" || v["~class"].downcase.include?("vfx") }
 runes.transform_keys! { |k, v| 
     next k if !k.start_with?("0x")
