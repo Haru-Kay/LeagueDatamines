@@ -797,6 +797,7 @@ def augmentSearcher(key, data, version=0)
 end
 
 def buildAugmentQuest(augment, questData)
+    return {} if !questData
     questHash = {
         "apiName" => questData["QuestName"],
         "TooltipOverride" => [],

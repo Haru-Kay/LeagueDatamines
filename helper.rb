@@ -24,12 +24,20 @@ def xxh3(s)
     return (hashInt & hashMask).to_s(16)
 end
 
-items = {}
-File.open("items/items.json", 'rb') { |f| items = JSON.parse(f.read) }
+augs = {}
+File.open("aram/mayhem/augments/augments.json", 'rb') { |f| augs = JSON.parse(f.read) }
 
-f = []
-items.each { |i, d|
-    f.push(i) if d["0xb2aa694"] == false
+out = {}
+augs.each { |data|
+    icons = data["icons"]
+    next unless icons.any? { |icon| icon.start_with?("0x") }
+    out[data["apiName"]] = {
+        :name => data["name"],
+        :icon => []
+    }
+    icons.each { |icon|
+        out[data["apiName"]][:icon].push(icon[2..]) if icon.start_with?("0x")
+    }
 }
 
-puts f.join(", ")
+puts JSON.pretty_generate(out)
