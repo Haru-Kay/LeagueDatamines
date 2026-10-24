@@ -1322,6 +1322,8 @@ diff()
                     newdata.store(group, weight)
                 }
                 data = newdata.sort_by { |k, v| k.downcase }.to_h
+            when "RewardGroup"
+                data = applyLangKeys(applyLang(data))
             else
                 type = "MiscData" if type.start_with?("0x")
         end

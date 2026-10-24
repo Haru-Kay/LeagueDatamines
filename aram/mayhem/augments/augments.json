@@ -1030,164 +1030,6 @@
     ]
   },
   {
-    "id": 1064,
-    "apiName": "ARAM_Perseverance",
-    "name": "Perseverance",
-    "rarity": "Gold",
-    "disabled": true,
-    "desc": "Gain hugely increased <healing>Health Regen</healing>, further increased at low <scaleHealth>Health</scaleHealth>.",
-    "tooltip": "Gain <healing>@BaseRegen*100@% base Health Regen</healing>, increased to <healing>@AmpedRegen*100@% base Health Regen</healing> below <scaleHealth>25% Health</scaleHealth>.<br><br>Total Healing Done: @f2@",
-    "dataValues": {
-      "BaseRegen": 10.0,
-      "AmpedRegen": 20.0,
-      "AmpedHPThreshold": 0.25
-    },
-    "icons": [
-      "assets/ux/cherry/augments/icons/perseverance_small.tex",
-      "assets/ux/cherry/augments/icons/perseverance_large.tex"
-    ]
-  },
-  {
-    "id": 1066,
-    "apiName": "ARAM_QuantumComputing",
-    "name": "Quantum Computing",
-    "rarity": "Prismatic",
-    "disabled": true,
-    "desc": "Periodically <keywordMajor>Autocast</keywordMajor> a massive slash. Enemies hit are <status>Slowed</status>, take additional <physicalDamage>max Health damage</physicalDamage>, and heal you.",
-    "tooltip": "Every @AutoCastCooldown@ seconds, <keywordMajor>Autocast</keywordMajor> a massive slash around you, dealing <physicalDamage>@BaseDamageTotal@ physical damage</physicalDamage>. Enemies hit by the outer half are <status>Slowed</status> by @SlowPercentage@% decaying over @SlowDuration@ seconds, and take an additional <physicalDamage>@OuterEdgeTooltip@ max Health physical damage</physicalDamage>. You restore <healing>@OuterConeHealingRatio@% champion damage dealt as Health</healing>.<br><br>Total Healing Done: @f2@",
-    "dataValues": {
-      "AutoCastCooldown": 30.0,
-      "BaseDamage": [
-        40.0,
-        70.0,
-        100.0,
-        130.0,
-        160.0,
-        190.0,
-        220.0
-      ],
-      "SlowDuration": 2.0,
-      "ChargeDuration": 0.75,
-      "SlowPercentage": 80.0,
-      "OuterConeMaxHPDamage": 0.1,
-      "ADRequiredFor1PercentDamage": 35.0,
-      "ADRequiredTooltipOnly": 0.00025,
-      "MonsterDamageReduction": 50.0,
-      "OuterConeHealingRatio": 80.0,
-      "MonsterHealingCap": 0.1,
-      "BlastLength": 650.0,
-      "ConeAngle": 45.0,
-      "APRequiredFor1PercentDamage": 60.0,
-      "BonusHPRequiredFor1PercentDamag": 600.0,
-      "BADRatio": 0.6,
-      "APRequiredTooltipOnly": 0.00016,
-      "BonusHPRequiredTooltipOnly": 0.00001
-    },
-    "calculations": {
-      "BaseDamageTotal": {
-        "mFormulaParts": [
-          {
-            "mEndValue": 350.0,
-            "mStartValue": 200.0,
-            "~class": "ByCharLevelInterpolationCalculationPart"
-          },
-          {
-            "mCoefficient": 0.75,
-            "mStat": 2,
-            "mStatFormula": 2,
-            "~class": "StatByCoefficientCalculationPart"
-          },
-          {
-            "mCoefficient": 0.45,
-            "~class": "StatByCoefficientCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "OuterEdgeTooltip": {
-        "mDisplayAsPercent": true,
-        "mFormulaParts": [
-          {
-            "mDataValue": "OuterConeMaxHPDamage",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          {
-            "mDataValue": "ADRequiredTooltipOnly",
-            "mStat": 2,
-            "mStatFormula": 2,
-            "~class": "StatByNamedDataValueCalculationPart"
-          },
-          {
-            "mDataValue": "APRequiredTooltipOnly",
-            "~class": "StatByNamedDataValueCalculationPart"
-          },
-          {
-            "mDataValue": "BonusHPRequiredTooltipOnly",
-            "mStat": 12,
-            "mStatFormula": 2,
-            "~class": "StatByNamedDataValueCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      }
-    },
-    "add": {
-      "Augment_ARAM_QuantumComputing_CamilleW": {
-        "dataValues": {
-          "BaseDamage": [
-            40.0,
-            70.0,
-            100.0,
-            130.0,
-            160.0,
-            190.0,
-            220.0
-          ],
-          "BADRatio": 0.6,
-          "SlowDuration": 2.0,
-          "ChargeDuration": 0.75,
-          "SlowPercentage": 80.0,
-          "OuterConeMaxHPDamage": 0.1,
-          "ADRequiredFor1PercentDamage": 35.0,
-          "ADRequiredTooltipOnly": 0.00025,
-          "MonsterDamageReduction": 50.0,
-          "OuterConeHealingRatio": 80.0,
-          "MonsterHealingCap": 0.1,
-          "BlastLength": 650.0,
-          "ConeAngle": 45.0,
-          "APRequiredFor1PercentDamage": 60.0,
-          "BonusHPRequiredFor1PercentDamag": 600.0
-        },
-        "calcs": {
-          "BaseDamageTotal": {
-            "mFormulaParts": [
-              {
-                "mEndValue": 350.0,
-                "mStartValue": 200.0,
-                "~class": "ByCharLevelInterpolationCalculationPart"
-              },
-              {
-                "mCoefficient": 0.85,
-                "mStat": 2,
-                "mStatFormula": 2,
-                "~class": "StatByCoefficientCalculationPart"
-              },
-              {
-                "mCoefficient": 0.5,
-                "~class": "StatByCoefficientCalculationPart"
-              }
-            ],
-            "~class": "GameCalculation"
-          }
-        }
-      }
-    },
-    "icons": [
-      "assets/ux/cherry/augments/icons/quantumcomputing_small.tex",
-      "assets/ux/cherry/augments/icons/quantumcomputing_large.tex"
-    ]
-  },
-  {
     "id": 1067,
     "apiName": "ARAM_RabbleRousing",
     "name": "Rejuvenation",
@@ -3251,38 +3093,6 @@
     ]
   },
   {
-    "id": 1327,
-    "apiName": "Adamant",
-    "name": "Adamant",
-    "rarity": "Silver",
-    "disabled": true,
-    "desc": "Each time you <status>Immobilize</status> or <status>Ground</status> an enemy, gain <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR>.",
-    "tooltip": "Each time you <status>Immobilize</status> or <status>Ground</status> an enemy, gain @ResistsPerLevel@ <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR> for @AugDuration@ seconds (up to @MaxStacks@ stacks).",
-    "dataValues": {
-      "Resists": 10.0,
-      "SpellIDCD": 5.0,
-      "MaxStacks": 10.0,
-      "AugDuration": 10.0,
-      "MaxLevel": 2.0
-    },
-    "calculations": {
-      "ResistsPerLevel": {
-        "mFormulaParts": [
-          {
-            "mEndValue": 10.0,
-            "mStartValue": 2.0,
-            "~class": "ByCharLevelInterpolationCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      }
-    },
-    "icons": [
-      "assets/ux/kiwi/augments/icons/adamant_small.tex",
-      "assets/ux/kiwi/augments/icons/adamant_large.tex"
-    ]
-  },
-  {
     "id": 1328,
     "apiName": "CriticalRhythm",
     "name": "Critical Rhythm",
@@ -3511,84 +3321,6 @@
     ]
   },
   {
-    "id": 1334,
-    "apiName": "SnowballUpgrade",
-    "name": "Snowball Upgrade",
-    "rarity": "Gold",
-    "disabled": true,
-    "desc": "Gain @AbilityHaste@ Ability Haste on <spellName>Snowball</spellName>. Hitting an enemy creates a snowfall that deals <magic>AoE damage</magic> and <status>Slows</status> nearby enemies.<br><br><rules>If you don't have one, gain a <spellName>Snowball</spellName>.</rules><br>",
-    "tooltip": "Gain @AbilityHaste@ Ability Haste on your Snowball. <br>Hitting a target creates an area that <status>Slows</status> enemies by @TotalSlowAmount@ and deals <magicDamage>@TotalDamagePerSecond@ magic damage</magicDamage> per second for @BaseDuration@ seconds (total <magicDamage>@TotalDamage@ magic damage</magicDamage>).<br><br><br>",
-    "dataValues": {
-      "AbilityHaste": 50.0,
-      "BaseDamagePerSecond": 100.0,
-      "BaseDuration": 2.0,
-      "BaseSlowAmount": 0.5,
-      "APRatioPerSecond": 0.6,
-      "TicksPerSecond": 4.0,
-      "CastDelay": 0.25,
-      "SlowPer100AP": 0.0006,
-      "BonusADRatio": 1.0
-    },
-    "calculations": {
-      "BaseDamage": {
-        "mFormulaParts": [
-          {
-            "mEndValue": 180.0,
-            "mStartValue": 90.0,
-            "~class": "ByCharLevelInterpolationCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      },
-      "TotalDamage": {
-        "mModifiedGameCalculation": "TotalDamagePerSecond",
-        "mMultiplier": {
-          "mDataValue": "BaseDuration",
-          "~class": "NamedDataValueCalculationPart"
-        },
-        "~class": "GameCalculationModified"
-      },
-      "TotalDamagePerSecond": {
-        "mFormulaParts": [
-          {
-            "mDataValue": "BaseDamagePerSecond",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          {
-            "mDataValue": "APRatioPerSecond",
-            "~class": "StatByNamedDataValueCalculationPart"
-          },
-          {
-            "mDataValue": "BonusADRatio",
-            "mStat": 2,
-            "mStatFormula": 2,
-            "~class": "StatByNamedDataValueCalculationPart"
-          }
-        ],
-        "mSimpleTooltipCalculationDisplay": 6,
-        "~class": "GameCalculation"
-      },
-      "TotalSlowAmount": {
-        "mDisplayAsPercent": true,
-        "mFormulaParts": [
-          {
-            "mDataValue": "BaseSlowAmount",
-            "~class": "NamedDataValueCalculationPart"
-          },
-          {
-            "mDataValue": "SlowPer100AP",
-            "~class": "StatByNamedDataValueCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      }
-    },
-    "icons": [
-      "assets/ux/kiwi/augments/icons/snowballupgrade_small.tex",
-      "assets/ux/kiwi/augments/icons/snowballupgrade_large.tex"
-    ]
-  },
-  {
     "id": 1335,
     "apiName": "Goldrend",
     "name": "Goldrend",
@@ -3809,22 +3541,6 @@
     "icons": [
       "assets/ux/kiwi/augments/icons/finalform_small.tex",
       "assets/ux/kiwi/augments/icons/finalform_large.tex"
-    ]
-  },
-  {
-    "id": 1346,
-    "apiName": "Vampirism",
-    "name": "Vampirism",
-    "rarity": "Gold",
-    "disabled": true,
-    "desc": "You cannot be healed by allies or gain <healing>Health Regen</healing>. Gain <omnivamp>@OmniVamp*100@%</omnivamp> Omnivamp.",
-    "tooltip": "You cannot be healed by allies or gain <healing>Health Regen</healing>. Gain <omnivamp>@OmniVamp*100@%</omnivamp> Omnivamp.",
-    "dataValues": {
-      "OmniVamp": 0.25
-    },
-    "icons": [
-      "assets/ux/kiwi/augments/icons/vampired_small.tex",
-      "assets/ux/kiwi/augments/icons/vampired_large.tex"
     ]
   },
   {
@@ -4762,113 +4478,6 @@
     ]
   },
   {
-    "id": 2007,
-    "apiName": "ARAM_LittleDevil",
-    "name": "Devil on Your Shoulder",
-    "rarity": "Prismatic",
-    "disabled": true,
-    "desc": "Forge a pact with The Little Devil himself. <br><br>He <omnivamp>drains your life over time</omnivamp> but rewards by applying <trueDamage>bonus true damage</trueDamage> against champions and creating <healing>healing remnants</healing> for you to acquire.",
-    "tooltip": "You've forged a pact with the Little Devil himself. He <omnivamp>drains @Calc_Drain_Per_Second_Non_Combat@ of your current Health per second, increased to @Calc_Drain_Per_Second@ if there are nearby enemies</omnivamp>.<br><br>In return, he amplifies your Attacks and Abilities to deal an additional <trueDamage>@Calc_Damage_Amp@ true damage</trueDamage>, which cause a <omnivamp>Life Remnant</omnivamp> to appear nearby for @Remnant_Duration@ seconds.<br><br>Absorbing a <omnivamp>Life Remnant</omnivamp> <healing>heals you for @Calc_Remnant_Healing@</healing> and grants you <speed>@Calc_Move_Speed@ Movement Speed</speed> for @Move_Speed_Duration@ second.<br><br><rules>Health Drained: @f1.0@<br>Damage Dealt: @f2.0@<br>Remnants Acquired: @f4.0@<br>Health Restored: @f5.0@<br>Periodic damage has a @DotDamageCooldown@ second cooldown</rules>",
-    "dataValues": {
-      "Amp_Duration": 8.0,
-      "Amp": 2.0,
-      "Remnant_Duration": 5.0,
-      "Move_Speed_Duration": 1.0,
-      "Detection_Radius": 1000.0,
-      "Remnant_Spawn_Cooldown": 0.75,
-      "DotDamageCooldown": 1.5,
-      "BaseDamageAmp": 0.2,
-      "BaseDamageReduction": 0.2,
-      "MaxLevel": 3.0,
-      "MSAmp": 0.15
-    },
-    "calculations": {
-      "Calc_Damage_Amp": {
-        "mDisplayAsPercent": true,
-        "mExpandedTooltipCalculationDisplay": 5,
-        "mFormulaParts": [
-          {
-            "mDataValue": "BaseDamageAmp",
-            "~class": "NamedDataValueCalculationPart"
-          }
-        ],
-        "mSimpleTooltipCalculationDisplay": 5,
-        "~class": "GameCalculation"
-      },
-      "Calc_Damage_Reduction": {
-        "mDisplayAsPercent": true,
-        "mExpandedTooltipCalculationDisplay": 5,
-        "mFormulaParts": [
-          {
-            "mDataValue": "BaseDamageReduction",
-            "~class": "NamedDataValueCalculationPart"
-          }
-        ],
-        "mSimpleTooltipCalculationDisplay": 5,
-        "~class": "GameCalculation"
-      },
-      "Calc_Drain_Per_Second": {
-        "mDisplayAsPercent": true,
-        "mExpandedTooltipCalculationDisplay": 5,
-        "mFormulaParts": [
-          {
-            "mNumber": 0.05,
-            "~class": "NumberCalculationPart"
-          }
-        ],
-        "mPrecision": 2,
-        "mSimpleTooltipCalculationDisplay": 5,
-        "~class": "GameCalculation"
-      },
-      "Calc_Drain_Per_Second_Non_Combat": {
-        "mExpandedTooltipCalculationDisplay": 5,
-        "mModifiedGameCalculation": "Calc_Drain_Per_Second",
-        "mMultiplier": {
-          "mNumber": 0.1,
-          "~class": "NumberCalculationPart"
-        },
-        "mSimpleTooltipCalculationDisplay": 5,
-        "~class": "GameCalculationModified"
-      },
-      "Calc_Move_Speed": {
-        "mDisplayAsPercent": true,
-        "mExpandedTooltipCalculationDisplay": 5,
-        "mFormulaParts": [
-          {
-            "mDataValue": "MSAmp",
-            "~class": "NamedDataValueCalculationPart"
-          }
-        ],
-        "mSimpleTooltipCalculationDisplay": 5,
-        "~class": "GameCalculation"
-      },
-      "Calc_Remnant_Healing": {
-        "mFormulaParts": [
-          {
-            "mEndValue": 250.0,
-            "mStartValue": 100.0,
-            "~class": "ByCharLevelInterpolationCalculationPart"
-          },
-          {
-            "mCoefficient": 0.6,
-            "mStat": 2,
-            "mStatFormula": 2,
-            "~class": "StatByCoefficientCalculationPart"
-          },
-          {
-            "mCoefficient": 0.3,
-            "~class": "StatByCoefficientCalculationPart"
-          }
-        ],
-        "~class": "GameCalculation"
-      }
-    },
-    "icons": [
-      "assets/ux/kiwi/augments/icons/littledevil_small.tex",
-      "assets/ux/kiwi/augments/icons/littledevil_large.tex"
-    ]
-  },
-  {
     "id": 2009,
     "apiName": "ARAM_Zealot",
     "name": "Zealot",
@@ -5775,53 +5384,6 @@
     ]
   },
   {
-    "id": 2097,
-    "apiName": "VoidDash",
-    "name": "Void Dash",
-    "rarity": "Gold",
-    "disabled": true,
-    "desc": "Dashing with <font color='#F0C200'>@SpellName@</font> spawns a Void Zone that <status>Slows</status> enemy champions and deals magic damage.",
-    "tooltip": "<font color='#F0C200'>@SpellName@</font> spawns a Void Zone at the targeted destination. It <status>Slows</status> enemy champions for @SlowAmount*100@% for @SlowDuration@ seconds, and deals <magicDamage>@TotalDamage@ magic damage</magicDamage>. <br><br>Champions Slowed: @f1@",
-    "dataValues": {
-      "BaseDamage": [
-        25.0,
-        80.0,
-        135.0,
-        190.0,
-        245.0,
-        300.0,
-        355.0
-      ],
-      "DelayBeforeKnockUp": 0.3,
-      "SlowAmount": 0.35,
-      "SlowDuration": 1.0,
-      "KnockUpRadius": 250.0,
-      "Haste": 1.0
-    },
-    "calculations": {
-      "TotalDamage": {
-        "mFormulaParts": [
-          {
-            "mEndValue": 400.0,
-            "mStartValue": 80.0,
-            "~class": "ByCharLevelInterpolationCalculationPart"
-          },
-          {
-            "mDataValue": "Haste",
-            "mStat": 11,
-            "~class": "StatByNamedDataValueCalculationPart"
-          }
-        ],
-        "mSimpleTooltipCalculationDisplay": 6,
-        "~class": "GameCalculation"
-      }
-    },
-    "icons": [
-      "assets/ux/kiwi/augments/icons/genericabilityaugmenticon_gold.tex",
-      "assets/ux/kiwi/augments/icons/genericabilityaugmenticon_gold.tex"
-    ]
-  },
-  {
     "id": 2098,
     "apiName": "ARAM_EndlessHunt",
     "name": "En Passant",
@@ -6305,35 +5867,6 @@
     "icons": [
       "assets/ux/kiwi/augments/icons/hellbent_small.tex",
       "assets/ux/kiwi/augments/icons/hellbent_large.tex"
-    ]
-  },
-  {
-    "id": 2108,
-    "apiName": "SupportMain",
-    "name": "Support Main",
-    "rarity": "Silver",
-    "desc": "<font color='#F0C200'>QUEST:</font> <healing>Heal</healing> allied champions for @QuestRequirement@ Health. <br><br><font color='#F0C200'>REWARD:</font> Any healing you provide now also Heals Over Time after the initial heal.",
-    "tooltip": "<font color='#F0C200'>QUEST:</font> <healing>Heal</healing> allied champions for @QuestRequirement@ health.<br><br><font color='#F0C200'>REWARD:</font> Any healing you provide now also Heals Over Time for @HealPercent@% of the initial heal over @HealDuration@ seconds.<br><br>Healing Done: @QuestProgress@ / @QuestRequirement@<br>",
-    "dataValues": {
-      "HealPercent": 25.0,
-      "HealDuration": 3.0
-    },
-    "quest": {
-      "apiName": "SupportMainQuest",
-      "QuestBreakpoints": [
-        {
-          "QuestRequirement": 3000,
-          "QuestDesc": "<font color='#F0C200'>QUEST:</font> <healing>Heal</healing> allied champions for @QuestRequirement@ health.<br><br><font color='#F0C200'>REWARD:</font> Any healing you provide now also Heals Over Time for @HealPercent@% of the initial heal over @HealDuration@ seconds.<br><br>Healing Done: @QuestProgress@ / @QuestRequirement@"
-        },
-        {
-          "QuestDesc": "Any healing you provide now also <healing>Heals Over Time</healing> for @HealPercent@% of the initial heal over @HealDuration@ seconds.<br><br>Quest Completed<br>Healing Done: @QuestProgress@"
-        }
-      ],
-      "icon": "assets/ux/cherry/augments/icons/firstaidkit_large.tex"
-    },
-    "icons": [
-      "assets/ux/kiwi/augments/icons/questsupportmain_small.tex",
-      "assets/ux/kiwi/augments/icons/questsupportmain_large.tex"
     ]
   },
   {
@@ -7193,18 +6726,6 @@
     ]
   },
   {
-    "id": 2148,
-    "apiName": "DoubleStrike",
-    "name": "Double Strike",
-    "rarity": "Silver",
-    "desc": "<font color='#F0C200'>@SpellName@</font> applies %i:OnHit% <OnHit>On-Hit</OnHit> effects an additional time.",
-    "tooltip": "<font color='#F0C200'>@SpellName@</font> applies %i:OnHit% <OnHit>On-Hit</OnHit> effects an additional time.",
-    "icons": [
-      "assets/ux/kiwi/augments/icons/adamant_small.tex",
-      "assets/ux/kiwi/augments/icons/adamant_large.tex"
-    ]
-  },
-  {
     "id": 2157,
     "apiName": "Upgrade_DeathDance",
     "name": "Upgrade Death's Dance",
@@ -7794,27 +7315,7 @@
         "~class": "GameCalculation"
       }
     },
-    "quest": {
-      "apiName": "BouncingBeesQuest",
-      "QuestBreakpoints": [
-        {
-          "QuestRequirement": 10,
-          "QuestDesc": "After casting an Ability, your next Attack bounces to the nearest enemy, dealing @BasicAttackDamagePercent@ of the original damage.<br><br><font color='#F0C200'>QUEST:</font> Bounce Attacks onto enemy Champions @QuestRequirement@ times<br><br><font color='#F0C200'>REWARD:</font> Gain <physicalDamage>%i:scaleAD% @ADPerMilestone@ Attack Damage</physicalDamage> and an extra bounce per Quest Level<br><br>Quest Progress: @QuestProgress@ / @QuestRequirement@<br>Attack Damage Gained: <physicalDamage>@f1@</physicalDamage><br>Maximum Bounces: @f2@"
-        },
-        {
-          "QuestRequirement": 40,
-          "QuestDesc": "After casting an Ability, your next Attack bounces to the nearest enemy, dealing @BasicAttackDamagePercent@ of the original damage.<br><br><font color='#F0C200'>QUEST:</font> Bounce Attacks onto enemy Champions @QuestRequirement@ times<br><br><font color='#F0C200'>REWARD:</font> Gain <physicalDamage>+%i:scaleAD% @ADPerMilestone@ Attack Damage</physicalDamage> and an extra bounce per Quest Level<br><br>Quest Progress: @QuestProgress@ / @QuestRequirement@<br>Attack Damage Gained: <physicalDamage>@f1@</physicalDamage><br>Maximum Bounces: @f2@"
-        },
-        {
-          "QuestRequirement": 163,
-          "QuestDesc": "After casting an Ability, your next Attack bounces to the nearest enemy, dealing @BasicAttackDamagePercent@ of the original damage.<br><br><font color='#F0C200'>QUEST:</font> Bounce Attacks onto enemy Champions @QuestRequirement@ times<br><br><font color='#F0C200'>REWARD:</font> Gain <physicalDamage>+%i:scaleAD% @ADPerMilestone@ Attack Damage</physicalDamage> and an extra bounce per Quest Level<br><br>Quest Progress: @QuestProgress@ / @QuestRequirement@<br>Attack Damage Gained: <physicalDamage>@f1@</physicalDamage><br>Maximum Bounces: @f2@"
-        },
-        {
-          "QuestDesc": "After casting an Ability, your next Attack bounces to the nearest enemy, dealing @BasicAttackDamagePercent@ of the original damage<br><br><font color='#F0C200'>QUEST COMPLETE</font> <br><br>Total Attack Damage Gained: @f1@<br>Maximum Bounces: @f2@"
-        }
-      ],
-      "icon": "assets/ux/kiwi/augments/icons/kingme_large.tex"
-    },
+    "quest": {},
     "icons": [
       "assets/ux/kiwi/augments/icons/kingme_large.tex",
       "assets/ux/kiwi/augments/icons/kingme_large.tex"
