@@ -260,7 +260,7 @@
     "tooltip": "When dropping below <scaleHealth>@HealthThreshold*100@% Health</scaleHealth>, <healing>heal for @HealAmount*100@% max Health over 3 seconds</healing>. <br>Resets on death or every @Cooldown@ seconds.<br>",
     "dataValues": {
       "HealthThreshold": 0.5,
-      "HealAmount": 0.3,
+      "HealAmount": 0.35,
       "Duration": 3.0,
       "Cooldown": 45.0
     },
@@ -3384,7 +3384,7 @@
     "desc": "<status>Immobilizing</status> an enemy champion grants <scaleHealth>@HealthGainPerStack@ max Health</scaleHealth>.<br><br>If taken as your second Augment, starts with <scaleHealth>@StartingHPIfSecondAugmentTT@ Health</scaleHealth>.",
     "tooltip": "<status>Immobilizing</status> an enemy champion grants <scaleHealth>@HealthGainPerStack@ max Health</scaleHealth>.<br><br>Total Health Gained: <scaleHealth>@HealthGained@</scaleHealth><br><rules>If taken as your second Augment, starts with <scaleHealth>@StartingHPIfSecondAugmentTT@ Health</scaleHealth>.</rules>",
     "dataValues": {
-      "HealthGainPerStack": 20.0,
+      "HealthGainPerStack": 30.0,
       "SpellIDCD": 5.0
     },
     "calculations": {
@@ -5157,16 +5157,11 @@
             "mBreakpoints": [
               {
                 "mAdditionalBonusAtThisLevel": 1.0,
-                "mLevel": 7,
-                "~class": "Breakpoint"
-              },
-              {
-                "mAdditionalBonusAtThisLevel": 1.0,
                 "mLevel": 11,
                 "~class": "Breakpoint"
               }
             ],
-            "mLevel1Value": 1.0,
+            "mLevel1Value": 2.0,
             "~class": "ByCharLevelBreakpointsCalculationPart"
           }
         ],
@@ -5210,7 +5205,7 @@
     "dataValues": {
       "BounceRangeCheck": 500.0,
       "Heal_APRatio": 0.05,
-      "Heal_bHPRatio": 0.1,
+      "Heal_bHPRatio": 0.12,
       "Damage_APRatio": 0.1,
       "Damage_HPRatio": 0.005,
       "BonusHealingPercent_Min": 0.15,
@@ -5250,8 +5245,8 @@
       "Heal": {
         "mFormulaParts": [
           {
-            "mEndValue": 200.0,
-            "mStartValue": 50.0,
+            "mEndValue": 300.0,
+            "mStartValue": 75.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           },
           {
@@ -5926,7 +5921,7 @@
       "QuestBreakpoints": [
         {
           "QuestRequirement": 15,
-          "QuestDesc": "<font color='#F0C200'>QUEST:</font> <keywordMajor>Snipe</keywordMajor> @QuestRequirement@ enemy champions with abilities.<br><br><keywordMajor>Snipe</keywordMajor> - Damage enemies over 600 distance away.<br><br><font color='#F0C200'>REWARD:</font> A meteor flies at enemy champions you Snipe, dealing @Damage@ damage in an area around them. The damage and size of the area increase the further the target is away from you.<br><br>Quest Progress: @QuestProgress@ / @QuestRequirement@<br><br><flavorText>Bang! Bang! Oh, what a shot!</flavorText>"
+          "QuestDesc": "<font color='#F0C200'>QUEST:</font> <keywordMajor>Snipe</keywordMajor> @QuestRequirement@ enemy champions with abilities.<br><br><keywordMajor>Snipe</keywordMajor> - Damage enemies over 600 distance away.<br><br><font color='#F0C200'>REWARD:</font> A meteor flies at enemy champions you Snipe, dealing @Damage@ damage around them. The damage and area increase the further away the target is.<br><br>Quest Progress: @QuestProgress@ / @QuestRequirement@"
         },
         {
           "QuestDesc": "A meteor flies at enemy champions you <keywordMajor>Snipe</keywordMajor>, dealing @Damage@ damage in an area around them. The damage and size of the area increase the further the target is away from you.<br><br><keywordMajor>Snipe</keywordMajor> - Damage enemies over 600 distance away.<br><br>Quest Complete.<br>Enemies Sniped: @QuestProgress@<br><br><flavorText>Bang! Bang! Oh, what a shot!</flavorText>"
@@ -6197,18 +6192,18 @@
       "Calc_Shield": {
         "mFormulaParts": [
           {
-            "mEndValue": 200.0,
-            "mStartValue": 50.0,
+            "mEndValue": 300.0,
+            "mStartValue": 100.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           },
           {
-            "mCoefficient": 0.5,
+            "mCoefficient": 0.7,
             "mStat": 1,
             "mStatFormula": 2,
             "~class": "StatByCoefficientCalculationPart"
           },
           {
-            "mCoefficient": 0.5,
+            "mCoefficient": 0.7,
             "mStat": 6,
             "mStatFormula": 2,
             "~class": "StatByCoefficientCalculationPart"

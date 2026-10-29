@@ -25,19 +25,16 @@ def xxh3(s)
 end
 
 augs = {}
-File.open("aram/mayhem/augments/augments.json", 'rb') { |f| augs = JSON.parse(f.read) }
+File.open("aram/data/RewardGroup.json", 'rb') { |f| augs = JSON.parse(f.read) }
 
-out = {}
-augs.each { |data|
-    icons = data["icons"]
-    next unless icons.any? { |icon| icon.start_with?("0x") }
-    out[data["apiName"]] = {
-        :name => data["name"],
-        :icon => []
+out = ""
+augs.each { |_, data|
+    name = data["internalName"].split("/")[-1]
+    rewards = []
+    data["rewards"].each { |reward|
+        rewards.push(reward["0x31c5f01c"])
     }
-    icons.each { |icon|
-        out[data["apiName"]][:icon].push(icon[2..]) if icon.start_with?("0x")
-    }
+    out += "#{name}: " + rewards.join(", ") + "\n"
 }
 
-puts JSON.pretty_generate(out)
+puts out

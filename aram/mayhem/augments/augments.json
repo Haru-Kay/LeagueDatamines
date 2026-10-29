@@ -309,7 +309,7 @@
     "tooltip": "When dropping below <scaleHealth>@HealthThreshold*100@% Health</scaleHealth>, <healing>heal for @HealAmount*100@% max Health over 3 seconds</healing>. <br>Resets on death or every @Cooldown@ seconds.<br>",
     "dataValues": {
       "HealthThreshold": 0.5,
-      "HealAmount": 0.3,
+      "HealAmount": 0.35,
       "Duration": 3.0,
       "Cooldown": 45.0
     },
@@ -3718,7 +3718,7 @@
     "desc": "<status>Immobilizing</status> an enemy champion grants <scaleHealth>@HealthGainPerStack@ max Health</scaleHealth>.<br><br>If taken as your second Augment, starts with <scaleHealth>@StartingHPIfSecondAugmentTT@ Health</scaleHealth>.",
     "tooltip": "<status>Immobilizing</status> an enemy champion grants <scaleHealth>@HealthGainPerStack@ max Health</scaleHealth>.<br><br>Total Health Gained: <scaleHealth>@HealthGained@</scaleHealth><br><rules>If taken as your second Augment, starts with <scaleHealth>@StartingHPIfSecondAugmentTT@ Health</scaleHealth>.</rules>",
     "dataValues": {
-      "HealthGainPerStack": 20.0,
+      "HealthGainPerStack": 30.0,
       "SpellIDCD": 5.0
     },
     "calculations": {
@@ -4980,16 +4980,11 @@
             "mBreakpoints": [
               {
                 "mAdditionalBonusAtThisLevel": 1.0,
-                "mLevel": 7,
-                "~class": "Breakpoint"
-              },
-              {
-                "mAdditionalBonusAtThisLevel": 1.0,
                 "mLevel": 11,
                 "~class": "Breakpoint"
               }
             ],
-            "mLevel1Value": 1.0,
+            "mLevel1Value": 2.0,
             "~class": "ByCharLevelBreakpointsCalculationPart"
           }
         ],
@@ -5033,7 +5028,7 @@
     "dataValues": {
       "BounceRangeCheck": 500.0,
       "Heal_APRatio": 0.05,
-      "Heal_bHPRatio": 0.1,
+      "Heal_bHPRatio": 0.12,
       "Damage_APRatio": 0.1,
       "Damage_HPRatio": 0.005,
       "BonusHealingPercent_Min": 0.15,
@@ -5073,8 +5068,8 @@
       "Heal": {
         "mFormulaParts": [
           {
-            "mEndValue": 200.0,
-            "mStartValue": 50.0,
+            "mEndValue": 300.0,
+            "mStartValue": 75.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           },
           {
@@ -5717,7 +5712,7 @@
       "QuestBreakpoints": [
         {
           "QuestRequirement": 15,
-          "QuestDesc": "<font color='#F0C200'>QUEST:</font> <keywordMajor>Snipe</keywordMajor> @QuestRequirement@ enemy champions with abilities.<br><br><keywordMajor>Snipe</keywordMajor> - Damage enemies over 600 distance away.<br><br><font color='#F0C200'>REWARD:</font> A meteor flies at enemy champions you Snipe, dealing @Damage@ damage in an area around them. The damage and size of the area increase the further the target is away from you.<br><br>Quest Progress: @QuestProgress@ / @QuestRequirement@<br><br><flavorText>Bang! Bang! Oh, what a shot!</flavorText>"
+          "QuestDesc": "<font color='#F0C200'>QUEST:</font> <keywordMajor>Snipe</keywordMajor> @QuestRequirement@ enemy champions with abilities.<br><br><keywordMajor>Snipe</keywordMajor> - Damage enemies over 600 distance away.<br><br><font color='#F0C200'>REWARD:</font> A meteor flies at enemy champions you Snipe, dealing @Damage@ damage around them. The damage and area increase the further away the target is.<br><br>Quest Progress: @QuestProgress@ / @QuestRequirement@"
         },
         {
           "QuestDesc": "A meteor flies at enemy champions you <keywordMajor>Snipe</keywordMajor>, dealing @Damage@ damage in an area around them. The damage and size of the area increase the further the target is away from you.<br><br><keywordMajor>Snipe</keywordMajor> - Damage enemies over 600 distance away.<br><br>Quest Complete.<br>Enemies Sniped: @QuestProgress@<br><br><flavorText>Bang! Bang! Oh, what a shot!</flavorText>"
@@ -5988,18 +5983,18 @@
       "Calc_Shield": {
         "mFormulaParts": [
           {
-            "mEndValue": 200.0,
-            "mStartValue": 50.0,
+            "mEndValue": 300.0,
+            "mStartValue": 100.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           },
           {
-            "mCoefficient": 0.5,
+            "mCoefficient": 0.7,
             "mStat": 1,
             "mStatFormula": 2,
             "~class": "StatByCoefficientCalculationPart"
           },
           {
-            "mCoefficient": 0.5,
+            "mCoefficient": 0.7,
             "mStat": 6,
             "mStatFormula": 2,
             "~class": "StatByCoefficientCalculationPart"
@@ -7329,7 +7324,7 @@
     "desc": "After casting an Ability, your next Attack deals @ArmorDamage@ bonus physical damage to nearby enemies.",
     "tooltip": "After casting an Ability, your next Attack deals @ArmorDamage@ bonus physical damage to nearby enemies.",
     "dataValues": {
-      "ArmorPercent": 2.5,
+      "ArmorPercent": 2.2,
       "AOEStartSize": 160.0,
       "AOEScalePercentPerArmor": 0.005,
       "Cooldown": 10.0
@@ -7345,7 +7340,7 @@
           },
           {
             "mEndValue": 125.0,
-            "mStartValue": 50.0,
+            "mStartValue": 25.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           }
         ],
@@ -8023,10 +8018,10 @@
       "UpgradeHSPower": 0.2,
       "UpgradeAR": 50.0,
       "UpgradeMR": 50.0,
-      "UpgradeArmorPenFlat": 35.0,
-      "UpgradeMagicPenFlat": 25.0,
-      "UpgradeArmorPenPercent": 0.25,
-      "UpgradeMagicPenPercent": 0.15,
+      "UpgradeArmorPenFlat": 20.0,
+      "UpgradeMagicPenFlat": 15.0,
+      "UpgradeArmorPenPercent": 0.15,
+      "UpgradeMagicPenPercent": 0.09,
       "UpgradeLifesteal": 0.25,
       "UpgradeOmnivamp": 0.25,
       "UpgradeMSPercent": 0.15,
@@ -8104,7 +8099,7 @@
       "Calc_Damage": {
         "mFormulaParts": [
           {
-            "mEndValue": 200.0,
+            "mEndValue": 140.0,
             "mStartValue": 75.0,
             "~class": "ByCharLevelInterpolationCalculationPart"
           },
@@ -8237,19 +8232,8 @@
         "mDisplayAsPercent": true,
         "mFormulaParts": [
           {
-            "mNumber": 0.15,
+            "mNumber": 0.17,
             "~class": "NumberCalculationPart"
-          },
-          {
-            "mCoefficient": 0.05,
-            "mStat": 4,
-            "mStatFormula": 2,
-            "~class": "StatByCoefficientCalculationPart"
-          },
-          {
-            "mCoefficient": 0.0015,
-            "mStat": 11,
-            "~class": "StatByCoefficientCalculationPart"
           }
         ],
         "mRangedMultiplier": {
@@ -8692,8 +8676,8 @@
     "apiName": "RISE",
     "name": "RISE",
     "rarity": "Prismatic",
-    "desc": "If you use <font color='#F0C200'>@SpellName@</font> to kill an enemy champion, you may <recast>Recast</recast> it.<br>Each <recast>Recast</recast> deals additional<br>subsequent damage.",
-    "tooltip": "If you use <font color='#F0C200'>@SpellName@</font> to kill an enemy champion, you may <recast>Recast</recast> it once within @Calc_RecastWindow@ seconds. Each <recast>Recast</recast> deals additional subsequent damage.<br><br><rules>You may <recast>Recast</recast> up to two additional times, each dealing @Calc_RecastDamageMod@ additional damage than the last. <br><br><flavorText>Make 'em remember you.</flavorText></rules>",
+    "desc": "If you use <font color='#F0C200'>@SpellName@</font> to kill an enemy champion, you may <recast>Recast</recast> it.<br>Each subsequent<recast>Recast</recast><br>deals additional damage.",
+    "tooltip": "If you use <font color='#F0C200'>@SpellName@</font> to kill an enemy champion, you may <recast>Recast</recast> it once within @Calc_RecastWindow@ seconds. Each subsequent <recast>Recast</recast> deals additional damage.<br><br><rules>You may <recast>Recast</recast> up to two additional times, each dealing @Calc_RecastDamageMod@ more damage than the last. <br><br><flavorText>Make 'em remember you.</flavorText></rules>",
     "calculations": {
       "0x20d703ce": {
         "mFormulaParts": [
