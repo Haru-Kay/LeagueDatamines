@@ -8,7 +8,7 @@ def augmentExtract(key, data, augmentTags, buildTags)
     name = data["NameTra"].strip
 
     tags = []
-    n = 16
+    n = 32
     while n > 0 && augmentTag > 0
         tag = 2**n
         if augmentTag - tag >= 0
@@ -24,7 +24,7 @@ def augmentExtract(key, data, augmentTags, buildTags)
     }
 
     tags = []
-    n = 16
+    n = 32
     while n > 0 && buildTag > 0
         tag = 2**n
         if buildTag - tag >= 0
@@ -44,10 +44,10 @@ end
 
 def championExtract(char, champTags)
     name = char["championName"].split("/")[1]
-    includeTags = char["mBuildTags"]
-    excludeTags = char["mExcludedTags"]
+    includeTags = char["mBuildTags"] || 0
+    excludeTags = char["mExcludedTags"] || 0
 
-    included = []
+    included = [0]
     n = 16
     while n > 0 && includeTags > 0
         tag = 2**n
@@ -107,47 +107,54 @@ aug1 = {}
 aug2 = {}
 aug3 = {}
 
-File.open("arena/data/AugmentInfo.json", 'rb') { |f| aug1 = JSON.parse(f.read()) }
-File.open("arena/cherry/data/AugmentInfo.json", 'rb') { |f| aug2 = JSON.parse(f.read()) }
+# File.open("arena/data/AugmentInfo.json", 'rb') { |f| aug1 = JSON.parse(f.read()) }
+# File.open("arena/cherry/data/AugmentInfo.json", 'rb') { |f| aug2 = JSON.parse(f.read()) }
 File.open("aram/mayhem/data/AugmentInfo.json", 'rb') { |f| aug3 = JSON.parse(f.read()) }
-cherryAugmentTags = {}
-cherryBuildTags = {}
+# cherryAugmentTags = {}
+# cherryBuildTags = {}
 kiwiAugmentTags = {}
 kiwiBuildTags = {}
 
-cherry = aug1.merge(aug2)
+# cherry = aug1.merge(aug2)
 kiwi = aug3
 
 kiwi.each { |key, data|
+    next if data["id"] == 3176
     kiwiAugmentTags, kiwiBuildTags = augmentExtract(key, data, kiwiAugmentTags, kiwiBuildTags)
 }
-cherry.each { |key, data|
-    cherryAugmentTags, cherryBuildTags = augmentExtract(key, data, cherryAugmentTags, cherryBuildTags)
-}
+kiwiAugmentTags = kiwiAugmentTags.sort_by { |k, v| k.to_i }.to_h
+kiwiBuildTags = kiwiBuildTags.sort_by { |k, v| k.to_i }.to_h
 
-=begin
-0   : Generic
-2   : Mage-related
-4   : AD/AS-related
-6   : Sheen + Master of Duality
-8   : Requires Mana (NOTE: NOT BUFF BUDDIES)
-16  : Requires CC
-18  : Cruelty
-32  : Requires Dash
-64  : Summoner Spells
-128 : Trueshot
-256 : Critical Missile
-260 : ADC Capstones?
-384 : Skilled Sniper
-512 : Tank-related
-1024: Requires Ultimate
-2048: Shield Buffs?
-2050: Circle of Death
-4096: Literal HSP scaling?
-4160: Upgrade: Mikael's
-6144: Shield related? CrackOpenThatEgg + BabyKitty
-6208: Empyrean Promise (Can get Empyrean + Summoner change???)
-=end
+File.open("out1.txt", 'wb') { |f| f.write(JSON.pretty_generate(kiwiAugmentTags)) }
+File.open("out2.txt", 'wb') { |f| f.write(JSON.pretty_generate(kiwiBuildTags)) }
+
+# cherry.each { |key, data|
+#     cherryAugmentTags, cherryBuildTags = augmentExtract(key, data, cherryAugmentTags, cherryBuildTags)
+# }
+
+# =begin
+# 0   : Generic
+# 2   : Mage-related
+# 4   : AD/AS-related
+# 6   : Sheen + Master of Duality
+# 8   : Requires Mana (NOTE: NOT BUFF BUDDIES)
+# 16  : Requires CC
+# 18  : Cruelty
+# 32  : Requires Dash
+# 64  : Summoner Spells
+# 128 : Trueshot
+# 256 : Critical Missile
+# 260 : ADC Capstones?
+# 384 : Skilled Sniper
+# 512 : Tank-related
+# 1024: Requires Ultimate
+# 2048: Shield Buffs?
+# 2050: Circle of Death
+# 4096: Literal HSP scaling?
+# 4160: Upgrade: Mikael's
+# 6144: Shield related? CrackOpenThatEgg + BabyKitty
+# 6208: Empyrean Promise (Can get Empyrean + Summoner change???)
+# =end
 
 kiwiAugmentTags = kiwiAugmentTags.sort_by { |k, v| k }.to_h.each { |tag, augs|
     augs.sort_by! {|a| a.downcase }
@@ -156,22 +163,22 @@ kiwiBuildTags = kiwiBuildTags.sort_by { |k, v| k }.to_h.each { |tag, augs|
     augs.sort_by! {|a| a.downcase }
 }
 
-cherryAugmentTags = cherryAugmentTags.sort_by { |k, v| k }.to_h.each { |tag, augs|
-    augs.sort_by! {|a| a.downcase }
-}
-cherryBuildTags = cherryBuildTags.sort_by { |k, v| k }.to_h.each { |tag, augs|
-    augs.sort_by! {|a| a.downcase }
-}
+# cherryAugmentTags = cherryAugmentTags.sort_by { |k, v| k }.to_h.each { |tag, augs|
+#     augs.sort_by! {|a| a.downcase }
+# }
+# cherryBuildTags = cherryBuildTags.sort_by { |k, v| k }.to_h.each { |tag, augs|
+#     augs.sort_by! {|a| a.downcase }
+# }
 
 
-cherryChampTags = {}
+# cherryChampTags = {}
 
-cherryTagList = []
-File.open("arena/data/ChampionAugmentTagList.json", 'rb') { |f| cherryTagList = JSON.parse(f.read).values[0].values[0] }
+# cherryTagList = []
+# File.open("arena/data/ChampionAugmentTagList.json", 'rb') { |f| cherryTagList = JSON.parse(f.read).values[0].values[0] }
 
-cherryTagList.each { |char|
-    cherryChampTags = championExtract(char, cherryChampTags)
-}
+# cherryTagList.each { |char|
+#     cherryChampTags = championExtract(char, cherryChampTags)
+# }
 
 kiwiChampTags = {}
 
@@ -181,6 +188,8 @@ File.open("aram/data/ChampionAugmentTagList.json", 'rb') { |f| kiwiTagList = JSO
 kiwiTagList.each { |char|
     kiwiChampTags = championExtract(char, kiwiChampTags)
 }
+
+p kiwiChampTags["Yasuo"]
 
 augmentTagList = {
     0 => "Generic",
@@ -210,7 +219,7 @@ buildTagList = {
     256 => "Tank?",
     512 => "Crit Based",
     1024 => "Autocasts",
-    2048 => "Fighter Caster?",
+    2048 => "Stat Conversion",
 }
 
 maxTags = 0
@@ -230,8 +239,16 @@ kiwiChampTags.each { |ch, t|
     end
 }
 
-puts maxChamp
-puts minChamp.length
+kiwiChampTags.transform_values! { |v| 
+    v[:excluded] = v[:excluded].map { |idx| kiwiAugmentTags[idx] }.flatten.sort_by { |v| v.downcase }
+    v[:included] = v[:included].map { |idx| kiwiBuildTags[idx] }.flatten.sort_by { |v| v.downcase }# - v[:excluded]
+    next v#[:included]
+}
 
-export(kiwiChampTags, kiwiBuildTags, kiwiAugmentTags, "Mayhem Champion Augments")
-export(cherryChampTags, cherryBuildTags, cherryAugmentTags, "Arena Champion Augments")
+File.open("out3.txt", 'wb') { |f| f.write(JSON.pretty_generate(kiwiChampTags)) }
+
+# puts maxChamp
+# puts minChamp.length
+
+# export(kiwiChampTags, kiwiBuildTags, kiwiAugmentTags, "Mayhem Champion Augments")
+# export(cherryChampTags, cherryBuildTags, cherryAugmentTags, "Arena Champion Augments")
