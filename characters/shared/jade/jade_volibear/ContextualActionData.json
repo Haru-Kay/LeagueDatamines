@@ -1,0 +1,1018 @@
+{
+  "Characters/Jade_Volibear/CAC/Jade_Volibear_Base": {
+    "mCooldown": 15.0,
+    "mObjectPath": "Characters/Jade_Volibear/CAC/Jade_Volibear_Base",
+    "mSituations": {
+      "AttackChampion2D": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 5,
+              "mSelfEventName": "Attack2DHuman",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCategory": "race",
+                    "mData": "human",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              },
+              {
+                "mRuleCooldown": 30.0,
+                "~class": "ContextualConditionRuleCooldown"
+              }
+            ],
+            "mRuleName": "Human",
+            "~class": "ContextualRule"
+          },
+          {
+            "mAudioAction": {
+              "mSelfEventName": "Attack2DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "General",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "AttackMinion2D": {
+        "mRules": [
+          {
+            "mAudioAction": {
+              "mSelfEventName": "Attack2DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "Attack Minion",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "AttackNeutral2D": {
+        "mRules": [
+          {
+            "mAudioAction": {
+              "mSelfEventName": "Attack2DNeutral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "Attack Neutral",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "Dance": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mSelfEventName": "Dance3DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "Dance",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "EnemyEncounter": {
+        "mCoolDownTime": 15.0,
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DAnivia",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Anivia/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "~class": "ContextualConditionEnemyEncounterNumber"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "Anivia",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DAshe",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Ashe/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "~class": "ContextualConditionEnemyEncounterNumber"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "Ashe",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DBraum",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Braum/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "~class": "ContextualConditionEnemyEncounterNumber"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "Braum",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DLissandra",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Lissandra/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "~class": "ContextualConditionEnemyEncounterNumber"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "Lissandra",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DNunu",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Nunu/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "~class": "ContextualConditionEnemyEncounterNumber"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "Nunu",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DOrnn",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Ornn/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "~class": "ContextualConditionEnemyEncounterNumber"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "Ornn",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DRengar",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Rengar/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "~class": "ContextualConditionEnemyEncounterNumber"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "Rengar",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DSejuani",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Sejuani/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "~class": "ContextualConditionEnemyEncounterNumber"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "Sejuani",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DTryndamere",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Tryndamere/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "~class": "ContextualConditionEnemyEncounterNumber"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "Tryndamere",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DYuumi",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Yuumi/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "~class": "ContextualConditionEnemyEncounterNumber"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "Yuumi",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DZilean",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Zilean/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  },
+                  {
+                    "~class": "ContextualConditionEnemyEncounterNumber"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "Zilean",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DHuman",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "mCategory": "race",
+                    "mData": "human",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  },
+                  {
+                    "~class": "ContextualConditionEnemyEncounterNumber"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "Human",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "FirstEncounter3DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 1,
+                "mChildConditions": [
+                  {
+                    "~class": "ContextualConditionEnemyEncounterNumber"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mRuleName": "General",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "FirstMove2D": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Move2DFirst",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "First Move",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "Idle_Base": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mSelfEventName": "Idle3DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mPercentChanceToPlay": 20,
+                "~class": "ContextualConditionChanceToPlay"
+              },
+              {
+                "mRuleCooldown": 60.0,
+                "~class": "ContextualConditionRuleCooldown"
+              }
+            ],
+            "mRuleName": "Idle",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "Joke": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Joke3DGeneral",
+              "mEnemyEventName": "Joke3DGeneral",
+              "mSelfEventName": "Joke3DGeneral",
+              "mSpectatorEventName": "Joke3DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "Joke",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "KillChampion": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mEnemyEventName": "Kill3DOrnn",
+              "mMaxOccurences": 2,
+              "mSelfEventName": "Kill3DOrnn",
+              "mWaitForAnnouncerQueue": true,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 6,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Ornn/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mPriority": 30,
+            "mRuleName": "Ornn",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mEnemyEventName": "Kill3DAnivia",
+              "mMaxOccurences": 1,
+              "mSelfEventName": "Kill3DAnivia",
+              "mWaitForAnnouncerQueue": true,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 6,
+                "mChildConditions": [
+                  {
+                    "mCharacters": [
+                      "Characters/Anivia/CharacterRecords/Root"
+                    ],
+                    "~class": "ContextualConditionCharacterName"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mPriority": 30,
+            "mRuleName": "Anivia",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mEnemyEventName": "Kill3DHuman",
+              "mMaxOccurences": 2,
+              "mSelfEventName": "Kill3DHuman",
+              "mWaitForAnnouncerQueue": true,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCharacterType": 6,
+                "mChildConditions": [
+                  {
+                    "mCategory": "race",
+                    "mData": "human",
+                    "~class": "ContextualConditionCharacterMetadata"
+                  }
+                ],
+                "~class": "ContextualConditionCharacter"
+              }
+            ],
+            "mPriority": 30,
+            "mRuleName": "Human",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mEnemyEventName": "Kill3DGeneral",
+              "mSelfEventName": "Kill3DGeneral",
+              "mWaitForAnnouncerQueue": true,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mPriority": 30,
+            "mRuleName": "General",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "KillTurret": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Kill3DTurret",
+              "mMaxOccurences": 4,
+              "mSelfEventName": "Kill3DTurret",
+              "mWaitForAnnouncerQueue": true,
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mPercentChanceToPlay": 75,
+                "~class": "ContextualConditionChanceToPlay"
+              }
+            ],
+            "mRuleName": "Turret",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "Laugh": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Laugh3DGeneral",
+              "mEnemyEventName": "Laugh3DGeneral",
+              "mSelfEventName": "Laugh3DGeneral",
+              "mSpectatorEventName": "Laugh3DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "Laugh",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "MoveOrder2D": {
+        "mRules": [
+          {
+            "mAudioAction": {
+              "mSelfEventName": "Move2DStandard",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCompareOp": 3,
+                "mDistance": 400.0,
+                "~class": "ContextualConditionMoveDistance"
+              },
+              {
+                "mCompareOp": 5,
+                "mDistance": 2000.0,
+                "~class": "ContextualConditionMoveDistance"
+              }
+            ],
+            "mRuleName": "Standard",
+            "~class": "ContextualRule"
+          },
+          {
+            "mAudioAction": {
+              "mSelfEventName": "Move2DLong",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mCompareOp": 2,
+                "mDistance": 2000.0,
+                "~class": "ContextualConditionMoveDistance"
+              }
+            ],
+            "mRuleName": "Long",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "RecallLeadIn": {
+        "mCoolDownTime": 10.0,
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mSelfEventName": "Recall3DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mPercentChanceToPlay": 75,
+                "~class": "ContextualConditionChanceToPlay"
+              },
+              {
+                "mRuleCooldown": 10.0,
+                "~class": "ContextualConditionRuleCooldown"
+              }
+            ],
+            "mRuleName": "Recall",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "Respawn2D": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mSelfEventName": "Respawn2DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mPercentChanceToPlay": 75,
+                "~class": "ContextualConditionChanceToPlay"
+              }
+            ],
+            "mRuleName": "Respawn",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "SpellCast": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "DontResetTimer": true,
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "cast3D",
+              "mEnemyEventName": "cast3D",
+              "mSelfEventName": "cast3D",
+              "mSpectatorEventName": "cast3D",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mSpell": "Characters/Jade_Volibear/Spells/Jade_VolibearBasicAttack",
+                "~class": "ContextualConditionSpellName"
+              },
+              {
+                "mPercentChanceToPlay": 30,
+                "~class": "ContextualConditionChanceToPlay"
+              }
+            ],
+            "mRuleName": "Basic 1",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "DontResetTimer": true,
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "cast3D",
+              "mEnemyEventName": "cast3D",
+              "mSelfEventName": "cast3D",
+              "mSpectatorEventName": "cast3D",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mSpell": "Characters/Jade_Volibear/Spells/Jade_VolibearBasicAttack2",
+                "~class": "ContextualConditionSpellName"
+              },
+              {
+                "mPercentChanceToPlay": 30,
+                "~class": "ContextualConditionChanceToPlay"
+              }
+            ],
+            "mRuleName": "Basic 2",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "DontResetTimer": true,
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "cast3D",
+              "mEnemyEventName": "cast3D",
+              "mSelfEventName": "cast3D",
+              "mSpectatorEventName": "cast3D",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mSpell": "Characters/Jade_Volibear/Spells/Jade_VolibearCritAttack",
+                "~class": "ContextualConditionSpellName"
+              },
+              {
+                "mPercentChanceToPlay": 30,
+                "~class": "ContextualConditionChanceToPlay"
+              }
+            ],
+            "mRuleName": "Crit",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "DontResetTimer": true,
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "cast3D",
+              "mEnemyEventName": "cast3D",
+              "mSelfEventName": "cast3D",
+              "mSpectatorEventName": "cast3D",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mSpell": "Characters/Jade_Volibear/Spells/Jade_VolibearQAbility/Jade_VolibearQ",
+                "~class": "ContextualConditionSpellName"
+              },
+              {
+                "mPercentChanceToPlay": 20,
+                "~class": "ContextualConditionChanceToPlay"
+              }
+            ],
+            "mRuleName": "Q",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "DontResetTimer": true,
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "cast3D",
+              "mEnemyEventName": "cast3D",
+              "mSelfEventName": "cast3D",
+              "mSpectatorEventName": "cast3D",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mSpell": "Characters/Jade_Volibear/Spells/Jade_VolibearWAbility/Jade_VolibearW",
+                "~class": "ContextualConditionSpellName"
+              },
+              {
+                "mPercentChanceToPlay": 30,
+                "~class": "ContextualConditionChanceToPlay"
+              }
+            ],
+            "mRuleName": "W",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "DontResetTimer": true,
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "cast3D",
+              "mEnemyEventName": "cast3D",
+              "mSelfEventName": "cast3D",
+              "mSpectatorEventName": "cast3D",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mSpell": "Characters/Jade_Volibear/Spells/Jade_VolibearEAbility/Jade_VolibearE",
+                "~class": "ContextualConditionSpellName"
+              },
+              {
+                "mPercentChanceToPlay": 50,
+                "~class": "ContextualConditionChanceToPlay"
+              }
+            ],
+            "mRuleName": "E",
+            "~class": "ContextualRule"
+          },
+          {
+            "CooldownModifications": {
+              "DontResetTimer": true,
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "cast3D",
+              "mEnemyEventName": "cast3D",
+              "mSelfEventName": "cast3D",
+              "mSpectatorEventName": "cast3D",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mConditions": [
+              {
+                "mSpell": "Characters/Jade_Volibear/Spells/Jade_VolibearRAbility/Jade_VolibearR",
+                "~class": "ContextualConditionSpellName"
+              }
+            ],
+            "mRuleName": "R",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "Taunt": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "Taunt3DGeneral",
+              "mEnemyEventName": "Taunt3DGeneral",
+              "mSelfEventName": "Taunt3DGeneral",
+              "mSpectatorEventName": "Taunt3DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "Taunt",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      },
+      "TauntEndedNearby": {
+        "mRules": [
+          {
+            "CooldownModifications": {
+              "IgnoreTimer": true,
+              "~class": "ContextualActionCooldownModifications"
+            },
+            "mAudioAction": {
+              "mAllyEventName": "TauntResponse3DGeneral",
+              "mEnemyEventName": "TauntResponse3DGeneral",
+              "mMaxOccurences": 1,
+              "mSelfEventName": "TauntResponse3DGeneral",
+              "~class": "ContextualActionPlayVO"
+            },
+            "mRuleName": "Taunt Response",
+            "~class": "ContextualRule"
+          }
+        ],
+        "~class": "ContextualSituation"
+      }
+    },
+    "~class": "ContextualActionData"
+  }
+}
