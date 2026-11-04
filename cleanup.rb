@@ -797,6 +797,7 @@ def augmentSearcher(key, data, version=0)
 end
 
 def buildAugmentQuest(augment, questData)
+    return {} if !questData
     questHash = {
         "apiName" => questData["QuestName"],
         "TooltipOverride" => [],
@@ -1321,6 +1322,8 @@ diff()
                     newdata.store(group, weight)
                 }
                 data = newdata.sort_by { |k, v| k.downcase }.to_h
+            when "RewardGroup"
+                data = applyLangKeys(applyLang(data))
             else
                 type = "MiscData" if type.start_with?("0x")
         end

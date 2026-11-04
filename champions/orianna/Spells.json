@@ -853,26 +853,13 @@
         {
           "name": "ReducedDamagePercent",
           "values": [
-            30.0,
-            30.0,
-            30.0,
-            30.0,
-            30.0,
-            30.0,
-            30.0
-          ],
-          "~class": "SpellDataValue"
-        },
-        {
-          "name": "MinimumDamagePercent",
-          "values": [
-            70.0,
-            70.0,
-            70.0,
-            70.0,
-            70.0,
-            70.0,
-            70.0
+            0.7,
+            0.7,
+            0.7,
+            0.7,
+            0.7,
+            0.7,
+            0.7
           ],
           "~class": "SpellDataValue"
         }
@@ -1009,7 +996,7 @@
           "mLocKeys": {
             "keyName": "Command: Attack",
             "keySummary": "Orianna commands her Ball to fire toward a target location, dealing magic damage to targets along the way (deals less damage to subsequent targets). Her Ball remains at the target location after.",
-            "keyTooltip": "Orianna commands her <keywordMajor>Ball</keywordMajor> to move to an area, dealing <magicDamage>@TotalDamageTooltip@ magic damage</magicDamage> to surrounding enemies and to enemies it passes through. Deals @ReducedDamagePercent@% less damage to all enemies after the first."
+            "keyTooltip": "Orianna commands her <keywordMajor>Ball</keywordMajor> to move to an area, dealing <magicDamage>@TotalDamage@ magic damage</magicDamage> to enemies it passes through and nearby enemies at the destination.<br><br>Damage is reduced to <magicDamage>@ReducedDamage@ magic damage</magicDamage> for enemies after the first hit."
           },
           "mObjectName": "OrianaIzunaCommand",
           "~class": "TooltipInstanceSpell"
@@ -1050,23 +1037,16 @@
         "~class": "ObjectTags"
       },
       "mSpellCalculations": {
-        "MinimumDamageTooltip": {
-          "mModifiedGameCalculation": "TotalDamageTooltip",
+        "ReducedDamage": {
+          "mModifiedGameCalculation": "TotalDamage",
           "mMultiplier": {
-            "mPart1": {
-              "mNumber": 0.01,
-              "~class": "NumberCalculationPart"
-            },
-            "mPart2": {
-              "mDataValue": "MinimumDamagePercent",
-              "~class": "NamedDataValueCalculationPart"
-            },
-            "~class": "ProductOfSubPartsCalculationPart"
+            "mDataValue": "ReducedDamagePercent",
+            "~class": "NamedDataValueCalculationPart"
           },
           "mSimpleTooltipCalculationDisplay": 6,
           "~class": "GameCalculationModified"
         },
-        "TotalDamageTooltip": {
+        "TotalDamage": {
           "mFormulaParts": [
             {
               "mDataValue": "BaseDamage",

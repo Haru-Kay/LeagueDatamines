@@ -24,12 +24,17 @@ def xxh3(s)
     return (hashInt & hashMask).to_s(16)
 end
 
-items = {}
-File.open("items/items.json", 'rb') { |f| items = JSON.parse(f.read) }
+augs = {}
+File.open("aram/data/RewardGroup.json", 'rb') { |f| augs = JSON.parse(f.read) }
 
-f = []
-items.each { |i, d|
-    f.push(i) if d["0xb2aa694"] == false
+out = ""
+augs.each { |_, data|
+    name = data["internalName"].split("/")[-1]
+    rewards = []
+    data["rewards"].each { |reward|
+        rewards.push(reward["0x31c5f01c"])
+    }
+    out += "#{name}: " + rewards.join(", ") + "\n"
 }
 
-puts f.join(", ")
+puts out
